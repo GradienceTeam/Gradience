@@ -100,7 +100,6 @@ class AdwcustomizerApplication(Adw.Application):
         final_css = ""
         for key in variables.keys():
             final_css += "@define-color {0} {1};\n".format(key, variables[key])
-        print(final_css)
         return final_css
 
     def reload_variables(self):
@@ -128,7 +127,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 modal=True,
                                 program_name='AdwCustomizer',
                                 logo_icon_name='com.github.ArtyIF.AdwCustomizer',
-                                version='0.0.4',
+                                version='0.0.5',
                                 authors=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 
