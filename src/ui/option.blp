@@ -1,0 +1,46 @@
+using Gtk 4.0;
+using Adw 1;
+
+template AdwcustomizerOption : Adw.ActionRow {
+  title: "Option Title";
+
+  [suffix]
+  MenuButton explanation-button {
+    valign: center;
+    icon-name: "help-about-symbolic";
+    popover: explanation-popover;
+  }
+
+  [suffix]
+  Stack value-stack {
+    valign: center;
+    hhomogeneous: false;
+    interpolate-size: true;
+    transition-type: crossfade;
+
+    ColorButton color-value {
+      rgba: "#00000000";
+    }
+    Entry text-value {
+      text: "#00000000";
+    }
+  }
+
+  [suffix]
+  ToggleButton text-value-toggle {
+    valign: center;
+    icon-name: "document-edit-symbolic";
+
+    toggled => on_text_value_toggled();
+  }
+}
+
+Popover explanation-popover {
+  position: bottom;
+  Label explanation-label {
+    max-width-chars: 50;
+    wrap: true;
+    justify: center;
+    label: "Text goes here";
+  }
+}

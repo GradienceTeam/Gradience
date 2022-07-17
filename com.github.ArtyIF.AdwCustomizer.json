@@ -1,0 +1,54 @@
+{
+    "app-id" : "com.github.ArtyIF.AdwCustomizer",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "42",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "adwcustomizer",
+    "finish-args" : [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--device=dri",
+        "--socket=wayland",
+        "--filesystem=xdg-config/gtk-3.0/gtk.css",
+        "--filesystem=xdg-config/gtk-4.0/gtk.css"
+    ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+        {
+            "name" : "blueprint-compiler",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                    "branch" : "main"
+                }
+            ]
+        },
+        {
+            "name" : "adwcustomizer",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "file:///home/artyif/Projects/AdwCustomizer"
+                }
+            ]
+        }
+    ],
+    "build-options" : {
+        "env" : {        }
+    }
+}

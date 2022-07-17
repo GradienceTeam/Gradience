@@ -1,0 +1,52 @@
+using Gtk 4.0;
+using Adw 1;
+
+template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
+  styles ["devel"]
+  title: "AdwCustomizer";
+  default-width: 1280;
+  default-height: 720;
+  titlebar: Gtk.HeaderBar {
+    [start]
+    Button apply_button {
+      styles ["suggested-action"]
+      label: "Apply";
+    }
+
+    [start]
+    Button save_preset_button {
+      label: "Save Preset";
+      icon-name: "document-save-symbolic";
+    }
+
+    [start]
+    Button preview_button {
+      label: "Preview";
+      icon-name: "window-new-symbolic";
+    }
+
+    [title]
+    MenuButton preset_dropdown {
+      styles ["flat"]
+      menu-model: preset_menu;
+      label: "Presets";
+    }
+
+    [end]
+    MenuButton {
+      styles ["flat"]
+      menu-model: main_menu;
+    }
+  };
+
+  Adw.PreferencesPage content { }
+}
+
+menu preset_menu {
+  item ("Adwaita", "app.load_adw_preset")
+  item ("Adwaita Dark", "app.load_adw_dark_preset")
+}
+
+menu main_menu {
+  item ("About AdwCustomizer", "app.about")
+}
