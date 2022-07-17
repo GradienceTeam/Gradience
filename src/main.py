@@ -29,11 +29,12 @@
 import sys
 import gi
 import json
+import os
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
-from gi.repository import Gtk, Gdk, Gio, Adw
+from gi.repository import Gtk, Gdk, Gio, Adw, GLib
 from .window import AdwcustomizerMainWindow
 from .option import AdwcustomizerOption
 
@@ -98,15 +99,15 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.reload_variables()
 
-    def generate_css(self, variables):
+    def generate_css(self):
         final_css = ""
-        for key in variables.keys():
-            final_css += "@define-color {0} {1};\n".format(key, variables[key])
+        for key in self.variables.keys():
+            final_css += "@define-color {0} {1};\n".format(key, self.variables[key])
         return final_css
 
     def reload_variables(self):
         css_provider = Gtk.CssProvider()
-        css_provider.load_from_data(self.generate_css(self.variables).encode())
+        css_provider.load_from_data(self.generate_css().encode())
         # loading with the priority above user to override the applied config
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
 
@@ -146,18 +147,30 @@ class AdwcustomizerApplication(Adw.Application):
 
     def apply_css_file(self, widget, response):
         if response == "apply":
-            print("todo: apply")
+            with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w') as f:
+                f.write(self.generate_css())
+            with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w') as f:
+                f.write(self.generate_css())
 
     def reset_css_file(self, widget, response):
         if response == "reset":
-            print("todo: reset")
+            file = Gio.File.new_for_path(GLib.get_user_config_dir() + "/gtk-4.0/gtk.css")
+            try:
+                file.delete()
+            except:
+                pass
+            file = Gio.File.new_for_path(GLib.get_user_config_dir() + "/gtk-3.0/gtk.css")
+            try:
+                file.delete()
+            except:
+                pass
 
     def show_about_window(self, widget, _):
         about = Adw.AboutWindow(transient_for=self.props.active_window,
                                 application_name='AdwCustomizer',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.7',
+                                version='0.0.8',
                                 developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 
