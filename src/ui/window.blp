@@ -11,6 +11,7 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
     Button apply_button {
       styles ["suggested-action"]
       label: "Apply";
+      action-name: "app.apply_css_file";
     }
 
     [start]
@@ -49,5 +50,6 @@ menu preset_menu {
 }
 
 menu main_menu {
+  item ("Reset gtk.css", "app.reset_css_file")
   item ("About AdwCustomizer", "app.about")
 }

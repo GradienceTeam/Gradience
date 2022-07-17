@@ -79,6 +79,8 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.create_action("load_adw_preset", self.load_adw_preset)
         self.create_action("load_adw_dark_preset", self.load_adw_dark_preset)
+        self.create_action("apply_css_file", self.show_apply_css_file_dialog)
+        self.create_action("reset_css_file", self.show_reset_css_file_dialog)
         self.create_action("about", self.show_about_window)
 
         win.present()
@@ -114,21 +116,49 @@ class AdwcustomizerApplication(Adw.Application):
     def load_adw_dark_preset(self, widget, _):
         self.load_preset('/com/github/ArtyIF/AdwCustomizer/presets/adwaita-dark.json')
 
+    def show_apply_css_file_dialog(self, widget, _):
+        dialog = Adw.MessageDialog(transient_for=self.props.active_window,
+                                   heading="Apply this color scheme?",
+                                   body="If there is a gtk.css file, it will irreversibly be rewritten. Make sure you have the current gtk.css file backed up.")
+
+        dialog.add_response("cancel", "Cancel")
+        dialog.add_response("apply", "Apply")
+        dialog.set_response_appearance("apply", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_default_response("cancel")
+        dialog.set_close_response("cancel")
+        dialog.connect("response", self.apply_css_file)
+
+        dialog.present()
+
+    def show_reset_css_file_dialog(self, widget, _):
+        dialog = Adw.MessageDialog(transient_for=self.props.active_window,
+                                   heading="Reset gtk.css?",
+                                   body="This will irreversibly reset the color scheme to default. Make sure you have the current settings saved as a preset.")
+
+        dialog.add_response("cancel", "Cancel")
+        dialog.add_response("reset", "Reset")
+        dialog.set_response_appearance("reset", Adw.ResponseAppearance.DESTRUCTIVE)
+        dialog.set_default_response("cancel")
+        dialog.set_close_response("cancel")
+        dialog.connect("response", self.reset_css_file)
+
+        dialog.present()
+
+    def apply_css_file(self, widget, response):
+        if response == "apply":
+            print("todo: apply")
+
+    def reset_css_file(self, widget, response):
+        if response == "reset":
+            print("todo: reset")
+
     def show_about_window(self, widget, _):
-        # TODO: Adw.AboutWindow doesn't exist in production GNOME Runtime, only master. Replace with this once it becomes available in the stable version
-        # about = Adw.AboutWindow(transient_for=self.props.active_window,
-        #                         application_name='AdwCustomizer',
-        #                         application_icon='com.github.ArtyIF.AdwCustomizer',
-        #                         developer_name='ArtyIF',
-        #                         version='whatever_version',
-        #                         developers=['ArtyIF'],
-        #                         copyright='© 2022 ArtyIF')
-        about = Gtk.AboutDialog(transient_for=self.props.active_window,
-                                modal=True,
-                                program_name='AdwCustomizer',
-                                logo_icon_name='com.github.ArtyIF.AdwCustomizer',
-                                version='0.0.6',
-                                authors=['ArtyIF'],
+        about = Adw.AboutWindow(transient_for=self.props.active_window,
+                                application_name='AdwCustomizer',
+                                application_icon='com.github.ArtyIF.AdwCustomizer',
+                                developer_name='ArtyIF',
+                                version='0.0.7',
+                                developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 
         about.present()
