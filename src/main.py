@@ -127,7 +127,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 modal=True,
                                 program_name='AdwCustomizer',
                                 logo_icon_name='com.github.ArtyIF.AdwCustomizer',
-                                version='0.0.5',
+                                version='0.0.6',
                                 authors=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 
