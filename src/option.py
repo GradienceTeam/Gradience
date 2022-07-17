@@ -40,9 +40,10 @@ class AdwcustomizerOption(Adw.ActionRow):
     explanation_button = Gtk.Template.Child("explanation-button")
     explanation_label = Gtk.Template.Child("explanation-label")
 
-    def __init__(self, title, explanation, value, **kwargs):
+    def __init__(self, name, title, explanation, value, **kwargs):
         super().__init__(**kwargs)
 
+        self.set_name(name)
         self.set_title(title)
         self.explanation_label.set_label(explanation or "")
         if (explanation is None):
@@ -80,4 +81,7 @@ class AdwcustomizerOption(Adw.ActionRow):
                 rgba.parse("#00000000")
                 self.color_value.set_rgba(rgba)
 
+        if Gtk.Application.get_default().is_ready and kwargs.get("update_from") == "text_value" and new_value != "":
+            Gtk.Application.get_default().variables[self.get_name()] = new_value
+            Gtk.Application.get_default().reload_variables()
 
