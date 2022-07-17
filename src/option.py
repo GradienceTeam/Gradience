@@ -51,19 +51,33 @@ class AdwcustomizerOption(Adw.ActionRow):
         self.update_value(value)
 
     @Gtk.Template.Callback()
+    def on_color_value_changed(self, *args):
+        self.update_value(self.color_value.get_rgba().to_string(), update_from="color_value")
+
+    @Gtk.Template.Callback()
+    def on_text_value_changed(self, *args):
+        self.update_value(self.text_value.get_text(), update_from="text_value")
+
+    @Gtk.Template.Callback()
     def on_text_value_toggled(self, *args):
         if (self.text_value_toggle.get_active()):
             self.value_stack.set_visible_child(self.text_value)
         else:
             self.value_stack.set_visible_child(self.color_value)
 
-    def update_value(self, new_value):
-        self.text_value.set_text(new_value)
-        rgba = Gdk.RGBA()
-        if rgba.parse(new_value):
-            self.color_value.set_rgba(rgba)
-            self.text_value_toggle.set_active(False)
-        else:
-            self.text_value_toggle.set_active(True)
+    def update_value(self, new_value, **kwargs):
+        if kwargs.get("update_from") != "text_value":
+            self.text_value.set_text(new_value)
+        if kwargs.get("update_from") != "color_value":
+            rgba = Gdk.RGBA()
+            if rgba.parse(new_value):
+                self.color_value.set_rgba(rgba)
+                if kwargs.get("update_from") != "text_value":
+                    self.text_value_toggle.set_active(False)
+            elif kwargs.get("update_from") != "text_value":
+                self.text_value_toggle.set_active(True)
+            else:
+                rgba.parse("#00000000")
+                self.color_value.set_rgba(rgba)
 
 

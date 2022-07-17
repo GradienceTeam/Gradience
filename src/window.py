@@ -26,7 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Gdk, Gio, Adw
+from gi.repository import Gtk
 import json
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/window.ui')
