@@ -8,28 +8,28 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
   default-height: 720;
   titlebar: Gtk.HeaderBar {
     [start]
-    Button apply_button {
+    Button apply-button {
       styles ["suggested-action"]
       label: "Apply";
       action-name: "app.apply_css_file";
     }
 
     [start]
-    Button save_preset_button {
+    Button save-preset-button {
       label: "Save Preset";
       icon-name: "document-save-symbolic";
     }
 
     [start]
-    Button preview_button {
+    Button preview-button {
       label: "Preview";
       icon-name: "window-new-symbolic";
     }
 
     [title]
-    MenuButton preset_dropdown {
+    MenuButton presets-dropdown {
       styles ["flat"]
-      menu-model: preset_menu;
+      menu-model: preset-menu;
       label: "Presets";
     }
 
@@ -37,19 +37,34 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
     MenuButton {
       styles ["flat"]
       icon-name: "open-menu-symbolic";
-      menu-model: main_menu;
+      menu-model: main-menu;
     }
   };
 
   Adw.PreferencesPage content { }
 }
 
-menu preset_menu {
-  item ("Adwaita", "app.load_adw_preset")
-  item ("Adwaita Dark", "app.load_adw_dark_preset")
+menu preset-menu {
+  section {
+    label: "Built-in";
+    item {
+      label: "Adwaita";
+      action: "app.load_preset";
+      target: "adwaita";
+    }
+    item {
+      label: "Adwaita Dark";
+      action: "app.load_preset";
+      target: "adwaita-dark";
+    }
+  }
+  section {
+    label: "User Defined";
+    item ("Open in File Manager", "app.open_presets_directory")
+  }
 }
 
-menu main_menu {
+menu main-menu {
   item ("Reset gtk.css", "app.reset_css_file")
   item ("About AdwCustomizer", "app.about")
 }

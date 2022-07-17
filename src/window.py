@@ -34,7 +34,11 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'AdwcustomizerMainWindow'
 
     content = Gtk.Template.Child()
+    presets_dropdown = Gtk.Template.Child("presets-dropdown")
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+    def set_current_preset_name(self, new_name):
+        self.presets_dropdown.set_label(new_name)
 

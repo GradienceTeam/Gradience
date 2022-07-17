@@ -76,10 +76,9 @@ class AdwcustomizerApplication(Adw.Application):
 
             win.content.add(pref_group)
 
-        self.load_preset('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
+        self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
 
-        self.create_action("load_adw_preset", self.load_adw_preset)
-        self.create_action("load_adw_dark_preset", self.load_adw_dark_preset)
+        self.create_stateful_action("load_preset", GLib.VariantType.new('s'), GLib.Variant('s', 'adwaita'), self.load_preset_action)
         self.create_action("apply_css_file", self.show_apply_css_file_dialog)
         self.create_action("reset_css_file", self.show_reset_css_file_dialog)
         self.create_action("about", self.show_about_window)
@@ -88,9 +87,26 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.is_ready = True
 
-    def load_preset(self, preset_path):
+    def load_preset_from_file(self, preset_path):
+        preset_text = ""
+        with open(preset_path, 'r') as f:
+            preset_text = f.read()
+        preset = json.loads(preset_text)
+        self.props.active_window.set_current_preset_name(preset["name"])
+
+        self.variables = preset["variables"]
+
+        for key in self.variables.keys():
+            if key in self.pref_variables:
+                self.pref_variables[key].update_value(self.variables[key])
+
+        self.reload_variables()
+
+    def load_preset_from_resource(self, preset_path):
         preset_text = Gio.resources_lookup_data(preset_path, 0).get_data().decode()
         preset = json.loads(preset_text)
+        self.props.active_window.set_current_preset_name(preset["name"])
+
         self.variables = preset["variables"]
 
         for key in self.variables.keys():
@@ -111,11 +127,12 @@ class AdwcustomizerApplication(Adw.Application):
         # loading with the priority above user to override the applied config
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
 
-    def load_adw_preset(self, widget, _):
-        self.load_preset('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
-
-    def load_adw_dark_preset(self, widget, _):
-        self.load_preset('/com/github/ArtyIF/AdwCustomizer/presets/adwaita-dark.json')
+    def load_preset_action(self, widget, *args):
+        if args[0].get_string().startswith("custom_"):
+            self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + args[0].get_string().replace("custom_", "") + ".json")
+        else:
+            self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/' + args[0].get_string() + '.json')
+        Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
     def show_apply_css_file_dialog(self, widget, _):
         dialog = Adw.MessageDialog(transient_for=self.props.active_window,
@@ -170,7 +187,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='AdwCustomizer',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.8',
+                                version='0.0.9',
                                 developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 
@@ -187,6 +204,15 @@ class AdwcustomizerApplication(Adw.Application):
             shortcuts: an optional list of accelerators
         """
         action = Gio.SimpleAction.new(name, None)
+        action.connect("activate", callback)
+        self.add_action(action)
+        if shortcuts:
+            self.set_accels_for_action(f"app.{name}", shortcuts)
+
+    def create_stateful_action(self, name, parameter_type, initial_state, callback, shortcuts=None):
+        """Add a stateful application action.
+        """
+        action = Gio.SimpleAction.new_stateful(name, parameter_type, initial_state)
         action.connect("activate", callback)
         self.add_action(action)
         if shortcuts:
