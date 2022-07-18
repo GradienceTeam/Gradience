@@ -1,6 +1,13 @@
 # AdwCustomizer
+![Screenshot of the main interface](https://github.com/ArtyIF/AdwCustomizer/raw/main/pictures/main_screenshot.png)
 
 AdwCustomizer is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+
+<details>
+    <summary>More screenshots</summary>
+    ![Screenshot of the customized interface](https://github.com/ArtyIF/AdwCustomizer/raw/main/pictures/customized_screenshot.png)
+    ![Screenshot of proof that this actually works](https://github.com/ArtyIF/AdwCustomizer/raw/main/pictures/proof_of_work_screenshot.png)
+</details>
 
 ## Building and Installing
 1. Clone this repository `git clone https://github.com/ArtyIF/AdwCustomizer.git`
