@@ -70,7 +70,7 @@ class AdwcustomizerApplication(Adw.Application):
             pref_group.set_description(group["description"])
 
             for variable in group["variables"]:
-                pref_variable = AdwcustomizerOption(variable["name"], variable["title"], variable.get("explanation"), "#00000000")
+                pref_variable = AdwcustomizerOption(variable["name"], variable["title"], variable.get("explanation"))
                 pref_group.add(pref_variable)
                 self.pref_variables[variable["name"]] = pref_variable
 
@@ -95,12 +95,7 @@ class AdwcustomizerApplication(Adw.Application):
         self.props.active_window.set_current_preset_name(preset["name"])
 
         self.variables = preset["variables"]
-
-        for key in self.variables.keys():
-            if key in self.pref_variables:
-                self.pref_variables[key].update_value(self.variables[key])
-
-        self.reload_variables()
+        self.load_preset_variables()
 
     def load_preset_from_resource(self, preset_path):
         preset_text = Gio.resources_lookup_data(preset_path, 0).get_data().decode()
@@ -108,7 +103,9 @@ class AdwcustomizerApplication(Adw.Application):
         self.props.active_window.set_current_preset_name(preset["name"])
 
         self.variables = preset["variables"]
+        self.load_preset_variables()
 
+    def load_preset_variables(self):
         for key in self.variables.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(self.variables[key])
@@ -128,8 +125,8 @@ class AdwcustomizerApplication(Adw.Application):
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
 
     def load_preset_action(self, widget, *args):
-        if args[0].get_string().startswith("custom_"):
-            self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + args[0].get_string().replace("custom_", "") + ".json")
+        if args[0].get_string().startswith("custom-"):
+            self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + args[0].get_string().replace("custom-", "") + ".json")
         else:
             self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/' + args[0].get_string() + '.json')
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
@@ -187,7 +184,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='AdwCustomizer',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.9',
+                                version='0.0.10',
                                 developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 

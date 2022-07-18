@@ -1,4 +1,4 @@
-# window.py
+# option.py
 #
 # Copyright 2022 ArtyIF
 #
@@ -40,7 +40,7 @@ class AdwcustomizerOption(Adw.ActionRow):
     explanation_button = Gtk.Template.Child("explanation-button")
     explanation_label = Gtk.Template.Child("explanation-label")
 
-    def __init__(self, name, title, explanation, value, **kwargs):
+    def __init__(self, name, title, explanation, **kwargs):
         super().__init__(**kwargs)
 
         self.set_name(name)
@@ -48,8 +48,6 @@ class AdwcustomizerOption(Adw.ActionRow):
         self.explanation_label.set_label(explanation or "")
         if (explanation is None):
             self.explanation_button.set_visible(False)
-
-        self.update_value(value)
 
     @Gtk.Template.Callback()
     def on_color_value_changed(self, *args):
