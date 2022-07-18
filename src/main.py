@@ -30,6 +30,8 @@ import sys
 import gi
 import json
 import os
+import re
+import subprocess
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
@@ -38,6 +40,8 @@ from gi.repository import Gtk, Gdk, Gio, Adw, GLib
 from .window import AdwcustomizerMainWindow
 from .option import AdwcustomizerOption
 
+def to_slug_case(non_slug):
+    return re.sub(r"[^0-9A-Za-z\u00C0-\uFFFF]+", "-", non_slug.lower())
 
 class AdwcustomizerApplication(Adw.Application):
     """The main application singleton class."""
@@ -81,6 +85,7 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_stateful_action("load_preset", GLib.VariantType.new('s'), GLib.Variant('s', 'adwaita'), self.load_preset_action)
         self.create_action("apply_css_file", self.show_apply_css_file_dialog)
         self.create_action("reset_css_file", self.show_reset_css_file_dialog)
+        self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
         win.present()
@@ -159,6 +164,43 @@ class AdwcustomizerApplication(Adw.Application):
 
         dialog.present()
 
+    def show_save_preset_dialog(self, widget, _):
+        dialog = Adw.MessageDialog(transient_for=self.props.active_window,
+                                   heading="Save preset as...",
+                                   body="Saving to <tt>$XDG_CONFIG_HOME/adwcustomizer/presets/</tt>",
+                                   body_use_markup=True)
+
+        dialog.add_response("cancel", "Cancel")
+        dialog.add_response("save", "Save")
+        dialog.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_response_enabled("save", False)
+        dialog.set_default_response("cancel")
+        dialog.set_close_response("cancel")
+
+        preset_entry = Gtk.Entry(placeholder_text="Preset Name")
+        def on_preset_entry_change(self, *args):
+            if len(preset_entry.get_text()) == 0:
+                dialog.set_body("Saving to <tt>$XDG_CONFIG_HOME/adwcustomizer/presets/</tt>")
+                dialog.set_response_enabled("save", False)
+            else:
+                dialog.set_body("Saving to <tt>$XDG_CONFIG_HOME/adwcustomizer/presets/" + to_slug_case(preset_entry.get_text()) + ".json</tt>. If that preset already exists, it will be overwritten!")
+                dialog.set_response_enabled("save", True)
+        preset_entry.connect("changed", on_preset_entry_change)
+        dialog.set_extra_child(preset_entry)
+
+        dialog.connect("response", self.save_preset, preset_entry)
+
+        dialog.present()
+
+    def save_preset(self, widget, response, entry):
+        if response == "save":
+            with open(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + to_slug_case(entry.get_text()) + ".json", 'w') as f:
+                object_to_write = {
+                    "name": entry.get_text(),
+                    "variables": self.variables
+                }
+                f.write(json.dumps(object_to_write, indent=4))
+
     def apply_css_file(self, widget, response):
         if response == "apply":
             with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w') as f:
@@ -184,7 +226,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='AdwCustomizer',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.11',
+                                version='0.0.12',
                                 developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 
