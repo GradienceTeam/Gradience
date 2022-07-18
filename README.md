@@ -32,14 +32,14 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 ## Roadmap
 This tool is currently in early development, but it already has a plenty of features and is very usable. Below is the roadmap, where all the checked features are already implemented:
 
-- [x] Customizing named colors, either with a color picker or with text
+- [x] Ability to customize named colors, either with a color picker or with text
 - [x] Explanations for some named colors
 - [x] Partial preview of changed variables
-- [x] Adwaita and Adwaita Dark built-in presets (based on default libadwaita colors)
-- [x] Creating and loading custom presets
-- [x] Applying changes to libadwaita, GTK4 (with extracted libadwaita theme) and GTK3 (with the adw-gtk3 theme) applications
-- [ ] Showing adw-gtk3's support of variables
-- [ ] Customizing the palette
-- [ ] Adding custom CSS code
-- [ ] Normalizing color variables to hexadecimal or `rgba(r, g, b, a)` format depending on settings
+- [x] Built-in presets for Adwaita and Adwaita Dark (based on default libadwaita colors)
+- [x] Ability to apply changes to libadwaita, GTK4 (with extracted libadwaita theme) and GTK3 (with the adw-gtk3 theme) applications
+- [x] Ability to load and create custom presets
+- [x] Ability to view adw-gtk3's support of variables
+- [ ] Ability to customize palette colors
+- [ ] Ability to add custom CSS code
+- [ ] Ability to normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
 - [ ] Full theme preview

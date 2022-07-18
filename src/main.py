@@ -74,7 +74,7 @@ class AdwcustomizerApplication(Adw.Application):
             pref_group.set_description(group["description"])
 
             for variable in group["variables"]:
-                pref_variable = AdwcustomizerOption(variable["name"], variable["title"], variable.get("explanation"))
+                pref_variable = AdwcustomizerOption(variable["name"], variable["title"], variable["adw_gtk3_support"], variable.get("explanation"))
                 pref_group.add(pref_variable)
                 self.pref_variables[variable["name"]] = pref_variable
 
@@ -248,7 +248,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='AdwCustomizer',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.15',
+                                version='0.0.16',
                                 developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 

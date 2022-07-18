@@ -5,9 +5,16 @@ template AdwcustomizerOption : Adw.ActionRow {
   title: "Option Title";
 
   [suffix]
+  MenuButton warning-button {
+    valign: center;
+    icon-name: "dialog-warning-symbolic";
+    popover: warning-popover;
+  }
+
+  [suffix]
   MenuButton explanation-button {
     valign: center;
-    icon-name: "help-about-symbolic";
+    icon-name: "dialog-question-symbolic";
     popover: explanation-popover;
   }
 
@@ -38,8 +45,16 @@ template AdwcustomizerOption : Adw.ActionRow {
   }
 }
 
+Popover warning-popover {
+  Label warning-label {
+    max-width-chars: 50;
+    wrap: true;
+    justify: center;
+    label: "Text goes here";
+  }
+}
+
 Popover explanation-popover {
-  position: bottom;
   Label explanation-label {
     max-width-chars: 50;
     wrap: true;
