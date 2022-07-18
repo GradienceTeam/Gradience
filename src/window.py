@@ -35,6 +35,7 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
 
     content = Gtk.Template.Child()
     presets_dropdown = Gtk.Template.Child("presets-dropdown")
+    presets_menu = Gtk.Template.Child("presets-menu")
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

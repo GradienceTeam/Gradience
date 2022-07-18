@@ -88,6 +88,24 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
+        self.custom_presets = {}
+        for file in os.listdir(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/"):
+            if file.endswith(".json"):
+                try:
+                    with open(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + file, 'r') as f:
+                        preset_text = f.read()
+                    preset = json.loads(preset_text)
+                    self.custom_presets[file.replace('.json', '')] = preset['name']
+                except Exception as e:
+                    print("Failed to load " + file + ":\n" + e)
+
+        custom_menu_section = Gio.Menu()
+        for preset in self.custom_presets.keys():
+            menu_item = Gio.MenuItem()
+            menu_item.set_label(self.custom_presets[preset])
+            menu_item.set_action_and_target_value("app.load_preset", GLib.Variant('s', "custom-" + preset))
+            custom_menu_section.append_item(menu_item)
+        win.presets_menu.append_section("User Defined", custom_menu_section)
         win.present()
 
         self.is_ready = True
@@ -131,7 +149,7 @@ class AdwcustomizerApplication(Adw.Application):
 
     def load_preset_action(self, widget, *args):
         if args[0].get_string().startswith("custom-"):
-            self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + args[0].get_string().replace("custom-", "") + ".json")
+            self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + args[0].get_string().replace("custom-", "", 1) + ".json")
         else:
             self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/' + args[0].get_string() + '.json')
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
@@ -226,7 +244,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='AdwCustomizer',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.13',
+                                version='0.0.14',
                                 developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 

@@ -24,7 +24,7 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
     [title]
     MenuButton presets-dropdown {
       styles ["flat"]
-      menu-model: preset-menu;
+      menu-model: presets-menu;
       label: "Presets";
     }
 
@@ -39,7 +39,7 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
   Adw.PreferencesPage content { }
 }
 
-menu preset-menu {
+menu presets-menu {
   section {
     label: "Built-in";
     item {
@@ -52,10 +52,6 @@ menu preset-menu {
       action: "app.load_preset";
       target: "adwaita-dark";
     }
-  }
-  section {
-    label: "User Defined";
-    item ("Open in File Manager", "app.open_presets_directory")
   }
 }
 
