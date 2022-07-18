@@ -97,13 +97,17 @@ class AdwcustomizerApplication(Adw.Application):
                     preset = json.loads(preset_text)
                     self.custom_presets[file.replace('.json', '')] = preset['name']
                 except Exception as e:
-                    print("Failed to load " + file + ":\n" + e)
+                    print("Failed to load " + file + ":\n" + str(e))
+                    self.custom_presets["error-" + file.replace('.json', '')] = file + " (Failed to Load)"
 
         custom_menu_section = Gio.Menu()
         for preset in self.custom_presets.keys():
             menu_item = Gio.MenuItem()
             menu_item.set_label(self.custom_presets[preset])
-            menu_item.set_action_and_target_value("app.load_preset", GLib.Variant('s', "custom-" + preset))
+            if not preset.startswith("error"):
+                menu_item.set_action_and_target_value("app.load_preset", GLib.Variant('s', "custom-" + preset))
+            else:
+                menu_item.set_action_and_target_value("")
             custom_menu_section.append_item(menu_item)
         win.presets_menu.append_section("User Defined", custom_menu_section)
         win.present()
@@ -244,7 +248,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='AdwCustomizer',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.14',
+                                version='0.0.15',
                                 developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 
