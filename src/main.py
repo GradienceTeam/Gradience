@@ -226,7 +226,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='AdwCustomizer',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.12',
+                                version='0.0.13',
                                 developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF')
 
