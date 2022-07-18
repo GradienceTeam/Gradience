@@ -52,3 +52,10 @@ This tool is currently in early development, but it already has a plenty of feat
 - [ ] Ability to add custom CSS code
 - [ ] Ability to normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
 - [ ] Full theme preview
+
+## Donation
+I am broke, and I live in Russia (I don't support the "military operation" currently going on), so if anyone from the outside wants to help me, the only way right now would be cryptocurrency:
+- Bitcoin: `1FrvFbfqWEZepmuH2Bayo8tSvHEr6NnANJ`
+- Ethereum/ERC20: `0x37e03C589F28831bD78C4B41Bf866e8ddB2bed3E`
+
+If you're in Russia, then send me an email to artyomisflash@mail.ru, and I'll send you my details (Tinkoff card number or SberBank/SBP/Qiwi/YooMoney/Megafon phone number)
