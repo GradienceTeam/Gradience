@@ -41,19 +41,21 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 ## Roadmap
 This tool is currently in early development, but it already has a plenty of features and is very usable. Below is the roadmap, where all the checked features are already implemented:
 
-- [x] Ability to customize named colors, either with a color picker or with text
+- [x] Customize named colors, either with a color picker or with text
 - [x] Explanations for some named colors
-- [x] Partial preview of changed variables
+- [x] Partial theme preview
 - [x] Built-in presets for Adwaita and Adwaita Dark (based on default libadwaita colors)
-- [x] Ability to apply changes to libadwaita, GTK4 (with extracted libadwaita theme) and GTK3 (with the adw-gtk3 theme) applications
-- [x] Ability to load and create custom presets
-- [x] Ability to view adw-gtk3's support of variables
-- [ ] Ability to customize palette colors
-- [ ] Ability to add custom CSS code
-- [ ] Ability to normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
+- [x] Apply changes to libadwaita, GTK4 (with extracted libadwaita theme) and GTK3 (with the adw-gtk3 theme) applications
+- [x] Load and create custom presets
+- [x] View adw-gtk3's support of variables
+- [x] View parsing errors
+- [ ] Customize palette colors
+- [ ] Add custom CSS code
+- [ ] Normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
 - [ ] Full theme preview
+- [ ] Localization
 
-## Donation
+## Donations
 I am broke, and I live in Russia (I don't support the "military operation" currently going on), so if anyone from the outside wants to help me, the only way right now would be cryptocurrency:
 - Bitcoin: `1FrvFbfqWEZepmuH2Bayo8tSvHEr6NnANJ`
 - Ethereum/ERC20: `0x37e03C589F28831bD78C4B41Bf866e8ddB2bed3E`

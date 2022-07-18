@@ -146,8 +146,20 @@ class AdwcustomizerApplication(Adw.Application):
         return final_css
 
     def reload_variables(self):
+        parsing_errors = []
         css_provider = Gtk.CssProvider()
+        def on_parsing_error(provider, section, error):
+            start_location = section.get_start_location().chars
+            end_location = section.get_end_location().chars
+            line_number = section.get_end_location().lines
+            parsing_errors.append({
+                "error": error.message,
+                "element": self.generate_css()[start_location:end_location],
+                "line": self.generate_css().splitlines()[line_number]
+            })
+        css_provider.connect("parsing-error", on_parsing_error)
         css_provider.load_from_data(self.generate_css().encode())
+        self.props.active_window.update_parsing_errors(parsing_errors)
         # loading with the priority above user to override the applied config
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
 
@@ -248,9 +260,10 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='AdwCustomizer',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.16',
+                                version='0.0.17',
                                 developers=['ArtyIF'],
-                                copyright='© 2022 ArtyIF')
+                                copyright='© 2022 ArtyIF and contributors',
+                                license_type=Gtk.License.MIT_X11)
 
         about.present()
 

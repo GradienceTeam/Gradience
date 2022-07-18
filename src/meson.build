@@ -4,6 +4,7 @@ gnome = import('gnome')
 
 blueprints = custom_target('blueprints',
   input: files(
+    'ui/parsing_error.blp',
     'ui/option.blp',
     'ui/window.blp',
   ),
@@ -38,6 +39,7 @@ configure_file(
 adwcustomizer_sources = [
   '__init__.py',
   'main.py',
+  'parsing_error.py',
   'option.py',
   'window.py',
 ]

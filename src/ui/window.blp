@@ -34,6 +34,13 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
       icon-name: "open-menu-symbolic";
       menu-model: main-menu;
     }
+
+    [end]
+    MenuButton errors-button {
+      styles ["flat", "error"]
+      icon-name: "dialog-warning-symbolic";
+      popover: errors-popover;
+    }
   };
 
   Adw.PreferencesPage content { }
@@ -58,4 +65,23 @@ menu presets-menu {
 menu main-menu {
   item ("Reset gtk.css", "app.reset_css_file")
   item ("About AdwCustomizer", "app.about")
+}
+
+Popover errors-popover {
+  ListBox errors-list {
+    selection-mode: none;
+    [placeholder]
+    Label {
+      margin-top: 6;
+      margin-bottom: 6;
+      margin-start: 12;
+      margin-end: 12;
+      halign: start;
+      styles ["dim-label"]
+      max-width-chars: 50;
+      wrap: true;
+      justify: left;
+      label: "No parsing errors";
+    }
+  }
 }

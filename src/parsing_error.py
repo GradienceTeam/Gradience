@@ -1,4 +1,4 @@
-# window.py
+# parsing_error.py
 #
 # Copyright 2022 ArtyIF
 #
@@ -26,32 +26,20 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk, Gio, Adw
 import json
-from .parsing_error import AdwcustomizerParsingError
 
-@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/window.ui')
-class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
-    __gtype_name__ = 'AdwcustomizerMainWindow'
+@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/parsing_error.ui')
+class AdwcustomizerParsingError(Gtk.ListBoxRow):
+    __gtype_name__ = 'AdwcustomizerParsingError'
 
-    content = Gtk.Template.Child()
-    presets_dropdown = Gtk.Template.Child("presets-dropdown")
-    presets_menu = Gtk.Template.Child("presets-menu")
-    errors_button = Gtk.Template.Child("errors-button")
-    errors_list = Gtk.Template.Child("errors-list")
+    error_label = Gtk.Template.Child("error-label")
+    element_label = Gtk.Template.Child("element-label")
+    line_label = Gtk.Template.Child("line-label")
 
-    def __init__(self, **kwargs):
+    def __init__(self, error, element, line, **kwargs):
         super().__init__(**kwargs)
 
-    def set_current_preset_name(self, new_name):
-        self.presets_dropdown.set_label(new_name)
-
-    def update_parsing_errors(self, parsing_errors):
-        child = self.errors_list.get_row_at_index(0)
-        while child is not None:
-            self.errors_list.remove(child)
-            child = self.errors_list.get_row_at_index(0)
-        self.errors_button.set_visible(len(parsing_errors) > 0)
-        for parsing_error in parsing_errors:
-            self.errors_list.append(AdwcustomizerParsingError(parsing_error["error"], parsing_error["element"], parsing_error["line"]))
-
+        self.error_label.set_label(error)
+        self.element_label.set_label(element)
+        self.line_label.set_label(line)
