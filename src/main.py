@@ -257,10 +257,10 @@ class AdwcustomizerApplication(Adw.Application):
 
     def show_about_window(self, widget, _):
         about = Adw.AboutWindow(transient_for=self.props.active_window,
-                                application_name='AdwCustomizer',
+                                application_name='Adwaita Manager',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='ArtyIF',
-                                version='0.0.17',
+                                version='0.0.18',
                                 developers=['ArtyIF'],
                                 copyright='© 2022 ArtyIF and contributors',
                                 license_type=Gtk.License.MIT_X11)
