@@ -1,6 +1,6 @@
 # main.py
 #
-# Copyright 2022 ArtyIF
+# Copyright 2022 Adwaita Manager Team
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -80,9 +80,10 @@ class AdwcustomizerApplication(Adw.Application):
 
             win.content.add(pref_group)
 
-        dir = os.path.join(os.environ['XDG_CONFIG_HOME'],"adwcustomizer","presets")
-        if not os.path.exists(dir):
-            os.makedirs(dir)
+        # usually flatpak takes care of that, but in case it doesn't we do it ourselves
+        preset_directory = os.path.join(os.environ['XDG_CONFIG_HOME'], "adwcustomizer", "presets")
+        if not os.path.exists(preset_directory):
+            os.makedirs(preset_directory)
 
         self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
 
@@ -263,10 +264,10 @@ class AdwcustomizerApplication(Adw.Application):
         about = Adw.AboutWindow(transient_for=self.props.active_window,
                                 application_name='Adwaita Manager',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
-                                developer_name='ArtyIF',
-                                version='0.0.18',
-                                developers=['ArtyIF'],
-                                copyright='© 2022 ArtyIF and contributors',
+                                developer_name='Adwaita Manager Team',
+                                version='0.0.19',
+                                developers=['Artyom "ArtyIF" Fomin https://github.com/ArtyIF', 'Verantor https://github.com/Verantor'],
+                                copyright='© 2022 Adwaita Manager Team',
                                 license_type=Gtk.License.MIT_X11)
 
         about.present()
