@@ -80,6 +80,10 @@ class AdwcustomizerApplication(Adw.Application):
 
             win.content.add(pref_group)
 
+        dir = os.path.join(os.environ['XDG_CONFIG_HOME'],"adwcustomizer","presets")
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+
         self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
 
         self.create_stateful_action("load_preset", GLib.VariantType.new('s'), GLib.Variant('s', 'adwaita'), self.load_preset_action)
