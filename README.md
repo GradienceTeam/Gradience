@@ -1,14 +1,17 @@
-# Adwaita Manager
-![Screenshot of the main interface](https://github.com/ArtyIF/AdwCustomizer/raw/main/pictures/main_screenshot.png)
+<div align="center">
+  <h1>Adwaita Manager</h1>
+  <img src="data/icons/hicolor/scalable/apps/com.github.ArtyIF.AdwCustomizer.svg" alt="Project Logo">
+  <img src="pictures/main_screenshot.png" alt="Screenshot of the main interface">
+</div>
 
 Adwaita Manager (formerly AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 <details>
   <summary>More screenshots</summary>
   
-  ![Screenshot of the customized interface](https://github.com/ArtyIF/AdwCustomizer/raw/main/pictures/customized_screenshot.png)
+  ![Screenshot of the customized interface](pictures/customized_screenshot.png)
   
-  ![Screenshot of proof that this actually works](https://github.com/ArtyIF/AdwCustomizer/raw/main/pictures/proof_of_work_screenshot.png)
+  ![Screenshot of proof that this actually works](pictures/proof_of_work_screenshot.png)
 </details>
 
 ## Building and Installing

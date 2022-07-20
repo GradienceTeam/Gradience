@@ -46,9 +46,10 @@ def to_slug_case(non_slug):
 class AdwcustomizerApplication(Adw.Application):
     """The main application singleton class."""
 
-    def __init__(self):
+    def __init__(self, version):
         super().__init__(application_id='com.github.ArtyIF.AdwCustomizer',
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
+        self.version = version
 
     def do_activate(self):
         """Called when the application is activated.
@@ -265,8 +266,9 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='Adwaita Manager',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='Adwaita Manager Team',
-                                version='0.0.19',
+                                version=self.version,
                                 developers=['Artyom "ArtyIF" Fomin https://github.com/ArtyIF', 'Verantor https://github.com/Verantor'],
+                                artists=['Allaeddine Boulefaat https://github.com/allaeddineomc']
                                 copyright='© 2022 Adwaita Manager Team',
                                 license_type=Gtk.License.MIT_X11)
 
@@ -300,5 +302,5 @@ class AdwcustomizerApplication(Adw.Application):
 
 def main(version):
     """The application's entry point."""
-    app = AdwcustomizerApplication()
+    app = AdwcustomizerApplication(version)
     return app.run(sys.argv)
