@@ -19,7 +19,7 @@ Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita application
 1. Open GNOME Builder
 2. Press the "Clone Repository" button in the bottom of window
 3. Paste this in "Repository URL" `https://github.com/ArtyIF/AdwCustomizer.git`
-4. Press the Build button (hammer in the header bar)
+4. Press the "Build" button (hammer in the header bar)
 5. Press on the status panel and click "Export Bundle" to export the app as a Flatpak bundle
 6. Install the bundle with `flatpak install <path to bundle>` or through a GUI application (like GNOME Software and KDE Discover)
 
