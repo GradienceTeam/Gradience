@@ -1,7 +1,6 @@
 <img align="left" alt="Project logo" src="data/icons/hicolor/scalable/apps/com.github.ArtyIF.AdwCustomizer.svg" />
 
 # Adwaita Manager
-
 Change the look of Adwaita, with ease
 
 <img src="pictures/main_screenshot.png">
