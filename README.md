@@ -1,10 +1,11 @@
-<div align="center">
-  <h1>Adwaita Manager</h1>
-  <img src="data/icons/hicolor/scalable/apps/com.github.ArtyIF.AdwCustomizer.svg" alt="Project Logo">
-  <img src="pictures/main_screenshot.png" alt="Screenshot of the main interface">
-</div>
+<img align="left" alt="Project logo" src="data/icons/hicolor/scalable/apps/com.github.ArtyIF.AdwCustomizer.svg" />
 
-Adwaita Manager (formerly AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+# Adwaita Manager
+Change the look of Adwaita, with ease
+
+<img src="pictures/main_screenshot.png">
+
+Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 <details>
   <summary>More screenshots</summary>
@@ -15,11 +16,12 @@ Adwaita Manager (formerly AdwCustomizer) is a tool for customizing Libadwaita ap
 </details>
 
 ## Building and Installing
-1. Clone this repository `git clone https://github.com/ArtyIF/AdwCustomizer.git`
-2. Open the project with GNOME Builder
-3. Press the Build (hammer in the header bar) button
-4. Press on the status panel and click "Export Bundle" to export the app as a Flatpak bundle
-5. Install the bundle with `flatpak install <path to bundle>` or through a GUI application of your choice (like GNOME Software and KDE Discover)
+1. Open GNOME Builder
+2. Press the "Clone Repository" button in the bottom of window
+3. Paste this in "Repository URL" `https://github.com/ArtyIF/AdwCustomizer.git`
+4. Press the "Build" button (hammer in the header bar)
+5. Press on the status panel and click "Export Bundle" to export the app as a Flatpak bundle
+6. Install the bundle with `flatpak install <path to bundle>` or through a GUI application (like GNOME Software and KDE Discover)
 
 > **WARNING**: The project currently uses the `master` version of `org.gnome.Platform` and depends on some `Adw` classes that are not yet available in the latest stable version of `org.gnome.Platform` (42 at the time of writing). Flathub only ships stable versions of packages, so make sure you have a Flatpak repository that ships the needed dependency versions before installing.
 
@@ -28,7 +30,7 @@ Adwaita Manager (formerly AdwCustomizer) is a tool for customizing Libadwaita ap
 ### Libadwaita applications
 No additional setup is required for native Libadwaita applications.
 
-For Flatpak Libadwaita applications, you need to override their permissions by:
+For Flatpak Libadwaita applications, you need to override their permissions:
 - Running `sudo flatpak override --filesystem=xdg-config/gtk-4.0`
 - Using [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-4.0` to **Other files** in the **Filesystem** section of **All Applications**
 
@@ -37,12 +39,12 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 ### GTK 3 applications
 - Install and apply the [adw-gtk3](https://github.com/lassekongo83/adw-gtk3#readme) theme (don't forget to install the Flatpak package!)
-- For Flatpak applications, you need to override their permissions by:
+- For Flatpak applications, you need to override their permissions:
   - Running `sudo flatpak override --filesystem=xdg-config/gtk-3.0`
   - Using [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-3.0` to **Other files** in the **Filesystem** section of **All Applications**
 
 ## Roadmap
-This tool is currently in early development, but it already has a plenty of features and is very usable. Below is the roadmap, where all the checked features are already implemented:
+This tool is currently WIP, but it already has a plenty of features and is very usable. Below is the roadmap, where all the checked features are already implemented:
 
 - [x] Customize named colors, either with a color picker or with text
 - [x] Explanations for some named colors
@@ -60,7 +62,7 @@ This tool is currently in early development, but it already has a plenty of feat
 - [ ] Localization
 
 ## Donations
-I am broke, and I live in Russia (I don't support the "military operation" currently going on), so if anyone from the outside wants to help me, the only way right now would be cryptocurrency:
+I am broke, and I live in Russia (I don't support the "military operation" currently going on), so if anyone wants to help me, the only way right now is cryptocurrency:
 - Bitcoin: `1FrvFbfqWEZepmuH2Bayo8tSvHEr6NnANJ`
 - Ethereum/ERC20: `0x37e03C589F28831bD78C4B41Bf866e8ddB2bed3E`
 - Binance Coin/BEP2: `bnb1aewh72p3u80qd8ufywhseuvjupy9mhxtrmwnm4` (no memo required, type anything in there if it's required by the exchange)
