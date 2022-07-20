@@ -39,7 +39,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 ### GTK 3 applications
 - Install and apply the [adw-gtk3](https://github.com/lassekongo83/adw-gtk3#readme) theme (don't forget to install the Flatpak package!)
-- For Flatpak applications, you need to override their permissions by:
+- For Flatpak applications, you need to override their permissions:
   - Running `sudo flatpak override --filesystem=xdg-config/gtk-3.0`
   - Using [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-3.0` to **Other files** in the **Filesystem** section of **All Applications**
 
