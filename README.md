@@ -55,6 +55,7 @@ This tool is currently in early development, but it already has a plenty of feat
 - [ ] Customize palette colors
 - [ ] Add custom CSS code
 - [ ] Normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
+- [ ] Add support for GNOME Shell customization
 - [ ] Full theme preview
 - [ ] Localization
 
@@ -62,5 +63,6 @@ This tool is currently in early development, but it already has a plenty of feat
 I am broke, and I live in Russia (I don't support the "military operation" currently going on), so if anyone from the outside wants to help me, the only way right now would be cryptocurrency:
 - Bitcoin: `1FrvFbfqWEZepmuH2Bayo8tSvHEr6NnANJ`
 - Ethereum/ERC20: `0x37e03C589F28831bD78C4B41Bf866e8ddB2bed3E`
+- Binance Coin/BEP2: `bnb1aewh72p3u80qd8ufywhseuvjupy9mhxtrmwnm4` (no memo required, type anything in there if it's required by the exchange)
 
 If you're in Russia, then send me an email to artyomisflash@mail.ru, and I'll send you my details (Tinkoff card number or SberBank/SBP/Qiwi/YooMoney/Megafon phone number)
