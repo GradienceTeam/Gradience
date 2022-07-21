@@ -54,11 +54,15 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] Load and create custom presets
 - [x] View adw-gtk3's support of variables
 - [x] View parsing errors
-- [ ] Customize palette colors
+- [x] Customize palette colors
 - [ ] Add custom CSS code
 - [ ] Normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
-- [ ] Add support for GNOME Shell customization
+- [ ] Secure the code
+- [ ] Release on Flathub
 - [ ] Full theme preview
+- [ ] Customize GNOME Shell
+- [ ] Customize GDM
+- [ ] Customize Firefox GNOME theme
 - [ ] Localization
 
 ## Donations
@@ -66,5 +70,6 @@ I am broke, and I live in Russia (I don't support the "military operation" curre
 - Bitcoin: `1FrvFbfqWEZepmuH2Bayo8tSvHEr6NnANJ`
 - Ethereum/ERC20: `0x37e03C589F28831bD78C4B41Bf866e8ddB2bed3E`
 - Binance Coin/BEP2: `bnb1aewh72p3u80qd8ufywhseuvjupy9mhxtrmwnm4` (no memo required, type anything in there if it's required by the exchange)
+- Solana: `Brs84xPGUjDJhCi7GH4EHRQi4dXvWFC6kYy9jY8oQpar`
 
 If you're in Russia, then send me an email to artyomisflash@mail.ru, and I'll send you my details (Tinkoff card number or SberBank/SBP/Qiwi/YooMoney/Megafon phone number)

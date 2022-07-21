@@ -28,7 +28,7 @@
 
 from gi.repository import Gtk
 import json
-from .parsing_error import AdwcustomizerParsingError
+from .error import AdwcustomizerError
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/window.ui')
 class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
@@ -46,12 +46,12 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
     def set_current_preset_name(self, new_name):
         self.presets_dropdown.set_label(new_name)
 
-    def update_parsing_errors(self, parsing_errors):
+    def update_errors(self, errors):
         child = self.errors_list.get_row_at_index(0)
         while child is not None:
             self.errors_list.remove(child)
             child = self.errors_list.get_row_at_index(0)
-        self.errors_button.set_visible(len(parsing_errors) > 0)
-        for parsing_error in parsing_errors:
-            self.errors_list.append(AdwcustomizerParsingError(parsing_error["error"], parsing_error["element"], parsing_error["line"]))
+        self.errors_button.set_visible(len(errors) > 0)
+        for error in errors:
+            self.errors_list.append(AdwcustomizerError(error["error"], error["element"], error["line"]))
 

@@ -1,4 +1,4 @@
-# parsing_error.py
+# error.py
 #
 # Copyright 2022 Adwaita Manager Team
 #
@@ -29,9 +29,9 @@
 from gi.repository import Gtk, Gdk, Gio, Adw
 import json
 
-@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/parsing_error.ui')
-class AdwcustomizerParsingError(Gtk.ListBoxRow):
-    __gtype_name__ = 'AdwcustomizerParsingError'
+@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/error.ui')
+class AdwcustomizerError(Gtk.ListBoxRow):
+    __gtype_name__ = 'AdwcustomizerError'
 
     error_label = Gtk.Template.Child("error-label")
     element_label = Gtk.Template.Child("element-label")

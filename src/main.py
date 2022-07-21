@@ -31,13 +31,14 @@ import gi
 import json
 import os
 import re
-import subprocess
+import traceback
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib
 from .window import AdwcustomizerMainWindow
+from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
 
 def to_slug_case(non_slug):
@@ -58,6 +59,8 @@ class AdwcustomizerApplication(Adw.Application):
         necessary.
         """
         self.variables = {}
+        self.palette = {}
+        self.global_errors = []
         self.is_ready = False
 
         win = self.props.active_window
@@ -75,11 +78,27 @@ class AdwcustomizerApplication(Adw.Application):
             pref_group.set_description(group["description"])
 
             for variable in group["variables"]:
-                pref_variable = AdwcustomizerOption(variable["name"], variable["title"], variable["adw_gtk3_support"], variable.get("explanation"))
+                pref_variable = AdwcustomizerOption(variable["name"],
+                                                    variable["title"],
+                                                    variable["adw_gtk3_support"],
+                                                    variable.get("explanation"))
                 pref_group.add(pref_variable)
                 self.pref_variables[variable["name"]] = pref_variable
 
             win.content.add(pref_group)
+
+        self.pref_palette_shades = {}
+        palette_pref_group = Adw.PreferencesGroup()
+        palette_pref_group.set_name("palette_colors")
+        palette_pref_group.set_title("Palette Colors")
+        palette_pref_group.set_description("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>.")
+        for color in self.settings_schema["palette"]:
+            palette_shades = AdwcustomizerPaletteShades(color["prefix"],
+                                                        color["title"],
+                                                        color["n_shades"])
+            palette_pref_group.add(palette_shades)
+            self.pref_palette_shades[color["prefix"]] = palette_shades
+        win.content.add(palette_pref_group)
 
         # usually flatpak takes care of that, but in case it doesn't we do it ourselves
         preset_directory = os.path.join(os.environ['XDG_CONFIG_HOME'], "adwcustomizer", "presets")
@@ -101,10 +120,18 @@ class AdwcustomizerApplication(Adw.Application):
                     with open(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + file, 'r') as f:
                         preset_text = f.read()
                     preset = json.loads(preset_text)
+                    if preset.get('variables') is None:
+                        raise KeyError('variables')
+                    if preset.get('palette') is None:
+                        raise KeyError('palette')
                     self.custom_presets[file.replace('.json', '')] = preset['name']
                 except Exception as e:
-                    print("Failed to load " + file + ":\n" + str(e))
-                    self.custom_presets["error-" + file.replace('.json', '')] = file + " (Failed to Load)"
+                    self.global_errors.append({
+                        "error": "Failed to load preset: " + file,
+                        "element": str(e),
+                        "line": traceback.format_exception(e)[2].strip()
+                    })
+                    self.props.active_window.update_errors(self.global_errors)
 
         custom_menu_section = Gio.Menu()
         for preset in self.custom_presets.keys():
@@ -124,24 +151,22 @@ class AdwcustomizerApplication(Adw.Application):
         preset_text = ""
         with open(preset_path, 'r') as f:
             preset_text = f.read()
-        preset = json.loads(preset_text)
-        self.props.active_window.set_current_preset_name(preset["name"])
-
-        self.variables = preset["variables"]
-        self.load_preset_variables()
+        self.load_preset_variables(json.loads(preset_text))
 
     def load_preset_from_resource(self, preset_path):
         preset_text = Gio.resources_lookup_data(preset_path, 0).get_data().decode()
-        preset = json.loads(preset_text)
+        self.load_preset_variables(json.loads(preset_text))
+
+    def load_preset_variables(self, preset):
         self.props.active_window.set_current_preset_name(preset["name"])
-
         self.variables = preset["variables"]
-        self.load_preset_variables()
-
-    def load_preset_variables(self):
+        self.palette = preset["palette"]
         for key in self.variables.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(self.variables[key])
+        for key in self.palette.keys():
+            if key in self.pref_palette_shades:
+                self.pref_palette_shades[key].update_shades(self.palette[key])
 
         self.reload_variables()
 
@@ -149,12 +174,15 @@ class AdwcustomizerApplication(Adw.Application):
         final_css = ""
         for key in self.variables.keys():
             final_css += "@define-color {0} {1};\n".format(key, self.variables[key])
+        for prefix_key in self.palette.keys():
+            for key in self.palette[prefix_key].keys():
+                final_css += "@define-color {0} {1};\n".format(prefix_key + key, self.palette[prefix_key][key])
         return final_css
 
     def reload_variables(self):
         parsing_errors = []
         css_provider = Gtk.CssProvider()
-        def on_parsing_error(provider, section, error):
+        def on_error(provider, section, error):
             start_location = section.get_start_location().chars
             end_location = section.get_end_location().chars
             line_number = section.get_end_location().lines
@@ -163,9 +191,9 @@ class AdwcustomizerApplication(Adw.Application):
                 "element": self.generate_css()[start_location:end_location],
                 "line": self.generate_css().splitlines()[line_number]
             })
-        css_provider.connect("parsing-error", on_parsing_error)
+        css_provider.connect("parsing-error", on_error)
         css_provider.load_from_data(self.generate_css().encode())
-        self.props.active_window.update_parsing_errors(parsing_errors)
+        self.props.active_window.update_errors(self.global_errors + parsing_errors)
         # loading with the priority above user to override the applied config
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
 
@@ -237,7 +265,8 @@ class AdwcustomizerApplication(Adw.Application):
             with open(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + to_slug_case(entry.get_text()) + ".json", 'w') as f:
                 object_to_write = {
                     "name": entry.get_text(),
-                    "variables": self.variables
+                    "variables": self.variables,
+                    "palette": self.palette
                 }
                 f.write(json.dumps(object_to_write, indent=4))
 
