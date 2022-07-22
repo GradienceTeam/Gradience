@@ -8,6 +8,7 @@ blueprints = custom_target('blueprints',
     'ui/palette_shades.blp',
     'ui/option.blp',
     'ui/window.blp',
+    'ui/app_type_dialog.blp',
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -44,6 +45,7 @@ adwcustomizer_sources = [
   'palette_shades.py',
   'option.py',
   'window.py',
+  'app_type_dialog.py',
 ]
 
 install_data(adwcustomizer_sources, install_dir: moduledir)

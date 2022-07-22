@@ -22,21 +22,19 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
 
     [title]
     MenuButton presets-dropdown {
-      styles ["flat"]
       menu-model: presets-menu;
       label: "Presets";
     }
 
     [end]
     MenuButton {
-      styles ["flat"]
       icon-name: "open-menu-symbolic";
       menu-model: main-menu;
     }
 
     [end]
     MenuButton errors-button {
-      styles ["flat", "error"]
+      styles ["raised", "error"]
       icon-name: "dialog-warning-symbolic";
       popover: errors-popover;
     }
@@ -62,7 +60,7 @@ menu presets-menu {
 }
 
 menu main-menu {
-  item ("Reset gtk.css", "app.reset_css_file")
+  item ("Reset Applied Color Scheme", "app.reset_css_file")
   item ("About Adwaita Manager", "app.about")
 }
 

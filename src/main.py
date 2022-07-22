@@ -40,6 +40,7 @@ from gi.repository import Gtk, Gdk, Gio, Adw, GLib
 from .window import AdwcustomizerMainWindow
 from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
+from .app_type_dialog import AdwcustomizerAppTypeDialog
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9A-Za-z\u00C0-\uFFFF]+", "-", non_slug.lower())
@@ -205,31 +206,19 @@ class AdwcustomizerApplication(Adw.Application):
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
     def show_apply_css_file_dialog(self, widget, _):
-        dialog = Adw.MessageDialog(transient_for=self.props.active_window,
-                                   heading="Apply this color scheme?",
-                                   body="If there is a gtk.css file, it will irreversibly be rewritten. Make sure you have the current gtk.css file backed up.")
-
-        dialog.add_response("cancel", "Cancel")
-        dialog.add_response("apply", "Apply")
-        dialog.set_response_appearance("apply", Adw.ResponseAppearance.SUGGESTED)
-        dialog.set_default_response("cancel")
-        dialog.set_close_response("cancel")
+        dialog = AdwcustomizerAppTypeDialog("Apply this color scheme?",
+                                            "Warning: any custom CSS files for those app types will be irreversibly overwritten!",
+                                            "apply", "Apply", Adw.ResponseAppearance.SUGGESTED,
+                                            transient_for=self.props.active_window)
         dialog.connect("response", self.apply_css_file)
-
         dialog.present()
 
     def show_reset_css_file_dialog(self, widget, _):
-        dialog = Adw.MessageDialog(transient_for=self.props.active_window,
-                                   heading="Reset gtk.css?",
-                                   body="This will irreversibly reset the color scheme to default. Make sure you have the current settings saved as a preset.")
-
-        dialog.add_response("cancel", "Cancel")
-        dialog.add_response("reset", "Reset")
-        dialog.set_response_appearance("reset", Adw.ResponseAppearance.DESTRUCTIVE)
-        dialog.set_default_response("cancel")
-        dialog.set_close_response("cancel")
+        dialog = AdwcustomizerAppTypeDialog("Reset applied color scheme?",
+                                            "Make sure you have the current settings saved as a preset.",
+                                            "reset", "Reset", Adw.ResponseAppearance.DESTRUCTIVE,
+                                            transient_for=self.props.active_window)
         dialog.connect("response", self.reset_css_file)
-
         dialog.present()
 
     def show_save_preset_dialog(self, widget, _):
@@ -272,23 +261,27 @@ class AdwcustomizerApplication(Adw.Application):
 
     def apply_css_file(self, widget, response):
         if response == "apply":
-            with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w') as f:
-                f.write(self.generate_css())
-            with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w') as f:
-                f.write(self.generate_css())
+            if widget.get_app_types()["gtk4"]:
+                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w') as f:
+                    f.write(self.generate_css())
+            if widget.get_app_types()["gtk3"]:
+                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w') as f:
+                    f.write(self.generate_css())
 
     def reset_css_file(self, widget, response):
         if response == "reset":
-            file = Gio.File.new_for_path(GLib.get_user_config_dir() + "/gtk-4.0/gtk.css")
-            try:
-                file.delete()
-            except:
-                pass
-            file = Gio.File.new_for_path(GLib.get_user_config_dir() + "/gtk-3.0/gtk.css")
-            try:
-                file.delete()
-            except:
-                pass
+            if widget.get_app_types()["gtk4"]:
+                file = Gio.File.new_for_path(GLib.get_user_config_dir() + "/gtk-4.0/gtk.css")
+                try:
+                    file.delete()
+                except:
+                    pass
+            if widget.get_app_types()["gtk3"]:
+                file = Gio.File.new_for_path(GLib.get_user_config_dir() + "/gtk-3.0/gtk.css")
+                try:
+                    file.delete()
+                except:
+                    pass
 
     def show_about_window(self, widget, _):
         about = Adw.AboutWindow(transient_for=self.props.active_window,
