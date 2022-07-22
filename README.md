@@ -3,14 +3,14 @@
 # Adwaita Manager
 Change the look of Adwaita, with ease
 
-<img src="pictures/main_screenshot.png">
+![Screenshot of interface with Adwaita light theme](pictures/main_screenshot.png)
 
 Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 <details>
   <summary>More screenshots</summary>
   
-  ![Screenshot of the customized interface](pictures/customized_screenshot.png)
+  ![Screenshot of interface with a customized theme](pictures/customized_screenshot.png)
   
   ![Screenshot of proof that this actually works](pictures/proof_of_work_screenshot.png)
 </details>
