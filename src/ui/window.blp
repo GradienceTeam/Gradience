@@ -10,7 +10,7 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
     Button apply-button {
       styles ["suggested-action"]
       label: "Apply";
-      action-name: "app.apply_css_file";
+      action-name: "app.apply_color_scheme";
     }
 
     [start]
@@ -60,7 +60,7 @@ menu presets-menu {
 }
 
 menu main-menu {
-  item ("Reset Applied Color Scheme", "app.reset_css_file")
+  item ("Reset Applied Color Scheme", "app.reset_color_scheme")
   item ("About Adwaita Manager", "app.about")
 }
 

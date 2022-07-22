@@ -109,8 +109,8 @@ class AdwcustomizerApplication(Adw.Application):
         self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
 
         self.create_stateful_action("load_preset", GLib.VariantType.new('s'), GLib.Variant('s', 'adwaita'), self.load_preset_action)
-        self.create_action("apply_css_file", self.show_apply_css_file_dialog)
-        self.create_action("reset_css_file", self.show_reset_css_file_dialog)
+        self.create_action("apply_color_scheme", self.show_apply_color_scheme_dialog)
+        self.create_action("reset_color_scheme", self.show_reset_color_scheme_dialog)
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
@@ -171,17 +171,18 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.reload_variables()
 
-    def generate_css(self):
+    def generate_gtk_css(self, variables, palette):
         final_css = ""
-        for key in self.variables.keys():
-            final_css += "@define-color {0} {1};\n".format(key, self.variables[key])
-        for prefix_key in self.palette.keys():
-            for key in self.palette[prefix_key].keys():
-                final_css += "@define-color {0} {1};\n".format(prefix_key + key, self.palette[prefix_key][key])
+        for key in variables.keys():
+            final_css += "@define-color {0} {1};\n".format(key, variables[key])
+        for prefix_key in palette.keys():
+            for key in palette[prefix_key].keys():
+                final_css += "@define-color {0} {1};\n".format(prefix_key + key, palette[prefix_key][key])
         return final_css
 
     def reload_variables(self):
         parsing_errors = []
+        gtk_css = self.generate_gtk_css(self.variables, self.palette)
         css_provider = Gtk.CssProvider()
         def on_error(provider, section, error):
             start_location = section.get_start_location().chars
@@ -189,11 +190,11 @@ class AdwcustomizerApplication(Adw.Application):
             line_number = section.get_end_location().lines
             parsing_errors.append({
                 "error": error.message,
-                "element": self.generate_css()[start_location:end_location],
-                "line": self.generate_css().splitlines()[line_number]
+                "element": gtk_css[start_location:end_location],
+                "line": gtk_css.splitlines()[line_number]
             })
         css_provider.connect("parsing-error", on_error)
-        css_provider.load_from_data(self.generate_css().encode())
+        css_provider.load_from_data(gtk_css.encode())
         self.props.active_window.update_errors(self.global_errors + parsing_errors)
         # loading with the priority above user to override the applied config
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
@@ -205,20 +206,20 @@ class AdwcustomizerApplication(Adw.Application):
             self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/' + args[0].get_string() + '.json')
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
-    def show_apply_css_file_dialog(self, widget, _):
+    def show_apply_color_scheme_dialog(self, widget, _):
         dialog = AdwcustomizerAppTypeDialog("Apply this color scheme?",
                                             "Warning: any custom CSS files for those app types will be irreversibly overwritten!",
                                             "apply", "Apply", Adw.ResponseAppearance.SUGGESTED,
                                             transient_for=self.props.active_window)
-        dialog.connect("response", self.apply_css_file)
+        dialog.connect("response", self.apply_color_scheme)
         dialog.present()
 
-    def show_reset_css_file_dialog(self, widget, _):
+    def show_reset_color_scheme_dialog(self, widget, _):
         dialog = AdwcustomizerAppTypeDialog("Reset applied color scheme?",
                                             "Make sure you have the current settings saved as a preset.",
                                             "reset", "Reset", Adw.ResponseAppearance.DESTRUCTIVE,
                                             transient_for=self.props.active_window)
-        dialog.connect("response", self.reset_css_file)
+        dialog.connect("response", self.reset_color_scheme)
         dialog.present()
 
     def show_save_preset_dialog(self, widget, _):
@@ -259,16 +260,17 @@ class AdwcustomizerApplication(Adw.Application):
                 }
                 f.write(json.dumps(object_to_write, indent=4))
 
-    def apply_css_file(self, widget, response):
+    def apply_color_scheme(self, widget, response):
         if response == "apply":
+            gtk_css = self.generate_gtk_css(self.variables, self.palette)
             if widget.get_app_types()["gtk4"]:
                 with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w') as f:
-                    f.write(self.generate_css())
+                    f.write(gtk_css)
             if widget.get_app_types()["gtk3"]:
                 with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w') as f:
-                    f.write(self.generate_css())
+                    f.write(gtk_css)
 
-    def reset_css_file(self, widget, response):
+    def reset_color_scheme(self, widget, response):
         if response == "reset":
             if widget.get_app_types()["gtk4"]:
                 file = Gio.File.new_for_path(GLib.get_user_config_dir() + "/gtk-4.0/gtk.css")
