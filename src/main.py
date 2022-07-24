@@ -105,7 +105,7 @@ class AdwcustomizerApplication(Adw.Application):
         win.content.add(palette_pref_group)
 
         # usually flatpak takes care of that, but in case it doesn't we do it ourselves
-        preset_directory = os.path.join(os.environ['XDG_CONFIG_HOME'], "adwcustomizer", "presets")
+        preset_directory = os.path.join(os.environ['XDG_CONFIG_HOME'], "presets")
         if not os.path.exists(preset_directory):
             os.makedirs(preset_directory)
 
