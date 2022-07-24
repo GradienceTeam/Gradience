@@ -10,7 +10,6 @@
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland",
-        "--filesystem=xdg-config/adwcustomizer/presets:create",
         "--filesystem=xdg-config/gtk-3.0",
         "--filesystem=xdg-config/gtk-4.0"
     ],
@@ -38,13 +37,26 @@
             ]
         },
         {
+            "name": "libportal",
+            "buildsystem": "meson",
+            "config-opts": ["-Ddocs=false", "-Dvapi=false", "-Dbackends=gtk4"],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/flatpak/libportal",
+                    "branch": "main"
+                }
+            ]
+        },
+        {
             "name" : "adwcustomizer",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "file:///home/artyif/Projects/AdwCustomizer"
+                    "url" : "file:///home/artyif/Projects/AdwCustomizer",
+                    "branch": "main"
                 }
             ]
         }

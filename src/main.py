@@ -35,8 +35,10 @@ import traceback
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
+gi.require_version('Xdp', '1.0')
+gi.require_version('XdpGtk4', '1.0')
 
-from gi.repository import Gtk, Gdk, Gio, Adw, GLib
+from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from .window import AdwcustomizerMainWindow
 from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
@@ -59,6 +61,7 @@ class AdwcustomizerApplication(Adw.Application):
         We raise the application's main window, creating it if
         necessary.
         """
+        self.portal = Xdp.Portal()
         self.variables = {}
         self.palette = {}
         self.global_errors = []
@@ -108,6 +111,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
 
+        self.create_action("open_preset_directory", self.open_preset_directory)
         self.create_stateful_action("load_preset", GLib.VariantType.new('s'), GLib.Variant('s', 'adwaita'), self.load_preset_action)
         self.create_action("apply_color_scheme", self.show_apply_color_scheme_dialog)
         self.create_action("reset_color_scheme", self.show_reset_color_scheme_dialog)
@@ -115,10 +119,10 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_action("about", self.show_about_window)
 
         self.custom_presets = {}
-        for file in os.listdir(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/"):
+        for file in os.listdir(os.environ['XDG_CONFIG_HOME'] + "/presets/"):
             if file.endswith(".json"):
                 try:
-                    with open(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + file, 'r') as f:
+                    with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + file, 'r') as f:
                         preset_text = f.read()
                     preset = json.loads(preset_text)
                     if preset.get('variables') is None:
@@ -143,10 +147,27 @@ class AdwcustomizerApplication(Adw.Application):
             else:
                 menu_item.set_action_and_target_value("")
             custom_menu_section.append_item(menu_item)
+        open_in_file_manager_item = Gio.MenuItem()
+        open_in_file_manager_item.set_label("Open in File Manager")
+        open_in_file_manager_item.set_action_and_target_value("app.open_preset_directory")
+        # does not work yet for some reason, i asked people in flatpak matrix room
+        custom_menu_section.append_item(open_in_file_manager_item)
         win.presets_menu.append_section("User Defined", custom_menu_section)
         win.present()
 
         self.is_ready = True
+
+    def open_preset_directory(self, *args):
+        parent = XdpGtk4.parent_new_gtk(self.props.active_window)
+        def open_dir_callback(result, task):
+            self.portal.open_uri_finish(task)
+        self.portal.open_uri(
+            parent,
+            "file://" + os.environ['XDG_CONFIG_HOME'] + "/presets/",
+            Xdp.OpenUriFlags.NONE,
+            None,
+            open_dir_callback
+        )
 
     def load_preset_from_file(self, preset_path):
         preset_text = ""
@@ -201,7 +222,7 @@ class AdwcustomizerApplication(Adw.Application):
 
     def load_preset_action(self, widget, *args):
         if args[0].get_string().startswith("custom-"):
-            self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + args[0].get_string().replace("custom-", "", 1) + ".json")
+            self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/presets/" + args[0].get_string().replace("custom-", "", 1) + ".json")
         else:
             self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/' + args[0].get_string() + '.json')
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
@@ -225,7 +246,7 @@ class AdwcustomizerApplication(Adw.Application):
     def show_save_preset_dialog(self, widget, _):
         dialog = Adw.MessageDialog(transient_for=self.props.active_window,
                                    heading="Save preset as...",
-                                   body="Saving to <tt>$XDG_CONFIG_HOME/adwcustomizer/presets/</tt>",
+                                   body="Saving to <tt>$XDG_CONFIG_HOME/presets/</tt>",
                                    body_use_markup=True)
 
         dialog.add_response("cancel", "Cancel")
@@ -238,10 +259,10 @@ class AdwcustomizerApplication(Adw.Application):
         preset_entry = Gtk.Entry(placeholder_text="Preset Name")
         def on_preset_entry_change(self, *args):
             if len(preset_entry.get_text()) == 0:
-                dialog.set_body("Saving to <tt>$XDG_CONFIG_HOME/adwcustomizer/presets/</tt>")
+                dialog.set_body("Saving to <tt>$XDG_CONFIG_HOME/presets/</tt>")
                 dialog.set_response_enabled("save", False)
             else:
-                dialog.set_body("Saving to <tt>$XDG_CONFIG_HOME/adwcustomizer/presets/" + to_slug_case(preset_entry.get_text()) + ".json</tt>. If that preset already exists, it will be overwritten!")
+                dialog.set_body("Saving to <tt>$XDG_CONFIG_HOME/presets/" + to_slug_case(preset_entry.get_text()) + ".json</tt>. If that preset already exists, it will be overwritten!")
                 dialog.set_response_enabled("save", True)
         preset_entry.connect("changed", on_preset_entry_change)
         dialog.set_extra_child(preset_entry)
@@ -252,7 +273,7 @@ class AdwcustomizerApplication(Adw.Application):
 
     def save_preset(self, widget, response, entry):
         if response == "save":
-            with open(os.environ['XDG_CONFIG_HOME'] + "/adwcustomizer/presets/" + to_slug_case(entry.get_text()) + ".json", 'w') as f:
+            with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + to_slug_case(entry.get_text()) + ".json", 'w') as f:
                 object_to_write = {
                     "name": entry.get_text(),
                     "variables": self.variables,
