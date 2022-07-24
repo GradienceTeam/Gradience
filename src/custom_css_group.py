@@ -26,8 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Gdk, Gio, Adw
-import json
+from gi.repository import Gtk, Adw
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/custom_css_group.ui')
 class AdwcustomizerCustomCSSGroup(Adw.PreferencesGroup):
@@ -49,6 +48,6 @@ class AdwcustomizerCustomCSSGroup(Adw.PreferencesGroup):
         Gtk.Application.get_default().update_custom_css_text(list(self.custom_css.keys())[self.app_type_dropdown.get_selected()], buffer.props.text)
 
     @Gtk.Template.Callback()
-    def on_dropdown_notify(self, widget, pspec):
+    def on_dropdown_notify(self, _, pspec):
         if pspec.name == "selected":
             self.custom_css_text_view.get_buffer().set_text(list(self.custom_css.values())[self.app_type_dropdown.get_selected()])

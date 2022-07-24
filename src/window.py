@@ -27,7 +27,6 @@
 # authorization.
 
 from gi.repository import Gtk
-import json
 from .error import AdwcustomizerError
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/window.ui')
@@ -54,4 +53,3 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
         self.errors_button.set_visible(len(errors) > 0)
         for error in errors:
             self.errors_list.append(AdwcustomizerError(error["error"], error["element"], error["line"]))
-

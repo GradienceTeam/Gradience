@@ -26,8 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Gdk, Gio, Adw
-import json
+from gi.repository import Gtk, Gdk, Adw
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/option.ui')
 class AdwcustomizerOption(Adw.ActionRow):
@@ -62,16 +61,16 @@ class AdwcustomizerOption(Adw.ActionRow):
             self.explanation_button.set_visible(False)
 
     @Gtk.Template.Callback()
-    def on_color_value_changed(self, *args):
+    def on_color_value_changed(self, *_):
         self.update_value(self.color_value.get_rgba().to_string(), update_from="color_value")
 
     @Gtk.Template.Callback()
-    def on_text_value_changed(self, *args):
+    def on_text_value_changed(self, *_):
         self.update_value(self.text_value.get_text(), update_from="text_value")
 
     @Gtk.Template.Callback()
-    def on_text_value_toggled(self, *args):
-        if (self.text_value_toggle.get_active()):
+    def on_text_value_toggled(self, *_):
+        if self.text_value_toggle.get_active():
             self.value_stack.set_visible_child(self.text_value)
         else:
             self.value_stack.set_visible_child(self.color_value)
@@ -96,4 +95,3 @@ class AdwcustomizerOption(Adw.ActionRow):
         if Gtk.Application.get_default().is_ready and kwargs.get("update_from") == "text_value" and new_value != "":
             Gtk.Application.get_default().variables[self.get_name()] = new_value
             Gtk.Application.get_default().reload_variables()
-

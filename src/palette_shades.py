@@ -26,8 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Gdk, Gio, Adw
-import json
+from gi.repository import Gtk, Gdk, Adw
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/palette_shades.ui')
 class AdwcustomizerPaletteShades(Adw.ActionRow):
@@ -50,10 +49,10 @@ class AdwcustomizerPaletteShades(Adw.ActionRow):
             self.color_pickers[str(i)] = picker
             self.add_suffix(picker)
 
-    def on_color_changed(self, *args):
+    def on_color_changed(self, *_):
         shades = {}
-        for picker_key in self.color_pickers.keys():
-            shades[picker_key] = self.color_pickers[picker_key].get_rgba().to_string()
+        for picker_key, picker in self.color_pickers.items():
+            shades[picker_key] = picker.get_rgba().to_string()
         self.update_shades(shades, update_from="color_value")
 
     def update_shades(self, shades, **kwargs):

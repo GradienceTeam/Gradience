@@ -27,12 +27,12 @@
 # authorization.
 
 import sys
-import gi
 import json
 import os
 import re
 import traceback
 
+import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 gi.require_version('Xdp', '1.0')
@@ -130,26 +130,26 @@ class AdwcustomizerApplication(Adw.Application):
         for file in os.listdir(os.environ['XDG_CONFIG_HOME'] + "/presets/"):
             if file.endswith(".json"):
                 try:
-                    with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + file, 'r') as f:
-                        preset_text = f.read()
+                    with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + file, 'r') as file:
+                        preset_text = file.read()
                     preset = json.loads(preset_text)
                     if preset.get('variables') is None:
                         raise KeyError('variables')
                     if preset.get('palette') is None:
                         raise KeyError('palette')
                     self.custom_presets[file.replace('.json', '')] = preset['name']
-                except Exception as e:
+                except Exception as ex:
                     self.global_errors.append({
                         "error": "Failed to load preset: " + file,
-                        "element": str(e),
-                        "line": traceback.format_exception(e)[2].strip()
+                        "element": str(ex),
+                        "line": traceback.format_exception(ex)[2].strip()
                     })
                     self.props.active_window.update_errors(self.global_errors)
 
         custom_menu_section = Gio.Menu()
-        for preset in self.custom_presets.keys():
+        for preset, preset_name in self.custom_presets.items():
             menu_item = Gio.MenuItem()
-            menu_item.set_label(self.custom_presets[preset])
+            menu_item.set_label(preset_name)
             if not preset.startswith("error"):
                 menu_item.set_action_and_target_value("app.load_preset", GLib.Variant('s', "custom-" + preset))
             else:
@@ -165,10 +165,10 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.is_ready = True
 
-    def open_preset_directory(self, *args):
+    def open_preset_directory(self, *_):
         parent = XdpGtk4.parent_new_gtk(self.props.active_window)
-        def open_dir_callback(result, task):
-            self.portal.open_uri_finish(task)
+        def open_dir_callback(_, result):
+            self.portal.open_uri_finish(result)
         self.portal.open_uri(
             parent,
             "file://" + os.environ['XDG_CONFIG_HOME'] + "/presets/",
@@ -179,8 +179,8 @@ class AdwcustomizerApplication(Adw.Application):
 
     def load_preset_from_file(self, preset_path):
         preset_text = ""
-        with open(preset_path, 'r') as f:
-            preset_text = f.read()
+        with open(preset_path, 'r') as file:
+            preset_text = file.read()
         self.load_preset_variables(json.loads(preset_text))
 
     def load_preset_from_resource(self, preset_path):
@@ -217,7 +217,7 @@ class AdwcustomizerApplication(Adw.Application):
         parsing_errors = []
         gtk_css = self.generate_gtk_css("gtk4")
         css_provider = Gtk.CssProvider()
-        def on_error(provider, section, error):
+        def on_error(_, section, error):
             start_location = section.get_start_location().chars
             end_location = section.get_end_location().chars
             line_number = section.get_end_location().lines
@@ -235,14 +235,14 @@ class AdwcustomizerApplication(Adw.Application):
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
         self.current_css_provider = css_provider
 
-    def load_preset_action(self, widget, *args):
+    def load_preset_action(self, _, *args):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/presets/" + args[0].get_string().replace("custom-", "", 1) + ".json")
         else:
             self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/' + args[0].get_string() + '.json')
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
-    def show_apply_color_scheme_dialog(self, widget, _):
+    def show_apply_color_scheme_dialog(self, *_):
         dialog = AdwcustomizerAppTypeDialog("Apply this color scheme?",
                                             "Warning: any custom CSS files for those app types will be irreversibly overwritten!",
                                             "apply", "Apply", Adw.ResponseAppearance.SUGGESTED,
@@ -250,7 +250,7 @@ class AdwcustomizerApplication(Adw.Application):
         dialog.connect("response", self.apply_color_scheme)
         dialog.present()
 
-    def show_reset_color_scheme_dialog(self, widget, _):
+    def show_reset_color_scheme_dialog(self, *_):
         dialog = AdwcustomizerAppTypeDialog("Reset applied color scheme?",
                                             "Make sure you have the current settings saved as a preset.",
                                             "reset", "Reset", Adw.ResponseAppearance.DESTRUCTIVE,
@@ -258,7 +258,7 @@ class AdwcustomizerApplication(Adw.Application):
         dialog.connect("response", self.reset_color_scheme)
         dialog.present()
 
-    def show_save_preset_dialog(self, widget, _):
+    def show_save_preset_dialog(self, *_):
         dialog = Adw.MessageDialog(transient_for=self.props.active_window,
                                    heading="Save preset as...",
                                    body="Saving to <tt>$XDG_CONFIG_HOME/presets/</tt>",
@@ -272,7 +272,7 @@ class AdwcustomizerApplication(Adw.Application):
         dialog.set_close_response("cancel")
 
         preset_entry = Gtk.Entry(placeholder_text="Preset Name")
-        def on_preset_entry_change(self, *args):
+        def on_preset_entry_change(*_):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body("Saving to <tt>$XDG_CONFIG_HOME/presets/</tt>")
                 dialog.set_response_enabled("save", False)
@@ -286,27 +286,27 @@ class AdwcustomizerApplication(Adw.Application):
 
         dialog.present()
 
-    def save_preset(self, widget, response, entry):
+    def save_preset(self, _, response, entry):
         if response == "save":
-            with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + to_slug_case(entry.get_text()) + ".json", 'w') as f:
+            with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + to_slug_case(entry.get_text()) + ".json", 'w') as file:
                 object_to_write = {
                     "name": entry.get_text(),
                     "variables": self.variables,
                     "palette": self.palette,
                     "custom_css": self.custom_css
                 }
-                f.write(json.dumps(object_to_write, indent=4))
+                file.write(json.dumps(object_to_write, indent=4))
 
     def apply_color_scheme(self, widget, response):
         if response == "apply":
             if widget.get_app_types()["gtk4"]:
                 gtk4_css = self.generate_gtk_css("gtk4")
-                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w') as f:
-                    f.write(gtk4_css)
+                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w') as file:
+                    file.write(gtk4_css)
             if widget.get_app_types()["gtk3"]:
                 gtk3_css = self.generate_gtk_css("gtk3")
-                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w') as f:
-                    f.write(gtk3_css)
+                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w') as file:
+                    file.write(gtk3_css)
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
@@ -323,7 +323,7 @@ class AdwcustomizerApplication(Adw.Application):
                 except:
                     pass
 
-    def show_about_window(self, widget, _):
+    def show_about_window(self, *_):
         about = Adw.AboutWindow(transient_for=self.props.active_window,
                                 application_name='Adwaita Manager',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',

@@ -27,7 +27,6 @@
 # authorization.
 
 from gi.repository import Gtk, Adw
-import json
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/app_type_dialog.ui')
 class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
@@ -52,4 +51,3 @@ class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
             "gtk4": self.gtk4_app_type.get_active(),
             "gtk3": self.gtk3_app_type.get_active()
         }
-

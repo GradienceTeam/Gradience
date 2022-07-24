@@ -26,8 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Gdk, Gio, Adw
-import json
+from gi.repository import Gtk
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/error.ui')
 class AdwcustomizerError(Gtk.ListBoxRow):
