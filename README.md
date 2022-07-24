@@ -57,7 +57,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] Customize palette colors
 - [x] Add custom CSS code
 - [ ] Normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
-- [ ] Secure the code
+- [ ] Make the code more secure
 - [ ] Release on Flathub
 - [ ] Full theme preview
 - [ ] Customize GNOME Shell

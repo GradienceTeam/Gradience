@@ -1,5 +1,5 @@
 project('adwcustomizer',
-          version: '0.0.24',
+          version: '0.0.25',
     meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2',
                      'werror=false',
