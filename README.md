@@ -64,6 +64,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [ ] Customize GDM
 - [ ] Customize KvLibadwaita
 - [ ] Customize Firefox GNOME theme
+- [ ] Customize GtkSourceView (might be complicated)
 - [ ] Localization
 
 ## Donations
