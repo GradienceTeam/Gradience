@@ -62,11 +62,12 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [ ] Full theme preview
 - [ ] Customize GNOME Shell
 - [ ] Customize GDM
+- [ ] Customize KvLibadwaita
 - [ ] Customize Firefox GNOME theme
 - [ ] Localization
 
 ## Donations
-I am broke, and I live in Russia (I don't support the "military operation" currently going on), so if anyone wants to help me, the only way right now is cryptocurrency:
+I live in Russia (I don't support the "military operation" currently going on), so if anyone wants to help me, the only way right now is cryptocurrency:
 - Bitcoin: `1FrvFbfqWEZepmuH2Bayo8tSvHEr6NnANJ`
 - Ethereum/ERC20: `0x37e03C589F28831bD78C4B41Bf866e8ddB2bed3E`
 - Binance Coin/BEP2: `bnb1aewh72p3u80qd8ufywhseuvjupy9mhxtrmwnm4` (no memo required, type anything in there if it's required by the exchange)
