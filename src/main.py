@@ -43,6 +43,7 @@ from .window import AdwcustomizerMainWindow
 from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
+from .custom_css_group import AdwcustomizerCustomCSSGroup
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9A-Za-z\u00C0-\uFFFF]+", "-", non_slug.lower())
@@ -64,7 +65,9 @@ class AdwcustomizerApplication(Adw.Application):
         self.portal = Xdp.Portal()
         self.variables = {}
         self.palette = {}
+        self.custom_css = {}
         self.global_errors = []
+        self.current_css_provider = None
         self.is_ready = False
 
         win = self.props.active_window
@@ -104,7 +107,12 @@ class AdwcustomizerApplication(Adw.Application):
             self.pref_palette_shades[color["prefix"]] = palette_shades
         win.content.add(palette_pref_group)
 
-        # usually flatpak takes care of that, but in case it doesn't we do it ourselves
+        self.custom_css_group = AdwcustomizerCustomCSSGroup()
+        for app_type in self.settings_schema["custom_css_app_types"]:
+            self.custom_css[app_type] = ""
+        self.custom_css_group.load_custom_css(self.custom_css)
+        win.content.add(self.custom_css_group)
+
         preset_directory = os.path.join(os.environ['XDG_CONFIG_HOME'], "presets")
         if not os.path.exists(preset_directory):
             os.makedirs(preset_directory)
@@ -183,27 +191,31 @@ class AdwcustomizerApplication(Adw.Application):
         self.props.active_window.set_current_preset_name(preset["name"])
         self.variables = preset["variables"]
         self.palette = preset["palette"]
+        if "custom_css" in preset:
+            self.custom_css = preset["custom_css"]
         for key in self.variables.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(self.variables[key])
         for key in self.palette.keys():
             if key in self.pref_palette_shades:
                 self.pref_palette_shades[key].update_shades(self.palette[key])
+        self.custom_css_group.load_custom_css(self.custom_css)
 
         self.reload_variables()
 
-    def generate_gtk_css(self, variables, palette):
+    def generate_gtk_css(self, app_type):
         final_css = ""
-        for key in variables.keys():
-            final_css += "@define-color {0} {1};\n".format(key, variables[key])
-        for prefix_key in palette.keys():
-            for key in palette[prefix_key].keys():
-                final_css += "@define-color {0} {1};\n".format(prefix_key + key, palette[prefix_key][key])
+        for key in self.variables.keys():
+            final_css += "@define-color {0} {1};\n".format(key, self.variables[key])
+        for prefix_key in self.palette.keys():
+            for key in self.palette[prefix_key].keys():
+                final_css += "@define-color {0} {1};\n".format(prefix_key + key, self.palette[prefix_key][key])
+        final_css += self.custom_css.get(app_type, "")
         return final_css
 
     def reload_variables(self):
         parsing_errors = []
-        gtk_css = self.generate_gtk_css(self.variables, self.palette)
+        gtk_css = self.generate_gtk_css("gtk4")
         css_provider = Gtk.CssProvider()
         def on_error(provider, section, error):
             start_location = section.get_start_location().chars
@@ -211,14 +223,17 @@ class AdwcustomizerApplication(Adw.Application):
             line_number = section.get_end_location().lines
             parsing_errors.append({
                 "error": error.message,
-                "element": gtk_css[start_location:end_location],
-                "line": gtk_css.splitlines()[line_number]
+                "element": gtk_css[start_location:end_location].strip(),
+                "line": gtk_css.splitlines()[line_number] if line_number < len(gtk_css.splitlines()) else "<last line>"
             })
         css_provider.connect("parsing-error", on_error)
         css_provider.load_from_data(gtk_css.encode())
         self.props.active_window.update_errors(self.global_errors + parsing_errors)
         # loading with the priority above user to override the applied config
+        if self.current_css_provider is not None:
+            Gtk.StyleContext.remove_provider_for_display(Gdk.Display.get_default(), self.current_css_provider)
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
+        self.current_css_provider = css_provider
 
     def load_preset_action(self, widget, *args):
         if args[0].get_string().startswith("custom-"):
@@ -277,19 +292,21 @@ class AdwcustomizerApplication(Adw.Application):
                 object_to_write = {
                     "name": entry.get_text(),
                     "variables": self.variables,
-                    "palette": self.palette
+                    "palette": self.palette,
+                    "custom_css": self.custom_css
                 }
                 f.write(json.dumps(object_to_write, indent=4))
 
     def apply_color_scheme(self, widget, response):
         if response == "apply":
-            gtk_css = self.generate_gtk_css(self.variables, self.palette)
             if widget.get_app_types()["gtk4"]:
+                gtk4_css = self.generate_gtk_css("gtk4")
                 with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w') as f:
-                    f.write(gtk_css)
+                    f.write(gtk4_css)
             if widget.get_app_types()["gtk3"]:
+                gtk3_css = self.generate_gtk_css("gtk3")
                 with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w') as f:
-                    f.write(gtk_css)
+                    f.write(gtk3_css)
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
@@ -319,6 +336,9 @@ class AdwcustomizerApplication(Adw.Application):
 
         about.present()
 
+    def update_custom_css_text(self, app_type, new_value):
+        self.custom_css[app_type] = new_value
+        self.reload_variables()
 
     def create_action(self, name, callback, shortcuts=None):
         """Add an application action.

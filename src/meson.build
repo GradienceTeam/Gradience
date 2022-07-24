@@ -9,6 +9,7 @@ blueprints = custom_target('blueprints',
     'ui/option.blp',
     'ui/window.blp',
     'ui/app_type_dialog.blp',
+    'ui/custom_css_group.blp',
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -46,6 +47,7 @@ adwcustomizer_sources = [
   'option.py',
   'window.py',
   'app_type_dialog.py',
+  'custom_css_group.py',
 ]
 
 install_data(adwcustomizer_sources, install_dir: moduledir)

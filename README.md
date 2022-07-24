@@ -55,7 +55,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] View adw-gtk3's support of variables
 - [x] View parsing errors
 - [x] Customize palette colors
-- [ ] Add custom CSS code
+- [x] Add custom CSS code
 - [ ] Normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
 - [ ] Secure the code
 - [ ] Release on Flathub

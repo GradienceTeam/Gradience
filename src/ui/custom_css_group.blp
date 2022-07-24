@@ -1,0 +1,32 @@
+using Gtk 4.0;
+using Adw 1;
+
+template AdwcustomizerCustomCSSGroup : Adw.PreferencesGroup {
+  title: "Custom CSS";
+  description: "Changing this may break some programs. Keep in mind that Libadwaita was made so that applications could hardcode values like paddings and margins (like in case of the Custom CSS code field itself, which uses 12px margins on its sides). Only GTK 4 CSS will be previewed here.";
+
+  [header-suffix]
+  DropDown app-type-dropdown {
+    valign: start;
+    model: app-type-list;
+    notify => on_dropdown_notify();
+  }
+
+  Adw.PreferencesRow {
+    activatable: false;
+    TextView custom-css-text-view {
+      margin-top: 12;
+      margin-bottom: 12;
+      margin-start: 12;
+      margin-end: 12;
+      monospace: true;
+      buffer: TextBuffer {
+        changed => on_custom_css_changed();
+      };
+    }
+  }
+}
+
+StringList app-type-list {
+  strings ["GTK 4", "GTK 3"]
+}

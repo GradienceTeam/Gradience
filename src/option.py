@@ -83,6 +83,7 @@ class AdwcustomizerOption(Adw.ActionRow):
             rgba = Gdk.RGBA()
             if rgba.parse(new_value):
                 self.color_value.set_rgba(rgba)
+                self.color_value.set_tooltip_text(new_value)
                 if kwargs.get("update_from") != "text_value":
                     self.text_value_toggle.set_active(False)
             elif kwargs.get("update_from") != "text_value":
@@ -90,6 +91,7 @@ class AdwcustomizerOption(Adw.ActionRow):
             else:
                 rgba.parse("#00000000")
                 self.color_value.set_rgba(rgba)
+                self.color_value.set_tooltip_text("Not a color, see text value")
 
         if Gtk.Application.get_default().is_ready and kwargs.get("update_from") == "text_value" and new_value != "":
             Gtk.Application.get_default().variables[self.get_name()] = new_value

@@ -9,6 +9,7 @@ template AdwcustomizerOption : Adw.ActionRow {
     valign: center;
     icon-name: "dialog-warning-symbolic";
     popover: warning-popover;
+    tooltip-text: "GTK 3 Support Warning";
   }
 
   [suffix]
@@ -16,6 +17,7 @@ template AdwcustomizerOption : Adw.ActionRow {
     valign: center;
     icon-name: "dialog-question-symbolic";
     popover: explanation-popover;
+    tooltip-text: "Explanation";
   }
 
   [suffix]
@@ -40,6 +42,7 @@ template AdwcustomizerOption : Adw.ActionRow {
   ToggleButton text-value-toggle {
     valign: center;
     icon-name: "document-edit-symbolic";
+    tooltip-text: "Toggle Text Value";
 
     toggled => on_text_value_toggled();
   }

@@ -61,6 +61,7 @@ class AdwcustomizerPaletteShades(Adw.ActionRow):
             new_rgba = Gdk.RGBA()
             if new_rgba.parse(shades[str(i)]):
                 self.color_pickers[str(i)].set_rgba(new_rgba)
+                self.color_pickers[str(i)].set_tooltip_text(shades[str(i)])
             if Gtk.Application.get_default().is_ready and kwargs.get("update_from") == "color_value":
                 Gtk.Application.get_default().palette[self.prefix][str(i)] = shades[str(i)]
 
