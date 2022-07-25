@@ -1,0 +1,197 @@
+# Adwaita Manager POT file
+# Copyright (C) 2022 Adwaita Manager Team
+# This file is distributed under the same license as the AdwCustomizer package.
+# Artyom Fomin <artyomisflash@mail.ru>, 2022.
+# 
+# Translators:
+# Artyom Fomin, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-25 17:32+0300\n"
+"PO-Revision-Date: 2022-07-25 14:48+0000\n"
+"Last-Translator: Artyom Fomin, 2022\n"
+"Language-Team: Russian (https://www.transifex.com/artyif/teams/147445/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: data/com.github.ArtyIF.AdwCustomizer.desktop.in:3 src/ui/window.blp:5
+#: src/main.py:333
+msgid "Adwaita Manager"
+msgstr "Adwaita Manager"
+
+#: data/com.github.ArtyIF.AdwCustomizer.appdata.xml.in:7
+msgid "No description"
+msgstr "Без описания"
+
+#: src/ui/app_type_dialog.blp:10
+msgid "Select app types you want to affect:"
+msgstr "Выберите типы приложений, которые вы хотите изменить:"
+
+#: src/ui/app_type_dialog.blp:13
+msgid "Libadwaita and GTK 4 apps"
+msgstr "Приложения Libadwaita и GTK 4"
+
+#: src/ui/app_type_dialog.blp:17
+msgid "GTK 3 apps (adw-gtk3 theme required)"
+msgstr "Приложения GTK 3 (требуется тема adw-gtk3)"
+
+#: src/ui/custom_css_group.blp:5
+msgid "Custom CSS"
+msgstr "Пользовательский CSS"
+
+#: src/ui/custom_css_group.blp:6
+msgid ""
+"Changing this may break some programs. Keep in mind that Libadwaita was made"
+" so that applications could hardcode values like paddings and margins (like "
+"in case of the Custom CSS code field itself, which uses 12px padding). Only "
+"GTK 4 CSS will be previewed here."
+msgstr ""
+"Изменение этого поля может сломать некоторые программы. Помните, что "
+"Libadwaita была создана, чтобы разработчики могли хардкодить такие вещи, как"
+" отступы элементов (например, в случаем самого поля с кодом "
+"пользовательского CSS, которое использует отступ в 12 пикселей). Тут будет "
+"предпросмотр CSS только для GTK 4."
+
+#: src/ui/custom_css_group.blp:29
+msgid "GTK 4"
+msgstr "GTK 4"
+
+#: src/ui/custom_css_group.blp:29
+msgid "GTK 3"
+msgstr "GTK 3"
+
+#: src/ui/option.blp:10
+msgid "GTK 3 Support Warning"
+msgstr "Предупреждение о поддержке GTK 3"
+
+#: src/ui/option.blp:18
+msgid "Explanation"
+msgstr "Объяснение"
+
+#: src/ui/option.blp:43
+msgid "Toggle Text Value"
+msgstr "Изменить текстовое значение"
+
+#: src/ui/window.blp:13 src/main.py:253
+msgid "Apply"
+msgstr "Применить"
+
+#: src/ui/window.blp:21
+msgid "Save Preset"
+msgstr "Сохранить настройки"
+
+#: src/ui/window.blp:48
+msgid "Built-in Presets"
+msgstr "Встроенные настройки"
+
+#: src/ui/window.blp:50
+msgid "Adwaita"
+msgstr "Adwaita"
+
+#: src/ui/window.blp:55
+msgid "Adwaita Dark"
+msgstr "Adwaita (тёмная)"
+
+#: src/ui/window.blp:63
+msgid "Reset Applied Color Scheme"
+msgstr "Сбросить применённую цветовую схему"
+
+#: src/ui/window.blp:64
+msgid "About Adwaita Manager"
+msgstr "Об Adwaita Manager"
+
+#: src/app_type_dialog.py:44 src/main.py:272
+msgid "Cancel"
+msgstr "Отменить"
+
+#: src/main.py:102
+msgid "Palette Colors"
+msgstr "Цвета палитры"
+
+#: src/main.py:103
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a"
+" href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human"
+" Interface Guidelines</a>."
+msgstr ""
+"Цвета палитры с названиями, которые используются некоторыми приложениями. "
+"Цвета по умолчанию следуют <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">Human "
+"Interface Guidelines GNOME</a>."
+
+#: src/main.py:145
+#, python-brace-format
+msgid "Failed to load preset: {0}"
+msgstr "Не удалось загрузить настройки: {0}"
+
+#: src/main.py:161
+msgid "Open in File Manager"
+msgstr "Открыть в файловом менеджере"
+
+#: src/main.py:165
+msgid "User Defined Presets"
+msgstr "Настройки пользователя"
+
+#: src/main.py:251
+msgid "Apply this color scheme?"
+msgstr "Применить эту цветовую схему?"
+
+#: src/main.py:252
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Внимание: любые добавленные пользователем файлы CSS для выбранных типов "
+"приложений будут безвозвратно перезаписаны!"
+
+#: src/main.py:259
+msgid "Reset applied color scheme?"
+msgstr "Сбросить применённую цветовую схему?"
+
+#: src/main.py:260
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "Убедитесь, что Вы сохранили текущие настройки."
+
+#: src/main.py:261
+msgid "Reset"
+msgstr "Сбросить"
+
+#: src/main.py:268
+msgid "Save preset as..."
+msgstr "Сохранить настройки как..."
+
+#: src/main.py:269 src/main.py:282 src/main.py:285
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+"Настройки сохранятся в <tt>{0}</tt>. Если там уже есть настройки, то они "
+"будут перезаписаны!"
+
+#: src/main.py:273
+msgid "Save"
+msgstr "Сохранить"
+
+#: src/main.py:335
+msgid "Adwaita Manager Team"
+msgstr "Команда Adwaita Manager"
+
+#: src/option.py:56
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "Эта переменная лишь частично поддерживается темой adw-gtk3."
+
+#: src/option.py:59
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "Эта переменная не поддерживается темой adw-gtk3."
+
+#: src/option.py:95
+msgid "Not a color, see text value"
+msgstr "Не является цветом, см. текстовое значение"
