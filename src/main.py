@@ -193,6 +193,9 @@ class AdwcustomizerApplication(Adw.Application):
         self.palette = preset["palette"]
         if "custom_css" in preset:
             self.custom_css = preset["custom_css"]
+        else:
+            for app_type in self.settings_schema["custom_css_app_types"]:
+                self.custom_css[app_type] = ""
         for key in self.variables.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(self.variables[key])
