@@ -127,20 +127,20 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_action("about", self.show_about_window)
 
         self.custom_presets = {}
-        for file in os.listdir(os.environ['XDG_CONFIG_HOME'] + "/presets/"):
-            if file.endswith(".json"):
+        for file_name in os.listdir(os.environ['XDG_CONFIG_HOME'] + "/presets/"):
+            if file_name.endswith(".json"):
                 try:
-                    with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + file, 'r') as file:
+                    with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + file_name, 'r') as file:
                         preset_text = file.read()
                     preset = json.loads(preset_text)
                     if preset.get('variables') is None:
                         raise KeyError('variables')
                     if preset.get('palette') is None:
                         raise KeyError('palette')
-                    self.custom_presets[file.replace('.json', '')] = preset['name']
+                    self.custom_presets[file_name.replace('.json', '')] = preset['name']
                 except Exception as ex:
                     self.global_errors.append({
-                        "error": "Failed to load preset: " + file,
+                        "error": "Failed to load preset: " + file_name,
                         "element": str(ex),
                         "line": traceback.format_exception(ex)[2].strip()
                     })
