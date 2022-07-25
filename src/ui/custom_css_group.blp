@@ -2,8 +2,8 @@ using Gtk 4.0;
 using Adw 1;
 
 template AdwcustomizerCustomCSSGroup : Adw.PreferencesGroup {
-  title: "Custom CSS";
-  description: "Changing this may break some programs. Keep in mind that Libadwaita was made so that applications could hardcode values like paddings and margins (like in case of the Custom CSS code field itself, which uses 12px padding). Only GTK 4 CSS will be previewed here.";
+  title: _("Custom CSS");
+  description: _("Changing this may break some programs. Keep in mind that Libadwaita was made so that applications could hardcode values like paddings and margins (like in case of the Custom CSS code field itself, which uses 12px padding). Only GTK 4 CSS will be previewed here.");
 
   [header-suffix]
   DropDown app-type-dropdown {
@@ -26,5 +26,5 @@ template AdwcustomizerCustomCSSGroup : Adw.PreferencesGroup {
 }
 
 StringList app-type-list {
-  strings ["GTK 4", "GTK 3"]
+  strings [_("GTK 4"), _("GTK 3")]
 }

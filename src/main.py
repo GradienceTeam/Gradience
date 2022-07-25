@@ -31,6 +31,7 @@ import json
 import os
 import re
 import traceback
+from gettext import gettext as _
 
 from anyascii import anyascii
 import gi
@@ -98,8 +99,8 @@ class AdwcustomizerApplication(Adw.Application):
         self.pref_palette_shades = {}
         palette_pref_group = Adw.PreferencesGroup()
         palette_pref_group.set_name("palette_colors")
-        palette_pref_group.set_title("Palette Colors")
-        palette_pref_group.set_description("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>.")
+        palette_pref_group.set_title(_("Palette Colors"))
+        palette_pref_group.set_description(_("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."))
         for color in self.settings_schema["palette"]:
             palette_shades = AdwcustomizerPaletteShades(color["prefix"],
                                                         color["title"],
@@ -141,7 +142,7 @@ class AdwcustomizerApplication(Adw.Application):
                     self.custom_presets[file_name.replace('.json', '')] = preset['name']
                 except Exception as ex:
                     self.global_errors.append({
-                        "error": "Failed to load preset: " + file_name,
+                        "error": _("Failed to load preset: {0}").format(file_name),
                         "element": str(ex),
                         "line": traceback.format_exception(ex)[2].strip()
                     })
@@ -157,16 +158,16 @@ class AdwcustomizerApplication(Adw.Application):
                 menu_item.set_action_and_target_value("")
             custom_menu_section.append_item(menu_item)
         open_in_file_manager_item = Gio.MenuItem()
-        open_in_file_manager_item.set_label("Open in File Manager")
+        open_in_file_manager_item.set_label(_("Open in File Manager"))
         open_in_file_manager_item.set_action_and_target_value("app.open_preset_directory")
         # does not work yet for some reason, i asked people in flatpak matrix room
         custom_menu_section.append_item(open_in_file_manager_item)
-        win.presets_menu.append_section("User Defined", custom_menu_section)
+        win.presets_menu.append_section(_("User Defined Presets"), custom_menu_section)
         win.present()
 
         self.is_ready = True
 
-    def open_preset_directory(self, *_):
+    def open_preset_directory(self, *_args):
         parent = XdpGtk4.parent_new_gtk(self.props.active_window)
         def open_dir_callback(_, result):
             self.portal.open_uri_finish(result)
@@ -239,49 +240,49 @@ class AdwcustomizerApplication(Adw.Application):
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
         self.current_css_provider = css_provider
 
-    def load_preset_action(self, _, *args):
+    def load_preset_action(self, _unused, *args):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/presets/" + args[0].get_string().replace("custom-", "", 1) + ".json")
         else:
             self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/' + args[0].get_string() + '.json')
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
-    def show_apply_color_scheme_dialog(self, *_):
-        dialog = AdwcustomizerAppTypeDialog("Apply this color scheme?",
-                                            "Warning: any custom CSS files for those app types will be irreversibly overwritten!",
-                                            "apply", "Apply", Adw.ResponseAppearance.SUGGESTED,
+    def show_apply_color_scheme_dialog(self, *_args):
+        dialog = AdwcustomizerAppTypeDialog(_("Apply this color scheme?"),
+                                            _("Warning: any custom CSS files for those app types will be irreversibly overwritten!"),
+                                            "apply", _("Apply"), Adw.ResponseAppearance.SUGGESTED,
                                             transient_for=self.props.active_window)
         dialog.connect("response", self.apply_color_scheme)
         dialog.present()
 
-    def show_reset_color_scheme_dialog(self, *_):
-        dialog = AdwcustomizerAppTypeDialog("Reset applied color scheme?",
-                                            "Make sure you have the current settings saved as a preset.",
-                                            "reset", "Reset", Adw.ResponseAppearance.DESTRUCTIVE,
+    def show_reset_color_scheme_dialog(self, *_args):
+        dialog = AdwcustomizerAppTypeDialog(_("Reset applied color scheme?"),
+                                            _("Make sure you have the current settings saved as a preset."),
+                                            "reset", _("Reset"), Adw.ResponseAppearance.DESTRUCTIVE,
                                             transient_for=self.props.active_window)
         dialog.connect("response", self.reset_color_scheme)
         dialog.present()
 
-    def show_save_preset_dialog(self, *_):
+    def show_save_preset_dialog(self, *_args):
         dialog = Adw.MessageDialog(transient_for=self.props.active_window,
-                                   heading="Save preset as...",
-                                   body="Saving to <tt>$XDG_CONFIG_HOME/presets/</tt>",
+                                   heading=_("Save preset as..."),
+                                   body=_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.environ['XDG_CONFIG_HOME'] + "/presets/"),
                                    body_use_markup=True)
 
-        dialog.add_response("cancel", "Cancel")
-        dialog.add_response("save", "Save")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("save", _("Save"))
         dialog.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_response_enabled("save", False)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
 
         preset_entry = Gtk.Entry(placeholder_text="Preset Name")
-        def on_preset_entry_change(*_):
+        def on_preset_entry_change(*_args):
             if len(preset_entry.get_text()) == 0:
-                dialog.set_body("Saving to <tt>$XDG_CONFIG_HOME/presets/</tt>")
+                dialog.set_body(_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.environ['XDG_CONFIG_HOME'] + "/presets/"))
                 dialog.set_response_enabled("save", False)
             else:
-                dialog.set_body("Saving to <tt>$XDG_CONFIG_HOME/presets/" + to_slug_case(preset_entry.get_text()) + ".json</tt>. If that preset already exists, it will be overwritten!")
+                dialog.set_body(_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.environ['XDG_CONFIG_HOME'] + "/presets/" + to_slug_case(preset_entry.get_text()) + ".json"))
                 dialog.set_response_enabled("save", True)
         preset_entry.connect("changed", on_preset_entry_change)
         dialog.set_extra_child(preset_entry)
@@ -290,7 +291,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         dialog.present()
 
-    def save_preset(self, _, response, entry):
+    def save_preset(self, _unused, response, entry):
         if response == "save":
             with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + to_slug_case(entry.get_text()) + ".json", 'w') as file:
                 object_to_write = {
@@ -327,11 +328,11 @@ class AdwcustomizerApplication(Adw.Application):
                 except:
                     pass
 
-    def show_about_window(self, *_):
+    def show_about_window(self, *_args):
         about = Adw.AboutWindow(transient_for=self.props.active_window,
-                                application_name='Adwaita Manager',
+                                application_name=_("Adwaita Manager"),
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
-                                developer_name='Adwaita Manager Team',
+                                developer_name=_("Adwaita Manager Team"),
                                 developers=['Artyom "ArtyIF" Fomin https://github.com/ArtyIF', 'Verantor https://github.com/Verantor'],
                                 artists=['Allaeddine https://github.com/allaeddine-boulefaat', 'David "Daudix UFO" Lapshin https://linktr.ee/daudix_ufo'],
                                 copyright='© 2022 Adwaita Manager Team',

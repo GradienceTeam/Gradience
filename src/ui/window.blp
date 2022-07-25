@@ -2,7 +2,7 @@ using Gtk 4.0;
 using Adw 1;
 
 template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
-  title: "Adwaita Manager";
+  title: _("Adwaita Manager");
   default-width: 1280;
   default-height: 720;
 
@@ -10,7 +10,7 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
     [start]
     Button apply-button {
       styles ["suggested-action"]
-      label: "Apply";
+      label: _("Apply");
       action-name: "app.apply_color_scheme";
     }
 
@@ -18,13 +18,12 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
     Button save-preset-button {
       icon-name: "document-save-symbolic";
       action-name: "app.save_preset";
-      tooltip-text: "Save Preset";
+      tooltip-text: _("Save Preset");
     }
 
     [title]
     MenuButton presets-dropdown {
       menu-model: presets-menu;
-      label: "Presets";
     }
 
     [end]
@@ -46,14 +45,14 @@ template AdwcustomizerMainWindow : Gtk.ApplicationWindow {
 
 menu presets-menu {
   section {
-    label: "Built-in";
+    label: _("Built-in Presets");
     item {
-      label: "Adwaita";
+      label: _("Adwaita");
       action: "app.load_preset";
       target: "adwaita";
     }
     item {
-      label: "Adwaita Dark";
+      label: _("Adwaita Dark");
       action: "app.load_preset";
       target: "adwaita-dark";
     }
@@ -61,8 +60,8 @@ menu presets-menu {
 }
 
 menu main-menu {
-  item ("Reset Applied Color Scheme", "app.reset_color_scheme")
-  item ("About Adwaita Manager", "app.about")
+  item (_("Reset Applied Color Scheme"), "app.reset_color_scheme")
+  item (_("About Adwaita Manager"), "app.about")
 }
 
 Popover errors-popover {
@@ -79,7 +78,6 @@ Popover errors-popover {
       max-width-chars: 50;
       wrap: true;
       justify: left;
-      label: "No parsing errors";
     }
   }
 }

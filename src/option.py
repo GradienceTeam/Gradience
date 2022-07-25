@@ -26,6 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
+from gettext import gettext as _
 from gi.repository import Gtk, Gdk, Adw
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/option.ui')
@@ -52,25 +53,25 @@ class AdwcustomizerOption(Adw.ActionRow):
             self.warning_button.set_visible(False)
         elif adw_gtk3_support == "partial":
             self.warning_button.add_css_class("warning")
-            self.warning_label.set_label("This option is only partially supported by the adw-gtk3 theme.")
+            self.warning_label.set_label(_("This option is only partially supported by the adw-gtk3 theme."))
         elif adw_gtk3_support == "no":
             self.warning_button.add_css_class("error")
-            self.warning_label.set_label("This option is not supported by the adw-gtk3 theme.")
+            self.warning_label.set_label(_("This option is not supported by the adw-gtk3 theme."))
 
         self.explanation_label.set_label(explanation or "")
         if explanation is None:
             self.explanation_button.set_visible(False)
 
     @Gtk.Template.Callback()
-    def on_color_value_changed(self, *_):
+    def on_color_value_changed(self, *_args):
         self.update_value(self.color_value.get_rgba().to_string(), update_from="color_value")
 
     @Gtk.Template.Callback()
-    def on_text_value_changed(self, *_):
+    def on_text_value_changed(self, *_args):
         self.update_value(self.text_value.get_text(), update_from="text_value")
 
     @Gtk.Template.Callback()
-    def on_text_value_toggled(self, *_):
+    def on_text_value_toggled(self, *_args):
         if self.text_value_toggle.get_active():
             self.value_stack.set_visible_child(self.text_value)
         else:
@@ -91,7 +92,7 @@ class AdwcustomizerOption(Adw.ActionRow):
             else:
                 rgba.parse("#00000000")
                 self.color_value.set_rgba(rgba)
-                self.color_value.set_tooltip_text("Not a color, see text value")
+                self.color_value.set_tooltip_text(_("Not a color, see text value"))
 
         if Gtk.Application.get_default().is_ready and kwargs.get("update_from") == "text_value" and new_value != "":
             Gtk.Application.get_default().variables[self.get_name()] = new_value

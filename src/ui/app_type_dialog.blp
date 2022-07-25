@@ -7,14 +7,14 @@ template AdwcustomizerAppTypeDialog : Adw.MessageDialog {
     orientation: vertical;
     Label {
       styles ["heading"]
-      label: "Select app types you want to affect:";
+      label: _("Select app types you want to affect:");
     }
     CheckButton gtk4-app-type {
-      label: "Libadwaita and GTK 4 apps";
+      label: _("Libadwaita and GTK 4 apps");
       active: true;
     }
     CheckButton gtk3-app-type {
-      label: "GTK 3 apps (adw-gtk3 theme required)";
+      label: _("GTK 3 apps (adw-gtk3 theme required)");
     }
   }
 }

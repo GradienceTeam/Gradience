@@ -26,6 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
+from gettext import gettext as _
 from gi.repository import Gtk, Adw
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/app_type_dialog.ui')
@@ -40,7 +41,7 @@ class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
         self.set_heading(heading)
         self.set_body(body)
 
-        self.add_response("cancel", "Cancel")
+        self.add_response("cancel", _("Cancel"))
         self.add_response(ok_response_name, ok_response_label)
         self.set_response_appearance(ok_response_name, ok_response_appearance)
         self.set_default_response("cancel")

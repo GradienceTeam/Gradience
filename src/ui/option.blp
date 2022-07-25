@@ -2,14 +2,12 @@ using Gtk 4.0;
 using Adw 1;
 
 template AdwcustomizerOption : Adw.ActionRow {
-  title: "Option Title";
-
   [suffix]
   MenuButton warning-button {
     valign: center;
     icon-name: "dialog-warning-symbolic";
     popover: warning-popover;
-    tooltip-text: "GTK 3 Support Warning";
+    tooltip-text: _("GTK 3 Support Warning");
   }
 
   [suffix]
@@ -17,7 +15,7 @@ template AdwcustomizerOption : Adw.ActionRow {
     valign: center;
     icon-name: "dialog-question-symbolic";
     popover: explanation-popover;
-    tooltip-text: "Explanation";
+    tooltip-text: _("Explanation");
   }
 
   [suffix]
@@ -42,7 +40,7 @@ template AdwcustomizerOption : Adw.ActionRow {
   ToggleButton text-value-toggle {
     valign: center;
     icon-name: "document-edit-symbolic";
-    tooltip-text: "Toggle Text Value";
+    tooltip-text: _("Toggle Text Value");
 
     toggled => on_text_value_toggled();
   }
@@ -53,7 +51,6 @@ Popover warning-popover {
     max-width-chars: 50;
     wrap: true;
     justify: center;
-    label: "Text goes here";
   }
 }
 
@@ -62,6 +59,5 @@ Popover explanation-popover {
     max-width-chars: 50;
     wrap: true;
     justify: center;
-    label: "Text goes here";
   }
 }

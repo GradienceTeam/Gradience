@@ -50,7 +50,7 @@ class AdwcustomizerPaletteShades(Adw.ActionRow):
             self.color_pickers[str(i)] = picker
             self.add_suffix(picker)
 
-    def on_color_changed(self, *_):
+    def on_color_changed(self, *_args):
         shades = {}
         for picker_key, picker in self.color_pickers.items():
             shades[picker_key] = picker.get_rgba().to_string()
