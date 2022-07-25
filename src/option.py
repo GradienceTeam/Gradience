@@ -46,6 +46,7 @@ class AdwcustomizerOption(Adw.ActionRow):
 
         self.set_name(name)
         self.set_title(title)
+        self.set_subtitle("@" + name)
 
         if adw_gtk3_support == "yes":
             self.warning_button.set_visible(False)
