@@ -47,7 +47,7 @@ from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 
 def to_slug_case(non_slug):
-    return re.sub(r"[^0-9A-Za-z]+", "-", anyascii(non_slug.lower())).strip("-")
+    return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
 class AdwcustomizerApplication(Adw.Application):
     """The main application singleton class."""
