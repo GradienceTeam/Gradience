@@ -331,7 +331,6 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_name='Adwaita Manager',
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name='Adwaita Manager Team',
-                                version=self.version,
                                 developers=['Artyom "ArtyIF" Fomin https://github.com/ArtyIF', 'Verantor https://github.com/Verantor'],
                                 artists=['Allaeddine https://github.com/allaeddine-boulefaat', 'David "Daudix UFO" Lapshin https://linktr.ee/daudix_ufo'],
                                 copyright='© 2022 Adwaita Manager Team',
