@@ -27,7 +27,7 @@ python = import('python')
 
 conf = configuration_data()
 conf.set('PYTHON', python.find_installation('python3').path())
-conf.set('VERSION', meson.project_version())
+conf.set('VERSION', 'git-' + run_command('git', 'rev-parse', '--short', 'HEAD', check: true).stdout().strip())
 conf.set('localedir', join_paths(get_option('prefix'), get_option('localedir')))
 conf.set('pkgdatadir', pkgdatadir)
 
