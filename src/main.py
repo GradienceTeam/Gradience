@@ -32,6 +32,7 @@ import os
 import re
 import traceback
 
+from anyascii import anyascii
 import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
@@ -46,7 +47,7 @@ from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 
 def to_slug_case(non_slug):
-    return re.sub(r"[^0-9A-Za-z\u00C0-\uFFFF]+", "-", non_slug.lower())
+    return re.sub(r"[^0-9A-Za-z]+", "-", anyascii(non_slug.lower())).strip("-")
 
 class AdwcustomizerApplication(Adw.Application):
     """The main application singleton class."""
