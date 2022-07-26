@@ -41,6 +41,7 @@ gi.require_version('Xdp', '1.0')
 gi.require_version('XdpGtk4', '1.0')
 
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
+from .settings_schema import settings_schema
 from .window import AdwcustomizerMainWindow
 from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
@@ -76,11 +77,8 @@ class AdwcustomizerApplication(Adw.Application):
         if not win:
             win = AdwcustomizerMainWindow(application=self)
 
-        settings_schema_text = Gio.resources_lookup_data('/com/github/ArtyIF/AdwCustomizer/settings_schema.json', 0).get_data().decode()
-        self.settings_schema = json.loads(settings_schema_text)
-
         self.pref_variables = {}
-        for group in self.settings_schema["groups"]:
+        for group in settings_schema["groups"]:
             pref_group = Adw.PreferencesGroup()
             pref_group.set_name(group["name"])
             pref_group.set_title(group["title"])
@@ -101,7 +99,7 @@ class AdwcustomizerApplication(Adw.Application):
         palette_pref_group.set_name("palette_colors")
         palette_pref_group.set_title(_("Palette Colors"))
         palette_pref_group.set_description(_("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."))
-        for color in self.settings_schema["palette"]:
+        for color in settings_schema["palette"]:
             palette_shades = AdwcustomizerPaletteShades(color["prefix"],
                                                         color["title"],
                                                         color["n_shades"])
@@ -110,7 +108,7 @@ class AdwcustomizerApplication(Adw.Application):
         win.content.add(palette_pref_group)
 
         self.custom_css_group = AdwcustomizerCustomCSSGroup()
-        for app_type in self.settings_schema["custom_css_app_types"]:
+        for app_type in settings_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
         self.custom_css_group.load_custom_css(self.custom_css)
         win.content.add(self.custom_css_group)
@@ -196,7 +194,7 @@ class AdwcustomizerApplication(Adw.Application):
         if "custom_css" in preset:
             self.custom_css = preset["custom_css"]
         else:
-            for app_type in self.settings_schema["custom_css_app_types"]:
+            for app_type in settings_schema["custom_css_app_types"]:
                 self.custom_css[app_type] = ""
         for key in self.variables.keys():
             if key in self.pref_variables:

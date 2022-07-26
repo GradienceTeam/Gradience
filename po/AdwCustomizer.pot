@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-25 17:32+0300\n"
+"POT-Creation-Date: 2022-07-26 16:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/com.github.ArtyIF.AdwCustomizer.desktop.in:3 src/ui/window.blp:5
-#: src/main.py:333
+#: src/main.py:331
 msgid "Adwaita Manager"
 msgstr ""
 
 #: data/com.github.ArtyIF.AdwCustomizer.appdata.xml.in:7
-msgid "No description"
+msgid "Change the look of Adwaita, with ease"
 msgstr ""
 
 #: src/ui/app_type_dialog.blp:10
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Toggle Text Value"
 msgstr ""
 
-#: src/ui/window.blp:13 src/main.py:253
+#: src/ui/window.blp:13 src/main.py:251
 msgid "Apply"
 msgstr ""
 
@@ -98,72 +98,72 @@ msgstr ""
 msgid "About Adwaita Manager"
 msgstr ""
 
-#: src/app_type_dialog.py:44 src/main.py:272
+#: src/app_type_dialog.py:44 src/main.py:270
 msgid "Cancel"
 msgstr ""
 
-#: src/main.py:102
+#: src/main.py:100
 msgid "Palette Colors"
 msgstr ""
 
-#: src/main.py:103
+#: src/main.py:101
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
 "Interface Guidelines</a>."
 msgstr ""
 
-#: src/main.py:145
+#: src/main.py:143
 #, python-brace-format
 msgid "Failed to load preset: {0}"
 msgstr ""
 
-#: src/main.py:161
+#: src/main.py:159
 msgid "Open in File Manager"
 msgstr ""
 
-#: src/main.py:165
+#: src/main.py:163
 msgid "User Defined Presets"
 msgstr ""
 
-#: src/main.py:251
+#: src/main.py:249
 msgid "Apply this color scheme?"
 msgstr ""
 
-#: src/main.py:252
+#: src/main.py:250
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:259
+#: src/main.py:257
 msgid "Reset applied color scheme?"
 msgstr ""
 
-#: src/main.py:260
+#: src/main.py:258
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 
-#: src/main.py:261
+#: src/main.py:259
 msgid "Reset"
 msgstr ""
 
-#: src/main.py:268
+#: src/main.py:266
 msgid "Save preset as..."
 msgstr ""
 
-#: src/main.py:269 src/main.py:282 src/main.py:285
+#: src/main.py:267 src/main.py:280 src/main.py:283
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:273
+#: src/main.py:271
 msgid "Save"
 msgstr ""
 
-#: src/main.py:335
+#: src/main.py:333
 msgid "Adwaita Manager Team"
 msgstr ""
 
@@ -177,4 +177,243 @@ msgstr ""
 
 #: src/option.py:95
 msgid "Not a color, see text value"
+msgstr ""
+
+#: src/settings_schema.py:7
+msgid "Accent Colors"
+msgstr ""
+
+#: src/settings_schema.py:8
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate that a widget is important, interactive, or "
+"currently active."
+msgstr ""
+
+#: src/settings_schema.py:12 src/settings_schema.py:35
+#: src/settings_schema.py:58 src/settings_schema.py:81
+#: src/settings_schema.py:104
+msgid "Standalone Color"
+msgstr ""
+
+#: src/settings_schema.py:13 src/settings_schema.py:36
+#: src/settings_schema.py:59 src/settings_schema.py:82
+#: src/settings_schema.py:105
+msgid ""
+"The standalone colors are similar to the background ones, but provide better "
+"contrast when used as foreground color on top of a neutral background - for "
+"example, colorful text in a window."
+msgstr ""
+
+#: src/settings_schema.py:18 src/settings_schema.py:41
+#: src/settings_schema.py:64 src/settings_schema.py:87
+#: src/settings_schema.py:110 src/settings_schema.py:127
+#: src/settings_schema.py:144 src/settings_schema.py:161
+#: src/settings_schema.py:196 src/settings_schema.py:219
+#: src/settings_schema.py:236
+msgid "Background Color"
+msgstr ""
+
+#: src/settings_schema.py:23 src/settings_schema.py:46
+#: src/settings_schema.py:69 src/settings_schema.py:92
+#: src/settings_schema.py:115 src/settings_schema.py:132
+#: src/settings_schema.py:149 src/settings_schema.py:166
+#: src/settings_schema.py:201 src/settings_schema.py:224
+#: src/settings_schema.py:241
+msgid "Foreground Color"
+msgstr ""
+
+#: src/settings_schema.py:30
+msgid "Destructive Colors"
+msgstr ""
+
+#: src/settings_schema.py:31
+msgid ""
+"These colors are used for buttons to indicate a dangerous action, such as "
+"deleting a file."
+msgstr ""
+
+#: src/settings_schema.py:53
+msgid "Success Colors"
+msgstr ""
+
+#: src/settings_schema.py:54
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a success or a high level."
+msgstr ""
+
+#: src/settings_schema.py:76
+msgid "Warning Colors"
+msgstr ""
+
+#: src/settings_schema.py:77
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a warning or a low level."
+msgstr ""
+
+#: src/settings_schema.py:99
+msgid "Error Colors"
+msgstr ""
+
+#: src/settings_schema.py:100
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate a failure."
+msgstr ""
+
+#: src/settings_schema.py:122
+msgid "Window Colors"
+msgstr ""
+
+#: src/settings_schema.py:123
+msgid "These colors are used primarily for windows."
+msgstr ""
+
+#: src/settings_schema.py:139
+msgid "View Colors"
+msgstr ""
+
+#: src/settings_schema.py:140
+msgid ""
+"These colors are used in a variety of widgets, such as text views and "
+"entries."
+msgstr ""
+
+#: src/settings_schema.py:156
+msgid "Header Bar Colors"
+msgstr ""
+
+#: src/settings_schema.py:157
+msgid ""
+"These colors are used for header bars, as well as widgets that are meant to "
+"be visually attached to it, such as search bars or tab bars."
+msgstr ""
+
+#: src/settings_schema.py:171
+msgid "Border Color"
+msgstr ""
+
+#: src/settings_schema.py:172
+msgid ""
+"The border color has the same default value as a foreground color, but "
+"doesn't change along with it. This can be useful if a light window has a "
+"dark header bar with light text; in this case it may be desirable to keep "
+"the border dark. This variable is only used for vertical borders - for "
+"example, separators between the two header bars in a split header bar layout."
+msgstr ""
+
+#: src/settings_schema.py:177
+msgid "Backdrop Color"
+msgstr ""
+
+#: src/settings_schema.py:178
+msgid ""
+"The backdrop color is used instead of the background color when the window "
+"is not focused. By default it's an alias of the window's background color "
+"and changes together with it. When changing this variable, make sure to set "
+"it to a value matching your header bar background color."
+msgstr ""
+
+#: src/settings_schema.py:183 src/settings_schema.py:206
+#: src/settings_schema.py:253
+msgid "Shade Color"
+msgstr ""
+
+#: src/settings_schema.py:184
+msgid ""
+"The shade color is used to provide a dark border for header bars and similar "
+"widgets that separates them from the main window."
+msgstr ""
+
+#: src/settings_schema.py:191
+msgid "Card Colors"
+msgstr ""
+
+#: src/settings_schema.py:192
+msgid "These colors are used for cards and boxed lists."
+msgstr ""
+
+#: src/settings_schema.py:207
+msgid ""
+"The shade color is used for shadows that are used by cards to separate "
+"themselves from the window background, as well as for row dividers in the "
+"cards."
+msgstr ""
+
+#: src/settings_schema.py:214
+msgid "Dialog Colors"
+msgstr ""
+
+#: src/settings_schema.py:215
+msgid "These colors are used for message dialogs."
+msgstr ""
+
+#: src/settings_schema.py:231
+msgid "Popover Colors"
+msgstr ""
+
+#: src/settings_schema.py:232
+msgid "These colors are used for popovers."
+msgstr ""
+
+#: src/settings_schema.py:248
+msgid "Miscalleneous Colors"
+msgstr ""
+
+#: src/settings_schema.py:249
+msgid "Colors that don't fit in any particular group."
+msgstr ""
+
+#: src/settings_schema.py:254
+msgid ""
+"The shade color is used by inline tab bars, as well as the transitions in "
+"leaflets and flaps, and info bar borders."
+msgstr ""
+
+#: src/settings_schema.py:259
+msgid "Scrollbar Outline Color"
+msgstr ""
+
+#: src/settings_schema.py:260
+msgid ""
+"The scrollbar outline color is used by scrollbars to ensure that overlay "
+"scrollbars are visible regardless of the content color."
+msgstr ""
+
+#: src/settings_schema.py:269
+msgid "Blue"
+msgstr ""
+
+#: src/settings_schema.py:274
+msgid "Green"
+msgstr ""
+
+#: src/settings_schema.py:279
+msgid "Yellow"
+msgstr ""
+
+#: src/settings_schema.py:284
+msgid "Orange"
+msgstr ""
+
+#: src/settings_schema.py:289
+msgid "Red"
+msgstr ""
+
+#: src/settings_schema.py:294
+msgid "Purple"
+msgstr ""
+
+#: src/settings_schema.py:299
+msgid "Brown"
+msgstr ""
+
+#: src/settings_schema.py:304
+msgid "Light"
+msgstr ""
+
+#: src/settings_schema.py:309
+msgid "Dark"
 msgstr ""

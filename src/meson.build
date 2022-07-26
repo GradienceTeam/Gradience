@@ -41,6 +41,7 @@ configure_file(
 
 adwcustomizer_sources = [
   '__init__.py',
+  'settings_schema.py',
   'main.py',
   'error.py',
   'palette_shades.py',

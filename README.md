@@ -16,14 +16,12 @@ Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita application
 </details>
 
 ## Building and Installing
-1. Open GNOME Builder
-2. Press the "Clone Repository" button in the bottom of window
-3. Paste this in "Repository URL" `https://github.com/ArtyIF/AdwCustomizer.git`
-4. Press the "Build" button (hammer in the header bar)
-5. Press on the status panel and click "Export Bundle" to export the app as a Flatpak bundle
-6. Install the bundle with `flatpak install <path to bundle>` or through a GUI application (like GNOME Software and KDE Discover)
+1. Open Terminal
+2. Run `git clone https://github.com/ArtyIF/AdwCustomizer.git && cd AdwCustomizer`
+3. Add the `gnome-nightly` Flatpak repository `flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo`
+4. Run `flatpak-builder --install --user --force-clean repo/ com.github.ArtyIF.AdwCustomizer.json`
 
-> **WARNING**: The project currently uses the `master` version of `org.gnome.Platform` and depends on some `Adw` classes that are not yet available in the latest stable version of `org.gnome.Platform` (42 at the time of writing). Flathub only ships stable versions of packages, so make sure you have a Flatpak repository that ships the needed dependency versions before installing.
+Alternatively, open the project with GNOME Builder, then build and run it.
 
 ## Setup Tutorial
 
@@ -56,6 +54,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] View parsing errors
 - [x] Customize palette colors
 - [x] Add custom CSS code
+- [x] Localization support
 - [ ] Normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
 - [ ] Make the code more secure
 - [ ] Release on Flathub
@@ -64,9 +63,15 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [ ] Customize GDM
 - [ ] Customize KvLibadwaita
 - [ ] Customize Firefox GNOME theme
-- [ ] Localization
 
-## Donations
+## Contribute
+### Code
+Fork this repository, then create a push request when you're done adding features or fixing bugs.
+
+### Localize
+The localization project is available on [Transifex](https://www.transifex.com/artyif/adwcustomizer/). 
+
+### Donate
 I live in Russia (I don't support the "military operation" currently going on), so if anyone wants to help me, the only way right now is cryptocurrency:
 - Bitcoin: `1FrvFbfqWEZepmuH2Bayo8tSvHEr6NnANJ`
 - Ethereum/ERC20: `0x37e03C589F28831bD78C4B41Bf866e8ddB2bed3E`
