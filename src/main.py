@@ -144,9 +144,9 @@ class AdwcustomizerApplication(Adw.Application):
                     self.custom_presets[file_name.replace('.json', '')] = preset['name']
                 except Exception as ex:
                     self.global_errors.append({
-                        "error": _("Failed to load preset: {0}").format(file_name),
-                        "element": str(ex),
-                        "line": traceback.format_exception(ex)[2].strip()
+                        "error": _("Failed to load preset"),
+                        "element": file_name,
+                        "line": traceback.format_exc().strip()
                     })
                     self.props.active_window.update_errors(self.global_errors)
 
