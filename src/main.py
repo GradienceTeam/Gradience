@@ -134,7 +134,7 @@ class AdwcustomizerApplication(Adw.Application):
         for file_name in os.listdir(os.environ['XDG_CONFIG_HOME'] + "/presets/"):
             if file_name.endswith(".json"):
                 try:
-                    with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + file_name, 'r') as file:
+                    with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + file_name, 'r', encoding="utf-8") as file:
                         preset_text = file.read()
                     preset = json.loads(preset_text)
                     if preset.get('variables') is None:
@@ -183,7 +183,7 @@ class AdwcustomizerApplication(Adw.Application):
 
     def load_preset_from_file(self, preset_path):
         preset_text = ""
-        with open(preset_path, 'r') as file:
+        with open(preset_path, 'r', encoding="utf-8") as file:
             preset_text = file.read()
         self.load_preset_variables(json.loads(preset_text))
 
@@ -213,10 +213,10 @@ class AdwcustomizerApplication(Adw.Application):
     def generate_gtk_css(self, app_type):
         final_css = ""
         for key in self.variables.keys():
-            final_css += "@define-color {0} {1};\n".format(key, self.variables[key])
+            final_css += f"@define-color {key} {self.variables[key]};\n"
         for prefix_key in self.palette.keys():
             for key in self.palette[prefix_key].keys():
-                final_css += "@define-color {0} {1};\n".format(prefix_key + key, self.palette[prefix_key][key])
+                final_css += f"@define-color {prefix_key + key} {self.palette[prefix_key][key]};\n"
         final_css += self.custom_css.get(app_type, "")
         return final_css
 
@@ -295,7 +295,7 @@ class AdwcustomizerApplication(Adw.Application):
 
     def save_preset(self, _unused, response, entry):
         if response == "save":
-            with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + to_slug_case(entry.get_text()) + ".json", 'w') as file:
+            with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + to_slug_case(entry.get_text()) + ".json", 'w', encoding="utf-8") as file:
                 object_to_write = {
                     "name": entry.get_text(),
                     "variables": self.variables,
@@ -308,11 +308,11 @@ class AdwcustomizerApplication(Adw.Application):
         if response == "apply":
             if widget.get_app_types()["gtk4"]:
                 gtk4_css = self.generate_gtk_css("gtk4")
-                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w') as file:
+                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w', encoding="utf-8") as file:
                     file.write(gtk4_css)
             if widget.get_app_types()["gtk3"]:
                 gtk3_css = self.generate_gtk_css("gtk3")
-                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w') as file:
+                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w', encoding="utf-8") as file:
                     file.write(gtk3_css)
 
     def reset_color_scheme(self, widget, response):
@@ -375,4 +375,3 @@ def main(version):
     """The application's entry point."""
     app = AdwcustomizerApplication(version)
     return app.run(sys.argv)
-
