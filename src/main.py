@@ -34,13 +34,10 @@ import traceback
 from gettext import gettext as _
 
 from anyascii import anyascii
-import gi
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
-gi.require_version('Xdp', '1.0')
-gi.require_version('XdpGtk4', '1.0')
 
+import gi
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
+
 from .settings_schema import settings_schema
 from .window import AdwcustomizerMainWindow
 from .palette_shades import AdwcustomizerPaletteShades
@@ -59,25 +56,34 @@ class AdwcustomizerApplication(Adw.Application):
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
         self.version = version
 
+        self.portal = Xdp.Portal()
+
+        self.variables = {}
+        self.pref_variables = {}
+
+        self.palette = {}
+        self.pref_palette_shades = {}
+
+        self.custom_css = {}
+        self.custom_css_group = None
+
+        self.custom_presets = {}
+        self.global_errors = []
+        self.current_css_provider = None
+
+        self.is_ready = False
+
     def do_activate(self):
         """Called when the application is activated.
 
         We raise the application's main window, creating it if
         necessary.
         """
-        self.portal = Xdp.Portal()
-        self.variables = {}
-        self.palette = {}
-        self.custom_css = {}
-        self.global_errors = []
-        self.current_css_provider = None
-        self.is_ready = False
 
         win = self.props.active_window
         if not win:
             win = AdwcustomizerMainWindow(application=self)
 
-        self.pref_variables = {}
         for group in settings_schema["groups"]:
             pref_group = Adw.PreferencesGroup()
             pref_group.set_name(group["name"])
@@ -94,7 +100,6 @@ class AdwcustomizerApplication(Adw.Application):
 
             win.content.add(pref_group)
 
-        self.pref_palette_shades = {}
         palette_pref_group = Adw.PreferencesGroup()
         palette_pref_group.set_name("palette_colors")
         palette_pref_group.set_title(_("Palette Colors"))
@@ -126,7 +131,6 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
-        self.custom_presets = {}
         for file_name in os.listdir(os.environ['XDG_CONFIG_HOME'] + "/presets/"):
             if file_name.endswith(".json"):
                 try:
@@ -371,3 +375,4 @@ def main(version):
     """The application's entry point."""
     app = AdwcustomizerApplication(version)
     return app.run(sys.argv)
+

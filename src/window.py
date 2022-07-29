@@ -39,9 +39,6 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
     errors_button = Gtk.Template.Child("errors-button")
     errors_list = Gtk.Template.Child("errors-list")
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
     def set_current_preset_name(self, new_name):
         self.presets_dropdown.set_label(new_name)
 

@@ -3,6 +3,10 @@
 # Adwaita Manager
 Change the look of Adwaita, with ease
 
+![Code quality score](https://api.codiga.io/project/34247/score/svg)
+
+[This project on Codita](https://app.codiga.io/hub/project/34247/AdwCustomizer)
+
 ![Screenshot of interface with Adwaita light theme](pictures/main_screenshot.png)
 
 Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
