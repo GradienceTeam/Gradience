@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 16:29+0300\n"
+"POT-Creation-Date: 2022-07-29 16:03+0300\n"
 "PO-Revision-Date: 2022-07-25 14:48+0000\n"
 "Last-Translator: Artyom Fomin, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/artyif/teams/147445/ru/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: data/com.github.ArtyIF.AdwCustomizer.desktop.in:3 src/ui/window.blp:5
-#: src/main.py:331
+#: src/main.py:335
 msgid "Adwaita Manager"
 msgstr "Adwaita Manager"
 
@@ -79,7 +79,7 @@ msgstr "Объяснение"
 msgid "Toggle Text Value"
 msgstr "Изменить текстовое значение"
 
-#: src/ui/window.blp:13 src/main.py:251
+#: src/ui/window.blp:13 src/main.py:255
 msgid "Apply"
 msgstr "Применить"
 
@@ -107,15 +107,15 @@ msgstr "Сбросить применённую цветовую схему"
 msgid "About Adwaita Manager"
 msgstr "Об Adwaita Manager"
 
-#: src/app_type_dialog.py:44 src/main.py:270
+#: src/app_type_dialog.py:44 src/main.py:274
 msgid "Cancel"
 msgstr "Отменить"
 
-#: src/main.py:100
+#: src/main.py:105
 msgid "Palette Colors"
 msgstr "Цвета палитры"
 
-#: src/main.py:101
+#: src/main.py:106
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a"
 " href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human"
@@ -126,24 +126,23 @@ msgstr ""
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">Human "
 "Interface Guidelines GNOME</a>."
 
-#: src/main.py:143
-#, python-brace-format
-msgid "Failed to load preset: {0}"
-msgstr "Не удалось загрузить настройки: {0}"
+#: src/main.py:147
+msgid "Failed to load preset"
+msgstr "Не удалось загрузить настройки"
 
-#: src/main.py:159
+#: src/main.py:163
 msgid "Open in File Manager"
 msgstr "Открыть в файловом менеджере"
 
-#: src/main.py:163
+#: src/main.py:167
 msgid "User Defined Presets"
 msgstr "Настройки пользователя"
 
-#: src/main.py:249
+#: src/main.py:253
 msgid "Apply this color scheme?"
 msgstr "Применить эту цветовую схему?"
 
-#: src/main.py:250
+#: src/main.py:254
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -151,23 +150,23 @@ msgstr ""
 "Внимание: любые добавленные пользователем файлы CSS для выбранных типов "
 "приложений будут безвозвратно перезаписаны!"
 
-#: src/main.py:257
+#: src/main.py:261
 msgid "Reset applied color scheme?"
 msgstr "Сбросить применённую цветовую схему?"
 
-#: src/main.py:258
+#: src/main.py:262
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Убедитесь, что Вы сохранили текущие настройки."
 
-#: src/main.py:259
+#: src/main.py:263
 msgid "Reset"
 msgstr "Сбросить"
 
-#: src/main.py:266
+#: src/main.py:270
 msgid "Save preset as..."
 msgstr "Сохранить настройки как..."
 
-#: src/main.py:267 src/main.py:280 src/main.py:283
+#: src/main.py:271 src/main.py:284 src/main.py:287
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -176,13 +175,17 @@ msgstr ""
 "Настройки сохранятся в <tt>{0}</tt>. Если там уже есть настройки, то они "
 "будут перезаписаны!"
 
-#: src/main.py:271
+#: src/main.py:275
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/main.py:333
+#: src/main.py:337
 msgid "Adwaita Manager Team"
 msgstr "Команда Adwaita Manager"
+
+#: src/main.py:340
+msgid "translator-credits"
+msgstr "Артём \"ArtyIF\" Фомин"
 
 #: src/option.py:56
 msgid "This option is only partially supported by the adw-gtk3 theme."
