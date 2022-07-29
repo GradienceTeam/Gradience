@@ -10,5 +10,5 @@ regex="$po_dir/([a-zA-Z_]*).po"
 po_files=$(find "$po_dir" -type f -name "*.po")
 if [[ $po_files =~ $regex ]]
 then
-  echo ${BASH_REMATCH[1]} > "$po_dir"/LINGUAS
+  echo "${BASH_REMATCH[1]}" > "$po_dir"/LINGUAS
 fi
