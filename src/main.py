@@ -335,7 +335,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 application_icon='com.github.ArtyIF.AdwCustomizer',
                                 developer_name=_("Adwaita Manager Team"),
                                 developers=['Artyom "ArtyIF" Fomin https://github.com/ArtyIF', 'Verantor https://github.com/Verantor'],
-                                artists=['Allaeddine https://github.com/allaeddine-boulefaat', 'David "Daudix UFO" Lapshin https://linktr.ee/daudix_ufo'],
+                                artists=['David "Daudix UFO" Lapshin https://linktr.ee/daudix_ufo'],
                                 translator_credits=_("translator-credits"),
                                 copyright='© 2022 Adwaita Manager Team',
                                 license_type=Gtk.License.MIT_X11)
