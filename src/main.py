@@ -31,7 +31,6 @@ import json
 import os
 import re
 import traceback
-from gettext import gettext as _
 
 from anyascii import anyascii
 

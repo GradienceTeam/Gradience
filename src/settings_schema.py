@@ -1,5 +1,3 @@
-from gettext import gettext as _
-
 settings_schema = {
     "groups": [
         {

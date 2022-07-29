@@ -26,7 +26,6 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gettext import gettext as _
 from gi.repository import Gtk, Gdk, Adw
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/option.ui')
