@@ -2,24 +2,26 @@
 # Copyright (C) 2022 Adwaita Manager Team
 # This file is distributed under the MIT/X11 license.
 # Adwaita Manager Team, 2022.
-# 
+#
 # Translators:
 # Artyom Fomin, 2022
-# 
-#, fuzzy
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-30 07:17+0300\n"
-"PO-Revision-Date: 2022-07-25 14:48+0000\n"
+"PO-Revision-Date: 2022-07-30 15:44+0300\n"
 "Last-Translator: Artyom Fomin, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/artyif/teams/147445/ru/)\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/com.github.ArtyIF.AdwCustomizer.desktop.in:3 src/ui/window.blp:5
 #: src/main.py:334
@@ -48,15 +50,15 @@ msgstr "Пользовательский CSS"
 
 #: src/ui/custom_css_group.blp:6
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made"
-" so that applications could hardcode values like paddings and margins (like "
+"Changing this may break some programs. Keep in mind that Libadwaita was made "
+"so that applications could hardcode values like paddings and margins (like "
 "in case of the Custom CSS code field itself, which uses 12px padding). Only "
 "GTK 4 CSS will be previewed here."
 msgstr ""
 "Изменение этого поля может сломать некоторые программы. Помните, что "
-"Libadwaita была создана, чтобы разработчики могли хардкодить такие вещи, как"
-" отступы элементов (например, в случае самого поля с кодом пользовательского"
-" CSS, которое использует отступ в 12 пикселей). Тут будет предпросмотр CSS "
+"Libadwaita была создана, чтобы разработчики могли хардкодить такие вещи, как "
+"отступы элементов (например, в случае самого поля с кодом пользовательского "
+"CSS, которое использует отступ в 12 пикселей). Тут будет предпросмотр CSS "
 "только для GTK 4."
 
 #: src/ui/custom_css_group.blp:29
@@ -85,11 +87,11 @@ msgstr "Применить"
 
 #: src/ui/window.blp:21
 msgid "Save Preset"
-msgstr "Сохранить настройки"
+msgstr "Сохранить предустановку"
 
 #: src/ui/window.blp:48
 msgid "Built-in Presets"
-msgstr "Встроенные настройки"
+msgstr "Встроенные предустановки"
 
 #: src/ui/window.blp:63
 msgid "Reset Applied Color Scheme"
@@ -109,18 +111,17 @@ msgstr "Цвета палитры"
 
 #: src/main.py:105
 msgid ""
-"Named palette colors used by some applications. Default colors follow the <a"
-" href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human"
-" Interface Guidelines</a>."
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
 msgstr ""
 "Цвета палитры с названиями, которые используются некоторыми приложениями. "
-"Цвета по умолчанию следуют <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">Human "
-"Interface Guidelines GNOME</a>."
+"Цвета по умолчанию следуют <a href=\"https://developer.gnome.org/hig/"
+"reference/palette.html\">Human Interface Guidelines GNOME</a>."
 
 #: src/main.py:146
 msgid "Failed to load preset"
-msgstr "Не удалось загрузить настройки"
+msgstr "Не удалось загрузить предустановку"
 
 #: src/main.py:162
 msgid "Open in File Manager"
@@ -128,7 +129,7 @@ msgstr "Открыть в файловом менеджере"
 
 #: src/main.py:166
 msgid "User Defined Presets"
-msgstr "Настройки пользователя"
+msgstr "Пользовательские предустановки"
 
 #: src/main.py:252
 msgid "Apply this color scheme?"
@@ -148,7 +149,7 @@ msgstr "Сбросить применённую цветовую схему?"
 
 #: src/main.py:261
 msgid "Make sure you have the current settings saved as a preset."
-msgstr "Убедитесь, что Вы сохранили текущие настройки."
+msgstr "Убедитесь, что Вы сохранили текущие настройки как предустановку."
 
 #: src/main.py:262
 msgid "Reset"
@@ -156,7 +157,7 @@ msgstr "Сбросить"
 
 #: src/main.py:269
 msgid "Save preset as..."
-msgstr "Сохранить настройки как..."
+msgstr "Сохранить предустановку как..."
 
 #: src/main.py:270 src/main.py:283 src/main.py:286
 #, python-brace-format
@@ -164,7 +165,7 @@ msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
-"Настройки сохранятся в <tt>{0}</tt>. Если там уже есть настройки, то они "
+"Предустановки сохранятся в <tt>{0}</tt>. Если там уже есть предустановки, то они "
 "будут перезаписаны!"
 
 #: src/main.py:274
@@ -200,8 +201,8 @@ msgstr "Акцентные цвета"
 #: src/settings_schema.py:6
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
-"labels, and entries, to indicate that a widget is important, interactive, or"
-" currently active."
+"labels, and entries, to indicate that a widget is important, interactive, or "
+"currently active."
 msgstr ""
 "Эти цвета используются во многих различных виджетах, таких, как кнопки и "
 "поля для ввода, чтобы показать, что виджет важный, им можно пользоваться, "
@@ -217,9 +218,9 @@ msgstr "Отдельный цвет"
 #: src/settings_schema.py:57 src/settings_schema.py:80
 #: src/settings_schema.py:103
 msgid ""
-"The standalone colors are similar to the background ones, but provide better"
-" contrast when used as foreground color on top of a neutral background - for"
-" example, colorful text in a window."
+"The standalone colors are similar to the background ones, but provide better "
+"contrast when used as foreground color on top of a neutral background - for "
+"example, colorful text in a window."
 msgstr ""
 "Отдельные цвета похожи на фоновые, но имеют больше контраста при "
 "использовании в качестве цвета переднего плана на нейтральном фоне - "
@@ -252,8 +253,8 @@ msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
 msgstr ""
-"Эти цвета используются в кнопках, чтобы показать опасное действие, например,"
-" удаление файла."
+"Эти цвета используются в кнопках, чтобы показать опасное действие, например, "
+"удаление файла."
 
 #: src/settings_schema.py:51
 msgid "Success Colors"
@@ -264,8 +265,8 @@ msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
 msgstr ""
-"Эти цвета используются во многих различных виджетах, таких, как кнопки, поля"
-" для ввода и полоски уровня, чтобы показать успех или высокий уровень."
+"Эти цвета используются во многих различных виджетах, таких, как кнопки, поля "
+"для ввода и полоски уровня, чтобы показать успех или высокий уровень."
 
 #: src/settings_schema.py:74
 msgid "Warning Colors"
@@ -276,9 +277,8 @@ msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
 msgstr ""
-"Эти цвета используются во многих различных виджетах, таких, как кнопки, поля"
-" для ввода и полоски уровня, чтобы показать предупреждение или низкий "
-"уровень."
+"Эти цвета используются во многих различных виджетах, таких, как кнопки, поля "
+"для ввода и полоски уровня, чтобы показать предупреждение или низкий уровень."
 
 #: src/settings_schema.py:97
 msgid "Error Colors"
@@ -321,8 +321,8 @@ msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
 msgstr ""
-"Эти цвета используются для заголовков окон, а также виджетов, которые должны"
-" быть с ними присоединены, например, панели поиска или панели вкладок."
+"Эти цвета используются для заголовков окон, а также виджетов, которые должны "
+"быть с ними присоединены, например, панели поиска или панели вкладок."
 
 #: src/settings_schema.py:169
 msgid "Border Color"
@@ -334,8 +334,7 @@ msgid ""
 "doesn't change along with it. This can be useful if a light window has a "
 "dark header bar with light text; in this case it may be desirable to keep "
 "the border dark. This variable is only used for vertical borders - for "
-"example, separators between the two header bars in a split header bar "
-"layout."
+"example, separators between the two header bars in a split header bar layout."
 msgstr ""
 "Цвет границы по умолчанию равен цвету переднего плана, но при этом с ним не "
 "меняется. Это полезно, если у светлого окна тёмный заголовок со светлым "
@@ -355,10 +354,10 @@ msgid ""
 "and changes together with it. When changing this variable, make sure to set "
 "it to a value matching your header bar background color."
 msgstr ""
-"Цвет фона без фокуса используется вместо обычного фонового цвета, когда окно"
-" без фокуса. Значение по умолчанию является ссылкой на фоновый цвет окна и "
-"меняется вместе с ним. При изменении этой переменной убедитесь, что значение"
-" близко к обычному фоновому цвету заголовка."
+"Цвет фона без фокуса используется вместо обычного фонового цвета, когда окно "
+"без фокуса. Значение по умолчанию является ссылкой на фоновый цвет окна и "
+"меняется вместе с ним. При изменении этой переменной убедитесь, что значение "
+"близко к обычному фоновому цвету заголовка."
 
 #: src/settings_schema.py:181 src/settings_schema.py:204
 #: src/settings_schema.py:251
@@ -367,8 +366,8 @@ msgstr "Цвет тени"
 
 #: src/settings_schema.py:182
 msgid ""
-"The shade color is used to provide a dark border for header bars and similar"
-" widgets that separates them from the main window."
+"The shade color is used to provide a dark border for header bars and similar "
+"widgets that separates them from the main window."
 msgstr ""
 "Цвет тени используется для тёмных границ для заголовков и похожих виджетов, "
 "которые отделяют их от основного окна."
@@ -387,8 +386,8 @@ msgid ""
 "themselves from the window background, as well as for row dividers in the "
 "cards."
 msgstr ""
-"Цвет тени используются для теней, которыми карточки отделяются от фона окна,"
-" а также для разделителей рядов в списках."
+"Цвет тени используются для теней, которыми карточки отделяются от фона окна, "
+"а также для разделителей рядов в списках."
 
 #: src/settings_schema.py:212
 msgid "Dialog Colors"
@@ -419,8 +418,8 @@ msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
 msgstr ""
-"Цвет тени используется во встроенных панелях вкладок, затемнениях в лифлетах"
-" и флапах (выскользающих сбоку меню), а также границах у панелей информации."
+"Цвет тени используется во встроенных панелях вкладок, затемнениях в лифлетах "
+"и флапах (выскользающих сбоку меню), а также границах у панелей информации."
 
 #: src/settings_schema.py:257
 msgid "Scrollbar Outline Color"
