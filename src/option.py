@@ -77,10 +77,13 @@ class AdwcustomizerOption(Adw.ActionRow):
             self.value_stack.set_visible_child(self.color_value)
 
     def update_value(self, new_value, **kwargs):
+        rgba = Gdk.RGBA()
         if kwargs.get("update_from") != "text_value":
-            self.text_value.set_text(new_value)
+            if rgba.parse(new_value):
+                self.text_value.set_text(rgba.to_string())
+            else:
+                self.text_value.set_text(new_value)
         if kwargs.get("update_from") != "color_value":
-            rgba = Gdk.RGBA()
             if rgba.parse(new_value):
                 self.color_value.set_rgba(rgba)
                 self.color_value.set_tooltip_text(new_value)
@@ -89,7 +92,7 @@ class AdwcustomizerOption(Adw.ActionRow):
             elif kwargs.get("update_from") != "text_value":
                 self.text_value_toggle.set_active(True)
             else:
-                rgba.parse("#00000000")
+                rgba.parse("rgba(0,0,0,0)")
                 self.color_value.set_rgba(rgba)
                 self.color_value.set_tooltip_text(_("Not a color, see text value"))
 

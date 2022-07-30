@@ -62,7 +62,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] Customize palette colors
 - [x] Add custom CSS code
 - [x] Localization support
-- [ ] Normalize color variables to hexadecimal or `rgba(r, g, b, a)` format
+- [x] Normalize color variables
 - [ ] Make the code more secure
 - [ ] Release on Flathub
 - [ ] Full theme preview
