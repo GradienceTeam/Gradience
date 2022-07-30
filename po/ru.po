@@ -5,14 +5,13 @@
 #
 # Translators:
 # Artyom Fomin, 2022
-# 
-#, fuzzy
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-30 07:17+0300\n"
-"PO-Revision-Date: 2022-07-30 15:44+0300\n"
+"PO-Revision-Date: 2022-07-30 16:23+0300\n"
 "Last-Translator: Artyom Fomin, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/artyif/teams/147445/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
 #: data/com.github.ArtyIF.AdwCustomizer.desktop.in:3 src/ui/window.blp:5
 #: src/main.py:334
 msgid "Adwaita Manager"
@@ -47,16 +47,15 @@ msgstr "Пользовательский CSS"
 
 #: src/ui/custom_css_group.blp:6
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins (like "
-"in case of the Custom CSS code field itself, which uses 12px padding). Only "
-"GTK 4 CSS will be previewed here."
+"Changing this may break some programs. Keep in mind that Libadwaita was made so "
+"that applications could hardcode values like paddings and margins (like in case "
+"of the Custom CSS code field itself, which uses 12px padding). Only GTK 4 CSS "
+"will be previewed here."
 msgstr ""
-"Изменение этого поля может сломать некоторые программы. Помните, что "
-"Libadwaita была создана, чтобы разработчики могли хардкодить такие вещи, как "
-"отступы элементов (например, в случае самого поля с кодом пользовательского "
-"CSS, которое использует отступ в 12 пикселей). Тут будет предпросмотр CSS "
-"только для GTK 4."
+"Изменение этого поля может сломать некоторые программы. Помните, что Libadwaita "
+"была создана, чтобы разработчики могли хардкодить такие вещи, как отступы "
+"элементов (например, в случае самого поля с кодом пользовательского CSS, которое "
+"использует отступ в 12 пикселей). Тут будет предпросмотр CSS только для GTK 4."
 
 #: src/ui/custom_css_group.blp:29
 msgid "GTK 4"
@@ -112,9 +111,9 @@ msgid ""
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
 "Interface Guidelines</a>."
 msgstr ""
-"Цвета палитры с названиями, которые используются некоторыми приложениями. "
-"Цвета по умолчанию следуют <a href=\"https://developer.gnome.org/hig/"
-"reference/palette.html\">Human Interface Guidelines GNOME</a>."
+"Цвета палитры с названиями, которые используются некоторыми приложениями. Цвета "
+"по умолчанию следуют <a href=\"https://developer.gnome.org/hig/reference/palette."
+"html\">Human Interface Guidelines GNOME</a>."
 
 #: src/main.py:146
 msgid "Failed to load preset"
@@ -197,47 +196,41 @@ msgstr "Акцентные цвета"
 
 #: src/settings_schema.py:6
 msgid ""
-"These colors are used across many different widgets, such as buttons, "
-"labels, and entries, to indicate that a widget is important, interactive, or "
-"currently active."
+"These colors are used across many different widgets, such as buttons, labels, "
+"and entries, to indicate that a widget is important, interactive, or currently "
+"active."
 msgstr ""
-"Эти цвета используются во многих различных виджетах, таких, как кнопки и "
-"поля для ввода, чтобы показать, что виджет важный, им можно пользоваться, "
-"или он сейчас активен."
+"Эти цвета используются во многих различных виджетах, таких, как кнопки и поля "
+"для ввода, чтобы показать, что виджет важный, им можно пользоваться, или он "
+"сейчас активен."
 
-#: src/settings_schema.py:10 src/settings_schema.py:33
-#: src/settings_schema.py:56 src/settings_schema.py:79
-#: src/settings_schema.py:102
+#: src/settings_schema.py:10 src/settings_schema.py:33 src/settings_schema.py:56
+#: src/settings_schema.py:79 src/settings_schema.py:102
 msgid "Standalone Color"
 msgstr "Отдельный цвет"
 
-#: src/settings_schema.py:11 src/settings_schema.py:34
-#: src/settings_schema.py:57 src/settings_schema.py:80
-#: src/settings_schema.py:103
+#: src/settings_schema.py:11 src/settings_schema.py:34 src/settings_schema.py:57
+#: src/settings_schema.py:80 src/settings_schema.py:103
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
 "example, colorful text in a window."
 msgstr ""
-"Отдельные цвета похожи на фоновые, но имеют больше контраста при "
-"использовании в качестве цвета переднего плана на нейтральном фоне - "
-"например, цветной текст в окне."
+"Отдельные цвета похожи на фоновые, но имеют больший контраст при использовании в "
+"качестве цвета переднего плана на нейтральном фоне - например, цветной текст в "
+"окне."
 
-#: src/settings_schema.py:16 src/settings_schema.py:39
-#: src/settings_schema.py:62 src/settings_schema.py:85
-#: src/settings_schema.py:108 src/settings_schema.py:125
-#: src/settings_schema.py:142 src/settings_schema.py:159
-#: src/settings_schema.py:194 src/settings_schema.py:217
-#: src/settings_schema.py:234
+#: src/settings_schema.py:16 src/settings_schema.py:39 src/settings_schema.py:62
+#: src/settings_schema.py:85 src/settings_schema.py:108 src/settings_schema.py:125
+#: src/settings_schema.py:142 src/settings_schema.py:159 src/settings_schema.py:194
+#: src/settings_schema.py:217 src/settings_schema.py:234
 msgid "Background Color"
 msgstr "Фоновый цвет"
 
-#: src/settings_schema.py:21 src/settings_schema.py:44
-#: src/settings_schema.py:67 src/settings_schema.py:90
-#: src/settings_schema.py:113 src/settings_schema.py:130
-#: src/settings_schema.py:147 src/settings_schema.py:164
-#: src/settings_schema.py:199 src/settings_schema.py:222
-#: src/settings_schema.py:239
+#: src/settings_schema.py:21 src/settings_schema.py:44 src/settings_schema.py:67
+#: src/settings_schema.py:90 src/settings_schema.py:113 src/settings_schema.py:130
+#: src/settings_schema.py:147 src/settings_schema.py:164 src/settings_schema.py:199
+#: src/settings_schema.py:222 src/settings_schema.py:239
 msgid "Foreground Color"
 msgstr "Цвет переднего плана"
 
@@ -259,11 +252,11 @@ msgstr "Цвета успеха"
 
 #: src/settings_schema.py:52
 msgid ""
-"These colors are used across many different widgets, such as buttons, "
-"labels, entries, and level bars, to indicate a success or a high level."
+"These colors are used across many different widgets, such as buttons, labels, "
+"entries, and level bars, to indicate a success or a high level."
 msgstr ""
-"Эти цвета используются во многих различных виджетах, таких, как кнопки, поля "
-"для ввода и полоски уровня, чтобы показать успех или высокий уровень."
+"Эти цвета используются во многих различных виджетах, таких, как кнопки, поля для "
+"ввода и полоски уровня, чтобы показать успех или высокий уровень."
 
 #: src/settings_schema.py:74
 msgid "Warning Colors"
@@ -271,11 +264,11 @@ msgstr "Цвета предупреждения"
 
 #: src/settings_schema.py:75
 msgid ""
-"These colors are used across many different widgets, such as buttons, "
-"labels, entries, and level bars, to indicate a warning or a low level."
+"These colors are used across many different widgets, such as buttons, labels, "
+"entries, and level bars, to indicate a warning or a low level."
 msgstr ""
-"Эти цвета используются во многих различных виджетах, таких, как кнопки, поля "
-"для ввода и полоски уровня, чтобы показать предупреждение или низкий уровень."
+"Эти цвета используются во многих различных виджетах, таких, как кнопки, поля для "
+"ввода и полоски уровня, чтобы показать предупреждение или низкий уровень."
 
 #: src/settings_schema.py:97
 msgid "Error Colors"
@@ -283,11 +276,11 @@ msgstr "Цвета ошибки"
 
 #: src/settings_schema.py:98
 msgid ""
-"These colors are used across many different widgets, such as buttons, "
-"labels, and entries, to indicate a failure."
+"These colors are used across many different widgets, such as buttons, labels, "
+"and entries, to indicate a failure."
 msgstr ""
-"Эти цвета используются во многих различных виджетах, таких, как кнопки и "
-"поля для ввода, чтобы показать ошибку."
+"Эти цвета используются во многих различных виджетах, таких, как кнопки и поля "
+"для ввода, чтобы показать ошибку."
 
 #: src/settings_schema.py:120
 msgid "Window Colors"
@@ -303,11 +296,10 @@ msgstr "Цвета представлений"
 
 #: src/settings_schema.py:138
 msgid ""
-"These colors are used in a variety of widgets, such as text views and "
-"entries."
+"These colors are used in a variety of widgets, such as text views and entries."
 msgstr ""
-"Эти цвета используются во многих различных виджетах, таких, как поля для "
-"ввода текста."
+"Эти цвета используются во многих различных виджетах, таких, как поля для ввода "
+"текста."
 
 #: src/settings_schema.py:154
 msgid "Header Bar Colors"
@@ -315,11 +307,11 @@ msgstr "Цвета заголовков"
 
 #: src/settings_schema.py:155
 msgid ""
-"These colors are used for header bars, as well as widgets that are meant to "
-"be visually attached to it, such as search bars or tab bars."
+"These colors are used for header bars, as well as widgets that are meant to be "
+"visually attached to it, such as search bars or tab bars."
 msgstr ""
 "Эти цвета используются для заголовков окон, а также виджетов, которые должны "
-"быть с ними присоединены, например, панели поиска или панели вкладок."
+"быть присоединены к ним, например, панели поиска или панели вкладок."
 
 #: src/settings_schema.py:169
 msgid "Border Color"
@@ -327,18 +319,17 @@ msgstr "Цвет границы"
 
 #: src/settings_schema.py:170
 msgid ""
-"The border color has the same default value as a foreground color, but "
-"doesn't change along with it. This can be useful if a light window has a "
-"dark header bar with light text; in this case it may be desirable to keep "
-"the border dark. This variable is only used for vertical borders - for "
-"example, separators between the two header bars in a split header bar layout."
+"The border color has the same default value as a foreground color, but doesn't "
+"change along with it. This can be useful if a light window has a dark header bar "
+"with light text; in this case it may be desirable to keep the border dark. This "
+"variable is only used for vertical borders - for example, separators between the "
+"two header bars in a split header bar layout."
 msgstr ""
 "Цвет границы по умолчанию равен цвету переднего плана, но при этом с ним не "
-"меняется. Это полезно, если у светлого окна тёмный заголовок со светлым "
-"текстом; в таком случае, скорее всего, будет желательно оставить границу "
-"чёрным. Эта переменная используется только для вертикальных границ - "
-"например, разделители между двумя заголовками в компоновке с раздельными "
-"заголовками."
+"меняется. Это полезно, если у светлого окна тёмный заголовок со светлым текстом; "
+"в таком случае, скорее всего, будет желательно оставить границу тёмной. Эта "
+"переменная используется только для вертикальных границ - например, разделители "
+"между двумя заголовками в компоновке с раздельными заголовками."
 
 #: src/settings_schema.py:175
 msgid "Backdrop Color"
@@ -346,18 +337,17 @@ msgstr "Цвет фона без фокуса"
 
 #: src/settings_schema.py:176
 msgid ""
-"The backdrop color is used instead of the background color when the window "
-"is not focused. By default it's an alias of the window's background color "
-"and changes together with it. When changing this variable, make sure to set "
-"it to a value matching your header bar background color."
+"The backdrop color is used instead of the background color when the window is "
+"not focused. By default it's an alias of the window's background color and "
+"changes together with it. When changing this variable, make sure to set it to a "
+"value matching your header bar background color."
 msgstr ""
-"Цвет фона без фокуса используется вместо обычного фонового цвета, когда окно "
-"без фокуса. Значение по умолчанию является ссылкой на фоновый цвет окна и "
-"меняется вместе с ним. При изменении этой переменной убедитесь, что значение "
-"близко к обычному фоновому цвету заголовка."
+"Цвет фона без фокуса используется вместо обычного фонового цвета, когда окно без "
+"фокуса. Значение по умолчанию является ссылкой на фоновый цвет окна и меняется "
+"вместе с ним. При изменении этой переменной убедитесь, что значение близко к "
+"обычному фоновому цвету заголовка."
 
-#: src/settings_schema.py:181 src/settings_schema.py:204
-#: src/settings_schema.py:251
+#: src/settings_schema.py:181 src/settings_schema.py:204 src/settings_schema.py:251
 msgid "Shade Color"
 msgstr "Цвет тени"
 
@@ -380,11 +370,10 @@ msgstr "Эти цвета используются в карточках и сп
 #: src/settings_schema.py:205
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
-"themselves from the window background, as well as for row dividers in the "
-"cards."
+"themselves from the window background, as well as for row dividers in the cards."
 msgstr ""
-"Цвет тени используются для теней, которыми карточки отделяются от фона окна, "
-"а также для разделителей рядов в списках."
+"Цвет тени используются для теней, которыми карточки отделяются от фона окна, а "
+"также для разделителей рядов в списках."
 
 #: src/settings_schema.py:212
 msgid "Dialog Colors"
@@ -400,7 +389,7 @@ msgstr "Цвета поповеров"
 
 #: src/settings_schema.py:230
 msgid "These colors are used for popovers."
-msgstr "Эти цвета используются для меню и поповеров."
+msgstr "Эти цвета используются для поповеров."
 
 #: src/settings_schema.py:246
 msgid "Miscalleneous Colors"
@@ -415,8 +404,8 @@ msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
 msgstr ""
-"Цвет тени используется во встроенных панелях вкладок, затемнениях в лифлетах "
-"и флапах (выскользающих сбоку меню), а также границах у панелей информации."
+"Цвет тени используется во встроенных панелях вкладок, затемнениях в лифлетах и "
+"флапах (выскользающих сбоку меню), а также границах у панелей информации."
 
 #: src/settings_schema.py:257
 msgid "Scrollbar Outline Color"
