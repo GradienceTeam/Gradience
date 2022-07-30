@@ -3,9 +3,11 @@
 # Adwaita Manager
 Change the look of Adwaita, with ease
 
-![Code quality score](https://api.codiga.io/project/34247/score/svg)
+# <!-- "The Badge Place" starts -->
 
-[This project on Codiga](https://app.codiga.io/hub/project/34247/AdwCustomizer)
+[![Code quality score and Codiga button](https://api.codiga.io/project/34247/score/svg)](https://app.codiga.io/hub/project/34247/AdwCustomizer)
+
+<!-- "The Badge Place" ends -->
 
 ![Screenshot of interface with Adwaita light theme](pictures/main_screenshot.png)
 
@@ -84,6 +86,6 @@ I live in Russia (I don't support the "military operation" currently going on), 
 - Binance Smart Chain/BEP20: `0xcB0fbfca3096E758B6895A5c50eff159B33c225f`
 - Solana: `Brs84xPGUjDJhCi7GH4EHRQi4dXvWFC6kYy9jY8oQpar`
 
-Keep in mind these are non-custodial wallets, so try not to send tokens there unless it's USDT (BUSD on BEP2). And if you have to, send me an email to artyomisflash@mail.ru so I created it.
+Keep in mind these are non-custodial wallets, so try not to send tokens there unless it's USDT (BUSD on BEP2). And if you have to, send me an [email](mailto:artyomisflash@mail.ru) so I created it.
 
-If you're in Russia, then send me an email to artyomisflash@mail.ru, and I'll send you my details (Tinkoff card number or SberBank/SBP/Qiwi/YooMoney/Megafon phone number)
+If you're in Russia, then send me an [email](mailto:artyomisflash@mail.ru), and I'll send you my details (Tinkoff card number or SberBank/SBP/Qiwi/YooMoney/Megafon phone number)
