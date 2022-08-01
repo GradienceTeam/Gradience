@@ -39,6 +39,10 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
     errors_button = Gtk.Template.Child("errors-button")
     errors_list = Gtk.Template.Child("errors-list")
 
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
+
     def set_current_preset_name(self, new_name):
         self.presets_dropdown.set_label(new_name)
 
@@ -50,3 +54,6 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
         self.errors_button.set_visible(len(errors) > 0)
         for error in errors:
             self.errors_list.append(AdwcustomizerError(error["error"], error["element"], error["line"]))
+
+    def on_presets_dropdown_activate(self, *args):
+        self.get_application().reload_user_defined_presets()

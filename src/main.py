@@ -126,10 +126,20 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
+        self.reload_user_defined_presets()
+
+        win.present()
+        self.is_ready = True
+
+    def reload_user_defined_presets(self):
+        if self.props.active_window.presets_menu.get_n_items() > 1:
+            self.props.active_window.presets_menu.remove(1)
+
         preset_directory = os.path.join(os.environ['XDG_CONFIG_HOME'], "presets")
         if not os.path.exists(preset_directory):
             os.makedirs(preset_directory)
 
+        self.custom_presets.clear()
         for file_name in os.listdir(preset_directory):
             if file_name.endswith(".json"):
                 try:
@@ -161,12 +171,8 @@ class AdwcustomizerApplication(Adw.Application):
         open_in_file_manager_item = Gio.MenuItem()
         open_in_file_manager_item.set_label(_("Open in File Manager"))
         open_in_file_manager_item.set_action_and_target_value("app.open_preset_directory")
-        # does not work yet for some reason, i asked people in flatpak matrix room
         custom_menu_section.append_item(open_in_file_manager_item)
-        win.presets_menu.append_section(_("User Defined Presets"), custom_menu_section)
-        win.present()
-
-        self.is_ready = True
+        self.props.active_window.presets_menu.append_section(_("User Defined Presets"), custom_menu_section)
 
     def open_preset_directory(self, *_args):
         parent = XdpGtk4.parent_new_gtk(self.props.active_window)
