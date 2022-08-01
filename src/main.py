@@ -57,6 +57,8 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.portal = Xdp.Portal()
 
+        self.preset_name = ""
+
         self.variables = {}
         self.pref_variables = {}
 
@@ -197,7 +199,7 @@ class AdwcustomizerApplication(Adw.Application):
         self.load_preset_variables(json.loads(preset_text))
 
     def load_preset_variables(self, preset):
-        self.props.active_window.set_current_preset_name(preset["name"])
+        self.preset_name = preset["name"]
         self.variables = preset["variables"]
         self.palette = preset["palette"]
         if "custom_css" in preset:
@@ -273,17 +275,17 @@ class AdwcustomizerApplication(Adw.Application):
     def show_save_preset_dialog(self, *_args):
         dialog = Adw.MessageDialog(transient_for=self.props.active_window,
                                    heading=_("Save preset as..."),
-                                   body=_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.path.join(os.environ['XDG_CONFIG_HOME'], "presets")),
+                                   body=_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.path.join(os.environ['XDG_CONFIG_HOME'], "presets", to_slug_case(self.preset_name) + ".json")),
                                    body_use_markup=True)
 
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("save", _("Save"))
         dialog.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
-        dialog.set_response_enabled("save", False)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
 
         preset_entry = Gtk.Entry(placeholder_text="Preset Name")
+        preset_entry.set_text(self.preset_name)
         def on_preset_entry_change(*_args):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.path.join(os.environ['XDG_CONFIG_HOME'], "presets")))

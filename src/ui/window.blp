@@ -21,9 +21,11 @@ template AdwcustomizerMainWindow : ApplicationWindow {
       tooltip-text: _("Save Preset");
     }
 
-    [title]
+    [start]
     MenuButton presets-dropdown {
+      icon-name: "controls-symbolic";
       menu-model: presets-menu;
+      tooltip-text: _("Presets");
     }
 
     [end]

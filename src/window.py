@@ -43,9 +43,6 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
         super().__init__(**kwargs)
         self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
 
-    def set_current_preset_name(self, new_name):
-        self.presets_dropdown.set_label(new_name)
-
     def update_errors(self, errors):
         child = self.errors_list.get_row_at_index(0)
         while child is not None:
