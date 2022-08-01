@@ -151,7 +151,7 @@ class AdwcustomizerApplication(Adw.Application):
                     if preset.get('palette') is None:
                         raise KeyError('palette')
                     self.custom_presets[file_name.replace('.json', '')] = preset['name']
-                except Exception as ex:
+                except Exception:
                     self.global_errors.append({
                         "error": _("Failed to load preset"),
                         "element": file_name,
@@ -326,13 +326,13 @@ class AdwcustomizerApplication(Adw.Application):
                 file = Gio.File.new_for_path(os.path.join(os.environ['XDG_CONFIG_HOME'], "/gtk-3.0/gtk.css"))
                 try:
                     file.delete()
-                except:
+                except Exception:
                     pass
             if widget.get_app_types()["gtk3"]:
                 file = Gio.File.new_for_path(os.path.join(os.environ['XDG_CONFIG_HOME'], "/gtk-3.0/gtk.css"))
                 try:
                     file.delete()
-                except:
+                except Exception:
                     pass
 
     def show_about_window(self, *_args):
