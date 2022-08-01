@@ -117,10 +117,6 @@ class AdwcustomizerApplication(Adw.Application):
         self.custom_css_group.load_custom_css(self.custom_css)
         win.content.add(self.custom_css_group)
 
-        preset_directory = os.path.join(os.environ['XDG_CONFIG_HOME'], "presets")
-        if not os.path.exists(preset_directory):
-            os.makedirs(preset_directory)
-
         self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
 
         self.create_action("open_preset_directory", self.open_preset_directory)
@@ -130,10 +126,14 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
-        for file_name in os.listdir(os.environ['XDG_CONFIG_HOME'] + "/presets/"):
+        preset_directory = os.path.join(os.environ['XDG_CONFIG_HOME'], "presets")
+        if not os.path.exists(preset_directory):
+            os.makedirs(preset_directory)
+
+        for file_name in os.listdir(preset_directory):
             if file_name.endswith(".json"):
                 try:
-                    with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + file_name, 'r', encoding="utf-8") as file:
+                    with open(os.path.join(preset_directory, file_name), 'r', encoding="utf-8") as file:
                         preset_text = file.read()
                     preset = json.loads(preset_text)
                     if preset.get('variables') is None:
@@ -174,7 +174,7 @@ class AdwcustomizerApplication(Adw.Application):
             self.portal.open_uri_finish(result)
         self.portal.open_uri(
             parent,
-            "file://" + os.environ['XDG_CONFIG_HOME'] + "/presets/",
+            "file://" + os.path.join(os.environ['XDG_CONFIG_HOME'], "presets"),
             Xdp.OpenUriFlags.NONE,
             None,
             open_dir_callback
@@ -243,7 +243,7 @@ class AdwcustomizerApplication(Adw.Application):
 
     def load_preset_action(self, _unused, *args):
         if args[0].get_string().startswith("custom-"):
-            self.load_preset_from_file(os.environ['XDG_CONFIG_HOME'] + "/presets/" + args[0].get_string().replace("custom-", "", 1) + ".json")
+            self.load_preset_from_file(os.path.join(os.environ['XDG_CONFIG_HOME'], "presets", args[0].get_string().replace("custom-", "", 1) + ".json"))
         else:
             self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/' + args[0].get_string() + '.json')
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
@@ -267,7 +267,7 @@ class AdwcustomizerApplication(Adw.Application):
     def show_save_preset_dialog(self, *_args):
         dialog = Adw.MessageDialog(transient_for=self.props.active_window,
                                    heading=_("Save preset as..."),
-                                   body=_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.environ['XDG_CONFIG_HOME'] + "/presets/"),
+                                   body=_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.path.join(os.environ['XDG_CONFIG_HOME'], "presets")),
                                    body_use_markup=True)
 
         dialog.add_response("cancel", _("Cancel"))
@@ -280,10 +280,10 @@ class AdwcustomizerApplication(Adw.Application):
         preset_entry = Gtk.Entry(placeholder_text="Preset Name")
         def on_preset_entry_change(*_args):
             if len(preset_entry.get_text()) == 0:
-                dialog.set_body(_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.environ['XDG_CONFIG_HOME'] + "/presets/"))
+                dialog.set_body(_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.path.join(os.environ['XDG_CONFIG_HOME'], "presets")))
                 dialog.set_response_enabled("save", False)
             else:
-                dialog.set_body(_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.environ['XDG_CONFIG_HOME'] + "/presets/" + to_slug_case(preset_entry.get_text()) + ".json"))
+                dialog.set_body(_("Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!").format(os.path.join(os.environ['XDG_CONFIG_HOME'], "presets", to_slug_case(preset_entry.get_text()) + ".json")))
                 dialog.set_response_enabled("save", True)
         preset_entry.connect("changed", on_preset_entry_change)
         dialog.set_extra_child(preset_entry)
@@ -294,7 +294,7 @@ class AdwcustomizerApplication(Adw.Application):
 
     def save_preset(self, _unused, response, entry):
         if response == "save":
-            with open(os.environ['XDG_CONFIG_HOME'] + "/presets/" + to_slug_case(entry.get_text()) + ".json", 'w', encoding="utf-8") as file:
+            with open(os.path.join(os.environ['XDG_CONFIG_HOME'], "presets", to_slug_case(entry.get_text()) + ".json"), 'w', encoding="utf-8") as file:
                 object_to_write = {
                     "name": entry.get_text(),
                     "variables": self.variables,
@@ -307,23 +307,23 @@ class AdwcustomizerApplication(Adw.Application):
         if response == "apply":
             if widget.get_app_types()["gtk4"]:
                 gtk4_css = self.generate_gtk_css("gtk4")
-                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-4.0/gtk.css", 'w', encoding="utf-8") as file:
+                with open(os.path.join(os.environ['XDG_CONFIG_HOME'], "/gtk-4.0/gtk.css"), 'w', encoding="utf-8") as file:
                     file.write(gtk4_css)
             if widget.get_app_types()["gtk3"]:
                 gtk3_css = self.generate_gtk_css("gtk3")
-                with open(os.environ['XDG_CONFIG_HOME'] + "/gtk-3.0/gtk.css", 'w', encoding="utf-8") as file:
+                with open(os.path.join(os.environ['XDG_CONFIG_HOME'], "/gtk-3.0/gtk.css"), 'w', encoding="utf-8") as file:
                     file.write(gtk3_css)
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
             if widget.get_app_types()["gtk4"]:
-                file = Gio.File.new_for_path(GLib.get_user_config_dir() + "/gtk-4.0/gtk.css")
+                file = Gio.File.new_for_path(os.path.join(os.environ['XDG_CONFIG_HOME'], "/gtk-3.0/gtk.css"))
                 try:
                     file.delete()
                 except:
                     pass
             if widget.get_app_types()["gtk3"]:
-                file = Gio.File.new_for_path(GLib.get_user_config_dir() + "/gtk-3.0/gtk.css")
+                file = Gio.File.new_for_path(os.path.join(os.environ['XDG_CONFIG_HOME'], "/gtk-3.0/gtk.css"))
                 try:
                     file.delete()
                 except:
