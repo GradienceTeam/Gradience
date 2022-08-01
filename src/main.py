@@ -58,6 +58,7 @@ class AdwcustomizerApplication(Adw.Application):
         self.portal = Xdp.Portal()
 
         self.preset_name = ""
+        self.is_dirty = False
 
         self.variables = {}
         self.pref_variables = {}
@@ -119,7 +120,6 @@ class AdwcustomizerApplication(Adw.Application):
         self.custom_css_group.load_custom_css(self.custom_css)
         win.content.add(self.custom_css_group)
 
-        self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
 
         self.create_action("open_preset_directory", self.open_preset_directory)
         self.create_stateful_action("load_preset", GLib.VariantType.new('s'), GLib.Variant('s', 'adwaita'), self.load_preset_action)
@@ -129,9 +129,9 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_action("about", self.show_about_window)
 
         self.reload_user_defined_presets()
+        self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
 
         win.present()
-        self.is_ready = True
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
@@ -199,6 +199,8 @@ class AdwcustomizerApplication(Adw.Application):
         self.load_preset_variables(json.loads(preset_text))
 
     def load_preset_variables(self, preset):
+        self.is_ready = False
+
         self.preset_name = preset["name"]
         self.variables = preset["variables"]
         self.palette = preset["palette"]
@@ -215,6 +217,8 @@ class AdwcustomizerApplication(Adw.Application):
                 self.pref_palette_shades[key].update_shades(self.palette[key])
         self.custom_css_group.load_custom_css(self.custom_css)
 
+        self.clear_dirty()
+
         self.reload_variables()
 
     def generate_gtk_css(self, app_type):
@@ -226,6 +230,18 @@ class AdwcustomizerApplication(Adw.Application):
                 final_css += f"@define-color {prefix_key + key} {self.palette[prefix_key][key]};\n"
         final_css += self.custom_css.get(app_type, "")
         return final_css
+
+    def mark_as_dirty(self):
+        self.is_dirty = True
+        self.props.active_window.save_preset_button.add_css_class("warning")
+        self.props.active_window.save_preset_button.add_css_class("raised")
+        self.props.active_window.save_preset_button.get_child().set_label(_("Unsaved changes"))
+
+    def clear_dirty(self):
+        self.is_dirty = False
+        self.props.active_window.save_preset_button.remove_css_class("warning")
+        self.props.active_window.save_preset_button.remove_css_class("raised")
+        self.props.active_window.save_preset_button.get_child().set_label("")
 
     def reload_variables(self):
         parsing_errors = []
@@ -248,6 +264,8 @@ class AdwcustomizerApplication(Adw.Application):
             Gtk.StyleContext.remove_provider_for_display(Gdk.Display.get_default(), self.current_css_provider)
         Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
         self.current_css_provider = css_provider
+
+        self.is_ready = True
 
     def load_preset_action(self, _unused, *args):
         if args[0].get_string().startswith("custom-"):
@@ -310,6 +328,7 @@ class AdwcustomizerApplication(Adw.Application):
                     "custom_css": self.custom_css
                 }
                 file.write(json.dumps(object_to_write, indent=4))
+                self.clear_dirty()
 
     def apply_color_scheme(self, widget, response):
         if response == "apply":

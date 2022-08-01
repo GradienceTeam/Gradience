@@ -16,9 +16,11 @@ template AdwcustomizerMainWindow : ApplicationWindow {
 
     [start]
     Button save-preset-button {
-      icon-name: "document-save-symbolic";
       action-name: "app.save_preset";
       tooltip-text: _("Save Preset");
+      Adw.ButtonContent {
+        icon-name: "document-save-symbolic";
+      }
     }
 
     [start]

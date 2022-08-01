@@ -98,4 +98,5 @@ class AdwcustomizerOption(Adw.ActionRow):
 
         if Gtk.Application.get_default().is_ready and kwargs.get("update_from") == "text_value" and new_value != "":
             Gtk.Application.get_default().variables[self.get_name()] = new_value
+            Gtk.Application.get_default().mark_as_dirty()
             Gtk.Application.get_default().reload_variables()

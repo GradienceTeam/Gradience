@@ -45,6 +45,7 @@ class AdwcustomizerCustomCSSGroup(Adw.PreferencesGroup):
 
     @Gtk.Template.Callback()
     def on_custom_css_changed(self, buffer):
+        Gtk.Application.get_default().mark_as_dirty()
         Gtk.Application.get_default().update_custom_css_text(list(self.custom_css.keys())[self.app_type_dropdown.get_selected()], buffer.props.text)
 
     @Gtk.Template.Callback()

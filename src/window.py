@@ -34,6 +34,7 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'AdwcustomizerMainWindow'
 
     content = Gtk.Template.Child()
+    save_preset_button = Gtk.Template.Child("save-preset-button")
     presets_dropdown = Gtk.Template.Child("presets-dropdown")
     presets_menu = Gtk.Template.Child("presets-menu")
     errors_button = Gtk.Template.Child("errors-button")
