@@ -86,41 +86,6 @@ class AdwcustomizerApplication(Adw.Application):
         if not win:
             win = AdwcustomizerMainWindow(application=self)
 
-        for group in settings_schema["groups"]:
-            pref_group = Adw.PreferencesGroup()
-            pref_group.set_name(group["name"])
-            pref_group.set_title(group["title"])
-            pref_group.set_description(group["description"])
-
-            for variable in group["variables"]:
-                pref_variable = AdwcustomizerOption(variable["name"],
-                                                    variable["title"],
-                                                    variable["adw_gtk3_support"],
-                                                    variable.get("explanation"))
-                pref_group.add(pref_variable)
-                self.pref_variables[variable["name"]] = pref_variable
-
-            win.content.add(pref_group)
-
-        palette_pref_group = Adw.PreferencesGroup()
-        palette_pref_group.set_name("palette_colors")
-        palette_pref_group.set_title(_("Palette Colors"))
-        palette_pref_group.set_description(_("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."))
-        for color in settings_schema["palette"]:
-            palette_shades = AdwcustomizerPaletteShades(color["prefix"],
-                                                        color["title"],
-                                                        color["n_shades"])
-            palette_pref_group.add(palette_shades)
-            self.pref_palette_shades[color["prefix"]] = palette_shades
-        win.content.add(palette_pref_group)
-
-        self.custom_css_group = AdwcustomizerCustomCSSGroup()
-        for app_type in settings_schema["custom_css_app_types"]:
-            self.custom_css[app_type] = ""
-        self.custom_css_group.load_custom_css(self.custom_css)
-        win.content.add(self.custom_css_group)
-
-
         self.create_action("open_preset_directory", self.open_preset_directory)
         self.create_stateful_action("load_preset", GLib.VariantType.new('s'), GLib.Variant('s', 'adwaita'), self.load_preset_action)
         self.create_action("apply_color_scheme", self.show_apply_color_scheme_dialog)
