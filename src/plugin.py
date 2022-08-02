@@ -23,7 +23,7 @@ class AdwcustomizerPlugin:
     def get_alias_values(self):
         alias_values = {}
         for key, value in self.alias_dict.items():
-            alias_values[key] = self.colors.get(key, self.palette.get(key, self.custom_settings.get(key)))
+            alias_values[key] = self.colors.get(value, self.palette.get(value, self.custom_settings.get(value)))
         return alias_values
 
     def save(self):
