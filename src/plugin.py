@@ -1,7 +1,6 @@
 class AdwcustomizerPlugin:
     def __init__(self):
-        self.id = None
-        self.name = None
+        self.title = None
 
         self.colors = None
         self.palette = None
@@ -18,7 +17,7 @@ class AdwcustomizerPlugin:
         self.palette = palette
 
     def load_custom_settings(self, settings):
-        self.custom_settings = settings
+        pass # TODO implement
 
     def get_alias_values(self):
         alias_values = {}
@@ -28,3 +27,4 @@ class AdwcustomizerPlugin:
 
     def save(self):
         pass
+

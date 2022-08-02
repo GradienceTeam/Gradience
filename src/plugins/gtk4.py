@@ -1,4 +1,4 @@
 from adwcustomizer.plugin import AdwcustomizerPlugin
 
-class AdwcustomizerGTK4Plugin(AdwcustomizerPlugin):
+class AdwcustomizerGtk4Plugin(AdwcustomizerPlugin):
     pass
