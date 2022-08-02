@@ -26,8 +26,13 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk
+from gi.repository import Gtk, Adw
 from .error import AdwcustomizerError
+from .settings_schema import settings_schema
+from .palette_shades import AdwcustomizerPaletteShades
+from .option import AdwcustomizerOption
+from .app_type_dialog import AdwcustomizerAppTypeDialog
+from .custom_css_group import AdwcustomizerCustomCSSGroup
 
 @Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/window.ui')
 class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
@@ -43,6 +48,41 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
+
+        for group in settings_schema["groups"]:
+            pref_group = Adw.PreferencesGroup()
+            pref_group.set_name(group["name"])
+            pref_group.set_title(group["title"])
+            pref_group.set_description(group["description"])
+
+            for variable in group["variables"]:
+                pref_variable = AdwcustomizerOption(variable["name"],
+                                                    variable["title"],
+                                                    variable["adw_gtk3_support"],
+                                                    variable.get("explanation"))
+                pref_group.add(pref_variable)
+                self.get_application().pref_variables[variable["name"]] = pref_variable
+
+            self.content.add(pref_group)
+
+        palette_pref_group = Adw.PreferencesGroup()
+        palette_pref_group.set_name("palette_colors")
+        palette_pref_group.set_title(_("Palette Colors"))
+        palette_pref_group.set_description(_("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."))
+        for color in settings_schema["palette"]:
+            palette_shades = AdwcustomizerPaletteShades(color["prefix"],
+                                                        color["title"],
+                                                        color["n_shades"])
+            palette_pref_group.add(palette_shades)
+            self.get_application().pref_palette_shades[color["prefix"]] = palette_shades
+        self.content.add(palette_pref_group)
+
+        custom_css_group = AdwcustomizerCustomCSSGroup()
+        for app_type in settings_schema["custom_css_app_types"]:
+            self.get_application().custom_css[app_type] = ""
+        custom_css_group.load_custom_css(self.get_application().custom_css)
+        self.content.add(custom_css_group)
+        self.get_application().custom_css_group = custom_css_group
 
     def update_errors(self, errors):
         child = self.errors_list.get_row_at_index(0)
