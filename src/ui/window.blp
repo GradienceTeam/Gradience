@@ -23,11 +23,17 @@ template AdwcustomizerMainWindow : ApplicationWindow {
       }
     }
 
-    [start]
+    // [start]
+    // MenuButton presets-dropdown {
+    //   icon-name: "palette-symbolic";
+    //   menu-model: presets-menu;
+    //   tooltip-text: _("Presets");
+    // }
+
+    [title]
     MenuButton presets-dropdown {
-      icon-name: "palette-symbolic";
       menu-model: presets-menu;
-      tooltip-text: _("Presets");
+      label: _("Presets");
     }
 
     [end]
