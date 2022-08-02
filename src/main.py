@@ -333,12 +333,18 @@ class AdwcustomizerApplication(Adw.Application):
     def apply_color_scheme(self, widget, response):
         if response == "apply":
             if widget.get_app_types()["gtk4"]:
+                gtk4_dir = os.path.join(os.environ['XDG_CONFIG_HOME'], "gtk-4.0")
+                if not os.path.exists(gtk4_dir):
+                    os.makedirs(gtk4_dir)
                 gtk4_css = self.generate_gtk_css("gtk4")
-                with open(os.path.join(os.environ['XDG_CONFIG_HOME'], "/gtk-4.0/gtk.css"), 'w', encoding="utf-8") as file:
+                with open(os.path.join(gtk4_dir, "gtk.css"), 'w', encoding="utf-8") as file:
                     file.write(gtk4_css)
             if widget.get_app_types()["gtk3"]:
+                gtk3_dir = os.path.join(os.environ['XDG_CONFIG_HOME'], "gtk-3.0")
+                if not os.path.exists(gtk3_dir):
+                    os.makedirs(gtk3_dir)
                 gtk3_css = self.generate_gtk_css("gtk3")
-                with open(os.path.join(os.environ['XDG_CONFIG_HOME'], "/gtk-3.0/gtk.css"), 'w', encoding="utf-8") as file:
+                with open(os.path.join(gtk3_dir, "gtk.css"), 'w', encoding="utf-8") as file:
                     file.write(gtk3_css)
 
     def reset_color_scheme(self, widget, response):
