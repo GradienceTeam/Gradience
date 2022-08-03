@@ -8,18 +8,15 @@ settings_schema = {
                 {
                     "name": "accent_color",
                     "title": _("Standalone Color"),
-                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window."),
-                    "adw_gtk3_support": "yes"
+                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window.")
                 },
                 {
                     "name": "accent_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "accent_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Foreground Color")
                 }
             ]
         },
@@ -31,18 +28,15 @@ settings_schema = {
                 {
                     "name": "destructive_color",
                     "title": _("Standalone Color"),
-                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window."),
-                    "adw_gtk3_support": "yes"
+                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window.")
                 },
                 {
                     "name": "destructive_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "destructive_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "partial"
+                    "title": _("Foreground Color")
                 }
             ]
         },
@@ -54,18 +48,15 @@ settings_schema = {
                 {
                     "name": "success_color",
                     "title": _("Standalone Color"),
-                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window."),
-                    "adw_gtk3_support": "yes"
+                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window.")
                 },
                 {
                     "name": "success_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "success_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "partial"
+                    "title": _("Foreground Color")
                 }
             ]
         },
@@ -77,18 +68,15 @@ settings_schema = {
                 {
                     "name": "warning_color",
                     "title": _("Standalone Color"),
-                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window."),
-                    "adw_gtk3_support": "yes"
+                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window.")
                 },
                 {
                     "name": "warning_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "warning_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "partial"
+                    "title": _("Foreground Color")
                 }
             ]
         },
@@ -100,18 +88,15 @@ settings_schema = {
                 {
                     "name": "error_color",
                     "title": _("Standalone Color"),
-                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window."),
-                    "adw_gtk3_support": "yes"
+                    "explanation": _("The standalone colors are similar to the background ones, but provide better contrast when used as foreground color on top of a neutral background - for example, colorful text in a window.")
                 },
                 {
                     "name": "error_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "error_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "partial"
+                    "title": _("Foreground Color")
                 }
             ]
         },
@@ -122,13 +107,11 @@ settings_schema = {
             "variables": [
                 {
                     "name": "window_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "window_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Foreground Color")
                 }
             ]
         },
@@ -139,13 +122,11 @@ settings_schema = {
             "variables": [
                 {
                     "name": "view_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "view_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Foreground Color")
                 }
             ]
         },
@@ -156,31 +137,26 @@ settings_schema = {
             "variables": [
                 {
                     "name": "headerbar_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "headerbar_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Foreground Color")
                 },
                 {
                     "name": "headerbar_border_color",
                     "title": _("Border Color"),
-                    "explanation": _("The border color has the same default value as a foreground color, but doesn't change along with it. This can be useful if a light window has a dark header bar with light text; in this case it may be desirable to keep the border dark. This variable is only used for vertical borders - for example, separators between the two header bars in a split header bar layout."),
-                    "adw_gtk3_support": "no"
+                    "explanation": _("The border color has the same default value as a foreground color, but doesn't change along with it. This can be useful if a light window has a dark header bar with light text; in this case it may be desirable to keep the border dark. This variable is only used for vertical borders - for example, separators between the two header bars in a split header bar layout.")
                 },
                 {
                     "name": "headerbar_backdrop_color",
                     "title": _("Backdrop Color"),
-                    "explanation": _("The backdrop color is used instead of the background color when the window is not focused. By default it's an alias of the window's background color and changes together with it. When changing this variable, make sure to set it to a value matching your header bar background color."),
-                    "adw_gtk3_support": "yes"
+                    "explanation": _("The backdrop color is used instead of the background color when the window is not focused. By default it's an alias of the window's background color and changes together with it. When changing this variable, make sure to set it to a value matching your header bar background color.")
                 },
                 {
                     "name": "headerbar_shade_color",
                     "title": _("Shade Color"),
-                    "explanation": _("The shade color is used to provide a dark border for header bars and similar widgets that separates them from the main window."),
-                    "adw_gtk3_support": "no"
+                    "explanation": _("The shade color is used to provide a dark border for header bars and similar widgets that separates them from the main window.")
                 }
             ]
         },
@@ -191,19 +167,16 @@ settings_schema = {
             "variables": [
                 {
                     "name": "card_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "card_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Foreground Color")
                 },
                 {
                     "name": "card_shade_color",
                     "title": _("Shade Color"),
-                    "explanation": _("The shade color is used for shadows that are used by cards to separate themselves from the window background, as well as for row dividers in the cards."),
-                    "adw_gtk3_support": "no"
+                    "explanation": _("The shade color is used for shadows that are used by cards to separate themselves from the window background, as well as for row dividers in the cards.")
                 }
             ]
         },
@@ -214,13 +187,11 @@ settings_schema = {
             "variables": [
                 {
                     "name": "dialog_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "no"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "dialog_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "no"
+                    "title": _("Foreground Color")
                 }
             ]
         },
@@ -231,13 +202,11 @@ settings_schema = {
             "variables": [
                 {
                     "name": "popover_bg_color",
-                    "title": _("Background Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Background Color")
                 },
                 {
                     "name": "popover_fg_color",
-                    "title": _("Foreground Color"),
-                    "adw_gtk3_support": "yes"
+                    "title": _("Foreground Color")
                 }
             ]
         },
@@ -249,14 +218,12 @@ settings_schema = {
                 {
                     "name": "shade_color",
                     "title": _("Shade Color"),
-                    "explanation": _("The shade color is used by inline tab bars, as well as the transitions in leaflets and flaps, and info bar borders."),
-                    "adw_gtk3_support": "no"
+                    "explanation": _("The shade color is used by inline tab bars, as well as the transitions in leaflets and flaps, and info bar borders.")
                 },
                 {
                     "name": "scrollbar_outline_color",
                     "title": _("Scrollbar Outline Color"),
-                    "explanation": _("The scrollbar outline color is used by scrollbars to ensure that overlay scrollbars are visible regardless of the content color."),
-                    "adw_gtk3_support": "no"
+                    "explanation": _("The scrollbar outline color is used by scrollbars to ensure that overlay scrollbars are visible regardless of the content color.")
                 }
             ]
         }

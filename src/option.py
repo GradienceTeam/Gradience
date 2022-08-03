@@ -36,26 +36,15 @@ class AdwcustomizerOption(Adw.ActionRow):
     text_value = Gtk.Template.Child("text-value")
     value_stack = Gtk.Template.Child("value-stack")
     text_value_toggle = Gtk.Template.Child("text-value-toggle")
-    warning_button = Gtk.Template.Child("warning-button")
-    warning_label = Gtk.Template.Child("warning-label")
     explanation_button = Gtk.Template.Child("explanation-button")
     explanation_label = Gtk.Template.Child("explanation-label")
 
-    def __init__(self, name, title, adw_gtk3_support, explanation, **kwargs):
+    def __init__(self, name, title, explanation, **kwargs):
         super().__init__(**kwargs)
 
         self.set_name(name)
         self.set_title(title)
         self.set_subtitle(name)
-
-        if adw_gtk3_support == "yes":
-            self.warning_button.set_visible(False)
-        elif adw_gtk3_support == "partial":
-            self.warning_button.add_css_class("warning")
-            self.warning_label.set_label(_("This option is only partially supported by the adw-gtk3 theme."))
-        elif adw_gtk3_support == "no":
-            self.warning_button.add_css_class("error")
-            self.warning_label.set_label(_("This option is not supported by the adw-gtk3 theme."))
 
         self.explanation_label.set_label(explanation or "")
         if explanation is None:

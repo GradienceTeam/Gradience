@@ -58,7 +58,6 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
             for variable in group["variables"]:
                 pref_variable = AdwcustomizerOption(variable["name"],
                                                     variable["title"],
-                                                    variable["adw_gtk3_support"],
                                                     variable.get("explanation"))
                 pref_group.add(pref_variable)
                 self.get_application().pref_variables[variable["name"]] = pref_variable

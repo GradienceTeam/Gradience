@@ -3,14 +3,6 @@ using Adw 1;
 
 template AdwcustomizerOption : Adw.ActionRow {
   [suffix]
-  MenuButton warning-button {
-    valign: center;
-    icon-name: "adw-gtk3-warning-symbolic";
-    popover: warning-popover;
-    tooltip-text: _("GTK 3 Support Warning");
-  }
-
-  [suffix]
   MenuButton explanation-button {
     valign: center;
     icon-name: "dialog-question-symbolic";
@@ -43,14 +35,6 @@ template AdwcustomizerOption : Adw.ActionRow {
     tooltip-text: _("Toggle Text Value");
 
     toggled => on_text_value_toggled();
-  }
-}
-
-Popover warning-popover {
-  Label warning-label {
-    max-width-chars: 50;
-    wrap: true;
-    justify: center;
   }
 }
 
