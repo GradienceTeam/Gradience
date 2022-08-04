@@ -8,4 +8,12 @@ class AdwcustomizerSetting:
         #  color shades
         #  color and text
         #  code field
-        pass
+        self.name = name
+        self.title = title
+        self.value_type = value_type
+        self.explanation = explanation
+        self.value = default_value
+
+    def set_value(self, new_value):
+        # TODO checks
+        self.value = new_value

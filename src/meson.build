@@ -43,6 +43,7 @@ configure_file(
 adwcustomizer_sources = [
   '__init__.py',
   'plugin.py',
+  'plugins_list.py',
   'settings_schema.py',
   'main.py',
   'error.py',

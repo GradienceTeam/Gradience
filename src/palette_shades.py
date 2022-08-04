@@ -38,7 +38,7 @@ class AdwcustomizerPaletteShades(Adw.ActionRow):
         self.prefix = prefix
         self.set_name(prefix + "shades")
         self.set_title(color_title)
-        self.set_subtitle("@" + prefix + "[1, " + str(n_shades) + "]")
+        self.set_subtitle(prefix + "[1, " + str(n_shades) + "]")
 
         self.color_pickers = {}
         for i in range(1, n_shades + 1):

@@ -1,3 +1,5 @@
+from .setting import AdwcustomizerSetting
+
 class AdwcustomizerPlugin:
     def __init__(self):
         self.title = None
@@ -17,7 +19,14 @@ class AdwcustomizerPlugin:
         self.palette = palette
 
     def load_custom_settings(self, settings):
-        pass # TODO implement
+        for setting_key, setting in self.custom_settings:
+            self.custom_settings[setting_key].set_value(settings[setting_key])
+
+    def get_custom_settings_for_preset(self):
+        setting_dict = {}
+        for setting_key, setting in self.custom_settings:
+            setting_dict[setting_key] = setting.value
+        return setting_list
 
     def get_alias_values(self):
         alias_values = {}
@@ -25,6 +34,9 @@ class AdwcustomizerPlugin:
             alias_values[key] = self.colors.get(value, self.palette.get(value, self.custom_settings.get(value)))
         return alias_values
 
-    def save(self):
+    def validate(self):
+        pass
+
+    def apply(self):
         pass
 

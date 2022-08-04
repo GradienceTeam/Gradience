@@ -43,8 +43,7 @@ from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
-
-from .plugins.gtk4 import AdwcustomizerGtk4Plugin
+from .plugins_list import AdwcustomizerPluginsList
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
@@ -57,9 +56,7 @@ class AdwcustomizerApplication(Adw.Application):
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
         self.version = version
 
-        self.plugins = {
-            "gtk4": AdwcustomizerGtk4Plugin()
-        }
+        self.plugins_list = AdwcustomizerPluginsList()
 
         self.portal = Xdp.Portal()
 
@@ -176,8 +173,6 @@ class AdwcustomizerApplication(Adw.Application):
         self.variables = preset["variables"]
         self.palette = preset["palette"]
 
-        for plugin_id, plugin in self.plugins.items():
-            plugin.load_custom_settings(preset.get("plugin_settings", {}).get(plugin_id, {}))
         if "custom_css" in preset:
             self.custom_css = preset["custom_css"]
         else:
