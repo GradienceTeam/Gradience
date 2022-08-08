@@ -28,7 +28,7 @@
 
 from gi.repository import Gtk
 
-@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/error.ui')
+@Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/error.ui')
 class AdwcustomizerError(Gtk.ListBoxRow):
     __gtype_name__ = 'AdwcustomizerError'
 

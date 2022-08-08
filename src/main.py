@@ -51,7 +51,7 @@ class AdwcustomizerApplication(Adw.Application):
     """The main application singleton class."""
 
     def __init__(self, version):
-        super().__init__(application_id='com.github.ArtyIF.AdwCustomizer',
+        super().__init__(application_id='com.github.AdwCustomizerTeam.AdwCustomizer',
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
         self.version = version
 
@@ -94,7 +94,7 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_action("about", self.show_about_window)
 
         self.reload_user_defined_presets()
-        self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/adwaita.json')
+        self.load_preset_from_resource('/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita.json')
 
         win.present()
 
@@ -236,7 +236,7 @@ class AdwcustomizerApplication(Adw.Application):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(os.path.join(os.environ['XDG_CONFIG_HOME'], "presets", args[0].get_string().replace("custom-", "", 1) + ".json"))
         else:
-            self.load_preset_from_resource('/com/github/ArtyIF/AdwCustomizer/presets/' + args[0].get_string() + '.json')
+            self.load_preset_from_resource('/com/github/AdwCustomizerTeam/AdwCustomizer/presets/' + args[0].get_string() + '.json')
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
     def show_apply_color_scheme_dialog(self, *_args):
@@ -330,7 +330,7 @@ class AdwcustomizerApplication(Adw.Application):
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(transient_for=self.props.active_window,
                                 application_name=_("Adwaita Manager"),
-                                application_icon='com.github.ArtyIF.AdwCustomizer',
+                                application_icon='com.github.AdwCustomizerTeam.AdwCustomizer',
                                 developer_name=_("Adwaita Manager Team"),
                                 developers=['Artyom "ArtyIF" Fomin https://github.com/ArtyIF', 'Verantor https://github.com/Verantor'],
                                 artists=['David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],

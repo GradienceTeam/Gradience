@@ -1,6 +1,6 @@
 desktop_file = i18n.merge_file(
-  input: 'com.github.ArtyIF.AdwCustomizer.desktop.in',
-  output: 'com.github.ArtyIF.AdwCustomizer.desktop',
+  input: 'com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in',
+  output: 'com.github.AdwCustomizerTeam.AdwCustomizer.desktop',
   type: 'desktop',
   po_dir: '../po',
   install: true,
@@ -15,8 +15,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-  input: 'com.github.ArtyIF.AdwCustomizer.appdata.xml.in',
-  output: 'com.github.ArtyIF.AdwCustomizer.appdata.xml',
+  input: 'com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in',
+  output: 'com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml',
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'appdata')
@@ -29,7 +29,7 @@ if appstream_util.found()
   )
 endif
 
-install_data('com.github.ArtyIF.AdwCustomizer.gschema.xml',
+install_data('com.github.AdwCustomizerTeam.AdwCustomizer.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
 

@@ -28,7 +28,7 @@
 
 from gi.repository import Gtk, Gdk, Adw
 
-@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/palette_shades.ui')
+@Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/palette_shades.ui')
 class AdwcustomizerPaletteShades(Adw.ActionRow):
     __gtype_name__ = 'AdwcustomizerPaletteShades'
 

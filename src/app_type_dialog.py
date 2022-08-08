@@ -28,7 +28,7 @@
 
 from gi.repository import Gtk, Adw
 
-@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/app_type_dialog.ui')
+@Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/app_type_dialog.ui')
 class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
     __gtype_name__ = 'AdwcustomizerAppTypeDialog'
 
