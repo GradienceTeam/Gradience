@@ -78,14 +78,3 @@ Fork this repository, then create a push request when you're done adding feature
 ### Localize
 The localization project is available on [Transifex](https://www.transifex.com/artyif/adwcustomizer/). 
 
-### Donate
-I live in Russia (I don't support the "military operation" currently going on), so if anyone wants to help me, the only way right now is cryptocurrency:
-- Bitcoin: `1FrvFbfqWEZepmuH2Bayo8tSvHEr6NnANJ`
-- Ethereum/ERC20: `0x37e03C589F28831bD78C4B41Bf866e8ddB2bed3E`
-- Binance Coin/BEP2: `bnb1aewh72p3u80qd8ufywhseuvjupy9mhxtrmwnm4` (no memo required, type anything in there if it's required by the exchange)
-- Binance Smart Chain/BEP20: `0xcB0fbfca3096E758B6895A5c50eff159B33c225f`
-- Solana: `Brs84xPGUjDJhCi7GH4EHRQi4dXvWFC6kYy9jY8oQpar`
-
-Keep in mind these are non-custodial wallets, so try not to send tokens there unless it's USDT (BUSD on BEP2). And if you have to, send me an [email](mailto:artyomisflash@mail.ru) so I created it.
-
-If you're in Russia, then send me an [email](mailto:artyomisflash@mail.ru), and I'll send you my details (Tinkoff card number or SberBank/SBP/Qiwi/YooMoney/Megafon phone number)
