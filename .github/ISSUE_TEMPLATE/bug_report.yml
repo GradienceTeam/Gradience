@@ -1,0 +1,96 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug", "triage"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for your problem.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear and concise description of what the bug is.
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+  - type: textarea
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
+  - type: markdown
+    attributes:
+      value: '## System'
+
+  - type: input
+    attributes:
+      label: OS
+      description: On which system do you run the app?
+      placeholder: Fedora Linux 36 (Workstation Edition)
+
+  - type: input
+    attributes:
+      label: Version
+      description: Which version of the app do you use?
+      placeholder: '1.2.0'
+
+  - type: dropdown
+    attributes:
+      label: Installation method
+      description: How did you install the app?
+      options:
+        - Flatpak from GitHub Actions
+        - Other, unofficial package
+
+  
+  - type: dropdown
+    id: version
+    attributes:
+      label: Installation method
+      description: How did you install AdwCustomizer ?
+      options:
+        - Flatpak from Flathub
+        - Flatpak from Github Actions
+        - AUR
+        - Other
+    validations:
+      required: true
+ 
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here.
+
+  
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
