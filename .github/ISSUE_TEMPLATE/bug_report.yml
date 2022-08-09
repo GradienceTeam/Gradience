@@ -3,19 +3,22 @@ description: File a bug report
 title: "[Bug]: "
 labels: ["bug", "triage"]
 assignees:
-  - octocat
+  - 0xMRTT
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
+        
   - type: checkboxes
+    id: no-existing
     attributes:
       label: Is there an existing issue for this?
       description: Please search to see if an issue already exists for your problem.
       options:
         - label: I have searched the existing issues
           required: true
+
   - type: textarea
     id: what-happened
     attributes:
@@ -25,7 +28,9 @@ body:
       value: "A bug happened!"
     validations:
       required: true
+
   - type: textarea
+    id: reproduce
     attributes:
       label: To Reproduce
       description: Steps to reproduce the behavior.
@@ -34,31 +39,39 @@ body:
         2. Click on '...'
         3. Scroll down to '...'
         4. See error
+
   - type: textarea
+    id: expected
     attributes:
       label: Expected behavior
       description: A clear and concise description of what you expected to happen.
+
   - type: textarea
+    id: screenshots
     attributes:
       label: Screenshots
       description: If applicable, add screenshots to help explain your problem.
+
   - type: markdown
     attributes:
-      value: '## System'
+      value: "## System"
 
   - type: input
+    id: os
     attributes:
       label: OS
       description: On which system do you run the app?
       placeholder: Fedora Linux 36 (Workstation Edition)
 
   - type: input
+    id: version
     attributes:
       label: Version
       description: Which version of the app do you use?
-      placeholder: '1.2.0'
+      placeholder: "1.2.0"
 
   - type: dropdown
+    id: installation
     attributes:
       label: Installation method
       description: How did you install the app?
@@ -66,7 +79,6 @@ body:
         - Flatpak from GitHub Actions
         - Other, unofficial package
 
-  
   - type: dropdown
     id: version
     attributes:
@@ -79,13 +91,13 @@ body:
         - Other
     validations:
       required: true
- 
+
   - type: textarea
+    id: additional
     attributes:
       label: Additional context
       description: Add any other context about the problem here.
 
-  
   - type: checkboxes
     id: terms
     attributes:
