@@ -4,25 +4,25 @@
 # Adwaita Manager Team, 2022.
 # 
 # Translators:
-# Artyom Fomin, 2022
+# ArtyIF, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-01 20:11+0300\n"
+"POT-Creation-Date: 2022-08-01 22:42+0300\n"
 "PO-Revision-Date: 2022-07-25 14:48+0000\n"
-"Last-Translator: Artyom Fomin, 2022\n"
-"Language-Team: Russian (https://www.transifex.com/artyif/teams/147445/ru/)\n"
+"Last-Translator: ArtyIF, 2022\n"
+"Language-Team: Russian (https://www.transifex.com/adwcustomizerteam/teams/147445/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: data/com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in:3 src/ui/window.blp:5
-#: src/main.py:342
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in:3
+#: src/ui/window.blp:5 src/main.py:361
 msgid "Adwaita Manager"
 msgstr "Adwaita Manager"
 
@@ -79,39 +79,39 @@ msgstr "Объяснение"
 msgid "Toggle Text Value"
 msgstr "Изменить текстовое значение"
 
-#: src/ui/window.blp:13 src/main.py:262
+#: src/ui/window.blp:13 src/main.py:280
 msgid "Apply"
 msgstr "Применить"
 
-#: src/ui/window.blp:21
+#: src/ui/window.blp:20
 msgid "Save Preset"
 msgstr "Сохранить предустановку"
 
-#: src/ui/window.blp:28
+#: src/ui/window.blp:30
 msgid "Presets"
 msgstr "Предустановки"
 
-#: src/ui/window.blp:50
+#: src/ui/window.blp:52
 msgid "Built-in Presets"
 msgstr "Встроенные предустановки"
 
-#: src/ui/window.blp:65
+#: src/ui/window.blp:67
 msgid "Reset Applied Color Scheme"
 msgstr "Сбросить применённую цветовую схему"
 
-#: src/ui/window.blp:66
+#: src/ui/window.blp:68
 msgid "About Adwaita Manager"
 msgstr "Об Adwaita Manager"
 
-#: src/app_type_dialog.py:43 src/main.py:281
+#: src/app_type_dialog.py:43 src/main.py:299
 msgid "Cancel"
 msgstr "Отменить"
 
-#: src/main.py:106
+#: src/main.py:107
 msgid "Palette Colors"
 msgstr "Цвета палитры"
 
-#: src/main.py:107
+#: src/main.py:108
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a"
 " href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human"
@@ -134,11 +134,15 @@ msgstr "Открыть в файловом менеджере"
 msgid "User Defined Presets"
 msgstr "Пользовательские предустановки"
 
-#: src/main.py:260
+#: src/main.py:238
+msgid "Unsaved changes"
+msgstr "Изменено"
+
+#: src/main.py:278
 msgid "Apply this color scheme?"
 msgstr "Применить эту цветовую схему?"
 
-#: src/main.py:261
+#: src/main.py:279
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -146,23 +150,23 @@ msgstr ""
 "Внимание: любые добавленные пользователем файлы CSS для выбранных типов "
 "приложений будут безвозвратно перезаписаны!"
 
-#: src/main.py:268
+#: src/main.py:286
 msgid "Reset applied color scheme?"
 msgstr "Сбросить применённую цветовую схему?"
 
-#: src/main.py:269
+#: src/main.py:287
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Убедитесь, что Вы сохранили текущие настройки как предустановку."
 
-#: src/main.py:270
+#: src/main.py:288
 msgid "Reset"
 msgstr "Сбросить"
 
-#: src/main.py:277
+#: src/main.py:295
 msgid "Save preset as..."
 msgstr "Сохранить предустановку как..."
 
-#: src/main.py:278 src/main.py:291 src/main.py:294
+#: src/main.py:296 src/main.py:309 src/main.py:312
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -171,15 +175,15 @@ msgstr ""
 "Предустановки сохранятся в <tt>{0}</tt>. Если эти предустановки уже "
 "существуют, то они будут перезаписаны!"
 
-#: src/main.py:282
+#: src/main.py:300
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/main.py:344
+#: src/main.py:363
 msgid "Adwaita Manager Team"
 msgstr "Команда Adwaita Manager"
 
-#: src/main.py:347
+#: src/main.py:366
 msgid "translator-credits"
 msgstr ""
 "Артём \"ArtyIF\" Фомин https://github.com/ArtyIF\n"
