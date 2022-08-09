@@ -1,0 +1,36 @@
+{
+    "app-id" : "com.github.AdwCustomizerTeam.AdwCustomizer",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "master",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "flatpak run com.github.AdwCustomizerTeam.AdwCustomizer",
+    "finish-args" : [
+        "--share=ipc",
+        "--device=dri",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+    ],
+    "modules" : [
+        {
+            "name" : "adwcustomizer",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "--prefix=/app",
+                "--buildtype=debugoptimized",
+                "-Dtests=true"
+            ],
+            "sources" : [
+                {
+                    "name" : "adwcustomizer",
+                    "buildsystem" : "meson",
+                    "type" : "dir",
+                    "path" : "../../"
+                }
+            ]
+        }
+    ]
+}
