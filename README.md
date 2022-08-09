@@ -3,12 +3,6 @@
 # Adwaita Manager
 Change the look of Adwaita, with ease
 
-# <!-- "The Badge Place" starts -->
-
-[![Code quality score and Codiga button](https://api.codiga.io/project/34247/score/svg)](https://app.codiga.io/hub/project/34247/AdwCustomizer)
-
-<!-- "The Badge Place" ends -->
-
 ![Screenshot of interface with Adwaita light theme](pictures/main_screenshot.png)
 
 Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
@@ -76,5 +70,5 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 Fork this repository, then create a push request when you're done adding features or fixing bugs.
 
 ### Localize
-The localization project is available on [Transifex](https://www.transifex.com/artyif/adwcustomizer/). 
+The localization project is available on [Transifex](https://www.transifex.com/adwcustomizerteam/adwcustomizer/). 
 
