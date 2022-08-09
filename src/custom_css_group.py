@@ -28,7 +28,7 @@
 
 from gi.repository import Gtk, Adw
 
-@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/custom_css_group.ui')
+@Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/custom_css_group.ui')
 class AdwcustomizerCustomCSSGroup(Adw.PreferencesGroup):
     __gtype_name__ = 'AdwcustomizerCustomCSSGroup'
 

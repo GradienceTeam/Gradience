@@ -34,7 +34,7 @@ from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 
-@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/window.ui')
+@Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/window.ui')
 class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'AdwcustomizerMainWindow'
 

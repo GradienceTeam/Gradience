@@ -28,7 +28,7 @@
 
 from gi.repository import Gtk, Gdk, Adw
 
-@Gtk.Template(resource_path='/com/github/ArtyIF/AdwCustomizer/ui/option.ui')
+@Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/option.ui')
 class AdwcustomizerOption(Adw.ActionRow):
     __gtype_name__ = 'AdwcustomizerOption'
 

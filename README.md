@@ -1,4 +1,4 @@
-<img align="left" alt="Project logo" src="data/icons/hicolor/scalable/apps/com.github.ArtyIF.AdwCustomizer.svg" />
+<img align="left" alt="Project logo" src="data/icons/hicolor/scalable/apps/com.github.AdwCustomizerTeam.AdwCustomizer.svg" />
 
 # Adwaita Manager
 Change the look of Adwaita, with ease
@@ -23,10 +23,10 @@ Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita application
 
 ## Building and Installing
 1. Open Terminal
-2. Run `git clone https://github.com/ArtyIF/AdwCustomizer.git && cd AdwCustomizer`
+2. Run `git clone https://github.com/AdwCustomizerTeam/AdwCustomizer.git && cd AdwCustomizer`
 3. Add the `gnome-nightly` Flatpak repository `flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo`
 4. Install the `master` version of GNOME SDK: `flatpak install org.gnome.Sdk/x86_64/master org.gnome.Platform/x86_64/master`
-5. Run `flatpak-builder --install --user --force-clean repo/ com.github.ArtyIF.AdwCustomizer.json`
+5. Run `flatpak-builder --install --user --force-clean repo/ com.github.AdwCustomizerTeam.AdwCustomizer.json`
 
 Alternatively, open the project with GNOME Builder, then build and run it.
 
