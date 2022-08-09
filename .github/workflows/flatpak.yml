@@ -1,36 +1,60 @@
-{
-    "app-id" : "com.github.AdwCustomizerTeam.AdwCustomizer",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "master",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "flatpak run com.github.AdwCustomizerTeam.AdwCustomizer",
-    "finish-args" : [
-        "--share=ipc",
-        "--device=dri",
-        "--socket=fallback-x11",
-        "--socket=wayland",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
-    ],
-    "modules" : [
-        {
-            "name" : "adwcustomizer",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "--prefix=/app",
-                "--buildtype=debugoptimized",
-                "-Dtests=true"
-            ],
-            "sources" : [
-                {
-                    "name" : "adwcustomizer",
-                    "buildsystem" : "meson",
-                    "type" : "dir",
-                    "path" : "../../"
-                }
-            ]
-        }
-    ]
-}
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/flatpak.yml
+      - data/**
+      - po/**
+      - src/**
+      - meson.build
+      - pylintrc
+      - pypi-dependencies.json
+      - requirements.txt
+      
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/flatpak.yml
+      - data/**
+      - po/**
+      - src/**
+      - meson.build
+      - pylintrc
+      - pypi-dependencies.json
+      - requirements.txt
+
+name: Flatpak
+
+jobs:
+  flatpak:
+    name: Flatpak
+    runs-on: ubuntu-latest
+
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:gnome-nightly
+      options: --privileged
+
+    strategy:
+      matrix: { arch: [x86_64, aarch64] }
+      fail-fast: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.2
+
+      - name: Install deps
+        run: dnf install -y docker
+
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v2.0.0
+        with: { platforms: arm64 }
+
+      - name: Build flatpak
+        uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+        with:
+          manifest-path: com.github.AdwCustomizerTeam.AdwCustomizer.json
+          bundle: com.github.AdwCustomizerTeam.AdwCustomizer.flatpak
+          branch: main
+          cache-key: flatpak-builder-${{ github.sha }}
+          arch: ${{ matrix.arch }}
