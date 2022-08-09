@@ -16,7 +16,8 @@ body:
         description: Please search to see if an issue already exists for your problem.
         options:
           - label: I have searched the existing issues
-            required: true
+      validations:
+        required: true
 
   - type: textarea
     attributes:
