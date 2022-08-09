@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-01 22:42+0300\n"
+"POT-Creation-Date: 2022-08-09 22:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in:3 src/ui/window.blp:5
-#: src/main.py:361
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in:3
+#: src/ui/window.blp:5 src/main.py:332
 msgid "Adwaita Manager"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Toggle Text Value"
 msgstr ""
 
-#: src/ui/window.blp:13 src/main.py:280
+#: src/ui/window.blp:13 src/main.py:245
 msgid "Apply"
 msgstr ""
 
@@ -78,95 +78,85 @@ msgstr ""
 msgid "Save Preset"
 msgstr ""
 
-#: src/ui/window.blp:30
+#: src/ui/window.blp:36
 msgid "Presets"
 msgstr ""
 
-#: src/ui/window.blp:52
+#: src/ui/window.blp:58
 msgid "Built-in Presets"
 msgstr ""
 
-#: src/ui/window.blp:67
+#: src/ui/window.blp:73
 msgid "Reset Applied Color Scheme"
 msgstr ""
 
-#: src/ui/window.blp:68
+#: src/ui/window.blp:74
 msgid "About Adwaita Manager"
 msgstr ""
 
-#: src/app_type_dialog.py:43 src/main.py:299
+#: src/app_type_dialog.py:43 src/main.py:264
 msgid "Cancel"
 msgstr ""
 
-#: src/main.py:107
-msgid "Palette Colors"
-msgstr ""
-
-#: src/main.py:108
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-
-#: src/main.py:158
+#: src/main.py:123
 msgid "Failed to load preset"
 msgstr ""
 
-#: src/main.py:174
+#: src/main.py:139
 msgid "Open in File Manager"
 msgstr ""
 
-#: src/main.py:177
+#: src/main.py:142
 msgid "User Defined Presets"
 msgstr ""
 
-#: src/main.py:238
+#: src/main.py:203
 msgid "Unsaved changes"
 msgstr ""
 
-#: src/main.py:278
+#: src/main.py:243
 msgid "Apply this color scheme?"
 msgstr ""
 
-#: src/main.py:279
+#: src/main.py:244
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:286
+#: src/main.py:251
 msgid "Reset applied color scheme?"
 msgstr ""
 
-#: src/main.py:287
+#: src/main.py:252
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 
-#: src/main.py:288
+#: src/main.py:253
 msgid "Reset"
 msgstr ""
 
-#: src/main.py:295
+#: src/main.py:260
 msgid "Save preset as..."
 msgstr ""
 
-#: src/main.py:296 src/main.py:309 src/main.py:312
+#: src/main.py:261 src/main.py:274 src/main.py:277
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:300
+#: src/main.py:265
 msgid "Save"
 msgstr ""
 
-#: src/main.py:363
+#: src/main.py:334
 msgid "Adwaita Manager Team"
 msgstr ""
 
-#: src/main.py:366
+#. Translators: This is a place to put your credits (formats: "Name https://example.com" or "Name <email@example.com>", no quotes) and is not meant to be translated literally.
+#: src/main.py:338
 msgid "translator-credits"
 msgstr ""
 
@@ -419,4 +409,15 @@ msgstr ""
 
 #: src/settings_schema.py:307
 msgid "Dark"
+msgstr ""
+
+#: src/window.py:70
+msgid "Palette Colors"
+msgstr ""
+
+#: src/window.py:71
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
 msgstr ""

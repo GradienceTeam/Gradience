@@ -334,6 +334,7 @@ class AdwcustomizerApplication(Adw.Application):
                                 developer_name=_("Adwaita Manager Team"),
                                 developers=['Artyom "ArtyIF" Fomin https://github.com/ArtyIF', 'Verantor https://github.com/Verantor'],
                                 artists=['David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],
+                                # Translators: This is a place to put your credits (formats: "Name https://example.com" or "Name <email@example.com>", no quotes) and is not meant to be translated literally.
                                 translator_credits=_("translator-credits"),
                                 copyright='© 2022 Adwaita Manager Team',
                                 license_type=Gtk.License.MIT_X11)
