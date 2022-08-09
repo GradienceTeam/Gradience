@@ -3,9 +3,9 @@ on:
     branches: [main]
     paths:
       - .github/workflows/flatpak.yml
-      - data/**
-      - po/**
-      - src/**
+      - data/
+      - po/
+      - src/
       - meson.build
       - pylintrc
       - pypi-dependencies.json
@@ -15,9 +15,9 @@ on:
     branches: [main]
     paths:
       - .github/workflows/flatpak.yml
-      - data/**
-      - po/**
-      - src/**
+      - data/
+      - po/
+      - src/
       - meson.build
       - pylintrc
       - pypi-dependencies.json
@@ -35,7 +35,7 @@ jobs:
       options: --privileged
 
     strategy:
-      matrix: { arch: [x86_64] }
+      matrix: { arch: [x86_64, aarch64] }
       fail-fast: false
 
     steps:
