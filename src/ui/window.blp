@@ -23,24 +23,9 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
           action-name: "app.apply_color_scheme";
         }
 
-        [start]
-        Button save-preset-button {
-          action-name: "app.save_preset";
-          tooltip-text: _("Save Preset");
-          Adw.ButtonContent {
-            icon-name: "disk-saved";
-          }
-        }
-
 				[title]
 				Adw.ViewSwitcherTitle title {
 					stack: view_stack;
-				}
-
-				[end]
-				Gtk.MenuButton {
-				  icon-name: "open-menu-symbolic";
-				  menu-model: main-menu;
 				}
 
         [end]
@@ -49,6 +34,21 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
           label: _("Presets");
           icon-name: "palette-symbolic";
         }
+
+        [end]
+        Button save-preset-button {
+          action-name: "app.save_preset";
+          tooltip-text: _("Save Preset");
+          Adw.ButtonContent {
+            icon-name: "disk-saved";
+          }
+        }
+
+        [end]
+				Gtk.MenuButton {
+				  icon-name: "open-menu-symbolic";
+				  menu-model: main-menu;
+				}
 
         [end]
         MenuButton errors-button {
