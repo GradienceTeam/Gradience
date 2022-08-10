@@ -55,34 +55,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
         self.setup_monet_page()
         self.setup_plugins_page()
-        for group in settings_schema["groups"]:
-            pref_group = Adw.PreferencesGroup()
-            pref_group.set_name(group["name"])
-            pref_group.set_title(group["title"])
-            pref_group.set_description(group["description"])
-
-            for variable in group["variables"]:
-                pref_variable = AdwcustomizerOption(variable["name"],
-                                                    variable["title"],
-                                                    variable["adw_gtk3_support"],
-                                                    variable.get("explanation"))
-                pref_group.add(pref_variable)
-                self.get_application().pref_variables[variable["name"]] = pref_variable
-
-            self.content.add(pref_group)
-
-        palette_pref_group = Adw.PreferencesGroup()
-        palette_pref_group.set_name("palette_colors")
-        palette_pref_group.set_title(_("Palette Colors"))
-        palette_pref_group.set_description(_("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."))
-        for color in settings_schema["palette"]:
-            palette_shades = AdwcustomizerPaletteShades(color["prefix"],
-                                                        color["title"],
-                                                        color["n_shades"])
-            palette_pref_group.add(palette_shades)
-            self.get_application().pref_palette_shades[color["prefix"]] = palette_shades
-        self.content.add(palette_pref_group)
-
+        self.setup_colors_page()
+        
         self.settings = Gio.Settings(
             "com.github.AdwCustomizerTeam.AdwCustomizer")
 
@@ -156,6 +130,35 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         custom_css_group.load_custom_css(self.get_application().custom_css)
         self.content_plugins.add(custom_css_group)
         self.get_application().custom_css_group = custom_css_group
+
+    def setup_colors_page(self):
+        for group in settings_schema["groups"]:
+            pref_group = Adw.PreferencesGroup()
+            pref_group.set_name(group["name"])
+            pref_group.set_title(group["title"])
+            pref_group.set_description(group["description"])
+
+            for variable in group["variables"]:
+                pref_variable = AdwcustomizerOption(variable["name"],
+                                                    variable["title"],
+                                                    variable["adw_gtk3_support"],
+                                                    variable.get("explanation"))
+                pref_group.add(pref_variable)
+                self.get_application().pref_variables[variable["name"]] = pref_variable
+
+            self.content.add(pref_group)
+
+        palette_pref_group = Adw.PreferencesGroup()
+        palette_pref_group.set_name("palette_colors")
+        palette_pref_group.set_title(_("Palette Colors"))
+        palette_pref_group.set_description(_("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."))
+        for color in settings_schema["palette"]:
+            palette_shades = AdwcustomizerPaletteShades(color["prefix"],
+                                                        color["title"],
+                                                        color["n_shades"])
+            palette_pref_group.add(palette_shades)
+            self.get_application().pref_palette_shades[color["prefix"]] = palette_shades
+        self.content.add(palette_pref_group)
 
 
     def update_errors(self, errors):
