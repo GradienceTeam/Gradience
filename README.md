@@ -17,6 +17,9 @@ Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita application
 
 
 ## Building and Installing
+
+See `next` branch for UI rework and latest commit.
+
 1. Open Terminal
 2. Run `git clone https://github.com/AdwCustomizerTeam/AdwCustomizer.git && cd AdwCustomizer`
 3. Add the `gnome-nightly` Flatpak repository `flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo`
@@ -58,7 +61,8 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] Add custom CSS code
 - [x] Localization support
 - [x] Normalize color variables
-- [ ] Make the code more secure
+- [x] Make the code more secure
+- [ ] Add plugin support. Will help integration with others tools.
 - [ ] Release on Flathub
 - [ ] Full theme preview
 - [ ] Customize GNOME Shell
