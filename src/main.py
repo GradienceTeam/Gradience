@@ -75,6 +75,17 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.is_ready = False
 
+        self.settings = Gio.Settings(schema_id="com.github.AdwCustomizerTeam.AdwCustomizer.State")
+
+        self.settings.bind("width", self, "default-width",
+                           Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("height", self, "default-height",
+                           Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("is-maximized", self, "maximized",
+                           Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("is-fullscreen", self, "fullscreened",
+                           Gio.SettingsBindFlags.DEFAULT)
+
     def do_activate(self):
         """Called when the application is activated.
 
