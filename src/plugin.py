@@ -25,8 +25,7 @@ class AdwcustomizerPlugin:
     def get_custom_settings_for_preset(self):
         setting_dict = {}
         for setting_key, setting in self.custom_settings:
-            setting_dict[setting_key] = setting.value
-        return setting_list
+            return setting_dict[setting_key]
 
     def get_alias_values(self):
         alias_values = {}
@@ -35,7 +34,10 @@ class AdwcustomizerPlugin:
         return alias_values
 
     def validate(self):
-        pass
+        raise NotImplementedError()
 
     def apply(self):
+        raise NotImplementedError()
+
+    def save(self):
         pass
