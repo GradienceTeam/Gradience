@@ -26,7 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Adw, Gio
+from gi.repository import Gtk, Adw, Gio, Gdk
 from .error import AdwcustomizerError
 from .settings_schema import settings_schema
 from .palette_shades import AdwcustomizerPaletteShades
@@ -35,11 +35,12 @@ from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 
 @Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/window.ui')
-class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
+class AdwcustomizerMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'AdwcustomizerMainWindow'
 
     content = Gtk.Template.Child()
     save_preset_button = Gtk.Template.Child("save-preset-button")
+    main_menu = Gtk.Template.Child("main-menu")
     presets_dropdown = Gtk.Template.Child("presets-dropdown")
     presets_menu = Gtk.Template.Child("presets-menu")
     errors_button = Gtk.Template.Child("errors-button")
