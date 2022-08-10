@@ -41,6 +41,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
     content = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     content_monet = Gtk.Template.Child("content_monet")
+    content_plugins = Gtk.Template.Child("content_plugins")
     save_preset_button = Gtk.Template.Child("save-preset-button")
     main_menu = Gtk.Template.Child("main-menu")
     presets_dropdown = Gtk.Template.Child("presets-dropdown")
@@ -53,6 +54,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
 
         self.setup_monet_page()
+        self.setup_plugins_page()
         for group in settings_schema["groups"]:
             pref_group = Adw.PreferencesGroup()
             pref_group.set_name(group["name"])
@@ -80,13 +82,6 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             palette_pref_group.add(palette_shades)
             self.get_application().pref_palette_shades[color["prefix"]] = palette_shades
         self.content.add(palette_pref_group)
-
-        custom_css_group = AdwcustomizerCustomCSSGroup()
-        for app_type in settings_schema["custom_css_app_types"]:
-            self.get_application().custom_css[app_type] = ""
-        custom_css_group.load_custom_css(self.get_application().custom_css)
-        self.content.add(custom_css_group)
-        self.get_application().custom_css_group = custom_css_group
 
         self.settings = Gio.Settings(
             "com.github.AdwCustomizerTeam.AdwCustomizer")
@@ -153,6 +148,14 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         monet_pref_group.add(self.palette_picker)
 
         self.content_monet.add(monet_pref_group)
+
+    def setup_plugins_page(self):
+        custom_css_group = AdwcustomizerCustomCSSGroup()
+        for app_type in settings_schema["custom_css_app_types"]:
+            self.get_application().custom_css[app_type] = ""
+        custom_css_group.load_custom_css(self.get_application().custom_css)
+        self.content_plugins.add(custom_css_group)
+        self.get_application().custom_css_group = custom_css_group
 
 
     def update_errors(self, errors):
