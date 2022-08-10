@@ -43,7 +43,7 @@ from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
-
+from .plugins_list import AdwcustomizerPluginsList
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
