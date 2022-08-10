@@ -16,5 +16,5 @@ jobs:
       - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
         with:
           bundle: palette.flatpak
-          manifest-path: com.github.AdwCustomizerTeam.AdwCustomizer.yml
+          manifest-path: com.github.AdwCustomizerTeam.AdwCustomizer.json
           cache-key: flatpak-builder-${{ github.sha }}
