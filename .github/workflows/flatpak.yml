@@ -11,9 +11,10 @@ jobs:
       image: bilelmoussaoui/flatpak-github-actions:gnome-40
       options: --privileged
     steps:
-    - uses: actions/checkout@v2
-    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
-      with:
-        bundle: palette.flatpak
-        manifest-path: com.github.AdwCustomizerTeam.AdwCustomizer.yml
-        cache-key: flatpak-builder-${{ github.sha }}
+      - name: Checkout
+          uses: actions/checkout@v3.0.2
+      - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+        with:
+          bundle: palette.flatpak
+          manifest-path: com.github.AdwCustomizerTeam.AdwCustomizer.yml
+          cache-key: flatpak-builder-${{ github.sha }}
