@@ -116,7 +116,7 @@ class AdwcustomizerApplication(Adw.Application):
             self.props.active_window.presets_menu.remove(1)
 
         preset_directory = os.path.join(
-            os.environ["XDG_CONFIG_HOME"], "presets")
+            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "presets")
         if not os.path.exists(preset_directory):
             os.makedirs(preset_directory)
 
@@ -174,7 +174,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.portal.open_uri(
             parent,
-            "file://" + os.path.join(os.environ["XDG_CONFIG_HOME"], "presets"),
+            "file://" + os.path.join(os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "presets"),
             Xdp.OpenUriFlags.NONE,
             None,
             open_dir_callback,
@@ -278,7 +278,7 @@ class AdwcustomizerApplication(Adw.Application):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(
                 os.path.join(
-                    os.environ["XDG_CONFIG_HOME"],
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ),
                     "presets",
                     args[0].get_string().replace("custom-", "", 1) + ".json",
                 )
@@ -325,7 +325,7 @@ class AdwcustomizerApplication(Adw.Application):
                 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
             ).format(
                 os.path.join(
-                    os.environ["XDG_CONFIG_HOME"],
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ),
                     "presets",
                     to_slug_case(self.preset_name) + ".json",
                 )
@@ -348,7 +348,7 @@ class AdwcustomizerApplication(Adw.Application):
                 dialog.set_body(
                     _(
                         "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
-                    ).format(os.path.join(os.environ["XDG_CONFIG_HOME"], "presets"))
+                    ).format(os.path.join(os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "presets"))
                 )
                 dialog.set_response_enabled("save", False)
             else:
@@ -357,7 +357,7 @@ class AdwcustomizerApplication(Adw.Application):
                         "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
-                            os.environ["XDG_CONFIG_HOME"],
+                           os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ),
                             "presets",
                             to_slug_case(preset_entry.get_text()) + ".json",
                         )
@@ -376,7 +376,7 @@ class AdwcustomizerApplication(Adw.Application):
         if response == "save":
             with open(
                 os.path.join(
-                    os.environ["XDG_CONFIG_HOME"],
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ),
                     "presets",
                     to_slug_case(entry.get_text()) + ".json",
                 ),
@@ -396,7 +396,7 @@ class AdwcustomizerApplication(Adw.Application):
         if response == "apply":
             if widget.get_app_types()["gtk4"]:
                 gtk4_dir = os.path.join(
-                    os.environ["XDG_CONFIG_HOME"], "gtk-4.0")
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-4.0")
                 if not os.path.exists(gtk4_dir):
                     os.makedirs(gtk4_dir)
                 gtk4_css = self.generate_gtk_css("gtk4")
@@ -406,7 +406,7 @@ class AdwcustomizerApplication(Adw.Application):
                     file.write(gtk4_css)
             if widget.get_app_types()["gtk3"]:
                 gtk3_dir = os.path.join(
-                    os.environ["XDG_CONFIG_HOME"], "gtk-3.0")
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-3.0")
                 if not os.path.exists(gtk3_dir):
                     os.makedirs(gtk3_dir)
                 gtk3_css = self.generate_gtk_css("gtk3")
@@ -420,7 +420,7 @@ class AdwcustomizerApplication(Adw.Application):
             if widget.get_app_types()["gtk4"]:
                 file = Gio.File.new_for_path(
                     os.path.join(
-                        os.environ["XDG_CONFIG_HOME"], "/gtk-3.0/gtk.css")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "/gtk-3.0/gtk.css")
                 )
                 try:
                     file.delete()
@@ -429,7 +429,7 @@ class AdwcustomizerApplication(Adw.Application):
             if widget.get_app_types()["gtk3"]:
                 file = Gio.File.new_for_path(
                     os.path.join(
-                        os.environ["XDG_CONFIG_HOME"], "/gtk-3.0/gtk.css")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "/gtk-3.0/gtk.css")
                 )
                 try:
                     file.delete()
