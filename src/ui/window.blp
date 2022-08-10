@@ -71,9 +71,7 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
 						title: C_("Navigation", "Colors");
 						icon-name: "larger-brush-symbolic";
           
-            child: Gtk.Label {
-              label: _("WIP");
-            };
+            child: Adw.PreferencesPage content { };
 		
 					}
 
@@ -109,8 +107,6 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
 				}
 			}
   	}
-
-  Adw.PreferencesPage content { }
   }
 }
 
