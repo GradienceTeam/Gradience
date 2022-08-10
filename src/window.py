@@ -26,7 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Adw
+from gi.repository import Gtk, Adw, Gio
 from .error import AdwcustomizerError
 from .settings_schema import settings_schema
 from .palette_shades import AdwcustomizerPaletteShades
