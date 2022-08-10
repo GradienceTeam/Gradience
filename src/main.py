@@ -226,16 +226,15 @@ class AdwcustomizerApplication(Adw.Application):
 
     def mark_as_dirty(self):
         self.is_dirty = True
-        self.props.active_window.save_preset_button.add_css_class("warning")
-        self.props.active_window.save_preset_button.add_css_class("raised")
-        self.props.active_window.save_preset_button.get_child().set_label(
+        self.props.active_window.save_preset_button.get_child().set_icon_name(
+            "disk-unsaved"
+        )
+        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
             _("Unsaved changes")
         )
 
     def clear_dirty(self):
         self.is_dirty = False
-        self.props.active_window.save_preset_button.remove_css_class("warning")
-        self.props.active_window.save_preset_button.remove_css_class("raised")
         self.props.active_window.save_preset_button.get_child().set_label("")
 
     def reload_variables(self):
