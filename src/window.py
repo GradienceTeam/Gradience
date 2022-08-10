@@ -39,6 +39,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'AdwcustomizerMainWindow'
 
     content = Gtk.Template.Child()
+    content_monet = Gtk.Template.Child("content_monet")
     save_preset_button = Gtk.Template.Child("save-preset-button")
     main_menu = Gtk.Template.Child("main-menu")
     presets_dropdown = Gtk.Template.Child("presets-dropdown")
@@ -50,6 +51,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         super().__init__(**kwargs)
         self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
 
+        self.setup_monet_page()
+        
         for group in settings_schema["groups"]:
             pref_group = Adw.PreferencesGroup()
             pref_group.set_name(group["name"])
@@ -102,6 +105,55 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.settings.bind(
             "window-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT
         )
+
+    def on_file_picker_button_clicked(self, *args):
+        self.monet_file_chooser_dialog.show()
+
+    def on_monet_file_chooser_response(self, widget, response):
+        if response == Gtk.ResponseType.ACCEPT:
+            image_file =  self.monet_file_chooser_dialog.get_file()
+            image_basename = image_file.get_basename()
+            self.monet_file_chooser_button.set_label(image_basename)
+        self.monet_file_chooser_dialog.hide()
+
+    def setup_monet_page(self):
+        monet_pref_group = Adw.PreferencesGroup()
+        monet_pref_group.set_name("monet")
+        monet_pref_group.set_title(_("Monet Engine"))
+        monet_pref_group.set_description(_("Monet is an engine that generates Material Design 3 palette from backgrounds color"))
+
+        self.monet_file_chooser_row = Adw.ActionRow()
+        self.monet_file_chooser_row.set_title(_("Background Image"))
+       
+        self.monet_file_chooser_dialog = Gtk.FileChooserNative()
+        self.monet_file_chooser_dialog.set_transient_for(self)
+
+        self.monet_file_chooser_button = Gtk.Button()
+        self.monet_file_chooser_button.set_label(_("Choose a file"))
+        self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
+
+        self.monet_file_chooser_button.connect("clicked", self.on_file_picker_button_clicked )
+        self.monet_file_chooser_dialog.connect("response", self.on_monet_file_chooser_response )
+        self.monet_file_chooser_row.add_suffix(self.monet_file_chooser_button)
+        monet_pref_group.add(self.monet_file_chooser_row)
+
+        self.palette_picker = Adw.ActionRow()
+        self.palette_picker.set_name("monet_palette")
+        self.palette_picker.set_title(_("Monet Palette"))
+        self.palette_picker
+        self.palette_pickers = {}
+        for i in range(5):
+            i = i+1
+            picker = Gtk.ColorButton()
+            picker.set_name(str(i))
+            picker.set_rgba(Gdk.RGBA(red=0, green=0, blue=0, alpha=0))
+            picker.set_valign(Gtk.Align.CENTER)
+            self.palette_pickers[str(i)] = picker
+            self.palette_picker.add_suffix(picker)
+        monet_pref_group.add(self.palette_picker)
+
+        self.content_monet.add(monet_pref_group)
+
 
     def update_errors(self, errors):
         child = self.errors_list.get_row_at_index(0)
