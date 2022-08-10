@@ -99,7 +99,7 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
         )
 
         self.settings.bind(
-            "window-fullscreen", self, "fullscreen", Gio.SettingsBindFlags.DEFAULT
+            "window-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT
         )
 
     def update_errors(self, errors):
