@@ -97,7 +97,16 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
               label: _("WIP");
             };
 
-						//child: .ExmBrowsePage browse_page {};
+					}
+
+          Adw.ViewStackPage {
+						name: "css";
+						title: C_("Navigation", "CSS");
+						icon-name: "code-symbolic";
+
+
+            child: Adw.PreferencesPage content_css { };
+
 					}
 				}
 
