@@ -427,16 +427,17 @@ class AdwcustomizerApplication(Adw.Application):
             if widget.get_app_types()["gtk4"]:
                 file = Gio.File.new_for_path(
                     os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "/gtk-3.0/gtk.css")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-4.0/gtk.css")
                 )
                 try:
                     file.delete()
                 except Exception:
                     pass
+                
             if widget.get_app_types()["gtk3"]:
                 file = Gio.File.new_for_path(
                     os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "/gtk-3.0/gtk.css")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-3.0/gtk.css")
                 )
                 try:
                     file.delete()
