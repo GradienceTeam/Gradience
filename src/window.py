@@ -56,7 +56,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.setup_monet_page()
         self.setup_plugins_page()
         self.setup_colors_page()
-        
+
         self.settings = Gio.Settings(
             "com.github.AdwCustomizerTeam.AdwCustomizer")
 
@@ -141,7 +141,6 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             for variable in group["variables"]:
                 pref_variable = AdwcustomizerOption(variable["name"],
                                                     variable["title"],
-                                                    variable["adw_gtk3_support"],
                                                     variable.get("explanation"))
                 pref_group.add(pref_variable)
                 self.get_application().pref_variables[variable["name"]] = pref_variable
