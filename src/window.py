@@ -98,6 +98,10 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
             "window-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT
         )
 
+        self.settings.bind(
+            "window-fullscreen", self, "fullscreen", Gio.SettingsBindFlags.DEFAULT
+        )
+
     def update_errors(self, errors):
         child = self.errors_list.get_row_at_index(0)
         while child is not None:
