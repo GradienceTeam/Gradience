@@ -141,7 +141,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             for variable in group["variables"]:
                 pref_variable = AdwcustomizerOption(variable["name"],
                                                     variable["title"],
-                                                    variable.get("explanation"))
+                                                    variable.get("explanation"),
+                                                    variable["adw_gtk3_support"])
                 pref_group.add(pref_variable)
                 self.get_application().pref_variables[variable["name"]] = pref_variable
 
