@@ -6,100 +6,102 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
   default-width: 1280;
   default-height: 720;
 
-  Adw.Leaflet leaflet {
-  	can-navigate-back: true;
-  	can-unfold: false;
+  Adw.ToastOverlay toast_overlay {
+    Adw.Leaflet leaflet {
+      can-navigate-back: true;
+      can-unfold: false;
 
-  	Gtk.Box main_view {
-  		orientation: vertical;
+      Gtk.Box main_view {
+        orientation: vertical;
 
-  		Adw.HeaderBar titlebar {
-				centering-policy: strict;
+        Adw.HeaderBar titlebar {
+          centering-policy: strict;
 
-        [start]
-        Button apply-button {
-          styles ["suggested-action"]
-          label: _("Apply");
-          action-name: "app.apply_color_scheme";
+          [start]
+          Button apply-button {
+            styles ["suggested-action"]
+            label: _("Apply");
+            action-name: "app.apply_color_scheme";
+          }
+
+          [title]
+          Adw.ViewSwitcherTitle title {
+            stack: view_stack;
+          }
+
+          [end]
+          MenuButton presets-dropdown {
+            menu-model: presets-menu;
+            label: _("Presets");
+            icon-name: "palette-symbolic";
+          }
+
+          [end]
+          Button save-preset-button {
+            action-name: "app.save_preset";
+            tooltip-text: _("Save Preset");
+            Adw.ButtonContent {
+              icon-name: "disk-saved";
+            }
+          }
+
+          [end]
+          Gtk.MenuButton {
+            icon-name: "menu-symbolic";
+            menu-model: main-menu;
+          }
+
+          [end]
+          MenuButton errors-button {
+            styles ["raised", "error"]
+            icon-name: "dialog-warning-symbolic";
+            popover: errors-popover;
+          }
+
         }
 
-				[title]
-				Adw.ViewSwitcherTitle title {
-					stack: view_stack;
-				}
+        Gtk.Box {
+          orientation: vertical;
 
-        [end]
-        MenuButton presets-dropdown {
-          menu-model: presets-menu;
-          label: _("Presets");
-          icon-name: "palette-symbolic";
-        }
+          Adw.ViewStack view_stack {
+            vexpand: true;
+            hexpand: true;
 
-        [end]
-        Button save-preset-button {
-          action-name: "app.save_preset";
-          tooltip-text: _("Save Preset");
-          Adw.ButtonContent {
-            icon-name: "disk-saved";
+            Adw.ViewStackPage {
+              name: "colors";
+              title: C_("Navigation", "Colors");
+              icon-name: "larger-brush-symbolic";
+            
+              child: Adw.PreferencesPage content { };
+      
+            }
+
+            Adw.ViewStackPage {
+              name: "monet";
+              title: C_("Navigation", "Monet");
+              icon-name: "color-picker-symbolic";
+
+              child: Adw.PreferencesPage content_monet { };
+            }
+
+            Adw.ViewStackPage {
+              name: "plugins";
+              title: C_("Navigation", "Plugins");
+              icon-name: "settings-symbolic";
+
+
+              child: Adw.PreferencesPage content_plugins { };
+
+            }
+          }
+
+          Adw.ViewSwitcherBar {
+            stack: view_stack;
+            reveal: bind title.title-visible;
           }
         }
-
-        [end]
-				Gtk.MenuButton {
-				  icon-name: "menu-symbolic";
-				  menu-model: main-menu;
-				}
-
-        [end]
-        MenuButton errors-button {
-          styles ["raised", "error"]
-          icon-name: "dialog-warning-symbolic";
-          popover: errors-popover;
-        }
-
-			}
-
-			Gtk.Box {
-				orientation: vertical;
-
-				Adw.ViewStack view_stack {
-					vexpand: true;
-					hexpand: true;
-
-					 Adw.ViewStackPage {
-						name: "colors";
-						title: C_("Navigation", "Colors");
-						icon-name: "larger-brush-symbolic";
-          
-            child: Adw.PreferencesPage content { };
-		
-					}
-
-					Adw.ViewStackPage {
-						name: "monet";
-						title: C_("Navigation", "Monet");
-						icon-name: "color-picker-symbolic";
-
-            child: Adw.PreferencesPage content_monet { };
-					}
-
-          Adw.ViewStackPage {
-						name: "plugins";
-						title: C_("Navigation", "Plugins");
-						icon-name: "settings-symbolic";
-
-
-            child: Adw.PreferencesPage content_plugins { };
-
-					}
-				}
-
-				Adw.ViewSwitcherBar {
-					stack: view_stack;
-					reveal: bind title.title-visible;
-				}
-			}
-  	}
+      }
+    }
   }
 }
 

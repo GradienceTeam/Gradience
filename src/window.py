@@ -39,6 +39,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'AdwcustomizerMainWindow'
 
     content = Gtk.Template.Child()
+    toast_overlay = Gtk.Template.Child()
     content_monet = Gtk.Template.Child("content_monet")
     save_preset_button = Gtk.Template.Child("save-preset-button")
     main_menu = Gtk.Template.Child("main-menu")
@@ -52,7 +53,6 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
 
         self.setup_monet_page()
-        
         for group in settings_schema["groups"]:
             pref_group = Adw.PreferencesGroup()
             pref_group.set_name(group["name"])

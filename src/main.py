@@ -143,6 +143,8 @@ class AdwcustomizerApplication(Adw.Application):
                             "line": traceback.format_exc().strip(),
                         }
                     )
+                    self.toast_overlay.add_toast(Adw.Toast(title=_("Failed to load preset")))
+
                     self.props.active_window.update_errors(self.global_errors)
 
         custom_menu_section = Gio.Menu()
@@ -391,6 +393,7 @@ class AdwcustomizerApplication(Adw.Application):
                 }
                 file.write(json.dumps(object_to_write, indent=4))
                 self.clear_dirty()
+                self.toast_overlay.add_toast(Adw.Toast(title=_("Scheme set successfully!")))
 
     def apply_color_scheme(self, widget, response):
         if response == "apply":
