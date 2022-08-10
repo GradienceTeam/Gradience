@@ -84,6 +84,20 @@ class AdwcustomizerMainWindow(Gtk.ApplicationWindow):
         self.content.add(custom_css_group)
         self.get_application().custom_css_group = custom_css_group
 
+        self.settings = Gio.Settings(
+            "com.github.AdwCustomizerTeam.AdwCustomizer")
+
+        self.settings.bind(
+            "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT
+        )
+
+        self.settings.bind(
+            "window-height", self, "default-height", Gio.SettingsBindFlags.DEFAULT
+        )
+        self.settings.bind(
+            "window-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT
+        )
+
     def update_errors(self, errors):
         child = self.errors_list.get_row_at_index(0)
         while child is not None:
