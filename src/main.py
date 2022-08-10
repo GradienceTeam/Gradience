@@ -393,7 +393,7 @@ class AdwcustomizerApplication(Adw.Application):
                 }
                 file.write(json.dumps(object_to_write, indent=4))
                 self.clear_dirty()
-                self.toast_overlay.add_toast(Adw.Toast(title=_("Scheme set successfully!")))
+                self.toast_overlay.add_toast(Adw.Toast(title=_("Scheme successfully saved!")))
 
     def apply_color_scheme(self, widget, response):
         if response == "apply":
@@ -417,6 +417,7 @@ class AdwcustomizerApplication(Adw.Application):
                     os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
                 ) as file:
                     file.write(gtk3_css)
+            self.toast_overlay.add_toast(Adw.Toast(title=_("Scheme set successfully!")))
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
