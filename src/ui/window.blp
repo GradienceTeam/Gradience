@@ -36,6 +36,11 @@ template AdwcustomizerMainWindow : ApplicationWindow {
       label: _("Presets");
     }
 
+    [title]
+    Adw.ViewSwitcherTitle view-switcher {
+      stack: stack
+    }
+
     [end]
     MenuButton {
       icon-name: "open-menu-symbolic";
@@ -50,7 +55,15 @@ template AdwcustomizerMainWindow : ApplicationWindow {
     }
   };
 
-  Adw.PreferencesPage content { }
+  Box {
+    Adw.ViewStack stack {
+      MenuButton {
+      icon-name: "open-menu-symbolic";
+      menu-model: main-menu;
+    }
+    }
+    Adw.PreferencesPage content { }
+  }
 }
 
 menu presets-menu {
