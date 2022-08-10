@@ -86,9 +86,9 @@ class AdwcustomizerApplication(Adw.Application):
         necessary.
         """
 
-        win = self.props.active_window
-        if not win:
-            win = AdwcustomizerMainWindow(application=self)
+        self.win = self.props.active_window
+        if not self.win:
+            self.win = AdwcustomizerMainWindow(application=self)
 
         self.create_action("open_preset_directory", self.open_preset_directory)
         self.create_stateful_action(
@@ -109,7 +109,7 @@ class AdwcustomizerApplication(Adw.Application):
             "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita.json"
         )
 
-        win.present()
+        self.win.present()
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
@@ -143,7 +143,7 @@ class AdwcustomizerApplication(Adw.Application):
                             "line": traceback.format_exc().strip(),
                         }
                     )
-                    self.toast_overlay.add_toast(Adw.Toast(title=_("Failed to load preset")))
+                    self.win.toast_overlay.add_toast(Adw.Toast(title=_("Failed to load preset")))
 
                     self.props.active_window.update_errors(self.global_errors)
 
@@ -393,7 +393,7 @@ class AdwcustomizerApplication(Adw.Application):
                 }
                 file.write(json.dumps(object_to_write, indent=4))
                 self.clear_dirty()
-                self.toast_overlay.add_toast(Adw.Toast(title=_("Scheme successfully saved!")))
+                self.win.toast_overlay.add_toast(Adw.Toast(title=_("Scheme successfully saved!")))
 
     def apply_color_scheme(self, widget, response):
         if response == "apply":
@@ -417,7 +417,7 @@ class AdwcustomizerApplication(Adw.Application):
                     os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
                 ) as file:
                     file.write(gtk3_css)
-            self.toast_overlay.add_toast(Adw.Toast(title=_("Scheme set successfully!")))
+            self.win.toast_overlay.add_toast(Adw.Toast(title=_("Scheme set successfully!")))
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
