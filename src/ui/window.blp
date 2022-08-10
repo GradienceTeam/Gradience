@@ -81,9 +81,7 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
 						icon-name: "color-picker-symbolic";
 
 
-            child: Gtk.Label {
-              label: _("WIP");
-            };
+            child: Adw.PreferencesPage content_monet { };
 						
 					}
 
@@ -93,19 +91,7 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
 						icon-name: "settings-symbolic";
 
 
-            child: Gtk.Label {
-              label: _("WIP");
-            };
-
-					}
-
-          Adw.ViewStackPage {
-						name: "css";
-						title: C_("Navigation", "CSS");
-						icon-name: "code-symbolic";
-
-
-            child: Adw.PreferencesPage content_css { };
+            child: Adw.PreferencesPage content_plugins { };
 
 					}
 				}
