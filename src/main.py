@@ -75,7 +75,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.is_ready = False
 
-        self.settings = Gio.Settings(schema_id="com.github.AdwCustomizerTeam.AdwCustomizer")
+        self.settings = Gio.Settings("com.github.AdwCustomizerTeam.AdwCustomizer")
 
         self.settings.bind("width", self, "default-width",
                            Gio.SettingsBindFlags.DEFAULT)
