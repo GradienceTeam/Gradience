@@ -443,17 +443,33 @@ class AdwcustomizerApplication(Adw.Application):
             application_name=_("Adwaita Manager"),
             application_icon="com.github.AdwCustomizerTeam.AdwCustomizer",
             developer_name=_("Adwaita Manager Team"),
+            website="https://github.com/AdwCustomizerTeam/AdwCustomizer",
+            support_url="https://github.com/orgs/AdwCustomizerTeam/discussions",
+            issue_url="https://github.com/AdwCustomizerTeam/AdwCustomizer/issues",
             developers=[
                 'Artyom "ArtyIF" Fomin https://github.com/ArtyIF',
                 "Verantor https://github.com/Verantor",
+                "0xMRTT https://github.com/0xMRTT",
             ],
-            artists=['David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],
+            artists=[
+                'David "Daudix UFO" Lapshin https://github.com/daudix-UFO'
+            ],
+            designers=[
+                'David "Daudix UFO" Lapshin https://github.com/daudix-UFO'
+            ],
             # Translators: This is a place to put your credits (formats: "Name https://example.com" or "Name <email@example.com>", no quotes) and is not meant to be translated literally.
-            translator_credits=_("translator-credits"),
+            translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh/
+                FineFindus https://github.com/FineFindus
+                Karol Lademan https://www.transifex.com/user/profile/karlod/
+                Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI/
+                Renato Corrêa https://www.transifex.com/user/profile/renatocrrs/
+                Aggelos Tselios https://www.transifex.com/user/profile/AndroGR/
+                David "Daudix UFO" Lapshin https://github.com/daudix-UFO'
+                Juanjo Cillero https://www.transifex.com/user/profile/renux918/
+                Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
             copyright="© 2022 Adwaita Manager Team",
             license_type=Gtk.License.MIT_X11,
         )
-
         about.present()
 
     def update_custom_css_text(self, app_type, new_value):
