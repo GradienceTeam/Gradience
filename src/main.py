@@ -444,7 +444,7 @@ class AdwcustomizerApplication(Adw.Application):
             transient_for=self.props.active_window,
         )
 
-        switch = Gtk.Switch()
+        switch = Adw.ActionRow()
         print(dir(switch))
 
         dialog.set_extra_child(switch)
