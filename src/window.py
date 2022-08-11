@@ -177,8 +177,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         for v in store_values:
             store.append(v)
         self.tone_row.set_model(store)
-        monet_pref_group.add(self.tone_row)
-        self.content_monet.add(monet_pref_group)
+        self.monet_pref_group.add(self.tone_row)
+        self.content_monet.add(self.monet_pref_group)
 
     def setup_plugins_page(self):
         custom_css_group = AdwcustomizerCustomCSSGroup()
