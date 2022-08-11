@@ -135,7 +135,6 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.tone_row.set_title(_("Tone"))
 
         store = Gtk.StringList()
-        print(dir(store))
         store_values = [
             "1",
             "5",
@@ -150,7 +149,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         for v in store_values:
             store.append(v)
         self.tone_row.set_model(store)
-        print(dir(self.tone_row))
+        self.content_monet.add(self.tone_row)
 
     def setup_plugins_page(self):
         custom_css_group = AdwcustomizerCustomCSSGroup()
