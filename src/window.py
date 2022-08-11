@@ -86,6 +86,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             self.monet_file_chooser_button.set_label(image_basename)
         self.monet_file_chooser_dialog.hide()
 
+        dir(self.monet_img)
         self.monet_img = Image.open(self.monet_image_file)
         self.monet_theme = themeFromImage(self.monet_img)
         self.monet_palette = self.monet_theme["palette"]
