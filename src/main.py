@@ -7,12 +7,12 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
@@ -35,6 +35,7 @@ from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from .plugins_list import AdwcustomizerPluginsList
+
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
@@ -114,7 +115,7 @@ class AdwcustomizerApplication(Adw.Application):
             self.props.active_window.presets_menu.remove(1)
 
         preset_directory = os.path.join(
-            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "presets")
+            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"), "presets")
         if not os.path.exists(preset_directory):
             os.makedirs(preset_directory)
 
@@ -141,7 +142,8 @@ class AdwcustomizerApplication(Adw.Application):
                             "line": traceback.format_exc().strip(),
                         }
                     )
-                    self.win.toast_overlay.add_toast(Adw.Toast(title=_("Failed to load preset")))
+                    self.win.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Failed to load preset")))
 
                     self.props.active_window.update_errors(self.global_errors)
 
@@ -174,7 +176,8 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.portal.open_uri(
             parent,
-            "file://" + os.path.join(os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "presets"),
+            "file://" + os.path.join(os.environ.get("XDG_CONFIG_HOME",
+                                     os.environ["HOME"] + "/.config"), "presets"),
             Xdp.OpenUriFlags.NONE,
             None,
             open_dir_callback,
@@ -214,8 +217,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.reload_variables()
 
-
-    def rgba_from_argb(self, argb, alpha = None) -> str:
+    def rgba_from_argb(self, argb, alpha=None) -> str:
         base = "rgba({}, {}, {}, {})"
 
         red = redFromArgb(argb)
@@ -229,28 +231,22 @@ class AdwcustomizerApplication(Adw.Application):
     def update_theme_from_monet(self, theme, tone, monet_theme):
         palettes = theme["palettes"]
 
-        monet_theme = monet_theme.get_string().lower() # dark / light
+        monet_theme = monet_theme.get_string().lower()  # dark / light
 
         palette = {}
         i = 0
         for color in palettes.values():
             i += 1
             palette[str(i)] = hexFromArgb(color.tone(int(tone.get_string())))
-
-        print(palette)
-
         self.pref_palette_shades["monet"].update_shades(palette)
-
-        print(monet_theme)
-        print(theme)
         if monet_theme == "automatic":
             if self.style_manager.get_dark():
                 monet_theme = "dark"
             else:
                 monet_theme = "light"
-        
+
         if monet_theme == "dark":
-            dark_theme =  theme["schemes"]["dark"]
+            dark_theme = theme["schemes"]["dark"]
             variable = {
                 "accent_color": self.rgba_from_argb(dark_theme.primary),
                 "accent_bg_color": self.rgba_from_argb(dark_theme.primaryContainer),
@@ -297,8 +293,8 @@ class AdwcustomizerApplication(Adw.Application):
                 "shade_color": self.rgba_from_argb(dark_theme.shadow),
                 "scrollbar_outline_color": self.rgba_from_argb(dark_theme.outline)
             }
-        else: # light
-            light_theme =  theme["schemes"]["light"]
+        else:  # light
+            light_theme = theme["schemes"]["light"]
             variable = {
                 "accent_color": self.rgba_from_argb(light_theme.primary),
                 "accent_bg_color": self.rgba_from_argb(light_theme.primaryContainer),
@@ -349,7 +345,7 @@ class AdwcustomizerApplication(Adw.Application):
         for key in variable.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(variable[key])
-        
+
         self.reload_variables()
 
     def generate_gtk_css(self, app_type):
@@ -419,7 +415,8 @@ class AdwcustomizerApplication(Adw.Application):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     args[0].get_string().replace("custom-", "", 1) + ".json",
                 )
@@ -451,7 +448,6 @@ class AdwcustomizerApplication(Adw.Application):
 
         box.append(label)
         box.append(switch)
-        print(dir(switch))
 
         dialog.set_extra_child(box)
 
@@ -478,7 +474,8 @@ class AdwcustomizerApplication(Adw.Application):
                 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
             ).format(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     to_slug_case(self.preset_name) + ".json",
                 )
@@ -501,7 +498,7 @@ class AdwcustomizerApplication(Adw.Application):
                 dialog.set_body(
                     _(
                         "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
-                    ).format(os.path.join(os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "presets"))
+                    ).format(os.path.join(os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"), "presets"))
                 )
                 dialog.set_response_enabled("save", False)
             else:
@@ -510,7 +507,8 @@ class AdwcustomizerApplication(Adw.Application):
                         "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
-                           os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ),
+                            os.environ.get("XDG_CONFIG_HOME",
+                                           os.environ["HOME"] + "/.config"),
                             "presets",
                             to_slug_case(preset_entry.get_text()) + ".json",
                         )
@@ -529,7 +527,8 @@ class AdwcustomizerApplication(Adw.Application):
         if response == "save":
             with open(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     to_slug_case(entry.get_text()) + ".json",
                 ),
@@ -544,14 +543,15 @@ class AdwcustomizerApplication(Adw.Application):
                 }
                 file.write(json.dumps(object_to_write, indent=4))
                 self.clear_dirty()
-                self.win.toast_overlay.add_toast(Adw.Toast(title=_("Scheme successfully saved!")))
+                self.win.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Scheme successfully saved!")))
 
     def apply_color_scheme(self, widget, response, switch):
         if response == "apply":
             if switch.get_active():
                 if widget.get_app_types()["gtk4"]:
                     gtk4_dir = os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-4.0")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"), "gtk-4.0")
                     if not os.path.exists(gtk4_dir):
                         os.makedirs(gtk4_dir)
                     gtk4_css = self.generate_gtk_css("gtk4")
@@ -561,7 +561,7 @@ class AdwcustomizerApplication(Adw.Application):
                         file.write(gtk4_css)
                 if widget.get_app_types()["gtk3"]:
                     gtk3_dir = os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-3.0")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"), "gtk-3.0")
                     if not os.path.exists(gtk3_dir):
                         os.makedirs(gtk3_dir)
                     gtk3_css = self.generate_gtk_css("gtk3")
@@ -572,7 +572,7 @@ class AdwcustomizerApplication(Adw.Application):
             else:
                 if widget.get_app_types()["gtk4"]:
                     gtk4_dir = os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-4.0")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"), "gtk-4.0")
                     if not os.path.exists(gtk4_dir):
                         os.makedirs(gtk4_dir)
                     gtk4_css = self.generate_gtk_css("gtk4")
@@ -582,7 +582,7 @@ class AdwcustomizerApplication(Adw.Application):
                         file.write(gtk4_css)
                 if widget.get_app_types()["gtk3"]:
                     gtk3_dir = os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-3.0")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"), "gtk-3.0")
                     if not os.path.exists(gtk3_dir):
                         os.makedirs(gtk3_dir)
                     gtk3_css = self.generate_gtk_css("gtk3")
@@ -590,30 +590,32 @@ class AdwcustomizerApplication(Adw.Application):
                         os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk3_css)
-            self.win.toast_overlay.add_toast(Adw.Toast(title=_("Scheme set successfully!")))
+            self.win.toast_overlay.add_toast(
+                Adw.Toast(title=_("Scheme set successfully!")))
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
             if widget.get_app_types()["gtk4"]:
                 file = Gio.File.new_for_path(
                     os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-4.0/gtk.css")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"), "gtk-4.0/gtk.css")
                 )
                 try:
                     file.delete()
                 except Exception:
                     pass
-                
+
             if widget.get_app_types()["gtk3"]:
                 file = Gio.File.new_for_path(
                     os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-3.0/gtk.css")
+                        os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"), "gtk-3.0/gtk.css")
                 )
                 try:
                     file.delete()
                 except Exception:
                     pass
-            self.win.toast_overlay.add_toast(Adw.Toast(title=_("Reset successfully!")))
+            self.win.toast_overlay.add_toast(
+                Adw.Toast(title=_("Reset successfully!")))
 
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
