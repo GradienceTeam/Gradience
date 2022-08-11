@@ -96,9 +96,17 @@ class AdwcustomizerApplication(Adw.Application):
         self.create_action("about", self.show_about_window)
 
         self.reload_user_defined_presets()
-        self.load_preset_from_resource(
-            "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita.json"
-        )
+
+        self.style_manager = Adw.StyleManager.get_default()
+
+        if  self.style_manager.get_color_scheme() == Adw.ColorScheme.DARK:
+            self.load_preset_from_resource(
+                "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita-dark.json"
+            )
+        else:
+            self.load_preset_from_resource(
+                "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita.json"
+            )
 
         self.win.present()
 
