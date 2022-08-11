@@ -99,7 +99,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.style_manager = Adw.StyleManager.get_default()
         print(dir(self.style_manager))
-        print(self.style_manager.get_default())
+        print(dir(self.style_manager.get_default()))
         print(self.style_manager.get_color_scheme())
         print(dir(self.style_manager.get_color_scheme()))
         if  self.style_manager.get_default() == Adw.ColorScheme.PREFER_DARK:
