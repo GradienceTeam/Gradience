@@ -433,6 +433,7 @@ class AdwcustomizerApplication(Adw.Application):
                     file.delete()
                 except Exception:
                     pass
+            self.win.toast_overlay.add_toast(Adw.Toast(title=_("Reset successfully!")))
 
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
