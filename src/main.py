@@ -214,7 +214,7 @@ class AdwcustomizerApplication(Adw.Application):
         i = 0
         for color in palettes.values():
             i += 1
-            palette[str(i)] = hexFromArgb(color.tone(tone))
+            palette[str(i)] = hexFromArgb(color.tone(int(tone.get_string())))
 
         self.pref_palette_shades["monet"].update_shades()
 
