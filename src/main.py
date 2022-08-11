@@ -449,8 +449,8 @@ class AdwcustomizerApplication(Adw.Application):
             issue_url="https://github.com/AdwCustomizerTeam/AdwCustomizer/issues",
             developers=[
                 'Artyom "ArtyIF" Fomin https://github.com/ArtyIF',
-                "Verantor https://github.com/Verantor",
                 "0xMRTT https://github.com/0xMRTT",
+                "Verantor https://github.com/Verantor",
             ],
             artists=[
                 'David "Daudix UFO" Lapshin https://github.com/daudix-UFO'
@@ -466,6 +466,7 @@ class AdwcustomizerApplication(Adw.Application):
                 Renato Corrêa https://www.transifex.com/user/profile/renatocrrs/
                 Aggelos Tselios https://www.transifex.com/user/profile/AndroGR/
                 David "Daudix UFO" Lapshin https://github.com/daudix-UFO'
+                0xMRTT https://github.com/0xMRTT
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918/
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
             copyright="© 2022 Adwaita Manager Team",
