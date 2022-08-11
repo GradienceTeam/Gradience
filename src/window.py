@@ -89,7 +89,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_img = Image.open(self.monet_image_file)
         self.monet_theme = themeFromImage(self.monet_img)
         self.monet_palette = self.monet_theme["palette"]
-        self.get_application().update_theme_from_monet(self.monet_theme)
+        #self.get_application().update_theme_from_monet(self.monet_theme, self.tone_row.get_selected_item())
 
     def setup_monet_page(self):
         
@@ -133,6 +133,22 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
         self.tone_row = Adw.ComboRow()
         self.tone_row.set_title(_("Tone"))
+
+        store = Gtk.ListStore(str)
+        store_values = [
+            "1",
+            "5",
+            "10",
+            "15",
+            "20",
+            "25",
+            "United Kingdom",
+            "United States of America",
+            "Uruguay",
+        ]
+        for v in store_values:
+            store.append([v])
+        self.tone_row.set_list_factory(store)
         print(dir(self.tone_row))
 
     def setup_plugins_page(self):
