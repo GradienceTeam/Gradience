@@ -89,7 +89,25 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_img = Image.open(self.monet_image_file)
         self.monet_theme = themeFromImage(self.monet_img)
         self.monet_palette = self.monet_theme["palette"]
-        #self.get_application().update_theme_from_monet(self.monet_theme, self.tone_row.get_selected_item())
+        self.tone = self.tone_row.get_selected_item()
+
+        i = 0
+        """
+        {'primary': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae01873130>, 
+        'secondary': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f7f0>, 
+        'tertiary': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f790>,
+         'neutral': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f730>, 
+         'neutralVariant': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f6d0>, 
+         'error': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f670>}
+        """
+        print(self.monet_palette)
+        print(self.monet_theme)
+        for color in self.monet_palette.values():
+            i+=1
+            color = color.tone(self.tone)
+            self.palette_pickers[str(i)].set_rgba(Gdk.RGBA(red=redFromArgb(color), green=greenFromArgb(color), blue=blueFromArgb(color), alpha=alphaFromArgb(color)))
+            
+        #self.get_application().update_theme_from_monet(self.monet_theme)
 
     def setup_monet_page(self):
         
@@ -119,7 +137,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.palette_picker.set_title(_("Monet Palette"))
         self.palette_picker
         self.palette_pickers = {}
-        for i in range(5):
+        for i in range(6):
             i = i+1
             picker = Gtk.ColorButton()
             picker.set_name(str(i))
@@ -141,9 +159,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             "15",
             "20",
             "25",
-            "United Kingdom",
-            "United States of America",
-            "Uruguay",
+            "30"
         ]
         for v in store_values:
             store.append(v)
