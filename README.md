@@ -16,8 +16,7 @@ Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita application
 </details>
 
 [![Build flatpak](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml)
-[![Build flatpak nightly](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml/badge.svg?branch=next)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml)
-
+[![Build flatpak nightly](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml)
 
 ## Building and Installing
 
