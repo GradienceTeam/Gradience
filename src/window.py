@@ -33,6 +33,7 @@ from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
+from material_color_utilities_python import *
 
 @Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/window.ui')
 class AdwcustomizerMainWindow(Adw.ApplicationWindow):
@@ -86,7 +87,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_dialog.hide()
 
     def setup_monet_page(self):
-        from material_color_utilities_python import *
+        
 
         monet_pref_group = Adw.PreferencesGroup()
         monet_pref_group.set_name("monet")
