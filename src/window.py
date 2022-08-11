@@ -101,7 +101,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_name("monet")
         self.monet_pref_group.set_title(_("Monet Engine"))
         self.monet_pref_group.set_description(
-            _("Monet is an engine that generates Material Design 3 palette from backgrounds color"))
+            _("Monet is an engine that generates Material Design 3 palette from backgrounds color. The generation can be slow"))
 
         self.monet_file_chooser_row = Adw.ActionRow()
         self.monet_file_chooser_row.set_title(_("Background Image"))
@@ -133,7 +133,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
         store = Gtk.StringList()
         store_values = []
-        for i in range(5, 100, 5):
+        for i in range(20, 80, 5):
             store_values.append(str(i))
         for v in store_values:
             store.append(v)
