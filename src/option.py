@@ -7,20 +7,21 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 from gi.repository import Gtk, Gdk, Adw
 
-@Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/option.ui')
+
+@Gtk.Template(resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/option.ui")
 class AdwcustomizerOption(Adw.ActionRow):
-    __gtype_name__ = 'AdwcustomizerOption'
+    __gtype_name__ = "AdwcustomizerOption"
 
     color_value = Gtk.Template.Child("color-value")
     text_value = Gtk.Template.Child("text-value")
@@ -42,10 +43,14 @@ class AdwcustomizerOption(Adw.ActionRow):
             self.warning_button.set_visible(False)
         elif adw_gtk3_support == "partial":
             self.warning_button.add_css_class("warning")
-            self.warning_label.set_label(_("This option is only partially supported by the adw-gtk3 theme."))
+            self.warning_label.set_label(
+                _("This option is only partially supported by the adw-gtk3 theme.")
+            )
         elif adw_gtk3_support == "no":
             self.warning_button.add_css_class("error")
-            self.warning_label.set_label(_("This option is not supported by the adw-gtk3 theme."))
+            self.warning_label.set_label(
+                _("This option is not supported by the adw-gtk3 theme.")
+            )
 
         self.explanation_label.set_label(explanation or "")
         if explanation is None:
@@ -53,7 +58,9 @@ class AdwcustomizerOption(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_color_value_changed(self, *_args):
-        self.update_value(self.color_value.get_rgba().to_string(), update_from="color_value")
+        self.update_value(
+            self.color_value.get_rgba().to_string(), update_from="color_value"
+        )
 
     @Gtk.Template.Callback()
     def on_text_value_changed(self, *_args):
@@ -86,7 +93,11 @@ class AdwcustomizerOption(Adw.ActionRow):
                 self.color_value.set_rgba(rgba)
                 self.color_value.set_tooltip_text(_("Not a color, see text value"))
 
-        if Gtk.Application.get_default().is_ready and kwargs.get("update_from") == "text_value" and new_value != "":
+        if (
+            Gtk.Application.get_default().is_ready
+            and kwargs.get("update_from") == "text_value"
+            and new_value != ""
+        ):
             Gtk.Application.get_default().variables[self.get_name()] = new_value
             Gtk.Application.get_default().mark_as_dirty()
             Gtk.Application.get_default().reload_variables()

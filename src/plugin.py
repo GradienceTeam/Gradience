@@ -7,16 +7,17 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 from .setting import AdwcustomizerSetting
+
 
 class AdwcustomizerPlugin:
     def __init__(self):
@@ -48,7 +49,9 @@ class AdwcustomizerPlugin:
     def get_alias_values(self):
         alias_values = {}
         for key, value in self.alias_dict.items():
-            alias_values[key] = self.colors.get(value, self.palette.get(value, self.custom_settings.get(value)))
+            alias_values[key] = self.colors.get(
+                value, self.palette.get(value, self.custom_settings.get(value))
+            )
         return alias_values
 
     def validate(self):

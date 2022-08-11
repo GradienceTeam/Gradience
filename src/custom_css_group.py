@@ -7,20 +7,23 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 from gi.repository import Gtk, Adw
 
-@Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/custom_css_group.ui')
+
+@Gtk.Template(
+    resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/custom_css_group.ui"
+)
 class AdwcustomizerCustomCSSGroup(Adw.PreferencesGroup):
-    __gtype_name__ = 'AdwcustomizerCustomCSSGroup'
+    __gtype_name__ = "AdwcustomizerCustomCSSGroup"
 
     app_type_dropdown = Gtk.Template.Child("app-type-dropdown")
     custom_css_text_view = Gtk.Template.Child("custom-css-text-view")
@@ -31,14 +34,21 @@ class AdwcustomizerCustomCSSGroup(Adw.PreferencesGroup):
 
     def load_custom_css(self, custom_css):
         self.custom_css = custom_css
-        self.custom_css_text_view.get_buffer().set_text(list(self.custom_css.values())[self.app_type_dropdown.get_selected()])
+        self.custom_css_text_view.get_buffer().set_text(
+            list(self.custom_css.values())[self.app_type_dropdown.get_selected()]
+        )
 
     @Gtk.Template.Callback()
     def on_custom_css_changed(self, buffer):
         Gtk.Application.get_default().mark_as_dirty()
-        Gtk.Application.get_default().update_custom_css_text(list(self.custom_css.keys())[self.app_type_dropdown.get_selected()], buffer.props.text)
+        Gtk.Application.get_default().update_custom_css_text(
+            list(self.custom_css.keys())[self.app_type_dropdown.get_selected()],
+            buffer.props.text,
+        )
 
     @Gtk.Template.Callback()
     def on_dropdown_notify(self, _unused, pspec):
         if pspec.name == "selected":
-            self.custom_css_text_view.get_buffer().set_text(list(self.custom_css.values())[self.app_type_dropdown.get_selected()])
+            self.custom_css_text_view.get_buffer().set_text(
+                list(self.custom_css.values())[self.app_type_dropdown.get_selected()]
+            )
