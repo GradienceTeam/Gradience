@@ -86,6 +86,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_dialog.hide()
 
     def setup_monet_page(self):
+        from material_color_utilities_python import *
+
         monet_pref_group = Adw.PreferencesGroup()
         monet_pref_group.set_name("monet")
         monet_pref_group.set_title(_("Monet Engine"))
