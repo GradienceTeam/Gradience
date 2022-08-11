@@ -1,9 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2022 Adwaita Manager Team -->
 <component type="desktop">
-	<id>com.github.AdwCustomizerTeam.AdwCustomizer.desktop</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>MIT</project_license>
-	<description>
-	  <p>Change the look of Adwaita, with ease</p>
-	</description>
+  <id>com.github.AdwCustomizerTeam.AdwCustomizer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+
+  <name>Adwaita Manager</name>
+  <summary>Change the look of Adwaita, with ease.</summary>
+
+  <developer_name>Adwaita Manager Team</developer_name>
+
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </recommends>
+
+  <description>
+    <p>
+      Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+    </p>
+    <p>With Adwaita Manager you can:</p>
+    <ul>
+      <li>Change any color of Adwaita theme</li>
+      <li>Apply Material 3 colors from wallaper</li>
+      <li>Use other users presets</li>
+      <li>Change advanced options with CSS</li>
+      <li>Extend functionality using plugins</li>
+    </ul>
+    <p>This app is written in Python and uses GTK 4 and libadwaita.</p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>colors</caption>
+      <image>https://github.com/AdwCustomizerTeam/Design/blob/2a37d136b2cd34a4727f06c7f6e013bada6aa360/Screenshots/colors.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>colors purple</caption>
+      <image>https://github.com/AdwCustomizerTeam/Design/blob/2a37d136b2cd34a4727f06c7f6e013bada6aa360/Screenshots/colors_purple.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>monet</caption>
+      <image>https://github.com/AdwCustomizerTeam/Design/blob/2a37d136b2cd34a4727f06c7f6e013bada6aa360/Screenshots/monet.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>monet purple</caption>
+      <image>https://github.com/AdwCustomizerTeam/Design/blob/2a37d136b2cd34a4727f06c7f6e013bada6aa360/Screenshots/monet_purple.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>advanced</caption>
+      <image>https://github.com/AdwCustomizerTeam/Design/blob/2a37d136b2cd34a4727f06c7f6e013bada6aa360/Screenshots/advanced.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>advanced purple</caption>
+      <image>https://github.com/AdwCustomizerTeam/Design/blob/2a37d136b2cd34a4727f06c7f6e013bada6aa360/Screenshots/advanced_purple.png</image>
+    </screenshot>
+  </screenshots>
+
+  <launchable type="desktop-id">com.github.AdwCustomizerTeam.AdwCustomizer.desktop</launchable>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+
+  <kudos>
+    <kudo>ModernToolkit</kudo>
+    <kudo>HiDpiIcon</kudo>
+  </kudos>
+
+  <releases>
+    <release date="2022-8-12" version="0.1.0">
+      <description>
+        <p>First release of Adwaita Manager.</p>
+      </description>
+    </release>
+  </releases>
+
+  <url type="homepage">https://github.com/AdwCustomizerTeam/AdwCustomizer</url>
+  <url type="bugtracker">https://github.com/AdwCustomizerTeam/AdwCustomizer/issues</url>
+  <url type="help">https://github.com/AdwCustomizerTeam/AdwCustomizer/issues</url>
+  <url type="translate">https://www.transifex.com/adwcustomizerteam/adwcustomizer</url>
+
+  <update_contact>add-team-email-here</update_contact>
 </component>
