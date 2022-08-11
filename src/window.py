@@ -86,11 +86,11 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             self.monet_file_chooser_button.set_label(image_basename)
         self.monet_file_chooser_dialog.hide()
 
-        print(dir(self.monet_image_file))
         self.monet_img = Image.open(self.monet_image_file.get_path())
         self.monet_theme = themeFromImage(self.monet_img)
         self.monet_palette = self.monet_theme["palettes"]
         self.tone = self.tone_row.get_selected_item()
+        print(dir(self.tone))
 
         i = 0
         """
@@ -105,7 +105,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         print(self.monet_theme)
         for color in self.monet_palette.values():
             i+=1
-            color = color.tone(self.tone)
+            color = color.tone(int(self.tone))
             self.palette_pickers[str(i)].set_rgba(Gdk.RGBA(red=redFromArgb(color), green=greenFromArgb(color), blue=blueFromArgb(color), alpha=alphaFromArgb(color)))
             
         #self.get_application().update_theme_from_monet(self.monet_theme)
