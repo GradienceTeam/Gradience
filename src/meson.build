@@ -44,7 +44,7 @@ configure_file(
           input: 'info.py.in',
          output: '@BASENAME@',
         install: true,
-    install_dir: python.get_install_dir() / 'adwcustomizer',
+    install_dir: moduledir,
   configuration: configuration_data({
            'version': meson.project_version(),
         'build_type': get_option('buildtype'),
