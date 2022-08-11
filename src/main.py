@@ -444,18 +444,18 @@ class AdwcustomizerApplication(Adw.Application):
             transient_for=self.props.active_window,
         )
 
-        comborow = Adw.ComboRow()
-        comborow.set_title(_("Apply as dark theme"))
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
 
-        store = Gtk.StringList()
-        store.append("Dark")
-        store.append("Light")
-        comborow.set_model(store)
-        print(dir(comborow))
+        label = Gtk.Label(text="Export as Dark theme")
+        switch = Gtk.Switch()
 
-        dialog.set_extra_child(comborow)
+        box.append(label)
+        box.append(switch)
+        print(dir(switch))
 
-        dialog.connect("response", self.apply_color_scheme, comborow)
+        dialog.set_extra_child(box)
+
+        dialog.connect("response", self.apply_color_scheme, switch)
         dialog.present()
 
     def show_reset_color_scheme_dialog(self, *_args):
@@ -546,9 +546,9 @@ class AdwcustomizerApplication(Adw.Application):
                 self.clear_dirty()
                 self.win.toast_overlay.add_toast(Adw.Toast(title=_("Scheme successfully saved!")))
 
-    def apply_color_scheme(self, widget, response, comborow):
+    def apply_color_scheme(self, widget, response, switch):
         if response == "apply":
-            if comborow.get_string().lower() == "dark":
+            if switch.get_active():
                 if widget.get_app_types()["gtk4"]:
                     gtk4_dir = os.path.join(
                         os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config" ), "gtk-4.0")
