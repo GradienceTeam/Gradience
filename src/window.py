@@ -89,7 +89,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         print(dir(self.monet_image_file))
         self.monet_img = Image.open(self.monet_image_file.get_path())
         self.monet_theme = themeFromImage(self.monet_img)
-        self.monet_palette = self.monet_theme["palette"]
+        self.monet_palette = self.monet_theme["palettes"]
         self.tone = self.tone_row.get_selected_item()
 
         i = 0
