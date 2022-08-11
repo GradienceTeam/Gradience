@@ -239,7 +239,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         if monet_theme == "dark":
             dark_theme =  theme["schemes"]["dark"].toJSON()
-            self.variable = {
+            variable = {
                 "accent_color": dark_theme["primary"],
                 "accent_bg_color": dark_theme["primaryContainer"],
                 "accent_fg_color": dark_theme["onPrimaryContainer"],
@@ -287,7 +287,7 @@ class AdwcustomizerApplication(Adw.Application):
             }
         else: # light
             light_theme =  theme["schemes"]["light"].toJSON()
-            self.variable = {
+            variable = {
                 "accent_color": light_theme["primary"],
                 "accent_bg_color": light_theme["primaryContainer"],
                 "accent_fg_color": light_theme["onPrimaryContainer"],
@@ -334,9 +334,9 @@ class AdwcustomizerApplication(Adw.Application):
                 "scrollbar_outline_color": light_theme["outline"]
             }
 
-        for key in self.variables.keys():
+        for key in variables.keys():
             if key in self.pref_variables:
-                self.pref_variables[key].update_value(self.variables[key])
+                self.pref_variables[key].update_value(variables[key])
 
     def generate_gtk_css(self, app_type):
         final_css = ""
