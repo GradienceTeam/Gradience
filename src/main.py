@@ -446,7 +446,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
 
-        label = Gtk.Label(text="Export as Dark theme")
+        label = Gtk.Label(label="Export as Dark theme")
         switch = Gtk.Switch()
 
         box.append(label)
