@@ -207,10 +207,22 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.reload_variables()
 
+
+    def rgba_from_argb(self, argb, alpha = None) -> str:
+        base = "rgba({}, {}, {}, {})"
+
+        red = redFromArgb(argb)
+        green = greenFromArgb(argb)
+        blue = blueFromArgb(argb)
+        if not alpha:
+            alpha = alphaFromArgb(argb)
+
+        return base.format(red, green, blue, alpha)
+
     def update_theme_from_monet(self, theme, tone, monet_theme):
         palettes = theme["palettes"]
 
-        monet_theme = monet_theme.get_string()
+        monet_theme = monet_theme.get_string().lower() # dark / light
 
         palette = {}
         i = 0
@@ -225,53 +237,106 @@ class AdwcustomizerApplication(Adw.Application):
         print(monet_theme)
         print(theme)
 
-        self.variable = {
-            "accent_color": theme["schemes"]["light"]["primary"],
-            "accent_bg_color": theme["schemes"]["light"]["primaryContainer"],
-            "accent_fg_color": theme["schemes"]["light"]["onPrimaryContainer"],
+        if monet_theme == "dark":
+            dark_theme =  theme["schemes"]["dark"].toJSON()
+            self.variable = {
+                "accent_color": dark_theme["primary"],
+                "accent_bg_color": dark_theme["primaryContainer"],
+                "accent_fg_color": dark_theme["onPrimaryContainer"],
 
-            "destructive_color": theme["schemes"]["light"][""],
-            "destructive_bg_color": theme["schemes"]["light"][""],
-            "destructive_fg_color": theme["schemes"]["light"][""],
+                "destructive_color": dark_theme["error"],
+                "destructive_bg_color": dark_theme["errorContainer"],
+                "destructive_fg_color": dark_theme["onError"],
 
-            "success_color": theme["schemes"]["light"][""],
-            "success_bg_color": theme["schemes"]["light"][""],
-            "success_fg_color": theme["schemes"]["light"][""],
+                "success_color": dark_theme["tertiary"],
+                "success_bg_color": dark_theme["onTertiary"],
+                "success_fg_color": dark_theme["tertiaryContainer"],
 
-            "warning_color": theme["schemes"]["light"][""],
-            "warning_bg_color": theme["schemes"]["light"][""],
-            "warning_fg_color": "rgba(0, 0, 0, 0.8)",
+                "warning_color": dark_theme["secondaryContainer"],
+                "warning_bg_color": dark_theme["inversePrimary"],
+                "warning_fg_color": self.rgba_from_argb(dark_theme["primary"], "0.8"),
 
-            "error_color": theme["schemes"]["light"][""],
-            "error_bg_color": theme["schemes"]["light"][""],
-            "error_fg_color": theme["schemes"]["light"][""],
+                "error_color": dark_theme["error"],
+                "error_bg_color": dark_theme["errorContainer"],
+                "error_fg_color": dark_theme["onError"],
 
-            "window_bg_color": theme["schemes"]["light"][""],
-            "window_fg_color": theme["schemes"]["light"][""],
+                "window_bg_color": dark_theme["surface"],
+                "window_fg_color": dark_theme["onSurface"],
 
-            "view_bg_color": theme["schemes"]["light"][""],
-            "view_fg_color": theme["schemes"]["light"][""],
+                "view_bg_color": dark_theme["surface"],
+                "view_fg_color": dark_theme["onSurface"],
 
-            "headerbar_bg_color": theme["schemes"]["light"][""],
-            "headerbar_fg_color": "rgba(0, 0, 0, 0.8)",
-            "headerbar_border_color": "rgba(0, 0, 0, 0.8)",
-            "headerbar_backdrop_color": "@window_bg_color",
-            "headerbar_shade_color": "rgba(0, 0, 0, 0.07)",
+                "headerbar_bg_color": dark_theme["surface"],
+                "headerbar_fg_color": dark_theme["onSurface"],
+                "headerbar_border_color": self.rgba_from_argb(dark_theme["primary"], "0.8"),
+                "headerbar_backdrop_color": "@window_bg_color",
+                "headerbar_shade_color": dark_theme["shadow"],
 
-            "card_bg_color": theme["schemes"]["light"][""],
-            "card_fg_color": "rgba(0, 0, 0, 0.8)",
-            "card_shade_color": "rgba(0, 0, 0, 0.07)",
+                "card_bg_color": self.rgba_from_argb(dark_theme["primary"], "0.05"),
+                "card_fg_color": dark_theme["surfaceVariant"],
+                "card_shade_color": dark_theme["shadow"],
 
-            "dialog_bg_color": theme["schemes"]["light"][""],
-            "dialog_fg_color": "rgba(0, 0, 0, 0.8)",
+                "dialog_bg_color": dark_theme["secondaryContainer"],
+                "dialog_fg_color": dark_theme["onSecondaryContainer"],
 
-            "popover_bg_color": theme["schemes"]["light"][""],
-            "popover_fg_color": "rgba(0, 0, 0, 0.8)",
+                "popover_bg_color": dark_theme["secondaryContainer"],
+                "popover_fg_color": dark_theme["onSecondaryContainer"],
 
-            "shade_color": theme["schemes"]["light"][""],
-            "scrollbar_outline_color": theme["schemes"]["light"][""]
-        }
+                "shade_color": dark_theme["shadow"],
+                "scrollbar_outline_color": dark_theme["outline"]
+            }
+        else: # light
+            light_theme =  theme["schemes"]["light"].toJSON()
+            self.variable = {
+                "accent_color": light_theme["primary"],
+                "accent_bg_color": light_theme["primaryContainer"],
+                "accent_fg_color": light_theme["onPrimaryContainer"],
 
+                "destructive_color": light_theme["error"],
+                "destructive_bg_color": light_theme["errorContainer"],
+                "destructive_fg_color": light_theme["onError"],
+
+                "success_color": light_theme["tertiary"],
+                "success_bg_color": light_theme["onTertiary"],
+                "success_fg_color": light_theme["tertiaryContainer"],
+
+                "warning_color": light_theme["secondaryContainer"],
+                "warning_bg_color": light_theme["inversePrimary"],
+                "warning_fg_color": self.rgba_from_argb(light_theme["primary"], "0.8"),
+
+                "error_color": light_theme["error"],
+                "error_bg_color": light_theme["errorContainer"],
+                "error_fg_color": light_theme["onError"],
+
+                "window_bg_color": light_theme["surface"],
+                "window_fg_color": light_theme["onSurface"],
+
+                "view_bg_color": light_theme["surface"],
+                "view_fg_color": light_theme["onSurface"],
+
+                "headerbar_bg_color": light_theme["surface"],
+                "headerbar_fg_color": light_theme["onSurface"],
+                "headerbar_border_color": self.rgba_from_argb(light_theme["primary"], "0.8"),
+                "headerbar_backdrop_color": "@window_bg_color",
+                "headerbar_shade_color": light_theme["shadow"],
+
+                "card_bg_color": self.rgba_from_argb(light_theme["primary"], "0.05"),
+                "card_fg_color": light_theme["surfaceVariant"],
+                "card_shade_color": light_theme["shadow"],
+
+                "dialog_bg_color": light_theme["secondaryContainer"],
+                "dialog_fg_color": light_theme["onSecondaryContainer"],
+
+                "popover_bg_color": light_theme["secondaryContainer"],
+                "popover_fg_color": light_theme["onSecondaryContainer"],
+
+                "shade_color": light_theme["shadow"],
+                "scrollbar_outline_color": light_theme["outline"]
+            }
+
+        for key in self.variables.keys():
+            if key in self.pref_variables:
+                self.pref_variables[key].update_value(self.variables[key])
 
     def generate_gtk_css(self, app_type):
         final_css = ""
