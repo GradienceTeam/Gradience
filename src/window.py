@@ -129,7 +129,6 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             self.palette_picker.add_suffix(picker)
         monet_pref_group.add(self.palette_picker)
 
-        self.content_monet.add(monet_pref_group)
 
         self.tone_row = Adw.ComboRow()
         self.tone_row.set_title(_("Tone"))
@@ -149,7 +148,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         for v in store_values:
             store.append(v)
         self.tone_row.set_model(store)
-        self.content_monet.add(self.tone_row)
+        monet_pref_group.add(self.tone_row)
+        self.content_monet.add(monet_pref_group)
 
     def setup_plugins_page(self):
         custom_css_group = AdwcustomizerCustomCSSGroup()
