@@ -207,8 +207,10 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.reload_variables()
 
-    def update_theme_from_monet(self, theme, tone):
+    def update_theme_from_monet(self, theme, tone, monet_theme):
         palettes = theme["palettes"]
+
+        monet_theme = monet_theme.get_string()
 
         palette = {}
         i = 0
@@ -219,6 +221,56 @@ class AdwcustomizerApplication(Adw.Application):
         print(palette)
 
         self.pref_palette_shades["monet"].update_shades(palette)
+
+        print(theme)
+
+        self.variable = {
+            "accent_color": theme["schemes"]["light"]["primary"],
+            "accent_bg_color": theme["schemes"]["light"]["primaryContainer"],
+            "accent_fg_color": theme["schemes"]["light"]["onPrimaryContainer"],
+
+            "destructive_color": theme["schemes"]["light"][""],
+            "destructive_bg_color": theme["schemes"]["light"][""],
+            "destructive_fg_color": theme["schemes"]["light"][""],
+
+            "success_color": theme["schemes"]["light"][""],
+            "success_bg_color": theme["schemes"]["light"][""],
+            "success_fg_color": theme["schemes"]["light"][""],
+
+            "warning_color": theme["schemes"]["light"][""],
+            "warning_bg_color": theme["schemes"]["light"][""],
+            "warning_fg_color": "rgba(0, 0, 0, 0.8)",
+
+            "error_color": theme["schemes"]["light"][""],
+            "error_bg_color": theme["schemes"]["light"][""],
+            "error_fg_color": theme["schemes"]["light"][""],
+
+            "window_bg_color": theme["schemes"]["light"][""],
+            "window_fg_color": theme["schemes"]["light"][""],
+
+            "view_bg_color": theme["schemes"]["light"][""],
+            "view_fg_color": theme["schemes"]["light"][""],
+
+            "headerbar_bg_color": theme["schemes"]["light"][""],
+            "headerbar_fg_color": "rgba(0, 0, 0, 0.8)",
+            "headerbar_border_color": "rgba(0, 0, 0, 0.8)",
+            "headerbar_backdrop_color": "@window_bg_color",
+            "headerbar_shade_color": "rgba(0, 0, 0, 0.07)",
+
+            "card_bg_color": theme["schemes"]["light"][""],
+            "card_fg_color": "rgba(0, 0, 0, 0.8)",
+            "card_shade_color": "rgba(0, 0, 0, 0.07)",
+
+            "dialog_bg_color": theme["schemes"]["light"][""],
+            "dialog_fg_color": "rgba(0, 0, 0, 0.8)",
+
+            "popover_bg_color": theme["schemes"]["light"][""],
+            "popover_fg_color": "rgba(0, 0, 0, 0.8)",
+
+            "shade_color": theme["schemes"]["light"][""],
+            "scrollbar_outline_color": theme["schemes"]["light"][""]
+        }
+
 
     def generate_gtk_css(self, app_type):
         final_css = ""
