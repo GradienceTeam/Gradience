@@ -134,7 +134,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.tone_row = Adw.ComboRow()
         self.tone_row.set_title(_("Tone"))
 
-        store = Gtk.ListStore(str)
+        store = Gtk.ListItemFactory(str)
         store_values = [
             "1",
             "5",
