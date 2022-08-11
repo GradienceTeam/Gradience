@@ -238,11 +238,11 @@ class AdwcustomizerApplication(Adw.Application):
         print(theme)
 
         if monet_theme == "dark":
-            dark_theme =  theme["schemes"]["dark"].toJSON()
+            dark_theme =  theme["schemes"]["dark"]
             variable = {
                 "accent_color": dark_theme.primary,
-                "accent_bg_color": dark_theme["primaryContainer"],
-                "accent_fg_color": dark_theme["onPrimaryContainer"],
+                "accent_bg_color": dark_theme.primaryContainer,
+                "accent_fg_color": dark_theme.onPrimaryContainer,
 
                 "destructive_color": dark_theme["error"],
                 "destructive_bg_color": dark_theme["errorContainer"],
