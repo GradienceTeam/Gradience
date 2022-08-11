@@ -240,50 +240,50 @@ class AdwcustomizerApplication(Adw.Application):
         if monet_theme == "dark":
             dark_theme =  theme["schemes"]["dark"]
             variable = {
-                "accent_color": dark_theme.primary,
-                "accent_bg_color": dark_theme.primaryContainer,
-                "accent_fg_color": dark_theme.onPrimaryContainer,
+                "accent_color": self.rgba_from_argb(dark_theme.primary),
+                "accent_bg_color": self.rgba_from_argb(dark_theme.primaryContainer),
+                "accent_fg_color": self.rgba_from_argb(dark_theme.onPrimaryContainer),
 
-                "destructive_color": dark_theme.error,
-                "destructive_bg_color": dark_theme.errorContainer,
-                "destructive_fg_color": dark_theme.onError,
+                "destructive_color": self.rgba_from_argb(dark_theme.error),
+                "destructive_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
+                "destructive_fg_color": self.rgba_from_argb(dark_theme.onError),
 
-                "success_color": dark_theme.tertiary,
-                "success_bg_color": dark_theme.onTertiary,
-                "success_fg_color": dark_theme.tertiaryContainer,
+                "success_color": self.rgba_from_argb(dark_theme.tertiary),
+                "success_bg_color": self.rgba_from_argb(dark_theme.onTertiary),
+                "success_fg_color": self.rgba_from_argb(dark_theme.tertiaryContainer),
 
-                "warning_color": dark_theme.secondaryContainer,
-                "warning_bg_color": dark_theme.inversePrimary,
+                "warning_color": self.rgba_from_argb(dark_theme.secondaryContainer),
+                "warning_bg_color": self.rgba_from_argb(dark_theme.inversePrimary),
                 "warning_fg_color": self.rgba_from_argb(dark_theme.primary, "0.8"),
 
-                "error_color": dark_theme.error,
-                "error_bg_color": dark_theme.errorContainer,
-                "error_fg_color": dark_theme.onError,
+                "error_color": self.rgba_from_argb(dark_theme.error),
+                "error_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
+                "error_fg_color": self.rgba_from_argb(dark_theme.onError),
 
-                "window_bg_color": dark_theme.surface,
-                "window_fg_color": dark_theme.onSurface,
+                "window_bg_color": self.rgba_from_argb(dark_theme.surface),
+                "window_fg_color": self.rgba_from_argb(dark_theme.onSurface),
 
-                "view_bg_color": dark_theme.surface,
-                "view_fg_color": dark_theme.onSurface,
+                "view_bg_color": self.rgba_from_argb(dark_theme.surface),
+                "view_fg_color": self.rgba_from_argb(dark_theme.onSurface),
 
-                "headerbar_bg_color": dark_theme.surface,
-                "headerbar_fg_color": dark_theme.onSurface,
+                "headerbar_bg_color": self.rgba_from_argb(dark_theme.surface),
+                "headerbar_fg_color": self.rgba_from_argb(dark_theme.onSurface),
                 "headerbar_border_color": self.rgba_from_argb(dark_theme.primary, "0.8"),
                 "headerbar_backdrop_color": "@window_bg_color",
-                "headerbar_shade_color": dark_theme.shadow,
+                "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
 
                 "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
-                "card_fg_color": dark_theme.surfaceVariant,
-                "card_shade_color": dark_theme.shadow,
+                "card_fg_color": self.rgba_from_argb(dark_theme.surfaceVariant),
+                "card_shade_color": self.rgba_from_argb(dark_theme.shadow),
 
-                "dialog_bg_color": dark_theme.secondaryContainer,
-                "dialog_fg_color": dark_theme.onSecondaryContainer,
+                "dialog_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
+                "dialog_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
 
-                "popover_bg_color": dark_theme.secondaryContainer,
-                "popover_fg_color": dark_theme.onSecondaryContainer,
+                "popover_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
+                "popover_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
 
-                "shade_color": dark_theme.shadow,
-                "scrollbar_outline_color": dark_theme.outline
+                "shade_color": self.rgba_from_argb(dark_theme.shadow),
+                "scrollbar_outline_color": self.rgba_from_argb(dark_theme.outline)
             }
         else: # light
             light_theme =  theme["schemes"]["light"]
