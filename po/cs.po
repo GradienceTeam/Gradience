@@ -1,0 +1,477 @@
+# Adwaita Manager POT file
+# Copyright (C) 2022 Adwaita Manager Team
+# This file is distributed under the MIT/X11 license.
+# Adwaita Manager Team, 2022.
+# 
+# Translators:
+# Miroslav Madera, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-09 22:21+0300\n"
+"PO-Revision-Date: 2022-07-25 14:48+0000\n"
+"Last-Translator: Miroslav Madera, 2022\n"
+"Language-Team: Czech (https://www.transifex.com/adwcustomizerteam/teams/147445/cs/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in:3
+#: src/ui/window.blp:5 src/main.py:332
+msgid "Adwaita Manager"
+msgstr "Adwaita Manager"
+
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in:7
+msgid "Change the look of Adwaita, with ease"
+msgstr "Změňte vzhled Adwaita snadno"
+
+#: src/ui/app_type_dialog.blp:10
+msgid "Select app types you want to affect:"
+msgstr "Vyberte typy aplikací, které chcete ovlivnit:"
+
+#: src/ui/app_type_dialog.blp:13
+msgid "Libadwaita and GTK 4 apps"
+msgstr "Libadwaita a GTK 4 aplikace"
+
+#: src/ui/app_type_dialog.blp:17
+msgid "GTK 3 apps (adw-gtk3 theme required)"
+msgstr "GTK 3 aplikace (vyžaduje motiv adw-gtk3)"
+
+#: src/ui/custom_css_group.blp:5
+msgid "Custom CSS"
+msgstr "Vlastní CSS"
+
+#: src/ui/custom_css_group.blp:6
+msgid ""
+"Changing this may break some programs. Keep in mind that Libadwaita was made"
+" so that applications could hardcode values like paddings and margins (like "
+"in case of the Custom CSS code field itself, which uses 12px padding). Only "
+"GTK 4 CSS will be previewed here."
+msgstr ""
+"Touto změnou můžete zničit některé programy. Mějte na paměti, že Libadwaita "
+"byla vytvořena tak, aby natvrdo nastavila hodnoty jako padding a margins "
+"(jako v případě pole vlastního CSS, které používá 12px padding). Zde bude "
+"ukázáno jen GTK 4 CSS."
+
+#: src/ui/custom_css_group.blp:29
+msgid "GTK 4"
+msgstr "GTK 4"
+
+#: src/ui/custom_css_group.blp:29
+msgid "GTK 3"
+msgstr "GTK 3"
+
+#: src/ui/option.blp:10
+msgid "GTK 3 Support Warning"
+msgstr "Upozornění na podporu GTK 3"
+
+#: src/ui/option.blp:18
+msgid "Explanation"
+msgstr "Vysvětlení"
+
+#: src/ui/option.blp:43
+msgid "Toggle Text Value"
+msgstr "Přepnout textovou hodnotu"
+
+#: src/ui/window.blp:13 src/main.py:245
+msgid "Apply"
+msgstr "Použít"
+
+#: src/ui/window.blp:20
+msgid "Save Preset"
+msgstr "Uložit předvolbu"
+
+#: src/ui/window.blp:36
+msgid "Presets"
+msgstr "Předvolby"
+
+#: src/ui/window.blp:58
+msgid "Built-in Presets"
+msgstr "Vestavěné předvolby"
+
+#: src/ui/window.blp:73
+msgid "Reset Applied Color Scheme"
+msgstr "Obnovit použité barevné schéma"
+
+#: src/ui/window.blp:74
+msgid "About Adwaita Manager"
+msgstr "O Adwaita Manager"
+
+#: src/app_type_dialog.py:43 src/main.py:264
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: src/main.py:123
+msgid "Failed to load preset"
+msgstr "Nepodařilo se načíst předvolbu"
+
+#: src/main.py:139
+msgid "Open in File Manager"
+msgstr "Otevřít v průzkumníku souborů"
+
+#: src/main.py:142
+msgid "User Defined Presets"
+msgstr "Uživatelsky definované předvolby"
+
+#: src/main.py:203
+msgid "Unsaved changes"
+msgstr "Neuložené změny"
+
+#: src/main.py:243
+msgid "Apply this color scheme?"
+msgstr "Aplikovat toto barevné schéma?"
+
+#: src/main.py:244
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Varování: Všechny vlastní CSS soubory pro tyto typy aplikací budou nevratně "
+"přepsány!"
+
+#: src/main.py:251
+msgid "Reset applied color scheme?"
+msgstr "Obnovit aplikované barevné schéma?"
+
+#: src/main.py:252
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "Ujistěte se, že máte aktuální nastavení uložené jako předvolbu."
+
+#: src/main.py:253
+msgid "Reset"
+msgstr "Obnovit"
+
+#: src/main.py:260
+msgid "Save preset as..."
+msgstr "Uložit předvolbu jako…"
+
+#: src/main.py:261 src/main.py:274 src/main.py:277
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+"Uložení předvolby do <tt>{0}</tt>. Pokud předvolba již existuje, bude "
+"přepsána!"
+
+#: src/main.py:265
+msgid "Save"
+msgstr "Uložit"
+
+#: src/main.py:334
+msgid "Adwaita Manager Team"
+msgstr "Tým Adwaita Manager"
+
+#. Translators: This is a place to put your credits (formats: "Name
+#. https://example.com" or "Name <email@example.com>", no quotes) and is not
+#. meant to be translated literally.
+#: src/main.py:338
+msgid "translator-credits"
+msgstr "Motirek https://github.com/motirek"
+
+#: src/option.py:55
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "Tato možnost je jen částečně podporována adw-gtk3 motivem."
+
+#: src/option.py:58
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "Tato možnost není podporována adw-gtk3 motivem."
+
+#: src/option.py:97
+msgid "Not a color, see text value"
+msgstr "Není barva, podívejte se na hodnotu textu"
+
+#: src/settings_schema.py:5
+msgid "Accent Colors"
+msgstr "Doplňkové barvy"
+
+#: src/settings_schema.py:6
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate that a widget is important, interactive, or"
+" currently active."
+msgstr ""
+"Tyto barvy se používají v mnoha různých widgetech, jako jsou tlačítka, "
+"štítky a položky, k označení toho, že widget je důležitý, interaktivní nebo "
+"aktuálně aktivní."
+
+#: src/settings_schema.py:10 src/settings_schema.py:33
+#: src/settings_schema.py:56 src/settings_schema.py:79
+#: src/settings_schema.py:102
+msgid "Standalone Color"
+msgstr "Samostatná barva"
+
+#: src/settings_schema.py:11 src/settings_schema.py:34
+#: src/settings_schema.py:57 src/settings_schema.py:80
+#: src/settings_schema.py:103
+msgid ""
+"The standalone colors are similar to the background ones, but provide better"
+" contrast when used as foreground color on top of a neutral background - for"
+" example, colorful text in a window."
+msgstr ""
+"Samostatné barvy jsou podobné barvám na pozadí, ale poskytují lepší "
+"kontrast, když jsou použity jako barva popředí na neutrálním pozadí – "
+"například barevný text v okně."
+
+#: src/settings_schema.py:16 src/settings_schema.py:39
+#: src/settings_schema.py:62 src/settings_schema.py:85
+#: src/settings_schema.py:108 src/settings_schema.py:125
+#: src/settings_schema.py:142 src/settings_schema.py:159
+#: src/settings_schema.py:194 src/settings_schema.py:217
+#: src/settings_schema.py:234
+msgid "Background Color"
+msgstr "Background Color"
+
+#: src/settings_schema.py:21 src/settings_schema.py:44
+#: src/settings_schema.py:67 src/settings_schema.py:90
+#: src/settings_schema.py:113 src/settings_schema.py:130
+#: src/settings_schema.py:147 src/settings_schema.py:164
+#: src/settings_schema.py:199 src/settings_schema.py:222
+#: src/settings_schema.py:239
+msgid "Foreground Color"
+msgstr "Foreground Color"
+
+#: src/settings_schema.py:28
+msgid "Destructive Colors"
+msgstr "Destructive Colors"
+
+#: src/settings_schema.py:29
+msgid ""
+"These colors are used for buttons to indicate a dangerous action, such as "
+"deleting a file."
+msgstr ""
+"Tyto barvy jsou použity pro tlačítka, které indikují nebezpečné akce, např. "
+"mazání dokumentu."
+
+#: src/settings_schema.py:51
+msgid "Success Colors"
+msgstr "Success Colors"
+
+#: src/settings_schema.py:52
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a success or a high level."
+msgstr ""
+"Tyto barvy se používají v mnoha různých widgetech, jako jsou tlačítka, "
+"štítky, položky a lišty úrovní, k označení úspěchu nebo vysoké úrovně."
+
+#: src/settings_schema.py:74
+msgid "Warning Colors"
+msgstr "Warning Colors"
+
+#: src/settings_schema.py:75
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a warning or a low level."
+msgstr ""
+"Tyto barvy se používají v mnoha různých widgetech, jako jsou tlačítka, "
+"štítky, položky a lišty úrovní, k označení varování nebo nízké úrovně."
+
+#: src/settings_schema.py:97
+msgid "Error Colors"
+msgstr "Warning Colors"
+
+#: src/settings_schema.py:98
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate a failure."
+msgstr ""
+"Tyto barvy se používají v mnoha různých widgetech, jako jsou tlačítka, "
+"štítky a položky, k označení selhání."
+
+#: src/settings_schema.py:120
+msgid "Window Colors"
+msgstr "Barvy okna"
+
+#: src/settings_schema.py:121
+msgid "These colors are used primarily for windows."
+msgstr "Tyto barvy se používají především na okna."
+
+#: src/settings_schema.py:137
+msgid "View Colors"
+msgstr "Zobrazit barvy"
+
+#: src/settings_schema.py:138
+msgid ""
+"These colors are used in a variety of widgets, such as text views and "
+"entries."
+msgstr ""
+"Tyto barvy se používají v různých widgetech, jako jsou textové zobrazení a "
+"položky."
+
+#: src/settings_schema.py:154
+msgid "Header Bar Colors"
+msgstr "Barvy záhlaví "
+
+#: src/settings_schema.py:155
+msgid ""
+"These colors are used for header bars, as well as widgets that are meant to "
+"be visually attached to it, such as search bars or tab bars."
+msgstr ""
+"Tyto barvy se používají pro lišty záhlaví a také widgety, které k nim mají "
+"být vizuálně připojeny, jako jsou vyhledávací lišty nebo lišty karet."
+
+#: src/settings_schema.py:169
+msgid "Border Color"
+msgstr "Barva ohraničení"
+
+#: src/settings_schema.py:170
+msgid ""
+"The border color has the same default value as a foreground color, but "
+"doesn't change along with it. This can be useful if a light window has a "
+"dark header bar with light text; in this case it may be desirable to keep "
+"the border dark. This variable is only used for vertical borders - for "
+"example, separators between the two header bars in a split header bar "
+"layout."
+msgstr ""
+"Barva ohraničení má stejnou výchozí hodnotu jako barva popředí, ale spolu s "
+"ní se nemění. To může být užitečné, pokud má světlé okno tmavý pruh záhlaví "
+"se světlým textem; v tomto případě může být žádoucí ponechat okraj tmavý. "
+"Tato proměnná se používá pouze pro svislé ohraničení – například oddělovače "
+"mezi dvěma pruhy záhlaví v rozložení pruhu rozděleného záhlaví."
+
+#: src/settings_schema.py:175
+msgid "Backdrop Color"
+msgstr "Backdrop Color"
+
+#: src/settings_schema.py:176
+msgid ""
+"The backdrop color is used instead of the background color when the window "
+"is not focused. By default it's an alias of the window's background color "
+"and changes together with it. When changing this variable, make sure to set "
+"it to a value matching your header bar background color."
+msgstr ""
+"Backdrop color se použije místo background color, pokud okno není zaostřené."
+" Ve výchozím nastavení je to alias background color okna a mění se spolu s "
+"ní. Při změně této proměnné se ujistěte, že jste ji nastavili na hodnotu "
+"odpovídající background color lišty záhlaví."
+
+#: src/settings_schema.py:181 src/settings_schema.py:204
+#: src/settings_schema.py:251
+msgid "Shade Color"
+msgstr "Barva odstínu"
+
+#: src/settings_schema.py:182
+msgid ""
+"The shade color is used to provide a dark border for header bars and similar"
+" widgets that separates them from the main window."
+msgstr ""
+"Barva odstínu se používá k vytvoření tmavého okraje pro pruhy záhlaví a "
+"podobné widgety, které je oddělují od hlavního okna."
+
+#: src/settings_schema.py:189
+msgid "Card Colors"
+msgstr "Barvy karty"
+
+#: src/settings_schema.py:190
+msgid "These colors are used for cards and boxed lists."
+msgstr "Tyto barvy se používají pro karty a seznamy."
+
+#: src/settings_schema.py:205
+msgid ""
+"The shade color is used for shadows that are used by cards to separate "
+"themselves from the window background, as well as for row dividers in the "
+"cards."
+msgstr ""
+"Barva odstínu se používá pro stíny, které karty používají k oddělení od "
+"pozadí okna, stejně jako pro oddělovače řádků na kartách."
+
+#: src/settings_schema.py:212
+msgid "Dialog Colors"
+msgstr "Barvy dialogu"
+
+#: src/settings_schema.py:213
+msgid "These colors are used for message dialogs."
+msgstr "Tyto barvy se používají pro dialogová okna zpráv."
+
+#: src/settings_schema.py:229
+msgid "Popover Colors"
+msgstr "Barvy vyskakovacího okna"
+
+#: src/settings_schema.py:230
+msgid "These colors are used for popovers."
+msgstr "Tyto barvy jsou použity vyskakovacími okny."
+
+#: src/settings_schema.py:246
+msgid "Miscalleneous Colors"
+msgstr "Ostatní barvy"
+
+#: src/settings_schema.py:247
+msgid "Colors that don't fit in any particular group."
+msgstr "Barvy, které se nehodí do žádné konkrétní skupiny."
+
+#: src/settings_schema.py:252
+msgid ""
+"The shade color is used by inline tab bars, as well as the transitions in "
+"leaflets and flaps, and info bar borders."
+msgstr ""
+"Barvu odstínu používají vložené pruhy karet, přechody v záložkách a okraje "
+"informačních pruhů."
+
+#: src/settings_schema.py:257
+msgid "Scrollbar Outline Color"
+msgstr "Barva obrysu posuvníku"
+
+#: src/settings_schema.py:258
+msgid ""
+"The scrollbar outline color is used by scrollbars to ensure that overlay "
+"scrollbars are visible regardless of the content color."
+msgstr ""
+"Barva obrysu posuvníku používají posuvníky, aby zajistily, že překryvné "
+"posuvníky budou viditelné bez ohledu na barvu obsahu."
+
+#: src/settings_schema.py:267
+msgid "Blue"
+msgstr "Modrá"
+
+#: src/settings_schema.py:272
+msgid "Green"
+msgstr "Zelená"
+
+#: src/settings_schema.py:277
+msgid "Yellow"
+msgstr "Žlutá"
+
+#: src/settings_schema.py:282
+msgid "Orange"
+msgstr "Oranžová"
+
+#: src/settings_schema.py:287
+msgid "Red"
+msgstr "Červená"
+
+#: src/settings_schema.py:292
+msgid "Purple"
+msgstr "Fialová"
+
+#: src/settings_schema.py:297
+msgid "Brown"
+msgstr "Hnědá"
+
+#: src/settings_schema.py:302
+msgid "Light"
+msgstr "Světlá"
+
+#: src/settings_schema.py:307
+msgid "Dark"
+msgstr "Tmavá"
+
+#: src/window.py:70
+msgid "Palette Colors"
+msgstr "Paleta barev"
+
+#: src/window.py:71
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a"
+" href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human"
+" Interface Guidelines</a>."
+msgstr ""
+"Pojmenovaná paleta barev používaná některými aplikacemi. Výchozí barvy jsou "
+"nastaveny podle <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
