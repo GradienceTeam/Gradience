@@ -148,7 +148,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             "Uruguay",
         ]
         for v in store_values:
-            store.append([v])
+            store.append(v)
         self.tone_row.set_list_factory(store)
         print(dir(self.tone_row))
 
