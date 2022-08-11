@@ -641,7 +641,7 @@ class AdwcustomizerApplication(Adw.Application):
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918/
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
             copyright="© 2022 Adwaita Manager Team",
-            license_type=Gtk.License.MIT_X11,
+            license_type=Gtk.License.GPL_3_0,
         )
         about.present()
 
