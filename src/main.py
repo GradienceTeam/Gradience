@@ -243,7 +243,12 @@ class AdwcustomizerApplication(Adw.Application):
 
         print(monet_theme)
         print(theme)
-
+        if monet_theme == "automatic":
+            if self.style_manager.get_dark():
+                monet_theme = "dark"
+            else:
+                monet_theme = "light"
+        
         if monet_theme == "dark":
             dark_theme =  theme["schemes"]["dark"]
             variable = {
