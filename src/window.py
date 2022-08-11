@@ -134,7 +134,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.tone_row = Adw.ComboRow()
         self.tone_row.set_title(_("Tone"))
 
-        store = Gtk.ListItemFactory()
+        store = Gtk.StringList()
         print(dir(store))
         store_values = [
             "1",
@@ -147,8 +147,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             "United States of America",
             "Uruguay",
         ]
-        store.replace_qdata(store_values)
-        store.replace_data(store_values)
+        for v in store_values:
+            store.append([v])
         self.tone_row.set_list_factory(store)
         print(dir(self.tone_row))
 
