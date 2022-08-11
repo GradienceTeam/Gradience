@@ -216,6 +216,8 @@ class AdwcustomizerApplication(Adw.Application):
             i += 1
             palette[str(i)] = hexFromArgb(color.tone(int(tone.get_string())))
 
+        print(palette)
+
         self.pref_palette_shades["monet"].update_shades(palette)
 
     def generate_gtk_css(self, app_type):
