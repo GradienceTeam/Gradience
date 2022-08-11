@@ -102,22 +102,33 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         """
         print(self.monet_palette)
         print(self.monet_theme)
+        self.monet_pref_group.remove(self.palette_picker)
+
+        self.palette_picker = Adw.ActionRow()
+        self.palette_picker.set_name("monet_palette")
+        self.palette_picker.set_title(_("Monet Palette"))
+        self.palette_picker
+        self.palette_pickers = {}
+        i = 0
         for color in self.monet_palette.values():
-            i+=1
+            i = i+1
+            picker = Gtk.ColorButton()
+            picker.set_name(str(i))
             color = color.tone(int(self.tone.get_string()))
-            print(color)
-            self.palette_pickers[str(i)].set_rgba(Gdk.RGBA(red=redFromArgb(color), green=greenFromArgb(color), blue=blueFromArgb(color), alpha=alphaFromArgb(color)))
-            
-        self.palette_pickers["1"].set_rgba(Gdk.RGBA(red=redFromArgb(color), green=greenFromArgb(color), blue=blueFromArgb(color), alpha=alphaFromArgb(color)))
+            picker.set_rgba(Gdk.RGBA(red=redFromArgb(color), green=greenFromArgb(color), blue=blueFromArgb(color), alpha=alphaFromArgb(color)))
+            picker.set_valign(Gtk.Align.CENTER)
+            self.palette_pickers[str(i)] = picker
+            self.palette_picker.add_suffix(picker)
+        self.monet_pref_group.add(self.palette_picker)
         #self.get_application().update_theme_from_monet(self.monet_theme)
 
     def setup_monet_page(self):
         
 
-        monet_pref_group = Adw.PreferencesGroup()
-        monet_pref_group.set_name("monet")
-        monet_pref_group.set_title(_("Monet Engine"))
-        monet_pref_group.set_description(_("Monet is an engine that generates Material Design 3 palette from backgrounds color"))
+        self.monet_pref_group = Adw.PreferencesGroup()
+        self.monet_pref_group.set_name("monet")
+        self.monet_pref_group.set_title(_("Monet Engine"))
+        self.monet_pref_group.set_description(_("Monet is an engine that generates Material Design 3 palette from backgrounds color"))
 
         self.monet_file_chooser_row = Adw.ActionRow()
         self.monet_file_chooser_row.set_title(_("Background Image"))
@@ -132,7 +143,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_button.connect("clicked", self.on_file_picker_button_clicked )
         self.monet_file_chooser_dialog.connect("response", self.on_monet_file_chooser_response )
         self.monet_file_chooser_row.add_suffix(self.monet_file_chooser_button)
-        monet_pref_group.add(self.monet_file_chooser_row)
+        self.monet_pref_group.add(self.monet_file_chooser_row)
 
         self.palette_picker = Adw.ActionRow()
         self.palette_picker.set_name("monet_palette")
@@ -147,7 +158,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             picker.set_valign(Gtk.Align.CENTER)
             self.palette_pickers[str(i)] = picker
             self.palette_picker.add_suffix(picker)
-        monet_pref_group.add(self.palette_picker)
+        self.monet_pref_group.add(self.palette_picker)
 
 
         self.tone_row = Adw.ComboRow()
