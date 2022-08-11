@@ -45,17 +45,19 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
             }
           }
 
-          [end]
-          Gtk.MenuButton {
-            icon-name: "open-menu-symbolic";
-            menu-model: main-menu;
-          }
 
           [end]
           MenuButton errors-button {
             styles ["raised", "error"]
             icon-name: "dialog-warning-symbolic";
             popover: errors-popover;
+          }
+
+          
+          [end]
+          Gtk.MenuButton {
+            icon-name: "open-menu-symbolic";
+            menu-model: main-menu;
           }
 
         }
