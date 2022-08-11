@@ -337,6 +337,8 @@ class AdwcustomizerApplication(Adw.Application):
         for key in variables.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(variables[key])
+        
+        self.reload_variables()
 
     def generate_gtk_css(self, app_type):
         final_css = ""
