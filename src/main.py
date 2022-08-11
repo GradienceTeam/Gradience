@@ -35,7 +35,7 @@ from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from .plugins_list import AdwcustomizerPluginsList
-
+from . import info
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
@@ -664,6 +664,7 @@ class AdwcustomizerApplication(Adw.Application):
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
             copyright="© 2022 Adwaita Manager Team",
             license_type=Gtk.License.GPL_3_0,
+            version=f"{info.version}"
         )
         about.present()
 

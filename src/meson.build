@@ -40,6 +40,17 @@ configure_file(
   install_dir: get_option('bindir')
 )
 
+configure_file(
+          input: 'info.py.in',
+         output: '@BASENAME@',
+        install: true,
+    install_dir: python.get_install_dir() / 'adwcustomizer',
+  configuration: configuration_data({
+           'version': meson.project_version(),
+        'build_type': get_option('buildtype'),
+  }),
+)
+
 adwcustomizer_sources = [
   '__init__.py',
   'settings_schema.py',
