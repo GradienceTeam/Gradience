@@ -26,6 +26,7 @@ from anyascii import anyascii
 
 import gi
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
+from material_color_utilities_python import *
 
 from .settings_schema import settings_schema
 from .window import AdwcustomizerMainWindow
@@ -207,7 +208,15 @@ class AdwcustomizerApplication(Adw.Application):
         self.reload_variables()
 
     def update_theme_from_monet(self, theme, tone):
-        pass
+        palettes = theme["palettes"]
+
+        palette = {}
+        i = 0
+        for color in palettes.values():
+            i += 1
+            palette[str(i)] = hexFromArgb(color.tone(tone))
+
+        self.pref_palette_shades["monet"].update_shades()
 
     def generate_gtk_css(self, app_type):
         final_css = ""
