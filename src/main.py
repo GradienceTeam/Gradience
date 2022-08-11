@@ -98,8 +98,9 @@ class AdwcustomizerApplication(Adw.Application):
         self.reload_user_defined_presets()
 
         self.style_manager = Adw.StyleManager.get_default()
-
+        print(dir(self.style_manager))
         print(self.style_manager.get_color_scheme())
+        print(dir(self.style_manager.get_color_scheme()))
         if  self.style_manager.get_color_scheme() == Adw.ColorScheme.DARK:
             self.load_preset_from_resource(
                 "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita-dark.json"
