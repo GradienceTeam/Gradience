@@ -137,6 +137,16 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             store.append(v)
         self.tone_row.set_model(store)
         self.monet_pref_group.add(self.tone_row)
+
+        self.monet_theme_row = Adw.ComboRow()
+        self.monet_theme_row.set_title(_("Theme"))
+
+        store = Gtk.StringList()
+        store.append("Dark")
+        store.append("Light")
+        self.monet_theme_row.set_model(store)
+        self.monet_pref_group.add(self.monet_theme_row)
+
         self.content_monet.add(self.monet_pref_group)
 
     def setup_plugins_page(self):
