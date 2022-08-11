@@ -149,7 +149,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_theme_row.set_title(_("Theme"))
 
         store = Gtk.StringList()
-        store.append("Automatic")
+        store.append("Auto")
         store.append("Dark")
         store.append("Light")
         self.monet_theme_row.set_model(store)
