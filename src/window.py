@@ -122,7 +122,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_palette_shades = AdwcustomizerPaletteShades("monet",
                                                                "Monet Palette",
                                                                6)
-        self.monet_pref_group.add(self.palette_picker)
+        self.monet_pref_group.add(self.monet_palette_shades)
 
         self.tone_row = Adw.ComboRow()
         self.tone_row.set_title(_("Tone"))
