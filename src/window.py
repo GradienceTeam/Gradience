@@ -88,11 +88,12 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             self.monet_file_chooser_button.set_label(image_basename)
         self.monet_file_chooser_dialog.hide()
 
-        self.monet_img = Image.open(self.monet_image_file.get_path())
-        self.theme = themeFromImage(self.monet_img)
-        self.tone = self.tone_row.get_selected_item()
-        self.monet_theme = self.monet_theme_row.get_selected_item()
-        self.get_application().update_theme_from_monet(self.theme, self.tone, self.monet_theme)
+        if response == Gtk.ResponseType.ACCEPT:
+            self.monet_img = Image.open(self.monet_image_file.get_path())
+            self.theme = themeFromImage(self.monet_img)
+            self.tone = self.tone_row.get_selected_item()
+            self.monet_theme = self.monet_theme_row.get_selected_item()
+            self.get_application().update_theme_from_monet(self.theme, self.tone, self.monet_theme)
 
     def setup_monet_page(self):
 
