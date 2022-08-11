@@ -444,9 +444,9 @@ class AdwcustomizerApplication(Adw.Application):
             transient_for=self.props.active_window,
         )
 
-        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
 
-        label = Gtk.Label(label="Export as Dark theme")
+        label = Gtk.Label(label="Apply as Dark theme")
         switch = Gtk.Switch()
 
         box.append(label)
