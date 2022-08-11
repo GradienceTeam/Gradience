@@ -300,50 +300,50 @@ class AdwcustomizerApplication(Adw.Application):
         else: # light
             light_theme =  theme["schemes"]["light"]
             variable = {
-                "accent_color": light_theme["primary"],
-                "accent_bg_color": light_theme["primaryContainer"],
-                "accent_fg_color": light_theme["onPrimaryContainer"],
+                "accent_color": self.rgba_from_argb(light_theme.primary),
+                "accent_bg_color": self.rgba_from_argb(light_theme.primaryContainer),
+                "accent_fg_color": self.rgba_from_argb(light_theme.onPrimaryContainer),
 
-                "destructive_color": light_theme["error"],
-                "destructive_bg_color": light_theme["errorContainer"],
-                "destructive_fg_color": light_theme["onError"],
+                "destructive_color": self.rgba_from_argb(light_theme.error),
+                "destructive_bg_color": self.rgba_from_argb(light_theme.errorContainer),
+                "destructive_fg_color": self.rgba_from_argb(light_theme.onError),
 
-                "success_color": light_theme["tertiary"],
-                "success_bg_color": light_theme["onTertiary"],
-                "success_fg_color": light_theme["tertiaryContainer"],
+                "success_color": self.rgba_from_argb(light_theme.tertiary),
+                "success_bg_color": self.rgba_from_argb(light_theme.onTertiary),
+                "success_fg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
 
-                "warning_color": light_theme["secondaryContainer"],
-                "warning_bg_color": light_theme["inversePrimary"],
-                "warning_fg_color": self.rgba_from_argb(light_theme["primary"], "0.8"),
+                "warning_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "warning_bg_color": self.rgba_from_argb(light_theme.inversePrimary),
+                "warning_fg_color": self.rgba_from_argb(light_theme.primary, "0.8"),
 
-                "error_color": light_theme["error"],
-                "error_bg_color": light_theme["errorContainer"],
-                "error_fg_color": light_theme["onError"],
+                "error_color": self.rgba_from_argb(light_theme.error),
+                "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
+                "error_fg_color": self.rgba_from_argb(light_theme.onError),
 
-                "window_bg_color": light_theme["surface"],
-                "window_fg_color": light_theme["onSurface"],
+                "window_bg_color": self.rgba_from_argb(light_theme.surface),
+                "window_fg_color": self.rgba_from_argb(light_theme.onSurface),
 
-                "view_bg_color": light_theme["surface"],
-                "view_fg_color": light_theme["onSurface"],
+                "view_bg_color": self.rgba_from_argb(light_theme.surface),
+                "view_fg_color": self.rgba_from_argb(light_theme.onSurface),
 
-                "headerbar_bg_color": light_theme["surface"],
-                "headerbar_fg_color": light_theme["onSurface"],
-                "headerbar_border_color": self.rgba_from_argb(light_theme["primary"], "0.8"),
+                "headerbar_bg_color": self.rgba_from_argb(light_theme.surface),
+                "headerbar_fg_color": self.rgba_from_argb(light_theme.onSurface),
+                "headerbar_border_color": self.rgba_from_argb(light_theme.primary, "0.8"),
                 "headerbar_backdrop_color": "@window_bg_color",
-                "headerbar_shade_color": light_theme["shadow"],
+                "headerbar_shade_color": self.rgba_from_argb(light_theme.shadow),
 
-                "card_bg_color": self.rgba_from_argb(light_theme["primary"], "0.05"),
-                "card_fg_color": light_theme["surfaceVariant"],
-                "card_shade_color": light_theme["shadow"],
+                "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
+                "card_fg_color": self.rgba_from_argb(light_theme.surfaceVariant),
+                "card_shade_color": self.rgba_from_argb(light_theme.shadow),
 
-                "dialog_bg_color": light_theme["secondaryContainer"],
-                "dialog_fg_color": light_theme["onSecondaryContainer"],
+                "dialog_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "dialog_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
 
-                "popover_bg_color": light_theme["secondaryContainer"],
-                "popover_fg_color": light_theme["onSecondaryContainer"],
+                "popover_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "popover_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
 
-                "shade_color": light_theme["shadow"],
-                "scrollbar_outline_color": light_theme["outline"]
+                "shade_color": self.rgba_from_argb(light_theme.shadow),
+                "scrollbar_outline_color": self.rgba_from_argb(light_theme.outline)
             }
 
         for key in variable.keys():
