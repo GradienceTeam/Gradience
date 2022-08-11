@@ -222,6 +222,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.pref_palette_shades["monet"].update_shades(palette)
 
+        print(monet_theme)
         print(theme)
 
         self.variable = {
