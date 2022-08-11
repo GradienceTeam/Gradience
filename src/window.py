@@ -35,6 +35,7 @@ from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from material_color_utilities_python import *
 
+
 @Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/window.ui')
 class AdwcustomizerMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'AdwcustomizerMainWindow'
@@ -52,7 +53,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
+        self.presets_dropdown.get_popover().connect(
+            "show", self.on_presets_dropdown_activate)
 
         self.setup_monet_page()
         self.setup_plugins_page()
@@ -81,99 +83,54 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
-            self.monet_image_file =  self.monet_file_chooser_dialog.get_file()
+            self.monet_image_file = self.monet_file_chooser_dialog.get_file()
             image_basename = self.monet_image_file.get_basename()
             self.monet_file_chooser_button.set_label(image_basename)
         self.monet_file_chooser_dialog.hide()
 
         self.monet_img = Image.open(self.monet_image_file.get_path())
         self.monet_theme = themeFromImage(self.monet_img)
-        self.monet_palette = self.monet_theme["palettes"]
         self.tone = self.tone_row.get_selected_item()
-
-        i = 0
-        """
-        {'primary': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae01873130>, 
-        'secondary': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f7f0>, 
-        'tertiary': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f790>,
-         'neutral': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f730>, 
-         'neutralVariant': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f6d0>, 
-         'error': <material_color_utilities_python.palettes.tonal_palette.TonalPalette object at 0x74ae00b4f670>}
-        """
-        print(self.monet_palette)
-        print(self.monet_theme)
-        self.monet_pref_group.remove(self.palette_picker)
-
-        self.palette_picker = Adw.ActionRow()
-        self.palette_picker.set_name("monet_palette")
-        self.palette_picker.set_title(_("Monet Palette"))
-        self.palette_picker
-        self.palette_pickers = {}
-        i = 0
-        for color in self.monet_palette.values():
-            i = i+1
-            picker = Gtk.ColorButton()
-            picker.set_name(str(i))
-            color = color.tone(int(self.tone.get_string()))
-            picker.set_rgba(Gdk.RGBA(red=redFromArgb(color), green=greenFromArgb(color), blue=blueFromArgb(color), alpha=alphaFromArgb(color)))
-            picker.set_valign(Gtk.Align.CENTER)
-            self.palette_pickers[str(i)] = picker
-            self.palette_picker.add_suffix(picker)
-        self.monet_pref_group.add(self.palette_picker)
-        #self.get_application().update_theme_from_monet(self.monet_theme)
+        self.get_application().update_theme_from_monet(self.monet_theme, self.tone)
 
     def setup_monet_page(self):
-        
 
         self.monet_pref_group = Adw.PreferencesGroup()
         self.monet_pref_group.set_name("monet")
         self.monet_pref_group.set_title(_("Monet Engine"))
-        self.monet_pref_group.set_description(_("Monet is an engine that generates Material Design 3 palette from backgrounds color"))
+        self.monet_pref_group.set_description(
+            _("Monet is an engine that generates Material Design 3 palette from backgrounds color"))
 
         self.monet_file_chooser_row = Adw.ActionRow()
         self.monet_file_chooser_row.set_title(_("Background Image"))
-       
+
         self.monet_file_chooser_dialog = Gtk.FileChooserNative()
         self.monet_file_chooser_dialog.set_transient_for(self)
 
         self.monet_file_chooser_button = Gtk.Button()
         self.monet_file_chooser_button.set_label(_("Choose a file"))
-        self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
+        self.monet_file_chooser_button.set_icon_name(
+            "folder-pictures-symbolic")
 
-        self.monet_file_chooser_button.connect("clicked", self.on_file_picker_button_clicked )
-        self.monet_file_chooser_dialog.connect("response", self.on_monet_file_chooser_response )
+        self.monet_file_chooser_button.connect(
+            "clicked", self.on_file_picker_button_clicked)
+        self.monet_file_chooser_dialog.connect(
+            "response", self.on_monet_file_chooser_response)
         self.monet_file_chooser_row.add_suffix(self.monet_file_chooser_button)
         self.monet_pref_group.add(self.monet_file_chooser_row)
 
-        self.palette_picker = Adw.ActionRow()
-        self.palette_picker.set_name("monet_palette")
-        self.palette_picker.set_title(_("Monet Palette"))
-        self.palette_picker
-        self.palette_pickers = {}
-        for i in range(6):
-            i = i+1
-            picker = Gtk.ColorButton()
-            picker.set_name(str(i))
-            picker.set_rgba(Gdk.RGBA(red=0, green=0, blue=0, alpha=0))
-            picker.set_valign(Gtk.Align.CENTER)
-            self.palette_pickers[str(i)] = picker
-            self.palette_picker.add_suffix(picker)
+        self.monet_palette_shades = AdwcustomizerPaletteShades("monet",
+                                                               "Monet Palette",
+                                                               6)
         self.monet_pref_group.add(self.palette_picker)
-
 
         self.tone_row = Adw.ComboRow()
         self.tone_row.set_title(_("Tone"))
 
         store = Gtk.StringList()
-        store_values = [
-            "1",
-            "5",
-            "10",
-            "15",
-            "20",
-            "25",
-            "30"
-        ]
+        store_values = ["1"]
+        for i in range(5, 100, 5):
+            store_values.append(str(i))
         for v in store_values:
             store.append(v)
         self.tone_row.set_model(store)
@@ -198,25 +155,28 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             for variable in group["variables"]:
                 pref_variable = AdwcustomizerOption(variable["name"],
                                                     variable["title"],
-                                                    variable.get("explanation"),
+                                                    variable.get(
+                                                        "explanation"),
                                                     variable["adw_gtk3_support"])
                 pref_group.add(pref_variable)
-                self.get_application().pref_variables[variable["name"]] = pref_variable
+                self.get_application(
+                ).pref_variables[variable["name"]] = pref_variable
 
             self.content.add(pref_group)
 
         palette_pref_group = Adw.PreferencesGroup()
         palette_pref_group.set_name("palette_colors")
         palette_pref_group.set_title(_("Palette Colors"))
-        palette_pref_group.set_description(_("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."))
+        palette_pref_group.set_description(
+            _("Named palette colors used by some applications. Default colors follow the <a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."))
         for color in settings_schema["palette"]:
             palette_shades = AdwcustomizerPaletteShades(color["prefix"],
                                                         color["title"],
                                                         color["n_shades"])
             palette_pref_group.add(palette_shades)
-            self.get_application().pref_palette_shades[color["prefix"]] = palette_shades
+            self.get_application(
+            ).pref_palette_shades[color["prefix"]] = palette_shades
         self.content.add(palette_pref_group)
-
 
     def update_errors(self, errors):
         child = self.errors_list.get_row_at_index(0)
@@ -225,7 +185,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             child = self.errors_list.get_row_at_index(0)
         self.errors_button.set_visible(len(errors) > 0)
         for error in errors:
-            self.errors_list.append(AdwcustomizerError(error["error"], error["element"], error["line"]))
+            self.errors_list.append(AdwcustomizerError(
+                error["error"], error["element"], error["line"]))
 
     def on_presets_dropdown_activate(self, *args):
         self.get_application().reload_user_defined_presets()

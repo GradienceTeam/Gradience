@@ -206,6 +206,9 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.reload_variables()
 
+    def update_theme_from_monet(self, theme, tone):
+        pass
+
     def generate_gtk_css(self, app_type):
         final_css = ""
         for key in self.variables.keys():
