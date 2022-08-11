@@ -147,7 +147,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             "United States of America",
             "Uruguay",
         ]
-        store.set_data(store_values)
+        store.replace_qdata(store_values)
+        store.replace_data(store_values)
         self.tone_row.set_list_factory(store)
         print(dir(self.tone_row))
 
