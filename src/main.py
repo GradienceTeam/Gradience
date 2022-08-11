@@ -240,7 +240,7 @@ class AdwcustomizerApplication(Adw.Application):
         if monet_theme == "dark":
             dark_theme =  theme["schemes"]["dark"].toJSON()
             variable = {
-                "accent_color": dark_theme["primary"],
+                "accent_color": dark_theme.primary,
                 "accent_bg_color": dark_theme["primaryContainer"],
                 "accent_fg_color": dark_theme["onPrimaryContainer"],
 
@@ -334,9 +334,9 @@ class AdwcustomizerApplication(Adw.Application):
                 "scrollbar_outline_color": light_theme["outline"]
             }
 
-        for key in variables.keys():
+        for key in variable.keys():
             if key in self.pref_variables:
-                self.pref_variables[key].update_value(variables[key])
+                self.pref_variables[key].update_value(variable[key])
         
         self.reload_variables()
 
