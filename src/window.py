@@ -149,7 +149,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         ]
         for v in store_values:
             store.append(v)
-        self.tone_row.set_list_factory(store)
+        self.tone_row.set_model(store)
         print(dir(self.tone_row))
 
     def setup_plugins_page(self):
