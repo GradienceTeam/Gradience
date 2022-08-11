@@ -89,10 +89,10 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_dialog.hide()
 
         self.monet_img = Image.open(self.monet_image_file.get_path())
-        self.monet_theme = themeFromImage(self.monet_img)
+        self.theme = themeFromImage(self.monet_img)
         self.tone = self.tone_row.get_selected_item()
         self.monet_theme = self.monet_theme_row.get_selected_item()
-        self.get_application().update_theme_from_monet(self.monet_theme, self.tone, self.monet_theme)
+        self.get_application().update_theme_from_monet(self.theme, self.tone, self.monet_theme)
 
     def setup_monet_page(self):
 
