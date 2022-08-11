@@ -130,7 +130,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.tone_row.set_title(_("Tone"))
 
         store = Gtk.StringList()
-        store_values = ["1"]
+        store_values = []
         for i in range(5, 100, 5):
             store_values.append(str(i))
         for v in store_values:
