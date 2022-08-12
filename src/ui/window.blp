@@ -30,6 +30,12 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
           }
 
           [end]
+          Gtk.MenuButton {
+            icon-name: "open-menu-symbolic";
+            menu-model: main-menu;
+          }
+
+          [end]
           MenuButton presets-dropdown {
             menu-model: presets-menu;
             label: _("Presets");
@@ -54,11 +60,6 @@ template AdwcustomizerMainWindow : Adw.ApplicationWindow {
           }
 
           
-          [end]
-          Gtk.MenuButton {
-            icon-name: "open-menu-symbolic";
-            menu-model: main-menu;
-          }
 
         }
 
