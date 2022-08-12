@@ -24,15 +24,25 @@ import signal
 import locale
 import gettext
 
-VERSION = '@VERSION@'
 pkgdatadir = '@pkgdatadir@'
 localedir = '@localedir@'
+version = '@VERSION@'
+
+builddir = os.environ.get('MESON_BUILD_ROOT')
+
+if builddir:
+    sys.dont_write_bytecode = True
+    sys.path.insert(1, os.environ['MESON_SOURCE_ROOT'])
+    data_dir = os.path.join(builddir, '@DATA_DIR@')
+    os.putenv('XDG_DATA_DIRS', '%s:%s' % (data_dir, os.getenv('XDG_DATA_DIRS', '/usr/local/share/:/usr/share/')))
 
 sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
+gettext.install('adwcustomizer', localedir)
+
 locale.bindtextdomain('adwcustomizer', localedir)
 locale.textdomain('adwcustomizer')
-gettext.install('adwcustomizer', localedir)
+
 
 if __name__ == '__main__':
     import gi
@@ -43,8 +53,9 @@ if __name__ == '__main__':
     gi.require_version('XdpGtk4', '1.0')
 
     from gi.repository import Gio
-    resource = Gio.Resource.load(os.path.join(pkgdatadir, 'adwcustomizer.gresource'))
+    resource = Gio.Resource.load(
+        os.path.join(pkgdatadir, 'adwcustomizer.gresource'))
     resource._register()
 
     from adwcustomizer import main
-    sys.exit(main.main(VERSION))
+    sys.exit(main.main(version))
