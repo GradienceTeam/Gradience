@@ -6,13 +6,13 @@ project('adwcustomizer',
                    ],
 )
 
-dependency('glib-2.0')
-dependency('pygobject-3.0')
-dependency('libadwaita-1')
-
 i18n = import('i18n')
-
 gnome = import('gnome')
+
+dependency('glib-2.0')
+dependency('gtk4', version: '>= 4.5.0')
+dependency('libadwaita-1', version: '>= 1.2.alpha')
+dependency('pygobject-3.0', version: '>= 3.42.0')
 
 subdir('data')
 subdir('src')
