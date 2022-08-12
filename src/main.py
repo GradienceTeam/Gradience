@@ -689,10 +689,10 @@ Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita application
 With Adwaita Manager you can:
     
     - Change any color of Adwaita theme
-    -  Apply Material 3 colors from wallaper
-    -  Use other users presets
-    -  Change advanced options with CSS
-    -  Extend functionality using plugins
+    - Apply Material 3 colors from wallaper
+    - Use other users presets
+    - Change advanced options with CSS
+    - Extend functionality using plugins
     
 This app is written in Python and uses GTK 4 and libadwaita.
             """
