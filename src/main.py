@@ -1,30 +1,20 @@
 # main.py
 #
-# Copyright 2022 Adwaita Manager Team
+# Change the look of Adwaita, with ease
+# Copyright (C) 2022  Adwaita Manager Team
 #
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files (the
-# "Software"), to deal in the Software without restriction, including
-# without limitation the rights to use, copy, modify, merge, publish,
-# distribute, sublicense, and/or sell copies of the Software, and to
-# permit persons to whom the Software is furnished to do so, subject to
-# the following conditions:
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
-# The above copyright notice and this permission notice shall be
-# included in all copies or substantial portions of the Software.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY
-# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-#
-# Except as contained in this notice, the name(s) of the above copyright
-# holders shall not be used in advertising or otherwise to promote the sale,
-# use or other dealings in this Software without prior written
-# authorization.
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import sys
 import json
@@ -36,6 +26,7 @@ from anyascii import anyascii
 
 import gi
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
+from material_color_utilities_python import *
 
 from .settings_schema import settings_schema
 from .window import AdwcustomizerMainWindow
@@ -43,6 +34,8 @@ from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
+from .plugins_list import AdwcustomizerPluginsList
+from . import info
 
 
 def to_slug_case(non_slug):
@@ -86,9 +79,9 @@ class AdwcustomizerApplication(Adw.Application):
         necessary.
         """
 
-        win = self.props.active_window
-        if not win:
-            win = AdwcustomizerMainWindow(application=self)
+        self.win = self.props.active_window
+        if not self.win:
+            self.win = AdwcustomizerMainWindow(application=self)
 
         self.create_action("open_preset_directory", self.open_preset_directory)
         self.create_stateful_action(
@@ -97,26 +90,33 @@ class AdwcustomizerApplication(Adw.Application):
             GLib.Variant("s", "adwaita"),
             self.load_preset_action,
         )
-        self.create_action("apply_color_scheme",
-                           self.show_apply_color_scheme_dialog)
-        self.create_action("reset_color_scheme",
-                           self.show_reset_color_scheme_dialog)
+        self.create_action("apply_color_scheme", self.show_apply_color_scheme_dialog)
+        self.create_action("reset_color_scheme", self.show_reset_color_scheme_dialog)
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
         self.reload_user_defined_presets()
-        self.load_preset_from_resource(
-            "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita.json"
-        )
 
-        win.present()
+        self.style_manager = Adw.StyleManager.get_default()
+        if self.style_manager.get_dark():
+            self.load_preset_from_resource(
+                "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita-dark.json"
+            )
+        else:
+            self.load_preset_from_resource(
+                "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita.json"
+            )
+
+        self.win.present()
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
             self.props.active_window.presets_menu.remove(1)
 
         preset_directory = os.path.join(
-            os.environ["XDG_CONFIG_HOME"], "presets")
+            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+            "presets",
+        )
         if not os.path.exists(preset_directory):
             os.makedirs(preset_directory)
 
@@ -133,8 +133,7 @@ class AdwcustomizerApplication(Adw.Application):
                         raise KeyError("variables")
                     if preset.get("palette") is None:
                         raise KeyError("palette")
-                    self.custom_presets[file_name.replace(
-                        ".json", "")] = preset["name"]
+                    self.custom_presets[file_name.replace(".json", "")] = preset["name"]
                 except Exception:
                     self.global_errors.append(
                         {
@@ -143,6 +142,10 @@ class AdwcustomizerApplication(Adw.Application):
                             "line": traceback.format_exc().strip(),
                         }
                     )
+                    self.win.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Failed to load preset"))
+                    )
+
                     self.props.active_window.update_errors(self.global_errors)
 
         custom_menu_section = Gio.Menu()
@@ -174,7 +177,11 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.portal.open_uri(
             parent,
-            "file://" + os.path.join(os.environ["XDG_CONFIG_HOME"], "presets"),
+            "file://"
+            + os.path.join(
+                os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+                "presets",
+            ),
             Xdp.OpenUriFlags.NONE,
             None,
             open_dir_callback,
@@ -187,8 +194,7 @@ class AdwcustomizerApplication(Adw.Application):
         self.load_preset_variables(json.loads(preset_text))
 
     def load_preset_from_resource(self, preset_path):
-        preset_text = Gio.resources_lookup_data(
-            preset_path, 0).get_data().decode()
+        preset_text = Gio.resources_lookup_data(preset_path, 0).get_data().decode()
         self.load_preset_variables(json.loads(preset_text))
 
     def load_preset_variables(self, preset):
@@ -214,6 +220,125 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.reload_variables()
 
+    def rgba_from_argb(self, argb, alpha=None) -> str:
+        base = "rgba({}, {}, {}, {})"
+
+        red = redFromArgb(argb)
+        green = greenFromArgb(argb)
+        blue = blueFromArgb(argb)
+        if not alpha:
+            alpha = alphaFromArgb(argb)
+
+        return base.format(red, green, blue, alpha)
+
+    def update_theme_from_monet(self, theme, tone, monet_theme):
+        palettes = theme["palettes"]
+
+        monet_theme = monet_theme.get_string().lower()  # dark / light
+
+        palette = {}
+        i = 0
+        for color in palettes.values():
+            i += 1
+            palette[str(i)] = hexFromArgb(color.tone(int(tone.get_string())))
+        self.pref_palette_shades["monet"].update_shades(palette)
+        if monet_theme == "automatic":
+            if self.style_manager.get_dark():
+                monet_theme = "dark"
+            else:
+                monet_theme = "light"
+
+        if monet_theme == "dark":
+            dark_theme = theme["schemes"]["dark"]
+            variable = {
+                "accent_color": self.rgba_from_argb(dark_theme.primary),
+                "accent_bg_color": self.rgba_from_argb(dark_theme.primaryContainer),
+                "accent_fg_color": self.rgba_from_argb(dark_theme.onPrimaryContainer),
+                "destructive_color": self.rgba_from_argb(dark_theme.error),
+                "destructive_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
+                "destructive_fg_color": self.rgba_from_argb(dark_theme.onError),
+                "success_color": self.rgba_from_argb(dark_theme.tertiary),
+                "success_bg_color": self.rgba_from_argb(dark_theme.onTertiary),
+                "success_fg_color": self.rgba_from_argb(dark_theme.tertiaryContainer),
+                "warning_color": self.rgba_from_argb(dark_theme.secondaryContainer),
+                "warning_bg_color": self.rgba_from_argb(dark_theme.inversePrimary),
+                "warning_fg_color": self.rgba_from_argb(dark_theme.primary, "0.8"),
+                "error_color": self.rgba_from_argb(dark_theme.error),
+                "error_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
+                "error_fg_color": self.rgba_from_argb(dark_theme.onError),
+                "window_bg_color": self.rgba_from_argb(dark_theme.surface),
+                "window_fg_color": self.rgba_from_argb(dark_theme.onSurface),
+                "view_bg_color": self.rgba_from_argb(dark_theme.surface),
+                "view_fg_color": self.rgba_from_argb(dark_theme.onSurface),
+                "headerbar_bg_color": self.rgba_from_argb(dark_theme.surface),
+                "headerbar_fg_color": self.rgba_from_argb(dark_theme.onSurface),
+                "headerbar_border_color": self.rgba_from_argb(
+                    dark_theme.primary, "0.8"
+                ),
+                "headerbar_backdrop_color": "@window_bg_color",
+                "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
+                "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
+                "card_fg_color": self.rgba_from_argb(dark_theme.onSurface),
+                "card_shade_color": self.rgba_from_argb(dark_theme.shadow),
+                "dialog_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
+                "dialog_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
+                "popover_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
+                "popover_fg_color": self.rgba_from_argb(
+                    dark_theme.onSecondaryContainer
+                ),
+                "shade_color": self.rgba_from_argb(dark_theme.shadow),
+                "scrollbar_outline_color": self.rgba_from_argb(dark_theme.outline),
+            }
+        else:  # light
+            light_theme = theme["schemes"]["light"]
+            variable = {
+                "accent_color": self.rgba_from_argb(light_theme.primary),
+                "accent_bg_color": self.rgba_from_argb(light_theme.primaryContainer),
+                "accent_fg_color": self.rgba_from_argb(light_theme.onPrimaryContainer),
+                "destructive_color": self.rgba_from_argb(light_theme.error),
+                "destructive_bg_color": self.rgba_from_argb(light_theme.errorContainer),
+                "destructive_fg_color": self.rgba_from_argb(light_theme.onError),
+                "success_color": self.rgba_from_argb(light_theme.tertiary),
+                "success_bg_color": self.rgba_from_argb(light_theme.onTertiary),
+                "success_fg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
+                "warning_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "warning_bg_color": self.rgba_from_argb(light_theme.inversePrimary),
+                "warning_fg_color": self.rgba_from_argb(light_theme.primary, "0.8"),
+                "error_color": self.rgba_from_argb(light_theme.error),
+                "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
+                "error_fg_color": self.rgba_from_argb(light_theme.onError),
+                "window_bg_color": self.rgba_from_argb(light_theme.surface),
+                "window_fg_color": self.rgba_from_argb(light_theme.onSurface),
+                "view_bg_color": self.rgba_from_argb(light_theme.surface),
+                "view_fg_color": self.rgba_from_argb(light_theme.onSurface),
+                "headerbar_bg_color": self.rgba_from_argb(light_theme.surface),
+                "headerbar_fg_color": self.rgba_from_argb(light_theme.onSurface),
+                "headerbar_border_color": self.rgba_from_argb(
+                    light_theme.primary, "0.8"
+                ),
+                "headerbar_backdrop_color": "@window_bg_color",
+                "headerbar_shade_color": self.rgba_from_argb(light_theme.shadow),
+                "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
+                "card_fg_color": self.rgba_from_argb(light_theme.surfaceVariant),
+                "card_shade_color": self.rgba_from_argb(light_theme.shadow),
+                "dialog_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "dialog_fg_color": self.rgba_from_argb(
+                    light_theme.onSecondaryContainer
+                ),
+                "popover_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "popover_fg_color": self.rgba_from_argb(
+                    light_theme.onSecondaryContainer
+                ),
+                "shade_color": self.rgba_from_argb(light_theme.shadow),
+                "scrollbar_outline_color": self.rgba_from_argb(light_theme.outline),
+            }
+
+        for key in variable.keys():
+            if key in self.pref_variables:
+                self.pref_variables[key].update_value(variable[key])
+
+        self.reload_variables()
+
     def generate_gtk_css(self, app_type):
         final_css = ""
         for key in self.variables.keys():
@@ -226,16 +351,18 @@ class AdwcustomizerApplication(Adw.Application):
 
     def mark_as_dirty(self):
         self.is_dirty = True
-        self.props.active_window.save_preset_button.add_css_class("warning")
-        self.props.active_window.save_preset_button.add_css_class("raised")
-        self.props.active_window.save_preset_button.get_child().set_label(
+        self.props.active_window.save_preset_button.get_child().set_icon_name(
+            "disk-unsaved-symbolic"
+        )
+        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
             _("Unsaved changes")
         )
 
     def clear_dirty(self):
         self.is_dirty = False
-        self.props.active_window.save_preset_button.remove_css_class("warning")
-        self.props.active_window.save_preset_button.remove_css_class("raised")
+        self.props.active_window.save_preset_button.get_child().set_icon_name(
+            "disk-saved-symbolic"
+        )
         self.props.active_window.save_preset_button.get_child().set_label("")
 
     def reload_variables(self):
@@ -259,8 +386,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         css_provider.connect("parsing-error", on_error)
         css_provider.load_from_data(gtk_css.encode())
-        self.props.active_window.update_errors(
-            self.global_errors + parsing_errors)
+        self.props.active_window.update_errors(self.global_errors + parsing_errors)
         # loading with the priority above user to override the applied config
         if self.current_css_provider is not None:
             Gtk.StyleContext.remove_provider_for_display(
@@ -279,7 +405,7 @@ class AdwcustomizerApplication(Adw.Application):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(
                 os.path.join(
-                    os.environ["XDG_CONFIG_HOME"],
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "presets",
                     args[0].get_string().replace("custom-", "", 1) + ".json",
                 )
@@ -303,7 +429,18 @@ class AdwcustomizerApplication(Adw.Application):
             Adw.ResponseAppearance.SUGGESTED,
             transient_for=self.props.active_window,
         )
-        dialog.connect("response", self.apply_color_scheme)
+
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+
+        label = Gtk.Label(label="Apply as Dark theme")
+        switch = Gtk.Switch()
+
+        box.append(label)
+        box.append(switch)
+
+        dialog.set_extra_child(box)
+
+        dialog.connect("response", self.apply_color_scheme, switch)
         dialog.present()
 
     def show_reset_color_scheme_dialog(self, *_args):
@@ -326,7 +463,7 @@ class AdwcustomizerApplication(Adw.Application):
                 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
             ).format(
                 os.path.join(
-                    os.environ["XDG_CONFIG_HOME"],
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "presets",
                     to_slug_case(self.preset_name) + ".json",
                 )
@@ -336,8 +473,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("save", _("Save"))
-        dialog.set_response_appearance(
-            "save", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
 
@@ -349,7 +485,14 @@ class AdwcustomizerApplication(Adw.Application):
                 dialog.set_body(
                     _(
                         "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
-                    ).format(os.path.join(os.environ["XDG_CONFIG_HOME"], "presets"))
+                    ).format(
+                        os.path.join(
+                            os.environ.get(
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                            ),
+                            "presets",
+                        )
+                    )
                 )
                 dialog.set_response_enabled("save", False)
             else:
@@ -358,7 +501,9 @@ class AdwcustomizerApplication(Adw.Application):
                         "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
-                            os.environ["XDG_CONFIG_HOME"],
+                            os.environ.get(
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                            ),
                             "presets",
                             to_slug_case(preset_entry.get_text()) + ".json",
                         )
@@ -377,7 +522,7 @@ class AdwcustomizerApplication(Adw.Application):
         if response == "save":
             with open(
                 os.path.join(
-                    os.environ["XDG_CONFIG_HOME"],
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "presets",
                     to_slug_case(entry.get_text()) + ".json",
                 ),
@@ -392,50 +537,104 @@ class AdwcustomizerApplication(Adw.Application):
                 }
                 file.write(json.dumps(object_to_write, indent=4))
                 self.clear_dirty()
+                self.win.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Scheme successfully saved!"))
+                )
 
-    def apply_color_scheme(self, widget, response):
+    def apply_color_scheme(self, widget, response, switch):
         if response == "apply":
-            if widget.get_app_types()["gtk4"]:
-                gtk4_dir = os.path.join(
-                    os.environ["XDG_CONFIG_HOME"], "gtk-4.0")
-                if not os.path.exists(gtk4_dir):
-                    os.makedirs(gtk4_dir)
-                gtk4_css = self.generate_gtk_css("gtk4")
-                with open(
-                    os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
-                ) as file:
-                    file.write(gtk4_css)
-            if widget.get_app_types()["gtk3"]:
-                gtk3_dir = os.path.join(
-                    os.environ["XDG_CONFIG_HOME"], "gtk-3.0")
-                if not os.path.exists(gtk3_dir):
-                    os.makedirs(gtk3_dir)
-                gtk3_css = self.generate_gtk_css("gtk3")
-                with open(
-                    os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
-                ) as file:
-                    file.write(gtk3_css)
+            if switch.get_active():
+                if widget.get_app_types()["gtk4"]:
+                    gtk4_dir = os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "gtk-4.0",
+                    )
+                    if not os.path.exists(gtk4_dir):
+                        os.makedirs(gtk4_dir)
+                    gtk4_css = self.generate_gtk_css("gtk4")
+                    with open(
+                        os.path.join(gtk4_dir, "gtk-dark.css"), "w", encoding="utf-8"
+                    ) as file:
+                        file.write(gtk4_css)
+                if widget.get_app_types()["gtk3"]:
+                    gtk3_dir = os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "gtk-3.0",
+                    )
+                    if not os.path.exists(gtk3_dir):
+                        os.makedirs(gtk3_dir)
+                    gtk3_css = self.generate_gtk_css("gtk3")
+                    with open(
+                        os.path.join(gtk3_dir, "gtk-dark.css"), "w", encoding="utf-8"
+                    ) as file:
+                        file.write(gtk3_css)
+            else:
+                if widget.get_app_types()["gtk4"]:
+                    gtk4_dir = os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "gtk-4.0",
+                    )
+                    if not os.path.exists(gtk4_dir):
+                        os.makedirs(gtk4_dir)
+                    gtk4_css = self.generate_gtk_css("gtk4")
+                    with open(
+                        os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
+                    ) as file:
+                        file.write(gtk4_css)
+                if widget.get_app_types()["gtk3"]:
+                    gtk3_dir = os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "gtk-3.0",
+                    )
+                    if not os.path.exists(gtk3_dir):
+                        os.makedirs(gtk3_dir)
+                    gtk3_css = self.generate_gtk_css("gtk3")
+                    with open(
+                        os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
+                    ) as file:
+                        file.write(gtk3_css)
+            self.win.toast_overlay.add_toast(
+                Adw.Toast(title=_("Scheme set successfully!"))
+            )
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
             if widget.get_app_types()["gtk4"]:
                 file = Gio.File.new_for_path(
                     os.path.join(
-                        os.environ["XDG_CONFIG_HOME"], "/gtk-3.0/gtk.css")
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "gtk-4.0/gtk.css",
+                    )
                 )
                 try:
                     file.delete()
                 except Exception:
                     pass
+
             if widget.get_app_types()["gtk3"]:
                 file = Gio.File.new_for_path(
                     os.path.join(
-                        os.environ["XDG_CONFIG_HOME"], "/gtk-3.0/gtk.css")
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "gtk-3.0/gtk.css",
+                    )
                 )
                 try:
                     file.delete()
                 except Exception:
                     pass
+            self.win.toast_overlay.add_toast(Adw.Toast(title=_("Reset successfully!")))
 
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
@@ -443,17 +642,61 @@ class AdwcustomizerApplication(Adw.Application):
             application_name=_("Adwaita Manager"),
             application_icon="com.github.AdwCustomizerTeam.AdwCustomizer",
             developer_name=_("Adwaita Manager Team"),
+            website="https://github.com/AdwCustomizerTeam/AdwCustomizer",
+            support_url="https://github.com/orgs/AdwCustomizerTeam/discussions",
+            issue_url="https://github.com/AdwCustomizerTeam/AdwCustomizer/issues",
             developers=[
                 'Artyom "ArtyIF" Fomin https://github.com/ArtyIF',
+                "0xMRTT https://github.com/0xMRTT",
                 "Verantor https://github.com/Verantor",
             ],
             artists=['David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],
+            designers=['David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],
             # Translators: This is a place to put your credits (formats: "Name https://example.com" or "Name <email@example.com>", no quotes) and is not meant to be translated literally.
-            translator_credits=_("translator-credits"),
+            translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh/
+                FineFindus https://github.com/FineFindus
+                Karol Lademan https://www.transifex.com/user/profile/karlod/
+                Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI/
+                Renato Corrêa https://www.transifex.com/user/profile/renatocrrs/
+                Aggelos Tselios https://www.transifex.com/user/profile/AndroGR/
+                David "Daudix UFO" Lapshin https://github.com/daudix-UFO'
+                0xMRTT https://github.com/0xMRTT
+                Juanjo Cillero https://www.transifex.com/user/profile/renux918/
+                Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
             copyright="© 2022 Adwaita Manager Team",
-            license_type=Gtk.License.MIT_X11,
+            license_type=Gtk.License.GPL_3_0,
+            version=f"{info.version}",
+            release_notes="""
+                <ul>
+        <li>Add AdwViewSwitcher in the header bar.</li>
+        <li>Move CSS to the "Advanced" tab</li>
+        <li>Move the rest to the "Colours" tab</li>
+        <li>Add Monet tab which generates a theme from a background</li>
+        <li>Add disk saved and disk unsaved icon in the header bar</li>
+        <li>Update about dialog</li>
+        <li>Change license to GNU GPLv3</li>
+        <li>Begin plugin support</li>
+        <li>Move preset selector to a drop-down called palette (icon palette)</li>
+        <li>Add ability to apply the theme onlyfor dark theme or oy for light theme</li>
+        <li>Automaticly use Adwaita-dark preset if the user prefered scheme is dark.</li>
+        <li>Added Flatpak CI build</li>
+        <li>Added issue template for bug and feature request </li>
+        <li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch </li>
+      </ul>
+            """,
+            comments="""
+Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+With Adwaita Manager you can:
+    
+    - Change any color of Adwaita theme
+    - Apply Material 3 colors from wallaper
+    - Use other users presets
+    - Change advanced options with CSS
+    - Extend functionality using plugins
+    
+This app is written in Python and uses GTK 4 and libadwaita.
+            """
         )
-
         about.present()
 
     def update_custom_css_text(self, app_type, new_value):
@@ -479,8 +722,7 @@ class AdwcustomizerApplication(Adw.Application):
         self, name, parameter_type, initial_state, callback, shortcuts=None
     ):
         """Add a stateful application action."""
-        action = Gio.SimpleAction.new_stateful(
-            name, parameter_type, initial_state)
+        action = Gio.SimpleAction.new_stateful(name, parameter_type, initial_state)
         action.connect("activate", callback)
         self.add_action(action)
         if shortcuts:

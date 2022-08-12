@@ -1,4 +1,4 @@
-# error.py
+# setting.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Adwaita Manager Team
@@ -16,20 +16,23 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk
 
+class AdwcustomizerSetting:
+    def __init__(self, name, title, value_type, explanation=None, default_value=None):
+        # TODO supported types:
+        #  text
+        #  integer
+        #  float
+        #  color only
+        #  color shades
+        #  color and text
+        #  code field
+        self.name = name
+        self.title = title
+        self.value_type = value_type
+        self.explanation = explanation
+        self.value = default_value
 
-@Gtk.Template(resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/error.ui")
-class AdwcustomizerError(Gtk.ListBoxRow):
-    __gtype_name__ = "AdwcustomizerError"
-
-    error_label = Gtk.Template.Child("error-label")
-    element_label = Gtk.Template.Child("element-label")
-    line_label = Gtk.Template.Child("line-label")
-
-    def __init__(self, error, element, line, **kwargs):
-        super().__init__(**kwargs)
-
-        self.error_label.set_label(error)
-        self.element_label.set_label(element)
-        self.line_label.set_label(line)
+    def set_value(self, new_value):
+        # TODO checks
+        self.value = new_value

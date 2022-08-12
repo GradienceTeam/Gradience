@@ -1,6 +1,6 @@
 # Adwaita Manager POT file
 # Copyright (C) 2022 Adwaita Manager Team
-# This file is distributed under the MIT/X11 license.
+# This file is distributed under the GNU GPLv3 license.
 # Adwaita Manager Team, 2022.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 22:21+0300\n"
+"POT-Creation-Date: 2022-08-12 11:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in:3
-#: src/ui/window.blp:5 src/main.py:332
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in:6
+#: src/ui/window.blp:5 src/main.py:642
 msgid "Adwaita Manager"
 msgstr ""
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in:7
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in:9
 msgid "Change the look of Adwaita, with ease"
 msgstr ""
 
@@ -70,225 +72,236 @@ msgstr ""
 msgid "Toggle Text Value"
 msgstr ""
 
-#: src/ui/window.blp:13 src/main.py:245
+#: src/ui/window.blp:23 src/main.py:428
 msgid "Apply"
 msgstr ""
 
-#: src/ui/window.blp:20
-msgid "Save Preset"
-msgstr ""
-
-#: src/ui/window.blp:36
+#: src/ui/window.blp:35
 msgid "Presets"
 msgstr ""
 
-#: src/ui/window.blp:58
+#: src/ui/window.blp:42
+msgid "Save Preset"
+msgstr ""
+
+#: src/ui/window.blp:112
 msgid "Built-in Presets"
 msgstr ""
 
-#: src/ui/window.blp:73
+#: src/ui/window.blp:134
+msgid "Release Notes"
+msgstr ""
+
+#: src/ui/window.blp:138
 msgid "Reset Applied Color Scheme"
 msgstr ""
 
-#: src/ui/window.blp:74
+#: src/ui/window.blp:142
 msgid "About Adwaita Manager"
 msgstr ""
 
-#: src/app_type_dialog.py:43 src/main.py:264
+#: src/app_type_dialog.py:44 src/main.py:474
 msgid "Cancel"
 msgstr ""
 
-#: src/main.py:123
+#: src/main.py:140 src/main.py:146
 msgid "Failed to load preset"
 msgstr ""
 
-#: src/main.py:139
+#: src/main.py:163
 msgid "Open in File Manager"
 msgstr ""
 
-#: src/main.py:142
+#: src/main.py:169
 msgid "User Defined Presets"
 msgstr ""
 
-#: src/main.py:203
+#: src/main.py:358
 msgid "Unsaved changes"
 msgstr ""
 
-#: src/main.py:243
+#: src/main.py:423
 msgid "Apply this color scheme?"
 msgstr ""
 
-#: src/main.py:244
+#: src/main.py:425
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:251
+#: src/main.py:448
 msgid "Reset applied color scheme?"
 msgstr ""
 
-#: src/main.py:252
+#: src/main.py:449
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 
-#: src/main.py:253
+#: src/main.py:451
 msgid "Reset"
 msgstr ""
 
-#: src/main.py:260
+#: src/main.py:461
 msgid "Save preset as..."
 msgstr ""
 
-#: src/main.py:261 src/main.py:274 src/main.py:277
+#: src/main.py:463 src/main.py:487 src/main.py:501
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:265
+#: src/main.py:475
 msgid "Save"
 msgstr ""
 
-#: src/main.py:334
+#: src/main.py:541
+msgid "Scheme successfully saved!"
+msgstr ""
+
+#: src/main.py:605
+msgid "Scheme set successfully!"
+msgstr ""
+
+#: src/main.py:637
+msgid "Reset successfully!"
+msgstr ""
+
+#: src/main.py:644
 msgid "Adwaita Manager Team"
 msgstr ""
 
-#. Translators: This is a place to put your credits (formats: "Name https://example.com" or "Name <email@example.com>", no quotes) and is not meant to be translated literally.
-#: src/main.py:338
-msgid "translator-credits"
-msgstr ""
-
-#: src/option.py:55
+#: src/option.py:47
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr ""
 
-#: src/option.py:58
+#: src/option.py:52
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr ""
 
-#: src/option.py:97
+#: src/option.py:94
 msgid "Not a color, see text value"
 msgstr ""
 
-#: src/settings_schema.py:5
+#: src/settings_schema.py:23
 msgid "Accent Colors"
 msgstr ""
 
-#: src/settings_schema.py:6
+#: src/settings_schema.py:25
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate that a widget is important, interactive, or "
 "currently active."
 msgstr ""
 
-#: src/settings_schema.py:10 src/settings_schema.py:33
-#: src/settings_schema.py:56 src/settings_schema.py:79
-#: src/settings_schema.py:102
+#: src/settings_schema.py:30 src/settings_schema.py:57
+#: src/settings_schema.py:84 src/settings_schema.py:111
+#: src/settings_schema.py:138
 msgid "Standalone Color"
 msgstr ""
 
-#: src/settings_schema.py:11 src/settings_schema.py:34
-#: src/settings_schema.py:57 src/settings_schema.py:80
-#: src/settings_schema.py:103
+#: src/settings_schema.py:32 src/settings_schema.py:59
+#: src/settings_schema.py:86 src/settings_schema.py:113
+#: src/settings_schema.py:140
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
 "example, colorful text in a window."
 msgstr ""
 
-#: src/settings_schema.py:16 src/settings_schema.py:39
-#: src/settings_schema.py:62 src/settings_schema.py:85
-#: src/settings_schema.py:108 src/settings_schema.py:125
-#: src/settings_schema.py:142 src/settings_schema.py:159
-#: src/settings_schema.py:194 src/settings_schema.py:217
-#: src/settings_schema.py:234
+#: src/settings_schema.py:38 src/settings_schema.py:65
+#: src/settings_schema.py:92 src/settings_schema.py:119
+#: src/settings_schema.py:146 src/settings_schema.py:163
+#: src/settings_schema.py:182 src/settings_schema.py:201
+#: src/settings_schema.py:242 src/settings_schema.py:267
+#: src/settings_schema.py:284
 msgid "Background Color"
 msgstr ""
 
-#: src/settings_schema.py:21 src/settings_schema.py:44
-#: src/settings_schema.py:67 src/settings_schema.py:90
-#: src/settings_schema.py:113 src/settings_schema.py:130
-#: src/settings_schema.py:147 src/settings_schema.py:164
-#: src/settings_schema.py:199 src/settings_schema.py:222
-#: src/settings_schema.py:239
+#: src/settings_schema.py:43 src/settings_schema.py:70
+#: src/settings_schema.py:97 src/settings_schema.py:124
+#: src/settings_schema.py:151 src/settings_schema.py:168
+#: src/settings_schema.py:187 src/settings_schema.py:206
+#: src/settings_schema.py:247 src/settings_schema.py:272
+#: src/settings_schema.py:289
 msgid "Foreground Color"
 msgstr ""
 
-#: src/settings_schema.py:28
+#: src/settings_schema.py:50
 msgid "Destructive Colors"
 msgstr ""
 
-#: src/settings_schema.py:29
+#: src/settings_schema.py:52
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
 msgstr ""
 
-#: src/settings_schema.py:51
+#: src/settings_schema.py:77
 msgid "Success Colors"
 msgstr ""
 
-#: src/settings_schema.py:52
+#: src/settings_schema.py:79
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
 msgstr ""
 
-#: src/settings_schema.py:74
+#: src/settings_schema.py:104
 msgid "Warning Colors"
 msgstr ""
 
-#: src/settings_schema.py:75
+#: src/settings_schema.py:106
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
 msgstr ""
 
-#: src/settings_schema.py:97
+#: src/settings_schema.py:131
 msgid "Error Colors"
 msgstr ""
 
-#: src/settings_schema.py:98
+#: src/settings_schema.py:133
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
 msgstr ""
 
-#: src/settings_schema.py:120
+#: src/settings_schema.py:158
 msgid "Window Colors"
 msgstr ""
 
-#: src/settings_schema.py:121
+#: src/settings_schema.py:159
 msgid "These colors are used primarily for windows."
 msgstr ""
 
-#: src/settings_schema.py:137
+#: src/settings_schema.py:175
 msgid "View Colors"
 msgstr ""
 
-#: src/settings_schema.py:138
+#: src/settings_schema.py:177
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
 msgstr ""
 
-#: src/settings_schema.py:154
+#: src/settings_schema.py:194
 msgid "Header Bar Colors"
 msgstr ""
 
-#: src/settings_schema.py:155
+#: src/settings_schema.py:196
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
 msgstr ""
 
-#: src/settings_schema.py:169
+#: src/settings_schema.py:211
 msgid "Border Color"
 msgstr ""
 
-#: src/settings_schema.py:170
+#: src/settings_schema.py:213
 msgid ""
 "The border color has the same default value as a foreground color, but "
 "doesn't change along with it. This can be useful if a light window has a "
@@ -297,11 +310,11 @@ msgid ""
 "example, separators between the two header bars in a split header bar layout."
 msgstr ""
 
-#: src/settings_schema.py:175
+#: src/settings_schema.py:219
 msgid "Backdrop Color"
 msgstr ""
 
-#: src/settings_schema.py:176
+#: src/settings_schema.py:221
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -309,113 +322,139 @@ msgid ""
 "it to a value matching your header bar background color."
 msgstr ""
 
-#: src/settings_schema.py:181 src/settings_schema.py:204
-#: src/settings_schema.py:251
+#: src/settings_schema.py:227 src/settings_schema.py:252
+#: src/settings_schema.py:301
 msgid "Shade Color"
 msgstr ""
 
-#: src/settings_schema.py:182
+#: src/settings_schema.py:229
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
 msgstr ""
 
-#: src/settings_schema.py:189
+#: src/settings_schema.py:237
 msgid "Card Colors"
 msgstr ""
 
-#: src/settings_schema.py:190
+#: src/settings_schema.py:238
 msgid "These colors are used for cards and boxed lists."
 msgstr ""
 
-#: src/settings_schema.py:205
+#: src/settings_schema.py:254
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
 "cards."
 msgstr ""
 
-#: src/settings_schema.py:212
+#: src/settings_schema.py:262
 msgid "Dialog Colors"
 msgstr ""
 
-#: src/settings_schema.py:213
+#: src/settings_schema.py:263
 msgid "These colors are used for message dialogs."
 msgstr ""
 
-#: src/settings_schema.py:229
+#: src/settings_schema.py:279
 msgid "Popover Colors"
 msgstr ""
 
-#: src/settings_schema.py:230
+#: src/settings_schema.py:280
 msgid "These colors are used for popovers."
 msgstr ""
 
-#: src/settings_schema.py:246
+#: src/settings_schema.py:296
 msgid "Miscalleneous Colors"
 msgstr ""
 
-#: src/settings_schema.py:247
+#: src/settings_schema.py:297
 msgid "Colors that don't fit in any particular group."
 msgstr ""
 
-#: src/settings_schema.py:252
+#: src/settings_schema.py:303
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
 msgstr ""
 
-#: src/settings_schema.py:257
+#: src/settings_schema.py:309
 msgid "Scrollbar Outline Color"
 msgstr ""
 
-#: src/settings_schema.py:258
+#: src/settings_schema.py:311
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
 msgstr ""
 
-#: src/settings_schema.py:267
+#: src/settings_schema.py:319
 msgid "Blue"
 msgstr ""
 
-#: src/settings_schema.py:272
+#: src/settings_schema.py:320
 msgid "Green"
 msgstr ""
 
-#: src/settings_schema.py:277
+#: src/settings_schema.py:321
 msgid "Yellow"
 msgstr ""
 
-#: src/settings_schema.py:282
+#: src/settings_schema.py:322
 msgid "Orange"
 msgstr ""
 
-#: src/settings_schema.py:287
+#: src/settings_schema.py:323
 msgid "Red"
 msgstr ""
 
-#: src/settings_schema.py:292
+#: src/settings_schema.py:324
 msgid "Purple"
 msgstr ""
 
-#: src/settings_schema.py:297
+#: src/settings_schema.py:325
 msgid "Brown"
 msgstr ""
 
-#: src/settings_schema.py:302
+#: src/settings_schema.py:326
 msgid "Light"
 msgstr ""
 
-#: src/settings_schema.py:307
+#: src/settings_schema.py:327
 msgid "Dark"
 msgstr ""
 
-#: src/window.py:70
+#: src/window.py:104
+msgid "Monet Engine"
+msgstr ""
+
+#: src/window.py:107
+msgid ""
+"Monet is an engine that generates Material Design 3 palette from backgrounds "
+"color. The generation can be slow"
+msgstr ""
+
+#: src/window.py:112
+msgid "Background Image"
+msgstr ""
+
+#: src/window.py:118
+msgid "Choose a file"
+msgstr ""
+
+#: src/window.py:137
+msgid "Tone"
+msgstr ""
+
+#: src/window.py:149
+msgid "Theme"
+msgstr ""
+
+#: src/window.py:189
 msgid "Palette Colors"
 msgstr ""
 
-#: src/window.py:71
+#: src/window.py:192
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "

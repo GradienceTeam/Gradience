@@ -1,36 +1,29 @@
 # palette_shades.py
 #
-# Copyright 2022 Adwaita Manager Team
+# Change the look of Adwaita, with ease
+# Copyright (C) 2022  Adwaita Manager Team
 #
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files (the
-# "Software"), to deal in the Software without restriction, including
-# without limitation the rights to use, copy, modify, merge, publish,
-# distribute, sublicense, and/or sell copies of the Software, and to
-# permit persons to whom the Software is furnished to do so, subject to
-# the following conditions:
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
-# The above copyright notice and this permission notice shall be
-# included in all copies or substantial portions of the Software.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY
-# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-#
-# Except as contained in this notice, the name(s) of the above copyright
-# holders shall not be used in advertising or otherwise to promote the sale,
-# use or other dealings in this Software without prior written
-# authorization.
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 from gi.repository import Gtk, Gdk, Adw
 
-@Gtk.Template(resource_path='/com/github/AdwCustomizerTeam/AdwCustomizer/ui/palette_shades.ui')
+
+@Gtk.Template(
+    resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/palette_shades.ui"
+)
 class AdwcustomizerPaletteShades(Adw.ActionRow):
-    __gtype_name__ = 'AdwcustomizerPaletteShades'
+    __gtype_name__ = "AdwcustomizerPaletteShades"
 
     def __init__(self, prefix, color_title, n_shades, **kwargs):
         super().__init__(**kwargs)
@@ -62,9 +55,17 @@ class AdwcustomizerPaletteShades(Adw.ActionRow):
             if new_rgba.parse(shades[str(i)]):
                 self.color_pickers[str(i)].set_rgba(new_rgba)
                 self.color_pickers[str(i)].set_tooltip_text(shades[str(i)])
-            if Gtk.Application.get_default().is_ready and kwargs.get("update_from") == "color_value":
-                Gtk.Application.get_default().palette[self.prefix][str(i)] = shades[str(i)]
+            if (
+                Gtk.Application.get_default().is_ready
+                and kwargs.get("update_from") == "color_value"
+            ):
+                Gtk.Application.get_default().palette[self.prefix][str(i)] = shades[
+                    str(i)
+                ]
 
-        if Gtk.Application.get_default().is_ready and kwargs.get("update_from") == "color_value":
+        if (
+            Gtk.Application.get_default().is_ready
+            and kwargs.get("update_from") == "color_value"
+        ):
             Gtk.Application.get_default().mark_as_dirty()
             Gtk.Application.get_default().reload_variables()
