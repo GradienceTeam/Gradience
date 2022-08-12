@@ -666,6 +666,40 @@ class AdwcustomizerApplication(Adw.Application):
             copyright="© 2022 Adwaita Manager Team",
             license_type=Gtk.License.GPL_3_0,
             version=f"{info.version}",
+            release_notes="""
+            <p>
+                <ul>
+        <li>Add AdwViewSwitcher in the header bar.</li>
+        <li>Move CSS to the "Advanced" tab</li>
+        <li>Move the rest to the "Colours" tab</li>
+        <li>Add Monet tab which generates a theme from a background</li>
+        <li>Add disk saved and disk unsaved icon in the header bar</li>
+        <li>Update about dialog</li>
+        <li>Change license to GNU GPLv3</li>
+        <li>Begin plugin support</li>
+        <li>Move preset selector to a drop-down called palette (icon palette)</li>
+        <li>Add ability to apply the theme onlyfor dark theme or oy for light theme</li>
+        <li>Automaticly use Adwaita-dark preset if the user prefered scheme is dark.</li>
+        <li>Added Flatpak CI build</li>
+        <li>Added issue template for bug and feature request </li>
+        <li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch </li>
+      </ul>
+            </p>
+            """,
+            comments="""
+            <p>
+      Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+    </p>
+    <p>With Adwaita Manager you can:</p>
+    <ul>
+      <li>Change any color of Adwaita theme</li>
+      <li>Apply Material 3 colors from wallaper</li>
+      <li>Use other users presets</li>
+      <li>Change advanced options with CSS</li>
+      <li>Extend functionality using plugins</li>
+    </ul>
+    <p>This app is written in Python and uses GTK 4 and libadwaita.</p>
+            """
         )
         about.present()
 
