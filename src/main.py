@@ -667,7 +667,6 @@ class AdwcustomizerApplication(Adw.Application):
             license_type=Gtk.License.GPL_3_0,
             version=f"{info.version}",
             release_notes="""
-            <p>
                 <ul>
         <li>Add AdwViewSwitcher in the header bar.</li>
         <li>Move CSS to the "Advanced" tab</li>
@@ -684,13 +683,11 @@ class AdwcustomizerApplication(Adw.Application):
         <li>Added issue template for bug and feature request </li>
         <li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch </li>
       </ul>
-            </p>
             """,
             comments="""
-            <p>
+
       Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
-    </p>
-    <p>With Adwaita Manager you can:</p>
+With Adwaita Manager you can:
     <ul>
       <li>Change any color of Adwaita theme</li>
       <li>Apply Material 3 colors from wallaper</li>
@@ -698,7 +695,7 @@ class AdwcustomizerApplication(Adw.Application):
       <li>Change advanced options with CSS</li>
       <li>Extend functionality using plugins</li>
     </ul>
-    <p>This app is written in Python and uses GTK 4 and libadwaita.</p>
+    This app is written in Python and uses GTK 4 and libadwaita.
             """
         )
         about.present()
