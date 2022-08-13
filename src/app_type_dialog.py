@@ -18,10 +18,10 @@
 
 from gi.repository import Gtk, Adw
 
+from .info import rootdir
 
-@Gtk.Template(
-    resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/app_type_dialog.ui"
-)
+
+@Gtk.Template(resource_path=f"{rootdir}/ui/app_type_dialog.ui")
 class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
     __gtype_name__ = "AdwcustomizerAppTypeDialog"
 

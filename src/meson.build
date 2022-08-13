@@ -1,6 +1,3 @@
-pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
-moduledir = join_paths(pkgdatadir, 'adwcustomizer')
-pluginsdir = join_paths(pkgdatadir, 'adwcustomizer', 'plugins')
 gnome = import('gnome')
 
 blueprints = custom_target('blueprints',
@@ -20,17 +17,9 @@ gnome.compile_resources('adwcustomizer',
   'adwcustomizer.gresource.xml',
   gresource_bundle: true,
   install: true,
-  install_dir: pkgdatadir,
+  install_dir: PKGDATA_DIR,
   dependencies: blueprints,
 )
-
-python = import('python')
-
-conf = configuration_data()
-conf.set('PYTHON', python.find_installation('python3').full_path())
-conf.set('VERSION', meson.project_version())
-conf.set('localedir', join_paths(get_option('prefix'), get_option('localedir')))
-conf.set('pkgdatadir', pkgdatadir)
 
 configure_file(
   input: 'adwcustomizer.in',
@@ -41,16 +30,14 @@ configure_file(
 )
 
 configure_file(
-          input: 'info.py.in',
-         output: '@BASENAME@',
-        install: true,
-    install_dir: moduledir,
-  configuration: configuration_data({
-           'version': meson.project_version(),
-        'build_type': get_option('buildtype'),
-  }),
+  input: 'info.py.in',
+  output: 'info.py',
+  configuration: conf,
+  install: true,
+  install_dir: MODULE_DIR
 )
 
+# Install sources
 adwcustomizer_sources = [
   '__init__.py',
   'settings_schema.py',
@@ -65,11 +52,10 @@ adwcustomizer_sources = [
   'app_type_dialog.py',
   'custom_css_group.py',
 ]
+install_data(adwcustomizer_sources, install_dir: MODULE_DIR)
 
 plugins_sources = [
   'plugins/__init__.py',
   'plugins/gtk4.py'
 ]
-
-install_data(adwcustomizer_sources, install_dir: moduledir)
-install_data(plugins_sources, install_dir: pluginsdir)
+install_data(plugins_sources, install_dir: PLUGINS_DIR)

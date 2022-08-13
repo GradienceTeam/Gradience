@@ -34,9 +34,10 @@ from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from material_color_utilities_python import *
+from .info import rootdir, build_type
 
 
-@Gtk.Template(resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/window.ui")
+@Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class AdwcustomizerMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = "AdwcustomizerMainWindow"
 
