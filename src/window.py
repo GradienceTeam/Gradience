@@ -58,6 +58,10 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             "show", self.on_presets_dropdown_activate
         )
 
+        # Set devel style
+        if build_type == "debug":
+            self.get_style_context().add_class("devel")
+
         self.setup_monet_page()
         self.setup_plugins_page()
         self.setup_colors_page()
