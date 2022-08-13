@@ -20,7 +20,46 @@ Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing 
 
 ## Building and Installing
 
-See `next` branch for UI rework and latest commit.
+**[NOTE]** See `next` branch for UI rework and latest commits.
+
+## Requirements:
+- Python 3 `python`
+- PyGObject `python-gobject`
+- Blueprint <code>[blueprint-compiler](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/setup.html)</code>
+- GTK4 `gtk4`
+- libadwaita (>= 1.2.alpha) `libadwaita`
+- Meson `meson`
+- Ninja `ninja`
+
+## Building from source:
+
+Install required Python libraries:
+```sh
+pip install -r requirements.txt
+pip3 install $(pwd)/monet/material_color_utilities_python-0.1.0-py3-none-any.whl
+```
+
+### Global installation:
+```sh
+git clone https://github.com/AdwCustomizerTeam/AdwCustomizer.git
+cd AdwCustomizer
+meson builddir --prefix=/usr/local
+sudo ninja -C builddir install
+```
+
+### Local build (for testing and development purposes):
+```sh
+git clone https://github.com/AdwCustomizerTeam/AdwCustomizer.git
+cd AdwCustomizer
+meson builddir
+meson configure builddir -Dprefix="$(pwd)/builddir/testdir"
+ninja -C builddir install
+ninja -C builddir run
+```
+
+**[NOTE]** During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
+
+### Building using flatpak-builder:
 
 1. Open Terminal
 2. Run `git clone https://github.com/AdwCustomizerTeam/AdwCustomizer.git && cd AdwCustomizer`

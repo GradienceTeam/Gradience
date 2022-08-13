@@ -37,6 +37,12 @@ configure_file(
   install_dir: MODULE_DIR
 )
 
+launcher = join_paths(meson.project_build_root(), 'src', meson.project_name())
+
+run_target('run',
+  command: [launcher]
+)
+
 # Install sources
 adwcustomizer_sources = [
   '__init__.py',
