@@ -20,30 +20,27 @@ from .plugins.gtk4 import AdwcustomizerGtk4Plugin
 import os
 from pathlib import Path
 import importlib
-
+import pkgutil
 
 class AdwcustomizerPluginsList:
     def __init__(self):
-        self.plugins = {"gtk4": AdwcustomizerGtk4Plugin()}  # AdwCustomizerTeam plugins
-        self.add_user_plugins()
+        self.discoverd_plugins  = {
+            name: importlib.import_module(name)
+            for finder, name, ispkg
+            in pkgutil.iter_modules()
+            if name.startswith('adwcustomizer_')
+        }
 
-    def add_user_plugins(self):
-        self.user_plugin_dir = (
-            Path(os.environ.get("XDG_DATA_HOME", os.environ["HOME"]))
-            / ".local"
-            / "share"
-            / "AdwCustomizer"
-            / "plugins"
-        )
-        if self.user_plugin_dir.exists():
-            for path, _, name in os.walk(self.user_plugin_dir):
-                print(name[0])
-        else:
-            print("No plugins dir found")
+        self.plugins = {}
+
+        for plugin_id, plugin in self.plugins.items():
+            self.plugins[plugin_id] = plugin.AdwcustomizerPlugin()
+
+        print(self.plugins)
 
     def load_all_custom_settings(self, settings):
         for plugin_id, plugin in self.plugins.items():
-            plugin.load_custom_settings(settings[plugin_id])
+            plugin.load_custom_settings(settings)
 
     def get_all_custom_settings_for_preset(self):
         custom_settings = {}

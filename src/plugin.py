@@ -19,7 +19,7 @@
 from .setting import AdwcustomizerSetting
 
 
-class AdwcustomizerPlugin:
+class AdwcustomizerPluginBase:
     def __init__(self):
         self.title = None
 
@@ -57,8 +57,8 @@ class AdwcustomizerPlugin:
     def validate(self):
         raise NotImplementedError()
 
-    def apply(self):
+    def apply(self, dark_theme=False):
         raise NotImplementedError()
 
     def save(self):
-        pass
+        raise NotImplementedError()
