@@ -35,7 +35,7 @@ from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from .plugins_list import AdwcustomizerPluginsList
-from .info import rootdir, app_id, version
+from .constants import rootdir, app_id, version
 
 
 def to_slug_case(non_slug):

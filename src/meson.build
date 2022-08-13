@@ -30,8 +30,8 @@ configure_file(
 )
 
 configure_file(
-  input: 'info.py.in',
-  output: 'info.py',
+  input: 'constants.py.in',
+  output: 'constants.py',
   configuration: conf,
   install: true,
   install_dir: MODULE_DIR

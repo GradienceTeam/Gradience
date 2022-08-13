@@ -18,7 +18,7 @@
 
 from gi.repository import Gtk
 
-from .info import rootdir
+from .constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/error.ui")
