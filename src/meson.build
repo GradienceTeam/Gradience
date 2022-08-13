@@ -59,9 +59,3 @@ adwcustomizer_sources = [
   'custom_css_group.py',
 ]
 install_data(adwcustomizer_sources, install_dir: MODULE_DIR)
-
-plugins_sources = [
-  'plugins/__init__.py',
-  'plugins/gtk4.py'
-]
-install_data(plugins_sources, install_dir: PLUGINS_DIR)
