@@ -27,8 +27,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     
-      - name: Update linguas
-        uses: AdwCustomizerTeam/action-update-linguas@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-    
+   
