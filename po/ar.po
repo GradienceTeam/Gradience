@@ -1,0 +1,513 @@
+# Adwaita Manager POT file
+# Copyright (C) 2022 Adwaita Manager Team
+# This file is distributed under the GNU GPLv3 license.
+# Adwaita Manager Team, 2022.
+# 
+# Translators:
+# Yousef Alshammari, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-12 11:24+0200\n"
+"PO-Revision-Date: 2022-07-25 14:48+0000\n"
+"Last-Translator: Yousef Alshammari, 2022\n"
+"Language-Team: Arabic (https://www.transifex.com/adwcustomizerteam/teams/147445/ar/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in:3
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in:6
+#: src/ui/window.blp:5 src/main.py:642
+msgid "Adwaita Manager"
+msgstr "مدير Adwaita"
+
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in:7
+#: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in:9
+msgid "Change the look of Adwaita, with ease"
+msgstr "غير مظهر Adwaita بكل سهولة"
+
+#: src/ui/app_type_dialog.blp:10
+msgid "Select app types you want to affect:"
+msgstr "حدد نوع التطبيقات التي تريد تخصيصها:"
+
+#: src/ui/app_type_dialog.blp:13
+msgid "Libadwaita and GTK 4 apps"
+msgstr "تطبيقات Libadwaita و GTK 4"
+
+#: src/ui/app_type_dialog.blp:17
+msgid "GTK 3 apps (adw-gtk3 theme required)"
+msgstr "تطبيقات GTK 3 (مطلوب سمة adw-gtk3)"
+
+#: src/ui/custom_css_group.blp:5
+msgid "Custom CSS"
+msgstr "CSS مخصصة"
+
+#: src/ui/custom_css_group.blp:6
+msgid ""
+"Changing this may break some programs. Keep in mind that Libadwaita was made"
+" so that applications could hardcode values like paddings and margins (like "
+"in case of the Custom CSS code field itself, which uses 12px padding). Only "
+"GTK 4 CSS will be previewed here."
+msgstr ""
+"قد يؤدي التغيير إلى كسر بعض البرامج. ضع في اعتبارك أن Libadwaita تم إنشاؤه "
+"بحيث يمكن للتطبيقات ترميز قيم مثل الحشوات والهوامش (كما هو الحال في حقل كود "
+"CSS المخصص نفسه، والذي يستخدم حشوة 12 بكسل). سيتم هنا معاينة GTK 4 CSS فقط."
+
+#: src/ui/custom_css_group.blp:29
+msgid "GTK 4"
+msgstr "GTK 4"
+
+#: src/ui/custom_css_group.blp:29
+msgid "GTK 3"
+msgstr "GTK 3"
+
+#: src/ui/option.blp:10
+msgid "GTK 3 Support Warning"
+msgstr "تحذير دعم GTK 3"
+
+#: src/ui/option.blp:18
+msgid "Explanation"
+msgstr "تفسير"
+
+#: src/ui/option.blp:43
+msgid "Toggle Text Value"
+msgstr "تبديل قيمة النص"
+
+#: src/ui/window.blp:23 src/main.py:428
+msgid "Apply"
+msgstr "تطبيق"
+
+#: src/ui/window.blp:35
+msgid "Presets"
+msgstr "الإعدادات المسبقة"
+
+#: src/ui/window.blp:42
+msgid "Save Preset"
+msgstr "حفظ الإعداد المسبق"
+
+#: src/ui/window.blp:112
+msgid "Built-in Presets"
+msgstr "الإعداد مدمج"
+
+#: src/ui/window.blp:134
+msgid "Release Notes"
+msgstr "ملاحظات الإصدار"
+
+#: src/ui/window.blp:138
+msgid "Reset Applied Color Scheme"
+msgstr "إعادة تعيين نمط الألوان المطبق"
+
+#: src/ui/window.blp:142
+msgid "About Adwaita Manager"
+msgstr "حول مدير Adwaita"
+
+#: src/app_type_dialog.py:44 src/main.py:474
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: src/main.py:140 src/main.py:146
+msgid "Failed to load preset"
+msgstr "أخفق في تفعيل الإعداد المسبق"
+
+#: src/main.py:163
+msgid "Open in File Manager"
+msgstr "افتح في مدير الملفات"
+
+#: src/main.py:169
+msgid "User Defined Presets"
+msgstr "محددات مسبقة من قبل المستخدم"
+
+#: src/main.py:358
+msgid "Unsaved changes"
+msgstr "تغييرات غير محفوظة"
+
+#: src/main.py:423
+msgid "Apply this color scheme?"
+msgstr "تطبيق نمط الألوان هذا؟"
+
+#: src/main.py:425
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"تحذير: سيتم الكتابة فوق أي ملفات CSS مخصصة لأنواع التطبيقات هذه بشكل نهائي!"
+
+#: src/main.py:448
+msgid "Reset applied color scheme?"
+msgstr "إعادة ضبط نمط الألوان المطبق؟"
+
+#: src/main.py:449
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "تحقق من حفظ الإعدادات الحالية كإعداد مسبق."
+
+#: src/main.py:451
+msgid "Reset"
+msgstr "إعادة ضبط"
+
+#: src/main.py:461
+msgid "Save preset as..."
+msgstr "حفظ الإعداد المسبق باسم ..."
+
+#: src/main.py:463 src/main.py:487 src/main.py:501
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+"حفظ الإعداد المسبق في <tt>{0}</tt>. إذا كان هذا الإعداد المسبق موجودًا "
+"سلفًا، فسيتم استبداله!"
+
+#: src/main.py:475
+msgid "Save"
+msgstr "حفظ"
+
+#: src/main.py:541
+msgid "Scheme successfully saved!"
+msgstr "تم حفظ النمط بنجاح!"
+
+#: src/main.py:605
+msgid "Scheme set successfully!"
+msgstr "تم تعيين النمط بنجاح!"
+
+#: src/main.py:637
+msgid "Reset successfully!"
+msgstr "تم إعادة التعيين بنجاح!"
+
+#: src/main.py:644
+msgid "Adwaita Manager Team"
+msgstr "فريق مدير Adwaita"
+
+#: src/option.py:47
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "هذا الخِيار مدعوم جزئيًا فقط بواسطة سمة adw-gtk3."
+
+#: src/option.py:52
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "هذا الخِيار غير مدعوم في سمة adw-gtk3."
+
+#: src/option.py:94
+msgid "Not a color, see text value"
+msgstr "ليس لونًا، انظر لقيمة النص"
+
+#: src/settings_schema.py:23
+msgid "Accent Colors"
+msgstr "ألوان مميزة"
+
+#: src/settings_schema.py:25
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate that a widget is important, interactive, or"
+" currently active."
+msgstr ""
+"يتم استخدام هذه الألوان عبر العديد من عناصر واجهة المستخدم المختلفة، مثل "
+"الأزرار والتسميات والإدخالات، للإشارة إلى أن عنصر واجهة المستخدم مهم و "
+"تفاعلي و نشط حاليًا."
+
+#: src/settings_schema.py:30 src/settings_schema.py:57
+#: src/settings_schema.py:84 src/settings_schema.py:111
+#: src/settings_schema.py:138
+msgid "Standalone Color"
+msgstr "لون مستقل"
+
+#: src/settings_schema.py:32 src/settings_schema.py:59
+#: src/settings_schema.py:86 src/settings_schema.py:113
+#: src/settings_schema.py:140
+msgid ""
+"The standalone colors are similar to the background ones, but provide better"
+" contrast when used as foreground color on top of a neutral background - for"
+" example, colorful text in a window."
+msgstr ""
+"تتشابه الألوان المستقلة مع ألوان الخلفية ، ولكنها توفر تباينًا أفضل عند "
+"استخدامها كلون أمامي أعلى خلفية محايدة - على سبيل المثال ، نص ملون في نافذة."
+
+#: src/settings_schema.py:38 src/settings_schema.py:65
+#: src/settings_schema.py:92 src/settings_schema.py:119
+#: src/settings_schema.py:146 src/settings_schema.py:163
+#: src/settings_schema.py:182 src/settings_schema.py:201
+#: src/settings_schema.py:242 src/settings_schema.py:267
+#: src/settings_schema.py:284
+msgid "Background Color"
+msgstr "لون الخلفية"
+
+#: src/settings_schema.py:43 src/settings_schema.py:70
+#: src/settings_schema.py:97 src/settings_schema.py:124
+#: src/settings_schema.py:151 src/settings_schema.py:168
+#: src/settings_schema.py:187 src/settings_schema.py:206
+#: src/settings_schema.py:247 src/settings_schema.py:272
+#: src/settings_schema.py:289
+msgid "Foreground Color"
+msgstr "لون المقدمة"
+
+#: src/settings_schema.py:50
+msgid "Destructive Colors"
+msgstr "ألوان المدمرة"
+
+#: src/settings_schema.py:52
+msgid ""
+"These colors are used for buttons to indicate a dangerous action, such as "
+"deleting a file."
+msgstr ""
+"تُستخدم هذه الألوان للأزرار التي  تشير إلى إجراء خطير، مثل حذف مِلَفّ."
+
+#: src/settings_schema.py:77
+msgid "Success Colors"
+msgstr "ألوان النجاح"
+
+#: src/settings_schema.py:79
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a success or a high level."
+msgstr ""
+"تُستخدم هذه الألوان عبر العديد من عناصر واجهة المستخدم المختلفة، مثل "
+"الأزرار، والتسميات، والمدخلات، وأشرطة المستوى، للإشارة إلى النجاح أو المستوى"
+" العالي."
+
+#: src/settings_schema.py:104
+msgid "Warning Colors"
+msgstr "ألوان التحذير"
+
+#: src/settings_schema.py:106
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a warning or a low level."
+msgstr ""
+"يتم استخدام هذه الألوان عبر العديد من عناصر واجهة المستخدم المختلفة، مثل "
+"الأزرار والتسميات والإدخالات وأشرطة المستوى، للإشارة إلى تحذير أو مستوى "
+"منخفض."
+
+#: src/settings_schema.py:131
+msgid "Error Colors"
+msgstr "ألوان الخطأ"
+
+#: src/settings_schema.py:133
+msgid ""
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate a failure."
+msgstr ""
+"يتم استخدام هذه الألوان عبر العديد من عناصر واجهة المستخدم المختلفة، مثل "
+"الأزرار والتسميات والإدخالات، للإشارة إلى الفشل."
+
+#: src/settings_schema.py:158
+msgid "Window Colors"
+msgstr "ألوان النافذة"
+
+#: src/settings_schema.py:159
+msgid "These colors are used primarily for windows."
+msgstr "تستخدم هذه الألوان بشكل أساسي للنوافذ."
+
+#: src/settings_schema.py:175
+msgid "View Colors"
+msgstr "عرض الألوان"
+
+#: src/settings_schema.py:177
+msgid ""
+"These colors are used in a variety of widgets, such as text views and "
+"entries."
+msgstr ""
+"تُستخدم هذه الألوان في مجموعة متنوعة من عناصر واجهة المستخدم، مثل طرق عرض "
+"النص وإدخالاته."
+
+#: src/settings_schema.py:194
+msgid "Header Bar Colors"
+msgstr "ألوان الشريط العلوي"
+
+#: src/settings_schema.py:196
+msgid ""
+"These colors are used for header bars, as well as widgets that are meant to "
+"be visually attached to it, such as search bars or tab bars."
+msgstr ""
+"تُستخدم هذه الألوان لأشرطة العلوية، بالإضافة إلى عناصر واجهة المستخدم التي "
+"من المفترض أن يتم إرفاقها بصريًا، مثل شُرُط البحث أو شُرُط علامات التبويب."
+
+#: src/settings_schema.py:211
+msgid "Border Color"
+msgstr "لون الحواف"
+
+#: src/settings_schema.py:213
+msgid ""
+"The border color has the same default value as a foreground color, but "
+"doesn't change along with it. This can be useful if a light window has a "
+"dark header bar with light text; in this case it may be desirable to keep "
+"the border dark. This variable is only used for vertical borders - for "
+"example, separators between the two header bars in a split header bar "
+"layout."
+msgstr ""
+"لون الحواف له نفس القيمة الافتراضية مثل لون المقدمة، لكنه لا يتغير معها. "
+"يمكن أن يكون هذا مفيدًا إذا كانت النافذة المضيئة بها شريط علوي داكن مع نص "
+"فاتح؛ في هذه الحالة، قد يكون من المستحسن إبقاء الحواف مظلمة. يستخدم هذا "
+"المتغير فقط للحدود العلوية - على سبيل المثال، الفواصل بين شريطي الرأس في "
+"تخطيط شريط الرأس المنفصل."
+
+#: src/settings_schema.py:219
+msgid "Backdrop Color"
+msgstr "اللون الخلفي"
+
+#: src/settings_schema.py:221
+msgid ""
+"The backdrop color is used instead of the background color when the window "
+"is not focused. By default it's an alias of the window's background color "
+"and changes together with it. When changing this variable, make sure to set "
+"it to a value matching your header bar background color."
+msgstr ""
+"يتم استخدام اللون الخلفي بدلاً من لون الخلفية عندما لا تكون النافذة مركزة. "
+"بشكل افتراضي، يكون اسمًا مستعارًا للون خلفية النافذة ويتغير معه. عند تغيير "
+"هذا المتغير، تحقق من تعيينه على قيمة تطابق لون خلفية شريط العلوي."
+
+#: src/settings_schema.py:227 src/settings_schema.py:252
+#: src/settings_schema.py:301
+msgid "Shade Color"
+msgstr "لون الظل"
+
+#: src/settings_schema.py:229
+msgid ""
+"The shade color is used to provide a dark border for header bars and similar"
+" widgets that separates them from the main window."
+msgstr ""
+"يتم استخدام لون الظل لتوفير حد داكن لأشرطة العلوية وعناصر واجهة مستخدم "
+"مماثلة تفصلها عن النافذة الرئيسية."
+
+#: src/settings_schema.py:237
+msgid "Card Colors"
+msgstr "ألوان البطاقات"
+
+#: src/settings_schema.py:238
+msgid "These colors are used for cards and boxed lists."
+msgstr "تستخدم هذه الألوان للبطاقات والقوائم المعبأة."
+
+#: src/settings_schema.py:254
+msgid ""
+"The shade color is used for shadows that are used by cards to separate "
+"themselves from the window background, as well as for row dividers in the "
+"cards."
+msgstr ""
+"يُستخدم لون الظل للظلال التي تستخدمها البطاقات لفصل نفسها عن خلفية النافذة، "
+"وكذلك لفواصل الصفوف في البطاقات."
+
+#: src/settings_schema.py:262
+msgid "Dialog Colors"
+msgstr "ألوان الحوار"
+
+#: src/settings_schema.py:263
+msgid "These colors are used for message dialogs."
+msgstr "تستخدم هذه الألوان لمربعات حوار الرسائل."
+
+#: src/settings_schema.py:279
+msgid "Popover Colors"
+msgstr "الألوان العناصر المنبثقة"
+
+#: src/settings_schema.py:280
+msgid "These colors are used for popovers."
+msgstr "تستخدم هذه الألوان للعناصر المنبثقة"
+
+#: src/settings_schema.py:296
+msgid "Miscalleneous Colors"
+msgstr "ألوان متنوعة"
+
+#: src/settings_schema.py:297
+msgid "Colors that don't fit in any particular group."
+msgstr "الألوان التي لا تناسب أي مجموعة محددة."
+
+#: src/settings_schema.py:303
+msgid ""
+"The shade color is used by inline tab bars, as well as the transitions in "
+"leaflets and flaps, and info bar borders."
+msgstr ""
+"يتم استخدام لون الظل بواسطة شُرُط علامات التبويب المضمنة، بالإضافة إلى "
+"الانتقالات في المنشورات واللوحات، وحدود شريط المعلومات."
+
+#: src/settings_schema.py:309
+msgid "Scrollbar Outline Color"
+msgstr "لون شريط التمرير"
+
+#: src/settings_schema.py:311
+msgid ""
+"The scrollbar outline color is used by scrollbars to ensure that overlay "
+"scrollbars are visible regardless of the content color."
+msgstr ""
+"يتم استخدام لون شريط التمرير بواسطة شُرُط التمرير لضمان ظهور شُرُط التمرير "
+"المتراكبة بغض النظر عن لون المحتوى."
+
+#: src/settings_schema.py:319
+msgid "Blue"
+msgstr "أزرق"
+
+#: src/settings_schema.py:320
+msgid "Green"
+msgstr "أخضر"
+
+#: src/settings_schema.py:321
+msgid "Yellow"
+msgstr "أصفر"
+
+#: src/settings_schema.py:322
+msgid "Orange"
+msgstr "برتقالي"
+
+#: src/settings_schema.py:323
+msgid "Red"
+msgstr "أحمر"
+
+#: src/settings_schema.py:324
+msgid "Purple"
+msgstr "بنفسجي"
+
+#: src/settings_schema.py:325
+msgid "Brown"
+msgstr "بني"
+
+#: src/settings_schema.py:326
+msgid "Light"
+msgstr "فاتح"
+
+#: src/settings_schema.py:327
+msgid "Dark"
+msgstr "داكن"
+
+#: src/window.py:104
+msgid "Monet Engine"
+msgstr "محرك مونيه"
+
+#: src/window.py:107
+msgid ""
+"Monet is an engine that generates Material Design 3 palette from backgrounds"
+" color. The generation can be slow"
+msgstr ""
+"Monet هو محرك يقوم بإنشاء لوحة Material Design 3 من ألوان الخلفيات. يمكن أن "
+"يكون التوليد بطيئًا"
+
+#: src/window.py:112
+msgid "Background Image"
+msgstr "الخلفية"
+
+#: src/window.py:118
+msgid "Choose a file"
+msgstr "اختيار مِلَفّ"
+
+#: src/window.py:137
+msgid "Tone"
+msgstr "نَغْمَة"
+
+#: src/window.py:149
+msgid "Theme"
+msgstr "سمة"
+
+#: src/window.py:189
+msgid "Palette Colors"
+msgstr "ألوان لوحة"
+
+#: src/window.py:192
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a"
+" href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human"
+" Interface Guidelines</a>."
+msgstr ""
+"ألوان لوح الأسماء المستخدمة في بعض التطبيقات. الألوان الافتراضية تتبع "
+"القواعد الارشادية ل <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\"> GNOME Human"
+" Interface </a>"
