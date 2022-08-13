@@ -18,8 +18,10 @@
 
 from gi.repository import Gtk
 
+from .constants import rootdir
 
-@Gtk.Template(resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/error.ui")
+
+@Gtk.Template(resource_path=f"{rootdir}/ui/error.ui")
 class AdwcustomizerError(Gtk.ListBoxRow):
     __gtype_name__ = "AdwcustomizerError"
 

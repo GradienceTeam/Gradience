@@ -18,10 +18,10 @@
 
 from gi.repository import Gtk, Gdk, Adw
 
+from .constants import rootdir
 
-@Gtk.Template(
-    resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/palette_shades.ui"
-)
+
+@Gtk.Template(resource_path=f"{rootdir}/ui/palette_shades.ui")
 class AdwcustomizerPaletteShades(Adw.ActionRow):
     __gtype_name__ = "AdwcustomizerPaletteShades"
 

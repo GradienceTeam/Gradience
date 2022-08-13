@@ -35,7 +35,7 @@ from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from .plugins_list import AdwcustomizerPluginsList
-from . import info
+from .constants import rootdir, app_id, version
 
 
 def to_slug_case(non_slug):
@@ -47,7 +47,7 @@ class AdwcustomizerApplication(Adw.Application):
 
     def __init__(self, version):
         super().__init__(
-            application_id="com.github.AdwCustomizerTeam.AdwCustomizer",
+            application_id=app_id,
             flags=Gio.ApplicationFlags.FLAGS_NONE,
         )
         self.version = version
@@ -100,11 +100,11 @@ class AdwcustomizerApplication(Adw.Application):
         self.style_manager = Adw.StyleManager.get_default()
         if self.style_manager.get_dark():
             self.load_preset_from_resource(
-                "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita-dark.json"
+                f"{rootdir}/presets/adwaita-dark.json"
             )
         else:
             self.load_preset_from_resource(
-                "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/adwaita.json"
+                f"{rootdir}/presets/adwaita.json"
             )
 
         self.win.present()
@@ -412,7 +412,7 @@ class AdwcustomizerApplication(Adw.Application):
             )
         else:
             self.load_preset_from_resource(
-                "/com/github/AdwCustomizerTeam/AdwCustomizer/presets/"
+                f"{rootdir}/presets/"
                 + args[0].get_string()
                 + ".json"
             )
@@ -665,7 +665,7 @@ class AdwcustomizerApplication(Adw.Application):
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
             copyright="© 2022 Adwaita Manager Team",
             license_type=Gtk.License.GPL_3_0,
-            version=f"{info.version}",
+            version=f"{version}",
             release_notes="""
                 <ul>
         <li>Add AdwViewSwitcher in the header bar.</li>

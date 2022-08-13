@@ -18,10 +18,10 @@
 
 from gi.repository import Gtk, Adw
 
+from .constants import rootdir
 
-@Gtk.Template(
-    resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/custom_css_group.ui"
-)
+
+@Gtk.Template(resource_path=f"{rootdir}/ui/custom_css_group.ui")
 class AdwcustomizerCustomCSSGroup(Adw.PreferencesGroup):
     __gtype_name__ = "AdwcustomizerCustomCSSGroup"
 
