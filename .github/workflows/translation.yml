@@ -9,8 +9,8 @@ on:
     - cron: '21 6 * * 5'
 
 jobs:
-  update-pot:
-    name: Update .pot
+  generate:
+    name: Generate .pot nad LINGUAS 
     runs-on: ubuntu-latest
   
     steps:
@@ -26,5 +26,9 @@ jobs:
           author: "Adwaita Manager Team"
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-    
+
+      - name: Update linguas
+        uses: AdwCustomizerTeam/action-update-linguas@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
    
