@@ -1,11 +1,11 @@
 <img align="left" alt="Project logo" src="https://github.com/AdwCustomizerTeam/AdwCustomizer/blob/main/data/icons/hicolor/scalable/apps/com.github.AdwCustomizerTeam.AdwCustomizer.svg" />
 
-# Adwaita Manager
+# Gradience
 Change the look of Adwaita, with ease
 
 ![Screenshot of interface with Adwaita light theme](https://github.com/AdwCustomizerTeam/Design/blob/main/Screenshots/main_screenshot.png)
 
-Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 <details>
   <summary>More screenshots</summary>
