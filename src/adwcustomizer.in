@@ -24,8 +24,8 @@ import signal
 import locale
 import gettext
 
-pkgdatadir = '@pkgdatadir@'
-localedir = '@localedir@'
+pkgdatadir = '@PKGDATA_DIR@'
+localedir = '@LOCALE_DIR@'
 version = '@VERSION@'
 
 builddir = os.environ.get('MESON_BUILD_ROOT')

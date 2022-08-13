@@ -34,9 +34,10 @@ from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from material_color_utilities_python import *
+from .constants import rootdir, build_type
 
 
-@Gtk.Template(resource_path="/com/github/AdwCustomizerTeam/AdwCustomizer/ui/window.ui")
+@Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class AdwcustomizerMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = "AdwcustomizerMainWindow"
 
@@ -56,6 +57,10 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.presets_dropdown.get_popover().connect(
             "show", self.on_presets_dropdown_activate
         )
+
+        # Set devel style
+        if build_type == "debug":
+            self.get_style_context().add_class("devel")
 
         self.setup_monet_page()
         self.setup_plugins_page()
