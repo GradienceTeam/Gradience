@@ -54,6 +54,7 @@ adwcustomizer_sources = [
   'plugins_list.py',
   'setting.py',
   'option.py',
+  'run_async.py',
   'window.py',
   'app_type_dialog.py',
   'custom_css_group.py',
