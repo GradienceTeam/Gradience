@@ -5,7 +5,7 @@ Change the look of Adwaita, with ease
 
 ![Screenshot of interface with Adwaita light theme](https://github.com/AdwCustomizerTeam/Design/blob/main/Screenshots/main_screenshot.png)
 
-Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+Gradience (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 <details>
   <summary>More screenshots</summary>
@@ -119,3 +119,10 @@ Fork this repository, then create a push request when you're done adding feature
 ### Localize
 The localization project is available on [Transifex](https://www.transifex.com/adwcustomizerteam/adwcustomizer/). 
 
+### About Name
+
+Gradience is originally named Adwaita Manager
+
+Meaning of Gradience is: https://en.wiktionary.org/wiki/gradience
+
+"A Paint Roller repaints Adwaita window and keeps it work the same"
