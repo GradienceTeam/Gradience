@@ -125,4 +125,4 @@ Gradience is originally named Adwaita Manager
 
 Meaning of Gradience is: https://en.wiktionary.org/wiki/gradience
 
-"A Paint Roller repaints Adwaita window and keeps it work the same"
+Meaning of an icon is: "A Paint Roller repaints Adwaita window keeping it's functionality"
