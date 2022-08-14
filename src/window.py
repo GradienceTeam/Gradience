@@ -39,7 +39,7 @@ from .constants import rootdir, build_type
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class AdwcustomizerMainWindow(Adw.ApplicationWindow):
-    __gtype_name__ = "AdwcustomizerMainWindow"
+    __gtype_name__ = "GradienceMainWindow"
 
     content = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()

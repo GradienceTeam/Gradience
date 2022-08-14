@@ -1,7 +1,7 @@
 # custom_css_group.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Adwaita Manager Team
+# Copyright (C) 2022  Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ from .constants import rootdir
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/custom_css_group.ui")
 class AdwcustomizerCustomCSSGroup(Adw.PreferencesGroup):
-    __gtype_name__ = "AdwcustomizerCustomCSSGroup"
+    __gtype_name__ = "GradienceCustomCSSGroup"
 
     app_type_dropdown = Gtk.Template.Child("app-type-dropdown")
     custom_css_text_view = Gtk.Template.Child("custom-css-text-view")

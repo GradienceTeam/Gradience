@@ -1,7 +1,7 @@
 # error.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Adwaita Manager Team
+# Copyright (C) 2022 Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ from .constants import rootdir
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/error.ui")
 class AdwcustomizerError(Gtk.ListBoxRow):
-    __gtype_name__ = "AdwcustomizerError"
+    __gtype_name__ = "GradienceError"
 
     error_label = Gtk.Template.Child("error-label")
     element_label = Gtk.Template.Child("element-label")

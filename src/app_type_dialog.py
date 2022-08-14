@@ -1,7 +1,7 @@
 # window.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Adwaita Manager Team
+# Copyright (C) 2022 Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ from .constants import rootdir
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/app_type_dialog.ui")
 class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
-    __gtype_name__ = "AdwcustomizerAppTypeDialog"
+    __gtype_name__ = "GradienceAppTypeDialog"
 
     gtk4_app_type = Gtk.Template.Child("gtk4-app-type")
     gtk3_app_type = Gtk.Template.Child("gtk3-app-type")
