@@ -119,7 +119,7 @@ Fork this repository, then create a push request when you're done adding feature
 ### Localize
 The localization project is available on [Transifex](https://www.transifex.com/adwcustomizerteam/adwcustomizer/). 
 
-### About Name
+## About Name
 
 Gradience is originally named Adwaita Manager
 
