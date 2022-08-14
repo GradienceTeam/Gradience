@@ -1,17 +1,36 @@
-desktop_file = i18n.merge_file(
-  input: 'com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in',
-  output: 'com.github.AdwCustomizerTeam.AdwCustomizer.desktop',
-  type: 'desktop',
-  po_dir: '../po',
-  install: true,
-  install_dir: join_paths(get_option('datadir'), 'applications')
-)
-
-desktop_utils = find_program('desktop-file-validate', required: false)
-if desktop_utils.found()
-  test('Validate desktop file', desktop_utils,
-    args: [desktop_file]
+if get_option('buildtype') == 'debug'
+  
+  desktop_file = i18n.merge_file(
+    input: 'com.github.AdwCustomizerTeam.AdwCustomizer.Devel.desktop.in',
+    output: 'com.github.AdwCustomizerTeam.AdwCustomizer.desktop',
+    type: 'desktop',
+    po_dir: '../po',
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'applications')
   )
+
+  desktop_utils = find_program('desktop-file-validate', required: false)
+  if desktop_utils.found()
+    test('Validate desktop file', desktop_utils,
+      args: [desktop_file]
+    )
+  endif
+else
+  desktop_file = i18n.merge_file(
+    input: 'com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in',
+    output: 'com.github.AdwCustomizerTeam.AdwCustomizer.desktop',
+    type: 'desktop',
+    po_dir: '../po',
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'applications')
+  )
+
+  desktop_utils = find_program('desktop-file-validate', required: false)
+  if desktop_utils.found()
+    test('Validate desktop file', desktop_utils,
+      args: [desktop_file]
+    )
+  endif
 endif
 
 appstream_file = i18n.merge_file(
