@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-13 19:01+0000\n"
+"POT-Creation-Date: 2022-08-14 14:15+0000\n"
 "PO-Revision-Date: 2022-07-25 14:48+0000\n"
 "Last-Translator: ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ FineFindus, 2022\n"
 "Language-Team: German (https://www.transifex.com/adwcustomizerteam/teams/147445/de/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.desktop.in:3
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in:8
-#: src/ui/window.blp:5 src/main.py:642
+#: src/ui/window.blp:5 src/main.py:632
 msgid "Adwaita Manager"
 msgstr "Adwaita Manager"
 
@@ -32,7 +32,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "Ändere mit Leichtigkeit das Aussehen von Adwaita"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in:11
-#: src/main.py:644
+#: src/main.py:634
 msgid "Adwaita Manager Team"
 msgstr "Adwaita Manager Team"
 
@@ -108,6 +108,18 @@ msgstr "Libadwaita und GTK 4 Apps"
 msgid "GTK 3 apps (adw-gtk3 theme required)"
 msgstr "GTK 3 Apps (adw-gtk3 Theme benötigt)"
 
+#: src/ui/app_type_dialog.blp:21
+msgid "Select color mode you want to affect:"
+msgstr "Wähle den Farbmodus zum ändern aus:"
+
+#: src/ui/app_type_dialog.blp:24 src/settings_schema.py:327
+msgid "Dark"
+msgstr "Dunkel"
+
+#: src/ui/app_type_dialog.blp:28 src/settings_schema.py:326
+msgid "Light"
+msgstr "Hell"
+
 #: src/ui/custom_css_group.blp:5
 msgid "Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
@@ -173,7 +185,7 @@ msgstr "Angewandtes Farbschema zurücksetzen"
 msgid "About Adwaita Manager"
 msgstr "Über Adwaita Manager"
 
-#: src/app_type_dialog.py:44 src/main.py:474
+#: src/app_type_dialog.py:46 src/main.py:464
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -205,25 +217,25 @@ msgstr ""
 "Warnung: jegliche benutzerdefinierte CSS Dateien für die ausgewählten "
 "Apptypen werden unumkehrbar überschrieben werden!"
 
-#: src/main.py:448
+#: src/main.py:438
 msgid "Reset applied color scheme?"
 msgstr "Angewandtes Farbschema zurücksetzen?"
 
-#: src/main.py:449
+#: src/main.py:439
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Stelle sicher, dass die derzeitigen Einstellungen als Voreinstellung "
 "gespeichert ist."
 
-#: src/main.py:451
+#: src/main.py:441
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: src/main.py:461
+#: src/main.py:451
 msgid "Save preset as..."
 msgstr "Speichere Voreinstellung als..."
 
-#: src/main.py:463 src/main.py:487 src/main.py:501
+#: src/main.py:453 src/main.py:477 src/main.py:491
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -232,19 +244,19 @@ msgstr ""
 "Speichere Voreinstellung als <tt>{0}</tt>. Falls sie eine Voreinstellung "
 "bereits unter dem Namen existiert, wird sie überschrieben!"
 
-#: src/main.py:475
+#: src/main.py:465
 msgid "Save"
 msgstr "Speichern"
 
-#: src/main.py:541
+#: src/main.py:531
 msgid "Scheme successfully saved!"
 msgstr "Farbschema erfolgreich gespeichert!"
 
-#: src/main.py:605
+#: src/main.py:595
 msgid "Scheme set successfully!"
 msgstr "Farbschema erfolgreich angewandt"
 
-#: src/main.py:637
+#: src/main.py:627
 msgid "Reset successfully!"
 msgstr "Erfolgreich zurückgesetzt!"
 
@@ -533,14 +545,6 @@ msgstr "Violett"
 #: src/settings_schema.py:325
 msgid "Brown"
 msgstr "Braun"
-
-#: src/settings_schema.py:326
-msgid "Light"
-msgstr "Hell"
-
-#: src/settings_schema.py:327
-msgid "Dark"
-msgstr "Dunkel"
 
 #: src/window.py:109
 msgid "Monet Engine"
