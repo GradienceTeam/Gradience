@@ -13,8 +13,8 @@ blueprints = custom_target('blueprints',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
-gnome.compile_resources('adwcustomizer',
-  'adwcustomizer.gresource.xml',
+gnome.compile_resources('gradience',
+  'gradience.gresource.xml',
   gresource_bundle: true,
   install: true,
   install_dir: PKGDATA_DIR,
@@ -22,8 +22,8 @@ gnome.compile_resources('adwcustomizer',
 )
 
 configure_file(
-  input: 'adwcustomizer.in',
-  output: 'adwcustomizer',
+  input: 'gradience.in',
+  output: 'gradience',
   configuration: conf,
   install: true,
   install_dir: get_option('bindir')
@@ -44,7 +44,7 @@ run_target('run',
 )
 
 # Install sources
-adwcustomizer_sources = [
+gradience_sources = [
   '__init__.py',
   'settings_schema.py',
   'main.py',
@@ -58,4 +58,4 @@ adwcustomizer_sources = [
   'app_type_dialog.py',
   'custom_css_group.py',
 ]
-install_data(adwcustomizer_sources, install_dir: MODULE_DIR)
+install_data(gradience_sources, install_dir: MODULE_DIR)

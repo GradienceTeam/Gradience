@@ -1,6 +1,6 @@
 #!@PYTHON@
 
-# adwcustomizer.in
+# gradience.in
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Adwaita Manager Team
@@ -54,8 +54,8 @@ if __name__ == '__main__':
 
     from gi.repository import Gio
     resource = Gio.Resource.load(
-        os.path.join(pkgdatadir, 'adwcustomizer.gresource'))
+        os.path.join(pkgdatadir, 'gradience.gresource'))
     resource._register()
 
-    from adwcustomizer import main
+    from gradience import main
     sys.exit(main.main(version))
