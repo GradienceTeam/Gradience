@@ -430,17 +430,7 @@ class AdwcustomizerApplication(Adw.Application):
             transient_for=self.props.active_window,
         )
 
-        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
-
-        label = Gtk.Label(label="Apply as Dark theme")
-        switch = Gtk.Switch()
-
-        box.append(label)
-        box.append(switch)
-
-        dialog.set_extra_child(box)
-
-        dialog.connect("response", self.apply_color_scheme, switch)
+        dialog.connect("response", self.apply_color_scheme)
         dialog.present()
 
     def show_reset_color_scheme_dialog(self, *_args):
@@ -541,9 +531,9 @@ class AdwcustomizerApplication(Adw.Application):
                     Adw.Toast(title=_("Scheme successfully saved!"))
                 )
 
-    def apply_color_scheme(self, widget, response, switch):
+    def apply_color_scheme(self, widget, response):
         if response == "apply":
-            if switch.get_active():
+            if widget.get_color_mode()["dark"]:
                 if widget.get_app_types()["gtk4"]:
                     gtk4_dir = os.path.join(
                         os.environ.get(
@@ -572,7 +562,7 @@ class AdwcustomizerApplication(Adw.Application):
                         os.path.join(gtk3_dir, "gtk-dark.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk3_css)
-            else:
+            if widget.get_color_mode()["light"]:
                 if widget.get_app_types()["gtk4"]:
                     gtk4_dir = os.path.join(
                         os.environ.get(

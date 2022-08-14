@@ -16,5 +16,16 @@ template AdwcustomizerAppTypeDialog : Adw.MessageDialog {
     CheckButton gtk3-app-type {
       label: _("GTK 3 apps (adw-gtk3 theme required)");
     }
+    Label {
+      styles ["heading"]
+      label: _("Select color mode you want to affect:");
+    }
+    CheckButton dark {
+      label: _("Dark");
+      active: true;
+    }
+    CheckButton light {
+      label: _("Light");
+    }
   }
 }
