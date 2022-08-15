@@ -278,7 +278,7 @@ class AdwcustomizerApplication(Adw.Application):
                 "headerbar_backdrop_color": "@window_bg_color",
                 "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
                 "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(dark_theme.surfaceVariant),
+                "card_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(dark_theme.shadow),
                 "dialog_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
                 "dialog_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
@@ -319,7 +319,7 @@ class AdwcustomizerApplication(Adw.Application):
                 "headerbar_backdrop_color": "@window_bg_color",
                 "headerbar_shade_color": self.rgba_from_argb(light_theme.shadow),
                 "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(light_theme.surfaceVariant),
+                "card_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(light_theme.shadow),
                 "dialog_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "dialog_fg_color": self.rgba_from_argb(
