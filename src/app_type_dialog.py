@@ -1,7 +1,7 @@
 # window.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Adwaita Manager Team
+# Copyright (C) 2022  Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
