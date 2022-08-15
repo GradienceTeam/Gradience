@@ -26,7 +26,6 @@ import gettext
 
 pkgdatadir = '@PKGDATA_DIR@'
 localedir = '@LOCALE_DIR@'
-version = '@VERSION@'
 
 builddir = os.environ.get('MESON_BUILD_ROOT')
 
@@ -58,4 +57,4 @@ if __name__ == '__main__':
     resource._register()
 
     from adwcustomizer import main
-    sys.exit(main.main(version))
+    sys.exit(main.main())

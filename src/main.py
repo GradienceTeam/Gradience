@@ -45,12 +45,12 @@ def to_slug_case(non_slug):
 class AdwcustomizerApplication(Adw.Application):
     """The main application singleton class."""
 
-    def __init__(self, version):
+    def __init__(self):
         super().__init__(
             application_id=app_id,
-            flags=Gio.ApplicationFlags.FLAGS_NONE,
+            flags=Gio.ApplicationFlags.FLAGS_NONE
         )
-        self.version = version
+        self.set_resource_base_path(rootdir)
 
         self.portal = Xdp.Portal()
 
@@ -636,7 +636,7 @@ class AdwcustomizerApplication(Adw.Application):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
             application_name=_("Adwaita Manager"),
-            application_icon="com.github.AdwCustomizerTeam.AdwCustomizer",
+            application_icon=app_id,
             developer_name=_("Adwaita Manager Team"),
             website="https://github.com/AdwCustomizerTeam/AdwCustomizer",
             support_url="https://github.com/orgs/AdwCustomizerTeam/discussions",
@@ -661,7 +661,7 @@ class AdwcustomizerApplication(Adw.Application):
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
             copyright="© 2022 Adwaita Manager Team",
             license_type=Gtk.License.GPL_3_0,
-            version=f"{version}",
+            version=version,
             release_notes="""
                 <ul>
         <li>Add AdwViewSwitcher in the header bar.</li>
@@ -725,7 +725,7 @@ This app is written in Python and uses GTK 4 and libadwaita.
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
 
-def main(version):
+def main():
     """The application's entry point."""
-    app = AdwcustomizerApplication(version)
+    app = AdwcustomizerApplication()
     return app.run(sys.argv)
