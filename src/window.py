@@ -114,7 +114,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_title(_("Monet Engine"))
         self.monet_pref_group.set_description(
             _(
-                "Monet is an engine that generates Material Design 3 palette from backgrounds color. The generation can be slow"
+                "Monet is an engine that generates Material Design 3 palette from backgrounds color."
             )
         )
 
