@@ -1,5 +1,5 @@
 {
-    "app-id" : "com.github.AdwCustomizerTeam.AdwCustomizer",
+    "app-id" : "com.github.AdwCustomizerTeam.AdwCustomizer.Devel",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
@@ -67,11 +67,11 @@
             "name" : "adwcustomizer",
             "builddir" : true,
             "buildsystem" : "meson",
+            "config-opts": ["-Dbuildtype=debug"],
             "sources" : [
                 {
-                    "type" : "git",
-                    "path" : ".",
-                    "branch": "next"
+                    "type" : "dir",
+                    "path" : "."
                 }
             ]
         }

@@ -34,8 +34,9 @@ from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from material_color_utilities_python import *
-from .constants import rootdir, build_type
+from .constants import rootdir, app_id, build_type
 from .presets_manager_window import AdwcustomizerPresetWindow
+
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class AdwcustomizerMainWindow(Adw.ApplicationWindow):
@@ -66,8 +67,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.setup_plugins_page()
         self.setup_colors_page()
 
-        self.settings = Gio.Settings(
-            "com.github.AdwCustomizerTeam.AdwCustomizer")
+        self.settings = Gio.Settings(app_id)
 
         self.settings.bind(
             "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT

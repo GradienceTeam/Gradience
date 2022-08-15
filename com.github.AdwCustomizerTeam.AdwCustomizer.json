@@ -67,11 +67,11 @@
             "name" : "adwcustomizer",
             "builddir" : true,
             "buildsystem" : "meson",
+            "config-opts": ["-Dbuildtype=release"],
             "sources" : [
                 {
-                    "type" : "git",
-                    "path" : ".",
-                    "branch": "main"
+                    "type" : "dir",
+                    "path" : "."
                 }
             ]
         }
