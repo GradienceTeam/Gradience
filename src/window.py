@@ -1,6 +1,6 @@
 # window.py
 #
-# Copyright 2022 Adwaita Manager Team
+# Copyright 2022 Gradience Team
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
