@@ -352,7 +352,7 @@ class AdwcustomizerApplication(Adw.Application):
     def mark_as_dirty(self):
         self.is_dirty = True
         self.props.active_window.save_preset_button.get_child().set_icon_name(
-            "disk-unsaved-symbolic"
+            "drive-unsaved-symbolic"
         )
         self.props.active_window.save_preset_button.get_child().set_tooltip_text(
             _("Unsaved changes")
@@ -361,7 +361,7 @@ class AdwcustomizerApplication(Adw.Application):
     def clear_dirty(self):
         self.is_dirty = False
         self.props.active_window.save_preset_button.get_child().set_icon_name(
-            "disk-saved-symbolic"
+            "drive-symbolic"
         )
         self.props.active_window.save_preset_button.get_child().set_label("")
 
