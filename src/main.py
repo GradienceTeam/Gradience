@@ -354,6 +354,8 @@ class AdwcustomizerApplication(Adw.Application):
         self.props.active_window.save_preset_button.get_child().set_icon_name(
             "drive-unsaved-symbolic"
         )
+        self.props.active_window.save_preset_button.add_css_class("warning")
+
         self.props.active_window.save_preset_button.get_child().set_tooltip_text(
             _("Unsaved changes")
         )
@@ -363,7 +365,11 @@ class AdwcustomizerApplication(Adw.Application):
         self.props.active_window.save_preset_button.get_child().set_icon_name(
             "drive-symbolic"
         )
+        self.props.active_window.save_preset_button.remove_css_class("warning")
         self.props.active_window.save_preset_button.get_child().set_label("")
+        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
+            _("Save changes")
+        )
 
     def reload_variables(self):
         parsing_errors = []
