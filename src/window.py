@@ -35,7 +35,7 @@ from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from material_color_utilities_python import *
 from .constants import rootdir, build_type
-
+from .presets_manager_window import AdwcustomizerPresetWindow
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class AdwcustomizerMainWindow(Adw.ApplicationWindow):
@@ -238,3 +238,4 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
     def on_presets_dropdown_activate(self, *args):
         self.get_application().reload_user_defined_presets()
+        #AdwcustomizerPresetWindow().present()

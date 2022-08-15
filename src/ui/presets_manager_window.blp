@@ -1,0 +1,39 @@
+using Gtk 4.0;
+using Adw 1;
+
+template AdwcustomizerPresetWindow: Adw.Window {
+    deletable: true;
+    default-width: 550;
+    default-height: 550;
+    Adw.ToastOverlay toast_overlay {
+        Gtk.Box main_view {
+            orientation: vertical;
+            Adw.HeaderBar titlebar {
+                centering-policy: strict;
+                [title]
+                Adw.WindowTitle {
+                    title: _("Presets");
+                }
+
+                [start]
+                Button import-button {
+                    styles ["suggested-action"]
+                    label: _("Import");
+                    action-name: "app.import_preset";
+                }
+
+
+                [end]
+                Button {
+                    icon-name: "folder-open-symbolic";
+                    action-name: "app.open_preset_directory";
+                }
+            }
+
+            Adw.PreferencesGroup preset_list {
+
+            }
+        }
+        
+    }
+}
