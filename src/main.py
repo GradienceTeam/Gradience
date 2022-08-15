@@ -242,7 +242,7 @@ class AdwcustomizerApplication(Adw.Application):
             i += 1
             palette[str(i)] = hexFromArgb(color.tone(int(tone.get_string())))
         self.pref_palette_shades["monet"].update_shades(palette)
-        if monet_theme == "automatic":
+        if monet_theme == "auto":
             if self.style_manager.get_dark():
                 monet_theme = "dark"
             else:
@@ -278,7 +278,7 @@ class AdwcustomizerApplication(Adw.Application):
                 "headerbar_backdrop_color": "@window_bg_color",
                 "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
                 "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(dark_theme.onSurface),
+                "card_fg_color": self.rgba_from_argb(dark_theme.surfaceVariant),
                 "card_shade_color": self.rgba_from_argb(dark_theme.shadow),
                 "dialog_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
                 "dialog_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
