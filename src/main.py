@@ -1,7 +1,7 @@
 # main.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Adwaita Manager Team
+# Copyright (C) 2022 Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -635,9 +635,9 @@ class AdwcustomizerApplication(Adw.Application):
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
-            application_name=_("Adwaita Manager"),
+            application_name=_("Gradience"),
             application_icon=app_id,
-            developer_name=_("Adwaita Manager Team"),
+            developer_name=_("Gradience Team"),
             website="https://github.com/AdwCustomizerTeam/AdwCustomizer",
             support_url="https://github.com/orgs/AdwCustomizerTeam/discussions",
             issue_url="https://github.com/AdwCustomizerTeam/AdwCustomizer/issues",
@@ -659,7 +659,7 @@ class AdwcustomizerApplication(Adw.Application):
                 0xMRTT https://github.com/0xMRTT
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918/
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
-            copyright="© 2022 Adwaita Manager Team",
+            copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
             release_notes="""
@@ -681,8 +681,8 @@ class AdwcustomizerApplication(Adw.Application):
       </ul>
             """,
             comments="""
-Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
-With Adwaita Manager you can:
+Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+With Gradience you can:
     
     - Change any color of Adwaita theme
     - Apply Material 3 colors from wallaper
