@@ -66,7 +66,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.setup_plugins_page()
         self.setup_colors_page()
 
-        self.settings = Gio.Settings("com.github.AdwCustomizerTeam.AdwCustomizer")
+        self.settings = Gio.Settings(
+            "com.github.AdwCustomizerTeam.AdwCustomizer")
 
         self.settings.bind(
             "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT
@@ -95,6 +96,10 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
         if response == Gtk.ResponseType.ACCEPT:
             self.monet_img = Image.open(self.monet_image_file.get_path())
+            basewidth = 64
+            wpercent = (basewidth/float(self.monet_img.size[0]))
+            hsize = int((float(self.monet_img.size[1])*float(wpercent)))
+            self.monet_img = self.monet_img.resize((basewidth, hsize), Image.Resampling.LANCZOS)
             self.theme = themeFromImage(self.monet_img)
             self.tone = self.tone_row.get_selected_item()
             self.monet_theme = self.monet_theme_row.get_selected_item()
