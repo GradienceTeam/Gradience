@@ -125,8 +125,21 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_dialog.set_transient_for(self)
 
         self.monet_file_chooser_button = Gtk.Button()
-        self.monet_file_chooser_button.set_label(_("Choose a file"))
-        self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
+        #self.monet_file_chooser_button.set_label(_("Choose a file"))
+        #self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
+
+        child_button = Gtk.Box()
+        label = Gtk.Label()
+        label.set_label(_("Choose a file"))
+        child_button.append(label)
+
+        icon = Gtk.Image()
+        icon.set_from_icon_name("folder-pictures-symbolic")
+        child_button.append(icon)
+        child_button.set_spacing(5)
+
+        self.monet_file_chooser_button.set_child(child_button)
+
         self.monet_file_chooser_button.set_margin_top(5)
         self.monet_file_chooser_button.set_margin_bottom(5)
 
