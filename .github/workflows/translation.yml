@@ -1,16 +1,14 @@
 name: "Translation"
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main" [
   schedule:
-    - cron: '21 6 * * 5'
+    - cron:  '0 0,12 * * *'
 
 jobs:
   generate:
-    name: Generate .pot nad LINGUAS 
+    name: Generate .pot and LINGUAS 
     runs-on: ubuntu-latest
   
     steps:
