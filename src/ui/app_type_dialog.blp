@@ -5,27 +5,35 @@ template AdwcustomizerAppTypeDialog : Adw.MessageDialog {
   [extra-child]
   Box {
     orientation: vertical;
-    Label {
-      styles ["heading"]
-      label: _("Select app types you want to affect:");
+    spacing: 15;
+
+    Box {
+      orientation: vertical;
+      Label {
+        styles ["heading"]
+        label: _("Select app types you want to affect:");
+      }
+      CheckButton gtk4-app-type {
+        label: _("Libadwaita and GTK 4 apps");
+        active: true;
+      }
+      CheckButton gtk3-app-type {
+        label: _("GTK 3 apps (adw-gtk3 theme required)");
+      }
     }
-    CheckButton gtk4-app-type {
-      label: _("Libadwaita and GTK 4 apps");
-      active: true;
-    }
-    CheckButton gtk3-app-type {
-      label: _("GTK 3 apps (adw-gtk3 theme required)");
-    }
-    Label {
-      styles ["heading"]
-      label: _("Select color mode you want to affect:");
-    }
-    CheckButton dark {
-      label: _("Dark");
-      active: true;
-    }
-    CheckButton light {
-      label: _("Light");
+    Box {
+      orientation: vertical;
+      Label {
+        styles ["heading"]
+        label: _("Select color mode you want to affect:");
+      }
+      CheckButton dark {
+        label: _("Dark");
+        active: true;
+      }
+      CheckButton light {
+        label: _("Light");
+      }
     }
   }
 }
