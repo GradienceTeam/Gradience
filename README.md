@@ -117,11 +117,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 ### Code
 Fork this repository, then create a push request when you're done adding features or fixing bugs.
 
-### Localize
-
-<a href="https://hosted.weblate.org/engage/GradienceTeam/">
-<img src="https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg" alt="Translations" />
-</a>
+### Localisation 
 
 [![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 
