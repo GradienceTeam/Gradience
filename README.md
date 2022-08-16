@@ -5,7 +5,7 @@ Change the look of Adwaita, with ease
 
 ![Screenshot of interface with Adwaita light theme](https://github.com/AdwCustomizerTeam/Design/blob/main/Screenshots/main_screenshot.png)
 
-Gradience (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 <details>
   <summary>More screenshots</summary>
@@ -66,10 +66,10 @@ ninja -C builddir run
 ### Building using flatpak-builder:
 
 1. Open Terminal
-2. Run `git clone https://github.com/AdwCustomizerTeam/AdwCustomizer.git && cd AdwCustomizer`
+2. Run `git clone https://github.com/GradienceTeam/Gradience.git && cd Gradience`
 3. Add the `gnome-nightly` Flatpak repository `flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo`
 4. Install the `master` version of GNOME SDK: `flatpak install org.gnome.Sdk/x86_64/master org.gnome.Platform/x86_64/master`
-5. Run `flatpak-builder --install --user --force-clean repo/ com.github.AdwCustomizerTeam.AdwCustomizer.json`
+5. Run `flatpak-builder --install --user --force-clean repo/ com.github.GradienceTeam.Gradience.json`
 
 Alternatively, open the project with GNOME Builder, then build and run it.
 
