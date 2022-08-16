@@ -17,7 +17,7 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 
 [![Build flatpak](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml)
 [![Build flatpak nightly](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml)
-[![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam/)
+[![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#AdwCustomizer:matrix.org)
 
 ## Building and Installing
@@ -120,8 +120,10 @@ Fork this repository, then create a push request when you're done adding feature
 ### Localize
 
 <a href="https://hosted.weblate.org/engage/GradienceTeam/">
-<img src="https://hosted.weblate.org/widgets/GradienceTeam/-/gradience/open-graph.png" alt="Translation status" />
+<img src="https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg" alt="Translations" />
 </a>
+
+[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 
 ## About Name
 
