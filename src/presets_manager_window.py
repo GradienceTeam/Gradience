@@ -1,4 +1,4 @@
-# window.py
+# presets_manager_window.py
 #
 # Copyright 2022 Gradience Team
 #
