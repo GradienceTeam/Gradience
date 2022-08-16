@@ -18,6 +18,9 @@ Gradience (AdwCustomizer) is a tool for customizing Libadwaita applications and 
 [![Build flatpak](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml)
 [![Build flatpak nightly](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml)
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#AdwCustomizer:matrix.org)
+<a href="https://hosted.weblate.org/engage/GradienceTeam/">
+<img src="https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg" alt="Translation status" />
+</a>
 
 ## Building and Installing
 
