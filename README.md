@@ -117,7 +117,10 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 Fork this repository, then create a push request when you're done adding features or fixing bugs.
 
 ### Localize
-The localization project is available on [Transifex](https://www.transifex.com/adwcustomizerteam/adwcustomizer/). 
+
+<a href="https://hosted.weblate.org/engage/GradienceTeam/">
+<img src="https://hosted.weblate.org/widgets/GradienceTeam/-/gradience/open-graph.png" alt="Translation status" />
+</a>
 
 ## About Name
 
