@@ -38,7 +38,6 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 Install required Python libraries:
 ```sh
 pip install -r requirements.txt
-pip3 install $(pwd)/monet/material_color_utilities_python-0.1.0-py3-none-any.whl
 ```
 
 ### Global installation:
