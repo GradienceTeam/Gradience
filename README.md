@@ -22,7 +22,7 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 
 ## Building and Installing
 
-**[NOTE]** See `next` branch for UI rework and latest commits.
+**[NOTE]** See `next` branch for latest commits.
 
 ## Requirements:
 - Python 3 `python`
@@ -38,7 +38,6 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 Install required Python libraries:
 ```sh
 pip install -r requirements.txt
-pip3 install $(pwd)/monet/material_color_utilities_python-0.1.0-py3-none-any.whl
 ```
 
 ### Global installation:
@@ -117,11 +116,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 ### Code
 Fork this repository, then create a push request when you're done adding features or fixing bugs.
 
-### Localize
-
-<a href="https://hosted.weblate.org/engage/GradienceTeam/">
-<img src="https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg" alt="Translations" />
-</a>
+### Localisation 
 
 [![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 
