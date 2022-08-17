@@ -34,7 +34,13 @@ class AdwcustomizerOption(Adw.ActionRow):
     explanation_button = Gtk.Template.Child("explanation-button")
     explanation_label = Gtk.Template.Child("explanation-label")
 
-    def __init__(self, name, title, explanation, adw_gtk3_support="yes", **kwargs):
+    def __init__(
+            self,
+            name,
+            title,
+            explanation,
+            adw_gtk3_support="yes",
+            **kwargs):
         super().__init__(**kwargs)
 
         self.set_name(name)
@@ -46,8 +52,7 @@ class AdwcustomizerOption(Adw.ActionRow):
         elif adw_gtk3_support == "partial":
             self.warning_button.add_css_class("warning")
             self.warning_label.set_label(
-                _("This option is only partially supported by the adw-gtk3 theme.")
-            )
+                _("This option is only partially supported by the adw-gtk3 theme."))
         elif adw_gtk3_support == "no":
             self.warning_button.add_css_class("error")
             self.warning_label.set_label(
@@ -93,13 +98,15 @@ class AdwcustomizerOption(Adw.ActionRow):
             else:
                 rgba.parse("rgba(0,0,0,0)")
                 self.color_value.set_rgba(rgba)
-                self.color_value.set_tooltip_text(_("Not a color, see text value"))
+                self.color_value.set_tooltip_text(
+                    _("Not a color, see text value"))
 
         if (
             Gtk.Application.get_default().is_ready
             and kwargs.get("update_from") == "text_value"
             and new_value != ""
         ):
-            Gtk.Application.get_default().variables[self.get_name()] = new_value
+            Gtk.Application.get_default(
+            ).variables[self.get_name()] = new_value
             Gtk.Application.get_default().mark_as_dirty()
             Gtk.Application.get_default().reload_variables()
