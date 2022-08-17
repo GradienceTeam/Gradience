@@ -1,0 +1,17 @@
+name: Black Check
+
+# Run action on PRs to master
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  suggest:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so that black can inspect it
+      - uses: actions/checkout@v2
+      - uses: rgasper/python-black-pull-request-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
