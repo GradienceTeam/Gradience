@@ -1,8 +1,10 @@
 from adwcustomizer.plugin import AdwcustomizerPluginCore
 
+
 class ShellPlugin(AdwcustomizerPluginCore):
     def validate(self):
         print("validate")
+
     def apply(self, dark_theme=False):
         print("apply")
 

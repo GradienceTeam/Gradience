@@ -70,19 +70,27 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.settings = Gio.Settings(app_id)
 
         self.settings.bind(
-            "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT
-        )
+            "window-width",
+            self,
+            "default-width",
+            Gio.SettingsBindFlags.DEFAULT)
 
         self.settings.bind(
-            "window-height", self, "default-height", Gio.SettingsBindFlags.DEFAULT
-        )
+            "window-height",
+            self,
+            "default-height",
+            Gio.SettingsBindFlags.DEFAULT)
         self.settings.bind(
-            "window-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT
-        )
+            "window-maximized",
+            self,
+            "maximized",
+            Gio.SettingsBindFlags.DEFAULT)
 
         self.settings.bind(
-            "window-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT
-        )
+            "window-fullscreen",
+            self,
+            "fullscreened",
+            Gio.SettingsBindFlags.DEFAULT)
 
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
@@ -97,9 +105,10 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         if response == Gtk.ResponseType.ACCEPT:
             self.monet_img = Image.open(self.monet_image_file.get_path())
             basewidth = 64
-            wpercent = (basewidth/float(self.monet_img.size[0]))
-            hsize = int((float(self.monet_img.size[1])*float(wpercent)))
-            self.monet_img = self.monet_img.resize((basewidth, hsize), Image.Resampling.LANCZOS)
+            wpercent = (basewidth / float(self.monet_img.size[0]))
+            hsize = int((float(self.monet_img.size[1]) * float(wpercent)))
+            self.monet_img = self.monet_img.resize(
+                (basewidth, hsize), Image.Resampling.LANCZOS)
             self.theme = themeFromImage(self.monet_img)
             self.tone = self.tone_row.get_selected_item()
             self.monet_theme = self.monet_theme_row.get_selected_item()
@@ -113,10 +122,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_name("monet")
         self.monet_pref_group.set_title(_("Monet Engine"))
         self.monet_pref_group.set_description(
-            _(
-                "Monet is an engine that generates Material Design 3 palette from backgrounds color."
-            )
-        )
+            _("Monet is an engine that generates Material Design 3 palette from backgrounds color."))
 
         self.monet_file_chooser_row = Adw.ActionRow()
         self.monet_file_chooser_row.set_title(_("Background Image"))
@@ -126,7 +132,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
         self.monet_file_chooser_button = Gtk.Button()
         #self.monet_file_chooser_button.set_label(_("Choose a file"))
-        #self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
+        # self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
 
         child_button = Gtk.Box()
         label = Gtk.Label()
@@ -155,7 +161,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_palette_shades = AdwcustomizerPaletteShades(
             "monet", "Monet Palette", 6
         )
-        self.get_application().pref_palette_shades["monet"] = self.monet_palette_shades
+        self.get_application(
+        ).pref_palette_shades["monet"] = self.monet_palette_shades
         self.monet_pref_group.add(self.monet_palette_shades)
 
         self.tone_row = Adw.ComboRow()
@@ -205,7 +212,8 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
                     variable["adw_gtk3_support"],
                 )
                 pref_group.add(pref_variable)
-                self.get_application().pref_variables[variable["name"]] = pref_variable
+                self.get_application(
+                ).pref_variables[variable["name"]] = pref_variable
 
             self.content.add(pref_group)
 
@@ -213,16 +221,14 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         palette_pref_group.set_name("palette_colors")
         palette_pref_group.set_title(_("Palette Colors"))
         palette_pref_group.set_description(
-            _(
-                'Named palette colors used by some applications. Default colors follow the <a href="https://developer.gnome.org/hig/reference/palette.html">GNOME Human Interface Guidelines</a>.'
-            )
-        )
+            _('Named palette colors used by some applications. Default colors follow the <a href="https://developer.gnome.org/hig/reference/palette.html">GNOME Human Interface Guidelines</a>.'))
         for color in settings_schema["palette"]:
             palette_shades = AdwcustomizerPaletteShades(
                 color["prefix"], color["title"], color["n_shades"]
             )
             palette_pref_group.add(palette_shades)
-            self.get_application().pref_palette_shades[color["prefix"]] = palette_shades
+            self.get_application(
+            ).pref_palette_shades[color["prefix"]] = palette_shades
         self.content.add(palette_pref_group)
 
     def update_errors(self, errors):
@@ -233,9 +239,11 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.errors_button.set_visible(len(errors) > 0)
         for error in errors:
             self.errors_list.append(
-                AdwcustomizerError(error["error"], error["element"], error["line"])
-            )
+                AdwcustomizerError(
+                    error["error"],
+                    error["element"],
+                    error["line"]))
 
     def on_presets_dropdown_activate(self, *args):
         self.get_application().reload_user_defined_presets()
-        #AdwcustomizerPresetWindow().present()
+        # AdwcustomizerPresetWindow().present()

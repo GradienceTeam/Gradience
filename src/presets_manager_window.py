@@ -31,6 +31,7 @@ from .constants import rootdir, build_type
 import os
 import json
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class AdwcustomizerPresetWindow(Adw.Window):
     __gtype_name__ = "AdwcustomizerPresetWindow"
@@ -46,7 +47,6 @@ class AdwcustomizerPresetWindow(Adw.Window):
         super().__init__(**kwargs)
         self.setup_pref_group()
 
-    
     def setup_pref_group(self):
         preset_directory = os.path.join(
             os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
@@ -54,7 +54,6 @@ class AdwcustomizerPresetWindow(Adw.Window):
         )
         if not os.path.exists(preset_directory):
             os.makedirs(preset_directory)
-
 
         self.custom_presets.clear()
         for file_name in os.listdir(preset_directory):
@@ -69,16 +68,14 @@ class AdwcustomizerPresetWindow(Adw.Window):
                         raise KeyError("variables")
                     if preset.get("palette") is None:
                         raise KeyError("palette")
-                    self.custom_presets[file_name.replace(".json", "")] = preset["name"]
+                    self.custom_presets[file_name.replace(
+                        ".json", "")] = preset["name"]
                 except Exception:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Failed to load preset"))
                     )
 
-
-        
         for preset, preset_name in self.custom_presets.items():
             row = Adw.ActionRow()
             row.set_title(preset_name)
             self.preset_list.add(row)
-        
