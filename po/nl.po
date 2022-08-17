@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-16 12:14+0000\n"
-"PO-Revision-Date: 2022-08-17 08:54+0000\n"
+"PO-Revision-Date: 2022-08-17 21:47+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/nl/>\n"
@@ -49,27 +49,28 @@ msgstr "Met Gradience kunt u:"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:25
 msgid "Change any color of Adwaita theme"
-msgstr ""
+msgstr "Verander elke kleur van het Adwaita-thema"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:26
 msgid "Apply Material 3 colors from wallaper"
-msgstr ""
+msgstr "Pas achtergrondkleuren toe van Material Design 3"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:27
 msgid "Use other users presets"
-msgstr ""
+msgstr "Gebruik voorinstellingen van andere gebruikers"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:28
 msgid "Change advanced options with CSS"
-msgstr ""
+msgstr "Verander geavanceerde opties met CSS"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:29
 msgid "Extend functionality using plugins"
-msgstr ""
+msgstr "Breid functionaliteit uit met plugins"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:31
 msgid "This app is written in Python and uses GTK 4 and libadwaita."
 msgstr ""
+"Deze app is ontwikkeld in Python en maakt gebruik van GTK 4 en Libadwaita."
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:36
 msgid "colors"
@@ -130,6 +131,11 @@ msgid ""
 "in case of the Custom CSS code field itself, which uses 12px padding). Only "
 "GTK 4 CSS will be previewed here."
 msgstr ""
+"Als u dit wijzigt, kunnen sommige programma's kapot gaan. Houd er rekening "
+"mee dat Libadwaita zo is gemaakt dat toepassingen waarden zoals opvulling en "
+"marges kunnen hardcoderen (zoals in het geval van het veld Aangepaste CSS-"
+"code zelf, dat 12px opvulling gebruikt). Alleen GTK 4 CSS wordt hier als "
+"voorbeeld weergegeven."
 
 #: src/ui/custom_css_group.blp:29
 msgid "GTK 4"
@@ -220,14 +226,17 @@ msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
+"Waarschuwing: aangepaste CSS-bestanden voor die app-typen worden "
+"onomkeerbaar overschreven!"
 
 #: src/main.py:444
 msgid "Reset applied color scheme?"
-msgstr ""
+msgstr "Toegepast kleurenschema opnieuw instellen?"
 
 #: src/main.py:445
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
+"Zorg ervoor dat u de huidige instellingen als voorinstelling hebt opgeslagen."
 
 #: src/main.py:447
 msgid "Reset"
@@ -243,6 +252,8 @@ msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
+"Voorinstelling opslaan in <tt>{0}</tt>. Als die voorinstelling al bestaat, "
+"wordt deze overschreven!"
 
 #: src/main.py:471
 msgid "Save"
@@ -263,18 +274,19 @@ msgstr "Succesvol opnieuw ingesteld!"
 #: src/option.py:49
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr ""
+"Deze optie wordt slechts gedeeltelijk ondersteund door het adw-gtk3-thema."
 
 #: src/option.py:54
 msgid "This option is not supported by the adw-gtk3 theme."
-msgstr ""
+msgstr "Deze optie wordt niet ondersteund door het adw-gtk3-thema."
 
 #: src/option.py:96
 msgid "Not a color, see text value"
-msgstr ""
+msgstr "Geen kleur, zie tekstwaarde"
 
 #: src/settings_schema.py:23
 msgid "Accent Colors"
-msgstr ""
+msgstr "Accentkleuren"
 
 #: src/settings_schema.py:25
 msgid ""
@@ -282,12 +294,15 @@ msgid ""
 "labels, and entries, to indicate that a widget is important, interactive, or "
 "currently active."
 msgstr ""
+"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
+"labels en velden, om aan te geven dat een widget belangrijk, interactief of "
+"momenteel actief is."
 
 #: src/settings_schema.py:30 src/settings_schema.py:57
 #: src/settings_schema.py:84 src/settings_schema.py:111
 #: src/settings_schema.py:138
 msgid "Standalone Color"
-msgstr ""
+msgstr "Losse kleur"
 
 #: src/settings_schema.py:32 src/settings_schema.py:59
 #: src/settings_schema.py:86 src/settings_schema.py:113
@@ -297,6 +312,9 @@ msgid ""
 "contrast when used as foreground color on top of a neutral background - for "
 "example, colorful text in a window."
 msgstr ""
+"De op zichzelf staande kleuren zijn vergelijkbaar met de achtergrondkleuren, "
+"maar bieden een beter contrast wanneer ze worden gebruikt als voorgrondkleur "
+"op een neutrale achtergrond, bijvoorbeeld kleurrijke tekst in een venster."
 
 #: src/settings_schema.py:38 src/settings_schema.py:65
 #: src/settings_schema.py:92 src/settings_schema.py:119
@@ -305,7 +323,7 @@ msgstr ""
 #: src/settings_schema.py:242 src/settings_schema.py:267
 #: src/settings_schema.py:284
 msgid "Background Color"
-msgstr ""
+msgstr "Achtergrondkleur"
 
 #: src/settings_schema.py:43 src/settings_schema.py:70
 #: src/settings_schema.py:97 src/settings_schema.py:124
@@ -314,41 +332,49 @@ msgstr ""
 #: src/settings_schema.py:247 src/settings_schema.py:272
 #: src/settings_schema.py:289
 msgid "Foreground Color"
-msgstr ""
+msgstr "Voorgrondkleur"
 
 #: src/settings_schema.py:50
 msgid "Destructive Colors"
-msgstr ""
+msgstr "Destructieve kleuren"
 
 #: src/settings_schema.py:52
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
 msgstr ""
+"Deze kleuren worden gebruikt voor knoppen om een gevaarlijke actie aan te "
+"geven, zoals het verwijderen van een bestand."
 
 #: src/settings_schema.py:77
 msgid "Success Colors"
-msgstr ""
+msgstr "Succes-kleuren"
 
 #: src/settings_schema.py:79
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
 msgstr ""
+"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
+"labels, velden en niveaubalken, om een succes of een hoog niveau aan te "
+"geven."
 
 #: src/settings_schema.py:104
 msgid "Warning Colors"
-msgstr ""
+msgstr "Waarschuwingskleuren"
 
 #: src/settings_schema.py:106
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
 msgstr ""
+"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
+"labels, velden en niveaubalken, om een waarschuwing of een laag niveau aan "
+"te geven."
 
 #: src/settings_schema.py:131
 msgid "Error Colors"
-msgstr ""
+msgstr "Foutkleuren"
 
 #: src/settings_schema.py:133
 msgid ""
