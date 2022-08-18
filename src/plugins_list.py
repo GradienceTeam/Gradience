@@ -21,9 +21,10 @@ from pathlib import Path
 import importlib
 import pkgutil
 
+
 class AdwcustomizerPluginsList:
     def __init__(self):
-        self.discoverd_plugins  = {
+        self.discoverd_plugins = {
             name: importlib.import_module(name)
             for finder, name, ispkg
             in pkgutil.iter_modules()

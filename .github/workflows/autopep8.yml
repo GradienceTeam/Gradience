@@ -1,0 +1,22 @@
+name: Format python code
+on: push
+jobs:
+  autopep8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: autopep8
+        uses: peter-evans/autopep8@v1
+        with:
+          args: --recursive --in-place --aggressive --aggressive .
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: "ci: autopep8 action fixes"
+          title: Fixes by autopep8 action
+          body: This is an auto-generated PR with fixes by autopep8.
+          labels: autopep8, automated pr
+          reviewers: 0xMRTT
+          committer: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
+          author: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
+          branch: autopep8-patches

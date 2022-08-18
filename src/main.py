@@ -90,8 +90,12 @@ class AdwcustomizerApplication(Adw.Application):
             GLib.Variant("s", "adwaita"),
             self.load_preset_action,
         )
-        self.create_action("apply_color_scheme", self.show_apply_color_scheme_dialog)
-        self.create_action("reset_color_scheme", self.show_reset_color_scheme_dialog)
+        self.create_action(
+            "apply_color_scheme",
+            self.show_apply_color_scheme_dialog)
+        self.create_action(
+            "reset_color_scheme",
+            self.show_reset_color_scheme_dialog)
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
@@ -133,7 +137,8 @@ class AdwcustomizerApplication(Adw.Application):
                         raise KeyError("variables")
                     if preset.get("palette") is None:
                         raise KeyError("palette")
-                    self.custom_presets[file_name.replace(".json", "")] = preset["name"]
+                    self.custom_presets[file_name.replace(
+                        ".json", "")] = preset["name"]
                 except Exception:
                     self.global_errors.append(
                         {
@@ -177,9 +182,12 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.portal.open_uri(
             parent,
-            "file://"
-            + os.path.join(
-                os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+            "file://" +
+            os.path.join(
+                os.environ.get(
+                    "XDG_CONFIG_HOME",
+                    os.environ["HOME"] +
+                    "/.config"),
                 "presets",
             ),
             Xdp.OpenUriFlags.NONE,
@@ -194,7 +202,8 @@ class AdwcustomizerApplication(Adw.Application):
         self.load_preset_variables(json.loads(preset_text))
 
     def load_preset_from_resource(self, preset_path):
-        preset_text = Gio.resources_lookup_data(preset_path, 0).get_data().decode()
+        preset_text = Gio.resources_lookup_data(
+            preset_path, 0).get_data().decode()
         self.load_preset_variables(json.loads(preset_text))
 
     def load_preset_variables(self, preset):
@@ -356,9 +365,8 @@ class AdwcustomizerApplication(Adw.Application):
         )
         self.props.active_window.save_preset_button.add_css_class("warning")
 
-        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
-            _("Unsaved changes")
-        )
+        self.props.active_window.save_preset_button.get_child(
+        ).set_tooltip_text(_("Unsaved changes"))
 
     def clear_dirty(self):
         self.is_dirty = False
@@ -367,9 +375,8 @@ class AdwcustomizerApplication(Adw.Application):
         )
         self.props.active_window.save_preset_button.remove_css_class("warning")
         self.props.active_window.save_preset_button.get_child().set_label("")
-        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
-            _("Save changes")
-        )
+        self.props.active_window.save_preset_button.get_child(
+        ).set_tooltip_text(_("Save changes"))
 
     def reload_variables(self):
         parsing_errors = []
@@ -392,7 +399,8 @@ class AdwcustomizerApplication(Adw.Application):
 
         css_provider.connect("parsing-error", on_error)
         css_provider.load_from_data(gtk_css.encode())
-        self.props.active_window.update_errors(self.global_errors + parsing_errors)
+        self.props.active_window.update_errors(
+            self.global_errors + parsing_errors)
         # loading with the priority above user to override the applied config
         if self.current_css_provider is not None:
             Gtk.StyleContext.remove_provider_for_display(
@@ -411,11 +419,17 @@ class AdwcustomizerApplication(Adw.Application):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+                    os.environ.get(
+                        "XDG_CONFIG_HOME",
+                        os.environ["HOME"] +
+                        "/.config"),
                     "presets",
-                    args[0].get_string().replace("custom-", "", 1) + ".json",
-                )
-            )
+                    args[0].get_string().replace(
+                        "custom-",
+                        "",
+                        1) +
+                    ".json",
+                ))
         else:
             self.load_preset_from_resource(
                 f"{rootdir}/presets/"
@@ -427,9 +441,7 @@ class AdwcustomizerApplication(Adw.Application):
     def show_apply_color_scheme_dialog(self, *_args):
         dialog = AdwcustomizerAppTypeDialog(
             _("Apply this color scheme?"),
-            _(
-                "Warning: any custom CSS files for those app types will be irreversibly overwritten!"
-            ),
+            _("Warning: any custom CSS files for those app types will be irreversibly overwritten!"),
             "apply",
             _("Apply"),
             Adw.ResponseAppearance.SUGGESTED,
@@ -469,7 +481,8 @@ class AdwcustomizerApplication(Adw.Application):
 
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("save", _("Save"))
-        dialog.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_response_appearance(
+            "save", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
 
@@ -630,7 +643,8 @@ class AdwcustomizerApplication(Adw.Application):
                     file.delete()
                 except Exception:
                     pass
-            self.win.toast_overlay.add_toast(Adw.Toast(title=_("Reset successfully!")))
+            self.win.toast_overlay.add_toast(
+                Adw.Toast(title=_("Reset successfully!")))
 
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
@@ -647,8 +661,11 @@ class AdwcustomizerApplication(Adw.Application):
                 "Verantor https://github.com/Verantor",
             ],
             artists=['David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],
-            designers=['David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],
-            # Translators: This is a place to put your credits (formats: "Name https://example.com" or "Name <email@example.com>", no quotes) and is not meant to be translated literally.
+            designers=[
+                'David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],
+            # Translators: This is a place to put your credits (formats: "Name
+            # https://example.com" or "Name <email@example.com>", no quotes)
+            # and is not meant to be translated literally.
             translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh/
                 FineFindus https://github.com/FineFindus
                 Karol Lademan https://www.transifex.com/user/profile/karlod/
@@ -683,13 +700,13 @@ class AdwcustomizerApplication(Adw.Application):
             comments="""
 Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 With Gradience you can:
-    
+
     - Change any color of Adwaita theme
     - Apply Material 3 colors from wallaper
     - Use other users presets
     - Change advanced options with CSS
     - Extend functionality using plugins
-    
+
 This app is written in Python and uses GTK 4 and libadwaita.
             """
         )
@@ -718,7 +735,8 @@ This app is written in Python and uses GTK 4 and libadwaita.
         self, name, parameter_type, initial_state, callback, shortcuts=None
     ):
         """Add a stateful application action."""
-        action = Gio.SimpleAction.new_stateful(name, parameter_type, initial_state)
+        action = Gio.SimpleAction.new_stateful(
+            name, parameter_type, initial_state)
         action.connect("activate", callback)
         self.add_action(action)
         if shortcuts:
