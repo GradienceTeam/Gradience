@@ -1,22 +1,22 @@
-<img align="left" alt="Project logo" src="https://github.com/AdwCustomizerTeam/AdwCustomizer/blob/main/data/icons/hicolor/scalable/apps/com.github.AdwCustomizerTeam.AdwCustomizer.svg" />
+<img align="left" alt="Project logo" src="https://github.com/GradienceTeam/Gradience/blob/main/data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg" />
 
 # Gradience
 Change the look of Adwaita, with ease
 
-![Screenshot of interface with Adwaita light theme](https://github.com/AdwCustomizerTeam/Design/blob/main/Screenshots/main_screenshot.png)
+![Screenshot of interface with Adwaita light theme](https://github.com/GradienceTeam/Design/blob/main/Screenshots/main_screenshot.png)
 
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 <details>
   <summary>More screenshots</summary>
   
-  ![Screenshot of interface with a customized theme](https://github.com/AdwCustomizerTeam/Design/blob/main/Screenshots/customized_screenshot.png)
+  ![Screenshot of interface with a customized theme](https://github.com/GradienceTeam/Design/blob/main/Screenshots/customized_screenshot.png)
   
-  ![Screenshot of proof that this actually works](https://github.com/AdwCustomizerTeam/Design/blob/main/Screenshots/proof_of_work_screenshot.png)
+  ![Screenshot of proof that this actually works](https://github.com/GradienceTeam/Design/blob/main/Screenshots/proof_of_work_screenshot.png)
 </details>
 
-[![Build flatpak](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml)
-[![Build flatpak nightly](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml)
+[![Build flatpak](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak.yml/badge.svg)](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak.yml)
+[![Build flatpak nightly](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml)
 [![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#Gradience:matrix.org)
 
@@ -42,16 +42,16 @@ pip install -r requirements.txt
 
 ### Global installation:
 ```sh
-git clone https://github.com/AdwCustomizerTeam/AdwCustomizer.git
-cd AdwCustomizer
+git clone https://github.com/GradienceTeam/Gradience.git
+cd Gradience
 meson builddir --prefix=/usr/local
 sudo ninja -C builddir install
 ```
 
 ### Local build (for testing and development purposes):
 ```sh
-git clone https://github.com/AdwCustomizerTeam/AdwCustomizer.git
-cd AdwCustomizer
+git clone https://github.com/GradienceTeam/Gradience.git
+cd Gradience
 meson builddir
 meson configure builddir -Dprefix="$(pwd)/builddir/testdir"
 ninja -C builddir install
