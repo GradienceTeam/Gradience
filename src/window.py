@@ -1,6 +1,6 @@
 # window.py
 #
-# Copyright 2022 Adwaita Manager Team
+# Copyright 2022 Gradience Team
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -34,7 +34,8 @@ from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
 from material_color_utilities_python import *
-from .constants import rootdir, build_type
+from .constants import rootdir, app_id, build_type
+from .presets_manager_window import AdwcustomizerPresetWindow
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
@@ -66,7 +67,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.setup_plugins_page()
         self.setup_colors_page()
 
-        self.settings = Gio.Settings("com.github.AdwCustomizerTeam.AdwCustomizer")
+        self.settings = Gio.Settings(app_id)
 
         self.settings.bind(
             "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT
@@ -95,6 +96,10 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
         if response == Gtk.ResponseType.ACCEPT:
             self.monet_img = Image.open(self.monet_image_file.get_path())
+            basewidth = 64
+            wpercent = (basewidth/float(self.monet_img.size[0]))
+            hsize = int((float(self.monet_img.size[1])*float(wpercent)))
+            self.monet_img = self.monet_img.resize((basewidth, hsize), Image.Resampling.LANCZOS)
             self.theme = themeFromImage(self.monet_img)
             self.tone = self.tone_row.get_selected_item()
             self.monet_theme = self.monet_theme_row.get_selected_item()
@@ -109,7 +114,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_title(_("Monet Engine"))
         self.monet_pref_group.set_description(
             _(
-                "Monet is an engine that generates Material Design 3 palette from backgrounds color. The generation can be slow"
+                "Monet is an engine that generates Material Design 3 palette from backgrounds color."
             )
         )
 
@@ -120,8 +125,23 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_dialog.set_transient_for(self)
 
         self.monet_file_chooser_button = Gtk.Button()
-        self.monet_file_chooser_button.set_label(_("Choose a file"))
-        self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
+        #self.monet_file_chooser_button.set_label(_("Choose a file"))
+        #self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
+
+        child_button = Gtk.Box()
+        label = Gtk.Label()
+        label.set_label(_("Choose a file"))
+        child_button.append(label)
+
+        icon = Gtk.Image()
+        icon.set_from_icon_name("folder-pictures-symbolic")
+        child_button.append(icon)
+        child_button.set_spacing(5)
+
+        self.monet_file_chooser_button.set_child(child_button)
+
+        self.monet_file_chooser_button.set_margin_top(5)
+        self.monet_file_chooser_button.set_margin_bottom(5)
 
         self.monet_file_chooser_button.connect(
             "clicked", self.on_file_picker_button_clicked
@@ -218,3 +238,4 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
 
     def on_presets_dropdown_activate(self, *args):
         self.get_application().reload_user_defined_presets()
+        #AdwcustomizerPresetWindow().present()

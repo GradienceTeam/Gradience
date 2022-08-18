@@ -1,0 +1,164 @@
+using Gtk 4.0;
+using Adw 1;
+
+template WelcomeDialog: Adw.Window {
+    resizable: false;
+    deletable: true;
+    modal: true;
+    default-width: 550;
+    default-height: 550;
+
+    Adw.ToastOverlay toast_overlay {
+        Adw.Leaflet leaflet {
+            can-navigate-back: true;
+            can-unfold: false;
+
+            Gtk.Box main_view {
+                orientation: vertical;
+
+                Adw.HeaderBar titlebar {
+                    centering-policy: strict;
+
+                    [title]
+                    Adw.CarouselIndicatorDots {
+                        styles ["flat"]
+                        carousel: carousel;
+                        orientation: horizontal;
+                    }
+
+                }
+
+                Gtk.Overlay {
+                    overlay: Gtk.Button btn_back {
+                        styles ["circular"]
+                        margin-start: 12;
+                        icon-name: go-previous-symbolic;
+                        halign: start;
+                        valign: center;
+                        visible: False;
+                        tooltip-text: _("Previous");
+                    }
+
+                    child: Adw.Carousel carousel {
+                        vexpand: true;
+                        hexpand: true;
+                        allow-scroll-wheel: true;
+                        allow-mouse-drag: true;
+                        allow-long-swipes: true;
+
+                        Gtk.Box {
+                            orientation: vertical;
+                            vexpand: true;
+                            hexpand: true;
+
+                            Gtk.Image img_welcome {
+                                resource: "/com/github/AdwCustomizerTeam/AdwCustomizer/images/welcome.svg";
+                                pixel-size: 320;
+                            }
+
+                            Adw.StatusPage page_welcome {
+                                title: _("Welcome to Gradience");
+                                description: _("Customize Adwaita with ease");
+                            }
+
+                        }
+
+                        Adw.StatusPage page_adwcustomizer {
+                            vexpand: true;
+                            hexpand: true;
+                            title: _("Customize Adwaita");
+                            description: _("Change colors of windows, buttons, lists and more with advanced features like adding custom CSS");
+                        }
+
+                        Adw.StatusPage page_configure {
+                            vexpand: true;
+                            hexpand: true;
+                            title: _("Configure themes");
+                            description: _("Install adw-gtk3 theme for legacy applications.");
+
+                            Adw.PreferencesPage {
+                                Adw.PreferencesGroup {
+                                    Adw.ActionRow configure_system {
+                                        title: _("adw-gtk3 theme (System)");
+                                    }
+
+                                    Adw.ActionRow configure_flatpak {
+                                        title: _("adw-gtk3 theme (Flatpak)");
+                                    }
+                                }
+                            }
+                        }
+
+                        Adw.StatusPage page_download {
+                            vexpand: true;
+                            hexpand: true;
+                            title: _("Installing themes")
+                            description: _("Please wait until themes will be installed. ")
+
+                            Gtk.Box {
+                                orientation: vertical;
+                                Gtk.Button btn_install {
+                                    styles ["suggested-action", "pill"]
+                                    label: _("Continue");
+                                    use-underline: true;
+                                    halign: center;
+
+                                }
+
+                                Gtk.ProgressBar progressbar {
+                                    width_request: 300
+                                    halign: center;
+                                    visible: False;
+                                    margin-top: 24;
+                                    margin-bottom: 24;
+                                }
+                            }
+                        }
+
+                        Adw.StatusPage page_finish {
+                            vexpand: true;
+                            hexpand: true;
+                            icon-name: "selection-mode-symbolic";
+                            title: _("Done");
+                            description: _("Now you can make your own presets, or download some online.");
+
+                            Gtk.Box {
+                                orientation: vertical;
+                                Gtk.Button label_skip {
+                                    label: _("Please Finish the setup first");
+                                    margin-bottom: 5;
+                                    visible
+
+                                }
+
+                                Gtk.Button btn_close {
+                                    styles ["suggested-action", "pill"]
+                                    label: _("Start using Gradience");
+                                    use-underline: true;
+                                    width_request: 300;
+                                    halign: center;
+                                }
+                            }
+                        }
+                    }
+
+                    overlay: Gtk.Button btn_next {
+                        styles ["circular", "suggested-action"]
+                        margin-start: 12;
+                        icon-name: go-next-symbolic;
+                        halign: end;
+                        valign: center;
+                        visible: False;
+                        tooltip-text: _("Next");
+                    }
+
+
+
+
+                }
+
+
+            }
+        }
+    }
+}

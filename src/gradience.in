@@ -3,7 +3,7 @@
 # gradience.in
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Adwaita Manager Team
+# Copyright (C) 2022 Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,7 +26,6 @@ import gettext
 
 pkgdatadir = '@PKGDATA_DIR@'
 localedir = '@LOCALE_DIR@'
-version = '@VERSION@'
 
 builddir = os.environ.get('MESON_BUILD_ROOT')
 
@@ -57,5 +56,10 @@ if __name__ == '__main__':
         os.path.join(pkgdatadir, 'gradience.gresource'))
     resource._register()
 
+<<<<<<< HEAD:src/gradience.in
     from gradience import main
     sys.exit(main.main(version))
+=======
+    from adwcustomizer import main
+    sys.exit(main.main())
+>>>>>>> upstream/main:src/adwcustomizer.in

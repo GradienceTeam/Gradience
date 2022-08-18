@@ -1,5 +1,5 @@
 {
-    "app-id" : "com.github.AdwCustomizerTeam.AdwCustomizer",
+    "app-id" : "com.github.AdwCustomizerTeam.AdwCustomizer.Devel",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
@@ -50,28 +50,14 @@
             ]
         },
         {
-            "name": "material-color-utilities-python",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"material_color_utilities_python~=0.1.0\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "path": "./monet/material_color_utilities_python-0.1.0-py3-none-any.whl",
-                    "sha256": "735d40c0afae660e319798c697da8fe332cfc7103fbed8a081a187f437ed4523"
-                }
-            ]
-        },
-        {
             "name" : "adwcustomizer",
             "builddir" : true,
             "buildsystem" : "meson",
+            "config-opts": ["-Dbuildtype=debug"],
             "sources" : [
                 {
-                    "type" : "git",
-                    "path" : ".",
-                    "branch": "next"
+                    "type" : "dir",
+                    "path" : "."
                 }
             ]
         }

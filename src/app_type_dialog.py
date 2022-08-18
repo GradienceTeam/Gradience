@@ -1,7 +1,11 @@
 # window.py
 #
 # Change the look of Adwaita, with ease
+<<<<<<< HEAD
 # Copyright (C) 2022 Gradience Team
+=======
+# Copyright (C) 2022  Gradience Team
+>>>>>>> upstream/main
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,6 +31,8 @@ class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
 
     gtk4_app_type = Gtk.Template.Child("gtk4-app-type")
     gtk3_app_type = Gtk.Template.Child("gtk3-app-type")
+    dark = Gtk.Template.Child("dark")
+    light = Gtk.Template.Child("light")
 
     def __init__(
         self,
@@ -51,4 +57,9 @@ class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
         return {
             "gtk4": self.gtk4_app_type.get_active(),
             "gtk3": self.gtk3_app_type.get_active(),
+        }
+    def get_color_mode(self):
+        return {
+            "dark":self.dark.get_active(),
+            "light": self.light.get_active(),
         }

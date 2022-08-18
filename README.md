@@ -5,7 +5,11 @@ Change the look of Adwaita, with ease.
 
 ![Screenshot of interface with Adwaita light theme](https://github.com/AdwCustomizerTeam/Design/blob/main/Screenshots/main_screenshot.png)
 
+<<<<<<< HEAD
 Gradience, previously Adwaita Manager or AdwCustomizer is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+=======
+Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+>>>>>>> upstream/main
 
 <details>
   <summary>More screenshots</summary>
@@ -17,13 +21,12 @@ Gradience, previously Adwaita Manager or AdwCustomizer is a tool for customizing
 
 [![Build flatpak](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak.yml)
 [![Build flatpak nightly](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/AdwCustomizerTeam/AdwCustomizer/actions/workflows/flatpak-nightly.yml)
+[![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#AdwCustomizer:matrix.org)
-
-# Name change in progress. [Vote here](https://github.com/AdwCustomizerTeam/AdwCustomizer/discussions/127) !!!
 
 ## Building and Installing
 
-**[NOTE]** See `next` branch for UI rework and latest commits.
+**[NOTE]** See `next` branch for latest commits.
 
 ## Requirements:
 - Python 3 `python`
@@ -39,7 +42,6 @@ Gradience, previously Adwaita Manager or AdwCustomizer is a tool for customizing
 Install required Python libraries:
 ```sh
 pip install -r requirements.txt
-pip3 install $(pwd)/monet/material_color_utilities_python-0.1.0-py3-none-any.whl
 ```
 
 ### Global installation:
@@ -65,10 +67,10 @@ ninja -C builddir run
 ### Building using flatpak-builder:
 
 1. Open Terminal
-2. Run `git clone https://github.com/AdwCustomizerTeam/AdwCustomizer.git && cd AdwCustomizer`
+2. Run `git clone https://github.com/GradienceTeam/Gradience.git && cd Gradience`
 3. Add the `gnome-nightly` Flatpak repository `flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo`
 4. Install the `master` version of GNOME SDK: `flatpak install org.gnome.Sdk/x86_64/master org.gnome.Platform/x86_64/master`
-5. Run `flatpak-builder --install --user --force-clean repo/ com.github.AdwCustomizerTeam.AdwCustomizer.json`
+5. Run `flatpak-builder --install --user --force-clean repo/ com.github.GradienceTeam.Gradience.json`
 
 Alternatively, open the project with GNOME Builder, then build and run it.
 
@@ -118,6 +120,14 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 ### Code
 Fork this repository, then create a push request when you're done adding features or fixing bugs.
 
-### Localize
-The localization project is available on [Transifex](https://www.transifex.com/adwcustomizerteam/adwcustomizer/). 
+### Localisation 
 
+[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
+
+## About Name
+
+Gradience is originally named Adwaita Manager
+
+Meaning of Gradience is: https://en.wiktionary.org/wiki/gradience
+
+Meaning of an icon is: "A Paint Roller repaints Adwaita window keeping it's functionality"

@@ -45,12 +45,12 @@ def to_slug_case(non_slug):
 class AdwcustomizerApplication(Adw.Application):
     """The main application singleton class."""
 
-    def __init__(self, version):
+    def __init__(self):
         super().__init__(
             application_id=app_id,
-            flags=Gio.ApplicationFlags.FLAGS_NONE,
+            flags=Gio.ApplicationFlags.FLAGS_NONE
         )
-        self.version = version
+        self.set_resource_base_path(rootdir)
 
         self.portal = Xdp.Portal()
 
@@ -242,7 +242,7 @@ class AdwcustomizerApplication(Adw.Application):
             i += 1
             palette[str(i)] = hexFromArgb(color.tone(int(tone.get_string())))
         self.pref_palette_shades["monet"].update_shades(palette)
-        if monet_theme == "automatic":
+        if monet_theme == "auto":
             if self.style_manager.get_dark():
                 monet_theme = "dark"
             else:
@@ -278,7 +278,7 @@ class AdwcustomizerApplication(Adw.Application):
                 "headerbar_backdrop_color": "@window_bg_color",
                 "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
                 "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(dark_theme.onSurface),
+                "card_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(dark_theme.shadow),
                 "dialog_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
                 "dialog_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
@@ -319,7 +319,7 @@ class AdwcustomizerApplication(Adw.Application):
                 "headerbar_backdrop_color": "@window_bg_color",
                 "headerbar_shade_color": self.rgba_from_argb(light_theme.shadow),
                 "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(light_theme.surfaceVariant),
+                "card_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(light_theme.shadow),
                 "dialog_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "dialog_fg_color": self.rgba_from_argb(
@@ -352,8 +352,10 @@ class AdwcustomizerApplication(Adw.Application):
     def mark_as_dirty(self):
         self.is_dirty = True
         self.props.active_window.save_preset_button.get_child().set_icon_name(
-            "disk-unsaved-symbolic"
+            "drive-unsaved-symbolic"
         )
+        self.props.active_window.save_preset_button.add_css_class("warning")
+
         self.props.active_window.save_preset_button.get_child().set_tooltip_text(
             _("Unsaved changes")
         )
@@ -361,9 +363,13 @@ class AdwcustomizerApplication(Adw.Application):
     def clear_dirty(self):
         self.is_dirty = False
         self.props.active_window.save_preset_button.get_child().set_icon_name(
-            "disk-saved-symbolic"
+            "drive-symbolic"
         )
+        self.props.active_window.save_preset_button.remove_css_class("warning")
         self.props.active_window.save_preset_button.get_child().set_label("")
+        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
+            _("Save changes")
+        )
 
     def reload_variables(self):
         parsing_errors = []
@@ -430,17 +436,7 @@ class AdwcustomizerApplication(Adw.Application):
             transient_for=self.props.active_window,
         )
 
-        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
-
-        label = Gtk.Label(label="Apply as Dark theme")
-        switch = Gtk.Switch()
-
-        box.append(label)
-        box.append(switch)
-
-        dialog.set_extra_child(box)
-
-        dialog.connect("response", self.apply_color_scheme, switch)
+        dialog.connect("response", self.apply_color_scheme)
         dialog.present()
 
     def show_reset_color_scheme_dialog(self, *_args):
@@ -541,9 +537,9 @@ class AdwcustomizerApplication(Adw.Application):
                     Adw.Toast(title=_("Scheme successfully saved!"))
                 )
 
-    def apply_color_scheme(self, widget, response, switch):
+    def apply_color_scheme(self, widget, response):
         if response == "apply":
-            if switch.get_active():
+            if widget.get_color_mode()["dark"]:
                 if widget.get_app_types()["gtk4"]:
                     gtk4_dir = os.path.join(
                         os.environ.get(
@@ -572,7 +568,7 @@ class AdwcustomizerApplication(Adw.Application):
                         os.path.join(gtk3_dir, "gtk-dark.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk3_css)
-            else:
+            if widget.get_color_mode()["light"]:
                 if widget.get_app_types()["gtk4"]:
                     gtk4_dir = os.path.join(
                         os.environ.get(
@@ -639,9 +635,9 @@ class AdwcustomizerApplication(Adw.Application):
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
-            application_name=_("Adwaita Manager"),
-            application_icon="com.github.AdwCustomizerTeam.AdwCustomizer",
-            developer_name=_("Adwaita Manager Team"),
+            application_name=_("Gradience"),
+            application_icon=app_id,
+            developer_name=_("Gradience Team"),
             website="https://github.com/AdwCustomizerTeam/AdwCustomizer",
             support_url="https://github.com/orgs/AdwCustomizerTeam/discussions",
             issue_url="https://github.com/AdwCustomizerTeam/AdwCustomizer/issues",
@@ -663,9 +659,9 @@ class AdwcustomizerApplication(Adw.Application):
                 0xMRTT https://github.com/0xMRTT
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918/
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
-            copyright="© 2022 Adwaita Manager Team",
+            copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
-            version=f"{version}",
+            version=version,
             release_notes="""
                 <ul>
         <li>Add AdwViewSwitcher in the header bar.</li>
@@ -685,8 +681,8 @@ class AdwcustomizerApplication(Adw.Application):
       </ul>
             """,
             comments="""
-Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
-With Adwaita Manager you can:
+Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+With Gradience you can:
     
     - Change any color of Adwaita theme
     - Apply Material 3 colors from wallaper
@@ -729,7 +725,7 @@ This app is written in Python and uses GTK 4 and libadwaita.
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
 
-def main(version):
+def main():
     """The application's entry point."""
-    app = AdwcustomizerApplication(version)
+    app = AdwcustomizerApplication()
     return app.run(sys.argv)

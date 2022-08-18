@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2022 Adwaita Manager Team -->
+<!-- Copyright 2022 Gradience Team -->
 <component type="desktop">
-  <id>com.github.AdwCustomizerTeam.AdwCustomizer</id>
+  <id>@APP_ID@</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
 
-  <name>Adwaita Manager</name>
+  <name>Gradience</name>
   <summary>Change the look of Adwaita, with ease.</summary>
 
-  <developer_name>Adwaita Manager Team</developer_name>
+  <developer_name>Gradience Team</developer_name>
 
   <recommends>
     <control>pointing</control>
@@ -18,9 +18,9 @@
 
   <description>
     <p>
-      Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+      Gradience (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
     </p>
-    <p>With Adwaita Manager you can:</p>
+    <p>With Gradience you can:</p>
     <ul>
       <li>Change any color of Adwaita theme</li>
       <li>Apply Material 3 colors from wallaper</li>
@@ -58,7 +58,7 @@
     </screenshot>
   </screenshots>
 
-  <launchable type="desktop-id">com.github.AdwCustomizerTeam.AdwCustomizer.desktop</launchable>
+  <launchable type="desktop-id">@APP_ID@.desktop</launchable>
 
   <categories>
     <category>Utility</category>
@@ -102,7 +102,7 @@
   <releases>
     <release date="2022-8-12" version="0.1.0">
       <description>
-        <p>First release of Adwaita Manager.</p>
+        <p>First release of Gradience.</p>
       </description>
       <ul>
         <li>Add AdwViewSwitcher in the header bar.</li>
@@ -123,10 +123,10 @@
     </release>
   </releases>
 
-  <url type="homepage">https://github.com/AdwCustomizerTeam/AdwCustomizer</url>
-  <url type="bugtracker">https://github.com/AdwCustomizerTeam/AdwCustomizer/issues</url>
-  <url type="help">https://github.com/orgs/AdwCustomizerTeam/discussions</url>
-  <url type="translate">https://www.transifex.com/adwcustomizerteam/adwcustomizer</url>
+  <url type="homepage">@PROJECT_URL@</url>
+  <url type="bugtracker">@BUGTRACKER_URL@</url>
+  <url type="help">@HELP_URL@</url>
+  <url type="translate">@TRANSLATE_URL@</url>
 
   <update_contact>AdwCustomizerTeam@proton.me</update_contact>
 </component>

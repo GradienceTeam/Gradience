@@ -15,33 +15,14 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 
-name: "Translation"
-
+name: Weekly Report
 on:
   schedule:
-    - cron:  '0 0,12 * * *'
-
+    - cron: '0 6 * * 0' # At 06:00 on Sunday
 jobs:
-  generate:
-    name: Generate .pot and LINGUAS 
+  run:
     runs-on: ubuntu-latest
-  
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Update .pot
-        uses: GradienceTeam/action-update-pot@main
+      - uses: wow-actions/activity-report@v1
         with:
-          title: "Gradience POT file"
-          copyright: "Gradience Team"
-          license: "GNU GPLv3"
-          author: "Gradience Team"
-        env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Update linguas
-        uses: GradienceTeam/action-update-linguas@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-   

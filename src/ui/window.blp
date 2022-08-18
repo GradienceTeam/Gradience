@@ -1,8 +1,13 @@
 using Gtk 4.0;
 using Adw 1;
 
+<<<<<<< HEAD
 template GradienceMainWindow : Adw.ApplicationWindow {
   title: _("Gradience | v0.1.0");
+=======
+template AdwcustomizerMainWindow : Adw.ApplicationWindow {
+  title: _("Gradience");
+>>>>>>> upstream/main
   default-width: 1280;
   default-height: 720;
 
@@ -47,7 +52,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
             action-name: "app.save_preset";
             tooltip-text: _("Save Preset");
             Adw.ButtonContent {
-              icon-name: "disk-saved-symbolic";
+              icon-name: "drive-symbolic";
             }
           }
 
@@ -112,17 +117,17 @@ menu presets-menu {
   section {
     label: _("Built-in Presets");
     item {
-      label: "Adwaita";
+      label: _("Adwaita");
       action: "app.load_preset";
       target: "adwaita";
     }
     item {
-      label: "Adwaita Dark";
+      label: _("Adwaita Dark");
       action: "app.load_preset";
       target: "adwaita-dark";
     }
     item {
-      label: "Manage Presets";
+      label: _("Manage Presets");
       action: "app.manage_presets";
     }
   }
@@ -131,10 +136,6 @@ menu presets-menu {
 
 menu main-menu {
   section {
-    item {
-      label: _("Release Notes");
-      action: "win.show-release-notes";
-    }
     item {
       label: _("Reset Applied Color Scheme");
       action: "app.reset_color_scheme";
