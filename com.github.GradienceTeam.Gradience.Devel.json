@@ -1,9 +1,9 @@
 {
-    "app-id" : "com.github.AdwCustomizerTeam.AdwCustomizer",
+    "app-id" : "com.github.GradienceTeam.Gradience.Devel",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
-    "command" : "adwcustomizer",
+    "command" : "gradience",
     "finish-args" : [
         "--share=network",
         "--share=ipc",
@@ -50,10 +50,10 @@
             ]
         },
         {
-            "name" : "adwcustomizer",
+            "name" : "gradience",
             "builddir" : true,
             "buildsystem" : "meson",
-            "config-opts": ["-Dbuildtype=release"],
+            "config-opts": ["-Dbuildtype=debug"],
             "sources" : [
                 {
                     "type" : "dir",
