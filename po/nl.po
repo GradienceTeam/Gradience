@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-16 12:14+0000\n"
-"PO-Revision-Date: 2022-08-17 21:47+0000\n"
+"PO-Revision-Date: 2022-08-19 05:49+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/nl/>\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:23
 msgid "With Gradience you can:"
-msgstr "Met Gradience kunt u:"
+msgstr "Gradience biedt de volgende functies:"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:25
 msgid "Change any color of Adwaita theme"
@@ -69,8 +69,7 @@ msgstr "Breid functionaliteit uit met plugins"
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:31
 msgid "This app is written in Python and uses GTK 4 and libadwaita."
-msgstr ""
-"Deze app is ontwikkeld in Python en maakt gebruik van GTK 4 en Libadwaita."
+msgstr "Deze app is geschreven in Python en gebruikt GTK 4 en libadwaita."
 
 #: data/com.github.AdwCustomizerTeam.AdwCustomizer.appdata.xml.in.in:36
 msgid "colors"
@@ -381,38 +380,44 @@ msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
 msgstr ""
+"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
+"labels en velden, om een storing aan te geven."
 
 #: src/settings_schema.py:158
 msgid "Window Colors"
-msgstr ""
+msgstr "Vensterkleuren"
 
 #: src/settings_schema.py:159
 msgid "These colors are used primarily for windows."
-msgstr ""
+msgstr "Deze kleuren worden voornamelijk voor vensters gebruikt."
 
 #: src/settings_schema.py:175
 msgid "View Colors"
-msgstr ""
+msgstr "Weergavekleuren"
 
 #: src/settings_schema.py:177
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
 msgstr ""
+"Deze kleuren worden gebruikt in verschillende widgets, zoals tekstweergaven "
+"en velden."
 
 #: src/settings_schema.py:194
 msgid "Header Bar Colors"
-msgstr ""
+msgstr "Titelbalkkleuren"
 
 #: src/settings_schema.py:196
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
 msgstr ""
+"Deze kleuren worden gebruikt voor titelbalken en widgets die hier visueel "
+"aan verbonden zijn, zoals zoek- en tabbalken."
 
 #: src/settings_schema.py:211
 msgid "Border Color"
-msgstr ""
+msgstr "Randkleur"
 
 #: src/settings_schema.py:213
 msgid ""
@@ -422,10 +427,16 @@ msgid ""
 "the border dark. This variable is only used for vertical borders - for "
 "example, separators between the two header bars in a split header bar layout."
 msgstr ""
+"De randkleur heeft dezelfde standaardwaarde als een voorgrondkleur, maar "
+"verandert niet mee. Dit kan handig zijn als een licht venster een donkere "
+"titelbalk met lichte tekst heeft; in dit geval kan het wenselijk zijn om de "
+"rand donker te houden. Deze variabele wordt alleen gebruikt voor verticale "
+"randen - bijvoorbeeld scheidingstekens tussen de twee titelbalken in een "
+"gesplitste titelbalk-layout."
 
 #: src/settings_schema.py:219
 msgid "Backdrop Color"
-msgstr ""
+msgstr "Backdrop-kleur"
 
 #: src/settings_schema.py:221
 msgid ""
@@ -434,25 +445,31 @@ msgid ""
 "and changes together with it. When changing this variable, make sure to set "
 "it to a value matching your header bar background color."
 msgstr ""
+"De backdrop-kleur wordt in plaats van de achtergrondkleur gebruikt wanneer "
+"een venster geen focus heeft. Standaard is dit hetzelfde als de "
+"achtergrondkleur. Als u dit verandert, let er dan op dat deze bij de "
+"achtergrondkleur van de titelbalk past."
 
 #: src/settings_schema.py:227 src/settings_schema.py:252
 #: src/settings_schema.py:301
 msgid "Shade Color"
-msgstr ""
+msgstr "Schaduwkleur"
 
 #: src/settings_schema.py:229
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
 msgstr ""
+"De schaduwkleur wordt gebruikt om een donkere rand te bieden voor "
+"titelbalken en soortgelijke widgets die ze scheidt van het hoofdvenster."
 
 #: src/settings_schema.py:237
 msgid "Card Colors"
-msgstr ""
+msgstr "Kaartkleuren"
 
 #: src/settings_schema.py:238
 msgid "These colors are used for cards and boxed lists."
-msgstr ""
+msgstr "Deze kleuren worden gebruikt voor kaarten en kaartlijsten."
 
 #: src/settings_schema.py:254
 msgid ""
@@ -460,46 +477,53 @@ msgid ""
 "themselves from the window background, as well as for row dividers in the "
 "cards."
 msgstr ""
+"De schaduwkleur wordt gebruikt voor schaduwen die door kaarten worden "
+"gebruikt om zichzelf te scheiden van de achtergrond van het venster, evenals "
+"voor rijverdelers in de kaarten."
 
 #: src/settings_schema.py:262
 msgid "Dialog Colors"
-msgstr ""
+msgstr "Dialoogkleuren"
 
 #: src/settings_schema.py:263
 msgid "These colors are used for message dialogs."
-msgstr ""
+msgstr "Deze kleuren worden gebruikt voor dialogen."
 
 #: src/settings_schema.py:279
 msgid "Popover Colors"
-msgstr ""
+msgstr "Popover-kleuren"
 
 #: src/settings_schema.py:280
 msgid "These colors are used for popovers."
-msgstr ""
+msgstr "Deze kleuren worden gebruikt voor popovers."
 
 #: src/settings_schema.py:296
 msgid "Miscalleneous Colors"
-msgstr ""
+msgstr "Diverse kleuren"
 
 #: src/settings_schema.py:297
 msgid "Colors that don't fit in any particular group."
-msgstr ""
+msgstr "Kleuren die niet in een bepaalde groep passen."
 
 #: src/settings_schema.py:303
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
 msgstr ""
+"De schaduwkleur wordt gebruikt door inline-tabbalken, leaflet- en flap-"
+"overgangen, en randen van infobalken."
 
 #: src/settings_schema.py:309
 msgid "Scrollbar Outline Color"
-msgstr ""
+msgstr "Randkleur schuifbalk"
 
 #: src/settings_schema.py:311
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
 msgstr ""
+"De randkleur van de schuifbalk wordt gebruikt door schuifbalken zodat "
+"zwevende schuifbalken zichtbaar blijven ongeacht de achtergrond."
 
 #: src/settings_schema.py:319
 msgid "Blue"
@@ -538,6 +562,8 @@ msgid ""
 "Monet is an engine that generates Material Design 3 palette from backgrounds "
 "color."
 msgstr ""
+"Monet is een algoritme dat van achtergronden een kleurenpaletten voor "
+"Material Design 3 maakt."
 
 #: src/window.py:122
 msgid "Background Image"
@@ -565,3 +591,6 @@ msgid ""
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
 "Interface Guidelines</a>."
 msgstr ""
+"Paletkleuren met naam welke gebruikt worden door sommige apps. "
+"Standaardkleuren volgen de <a href=\"https://developer.gnome.org/hig/"
+"reference/palette.html\">GNOME Human Interface Guidelines</a>."
