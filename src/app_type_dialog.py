@@ -58,8 +58,9 @@ class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
             "gtk4": self.gtk4_app_type.get_active(),
             "gtk3": self.gtk3_app_type.get_active(),
         }
+
     def get_color_mode(self):
         return {
-            "dark":self.dark.get_active(),
+            "dark": self.dark.get_active(),
             "light": self.light.get_active(),
         }

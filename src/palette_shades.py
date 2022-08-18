@@ -63,9 +63,8 @@ class AdwcustomizerPaletteShades(Adw.ActionRow):
                 Gtk.Application.get_default().is_ready
                 and kwargs.get("update_from") == "color_value"
             ):
-                Gtk.Application.get_default().palette[self.prefix][str(i)] = shades[
-                    str(i)
-                ]
+                Gtk.Application.get_default(
+                ).palette[self.prefix][str(i)] = shades[str(i)]
 
         if (
             Gtk.Application.get_default().is_ready
