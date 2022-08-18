@@ -1,4 +1,4 @@
-project('adwcustomizer',
+project('gradience',
           version: '0.1.0',
     meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2',
@@ -12,13 +12,13 @@ i18n = import('i18n')
 python = import('python')
 
 # Project information
-PROJECT_URL = 'https://github.com/AdwCustomizerTeam/AdwCustomizer'
+PROJECT_URL = 'https://github.com/GradienceTeam/Gradience'
 BUGTRACKER_URL = 'https://github.com/tfuxu/themeteor/issues'
-HELP_URL = 'https://github.com/orgs/AdwCustomizerTeam/discussions'
-TRANSLATE_URL = 'https://www.transifex.com/adwcustomizerteam/adwcustomizer'
+HELP_URL = 'https://github.com/orgs/GradienceTeam/discussions'
+TRANSLATE_URL = 'https://www.transifex.com/Gradienceteam/Gradience'
 
 # Constants
-PROJECT_RDNN_NAME = 'com.github.AdwCustomizerTeam.AdwCustomizer'
+PROJECT_RDNN_NAME = 'com.github.GradienceTeam.Gradience'
 
 # Set APPLICATION_ID and VERSION_SUFFIX
 if get_option('buildtype') == 'debug'
@@ -48,8 +48,8 @@ if not PY_INSTALLDIR.found()
 endif
 
 PKGDATA_DIR = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
-MODULE_DIR = join_paths(PKGDATA_DIR, 'adwcustomizer')
-PLUGINS_DIR = join_paths(PKGDATA_DIR, 'adwcustomizer', 'plugins')
+MODULE_DIR = join_paths(PKGDATA_DIR, 'gradience')
+PLUGINS_DIR = join_paths(PKGDATA_DIR, 'gradience', 'plugins')
 
 # Install configuration data
 conf = configuration_data()
