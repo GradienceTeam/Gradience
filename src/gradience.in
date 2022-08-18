@@ -1,6 +1,6 @@
 #!@PYTHON@
 
-# adwcustomizer.in
+# gradience.in
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
@@ -37,10 +37,10 @@ if builddir:
 
 sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
-gettext.install('adwcustomizer', localedir)
+gettext.install('gradience', localedir)
 
-locale.bindtextdomain('adwcustomizer', localedir)
-locale.textdomain('adwcustomizer')
+locale.bindtextdomain('gradience', localedir)
+locale.textdomain('gradience')
 
 
 if __name__ == '__main__':
@@ -53,8 +53,10 @@ if __name__ == '__main__':
 
     from gi.repository import Gio
     resource = Gio.Resource.load(
-        os.path.join(pkgdatadir, 'adwcustomizer.gresource'))
+        os.path.join(pkgdatadir, 'gradience.gresource'))
     resource._register()
 
-    from adwcustomizer import main
+    sys.path.append("/usr/local/lib/python3.10/site-packages/")
+
+    from gradience import main
     sys.exit(main.main())
