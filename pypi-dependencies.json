@@ -40,8 +40,27 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/c6/5a/e266ef579433b9cbd3e704032bb3ffa66b89ff3f0b0874a8cbaa4d451427/regex-2022.7.25.tar.gz",
-                    "sha256": "bd0883e86964cd61360ffc36dbebbc49b928e92a306f886eab02c11dfde5b7aa"
+                    "url": "https://files.pythonhosted.org/packages/f7/e1/8b46ff54516faea4ea9469c4f5b50f2e9e73131f54d19e6827141698a822/regex-2022.8.17.tar.gz",
+                    "sha256": "5c77eab46f3a2b2cd8bbe06467df783543bf7396df431eb4a144cc4b89e9fb3c"
+                }
+            ]
+        },
+        {
+            "name": "python3-material-color-utilities-python",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"material-color-utilities-python\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/8c/92/2975b464d9926dc667020ed1abfa6276e68c3571dcb77e43347e15ee9eed/Pillow-9.2.0.tar.gz",
+                    "sha256": "75e636fd3e0fb872693f23ccb8a5ff2cd578801251f3a4f6854c6a5d437d3c04"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a0/7d/c20d1ca66b8f60e7074dc0a312991fcc80026a377666d987a34cdfa1a0cf/material_color_utilities_python-0.1.0-py3-none-any.whl",
+                    "sha256": "d63c7aeb6d9d6ce1063160eb2e398026f2144da10c49b01f41c40650fd7a7e1e"
                 }
             ]
         }
