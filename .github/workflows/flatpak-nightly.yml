@@ -30,6 +30,6 @@ jobs:
         uses: actions/checkout@v3.0.2
       - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
         with:
-          bundle: com.github.AdwCustomizerTeam.AdwCustomizer.Devel.flatpak
-          manifest-path: com.github.AdwCustomizerTeam.AdwCustomizer.Devel.json
+          bundle: com.github.GradienceTeam.Gradience.Devel.flatpak
+          manifest-path: com.github.GradienceTeam.Gradience.Devel.json
           cache-key: flatpak-builder-${{ github.sha }}-nightly
