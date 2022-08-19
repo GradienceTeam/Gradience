@@ -21,6 +21,8 @@
 class GradiencePluginCore():
     def __init__(self):
         self.title = None
+        self.author = None
+        self.description = None
 
         self.colors = None
         self.palette = None

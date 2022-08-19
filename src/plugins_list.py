@@ -28,6 +28,9 @@ import sys
 
 class GradiencePluginsList:
     def __init__(self):
+
+
+
         self.discoverd_plugins = {
             name: importlib.import_module(name)
             for finder, name, ispkg
@@ -35,10 +38,10 @@ class GradiencePluginsList:
             if name.startswith('gradience_')
         }
 
-        self.plugins = {}
+        print(self.discoverd_plugins)
 
-        sys.path.append("/usr/local/lib/python3.10/site-packages/")
-        for plugin_id, plugin in self.plugins.items():
+        self.plugins = {}
+        for plugin_id, plugin in self.discoverd_plugins.items():
             self.plugins[plugin_id] = plugin.GradiencePlugin()
 
         print(self.plugins)
@@ -57,9 +60,11 @@ class GradiencePluginsList:
         group.set_title(_("Plugins"))
         group.set_description(
             _("Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."))
-        for plugin_id, plugin in self.plugins:
-            row = GradiencePluginRow(plugin.name, plugin_id)
-            group.add(row)
+        if self.plugins:
+            for plugin_id, plugin in self.plugins.items():
+                print(dir(plugin))
+                row = GradiencePluginRow(plugin.title, plugin_id)
+                group.add(row)
         else:
             row = Adw.ActionRow()
             row.set_title(_("No plugins found"))
