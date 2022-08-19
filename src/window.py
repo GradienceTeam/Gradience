@@ -102,7 +102,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         if self.get_application().is_dirty:
             print("dirty")
 
-
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
             self.monet_image_file = self.monet_file_chooser_dialog.get_file()
