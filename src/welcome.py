@@ -123,6 +123,7 @@ class GradienceWelcomeWindow(Adw.Window):
             install,
             callback=set_completed,
         )
+
     def previous_page(self, widget=False):
         index = int(self.carousel.get_position())
         previous_page = self.carousel.get_nth_page(index - 1)
