@@ -1,0 +1,19 @@
+using Gtk 4.0;
+using Adw 1;
+
+template AdwcustomizerOption : Adw.ActionRow {
+  [suffix]
+  MenuButton remove-button {
+    valign: center;
+    icon-name: "close-symbolic";
+    tooltip-text: _("Remove plugin");
+  }
+
+  [suffix]
+  MenuButton settings-button {
+    valign: center;
+    icon-name: "settings-symbolic";
+    tooltip-text: _("Settings");
+  }
+
+}
