@@ -22,19 +22,19 @@ import importlib
 import pkgutil
 
 
-class AdwcustomizerPluginsList:
+class GradiencePluginsList:
     def __init__(self):
         self.discoverd_plugins = {
             name: importlib.import_module(name)
             for finder, name, ispkg
             in pkgutil.iter_modules()
-            if name.startswith('adwcustomizer_')
+            if name.startswith('gradience_')
         }
 
         self.plugins = {}
 
         for plugin_id, plugin in self.plugins.items():
-            self.plugins[plugin_id] = plugin.AdwcustomizerPlugin()
+            self.plugins[plugin_id] = plugin.GradiencePlugin()
 
         print(self.plugins)
 
