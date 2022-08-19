@@ -182,5 +182,7 @@ class PluginEngine:
 
 
 if __name__ == "__main__":
+    import sys
+    sys.path.append("/usr/local/lib/python3.10/site-packages/")
     engine = PluginEngine()
     engine.start()
