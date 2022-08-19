@@ -36,7 +36,7 @@ from .custom_css_group import AdwcustomizerCustomCSSGroup
 from material_color_utilities_python import *
 from .constants import rootdir, app_id, build_type
 from .presets_manager_window import AdwcustomizerPresetWindow
-
+from .plugins_list import GradiencePluginsList
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class AdwcustomizerMainWindow(Adw.ApplicationWindow):
@@ -190,6 +190,11 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.content_monet.add(self.monet_pref_group)
 
     def setup_plugins_page(self):
+        self.plugins_list = GradiencePluginsList()
+        self.plugins_group = self.plugins_list.to_group()
+
+        self.content_plugins.add(self.plugins_group)
+        
         custom_css_group = AdwcustomizerCustomCSSGroup()
         for app_type in settings_schema["custom_css_app_types"]:
             self.get_application().custom_css[app_type] = ""

@@ -34,7 +34,6 @@ from .palette_shades import AdwcustomizerPaletteShades
 from .option import AdwcustomizerOption
 from .app_type_dialog import AdwcustomizerAppTypeDialog
 from .custom_css_group import AdwcustomizerCustomCSSGroup
-from .plugins_list import AdwcustomizerPluginsList
 from .constants import rootdir, app_id, version
 
 

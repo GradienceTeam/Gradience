@@ -20,6 +20,8 @@ import os
 from pathlib import Path
 import importlib
 import pkgutil
+from .plugin_row import GradiencePluginRow
+from gi.repository import Gtk, Adw, Gio, Gdk
 
 
 class GradiencePluginsList:
@@ -46,3 +48,16 @@ class GradiencePluginsList:
         custom_settings = {}
         for plugin_id, plugin in self.plugins.items():
             custom_settings[plugin_id] = plugin.get_custom_settings_for_preset()
+
+    def to_group(self):
+        group = Adw.PreferencesGroup()
+        group.set_title(_("Plugins"))
+        for plugin_id, plugin in self.plugins:
+            row = GradiencePluginRow(plugin.name, plugin_id)
+            group.add(row)
+        else:
+            row = Adw.ActionRow()
+            row.set_title(_("No plugins found"))
+            group.add(row)
+        return group
+

@@ -5,8 +5,8 @@ from .constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/plugin_row.ui")
-class AdwcustomizerPluginRow(Adw.ActionRow):
-    __gtype_name__ = "AdwcustomizerPluginRow"
+class GradiencePluginRow(Adw.ActionRow):
+    __gtype_name__ = "GradiencePluginRow"
 
     def __init__(self, name, repo, **kwargs):
         super().__init__(**kwargs)
