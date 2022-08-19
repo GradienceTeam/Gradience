@@ -71,6 +71,10 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.is_ready = False
 
+        self.settings = Gio.Settings(app_id)
+        self.disabled_plugins = self.settings.get_boolean("disabled-plugins")
+        print(f"disabled plugins: {self.disabled_plugins}")
+
     def do_activate(self):
         """Called when the application is activated.
 
