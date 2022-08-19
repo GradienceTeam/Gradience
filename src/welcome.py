@@ -2,8 +2,12 @@ from gi.repository import Gtk, Adw, Gio, Gdk
 from material_color_utilities_python import *
 from .constants import rootdir
 from .run_async import RunAsync
+<<<<<<< HEAD
 
 
+=======
+import time
+>>>>>>> 48600d1 (fix: welcome dialog)
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
 class GradienceWelcomeWindow(Adw.Window):
     __gtype_name__ = "GradienceWelcomeWindow"
@@ -93,7 +97,6 @@ class GradienceWelcomeWindow(Adw.Window):
     @staticmethod
     def __quit(widget=False):
         quit()
-        self.window.present()
 
     def __install_runner(self, widget):
         def set_completed(result, error=False):
@@ -120,7 +123,7 @@ class GradienceWelcomeWindow(Adw.Window):
 
         print("install")
 
-        self.btn_next.set_visible(True)
+        set_completed("")
 
     def __previous_page(self, widget=False):
         index = int(self.carousel.get_position())
@@ -140,4 +143,4 @@ class GradienceWelcomeWindow(Adw.Window):
 
     def __close_window(self, widget):
         self.destroy()
-        self.win.present()
+        self.window.present()
