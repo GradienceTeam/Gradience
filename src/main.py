@@ -37,6 +37,7 @@ from .custom_css_group import GradienceCustomCSSGroup
 from .constants import rootdir, app_id, version, bugtracker_url, help_url, project_url
 from .welcome import GradienceWelcomeWindow
 
+
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
@@ -124,7 +125,6 @@ class GradienceApplication(Adw.Application):
         else:
             print("normal run")
             self.win.present()
-
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
