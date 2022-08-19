@@ -4,6 +4,8 @@ from .constants import rootdir
 from .run_async import RunAsync
 
 import time
+
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
 class GradienceWelcomeWindow(Adw.Window):
     gtype_name = "GradienceWelcomeWindow"
