@@ -120,7 +120,7 @@ class GradienceWelcomeWindow(Adw.Window):
 
         print("install")
 
-        set_completed("")
+        set_completed(None)
 
     def __previous_page(self, widget=False):
         index = int(self.carousel.get_position())
