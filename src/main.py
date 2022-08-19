@@ -71,6 +71,10 @@ class GradienceApplication(Adw.Application):
 
         self.is_ready = False
 
+        self.settings = Gio.Settings(app_id)
+        self.disabled_plugins = list(self.settings.get_value("disabled-plugins"))
+        
+        print(f"disabled plugins: {self.disabled_plugins}")
 
     def do_activate(self):
         """Called when the application is activated.
