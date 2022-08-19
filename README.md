@@ -104,7 +104,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] Localization support
 - [x] Normalize color variables
 - [x] Make the code more secure
-- [ ] Add plugin support. Will help integration with others tools.
+- [ ] Add plugin support. Will help integration with others tools. (WIP)
 - [ ] Release on Flathub
 - [ ] Full theme preview
 - [ ] Customize GNOME Shell
