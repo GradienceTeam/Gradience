@@ -25,6 +25,8 @@ class GradienceWelcomeWindow(Adw.Window):
     page_finish = Gtk.Template.Child()
     img_welcome = Gtk.Template.Child()
     label_skip = Gtk.Template.Child()
+    switch_system = Gtk.Template.Child()
+    switch_user = Gtk.Template.Child()
 
     carousel_pages = [
         "welcome",
@@ -115,6 +117,8 @@ class GradienceWelcomeWindow(Adw.Window):
 
         def install():
             for i in range(4):
+                print(f"system: {self.switch_system.get_active()}")
+                print(f"user: {self.switch_user.get_active()}")
                 print("install in progress")
                 time.sleep(0.2)
 
