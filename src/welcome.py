@@ -2,12 +2,8 @@ from gi.repository import Gtk, Adw, Gio, Gdk
 from material_color_utilities_python import *
 from .constants import rootdir
 from .run_async import RunAsync
-<<<<<<< HEAD
 
-
-=======
 import time
->>>>>>> 48600d1 (fix: welcome dialog)
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
 class GradienceWelcomeWindow(Adw.Window):
     __gtype_name__ = "GradienceWelcomeWindow"
@@ -102,6 +98,7 @@ class GradienceWelcomeWindow(Adw.Window):
         def set_completed(result, error=False):
             self.label_skip.set_visible(False)
             self.btn_close.set_sensitive(True)
+            self.window.settings.set_boolean("first-run", False)
             self.__next_page()
 
         self.__installing = True
