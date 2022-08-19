@@ -113,10 +113,6 @@ class GradienceApplication(Adw.Application):
 
         self.win.present()
 
-        self.settings = self.win.settings
-        #self.disabled_plugins = self.settings.get_boolean("disabled-plugins")
-        print(f"disabled plugins: {self.disabled_plugins}")
-
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
             self.props.active_window.presets_menu.remove(1)
