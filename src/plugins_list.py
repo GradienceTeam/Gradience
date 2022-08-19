@@ -23,6 +23,8 @@ import pkgutil
 from .plugin_row import GradiencePluginRow
 from gi.repository import Gtk, Adw, Gio, Gdk
 
+import sys
+
 
 class GradiencePluginsList:
     def __init__(self):
@@ -35,6 +37,7 @@ class GradiencePluginsList:
 
         self.plugins = {}
 
+        sys.path.append("/usr/local/lib/python3.10/site-packages/")
         for plugin_id, plugin in self.plugins.items():
             self.plugins[plugin_id] = plugin.GradiencePlugin()
 
