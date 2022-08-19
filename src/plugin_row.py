@@ -8,10 +8,9 @@ from .constants import rootdir
 class GradiencePluginRow(Adw.ActionRow):
     __gtype_name__ = "GradiencePluginRow"
 
-    def __init__(self, name, repo, **kwargs):
+    def __init__(self, title, id, **kwargs):
         super().__init__(**kwargs)
 
-        self.name = name
-        self.set_name(name)
-        self.set_title(name)
-        self.set_subtitle("@" + repo)
+        self.set_name(id)
+        self.set_title(title)
+        self.set_subtitle("@" + id)
