@@ -741,6 +741,9 @@ This app is written in Python and uses GTK 4 and libadwaita.
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
+    def reload_plugins(self):
+        print("reload plugins")
+        self.win.plugins_group = self.win.plugins_list.to_group()
 
 def main():
     """The application's entry point."""

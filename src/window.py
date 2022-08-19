@@ -195,6 +195,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.plugins_group = self.plugins_list.to_group()
 
         self.content_plugins.add(self.plugins_group)
+        self.get_application().plugins_group = self.plugins_group
 
         custom_css_group = AdwcustomizerCustomCSSGroup()
         for app_type in settings_schema["custom_css_app_types"]:

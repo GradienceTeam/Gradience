@@ -31,3 +31,5 @@ class GradiencePluginRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_switch_toggled(self, *_args):
         print("toggled")
+
+        Gtk.Application.get_default().reload_plugins()
