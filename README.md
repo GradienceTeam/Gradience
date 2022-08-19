@@ -10,7 +10,7 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 <details>
   <summary>More screenshots</summary>
   
-  ![Screenshot of interface with a customized theme](https://github.com/GradienceTeam/Design/blob/main/Screenshots/customized_screenshot.png)
+  ![Screenshot of interface of Monet Tab](https://github.com/GradienceTeam/Design/blob/main/Screenshots/monet_purple.png)
   
   ![Screenshot of proof that this actually works](https://github.com/GradienceTeam/Design/blob/main/Screenshots/proof_of_work_screenshot.png)
 </details>
