@@ -72,8 +72,9 @@ class GradienceApplication(Adw.Application):
         self.is_ready = False
 
         self.settings = Gio.Settings(app_id)
-        self.disabled_plugins = list(self.settings.get_value("disabled-plugins"))
-        
+        self.disabled_plugins = list(
+            self.settings.get_value("disabled-plugins"))
+
         print(f"disabled plugins: {self.disabled_plugins}")
 
     def do_activate(self):
@@ -749,6 +750,7 @@ This app is written in Python and uses GTK 4 and libadwaita.
     def reload_plugins(self):
         print("reload plugins")
         self.win.plugins_group = self.win.plugins_list.to_group()
+
 
 def main():
     """The application's entry point."""
