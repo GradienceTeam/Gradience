@@ -22,8 +22,8 @@ from .constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/app_type_dialog.ui")
-class AdwcustomizerAppTypeDialog(Adw.MessageDialog):
-    __gtype_name__ = "AdwcustomizerAppTypeDialog"
+class GradienceAppTypeDialog(Adw.MessageDialog):
+    __gtype_name__ = "GradienceAppTypeDialog"
 
     gtk4_app_type = Gtk.Template.Child("gtk4-app-type")
     gtk3_app_type = Gtk.Template.Child("gtk3-app-type")
