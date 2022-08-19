@@ -1,8 +1,7 @@
 name: Format python code
 on: 
-  - push: 
+  push: 
     branch: [ "main" ]
-  - workflow_dispatch
 jobs:
   autopep8:
     runs-on: ubuntu-latest
