@@ -7,7 +7,7 @@ template GradiencePluginRow : Adw.ActionRow {
     valign: center;
     icon-name: "close-symbolic";
     tooltip-text: _("Remove plugin");
-    toggled => on_remove_plugin_toggled();
+    clicked => on_remove_plugin_clicked();
   }
 
   [suffix]
@@ -15,7 +15,7 @@ template GradiencePluginRow : Adw.ActionRow {
     valign: center;
     icon-name: "settings-symbolic";
     tooltip-text: _("Settings");
-    clicked => on_settings_plugin_toggled();
+    clicked => on_settings_plugin_clicked();
   }
 
 }
