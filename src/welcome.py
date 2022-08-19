@@ -3,6 +3,7 @@ from material_color_utilities_python import *
 from .constants import rootdir
 from .run_async import RunAsync
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
 class GradienceWelcomeWindow(Adw.Window):
     __gtype_name__ = "GradienceWelcomeWindow"
@@ -49,7 +50,9 @@ class GradienceWelcomeWindow(Adw.Window):
         self.btn_back.connect("clicked", self.__previous_page)
         self.btn_next.connect("clicked", self.__next_page)
         self.btn_install.connect("clicked", self.__install_runner)
-        self.__settings.connect("notify::gtk-application-prefer-dark-theme", self.__theme_changed)
+        self.__settings.connect(
+            "notify::gtk-application-prefer-dark-theme",
+            self.__theme_changed)
 
         self.btn_close.set_sensitive(False)
 
@@ -59,7 +62,8 @@ class GradienceWelcomeWindow(Adw.Window):
         self.__page_changed()
 
     def __theme_changed(self, settings, key):
-        self.img_welcome.set_from_resource(self.images[settings.get_property("gtk-application-prefer-dark-theme")])
+        self.img_welcome.set_from_resource(
+            self.images[settings.get_property("gtk-application-prefer-dark-theme")])
 
     def __get_page(self, index):
         return self.carousel_pages[index]
@@ -107,12 +111,12 @@ class GradienceWelcomeWindow(Adw.Window):
         self.carousel.set_allow_scroll_wheel(False)
         self.set_deletable(False)
 
-        #RunAsync(self.pulse)
-        #RunAsync(
+        # RunAsync(self.pulse)
+        # RunAsync(
         #    callback=set_completed,
         #    install_latest=True,
         #    first_run=True
-        #)
+        # )
 
         print("install")
 
