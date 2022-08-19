@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-19 20:36+0200\n"
-"PO-Revision-Date: 2022-08-19 18:36+0000\n"
+"PO-Revision-Date: 2022-08-19 23:01+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ru/>\n"
@@ -58,8 +58,6 @@ msgid "Change any color of Adwaita theme"
 msgstr "Менять любой цвет темы Adwaita"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:26
-#, fuzzy
-#| msgid "Apply Material 3 colors from wallaper"
 msgid "Apply Material 3 colors from wallpaper"
 msgstr "Применять цвета Material 3 из фона"
 
@@ -105,7 +103,7 @@ msgstr "advanced purple"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:105
 msgid "First release of Gradience."
-msgstr ""
+msgstr "Первый выпуск Gradience."
 
 #: src/ui/app_type_dialog.blp:14
 msgid "Select app types you want to affect:"
@@ -181,22 +179,16 @@ msgid "Save Preset"
 msgstr "Сохранить предустановку"
 
 #: src/ui/window.blp:75
-#, fuzzy
-#| msgid "colors"
 msgid "Colors"
-msgstr "colors"
+msgstr "Цвета"
 
 #: src/ui/window.blp:84
-#, fuzzy
-#| msgid "monet"
 msgid "Monet"
-msgstr "monet"
+msgstr "Monet"
 
 #: src/ui/window.blp:92
-#, fuzzy
-#| msgid "advanced"
 msgid "Advanced"
-msgstr "advanced"
+msgstr "Продвинутое"
 
 #: src/ui/window.blp:113
 msgid "Built-in Presets"
@@ -324,6 +316,30 @@ msgid ""
 "      </ul>\n"
 "            "
 msgstr ""
+"\n"
+"                <ul>\n"
+"        <li>Добавлен AdwViewSwitcher в заголовок окна.</li>\n"
+"        <li>CSS Перемещён во вкладку \"Продвинутое\"</li>\n"
+"        <li>Остальное перемещено во вкладку \"Цвета\"</li>\n"
+"        <li>Добавлена вкладка Monet которая генерирует тему из фона</li>\n"
+"        <li>Добавлены иконки диск сохранен и диск несохранен в заголовок "
+"окна</li>\n"
+"        <li>Обновлён диалог О Приложении</li>\n"
+"        <li>Лицензия изменена на GNU GPLv3</li>\n"
+"        <li>Начало поддержки плагинов</li>\n"
+"        <li>Выбор пресетов перемещён в выпадающее меню под названием палитра "
+"(иконка палитры)</li>\n"
+"        <li>Добавлена возможность применять тему только для темной или "
+"светлой темы</li>\n"
+"        <li>Автоматически использовать предустановку Adwaita-dark если тема "
+"пользователя установлена на \"предпочитать тёмную тему\"</li>\n"
+"        <li>Добавлена сборка CI Flatpak</li>\n"
+"        <li>Добавлен шаблон отчёта об ошибке для отчета об ошибки или "
+"просьбы добавить функцию</li>\n"
+"        <li>Ветка `Main` теперь защишена при побощи GitHub branch "
+"protection. Разработка бутед идти в ветке `next`</li>\n"
+"      </ul>\n"
+"            "
 
 #: src/main.py:699
 msgid ""
@@ -341,6 +357,19 @@ msgid ""
 "This app is written in Python and uses GTK 4 and libadwaita.\n"
 "            "
 msgstr ""
+"\n"
+"Gradience, изначально Adwaita Manager (AdwCustomizer) это инструмент для "
+"кастомизации приложений Libadwaita и темы adw-gtk3.\n"
+"С Gradience вы можете:\n"
+"\n"
+"    - Изменять любой цвет темы Adwaita\n"
+"    - Применять цвета Material с обои\n"
+"    - Использовать предустановки других пользователей\n"
+"    - Изменять продвинутые параметры при помощи CSS\n"
+"    - Расширять функционал используя плагины\n"
+"\n"
+"Это приложение написано на Python и использует GTK 4 и libadwaita.\n"
+"            "
 
 #: src/option.py:55
 msgid "This option is only partially supported by the adw-gtk3 theme."
@@ -642,7 +671,7 @@ msgstr "Выберете файл"
 
 #: src/window.py:163
 msgid "Monet Palette"
-msgstr ""
+msgstr "Палитра Monet"
 
 #: src/window.py:170
 msgid "Tone"
