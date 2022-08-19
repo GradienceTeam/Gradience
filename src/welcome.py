@@ -32,8 +32,8 @@ class GradienceWelcomeWindow(Adw.Window):
         "finish"
     ]
     images = [
-        "/com/github/GradienceTeam/Gradience/images/images/gradience-welcome.svg",
-        "/com/github/GradienceTeam/Gradience/images/images/gradience-welcome-night.svg",
+        "/com/github/GradienceTeam/Gradience/images/images/welcome.svg",
+        "/com/github/GradienceTeam/Gradience/images/images/welcome-night.svg",
     ]
 
     def __init__(self, window, **kwargs) -> None:
