@@ -36,6 +36,8 @@ class GradiencePluginsList:
             if name.startswith('gradience_')
         }
 
+        self.rows = {}
+
         print(self.discoverd_plugins)
 
         self.plugins = {}
@@ -62,6 +64,7 @@ class GradiencePluginsList:
             for plugin_id, plugin in self.plugins.items():
                 print(dir(plugin))
                 row = GradiencePluginRow(plugin.title, plugin_id)
+                self.rows[plugin_id] = row
                 group.add(row)
         else:
             row = Adw.ActionRow()
