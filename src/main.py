@@ -678,7 +678,7 @@ class AdwcustomizerApplication(Adw.Application):
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
-            release_notes="""
+            release_notes=_("""
                 <ul>
         <li>Add AdwViewSwitcher in the header bar.</li>
         <li>Move CSS to the "Advanced" tab</li>
@@ -695,8 +695,8 @@ class AdwcustomizerApplication(Adw.Application):
         <li>Added issue template for bug and feature request </li>
         <li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch </li>
       </ul>
-            """,
-            comments="""
+            """),
+            comments=_("""
 Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 With Gradience you can:
 
@@ -707,7 +707,7 @@ With Gradience you can:
     - Extend functionality using plugins
 
 This app is written in Python and uses GTK 4 and libadwaita.
-            """
+            """)
         )
         about.present()
 

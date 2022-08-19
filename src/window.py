@@ -160,7 +160,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.add(self.monet_file_chooser_row)
 
         self.monet_palette_shades = AdwcustomizerPaletteShades(
-            "monet", "Monet Palette", 6
+            "monet", _("Monet Palette"), 6
         )
         self.get_application(
         ).pref_palette_shades["monet"] = self.monet_palette_shades
