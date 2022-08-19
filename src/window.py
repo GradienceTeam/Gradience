@@ -93,8 +93,15 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             "fullscreened",
             Gio.SettingsBindFlags.DEFAULT)
 
+        self.connect("close-request", self.__close_window)
+
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
+
+    def __close_window(self, widegt):
+        if self.get_application().is_dirty:
+            print("dirty")
+
 
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
