@@ -61,4 +61,3 @@ class GradiencePluginCore():
 
     def save(self):
         raise NotImplementedError()
-

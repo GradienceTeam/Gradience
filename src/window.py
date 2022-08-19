@@ -38,6 +38,7 @@ from .constants import rootdir, app_id, build_type
 from .presets_manager_window import AdwcustomizerPresetWindow
 from .plugins_list import GradiencePluginsList
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class AdwcustomizerMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = "AdwcustomizerMainWindow"
@@ -194,7 +195,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.plugins_group = self.plugins_list.to_group()
 
         self.content_plugins.add(self.plugins_group)
-        
+
         custom_css_group = AdwcustomizerCustomCSSGroup()
         for app_type in settings_schema["custom_css_app_types"]:
             self.get_application().custom_css[app_type] = ""
