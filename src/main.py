@@ -653,7 +653,7 @@ class GradienceApplication(Adw.Application):
             application_icon=app_id,
             developer_name=_("Gradience Team"),
             website=project_url,
-            support_url=support_url,
+            support_url=help_url,
             issue_url=bugtracker_url,
             developers=[
                 'Artyom "ArtyIF" Fomin https://github.com/ArtyIF',
