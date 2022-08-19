@@ -71,9 +71,6 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.is_ready = False
 
-        self.settings = Gio.Settings(app_id)
-        self.disabled_plugins = self.settings.get_boolean("disabled-plugins")
-        print(f"disabled plugins: {self.disabled_plugins}")
 
     def do_activate(self):
         """Called when the application is activated.
@@ -115,6 +112,10 @@ class AdwcustomizerApplication(Adw.Application):
             )
 
         self.win.present()
+
+        self.settings = self.win.settings
+        #self.disabled_plugins = self.settings.get_boolean("disabled-plugins")
+        print(f"disabled plugins: {self.disabled_plugins}")
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
