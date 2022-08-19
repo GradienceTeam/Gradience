@@ -1,9 +1,9 @@
 from gi.repository import Gtk, Adw, Gio, Gdk
 from material_color_utilities_python import *
 from .constants import rootdir
-from .run_async import RunAsync
-
+import threading
 import time
+from .run_async import RunAsync
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
@@ -113,17 +113,16 @@ class GradienceWelcomeWindow(Adw.Window):
         self.carousel.set_allow_scroll_wheel(False)
         self.set_deletable(False)
 
-        # RunAsync(self.pulse)
-        # RunAsync(
-        #    callback=set_completed,
-        #    install_latest=True,
-        #    first_run=True
-        # )
+        def install():
+            for i in range(4):
+                print("install in progress")
+                time.sleep(0.2)
 
-        print("install")
-
-        set_completed(None)
-
+        RunAsync(self.pulse)
+        RunAsync(
+            install,
+            callback=set_completed,
+        )
     def previous_page(self, widget=False):
         index = int(self.carousel.get_position())
         previous_page = self.carousel.get_nth_page(index - 1)
