@@ -8,7 +8,7 @@ import time
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
 class GradienceWelcomeWindow(Adw.Window):
-    gtype_name = "GradienceWelcomeWindow"
+    __gtype_name__ = "GradienceWelcomeWindow"
 
     settings = Gtk.Settings.get_default()
 
@@ -34,12 +34,12 @@ class GradienceWelcomeWindow(Adw.Window):
         "finish"
     ]
     images = [
-        "/com/github/GradienceTeam/Gradience/images/images/welcome.svg",
-        "/com/github/GradienceTeam/Gradience/images/images/welcome-night.svg",
+        "/com/github/GradienceTeam/Gradience/images/welcome.svg",
+        "/com/github/GradienceTeam/Gradience/images/welcome-night.svg",
     ]
 
-    def init(self, window, **kwargs) -> None:
-        super().init(**kwargs)
+    def __init__(self, window, **kwargs) -> None:
+        super().__init__(**kwargs)
         self.set_transient_for(window)
 
         # common variables and references
