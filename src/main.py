@@ -34,7 +34,7 @@ from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
 from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
-from .constants import rootdir, app_id, version, bugtracker_url, support_url, project_url
+from .constants import rootdir, app_id, version, bugtracker_url, help_url, project_url
 
 
 def to_slug_case(non_slug):
