@@ -1,7 +1,7 @@
-from adwcustomizer.plugin import AdwcustomizerPluginCore
+from gradience.plugin import GradiencePluginCore
 
 
-class GDMPlugin(AdwcustomizerPluginCore):
+class GDMPlugin(GradiencePluginCore):
     def validate(self):
         print("validate")
 

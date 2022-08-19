@@ -40,11 +40,11 @@ class IPluginRegistry(type):
 
     def __init__(cls, name, bases, attrs):
         super().__init__(cls)
-        if name != 'AdwcustomizerPluginCore':
+        if name != 'GradiencePluginCore':
             IPluginRegistry.plugin_registries.append(cls)
 
 
-class AdwcustomizerPluginCore(metaclass=IPluginRegistry):
+class GradiencePluginCore(metaclass=IPluginRegistry):
     meta: Meta
 
     def __init__(self):
