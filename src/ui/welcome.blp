@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template WelcomeDialog: Adw.Window {
+template GradienceWelcomeWindow: Adw.Window {
     resizable: false;
     deletable: true;
     modal: true;
@@ -29,13 +29,14 @@ template WelcomeDialog: Adw.Window {
                 }
 
                 Gtk.Overlay {
-                    overlay: Gtk.Button btn_back {
+                    [overlay]
+                    Gtk.Button btn_back {
                         styles ["circular"]
                         margin-start: 12;
-                        icon-name: go-previous-symbolic;
+                        icon-name: "go-previous-symbolic";
                         halign: start;
                         valign: center;
-                        visible: False;
+                        visible: false;
                         tooltip-text: _("Previous");
                     }
 
@@ -92,8 +93,8 @@ template WelcomeDialog: Adw.Window {
                         Adw.StatusPage page_download {
                             vexpand: true;
                             hexpand: true;
-                            title: _("Installing themes")
-                            description: _("Please wait until themes will be installed. ")
+                            title: _("Installing themes");
+                            description: _("Please wait until themes will be installed. ");
 
                             Gtk.Box {
                                 orientation: vertical;
@@ -106,9 +107,8 @@ template WelcomeDialog: Adw.Window {
                                 }
 
                                 Gtk.ProgressBar progressbar {
-                                    width_request: 300
                                     halign: center;
-                                    visible: False;
+                                    visible: false;
                                     margin-top: 24;
                                     margin-bottom: 24;
                                 }
@@ -127,7 +127,7 @@ template WelcomeDialog: Adw.Window {
                                 Gtk.Button label_skip {
                                     label: _("Please Finish the setup first");
                                     margin-bottom: 5;
-                                    visible
+                                    visible: true;
 
                                 }
 
@@ -135,20 +135,20 @@ template WelcomeDialog: Adw.Window {
                                     styles ["suggested-action", "pill"]
                                     label: _("Start using Gradience");
                                     use-underline: true;
-                                    width_request: 300;
                                     halign: center;
                                 }
                             }
                         }
-                    }
+                    };
 
-                    overlay: Gtk.Button btn_next {
+                    [overlay]
+                    Gtk.Button btn_next {
                         styles ["circular", "suggested-action"]
                         margin-start: 12;
-                        icon-name: go-next-symbolic;
+                        icon-name: "go-next-symbolic";
                         halign: end;
                         valign: center;
-                        visible: False;
+                        visible: false;
                         tooltip-text: _("Next");
                     }
 
