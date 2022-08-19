@@ -29,8 +29,6 @@ import sys
 class GradiencePluginsList:
     def __init__(self):
 
-
-
         self.discoverd_plugins = {
             name: importlib.import_module(name)
             for finder, name, ispkg
