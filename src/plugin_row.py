@@ -27,7 +27,6 @@ class GradiencePluginRow(Adw.ActionRow):
     def on_remove_plugin_clicked(self, *_args):
         print("removed")
 
-    
     @Gtk.Template.Callback()
     def on_switch_toggled(self, *_args):
         print("toggled")
