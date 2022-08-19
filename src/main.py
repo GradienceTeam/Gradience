@@ -29,19 +29,19 @@ from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from material_color_utilities_python import *
 
 from .settings_schema import settings_schema
-from .window import AdwcustomizerMainWindow
-from .palette_shades import AdwcustomizerPaletteShades
-from .option import AdwcustomizerOption
-from .app_type_dialog import AdwcustomizerAppTypeDialog
-from .custom_css_group import AdwcustomizerCustomCSSGroup
-from .constants import rootdir, app_id, version
+from .window import GradienceMainWindow
+from .palette_shades import GradiencePaletteShades
+from .option import GradienceOption
+from .app_type_dialog import GradienceAppTypeDialog
+from .custom_css_group import GradienceCustomCSSGroup
+from .constants import rootdir, app_id, version, bugtracker_url, support_url, project_url
 
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
 
-class AdwcustomizerApplication(Adw.Application):
+class GradienceApplication(Adw.Application):
     """The main application singleton class."""
 
     def __init__(self):
@@ -81,7 +81,7 @@ class AdwcustomizerApplication(Adw.Application):
 
         self.win = self.props.active_window
         if not self.win:
-            self.win = AdwcustomizerMainWindow(application=self)
+            self.win = GradienceMainWindow(application=self)
 
         self.create_action("open_preset_directory", self.open_preset_directory)
         self.create_stateful_action(
@@ -443,7 +443,7 @@ class AdwcustomizerApplication(Adw.Application):
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
     def show_apply_color_scheme_dialog(self, *_args):
-        dialog = AdwcustomizerAppTypeDialog(
+        dialog = GradienceAppTypeDialog(
             _("Apply this color scheme?"),
             _("Warning: any custom CSS files for those app types will be irreversibly overwritten!"),
             "apply",
@@ -456,7 +456,7 @@ class AdwcustomizerApplication(Adw.Application):
         dialog.present()
 
     def show_reset_color_scheme_dialog(self, *_args):
-        dialog = AdwcustomizerAppTypeDialog(
+        dialog = GradienceAppTypeDialog(
             _("Reset applied color scheme?"),
             _("Make sure you have the current settings saved as a preset."),
             "reset",
@@ -656,9 +656,9 @@ class AdwcustomizerApplication(Adw.Application):
             application_name=_("Gradience"),
             application_icon=app_id,
             developer_name=_("Gradience Team"),
-            website="https://github.com/AdwCustomizerTeam/AdwCustomizer",
-            support_url="https://github.com/orgs/AdwCustomizerTeam/discussions",
-            issue_url="https://github.com/AdwCustomizerTeam/AdwCustomizer/issues",
+            website=project_url,
+            support_url=support_url,
+            issue_url=bugtracker_url,
             developers=[
                 'Artyom "ArtyIF" Fomin https://github.com/ArtyIF',
                 "0xMRTT https://github.com/0xMRTT",
@@ -702,7 +702,7 @@ class AdwcustomizerApplication(Adw.Application):
       </ul>
             """),
             comments=_("""
-Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+Gradience, originally Adwaita Manager (Gradience) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 With Gradience you can:
 
     - Change any color of Adwaita theme
@@ -752,5 +752,5 @@ This app is written in Python and uses GTK 4 and libadwaita.
 
 def main():
     """The application's entry point."""
-    app = AdwcustomizerApplication()
+    app = GradienceApplication()
     return app.run(sys.argv)

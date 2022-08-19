@@ -22,8 +22,8 @@ from .constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/custom_css_group.ui")
-class AdwcustomizerCustomCSSGroup(Adw.PreferencesGroup):
-    __gtype_name__ = "AdwcustomizerCustomCSSGroup"
+class GradienceCustomCSSGroup(Adw.PreferencesGroup):
+    __gtype_name__ = "GradienceCustomCSSGroup"
 
     app_type_dropdown = Gtk.Template.Child("app-type-dropdown")
     custom_css_text_view = Gtk.Template.Child("custom-css-text-view")

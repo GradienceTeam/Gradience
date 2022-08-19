@@ -33,8 +33,8 @@ import json
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
-class AdwcustomizerPresetWindow(Adw.Window):
-    __gtype_name__ = "AdwcustomizerPresetWindow"
+class GradiencePresetWindow(Adw.Window):
+    __gtype_name__ = "GradiencePresetWindow"
 
     main_view = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()

@@ -22,8 +22,8 @@ from .constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/error.ui")
-class AdwcustomizerError(Gtk.ListBoxRow):
-    __gtype_name__ = "AdwcustomizerError"
+class GradienceError(Gtk.ListBoxRow):
+    __gtype_name__ = "GradienceError"
 
     error_label = Gtk.Template.Child("error-label")
     element_label = Gtk.Template.Child("element-label")

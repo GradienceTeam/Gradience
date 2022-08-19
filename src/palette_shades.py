@@ -22,8 +22,8 @@ from .constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/palette_shades.ui")
-class AdwcustomizerPaletteShades(Adw.ActionRow):
-    __gtype_name__ = "AdwcustomizerPaletteShades"
+class GradiencePaletteShades(Adw.ActionRow):
+    __gtype_name__ = "GradiencePaletteShades"
 
     def __init__(self, prefix, color_title, n_shades, **kwargs):
         super().__init__(**kwargs)

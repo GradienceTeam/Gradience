@@ -27,21 +27,21 @@
 # authorization.
 
 from gi.repository import Gtk, Adw, Gio, Gdk
-from .error import AdwcustomizerError
+from .error import GradienceError
 from .settings_schema import settings_schema
-from .palette_shades import AdwcustomizerPaletteShades
-from .option import AdwcustomizerOption
-from .app_type_dialog import AdwcustomizerAppTypeDialog
-from .custom_css_group import AdwcustomizerCustomCSSGroup
+from .palette_shades import GradiencePaletteShades
+from .option import GradienceOption
+from .app_type_dialog import GradienceAppTypeDialog
+from .custom_css_group import GradienceCustomCSSGroup
 from material_color_utilities_python import *
 from .constants import rootdir, app_id, build_type
-from .presets_manager_window import AdwcustomizerPresetWindow
+from .presets_manager_window import GradiencePresetWindow
 from .plugins_list import GradiencePluginsList
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
-class AdwcustomizerMainWindow(Adw.ApplicationWindow):
-    __gtype_name__ = "AdwcustomizerMainWindow"
+class GradienceMainWindow(Adw.ApplicationWindow):
+    __gtype_name__ = "GradienceMainWindow"
 
     content = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
@@ -159,7 +159,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_row.add_suffix(self.monet_file_chooser_button)
         self.monet_pref_group.add(self.monet_file_chooser_row)
 
-        self.monet_palette_shades = AdwcustomizerPaletteShades(
+        self.monet_palette_shades = GradiencePaletteShades(
             "monet", _("Monet Palette"), 6
         )
         self.get_application(
@@ -197,7 +197,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.content_plugins.add(self.plugins_group)
         self.get_application().plugins_group = self.plugins_group
 
-        custom_css_group = AdwcustomizerCustomCSSGroup()
+        custom_css_group = GradienceCustomCSSGroup()
         for app_type in settings_schema["custom_css_app_types"]:
             self.get_application().custom_css[app_type] = ""
         custom_css_group.load_custom_css(self.get_application().custom_css)
@@ -212,7 +212,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
             pref_group.set_description(group["description"])
 
             for variable in group["variables"]:
-                pref_variable = AdwcustomizerOption(
+                pref_variable = GradienceOption(
                     variable["name"],
                     variable["title"],
                     variable.get("explanation"),
@@ -230,7 +230,7 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         palette_pref_group.set_description(
             _('Named palette colors used by some applications. Default colors follow the <a href="https://developer.gnome.org/hig/reference/palette.html">GNOME Human Interface Guidelines</a>.'))
         for color in settings_schema["palette"]:
-            palette_shades = AdwcustomizerPaletteShades(
+            palette_shades = GradiencePaletteShades(
                 color["prefix"], color["title"], color["n_shades"]
             )
             palette_pref_group.add(palette_shades)
@@ -246,11 +246,11 @@ class AdwcustomizerMainWindow(Adw.ApplicationWindow):
         self.errors_button.set_visible(len(errors) > 0)
         for error in errors:
             self.errors_list.append(
-                AdwcustomizerError(
+                GradienceError(
                     error["error"],
                     error["element"],
                     error["line"]))
 
     def on_presets_dropdown_activate(self, *args):
         self.get_application().reload_user_defined_presets()
-        # AdwcustomizerPresetWindow().present()
+        # GradiencePresetWindow().present()

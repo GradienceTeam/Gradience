@@ -22,8 +22,8 @@ from .constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/option.ui")
-class AdwcustomizerOption(Adw.ActionRow):
-    __gtype_name__ = "AdwcustomizerOption"
+class GradienceOption(Adw.ActionRow):
+    __gtype_name__ = "GradienceOption"
 
     color_value = Gtk.Template.Child("color-value")
     text_value = Gtk.Template.Child("text-value")
