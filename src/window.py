@@ -105,9 +105,11 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
         if self.style_manager.get_dark():
-            self.monet_image_file = background_settings.get_string("picture-uri-dark")
+            self.monet_image_file = background_settings.get_string(
+                "picture-uri-dark")
         else:
-            self.monet_image_file = background_settings.get_string("picture-uri-dark")
+            self.monet_image_file = background_settings.get_string(
+                "picture-uri-dark")
         print(self.monet_image_file)
 
         self.monet_image_file = Gio.File.new_for_uri(self.monet_image_file)
@@ -115,7 +117,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_button.set_label(image_basename)
         self.monet_image_file = self.monet_image_file.get_path()
         self.on_apply_button()
-
 
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
@@ -143,7 +144,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_title(_("Monet Engine"))
         self.monet_pref_group.set_description(
             _("Monet is an engine that generates Material Design 3 palette from backgrounds color."))
-
 
         self.apply_button = Gtk.Button()
         self.apply_button.set_label(_("Apply"))
@@ -214,10 +214,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.add(self.monet_theme_row)
 
         self.content_monet.add(self.monet_pref_group)
-    
+
     def on_apply_button(self, *_args):
         if self.monet_image_file:
-            
+
             if self.monet_image_file.endswith(".svg"):
                 drawing = svg2rlg(self.monet_image_file)
                 self.monet_image_file = os.path.join(
