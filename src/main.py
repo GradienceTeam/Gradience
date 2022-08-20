@@ -729,7 +729,7 @@ class GradienceApplication(Adw.Application):
       </ul>
             """),
             comments=_("""
-Gradience, originally Adwaita Manager (Gradience) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 With Gradience you can:
 
     - Change any color of Adwaita theme
