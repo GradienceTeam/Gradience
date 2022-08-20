@@ -225,7 +225,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 self.monet_img = Image.open(self.monet_image_file)
             except Exception:
                 self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Unsupported image type"))
+                    Adw.Toast(title=_("Unsupported background type"))
                 )
             else:
                 basewidth = 64
