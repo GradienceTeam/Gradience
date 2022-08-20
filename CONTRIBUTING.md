@@ -23,6 +23,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/ArtyIF"><img src="https://avatars.githubusercontent.com/u/8017858?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ArtyIF</b></sub></a><br /><a href="https://github.com/GradienceTeam/Gradience/commits?author=ArtyIF" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/tfuxu"><img src="https://avatars.githubusercontent.com/u/73042332?v=4?s=100" width="100px;" alt=""/><br /><sub><b>tfuxu</b></sub></a><br /><a href="https://github.com/GradienceTeam/Gradience/commits?author=tfuxu" title="Code">💻</a></td>
     <td align="center"><a href="http://jahinzee.github.io"><img src="https://avatars.githubusercontent.com/u/56011682?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jahin Z.</b></sub></a><br /><a href="https://github.com/GradienceTeam/Gradience/issues?q=author%3Ajahinzee" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/Adaoh2"><img src="https://avatars.githubusercontent.com/u/43153657?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adaoh</b></sub></a><br /><a href="#userTesting-Adaoh2" title="User Testing">📓</a></td>
   </tr>
 </table>
 
