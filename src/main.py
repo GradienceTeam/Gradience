@@ -104,7 +104,17 @@ class GradienceApplication(Adw.Application):
 
         self.create_action(
             "show_adwaita_demo",
-            self.open_adwaita_demo)
+            self.show_adwaita_demo)
+
+        self.create_action(
+            "show_gtk4_widget_factory",
+            self.show_gtk4_widget_factory)
+
+        self.create_action(
+            "show_gtk4_demo",
+            self.show_gtk4_demo)
+
+            
 
         self.create_action(
             "reset_color_scheme",
@@ -769,9 +779,17 @@ This app is written in Python and uses GTK 4 and libadwaita.
         window = GradiencePreviewWindow(self.win)
         window.present()
 
-    def open_adwaita_demo(self, *_args):
+    def show_adwaita_demo(self, *_args):
         GLib.spawn_command_line_async(
             'sh -c "/bin/adwaita-1-demo > /dev/null 2>&1"')
+
+    def show_gtk4_demo(self, *_args):
+        GLib.spawn_command_line_async(
+            'sh -c "/bin/gtk4-demo > /dev/null 2>&1"')
+
+    def show_gtk4_widget_factory(self, *_args):
+        GLib.spawn_command_line_async(
+            'sh -c "/bin/gtk4-widget-factory > /dev/null 2>&1"')
 
 
 def main():
