@@ -35,7 +35,7 @@ class GradienceWelcomeWindow(Adw.Window):
     ]
     images = [
         f"{rootdir}/images/welcome.svg",
-        f"{rootdir}/images/welcome-night.svg",
+        f"{rootdir}/images/welcome-dark.svg",
     ]
 
     def __init__(self, window, **kwargs) -> None:
@@ -145,3 +145,4 @@ class GradienceWelcomeWindow(Adw.Window):
     def close_window(self, widget):
         self.destroy()
         self.window.present()
+
