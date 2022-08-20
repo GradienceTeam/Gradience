@@ -219,7 +219,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 self.theme, self.tone, self.monet_theme
             )
             self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Pallete generated with success!"))
+                Adw.Toast(title=_("Palette generated with success!"))
             )
         else:
             self.toast_overlay.add_toast(
