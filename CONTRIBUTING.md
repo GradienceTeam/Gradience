@@ -1,5 +1,13 @@
 # Contributing
 
+### Code
+Fork this repository, then create a push request when you're done adding features or fixing bugs.
+
+### Localisation 
+
+[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
+
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)) (If you have contributed to this project and you want to be mentionned here, just see [how to add yourself](https://allcontributors.org/docs/en/bot/usage))

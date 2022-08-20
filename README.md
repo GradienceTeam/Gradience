@@ -19,7 +19,7 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 [![Build flatpak nightly](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml)
 [![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#Gradience:matrix.org)
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](/CONTRIBUTING.md)
 
 ## Building and Installing
 
@@ -114,13 +114,8 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [ ] Customize Firefox GNOME theme
 
 ## Contribute
-### Code
-Fork this repository, then create a push request when you're done adding features or fixing bugs.
 
-### Localisation 
-
-[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
-
+See [`CONtRIBUTING.md`](CONTRIBUTING.md) for more informations and a list of contributors
 ## About Name
 
 Gradience is originally named Adwaita Manager
