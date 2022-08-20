@@ -37,7 +37,8 @@ from material_color_utilities_python import *
 from .constants import rootdir, app_id, build_type
 from .presets_manager_window import GradiencePresetWindow
 from .plugins_list import GradiencePluginsList
-from cairosvg import svg2png
+from svglib.svglib import svg2rlg
+from reportlab.graphics import renderPM
 import os
 
 
@@ -218,12 +219,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         if self.monet_image_file:
             
             if self.monet_image_file.endswith(".svg"):
-                with open(self.monet_image_file, "rb") as svg_img:
-                    self.monet_image_file = os.path.join(
-                        os.environ.get("XDG_RUNTIME_DIR"), "gradience_bg.png")
-                    svg2png(
-                        bytestring=svg_img.read(),
-                        write_to=self.monet_image_file)
+                drawing = svg2rlg(self.monet_image_file)
+                self.monet_image_file = os.path.join(
+                    os.environ.get("XDG_RUNTIME_DIR"), "gradience_bg.png")
+                renderPM.drawToFile(drawing, self.monet_image_file, fmt='PNG')
             try:
                 self.monet_img = Image.open(self.monet_image_file)
             except Exception:
