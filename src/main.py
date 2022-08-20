@@ -770,7 +770,9 @@ This app is written in Python and uses GTK 4 and libadwaita.
         window.present()
 
     def open_adwaita_demo(self, *_args):
-        GLib.spawn_command_line_async('sh -c "/bin/adwaita-1-demo > /dev/null 2>&1"')
+        GLib.spawn_command_line_async(
+            'sh -c "/bin/adwaita-1-demo > /dev/null 2>&1"')
+
 
 def main():
     """The application's entry point."""
