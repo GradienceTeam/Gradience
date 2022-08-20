@@ -55,6 +55,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     presets_menu = Gtk.Template.Child("presets-menu")
     errors_button = Gtk.Template.Child("errors-button")
     errors_list = Gtk.Template.Child("errors-list")
+    monet_image_file = None
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -113,26 +114,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         if response == Gtk.ResponseType.ACCEPT:
             self.monet_image_file = self.monet_image_file.get_path()
-            if self.monet_image_file.endswith(".svg"):
-                with open(self.monet_image_file, "rb") as svg_img:
-                    self.monet_image_file = os.path.join(
-                        os.environ.get("XDG_RUNTIME_DIR"), "gradience_bg.png")
-                    svg2png(
-                        bytestring=svg_img.read(),
-                        write_to=self.monet_image_file)
-
-            self.monet_img = Image.open(self.monet_image_file)
-            basewidth = 64
-            wpercent = (basewidth / float(self.monet_img.size[0]))
-            hsize = int((float(self.monet_img.size[1]) * float(wpercent)))
-            self.monet_img = self.monet_img.resize(
-                (basewidth, hsize), Image.Resampling.LANCZOS)
-            self.theme = themeFromImage(self.monet_img)
-            self.tone = self.tone_row.get_selected_item()
-            self.monet_theme = self.monet_theme_row.get_selected_item()
-            self.get_application().update_theme_from_monet(
-                self.theme, self.tone, self.monet_theme
-            )
+            self.on_apply_button()
 
     def setup_monet_page(self):
 
@@ -142,6 +124,12 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_description(
             _("Monet is an engine that generates Material Design 3 palette from backgrounds color."))
 
+
+        self.apply_button = Gtk.Button()
+        self.apply_button.set_label(_("Apply"))
+        self.apply_button.connect("clicked", self.on_apply_button)
+        self.apply_button.set_css_classes("suggested-action")
+        self.monet_pref_group.set_header_suffix(self.apply_button)
         self.monet_file_chooser_row = Adw.ActionRow()
         self.monet_file_chooser_row.set_title(_("Background Image"))
 
@@ -206,6 +194,34 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.add(self.monet_theme_row)
 
         self.content_monet.add(self.monet_pref_group)
+    
+    def on_apply_button(self, *_args):
+        if self.monet_image_file:
+            
+            if self.monet_image_file.endswith(".svg"):
+                with open(self.monet_image_file, "rb") as svg_img:
+                    self.monet_image_file = os.path.join(
+                        os.environ.get("XDG_RUNTIME_DIR"), "gradience_bg.png")
+                    svg2png(
+                        bytestring=svg_img.read(),
+                        write_to=self.monet_image_file)
+
+            self.monet_img = Image.open(self.monet_image_file)
+            basewidth = 64
+            wpercent = (basewidth / float(self.monet_img.size[0]))
+            hsize = int((float(self.monet_img.size[1]) * float(wpercent)))
+            self.monet_img = self.monet_img.resize(
+                (basewidth, hsize), Image.Resampling.LANCZOS)
+            self.theme = themeFromImage(self.monet_img)
+            self.tone = self.tone_row.get_selected_item()
+            self.monet_theme = self.monet_theme_row.get_selected_item()
+            self.get_application().update_theme_from_monet(
+                self.theme, self.tone, self.monet_theme
+            )
+        else:
+            self.toast_overlay.add_toast(
+                Adw.Toast(title=_("Select a background first"))
+            )
 
     def setup_plugins_page(self):
         self.plugins_list = GradiencePluginsList()
