@@ -1,6 +1,6 @@
 <img align="left" alt="Project logo" src="https://github.com/GradienceTeam/Gradience/blob/main/data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg" />
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Gradience
@@ -141,6 +141,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/rene-coty"><img src="https://avatars.githubusercontent.com/u/95506494?v=4?s=100" width="100px;" alt=""/><br /><sub><b>rene-coty</b></sub></a><br /><a href="#translation-rene-coty" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/0xMRTT"><img src="https://avatars.githubusercontent.com/u/105598867?v=4?s=100" width="100px;" alt=""/><br /><sub><b>0xMRTT</b></sub></a><br /><a href="#maintenance-0xMRTT" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
