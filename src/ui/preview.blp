@@ -2,4 +2,71 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradiencePreviewWindow: Adw.Window {
+    title: _("Theme Preview");
+
+    Adw.ToastOverlay toast_overlay {
+        Adw.Leaflet leaflet {
+            can-navigate-back: true;
+            can-unfold: false;
+
+            Gtk.Box main_view {
+                orientation: vertical;
+
+                Adw.HeaderBar titlebar {
+                centering-policy: strict;
+
+                    [start]
+                    Button apply-button {
+                        styles ["suggested-action"]
+                        label: _("@primary");
+                    }
+                    
+                    [title]
+                    Adw.ViewSwitcherTitle title {
+                        stack: view_stack;
+                    }
+
+                }
+
+                Gtk.Box {
+                    orientation: vertical;
+
+                    Adw.ViewStack view_stack {
+                        vexpand: true;
+                        hexpand: true;
+
+                        Adw.ViewStackPage {
+                            name: "page_1";
+                            title: _("Page 1");
+                            
+                            child: Adw.PreferencesPage content_1 { };
+                    
+                        }
+
+                        Adw.ViewStackPage {
+                            name: "page_2";
+                            title: _("Page 2");
+
+                            child: Adw.PreferencesPage content_2 { };
+                        }
+
+                        Adw.ViewStackPage {
+                            name: "page_3";
+                            title: _("Page 3");
+
+
+                            child: Adw.PreferencesPage content_3 { };
+
+                        }
+                    }
+
+                    Adw.ViewSwitcherBar {
+                        stack: view_stack;
+                        reveal: bind title.title-visible;
+                    }
+                }
+            }
+        }
+    }
 }
+
