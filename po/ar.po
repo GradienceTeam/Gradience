@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-19 20:36+0200\n"
+"POT-Creation-Date: 2022-08-20 11:30+0200\n"
 "PO-Revision-Date: 2022-07-25 14:48+0000\n"
 "Last-Translator: Yousef Alshammari, 2022\n"
 "Language-Team: Arabic (https://www.transifex.com/adwcustomizerteam/"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:8
-#: src/ui/window.blp:5 src/main.py:651
+#: src/ui/window.blp:5 src/main.py:683
 msgid "Gradience"
 msgstr ""
 
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Change the look of Adwaita, with ease."
 msgstr "غير مظهر Adwaita بكل سهولة"
 
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:11 src/main.py:653
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:11 src/main.py:685
 msgid "Gradience Team"
 msgstr ""
 
@@ -168,116 +168,136 @@ msgstr "تفسير"
 msgid "Toggle Text Value"
 msgstr "تبديل قيمة النص"
 
-#: src/ui/window.blp:23 src/main.py:445
+#: src/ui/window.blp:23 src/main.py:473
 msgid "Apply"
 msgstr "تطبيق"
 
-#: src/ui/window.blp:41
+#: src/ui/window.blp:47
 msgid "Presets"
 msgstr "الإعدادات المسبقة"
 
-#: src/ui/window.blp:48
+#: src/ui/window.blp:54
 msgid "Save Preset"
 msgstr "حفظ الإعداد المسبق"
 
-#: src/ui/window.blp:75
+#: src/ui/window.blp:81
 #, fuzzy
 #| msgid "Accent Colors"
 msgid "Colors"
 msgstr "ألوان مميزة"
 
-#: src/ui/window.blp:84
+#: src/ui/window.blp:90
 msgid "Monet"
 msgstr ""
 
-#: src/ui/window.blp:92
+#: src/ui/window.blp:98
 msgid "Advanced"
 msgstr ""
 
-#: src/ui/window.blp:113
+#: src/ui/window.blp:119
 msgid "Built-in Presets"
 msgstr "الإعداد مدمج"
 
-#: src/ui/window.blp:115
+#: src/ui/window.blp:121
 #, fuzzy
 #| msgid "Adwaita Manager"
 msgid "Adwaita"
 msgstr "مدير Adwaita"
 
-#: src/ui/window.blp:120
+#: src/ui/window.blp:126
 #, fuzzy
 #| msgid "Adwaita Manager"
 msgid "Adwaita Dark"
 msgstr "مدير Adwaita"
 
-#: src/ui/window.blp:125
+#: src/ui/window.blp:131
+#, fuzzy
+#| msgid "Purple"
+msgid "Pretty purple"
+msgstr "بنفسجي"
+
+#: src/ui/window.blp:136
 #, fuzzy
 #| msgid "Save Preset"
 msgid "Manage Presets"
 msgstr "حفظ الإعداد المسبق"
 
-#: src/ui/window.blp:135
+#: src/ui/window.blp:146
 msgid "Reset Applied Color Scheme"
 msgstr "إعادة تعيين نمط الألوان المطبق"
 
-#: src/ui/window.blp:139
+#: src/ui/window.blp:150
 msgid "About Gradience"
 msgstr ""
 
-#: src/app_type_dialog.py:46 src/main.py:481
+#: src/ui/window.blp:159
+#, fuzzy
+#| msgid "Adwaita Manager"
+msgid "Try Adwaita Demo"
+msgstr "مدير Adwaita"
+
+#: src/ui/window.blp:163
+msgid "GTK4 Demo"
+msgstr ""
+
+#: src/ui/window.blp:167
+msgid "GTK4 Widget Factory"
+msgstr ""
+
+#: src/app_type_dialog.py:46 src/main.py:510
 msgid "Cancel"
 msgstr "إلغاء"
 
-#: src/main.py:144 src/main.py:150
+#: src/main.py:172 src/main.py:178
 msgid "Failed to load preset"
 msgstr "أخفق في تفعيل الإعداد المسبق"
 
-#: src/main.py:167
+#: src/main.py:195
 msgid "Open in File Manager"
 msgstr "افتح في مدير الملفات"
 
-#: src/main.py:173
+#: src/main.py:201
 msgid "User Defined Presets"
 msgstr "محددات مسبقة من قبل المستخدم"
 
-#: src/main.py:368
+#: src/main.py:396
 msgid "Unsaved changes"
 msgstr "تغييرات غير محفوظة"
 
-#: src/main.py:378
+#: src/main.py:406
 #, fuzzy
 #| msgid "Unsaved changes"
 msgid "Save changes"
 msgstr "تغييرات غير محفوظة"
 
-#: src/main.py:442
+#: src/main.py:470
 msgid "Apply this color scheme?"
 msgstr "تطبيق نمط الألوان هذا؟"
 
-#: src/main.py:443
+#: src/main.py:471
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 "تحذير: سيتم الكتابة فوق أي ملفات CSS مخصصة لأنواع التطبيقات هذه بشكل نهائي!"
 
-#: src/main.py:455
+#: src/main.py:483
 msgid "Reset applied color scheme?"
 msgstr "إعادة ضبط نمط الألوان المطبق؟"
 
-#: src/main.py:456
+#: src/main.py:484
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "تحقق من حفظ الإعدادات الحالية كإعداد مسبق."
 
-#: src/main.py:458
+#: src/main.py:486
 msgid "Reset"
 msgstr "إعادة ضبط"
 
-#: src/main.py:468
+#: src/main.py:496
 msgid "Save preset as..."
 msgstr "حفظ الإعداد المسبق باسم ..."
 
-#: src/main.py:470 src/main.py:495 src/main.py:509
+#: src/main.py:498 src/main.py:524 src/main.py:539
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -286,23 +306,23 @@ msgstr ""
 "حفظ الإعداد المسبق في <tt>{0}</tt>. إذا كان هذا الإعداد المسبق موجودًا سلفًا، "
 "فسيتم استبداله!"
 
-#: src/main.py:482
+#: src/main.py:511
 msgid "Save"
 msgstr "حفظ"
 
-#: src/main.py:549
+#: src/main.py:581
 msgid "Scheme successfully saved!"
 msgstr "تم حفظ النمط بنجاح!"
 
-#: src/main.py:613
+#: src/main.py:645
 msgid "Scheme set successfully!"
 msgstr "تم تعيين النمط بنجاح!"
 
-#: src/main.py:646
+#: src/main.py:678
 msgid "Reset successfully!"
 msgstr "تم إعادة التعيين بنجاح!"
 
-#: src/main.py:681
+#: src/main.py:713
 msgid ""
 "\n"
 "                <ul>\n"
@@ -328,11 +348,11 @@ msgid ""
 "            "
 msgstr ""
 
-#: src/main.py:699
+#: src/main.py:731
 msgid ""
 "\n"
-"Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for "
-"customizing Libadwaita applications and the adw-gtk3 theme.\n"
+"Gradience, originally Adwaita Manager (Gradience) is a tool for customizing "
+"Libadwaita applications and the adw-gtk3 theme.\n"
 "With Gradience you can:\n"
 "\n"
 "    - Change any color of Adwaita theme\n"
@@ -620,11 +640,11 @@ msgstr "بنفسجي"
 msgid "Brown"
 msgstr "بني"
 
-#: src/window.py:124
+#: src/window.py:137
 msgid "Monet Engine"
 msgstr "محرك مونيه"
 
-#: src/window.py:126
+#: src/window.py:139
 #, fuzzy
 #| msgid ""
 #| "Monet is an engine that generates Material Design 3 palette from "
@@ -636,31 +656,31 @@ msgstr ""
 "Monet هو محرك يقوم بإنشاء لوحة Material Design 3 من ألوان الخلفيات. يمكن أن "
 "يكون التوليد بطيئًا"
 
-#: src/window.py:129
+#: src/window.py:142
 msgid "Background Image"
 msgstr "الخلفية"
 
-#: src/window.py:140
+#: src/window.py:153
 msgid "Choose a file"
 msgstr "اختيار مِلَفّ"
 
-#: src/window.py:163
+#: src/window.py:176
 msgid "Monet Palette"
 msgstr ""
 
-#: src/window.py:170
+#: src/window.py:183
 msgid "Tone"
 msgstr "نَغْمَة"
 
-#: src/window.py:182
+#: src/window.py:195
 msgid "Theme"
 msgstr "سمة"
 
-#: src/window.py:228
+#: src/window.py:242
 msgid "Palette Colors"
 msgstr "ألوان لوحة"
 
-#: src/window.py:230
+#: src/window.py:244
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
