@@ -101,7 +101,7 @@ class GradienceWelcomeWindow(Adw.Window):
         return True
 
     def adw_gtk3(self):
-        if not self.check_adw_gtk3(): #install
+        if not self.check_adw_gtk3():  # install
             print("install adw-gtk3")
 
     def configure_system(self):
@@ -127,7 +127,7 @@ class GradienceWelcomeWindow(Adw.Window):
         def install():
             if self.switch_adw_gtk3.get_active():
                 self.adw_gtk3()
-            
+
             if self.switch_system.get_active():
                 self.configure_system()
 
