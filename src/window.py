@@ -99,6 +99,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.connect("close-request", self.__close_window)
         self.style_manager = self.get_application().style_manager
+        self.first_apply = True
 
         self.get_default_wallpaper()
 
@@ -110,8 +111,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         else:
             self.monet_image_file = background_settings.get_string(
                 "picture-uri-dark")
-        print(self.monet_image_file)
-
         self.monet_image_file = Gio.File.new_for_uri(self.monet_image_file)
         image_basename = self.monet_image_file.get_basename()
         self.monet_file_chooser_button.set_label(image_basename)
@@ -240,9 +239,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 self.get_application().update_theme_from_monet(
                     self.theme, self.tone, self.monet_theme
                 )
-                self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Palette generated with success!"))
-                )
+                if not self.first_apply:
+                    self.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Palette generated with success!"))
+                    )
         else:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Select a background first"))
