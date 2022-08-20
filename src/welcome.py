@@ -128,7 +128,7 @@ class GradienceWelcomeWindow(Adw.Window):
             if self.switch_adw_gtk3.get_active():
                 self.adw_gtk3()
             
-            if self.switch_user.get_active():
+            if self.switch_system.get_active():
                 self.configure_system()
 
         RunAsync(self.pulse)
