@@ -145,4 +145,3 @@ class GradienceWelcomeWindow(Adw.Window):
     def close_window(self, widget):
         self.destroy()
         self.window.present()
-
