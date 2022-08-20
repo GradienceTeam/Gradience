@@ -98,7 +98,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             Gio.SettingsBindFlags.DEFAULT)
 
         self.connect("close-request", self.__close_window)
-        self.style_manager = Adw.StyleManager.get_default()
+        self.style_manager = self.get_application().style_manager
 
         self.get_default_wallpaper()
 
@@ -217,7 +217,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     def on_apply_button(self, *_args):
         if self.monet_image_file:
-
             if self.monet_image_file.endswith(".svg"):
                 drawing = svg2rlg(self.monet_image_file)
                 self.monet_image_file = os.path.join(

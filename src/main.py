@@ -80,6 +80,8 @@ class GradienceApplication(Adw.Application):
         self.first_run = self.settings.get_boolean("first-run")
         print(f"disabled plugins: {self.disabled_plugins}")
 
+        self.style_manager = Adw.StyleManager.get_default()
+
     def do_activate(self):
         """Called when the application is activated.
 
@@ -122,7 +124,7 @@ class GradienceApplication(Adw.Application):
 
         self.reload_user_defined_presets()
 
-        self.style_manager = Adw.StyleManager.get_default()
+        
         if self.style_manager.get_dark():
             self.load_preset_from_resource(
                 f"{rootdir}/presets/adwaita-dark.json"
