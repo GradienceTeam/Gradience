@@ -38,6 +38,7 @@ from .constants import rootdir, app_id, version, bugtracker_url, help_url, proje
 from .welcome import GradienceWelcomeWindow
 from .presets_manager_window import GradiencePresetWindow
 
+
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
