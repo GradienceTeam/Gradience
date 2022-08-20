@@ -37,7 +37,8 @@ from material_color_utilities_python import *
 from .constants import rootdir, app_id, build_type
 from .presets_manager_window import GradiencePresetWindow
 from .plugins_list import GradiencePluginsList
-
+from cairosvg import svg2png
+import os
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class GradienceMainWindow(Adw.ApplicationWindow):
@@ -110,7 +111,13 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_dialog.hide()
 
         if response == Gtk.ResponseType.ACCEPT:
-            self.monet_img = Image.open(self.monet_image_file.get_path())
+            self.monet_image_file = self.monet_image_file.get_path()
+            if self.monet_image_file.endswith(".svg"):
+                with open(self.monet_image_file, "rb") as svg_img:
+                    self.monet_image_file = os.path.join(os.environ.get("XDG_RUNTIME_DIR"), "gradience_bg.png")
+                    svg2png(bytestring=svg_img.read(),write_to=self.monet_image_file)
+            
+            self.monet_img = Image.open(self.monet_image_file)
             basewidth = 64
             wpercent = (basewidth / float(self.monet_img.size[0]))
             hsize = int((float(self.monet_img.size[1]) * float(wpercent)))
