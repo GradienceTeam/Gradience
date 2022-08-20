@@ -49,6 +49,60 @@
                     "sha256": "f5db2b04cc9b87194bc246dd5dc56e797249ab97ffcd5510bebafe485eda105f"
                 }
             ]
+        },
+        {
+            "name": "python3-cairosvg",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cairosvg\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/62/d5/5f610ebe421e85889f2e55e33b7f9a6795bd982198517d912eb1c76e1a53/pycparser-2.21-py2.py3-none-any.whl",
+                    "sha256": "8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl",
+                    "sha256": "a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz",
+                    "sha256": "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/53/7b/5dba39bf0572f1f28e2844f08f74a73482a381de1d1feac3bbc6b808051e/tinycss2-1.1.1-py3-none-any.whl",
+                    "sha256": "fe794ceaadfe3cf3e686b22155d0da5780dd0e273471a51846d0a02bc204fec8"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/8c/92/2975b464d9926dc667020ed1abfa6276e68c3571dcb77e43347e15ee9eed/Pillow-9.2.0.tar.gz",
+                    "sha256": "75e636fd3e0fb872693f23ccb8a5ff2cd578801251f3a4f6854c6a5d437d3c04"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl",
+                    "sha256": "a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/e4/40/98fcfdf1a190aa0aeddf2fd0a432a4997c2c1f826f3f7b00fe42fc72c8ce/cssselect2-0.6.0-py3-none-any.whl",
+                    "sha256": "3a83b2a68370c69c9cd3fcb88bbfaebe9d22edeef2c22d1ff3e1ed9c7fa45ed8"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/8b/d2/137b346d64f0d6428a90f60b51a06706592a86b74fd21ff66c853537cb9b/cairocffi-1.3.0.tar.gz",
+                    "sha256": "108a3a7cb09e203bdd8501d9baad91d786d204561bd71e9364e8b34897c47b91"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/01/42/0e6584a0c564201ac3004dd41240bbbdb12c8343f414a559f9161b0859fb/CairoSVG-2.5.2-py3-none-any.whl",
+                    "sha256": "98c276b7e4f0caf01e5c7176765c104ffa1aa1461d63b2053b04ab663cf7052b"
+                }
+            ]
         }
     ]
 }
