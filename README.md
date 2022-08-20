@@ -131,7 +131,7 @@ Meaning of an icon is: "A Paint Roller repaints Adwaita window keeping it's func
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)) (If you have contributed to this project and you want to be mentionned here, just see [how to add yourself](https://allcontributors.org/docs/en/bot/usage))
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
