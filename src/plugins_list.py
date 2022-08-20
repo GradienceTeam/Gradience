@@ -37,9 +37,6 @@ class GradiencePluginsList:
         }
 
         self.rows = {}
-
-        print(self.discoverd_plugins)
-
         self.plugins = {}
         for plugin_id, plugin in self.discoverd_plugins.items():
             self.plugins[plugin_id] = plugin.GradiencePlugin()
@@ -62,7 +59,6 @@ class GradiencePluginsList:
             _("Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."))
         if self.plugins:
             for plugin_id, plugin in self.plugins.items():
-                print(dir(plugin))
                 row = GradiencePluginRow(plugin.title, plugin_id)
                 self.rows[plugin_id] = row
                 group.add(row)
