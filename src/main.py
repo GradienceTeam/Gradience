@@ -124,7 +124,6 @@ class GradienceApplication(Adw.Application):
 
         self.reload_user_defined_presets()
 
-        
         if self.style_manager.get_dark():
             self.load_preset_from_resource(
                 f"{rootdir}/presets/adwaita-dark.json"
