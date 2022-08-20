@@ -1,7 +1,4 @@
 <img align="left" alt="Project logo" src="https://github.com/GradienceTeam/Gradience/blob/main/data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg" />
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Gradience
 Change the look of Adwaita, with ease
@@ -22,6 +19,7 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 [![Build flatpak nightly](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml)
 [![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#Gradience:matrix.org)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
 ## Building and Installing
 
