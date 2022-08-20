@@ -36,7 +36,7 @@ from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
 from .constants import rootdir, app_id, version, bugtracker_url, help_url, project_url
 from .welcome import GradienceWelcomeWindow
-
+from .preview import GradiencePreviewWindow
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
@@ -100,6 +100,11 @@ class GradienceApplication(Adw.Application):
         self.create_action(
             "apply_color_scheme",
             self.show_apply_color_scheme_dialog)
+
+        self.create_action(
+            "show_theme_preview",
+            self.show_theme_preview)
+
         self.create_action(
             "reset_color_scheme",
             self.show_reset_color_scheme_dialog)
@@ -758,6 +763,10 @@ This app is written in Python and uses GTK 4 and libadwaita.
     def reload_plugins(self):
         print("reload plugins")
         self.win.plugins_group = self.win.plugins_list.to_group()
+
+    def show_theme_preview(self, *_args):
+        window = GradiencePreviewWindow(self.win)
+        window.present()
 
 
 def main():
