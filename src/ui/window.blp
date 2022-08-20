@@ -24,10 +24,9 @@ template GradienceMainWindow : Adw.ApplicationWindow {
             action-name: "app.apply_color_scheme";
           }
           [start]
-          Button preview-button {
-            label: _("Preview");
-            icon-name: "web-browser-symbolic";
-            action-name: "app.show_theme_preview";
+          Gtk.MenuButton {
+            icon-name: "open-menu-symbolic";
+            menu-model: preview-menu;
           }
 
           [title]
@@ -144,6 +143,15 @@ menu main-menu {
     item {
       label: _("About Gradience");
       action: "app.about";
+    }
+  }
+}
+
+menu preview-menu {
+  section {
+    item {
+      label: _("Try Adwaita Demo");
+      action: "app.show_adwaita_demo"
     }
   }
 }

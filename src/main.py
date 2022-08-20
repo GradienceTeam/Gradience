@@ -103,7 +103,7 @@ class GradienceApplication(Adw.Application):
             self.show_apply_color_scheme_dialog)
 
         self.create_action(
-            "show_theme_preview",
+            "show_adwaita_demo",
             self.open_adwaita_demo)
 
         self.create_action(
