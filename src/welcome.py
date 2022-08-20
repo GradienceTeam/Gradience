@@ -1,7 +1,5 @@
 from gi.repository import Gtk, Adw, Gio, Gdk
-from material_color_utilities_python import *
 from .constants import rootdir
-import threading
 import time
 from .run_async import RunAsync
 
