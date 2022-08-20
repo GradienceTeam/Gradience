@@ -23,6 +23,12 @@ template GradienceMainWindow : Adw.ApplicationWindow {
             label: _("Apply");
             action-name: "app.apply_color_scheme";
           }
+          [start]
+          Button preview-button {
+            label: _("Preview");
+            icon-name: "web-browser-symbolic";
+            action-name: "app.preview";
+          }
 
           [title]
           Adw.ViewSwitcherTitle title {
