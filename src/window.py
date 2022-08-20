@@ -97,6 +97,24 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             Gio.SettingsBindFlags.DEFAULT)
 
         self.connect("close-request", self.__close_window)
+        self.style_manager = Adw.StyleManager.get_default()
+
+        self.get_default_wallpaper()
+
+    def get_default_wallpaper(self):
+        background_settings = Gio.Settings("org.gnome.desktop.background")
+        if self.style_manager.get_dark():
+            self.monet_image_file = background_settings.get_string("picture-uri-dark")
+        else:
+            self.monet_image_file = background_settings.get_string("picture-uri-dark")
+        print(self.monet_image_file)
+
+        self.monet_image_file = Gio.File.new_for_uri(self.monet_image_file)
+        image_basename = self.monet_image_file.get_basename()
+        self.monet_file_chooser_button.set_label(image_basename)
+        self.monet_image_file = self.monet_image_file.get_path()
+        self.on_apply_button()
+
 
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
@@ -108,6 +126,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
             self.monet_image_file = self.monet_file_chooser_dialog.get_file()
+            print(type(self.monet_image_file))
             image_basename = self.monet_image_file.get_basename()
             self.monet_file_chooser_button.set_label(image_basename)
         self.monet_file_chooser_dialog.hide()
@@ -205,22 +224,27 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                     svg2png(
                         bytestring=svg_img.read(),
                         write_to=self.monet_image_file)
-
-            self.monet_img = Image.open(self.monet_image_file)
-            basewidth = 64
-            wpercent = (basewidth / float(self.monet_img.size[0]))
-            hsize = int((float(self.monet_img.size[1]) * float(wpercent)))
-            self.monet_img = self.monet_img.resize(
-                (basewidth, hsize), Image.Resampling.LANCZOS)
-            self.theme = themeFromImage(self.monet_img)
-            self.tone = self.tone_row.get_selected_item()
-            self.monet_theme = self.monet_theme_row.get_selected_item()
-            self.get_application().update_theme_from_monet(
-                self.theme, self.tone, self.monet_theme
-            )
-            self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Palette generated with success!"))
-            )
+            try:
+                self.monet_img = Image.open(self.monet_image_file)
+            except Exception:
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unsupported image type"))
+                )
+            else:
+                basewidth = 64
+                wpercent = (basewidth / float(self.monet_img.size[0]))
+                hsize = int((float(self.monet_img.size[1]) * float(wpercent)))
+                self.monet_img = self.monet_img.resize(
+                    (basewidth, hsize), Image.Resampling.LANCZOS)
+                self.theme = themeFromImage(self.monet_img)
+                self.tone = self.tone_row.get_selected_item()
+                self.monet_theme = self.monet_theme_row.get_selected_item()
+                self.get_application().update_theme_from_monet(
+                    self.theme, self.tone, self.monet_theme
+                )
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Palette generated with success!"))
+                )
         else:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Select a background first"))
