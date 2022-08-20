@@ -24,7 +24,7 @@ class GradienceWelcomeWindow(Adw.Window):
     img_welcome = Gtk.Template.Child()
     label_skip = Gtk.Template.Child()
     switch_system = Gtk.Template.Child()
-    switch_user = Gtk.Template.Child()
+    switch_adw_gtk3 = Gtk.Template.Child()
 
     carousel_pages = [
         "welcome",
@@ -96,6 +96,17 @@ class GradienceWelcomeWindow(Adw.Window):
     def quit(widget=False):
         quit()
 
+    def check_adw_gtk3(self):
+        print("check if adw-gtk3 installed")
+        return True
+
+    def adw_gtk3(self):
+        if not self.check_adw_gtk3(): #install
+            print("install adw-gtk3")
+
+    def configure_system(self):
+        print("confiure system")
+
     def install_runner(self, widget):
         def set_completed(result, error=False):
             self.label_skip.set_visible(False)
@@ -114,11 +125,11 @@ class GradienceWelcomeWindow(Adw.Window):
         self.set_deletable(False)
 
         def install():
-            for i in range(4):
-                print(f"system: {self.switch_system.get_active()}")
-                print(f"user: {self.switch_user.get_active()}")
-                print("install in progress")
-                time.sleep(0.2)
+            if self.switch_adw_gtk3.get_active():
+                self.adw_gtk3()
+            
+            if self.switch_user.get_active():
+                self.configure_system()
 
         RunAsync(self.pulse)
         RunAsync(
