@@ -81,21 +81,20 @@ template GradienceWelcomeWindow: Adw.Window {
 
                             Adw.PreferencesPage {
                                 Adw.PreferencesGroup {
-                                    Adw.ActionRow configure_system {
-                                        title: _("adw-gtk3 theme (System)");
-
+                                    Adw.ActionRow configure_flatpak {
+                                        title: _("adw-gtk3 theme");
                                         [suffix]
-                                        Switch switch_system {
+                                        Switch switch_user {
                                             valign: center;
                                             tooltip-text: _("Allow installation");
                                         }
-                                        
                                     }
 
-                                    Adw.ActionRow configure_flatpak {
-                                        title: _("adw-gtk3 theme (Flatpak)");
+                                    Adw.ActionRow configure_system {
+                                        title: _("System configuration");
+
                                         [suffix]
-                                        Switch switch_user {
+                                        Switch switch_system {
                                             valign: center;
                                             tooltip-text: _("Allow installation");
                                         }
