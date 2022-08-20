@@ -36,7 +36,6 @@ from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
 from .constants import rootdir, app_id, version, bugtracker_url, help_url, project_url
 from .welcome import GradienceWelcomeWindow
-from .preview import GradiencePreviewWindow
 
 
 def to_slug_case(non_slug):
@@ -113,8 +112,6 @@ class GradienceApplication(Adw.Application):
         self.create_action(
             "show_gtk4_demo",
             self.show_gtk4_demo)
-
-            
 
         self.create_action(
             "reset_color_scheme",
@@ -500,7 +497,8 @@ class GradienceApplication(Adw.Application):
                 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
             ).format(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     to_slug_case(self.preset_name) + ".json",
                 )
@@ -526,7 +524,8 @@ class GradienceApplication(Adw.Application):
                     ).format(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                                "XDG_CONFIG_HOME", os.environ["HOME"] +
+                                "/.config"
                             ),
                             "presets",
                         )
@@ -540,7 +539,8 @@ class GradienceApplication(Adw.Application):
                     ).format(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                                "XDG_CONFIG_HOME", os.environ["HOME"] +
+                                "/.config"
                             ),
                             "presets",
                             to_slug_case(preset_entry.get_text()) + ".json",
@@ -560,7 +560,8 @@ class GradienceApplication(Adw.Application):
         if response == "save":
             with open(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     to_slug_case(entry.get_text()) + ".json",
                 ),
@@ -774,10 +775,6 @@ This app is written in Python and uses GTK 4 and libadwaita.
     def reload_plugins(self):
         print("reload plugins")
         self.win.plugins_group = self.win.plugins_list.to_group()
-
-    def show_theme_preview(self, *_args):
-        window = GradiencePreviewWindow(self.win)
-        window.present()
 
     def show_adwaita_demo(self, *_args):
         GLib.spawn_command_line_async(
