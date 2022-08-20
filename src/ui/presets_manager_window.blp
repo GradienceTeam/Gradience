@@ -30,10 +30,38 @@ template GradiencePresetWindow: Adw.Window {
                 }
             }
 
-            Adw.PreferencesGroup preset_list {
+            Gtk.Box {
+                orientation: vertical;
 
+                Adw.ViewStack view_stack {
+                    vexpand: true;
+                    hexpand: true;
+
+                    Adw.ViewStackPage {
+                        name: "manage";
+                        title: _("Manage");
+                        icon-name: "larger-brush-symbolic";
+                        
+                        child: Adw.PreferencesPage content { };
+                
+                    }
+
+                    Adw.ViewStackPage {
+                        name: "explore";
+                        title: _("Explore");
+                        icon-name: "applications-science-symbolic";
+
+                        child: Adw.PreferencesPage content_explore { };
+                    }
+
+                }
+            }
+
+            Adw.ViewSwitcherBar {
+                stack: view_stack;
+                reveal: bind title.title-visible;
             }
         }
-        
     }
+        
 }

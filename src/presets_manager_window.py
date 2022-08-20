@@ -36,10 +36,11 @@ import json
 class GradiencePresetWindow(Adw.Window):
     __gtype_name__ = "GradiencePresetWindow"
 
+    content = Gtk.Template.Child()
+    content_explore = Gtk.Template.Child()
     main_view = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     import_button = Gtk.Template.Child("import-button")
-    preset_list = Gtk.Template.Child("preset_list")
 
     custom_presets = {}
 
@@ -74,8 +75,9 @@ class GradiencePresetWindow(Adw.Window):
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Failed to load preset"))
                     )
-
+        self.preset_list = Adw.PreferencesGroup()
         for preset, preset_name in self.custom_presets.items():
             row = Adw.ActionRow()
             row.set_title(preset_name)
             self.preset_list.add(row)
+        self.content.add(self.preset_list)
