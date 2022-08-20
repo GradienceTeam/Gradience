@@ -115,7 +115,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 
 ## Contribute
 
-See [`CONtRIBUTING.md`](CONTRIBUTING.md) for more informations and a list of contributors
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for more informations and a list of contributors
 ## About Name
 
 Gradience is originally named Adwaita Manager
