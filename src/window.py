@@ -218,6 +218,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             self.get_application().update_theme_from_monet(
                 self.theme, self.tone, self.monet_theme
             )
+            self.toast_overlay.add_toast(
+                Adw.Toast(title=_("Pallete generated with success!"))
+            )
         else:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Select a background first"))
