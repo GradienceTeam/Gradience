@@ -142,7 +142,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/rene-coty"><img src="https://avatars.githubusercontent.com/u/95506494?v=4?s=100" width="100px;" alt=""/><br /><sub><b>rene-coty</b></sub></a><br /><a href="#translation-rene-coty" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/0xMRTT"><img src="https://avatars.githubusercontent.com/u/105598867?v=4?s=100" width="100px;" alt=""/><br /><sub><b>0xMRTT</b></sub></a><br /><a href="#maintenance-0xMRTT" title="Maintenance">🚧</a> <a href="#translation-0xMRTT" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://linktr.ee/daudix_ufo"><img src="https://avatars.githubusercontent.com/u/77155297?v=4?s=100" width="100px;" alt=""/><br /><sub><b>David Lapshin</b></sub></a><br /><a href="#translation-daudix-UFO" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://linktr.ee/daudix_ufo"><img src="https://avatars.githubusercontent.com/u/77155297?v=4?s=100" width="100px;" alt=""/><br /><sub><b>David Lapshin</b></sub></a><br /><a href="#translation-daudix-UFO" title="Translation">🌍</a> <a href="#design-daudix-UFO" title="Design">🎨</a></td>
   </tr>
 </table>
 
