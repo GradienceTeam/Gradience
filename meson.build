@@ -38,8 +38,6 @@ dependency('glib-2.0')
 dependency('gtk4', version: '>= 4.5.0')
 dependency('libadwaita-1', version: '>= 1.2.alpha')
 dependency('pygobject-3.0', version: '>= 3.42.0')
-dependency('libxml-2.0')
-dependency('libxslt')
 
 # Python installation directory
 PY_INSTALLDIR = python.find_installation('python3', required: true, modules: ['lxml'])
