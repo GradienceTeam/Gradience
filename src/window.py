@@ -41,6 +41,7 @@ from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
 import os
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class GradienceMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = "GradienceMainWindow"
