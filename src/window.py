@@ -41,7 +41,6 @@ from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
 import os
 
-
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
 class GradienceMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = "GradienceMainWindow"
@@ -220,6 +219,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 self.monet_image_file = os.path.join(
                     os.environ.get("XDG_RUNTIME_DIR"), "gradience_bg.png")
                 renderPM.drawToFile(drawing, self.monet_image_file, fmt='PNG')
+
+            if self.monet_image_file.endswith(".xml"):
+                print("XML WIP")
+
             try:
                 self.monet_img = Image.open(self.monet_image_file)
             except Exception:
