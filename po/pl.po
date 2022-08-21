@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-20 11:30+0200\n"
-"PO-Revision-Date: 2022-08-20 12:10+0000\n"
+"PO-Revision-Date: 2022-08-21 14:20+0000\n"
 "Last-Translator: Kamil Wróbel <thekambot@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/pl/>\n"
@@ -382,7 +382,7 @@ msgstr ""
 #: src/settings_schema.py:84 src/settings_schema.py:111
 #: src/settings_schema.py:138
 msgid "Standalone Color"
-msgstr "Samodzielny Kolor"
+msgstr "Niezależny Kolor"
 
 #: src/settings_schema.py:32 src/settings_schema.py:59
 #: src/settings_schema.py:86 src/settings_schema.py:113
@@ -392,6 +392,9 @@ msgid ""
 "contrast when used as foreground color on top of a neutral background - for "
 "example, colorful text in a window."
 msgstr ""
+"Niezależne kolory są podobne do kolorów tła, ale zapewniają lepszy kontrast, "
+"gdy są stosowane jako kolor pierwszego planu na neutralnym tle - na przykład "
+"kolorowy tekst w oknie."
 
 #: src/settings_schema.py:38 src/settings_schema.py:65
 #: src/settings_schema.py:92 src/settings_schema.py:119
@@ -400,7 +403,7 @@ msgstr ""
 #: src/settings_schema.py:242 src/settings_schema.py:267
 #: src/settings_schema.py:284
 msgid "Background Color"
-msgstr ""
+msgstr "Kolor Tła"
 
 #: src/settings_schema.py:43 src/settings_schema.py:70
 #: src/settings_schema.py:97 src/settings_schema.py:124
@@ -409,79 +412,94 @@ msgstr ""
 #: src/settings_schema.py:247 src/settings_schema.py:272
 #: src/settings_schema.py:289
 msgid "Foreground Color"
-msgstr ""
+msgstr "Kolor Pierwszego Planu"
 
 #: src/settings_schema.py:50
 msgid "Destructive Colors"
-msgstr ""
+msgstr "Destrukcyjne Kolory"
 
 #: src/settings_schema.py:52
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
 msgstr ""
+"Kolory te są używane w przypadku przycisków wskazujących na niebezpieczną "
+"akcję, taką jak usunięcie pliku."
 
 #: src/settings_schema.py:77
 msgid "Success Colors"
-msgstr ""
+msgstr "Kolory Sukcesu"
 
 #: src/settings_schema.py:79
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
 msgstr ""
+"Te kolory są używane w wielu różnych widżetach, takich jak przyciski, "
+"etykiety, pola tekstowe i paski poziomu, aby wskazać sukces lub wysoki "
+"poziom."
 
 #: src/settings_schema.py:104
 msgid "Warning Colors"
-msgstr ""
+msgstr "Kolory Ostrzegawcze"
 
 #: src/settings_schema.py:106
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
 msgstr ""
+"Kolory te są używane w wielu różnych widżetach, takich jak przyciski, "
+"etykiety, pola tekstowe i paski poziomu, aby wskazać ostrzeżenie lub niski "
+"poziom."
 
 #: src/settings_schema.py:131
 msgid "Error Colors"
-msgstr ""
+msgstr "Kolory Błędów"
 
 #: src/settings_schema.py:133
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
 msgstr ""
+"Te kolory są używane w wielu różnych widżetach, takich jak przyciski, "
+"etykiety i pola tekstowe, aby wskazać niepowodzenie."
 
 #: src/settings_schema.py:158
 msgid "Window Colors"
-msgstr ""
+msgstr "Kolory Okna"
 
 #: src/settings_schema.py:159
 msgid "These colors are used primarily for windows."
-msgstr ""
+msgstr "Te kolory stosuje się przede wszystkim w przypadku okien."
 
 #: src/settings_schema.py:175
 msgid "View Colors"
-msgstr ""
+msgstr "Kolory Pól"
 
 #: src/settings_schema.py:177
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
 msgstr ""
+"Kolory te są używane w różnych widżetach, takich jak pola tekstowe i tym "
+"podobnych."
 
 #: src/settings_schema.py:194
 msgid "Header Bar Colors"
-msgstr ""
+msgstr "Kolory Pasku Nagłówka"
 
 #: src/settings_schema.py:196
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
 msgstr ""
+"Kolory te są wykorzystywane do pasków nagłówkowych, a także widżetów, które "
+"mają być do niego wizualnie dołączone, takich jak paski wyszukiwania czy "
+"paski zakładek."
 
 #: src/settings_schema.py:211
 msgid "Border Color"
-msgstr ""
+msgstr "Kolor Obramowania"
 
 #: src/settings_schema.py:213
 msgid ""
@@ -491,10 +509,16 @@ msgid ""
 "the border dark. This variable is only used for vertical borders - for "
 "example, separators between the two header bars in a split header bar layout."
 msgstr ""
+"Kolor obramowania ma taką samą wartość domyślną jak kolor pierwszego planu, "
+"ale mogą to być dwie odrębne wartości. Może to być przydatne, jeśli jasne "
+"okno ma ciemny pasek nagłówka z jasnym tekstem; w tym przypadku może być "
+"pożądane, aby obramowanie było ciemne. Ta zmienna jest używana tylko dla "
+"pionowych obramowań - na przykład separatorów między dwoma paskami nagłówka "
+"w układzie z dzielonym paskiem nagłówka."
 
 #: src/settings_schema.py:219
 msgid "Backdrop Color"
-msgstr ""
+msgstr "Kolor Zasłony"
 
 #: src/settings_schema.py:221
 msgid ""
@@ -503,25 +527,31 @@ msgid ""
 "and changes together with it. When changing this variable, make sure to set "
 "it to a value matching your header bar background color."
 msgstr ""
+"Kolor zasłony jest używany zamiast koloru tła, gdy okno nie jest skupione. "
+"Domyślnie jest to alias koloru tła okna i zmienia się razem z nim. "
+"Zmieniając tę zmienną, upewnij się, że ustawiasz ją na wartość odpowiadającą "
+"kolorowi tła paska nagłówka."
 
 #: src/settings_schema.py:227 src/settings_schema.py:252
 #: src/settings_schema.py:301
 msgid "Shade Color"
-msgstr ""
+msgstr "Kolor Cienia"
 
 #: src/settings_schema.py:229
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
 msgstr ""
+"Kolor cienia służy do zapewnienia ciemnej granicy dla pasków nagłówkowych i "
+"podobnych widżetów, która oddziela je od głównego okna."
 
 #: src/settings_schema.py:237
 msgid "Card Colors"
-msgstr ""
+msgstr "Kolory Karty"
 
 #: src/settings_schema.py:238
 msgid "These colors are used for cards and boxed lists."
-msgstr ""
+msgstr "Te kolory są używane do kart i pól list."
 
 #: src/settings_schema.py:254
 msgid ""
@@ -529,108 +559,119 @@ msgid ""
 "themselves from the window background, as well as for row dividers in the "
 "cards."
 msgstr ""
+"Kolor cieni jest używany do cieni, które są wykorzystywane przez karty do "
+"oddzielenia się od tła okna, a także do przegródek rzędów w kartach."
 
 #: src/settings_schema.py:262
 msgid "Dialog Colors"
-msgstr ""
+msgstr "Kolory Okna Dialogowego"
 
 #: src/settings_schema.py:263
+#, fuzzy
 msgid "These colors are used for message dialogs."
-msgstr ""
+msgstr "Kolory te są używane w oknach dialogowych komunikatów."
 
 #: src/settings_schema.py:279
 msgid "Popover Colors"
-msgstr ""
+msgstr "Kolory Wyskakującego Dymku"
 
 #: src/settings_schema.py:280
+#, fuzzy
 msgid "These colors are used for popovers."
-msgstr ""
+msgstr "Te kolory są używane do popovers."
 
 #: src/settings_schema.py:296
 msgid "Miscalleneous Colors"
-msgstr ""
+msgstr "Inne Kolory"
 
 #: src/settings_schema.py:297
+#, fuzzy
 msgid "Colors that don't fit in any particular group."
-msgstr ""
+msgstr "Kolory, które nie pasują do żadnej konkretnej grupy."
 
 #: src/settings_schema.py:303
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
 msgstr ""
+"Kolor cienia jest używany przez liniowe paski zakładek, a także w "
+"przejściach w leafletach i flapsach oraz obramowaniach pasków informacyjnych."
 
 #: src/settings_schema.py:309
 msgid "Scrollbar Outline Color"
-msgstr ""
+msgstr "Kolor Konturu Paska Przewijania"
 
 #: src/settings_schema.py:311
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
 msgstr ""
+"Kolor okonturu paska przewijania jest używany przez paski przewijania, aby "
+"zapewnić, że nakładane paski przewijania są widoczne niezależnie od koloru "
+"zawartości."
 
 #: src/settings_schema.py:319
 msgid "Blue"
-msgstr ""
+msgstr "Niebieski"
 
 #: src/settings_schema.py:320
 msgid "Green"
-msgstr ""
+msgstr "Zielony"
 
 #: src/settings_schema.py:321
 msgid "Yellow"
-msgstr ""
+msgstr "Żółty"
 
 #: src/settings_schema.py:322
 msgid "Orange"
-msgstr ""
+msgstr "Pomarańczowy"
 
 #: src/settings_schema.py:323
 msgid "Red"
-msgstr ""
+msgstr "Czerwony"
 
 #: src/settings_schema.py:324
 msgid "Purple"
-msgstr ""
+msgstr "Fioletowy"
 
 #: src/settings_schema.py:325
 msgid "Brown"
-msgstr ""
+msgstr "Brązowy"
 
 #: src/window.py:137
 msgid "Monet Engine"
-msgstr ""
+msgstr "Silnik Monet"
 
 #: src/window.py:139
+#, fuzzy
 msgid ""
 "Monet is an engine that generates Material Design 3 palette from backgrounds "
 "color."
-msgstr ""
+msgstr "Monet to silnik generujący paletę Material Design 3 z kolorów tła."
 
 #: src/window.py:142
 msgid "Background Image"
-msgstr ""
+msgstr "Obraz Tła"
 
 #: src/window.py:153
 msgid "Choose a file"
-msgstr ""
+msgstr "Wybierz plik"
 
 #: src/window.py:176
 msgid "Monet Palette"
-msgstr ""
+msgstr "Paleta Kolorów Monet"
 
 #: src/window.py:183
 msgid "Tone"
-msgstr ""
+msgstr "Ton"
 
 #: src/window.py:195
 msgid "Theme"
-msgstr ""
+msgstr "Motyw"
 
 #: src/window.py:242
 msgid "Palette Colors"
-msgstr ""
+msgstr "Paleta Kolorów"
 
 #: src/window.py:244
 msgid ""
@@ -638,3 +679,6 @@ msgid ""
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
 "Interface Guidelines</a>."
 msgstr ""
+"Nazwane palety kolorów używane przez niektóre aplikacje. Domyślne kolory są "
+"zgodne z <a href=\"https://developer.gnome.org/hig/reference/palette.html\""
+">wskazówkami dotyczące interfejsu użytkownika GNOME</a>."
