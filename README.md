@@ -1,4 +1,4 @@
-<img align="left" alt="Project logo" src="https://github.com/GradienceTeam/Gradience/blob/main/data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg" />
+<img align="left" alt="Logo" src="https://github.com/GradienceTeam/Gradience/blob/main/data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg">
 
 # Gradience
 
