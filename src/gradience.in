@@ -51,6 +51,9 @@ if __name__ == '__main__':
     gi.require_version('Xdp', '1.0')
     gi.require_version('XdpGtk4', '1.0')
 
+    if '@BUILD_TYPE@' == "debug":
+       sys.path.append("/usr/local/local/lib/python3.10/site-packages")
+
     from gi.repository import Gio
     resource = Gio.Resource.load(
         os.path.join(pkgdatadir, 'gradience.gresource'))
