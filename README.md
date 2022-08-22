@@ -22,7 +22,7 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 [![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#Gradience:matrix.org)
 
-## Building and Installing
+# Building and Installing
 
 **[NOTE]** See `next` branch for latest commits.
 
@@ -44,7 +44,7 @@ Install required Python libraries:
 pip install -r requirements.txt
 ```
 
-### Global installation
+## Global installation
 
 ```sh
 git clone https://github.com/GradienceTeam/Gradience.git
@@ -53,7 +53,7 @@ meson builddir --prefix=/usr/local
 sudo ninja -C builddir install
 ```
 
-### Local build (for testing and development purposes)
+## Local build (for testing and development purposes)
 
 ```sh
 git clone https://github.com/GradienceTeam/Gradience.git
@@ -66,7 +66,7 @@ ninja -C builddir run
 
 **[NOTE]** During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
 
-### Building using flatpak-builder
+## Building using flatpak-builder
 
 1. Open Terminal
 2. Run `git clone https://github.com/GradienceTeam/Gradience.git && cd Gradience`
@@ -76,9 +76,9 @@ ninja -C builddir run
 
 Alternatively, open the project with GNOME Builder, then build and run it.
 
-## Setup Tutorial
+# Setup Tutorial
 
-### Libadwaita applications
+## Libadwaita applications
 
 No additional setup is required for native Libadwaita applications.
 
@@ -87,18 +87,22 @@ For Flatpak Libadwaita applications, you need to override their permissions:
 - Run `sudo flatpak override --filesystem=xdg-config/gtk-4.0` or
 - Use [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-4.0` to **Other files** in the **Filesystem** section of **All Applications**
 
-### Vanilla GTK 4 applications
+## Vanilla GTK 4 applications
 
 Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to theme vanilla GTK 4 applications.
 
-### GTK 3 applications
+## GTK 3 applications
 
 - Install and apply the [adw-gtk3](https://github.com/lassekongo83/adw-gtk3#readme) theme (don't forget to install the Flatpak package!)
 - For Flatpak applications, you need to override their permissions:
   - Run `sudo flatpak override --filesystem=xdg-config/gtk-3.0` or
   - Use [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-3.0` to **Other files** in the **Filesystem** section of **All Applications**
 
-## Roadmap
+# Roadmap
+
+<details><summary>Show roadmap</summary>
+
+### <!-- GapTool Turbo 3000 -->
 
 This tool is currently WIP, but it already has a plenty of features and is very usable. Below is the roadmap, where all the checked features are already implemented:
 
@@ -123,11 +127,13 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [ ] Customize KvLibadwaita
 - [ ] Customize Firefox GNOME theme
 
-## Contribute
+</details>
+
+# Contribute
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for more informations and a list of contributors
 
-## About Name
+# About Name
 
 Gradience is originally named Adwaita Manager
 
