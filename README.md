@@ -100,11 +100,11 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 # Roadmap
 
+This tool is currently WIP, but it already has a plenty of features and is very usable. Below is the roadmap, where all the checked features are already implemented:
+
 <details><summary>Show roadmap</summary>
 
 ### <!-- GapTool Turbo 3000 -->
-
-This tool is currently WIP, but it already has a plenty of features and is very usable. Below is the roadmap, where all the checked features are already implemented:
 
 - [x] Customize named colors, either with a color picker or with text
 - [x] Explanations for some named colors
