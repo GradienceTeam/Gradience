@@ -313,5 +313,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                     error["line"]))
 
     def on_presets_dropdown_activate(self, *args):
-        self.get_application().reload_user_defined_presets()
-        # GradiencePresetWindow().present()
+        if build_type == "debug":
+            GradiencePresetWindow().present()
+        else:
+            self.get_application().reload_user_defined_presets()
