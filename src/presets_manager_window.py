@@ -20,17 +20,21 @@ from gi.repository import Gtk, Adw, Gio, Gdk
 from .constants import rootdir, build_type
 import os
 import json
-
+from .preset_row import GradiencePresetRow
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
     __gtype_name__ = "GradiencePresetWindow"
 
-    content = Gtk.Template.Child()
-    content_explore = Gtk.Template.Child()
+    installed = Gtk.Template.Child("installed")
+    content_explore = Gtk.Template.Child("explore")
     main_view = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
-    import_button = Gtk.Template.Child("import-button")
+    
+    import_button = Gtk.Template.Child("import_button")
+    remove_button = Gtk.Template.Child("remove_button")
+    file_manager_button = Gtk.Template.Child("file_manager_button")
+    select_button = Gtk.Template.Child("select_button")
 
     custom_presets = {}
 
@@ -65,9 +69,9 @@ class GradiencePresetWindow(Adw.Window):
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Failed to load preset"))
                     )
+        print("custom_presets: ", self.custom_presets)
         self.preset_list = Adw.PreferencesGroup()
         for preset, preset_name in self.custom_presets.items():
-            row = Adw.ActionRow()
-            row.set_title(preset_name)
+            row = GradiencePresetRow(preset_name)
             self.preset_list.add(row)
-        self.content.add(self.preset_list)
+        self.installed.add(self.preset_list)
