@@ -3,8 +3,8 @@ using Adw 1;
 
 template GradiencePresetWindow : Adw.Window {
   title: _("Presets");
-  default-width: 1280;
-  default-height: 720;
+  default-width: 600;
+  default-height: 400;
 
   Adw.ToastOverlay toast_overlay {
     Adw.Leaflet leaflet {
@@ -18,17 +18,15 @@ template GradiencePresetWindow : Adw.Window {
           centering-policy: strict;
 
           [start]
-          Button import-button {
+          Button import_button {
             styles ["suggested-action"]
             label: _("Import");
-            action-name: "import_preset";
           }
 
           [start]
-          Button remove-button {
-            styles ["danger-action"]
+          Button remove_button {
+            styles ["danger"]
             label: _("Delete");
-            action-name: "delete_preset";
             visible: false;
           }
           
@@ -38,11 +36,18 @@ template GradiencePresetWindow : Adw.Window {
           }
 
           [end]
-          Button file-manager-button {
-            action-name: "open_file_manager";
+          Button file_manager_button {
             tooltip-text: _("Open in file manager");
             Adw.ButtonContent {
               icon-name: "folder-symbolic";
+            }
+          }
+
+          [end]
+          Button select_button {
+            tooltip-text: _("Select preset");
+            Adw.ButtonContent {
+              icon-name: "selection-mode-symbolic";
             }
           }
           
