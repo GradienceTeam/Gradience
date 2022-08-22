@@ -11,6 +11,7 @@ blueprints = custom_target('blueprints',
     'ui/presets_manager_window.blp',
     'ui/plugin_row.blp',
     'ui/welcome.blp',
+    'ui/preset_row.blp',
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -64,6 +65,7 @@ gradience_sources = [
   'presets_manager_window.py',
   'plugin_row.py',
   'welcome.py',
+  'preset_row.py',
 ]
 
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
