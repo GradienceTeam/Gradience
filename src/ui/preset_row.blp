@@ -1,0 +1,22 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradiencePresetRow : Adw.ActionRow {
+
+  [suffix]
+  Button apply_button {
+    valign: center;
+    icon-name: "checkmark";
+    tooltip-text: _("Apply preset");
+    clicked => on_apply_button_clicked();
+  }
+
+  [suffix]
+  Button rename_button {
+    valign: center;
+    icon-name: "edit-symbolic";
+    tooltip-text: _("Rename");
+    clicked => on_rename_button_clicked();
+  }
+
+}
