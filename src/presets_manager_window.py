@@ -22,6 +22,7 @@ import os
 import json
 from .preset_row import GradiencePresetRow
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
     __gtype_name__ = "GradiencePresetWindow"
@@ -30,7 +31,7 @@ class GradiencePresetWindow(Adw.Window):
     content_explore = Gtk.Template.Child("explore")
     main_view = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
-    
+
     import_button = Gtk.Template.Child("import_button")
     remove_button = Gtk.Template.Child("remove_button")
     file_manager_button = Gtk.Template.Child("file_manager_button")
