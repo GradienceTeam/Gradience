@@ -168,4 +168,5 @@ class GradiencePresetWindow(Adw.Window):
         else:
             empty = Adw.ActionRow()
             empty.set_title(_("No preset found! Use the import button to import one or search one on the Explore tab"))
+            self.preset_list.add(empty)
         self.installed.add(self.preset_list)
