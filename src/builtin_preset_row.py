@@ -1,7 +1,7 @@
 from gi.repository import Gtk, Gdk, Adw
 
 from .constants import rootdir
-from . import to_slug_case
+from .modules.utils import to_slug_case, buglog
 import json
 import os
 
@@ -29,7 +29,7 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
-        print("apply")
+        buglog("apply")
 
         self.app.load_preset_from_resource(
             f"{rootdir}/presets/"

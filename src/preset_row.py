@@ -1,7 +1,7 @@
 from gi.repository import Gtk, Gdk, Adw
 
 from .constants import rootdir
-from . import to_slug_case
+from .modules.utils import to_slug_case
 import json
 import os
 
@@ -36,7 +36,7 @@ class GradiencePresetRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
-        print("apply")
+        buglog("apply")
 
         self.app.load_preset_from_file(os.path.join(
             os.environ.get("XDG_CONFIG_HOME",
