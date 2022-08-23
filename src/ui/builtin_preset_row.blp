@@ -1,0 +1,14 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradienceBuiltinPresetRow : Adw.ActionRow {
+  [suffix]
+  Button apply_button {
+      valign: center;
+      icon-name: "checkmark-small-symbolic";
+      tooltip-text: _("Apply preset");
+      clicked => on_apply_button_clicked();
+  }
+    
+
+}

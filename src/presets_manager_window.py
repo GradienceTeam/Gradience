@@ -21,6 +21,7 @@ from .constants import rootdir, build_type
 import os
 import json
 from .preset_row import GradiencePresetRow
+from .builtin_preset_row import GradienceBuiltinPresetRow
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
@@ -58,6 +59,11 @@ class GradiencePresetWindow(Adw.Window):
             os.makedirs(preset_directory)
 
         self.custom_presets.clear()
+        self.builtin_presets = {
+            "adwaita-dark": "Adwaita Dark",
+            "adwaita": "Adwaita",
+            "pretty-purple": "Pretty Purple",
+        }
         for file_name in os.listdir(preset_directory):
             if file_name.endswith(".json"):
                 try:
@@ -82,3 +88,10 @@ class GradiencePresetWindow(Adw.Window):
             row = GradiencePresetRow(preset_name, self.toast_overlay)
             self.preset_list.add(row)
         self.installed.add(self.preset_list)
+        
+        self.builtin_preset_list = Adw.PreferencesGroup()
+        for preset, preset_name in self.builtin_presets.items():
+            row = GradienceBuiltinPresetRow(preset_name, self.toast_overlay)
+            self.builtin_preset_list.add(row)
+        self.installed.add(self.builtin_preset_list)
+
