@@ -666,11 +666,11 @@ class GradienceApplication(Adw.Application):
 Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 With Gradience you can:
 
-    - Change any color of Adwaita theme
-    - Apply Material 3 colors from wallaper
-    - Use other users presets
-    - Change advanced options with CSS
-    - Extend functionality using plugins
+- Change any color of Adwaita theme
+- Apply Material 3 colors from wallaper
+- Use other users presets
+- Change advanced options with CSS
+- Extend functionality using plugins
 
 This app is written in Python and uses GTK 4 and libadwaita.
             """)
