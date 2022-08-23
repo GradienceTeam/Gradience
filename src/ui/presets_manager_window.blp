@@ -1,67 +1,83 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradiencePresetWindow: Adw.Window {
-    deletable: true;
-    default-width: 550;
-    default-height: 550;
-    Adw.ToastOverlay toast_overlay {
-        Gtk.Box main_view {
-            orientation: vertical;
-            Adw.HeaderBar titlebar {
-                centering-policy: strict;
-                [title]
-                Adw.WindowTitle {
-                    title: _("Presets");
-                }
+template GradiencePresetWindow : Adw.Window {
+  title: _("Presets");
+  default-width: 600;
+  default-height: 400;
 
-                [start]
-                Button import-button {
-                    styles ["suggested-action"]
-                    label: _("Import");
-                    action-name: "app.import_preset";
-                }
+  Adw.ToastOverlay toast_overlay {
+    Adw.Leaflet leaflet {
+      can-navigate-back: true;
+      can-unfold: false;
 
+      Gtk.Box main_view {
+        orientation: vertical;
 
-                [end]
-                Button {
-                    icon-name: "folder-open-symbolic";
-                    action-name: "app.open_preset_directory";
-                }
+        Adw.HeaderBar titlebar {
+          centering-policy: strict;
+
+          [start]
+          Button import_button {
+            styles ["suggested-action"]
+            label: _("Import");
+            clicked => on_import_button_clicked();
+          }
+
+          [start]
+          Button remove_button {
+            styles ["danger"]
+            label: _("Delete");
+            visible: false;
+          }
+          
+          [title]
+          Adw.ViewSwitcherTitle title {
+            stack: view_stack;
+          }
+
+          [end]
+          Button file_manager_button {
+            tooltip-text: _("Open in file manager");
+            clicked => on_file_manager_button_clicked();
+            Adw.ButtonContent {
+              icon-name: "folder-symbolic";
             }
+          }
 
-            Gtk.Box {
-                orientation: vertical;
-
-                Adw.ViewStack view_stack {
-                    vexpand: true;
-                    hexpand: true;
-
-                    Adw.ViewStackPage {
-                        name: "manage";
-                        title: _("Manage");
-                        icon-name: "larger-brush-symbolic";
-                        
-                        child: Adw.PreferencesPage content { };
-                
-                    }
-
-                    Adw.ViewStackPage {
-                        name: "explore";
-                        title: _("Explore");
-                        icon-name: "applications-science-symbolic";
-
-                        child: Adw.PreferencesPage content_explore { };
-                    }
-
-                }
-            }
-
-            Adw.ViewSwitcherBar {
-                stack: view_stack;
-                reveal: bind title.title-visible;
-            }
         }
+
+        Gtk.Box {
+          orientation: vertical;
+
+          Adw.ViewStack view_stack {
+            vexpand: true;
+            hexpand: true;
+
+            Adw.ViewStackPage {
+              name: "installed";
+              title: _("Installed");
+              icon-name: "larger-brush-symbolic";
+            
+              child: Adw.PreferencesPage installed { };
+      
+            }
+
+            Adw.ViewStackPage {
+              name: "explore";
+              title: _("Explore");
+              icon-name: "web-browser-symbolic";
+
+              child: Adw.PreferencesPage explore { };
+            }
+          }
+
+          Adw.ViewSwitcherBar {
+            stack: view_stack;
+            reveal: bind title.title-visible;
+          }
+        }
+      }
     }
-        
+  }
 }
