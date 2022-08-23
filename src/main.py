@@ -218,6 +218,7 @@ class GradienceApplication(Adw.Application):
         )
 
     def load_preset_from_file(self, preset_path):
+        print("load preset from file", preset_path)
         preset_text = ""
         with open(preset_path, "r", encoding="utf-8") as file:
             preset_text = file.read()
