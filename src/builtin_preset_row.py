@@ -31,9 +31,7 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
     def on_apply_button_clicked(self, *_args):
         print("apply")
 
-        self.app.load_preset_from_file(os.path.join(
-            os.environ.get("XDG_CONFIG_HOME",
-                           os.environ["HOME"] + "/.config"),
-            "presets",
-            to_slug_case(self.name) + ".json",
-        ))
+         self.load_preset_from_resource(
+                f"{rootdir}/presets/"
+                + to_slug_case(self.name) + ".json"
+            )
