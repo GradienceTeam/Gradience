@@ -2,21 +2,32 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradiencePresetRow : Adw.ActionRow {
-
   [suffix]
-  Button apply_button {
+  Stack value_stack {
     valign: center;
-    icon-name: "checkmark-small";
-    tooltip-text: _("Apply preset");
-    clicked => on_apply_button_clicked();
+    hhomogeneous: false;
+    interpolate-size: true;
+    transition-type: crossfade;
+
+    Button apply_button {
+      valign: center;
+      icon-name: "checkmark-small";
+      tooltip-text: _("Apply preset");
+      clicked => on_apply_button_clicked();
+    }
+    Entry name_entry {
+      text: "Name";
+      changed => on_name_entry_changed();
+    }
   }
 
   [suffix]
-  Button rename_button {
+  ToggleButton name_entry_toggle {
     valign: center;
-    icon-name: "edit-symbolic";
-    tooltip-text: _("Rename");
-    clicked => on_rename_button_clicked();
+    icon-name: "document-edit-symbolic";
+    tooltip-text: _("Toggle Text Value");
+
+    toggled => on_name_entry_toggled();
   }
 
 }
