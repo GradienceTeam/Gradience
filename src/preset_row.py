@@ -58,18 +58,29 @@ class GradiencePresetRow(Adw.ActionRow):
         else:
             self.update_value()
             self.value_stack.set_visible_child(self.apply_button)
-            
+
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):
-        os.remove(os.path.join(
-            os.environ.get("XDG_CONFIG_HOME",
-                           os.environ["HOME"] + "/.config"),
-            "presets",
-            to_slug_case(self.old_name) + ".json",
-        ))
-        
+
+        try:
+            os.remove(os.path.join(
+                os.environ.get("XDG_CONFIG_HOME",
+                               os.environ["HOME"] + "/.config"),
+                "presets",
+                to_slug_case(self.old_name) + ".json",
+            ))
+        except Exception:
+
+            self.toast_overlay.add_toast(
+                Adw.Toast(title=_("Scheme could not be removed!"))
+            )
+        else:
+            self.toast_overlay.add_toast(
+                Adw.Toast(title=_("Scheme successfully deleted!"))
+            )
+
         self.win.reload_pref_group()
-        
+
     def update_value(self):
         os.remove(os.path.join(
             os.environ.get("XDG_CONFIG_HOME",
