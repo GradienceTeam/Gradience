@@ -16,14 +16,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+import sys
 import os
-from pathlib import Path
 import importlib
 import pkgutil
-from .plugin_row import GradiencePluginRow
+
 from gi.repository import Gtk, Adw, Gio, Gdk
 
-import sys
+from pathlib import Path
+from .modules.utils import buglog
+from .plugin_row import GradiencePluginRow
 
 
 class GradiencePluginsList:
@@ -41,7 +43,7 @@ class GradiencePluginsList:
         for plugin_id, plugin in self.discoverd_plugins.items():
             self.plugins[plugin_id] = plugin.GradiencePlugin()
 
-        print(self.plugins)
+        buglog(self.plugins)
 
     def load_all_custom_settings(self, settings):
         for plugin_id, plugin in self.plugins.items():

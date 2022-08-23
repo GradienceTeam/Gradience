@@ -19,7 +19,6 @@
 import sys
 import json
 import os
-import re
 import traceback
 
 import gi
@@ -35,7 +34,7 @@ from .custom_css_group import GradienceCustomCSSGroup
 from .constants import rootdir, app_id, rel_ver, version, bugtracker_url, help_url, project_url
 from .welcome import GradienceWelcomeWindow
 from .presets_manager_window import GradiencePresetWindow
-from . import to_slug_case
+from .modules.utils import to_slug_case, buglog
 
 
 class GradienceApplication(Adw.Application):
@@ -73,7 +72,7 @@ class GradienceApplication(Adw.Application):
             self.settings.get_value("disabled-plugins"))
 
         self.first_run = self.settings.get_boolean("first-run")
-        print(f"disabled plugins: {self.disabled_plugins}")
+        buglog(f"disabled plugins: {self.disabled_plugins}")
 
         self.style_manager = Adw.StyleManager.get_default()
 
@@ -127,11 +126,11 @@ class GradienceApplication(Adw.Application):
             )
 
         if self.first_run:
-            print("first run")
+            buglog("first run")
             welcome = GradienceWelcomeWindow(self.win)
             welcome.present()
         else:
-            print("normal run")
+            buglog("normal run")
             self.win.present()
 
     def open_preset_directory(self, *_args):
@@ -711,7 +710,7 @@ This app is written in Python and uses GTK 4 and libadwaita.
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
     def reload_plugins(self):
-        print("reload plugins")
+        buglog("reload plugins")
         self.win.plugins_group = self.win.plugins_list.to_group()
 
     def show_adwaita_demo(self, *_args):

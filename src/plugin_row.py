@@ -1,6 +1,7 @@
 
 from gi.repository import Gtk, Gdk, Adw
 
+from .modules.utils import buglog
 from .constants import rootdir
 
 
@@ -21,14 +22,14 @@ class GradiencePluginRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_settings_plugin_clicked(self, *_args):
-        print("settings")
+        buglog("settings")
 
     @Gtk.Template.Callback()
     def on_remove_plugin_clicked(self, *_args):
-        print("removed")
+        buglog("removed")
 
     @Gtk.Template.Callback()
     def on_switch_toggled(self, *_args):
-        print("toggled")
+        buglog("toggled")
 
         Gtk.Application.get_default().reload_plugins()
