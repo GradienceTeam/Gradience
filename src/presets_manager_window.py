@@ -74,6 +74,8 @@ class GradiencePresetWindow(Adw.Window):
         empty = Adw.ActionRow()
         empty.set_title(_("Not available yet"))
         
+        self.explore_list.add(empty)
+        
         self.explore.add(self.explore_list)
 
     @Gtk.Template.Callback()
@@ -91,10 +93,6 @@ class GradiencePresetWindow(Adw.Window):
         self.file_chooser_dialog.hide()
 
         if response == Gtk.ResponseType.ACCEPT:
-            print("preset_path: ", self.preset_path)
-            print("preset_file: ", preset_file)
-            print("preset type: ", type(self.preset_path))
-
             if preset_file.endswith(".json"):
 
                 if preset_file.strip(".json") in self.custom_presets:
@@ -150,7 +148,6 @@ class GradiencePresetWindow(Adw.Window):
                     self.toast_overlay.add_toast(
                         Adw.Toast(title=_("Failed to load preset"))
                     )
-        print("custom_presets: ", self.custom_presets)
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
 
