@@ -162,11 +162,12 @@ class GradiencePresetWindow(Adw.Window):
         self.preset_list.set_title(_("User Presets"))
         self.preset_list.set_description(_("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
         
-        for preset, preset_name in self.custom_presets.items():
-            row = GradiencePresetRow(preset_name, self)
-            self.preset_list.add(row)
+        if self.custom_presets:
+            for preset, preset_name in self.custom_presets.items():
+                row = GradiencePresetRow(preset_name, self)
+                self.preset_list.add(row)
         else:
-            empty = Adw.ActionRow()
-            empty.set_title(_("No preset found! Use the import button to import one or search one on the Explore tab"))
-            self.preset_list.add(empty)
+            self.preset_empty = Adw.ActionRow()
+            self.preset_empty.set_title(_("No preset found! Use the import button to import one or search one on the Explore tab"))
+            self.preset_list.add(self.preset_empty)
         self.installed.add(self.preset_list)
