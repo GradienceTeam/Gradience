@@ -42,7 +42,6 @@ class GradiencePresetWindow(Adw.Window):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.setup_pref_group()
-
     def setup_pref_group(self):
         preset_directory = os.path.join(
             os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
@@ -67,12 +66,12 @@ class GradiencePresetWindow(Adw.Window):
                     self.custom_presets[file_name.replace(
                         ".json", "")] = preset["name"]
                 except Exception:
-                    self.win.toast_overlay.add_toast(
+                    self.toast_overlay.add_toast(
                         Adw.Toast(title=_("Failed to load preset"))
                     )
         print("custom_presets: ", self.custom_presets)
         self.preset_list = Adw.PreferencesGroup()
         for preset, preset_name in self.custom_presets.items():
-            row = GradiencePresetRow(preset_name)
+            row = GradiencePresetRow(preset_name, self.toast_overlay)
             self.preset_list.add(row)
         self.installed.add(self.preset_list)
