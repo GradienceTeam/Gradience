@@ -30,7 +30,7 @@ class GradiencePresetWindow(Adw.Window):
     __gtype_name__ = "GradiencePresetWindow"
 
     installed = Gtk.Template.Child("installed")
-    content_explore = Gtk.Template.Child("explore")
+    explore = Gtk.Template.Child("explore")
     main_view = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
 
@@ -63,6 +63,15 @@ class GradiencePresetWindow(Adw.Window):
         self.file_chooser_dialog.connect(
             "response", self.on_file_chooser_response
         )
+        
+    def setup_explore(self):
+        self.explore_list = Adw.PreferencesGroup()
+        self.explore_list.set_title(_("Explore"))
+        
+        empty = Adw.ActionRow()
+        empty.set_title(_("Not available yet"))
+        
+        self.explore.add(self.explore_list)
 
     @Gtk.Template.Callback()
     def on_file_manager_button_clicked(self, *_args):
