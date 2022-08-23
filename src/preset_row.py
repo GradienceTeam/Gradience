@@ -6,7 +6,7 @@ from .constants import rootdir
 @Gtk.Template(resource_path=f"{rootdir}/ui/preset_row.ui")
 class GradiencePresetRow(Adw.ActionRow):
     __gtype_name__ = "GradiencePresetRow"
-    
+
     name_entry = Gtk.Template.Child("name_entry")
     value_stack = Gtk.Template.Child("value_stack")
     name_entry_toggle = Gtk.Template.Child("name_entry_toggle")
