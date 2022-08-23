@@ -46,10 +46,10 @@ class GradiencePresetRow(Adw.ActionRow):
         if self.name_entry_toggle.get_active():
             self.value_stack.set_visible_child(self.name_entry)
         else:
-            self.update_value(self.name_entry.get_text())
+            self.update_value()
             self.value_stack.set_visible_child(self.apply_button)
 
-    def update_value(self, new_value):        
+    def update_value(self):        
         with open(
             os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
