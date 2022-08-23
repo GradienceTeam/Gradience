@@ -37,7 +37,16 @@ configure_file(
 configure_file(
   input: 'constants.py.in',
   output: 'constants.py',
-  configuration: conf,
+  configuration: configuration_data({
+    'APP_ID': APPLICATION_ID,
+    'RELEASE_VER': meson.project_version(),
+    'VERSION': meson.project_version() + VERSION_SUFFIX,
+    'BUILD_TYPE': get_option('buildtype'),
+    'PROJECT_URL': PROJECT_URL,
+    'BUGTRACKER_URL': BUGTRACKER_URL,
+    'HELP_URL': HELP_URL,
+    'TRANSLATE_URL': TRANSLATE_URL
+  }),
   install: true,
   install_dir: PY_INSTALLDIR.get_install_dir() / 'gradience',
 )
