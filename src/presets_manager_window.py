@@ -69,7 +69,7 @@ class GradiencePresetWindow(Adw.Window):
     def setup_explore(self):
         self.explore_list = Adw.PreferencesGroup()
         self.explore_list.set_title(_("Explore community presets"))
-        self.explore_list.set_description(_("See <a href=\"https://github.com/GradienceTeam/Gradience\">GradienceTeam/Gradience</a> on Github for more presets"))
+        self.explore_list.set_description(_("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
         
         empty = Adw.ActionRow()
         empty.set_title(_("Not available yet"))
@@ -160,7 +160,7 @@ class GradiencePresetWindow(Adw.Window):
 
         self.preset_list = Adw.PreferencesGroup()
         self.preset_list.set_title(_("User Presets"))
-        self.preset_list.set_description(_("See <a href=\"https://github.com/GradienceTeam/Gradience\">GradienceTeam/Gradience</a> on Github for more presets"))
+        self.preset_list.set_description(_("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
         for preset, preset_name in self.custom_presets.items():
             row = GradiencePresetRow(preset_name, self.toast_overlay)
             self.preset_list.add(row)
