@@ -36,7 +36,6 @@ class GradiencePresetWindow(Adw.Window):
     import_button = Gtk.Template.Child("import_button")
     remove_button = Gtk.Template.Child("remove_button")
     file_manager_button = Gtk.Template.Child("file_manager_button")
-    select_button = Gtk.Template.Child("select_button")
 
     custom_presets = {}
 
