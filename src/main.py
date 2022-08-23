@@ -34,7 +34,7 @@ from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
 from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
-from .constants import rootdir, app_id, version, bugtracker_url, help_url, project_url
+from .constants import rootdir, app_id, rel_ver, version, bugtracker_url, help_url, project_url
 from .welcome import GradienceWelcomeWindow
 from .presets_manager_window import GradiencePresetWindow
 
@@ -698,19 +698,22 @@ class GradienceApplication(Adw.Application):
             # Translators: This is a place to put your credits (formats: "Name
             # https://example.com" or "Name <email@example.com>", no quotes)
             # and is not meant to be translated literally.
+            # TODO: Automate this process using CI, because not everyone knows about this
             translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh/
                 FineFindus https://github.com/FineFindus
                 Karol Lademan https://www.transifex.com/user/profile/karlod/
                 Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI/
                 Renato Corrêa https://www.transifex.com/user/profile/renatocrrs/
                 Aggelos Tselios https://www.transifex.com/user/profile/AndroGR/
-                David "Daudix UFO" Lapshin https://github.com/daudix-UFO'
+                David "Daudix UFO" Lapshin https://github.com/daudix-UFO
                 0xMRTT https://github.com/0xMRTT
+                tfuxu https://github.com/tfuxu
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918/
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
+            release_notes_version=rel_ver,
             release_notes=_("""
                 <ul>
         <li>Add AdwViewSwitcher in the header bar.</li>
