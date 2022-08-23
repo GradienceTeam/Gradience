@@ -37,6 +37,7 @@ from .welcome import GradienceWelcomeWindow
 from .presets_manager_window import GradiencePresetWindow
 from . import to_slug_case
 
+
 class GradienceApplication(Adw.Application):
     """The main application singleton class."""
 

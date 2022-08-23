@@ -15,9 +15,9 @@ class GradiencePresetRow(Adw.ActionRow):
     name_entry_toggle = Gtk.Template.Child("name_entry_toggle")
     apply_button = Gtk.Template.Child("apply_button")
 
-    def __init__(self, name, toast_overlay, author="",  **kwargs):
+    def __init__(self, name, toast_overlay, author="", **kwargs):
         super().__init__(**kwargs)
-        
+
         self.name = name
         self.old_name = name
 
@@ -25,9 +25,9 @@ class GradiencePresetRow(Adw.ActionRow):
         self.set_title(name)
         self.set_subtitle(author)
         self.name_entry.set_text(name)
-        
+
         self.app = Gtk.Application.get_default()
-        
+
         self.toast_overlay = toast_overlay
 
         apply_button = Gtk.Template.Child("apply_button")
@@ -36,13 +36,13 @@ class GradiencePresetRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         print("apply")
-        
+
         self.app.load_preset_from_file(os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-                to_slug_case(self.name) + ".json",
-            ))
+            os.environ.get("XDG_CONFIG_HOME",
+                           os.environ["HOME"] + "/.config"),
+            "presets",
+            to_slug_case(self.name) + ".json",
+        ))
 
     @Gtk.Template.Callback()
     def on_name_entry_changed(self, *_args):
@@ -58,13 +58,13 @@ class GradiencePresetRow(Adw.ActionRow):
             self.update_value()
             self.value_stack.set_visible_child(self.apply_button)
 
-    def update_value(self): 
+    def update_value(self):
         os.remove(os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-                to_slug_case(self.old_name) + ".json",
-            ),)       
+            os.environ.get("XDG_CONFIG_HOME",
+                           os.environ["HOME"] + "/.config"),
+            "presets",
+            to_slug_case(self.old_name) + ".json",
+        ),)
         with open(
             os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",

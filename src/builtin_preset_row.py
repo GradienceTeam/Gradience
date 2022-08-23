@@ -12,17 +12,17 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
 
     apply_button = Gtk.Template.Child("apply_button")
 
-    def __init__(self, name, toast_overlay, author="",  **kwargs):
+    def __init__(self, name, toast_overlay, author="", **kwargs):
         super().__init__(**kwargs)
-        
+
         self.name = name
 
         self.set_name(name)
         self.set_title(name)
         self.set_subtitle(author)
-        
+
         self.app = Gtk.Application.get_default()
-        
+
         self.toast_overlay = toast_overlay
 
         apply_button = Gtk.Template.Child("apply_button")
@@ -30,10 +30,10 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         print("apply")
-        
+
         self.app.load_preset_from_file(os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-                to_slug_case(self.name) + ".json",
-            ))
+            os.environ.get("XDG_CONFIG_HOME",
+                           os.environ["HOME"] + "/.config"),
+            "presets",
+            to_slug_case(self.name) + ".json",
+        ))
