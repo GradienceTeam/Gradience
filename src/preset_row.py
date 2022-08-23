@@ -36,6 +36,13 @@ class GradiencePresetRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         print("apply")
+        
+        self.app.load_preset_from_file(os.path.join(
+                os.environ.get("XDG_CONFIG_HOME",
+                               os.environ["HOME"] + "/.config"),
+                "presets",
+                to_slug_case(self.name) + ".json",
+            ))
 
     @Gtk.Template.Callback()
     def on_name_entry_changed(self, *_args):
