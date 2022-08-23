@@ -19,6 +19,7 @@ class GradiencePresetRow(Adw.ActionRow):
         super().__init__(**kwargs)
         
         self.name = name
+        self.old_name = name
 
         self.set_name(name)
         self.set_title(name)
@@ -50,7 +51,13 @@ class GradiencePresetRow(Adw.ActionRow):
             self.update_value()
             self.value_stack.set_visible_child(self.apply_button)
 
-    def update_value(self):        
+    def update_value(self): 
+        os.remove(os.path.join(
+                os.environ.get("XDG_CONFIG_HOME",
+                               os.environ["HOME"] + "/.config"),
+                "presets",
+                to_slug_case(self.old_name) + ".json",
+            ),)       
         with open(
             os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
@@ -72,3 +79,4 @@ class GradiencePresetRow(Adw.ActionRow):
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Scheme successfully renamed!"))
             )
+        self.old_name = self.name
