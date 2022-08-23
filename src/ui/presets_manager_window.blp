@@ -21,6 +21,7 @@ template GradiencePresetWindow : Adw.Window {
           Button import_button {
             styles ["suggested-action"]
             label: _("Import");
+            clicked => on_import_button_clicked();
           }
 
           [start]

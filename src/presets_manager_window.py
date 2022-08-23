@@ -19,6 +19,7 @@
 from gi.repository import Gtk, Adw, Gio, Gdk
 from .constants import rootdir, build_type
 import os
+import shutil
 import json
 from .preset_row import GradiencePresetRow
 from .builtin_preset_row import GradienceBuiltinPresetRow
@@ -41,15 +42,58 @@ class GradiencePresetWindow(Adw.Window):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.setup_pref_group()
+        
+        self.builtin_preset_list = Adw.PreferencesGroup()
+        self.builtin_preset_list.set_title(_("Builtin Presets"))
+        self.installed.add(self.builtin_preset_list)
+
+        self.preset_list = Adw.PreferencesGroup()
+        self.preset_list.set_title(_("User Presets"))
+        self.installed.add(self.preset_list)
+
+        self.reload_pref_group()
 
         self.app = Gtk.Application.get_default()
+        self.setup_import()
+
+    def setup_import(self):
+        self.file_chooser_dialog = Gtk.FileChooserNative()
+        self.file_chooser_dialog.set_transient_for(self)
+
+        self.file_chooser_dialog.connect(
+            "response", self.on_file_chooser_response
+        )
 
     @Gtk.Template.Callback()
     def on_file_manager_button_clicked(self, *_args):
         self.app.open_preset_directory()
 
-    def setup_pref_group(self):
+    @Gtk.Template.Callback()
+    def on_import_button_clicked(self, *_args):
+        self.file_chooser_dialog.show()
+
+    def on_file_chooser_response(self, widget, response):
+        if response == Gtk.ResponseType.ACCEPT:
+            self.preset_path = self.file_chooser_dialog.get_file()
+            preset_file = self.preset_path.get_basename()
+        self.file_chooser_dialog.hide()
+
+        if response == Gtk.ResponseType.ACCEPT:
+            print("preset_path: ", self.preset_path)
+            print("preset_file: ", preset_file)
+            print("preset type: ", type(self.preset_path))
+
+            if preset_file.endswith(".json"):
+                shutil.copy(self.preset_path.get_path(), os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "presets",
+                    preset_file
+                ))
+                
+        self.reload_pref_group()
+
+    def reload_pref_group(self):
         preset_directory = os.path.join(
             os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
             "presets",
@@ -82,17 +126,19 @@ class GradiencePresetWindow(Adw.Window):
                         Adw.Toast(title=_("Failed to load preset"))
                     )
         print("custom_presets: ", self.custom_presets)
+        self.installed.remove(self.preset_list)
+        self.installed.remove(self.builtin_preset_list)
+        
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
         for preset, preset_name in self.builtin_presets.items():
             row = GradienceBuiltinPresetRow(preset_name, self.toast_overlay)
             self.builtin_preset_list.add(row)
         self.installed.add(self.builtin_preset_list)
-        
+
         self.preset_list = Adw.PreferencesGroup()
         self.preset_list.set_title(_("User Presets"))
         for preset, preset_name in self.custom_presets.items():
             row = GradiencePresetRow(preset_name, self.toast_overlay)
             self.preset_list.add(row)
         self.installed.add(self.preset_list)
-
