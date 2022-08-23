@@ -19,9 +19,8 @@ class GradiencePresetRow(Adw.ActionRow):
         super().__init__(**kwargs)
         
         self.name = name
+        self.update_name()
 
-        self.set_name(name)
-        self.set_title(name)
         self.set_subtitle(author)
         
         self.app = Gtk.Application.get_default()
@@ -30,6 +29,7 @@ class GradiencePresetRow(Adw.ActionRow):
 
         apply_button = Gtk.Template.Child("apply_button")
         rename_button = Gtk.Template.Child("rename_button")
+        
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
@@ -37,7 +37,11 @@ class GradiencePresetRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_name_entry_changed(self, *_args):
+        self.update_name()
+        
+    def update_name(self):
         self.name = self.name_entry.get_text()
+        self.name_entry.set_text(self.name)
         self.set_name(self.name)
         self.set_title(self.name)
 
