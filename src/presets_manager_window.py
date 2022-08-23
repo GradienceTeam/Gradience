@@ -82,14 +82,17 @@ class GradiencePresetWindow(Adw.Window):
                         Adw.Toast(title=_("Failed to load preset"))
                     )
         print("custom_presets: ", self.custom_presets)
+        self.builtin_preset_list = Adw.PreferencesGroup()
+        self.builtin_preset_list.set_title(_("Builtin Presets"))
+        for preset, preset_name in self.builtin_presets.items():
+            row = GradienceBuiltinPresetRow(preset_name, self.toast_overlay)
+            self.builtin_preset_list.add(row)
+        self.installed.add(self.builtin_preset_list)
+        
         self.preset_list = Adw.PreferencesGroup()
+        self.preset_list.set_title(_("User Presets"))
         for preset, preset_name in self.custom_presets.items():
             row = GradiencePresetRow(preset_name, self.toast_overlay)
             self.preset_list.add(row)
         self.installed.add(self.preset_list)
 
-        self.builtin_preset_list = Adw.PreferencesGroup()
-        for preset, preset_name in self.builtin_presets.items():
-            row = GradienceBuiltinPresetRow(preset_name, self.toast_overlay)
-            self.builtin_preset_list.add(row)
-        self.installed.add(self.builtin_preset_list)
