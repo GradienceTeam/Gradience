@@ -31,7 +31,7 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
     def on_apply_button_clicked(self, *_args):
         print("apply")
 
-        self.load_preset_from_resource(
+        self.app.load_preset_from_resource(
             f"{rootdir}/presets/"
             + to_slug_case(self.name) + ".json"
         )
