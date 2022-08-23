@@ -42,6 +42,8 @@ class GradiencePresetWindow(Adw.Window):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        
+        self.setup_explore()
 
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
