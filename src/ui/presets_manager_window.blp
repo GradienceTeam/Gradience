@@ -38,19 +38,11 @@ template GradiencePresetWindow : Adw.Window {
           [end]
           Button file_manager_button {
             tooltip-text: _("Open in file manager");
+            clicked => on_file_manager_button_clicked();
             Adw.ButtonContent {
               icon-name: "folder-symbolic";
             }
           }
-
-          [end]
-          Button select_button {
-            tooltip-text: _("Select preset");
-            Adw.ButtonContent {
-              icon-name: "selection-mode-symbolic";
-            }
-          }
-          
 
         }
 

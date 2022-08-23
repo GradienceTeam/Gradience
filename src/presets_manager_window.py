@@ -42,6 +42,13 @@ class GradiencePresetWindow(Adw.Window):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.setup_pref_group()
+        
+        self.app = Gtk.Application.get_default()
+        
+    @Gtk.Template.Callback()
+    def on_file_manager_button_clicked(self, *_args):
+        self.app.open_preset_directory()
+        
     def setup_pref_group(self):
         preset_directory = os.path.join(
             os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
