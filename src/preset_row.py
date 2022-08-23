@@ -14,8 +14,9 @@ class GradiencePresetRow(Adw.ActionRow):
     value_stack = Gtk.Template.Child("value_stack")
     name_entry_toggle = Gtk.Template.Child("name_entry_toggle")
     apply_button = Gtk.Template.Child("apply_button")
+    remove_button = Gtk.Template.Child("remove_button")
 
-    def __init__(self, name, toast_overlay, author="", **kwargs):
+    def __init__(self, name, win, author="", **kwargs):
         super().__init__(**kwargs)
 
         self.name = name
@@ -27,8 +28,8 @@ class GradiencePresetRow(Adw.ActionRow):
         self.name_entry.set_text(name)
 
         self.app = Gtk.Application.get_default()
-
-        self.toast_overlay = toast_overlay
+        self.win = win
+        self.toast_overlay = self.win.toast_overlay
 
         apply_button = Gtk.Template.Child("apply_button")
         rename_button = Gtk.Template.Child("rename_button")
@@ -57,14 +58,25 @@ class GradiencePresetRow(Adw.ActionRow):
         else:
             self.update_value()
             self.value_stack.set_visible_child(self.apply_button)
-
+            
+    @Gtk.Template.Callback()
+    def on_remove_button_clicked(self, *_args):
+        os.remove(os.path.join(
+            os.environ.get("XDG_CONFIG_HOME",
+                           os.environ["HOME"] + "/.config"),
+            "presets",
+            to_slug_case(self.old_name) + ".json",
+        ))
+        
+        self.win.reload_pref_group()
+        
     def update_value(self):
         os.remove(os.path.join(
             os.environ.get("XDG_CONFIG_HOME",
                            os.environ["HOME"] + "/.config"),
             "presets",
             to_slug_case(self.old_name) + ".json",
-        ),)
+        ))
         with open(
             os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",

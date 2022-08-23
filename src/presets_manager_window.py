@@ -162,6 +162,6 @@ class GradiencePresetWindow(Adw.Window):
         self.preset_list.set_title(_("User Presets"))
         self.preset_list.set_description(_("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
         for preset, preset_name in self.custom_presets.items():
-            row = GradiencePresetRow(preset_name, self.toast_overlay)
+            row = GradiencePresetRow(preset_name, self)
             self.preset_list.add(row)
         self.installed.add(self.preset_list)

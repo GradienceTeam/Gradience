@@ -25,9 +25,17 @@ template GradiencePresetRow : Adw.ActionRow {
   ToggleButton name_entry_toggle {
     valign: center;
     icon-name: "document-edit-symbolic";
-    tooltip-text: _("Toggle Text Value");
+    tooltip-text: _("Edit preset name");
 
     toggled => on_name_entry_toggled();
+  }
+
+  [suffix]
+  Button remove_button {
+    valign: center;
+    icon-name: "close-symbolic";
+    tooltip-text: _("Remove preset");
+    clicked => on_remove_button_clicked();
   }
 
 }
