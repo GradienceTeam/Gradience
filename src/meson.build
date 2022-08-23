@@ -77,3 +77,11 @@ gradience_sources = [
 
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
 #install_data(gradience_sources, install_dir: MODULE_DIR)
+
+# Install modules
+gradience_modules = [
+  'modules/__init__.py',
+  'modules/utils.py'
+]
+
+PY_INSTALLDIR.install_sources(gradience_modules, subdir: 'gradience/modules')

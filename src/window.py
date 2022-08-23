@@ -13,33 +13,25 @@
 # The above copyright notice and this permission notice shall be
 # included in all copies or substantial portions of the Software.
 #
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY
-# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-#
-# Except as contained in this notice, the name(s) of the above copyright
-# holders shall not be used in advertising or otherwise to promote the sale,
-# use or other dealings in this Software without prior written
-# authorization.
+
+import os
 
 from gi.repository import Gtk, Adw, Gio, Gdk
+
+from svglib.svglib import svg2rlg
+from reportlab.graphics import renderPM
+from material_color_utilities_python import *
+
 from .error import GradienceError
 from .settings_schema import settings_schema
 from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
 from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
-from material_color_utilities_python import *
-from .constants import rootdir, app_id, build_type
 from .presets_manager_window import GradiencePresetWindow
 from .plugins_list import GradiencePluginsList
-from svglib.svglib import svg2rlg
-from reportlab.graphics import renderPM
-import os
+from .modules.utils import buglog
+from .constants import rootdir, app_id, build_type
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
@@ -122,7 +114,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     def __close_window(self, widegt):
         if self.get_application().is_dirty:
-            print("app is dirty")
+            buglog("app is dirty")
 
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
@@ -222,7 +214,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 renderPM.drawToFile(drawing, self.monet_image_file, fmt='PNG')
 
             if self.monet_image_file.endswith(".xml"):
-                print("XML WIP")
+                buglog("XML WIP")
 
             try:
                 self.monet_img = Image.open(self.monet_image_file)
