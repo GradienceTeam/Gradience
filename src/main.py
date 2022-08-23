@@ -686,9 +686,9 @@ class GradienceApplication(Adw.Application):
                 "0xMRTT https://github.com/0xMRTT",
                 "Verantor https://github.com/Verantor",
             ],
-            artists=['David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],
+            artists=['David Lapshin https://github.com/daudix-UFO'],
             designers=[
-                'David "Daudix UFO" Lapshin https://github.com/daudix-UFO'],
+                'David Lapshin https://github.com/daudix-UFO'],
             # Translators: This is a place to put your credits (formats: "Name
             # https://example.com" or "Name <email@example.com>", no quotes)
             # and is not meant to be translated literally.
