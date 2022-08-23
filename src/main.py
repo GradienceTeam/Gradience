@@ -117,8 +117,6 @@ class GradienceApplication(Adw.Application):
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
-        self.reload_user_defined_presets()
-
         if self.style_manager.get_dark():
             self.load_preset_from_resource(
                 f"{rootdir}/presets/adwaita-dark.json"
@@ -135,67 +133,6 @@ class GradienceApplication(Adw.Application):
         else:
             print("normal run")
             self.win.present()
-
-    def reload_user_defined_presets(self):
-        if self.props.active_window.presets_menu.get_n_items() > 1:
-            self.props.active_window.presets_menu.remove(1)
-
-        preset_directory = os.path.join(
-            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
-            "presets",
-        )
-        if not os.path.exists(preset_directory):
-            os.makedirs(preset_directory)
-
-        self.custom_presets.clear()
-        for file_name in os.listdir(preset_directory):
-            if file_name.endswith(".json"):
-                try:
-                    with open(
-                        os.path.join(preset_directory, file_name), "r", encoding="utf-8"
-                    ) as file:
-                        preset_text = file.read()
-                    preset = json.loads(preset_text)
-                    if preset.get("variables") is None:
-                        raise KeyError("variables")
-                    if preset.get("palette") is None:
-                        raise KeyError("palette")
-                    self.custom_presets[file_name.replace(
-                        ".json", "")] = preset["name"]
-                except Exception:
-                    self.global_errors.append(
-                        {
-                            "error": _("Failed to load preset"),
-                            "element": file_name,
-                            "line": traceback.format_exc().strip(),
-                        }
-                    )
-                    self.win.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Failed to load preset"))
-                    )
-
-                    self.props.active_window.update_errors(self.global_errors)
-
-        custom_menu_section = Gio.Menu()
-        for preset, preset_name in self.custom_presets.items():
-            menu_item = Gio.MenuItem()
-            menu_item.set_label(preset_name)
-            if not preset.startswith("error"):
-                menu_item.set_action_and_target_value(
-                    "app.load_preset", GLib.Variant("s", "custom-" + preset)
-                )
-            else:
-                menu_item.set_action_and_target_value("")
-            custom_menu_section.append_item(menu_item)
-        open_in_file_manager_item = Gio.MenuItem()
-        open_in_file_manager_item.set_label(_("Open in File Manager"))
-        open_in_file_manager_item.set_action_and_target_value(
-            "app.open_preset_directory"
-        )
-        custom_menu_section.append_item(open_in_file_manager_item)
-        self.props.active_window.presets_menu.append_section(
-            _("User Defined Presets"), custom_menu_section
-        )
 
     def open_preset_directory(self, *_args):
         parent = XdpGtk4.parent_new_gtk(self.props.active_window)

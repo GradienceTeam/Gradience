@@ -52,17 +52,12 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     content_plugins = Gtk.Template.Child("content_plugins")
     save_preset_button = Gtk.Template.Child("save-preset-button")
     main_menu = Gtk.Template.Child("main-menu")
-    presets_dropdown = Gtk.Template.Child("presets-dropdown")
-    presets_menu = Gtk.Template.Child("presets-menu")
     errors_button = Gtk.Template.Child("errors-button")
     errors_list = Gtk.Template.Child("errors-list")
     monet_image_file = None
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.presets_dropdown.get_popover().connect(
-            "show", self.on_presets_dropdown_activate
-        )
 
         # Set devel style
         if build_type == "debug":
@@ -312,8 +307,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                     error["element"],
                     error["line"]))
 
-    def on_presets_dropdown_activate(self, *args):
-        if build_type == "debug":
-            GradiencePresetWindow().present()
-        else:
-            self.get_application().reload_user_defined_presets()
+    @Gtk.Template.Callback()
+    def on_presets_button_clicked(self, *args):
+        GradiencePresetWindow().present()
