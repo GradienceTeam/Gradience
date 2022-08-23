@@ -42,7 +42,7 @@ class GradiencePresetWindow(Adw.Window):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        
+
         self.setup_explore()
 
         self.builtin_preset_list = Adw.PreferencesGroup()
@@ -65,17 +65,18 @@ class GradiencePresetWindow(Adw.Window):
         self.file_chooser_dialog.connect(
             "response", self.on_file_chooser_response
         )
-        
+
     def setup_explore(self):
         self.explore_list = Adw.PreferencesGroup()
         self.explore_list.set_title(_("Explore community presets"))
-        self.explore_list.set_description(_("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
-        
+        self.explore_list.set_description(
+            _("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
+
         empty = Adw.ActionRow()
         empty.set_title(_("Not available yet"))
-        
+
         self.explore_list.add(empty)
-        
+
         self.explore.add(self.explore_list)
 
     @Gtk.Template.Callback()
@@ -110,9 +111,8 @@ class GradiencePresetWindow(Adw.Window):
                         Adw.Toast(title=_("Succesfuly imported preset"))
                     )
             else:
-                self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Unsupported file format, must be .json"))
-                )
+                self.toast_overlay.add_toast(Adw.Toast(
+                    title=_("Unsupported file format, must be .json")))
 
         self.reload_pref_group()
 
@@ -160,14 +160,16 @@ class GradiencePresetWindow(Adw.Window):
 
         self.preset_list = Adw.PreferencesGroup()
         self.preset_list.set_title(_("User Presets"))
-        self.preset_list.set_description(_("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
-        
+        self.preset_list.set_description(
+            _("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
+
         if self.custom_presets:
             for preset, preset_name in self.custom_presets.items():
                 row = GradiencePresetRow(preset_name, self)
                 self.preset_list.add(row)
         else:
             self.preset_empty = Adw.ActionRow()
-            self.preset_empty.set_title(_("No preset found! Use the import button to import one or search one on the Explore tab"))
+            self.preset_empty.set_title(
+                _("No preset found! Use the import button to import one or search one on the Explore tab"))
             self.preset_list.add(self.preset_empty)
         self.installed.add(self.preset_list)
