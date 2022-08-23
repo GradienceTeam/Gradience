@@ -42,7 +42,7 @@ class GradiencePresetWindow(Adw.Window):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        
+
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
         self.installed.add(self.builtin_preset_list)
@@ -84,13 +84,26 @@ class GradiencePresetWindow(Adw.Window):
             print("preset type: ", type(self.preset_path))
 
             if preset_file.endswith(".json"):
-                shutil.copy(self.preset_path.get_path(), os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    preset_file
-                ))
-                
+
+                if preset_file.strip(".json") in self.custom_presets:
+                    self.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Preset already exists"))
+                    )
+                else:
+                    shutil.copy(self.preset_path.get_path(), os.path.join(
+                        os.environ.get("XDG_CONFIG_HOME",
+                                       os.environ["HOME"] + "/.config"),
+                        "presets",
+                        preset_file
+                    ))
+                    self.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Succesfuly imported preset"))
+                    )
+            else:
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unsupported file format, must be .json"))
+                )
+
         self.reload_pref_group()
 
     def reload_pref_group(self):
@@ -128,7 +141,7 @@ class GradiencePresetWindow(Adw.Window):
         print("custom_presets: ", self.custom_presets)
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
-        
+
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
         for preset, preset_name in self.builtin_presets.items():
