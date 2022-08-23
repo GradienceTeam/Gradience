@@ -22,8 +22,6 @@ import os
 import re
 import traceback
 
-from anyascii import anyascii
-
 import gi
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from material_color_utilities_python import *
@@ -37,11 +35,7 @@ from .custom_css_group import GradienceCustomCSSGroup
 from .constants import rootdir, app_id, version, bugtracker_url, help_url, project_url
 from .welcome import GradienceWelcomeWindow
 from .presets_manager_window import GradiencePresetWindow
-
-
-def to_slug_case(non_slug):
-    return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
-
+from . import to_slug_case
 
 class GradienceApplication(Adw.Application):
     """The main application singleton class."""
