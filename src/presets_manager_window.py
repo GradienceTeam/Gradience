@@ -21,9 +21,11 @@ from .constants import rootdir, build_type
 import os
 import shutil
 import json
+import requests
 from .preset_row import GradiencePresetRow
 from .builtin_preset_row import GradienceBuiltinPresetRow
 
+PRESETS_LIST_URL = "https://github.com/GradienceTeam/Community/raw/main/presets.json"
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
