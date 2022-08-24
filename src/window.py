@@ -144,8 +144,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.apply_button = Gtk.Button()
         self.apply_button.set_label(_("Apply"))
-        self.apply_button.set_margin_top(10)
-        self.apply_button.set_margin_bottom(10)
+        self.apply_button.set_valign(Gtk.Align.CENTER)
         self.apply_button.connect("clicked", self.on_apply_button)
         self.apply_button.set_css_classes("suggested-action")
         self.monet_pref_group.set_header_suffix(self.apply_button)
