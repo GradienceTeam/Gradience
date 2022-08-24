@@ -1,3 +1,5 @@
+# __init__.py
+#
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
 #
@@ -13,10 +15,3 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
-
-import re
-from anyascii import anyascii
-
-
-def to_slug_case(non_slug):
-    return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
