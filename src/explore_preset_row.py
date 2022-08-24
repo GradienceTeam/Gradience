@@ -25,6 +25,7 @@ from .constants import rootdir
 from .modules.custom_presets import download_preset
 from .modules.utils import to_slug_case, buglog
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/explore_preset_row.ui")
 class GradienceExplorePresetRow(Adw.ActionRow):
     __gtype_name__ = "GradienceExplorePresetRow"
@@ -47,7 +48,6 @@ class GradienceExplorePresetRow(Adw.ActionRow):
 
         self.url = url
 
-
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         try:
@@ -59,7 +59,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
         else:
             self.app.load_preset_from_file(os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
-                            os.environ["HOME"] + "/.config"),
+                               os.environ["HOME"] + "/.config"),
                 "presets",
                 to_slug_case(self.name) + ".json",
             ))
