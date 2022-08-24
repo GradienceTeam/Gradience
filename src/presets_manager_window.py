@@ -68,13 +68,13 @@ class GradiencePresetWindow(Adw.Window):
         self.app = Gtk.Application.get_default()
         self.setup_import()
 
-
     def setup_explore(self):
         self.explore_presets, urls = fetch_presets()
 
         self.search_spinner.props.visible = False
 
-        for (preset, preset_name), preset_url in zip(self.explore_presets.items(), urls):
+        for (preset, preset_name), preset_url in zip(
+                self.explore_presets.items(), urls):
             row = GradienceExplorePresetRow(preset_name, preset_url, self)
             self.search_results.append(row)
 
