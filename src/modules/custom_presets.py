@@ -26,9 +26,7 @@ from .utils import to_slug_case
 poolmgr = urllib3.PoolManager()
 
 def fetch_presets():
-
     http = poolmgr.request("GET", "https://raw.githubusercontent.com/GradienceTeam/Community/main/presets.json")
-
     raw = json.loads(http.data)
 
     preset_dict = {}
@@ -48,13 +46,15 @@ def fetch_presets():
 
         #print(preset_dict)
         #print(url)
-
+      
     return preset_dict, url_list
 
 def download_preset(name, url):
     http = poolmgr.request("GET", url)
-    preset = json.loads(http.data)
-    #print(preset)
+    json_raw = json.loads(http.data)
+
+    data = json.dumps(json_raw)
+    #print(data)
 
     with open(os.path.join(
             os.environ.get("XDG_CONFIG_HOME",
@@ -62,7 +62,7 @@ def download_preset(name, url):
             "presets",
             to_slug_case(name) + ".json"), 
         "w") as f:
-        f.write(str(preset))
+        f.write(data)
         f.close()
 
 
