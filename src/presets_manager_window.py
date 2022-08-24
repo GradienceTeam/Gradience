@@ -16,13 +16,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, Adw, Gio, Gdk
-from .constants import rootdir, build_type
 import os
 import shutil
 import json
+
+from gi.repository import Gtk, Adw, Gio, Gdk
+
 from .preset_row import GradiencePresetRow
 from .builtin_preset_row import GradienceBuiltinPresetRow
+from .explore_preset_row import GradienceExplorePresetRow
+from .modules.custom_presets import fetch_presets
+from .constants import rootdir, build_type
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
@@ -41,11 +45,14 @@ class GradiencePresetWindow(Adw.Window):
     search_dropdown = Gtk.Template.Child("search_dropdown")
     search_stack = Gtk.Template.Child("search_stack")
     search_results = Gtk.Template.Child("search_results")
+    search_spinner = Gtk.Template.Child("search_spinner")
 
     custom_presets = {}
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+        self.setup_explore()
 
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
@@ -59,6 +66,16 @@ class GradiencePresetWindow(Adw.Window):
 
         self.app = Gtk.Application.get_default()
         self.setup_import()
+
+
+    def setup_explore(self):
+        self.explore_presets, urls = fetch_presets()
+
+        self.search_spinner.props.visible = False
+
+        for (preset, preset_name), preset_url in zip(self.explore_presets.items(), urls):
+            row = GradienceExplorePresetRow(preset_name, preset_url, self)
+            self.search_results.append(row)
 
     def setup_import(self):
         self.file_chooser_dialog = Gtk.FileChooserNative()
