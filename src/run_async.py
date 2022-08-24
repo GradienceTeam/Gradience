@@ -52,7 +52,7 @@ class RunAsync(threading.Thread):
             result = self.task_func(*args, **kwargs)
         except Exception as exception:
             buglog("Error while running async job: "
-                  f"{self.task_func}\nException: {exception}")
+                   f"{self.task_func}\nException: {exception}")
 
             error = exception
             _ex_type, _ex_value, trace = sys.exc_info()

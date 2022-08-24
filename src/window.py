@@ -93,7 +93,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.get_default_wallpaper()
 
-    # FIXME: This function works only when build using meson, because Flatpak can't access host's dconf with current config/impl
+    # FIXME: This function works only when build using meson, because Flatpak
+    # can't access host's dconf with current config/impl
     def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
         if self.style_manager.get_dark():
@@ -110,7 +111,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_image_file = self.monet_image_file.get_path()
         self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
         buglog(self.monet_image_file)
-        #self.on_apply_button() # Comment out for now, because it always shows that annoying toast on startup
+        # self.on_apply_button() # Comment out for now, because it always shows
+        # that annoying toast on startup
 
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
@@ -124,7 +126,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             self.monet_image_file = self.monet_file_chooser_dialog.get_file()
             image_basename = self.monet_image_file.get_basename()
             self.monet_file_chooser_button.set_label(image_basename)
-            self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
+            self.monet_file_chooser_button.set_tooltip_text(
+                self.monet_image_file)
         self.monet_file_chooser_dialog.hide()
 
         if response == Gtk.ResponseType.ACCEPT:

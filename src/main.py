@@ -630,7 +630,8 @@ class GradienceApplication(Adw.Application):
             # Translators: This is a place to put your credits (formats: "Name
             # https://example.com" or "Name <email@example.com>", no quotes)
             # and is not meant to be translated literally.
-            # TODO: Automate this process using CI, because not everyone knows about this
+            # TODO: Automate this process using CI, because not everyone knows
+            # about this
             translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh/
                 FineFindus https://github.com/FineFindus
                 Karol Lademan https://www.transifex.com/user/profile/karlod/
