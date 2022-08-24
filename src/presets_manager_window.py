@@ -29,21 +29,23 @@ from .builtin_preset_row import GradienceBuiltinPresetRow
 class GradiencePresetWindow(Adw.Window):
     __gtype_name__ = "GradiencePresetWindow"
 
-    installed = Gtk.Template.Child("installed")
-    explore = Gtk.Template.Child("explore")
+    installed = Gtk.Template.Child()
     main_view = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
 
     import_button = Gtk.Template.Child("import_button")
     remove_button = Gtk.Template.Child("remove_button")
     file_manager_button = Gtk.Template.Child("file_manager_button")
+    
+    search_entry = Gtk.Template.Child("search_entry")
+    search_dropdown = Gtk.Template.Child("search_dropdown")
+    search_stack = Gtk.Template.Child("search_stack")
+    search_results = Gtk.Template.Child("search_results")
 
     custom_presets = {}
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
-        self.setup_explore()
 
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
@@ -65,20 +67,18 @@ class GradiencePresetWindow(Adw.Window):
         self.file_chooser_dialog.connect(
             "response", self.on_file_chooser_response
         )
-
-    def setup_explore(self):
-        self.explore_list = Adw.PreferencesGroup()
-        self.explore_list.set_title(_("Explore community presets"))
-        self.explore_list.set_description(
-            _("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
-
-        empty = Adw.ActionRow()
-        empty.set_title(_("Not available yet"))
-
-        self.explore_list.add(empty)
-
-        self.explore.add(self.explore_list)
-
+        
+    def connect_signals(self):
+        self.search_entry.connect("search-changed", self.on_search_changed)
+        self.search_dropdown.connect("notify::selected", self.on_search_changed)
+        self.search_entry.connect("realize", self.on_search_realize)
+        
+    def on_search_changed(self):
+        print("search changed")
+        
+    def on_search_realize(self, widget):
+        print("search realized")
+        
     @Gtk.Template.Callback()
     def on_file_manager_button_clicked(self, *_args):
         self.app.open_preset_directory()

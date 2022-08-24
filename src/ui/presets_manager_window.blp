@@ -68,7 +68,65 @@ template GradiencePresetWindow : Adw.Window {
               title: _("Explore");
               icon-name: "web-browser-symbolic";
 
-              child: Adw.PreferencesPage explore { };
+              child: Gtk.ScrolledWindow {
+                Adw.StatusPage {
+                  title: _("Search for presets");
+                  description: _("Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a>.");
+                  valign: start;
+                  Adw.Clamp {
+                    styles ["clamp"]
+
+                    Gtk.Box {
+                      orientation: vertical;
+
+                      Gtk.Box {
+                        styles ["linked"]
+
+                        Gtk.SearchEntry search_entry {
+                          hexpand: true;
+                          placeholder-text: _("e.g. \"Pretty Purple\"");
+                        }
+
+                        Gtk.DropDown search_dropdown {
+                          model: StringList {
+                            // Translators: dropdown items for sorting search results
+                            strings [_("Popularity"), _("Downloads"), _("Recent"), _("Name")]
+                          };
+                        }
+                      }
+
+                      Gtk.Stack search_stack {
+                        Gtk.StackPage {
+                          name: "page_spinner";
+                          child: Gtk.Spinner {
+                            valign: start;
+                            halign: center;
+                            spinning: true;
+                          };
+                        }
+
+                        Gtk.StackPage {
+                          name: "page_results";
+                          child: Gtk.ListBox search_results {
+                            styles ["boxed-list"]
+                            valign: start;
+                            selection-mode: none;
+                          };
+                        }
+
+                        Gtk.StackPage {
+                          name: "page_empty";
+                          child: Gtk.Label {
+                            label: _("No Results Found");
+                            valign: start;
+                            halign: center;
+                          };
+                        }
+                      }
+                    }
+                  }
+                }
+              };
             }
           }
 
