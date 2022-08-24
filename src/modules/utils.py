@@ -17,9 +17,15 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import re
+import logging
 
 from anyascii import anyascii
 from gradience.constants import build_type
+
+if build_type == "debug":
+    logging.basicConfig(level=logging.DEBUG)
+else:
+    logging.basicConfig(level=logging.WARNING)
 
 
 def to_slug_case(non_slug):
@@ -31,8 +37,4 @@ def to_slug_case(non_slug):
 
 
 def buglog(*args):
-    if build_type == "debug":
-        message = ""
-        for obj in args:
-            message += str(obj)
-        return print(f"[DEBUG]: {message}")
+    logging.debug(*args)
