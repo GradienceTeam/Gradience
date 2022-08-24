@@ -77,23 +77,12 @@ template GradiencePresetWindow : Adw.Window {
                     styles ["clamp"]
 
                     Gtk.Box {
-                      orientation: vertical;
+                      orientation: vertical;                      
 
-                      Gtk.Box {
-                        styles ["linked"]
-
-                        Gtk.SearchEntry search_entry {
-                          hexpand: true;
-                          placeholder-text: _("e.g. \"Pretty Purple\"");
-                        }
-
-                        Gtk.DropDown search_dropdown {
-                          model: StringList {
-                            // Translators: dropdown items for sorting search results
-                            strings [_("Popularity"), _("Downloads"), _("Recent"), _("Name")]
-                          };
-                        }
-                      }
+                      Gtk.SearchEntry search_entry {
+                        hexpand: true;
+                        placeholder-text: _("e.g. \"Pretty Purple\"");
+                      }    
 
                       Gtk.Stack search_stack {
                         Gtk.StackPage {
