@@ -26,7 +26,10 @@ def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
 # Use it instead of print(), so there isn't any output in stdout if Gradience was build in release mode
-# TODO: Can be replaced with `logging` module [https://docs.python.org/3/library/logging.html] in future
+# TODO: Can be replaced with `logging` module
+# [https://docs.python.org/3/library/logging.html] in future
+
+
 def buglog(*args):
     if build_type == "debug":
         message = ""
