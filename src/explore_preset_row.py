@@ -36,7 +36,6 @@ class GradienceExplorePresetRow(Adw.ActionRow):
         super().__init__(**kwargs)
 
         self.name = name
-        self.old_name = name
 
         self.set_name(name)
         self.set_title(name)
@@ -51,12 +50,30 @@ class GradienceExplorePresetRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
-        buglog("apply and download compeleted")
+        try:
+            download_preset(to_slug_case(self.name), self.url)
+        except Exception:
+            self.toast_overlay.add_toast(
+                Adw.Toast(title=_("Scheme could not be downloaded!"))
+            )
+        else:
+            self.app.load_preset_from_file(os.path.join(
+                os.environ.get("XDG_CONFIG_HOME",
+                            os.environ["HOME"] + "/.config"),
+                "presets",
+                to_slug_case(self.name) + ".json",
+            ))
+
+            self.toast_overlay.add_toast(
+                Adw.Toast(title=_("Scheme successfully downloaded!"))
+            )
+
+        buglog("Apply and download compeleted")
 
     @Gtk.Template.Callback()
     def on_download_button_clicked(self, *_args):
         try:
-            download_preset(to_slug_case(self.old_name), self.url)
+            download_preset(to_slug_case(self.name), self.url)
         except Exception:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Scheme could not be downloaded!"))
