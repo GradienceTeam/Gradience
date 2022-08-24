@@ -262,7 +262,7 @@ class GradienceApplication(Adw.Application):
             light_theme = theme["schemes"]["light"]
             variable = {
                 "accent_color": self.rgba_from_argb(light_theme.primary),
-                "accent_bg_color": self.rgba_from_argb(light_theme.primaryContainer),
+                "accent_bg_color": self.rgba_from_argb(light_theme.primary),
                 "accent_fg_color": self.rgba_from_argb(light_theme.onPrimaryContainer),
                 "destructive_color": self.rgba_from_argb(light_theme.error),
                 "destructive_bg_color": self.rgba_from_argb(light_theme.errorContainer),
@@ -276,17 +276,17 @@ class GradienceApplication(Adw.Application):
                 "error_color": self.rgba_from_argb(light_theme.error),
                 "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
                 "error_fg_color": self.rgba_from_argb(light_theme.onError),
-                "window_bg_color": self.rgba_from_argb(light_theme.surface),
+                "window_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "window_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "view_bg_color": self.rgba_from_argb(light_theme.surface),
+                "view_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "view_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "headerbar_bg_color": self.rgba_from_argb(light_theme.surface),
+                "headerbar_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "headerbar_fg_color": self.rgba_from_argb(light_theme.onSurface),
                 "headerbar_border_color": self.rgba_from_argb(
                     light_theme.primary, "0.8"
                 ),
                 "headerbar_backdrop_color": "@window_bg_color",
-                "headerbar_shade_color": self.rgba_from_argb(light_theme.shadow),
+                "headerbar_shade_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
                 "card_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(light_theme.shadow),
