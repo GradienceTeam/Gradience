@@ -270,7 +270,7 @@ class GradienceApplication(Adw.Application):
                 "success_color": self.rgba_from_argb(light_theme.tertiary),
                 "success_bg_color": self.rgba_from_argb(light_theme.onTertiary),
                 "success_fg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
-                "warning_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "warning_color": self.rgba_from_argb(light_theme.inversePrimary),
                 "warning_bg_color": self.rgba_from_argb(light_theme.inversePrimary),
                 "warning_fg_color": self.rgba_from_argb(light_theme.primary, "0.8"),
                 "error_color": self.rgba_from_argb(light_theme.error),
