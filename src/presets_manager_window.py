@@ -44,7 +44,6 @@ class GradiencePresetWindow(Adw.Window):
     file_manager_button = Gtk.Template.Child("file_manager_button")
 
     search_entry = Gtk.Template.Child("search_entry")
-    search_dropdown = Gtk.Template.Child("search_dropdown")
     search_stack = Gtk.Template.Child("search_stack")
     search_results = Gtk.Template.Child("search_results")
     search_spinner = Gtk.Template.Child("search_spinner")
@@ -89,8 +88,6 @@ class GradiencePresetWindow(Adw.Window):
 
     def connect_signals(self):
         self.search_entry.connect("search-changed", self.on_search_changed)
-        self.search_dropdown.connect(
-            "notify::selected", self.on_search_changed)
         self.search_entry.connect("realize", self.on_search_realize)
 
     def on_search_changed(self):
