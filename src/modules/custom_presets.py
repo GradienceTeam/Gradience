@@ -23,6 +23,7 @@ import urllib3
 from .utils import to_slug_case
 
 
+# Open an pool manager
 poolmgr = urllib3.PoolManager()
 
 def fetch_presets():
@@ -37,24 +38,20 @@ def fetch_presets():
         data.insert(0, to_slug_case(data[0]))
 
         url = data[2]
-        data.pop(2)
+        data.pop(2) # Remove preset URL from list
 
         to_dict = iter(data)
-        preset_dict.update(dict(zip(to_dict, to_dict)))
+        preset_dict.update(dict(zip(to_dict, to_dict))) # Convert list back to dict
 
         url_list.append(url)
-
-        #print(preset_dict)
-        #print(url)
       
     return preset_dict, url_list
 
 def download_preset(name, url):
     http = poolmgr.request("GET", url)
-    json_raw = json.loads(http.data)
+    raw = json.loads(http.data)
 
-    data = json.dumps(json_raw)
-    #print(data)
+    data = json.dumps(raw)
 
     with open(os.path.join(
             os.environ.get("XDG_CONFIG_HOME",
@@ -64,7 +61,3 @@ def download_preset(name, url):
         "w") as f:
         f.write(data)
         f.close()
-
-
-#pd, ul = fetch_presets()
-#print(pd, ul)
