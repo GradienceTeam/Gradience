@@ -28,6 +28,8 @@ from .explore_preset_row import GradienceExplorePresetRow
 from .modules.custom_presets import fetch_presets
 from .constants import rootdir, build_type
 
+PRESETS_LIST_URL = "https://github.com/GradienceTeam/Community/raw/main/presets.json"
+
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
@@ -40,7 +42,7 @@ class GradiencePresetWindow(Adw.Window):
     import_button = Gtk.Template.Child("import_button")
     remove_button = Gtk.Template.Child("remove_button")
     file_manager_button = Gtk.Template.Child("file_manager_button")
-    
+
     search_entry = Gtk.Template.Child("search_entry")
     search_dropdown = Gtk.Template.Child("search_dropdown")
     search_stack = Gtk.Template.Child("search_stack")
@@ -84,18 +86,19 @@ class GradiencePresetWindow(Adw.Window):
         self.file_chooser_dialog.connect(
             "response", self.on_file_chooser_response
         )
-        
+
     def connect_signals(self):
         self.search_entry.connect("search-changed", self.on_search_changed)
-        self.search_dropdown.connect("notify::selected", self.on_search_changed)
+        self.search_dropdown.connect(
+            "notify::selected", self.on_search_changed)
         self.search_entry.connect("realize", self.on_search_realize)
-        
+
     def on_search_changed(self):
         print("search changed")
-        
+
     def on_search_realize(self, widget):
         print("search realized")
-        
+
     @Gtk.Template.Callback()
     def on_file_manager_button_clicked(self, *_args):
         self.app.open_preset_directory()
