@@ -87,7 +87,7 @@ class GradiencePresetWindow(Adw.Window):
             self.search_stack.set_visible("page_offline")
         else:
             self.search_spinner.props.visible = False
-        
+
             for (preset, preset_name), preset_url in zip(
                     self.explore_presets.items(), urls):
                 row = GradienceExplorePresetRow(preset_name, preset_url, self)
