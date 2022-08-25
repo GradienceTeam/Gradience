@@ -82,4 +82,5 @@ class GradienceExplorePresetRow(Adw.ActionRow):
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Scheme successfully downloaded!"))
             )
+            self.win.reload_pref_group()
         buglog("Download compeleted")
