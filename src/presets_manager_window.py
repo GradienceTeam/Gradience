@@ -73,11 +73,13 @@ class GradiencePresetWindow(Adw.Window):
         self.connect_signals()
 
         self.delete_toast = Adw.Toast(title=_("Scheme successfully deleted!"))
-        #self.delete_toast.set_action_name("on_undo_button_clicked")
+        # self.delete_toast.set_action_name("on_undo_button_clicked")
         self.delete_preset = True
         self.delete_toast.set_button_label(_("Undo"))
         self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
-        self.delete_toast.connect("button-clicked", self.on_undo_button_clicked)
+        self.delete_toast.connect(
+            "button-clicked",
+            self.on_undo_button_clicked)
 
     def setup_explore(self):
         self.explore_presets, urls = fetch_presets()
@@ -111,21 +113,20 @@ class GradiencePresetWindow(Adw.Window):
             try:
                 os.remove(os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
-                                os.environ["HOME"] + "/.config"),
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     to_slug_case(self.old_name) + ".json",
                 ))
             except Exception:
                 self.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Unable to delete preset"))
-                    )
+                    Adw.Toast(title=_("Unable to delete preset"))
+                )
             else:
                 self.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Succesfuly deleted preset"))
-                    )
+                    Adw.Toast(title=_("Succesfuly deleted preset"))
+                )
             finally:
                 self.reload_pref_group()
-
 
         self.delete_preset = True
 

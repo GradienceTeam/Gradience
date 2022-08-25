@@ -51,7 +51,7 @@ def fetch_presets():
             url_list.append(url)
 
         return preset_dict, url_list
-    except Exception: # offline
+    except Exception:  # offline
         return False, False
 
 
@@ -64,7 +64,7 @@ def download_preset(name, url):
 
         with open(os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
-                            os.environ["HOME"] + "/.config"),
+                               os.environ["HOME"] + "/.config"),
                 "presets",
                 to_slug_case(name) + ".json"),
                 "w") as f:
