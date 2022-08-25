@@ -155,6 +155,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_dialog.set_transient_for(self)
 
         self.monet_file_chooser_button = Gtk.Button()
+        self.monet_file_chooser_button.set_valign(Gtk.Align.CENTER)
         #self.monet_file_chooser_button.set_label(_("Choose a file"))
         # self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
 
@@ -170,8 +171,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.monet_file_chooser_button.set_child(child_button)
 
-        self.monet_file_chooser_button.set_margin_top(5)
-        self.monet_file_chooser_button.set_margin_bottom(5)
+        #self.monet_file_chooser_button.set_margin_top(5)
+        #self.monet_file_chooser_button.set_margin_bottom(5)
 
         self.monet_file_chooser_button.connect(
             "clicked", self.on_file_picker_button_clicked
