@@ -80,23 +80,11 @@ class GradiencePresetRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):
+        self.toast_overlay.add_toast(
+            self.win.delete_toast
+        )
 
-        try:
-            os.remove(os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-                to_slug_case(self.old_name) + ".json",
-            ))
-        except Exception:
-
-            self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Scheme could not be removed!"))
-            )
-        else:
-            self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Scheme successfully deleted!"))
-            )
+        self.win.old_name = self.name
 
         self.win.reload_pref_group()
 

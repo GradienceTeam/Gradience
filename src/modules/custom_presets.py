@@ -28,41 +28,47 @@ poolmgr = urllib3.PoolManager()
 
 
 def fetch_presets():
-    http = poolmgr.request(
-        "GET",
-        "https://raw.githubusercontent.com/GradienceTeam/Community/main/presets.json")
-    raw = json.loads(http.data)
+    try:
+        http = poolmgr.request(
+            "GET",
+            "https://raw.githubusercontent.com/GradienceTeam/Community/main/presets.json")
+        raw = json.loads(http.data)
 
-    preset_dict = {}
-    url_list = []
+        preset_dict = {}
+        url_list = []
 
-    for data in raw.items():
-        data = list(data)
-        data.insert(0, to_slug_case(data[0]))
+        for data in raw.items():
+            data = list(data)
+            data.insert(0, to_slug_case(data[0]))
 
-        url = data[2]
-        data.pop(2)  # Remove preset URL from list
+            url = data[2]
+            data.pop(2)  # Remove preset URL from list
 
-        to_dict = iter(data)
-        # Convert list back to dict
-        preset_dict.update(dict(zip(to_dict, to_dict)))
+            to_dict = iter(data)
+            # Convert list back to dict
+            preset_dict.update(dict(zip(to_dict, to_dict)))
 
-        url_list.append(url)
+            url_list.append(url)
 
-    return preset_dict, url_list
+        return preset_dict, url_list
+    except Exception: # offline
+        return False, False
 
 
 def download_preset(name, url):
-    http = poolmgr.request("GET", url)
-    raw = json.loads(http.data)
+    try:
+        http = poolmgr.request("GET", url)
+        raw = json.loads(http.data)
 
-    data = json.dumps(raw)
+        data = json.dumps(raw)
 
-    with open(os.path.join(
-            os.environ.get("XDG_CONFIG_HOME",
-                           os.environ["HOME"] + "/.config"),
-            "presets",
-            to_slug_case(name) + ".json"),
-            "w") as f:
-        f.write(data)
-        f.close()
+        with open(os.path.join(
+                os.environ.get("XDG_CONFIG_HOME",
+                            os.environ["HOME"] + "/.config"),
+                "presets",
+                to_slug_case(name) + ".json"),
+                "w") as f:
+            f.write(data)
+            f.close()
+    except Exception:
+        return False, False

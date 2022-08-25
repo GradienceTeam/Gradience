@@ -27,6 +27,7 @@ from .builtin_preset_row import GradienceBuiltinPresetRow
 from .explore_preset_row import GradienceExplorePresetRow
 from .modules.custom_presets import fetch_presets
 from .constants import rootdir, build_type
+from .modules.utils import to_slug_case
 
 PRESETS_LIST_URL = "https://github.com/GradienceTeam/Community/raw/main/presets.json"
 
@@ -72,27 +73,29 @@ class GradiencePresetWindow(Adw.Window):
         self.connect_signals()
 
         self.delete_toast = Adw.Toast(title=_("Scheme successfully deleted!"))
-        self.delete_toast.set_action_name("undo")
+        #self.delete_toast.set_action_name("on_undo_button_clicked")
+        self.delete_preset = True
         self.delete_toast.set_button_label(_("Undo"))
         self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
+        self.delete_toast.connect("button-clicked", self.on_undo_button_clicked)
 
     def setup_explore(self):
-        self.explore_presets, urls=fetch_presets()
+        self.explore_presets, urls = fetch_presets()
 
-        if not self.explore_presets: # offline
+        if not self.explore_presets:  # offline
             self.search_stack.set_visible("page_offline")
-            self.offline_label.props.visible=True
+            self.offline_label.props.visible = True
         else:
-            self.search_spinner.props.visible=False
-            self.offline_label.props.visible=False
+            self.search_spinner.props.visible = False
+            self.offline_label.props.visible = False
 
             for (preset, preset_name), preset_url in zip(
                     self.explore_presets.items(), urls):
-                row=GradienceExplorePresetRow(preset_name, preset_url, self)
+                row = GradienceExplorePresetRow(preset_name, preset_url, self)
                 self.search_results.append(row)
 
     def setup_import(self):
-        self.file_chooser_dialog=Gtk.FileChooserNative()
+        self.file_chooser_dialog = Gtk.FileChooserNative()
         self.file_chooser_dialog.set_transient_for(self)
 
         self.file_chooser_dialog.connect(
@@ -102,16 +105,18 @@ class GradiencePresetWindow(Adw.Window):
     def connect_signals(self):
         self.search_entry.connect("search-changed", self.on_search_changed)
         self.search_entry.connect("realize", self.on_search_realize)
-        
 
     def on_delete_toast_dismissed(self, widget):
-        """os.remove(os.path.join(
+        if self.delete_preset:
+            os.remove(os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
+                            os.environ["HOME"] + "/.config"),
                 "presets",
                 to_slug_case(self.old_name) + ".json",
-            ))"""
-        self.delete_toast.destroy()
+            ))
+
+    def on_undo_button_clicked(self, *_args):
+        self.delete_preset = False
 
     def on_search_changed(self):
         print("search changed")
@@ -119,18 +124,18 @@ class GradiencePresetWindow(Adw.Window):
     def on_search_realize(self, widget):
         print("search realized")
 
-    @ Gtk.Template.Callback()
+    @Gtk.Template.Callback()
     def on_file_manager_button_clicked(self, *_args):
         self.app.open_preset_directory()
 
-    @ Gtk.Template.Callback()
+    @Gtk.Template.Callback()
     def on_import_button_clicked(self, *_args):
         self.file_chooser_dialog.show()
 
     def on_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
-            self.preset_path=self.file_chooser_dialog.get_file()
-            preset_file=self.preset_path.get_basename()
+            self.preset_path = self.file_chooser_dialog.get_file()
+            preset_file = self.preset_path.get_basename()
         self.file_chooser_dialog.hide()
 
         if response == Gtk.ResponseType.ACCEPT:
@@ -157,7 +162,7 @@ class GradiencePresetWindow(Adw.Window):
         self.reload_pref_group()
 
     def reload_pref_group(self):
-        preset_directory=os.path.join(
+        preset_directory = os.path.join(
             os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
             "presets",
         )
@@ -165,7 +170,7 @@ class GradiencePresetWindow(Adw.Window):
             os.makedirs(preset_directory)
 
         self.custom_presets.clear()
-        self.builtin_presets={
+        self.builtin_presets = {
             "adwaita-dark": "Adwaita Dark",
             "adwaita": "Adwaita",
             "pretty-purple": "Pretty Purple",
@@ -176,14 +181,14 @@ class GradiencePresetWindow(Adw.Window):
                     with open(
                         os.path.join(preset_directory, file_name), "r", encoding="utf-8"
                     ) as file:
-                        preset_text=file.read()
-                    preset=json.loads(preset_text)
+                        preset_text = file.read()
+                    preset = json.loads(preset_text)
                     if preset.get("variables") is None:
                         raise KeyError("variables")
                     if preset.get("palette") is None:
                         raise KeyError("palette")
                     self.custom_presets[file_name.replace(
-                        ".json", "")]=preset["name"]
+                        ".json", "")] = preset["name"]
                 except Exception:
                     self.toast_overlay.add_toast(
                         Adw.Toast(title=_("Failed to load preset"))
@@ -191,24 +196,24 @@ class GradiencePresetWindow(Adw.Window):
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
 
-        self.builtin_preset_list=Adw.PreferencesGroup()
+        self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
         for preset, preset_name in self.builtin_presets.items():
-            row=GradienceBuiltinPresetRow(preset_name, self.toast_overlay)
+            row = GradienceBuiltinPresetRow(preset_name, self.toast_overlay)
             self.builtin_preset_list.add(row)
         self.installed.add(self.builtin_preset_list)
 
-        self.preset_list=Adw.PreferencesGroup()
+        self.preset_list = Adw.PreferencesGroup()
         self.preset_list.set_title(_("User Presets"))
         self.preset_list.set_description(
             _("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
 
         if self.custom_presets:
             for preset, preset_name in self.custom_presets.items():
-                row=GradiencePresetRow(preset_name, self)
+                row = GradiencePresetRow(preset_name, self)
                 self.preset_list.add(row)
         else:
-            self.preset_empty=Adw.ActionRow()
+            self.preset_empty = Adw.ActionRow()
             self.preset_empty.set_title(
                 _("No preset found! Use the import button to import one or search one on the Explore tab"))
             self.preset_list.add(self.preset_empty)
