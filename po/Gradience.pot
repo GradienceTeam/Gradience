@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-23 12:16+0000\n"
+"POT-Creation-Date: 2022-08-25 13:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:8
-#: src/ui/window.blp:5 src/main.py:684
+#: src/ui/window.blp:5 src/main.py:616
 msgid "Gradience"
 msgstr ""
 
@@ -27,7 +27,7 @@ msgstr ""
 msgid "Change the look of Adwaita, with ease."
 msgstr ""
 
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:11 src/main.py:686
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:11 src/main.py:618
 msgid "Gradience Team"
 msgstr ""
 
@@ -133,11 +133,11 @@ msgstr ""
 msgid "Toggle Text Value"
 msgstr ""
 
-#: src/ui/window.blp:23 src/main.py:474 src/window.py:147
+#: src/ui/window.blp:23 src/main.py:406 src/window.py:146
 msgid "Apply"
 msgstr ""
 
-#: src/ui/window.blp:47
+#: src/ui/window.blp:46
 msgid "Presets"
 msgstr ""
 
@@ -157,120 +157,88 @@ msgstr ""
 msgid "Advanced"
 msgstr ""
 
-#: src/ui/window.blp:119
-msgid "Built-in Presets"
-msgstr ""
-
 #: src/ui/window.blp:121
-msgid "Adwaita"
-msgstr ""
-
-#: src/ui/window.blp:126
-msgid "Adwaita Dark"
-msgstr ""
-
-#: src/ui/window.blp:131
-msgid "Pretty purple"
-msgstr ""
-
-#: src/ui/window.blp:136
-msgid "Manage Presets"
-msgstr ""
-
-#: src/ui/window.blp:146
 msgid "Reset Applied Color Scheme"
 msgstr ""
 
-#: src/ui/window.blp:150
+#: src/ui/window.blp:125
 msgid "About Gradience"
 msgstr ""
 
-#: src/ui/window.blp:159
-msgid "Try Adwaita Demo"
+#: src/ui/window.blp:134
+msgid "Adwaita Demo"
 msgstr ""
 
-#: src/ui/window.blp:163
+#: src/ui/window.blp:138
 msgid "GTK4 Demo"
 msgstr ""
 
-#: src/ui/window.blp:167
+#: src/ui/window.blp:142
 msgid "GTK4 Widget Factory"
 msgstr ""
 
-#: src/app_type_dialog.py:46 src/main.py:511
+#: src/app_type_dialog.py:46 src/main.py:443
 msgid "Cancel"
 msgstr ""
 
-#: src/main.py:173 src/main.py:179
-msgid "Failed to load preset"
-msgstr ""
-
-#: src/main.py:196
-msgid "Open in File Manager"
-msgstr ""
-
-#: src/main.py:202
-msgid "User Defined Presets"
-msgstr ""
-
-#: src/main.py:397
+#: src/main.py:329
 msgid "Unsaved changes"
 msgstr ""
 
-#: src/main.py:407
+#: src/main.py:339
 msgid "Save changes"
 msgstr ""
 
-#: src/main.py:471
+#: src/main.py:403
 msgid "Apply this color scheme?"
 msgstr ""
 
-#: src/main.py:472
+#: src/main.py:404
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:484
+#: src/main.py:416
 msgid "Reset applied color scheme?"
 msgstr ""
 
-#: src/main.py:485
+#: src/main.py:417
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 
-#: src/main.py:487
+#: src/main.py:419
 msgid "Reset"
 msgstr ""
 
-#: src/main.py:497
+#: src/main.py:429
 msgid "Save preset as..."
 msgstr ""
 
-#: src/main.py:499 src/main.py:525 src/main.py:540
+#: src/main.py:431 src/main.py:457 src/main.py:472
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:512
+#: src/main.py:444
 msgid "Save"
 msgstr ""
 
-#: src/main.py:582
-msgid "Scheme successfully saved!"
+#: src/main.py:514
+msgid "Preset saved"
 msgstr ""
 
-#: src/main.py:646
-msgid "Scheme set successfully!"
+#: src/main.py:578
+msgid "Preset set sucessfully"
 msgstr ""
 
-#: src/main.py:679
-msgid "Reset successfully!"
+#: src/main.py:611
+msgid "Preset reseted"
 msgstr ""
 
-#: src/main.py:714
+#: src/main.py:650
 msgid ""
 "\n"
 "                <ul>\n"
@@ -296,18 +264,18 @@ msgid ""
 "            "
 msgstr ""
 
-#: src/main.py:732
+#: src/main.py:668
 msgid ""
 "\n"
 "Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for "
 "customizing Libadwaita applications and the adw-gtk3 theme.\n"
 "With Gradience you can:\n"
 "\n"
-"    - Change any color of Adwaita theme\n"
-"    - Apply Material 3 colors from wallaper\n"
-"    - Use other users presets\n"
-"    - Change advanced options with CSS\n"
-"    - Extend functionality using plugins\n"
+"- Change any color of Adwaita theme\n"
+"- Apply Material 3 colors from wallaper\n"
+"- Use other users presets\n"
+"- Change advanced options with CSS\n"
+"- Extend functionality using plugins\n"
 "\n"
 "This app is written in Python and uses GTK 4 and libadwaita.\n"
 "            "
@@ -564,11 +532,11 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: src/window.py:142
+#: src/window.py:141
 msgid "Monet Engine"
 msgstr ""
 
-#: src/window.py:144
+#: src/window.py:143
 msgid ""
 "Monet is an engine that generates Material Design 3 palette from backgrounds "
 "color."
@@ -578,39 +546,39 @@ msgstr ""
 msgid "Background Image"
 msgstr ""
 
-#: src/window.py:163
+#: src/window.py:164
 msgid "Choose a file"
 msgstr ""
 
-#: src/window.py:186
+#: src/window.py:187
 msgid "Monet Palette"
 msgstr ""
 
-#: src/window.py:193
+#: src/window.py:194
 msgid "Tone"
 msgstr ""
 
-#: src/window.py:205
+#: src/window.py:206
 msgid "Theme"
 msgstr ""
 
-#: src/window.py:231
+#: src/window.py:232
 msgid "Unsupported background type"
 msgstr ""
 
-#: src/window.py:247
-msgid "Palette generated with success!"
+#: src/window.py:248
+msgid "Palette generated"
 msgstr ""
 
-#: src/window.py:251
+#: src/window.py:252
 msgid "Select a background first"
 msgstr ""
 
-#: src/window.py:290
+#: src/window.py:291
 msgid "Palette Colors"
 msgstr ""
 
-#: src/window.py:292
+#: src/window.py:293
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
