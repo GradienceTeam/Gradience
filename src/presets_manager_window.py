@@ -123,6 +123,8 @@ class GradiencePresetWindow(Adw.Window):
                 self.toast_overlay.add_toast(
                         Adw.Toast(title=_("Succesfuly deleted preset"))
                     )
+            finally:
+                self.reload_pref_group()
 
 
         self.delete_preset = True
