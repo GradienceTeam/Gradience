@@ -48,7 +48,6 @@ class GradiencePresetWindow(Adw.Window):
     search_stack = Gtk.Template.Child("search_stack")
     search_results = Gtk.Template.Child("search_results")
     search_spinner = Gtk.Template.Child("search_spinner")
-    offline_label = Gtk.Template.Child("offline_label")
 
     custom_presets = {}
 
@@ -86,11 +85,9 @@ class GradiencePresetWindow(Adw.Window):
 
         if not self.explore_presets:  # offline
             self.search_stack.set_visible("page_offline")
-            self.offline_label.props.visible = True
         else:
             self.search_spinner.props.visible = False
-            self.offline_label.props.visible = False
-
+        
             for (preset, preset_name), preset_url in zip(
                     self.explore_presets.items(), urls):
                 row = GradienceExplorePresetRow(preset_name, preset_url, self)
