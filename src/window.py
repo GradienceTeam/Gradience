@@ -245,7 +245,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 )
                 if not self.first_apply:
                     self.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Palette generated with success!"))
+                        Adw.Toast(title=_("Palette generated"))
                     )
         else:
             self.toast_overlay.add_toast(

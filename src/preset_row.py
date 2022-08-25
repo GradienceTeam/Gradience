@@ -114,6 +114,6 @@ class GradiencePresetRow(Adw.ActionRow):
             file.write(json.dumps(object_to_write, indent=4))
             self.app.clear_dirty()
             self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Scheme successfully renamed!"))
+                Adw.Toast(title=_("Preset renamed"))
             )
         self.old_name = self.name

@@ -71,7 +71,7 @@ class GradiencePresetWindow(Adw.Window):
 
         self.connect_signals()
 
-        self.delete_toast = Adw.Toast(title=_("Scheme successfully deleted!"))
+        self.delete_toast = Adw.Toast(title=_("Preset removed"))
         # self.delete_toast.set_action_name("on_undo_button_clicked")
         self.delete_preset = True
         self.delete_toast.set_button_label(_("Undo"))
@@ -120,7 +120,7 @@ class GradiencePresetWindow(Adw.Window):
                 )
             else:
                 self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Succesfuly deleted preset"))
+                    Adw.Toast(title=_("Preset removed"))
                 )
             finally:
                 self.reload_pref_group()
@@ -166,7 +166,7 @@ class GradiencePresetWindow(Adw.Window):
                         preset_file
                     ))
                     self.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Succesfuly imported preset"))
+                        Adw.Toast(title=_("Preset imported"))
                     )
             else:
                 self.toast_overlay.add_toast(Adw.Toast(

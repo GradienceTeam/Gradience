@@ -54,7 +54,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
             download_preset(to_slug_case(self.name), self.url)
         except Exception:
             self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Scheme could not be downloaded!"))
+                Adw.Toast(title=_("Preset could not be downloaded"))
             )
         else:
             self.app.load_preset_from_file(os.path.join(
@@ -65,7 +65,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
             ))
 
             self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Scheme successfully downloaded!"))
+                Adw.Toast(title=_("Preset downloaded"))
             )
 
         buglog("Apply and download compeleted")
@@ -76,11 +76,11 @@ class GradienceExplorePresetRow(Adw.ActionRow):
             download_preset(to_slug_case(self.name), self.url)
         except Exception:
             self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Scheme could not be downloaded!"))
+                Adw.Toast(title=_("Preset could not be downloaded"))
             )
         else:
             self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Scheme successfully downloaded!"))
+                Adw.Toast(title=_("Preset downloaded"))
             )
             self.win.reload_pref_group()
         buglog("Download compeleted")

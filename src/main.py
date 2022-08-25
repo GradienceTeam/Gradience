@@ -511,7 +511,7 @@ class GradienceApplication(Adw.Application):
                 file.write(json.dumps(object_to_write, indent=4))
                 self.clear_dirty()
                 self.win.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Scheme successfully saved!"))
+                    Adw.Toast(title=_("Preset saved"))
                 )
 
     def apply_color_scheme(self, widget, response):
@@ -575,7 +575,7 @@ class GradienceApplication(Adw.Application):
                 ) as file:
                     file.write(gtk3_css)
             self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Scheme set successfully!"))
+                Adw.Toast(title=_("Preset set sucessfully"))
             )
 
     def reset_color_scheme(self, widget, response):
@@ -608,7 +608,7 @@ class GradienceApplication(Adw.Application):
                 except Exception:
                     pass
             self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Reset successfully!")))
+                Adw.Toast(title=_("Preset reseted")))
 
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
