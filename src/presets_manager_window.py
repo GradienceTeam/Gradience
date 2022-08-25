@@ -108,15 +108,28 @@ class GradiencePresetWindow(Adw.Window):
 
     def on_delete_toast_dismissed(self, widget):
         if self.delete_preset:
-            os.remove(os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                            os.environ["HOME"] + "/.config"),
-                "presets",
-                to_slug_case(self.old_name) + ".json",
-            ))
+            try:
+                os.remove(os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                os.environ["HOME"] + "/.config"),
+                    "presets",
+                    to_slug_case(self.old_name) + ".json",
+                ))
+            except Exception:
+                self.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Unable to delete preset"))
+                    )
+            else:
+                self.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Succesfuly deleted preset"))
+                    )
+
+
+        self.delete_preset = True
 
     def on_undo_button_clicked(self, *_args):
         self.delete_preset = False
+        self.delete_toast.dismiss()
 
     def on_search_changed(self, widget):
         print("search changed")
