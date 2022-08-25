@@ -111,6 +111,15 @@ template GradiencePresetWindow : Adw.Window {
                             halign: center;
                           };
                         }
+
+                        Gtk.StackPage {
+                          name: "page_offline";
+                          child: Gtk.Label offline_label {
+                            label: _("Offline");
+                            valign: start;
+                            halign: center;
+                          };
+                        }
                       }
                     }
                   }
