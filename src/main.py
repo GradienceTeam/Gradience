@@ -638,7 +638,7 @@ class GradienceApplication(Adw.Application):
                 Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI/
                 Renato Corrêa https://www.transifex.com/user/profile/renatocrrs/
                 Aggelos Tselios https://www.transifex.com/user/profile/AndroGR/
-                David "Daudix UFO" Lapshin https://github.com/daudix-UFO
+                David Lapshin https://github.com/daudix-UFO
                 0xMRTT https://github.com/0xMRTT
                 tfuxu https://github.com/tfuxu
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918/
