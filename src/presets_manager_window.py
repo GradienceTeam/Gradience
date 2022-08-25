@@ -118,7 +118,7 @@ class GradiencePresetWindow(Adw.Window):
     def on_undo_button_clicked(self, *_args):
         self.delete_preset = False
 
-    def on_search_changed(self):
+    def on_search_changed(self, widget):
         print("search changed")
 
     def on_search_realize(self, widget):
