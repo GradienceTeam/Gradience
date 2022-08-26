@@ -16,10 +16,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, Adw, Gio, Gdk
-from .constants import rootdir
 import time
+
+from gi.repository import Gtk, Adw, Gio, Gdk
+
 from .run_async import RunAsync
+from .modules.utils import buglog
+from .constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
@@ -115,15 +118,15 @@ class GradienceWelcomeWindow(Adw.Window):
         quit()
 
     def check_adw_gtk3(self):
-        print("check if adw-gtk3 installed")
+        buglog("check if adw-gtk3 installed")
         return True
 
     def adw_gtk3(self):
         if not self.check_adw_gtk3():  # install
-            print("install adw-gtk3")
+            buglog("install adw-gtk3")
 
     def configure_system(self):
-        print("confiure system")
+        buglog("configure system")
 
     def install_runner(self, widget):
         def set_completed(result, error=False):

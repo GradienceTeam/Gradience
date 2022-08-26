@@ -7,7 +7,6 @@ global:
 	sudo ninja -C builddir install
 
 user:
-	meson builddiruser
-	meson configure builddiruser -Dprefix="$(pwd)/builddiruser/testdir"
-	ninja -C builddiruser install
-	ninja -C builddiruser run
+	meson builddir --prefix="$(shell pwd)/builddir/testdir" --wipe
+	ninja -C builddir install
+	ninja -C builddir run

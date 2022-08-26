@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+# utils.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
@@ -16,22 +16,24 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+import re
+import logging
 
-read -p "Do you want to install Python requirements? (yes, no): " answer
+from anyascii import anyascii
+from gradience.constants import build_type
 
-if [[ "$answer" == "yes" ]]; then
-    pip3 install --user -r requirements.txt
-elif [[ "$answer" == "no" ]]; then
-    echo "Skipping requirements installation"
-fi
+if build_type == "debug":
+    logging.basicConfig(level=logging.DEBUG)
+else:
+    logging.basicConfig(level=logging.WARNING)
 
-echo "Cleaning builddir directory"
-rm -r builddir
 
-echo "Rebuilding"
-meson builddir
-meson configure builddir -Dprefix="$(pwd)/builddir/testdir" -Dbuildtype=debug
-ninja -C builddir install
+def to_slug_case(non_slug):
+    return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
-echo "Running"
-ninja -C builddir run
+# Use it instead of print(), so there isn't any output in stdout if
+# Gradience was build in release mode
+
+
+def buglog(*args):
+    logging.debug(*args)

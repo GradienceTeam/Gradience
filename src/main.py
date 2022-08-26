@@ -19,10 +19,7 @@
 import sys
 import json
 import os
-import re
 import traceback
-
-from anyascii import anyascii
 
 import gi
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
@@ -34,13 +31,10 @@ from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
 from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
-from .constants import rootdir, app_id, version, bugtracker_url, help_url, project_url
+from .constants import rootdir, app_id, rel_ver, version, bugtracker_url, help_url, project_url
 from .welcome import GradienceWelcomeWindow
 from .presets_manager_window import GradiencePresetWindow
-
-
-def to_slug_case(non_slug):
-    return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
+from .modules.utils import to_slug_case, buglog
 
 
 class GradienceApplication(Adw.Application):
@@ -78,7 +72,7 @@ class GradienceApplication(Adw.Application):
             self.settings.get_value("disabled-plugins"))
 
         self.first_run = self.settings.get_boolean("first-run")
-        print(f"disabled plugins: {self.disabled_plugins}")
+        buglog(f"disabled plugins: {self.disabled_plugins}")
 
         self.style_manager = Adw.StyleManager.get_default()
 
@@ -122,8 +116,6 @@ class GradienceApplication(Adw.Application):
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
-        self.reload_user_defined_presets()
-
         if self.style_manager.get_dark():
             self.load_preset_from_resource(
                 f"{rootdir}/presets/adwaita-dark.json"
@@ -134,73 +126,12 @@ class GradienceApplication(Adw.Application):
             )
 
         if self.first_run:
-            print("first run")
+            buglog("first run")
             welcome = GradienceWelcomeWindow(self.win)
             welcome.present()
         else:
-            print("normal run")
+            buglog("normal run")
             self.win.present()
-
-    def reload_user_defined_presets(self):
-        if self.props.active_window.presets_menu.get_n_items() > 1:
-            self.props.active_window.presets_menu.remove(1)
-
-        preset_directory = os.path.join(
-            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
-            "presets",
-        )
-        if not os.path.exists(preset_directory):
-            os.makedirs(preset_directory)
-
-        self.custom_presets.clear()
-        for file_name in os.listdir(preset_directory):
-            if file_name.endswith(".json"):
-                try:
-                    with open(
-                        os.path.join(preset_directory, file_name), "r", encoding="utf-8"
-                    ) as file:
-                        preset_text = file.read()
-                    preset = json.loads(preset_text)
-                    if preset.get("variables") is None:
-                        raise KeyError("variables")
-                    if preset.get("palette") is None:
-                        raise KeyError("palette")
-                    self.custom_presets[file_name.replace(
-                        ".json", "")] = preset["name"]
-                except Exception:
-                    self.global_errors.append(
-                        {
-                            "error": _("Failed to load preset"),
-                            "element": file_name,
-                            "line": traceback.format_exc().strip(),
-                        }
-                    )
-                    self.win.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Failed to load preset"))
-                    )
-
-                    self.props.active_window.update_errors(self.global_errors)
-
-        custom_menu_section = Gio.Menu()
-        for preset, preset_name in self.custom_presets.items():
-            menu_item = Gio.MenuItem()
-            menu_item.set_label(preset_name)
-            if not preset.startswith("error"):
-                menu_item.set_action_and_target_value(
-                    "app.load_preset", GLib.Variant("s", "custom-" + preset)
-                )
-            else:
-                menu_item.set_action_and_target_value("")
-            custom_menu_section.append_item(menu_item)
-        open_in_file_manager_item = Gio.MenuItem()
-        open_in_file_manager_item.set_label(_("Open in File Manager"))
-        open_in_file_manager_item.set_action_and_target_value(
-            "app.open_preset_directory"
-        )
-        custom_menu_section.append_item(open_in_file_manager_item)
-        self.props.active_window.presets_menu.append_section(
-            _("User Defined Presets"), custom_menu_section
-        )
 
     def open_preset_directory(self, *_args):
         parent = XdpGtk4.parent_new_gtk(self.props.active_window)
@@ -224,6 +155,7 @@ class GradienceApplication(Adw.Application):
         )
 
     def load_preset_from_file(self, preset_path):
+        buglog(f"load preset from file {preset_path}")
         preset_text = ""
         with open(preset_path, "r", encoding="utf-8") as file:
             preset_text = file.read()
@@ -330,7 +262,7 @@ class GradienceApplication(Adw.Application):
             light_theme = theme["schemes"]["light"]
             variable = {
                 "accent_color": self.rgba_from_argb(light_theme.primary),
-                "accent_bg_color": self.rgba_from_argb(light_theme.primaryContainer),
+                "accent_bg_color": self.rgba_from_argb(light_theme.primary),
                 "accent_fg_color": self.rgba_from_argb(light_theme.onPrimaryContainer),
                 "destructive_color": self.rgba_from_argb(light_theme.error),
                 "destructive_bg_color": self.rgba_from_argb(light_theme.errorContainer),
@@ -338,23 +270,23 @@ class GradienceApplication(Adw.Application):
                 "success_color": self.rgba_from_argb(light_theme.tertiary),
                 "success_bg_color": self.rgba_from_argb(light_theme.onTertiary),
                 "success_fg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
-                "warning_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "warning_color": self.rgba_from_argb(light_theme.inversePrimary),
                 "warning_bg_color": self.rgba_from_argb(light_theme.inversePrimary),
                 "warning_fg_color": self.rgba_from_argb(light_theme.primary, "0.8"),
                 "error_color": self.rgba_from_argb(light_theme.error),
                 "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
                 "error_fg_color": self.rgba_from_argb(light_theme.onError),
-                "window_bg_color": self.rgba_from_argb(light_theme.surface),
+                "window_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "window_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "view_bg_color": self.rgba_from_argb(light_theme.surface),
+                "view_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "view_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "headerbar_bg_color": self.rgba_from_argb(light_theme.surface),
+                "headerbar_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "headerbar_fg_color": self.rgba_from_argb(light_theme.onSurface),
                 "headerbar_border_color": self.rgba_from_argb(
                     light_theme.primary, "0.8"
                 ),
                 "headerbar_backdrop_color": "@window_bg_color",
-                "headerbar_shade_color": self.rgba_from_argb(light_theme.shadow),
+                "headerbar_shade_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
                 "card_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(light_theme.shadow),
@@ -579,7 +511,7 @@ class GradienceApplication(Adw.Application):
                 file.write(json.dumps(object_to_write, indent=4))
                 self.clear_dirty()
                 self.win.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Scheme successfully saved!"))
+                    Adw.Toast(title=_("Preset saved"))
                 )
 
     def apply_color_scheme(self, widget, response):
@@ -643,7 +575,7 @@ class GradienceApplication(Adw.Application):
                 ) as file:
                     file.write(gtk3_css)
             self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Scheme set successfully!"))
+                Adw.Toast(title=_("Preset set sucessfully"))
             )
 
     def reset_color_scheme(self, widget, response):
@@ -676,7 +608,7 @@ class GradienceApplication(Adw.Application):
                 except Exception:
                     pass
             self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Reset successfully!")))
+                Adw.Toast(title=_("Preset reseted")))
 
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
@@ -698,19 +630,23 @@ class GradienceApplication(Adw.Application):
             # Translators: This is a place to put your credits (formats: "Name
             # https://example.com" or "Name <email@example.com>", no quotes)
             # and is not meant to be translated literally.
+            # TODO: Automate this process using CI, because not everyone knows
+            # about this
             translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh/
                 FineFindus https://github.com/FineFindus
                 Karol Lademan https://www.transifex.com/user/profile/karlod/
                 Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI/
                 Renato Corrêa https://www.transifex.com/user/profile/renatocrrs/
                 Aggelos Tselios https://www.transifex.com/user/profile/AndroGR/
-                David "Daudix UFO" Lapshin https://github.com/daudix-UFO'
+                David Lapshin https://github.com/daudix-UFO
                 0xMRTT https://github.com/0xMRTT
+                tfuxu https://github.com/tfuxu
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918/
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
+            release_notes_version=rel_ver,
             release_notes=_("""
                 <ul>
         <li>Add AdwViewSwitcher in the header bar.</li>
@@ -733,11 +669,11 @@ class GradienceApplication(Adw.Application):
 Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 With Gradience you can:
 
-    - Change any color of Adwaita theme
-    - Apply Material 3 colors from wallaper
-    - Use other users presets
-    - Change advanced options with CSS
-    - Extend functionality using plugins
+- Change any color of Adwaita theme
+- Apply Material 3 colors from wallaper
+- Use other users presets
+- Change advanced options with CSS
+- Extend functionality using plugins
 
 This app is written in Python and uses GTK 4 and libadwaita.
             """)
@@ -775,7 +711,7 @@ This app is written in Python and uses GTK 4 and libadwaita.
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
     def reload_plugins(self):
-        print("reload plugins")
+        buglog("reload plugins")
         self.win.plugins_group = self.win.plugins_list.to_group()
 
     def show_adwaita_demo(self, *_args):

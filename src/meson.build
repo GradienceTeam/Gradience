@@ -11,6 +11,9 @@ blueprints = custom_target('blueprints',
     'ui/presets_manager_window.blp',
     'ui/plugin_row.blp',
     'ui/welcome.blp',
+    'ui/preset_row.blp',
+    'ui/builtin_preset_row.blp',
+    'ui/explore_preset_row.blp'
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -35,7 +38,16 @@ configure_file(
 configure_file(
   input: 'constants.py.in',
   output: 'constants.py',
-  configuration: conf,
+  configuration: configuration_data({
+    'APP_ID': APPLICATION_ID,
+    'RELEASE_VER': meson.project_version(),
+    'VERSION': meson.project_version() + VERSION_SUFFIX,
+    'BUILD_TYPE': get_option('buildtype'),
+    'PROJECT_URL': PROJECT_URL,
+    'BUGTRACKER_URL': BUGTRACKER_URL,
+    'HELP_URL': HELP_URL,
+    'TRANSLATE_URL': TRANSLATE_URL
+  }),
   install: true,
   install_dir: PY_INSTALLDIR.get_install_dir() / 'gradience',
 )
@@ -63,8 +75,20 @@ gradience_sources = [
   'custom_css_group.py',
   'presets_manager_window.py',
   'plugin_row.py',
+  'explore_preset_row.py',
+  'builtin_preset_row.py',
+  'preset_row.py',
   'welcome.py',
 ]
 
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
 #install_data(gradience_sources, install_dir: MODULE_DIR)
+
+# Install modules
+gradience_modules = [
+  'modules/__init__.py',
+  'modules/custom_presets.py',
+  'modules/utils.py'
+]
+
+PY_INSTALLDIR.install_sources(gradience_modules, subdir: 'gradience/modules')

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/GradienceTeam/Gradience">
-    <file>style.css</file>
     <file>presets/adwaita.json</file>
     <file>presets/adwaita-dark.json</file>
     <file>presets/pretty-purple.json</file>
@@ -11,6 +10,9 @@
     <file>ui/window.ui</file>
     <file>ui/app_type_dialog.ui</file>
     <file>ui/custom_css_group.ui</file>
+    <file>ui/builtin_preset_row.ui</file>
+    <file>ui/explore_preset_row.ui</file>
+    <file>ui/preset_row.ui</file>
     <file>ui/presets_manager_window.ui</file>
     <file>ui/plugin_row.ui</file>
     <file>ui/welcome.ui</file>
@@ -51,6 +53,18 @@
       preprocess="xml-stripblanks"
       alias="settings-symbolic.svg"
      >icons/com.github.GradienceTeam.Gradience-settings-symbolic.svg</file>
+     <file
+      preprocess="xml-stripblanks"
+      alias="download-symbolic.svg"
+     >icons/com.github.GradienceTeam.Gradience-download-symbolic.svg</file>
+     <file
+      preprocess="xml-stripblanks"
+      alias="remove-symbolic.svg"
+     >icons/com.github.GradienceTeam.Gradience-remove-symbolic.svg</file>
+    <file
+      preprocess="xml-stripblanks"
+      alias="checkmark-small-symbolic.svg"
+     >icons/com.github.GradienceTeam.Gradience-checkmark-small-symbolic.svg</file>
     
   </gresource>
 
