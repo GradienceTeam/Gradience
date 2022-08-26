@@ -119,8 +119,9 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] Localization support
 - [x] Normalize color variables
 - [x] Make the code more secure
-- [ ] Add plugin support. Will help integration with others tools. (WIP)
+- [x] Add preset manager with option to download other users presets
 - [ ] Release on Flathub
+- [ ] Add plugin support. Will help integration with others tools. (WIP)
 - [ ] Full theme preview
 - [ ] Customize GNOME Shell
 - [ ] Customize GDM
