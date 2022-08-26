@@ -1,7 +1,7 @@
 {
     "app-id" : "com.github.GradienceTeam.Gradience",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "master",
+    "runtime-version" : "42",
     "sdk" : "org.gnome.Sdk",
     "command" : "gradience",
     "finish-args" : [
@@ -41,7 +41,6 @@
                 }
             ]
         },
-
         {
             "name" : "blueprint-compiler",
             "buildsystem" : "meson",
@@ -54,6 +53,18 @@
             ]
         },
         {
+            "name": "libadwaita",
+            "buildsystem": "meson",
+            "config-opts": ["-Dvapi=false", "-Dtests=false", "-Dexamples=false", "-Dintrospection=true"],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/libadwaita.git",
+                    "tag": "1.2.beta"
+                }
+            ]
+        },
+        {
             "name": "libportal",
             "buildsystem": "meson",
             "config-opts": ["-Ddocs=false", "-Dvapi=false", "-Dbackends=gtk4"],
@@ -61,7 +72,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/libportal",
-                    "branch": "main"
+                    "tag": "0.6"
                 }
             ]
         },
