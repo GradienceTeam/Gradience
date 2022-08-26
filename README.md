@@ -120,7 +120,7 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] Normalize color variables
 - [x] Make the code more secure
 - [x] Add preset manager with option to download other users presets
-- [ ] Release on Flathub
+- [ ] Release on Flathub (in review)
 - [ ] Add plugin support. Will help integration with others tools. (WIP)
 - [ ] Full theme preview
 - [ ] Customize GNOME Shell
