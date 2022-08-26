@@ -1,45 +1,40 @@
 # window.py
 #
-# Copyright 2022 Gradience Team
+# Change the look of Adwaita, with ease
+# Copyright (C) 2022  Gradience Team
 #
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files (the
-# "Software"), to deal in the Software without restriction, including
-# without limitation the rights to use, copy, modify, merge, publish,
-# distribute, sublicense, and/or sell copies of the Software, and to
-# permit persons to whom the Software is furnished to do so, subject to
-# the following conditions:
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
-# The above copyright notice and this permission notice shall be
-# included in all copies or substantial portions of the Software.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY
-# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-#
-# Except as contained in this notice, the name(s) of the above copyright
-# holders shall not be used in advertising or otherwise to promote the sale,
-# use or other dealings in this Software without prior written
-# authorization.
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+import os
 
 from gi.repository import Gtk, Adw, Gio, Gdk
+
+from svglib.svglib import svg2rlg
+from reportlab.graphics import renderPM
+from material_color_utilities_python import *
+
 from .error import GradienceError
 from .settings_schema import settings_schema
 from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
 from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
-from material_color_utilities_python import *
-from .constants import rootdir, app_id, build_type
 from .presets_manager_window import GradiencePresetWindow
 from .plugins_list import GradiencePluginsList
-from svglib.svglib import svg2rlg
-from reportlab.graphics import renderPM
-import os
+from .modules.utils import buglog
+from .constants import rootdir, app_id, build_type
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
@@ -52,17 +47,12 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     content_plugins = Gtk.Template.Child("content_plugins")
     save_preset_button = Gtk.Template.Child("save-preset-button")
     main_menu = Gtk.Template.Child("main-menu")
-    presets_dropdown = Gtk.Template.Child("presets-dropdown")
-    presets_menu = Gtk.Template.Child("presets-menu")
     errors_button = Gtk.Template.Child("errors-button")
     errors_list = Gtk.Template.Child("errors-list")
     monet_image_file = None
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.presets_dropdown.get_popover().connect(
-            "show", self.on_presets_dropdown_activate
-        )
 
         # Set devel style
         if build_type == "debug":
@@ -103,32 +93,41 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.get_default_wallpaper()
 
+    # FIXME: This function works only when build using meson, because Flatpak
+    # can't access host's dconf with current config/impl
     def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
         if self.style_manager.get_dark():
-            self.monet_image_file = background_settings.get_string(
+            picture_uri = background_settings.get_string(
                 "picture-uri-dark")
         else:
-            self.monet_image_file = background_settings.get_string(
-                "picture-uri-dark")
-        self.monet_image_file = Gio.File.new_for_uri(self.monet_image_file)
+            picture_uri = background_settings.get_string(
+                "picture-uri")
+        buglog(picture_uri)
+        self.monet_image_file = Gio.File.new_for_uri(picture_uri)
         image_basename = self.monet_image_file.get_basename()
+        buglog(image_basename)
         self.monet_file_chooser_button.set_label(image_basename)
         self.monet_image_file = self.monet_image_file.get_path()
-        self.on_apply_button()
+        self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
+        buglog(self.monet_image_file)
+        # self.on_apply_button() # Comment out for now, because it always shows
+        # that annoying toast on startup
 
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
 
     def __close_window(self, widegt):
         if self.get_application().is_dirty:
-            print("app is dirty")
+            buglog("app is dirty")
 
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
             self.monet_image_file = self.monet_file_chooser_dialog.get_file()
             image_basename = self.monet_image_file.get_basename()
             self.monet_file_chooser_button.set_label(image_basename)
+            self.monet_file_chooser_button.set_tooltip_text(
+                image_basename)
         self.monet_file_chooser_dialog.hide()
 
         if response == Gtk.ResponseType.ACCEPT:
@@ -145,6 +144,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.apply_button = Gtk.Button()
         self.apply_button.set_label(_("Apply"))
+        self.apply_button.set_valign(Gtk.Align.CENTER)
         self.apply_button.connect("clicked", self.on_apply_button)
         self.apply_button.set_css_classes("suggested-action")
         self.monet_pref_group.set_header_suffix(self.apply_button)
@@ -155,6 +155,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_dialog.set_transient_for(self)
 
         self.monet_file_chooser_button = Gtk.Button()
+        self.monet_file_chooser_button.set_valign(Gtk.Align.CENTER)
         #self.monet_file_chooser_button.set_label(_("Choose a file"))
         # self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
 
@@ -170,8 +171,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.monet_file_chooser_button.set_child(child_button)
 
-        self.monet_file_chooser_button.set_margin_top(5)
-        self.monet_file_chooser_button.set_margin_bottom(5)
+        # self.monet_file_chooser_button.set_margin_top(5)
+        # self.monet_file_chooser_button.set_margin_bottom(5)
 
         self.monet_file_chooser_button.connect(
             "clicked", self.on_file_picker_button_clicked
@@ -222,7 +223,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 renderPM.drawToFile(drawing, self.monet_image_file, fmt='PNG')
 
             if self.monet_image_file.endswith(".xml"):
-                print("XML WIP")
+                buglog("XML WIP")
 
             try:
                 self.monet_img = Image.open(self.monet_image_file)
@@ -244,7 +245,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 )
                 if not self.first_apply:
                     self.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Palette generated with success!"))
+                        Adw.Toast(title=_("Palette generated"))
                     )
         else:
             self.toast_overlay.add_toast(
@@ -312,6 +313,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                     error["element"],
                     error["line"]))
 
-    def on_presets_dropdown_activate(self, *args):
-        self.get_application().reload_user_defined_presets()
-        # GradiencePresetWindow().present()
+    @Gtk.Template.Callback()
+    def on_presets_button_clicked(self, *args):
+        GradiencePresetWindow().present()

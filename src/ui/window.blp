@@ -42,10 +42,10 @@ template GradienceMainWindow : Adw.ApplicationWindow {
           }
 
           [end]
-          MenuButton presets-dropdown {
-            menu-model: presets-menu;
+          Button presets_button {
             label: _("Presets");
             icon-name: "palette-symbolic";
+            clicked => on_presets_button_clicked();
           }
 
           [end]
@@ -114,31 +114,6 @@ template GradienceMainWindow : Adw.ApplicationWindow {
   }
 }
 
-menu presets-menu {
-  section {
-    label: _("Built-in Presets");
-    item {
-      label: _("Adwaita");
-      action: "app.load_preset";
-      target: "adwaita";
-    }
-    item {
-      label: _("Adwaita Dark");
-      action: "app.load_preset";
-      target: "adwaita-dark";
-    }
-    item {
-      label: _("Pretty purple");
-      action: "app.load_preset";
-      target: "pretty-purple";
-    }
-    item {
-      label: _("Manage Presets");
-      action: "app.manage_presets";
-    }
-  }
-}
-
 
 menu main-menu {
   section {
@@ -156,7 +131,7 @@ menu main-menu {
 menu preview-menu {
   section {
     item {
-      label: _("Try Adwaita Demo");
+      label: _("Adwaita Demo");
       action: "app.show_adwaita_demo";
     }
     item {

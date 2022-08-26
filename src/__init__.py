@@ -1,3 +1,5 @@
+# __init__.py
+#
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
 #
