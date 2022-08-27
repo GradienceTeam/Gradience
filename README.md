@@ -24,8 +24,6 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 
 ## Building and Installing
 
-**[NOTE]** See `next` branch for latest commits.
-
 ### Requirements
 
 - Python 3 `python`
