@@ -52,10 +52,11 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     def on_apply_button_clicked(self, *_args):
         try:
             download_preset(to_slug_case(self.name), self.url)
-        except Exception:
+        except Exception as exception:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
+            buglog(exception)
         else:
             self.app.load_preset_from_file(os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
@@ -67,20 +68,22 @@ class GradienceExplorePresetRow(Adw.ActionRow):
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset downloaded"))
             )
-
-        buglog("Apply and download compeleted")
+            self.win.reload_pref_group()
+            
+            buglog("Apply and download compeleted")
 
     @Gtk.Template.Callback()
     def on_download_button_clicked(self, *_args):
         try:
             download_preset(to_slug_case(self.name), self.url)
-        except Exception:
+        except Exception as exception:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
+            buglog(exception)
         else:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset downloaded"))
             )
             self.win.reload_pref_group()
-        buglog("Download compeleted")
+            buglog("Download compeleted")
