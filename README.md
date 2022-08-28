@@ -136,8 +136,8 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for more informations and a list of con
 
 ## About Name
 
-Gradience is originally named Adwaita Manager
+Gradience was originally named Adwaita Manager.
 
-See the meaning of Gradience on [Wiktionary](https://en.wiktionary.org/wiki/gradience).
+You can see the meaning of Gradience on [Wiktionary](https://en.wiktionary.org/wiki/gradience).
 
-Meaning of an icon is: _A Paint Roller repaints Adwaita window, keeping it's functionality_
+The icon represents: _A Paint Roller repainting an Adwaita window, keeping it's functionality and improving it's looks_
