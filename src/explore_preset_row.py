@@ -69,7 +69,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
                 Adw.Toast(title=_("Preset downloaded"))
             )
             self.win.reload_pref_group()
-            
+
             buglog("Apply and download compeleted")
 
     @Gtk.Template.Callback()
