@@ -84,7 +84,8 @@ class GradiencePresetWindow(Adw.Window):
         self.explore_presets, urls = fetch_presets()
 
         if not self.explore_presets:  # offline
-            self.search_stack.set_visible("page_offline")
+            self.search_spinner.props.visible = False
+            self.search_stack.set_visible_child_name("page_offline")
         else:
             self.search_spinner.props.visible = False
 
