@@ -31,5 +31,5 @@ jobs:
       - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
         with:
           bundle: com.github.GradienceTeam.Gradience.Devel.flatpak
-          manifest-path: com.github.GradienceTeam.Gradience.Devel.json
+          manifest-path: build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
           cache-key: flatpak-builder-${{ github.sha }}-nightly

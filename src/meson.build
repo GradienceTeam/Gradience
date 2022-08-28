@@ -1,32 +1,3 @@
-gnome = import('gnome')
-
-blueprints = custom_target('blueprints',
-  input: files(
-    'ui/error.blp',
-    'ui/palette_shades.blp',
-    'ui/option.blp',
-    'ui/window.blp',
-    'ui/app_type_dialog.blp',
-    'ui/custom_css_group.blp',
-    'ui/presets_manager_window.blp',
-    'ui/plugin_row.blp',
-    'ui/welcome.blp',
-    'ui/preset_row.blp',
-    'ui/builtin_preset_row.blp',
-    'ui/explore_preset_row.blp'
-  ),
-  output: '.',
-  command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
-)
-
-gnome.compile_resources('gradience',
-  'gradience.gresource.xml',
-  gresource_bundle: true,
-  install: true,
-  install_dir: PKGDATA_DIR,
-  dependencies: blueprints,
-)
-
 configure_file(
   input: 'gradience.in',
   output: 'gradience',
