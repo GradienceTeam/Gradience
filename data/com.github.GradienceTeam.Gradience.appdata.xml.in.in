@@ -80,39 +80,48 @@
   </kudos>
 
   <releases>
-	  <release date="2022-8-26" version="0.2.0">
+    <release date="2022-8-30" version="0.2.1">
+      <description>
+        <p>A small bug fix release of Gradience.</p>
+        <ul>
+          <li>Small improvements to the welcome screen</li>
+          <li>Fixing release notes</li>
+        </ul>
+      </description>
+    </release>
+    <release date="2022-8-26" version="0.2.0">
       <description>
         <p>New Release of Gradience.</p>
+        <ul>
+          <li>Rebrand</li>
+          <li>Refactoring meson architecture</li>
+          <li>New debug check</li>
+          <li>Switching runtime to GNOME 42 and adding adw 1.2</li>
+          <li>Add more info about monet</li>
+          <li>Add preset manager with option to download other users presets</li>
+        </ul>
       </description>
-      <ul>
-	<li>Rebrand</li>
-        <li>Refactoring meson architecture</li>
-	<li>New debug check</li>
-	<li>Switching runtime to GNOME 42 and adding adw 1.2</li>
-	<li>Add more info about monet</li>
-	<li>Add preset manager with option to download other users presets</li>
-      </ul>
     </release>
     <release date="2022-8-12" version="0.1.0">
       <description>
         <p>First release of Gradience.</p>
+        <ul>
+          <li>Add AdwViewSwitcher in the header bar</li>
+          <li>Move CSS to the "Advanced" tab</li>
+          <li>Move the rest to the "Colours" tab</li>
+          <li>Add Monet tab which generates a theme from a background</li>
+          <li>Add disk saved and disk unsaved icon in the header bar</li>
+          <li>Update about dialog</li>
+          <li>Change license to GNU GPLv3</li>
+          <li>Begin plugin support</li>
+          <li>Move preset selector to a drop-down called palette (icon palette)</li>
+          <li>Add ability to apply the theme onlyfor dark theme or oy for light theme</li>
+          <li>Automaticly use Adwaita-dark preset if the user prefered scheme is dark.</li>
+          <li>Added Flatpak CI build</li>
+          <li>Added issue template for bug and feature request </li>
+          <li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch </li>
+        </ul>
       </description>
-      <ul>
-        <li>Add AdwViewSwitcher in the header bar.</li>
-        <li>Move CSS to the "Advanced" tab</li>
-        <li>Move the rest to the "Colours" tab</li>
-        <li>Add Monet tab which generates a theme from a background</li>
-        <li>Add disk saved and disk unsaved icon in the header bar</li>
-        <li>Update about dialog</li>
-        <li>Change license to GNU GPLv3</li>
-        <li>Begin plugin support</li>
-        <li>Move preset selector to a drop-down called palette (icon palette)</li>
-        <li>Add ability to apply the theme onlyfor dark theme or oy for light theme</li>
-        <li>Automaticly use Adwaita-dark preset if the user prefered scheme is dark.</li>
-        <li>Added Flatpak CI build</li>
-        <li>Added issue template for bug and feature request </li>
-        <li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch </li>
-      </ul>
     </release>
   </releases>
 
