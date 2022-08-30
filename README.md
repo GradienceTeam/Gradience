@@ -28,7 +28,7 @@ Gradience is available on Flathub
 
 <a href="https://flathub.org/apps/details/com.github.GradienceTeam.Gradience">
     <img width="200" alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-i-en.svg"/>
-
+</a>
 ## Building and Installing
 
 **[NOTE]** See `next` branch for latest commits.
