@@ -2,6 +2,8 @@
 
 # Gradience
 
+<a href='https://flathub.org/apps/details/com.github.GradienceTeam.Gradience'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+
 Change the look of Adwaita, with ease
 
 ![Screenshot of interface with Adwaita light theme](https://github.com/GradienceTeam/Design/blob/main/Screenshots/main_screenshot.png)
