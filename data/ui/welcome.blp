@@ -5,7 +5,7 @@ template GradienceWelcomeWindow: Adw.Window {
     resizable: false;
     deletable: true;
     modal: true;
-    default-width: 600;
+    default-width: 500;
     default-height: 500;
 
     Adw.ToastOverlay toast_overlay {
@@ -46,7 +46,7 @@ template GradienceWelcomeWindow: Adw.Window {
                         hexpand: true;
                         allow-scroll-wheel: true;
                         allow-mouse-drag: true;
-                        allow-long-swipes: true;
+                        allow-long-swipes: false;
 
                         Gtk.Box {
                             orientation: vertical;
@@ -139,7 +139,7 @@ template GradienceWelcomeWindow: Adw.Window {
                                 orientation: vertical;
                                 Gtk.Button label_skip {
                                     label: _("Please Finish the setup first");
-                                    margin-bottom: 5;
+                                    margin-bottom: 24;
                                     visible: true;
 
                                 }
