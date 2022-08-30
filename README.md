@@ -24,13 +24,11 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 
 ## Download
 
-Gradience will be available on Flathub very soon
+Gradience is available on Flathub.
 
-<!--
 <a href="https://flathub.org/apps/details/com.github.GradienceTeam.Gradience">
     <img width="200" alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-i-en.svg"/>
 </a>
--->
 
 ## Building and Installing
 
