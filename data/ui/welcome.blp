@@ -5,8 +5,8 @@ template GradienceWelcomeWindow: Adw.Window {
     resizable: false;
     deletable: true;
     modal: true;
-    default-width: 650;
-    default-height: 550;
+    default-width: 600;
+    default-height: 500;
 
     Adw.ToastOverlay toast_overlay {
         Adw.Leaflet leaflet {
@@ -55,7 +55,7 @@ template GradienceWelcomeWindow: Adw.Window {
 
                             Gtk.Image img_welcome {
                                 resource: "/com/github/GradienceTeam/Gradience/images/welcome.svg";
-                                pixel-size: 320;
+                                pixel-size: 256;
                             }
 
                             Adw.StatusPage page_welcome {
