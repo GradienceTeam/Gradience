@@ -18,7 +18,7 @@
 
   <description>
     <p>
-      Gradience (AdwCustomizer) is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+      Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
     </p>
     <p>With Gradience you can:</p>
     <ul>
@@ -64,35 +64,15 @@
     <category>Utility</category>
   </categories>
 
-  <content_rating type="oars-1.1">
-    <content_attribute id="violence-cartoon">none</content_attribute>
-    <content_attribute id="violence-fantasy">none</content_attribute>
-    <content_attribute id="violence-realistic">none</content_attribute>
-    <content_attribute id="violence-bloodshed">none</content_attribute>
-    <content_attribute id="violence-sexual">none</content_attribute>
-    <content_attribute id="violence-desecration">none</content_attribute>
-    <content_attribute id="violence-slavery">none</content_attribute>
-    <content_attribute id="violence-worship">none</content_attribute>
-    <content_attribute id="drugs-alcohol">none</content_attribute>
-    <content_attribute id="drugs-narcotics">none</content_attribute>
-    <content_attribute id="drugs-tobacco">none</content_attribute>
-    <content_attribute id="sex-nudity">none</content_attribute>
-    <content_attribute id="sex-themes">none</content_attribute>
-    <content_attribute id="sex-homosexuality">none</content_attribute>
-    <content_attribute id="sex-prostitution">none</content_attribute>
-    <content_attribute id="sex-adultery">none</content_attribute>
-    <content_attribute id="sex-appearance">none</content_attribute>
-    <content_attribute id="language-profanity">none</content_attribute>
-    <content_attribute id="language-humor">none</content_attribute>
-    <content_attribute id="language-discrimination">none</content_attribute>
-    <content_attribute id="social-chat">none</content_attribute>
-    <content_attribute id="social-info">none</content_attribute>
-    <content_attribute id="social-audio">none</content_attribute>
-    <content_attribute id="social-location">none</content_attribute>
-    <content_attribute id="social-contacts">none</content_attribute>
-    <content_attribute id="money-purchasing">none</content_attribute>
-    <content_attribute id="money-gambling">none</content_attribute>
-  </content_rating>
+  <content_rating type="oars-1.1" />
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+    <internet>offline-only</internet>
+
+  </supports>
 
   <kudos>
     <kudo>ModernToolkit</kudo>
@@ -100,6 +80,19 @@
   </kudos>
 
   <releases>
+	  <release date="2022-8-26" version="0.2.0">
+      <description>
+        <p>New Release of Gradience.</p>
+      </description>
+      <ul>
+	<li>Rebrand</li>
+        <li>Refactoring meson architecture</li>
+	<li>New debug check</li>
+	<li>Switching runtime to GNOME 42 and adding adw 1.2</li>
+	<li>Add more info about monet</li>
+	<li>Add preset manager with option to download other users presets</li>
+      </ul>
+    </release>
     <release date="2022-8-12" version="0.1.0">
       <description>
         <p>First release of Gradience.</p>
