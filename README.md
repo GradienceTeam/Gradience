@@ -32,8 +32,6 @@ Gradience is available on Flathub.
 
 ## Building and Installing
 
-**[NOTE]** See `next` branch for latest commits.
-
 ### Requirements
 
 - Python 3 `python`
