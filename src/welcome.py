@@ -136,7 +136,7 @@ class GradienceWelcomeWindow(Adw.Window):
                 if not user_data_dir:
                     user_data_dir = os.path.expanduser('~/.local/share')
             return os.path.join(user_data_dir, 'flatpak')
-        
+
     def configure_system(self):
         print(self.get_user_path())
         buglog("configure system")
