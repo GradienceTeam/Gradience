@@ -556,6 +556,15 @@ class GradienceApplication(Adw.Application):
                 if not os.path.exists(gtk4_dir):
                     os.makedirs(gtk4_dir)
                 gtk4_css = self.generate_gtk_css("gtk4")
+                contents = ""
+                with open(
+                        os.path.join(gtk4_dir, "gtk.css"), "r", encoding="utf-8"
+                ) as file:
+                	contents = file.read()
+                with open(
+                        os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
+                ) as file:
+                        file.write(contents)
                 with open(
                     os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
                 ) as file:
