@@ -140,7 +140,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_name("monet")
         self.monet_pref_group.set_title(_("Monet Engine"))
         self.monet_pref_group.set_description(
-            _("Monet is an engine that generates Material Design 3 palette from backgrounds color."))
+            _("Monet is an engine that generates a Material Design 3 palette from an image's color."))
 
         self.apply_button = Gtk.Button()
         self.apply_button.set_label(_("Apply"))
