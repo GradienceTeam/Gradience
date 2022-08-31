@@ -45,6 +45,7 @@ gradience_sources = [
   'app_type_dialog.py',
   'custom_css_group.py',
   'presets_manager_window.py',
+  'preferences.py',
   'plugin_row.py',
   'explore_preset_row.py',
   'builtin_preset_row.py',

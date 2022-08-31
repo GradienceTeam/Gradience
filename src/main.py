@@ -33,12 +33,16 @@ from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
 from .constants import rootdir, app_id, rel_ver, version, bugtracker_url, help_url, project_url
 from .welcome import GradienceWelcomeWindow
+from .preferences import GradiencePreferencesWindow
 from .presets_manager_window import GradiencePresetWindow
 from .modules.utils import to_slug_case, buglog
 
 
 class GradienceApplication(Adw.Application):
     """The main application singleton class."""
+    __gtype_name__ = "GradienceApplication"
+
+    settings = Gio.Settings.new(app_id)
 
     def __init__(self):
         super().__init__(
@@ -67,7 +71,6 @@ class GradienceApplication(Adw.Application):
 
         self.is_ready = False
 
-        self.settings = Gio.Settings(app_id)
         self.disabled_plugins = list(
             self.settings.get_value("disabled-plugins"))
 
@@ -113,6 +116,7 @@ class GradienceApplication(Adw.Application):
         self.create_action(
             "reset_color_scheme",
             self.show_reset_color_scheme_dialog)
+        self.create_action("preferences", self.show_preferences)
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
@@ -610,6 +614,11 @@ class GradienceApplication(Adw.Application):
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset reseted")))
 
+    def show_preferences(self, *_args):
+        prefs = GradiencePreferencesWindow(self.win)
+        prefs.set_transient_for(self.win)
+        prefs.present()
+    
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
