@@ -76,13 +76,14 @@ template GradienceWelcomeWindow: Adw.Window {
                         Adw.StatusPage page_configure {
                             vexpand: true;
                             hexpand: true;
-                            title: _("Configure themes");
+                            title: _("Configure Themes");
                             description: _("Install adw-gtk3 theme for legacy applications.");
 
                             Adw.PreferencesPage {
                                 Adw.PreferencesGroup {
                                     Adw.ActionRow configure_adw_gtk3 {
                                         title: _("adw-gtk3 theme");
+                                        activatable-widget: switch_adw_gtk3;
                                         [suffix]
                                         Switch switch_adw_gtk3 {
                                             valign: center;
@@ -91,7 +92,8 @@ template GradienceWelcomeWindow: Adw.Window {
                                     }
 
                                     Adw.ActionRow configure_system {
-                                        title: _("System configuration");
+                                        title: _("System Configuration");
+                                        activatable-widget: switch_system;
 
                                         [suffix]
                                         Switch switch_system {
@@ -106,8 +108,8 @@ template GradienceWelcomeWindow: Adw.Window {
                         Adw.StatusPage page_download {
                             vexpand: true;
                             hexpand: true;
-                            title: _("Installing themes");
-                            description: _("Please wait until themes will be installed. ");
+                            title: _("Installing Themes");
+                            description: _("Please wait until themes will be installed.");
 
                             Gtk.Box {
                                 orientation: vertical;
