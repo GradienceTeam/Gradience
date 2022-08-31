@@ -18,7 +18,7 @@
 
 import time
 
-from gi.repository import Gtk, Adw, Gio, Gdk
+from gi.repository import Gtk, Adw, Gio, Gdk, Glib
 
 from .run_async import RunAsync
 from .modules.utils import buglog
@@ -125,7 +125,20 @@ class GradienceWelcomeWindow(Adw.Window):
         if not self.check_adw_gtk3():  # install
             buglog("install adw-gtk3")
 
+    def get_user_path(self):
+        user_path = GLib.getenv('FLATPAK_USER_DIR')
+        if user_path:
+            return user_path
+        else:
+            user_data_dir = GLib.get_user_data_dir()
+            if not user_data_dir:
+                user_data_dir = GLib.getenv('HOST_XDG_DATA_HOME')
+                if not user_data_dir:
+                    user_data_dir = os.path.expanduser('~/.local/share')
+            return os.path.join(user_data_dir, 'flatpak')
+        
     def configure_system(self):
+        print(self.get_user_path())
         buglog("configure system")
 
     def install_runner(self, widget):
@@ -146,10 +159,13 @@ class GradienceWelcomeWindow(Adw.Window):
         self.set_deletable(False)
 
         def install():
+            print("install")
             if self.switch_adw_gtk3.get_active():
+                print("gtk3")
                 self.adw_gtk3()
 
             if self.switch_system.get_active():
+                print("system")
                 self.configure_system()
 
         RunAsync(self.pulse)
