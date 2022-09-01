@@ -110,6 +110,8 @@ class GradienceApplication(Adw.Application):
             "show_gtk4_demo",
             self.show_gtk4_demo)
 
+        self.create_action("restore_color_scheme",
+                           self.show_restore_color_scheme_dialog)
         self.create_action(
             "reset_color_scheme",
             self.show_reset_color_scheme_dialog)
@@ -411,6 +413,18 @@ class GradienceApplication(Adw.Application):
         dialog.connect("response", self.apply_color_scheme)
         dialog.present()
 
+    def show_restore_color_scheme_dialog(self, *_args):
+        dialog = GradienceAppTypeDialog(
+            _("Restore applied color scheme?"),
+            _("Make sure you have the current settings saved as a preset."),
+            "restore",
+            _("Restore"),
+            Adw.ResponseAppearance.DESTRUCTIVE,
+            transient_for=self.props.active_window,
+        )
+        dialog.connect("response", self.restore_color_scheme)
+        dialog.present()
+
     def show_reset_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
             _("Reset applied color scheme?"),
@@ -586,6 +600,48 @@ class GradienceApplication(Adw.Application):
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset set sucessfully"))
             )
+
+    def restore_color_scheme(self, widget, response):
+        if response == "restore":
+            if widget.get_app_types()["gtk4"]:
+                file = Gio.File.new_for_path(
+                    os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "gtk-4.0/gtk.css.bak",
+                    )
+                )
+                try:
+                    backup = open(
+                        os.path.join(
+                            os.environ.get(
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                            ),
+                            "gtk-4.0/gtk.css.bak",
+                        ),
+                        "r",
+                        encoding="utf-8",
+                    )
+                    contents = backup.read()
+                    backup.close()
+                    gtk4css = open(
+                        os.path.join(
+                            os.environ.get(
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                            ),
+                            "gtk-4.0/gtk.css",
+                        ),
+                        "w",
+                        encoding="utf-8",
+                    )
+                    gtk4css.write(contents)
+                    gtk4css.close()
+                except FileNotFoundError:
+                    self.win.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Could not restore GTK4 backup"))
+                    )
+                    pass
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
