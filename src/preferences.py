@@ -21,7 +21,7 @@ import os
 from gi.repository import GLib, Gio, Gtk, Adw
 
 from .constants import rootdir, app_id
-from .modules.flatpak_overrides import create_gtk4_user_override, remove_gtk4_user_override
+from .modules.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
 from .modules.utils import buglog
 
 
@@ -60,9 +60,9 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         state = self.allow_flatpak_theming_user.props.state
 
         if state == False:
-            create_gtk4_user_override(self, self.settings)
+            create_gtk_user_override(self, self.settings, "gtk4")
         else:
-            remove_gtk4_user_override(self, self.settings)
+            remove_gtk_user_override(self, self.settings, "gtk4")
 
             buglog(f"user-flatpak-theming: {self.settings.get_boolean('user-flatpak-theming')}")
 
