@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-28 12:13+0000\n"
+"POT-Creation-Date: 2022-09-01 00:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:8
-#: src/ui/window.blp:5 src/main.py:616
+#: data/ui/window.blp:5 src/main.py:616
 msgid "Gradience"
 msgstr ""
 
@@ -33,8 +33,8 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:20
 msgid ""
-"Gradience (AdwCustomizer) is a tool for customizing Libadwaita applications "
-"and the adw-gtk3 theme."
+"Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
+"theme."
 msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:23
@@ -89,96 +89,252 @@ msgstr ""
 msgid "advanced purple"
 msgstr ""
 
-#: src/ui/app_type_dialog.blp:14
+#: data/ui/app_type_dialog.blp:14
 msgid "Select app types you want to affect:"
 msgstr ""
 
-#: src/ui/app_type_dialog.blp:17
+#: data/ui/app_type_dialog.blp:17
 msgid "Libadwaita and GTK 4 apps"
 msgstr ""
 
-#: src/ui/app_type_dialog.blp:21
+#: data/ui/app_type_dialog.blp:21
 msgid "GTK 3 apps (adw-gtk3 theme required)"
 msgstr ""
 
-#: src/ui/custom_css_group.blp:5
+#: data/ui/builtin_preset_row.blp:9 data/ui/preset_row.blp:15
+msgid "Apply preset"
+msgstr ""
+
+#: data/ui/custom_css_group.blp:5
 msgid "Custom CSS"
 msgstr ""
 
-#: src/ui/custom_css_group.blp:6
+#: data/ui/custom_css_group.blp:6
 msgid ""
 "Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins (like "
-"in case of the Custom CSS code field itself, which uses 12px padding). Only "
+"so that applications could hardcode values like paddings and margins. Only "
 "GTK 4 CSS will be previewed here."
 msgstr ""
 
-#: src/ui/custom_css_group.blp:29
+#: data/ui/custom_css_group.blp:29
 msgid "GTK 4"
 msgstr ""
 
-#: src/ui/custom_css_group.blp:29
+#: data/ui/custom_css_group.blp:29
 msgid "GTK 3"
 msgstr ""
 
-#: src/ui/option.blp:10
+#: data/ui/explore_preset_row.blp:9
+msgid "Download and apply"
+msgstr ""
+
+#: data/ui/explore_preset_row.blp:17
+msgid "Download only"
+msgstr ""
+
+#: data/ui/option.blp:10
 msgid "GTK 3 Support Warning"
 msgstr ""
 
-#: src/ui/option.blp:18
+#: data/ui/option.blp:18
 msgid "Explanation"
 msgstr ""
 
-#: src/ui/option.blp:43
+#: data/ui/option.blp:43
 msgid "Toggle Text Value"
 msgstr ""
 
-#: src/ui/window.blp:23 src/main.py:406 src/window.py:146
-msgid "Apply"
+#: data/ui/plugin_row.blp:8
+msgid "Enable plugin"
 msgstr ""
 
-#: src/ui/window.blp:46
+#: data/ui/plugin_row.blp:16
+msgid "Settings"
+msgstr ""
+
+#: data/ui/plugin_row.blp:24
+msgid "Remove plugin"
+msgstr ""
+
+#: data/ui/preset_row.blp:28
+msgid "Edit preset name"
+msgstr ""
+
+#: data/ui/preset_row.blp:37
+msgid "Remove preset"
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:46
+#: data/ui/window.blp:47
 msgid "Presets"
 msgstr ""
 
-#: src/ui/window.blp:54
+#: data/ui/presets_manager_window.blp:23
+msgid "Import"
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:30
+msgid "Delete"
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:41
+msgid "Open in file manager"
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:59
+msgid "Installed"
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:68
+msgid "Explore"
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:73
+msgid "Search for presets"
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:74
+msgid ""
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:84
+msgid "e.g. \"Pretty Purple\""
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:109
+msgid "No Results Found"
+msgstr ""
+
+#: data/ui/presets_manager_window.blp:118
+msgid "Offline"
+msgstr ""
+
+#: data/ui/welcome.blp:41
+msgid "Previous"
+msgstr ""
+
+#: data/ui/welcome.blp:62
+msgid "Welcome to Gradience"
+msgstr ""
+
+#: data/ui/welcome.blp:63
+msgid "Customize Adwaita with ease"
+msgstr ""
+
+#: data/ui/welcome.blp:72
+msgid "Customize Adwaita Theme"
+msgstr ""
+
+#: data/ui/welcome.blp:73
+msgid ""
+"Change colors of windows, buttons, lists and more with advanced features "
+"like adding custom CSS"
+msgstr ""
+
+#: data/ui/welcome.blp:79
+msgid "Configure themes"
+msgstr ""
+
+#: data/ui/welcome.blp:80
+msgid "Install adw-gtk3 theme for legacy applications."
+msgstr ""
+
+#: data/ui/welcome.blp:85
+msgid "adw-gtk3 theme"
+msgstr ""
+
+#: data/ui/welcome.blp:89 data/ui/welcome.blp:99
+msgid "Allow installation"
+msgstr ""
+
+#: data/ui/welcome.blp:94
+msgid "System configuration"
+msgstr ""
+
+#: data/ui/welcome.blp:109
+msgid "Installing themes"
+msgstr ""
+
+#: data/ui/welcome.blp:110
+msgid "Please wait until themes will be installed. "
+msgstr ""
+
+#: data/ui/welcome.blp:116
+msgid "Continue"
+msgstr ""
+
+#: data/ui/welcome.blp:135
+msgid "Done"
+msgstr ""
+
+#: data/ui/welcome.blp:136
+msgid "Now you can make your own presets, or download some online."
+msgstr ""
+
+#: data/ui/welcome.blp:141
+msgid "Please Finish the setup first"
+msgstr ""
+
+#: data/ui/welcome.blp:149
+msgid "Start using Gradience"
+msgstr ""
+
+#: data/ui/welcome.blp:166
+msgid "Next"
+msgstr ""
+
+#: data/ui/window.blp:23 src/main.py:406 src/window.py:146
+msgid "Apply"
+msgstr ""
+
+#: data/ui/window.blp:55
 msgid "Save Preset"
 msgstr ""
 
-#: src/ui/window.blp:81
+#: data/ui/window.blp:82
 msgid "Colors"
 msgstr ""
 
-#: src/ui/window.blp:90
+#: data/ui/window.blp:91
 msgid "Monet"
 msgstr ""
 
-#: src/ui/window.blp:98
+#: data/ui/window.blp:99
 msgid "Advanced"
 msgstr ""
 
-#: src/ui/window.blp:121
+#: data/ui/window.blp:122
 msgid "Reset Applied Color Scheme"
 msgstr ""
 
-#: src/ui/window.blp:125
+#: data/ui/window.blp:126
 msgid "About Gradience"
 msgstr ""
 
-#: src/ui/window.blp:134
+#: data/ui/window.blp:135
 msgid "Adwaita Demo"
 msgstr ""
 
-#: src/ui/window.blp:138
+#: data/ui/window.blp:139
 msgid "GTK4 Demo"
 msgstr ""
 
-#: src/ui/window.blp:142
+#: data/ui/window.blp:143
 msgid "GTK4 Widget Factory"
 msgstr ""
 
 #: src/app_type_dialog.py:46 src/main.py:443
 msgid "Cancel"
+msgstr ""
+
+#: src/explore_preset_row.py:57 src/explore_preset_row.py:81
+msgid "Preset could not be downloaded"
+msgstr ""
+
+#: src/explore_preset_row.py:69 src/explore_preset_row.py:86
+msgid "Preset downloaded"
 msgstr ""
 
 #: src/main.py:329
@@ -267,8 +423,8 @@ msgstr ""
 #: src/main.py:668
 msgid ""
 "\n"
-"Gradience, originally Adwaita Manager (AdwCustomizer) is a tool for "
-"customizing Libadwaita applications and the adw-gtk3 theme.\n"
+"Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
+"theme.\n"
 "With Gradience you can:\n"
 "\n"
 "- Change any color of Adwaita theme\n"
@@ -291,6 +447,72 @@ msgstr ""
 
 #: src/option.py:102
 msgid "Not a color, see text value"
+msgstr ""
+
+#: src/plugins_list.py:59
+msgid "Plugins"
+msgstr ""
+
+#: src/plugins_list.py:61
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can make issues."
+msgstr ""
+
+#: src/plugins_list.py:69
+msgid "No plugins found"
+msgstr ""
+
+#: src/preset_row.py:117
+msgid "Preset renamed"
+msgstr ""
+
+#: src/presets_manager_window.py:60 src/presets_manager_window.py:214
+msgid "Builtin Presets"
+msgstr ""
+
+#: src/presets_manager_window.py:64 src/presets_manager_window.py:221
+msgid "User Presets"
+msgstr ""
+
+#: src/presets_manager_window.py:74 src/presets_manager_window.py:124
+msgid "Preset removed"
+msgstr ""
+
+#: src/presets_manager_window.py:77
+msgid "Undo"
+msgstr ""
+
+#: src/presets_manager_window.py:120
+msgid "Unable to delete preset"
+msgstr ""
+
+#: src/presets_manager_window.py:160
+msgid "Preset already exists"
+msgstr ""
+
+#: src/presets_manager_window.py:170
+msgid "Preset imported"
+msgstr ""
+
+#: src/presets_manager_window.py:174
+msgid "Unsupported file format, must be .json"
+msgstr ""
+
+#: src/presets_manager_window.py:208
+msgid "Failed to load preset"
+msgstr ""
+
+#: src/presets_manager_window.py:223
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets"
+msgstr ""
+
+#: src/presets_manager_window.py:232
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab"
 msgstr ""
 
 #: src/settings_schema.py:23
@@ -538,8 +760,8 @@ msgstr ""
 
 #: src/window.py:143
 msgid ""
-"Monet is an engine that generates Material Design 3 palette from backgrounds "
-"color."
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
 msgstr ""
 
 #: src/window.py:152
