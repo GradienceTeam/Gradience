@@ -573,18 +573,23 @@ class GradienceApplication(Adw.Application):
                     os.makedirs(gtk4_dir)
                 gtk4_css = self.generate_gtk_css("gtk4")
                 contents = ""
-                with open(
-                        os.path.join(gtk4_dir, "gtk.css"), "r", encoding="utf-8"
-                ) as file:
-                	contents = file.read()
-                with open(
-                        os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
-                ) as file:
-                        file.write(contents)
-                with open(
-                    os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
-                ) as file:
-                    file.write(gtk4_css)
+                try:
+                    with open(
+                            os.path.join(gtk4_dir, "gtk.css"), "r", encoding="utf-8"
+                    ) as file:
+                        contents = file.read()
+                except FileNotFoundError: # first run
+                    pass
+                else:
+                    with open(
+                            os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
+                    ) as file:
+                            file.write(contents)
+                finally:
+                    with open(
+                        os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
+                    ) as file:
+                        file.write(gtk4_css)
             if widget.get_app_types()["gtk3"]:
                 gtk3_dir = os.path.join(
                     os.environ.get(
@@ -595,10 +600,24 @@ class GradienceApplication(Adw.Application):
                 if not os.path.exists(gtk3_dir):
                     os.makedirs(gtk3_dir)
                 gtk3_css = self.generate_gtk_css("gtk3")
-                with open(
-                    os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
-                ) as file:
-                    file.write(gtk3_css)
+                contents = ""
+                try:
+                    with open(
+                            os.path.join(gtk3_dir, "gtk.css"), "r", encoding="utf-8"
+                    ) as file:
+                        contents = file.read()
+                except FileNotFoundError: # first run
+                    pass
+                else:
+                    with open(
+                            os.path.join(gtk3_dir, "gtk.css.bak"), "w", encoding="utf-8"
+                    ) as file:
+                            file.write(contents)
+                finally:
+                    with open(
+                        os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
+                    ) as file:
+                        file.write(gtk3_css)
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset set sucessfully"))
             )
