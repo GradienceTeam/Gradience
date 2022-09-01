@@ -37,8 +37,6 @@ class GradiencePluginsList:
         self.plugins = win.settings.get_list("plugins-enabled")
         buglog(self.plugins)
 
-        buglog(self.plugins)
-
     def load_all_custom_settings(self, settings):
         for plugin_id, plugin in self.plugins.items():
             plugin.load_custom_settings(settings)
