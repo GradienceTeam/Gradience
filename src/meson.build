@@ -63,3 +63,10 @@ gradience_modules = [
 ]
 
 PY_INSTALLDIR.install_sources(gradience_modules, subdir: 'gradience/modules')
+
+gradience_plugins = [
+  'plugins/hookspec.py',
+  'plugins/__init__.py',
+]
+
+PY_INSTALLDIR.install_sources(gradience_plugins, subdir: 'gradience/plugins')
