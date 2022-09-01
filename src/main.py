@@ -706,7 +706,7 @@ class GradienceApplication(Adw.Application):
         prefs = GradiencePreferencesWindow(self.win)
         prefs.set_transient_for(self.win)
         prefs.present()
-    
+
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,

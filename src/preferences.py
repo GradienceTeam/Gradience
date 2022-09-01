@@ -28,7 +28,7 @@ from .modules.utils import buglog
 @Gtk.Template(resource_path=f"{rootdir}/ui/preferences.ui")
 class GradiencePreferencesWindow(Adw.PreferencesWindow):
     __gtype_name__ = "GradiencePreferencesWindow"
-    
+
     allow_flatpak_theming_user = Gtk.Template.Child()
     allow_flatpak_theming_global = Gtk.Template.Child()
 
@@ -44,33 +44,35 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.set_search_enabled(False)
 
         self.setup_flatpak_group()
-        
+
     def setup_flatpak_group(self):
-        user_flatpak_theming = self.settings.get_boolean("user-flatpak-theming")
+        user_flatpak_theming = self.settings.get_boolean(
+            "user-flatpak-theming")
         #global_flatpak_theming = self.settings.get_boolean("global-flatpak-theming")
 
         self.allow_flatpak_theming_user.set_state(user_flatpak_theming)
-        #self.allow_flatpak_theming_global.set_state(global_flatpak_theming)
+        # self.allow_flatpak_theming_global.set_state(global_flatpak_theming)
 
-        self.allow_flatpak_theming_user.connect("state-set", self.on_allow_flatpak_theming_user_toggled)
+        self.allow_flatpak_theming_user.connect(
+            "state-set", self.on_allow_flatpak_theming_user_toggled)
         #self.allow_flatpak_theming_global.connect("state-set", self.on_allow_flatpak_theming_global_toggled)
-
 
     def on_allow_flatpak_theming_user_toggled(self, *args):
         state = self.allow_flatpak_theming_user.props.state
 
-        if state == False:
+        if not state:
             create_gtk_user_override(self, self.settings, "gtk4")
         else:
             remove_gtk_user_override(self, self.settings, "gtk4")
 
-            buglog(f"user-flatpak-theming: {self.settings.get_boolean('user-flatpak-theming')}")
+            buglog(
+                f"user-flatpak-theming: {self.settings.get_boolean('user-flatpak-theming')}")
 
     # Placeholder function
     def on_allow_flatpak_theming_global_toggled(self, *args):
         state = self.allow_flatpak_theming_global.props.state
 
-        if state == False:
+        if not state:
             pass
         else:
             pass
