@@ -253,7 +253,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             )
 
     def setup_plugins_page(self):
-        self.plugins_list = GradiencePluginsList()
+        self.plugins_list = GradiencePluginsList(self)
         self.plugins_group = self.plugins_list.to_group()
 
         self.content_plugins.add(self.plugins_group)

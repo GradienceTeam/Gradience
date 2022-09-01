@@ -5,8 +5,13 @@ Fork this repository, then create a push request when you're done adding feature
 
 ### Localisation 
 
+We use Weblate for Gradience
+
 [![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 
+And we use Crowdin for the website 
+
+[![Crowdin](https://badges.crowdin.net/gradience/localized.svg)](https://crowdin.com/project/gradience)
 
 ## Contributors ✨
 

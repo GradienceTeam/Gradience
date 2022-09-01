@@ -22,28 +22,24 @@ import importlib
 import pkgutil
 
 from gi.repository import Gtk, Adw, Gio, Gdk
+import pluggy
 
 from pathlib import Path
 from .modules.utils import buglog
 from .plugin_row import GradiencePluginRow
+from plugins.hookspec import GradienceHooks
 
 
 class GradiencePluginsList:
-    def __init__(self):
+    def __init__(self, win):
 
-        self.discoverd_plugins = {
-            name: importlib.import_module(name)
-            for finder, name, ispkg
-            in pkgutil.iter_modules()
-            if name.startswith('gradience_')
-        }
+        self.win = win
 
-        self.rows = {}
-        self.plugins = {}
-        for plugin_id, plugin in self.discoverd_plugins.items():
-            self.plugins[plugin_id] = plugin.GradiencePlugin()
-
+        self.plugins = win.settings.get_list("plugins-enabled")
         buglog(self.plugins)
+
+        self.pm = pluggy.PluginManager("gradience")
+        self.pm.add_hookspecs(GradienceHooks)
 
     def load_all_custom_settings(self, settings):
         for plugin_id, plugin in self.plugins.items():
