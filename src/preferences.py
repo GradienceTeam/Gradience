@@ -21,6 +21,7 @@ import os
 from gi.repository import GLib, Gio, Gtk, Adw
 
 from .constants import rootdir, app_id
+from .modules.flatpak_overrides import create_gtk4_user_override, remove_gtk4_user_override
 from .modules.utils import buglog
 
 
@@ -55,172 +56,21 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         #self.allow_flatpak_theming_global.connect("state-set", self.on_allow_flatpak_theming_global_toggled)
 
 
-    def get_system_flatpak_path(self):
-        systemPath = GLib.getenv("FLATPAK_SYSTEM_DIR")
-        buglog(f"systemPath: {systemPath}")
-        
-        if systemPath:
-            return systemPath
-
-        systemDataDir = GLib.build_filenamev([
-            GLib.DIR_SEPARATOR_S, "var", "lib"
-        ])
-
-        return GLib.build_filenamev([systemDataDir, "flatpak"])
-
-    def get_user_flatpak_path(self):
-        userPath = GLib.getenv("FLATPAK_USER_DIR")
-        buglog(f"userPath: {userPath}")
-        
-        if userPath:
-            return userPath
-
-        userDataDir = GLib.build_filenamev([
-            GLib.get_home_dir(), ".local", "share"
-        ])
-
-        return GLib.build_filenamev([userDataDir, "flatpak"])
-
-
     def on_allow_flatpak_theming_user_toggled(self, *args):
-        user_flatpak_theming = self.settings.get_boolean("user-flatpak-theming")
         state = self.allow_flatpak_theming_user.props.state
 
-        override_dir = os.path.join(self.get_user_flatpak_path(), "overrides")
-        filename = GLib.build_filenamev([
-            override_dir, "global"
-        ])
-
-        user_keyfile = GLib.KeyFile.new()
-
         if state == False:
-            try:
-                user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
-            except GLib.GError as e:
-                if e.code == 4:
-                    buglog("File doesn't exist. Attempting to create one")
-                    if not os.path.exists(override_dir):
-                        os.makedirs(override_dir)
-                        buglog("dir create")
-
-                    file = Gio.File.new_for_path(filename)
-                    file.create(Gio.FileCreateFlags.NONE, None)
-
-                    user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
-                    user_keyfile.set_string("Context", "filesystems", "xdg-config/gtk-4.0") 
-                #else:
-                #    self.add_toast(Adw.Toast(title=_("Unexpected file error occurred")))
-                #    buglog(f"Unhandled GLib.FileError error code. Exc: {e}")
-            else:
-                try:
-                    filesys_list = user_keyfile.get_string_list("Context", "filesystems")
-                except GLib.GError:
-                    user_keyfile.set_string("Context", "filesystems", "xdg-config/gtk-4.0")
-                else:
-                    if user_keyfile.get_string_list("Context", "filesystems") != filesys_list + ["xdg-config/gtk-4.0"]:
-                        user_keyfile.set_string_list("Context", "filesystems", filesys_list + ["xdg-config/gtk-4.0"])
-            finally:
-                try:
-                    user_keyfile.save_to_file(filename)
-                except Glib.GError as e:
-                    self.add_toast(Adw.Toast(title=_("Failed to save override")))
-                    buglog(f"Failed to save keyfile structure to override. Exc: {e}")
-                else:
-                    self.settings.set_boolean("user-flatpak-theming", True)
-                    buglog(f"user-flatpak-theming: {self.settings.get_boolean('user-flatpak-theming')}")
-                    #value = user_keyfile.get_string_list("Context", "filesystems")
-                    #print(value)
+            create_gtk4_user_override(self, self.settings)
         else:
-            try:
-                user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
-            except GLib.GError as e:
-                if e.code == 4:
-                    self.settings.set_boolean("user-flatpak-theming", False)
-                    buglog("remove override: File doesn't exist")
-                else:
-                    self.add_toast(Adw.Toast(title=_("Unexpected file error occurred")))
-                    buglog(f"Unhandled GLib.FileError error code. Exc: {e}")
-            else:
-                try:
-                    filesys_list = user_keyfile.get_string_list("Context", "filesystems")
-                except GLib.GError:
-                    self.settings.set_boolean("user-flatpak-theming", False)
-                    buglog("remove override: Group/key not found.")
-                else:
-                    if "xdg-config/gtk-4.0" in filesys_list:
-                        buglog(f"before: {filesys_list}")
-                        filesys_list.remove("xdg-config/gtk-4.0")
-                        buglog(f"after: {filesys_list}")
-
-                        user_keyfile.set_string_list("Context", "filesystems", filesys_list)
-                        try:
-                            user_keyfile.save_to_file(filename)
-                        except Glib.GError as e:
-                            self.add_toast(Adw.Toast(title=_("Failed to save override")))
-                            buglog(f"Failed to save keyfile structure to override. Exc: {e}")
-                        else:
-                            self.settings.set_boolean("user-flatpak-theming", False)
-                            buglog("remove override: Value removed.")
-                    else:
-                        self.settings.set_boolean("user-flatpak-theming", False)
-                        buglog("remove override: Value not found.")
+            remove_gtk4_user_override(self, self.settings)
 
             buglog(f"user-flatpak-theming: {self.settings.get_boolean('user-flatpak-theming')}")
 
-    # Do not use this function for now, as it's lacking authentication
+    # Placeholder function
     def on_allow_flatpak_theming_global_toggled(self, *args):
-        global_flatpak_theming = self.settings.get_boolean("global-flatpak-theming")
         state = self.allow_flatpak_theming_global.props.state
 
-        override_dir = os.path.join(self.get_system_flatpak_path(), "overrides")
-        filename = GLib.build_filenamev([
-            self.get_system_flatpak_path(), "global"
-        ])
-
-        global_keyfile = GLib.KeyFile.new()
-
-        # TODO: Implement user authentication using Polkit
         if state == False:
-            try:
-                global_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
-            except GLib.GError as e:
-                if e.code == 4:
-                    buglog("File doesn't exist. Attempting to create one")
-                    if not os.path.exists(override_dir):
-                        try:
-                            os.makedirs(override_dir)
-                        except Exception as e:
-                            buglog(f"Unhandled GLib.FileError error code. Exc: {e}")
-                        buglog("dir create")
-
-                    file = Gio.File.new_for_path(filename)
-                    file.create(Gio.FileCreateFlags.NONE, None)
-
-                    global_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
-                    global_keyfile.set_string("Context", "filesystems", "xdg-config/gtk-4.0") 
-                else:
-                    self.add_toast(Adw.Toast(title=_("Unexpected file error occurred")))
-                    buglog(f"Unhandled GLib.FileError error code. Exc: {e}")
-            else:
-                try:
-                    filesys_list = global_keyfile.get_string_list("Context", "filesystems")
-                except GLib.GError:
-                    global_keyfile.set_string("Context", "filesystems", "xdg-config/gtk-4.0")
-                else:
-                    if global_keyfile.get_string_list("Context", "filesystems") != filesys_list + ["xdg-config/gtk-4.0"]:
-                        global_keyfile.set_string_list("Context", "filesystems", filesys_list + ["xdg-config/gtk-4.0"])
-                        print("here")
-            finally:
-                try:
-                    global_keyfile.save_to_file(filename)
-                except Glib.GError as e:
-                    self.add_toast(Adw.Toast(title=_("Failed to save override")))
-                    buglog(f"Failed to save keyfile structure to override. Exc: {e}")
-                else:
-                    self.settings.set_boolean("global-flatpak-theming", True)
-                    buglog(f"global-flatpak-theming: {self.settings.get_boolean('global-flatpak-theming')}")
-                    #value = global_keyfile.get_string_list("Context", "filesystems")
-                    #print(value)
+            pass
         else:
-            self.settings.set_boolean("global-flatpak-theming", False)
-            buglog(f"global-flatpak-theming: {self.settings.get_boolean('global-flatpak-theming')}")
+            pass

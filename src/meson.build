@@ -60,6 +60,7 @@ PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
 gradience_modules = [
   'modules/__init__.py',
   'modules/custom_presets.py',
+  'modules/flatpak_overrides.py',
   'modules/utils.py'
 ]
 
