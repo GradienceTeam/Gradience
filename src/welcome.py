@@ -18,7 +18,7 @@
 
 import time
 
-from gi.repository import Gtk, Adw, Gio, Gdk, Glib
+from gi.repository import Gtk, Adw, Gio, Gdk
 
 from .run_async import RunAsync
 from .modules.utils import buglog
