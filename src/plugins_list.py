@@ -37,7 +37,7 @@ class GradiencePluginsList:
 
         self.plugins = win.settings.get_list("plugins-enabled")
         buglog(self.plugins)
-        
+
         self.pm = pluggy.PluginManager("gradience")
         self.pm.add_hookspecs(GradienceHooks)
 
