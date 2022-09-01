@@ -113,7 +113,7 @@ class GradienceApplication(Adw.Application):
         self.create_action(
             "restore_color_scheme",
             self.show_restore_color_scheme_dialog)
-        
+
         self.create_action(
             "reset_color_scheme",
             self.show_reset_color_scheme_dialog)
@@ -578,13 +578,13 @@ class GradienceApplication(Adw.Application):
                             os.path.join(gtk4_dir, "gtk.css"), "r", encoding="utf-8"
                     ) as file:
                         contents = file.read()
-                except FileNotFoundError: # first run
+                except FileNotFoundError:  # first run
                     pass
                 else:
                     with open(
                             os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
                     ) as file:
-                            file.write(contents)
+                        file.write(contents)
                 finally:
                     with open(
                         os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
@@ -606,13 +606,13 @@ class GradienceApplication(Adw.Application):
                             os.path.join(gtk3_dir, "gtk.css"), "r", encoding="utf-8"
                     ) as file:
                         contents = file.read()
-                except FileNotFoundError: # first run
+                except FileNotFoundError:  # first run
                     pass
                 else:
                     with open(
                             os.path.join(gtk3_dir, "gtk.css.bak"), "w", encoding="utf-8"
                     ) as file:
-                            file.write(contents)
+                        file.write(contents)
                 finally:
                     with open(
                         os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
@@ -637,8 +637,9 @@ class GradienceApplication(Adw.Application):
                     backup = open(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                            ),
+                                "XDG_CONFIG_HOME",
+                                os.environ["HOME"] +
+                                "/.config"),
                             "gtk-4.0/gtk.css.bak",
                         ),
                         "r",
@@ -649,8 +650,9 @@ class GradienceApplication(Adw.Application):
                     gtk4css = open(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                            ),
+                                "XDG_CONFIG_HOME",
+                                os.environ["HOME"] +
+                                "/.config"),
                             "gtk-4.0/gtk.css",
                         ),
                         "w",
