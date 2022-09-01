@@ -110,8 +110,10 @@ class GradienceApplication(Adw.Application):
             "show_gtk4_demo",
             self.show_gtk4_demo)
 
-        self.create_action("restore_color_scheme",
-                           self.show_restore_color_scheme_dialog)
+        self.create_action(
+            "restore_color_scheme",
+            self.show_restore_color_scheme_dialog)
+        
         self.create_action(
             "reset_color_scheme",
             self.show_reset_color_scheme_dialog)
