@@ -3,7 +3,7 @@ import pluggy
 hookspec = pluggy.HookspecMarker("gradience")
 
 
-class PrinterHooks:
+class GradienceHooks:
     @hookspec
     def validate(msg):
         "validate hook"

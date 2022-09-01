@@ -27,6 +27,7 @@ import pluggy
 from pathlib import Path
 from .modules.utils import buglog
 from .plugin_row import GradiencePluginRow
+from plugins.hookspec import GradienceHooks
 
 
 class GradiencePluginsList:
@@ -36,6 +37,9 @@ class GradiencePluginsList:
 
         self.plugins = win.settings.get_list("plugins-enabled")
         buglog(self.plugins)
+        
+        self.pm = pluggy.PluginManager("gradience")
+        pm.add_hookspecs(GradienceHooks)
 
     def load_all_custom_settings(self, settings):
         for plugin_id, plugin in self.plugins.items():
