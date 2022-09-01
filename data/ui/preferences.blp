@@ -1,0 +1,32 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradiencePreferencesWindow : Adw.PreferencesWindow {
+    title: _("Preferences");
+    default-height: 460;
+    default-width: 600;
+    modal: true;
+
+    Adw.PreferencesPage {
+        Adw.PreferencesGroup flatpak_group {
+            title: _("Flatpak Specific");
+            Adw.ActionRow {
+                title: _("Allow Flatpak theming");
+                subtitle: _("Override Flatpak permissions for current user to allow Flatpak applications to access custom themes.");
+                activatable-widget: allow_flatpak_theming_user;
+                Gtk.Switch allow_flatpak_theming_user {
+                    valign: center;
+                }
+            }
+            Adw.ActionRow {
+                visible: false;
+                title: _("Allow Flatpak theming (Global)");
+                subtitle: _("Override Flatpak permissions for all users to allow Flatpak applications to access custom themes. (Requires root access)");
+                activatable-widget: allow_flatpak_theming_global;
+                Gtk.Switch allow_flatpak_theming_global {
+                    valign: center;
+                }
+            }
+        }
+    }
+}

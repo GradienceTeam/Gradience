@@ -45,6 +45,7 @@ gradience_sources = [
   'app_type_dialog.py',
   'custom_css_group.py',
   'presets_manager_window.py',
+  'preferences.py',
   'plugin_row.py',
   'explore_preset_row.py',
   'builtin_preset_row.py',
@@ -59,6 +60,7 @@ PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
 gradience_modules = [
   'modules/__init__.py',
   'modules/custom_presets.py',
+  'modules/flatpak_overrides.py',
   'modules/utils.py'
 ]
 
