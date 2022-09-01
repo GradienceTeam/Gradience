@@ -39,7 +39,7 @@ class GradiencePluginsList:
         buglog(self.plugins)
         
         self.pm = pluggy.PluginManager("gradience")
-        pm.add_hookspecs(GradienceHooks)
+        self.pm.add_hookspecs(GradienceHooks)
 
     def load_all_custom_settings(self, settings):
         for plugin_id, plugin in self.plugins.items():
