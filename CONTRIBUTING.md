@@ -11,7 +11,7 @@ We use Weblate for Gradience
 
 And we use Crowdin for the website 
 
-[![Crowdin](https://badges.crowdin.net/gradience/localized.svg)](https://crowdin.com/project/gradience)
+[![Crowdin](https://badges.crowdin.net/e/dc4050b7c8eb0245af602d2902fef593/localized.svg)](https://atrophaneura.crowdin.com/gradience)
 
 ## Contributors ✨
 
