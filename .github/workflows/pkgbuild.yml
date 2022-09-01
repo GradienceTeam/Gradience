@@ -1,0 +1,19 @@
+name: Build Arch Package 
+on: 
+  push: 
+    branch: [ "main" ]
+  workflow_dispatch:
+jobs:
+  pkgbuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Package
+        uses: ouuan/pkgbuild-action@master
+        id: build-package
+        with:
+          path: build-aux/pkgbuild 
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: pkgname-${{ github.run_id }}
+          path: ${{ steps.build-package.outputs.pkgfile }}
