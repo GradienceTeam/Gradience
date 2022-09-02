@@ -98,6 +98,20 @@
                     "sha256": "48c24706c23bb4262173b6fa49eabb10afa15b8412f14283120549517ccfa314"
                 }
             ]
+        },
+        {
+            "name": "python3-pluggy",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pluggy\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/9e/01/f38e2ff29715251cf25532b9082a1589ab7e4f571ced434f98d0139336dc/pluggy-1.0.0-py2.py3-none-any.whl",
+                    "sha256": "74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"
+                }
+            ]
         }
     ]
 }
