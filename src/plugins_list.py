@@ -36,7 +36,8 @@ class GradiencePluginsList:
 
         self.win = win
 
-        self.plugins = Gio.Settings(app_id).get_list("plugins-enabled")
+        #self.plugins = Gio.Settings(app_id).get_dict("plugins-enabled")
+        self.plugins = {}
         buglog(self.plugins)
 
         self.pm = pluggy.PluginManager("gradience")
