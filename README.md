@@ -85,6 +85,8 @@ Alternatively, open the project with GNOME Builder, then build and run it.
 
 ## Setup Tutorial
 
+You can also go in `Preferences` and apply overwrite for Flatpak 
+
 ### Libadwaita applications
 
 No additional setup is required for native Libadwaita applications.
