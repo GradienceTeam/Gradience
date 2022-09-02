@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-01 12:15+0000\n"
+"POT-Creation-Date: 2022-09-02 00:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:8
-#: data/ui/window.blp:5 src/main.py:616
+#: data/ui/window.blp:5 src/main.py:713
 msgid "Gradience"
 msgstr ""
 
@@ -27,7 +27,7 @@ msgstr ""
 msgid "Change the look of Adwaita, with ease."
 msgstr ""
 
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:11 src/main.py:618
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:11 src/main.py:715
 msgid "Gradience Team"
 msgstr ""
 
@@ -154,6 +154,34 @@ msgstr ""
 
 #: data/ui/plugin_row.blp:24
 msgid "Remove plugin"
+msgstr ""
+
+#: data/ui/preferences.blp:5 data/ui/window.blp:132
+msgid "Preferences"
+msgstr ""
+
+#: data/ui/preferences.blp:12
+msgid "Flatpak Specific"
+msgstr ""
+
+#: data/ui/preferences.blp:14
+msgid "Allow Flatpak theming"
+msgstr ""
+
+#: data/ui/preferences.blp:15
+msgid ""
+"Override Flatpak permissions for current user to allow Flatpak applications "
+"to access custom themes."
+msgstr ""
+
+#: data/ui/preferences.blp:23
+msgid "Allow Flatpak theming (Global)"
+msgstr ""
+
+#: data/ui/preferences.blp:24
+msgid ""
+"Override Flatpak permissions for all users to allow Flatpak applications to "
+"access custom themes. (Requires root access)"
 msgstr ""
 
 #: data/ui/preset_row.blp:28
@@ -285,7 +313,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: data/ui/window.blp:23 src/main.py:406 src/window.py:146
+#: data/ui/window.blp:23 src/main.py:414 src/window.py:146
 msgid "Apply"
 msgstr ""
 
@@ -306,26 +334,39 @@ msgid "Advanced"
 msgstr ""
 
 #: data/ui/window.blp:122
-msgid "Reset Applied Color Scheme"
+msgid "Restore Applied Color Scheme"
 msgstr ""
 
 #: data/ui/window.blp:126
+msgid "Reset Applied Color Scheme"
+msgstr ""
+
+#: data/ui/window.blp:136
 msgid "About Gradience"
 msgstr ""
 
-#: data/ui/window.blp:135
+#: data/ui/window.blp:145
 msgid "Adwaita Demo"
 msgstr ""
 
-#: data/ui/window.blp:139
+#: data/ui/window.blp:149
 msgid "GTK4 Demo"
 msgstr ""
 
-#: data/ui/window.blp:143
+#: data/ui/window.blp:153
 msgid "GTK4 Widget Factory"
 msgstr ""
 
-#: src/app_type_dialog.py:46 src/main.py:443
+#: src/modules/flatpak_overrides.py:68 src/modules/flatpak_overrides.py:80
+msgid "Failed to save override"
+msgstr ""
+
+#: src/modules/flatpak_overrides.py:135 src/modules/flatpak_overrides.py:184
+#: src/modules/flatpak_overrides.py:262 src/modules/flatpak_overrides.py:316
+msgid "Unexpected file error occurred"
+msgstr ""
+
+#: src/app_type_dialog.py:46 src/main.py:463
 msgid "Cancel"
 msgstr ""
 
@@ -337,64 +378,76 @@ msgstr ""
 msgid "Preset downloaded"
 msgstr ""
 
-#: src/main.py:329
+#: src/main.py:337
 msgid "Unsaved changes"
 msgstr ""
 
-#: src/main.py:339
+#: src/main.py:347
 msgid "Save changes"
 msgstr ""
 
-#: src/main.py:403
+#: src/main.py:411
 msgid "Apply this color scheme?"
 msgstr ""
 
-#: src/main.py:404
+#: src/main.py:412
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:416
-msgid "Reset applied color scheme?"
+#: src/main.py:424
+msgid "Restore applied color scheme?"
 msgstr ""
 
-#: src/main.py:417
+#: src/main.py:425 src/main.py:437
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 
-#: src/main.py:419
+#: src/main.py:427
+msgid "Restore"
+msgstr ""
+
+#: src/main.py:436
+msgid "Reset applied color scheme?"
+msgstr ""
+
+#: src/main.py:439
 msgid "Reset"
 msgstr ""
 
-#: src/main.py:429
+#: src/main.py:449
 msgid "Save preset as..."
 msgstr ""
 
-#: src/main.py:431 src/main.py:457 src/main.py:472
+#: src/main.py:451 src/main.py:477 src/main.py:492
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:444
+#: src/main.py:464
 msgid "Save"
 msgstr ""
 
-#: src/main.py:514
+#: src/main.py:534
 msgid "Preset saved"
 msgstr ""
 
-#: src/main.py:578
+#: src/main.py:626
 msgid "Preset set sucessfully"
 msgstr ""
 
-#: src/main.py:611
+#: src/main.py:669
+msgid "Could not restore GTK4 backup"
+msgstr ""
+
+#: src/main.py:703
 msgid "Preset reseted"
 msgstr ""
 
-#: src/main.py:650
+#: src/main.py:747
 msgid ""
 "\n"
 "                <ul>\n"
@@ -420,7 +473,7 @@ msgid ""
 "            "
 msgstr ""
 
-#: src/main.py:668
+#: src/main.py:765
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -449,17 +502,17 @@ msgstr ""
 msgid "Not a color, see text value"
 msgstr ""
 
-#: src/plugins_list.py:59
+#: src/plugins_list.py:55
 msgid "Plugins"
 msgstr ""
 
-#: src/plugins_list.py:61
+#: src/plugins_list.py:57
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can make issues."
 msgstr ""
 
-#: src/plugins_list.py:69
+#: src/plugins_list.py:65
 msgid "No plugins found"
 msgstr ""
 
