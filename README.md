@@ -22,7 +22,8 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 [![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#Gradience:matrix.org)
 [![Chat on Discord](https://img.shields.io/discord/1013779899821064202)](https://discord.com/invite/rwNDGPJf)
-[![](https://img.shields.io/endpoint?url=https://flathub-stats-backend.vercel.app/badges/com.github.GradienceTeam.Gradience/shields.io.json)](https://flatstat.mijorus.it/app/com.github.GradienceTeam.Gradience)
+[![Flathub](https://img.shields.io/flathub/downloads/com.github.GradienceTeam.Gradience)](https://flathub.org/apps/details/com.github.GradienceTeam.Gradience)
+
 ## Download
 
 Gradience is available on Flathub.
