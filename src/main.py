@@ -71,11 +71,7 @@ class GradienceApplication(Adw.Application):
 
         self.is_ready = False
 
-        self.disabled_plugins = list(
-            self.settings.get_value("disabled-plugins"))
-
         self.first_run = self.settings.get_boolean("first-run")
-        buglog(f"disabled plugins: {self.disabled_plugins}")
 
         self.style_manager = Adw.StyleManager.get_default()
 
