@@ -28,6 +28,7 @@ from pathlib import Path
 from .modules.utils import buglog
 from .plugin_row import GradiencePluginRow
 from .plugins.hookspec import GradienceHooks
+from .constants import app_id
 
 
 class GradiencePluginsList:
@@ -35,7 +36,7 @@ class GradiencePluginsList:
 
         self.win = win
 
-        self.plugins = win.settings.get_list("plugins-enabled")
+        self.plugins = Gio.Settings(app_id).get_list("plugins-enabled")
         buglog(self.plugins)
 
         self.pm = pluggy.PluginManager("gradience")
