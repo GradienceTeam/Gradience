@@ -315,4 +315,5 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     @Gtk.Template.Callback()
     def on_presets_button_clicked(self, *args):
-        GradiencePresetWindow().present()
+        presets = GradiencePresetWindow(self.get_application())
+        presets.present()

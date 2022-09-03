@@ -34,7 +34,6 @@ from .custom_css_group import GradienceCustomCSSGroup
 from .constants import rootdir, app_id, rel_ver, version, bugtracker_url, help_url, project_url
 from .welcome import GradienceWelcomeWindow
 from .preferences import GradiencePreferencesWindow
-from .presets_manager_window import GradiencePresetWindow
 from .modules.utils import to_slug_case, buglog
 
 

@@ -59,13 +59,12 @@ class GradiencePresetWindow(Adw.Window):
     
     search_results_list = []
 
-    def __init__(self, **kwargs):
+    def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
 
-
-        self.repositories = {
-            "Official 2": "https://github.com/GradienceTeam/Community/raw/main/presets.json"
-        }
+        self.settings = parent.settings
+        self.user_repositories = self.settings.get_value("repos").unpack()
+        self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
         self.repos.add(self.repos_list)
@@ -97,7 +96,7 @@ class GradiencePresetWindow(Adw.Window):
             self.on_undo_button_clicked)
 
     def remove_repo(self, repo_name):
-        self.repositories.pop(repo_name)    
+        self.user_repositories.pop(repo_name)    
         self.reload_repos_group()
         self.setup_explore()
 
@@ -109,13 +108,13 @@ class GradiencePresetWindow(Adw.Window):
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
             self.repos_list.add(row)
             
-        for repo_name, repo in self.repositories.items():
+        for repo_name, repo in self.user_repositories.items():
             row = GradienceRepoRow(repo, repo_name, self)
             self.repos_list.add(row)
             
         self.repos.add(self.repos_list)
         
-        self._repos = {**self.repositories, **self.official_repositories}
+        self._repos = {**self.user_repositories, **self.official_repositories}
 
     def setup_explore(self):
         for widget in self.search_results_list:
