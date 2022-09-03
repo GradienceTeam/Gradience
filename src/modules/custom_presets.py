@@ -27,11 +27,11 @@ from .utils import to_slug_case
 poolmgr = urllib3.PoolManager()
 
 
-def fetch_presets():
+def fetch_presets(repo):
     try:
         http = poolmgr.request(
             "GET",
-            "https://raw.githubusercontent.com/GradienceTeam/Community/main/presets.json")
+            repo)
         raw = json.loads(http.data)
 
         preset_dict = {}

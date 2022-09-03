@@ -56,15 +56,20 @@ class GradiencePresetWindow(Adw.Window):
     official_repositories = {
         "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"
     }
+    
+    search_results_list = []
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        self.setup_explore()
 
         self.repositories = {
             "Official 2": "https://github.com/GradienceTeam/Community/raw/main/presets.json"
         }
+        self.repos_list = Adw.PreferencesGroup()
+        self.repos_list.set_title(_("Repositories"))
+        self.repos.add(self.repos_list)
+        self.reload_repos_group()
 
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
@@ -75,12 +80,9 @@ class GradiencePresetWindow(Adw.Window):
         self.installed.add(self.preset_list)
         self.reload_pref_group()
 
-        self.repos_list = Adw.PreferencesGroup()
-        self.repos_list.set_title(_("Repositories"))
-        self.repos.add(self.repos_list)
-        self.reload_repos_group()
 
         self.app = Gtk.Application.get_default()
+        self.setup_explore()
         self.setup_import()
 
         self.connect_signals()
@@ -95,7 +97,9 @@ class GradiencePresetWindow(Adw.Window):
             self.on_undo_button_clicked)
 
     def remove_repo(self, repo_name):
-        self.repositories.pop(repo_name)
+        self.repositories.pop(repo_name)    
+        self.reload_repos_group()
+        self.setup_explore()
 
     def reload_repos_group(self):
         self.repos.remove(self.repos_list)
@@ -110,20 +114,26 @@ class GradiencePresetWindow(Adw.Window):
             self.repos_list.add(row)
             
         self.repos.add(self.repos_list)
+        
+        self._repos = {**self.repositories, **self.official_repositories}
 
     def setup_explore(self):
-        self.explore_presets, urls = fetch_presets()
+        for widget in self.search_results_list:
+            self.search_results.remove(widget)
+        for repo_name, repo in self._repos.items():
+            self.explore_presets, urls = fetch_presets(repo)
 
-        if not self.explore_presets:  # offline
-            self.search_spinner.props.visible = False
-            self.search_stack.set_visible_child_name("page_offline")
-        else:
-            self.search_spinner.props.visible = False
+            if not self.explore_presets:  # offline
+                self.search_spinner.props.visible = False
+                self.search_stack.set_visible_child_name("page_offline")
+            else:
+                self.search_spinner.props.visible = False
 
-            for (preset, preset_name), preset_url in zip(
-                    self.explore_presets.items(), urls):
-                row = GradienceExplorePresetRow(preset_name, preset_url, self)
-                self.search_results.append(row)
+                for (preset, preset_name), preset_url in zip(
+                        self.explore_presets.items(), urls):
+                    row = GradienceExplorePresetRow(preset_name, preset_url, self)
+                    self.search_results.append(row)
+                    self.search_results_list.append(row)
 
     def setup_import(self):
         self.file_chooser_dialog = Gtk.FileChooserNative()
