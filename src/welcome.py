@@ -22,7 +22,8 @@ from gi.repository import Gtk, Adw, Gio, Gdk
 
 from .run_async import RunAsync
 from .modules.utils import buglog
-from .constants import rootdir
+from .modules.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
+from .constants import rootdir, app_id
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
@@ -65,6 +66,8 @@ class GradienceWelcomeWindow(Adw.Window):
 
         # common variables and references
         self.window = window
+
+        self.gio_settings = Gio.Settings(app_id)
 
         # connect signals
         self.connect("close-request", self.quit)
@@ -125,21 +128,14 @@ class GradienceWelcomeWindow(Adw.Window):
         if not self.check_adw_gtk3():  # install
             buglog("install adw-gtk3")
 
-    def get_user_path(self):
-        user_path = GLib.getenv('FLATPAK_USER_DIR')
-        if user_path:
-            return user_path
-        else:
-            user_data_dir = GLib.get_user_data_dir()
-            if not user_data_dir:
-                user_data_dir = GLib.getenv('HOST_XDG_DATA_HOME')
-                if not user_data_dir:
-                    user_data_dir = os.path.expanduser('~/.local/share')
-            return os.path.join(user_data_dir, 'flatpak')
-
     def configure_system(self):
-        print(self.get_user_path())
         buglog("configure system")
+        self.allow_flatpak_theming_user_toggled()
+
+    def allow_flatpak_theming_user_toggled(self, *args):
+        create_gtk_user_override(self, self.gio_settings, "gtk4")
+        buglog(
+            f"user-flatpak-theming: {self.gio_settings.get_boolean('user-flatpak-theming')}")
 
     def install_runner(self, widget):
         def set_completed(result, error=False):
@@ -159,13 +155,10 @@ class GradienceWelcomeWindow(Adw.Window):
         self.set_deletable(False)
 
         def install():
-            print("install")
             if self.switch_adw_gtk3.get_active():
-                print("gtk3")
                 self.adw_gtk3()
 
             if self.switch_system.get_active():
-                print("system")
                 self.configure_system()
 
         RunAsync(self.pulse)
