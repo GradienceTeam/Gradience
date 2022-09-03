@@ -95,6 +95,10 @@ class GradiencePresetWindow(Adw.Window):
 
     def remove_repo(self, repo_name):
         self.user_repositories.pop(repo_name)
+        self.save_repos()
+        
+        
+    def save_repos(self):
         self.settings.set_value(
             "repos", GLib.Variant(
                 "a{sv}", self.user_repositories))
@@ -127,12 +131,19 @@ class GradiencePresetWindow(Adw.Window):
 
     def add_repo(self, _unused, response, name_entry, url_entry):
         if response == "add":
+<<<<<<< HEAD
             self.user_repositories[name_entry.get_text()
                                    ] = url_entry.get_text()
             self.settings.set_value(
                 "repos", GLib.Variant(
                     "a{sv}", self.user_repositories))
             self.reload_repos_group()
+=======
+            repo = {name_entry.get_text(): url_entry.get_text()}
+            self.user_repositories.update(repo)
+            
+            self.save_repos()
+>>>>>>> 7869edd (feat: update add repo button)
 
     def on_add_repo_button_clicked(self, *args):
         dialog = Adw.MessageDialog(
@@ -187,12 +198,13 @@ class GradiencePresetWindow(Adw.Window):
     def setup_explore(self):
         for widget in self.search_results_list:
             self.search_results.remove(widget)
+            
+        not_offline = []
         for repo_name, repo in self._repos.items():
             self.explore_presets, urls = fetch_presets(repo)
 
             if not self.explore_presets:  # offline
-                self.search_spinner.props.visible = False
-                self.search_stack.set_visible_child_name("page_offline")
+                not_offline.append(False)
             else:
                 self.search_spinner.props.visible = False
 
@@ -202,6 +214,9 @@ class GradiencePresetWindow(Adw.Window):
                         preset_name, preset_url, self)
                     self.search_results.append(row)
                     self.search_results_list.append(row)
+        if not not_offline:
+            self.search_spinner.props.visible = False
+            self.search_stack.set_visible_child_name("page_offline")
 
     def setup_import(self):
         self.file_chooser_dialog = Gtk.FileChooserNative()
