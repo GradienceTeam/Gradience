@@ -317,4 +317,5 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def on_presets_button_clicked(self, *args):
         presets = GradiencePresetWindow(self.get_application())
         presets.set_transient_for(self)
+        presets.set_modal(True)
         presets.present()
