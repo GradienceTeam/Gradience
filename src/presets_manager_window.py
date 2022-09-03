@@ -16,9 +16,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+from genericpath import isdir
 import os
 import shutil
 import json
+from pathlib import Path
 
 from gi.repository import Gtk, Adw, Gio, Gdk, GLib
 
@@ -29,7 +31,6 @@ from .modules.custom_presets import fetch_presets
 from .constants import rootdir, build_type
 from .modules.utils import to_slug_case
 from .repo_row import GradienceRepoRow
-
 PRESETS_LIST_URL = "https://github.com/GradienceTeam/Community/raw/main/presets.json"
 
 
@@ -84,20 +85,13 @@ class GradiencePresetWindow(Adw.Window):
 
         self.connect_signals()
 
-        self.delete_toast = Adw.Toast(title=_("Preset removed"))
-        # self.delete_toast.set_action_name("on_undo_button_clicked")
-        self.delete_preset = True
-        self.delete_toast.set_button_label(_("Undo"))
-        self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
-        self.delete_toast.connect(
-            "button-clicked",
-            self.on_undo_button_clicked)
+        
+        
 
     def remove_repo(self, repo_name):
         self.user_repositories.pop(repo_name)
         self.save_repos()
-        
-        
+
     def save_repos(self):
         self.settings.set_value(
             "repos", GLib.Variant(
@@ -131,19 +125,10 @@ class GradiencePresetWindow(Adw.Window):
 
     def add_repo(self, _unused, response, name_entry, url_entry):
         if response == "add":
-<<<<<<< HEAD
-            self.user_repositories[name_entry.get_text()
-                                   ] = url_entry.get_text()
-            self.settings.set_value(
-                "repos", GLib.Variant(
-                    "a{sv}", self.user_repositories))
-            self.reload_repos_group()
-=======
             repo = {name_entry.get_text(): url_entry.get_text()}
             self.user_repositories.update(repo)
-            
+
             self.save_repos()
->>>>>>> 7869edd (feat: update add repo button)
 
     def on_add_repo_button_clicked(self, *args):
         dialog = Adw.MessageDialog(
@@ -198,7 +183,7 @@ class GradiencePresetWindow(Adw.Window):
     def setup_explore(self):
         for widget in self.search_results_list:
             self.search_results.remove(widget)
-            
+
         not_offline = []
         for repo_name, repo in self._repos.items():
             self.explore_presets, urls = fetch_presets(repo)
@@ -211,10 +196,10 @@ class GradiencePresetWindow(Adw.Window):
                 for (preset, preset_name), preset_url in zip(
                         self.explore_presets.items(), urls):
                     row = GradienceExplorePresetRow(
-                        preset_name, preset_url, self)
+                        preset_name, preset_url, self, repo_name)
                     self.search_results.append(row)
                     self.search_results_list.append(row)
-        if not not_offline:
+        if not_offline:
             self.search_spinner.props.visible = False
             self.search_stack.set_visible_child_name("page_offline")
 
@@ -230,32 +215,9 @@ class GradiencePresetWindow(Adw.Window):
         self.search_entry.connect("search-changed", self.on_search_changed)
         self.search_entry.connect("realize", self.on_search_realize)
 
-    def on_delete_toast_dismissed(self, widget):
-        if self.delete_preset:
-            try:
-                os.remove(os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    to_slug_case(self.old_name) + ".json",
-                ))
-            except Exception:
-                self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Unable to delete preset"))
-                )
-            else:
-                self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Preset removed"))
-                )
-            finally:
-                self.reload_pref_group()
+    
 
-        self.delete_preset = True
-
-    def on_undo_button_clicked(self, *_args):
-        self.delete_preset = False
-        self.delete_toast.dismiss()
-
+    
     def on_search_changed(self, widget):
         print("search changed")
 
@@ -313,24 +275,29 @@ class GradiencePresetWindow(Adw.Window):
             "adwaita": "Adwaita",
             "pretty-purple": "Pretty Purple",
         }
-        for file_name in os.listdir(preset_directory):
-            if file_name.endswith(".json"):
-                try:
-                    with open(
-                        os.path.join(preset_directory, file_name), "r", encoding="utf-8"
-                    ) as file:
-                        preset_text = file.read()
-                    preset = json.loads(preset_text)
-                    if preset.get("variables") is None:
-                        raise KeyError("variables")
-                    if preset.get("palette") is None:
-                        raise KeyError("palette")
-                    self.custom_presets[file_name.replace(
-                        ".json", "")] = preset["name"]
-                except Exception:
-                    self.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Failed to load preset"))
-                    )
+        for repo in Path(preset_directory).iterdir():
+            if repo.is_dir():  # repo
+                presets_list = {}
+                for file_name in repo.iterdir():
+                    file_name = str(file_name)
+                    if file_name.endswith(".json"):
+                        try:
+                            with open(
+                                os.path.join(preset_directory, file_name), "r", encoding="utf-8"
+                            ) as file:
+                                preset_text = file.read()
+                            preset = json.loads(preset_text)
+                            if preset.get("variables") is None:
+                                raise KeyError("variables")
+                            if preset.get("palette") is None:
+                                raise KeyError("palette")
+                            presets_list[file_name.replace(
+                                ".json", "")] = preset["name"]
+                        except Exception:
+                            self.toast_overlay.add_toast(
+                                Adw.Toast(title=_("Failed to load preset"))
+                            )
+                self.custom_presets[repo.name] = presets_list
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
 
@@ -347,9 +314,11 @@ class GradiencePresetWindow(Adw.Window):
             _("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
 
         if self.custom_presets:
-            for preset, preset_name in self.custom_presets.items():
-                row = GradiencePresetRow(preset_name, self)
-                self.preset_list.add(row)
+            for repo, presets in self.custom_presets.items():
+                for preset, preset_name in presets.items():
+                    row = GradiencePresetRow(preset_name, self, repo)
+                    self.preset_list.add(row)
+
         else:
             self.preset_empty = Adw.ActionRow()
             self.preset_empty.set_title(

@@ -55,7 +55,7 @@ def fetch_presets(repo):
         return False, False
 
 
-def download_preset(name, url):
+def download_preset(name, repo_name, url):
     try:
         http = poolmgr.request("GET", url)
         raw = json.loads(http.data)
@@ -66,6 +66,7 @@ def download_preset(name, url):
                 os.environ.get("XDG_CONFIG_HOME",
                                os.environ["HOME"] + "/.config"),
                 "presets",
+                repo_name,
                 to_slug_case(name) + ".json"),
                 "w") as f:
             f.write(data)

@@ -35,11 +35,13 @@ class GradiencePresetRow(Adw.ActionRow):
     apply_button = Gtk.Template.Child("apply_button")
     remove_button = Gtk.Template.Child("remove_button")
 
-    def __init__(self, name, win, author="", **kwargs):
+    def __init__(self, name, win, repo_name, author="", **kwargs):
         super().__init__(**kwargs)
 
         self.name = name
         self.old_name = name
+        
+        self.prefix = to_slug_case(repo_name)
 
         self.set_name(name)
         self.set_title(name)
@@ -61,6 +63,7 @@ class GradiencePresetRow(Adw.ActionRow):
             os.environ.get("XDG_CONFIG_HOME",
                            os.environ["HOME"] + "/.config"),
             "presets",
+            self.prefix,
             to_slug_case(self.name) + ".json",
         ))
 
@@ -80,8 +83,17 @@ class GradiencePresetRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):
+        self.delete_preset = True
+        self.delete_toast = Adw.Toast(title=_("Preset removed"))
+        # self.delete_toast.set_action_name("on_undo_button_clicked")
+        self.delete_toast.set_button_label(_("Undo"))
+        self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
+        self.delete_toast.connect(
+            "button-clicked",
+            self.on_undo_button_clicked)
+        
         self.toast_overlay.add_toast(
-            self.win.delete_toast
+            self.delete_toast
         )
 
         self.win.old_name = self.name
@@ -93,6 +105,7 @@ class GradiencePresetRow(Adw.ActionRow):
             os.environ.get("XDG_CONFIG_HOME",
                            os.environ["HOME"] + "/.config"),
             "presets",
+            self.prefix,
             to_slug_case(self.old_name) + ".json",
         ))
         with open(
@@ -100,6 +113,7 @@ class GradiencePresetRow(Adw.ActionRow):
                 os.environ.get("XDG_CONFIG_HOME",
                                os.environ["HOME"] + "/.config"),
                 "presets",
+                self.prefix,
                 to_slug_case(self.name) + ".json",
             ),
             "w",
@@ -117,3 +131,32 @@ class GradiencePresetRow(Adw.ActionRow):
                 Adw.Toast(title=_("Preset renamed"))
             )
         self.old_name = self.name
+
+    def on_delete_toast_dismissed(self, widget):
+        
+        if self.delete_preset:
+            try:
+                os.remove(os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "presets",
+                    self.prefix,
+                    to_slug_case(self.old_name) + ".json",
+                ))
+            except Exception as exception:
+                print(exception.with_traceback())
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unable to delete preset"))
+                )
+            else:
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Preset removed"))
+                )
+            finally:
+                self.win.reload_pref_group()
+
+        self.delete_preset = True
+        
+    def on_undo_button_clicked(self, *_args):
+        self.delete_preset = False
+        self.delete_toast.dismiss()
