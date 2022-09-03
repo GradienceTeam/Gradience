@@ -53,10 +53,18 @@ class GradiencePresetWindow(Adw.Window):
 
     custom_presets = {}
 
+    official_repositories = {
+        "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"
+    }
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
         self.setup_explore()
+
+        self.repositories = {
+            "Official 2": "https://github.com/GradienceTeam/Community/raw/main/presets.json"
+        }
 
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
@@ -85,9 +93,6 @@ class GradiencePresetWindow(Adw.Window):
         self.delete_toast.connect(
             "button-clicked",
             self.on_undo_button_clicked)
-
-        self.repositories = {
-            "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"}
 
     def remove_repo(self, repo_name):
         self.repositories.pop(repo_name)
