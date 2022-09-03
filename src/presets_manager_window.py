@@ -101,7 +101,7 @@ class GradiencePresetWindow(Adw.Window):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Builtin Presets"))
         for repo, repo_name in self.repositories.items():
-            row = GradienceRepoRow(repo, repo_name, self.toast_overlay)
+            row = GradienceRepoRow(repo, repo_name, self)
             self.repos_list.add(row)
         self.repos.add(self.repos_list)
 
