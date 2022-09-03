@@ -20,7 +20,7 @@ import os
 import shutil
 import json
 
-from gi.repository import Gtk, Adw, Gio, Gdk
+from gi.repository import Gtk, Adw, Gio, Gdk, GLib
 
 from .preset_row import GradiencePresetRow
 from .builtin_preset_row import GradienceBuiltinPresetRow
@@ -96,7 +96,8 @@ class GradiencePresetWindow(Adw.Window):
             self.on_undo_button_clicked)
 
     def remove_repo(self, repo_name):
-        self.user_repositories.pop(repo_name)    
+        self.user_repositories.pop(repo_name) 
+        self.settings.set_value("repos", GLib.Variant("a{sv}", self.user_repositories))   
         self.reload_repos_group()
         self.setup_explore()
 
