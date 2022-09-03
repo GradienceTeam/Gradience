@@ -125,9 +125,10 @@ class GradiencePresetWindow(Adw.Window):
 
         self._repos = {**self.user_repositories, **self.official_repositories}
 
-    def add_repo(self,  _unused, response, name_entry, url_entry):
+    def add_repo(self, _unused, response, name_entry, url_entry):
         if response == "add":
-            self.user_repositories[name_entry.get_text()] = url_entry.get_text()
+            self.user_repositories[name_entry.get_text()
+                                   ] = url_entry.get_text()
             self.settings.set_value(
                 "repos", GLib.Variant(
                     "a{sv}", self.user_repositories))
@@ -151,7 +152,7 @@ class GradiencePresetWindow(Adw.Window):
         dialog.set_close_response("cancel")
 
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
-        
+
         name_entry = Gtk.Entry(placeholder_text="Preset Name")
         name_entry.set_text("My Repo")
 
