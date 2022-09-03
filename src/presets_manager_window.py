@@ -98,6 +98,7 @@ class GradiencePresetWindow(Adw.Window):
         self.repositories.pop(repo_name)
 
     def reload_repos_group(self):
+        self.repos.remove(self.repos_list)
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
         for repo_name, repo in self.official_repositories.items():
