@@ -40,7 +40,7 @@ class GradiencePresetRow(Adw.ActionRow):
 
         self.name = name
         self.old_name = name
-        
+
         self.prefix = to_slug_case(repo_name)
 
         self.set_name(name)
@@ -91,7 +91,7 @@ class GradiencePresetRow(Adw.ActionRow):
         self.delete_toast.connect(
             "button-clicked",
             self.on_undo_button_clicked)
-        
+
         self.toast_overlay.add_toast(
             self.delete_toast
         )
@@ -133,7 +133,7 @@ class GradiencePresetRow(Adw.ActionRow):
         self.old_name = self.name
 
     def on_delete_toast_dismissed(self, widget):
-        
+
         if self.delete_preset:
             try:
                 os.remove(os.path.join(
@@ -156,7 +156,7 @@ class GradiencePresetRow(Adw.ActionRow):
                 self.win.reload_pref_group()
 
         self.delete_preset = True
-        
+
     def on_undo_button_clicked(self, *_args):
         self.delete_preset = False
         self.delete_toast.dismiss()
