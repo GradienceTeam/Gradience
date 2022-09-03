@@ -50,7 +50,7 @@ class GradienceRepoRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):
         self.toast_overlay.add_toast(
-            self.win.delete_toast
+            Adw.Toast(title=_("Repository removed"))
         )
 
         self.win.remove_repo(self.name)
