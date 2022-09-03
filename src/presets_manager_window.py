@@ -54,9 +54,8 @@ class GradiencePresetWindow(Adw.Window):
     custom_presets = {}
 
     official_repositories = {
-        "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"
-    }
-    
+        "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"}
+
     search_results_list = []
 
     def __init__(self, parent, **kwargs):
@@ -79,7 +78,6 @@ class GradiencePresetWindow(Adw.Window):
         self.installed.add(self.preset_list)
         self.reload_pref_group()
 
-
         self.app = Gtk.Application.get_default()
         self.setup_explore()
         self.setup_import()
@@ -96,8 +94,10 @@ class GradiencePresetWindow(Adw.Window):
             self.on_undo_button_clicked)
 
     def remove_repo(self, repo_name):
-        self.user_repositories.pop(repo_name) 
-        self.settings.set_value("repos", GLib.Variant("a{sv}", self.user_repositories))   
+        self.user_repositories.pop(repo_name)
+        self.settings.set_value(
+            "repos", GLib.Variant(
+                "a{sv}", self.user_repositories))
         self.reload_repos_group()
         self.setup_explore()
 
@@ -108,13 +108,13 @@ class GradiencePresetWindow(Adw.Window):
         for repo_name, repo in self.official_repositories.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
             self.repos_list.add(row)
-            
+
         for repo_name, repo in self.user_repositories.items():
             row = GradienceRepoRow(repo, repo_name, self)
             self.repos_list.add(row)
-            
+
         self.repos.add(self.repos_list)
-        
+
         self._repos = {**self.user_repositories, **self.official_repositories}
 
     def setup_explore(self):
@@ -131,7 +131,8 @@ class GradiencePresetWindow(Adw.Window):
 
                 for (preset, preset_name), preset_url in zip(
                         self.explore_presets.items(), urls):
-                    row = GradienceExplorePresetRow(preset_name, preset_url, self)
+                    row = GradienceExplorePresetRow(
+                        preset_name, preset_url, self)
                     self.search_results.append(row)
                     self.search_results_list.append(row)
 
