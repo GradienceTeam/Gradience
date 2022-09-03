@@ -66,12 +66,11 @@ class GradiencePresetWindow(Adw.Window):
         self.preset_list.set_title(_("User Presets"))
         self.installed.add(self.preset_list)
         self.reload_pref_group()
-        
+
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
         self.repos.add(self.repos_list)
         self.reload_repos_group()
-
 
         self.app = Gtk.Application.get_default()
         self.setup_import()
@@ -86,11 +85,10 @@ class GradiencePresetWindow(Adw.Window):
         self.delete_toast.connect(
             "button-clicked",
             self.on_undo_button_clicked)
-        
+
         self.repositories = {
-            "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"
-        }
-        
+            "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"}
+
     def remove_repo(self, repo_name):
         self.repositories.pop(repo_name)
 
@@ -101,7 +99,7 @@ class GradiencePresetWindow(Adw.Window):
             row = GradienceRepoRow(repo, repo_name, self.toast_overlay)
             self.repos_list.add(row)
         self.repos.add(self.repos_list)
-        
+
     def setup_explore(self):
         self.explore_presets, urls = fetch_presets()
 

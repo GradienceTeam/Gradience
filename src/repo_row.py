@@ -43,10 +43,9 @@ class GradienceRepoRow(Adw.ActionRow):
         self.app = Gtk.Application.get_default()
         self.win = win
         self.toast_overlay = self.win.toast_overlay
-        
+
         if not deletable:
             self.remove_button.set_visible(False)
-        
 
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):
