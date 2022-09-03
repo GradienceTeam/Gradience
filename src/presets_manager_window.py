@@ -105,12 +105,14 @@ class GradiencePresetWindow(Adw.Window):
         self.repos.remove(self.repos_list)
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
-        
-        self.add_repo_button = Gtk.Button.new_from_icon_name("list-add-symbolic")
-        self.add_repo_button.connect("clicked", self.on_add_repo_button_clicked)
-        
+
+        self.add_repo_button = Gtk.Button.new_from_icon_name(
+            "list-add-symbolic")
+        self.add_repo_button.connect(
+            "clicked", self.on_add_repo_button_clicked)
+
         self.repos_list.set_header_suffix(self.add_repo_button)
-        
+
         for repo_name, repo in self.official_repositories.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
             self.repos_list.add(row)
@@ -122,17 +124,64 @@ class GradiencePresetWindow(Adw.Window):
         self.repos.add(self.repos_list)
 
         self._repos = {**self.user_repositories, **self.official_repositories}
-        
-        
-    def add_repo(self, repo_name, repo_url):
-        self.user_repositories[repo_name] = repo_url
-        self.settings.set_value(
-            "repos", GLib.Variant(
-                "a{sv}", self.user_repositories))
-        self.reload_repos_group()
+
+    def add_repo(self,  _unused, response, name_entry, url_entry):
+        if response == "add":
+            self.user_repositories[name_entry.get_text()] = url_entry.get_text()
+            self.settings.set_value(
+                "repos", GLib.Variant(
+                    "a{sv}", self.user_repositories))
+            self.reload_repos_group()
+
     def on_add_repo_button_clicked(self, *args):
-        print("add new repo")
+        dialog = Adw.MessageDialog(
+            transient_for=self,
+            heading=_("Add new repository"),
+            body=_(
+                "Add a repository to install additional presets"
+            ),
+            body_use_markup=True,
+        )
+
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("add", _("Add"))
+        dialog.set_response_appearance(
+            "add", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_default_response("cancel")
+        dialog.set_close_response("cancel")
+
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
         
+        name_entry = Gtk.Entry(placeholder_text="Preset Name")
+        name_entry.set_text("My Repo")
+
+        def on_name_entry_change(*_args):
+            if len(name_entry.get_text()) == 0:
+                dialog.set_response_enabled("save", False)
+            else:
+                dialog.set_response_enabled("save", True)
+
+        name_entry.connect("changed", on_name_entry_change)
+
+        url_entry = Gtk.Entry(placeholder_text="URL")
+        url_entry.set_text("https://website.com/raw/presets.json")
+
+        def on_url_entry_change(*_args):
+            if len(url_entry.get_text()) == 0:
+                dialog.set_response_enabled("save", False)
+            else:
+                # TODO: Check if URL is valid
+                dialog.set_response_enabled("save", True)
+
+        url_entry.connect("changed", on_url_entry_change)
+
+        box.append(name_entry)
+        box.append(url_entry)
+        dialog.set_extra_child(box)
+
+        dialog.connect("response", self.add_repo, name_entry, url_entry)
+
+        dialog.present()
 
     def setup_explore(self):
         for widget in self.search_results_list:
