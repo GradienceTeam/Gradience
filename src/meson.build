@@ -51,6 +51,7 @@ gradience_sources = [
   'builtin_preset_row.py',
   'preset_row.py',
   'welcome.py',
+  'repo_row.py',
 ]
 
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')

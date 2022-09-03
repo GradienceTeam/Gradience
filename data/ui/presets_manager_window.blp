@@ -126,6 +126,15 @@ template GradiencePresetWindow : Adw.Window {
                 }
               };
             }
+
+            Adw.ViewStackPage {
+              name: "repos";
+              title: _("Repositories");
+              icon-name: "folder-symbolic";
+            
+              child: Adw.PreferencesPage repos { };
+      
+            }
           }
 
           Adw.ViewSwitcherBar {

@@ -28,6 +28,7 @@ from .explore_preset_row import GradienceExplorePresetRow
 from .modules.custom_presets import fetch_presets
 from .constants import rootdir, build_type
 from .modules.utils import to_slug_case
+from .repo_row import GradienceRepoRow
 
 PRESETS_LIST_URL = "https://github.com/GradienceTeam/Community/raw/main/presets.json"
 
@@ -37,6 +38,7 @@ class GradiencePresetWindow(Adw.Window):
     __gtype_name__ = "GradiencePresetWindow"
 
     installed = Gtk.Template.Child()
+    repos = Gtk.Template.Child()
     main_view = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
 
@@ -63,6 +65,10 @@ class GradiencePresetWindow(Adw.Window):
         self.preset_list = Adw.PreferencesGroup()
         self.preset_list.set_title(_("User Presets"))
         self.installed.add(self.preset_list)
+        
+        self.repos_list = Adw.PreferencesGroup()
+        self.repos_list.set_title(_("Repositories"))
+        self.repos.add(self.repos_list)
 
         self.reload_pref_group()
 
@@ -79,7 +85,22 @@ class GradiencePresetWindow(Adw.Window):
         self.delete_toast.connect(
             "button-clicked",
             self.on_undo_button_clicked)
+        
+        self.repositories = {
+            "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"
+        }
+        
+    def remove_repo(self, repo_name):
+        self.repositories.pop(repo_name)
 
+    def reload_repos_group(self):
+        self.repos_list = Adw.PreferencesGroup()
+        self.repos_list.set_title(_("Builtin Presets"))
+        for repo, repo_name in self.repositories.items():
+            row = GradienceRepoRow(repo, repo_name, self.toast_overlay)
+            self.repos_list.add(row)
+        self.repos.add(self.repos_list)
+        
     def setup_explore(self):
         self.explore_presets, urls = fetch_presets()
 

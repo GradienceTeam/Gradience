@@ -1,0 +1,13 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradienceRepoRow : Adw.ActionRow {
+  [suffix]
+  Button remove_button {
+    valign: center;
+    icon-name: "remove-symbolic";
+    tooltip-text: _("Remove preset");
+    clicked => on_remove_button_clicked();
+  }
+
+}
