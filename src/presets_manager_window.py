@@ -85,9 +85,6 @@ class GradiencePresetWindow(Adw.Window):
 
         self.connect_signals()
 
-        
-        
-
     def remove_repo(self, repo_name):
         self.user_repositories.pop(repo_name)
         self.save_repos()
@@ -215,9 +212,6 @@ class GradiencePresetWindow(Adw.Window):
         self.search_entry.connect("search-changed", self.on_search_changed)
         self.search_entry.connect("realize", self.on_search_realize)
 
-    
-
-    
     def on_search_changed(self, widget):
         print("search changed")
 

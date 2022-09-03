@@ -53,7 +53,7 @@ class GradienceRepoRow(Adw.ActionRow):
             "presets",
             to_slug_case(repo_name)
         )
-        
+
         if not os.path.exists(self.path):
             os.makedirs(self.path)
 

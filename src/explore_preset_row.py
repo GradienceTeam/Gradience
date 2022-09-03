@@ -37,7 +37,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
         super().__init__(**kwargs)
 
         self.name = name
-        
+
         self.prefix = to_slug_case(repo_name)
 
         self.set_name(name)
