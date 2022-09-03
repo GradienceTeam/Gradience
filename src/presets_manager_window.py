@@ -65,12 +65,13 @@ class GradiencePresetWindow(Adw.Window):
         self.preset_list = Adw.PreferencesGroup()
         self.preset_list.set_title(_("User Presets"))
         self.installed.add(self.preset_list)
+        self.reload_pref_group()
         
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
         self.repos.add(self.repos_list)
+        self.reload_repos_group()
 
-        self.reload_pref_group()
 
         self.app = Gtk.Application.get_default()
         self.setup_import()
