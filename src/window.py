@@ -316,5 +316,5 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     @Gtk.Template.Callback()
     def on_presets_button_clicked(self, *args):
         presets = GradiencePresetWindow(self.get_application())
-        self.set_transient_for(presets)
+        presets.set_transient_for(self)
         presets.present()
