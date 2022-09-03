@@ -100,9 +100,14 @@ class GradiencePresetWindow(Adw.Window):
     def reload_repos_group(self):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
+        for repo, repo_name in self.official_repositories.items():
+            row = GradienceRepoRow(repo, repo_name, self, deletable=False)
+            self.repos_list.add(row)
+            
         for repo, repo_name in self.repositories.items():
             row = GradienceRepoRow(repo, repo_name, self)
             self.repos_list.add(row)
+            
         self.repos.add(self.repos_list)
 
     def setup_explore(self):
