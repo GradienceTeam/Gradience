@@ -53,7 +53,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         try:
-            download_preset(to_slug_case(self.name), self.url)
+            download_preset(to_slug_case(self.name), self.prefix, self.url)
         except Exception as exception:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
