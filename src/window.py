@@ -59,7 +59,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             self.get_style_context().add_class("devel")
 
         self.setup_monet_page()
-        self.setup_plugins_page()
         self.setup_colors_page()
 
         self.settings = Gio.Settings(app_id)
@@ -252,19 +251,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 Adw.Toast(title=_("Select a background first"))
             )
 
-    def setup_plugins_page(self):
-        self.plugins_list = GradiencePluginsList(self)
-        self.plugins_group = self.plugins_list.to_group()
-
-        self.content_plugins.add(self.plugins_group)
-        self.get_application().plugins_group = self.plugins_group
-
-        custom_css_group = GradienceCustomCSSGroup()
-        for app_type in settings_schema["custom_css_app_types"]:
-            self.get_application().custom_css[app_type] = ""
-        custom_css_group.load_custom_css(self.get_application().custom_css)
-        self.content_plugins.add(custom_css_group)
-        self.get_application().custom_css_group = custom_css_group
 
     def setup_colors_page(self):
         for group in settings_schema["groups"]:

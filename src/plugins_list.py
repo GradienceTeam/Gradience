@@ -22,6 +22,7 @@ import importlib
 import pkgutil
 
 from gi.repository import Gtk, Adw, Gio, Gdk
+from yapsy.PluginManager import PluginManager
 
 from pathlib import Path
 from .modules.utils import buglog
@@ -35,9 +36,17 @@ class GradiencePluginsList:
 
         self.win = win
 
-        #self.plugins = Gio.Settings(app_id).get_dict("plugins-enabled")
-        self.plugins = {}
-        buglog(self.plugins)
+        self.pm = PluginManager()
+        self.pm.setPluginPlaces([os.path.join(
+            os.environ.get("XDG_CONFIG_HOME",
+                           os.environ["HOME"] + "/.config"),
+            "gradience_plugins",
+        )])
+        self.pm.collectPlugins()
+        self.rows = {}
+
+        for pluginInfo in self.pm.getAllPlugins():
+            pluginInfo.plugin_object.activate()
 
 
     def load_all_custom_settings(self, settings):
@@ -54,13 +63,19 @@ class GradiencePluginsList:
         group.set_title(_("Plugins"))
         group.set_description(
             _("Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."))
-        if self.plugins:
-            for plugin_id, plugin in self.plugins.items():
-                row = GradiencePluginRow(plugin.title, plugin_id)
-                self.rows[plugin_id] = row
+        if self.pm:
+            for pluginInfo in self.pm.getAllPlugins():
+                row = GradiencePluginRow( pluginInfo.plugin_object)
+                self.rows[ pluginInfo.plugin_object.plugin_id] = row
                 group.add(row)
         else:
             row = Adw.ActionRow()
             row.set_title(_("No plugins found"))
             group.add(row)
         return group
+    
+    def save(self):
+        saved = {}
+        for pluginInfo in self.pm.getAllPlugins():
+            saved[pluginInfo.plugin_object.plugin_id] = pluginInfo.plugin_object.save()
+        return saved

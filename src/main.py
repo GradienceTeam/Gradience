@@ -35,6 +35,7 @@ from .constants import rootdir, app_id, rel_ver, version, bugtracker_url, help_u
 from .welcome import GradienceWelcomeWindow
 from .preferences import GradiencePreferencesWindow
 from .modules.utils import to_slug_case, buglog
+from .plugins_list import GradiencePluginsList
 
 
 class GradienceApplication(Adw.Application):
@@ -73,7 +74,6 @@ class GradienceApplication(Adw.Application):
         self.first_run = self.settings.get_boolean("first-run")
 
         self.style_manager = Adw.StyleManager.get_default()
-
     def do_activate(self):
         """Called when the application is activated.
 
@@ -84,6 +84,8 @@ class GradienceApplication(Adw.Application):
         self.win = self.props.active_window
         if not self.win:
             self.win = GradienceMainWindow(application=self)
+        self.plugins_list = GradiencePluginsList(self.win)
+        self.reload_plugins()
 
         self.create_action("open_preset_directory", self.open_preset_directory)
         self.create_stateful_action(
@@ -522,6 +524,7 @@ class GradienceApplication(Adw.Application):
                     "variables": self.variables,
                     "palette": self.palette,
                     "custom_css": self.custom_css,
+                    "plugins": self.plugins_list.save(),
                 }
                 file.write(json.dumps(object_to_write, indent=4))
                 self.clear_dirty()
@@ -804,7 +807,17 @@ This app is written in Python and uses GTK 4 and libadwaita.
 
     def reload_plugins(self):
         buglog("reload plugins")
-        self.win.plugins_group = self.win.plugins_list.to_group()
+        self.plugins_group = self.plugins_list.to_group()
+
+        self.win.content_plugins.add(self.plugins_group)
+        self.plugins_group = self.plugins_group
+
+        custom_css_group = GradienceCustomCSSGroup()
+        for app_type in settings_schema["custom_css_app_types"]:
+            self.custom_css[app_type] = ""
+        custom_css_group.load_custom_css(self.custom_css)
+        self.win.content_plugins.add(custom_css_group)
+        self.custom_css_group = custom_css_group
 
     def show_adwaita_demo(self, *_args):
         GLib.spawn_command_line_async(
