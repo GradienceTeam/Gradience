@@ -103,14 +103,14 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             picture_uri = background_settings.get_string(
                 "picture-uri")
         buglog(picture_uri)
-        self.monet_image_file = Gio.File.new_for_uri(picture_uri)
+        if picture_uri.startswith("file://"):
+            self.monet_image_file = Gio.File.new_for_path(picture_uri)
+        else:
+            self.monet_image_file = Gio.File.new_for_uri(picture_uri)
         image_basename = self.monet_image_file.get_basename()
         buglog(image_basename)
         self.monet_image_file = self.monet_image_file.get_path()
-        if image_basename:
-            self.monet_file_chooser_button.set_label(image_basename)
-        else:
-            self.monet_file_chooser_button.set_label(self.monet_image_file)
+        self.monet_file_chooser_button.set_label(image_basename)
         self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
         buglog(self.monet_image_file)
         # self.on_apply_button() # Comment out for now, because it always shows
