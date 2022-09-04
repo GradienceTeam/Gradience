@@ -263,7 +263,7 @@ class GradiencePresetWindow(Adw.Window):
         if not os.path.exists(preset_directory):
             os.makedirs(preset_directory)
 
-        self.custom_presets.clear()
+        self.custom_presets = {"user": {}}
         self.builtin_presets = {
             "adwaita-dark": "Adwaita Dark",
             "adwaita": "Adwaita",
@@ -292,6 +292,30 @@ class GradiencePresetWindow(Adw.Window):
                                 Adw.Toast(title=_("Failed to load preset"))
                             )
                 self.custom_presets[repo.name] = presets_list
+            elif repo.is_file():
+                print("file")
+                # keep compatiblity with old presets
+                if repo.name.endswith(".json"):
+                    os.rename(repo, os.path.join(
+                        preset_directory, "user", repo.name))
+
+                    try:
+                        with open(
+                            os.path.join(preset_directory, "user", repo), "r", encoding="utf-8"
+                        ) as file:
+                            preset_text = file.read()
+                        preset = json.loads(preset_text)
+                        if preset.get("variables") is None:
+                            raise KeyError("variables")
+                        if preset.get("palette") is None:
+                            raise KeyError("palette")
+                        presets_list["user"][file_name.replace(
+                            ".json", "")] = preset["name"]
+                    except Exception:
+                        self.toast_overlay.add_toast(
+                            Adw.Toast(title=_("Failed to load preset"))
+                        )
+                    print(self.custom_presets)
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
 
