@@ -27,7 +27,6 @@ from yapsy.PluginManager import PluginManager
 from pathlib import Path
 from .modules.utils import buglog
 from .plugin_row import GradiencePluginRow
-from .plugins.hookspec import GradienceHooks
 from .constants import app_id
 
 
