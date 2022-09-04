@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-03 12:13+0000\n"
+"POT-Creation-Date: 2022-09-04 00:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:8
-#: data/ui/window.blp:5 src/main.py:709
+#: data/ui/window.blp:5 src/main.py:708
 msgid "Gradience"
 msgstr ""
 
@@ -27,7 +27,7 @@ msgstr ""
 msgid "Change the look of Adwaita, with ease."
 msgstr ""
 
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:11 src/main.py:711
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:11 src/main.py:710
 msgid "Gradience Team"
 msgstr ""
 
@@ -239,7 +239,8 @@ msgstr ""
 msgid "Offline"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:132 src/presets_manager_window.py:71
+#: data/ui/presets_manager_window.blp:132 src/presets_manager_window.py:69
+#: src/presets_manager_window.py:102
 msgid "Repositories"
 msgstr ""
 
@@ -317,7 +318,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: data/ui/window.blp:23 src/main.py:410 src/window.py:146
+#: data/ui/window.blp:23 src/main.py:409 src/window.py:146
 msgid "Apply"
 msgstr ""
 
@@ -370,88 +371,88 @@ msgstr ""
 msgid "Unexpected file error occurred"
 msgstr ""
 
-#: src/app_type_dialog.py:46 src/main.py:459
+#: src/app_type_dialog.py:46 src/main.py:458 src/presets_manager_window.py:140
 msgid "Cancel"
 msgstr ""
 
-#: src/explore_preset_row.py:57 src/explore_preset_row.py:81
+#: src/explore_preset_row.py:59 src/explore_preset_row.py:84
 msgid "Preset could not be downloaded"
 msgstr ""
 
-#: src/explore_preset_row.py:69 src/explore_preset_row.py:86
+#: src/explore_preset_row.py:72 src/explore_preset_row.py:89
 msgid "Preset downloaded"
 msgstr ""
 
-#: src/main.py:333
+#: src/main.py:332
 msgid "Unsaved changes"
 msgstr ""
 
-#: src/main.py:343
+#: src/main.py:342
 msgid "Save changes"
 msgstr ""
 
-#: src/main.py:407
+#: src/main.py:406
 msgid "Apply this color scheme?"
 msgstr ""
 
-#: src/main.py:408
+#: src/main.py:407
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:420
+#: src/main.py:419
 msgid "Restore applied color scheme?"
 msgstr ""
 
-#: src/main.py:421 src/main.py:433
+#: src/main.py:420 src/main.py:432
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 
-#: src/main.py:423
+#: src/main.py:422
 msgid "Restore"
 msgstr ""
 
-#: src/main.py:432
+#: src/main.py:431
 msgid "Reset applied color scheme?"
 msgstr ""
 
-#: src/main.py:435
+#: src/main.py:434
 msgid "Reset"
 msgstr ""
 
-#: src/main.py:445
+#: src/main.py:444
 msgid "Save preset as..."
 msgstr ""
 
-#: src/main.py:447 src/main.py:473 src/main.py:488
+#: src/main.py:446 src/main.py:472 src/main.py:487
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
 
-#: src/main.py:460
+#: src/main.py:459
 msgid "Save"
 msgstr ""
 
-#: src/main.py:530
+#: src/main.py:529
 msgid "Preset saved"
 msgstr ""
 
-#: src/main.py:622
+#: src/main.py:621
 msgid "Preset set sucessfully"
 msgstr ""
 
-#: src/main.py:665
+#: src/main.py:664
 msgid "Could not restore GTK4 backup"
 msgstr ""
 
-#: src/main.py:699
+#: src/main.py:698
 msgid "Preset reseted"
 msgstr ""
 
-#: src/main.py:743
+#: src/main.py:742
 msgid ""
 "\n"
 "                <ul>\n"
@@ -477,7 +478,7 @@ msgid ""
 "            "
 msgstr ""
 
-#: src/main.py:761
+#: src/main.py:760
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -520,54 +521,65 @@ msgstr ""
 msgid "No plugins found"
 msgstr ""
 
-#: src/preset_row.py:117
-msgid "Preset renamed"
-msgstr ""
-
-#: src/presets_manager_window.py:62 src/presets_manager_window.py:97
-#: src/presets_manager_window.py:234
-msgid "Builtin Presets"
-msgstr ""
-
-#: src/presets_manager_window.py:66 src/presets_manager_window.py:241
-msgid "User Presets"
-msgstr ""
-
-#: src/presets_manager_window.py:80 src/presets_manager_window.py:144
+#: src/preset_row.py:87 src/preset_row.py:153
 msgid "Preset removed"
 msgstr ""
 
-#: src/presets_manager_window.py:83
+#: src/preset_row.py:89
 msgid "Undo"
 msgstr ""
 
-#: src/presets_manager_window.py:140
+#: src/preset_row.py:131
+msgid "Preset renamed"
+msgstr ""
+
+#: src/preset_row.py:149
 msgid "Unable to delete preset"
 msgstr ""
 
-#: src/presets_manager_window.py:180
+#: src/presets_manager_window.py:74 src/presets_manager_window.py:299
+msgid "Builtin Presets"
+msgstr ""
+
+#: src/presets_manager_window.py:78 src/presets_manager_window.py:306
+msgid "User Presets"
+msgstr ""
+
+#: src/presets_manager_window.py:133
+msgid "Add new repository"
+msgstr ""
+
+#: src/presets_manager_window.py:135
+msgid "Add a repository to install additional presets"
+msgstr ""
+
+#: src/presets_manager_window.py:141
+msgid "Add"
+msgstr ""
+
+#: src/presets_manager_window.py:240
 msgid "Preset already exists"
 msgstr ""
 
-#: src/presets_manager_window.py:190
+#: src/presets_manager_window.py:250
 msgid "Preset imported"
 msgstr ""
 
-#: src/presets_manager_window.py:194
+#: src/presets_manager_window.py:254
 msgid "Unsupported file format, must be .json"
 msgstr ""
 
-#: src/presets_manager_window.py:228
+#: src/presets_manager_window.py:292
 msgid "Failed to load preset"
 msgstr ""
 
-#: src/presets_manager_window.py:243
+#: src/presets_manager_window.py:308
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets"
 msgstr ""
 
-#: src/presets_manager_window.py:252
+#: src/presets_manager_window.py:319
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab"
