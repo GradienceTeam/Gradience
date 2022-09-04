@@ -97,6 +97,8 @@ class GradiencePresetRow(Adw.ActionRow):
         )
 
         self.win.old_name = self.name
+        
+        self.do_delete_preset()
 
         self.win.reload_pref_group()
 
@@ -132,8 +134,29 @@ class GradiencePresetRow(Adw.ActionRow):
             )
         self.old_name = self.name
 
-    def on_delete_toast_dismissed(self, widget):
+    def do_delete_preset(self):
+        if self.delete_preset:
+            try:
+                os.rename(os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "presets",
+                    self.prefix,
+                    to_slug_case(self.old_name) + ".json",
+                ), os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "presets",
+                    self.prefix,
+                    to_slug_case(self.old_name) + ".json.to_delete",
+                ))
+            except Exception as exception:
+                print(exception.with_traceback())
+            finally:
+                self.win.reload_pref_group()
 
+        self.delete_preset = True
+    def on_delete_toast_dismissed(self, widget):
         if self.delete_preset:
             try:
                 os.remove(os.path.join(
@@ -141,7 +164,7 @@ class GradiencePresetRow(Adw.ActionRow):
                                    os.environ["HOME"] + "/.config"),
                     "presets",
                     self.prefix,
-                    to_slug_case(self.old_name) + ".json",
+                    to_slug_case(self.old_name) + ".json.to_delete",
                 ))
             except Exception as exception:
                 print(exception.with_traceback())
