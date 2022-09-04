@@ -34,7 +34,36 @@ Gradience is available on Flathub.
 
 ## Building and Installing
 
-### Requirements
+Gradience can be installed using multiple methods.
+
+### Flatpak
+
+Gradience is available on Flathub. You can install it using the following command:
+
+```bash
+flatpak install flathub com.github.GradienceTeam.Gradience
+```
+
+### COPR 
+
+Gradience is available on COPR. You can install it using the following command:
+
+```bash
+dnf copr enable lyessaadi/gradience
+dnf install gradience
+```
+
+### AUR 
+
+Gradience is available on AUR. You can install it using the following command:
+
+```bash
+yay -S gradience # or gradience-git
+```
+
+### Building from source
+
+#### Requirements
 
 - Python 3 `python`
 - PyGObject `python-gobject`
@@ -43,8 +72,6 @@ Gradience is available on Flathub.
 - libadwaita (>= 1.2.alpha) `libadwaita`
 - Meson `meson`
 - Ninja `ninja`
-
-### Building from source
 
 Install required Python libraries:
 
