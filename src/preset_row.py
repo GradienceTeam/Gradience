@@ -177,6 +177,25 @@ class GradiencePresetRow(Adw.ActionRow):
                 )
             finally:
                 self.win.reload_pref_group()
+        else:
+            try:
+                os.rename(os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "presets",
+                    self.prefix,
+                    to_slug_case(self.old_name) + ".json.to_delete",
+                ), os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "presets",
+                    self.prefix,
+                    to_slug_case(self.old_name) + ".json",
+                ))
+            except Exception as exception:
+                print(exception.with_traceback())
+            finally:
+                self.win.reload_pref_group()
 
         self.delete_preset = True
 
