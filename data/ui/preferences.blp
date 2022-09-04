@@ -19,7 +19,7 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
                 }
             }
             Adw.ActionRow {
-                //visible: false;
+                visible: false;
                 title: _("Allow GTK4 Flatpak theming (Global)");
                 subtitle: _("Override Flatpak permissions for all users to allow GTK4 Flatpak applications to access custom themes. (Requires root access)");
                 activatable-widget: allow_gtk4_flatpak_theming_global;
@@ -30,7 +30,7 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
         }
         Adw.PreferencesGroup gtk3_flatpak_group {
             title: _("GTK3 Flatpak Specific");
-            description: _("Remember to install adw-gtk3 theme (as a Flatpak package) in order to get custom presets working in GTK3 applications.");
+            description: _("Remember to install adw-gtk3 theme (as a Flatpak package) in order to get custom presets working in GTK3 Flatpak applications.");
             Adw.ActionRow {
                 title: _("Allow GTK3 Flatpak theming");
                 subtitle: _("Override Flatpak permissions for current user to allow GTK3 Flatpak applications to access adw-gtk3 theme.");
@@ -40,7 +40,7 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
                 }
             }
             Adw.ActionRow {
-                //visible: false;
+                visible: false;
                 title: _("Allow GTK3 Flatpak theming (Global)");
                 subtitle: _("Override Flatpak permissions for all users to allow GTK3 Flatpak applications to access adw-gtk3 theme. (Requires root access)");
                 activatable-widget: allow_gtk3_flatpak_theming_global;

@@ -125,6 +125,11 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):
                     dirs.make_directory_with_parents(None)
                 except GLib.GError as e:
                     buglog(f"Unable to create directories. Exc: {e}")
+                    if is_gtk4:
+                        settings.set_boolean("user-flatpak-theming-gtk4", False)
+                    elif is_gtk3:
+                        settings.set_boolean("user-flatpak-theming-gtk3", False)
+                    return
                 else:
                     buglog("Directories created.")
 
@@ -234,7 +239,7 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
     print(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([
-        self.get_system_flatpak_path(), "global"
+        override_dir, "global"
     ])
 
     global_keyfile = GLib.KeyFile.new()
@@ -260,6 +265,11 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
                     dirs.make_directory_with_parents(None)
                 except GLib.GError as e:
                     buglog(f"Unable to create directories. Exc: {e}")
+                    if is_gtk4:
+                        settings.set_boolean("global-flatpak-theming-gtk4", False)
+                    elif is_gtk3:
+                        settings.set_boolean("global-flatpak-theming-gtk3", False)
+                    return
                 else:
                     buglog("Directories created.")
 
@@ -305,7 +315,7 @@ def remove_gtk_global_override(toast_overlay, settings, gtk_ver):
     print(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([
-        self.get_system_flatpak_path(), "global"
+        override_dir, "global"
     ])
 
     global_keyfile = GLib.KeyFile.new()
