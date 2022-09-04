@@ -97,7 +97,7 @@ class GradiencePresetRow(Adw.ActionRow):
         )
 
         self.win.old_name = self.name
-        
+
         self.do_delete_preset()
 
         self.win.reload_pref_group()
@@ -156,6 +156,7 @@ class GradiencePresetRow(Adw.ActionRow):
                 self.win.reload_pref_group()
 
         self.delete_preset = True
+
     def on_delete_toast_dismissed(self, widget):
         if self.delete_preset:
             try:
