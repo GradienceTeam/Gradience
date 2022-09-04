@@ -22,7 +22,6 @@ import importlib
 import pkgutil
 
 from gi.repository import Gtk, Adw, Gio, Gdk
-import pluggy
 
 from pathlib import Path
 from .modules.utils import buglog
@@ -40,8 +39,6 @@ class GradiencePluginsList:
         self.plugins = {}
         buglog(self.plugins)
 
-        self.pm = pluggy.PluginManager("gradience")
-        self.pm.add_hookspecs(GradienceHooks)
 
     def load_all_custom_settings(self, settings):
         for plugin_id, plugin in self.plugins.items():
