@@ -35,4 +35,4 @@ jobs:
           curl -O https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/pip/flatpak-pip-generator
           chmod +x flatpak-pip-generator
           python -m pip install requirements-parser
-          flatpak-pip-generator --requirements-file=requirements.txt --output pypi-dependencies
+          ./flatpak-pip-generator --requirements-file=requirements.txt --output pypi-dependencies
