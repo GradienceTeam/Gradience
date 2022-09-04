@@ -836,9 +836,9 @@ This app is written in Python and uses GTK 4 and libadwaita.
         custom_css_group.load_custom_css(self.custom_css)
         self.win.content_plugins.add(custom_css_group)
         self.custom_css_group = custom_css_group
-        
+
         plugins_errors = self.plugins_list.validate()
-        
+
         self.props.active_window.update_errors(
             self.global_errors + plugins_errors)
 

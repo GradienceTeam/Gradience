@@ -251,7 +251,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 Adw.Toast(title=_("Select a background first"))
             )
 
-
     def setup_colors_page(self):
         for group in settings_schema["groups"]:
             pref_group = Adw.PreferencesGroup()
