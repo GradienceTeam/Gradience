@@ -36,3 +36,14 @@ jobs:
           chmod +x flatpak-pip-generator
           python -m pip install requirements-parser
           ./flatpak-pip-generator --requirements-file=requirements.txt --output pypi-dependencies
+          mv pypi-dependencies.json build-aux/flatpak/pypi-dependencies.json
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: "ci: update Flatpak pypi dependencies"
+          title: Update `pypi-dependencies.json`
+          body: This is an auto-generated PR with the generation of `pypi-dependencies.json`.
+          labels: flatpak, automated pr
+          committer: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
+          author: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
+          branch: pypi-deps
