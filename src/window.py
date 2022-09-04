@@ -104,9 +104,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 "picture-uri")
         buglog(picture_uri)
         if picture_uri.startswith("file://"):
-            self.monet_image_file = Gio.File.new_for_path(picture_uri)
-        else:
             self.monet_image_file = Gio.File.new_for_uri(picture_uri)
+        else:
+            self.monet_image_file = Gio.File.new_for_path(picture_uri)
         image_basename = self.monet_image_file.get_basename()
         buglog(image_basename)
         self.monet_image_file = self.monet_image_file.get_path()
