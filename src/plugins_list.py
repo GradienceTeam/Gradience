@@ -48,7 +48,6 @@ class GradiencePluginsList:
         for pluginInfo in self.pm.getAllPlugins():
             pluginInfo.plugin_object.activate()
 
-
     def load_all_custom_settings(self, settings):
         for plugin_id, plugin in self.plugins.items():
             plugin.load_custom_settings(settings)
@@ -65,17 +64,27 @@ class GradiencePluginsList:
             _("Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."))
         if self.pm:
             for pluginInfo in self.pm.getAllPlugins():
-                row = GradiencePluginRow( pluginInfo.plugin_object)
-                self.rows[ pluginInfo.plugin_object.plugin_id] = row
+                row = GradiencePluginRow(pluginInfo.plugin_object)
+                self.rows[pluginInfo.plugin_object.plugin_id] = row
                 group.add(row)
         else:
             row = Adw.ActionRow()
             row.set_title(_("No plugins found"))
             group.add(row)
         return group
-    
+
     def save(self):
         saved = {}
         for pluginInfo in self.pm.getAllPlugins():
             saved[pluginInfo.plugin_object.plugin_id] = pluginInfo.plugin_object.save()
         return saved
+
+    def validate(self):
+        errors = []
+        for pluginInfo in self.pm.getAllPlugins():
+            error, detail = pluginInfo.plugin_object.validate()
+            if error:
+                errors.append(
+                    detail
+                )
+        return errors
