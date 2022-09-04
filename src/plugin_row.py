@@ -20,7 +20,7 @@ from gi.repository import Gtk, Gdk, Adw
 
 from .modules.utils import buglog
 from .constants import rootdir
-
+import os
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/plugin_row.ui")
 class GradiencePluginRow(Adw.ActionRow):
@@ -37,14 +37,32 @@ class GradiencePluginRow(Adw.ActionRow):
         switch = Gtk.Template.Child("switch")
         settings_button = Gtk.Template.Child("settings-button")
         remove_button = Gtk.Template.Child("remove-button")
-
+        
     @Gtk.Template.Callback()
     def on_settings_plugin_clicked(self, *_args):
         self.plugin_object.open_settings()
 
     @Gtk.Template.Callback()
     def on_remove_plugin_clicked(self, *_args):
-        buglog("removed")
+        # try:
+        #     os.remove(os.path.join(
+        #         os.environ.get("XDG_CONFIG_HOME",
+        #                         os.environ["HOME"] + "/.config"),
+        #         "gradience_plugins",
+        #         self.plugin_object.plugin_id + "."
+        #     ))
+        # except Exception as exception:
+        #     print(exception.with_traceback())
+        #     self.toast_overlay.add_toast(
+        #         Adw.Toast(title=_("Unable to delete preset"))
+        #     )
+        # else:
+        #     self.toast_overlay.add_toast(
+        #         Adw.Toast(title=_("Preset removed"))
+        #     )
+        # finally:
+        #     self.win.reload_pref_group()
+        print("delete")
 
     @Gtk.Template.Callback()
     def on_switch_toggled(self, *_args):

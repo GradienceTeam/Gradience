@@ -74,6 +74,7 @@ class GradienceApplication(Adw.Application):
         self.first_run = self.settings.get_boolean("first-run")
 
         self.style_manager = Adw.StyleManager.get_default()
+
     def do_activate(self):
         """Called when the application is activated.
 
@@ -451,6 +452,7 @@ class GradienceApplication(Adw.Application):
                     os.environ.get("XDG_CONFIG_HOME",
                                    os.environ["HOME"] + "/.config"),
                     "presets",
+                    "user",
                     to_slug_case(self.preset_name) + ".json",
                 )
             ),
@@ -479,6 +481,7 @@ class GradienceApplication(Adw.Application):
                                 "/.config"
                             ),
                             "presets",
+                            "user",
                         )
                     )
                 )
@@ -494,6 +497,7 @@ class GradienceApplication(Adw.Application):
                                 "/.config"
                             ),
                             "presets",
+                            "user",
                             to_slug_case(preset_entry.get_text()) + ".json",
                         )
                     )
@@ -509,11 +513,25 @@ class GradienceApplication(Adw.Application):
 
     def save_preset(self, _unused, response, entry):
         if response == "save":
+            if not os.path.exists(os.path.join(
+                os.environ.get("XDG_CONFIG_HOME",
+                               os.environ["HOME"] + "/.config"),
+                "presets",
+                "user",
+            )):
+                os.makedirs(os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "presets",
+                    "user",
+                ))
+
             with open(
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
                                    os.environ["HOME"] + "/.config"),
                     "presets",
+                    "user",
                     to_slug_case(entry.get_text()) + ".json",
                 ),
                 "w",
