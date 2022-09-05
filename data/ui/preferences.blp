@@ -9,22 +9,63 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
 
     Adw.PreferencesPage {
         Adw.PreferencesGroup flatpak_group {
-            title: _("Flatpak Specific");
+            title: _("GTK4 Flatpak Specific");
             Adw.ActionRow {
-                title: _("Allow Flatpak theming");
-                subtitle: _("Override Flatpak permissions for current user to allow Flatpak applications to access custom themes.");
-                activatable-widget: allow_flatpak_theming_user;
-                Gtk.Switch allow_flatpak_theming_user {
+                title: _("Allow GTK4 Flatpak theming");
+                subtitle: _("Override Flatpak permissions for current user to allow GTK4 Flatpak applications to access custom themes.");
+                activatable-widget: allow_gtk4_flatpak_theming_user;
+                Gtk.Switch allow_gtk4_flatpak_theming_user {
                     valign: center;
                 }
             }
             Adw.ActionRow {
                 visible: false;
-                title: _("Allow Flatpak theming (Global)");
-                subtitle: _("Override Flatpak permissions for all users to allow Flatpak applications to access custom themes. (Requires root access)");
-                activatable-widget: allow_flatpak_theming_global;
-                Gtk.Switch allow_flatpak_theming_global {
+                title: _("Allow GTK4 Flatpak theming (Global)");
+                subtitle: _("Override Flatpak permissions for all users to allow GTK4 Flatpak applications to access custom themes. (Requires root access)");
+                activatable-widget: allow_gtk4_flatpak_theming_global;
+                Gtk.Switch allow_gtk4_flatpak_theming_global {
                     valign: center;
+                }
+            }
+        }
+        Adw.PreferencesGroup gtk3_flatpak_group {
+            title: _("GTK3 Flatpak Specific");
+            description: _("Remember to install adw-gtk3 theme (as a Flatpak package) in order to get custom presets working in GTK3 Flatpak applications.");
+            Adw.ActionRow {
+                title: _("Allow GTK3 Flatpak theming");
+                subtitle: _("Override Flatpak permissions for current user to allow GTK3 Flatpak applications to access adw-gtk3 theme.");
+                activatable-widget: allow_gtk3_flatpak_theming_user;
+                Gtk.Switch allow_gtk3_flatpak_theming_user {
+                    valign: center;
+                }
+            }
+            Adw.ActionRow {
+                visible: false;
+                title: _("Allow GTK3 Flatpak theming (Global)");
+                subtitle: _("Override Flatpak permissions for all users to allow GTK3 Flatpak applications to access adw-gtk3 theme. (Requires root access)");
+                activatable-widget: allow_gtk3_flatpak_theming_global;
+                Gtk.Switch allow_gtk3_flatpak_theming_global {
+                    valign: center;
+                }
+            }
+        }
+        Adw.PreferencesGroup custom_repository_group {
+            visible: false;
+            title: _("Custom Preset Repositories");
+            Adw.ActionRow {
+                title: _("Custom repository URL address");
+                Gtk.Box {
+                    styles ["linked"]
+                    orientation: horizontal;
+
+                    Gtk.Entry custom_repository_entry {
+                        valign: center;
+                    }
+
+                    Gtk.Button custom_repository_apply {
+                        valign: center;
+                        icon-name: "checkmark-small-symbolic";
+                    }
                 }
             }
         }

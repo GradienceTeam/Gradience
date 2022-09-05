@@ -33,20 +33,18 @@ class GradienceWelcomeWindow(Adw.Window):
     settings = Gtk.Settings.get_default()
 
     carousel = Gtk.Template.Child()
+
     btn_close = Gtk.Template.Child()
     btn_back = Gtk.Template.Child()
     btn_next = Gtk.Template.Child()
     btn_install = Gtk.Template.Child()
-    progressbar = Gtk.Template.Child()
-    page_welcome = Gtk.Template.Child()
-    page_gradience = Gtk.Template.Child()
-    page_configure = Gtk.Template.Child()
-    page_download = Gtk.Template.Child()
-    page_finish = Gtk.Template.Child()
-    img_welcome = Gtk.Template.Child()
-    label_skip = Gtk.Template.Child()
+
     switch_system = Gtk.Template.Child()
     switch_adw_gtk3 = Gtk.Template.Child()
+
+    progressbar = Gtk.Template.Child()
+    img_welcome = Gtk.Template.Child()
+    label_skip = Gtk.Template.Child()
 
     carousel_pages = [
         "welcome",
@@ -120,6 +118,7 @@ class GradienceWelcomeWindow(Adw.Window):
     def quit(widget=False):
         quit()
 
+    # TODO: Add adw-gtk3 check
     def check_adw_gtk3(self):
         buglog("check if adw-gtk3 installed")
         return True

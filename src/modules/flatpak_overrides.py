@@ -24,15 +24,11 @@ from .utils import buglog
 
 
 ''' Custom exception class '''
-
-
 class InvalidGTKVersion(Exception):
     pass
 
 
 ''' Internal helper functions (shouldn't be used outside this file) '''
-
-
 def get_system_flatpak_path():
     systemPath = GLib.getenv("FLATPAK_SYSTEM_DIR")
     buglog(f"systemPath: {systemPath}")
@@ -61,34 +57,42 @@ def get_user_flatpak_path():
     return GLib.build_filenamev([userDataDir, "flatpak"])
 
 
-def user_save_keyfile(toast_overlay, settings, user_keyfile, filename):
+def user_save_keyfile(toast_overlay, settings, user_keyfile, filename, gtk_ver):
     try:
         user_keyfile.save_to_file(filename)
     except Glib.GError as e:
         toast_overlay.add_toast(Adw.Toast(title=_("Failed to save override")))
         buglog(f"Failed to save keyfile structure to override. Exc: {e}")
     else:
-        settings.set_boolean("user-flatpak-theming", True)
-        buglog(
-            f"user-flatpak-theming: {settings.get_boolean('user-flatpak-theming')}")
+        if gtk_ver == "gtk4":
+            settings.set_boolean("user-flatpak-theming-gtk4", True)
+            buglog(
+                f"user-flatpak-theming-gtk4: {settings.get_boolean('user-flatpak-theming-gtk4')}")
+        elif gtk_ver == "gtk3":
+            settings.set_boolean("user-flatpak-theming-gtk3", True)
+            buglog(
+                f"user-flatpak-theming-gtk3: {settings.get_boolean('user-flatpak-theming-gtk3')}")
 
 
-def global_save_keyfile(toast_overlay, settings, global_keyfile, filename):
+def global_save_keyfile(toast_overlay, settings, global_keyfile, filename, gtk_ver):
     try:
         global_keyfile.save_to_file(filename)
     except Glib.GError as e:
         toast_overlay.add_toast(Adw.Toast(title=_("Failed to save override")))
         buglog(f"Failed to save keyfile structure to override. Exc: {e}")
     else:
-        settings.set_boolean("global-flatpak-theming", True)
-        buglog(
-            f"global-flatpak-theming: {settings.get_boolean('global-flatpak-theming')}")
+        if gtk_ver == "gtk4":
+            settings.set_boolean("global-flatpak-theming-gtk4", True)
+            buglog(
+                f"global-flatpak-theming-gtk4: {settings.get_boolean('global-flatpak-theming-gtk4')}")
+        elif gtk_ver == "gtk3":
+            settings.set_boolean("global-flatpak-theming-gtk3", True)
+            buglog(
+                f"global-flatpak-theming-gtk3: {settings.get_boolean('global-flatpak-theming-gtk3')}")
 
 
 ''' Main functions '''
-
-
-def create_gtk_user_override(toast_overlay, settings, gtk_ver):  # gtk_ver: gtk4, gtk3
+def create_gtk_user_override(toast_overlay, settings, gtk_ver):
     override_dir = GLib.build_filenamev([
         get_user_flatpak_path(), "overrides"
     ])
@@ -100,13 +104,15 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):  # gtk_ver: gtk4
 
     user_keyfile = GLib.KeyFile.new()
 
-    if gtk_ver == "gtk4":
+    is_gtk4 = gtk_ver == "gtk4"
+    is_gtk3 = gtk_ver == "gtk3"
+    if is_gtk4:
         gtk_path = "xdg-config/gtk-4.0"
-    elif gtk_ver == "gtk3":
+    elif is_gtk3:
         gtk_path = "xdg-config/gtk-3.0"
     else:
         raise InvalidGTKVersion(
-            "Invalid GTK version chosen. Please choose between two options: gtk4, gtk3")
+            f"Invalid GTK version chosen: {gtk_ver}. Please choose between two options: gtk4, gtk3")
 
     try:
         user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
@@ -119,6 +125,11 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):  # gtk_ver: gtk4
                     dirs.make_directory_with_parents(None)
                 except GLib.GError as e:
                     buglog(f"Unable to create directories. Exc: {e}")
+                    if is_gtk4:
+                        settings.set_boolean("user-flatpak-theming-gtk4", False)
+                    elif is_gtk3:
+                        settings.set_boolean("user-flatpak-theming-gtk3", False)
+                    return
                 else:
                     buglog("Directories created.")
 
@@ -128,7 +139,8 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):  # gtk_ver: gtk4
             user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
             user_keyfile.set_string("Context", "filesystems", gtk_path)
 
-            user_save_keyfile(toast_overlay, settings, user_keyfile, filename)
+            user_save_keyfile(
+                toast_overlay, settings, user_keyfile, filename, gtk_ver)
         else:
             toast_overlay.add_toast(
                 Adw.Toast(
@@ -140,19 +152,23 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):  # gtk_ver: gtk4
                 "Context", "filesystems")
         except GLib.GError:
             user_keyfile.set_string("Context", "filesystems", gtk_path)
-            user_save_keyfile(toast_overlay, settings, user_keyfile, filename)
+            user_save_keyfile(
+                toast_overlay, settings, user_keyfile, filename, gtk_ver)
         else:
             if gtk_path not in filesys_list:
                 user_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list + [gtk_path])
                 user_save_keyfile(
-                    toast_overlay, settings, user_keyfile, filename)
+                    toast_overlay, settings, user_keyfile, filename, gtk_ver)
             else:
-                settings.set_boolean("user-flatpak-theming", True)
+                if is_gtk4:
+                    settings.set_boolean("user-flatpak-theming-gtk4", True)
+                elif is_gtk3:
+                    settings.set_boolean("user-flatpak-theming-gtk3", True)
                 buglog("Value already exists.")
 
 
-def remove_gtk_user_override(toast_overlay, settings, gtk_ver):  # gtk_ver: gtk4, gtk3
+def remove_gtk_user_override(toast_overlay, settings, gtk_ver):
     override_dir = GLib.build_filenamev([
         get_user_flatpak_path(), "overrides"
     ])
@@ -164,19 +180,27 @@ def remove_gtk_user_override(toast_overlay, settings, gtk_ver):  # gtk_ver: gtk4
 
     user_keyfile = GLib.KeyFile.new()
 
-    if gtk_ver == "gtk4":
+    is_gtk4 = gtk_ver == "gtk4"
+    is_gtk3 = gtk_ver == "gtk3"
+    if is_gtk4:
         gtk_path = "xdg-config/gtk-4.0"
-    elif gtk_ver == "gtk3":
+    elif is_gtk3:
         gtk_path = "xdg-config/gtk-3.0"
     else:
         raise InvalidGTKVersion(
-            "Invalid GTK version chosen. Please choose between two options: gtk4, gtk3")
+            f"Invalid GTK version chosen: {gtk_ver}. Please choose between two options: gtk4, gtk3")
+
+    def set_theming():
+        if is_gtk4:
+            settings.set_boolean("user-flatpak-theming-gtk4", False)
+        elif is_gtk3:
+            settings.set_boolean("user-flatpak-theming-gtk3", False)
 
     try:
         user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
     except GLib.GError as e:
         if e.code == 4:
-            settings.set_boolean("user-flatpak-theming", False)
+            set_theming()
             buglog("remove override: File doesn't exist")
         else:
             toast_overlay.add_toast(
@@ -188,7 +212,7 @@ def remove_gtk_user_override(toast_overlay, settings, gtk_ver):  # gtk_ver: gtk4
             filesys_list = user_keyfile.get_string_list(
                 "Context", "filesystems")
         except GLib.GError:
-            settings.set_boolean("user-flatpak-theming", False)
+            set_theming()
             buglog("remove override: Group/key not found.")
         else:
             if gtk_path in filesys_list:
@@ -199,18 +223,15 @@ def remove_gtk_user_override(toast_overlay, settings, gtk_ver):  # gtk_ver: gtk4
                 user_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list)
                 user_save_keyfile(
-                    toast_overlay, settings, user_keyfile, filename)
+                    toast_overlay, settings, user_keyfile, filename, gtk_ver)
                 buglog("remove override: Value removed.")
             else:
-                settings.set_boolean("user-flatpak-theming", False)
+                set_theming()
                 buglog("remove override: Value not found.")
 
 
 ''' Do not use this functions for now, as they are lacking authentication'''
 # TODO: Implement user authentication using Polkit
-
-
-# gtk_ver: gtk4, gtk3
 def create_gtk_global_override(toast_overlay, settings, gtk_ver):
     override_dir = GLib.build_filenamev([
         get_system_flatpak_path(), "overrides"
@@ -218,18 +239,20 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
     print(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([
-        self.get_system_flatpak_path(), "global"
+        override_dir, "global"
     ])
 
     global_keyfile = GLib.KeyFile.new()
 
-    if gtk_ver == "gtk4":
+    is_gtk4 = gtk_ver == "gtk4"
+    is_gtk3 = gtk_ver == "gtk3"
+    if is_gtk4:
         gtk_path = "xdg-config/gtk-4.0"
-    elif gtk_ver == "gtk3":
+    elif is_gtk3:
         gtk_path = "xdg-config/gtk-3.0"
     else:
         raise InvalidGTKVersion(
-            "Invalid GTK version chosen. Please choose between two options: gtk4, gtk3")
+            f"Invalid GTK version chosen: {gtk_ver}. Please choose between two options: gtk4, gtk3")
 
     try:
         global_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
@@ -242,6 +265,11 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
                     dirs.make_directory_with_parents(None)
                 except GLib.GError as e:
                     buglog(f"Unable to create directories. Exc: {e}")
+                    if is_gtk4:
+                        settings.set_boolean("global-flatpak-theming-gtk4", False)
+                    elif is_gtk3:
+                        settings.set_boolean("global-flatpak-theming-gtk3", False)
+                    return
                 else:
                     buglog("Directories created.")
 
@@ -252,10 +280,7 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
             global_keyfile.set_string("Context", "filesystems", gtk_path)
 
             global_save_keyfile(
-                toast_overlay,
-                settings,
-                global_keyfile,
-                filename)
+                toast_overlay, settings, global_keyfile, filename, gtk_ver)
         else:
             toast_overlay.add_toast(
                 Adw.Toast(
@@ -268,22 +293,21 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
         except GLib.GError:
             global_keyfile.set_string("Context", "filesystems", gtk_path)
             global_save_keyfile(
-                toast_overlay,
-                settings,
-                global_keyfile,
-                filename)
+                toast_overlay, settings, global_keyfile, filename, gtk_ver)
         else:
             if gtk_path not in filesys_list:
                 global_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list + [gtk_path])
                 global_save_keyfile(
-                    toast_overlay, settings, global_keyfile, filename)
+                    toast_overlay, settings, global_keyfile, filename, gtk_ver)
             else:
-                settings.set_boolean("global-flatpak-theming", True)
+                if is_gtk4:
+                    settings.set_boolean("global-flatpak-theming-gtk4", True)
+                elif is_gtk3:
+                    settings.set_boolean("global-flatpak-theming-gtk3", True)
                 buglog("Value already exists.")
 
 
-# gtk_ver: gtk4, gtk3
 def remove_gtk_global_override(toast_overlay, settings, gtk_ver):
     override_dir = GLib.build_filenamev([
         get_system_flatpak_path(), "overrides"
@@ -291,24 +315,32 @@ def remove_gtk_global_override(toast_overlay, settings, gtk_ver):
     print(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([
-        self.get_system_flatpak_path(), "global"
+        override_dir, "global"
     ])
 
     global_keyfile = GLib.KeyFile.new()
 
-    if gtk_ver == "gtk4":
+    is_gtk4 = gtk_ver == "gtk4"
+    is_gtk3 = gtk_ver == "gtk3"
+    if is_gtk4:
         gtk_path = "xdg-config/gtk-4.0"
-    elif gtk_ver == "gtk3":
+    elif is_gtk3:
         gtk_path = "xdg-config/gtk-3.0"
     else:
         raise InvalidGTKVersion(
-            "Invalid GTK version chosen. Please choose between two options: gtk4, gtk3")
+            f"Invalid GTK version chosen: {gtk_ver}. Please choose between two options: gtk4, gtk3")
+
+    def set_theming():
+        if is_gtk4:
+            settings.set_boolean("user-flatpak-theming-gtk4", False)
+        elif is_gtk3:
+            settings.set_boolean("user-flatpak-theming-gtk3", False)
 
     try:
         global_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
     except GLib.GError as e:
         if e.code == 4:
-            settings.set_boolean("global-flatpak-theming", False)
+            set_theming()
             buglog("remove override: File doesn't exist")
         else:
             toast_overlay.add_toast(
@@ -320,7 +352,7 @@ def remove_gtk_global_override(toast_overlay, settings, gtk_ver):
             filesys_list = global_keyfile.get_string_list(
                 "Context", "filesystems")
         except GLib.GError:
-            settings.set_boolean("global-flatpak-theming", False)
+            set_theming()
             buglog("remove override: Group/key not found.")
         else:
             if gtk_path in filesys_list:
@@ -331,8 +363,8 @@ def remove_gtk_global_override(toast_overlay, settings, gtk_ver):
                 global_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list)
                 global_save_keyfile(
-                    toast_overlay, settings, global_keyfile, filename)
+                    toast_overlay, settings, global_keyfile, filename, gtk_ver)
                 buglog("remove override: Value removed.")
             else:
-                settings.set_boolean("global-flatpak-theming", False)
+                set_theming()
                 buglog("remove override: Value not found.")
