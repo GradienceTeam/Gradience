@@ -57,7 +57,12 @@ def get_user_flatpak_path():
     return GLib.build_filenamev([userDataDir, "flatpak"])
 
 
-def user_save_keyfile(toast_overlay, settings, user_keyfile, filename, gtk_ver):
+def user_save_keyfile(
+        toast_overlay,
+        settings,
+        user_keyfile,
+        filename,
+        gtk_ver):
     try:
         user_keyfile.save_to_file(filename)
     except Glib.GError as e:
@@ -74,7 +79,12 @@ def user_save_keyfile(toast_overlay, settings, user_keyfile, filename, gtk_ver):
                 f"user-flatpak-theming-gtk3: {settings.get_boolean('user-flatpak-theming-gtk3')}")
 
 
-def global_save_keyfile(toast_overlay, settings, global_keyfile, filename, gtk_ver):
+def global_save_keyfile(
+        toast_overlay,
+        settings,
+        global_keyfile,
+        filename,
+        gtk_ver):
     try:
         global_keyfile.save_to_file(filename)
     except Glib.GError as e:
@@ -126,9 +136,11 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):
                 except GLib.GError as e:
                     buglog(f"Unable to create directories. Exc: {e}")
                     if is_gtk4:
-                        settings.set_boolean("user-flatpak-theming-gtk4", False)
+                        settings.set_boolean(
+                            "user-flatpak-theming-gtk4", False)
                     elif is_gtk3:
-                        settings.set_boolean("user-flatpak-theming-gtk3", False)
+                        settings.set_boolean(
+                            "user-flatpak-theming-gtk3", False)
                     return
                 else:
                     buglog("Directories created.")
@@ -266,9 +278,11 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
                 except GLib.GError as e:
                     buglog(f"Unable to create directories. Exc: {e}")
                     if is_gtk4:
-                        settings.set_boolean("global-flatpak-theming-gtk4", False)
+                        settings.set_boolean(
+                            "global-flatpak-theming-gtk4", False)
                     elif is_gtk3:
-                        settings.set_boolean("global-flatpak-theming-gtk3", False)
+                        settings.set_boolean(
+                            "global-flatpak-theming-gtk3", False)
                     return
                 else:
                     buglog("Directories created.")
