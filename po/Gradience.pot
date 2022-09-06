@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-05 12:16+0000\n"
+"POT-Creation-Date: 2022-09-06 00:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -161,27 +161,65 @@ msgid "Preferences"
 msgstr ""
 
 #: data/ui/preferences.blp:12
-msgid "Flatpak Specific"
+msgid "GTK4 Flatpak Specific"
 msgstr ""
 
 #: data/ui/preferences.blp:14
-msgid "Allow Flatpak theming"
+msgid "Allow GTK4 Flatpak theming"
 msgstr ""
 
 #: data/ui/preferences.blp:15
 msgid ""
-"Override Flatpak permissions for current user to allow Flatpak applications "
-"to access custom themes."
+"Override Flatpak permissions for current user to allow GTK4 Flatpak "
+"applications to access custom themes."
 msgstr ""
 
 #: data/ui/preferences.blp:23
-msgid "Allow Flatpak theming (Global)"
+msgid "Allow GTK4 Flatpak theming (Global)"
 msgstr ""
 
 #: data/ui/preferences.blp:24
 msgid ""
-"Override Flatpak permissions for all users to allow Flatpak applications to "
-"access custom themes. (Requires root access)"
+"Override Flatpak permissions for all users to allow GTK4 Flatpak "
+"applications to access custom themes. (Requires root access)"
+msgstr ""
+
+#: data/ui/preferences.blp:32
+msgid "GTK3 Flatpak Specific"
+msgstr ""
+
+#: data/ui/preferences.blp:33
+msgid ""
+"Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
+"custom presets working in GTK3 Flatpak applications."
+msgstr ""
+
+#: data/ui/preferences.blp:35
+msgid "Allow GTK3 Flatpak theming"
+msgstr ""
+
+#: data/ui/preferences.blp:36
+msgid ""
+"Override Flatpak permissions for current user to allow GTK3 Flatpak "
+"applications to access adw-gtk3 theme."
+msgstr ""
+
+#: data/ui/preferences.blp:44
+msgid "Allow GTK3 Flatpak theming (Global)"
+msgstr ""
+
+#: data/ui/preferences.blp:45
+msgid ""
+"Override Flatpak permissions for all users to allow GTK3 Flatpak "
+"applications to access adw-gtk3 theme. (Requires root access)"
+msgstr ""
+
+#: data/ui/preferences.blp:54
+msgid "Custom Preset Repositories"
+msgstr ""
+
+#: data/ui/preferences.blp:56
+msgid "Custom repository URL address"
 msgstr ""
 
 #: data/ui/preset_row.blp:28
@@ -362,12 +400,12 @@ msgstr ""
 msgid "GTK4 Widget Factory"
 msgstr ""
 
-#: src/modules/flatpak_overrides.py:68 src/modules/flatpak_overrides.py:80
+#: src/modules/flatpak_overrides.py:69 src/modules/flatpak_overrides.py:91
 msgid "Failed to save override"
 msgstr ""
 
-#: src/modules/flatpak_overrides.py:135 src/modules/flatpak_overrides.py:184
-#: src/modules/flatpak_overrides.py:262 src/modules/flatpak_overrides.py:316
+#: src/modules/flatpak_overrides.py:159 src/modules/flatpak_overrides.py:220
+#: src/modules/flatpak_overrides.py:301 src/modules/flatpak_overrides.py:362
 msgid "Unexpected file error occurred"
 msgstr ""
 
