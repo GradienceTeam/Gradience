@@ -36,6 +36,11 @@ Gradience is available on Flathub.
 
 Gradience can be installed using multiple methods.
 
+- Flathub (Recommended)
+- As RPM package
+- As DEB package (not available yet)
+- From AUR
+
 ### Flatpak
 
 Gradience is available on Flathub. You can install it using the following command:
@@ -52,6 +57,10 @@ Gradience is available on COPR. You can install it using the following command:
 dnf copr enable lyessaadi/gradience
 dnf install gradience
 ```
+
+### Debian (And derivates)
+
+Not available yet
 
 ### AUR 
 
