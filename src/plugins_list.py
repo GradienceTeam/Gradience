@@ -23,19 +23,23 @@ from yapsy.PluginManager import PluginManager
 from .plugin_row import GradiencePluginRow
 
 
+USER_PLUGIN_DIR = os.path.join(
+    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+    "gradience",
+    "plugins",
+)
+
+
 class GradiencePluginsList:
     def __init__(self, win):
 
         self.win = win
 
         self.pm = PluginManager()
+
         self.pm.setPluginPlaces(
             [
-                os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "gradience_plugins",
-                )
+                USER_PLUGIN_DIR,
             ]
         )
         self.pm.collectPlugins()
@@ -43,15 +47,6 @@ class GradiencePluginsList:
 
         for pluginInfo in self.pm.getAllPlugins():
             pluginInfo.plugin_object.activate()
-
-    def load_all_custom_settings(self, settings):
-        for plugin_id, plugin in self.plugins.items():
-            plugin.load_custom_settings(settings)
-
-    def get_all_custom_settings_for_preset(self):
-        custom_settings = {}
-        for plugin_id, plugin in self.plugins.items():
-            custom_settings[plugin_id] = plugin.get_custom_settings_for_preset()
 
     def to_group(self):
         group = Adw.PreferencesGroup()
