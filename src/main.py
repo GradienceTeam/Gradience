@@ -325,8 +325,9 @@ class GradienceApplication(Adw.Application):
         )
         self.props.active_window.save_preset_button.add_css_class("warning")
 
-        self.props.active_window.save_preset_button.get_child(
-        ).set_tooltip_text(_("Unsaved changes"))
+        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
+            _("Unsaved changes")
+        )
 
     def clear_dirty(self):
         self.is_dirty = False
@@ -335,8 +336,9 @@ class GradienceApplication(Adw.Application):
         )
         self.props.active_window.save_preset_button.remove_css_class("warning")
         self.props.active_window.save_preset_button.get_child().set_label("")
-        self.props.active_window.save_preset_button.get_child(
-        ).set_tooltip_text(_("Save changes"))
+        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
+            _("Save changes")
+        )
 
     def reload_variables(self):
         parsing_errors = []
@@ -394,7 +396,9 @@ class GradienceApplication(Adw.Application):
     def show_apply_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
             _("Apply this color scheme?"),
-            _("Warning: any custom CSS files for those app types will be irreversibly overwritten!"),
+            _(
+                "Warning: any custom CSS files for those app types will be irreversibly overwritten!"
+            ),
             "apply",
             _("Apply"),
             Adw.ResponseAppearance.SUGGESTED,
