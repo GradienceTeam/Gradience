@@ -120,7 +120,8 @@ class GradienceWelcomeWindow(Adw.Window):
         sys.exit()
 
     # TODO: Add adw-gtk3 check
-    def check_adw_gtk3(self):
+    @staticmethod
+    def check_adw_gtk3():
         buglog("check if adw-gtk3 installed")
         return True
 

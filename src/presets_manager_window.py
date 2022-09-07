@@ -211,10 +211,12 @@ class GradiencePresetWindow(Adw.Window):
         self.search_entry.connect("search-changed", self.on_search_changed)
         self.search_entry.connect("realize", self.on_search_realize)
 
-    def on_search_changed(self, widget):
+    @staticmethod
+    def on_search_changed(widget):
         print("search changed")
 
-    def on_search_realize(self, widget):
+    @staticmethod
+    def on_search_realize(widget):
         print("search realized")
 
     @Gtk.Template.Callback()
