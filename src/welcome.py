@@ -16,6 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+import sys
 import time
 
 from gi.repository import Gtk, Adw, Gio, Gdk
@@ -116,7 +117,7 @@ class GradienceWelcomeWindow(Adw.Window):
 
     @staticmethod
     def quit(widget=False):
-        quit()
+        sys.exit()
 
     # TODO: Add adw-gtk3 check
     def check_adw_gtk3(self):
