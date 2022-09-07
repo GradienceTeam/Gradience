@@ -31,6 +31,7 @@ from .modules.custom_presets import fetch_presets
 from .constants import rootdir, build_type
 from .modules.utils import to_slug_case
 from .repo_row import GradienceRepoRow
+
 PRESETS_LIST_URL = "https://github.com/GradienceTeam/Community/raw/main/presets.json"
 
 
@@ -55,7 +56,8 @@ class GradiencePresetWindow(Adw.Window):
     custom_presets = {}
 
     official_repositories = {
-        "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"}
+        "Official": "https://github.com/GradienceTeam/Community/raw/main/presets.json"
+    }
 
     search_results_list = []
 
@@ -90,9 +92,8 @@ class GradiencePresetWindow(Adw.Window):
         self.save_repos()
 
     def save_repos(self):
-        self.settings.set_value(
-            "repos", GLib.Variant(
-                "a{sv}", self.user_repositories))
+        self.settings.set_value("repos", GLib.Variant(
+            "a{sv}", self.user_repositories))
         self.reload_repos_group()
         self.setup_explore()
 
@@ -131,16 +132,13 @@ class GradiencePresetWindow(Adw.Window):
         dialog = Adw.MessageDialog(
             transient_for=self,
             heading=_("Add new repository"),
-            body=_(
-                "Add a repository to install additional presets"
-            ),
+            body=_("Add a repository to install additional presets"),
             body_use_markup=True,
         )
 
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("add", _("Add"))
-        dialog.set_response_appearance(
-            "add", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_response_appearance("add", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
 
@@ -191,9 +189,11 @@ class GradiencePresetWindow(Adw.Window):
                 self.search_spinner.props.visible = False
 
                 for (preset, preset_name), preset_url in zip(
-                        self.explore_presets.items(), urls):
+                    self.explore_presets.items(), urls
+                ):
                     row = GradienceExplorePresetRow(
-                        preset_name, preset_url, self, repo_name)
+                        preset_name, preset_url, self, repo_name
+                    )
                     self.search_results.append(row)
                     self.search_results_list.append(row)
         if not_offline:
@@ -205,8 +205,7 @@ class GradiencePresetWindow(Adw.Window):
         self.file_chooser_dialog.set_transient_for(self)
 
         self.file_chooser_dialog.connect(
-            "response", self.on_file_chooser_response
-        )
+            "response", self.on_file_chooser_response)
 
     def connect_signals(self):
         self.search_entry.connect("search-changed", self.on_search_changed)
@@ -240,18 +239,23 @@ class GradiencePresetWindow(Adw.Window):
                         Adw.Toast(title=_("Preset already exists"))
                     )
                 else:
-                    shutil.copy(self.preset_path.get_path(), os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME",
-                                       os.environ["HOME"] + "/.config"),
-                        "presets",
-                        preset_file
-                    ))
-                    self.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Preset imported"))
+                    shutil.copy(
+                        self.preset_path.get_path(),
+                        os.path.join(
+                            os.environ.get(
+                                "XDG_CONFIG_HOME", os.environ["HOME"] +
+                                "/.config"
+                            ),
+                            "presets",
+                            preset_file,
+                        ),
                     )
+                    self.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Preset imported")))
             else:
-                self.toast_overlay.add_toast(Adw.Toast(
-                    title=_("Unsupported file format, must be .json")))
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unsupported file format, must be .json"))
+                )
 
         self.reload_pref_group()
 
@@ -277,7 +281,9 @@ class GradiencePresetWindow(Adw.Window):
                     if file_name.endswith(".json"):
                         try:
                             with open(
-                                os.path.join(preset_directory, file_name), "r", encoding="utf-8"
+                                os.path.join(preset_directory, file_name),
+                                "r",
+                                encoding="utf-8",
                             ) as file:
                                 preset_text = file.read()
                             preset = json.loads(preset_text)
@@ -285,8 +291,9 @@ class GradiencePresetWindow(Adw.Window):
                                 raise KeyError("variables")
                             if preset.get("palette") is None:
                                 raise KeyError("palette")
-                            presets_list[file_name.replace(
-                                ".json", "")] = preset["name"]
+                            presets_list[file_name.replace(".json", "")] = preset[
+                                "name"
+                            ]
                         except Exception:
                             self.toast_overlay.add_toast(
                                 Adw.Toast(title=_("Failed to load preset"))
@@ -301,7 +308,9 @@ class GradiencePresetWindow(Adw.Window):
 
                     try:
                         with open(
-                            os.path.join(preset_directory, "user", repo), "r", encoding="utf-8"
+                            os.path.join(preset_directory, "user", repo),
+                            "r",
+                            encoding="utf-8",
                         ) as file:
                             preset_text = file.read()
                         preset = json.loads(preset_text)
@@ -309,8 +318,9 @@ class GradiencePresetWindow(Adw.Window):
                             raise KeyError("variables")
                         if preset.get("palette") is None:
                             raise KeyError("palette")
-                        presets_list["user"][file_name.replace(
-                            ".json", "")] = preset["name"]
+                        presets_list["user"][file_name.replace(".json", "")] = preset[
+                            "name"
+                        ]
                     except Exception:
                         self.toast_overlay.add_toast(
                             Adw.Toast(title=_("Failed to load preset"))
@@ -329,7 +339,10 @@ class GradiencePresetWindow(Adw.Window):
         self.preset_list = Adw.PreferencesGroup()
         self.preset_list.set_title(_("User Presets"))
         self.preset_list.set_description(
-            _("See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on Github for more presets"))
+            _(
+                'See <a href="https://github.com/GradienceTeam/Community">GradienceTeam/Community</a> on Github for more presets'
+            )
+        )
 
         if self.custom_presets:
             for repo, presets in self.custom_presets.items():
@@ -340,6 +353,9 @@ class GradiencePresetWindow(Adw.Window):
         else:
             self.preset_empty = Adw.ActionRow()
             self.preset_empty.set_title(
-                _("No preset found! Use the import button to import one or search one on the Explore tab"))
+                _(
+                    "No preset found! Use the import button to import one or search one on the Explore tab"
+                )
+            )
             self.preset_list.add(self.preset_empty)
         self.installed.add(self.preset_list)

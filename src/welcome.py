@@ -22,7 +22,10 @@ from gi.repository import Gtk, Adw, Gio, Gdk
 
 from .run_async import RunAsync
 from .modules.utils import buglog
-from .modules.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
+from .modules.flatpak_overrides import (
+    create_gtk_user_override,
+    remove_gtk_user_override,
+)
 from .constants import rootdir, app_id
 
 
@@ -46,13 +49,8 @@ class GradienceWelcomeWindow(Adw.Window):
     img_welcome = Gtk.Template.Child()
     label_skip = Gtk.Template.Child()
 
-    carousel_pages = [
-        "welcome",
-        "gradience",
-        "configure",
-        "download",
-        "finish"
-    ]
+    carousel_pages = ["welcome", "gradience",
+                      "configure", "download", "finish"]
     images = [
         f"{rootdir}/images/welcome.svg",
         f"{rootdir}/images/welcome-dark.svg",
@@ -69,14 +67,14 @@ class GradienceWelcomeWindow(Adw.Window):
 
         # connect signals
         self.connect("close-request", self.quit)
-        self.carousel.connect('page-changed', self.page_changed)
+        self.carousel.connect("page-changed", self.page_changed)
         self.btn_close.connect("clicked", self.close_window)
         self.btn_back.connect("clicked", self.previous_page)
         self.btn_next.connect("clicked", self.next_page)
         self.btn_install.connect("clicked", self.install_runner)
         self.settings.connect(
-            "notify::gtk-application-prefer-dark-theme",
-            self.theme_changed)
+            "notify::gtk-application-prefer-dark-theme", self.theme_changed
+        )
 
         self.btn_close.set_sensitive(False)
 
@@ -87,7 +85,9 @@ class GradienceWelcomeWindow(Adw.Window):
 
     def theme_changed(self, settings, key):
         self.img_welcome.set_from_resource(
-            self.images[settings.get_property("gtk-application-prefer-dark-theme")])
+            self.images[settings.get_property(
+                "gtk-application-prefer-dark-theme")]
+        )
 
     def get_page(self, index):
         return self.carousel_pages[index]
@@ -134,7 +134,8 @@ class GradienceWelcomeWindow(Adw.Window):
     def allow_flatpak_theming_user_toggled(self, *args):
         create_gtk_user_override(self, self.gio_settings, "gtk4")
         buglog(
-            f"user-flatpak-theming: {self.gio_settings.get_boolean('user-flatpak-theming')}")
+            f"user-flatpak-theming: {self.gio_settings.get_boolean('user-flatpak-theming')}"
+        )
 
     def install_runner(self, widget):
         def set_completed(result, error=False):
@@ -179,7 +180,7 @@ class GradienceWelcomeWindow(Adw.Window):
     def pulse(self):
         # This function update the progress bar every 1s.
         while True:
-            time.sleep(.5)
+            time.sleep(0.5)
             self.progressbar.pulse()
 
     def close_window(self, widget):

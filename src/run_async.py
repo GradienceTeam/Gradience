@@ -51,13 +51,15 @@ class RunAsync(threading.Thread):
         try:
             result = self.task_func(*args, **kwargs)
         except Exception as exception:
-            buglog("Error while running async job: "
-                   f"{self.task_func}\nException: {exception}")
+            buglog(
+                "Error while running async job: "
+                f"{self.task_func}\nException: {exception}"
+            )
 
             error = exception
             _ex_type, _ex_value, trace = sys.exc_info()
             traceback.print_tb(trace)
-            traceback_info = '\n'.join(traceback.format_tb(trace))
+            traceback_info = "\n".join(traceback.format_tb(trace))
 
             buglog([str(exception), traceback_info])
         self.source_id = GLib.idle_add(self.callback, result, error)

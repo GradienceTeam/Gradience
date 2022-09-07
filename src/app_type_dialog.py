@@ -37,7 +37,7 @@ class GradienceAppTypeDialog(Adw.MessageDialog):
         ok_response_name,
         ok_response_label,
         ok_response_appearance,
-        **kwargs
+        **kwargs,
     ):
         super().__init__(**kwargs)
         self.set_heading(heading)

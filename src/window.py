@@ -64,27 +64,19 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.settings = Gio.Settings(app_id)
 
         self.settings.bind(
-            "window-width",
-            self,
-            "default-width",
-            Gio.SettingsBindFlags.DEFAULT)
+            "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT
+        )
 
         self.settings.bind(
-            "window-height",
-            self,
-            "default-height",
-            Gio.SettingsBindFlags.DEFAULT)
+            "window-height", self, "default-height", Gio.SettingsBindFlags.DEFAULT
+        )
         self.settings.bind(
-            "window-maximized",
-            self,
-            "maximized",
-            Gio.SettingsBindFlags.DEFAULT)
+            "window-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT
+        )
 
         self.settings.bind(
-            "window-fullscreen",
-            self,
-            "fullscreened",
-            Gio.SettingsBindFlags.DEFAULT)
+            "window-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT
+        )
 
         self.connect("close-request", self.__close_window)
         self.style_manager = self.get_application().style_manager
@@ -97,11 +89,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
         if self.style_manager.get_dark():
-            picture_uri = background_settings.get_string(
-                "picture-uri-dark")
+            picture_uri = background_settings.get_string("picture-uri-dark")
         else:
-            picture_uri = background_settings.get_string(
-                "picture-uri")
+            picture_uri = background_settings.get_string("picture-uri")
         buglog(picture_uri)
         if picture_uri.startswith("file://"):
             self.monet_image_file = Gio.File.new_for_uri(picture_uri)
@@ -128,8 +118,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             self.monet_image_file = self.monet_file_chooser_dialog.get_file()
             image_basename = self.monet_image_file.get_basename()
             self.monet_file_chooser_button.set_label(image_basename)
-            self.monet_file_chooser_button.set_tooltip_text(
-                image_basename)
+            self.monet_file_chooser_button.set_tooltip_text(image_basename)
         self.monet_file_chooser_dialog.hide()
 
         if response == Gtk.ResponseType.ACCEPT:
@@ -142,7 +131,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_name("monet")
         self.monet_pref_group.set_title(_("Monet Engine"))
         self.monet_pref_group.set_description(
-            _("Monet is an engine that generates a Material Design 3 palette from an image's color."))
+            _(
+                "Monet is an engine that generates a Material Design 3 palette from an image's color."
+            )
+        )
 
         self.apply_button = Gtk.Button()
         self.apply_button.set_label(_("Apply"))
@@ -158,7 +150,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.monet_file_chooser_button = Gtk.Button()
         self.monet_file_chooser_button.set_valign(Gtk.Align.CENTER)
-        #self.monet_file_chooser_button.set_label(_("Choose a file"))
+        # self.monet_file_chooser_button.set_label(_("Choose a file"))
         # self.monet_file_chooser_button.set_icon_name("folder-pictures-symbolic")
 
         child_button = Gtk.Box()
@@ -221,8 +213,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             if self.monet_image_file.endswith(".svg"):
                 drawing = svg2rlg(self.monet_image_file)
                 self.monet_image_file = os.path.join(
-                    os.environ.get("XDG_RUNTIME_DIR"), "gradience_bg.png")
-                renderPM.drawToFile(drawing, self.monet_image_file, fmt='PNG')
+                    os.environ.get("XDG_RUNTIME_DIR"), "gradience_bg.png"
+                )
+                renderPM.drawToFile(drawing, self.monet_image_file, fmt="PNG")
 
             if self.monet_image_file.endswith(".xml"):
                 buglog("XML WIP")
@@ -235,10 +228,11 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 )
             else:
                 basewidth = 64
-                wpercent = (basewidth / float(self.monet_img.size[0]))
+                wpercent = basewidth / float(self.monet_img.size[0])
                 hsize = int((float(self.monet_img.size[1]) * float(wpercent)))
                 self.monet_img = self.monet_img.resize(
-                    (basewidth, hsize), Image.Resampling.LANCZOS)
+                    (basewidth, hsize), Image.Resampling.LANCZOS
+                )
                 self.theme = themeFromImage(self.monet_img)
                 self.tone = self.tone_row.get_selected_item()
                 self.monet_theme = self.monet_theme_row.get_selected_item()
@@ -278,7 +272,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         palette_pref_group.set_name("palette_colors")
         palette_pref_group.set_title(_("Palette Colors"))
         palette_pref_group.set_description(
-            _('Named palette colors used by some applications. Default colors follow the <a href="https://developer.gnome.org/hig/reference/palette.html">GNOME Human Interface Guidelines</a>.'))
+            _(
+                'Named palette colors used by some applications. Default colors follow the <a href="https://developer.gnome.org/hig/reference/palette.html">GNOME Human Interface Guidelines</a>.'
+            )
+        )
         for color in settings_schema["palette"]:
             palette_shades = GradiencePaletteShades(
                 color["prefix"], color["title"], color["n_shades"]
@@ -296,10 +293,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.errors_button.set_visible(len(errors) > 0)
         for error in errors:
             self.errors_list.append(
-                GradienceError(
-                    error["error"],
-                    error["element"],
-                    error["line"]))
+                GradienceError(error["error"], error["element"], error["line"])
+            )
 
     @Gtk.Template.Callback()
     def on_presets_button_clicked(self, *args):
