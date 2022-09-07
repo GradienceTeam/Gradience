@@ -29,7 +29,8 @@ from .modules.utils import buglog
 class RunAsync(threading.Thread):
     def __init__(self, task_func, callback=None, *args, **kwargs):
         self.source_id = None
-        assert threading.current_thread() is threading.main_thread()
+        if threading.current_thread() is not threading.main_thread():
+            raise AssertionError
 
         super(RunAsync, self).__init__(
             target=self.target, args=args, kwargs=kwargs)
