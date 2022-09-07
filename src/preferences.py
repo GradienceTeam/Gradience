@@ -16,11 +16,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import os
 
-from gi.repository import GLib, Gio, Gtk, Adw
+from gi.repository import Gtk, Adw
 
-from .constants import rootdir, app_id
+from .constants import rootdir
 from .modules.flatpak_overrides import (
     create_gtk_user_override,
     remove_gtk_user_override,

@@ -19,7 +19,7 @@
 
 import os
 
-from gi.repository import Gtk, Adw, Gio, Gdk
+from gi.repository import Gtk, Adw, Gio
 
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
@@ -29,10 +29,7 @@ from .error import GradienceError
 from .settings_schema import settings_schema
 from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
-from .app_type_dialog import GradienceAppTypeDialog
-from .custom_css_group import GradienceCustomCSSGroup
 from .presets_manager_window import GradiencePresetWindow
-from .plugins_list import GradiencePluginsList
 from .modules.utils import buglog
 from .constants import rootdir, app_id, build_type
 

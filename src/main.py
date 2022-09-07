@@ -19,16 +19,11 @@
 import sys
 import json
 import os
-import traceback
-
-import gi
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from material_color_utilities_python import *
 
 from .settings_schema import settings_schema
 from .window import GradienceMainWindow
-from .palette_shades import GradiencePaletteShades
-from .option import GradienceOption
 from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
 from .constants import (

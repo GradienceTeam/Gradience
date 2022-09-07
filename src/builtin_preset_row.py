@@ -1,9 +1,7 @@
-from gi.repository import Gtk, Gdk, Adw
+from gi.repository import Gtk, Adw
 
 from .constants import rootdir
 from .modules.utils import to_slug_case, buglog
-import json
-import os
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/builtin_preset_row.ui")

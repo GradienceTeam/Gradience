@@ -16,13 +16,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import json
 import os
 
-from gi.repository import Gtk, Gdk, Adw
+from gi.repository import Gtk, Adw
 
 from .constants import rootdir
-from .modules.utils import to_slug_case, buglog
+from .modules.utils import to_slug_case
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/repo_row.ui")

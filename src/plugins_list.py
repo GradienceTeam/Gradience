@@ -16,18 +16,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import sys
 import os
-import importlib
-import pkgutil
 
-from gi.repository import Gtk, Adw, Gio, Gdk
+from gi.repository import Adw
 from yapsy.PluginManager import PluginManager
-
-from pathlib import Path
-from .modules.utils import buglog
 from .plugin_row import GradiencePluginRow
-from .constants import app_id
 
 
 class GradiencePluginsList:
