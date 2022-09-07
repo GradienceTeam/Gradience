@@ -307,7 +307,7 @@ class GradienceApplication(Adw.Application):
                 "scrollbar_outline_color": self.rgba_from_argb(light_theme.outline),
             }
 
-        for key in variable.keys():
+        for key in variable:
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(variable[key])
 
