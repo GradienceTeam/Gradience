@@ -31,6 +31,7 @@ else:
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
+
 # Use it instead of print(), so there isn't any output in stdout if
 # Gradience was build in release mode
 

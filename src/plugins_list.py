@@ -36,11 +36,15 @@ class GradiencePluginsList:
         self.win = win
 
         self.pm = PluginManager()
-        self.pm.setPluginPlaces([os.path.join(
-            os.environ.get("XDG_CONFIG_HOME",
-                           os.environ["HOME"] + "/.config"),
-            "gradience_plugins",
-        )])
+        self.pm.setPluginPlaces(
+            [
+                os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "gradience_plugins",
+                )
+            ]
+        )
         self.pm.collectPlugins()
         self.rows = {}
 
@@ -60,7 +64,10 @@ class GradiencePluginsList:
         group = Adw.PreferencesGroup()
         group.set_title(_("Plugins"))
         group.set_description(
-            _("Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."))
+            _(
+                "Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."
+            )
+        )
         if self.pm:
             for pluginInfo in self.pm.getAllPlugins():
                 row = GradiencePluginRow(pluginInfo.plugin_object)
@@ -83,7 +90,5 @@ class GradiencePluginsList:
         for pluginInfo in self.pm.getAllPlugins():
             error, detail = pluginInfo.plugin_object.validate()
             if error:
-                errors.append(
-                    detail
-                )
+                errors.append(detail)
         return errors

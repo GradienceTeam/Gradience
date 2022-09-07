@@ -48,10 +48,9 @@ class GradienceRepoRow(Adw.ActionRow):
             self.remove_button.set_visible(False)
 
         self.path = os.path.join(
-            os.environ.get("XDG_CONFIG_HOME",
-                           os.environ["HOME"] + "/.config"),
+            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
             "presets",
-            to_slug_case(repo_name)
+            to_slug_case(repo_name),
         )
 
         if not os.path.exists(self.path):
@@ -59,9 +58,7 @@ class GradienceRepoRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):
-        self.toast_overlay.add_toast(
-            Adw.Toast(title=_("Repository removed"))
-        )
+        self.toast_overlay.add_toast(Adw.Toast(title=_("Repository removed")))
 
         self.win.remove_repo(self.name)
 
