@@ -189,7 +189,8 @@ class GradienceApplication(Adw.Application):
 
         self.reload_variables()
 
-    def rgba_from_argb(self, argb, alpha=None) -> str:
+    @staticmethod
+    def rgba_from_argb(argb, alpha=None) -> str:
         base = "rgba({}, {}, {}, {})"
 
         red = redFromArgb(argb)
@@ -812,15 +813,18 @@ This app is written in Python and uses GTK 4 and libadwaita.
         self.props.active_window.update_errors(
             self.global_errors + plugins_errors)
 
-    def show_adwaita_demo(self, *_args):
+    @staticmethod
+    def show_adwaita_demo(*_args):
         GLib.spawn_command_line_async(
             'sh -c "/bin/adwaita-1-demo > /dev/null 2>&1"')
 
-    def show_gtk4_demo(self, *_args):
+    @staticmethod
+    def show_gtk4_demo(*_args):
         GLib.spawn_command_line_async(
             'sh -c "/bin/gtk4-demo > /dev/null 2>&1"')
 
-    def show_gtk4_widget_factory(self, *_args):
+    @staticmethod
+    def show_gtk4_widget_factory(*_args):
         GLib.spawn_command_line_async(
             'sh -c "/bin/gtk4-widget-factory > /dev/null 2>&1"'
         )
