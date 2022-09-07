@@ -60,17 +60,18 @@ class GradienceExplorePresetRow(Adw.ActionRow):
             )
             buglog(exception)
         else:
-            self.app.load_preset_from_file(os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-                self.prefix,
-                to_slug_case(self.name) + ".json",
-            ))
+            self.app.load_preset_from_file(
+                os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "presets",
+                    self.prefix,
+                    to_slug_case(self.name) + ".json",
+                )
+            )
 
             self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset downloaded"))
-            )
+                Adw.Toast(title=_("Preset downloaded")))
             self.win.reload_pref_group()
 
             buglog("Apply and download compeleted")
@@ -86,7 +87,6 @@ class GradienceExplorePresetRow(Adw.ActionRow):
             buglog(exception)
         else:
             self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset downloaded"))
-            )
+                Adw.Toast(title=_("Preset downloaded")))
             self.win.reload_pref_group()
             buglog("Download compeleted")

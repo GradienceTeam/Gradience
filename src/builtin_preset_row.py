@@ -32,6 +32,5 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
         buglog("apply")
 
         self.app.load_preset_from_resource(
-            f"{rootdir}/presets/"
-            + to_slug_case(self.name) + ".json"
+            f"{rootdir}/presets/" + to_slug_case(self.name) + ".json"
         )

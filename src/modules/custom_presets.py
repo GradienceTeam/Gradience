@@ -29,9 +29,7 @@ poolmgr = urllib3.PoolManager()
 
 def fetch_presets(repo):
     try:
-        http = poolmgr.request(
-            "GET",
-            repo)
+        http = poolmgr.request("GET", repo)
         raw = json.loads(http.data)
 
         preset_dict = {}
@@ -62,13 +60,16 @@ def download_preset(name, repo_name, url):
 
         data = json.dumps(raw)
 
-        with open(os.path.join(
+        with open(
+            os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
                                os.environ["HOME"] + "/.config"),
                 "presets",
                 repo_name,
-                to_slug_case(name) + ".json"),
-                "w") as f:
+                to_slug_case(name) + ".json",
+            ),
+            "w",
+        ) as f:
             f.write(data)
             f.close()
     except Exception:

@@ -31,7 +31,15 @@ from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
 from .app_type_dialog import GradienceAppTypeDialog
 from .custom_css_group import GradienceCustomCSSGroup
-from .constants import rootdir, app_id, rel_ver, version, bugtracker_url, help_url, project_url
+from .constants import (
+    rootdir,
+    app_id,
+    rel_ver,
+    version,
+    bugtracker_url,
+    help_url,
+    project_url,
+)
 from .welcome import GradienceWelcomeWindow
 from .preferences import GradiencePreferencesWindow
 from .modules.utils import to_slug_case, buglog
@@ -40,15 +48,13 @@ from .plugins_list import GradiencePluginsList
 
 class GradienceApplication(Adw.Application):
     """The main application singleton class."""
+
     __gtype_name__ = "GradienceApplication"
 
     settings = Gio.Settings.new(app_id)
 
     def __init__(self):
-        super().__init__(
-            application_id=app_id,
-            flags=Gio.ApplicationFlags.FLAGS_NONE
-        )
+        super().__init__(application_id=app_id, flags=Gio.ApplicationFlags.FLAGS_NONE)
         self.set_resource_base_path(rootdir)
 
         self.portal = Xdp.Portal()
@@ -95,41 +101,31 @@ class GradienceApplication(Adw.Application):
             GLib.Variant("s", "adwaita"),
             self.load_preset_action,
         )
-        self.create_action(
-            "apply_color_scheme",
-            self.show_apply_color_scheme_dialog)
+        self.create_action("apply_color_scheme",
+                           self.show_apply_color_scheme_dialog)
+
+        self.create_action("show_adwaita_demo", self.show_adwaita_demo)
+
+        self.create_action("show_gtk4_widget_factory",
+                           self.show_gtk4_widget_factory)
+
+        self.create_action("show_gtk4_demo", self.show_gtk4_demo)
 
         self.create_action(
-            "show_adwaita_demo",
-            self.show_adwaita_demo)
+            "restore_color_scheme", self.show_restore_color_scheme_dialog
+        )
 
-        self.create_action(
-            "show_gtk4_widget_factory",
-            self.show_gtk4_widget_factory)
-
-        self.create_action(
-            "show_gtk4_demo",
-            self.show_gtk4_demo)
-
-        self.create_action(
-            "restore_color_scheme",
-            self.show_restore_color_scheme_dialog)
-
-        self.create_action(
-            "reset_color_scheme",
-            self.show_reset_color_scheme_dialog)
+        self.create_action("reset_color_scheme",
+                           self.show_reset_color_scheme_dialog)
         self.create_action("preferences", self.show_preferences)
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
 
         if self.style_manager.get_dark():
             self.load_preset_from_resource(
-                f"{rootdir}/presets/adwaita-dark.json"
-            )
+                f"{rootdir}/presets/adwaita-dark.json")
         else:
-            self.load_preset_from_resource(
-                f"{rootdir}/presets/adwaita.json"
-            )
+            self.load_preset_from_resource(f"{rootdir}/presets/adwaita.json")
 
         if self.first_run:
             buglog("first run")
@@ -147,12 +143,10 @@ class GradienceApplication(Adw.Application):
 
         self.portal.open_uri(
             parent,
-            "file://" +
-            os.path.join(
-                os.environ.get(
-                    "XDG_CONFIG_HOME",
-                    os.environ["HOME"] +
-                    "/.config"),
+            "file://"
+            + os.path.join(
+                os.environ.get("XDG_CONFIG_HOME",
+                               os.environ["HOME"] + "/.config"),
                 "presets",
             ),
             Xdp.OpenUriFlags.NONE,
@@ -286,13 +280,17 @@ class GradienceApplication(Adw.Application):
                 "window_fg_color": self.rgba_from_argb(light_theme.onSurface),
                 "view_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "view_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "headerbar_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "headerbar_bg_color": self.rgba_from_argb(
+                    light_theme.secondaryContainer
+                ),
                 "headerbar_fg_color": self.rgba_from_argb(light_theme.onSurface),
                 "headerbar_border_color": self.rgba_from_argb(
                     light_theme.primary, "0.8"
                 ),
                 "headerbar_backdrop_color": "@window_bg_color",
-                "headerbar_shade_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "headerbar_shade_color": self.rgba_from_argb(
+                    light_theme.secondaryContainer
+                ),
                 "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
                 "card_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(light_theme.shadow),
@@ -331,8 +329,9 @@ class GradienceApplication(Adw.Application):
         )
         self.props.active_window.save_preset_button.add_css_class("warning")
 
-        self.props.active_window.save_preset_button.get_child(
-        ).set_tooltip_text(_("Unsaved changes"))
+        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
+            _("Unsaved changes")
+        )
 
     def clear_dirty(self):
         self.is_dirty = False
@@ -341,8 +340,9 @@ class GradienceApplication(Adw.Application):
         )
         self.props.active_window.save_preset_button.remove_css_class("warning")
         self.props.active_window.save_preset_button.get_child().set_label("")
-        self.props.active_window.save_preset_button.get_child(
-        ).set_tooltip_text(_("Save changes"))
+        self.props.active_window.save_preset_button.get_child().set_tooltip_text(
+            _("Save changes")
+        )
 
     def reload_variables(self):
         parsing_errors = []
@@ -385,29 +385,24 @@ class GradienceApplication(Adw.Application):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(
                 os.path.join(
-                    os.environ.get(
-                        "XDG_CONFIG_HOME",
-                        os.environ["HOME"] +
-                        "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
-                    args[0].get_string().replace(
-                        "custom-",
-                        "",
-                        1) +
-                    ".json",
-                ))
+                    args[0].get_string().replace("custom-", "", 1) + ".json",
+                )
+            )
         else:
             self.load_preset_from_resource(
-                f"{rootdir}/presets/"
-                + args[0].get_string()
-                + ".json"
+                f"{rootdir}/presets/" + args[0].get_string() + ".json"
             )
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
     def show_apply_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
             _("Apply this color scheme?"),
-            _("Warning: any custom CSS files for those app types will be irreversibly overwritten!"),
+            _(
+                "Warning: any custom CSS files for those app types will be irreversibly overwritten!"
+            ),
             "apply",
             _("Apply"),
             Adw.ResponseAppearance.SUGGESTED,
@@ -513,18 +508,23 @@ class GradienceApplication(Adw.Application):
 
     def save_preset(self, _unused, response, entry):
         if response == "save":
-            if not os.path.exists(os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-                "user",
-            )):
-                os.makedirs(os.path.join(
+            if not os.path.exists(
+                os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
                                    os.environ["HOME"] + "/.config"),
                     "presets",
                     "user",
-                ))
+                )
+            ):
+                os.makedirs(
+                    os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "presets",
+                        "user",
+                    )
+                )
 
             with open(
                 os.path.join(
@@ -547,8 +547,7 @@ class GradienceApplication(Adw.Application):
                 file.write(json.dumps(object_to_write, indent=4))
                 self.clear_dirty()
                 self.win.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Preset saved"))
-                )
+                    Adw.Toast(title=_("Preset saved")))
 
     def apply_color_scheme(self, widget, response):
         if response == "apply":
@@ -584,9 +583,8 @@ class GradienceApplication(Adw.Application):
             # if widget.get_color_mode()["light"]:
             if widget.get_app_types()["gtk4"]:
                 gtk4_dir = os.path.join(
-                    os.environ.get(
-                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                    ),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "gtk-4.0",
                 )
                 if not os.path.exists(gtk4_dir):
@@ -595,14 +593,14 @@ class GradienceApplication(Adw.Application):
                 contents = ""
                 try:
                     with open(
-                            os.path.join(gtk4_dir, "gtk.css"), "r", encoding="utf-8"
+                        os.path.join(gtk4_dir, "gtk.css"), "r", encoding="utf-8"
                     ) as file:
                         contents = file.read()
                 except FileNotFoundError:  # first run
                     pass
                 else:
                     with open(
-                            os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
+                        os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
                     ) as file:
                         file.write(contents)
                 finally:
@@ -612,9 +610,8 @@ class GradienceApplication(Adw.Application):
                         file.write(gtk4_css)
             if widget.get_app_types()["gtk3"]:
                 gtk3_dir = os.path.join(
-                    os.environ.get(
-                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                    ),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "gtk-3.0",
                 )
                 if not os.path.exists(gtk3_dir):
@@ -623,14 +620,14 @@ class GradienceApplication(Adw.Application):
                 contents = ""
                 try:
                     with open(
-                            os.path.join(gtk3_dir, "gtk.css"), "r", encoding="utf-8"
+                        os.path.join(gtk3_dir, "gtk.css"), "r", encoding="utf-8"
                     ) as file:
                         contents = file.read()
                 except FileNotFoundError:  # first run
                     pass
                 else:
                     with open(
-                            os.path.join(gtk3_dir, "gtk.css.bak"), "w", encoding="utf-8"
+                        os.path.join(gtk3_dir, "gtk.css.bak"), "w", encoding="utf-8"
                     ) as file:
                         file.write(contents)
                 finally:
@@ -657,9 +654,9 @@ class GradienceApplication(Adw.Application):
                     backup = open(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME",
-                                os.environ["HOME"] +
-                                "/.config"),
+                                "XDG_CONFIG_HOME", os.environ["HOME"] +
+                                "/.config"
+                            ),
                             "gtk-4.0/gtk.css.bak",
                         ),
                         "r",
@@ -670,9 +667,9 @@ class GradienceApplication(Adw.Application):
                     gtk4css = open(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME",
-                                os.environ["HOME"] +
-                                "/.config"),
+                                "XDG_CONFIG_HOME", os.environ["HOME"] +
+                                "/.config"
+                            ),
                             "gtk-4.0/gtk.css",
                         ),
                         "w",
@@ -737,9 +734,8 @@ class GradienceApplication(Adw.Application):
                 "0xMRTT https://github.com/0xMRTT",
                 "Verantor https://github.com/Verantor",
             ],
-            artists=['David Lapshin https://github.com/daudix-UFO'],
-            designers=[
-                'David Lapshin https://github.com/daudix-UFO'],
+            artists=["David Lapshin https://github.com/daudix-UFO"],
+            designers=["David Lapshin https://github.com/daudix-UFO"],
             # Translators: This is a place to put your credits (formats: "Name
             # https://example.com" or "Name <email@example.com>", no quotes)
             # and is not meant to be translated literally.
@@ -760,7 +756,8 @@ class GradienceApplication(Adw.Application):
             license_type=Gtk.License.GPL_3_0,
             version=version,
             release_notes_version=rel_ver,
-            release_notes=_("""
+            release_notes=_(
+                """
                 <ul>
         <li>Add AdwViewSwitcher in the header bar.</li>
         <li>Move CSS to the "Advanced" tab</li>
@@ -777,8 +774,10 @@ class GradienceApplication(Adw.Application):
         <li>Added issue template for bug and feature request </li>
         <li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch </li>
       </ul>
-            """),
-            comments=_("""
+            """
+            ),
+            comments=_(
+                """
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 With Gradience you can:
 
@@ -789,7 +788,8 @@ With Gradience you can:
 - Extend functionality using plugins
 
 This app is written in Python and uses GTK 4 and libadwaita.
-            """)
+            """
+            ),
         )
         about.present()
 
@@ -852,7 +852,8 @@ This app is written in Python and uses GTK 4 and libadwaita.
 
     def show_gtk4_widget_factory(self, *_args):
         GLib.spawn_command_line_async(
-            'sh -c "/bin/gtk4-widget-factory > /dev/null 2>&1"')
+            'sh -c "/bin/gtk4-widget-factory > /dev/null 2>&1"'
+        )
 
 
 def main():
