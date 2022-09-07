@@ -25,7 +25,7 @@ from .run_async import RunAsync
 from .modules.utils import buglog
 from .modules.flatpak_overrides import (
     create_gtk_user_override,
-    )
+)
 from .constants import rootdir, app_id
 
 
