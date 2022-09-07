@@ -51,7 +51,6 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.setup()
 
     def setup(self):
-        # self.set_search_enabled(False)
 
         self.setup_flatpak_group()
 
@@ -59,14 +58,10 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         user_flatpak_theming_gtk4 = self.settings.get_boolean(
             "user-flatpak-theming-gtk4"
         )
-        # global_flatpak_theming_gtk4 = self.settings.get_boolean(
-        #    "global-flatpak-theming-gtk4")
 
         user_flatpak_theming_gtk3 = self.settings.get_boolean(
             "user-flatpak-theming-gtk3"
         )
-        # global_flatpak_theming_gtk3 = self.settings.get_boolean(
-        #    "global-flatpak-theming-gtk3")
 
         self.allow_gtk4_flatpak_theming_user.set_state(
             user_flatpak_theming_gtk4)
@@ -79,14 +74,10 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.allow_gtk4_flatpak_theming_user.connect(
             "state-set", self.on_allow_gtk4_flatpak_theming_user_toggled
         )
-        # self.allow_gtk4_flatpak_theming_global.connect(
-        #    "state-set", self.on_allow_gtk4_flatpak_theming_global_toggled)
 
         self.allow_gtk3_flatpak_theming_user.connect(
             "state-set", self.on_allow_gtk3_flatpak_theming_user_toggled
         )
-        # self.allow_gtk3_flatpak_theming_global.connect(
-        #    "state-set", self.on_allow_gtk3_flatpak_theming_global_toggled)
 
     def on_allow_gtk4_flatpak_theming_user_toggled(self, *args):
         state = self.allow_gtk4_flatpak_theming_user.props.state

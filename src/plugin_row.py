@@ -45,24 +45,6 @@ class GradiencePluginRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_remove_plugin_clicked(self, *_args):
-        # try:
-        #     os.remove(os.path.join(
-        #         os.environ.get("XDG_CONFIG_HOME",
-        #                         os.environ["HOME"] + "/.config"),
-        #         "gradience_plugins",
-        #         self.plugin_object.plugin_id + "."
-        #     ))
-        # except Exception as exception:
-        #     print(exception.with_traceback())
-        #     self.toast_overlay.add_toast(
-        #         Adw.Toast(title=_("Unable to delete preset"))
-        #     )
-        # else:
-        #     self.toast_overlay.add_toast(
-        #         Adw.Toast(title=_("Preset removed"))
-        #     )
-        # finally:
-        #     self.win.reload_pref_group()
         print("delete")
 
     @Gtk.Template.Callback()
