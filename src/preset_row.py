@@ -59,13 +59,15 @@ class GradiencePresetRow(Adw.ActionRow):
     def on_apply_button_clicked(self, *_args):
         buglog("apply")
 
-        self.app.load_preset_from_file(os.path.join(
-            os.environ.get("XDG_CONFIG_HOME",
-                           os.environ["HOME"] + "/.config"),
-            "presets",
-            self.prefix,
-            to_slug_case(self.name) + ".json",
-        ))
+        self.app.load_preset_from_file(
+            os.path.join(
+                os.environ.get("XDG_CONFIG_HOME",
+                               os.environ["HOME"] + "/.config"),
+                "presets",
+                self.prefix,
+                to_slug_case(self.name) + ".json",
+            )
+        )
 
     @Gtk.Template.Callback()
     def on_name_entry_changed(self, *_args):
@@ -88,12 +90,9 @@ class GradiencePresetRow(Adw.ActionRow):
         self.delete_toast.set_button_label(_("Undo"))
         self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
         self.delete_toast.connect(
-            "button-clicked",
-            self.on_undo_button_clicked)
+            "button-clicked", self.on_undo_button_clicked)
 
-        self.toast_overlay.add_toast(
-            self.delete_toast
-        )
+        self.toast_overlay.add_toast(self.delete_toast)
 
         self.win.old_name = self.name
 
@@ -102,13 +101,15 @@ class GradiencePresetRow(Adw.ActionRow):
         self.win.reload_pref_group()
 
     def update_value(self):
-        os.remove(os.path.join(
-            os.environ.get("XDG_CONFIG_HOME",
-                           os.environ["HOME"] + "/.config"),
-            "presets",
-            self.prefix,
-            to_slug_case(self.old_name) + ".json",
-        ))
+        os.remove(
+            os.path.join(
+                os.environ.get("XDG_CONFIG_HOME",
+                               os.environ["HOME"] + "/.config"),
+                "presets",
+                self.prefix,
+                to_slug_case(self.old_name) + ".json",
+            )
+        )
         with open(
             os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
@@ -128,27 +129,30 @@ class GradiencePresetRow(Adw.ActionRow):
             }
             file.write(json.dumps(object_to_write, indent=4))
             self.app.clear_dirty()
-            self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset renamed"))
-            )
+            self.toast_overlay.add_toast(Adw.Toast(title=_("Preset renamed")))
         self.old_name = self.name
 
     def do_delete_preset(self):
         if self.delete_preset:
             try:
-                os.rename(os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    self.prefix,
-                    to_slug_case(self.old_name) + ".json",
-                ), os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    self.prefix,
-                    to_slug_case(self.old_name) + ".json.to_delete",
-                ))
+                os.rename(
+                    os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "presets",
+                        self.prefix,
+                        to_slug_case(self.old_name) + ".json",
+                    ),
+                    os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "presets",
+                        self.prefix,
+                        to_slug_case(self.old_name) + ".json.to_delete",
+                    ),
+                )
             except Exception as exception:
                 print(exception.with_traceback())
             finally:
@@ -159,13 +163,16 @@ class GradiencePresetRow(Adw.ActionRow):
     def on_delete_toast_dismissed(self, widget):
         if self.delete_preset:
             try:
-                os.remove(os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    self.prefix,
-                    to_slug_case(self.old_name) + ".json.to_delete",
-                ))
+                os.remove(
+                    os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "presets",
+                        self.prefix,
+                        to_slug_case(self.old_name) + ".json.to_delete",
+                    )
+                )
             except Exception as exception:
                 print(exception.with_traceback())
                 self.toast_overlay.add_toast(
@@ -173,25 +180,29 @@ class GradiencePresetRow(Adw.ActionRow):
                 )
             else:
                 self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Preset removed"))
-                )
+                    Adw.Toast(title=_("Preset removed")))
             finally:
                 self.win.reload_pref_group()
         else:
             try:
-                os.rename(os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    self.prefix,
-                    to_slug_case(self.old_name) + ".json.to_delete",
-                ), os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    self.prefix,
-                    to_slug_case(self.old_name) + ".json",
-                ))
+                os.rename(
+                    os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "presets",
+                        self.prefix,
+                        to_slug_case(self.old_name) + ".json.to_delete",
+                    ),
+                    os.path.join(
+                        os.environ.get(
+                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                        ),
+                        "presets",
+                        self.prefix,
+                        to_slug_case(self.old_name) + ".json",
+                    ),
+                )
             except Exception as exception:
                 print(exception.with_traceback())
             finally:

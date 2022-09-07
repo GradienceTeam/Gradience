@@ -17,7 +17,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 
-class GradiencePluginCore():
+class GradiencePluginCore:
     def __init__(self):
         self.title = None
         self.author = None
