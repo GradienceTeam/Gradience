@@ -61,27 +61,19 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.settings = Gio.Settings(app_id)
 
         self.settings.bind(
-            "window-width",
-            self,
-            "default-width",
-            Gio.SettingsBindFlags.DEFAULT)
+            "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT
+        )
 
         self.settings.bind(
-            "window-height",
-            self,
-            "default-height",
-            Gio.SettingsBindFlags.DEFAULT)
+            "window-height", self, "default-height", Gio.SettingsBindFlags.DEFAULT
+        )
         self.settings.bind(
-            "window-maximized",
-            self,
-            "maximized",
-            Gio.SettingsBindFlags.DEFAULT)
+            "window-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT
+        )
 
         self.settings.bind(
-            "window-fullscreen",
-            self,
-            "fullscreened",
-            Gio.SettingsBindFlags.DEFAULT)
+            "window-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT
+        )
 
         self.connect("close-request", self.__close_window)
         self.style_manager = self.get_application().style_manager
@@ -136,7 +128,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_name("monet")
         self.monet_pref_group.set_title(_("Monet Engine"))
         self.monet_pref_group.set_description(
-            _("Monet is an engine that generates a Material Design 3 palette from an image's color."))
+            _(
+                "Monet is an engine that generates a Material Design 3 palette from an image's color."
+            )
+        )
 
         self.apply_button = Gtk.Button()
         self.apply_button.set_label(_("Apply"))
@@ -269,7 +264,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         palette_pref_group.set_name("palette_colors")
         palette_pref_group.set_title(_("Palette Colors"))
         palette_pref_group.set_description(
-            _('Named palette colors used by some applications. Default colors follow the <a href="https://developer.gnome.org/hig/reference/palette.html">GNOME Human Interface Guidelines</a>.'))
+            _(
+                'Named palette colors used by some applications. Default colors follow the <a href="https://developer.gnome.org/hig/reference/palette.html">GNOME Human Interface Guidelines</a>.'
+            )
+        )
         for color in settings_schema["palette"]:
             palette_shades = GradiencePaletteShades(
                 color["prefix"], color["title"], color["n_shades"]
