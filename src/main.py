@@ -647,7 +647,6 @@ class GradienceApplication(Adw.Application):
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Could not restore GTK4 backup"))
                     )
-                    pass
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
