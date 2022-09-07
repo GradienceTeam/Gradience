@@ -31,11 +31,12 @@ USER_PLUGIN_DIR = os.path.join(
 
 
 class GradiencePluginsList:
-    """ Represent the plugin group in Advanced"""
+    """Represent the plugin group in Advanced"""
+
     def __init__(self, win):
 
         self.win = win
-        
+
         self.check_if_plugin_dir_exists()
 
         self.pm = PluginManager()
@@ -50,10 +51,10 @@ class GradiencePluginsList:
 
         for pluginInfo in self.pm.getAllPlugins():
             pluginInfo.plugin_object.activate()
-            
+
     @staticmethod
     def check_if_plugin_dir_exists():
-        """ Check if the plugin directory exists, if not, create it """
+        """Check if the plugin directory exists, if not, create it"""
         if not os.path.exists(USER_PLUGIN_DIR):
             os.makedirs(USER_PLUGIN_DIR)
             return False
