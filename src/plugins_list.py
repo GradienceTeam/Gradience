@@ -57,10 +57,7 @@ class GradiencePluginsList:
         group = Adw.PreferencesGroup()
         group.set_title(_("Plugins"))
         group.set_description(
-            _(
-                "Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."
-            )
-        )
+            _("Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."))
         if self.pm:
             for pluginInfo in self.pm.getAllPlugins():
                 row = GradiencePluginRow(pluginInfo.plugin_object)
