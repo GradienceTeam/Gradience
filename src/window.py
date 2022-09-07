@@ -173,8 +173,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.monet_file_chooser_button.set_child(child_button)
 
-        # self.monet_file_chooser_button.set_margin_top(5)
-        # self.monet_file_chooser_button.set_margin_bottom(5)
 
         self.monet_file_chooser_button.connect(
             "clicked", self.on_file_picker_button_clicked

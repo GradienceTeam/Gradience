@@ -552,36 +552,6 @@ class GradienceApplication(Adw.Application):
 
     def apply_color_scheme(self, widget, response):
         if response == "apply":
-            # if widget.get_color_mode()["dark"]:
-            #     if widget.get_app_types()["gtk4"]:
-            #         gtk4_dir = os.path.join(
-            #             os.environ.get(
-            #                 "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-            #             ),
-            #             "gtk-4.0",
-            #         )
-            #         if not os.path.exists(gtk4_dir):
-            #             os.makedirs(gtk4_dir)
-            #         gtk4_css = self.generate_gtk_css("gtk4")
-            #         with open(
-            #             os.path.join(gtk4_dir, "gtk-dark.css"), "w", encoding="utf-8"
-            #         ) as file:
-            #             file.write(gtk4_css)
-            #     if widget.get_app_types()["gtk3"]:
-            #         gtk3_dir = os.path.join(
-            #             os.environ.get(
-            #                 "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-            #             ),
-            #             "gtk-3.0",
-            #         )
-            #         if not os.path.exists(gtk3_dir):
-            #             os.makedirs(gtk3_dir)
-            #         gtk3_css = self.generate_gtk_css("gtk3")
-            #         with open(
-            #             os.path.join(gtk3_dir, "gtk-dark.css"), "w", encoding="utf-8"
-            #         ) as file:
-            #             file.write(gtk3_css)
-            # if widget.get_color_mode()["light"]:
             if widget.get_app_types()["gtk4"]:
                 gtk4_dir = os.path.join(
                     os.environ.get(

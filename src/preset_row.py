@@ -85,7 +85,6 @@ class GradiencePresetRow(Adw.ActionRow):
     def on_remove_button_clicked(self, *_args):
         self.delete_preset = True
         self.delete_toast = Adw.Toast(title=_("Preset removed"))
-        # self.delete_toast.set_action_name("on_undo_button_clicked")
         self.delete_toast.set_button_label(_("Undo"))
         self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
         self.delete_toast.connect(
