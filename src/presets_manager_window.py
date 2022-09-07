@@ -16,20 +16,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from genericpath import isdir
 import os
 import shutil
 import json
 from pathlib import Path
 
-from gi.repository import Gtk, Adw, Gio, Gdk, GLib
+from gi.repository import Gtk, Adw, GLib
 
 from .preset_row import GradiencePresetRow
 from .builtin_preset_row import GradienceBuiltinPresetRow
 from .explore_preset_row import GradienceExplorePresetRow
 from .modules.custom_presets import fetch_presets
-from .constants import rootdir, build_type
-from .modules.utils import to_slug_case
+from .constants import rootdir
 from .repo_row import GradienceRepoRow
 
 PRESETS_LIST_URL = "https://github.com/GradienceTeam/Community/raw/main/presets.json"

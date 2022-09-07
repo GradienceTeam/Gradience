@@ -19,13 +19,12 @@
 import sys
 import time
 
-from gi.repository import Gtk, Adw, Gio, Gdk
+from gi.repository import Gtk, Adw, Gio
 
 from .run_async import RunAsync
 from .modules.utils import buglog
 from .modules.flatpak_overrides import (
     create_gtk_user_override,
-    remove_gtk_user_override,
 )
 from .constants import rootdir, app_id
 

@@ -19,7 +19,7 @@
 import json
 import os
 
-from gi.repository import Gtk, Gdk, Adw
+from gi.repository import Gtk, Adw
 
 from .constants import rootdir
 from .modules.utils import to_slug_case, buglog

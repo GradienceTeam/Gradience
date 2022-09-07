@@ -16,11 +16,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, Gdk, Adw
+from gi.repository import Gtk, Adw
 
 from .modules.utils import buglog
 from .constants import rootdir
-import os
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/plugin_row.ui")
