@@ -45,7 +45,7 @@ jobs:
           platforms: arm64
       - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
         with:
-          bundle: com.github.GradienceTeam.Gradience.flatpak
+          bundle: com.github.GradienceTeam.Gradience.Devel.flatpak
           manifest-path: build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
           cache-key: flatpak-builder-${{ github.sha }}
           arch: ${{ matrix.arch }}
