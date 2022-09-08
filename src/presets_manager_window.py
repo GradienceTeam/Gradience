@@ -19,6 +19,8 @@
 import os
 import shutil
 import json
+import re
+
 from pathlib import Path
 
 from gi.repository import Gtk, Adw, GLib
@@ -27,8 +29,9 @@ from .preset_row import GradiencePresetRow
 from .builtin_preset_row import GradienceBuiltinPresetRow
 from .explore_preset_row import GradienceExplorePresetRow
 from .modules.custom_presets import fetch_presets
-from .constants import rootdir
 from .repo_row import GradienceRepoRow
+from .modules.utils import buglog
+from .constants import rootdir
 
 PRESETS_LIST_URL = "https://github.com/GradienceTeam/Community/raw/main/presets.json"
 
@@ -194,6 +197,7 @@ class GradiencePresetWindow(Adw.Window):
                     )
                     self.search_results.append(row)
                     self.search_results_list.append(row)
+
         if not_offline:
             self.search_spinner.props.visible = False
             self.search_stack.set_visible_child_name("page_offline")
@@ -207,15 +211,26 @@ class GradiencePresetWindow(Adw.Window):
 
     def connect_signals(self):
         self.search_entry.connect("search-changed", self.on_search_changed)
-        self.search_entry.connect("realize", self.on_search_realize)
+        self.search_entry.connect("stop-search", self.on_search_ended)
 
-    @staticmethod
-    def on_search_changed(widget):
-        print("search changed")
+    def on_search_changed(self, *args):
+        search_text = self.search_entry.props.text
+        buglog("[New search query]")
+        buglog(f"Search string: {search_text}")
+        buglog("Items found:")
+        for widget in self.search_results_list:
+            if search_text == "":
+                widget.props.visible = True
+            else:
+                widget.props.visible = False
+                match = re.search(search_text, widget.props.title)
+                if match:
+                    print(widget.props.title)
+                    widget.props.visible = True
 
-    @staticmethod
-    def on_search_realize(widget):
-        print("search realized")
+    def on_search_ended(self, *args):
+        for widget in self.search_results_list:
+            widget.props.visible = True
 
     @Gtk.Template.Callback()
     def on_file_manager_button_clicked(self, *_args):
