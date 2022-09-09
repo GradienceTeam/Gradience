@@ -10,6 +10,7 @@
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland",
+        "--filesystem=xdg-data/flatpak:create",
         "--filesystem=xdg-config/gtk-3.0",
         "--filesystem=xdg-config/gtk-4.0",
         "--filesystem=xdg-run/dconf",
@@ -119,7 +120,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/libportal",
-                    "tag": "0.6"
+                    "tag": "main"
                 }
             ]
         },
@@ -128,7 +129,7 @@
             "builddir" : true,
             "buildsystem" : "meson",
             "config-opts": [
-                "-Dbuildtype=release"
+                "-Dbuildtype=debug"
             ],
             "sources" : [
                 {
