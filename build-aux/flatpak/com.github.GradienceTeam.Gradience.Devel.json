@@ -1,5 +1,5 @@
 {
-    "app-id" : "com.github.GradienceTeam.Gradience",
+    "app-id" : "com.github.GradienceTeam.Gradience.Devel",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "42",
     "sdk" : "org.gnome.Sdk",
@@ -120,7 +120,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/libportal",
-                    "tag": "0.6"
+                    "tag": "main"
                 }
             ]
         },
@@ -129,7 +129,7 @@
             "builddir" : true,
             "buildsystem" : "meson",
             "config-opts": [
-                "-Dbuildtype=release"
+                "-Dbuildtype=debug"
             ],
             "sources" : [
                 {

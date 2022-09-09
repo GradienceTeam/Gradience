@@ -24,7 +24,7 @@ from .plugin_row import GradiencePluginRow
 
 
 USER_PLUGIN_DIR = os.path.join(
-    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+    os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
     "gradience",
     "plugins",
 )

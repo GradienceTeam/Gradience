@@ -182,7 +182,7 @@ class GradiencePresetWindow(Adw.Window):
         for widget in self.search_results_list:
             self.search_results.remove(widget)
 
-        offline = True
+        offline = False
         for repo_name, repo in self._repos.items():
             self.explore_presets, urls = fetch_presets(repo)
 
@@ -198,7 +198,7 @@ class GradiencePresetWindow(Adw.Window):
                     self.search_results.append(row)
                     self.search_results_list.append(row)
             else:
-                offline = False
+                offline = True
 
         if offline:
             self.search_spinner.props.visible = False
