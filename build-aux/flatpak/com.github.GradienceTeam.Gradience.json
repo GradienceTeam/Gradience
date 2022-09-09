@@ -10,8 +10,13 @@
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland",
+        "--filesystem=xdg-data/flatpak:create",
         "--filesystem=xdg-config/gtk-3.0",
-        "--filesystem=xdg-config/gtk-4.0"
+        "--filesystem=xdg-config/gtk-4.0",
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
     "cleanup" : [
         "/include",

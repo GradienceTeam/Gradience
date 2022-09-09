@@ -19,7 +19,6 @@
 import os
 import shutil
 import json
-import re
 
 from pathlib import Path
 
@@ -183,7 +182,7 @@ class GradiencePresetWindow(Adw.Window):
         for widget in self.search_results_list:
             self.search_results.remove(widget)
 
-        offline = True
+        offline = False
         for repo_name, repo in self._repos.items():
             self.explore_presets, urls = fetch_presets(repo)
 
@@ -199,7 +198,7 @@ class GradiencePresetWindow(Adw.Window):
                     self.search_results.append(row)
                     self.search_results_list.append(row)
             else:
-                offline = False
+                offline = True
 
         if offline:
             self.search_spinner.props.visible = False
@@ -226,10 +225,11 @@ class GradiencePresetWindow(Adw.Window):
                 widget.props.visible = True
             else:
                 widget.props.visible = False
-                match = re.search(search_text, widget.props.title)
-                if match:
-                    print(widget.props.title)
+                buglog("Matching {} with {}".format(
+                    search_text, widget.props.title))
+                if search_text.lower() in widget.props.title.lower():
                     widget.props.visible = True
+                    buglog(widget.props.title)
 
     def on_search_ended(self, *args):
         for widget in self.search_results_list:
@@ -318,7 +318,7 @@ class GradiencePresetWindow(Adw.Window):
                             )
                 self.custom_presets[repo.name] = presets_list
             elif repo.is_file():
-                print("file")
+                buglog("file")
                 # keep compatiblity with old presets
                 if repo.name.endswith(".json"):
                     os.rename(repo, os.path.join(
@@ -343,7 +343,7 @@ class GradiencePresetWindow(Adw.Window):
                         self.toast_overlay.add_toast(
                             Adw.Toast(title=_("Failed to load preset"))
                         )
-                    print(self.custom_presets)
+                    buglog(self.custom_presets)
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
 

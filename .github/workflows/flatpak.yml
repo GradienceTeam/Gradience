@@ -18,7 +18,21 @@
 name: Build flatpak
 on:
   push:
-    branches: [main]
+    branches: 
+      - "main"
+    path: 
+      # all python files
+      - "**.py"
+      - "src/**"
+      # all meson files
+      - "**.build"
+      # flatpak manifest
+      - "build-aux/flatpak/*.json"
+      # github action itself
+      - ".github/workflows/flatpak.yml"
+      # data
+      - "data/**"
+
 jobs:
   flatpak:
     name: "Flatpak"
