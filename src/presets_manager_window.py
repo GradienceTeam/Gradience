@@ -32,6 +32,7 @@ from .repo_row import GradienceRepoRow
 from .modules.utils import buglog
 from .constants import rootdir
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
     __gtype_name__ = "GradiencePresetWindow"
@@ -53,7 +54,9 @@ class GradiencePresetWindow(Adw.Window):
     custom_presets = {}
 
     official_repositories = {
-        _("Official"): "https://github.com/GradienceTeam/Community/raw/main/official.json",
+        _(
+            "Official"
+        ): "https://github.com/GradienceTeam/Community/raw/main/official.json",
     }
 
     search_results_list = []
@@ -63,7 +66,9 @@ class GradiencePresetWindow(Adw.Window):
 
         self.settings = parent.settings
         self.user_repositories = self.settings.get_value("repos").unpack()
-        self.user_repositories[_("Curated")] = "https://github.com/GradienceTeam/Community/raw/main/curated.json"
+        self.user_repositories[
+            _("Curated")
+        ] = "https://github.com/GradienceTeam/Community/raw/main/curated.json"
         self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
@@ -181,7 +186,7 @@ class GradiencePresetWindow(Adw.Window):
         for repo_name, repo in self._repos.items():
             self.explore_presets, urls = fetch_presets(repo)
 
-            if self.explore_presets:  
+            if self.explore_presets:
                 self.search_spinner.props.visible = False
 
                 for (preset, preset_name), preset_url in zip(
@@ -220,7 +225,8 @@ class GradiencePresetWindow(Adw.Window):
                 widget.props.visible = True
             else:
                 widget.props.visible = False
-                buglog("Matching {} with {}".format(search_text, widget.props.title))
+                buglog("Matching {} with {}".format(
+                    search_text, widget.props.title))
                 if search_text.lower() in widget.props.title.lower():
                     widget.props.visible = True
                     buglog(widget.props.title)
