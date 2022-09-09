@@ -178,13 +178,11 @@ class GradiencePresetWindow(Adw.Window):
         for widget in self.search_results_list:
             self.search_results.remove(widget)
 
-        not_offline = []
+        offline = True
         for repo_name, repo in self._repos.items():
             self.explore_presets, urls = fetch_presets(repo)
 
-            if not self.explore_presets:  # offline
-                not_offline.append(False)
-            else:
+            if self.explore_presets:  
                 self.search_spinner.props.visible = False
 
                 for (preset, preset_name), preset_url in zip(
@@ -195,8 +193,10 @@ class GradiencePresetWindow(Adw.Window):
                     )
                     self.search_results.append(row)
                     self.search_results_list.append(row)
+            else:
+                offline = False
 
-        if not_offline:
+        if offline:
             self.search_spinner.props.visible = False
             self.search_stack.set_visible_child_name("page_offline")
 
