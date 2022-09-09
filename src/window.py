@@ -75,7 +75,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             "window-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT
         )
 
-        self.connect("close-request", self.__close_window)
+        self.connect("close-request", self.close_window)
         self.style_manager = self.get_application().style_manager
         self.first_apply = True
 
@@ -106,7 +106,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
 
-    def __close_window(self, widegt):
+    def close_window(self, *args):
         if self.get_application().is_dirty:
             buglog("app is dirty")
 
