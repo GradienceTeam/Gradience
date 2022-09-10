@@ -29,9 +29,10 @@ class GradiencePluginRow(Adw.ActionRow):
     switch = Gtk.Template.Child("switch")
     settings_button = Gtk.Template.Child("settings-button")
     remove_button = Gtk.Template.Child("remove-button")
+
     def __init__(self, plugin_object, preset, plugins_list, **kwargs):
         super().__init__(**kwargs)
-        
+
         self.plugins_list = plugins_list
 
         self.plugin_object = plugin_object
@@ -39,11 +40,9 @@ class GradiencePluginRow(Adw.ActionRow):
         self.set_title(plugin_object.title)
         self.set_subtitle("@" + plugin_object.plugin_id)
 
-        
         self.enabled_plugins = self.plugins_list.enabled_plugins
         if self.plugin_object.plugin_id in self.enabled_plugins:
             self.switch.set_active(True)
-            
 
         self.give_preset_settings(preset)
 
