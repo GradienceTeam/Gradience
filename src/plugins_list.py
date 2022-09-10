@@ -40,11 +40,13 @@ class GradiencePluginsList:
         self.check_if_plugin_dir_exists()
 
         self.app = self.win.get_application()
-        self.enabled_plugins = set(self.app.settings.get_value("enabled-plugins").unpack())
+        self.enabled_plugins = set(
+            self.app.settings.get_value("enabled-plugins").unpack()
+        )
         self.rows = {}
-        
+
         self.reload()
-                
+
     def reload(self):
         self.pm = PluginManager()
         self.pm.setPluginPlaces(
