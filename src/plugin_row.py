@@ -26,7 +26,7 @@ from .constants import rootdir
 class GradiencePluginRow(Adw.ActionRow):
     __gtype_name__ = "GradiencePluginRow"
 
-    def __init__(self, plugin_object, **kwargs):
+    def __init__(self, plugin_object, preset, **kwargs):
         super().__init__(**kwargs)
 
         self.plugin_object = plugin_object
@@ -37,6 +37,8 @@ class GradiencePluginRow(Adw.ActionRow):
         switch = Gtk.Template.Child("switch")
         settings_button = Gtk.Template.Child("settings-button")
         remove_button = Gtk.Template.Child("remove-button")
+        
+        self.give_preset_settings(preset)
 
     @Gtk.Template.Callback()
     def on_settings_plugin_clicked(self, *_args):
@@ -50,3 +52,8 @@ class GradiencePluginRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_switch_toggled(self, *_args):
         buglog("toggled")
+        
+    def give_preset_settings(self, preset_settings):
+        self.preset_settings = preset_settings
+        self.plugin_object.give_preset_settings(preset_settings)
+

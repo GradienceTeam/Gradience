@@ -51,6 +51,8 @@ class GradiencePluginsList:
 
         for pluginInfo in self.pm.getAllPlugins():
             pluginInfo.plugin_object.activate()
+            
+        self.app = self.win.get_application()
 
     @staticmethod
     def check_if_plugin_dir_exists():
@@ -61,6 +63,11 @@ class GradiencePluginsList:
         return True
 
     def to_group(self):
+        preset =  {
+                    "variables": self.app.variables,
+                    "palette": self.app.palette,
+                    "custom_css": self.app.custom_css,
+                }
         group = Adw.PreferencesGroup()
         group.set_title(_("Plugins"))
         group.set_description(
@@ -70,7 +77,7 @@ class GradiencePluginsList:
         )
         if self.pm:
             for pluginInfo in self.pm.getAllPlugins():
-                row = GradiencePluginRow(pluginInfo.plugin_object)
+                row = GradiencePluginRow(pluginInfo.plugin_object, preset)
                 self.rows[pluginInfo.plugin_object.plugin_id] = row
                 group.add(row)
         else:
