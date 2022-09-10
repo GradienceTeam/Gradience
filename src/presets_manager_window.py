@@ -172,6 +172,8 @@ class GradiencePresetWindow(Adw.Window):
             body_use_markup=True,
         )
 
+        #TODO: Fix "assertion 'adw_message_dialog_has_response (self, response)' failed" error \
+        # (don't know if this isn't a bug in libadwaita itself)
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("add", _("Add"))
         dialog.set_response_appearance("add", Adw.ResponseAppearance.SUGGESTED)
@@ -191,8 +193,7 @@ class GradiencePresetWindow(Adw.Window):
 
         name_entry.connect("changed", on_name_entry_change)
 
-        url_entry = Gtk.Entry(placeholder_text="URL")
-        url_entry.set_text("https://website.com/raw/presets.json")
+        url_entry = Gtk.Entry(placeholder_text="https://website.com/raw/presets.json")
 
         def on_url_entry_change(*_args):
             if len(url_entry.get_text()) == 0:
@@ -357,7 +358,16 @@ class GradiencePresetWindow(Adw.Window):
             )
         )
 
-        if self.custom_presets:
+        buglog(f"custom_presets values: {self.custom_presets.values()}")
+
+        presets_check = not (
+            len(self.custom_presets["user"]) == 0
+            and len(self.custom_presets["official"]) == 0
+            and len(self.custom_presets["curated"]) == 0
+        )
+        buglog(f"preset_check: {presets_check}")
+
+        if presets_check:
             for repo, presets in self.custom_presets.items():
                 for preset, preset_name in presets.items():
                     row = GradiencePresetRow(preset_name, self, repo)
