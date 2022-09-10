@@ -62,7 +62,9 @@ class GradiencePluginRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_remove_plugin_clicked(self, *_args):
-        plugin_yapsy_file = USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"
+        plugin_yapsy_file = (
+            USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"
+        )
         buglog("remove", plugin_yapsy_file)
         os.remove(plugin_yapsy_file)
         Gtk.Application.get_default().reload_plugins()
