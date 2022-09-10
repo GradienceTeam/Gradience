@@ -53,21 +53,23 @@ class GradiencePluginsList:
             pluginInfo.plugin_object.activate()
 
         self.app = self.win.get_application()
-        self.enabled_plugins = set(self.app.settings.get_value("enabled-plugins").unpack())
-        
+        self.enabled_plugins = set(
+            self.app.settings.get_value("enabled-plugins").unpack()
+        )
+
     def save_enabled_plugins(self):
         self.app.settings.set_value(
             "enabled-plugins", GLib.Variant("as", list(self.enabled_plugins))
         )
-    
+
     def enable_plugin(self, plugin_id):
         self.enabled_plugins.add(plugin_id)
         self.save_enabled_plugins()
-        
+
     def disable_plugin(self, plugin_id):
         self.enabled_plugins.remove(plugin_id)
         self.save_enabled_plugins()
-        
+
     @staticmethod
     def check_if_plugin_dir_exists():
         """Check if the plugin directory exists, if not, create it"""
@@ -91,7 +93,8 @@ class GradiencePluginsList:
         )
         if self.pm:
             for pluginInfo in self.pm.getAllPlugins():
-                row = GradiencePluginRow(pluginInfo.plugin_object, preset, self)
+                row = GradiencePluginRow(
+                    pluginInfo.plugin_object, preset, self)
                 self.rows[pluginInfo.plugin_object.plugin_id] = row
                 group.add(row)
         else:
