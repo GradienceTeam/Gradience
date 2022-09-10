@@ -37,7 +37,7 @@ class GradiencePluginRow(Adw.ActionRow):
         switch = Gtk.Template.Child("switch")
         settings_button = Gtk.Template.Child("settings-button")
         remove_button = Gtk.Template.Child("remove-button")
-        
+
         self.give_preset_settings(preset)
 
     @Gtk.Template.Callback()
@@ -52,8 +52,7 @@ class GradiencePluginRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_switch_toggled(self, *_args):
         buglog("toggled")
-        
+
     def give_preset_settings(self, preset_settings):
         self.preset_settings = preset_settings
         self.plugin_object.give_preset_settings(preset_settings)
-
