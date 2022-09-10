@@ -114,7 +114,7 @@ class GradiencePresetRow(Adw.ActionRow):
         ) as file:
             preset_text = file.read()
             preset = json.loads(preset_text)
-            
+
             preset_name = preset["name"]
             variables = preset["variables"]
             palette = preset["palette"]
@@ -125,7 +125,7 @@ class GradiencePresetRow(Adw.ActionRow):
                     "gtk4": "",
                     "gtk3": "",
                 }
-                
+
         with open(
             os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
