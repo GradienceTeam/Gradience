@@ -601,6 +601,9 @@ class GradienceApplication(Adw.Application):
                         os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk3_css)
+            
+            self.plugins_list.apply()
+                
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset set sucessfully"))
             )

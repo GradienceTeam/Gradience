@@ -92,3 +92,7 @@ class GradiencePluginsList:
             if error:
                 errors.append(detail)
         return errors
+
+    def apply(self):
+        for pluginInfo in self.pm.getAllPlugins():
+            pluginInfo.plugin_object.apply()
