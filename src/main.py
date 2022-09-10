@@ -811,6 +811,7 @@ This app is written in Python and uses GTK 4 and libadwaita.
             self.global_errors + plugins_errors)
 
     def reload_plugins(self):
+        self.plugins_list.reload()
         buglog("reload plugins")
         self.win.content_plugins.remove(self.plugins_group)
         self.win.content_plugins.remove(self.custom_css_group)

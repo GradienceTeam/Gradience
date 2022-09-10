@@ -20,6 +20,16 @@ from gi.repository import Gtk, Adw
 
 from .modules.utils import buglog
 from .constants import rootdir
+from pathlib import Path
+import os
+
+USER_PLUGIN_DIR = Path(
+    os.path.join(
+        os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
+        "gradience",
+        "plugins",
+    )
+)
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/plugin_row.ui")
@@ -52,7 +62,9 @@ class GradiencePluginRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_remove_plugin_clicked(self, *_args):
-        print("delete")
+        plugin_yapsy_file = USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"
+        buglog("remove", plugin_yapsy_file)
+        os.remove(plugin_yapsy_file)
         Gtk.Application.get_default().reload_plugins()
 
     @Gtk.Template.Callback()
