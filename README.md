@@ -167,12 +167,12 @@ This tool is currently WIP, but it already has a plenty of features and is very 
 - [x] Make the code more secure
 - [x] Add preset manager with option to download other users presets
 - [x] Release on Flathub
-- [ ] Add plugin support. Will help integration with others tools. (WIP)
+- [x] Add plugin support. Will help integration with others tools. (WIP)
 - [ ] Full theme preview
 - [ ] Customize GNOME Shell
 - [ ] Customize GDM
 - [ ] Customize KvLibadwaita
-- [ ] Customize Firefox GNOME theme
+- [x] Customize Firefox GNOME theme
 
 </details>
 
