@@ -178,7 +178,7 @@ class GradiencePresetRow(Adw.ActionRow):
                     ),
                 )
             except Exception as exception:
-                print(exception.with_traceback())
+                buglog(exception)
             finally:
                 self.win.reload_pref_group()
 
@@ -198,7 +198,7 @@ class GradiencePresetRow(Adw.ActionRow):
                     )
                 )
             except Exception as exception:
-                print(exception.with_traceback())
+                buglog(exception)
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Unable to delete preset"))
                 )
@@ -225,7 +225,7 @@ class GradiencePresetRow(Adw.ActionRow):
                     ),
                 )
             except Exception as exception:
-                print(exception.with_traceback())
+                buglog(exception)
             finally:
                 self.win.reload_pref_group()
 

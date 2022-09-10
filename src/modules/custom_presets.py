@@ -26,7 +26,7 @@ from .utils import to_slug_case, buglog
 # Open an pool manager
 poolmgr = urllib3.PoolManager()
 
-
+# TODO: Modify functions to be asynchronous
 def fetch_presets(repo) -> [dict, list]:
     try:
         http = poolmgr.request("GET", repo)
@@ -99,4 +99,4 @@ def download_preset(name, repo_name, url) -> None:
             f.write(data)
             f.close()
     except OSError as e:
-        buglog(f"Failed to write data into a file. Exc: {e}")
+        buglog(f"Failed to write data to a file. Exc: {e}")
