@@ -101,15 +101,31 @@ class GradiencePresetRow(Adw.ActionRow):
         self.win.reload_pref_group()
 
     def update_value(self):
-        os.remove(
+        with open(
             os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
                                os.environ["HOME"] + "/.config"),
                 "presets",
                 self.prefix,
                 to_slug_case(self.old_name) + ".json",
-            )
-        )
+            ),
+            "r",
+            encoding="utf-8",
+        ) as file:
+            preset_text = file.read()
+            preset = json.loads(preset_text)
+            
+            preset_name = preset["name"]
+            variables = preset["variables"]
+            palette = preset["palette"]
+            if "custom_css" in preset:
+                custom_css = preset["custom_css"]
+            else:
+                custom_css = {
+                    "gtk4": "",
+                    "gtk3": "",
+                }
+                
         with open(
             os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
@@ -123,13 +139,21 @@ class GradiencePresetRow(Adw.ActionRow):
         ) as file:
             object_to_write = {
                 "name": self.name,
-                "variables": self.app.variables,
-                "palette": self.app.palette,
-                "custom_css": self.app.custom_css,
+                "variables": variables,
+                "palette": palette,
+                "custom_css": custom_css,
             }
             file.write(json.dumps(object_to_write, indent=4))
-            self.app.clear_dirty()
             self.toast_overlay.add_toast(Adw.Toast(title=_("Preset renamed")))
+            os.remove(
+                os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                os.environ["HOME"] + "/.config"),
+                    "presets",
+                    self.prefix,
+                    to_slug_case(self.old_name) + ".json",
+                )
+            )
         self.old_name = self.name
 
     def do_delete_preset(self):
