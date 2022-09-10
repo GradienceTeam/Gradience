@@ -148,7 +148,7 @@ class GradiencePresetRow(Adw.ActionRow):
             os.remove(
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
-                                os.environ["HOME"] + "/.config"),
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     self.prefix,
                     to_slug_case(self.old_name) + ".json",
