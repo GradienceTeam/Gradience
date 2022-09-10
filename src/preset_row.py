@@ -202,9 +202,6 @@ class GradiencePresetRow(Adw.ActionRow):
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Unable to delete preset"))
                 )
-            else:
-                self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Preset removed")))
             finally:
                 self.win.reload_pref_group()
         else:
