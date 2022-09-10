@@ -50,4 +50,3 @@ class GradiencePluginRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_switch_toggled(self, *_args):
         buglog("toggled")
-

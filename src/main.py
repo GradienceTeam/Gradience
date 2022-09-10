@@ -601,9 +601,9 @@ class GradienceApplication(Adw.Application):
                         os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk3_css)
-            
+
             self.plugins_list.apply()
-                
+
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset set sucessfully"))
             )
@@ -809,12 +809,12 @@ This app is written in Python and uses GTK 4 and libadwaita.
 
         self.props.active_window.update_errors(
             self.global_errors + plugins_errors)
-        
+
     def reload_plugins(self):
         buglog("reload plugins")
         self.win.content_plugins.remove(self.plugins_group)
         self.win.content_plugins.remove(self.custom_css_group)
-        
+
         self.plugins_group = self.plugins_list.to_group()
 
         self.win.content_plugins.add(self.plugins_group)
