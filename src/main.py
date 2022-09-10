@@ -87,7 +87,7 @@ class GradienceApplication(Adw.Application):
         if not self.win:
             self.win = GradienceMainWindow(application=self)
         self.plugins_list = GradiencePluginsList(self.win)
-        self.reload_plugins()
+        self.setup_plugins()
 
         self.create_action("open_preset_directory", self.open_preset_directory)
         self.create_stateful_action(
@@ -788,19 +788,41 @@ This app is written in Python and uses GTK 4 and libadwaita.
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
-    def reload_plugins(self):
-        buglog("reload plugins")
+    def setup_plugins(self):
+        buglog("setup plugins")
         self.plugins_group = self.plugins_list.to_group()
 
         self.win.content_plugins.add(self.plugins_group)
         self.plugins_group = self.plugins_group
 
-        custom_css_group = GradienceCustomCSSGroup()
+        self.custom_css_group = GradienceCustomCSSGroup()
         for app_type in settings_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
-        custom_css_group.load_custom_css(self.custom_css)
-        self.win.content_plugins.add(custom_css_group)
-        self.custom_css_group = custom_css_group
+        self.custom_css_group.load_custom_css(self.custom_css)
+        self.win.content_plugins.add(self.custom_css_group)
+        self.custom_css_group = self.custom_css_group
+
+        plugins_errors = self.plugins_list.validate()
+
+        self.props.active_window.update_errors(
+            self.global_errors + plugins_errors)
+        
+    def reload_plugins(self):
+        buglog("reload plugins")
+        self.win.content_plugins.remove(self.plugins_group)
+        self.win.content_plugins.remove(self.custom_css_group)
+        
+        self.plugins_group = self.plugins_list.to_group()
+
+        self.win.content_plugins.add(self.plugins_group)
+        self.plugins_group = self.plugins_group
+
+        self.custom_css_group = GradienceCustomCSSGroup()
+        for app_type in settings_schema["custom_css_app_types"]:
+            self.custom_css[app_type] = ""
+        self.custom_css_group.load_custom_css(self.custom_css)
+        self.win.content_plugins.add(self.custom_css_group)
+        self.custom_css_group = self.custom_css_group
 
         plugins_errors = self.plugins_list.validate()
 

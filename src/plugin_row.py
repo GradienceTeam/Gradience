@@ -45,9 +45,9 @@ class GradiencePluginRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_remove_plugin_clicked(self, *_args):
         print("delete")
+        Gtk.Application.get_default().reload_plugins()
 
     @Gtk.Template.Callback()
     def on_switch_toggled(self, *_args):
         buglog("toggled")
 
-        Gtk.Application.get_default().reload_plugins()
