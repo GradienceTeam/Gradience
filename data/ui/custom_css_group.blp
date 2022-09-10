@@ -16,7 +16,11 @@ template GradienceCustomCSSGroup : Adw.PreferencesGroup {
     min-content-height: 500;
     max-content-height: 500;
     TextView custom-css-text-view {
-      styles ["custom-css-view", "card"]
+      styles ["card"]
+      left-margin: 10;
+      right-margin: 10;
+      top-margin: 10;
+      bottom-margin: 10;
       monospace: true;
       buffer: TextBuffer {
         changed => on_custom_css_changed();
