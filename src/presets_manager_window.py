@@ -121,6 +121,9 @@ class GradiencePresetWindow(Adw.Window):
         self.reload_repos_group()
 
     def setup_explore(self):
+        self.search_results_list.clear()
+        buglog("Preset list cleared")
+        
         offline = False
 
         for repo_name, repo in self._repos.items():
@@ -211,6 +214,7 @@ class GradiencePresetWindow(Adw.Window):
     def on_search_changed(self, *args):
         search_text = self.search_entry.props.text
         buglog("[New search query]")
+        buglog(f"Presets amount: {len(self.search_results_list)}")
         buglog(f"Search string: {search_text}")
         buglog("Items found:")
         for widget in self.search_results_list:
@@ -218,8 +222,6 @@ class GradiencePresetWindow(Adw.Window):
                 widget.props.visible = True
             else:
                 widget.props.visible = False
-                buglog("Matching {} with {}".format(
-                    search_text, widget.props.title))
                 if search_text.lower() in widget.props.title.lower():
                     widget.props.visible = True
                     buglog(widget.props.title)
