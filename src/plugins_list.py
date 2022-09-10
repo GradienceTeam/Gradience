@@ -61,7 +61,6 @@ class GradiencePluginsList:
             self.app.settings.get_value("enabled-plugins").unpack()
         )
 
-(feat: add plugin deletion)
     def save_enabled_plugins(self):
         self.app.settings.set_value(
             "enabled-plugins", GLib.Variant("as", list(self.enabled_plugins))
