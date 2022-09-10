@@ -22,19 +22,17 @@ import logging
 from anyascii import anyascii
 from gradience.constants import build_type
 
+
 if build_type == "debug":
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.DEBUG, format="[%(levelname)s] [%(name)s] %(message)s")
 else:
-    logging.basicConfig(level=logging.WARNING)
+    logging.basicConfig(level=logging.WARNING, format="[%(levelname)s] [%(name)s] %(message)s")
 
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
-
 # Use it instead of print(), so there isn't any output in stdout if
-# Gradience was build in release mode
-
-
+# Gradience is build in release mode
 def buglog(*args):
     logging.debug(*args)
