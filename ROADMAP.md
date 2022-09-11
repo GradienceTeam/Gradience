@@ -1,5 +1,7 @@
 # Roadmap 
 
+This tool is fully usable, if you want a new feature, open an issue or submit a PR
+
 # Base features
 
 - [x] Customize named colors, either with a color picker or with text
@@ -22,7 +24,7 @@
 
 # Plugins
 
-- [x] Add plugin support. Will help integration with others tools. (WIP)
+- [x] Add plugin support. Will help integration with others tools.
 - [ ] Full theme preview
 - [ ] Customize GNOME Shell
 - [ ] Customize GDM
