@@ -61,7 +61,7 @@ gradience_modules = [
   'modules/__init__.py',
   'modules/custom_presets.py',
   'modules/flatpak_overrides.py',
-  'modules/utils.py'
+  'modules/utils.py',
   'modules/run_async.py',
 ]
 
