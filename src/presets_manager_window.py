@@ -66,7 +66,6 @@ class GradiencePresetWindow(Adw.Window):
 
     search_results_list = []
 
-
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
 
@@ -87,7 +86,6 @@ class GradiencePresetWindow(Adw.Window):
         self.setup_repos()
         self.setup_user_presets()
         self.setup_explore()
-
 
     def setup(self):
         self.import_file_chooser.set_transient_for(self)
@@ -123,7 +121,7 @@ class GradiencePresetWindow(Adw.Window):
     def setup_explore(self):
         self.search_results_list.clear()
         buglog("Preset list cleared")
-        
+
         offline = False
 
         for repo_name, repo in self._repos.items():
@@ -172,7 +170,7 @@ class GradiencePresetWindow(Adw.Window):
             body_use_markup=True,
         )
 
-        #TODO: Fix "assertion 'adw_message_dialog_has_response (self, response)' failed" error \
+        # TODO: Fix "assertion 'adw_message_dialog_has_response (self, response)' failed" error \
         # (don't know if this isn't a bug in libadwaita itself)
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("add", _("Add"))
@@ -193,7 +191,8 @@ class GradiencePresetWindow(Adw.Window):
 
         name_entry.connect("changed", on_name_entry_change)
 
-        url_entry = Gtk.Entry(placeholder_text="https://website.com/raw/presets.json")
+        url_entry = Gtk.Entry(
+            placeholder_text="https://website.com/raw/presets.json")
 
         def on_url_entry_change(*_args):
             if len(url_entry.get_text()) == 0:
