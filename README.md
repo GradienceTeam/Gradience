@@ -61,7 +61,7 @@ dnf install gradience
 
 ### Debian (And derivates)
 
-Not available yet
+Not available yet. If you want, submit a PR.
 
 ### AUR 
 
