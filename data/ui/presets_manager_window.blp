@@ -146,3 +146,18 @@ template GradiencePresetWindow : Adw.Window {
     }
   }
 }
+
+Gtk.FileChooserNative import_file_chooser {
+  title: _("Import a Preset File (*.json)");
+  modal: true;
+}
+
+Gtk.FileFilter all_filter {
+  name: _("All files");
+  mime-types ["application/octet-stream"]
+}
+
+Gtk.FileFilter json_filter {
+  name: _("JSON file (*.json)");
+  mime-types ["application/json"]
+}

@@ -42,7 +42,12 @@ class GradiencePresetWindow(Adw.Window):
     main_view = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
 
-    import_button = Gtk.Template.Child("import_button")
+    import_button = Gtk.Template.Child()
+    import_file_chooser = Gtk.Template.Child()
+
+    all_filter = Gtk.Template.Child()
+    json_filter = Gtk.Template.Child()
+
     remove_button = Gtk.Template.Child("remove_button")
     file_manager_button = Gtk.Template.Child("file_manager_button")
 
@@ -61,128 +66,66 @@ class GradiencePresetWindow(Adw.Window):
 
     search_results_list = []
 
+
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
 
+        self.app = Gtk.Application.get_default()
+
         self.settings = parent.settings
+
         self.user_repositories = self.settings.get_value("repos").unpack()
         self.user_repositories[
             _("Curated")
         ] = "https://github.com/GradienceTeam/Community/raw/next/curated.json"
         self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
-        self.repos_list = Adw.PreferencesGroup()
-        self.repos_list.set_title(_("Repositories"))
-        self.repos.add(self.repos_list)
-        self.reload_repos_group()
 
+        self.setup_signals()
+        self.setup()
+
+        self.setup_builtin_presets()
+        self.setup_repos()
+        self.setup_user_presets()
+        self.setup_explore()
+
+
+    def setup(self):
+        self.import_file_chooser.set_transient_for(self)
+        self.import_file_chooser.set_action(Gtk.FileChooserAction.OPEN)
+
+        self.import_file_chooser.add_filter(self.all_filter)
+        self.import_file_chooser.add_filter(self.json_filter)
+
+        self.import_file_chooser.connect(
+            "response", self.on_file_chooser_response)
+
+    def setup_signals(self):
+        self.search_entry.connect("search-changed", self.on_search_changed)
+        self.search_entry.connect("stop-search", self.on_search_ended)
+
+    def setup_builtin_presets(self):
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
         self.installed.add(self.builtin_preset_list)
 
+    def setup_user_presets(self):
         self.preset_list = Adw.PreferencesGroup()
         self.preset_list.set_title(_("User Presets"))
         self.installed.add(self.preset_list)
         self.reload_pref_group()
 
-        self.app = Gtk.Application.get_default()
-        self.setup_explore()
-        self.setup_import()
-
-        self.connect_signals()
-
-    def remove_repo(self, repo_name):
-        self.user_repositories.pop(repo_name)
-        self.save_repos()
-
-    def save_repos(self):
-        self.settings.set_value("repos", GLib.Variant(
-            "a{sv}", self.user_repositories))
-        self.reload_repos_group()
-        self.setup_explore()
-
-    def reload_repos_group(self):
-        self.repos.remove(self.repos_list)
+    def setup_repos(self):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
-
-        self.add_repo_button = Gtk.Button.new_from_icon_name(
-            "list-add-symbolic")
-        self.add_repo_button.connect(
-            "clicked", self.on_add_repo_button_clicked)
-
-        self.repos_list.set_header_suffix(self.add_repo_button)
-
-        for repo_name, repo in self.official_repositories.items():
-            row = GradienceRepoRow(repo, repo_name, self, deletable=False)
-            self.repos_list.add(row)
-
-        for repo_name, repo in self.user_repositories.items():
-            row = GradienceRepoRow(repo, repo_name, self)
-            self.repos_list.add(row)
-
         self.repos.add(self.repos_list)
-
-        self._repos = {**self.user_repositories, **self.official_repositories}
-
-    def add_repo(self, _unused, response, name_entry, url_entry):
-        if response == "add":
-            repo = {name_entry.get_text(): url_entry.get_text()}
-            self.user_repositories.update(repo)
-
-            self.save_repos()
-
-    def on_add_repo_button_clicked(self, *args):
-        dialog = Adw.MessageDialog(
-            transient_for=self,
-            heading=_("Add new repository"),
-            body=_("Add a repository to install additional presets"),
-            body_use_markup=True,
-        )
-
-        dialog.add_response("cancel", _("Cancel"))
-        dialog.add_response("add", _("Add"))
-        dialog.set_response_appearance("add", Adw.ResponseAppearance.SUGGESTED)
-        dialog.set_default_response("cancel")
-        dialog.set_close_response("cancel")
-
-        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
-
-        name_entry = Gtk.Entry(placeholder_text="Preset Name")
-        name_entry.set_text("My Repo")
-
-        def on_name_entry_change(*_args):
-            if len(name_entry.get_text()) == 0:
-                dialog.set_response_enabled("save", False)
-            else:
-                dialog.set_response_enabled("save", True)
-
-        name_entry.connect("changed", on_name_entry_change)
-
-        url_entry = Gtk.Entry(placeholder_text="URL")
-        url_entry.set_text("https://website.com/raw/presets.json")
-
-        def on_url_entry_change(*_args):
-            if len(url_entry.get_text()) == 0:
-                dialog.set_response_enabled("save", False)
-            else:
-                # TODO: Check if URL is valid
-                dialog.set_response_enabled("save", True)
-
-        url_entry.connect("changed", on_url_entry_change)
-
-        box.append(name_entry)
-        box.append(url_entry)
-        dialog.set_extra_child(box)
-
-        dialog.connect("response", self.add_repo, name_entry, url_entry)
-
-        dialog.present()
+        self.reload_repos_group()
 
     def setup_explore(self):
-        for widget in self.search_results_list:
-            self.search_results.remove(widget)
-
+        self.search_results_list.clear()
+        buglog("Preset list cleared")
+        
         offline = False
+
         for repo_name, repo in self._repos.items():
             self.explore_presets, urls = fetch_presets(repo)
 
@@ -204,20 +147,75 @@ class GradiencePresetWindow(Adw.Window):
             self.search_spinner.props.visible = False
             self.search_stack.set_visible_child_name("page_offline")
 
-    def setup_import(self):
-        self.file_chooser_dialog = Gtk.FileChooserNative()
-        self.file_chooser_dialog.set_transient_for(self)
+    def add_repo(self, _unused, response, name_entry, url_entry):
+        if response == "add":
+            repo = {name_entry.get_text(): url_entry.get_text()}
+            self.user_repositories.update(repo)
 
-        self.file_chooser_dialog.connect(
-            "response", self.on_file_chooser_response)
+            self.save_repos()
 
-    def connect_signals(self):
-        self.search_entry.connect("search-changed", self.on_search_changed)
-        self.search_entry.connect("stop-search", self.on_search_ended)
+    def remove_repo(self, repo_name):
+        self.user_repositories.pop(repo_name)
+        self.save_repos()
+
+    def save_repos(self):
+        self.settings.set_value("repos", GLib.Variant(
+            "a{sv}", self.user_repositories))
+        self.reload_repos_group()
+        self.setup_explore()
+
+    def on_add_repo_button_clicked(self, *args):
+        dialog = Adw.MessageDialog(
+            transient_for=self,
+            heading=_("Add new repository"),
+            body=_("Add a repository to install additional presets"),
+            body_use_markup=True,
+        )
+
+        #TODO: Fix "assertion 'adw_message_dialog_has_response (self, response)' failed" error \
+        # (don't know if this isn't a bug in libadwaita itself)
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("add", _("Add"))
+        dialog.set_response_appearance("add", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_default_response("cancel")
+        dialog.set_close_response("cancel")
+
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+
+        name_entry = Gtk.Entry(placeholder_text="Preset Name")
+        name_entry.set_text("My Repo")
+
+        def on_name_entry_change(*_args):
+            if len(name_entry.get_text()) == 0:
+                dialog.set_response_enabled("save", False)
+            else:
+                dialog.set_response_enabled("save", True)
+
+        name_entry.connect("changed", on_name_entry_change)
+
+        url_entry = Gtk.Entry(placeholder_text="https://website.com/raw/presets.json")
+
+        def on_url_entry_change(*_args):
+            if len(url_entry.get_text()) == 0:
+                dialog.set_response_enabled("save", False)
+            else:
+                # TODO: Check if URL is valid
+                dialog.set_response_enabled("save", True)
+
+        url_entry.connect("changed", on_url_entry_change)
+
+        box.append(name_entry)
+        box.append(url_entry)
+        dialog.set_extra_child(box)
+
+        dialog.connect("response", self.add_repo, name_entry, url_entry)
+
+        dialog.present()
 
     def on_search_changed(self, *args):
         search_text = self.search_entry.props.text
         buglog("[New search query]")
+        buglog(f"Presets amount: {len(self.search_results_list)}")
         buglog(f"Search string: {search_text}")
         buglog("Items found:")
         for widget in self.search_results_list:
@@ -225,8 +223,6 @@ class GradiencePresetWindow(Adw.Window):
                 widget.props.visible = True
             else:
                 widget.props.visible = False
-                buglog("Matching {} with {}".format(
-                    search_text, widget.props.title))
                 if search_text.lower() in widget.props.title.lower():
                     widget.props.visible = True
                     buglog(widget.props.title)
@@ -241,13 +237,13 @@ class GradiencePresetWindow(Adw.Window):
 
     @Gtk.Template.Callback()
     def on_import_button_clicked(self, *_args):
-        self.file_chooser_dialog.show()
+        self.import_file_chooser.show()
 
     def on_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
-            self.preset_path = self.file_chooser_dialog.get_file()
+            self.preset_path = widget.get_file()
             preset_file = self.preset_path.get_basename()
-        self.file_chooser_dialog.hide()
+        widget.hide()
 
         if response == Gtk.ResponseType.ACCEPT:
             if preset_file.endswith(".json"):
@@ -362,7 +358,16 @@ class GradiencePresetWindow(Adw.Window):
             )
         )
 
-        if self.custom_presets:
+        buglog(f"custom_presets values: {self.custom_presets.values()}")
+
+        presets_check = not (
+            len(self.custom_presets["user"]) == 0
+            and len(self.custom_presets["official"]) == 0
+            and len(self.custom_presets["curated"]) == 0
+        )
+        buglog(f"preset_check: {presets_check}")
+
+        if presets_check:
             for repo, presets in self.custom_presets.items():
                 for preset, preset_name in presets.items():
                     row = GradiencePresetRow(preset_name, self, repo)
@@ -377,3 +382,27 @@ class GradiencePresetWindow(Adw.Window):
             )
             self.preset_list.add(self.preset_empty)
         self.installed.add(self.preset_list)
+
+    def reload_repos_group(self):
+        self.repos.remove(self.repos_list)
+        self.repos_list = Adw.PreferencesGroup()
+        self.repos_list.set_title(_("Repositories"))
+
+        self.add_repo_button = Gtk.Button.new_from_icon_name(
+            "list-add-symbolic")
+        self.add_repo_button.connect(
+            "clicked", self.on_add_repo_button_clicked)
+
+        self.repos_list.set_header_suffix(self.add_repo_button)
+
+        for repo_name, repo in self.official_repositories.items():
+            row = GradienceRepoRow(repo, repo_name, self, deletable=False)
+            self.repos_list.add(row)
+
+        for repo_name, repo in self.user_repositories.items():
+            row = GradienceRepoRow(repo, repo_name, self)
+            self.repos_list.add(row)
+
+        self.repos.add(self.repos_list)
+
+        self._repos = {**self.user_repositories, **self.official_repositories}
