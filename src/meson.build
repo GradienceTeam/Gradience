@@ -40,7 +40,6 @@ gradience_sources = [
   'plugins_list.py',
   'setting.py',
   'option.py',
-  'run_async.py',
   'window.py',
   'app_type_dialog.py',
   'custom_css_group.py',
@@ -63,6 +62,7 @@ gradience_modules = [
   'modules/custom_presets.py',
   'modules/flatpak_overrides.py',
   'modules/utils.py'
+  'modules/run_async.py',
 ]
 
 PY_INSTALLDIR.install_sources(gradience_modules, subdir: 'gradience/modules')
