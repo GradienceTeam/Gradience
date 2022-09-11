@@ -27,10 +27,12 @@ from .utils import to_slug_case, buglog
 poolmgr = urllib3.PoolManager()
 
 # TODO: Modify functions to be asynchronous
+
+
 def fetch_presets(repo) -> [dict, list]:
     try:
         http = poolmgr.request("GET", repo)
-    except urllib3.exceptions.NewConnectionError as e: # offline
+    except urllib3.exceptions.NewConnectionError as e:  # offline
         buglog(f"Failed to establish a new connection. Exc: {e}")
         return False, False
     except urllib3.exceptions.MaxRetryError as e:
@@ -39,7 +41,7 @@ def fetch_presets(repo) -> [dict, list]:
     except urllib3.exceptions.HTTPError as e:
         buglog(f"Unhandled urllib3.exceptions.HTTPError error code. Exc: {e}")
         return False, False
-    
+
     try:
         raw = json.loads(http.data)
     except json.JSONDecodeError as e:
@@ -64,10 +66,11 @@ def fetch_presets(repo) -> [dict, list]:
 
     return preset_dict, url_list
 
+
 def download_preset(name, repo_name, url) -> None:
     try:
         http = poolmgr.request("GET", url)
-    except urllib3.exceptions.NewConnectionError as e: # offline
+    except urllib3.exceptions.NewConnectionError as e:  # offline
         buglog(f"Failed to establish a new connection. Exc: {e}")
         return False, False
     except urllib3.exceptions.MaxRetryError as e:
@@ -89,7 +92,7 @@ def download_preset(name, repo_name, url) -> None:
         with open(
             os.path.join(
                 os.environ.get("XDG_CONFIG_HOME",
-                                os.environ["HOME"] + "/.config"),
+                               os.environ["HOME"] + "/.config"),
                 "presets",
                 repo_name,
                 to_slug_case(name) + ".json",
