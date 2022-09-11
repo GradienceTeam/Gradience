@@ -19,4 +19,4 @@ jobs:
     steps:
     - uses: actions/labeler@v4
       with:
-        repo-token: "${{ secrets.ACCESS_TOKEN }}"
+        repo-token: ${{ secrets.ACCESS_TOKEN }}
