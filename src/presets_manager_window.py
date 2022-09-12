@@ -31,6 +31,7 @@ from .modules.custom_presets import fetch_presets
 from .repo_row import GradienceRepoRow
 from .modules.utils import buglog
 from .constants import rootdir
+from .modules.run_async import RunAsync
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
@@ -124,14 +125,15 @@ class GradiencePresetWindow(Adw.Window):
 
         offline = False
 
-        for repo_name, repo in self._repos.items():
-            self.explore_presets, urls = fetch_presets(repo)
+        def fetch(repo_name, repo):
+            global offline
+            explore_presets, urls = fetch_presets(repo)
 
-            if self.explore_presets:
+            if explore_presets:
                 self.search_spinner.props.visible = False
 
                 for (preset, preset_name), preset_url in zip(
-                    self.explore_presets.items(), urls
+                    explore_presets.items(), urls
                 ):
                     row = GradienceExplorePresetRow(
                         preset_name, preset_url, self, repo_name
@@ -140,6 +142,9 @@ class GradiencePresetWindow(Adw.Window):
                     self.search_results_list.append(row)
             else:
                 offline = True
+
+        for repo_name, repo in self._repos.items():
+            fetch(repo_name=repo_name, repo=repo)
 
         if offline:
             self.search_spinner.props.visible = False

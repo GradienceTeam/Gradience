@@ -23,7 +23,7 @@ import traceback
 
 from gi.repository import GLib
 
-from .modules.utils import buglog
+from .utils import buglog
 
 
 class RunAsync(threading.Thread):
