@@ -25,9 +25,11 @@ from .utils import to_slug_case, buglog
 import aiohttp
 import asyncio
 
+
 async def fetch(session, url):
     async with session.get(url) as response:
         return await response.text()
+
 
 async def main(repo):
     async with aiohttp.ClientSession() as session:
@@ -67,8 +69,9 @@ async def main(repo):
 def fetch_presets(repo) -> [dict, list]:
     return asyncio.run(main(repo))
 
+
 async def _download_preset(name, repo_name, url) -> None:
-     async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession() as session:
         try:
             http = await fetch(session, url)
         except aiohttp.ClientError as error:
@@ -87,7 +90,7 @@ async def _download_preset(name, repo_name, url) -> None:
             with open(
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
-                                os.environ["HOME"] + "/.config"),
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     repo_name,
                     to_slug_case(name) + ".json",
@@ -99,6 +102,7 @@ async def _download_preset(name, repo_name, url) -> None:
                 f.close()
         except OSError as error:
             buglog(f"Failed to write data to a file. Exc: {error}")
+
 
 def download_preset(name, repo_name, url) -> None:
     asyncio.run(_download_preset(name, repo_name, url))
