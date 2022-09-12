@@ -36,22 +36,62 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/f7/e1/8b46ff54516faea4ea9469c4f5b50f2e9e73131f54d19e6827141698a822/regex-2022.8.17.tar.gz",
-                    "sha256": "5c77eab46f3a2b2cd8bbe06467df783543bf7396df431eb4a144cc4b89e9fb3c"
+                    "url": "https://files.pythonhosted.org/packages/fb/aa/390071f384435ae3bbda1c30ae8b1ca97575b154694d5ec092bca45d97ef/regex-2022.9.11.tar.gz",
+                    "sha256": "36dc03da451c2aef9a3ea521a453faa43474fc6c1d8b46706aee6c31a57d3552"
                 }
             ]
         },
         {
-            "name": "python3-urllib3",
+            "name": "python3-aiohttp",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"urllib3\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"aiohttp\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/6f/de/5be2e3eed8426f871b170663333a0f627fc2924cc386cd41be065e7ea870/urllib3-1.26.12-py2.py3-none-any.whl",
-                    "sha256": "b930dd878d5a8afb066a637fbb35144fe7901e3b209d1cd4f524bd0e9deee997"
+                    "url": "https://files.pythonhosted.org/packages/04/a2/d918dcd22354d8958fe113e1a3630137e0fc8b44859ade3063982eacd2a4/idna-3.3-py3-none-any.whl",
+                    "sha256": "84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/d6/04/255c68974ec47fa754564c4abba8f61f9ed68b869bbbb854198d6259c4f7/yarl-1.8.1.tar.gz",
+                    "sha256": "af887845b8c2e060eb5605ff72b6f2dd2aab7a761379373fd89d314f4752abbf"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/f2/bc/d817287d1aa01878af07c19505fafd1165cd6a119e9d0821ca1d1c20312d/attrs-22.1.0-py2.py3-none-any.whl",
+                    "sha256": "86efa402f67bf2df34f51a335487cf46b1ec130d02b8d39fd248abfd30da551c"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/3b/87/fe94898f2d44a93a35d5aa74671ed28094d80753a1113d68b799fab6dc22/aiosignal-1.2.0-py3-none-any.whl",
+                    "sha256": "26e62109036cd181df6e6ad646f91f0dcfd05fe16d0cb924138ff2ab75d64e3a"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/d6/c1/8991e7c5385b897b8c020cdaad718c5b087a6626d1d11a23e1ea87e325a7/async_timeout-4.0.2-py3-none-any.whl",
+                    "sha256": "8ca1e4fcf50d07413d66d1a5e416e42cfdf5851c981d679a09851a6853383b3c"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/8a/95/229aacfe85daa28e2792481a98c336bc30d3729533e6a44db537880aca21/frozenlist-1.3.1.tar.gz",
+                    "sha256": "3a735e4211a04ccfa3f4833547acdf5d2f863bfeb01cfd3edaffbc251f15cec8"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/5a/86/5f63de7a202550269a617a5d57859a2961f3396ecd1739a70b92224766bc/aiohttp-3.8.1.tar.gz",
+                    "sha256": "fc5471e1a54de15ef71c1bc6ebe80d4dc681ea600e68bfd1cbce40427f0b7578"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/db/51/a507c856293ab05cdc1db77ff4bc1268ddd39f29e7dc4919aa497f0adbec/charset_normalizer-2.1.1-py3-none-any.whl",
+                    "sha256": "83e9a75d1911279afd89352c68b45348559d1fc0506b054b346651b5e7fee29f"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/fa/a7/71c253cdb8a1528802bac7503bf82fe674367e4055b09c28846fdfa4ab90/multidict-6.0.2.tar.gz",
+                    "sha256": "5ff3bd75f38e4c43f1f470f2df7a4d430b821c4ce22be384e1459cb57d6bb013"
                 }
             ]
         },
