@@ -21,6 +21,8 @@
 # chmod +x flatpak-pip-generator
 # Then run:
 # ./flatpak-pip-generator --requirements-file=requirements.txt --output pypi-dependencies
+# And move output file to build-aux directory:
+# mv pypi-dependencies.json build-aux/flatpak/
 # 
 # or more simply, just push and the bot will do this for you.
 

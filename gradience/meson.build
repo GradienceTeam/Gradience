@@ -2,8 +2,13 @@ configure_file(
   input: 'gradience.in',
   output: 'gradience',
   configuration: conf,
-  install: true,
   install_dir: get_option('bindir')
+)
+
+configure_file(
+  input: 'gradience.in',
+  output: 'local-gradience',
+  configuration: local_conf
 )
 
 configure_file(
@@ -23,7 +28,7 @@ configure_file(
   install_dir: PY_INSTALLDIR.get_install_dir() / 'gradience',
 )
 
-launcher = join_paths(meson.project_build_root(), 'src', meson.project_name())
+launcher = join_paths(meson.project_build_root(), 'gradience', 'local-' + meson.project_name())
 
 run_target('run',
   command: [launcher]
@@ -54,7 +59,6 @@ gradience_sources = [
 ]
 
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
-#install_data(gradience_sources, install_dir: MODULE_DIR)
 
 # Install modules
 gradience_modules = [
