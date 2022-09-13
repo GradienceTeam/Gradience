@@ -29,7 +29,6 @@ from .error import GradienceError
 from .settings_schema import settings_schema
 from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
-from .presets_manager_window import GradiencePresetWindow
 from .modules.utils import buglog
 from .constants import rootdir, app_id, build_type
 
@@ -52,7 +51,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
+        self.presets_dropdown.get_popover().connect(
+            "show", self.on_presets_dropdown_activate
+        )
 
         # Set devel style
         if build_type == "debug":
