@@ -27,7 +27,7 @@ This tool is fully usable, if you want a new feature, open an issue or submit a 
 
 - [x] Add plugin support. Will help integration with others tools.
 - [ ] Full theme preview
-- [ ] Customize GNOME Shell
-- [ ] Customize GDM
+- [ ] Customize GNOME Shell **(High priority)**
+- [ ] Customize GDM **(High priority)**
 - [ ] Customize KvLibadwaita
 - [x] Customize Firefox GNOME theme
