@@ -130,28 +130,26 @@ class GradienceApplication(Adw.Application):
         try:
             variables, palette, custom_css = load_preset_from_css(
                 os.path.join(
-                        os.environ.get("XDG_CONFIG_HOME",
-                                    os.environ["HOME"] + "/.config"),
-                        "gtk-4.0",
-                        "gtk.css"
-                    )
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "gtk-4.0",
+                    "gtk.css",
+                )
             )
             preset = {
                 "name": "User",
                 "variables": variables,
                 "palette": palette,
-                "custom_css": {
-                    "gtk4": custom_css
-                }
-
+                "custom_css": {"gtk4": custom_css},
             }
             self.load_preset_variables(preset)
-        except OSError: # fallback to adwaita
+        except OSError:  # fallback to adwaita
             if self.style_manager.get_dark():
                 self.load_preset_from_resource(
                     f"{rootdir}/presets/adwaita-dark.json")
             else:
-                self.load_preset_from_resource(f"{rootdir}/presets/adwaita.json")
+                self.load_preset_from_resource(
+                    f"{rootdir}/presets/adwaita.json")
 
     def open_preset_directory(self, *_args):
         parent = XdpGtk4.parent_new_gtk(self.props.active_window)
