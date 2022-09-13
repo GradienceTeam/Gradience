@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-31 17:25+0200\n"
-"PO-Revision-Date: 2022-09-11 20:22+0000\n"
+"PO-Revision-Date: 2022-09-13 19:38+0000\n"
 "Last-Translator: 0xMRTT <0xMRTT@tuta.io>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/fi/>\n"
@@ -226,6 +226,10 @@ msgid ""
 "so that applications could hardcode values like paddings and margins. Only "
 "GTK 4 CSS will be previewed here."
 msgstr ""
+"Tämän muuttaminen saattaa rikkoa joitain ohjelmia. Pidä mielessä, että "
+"Libadwaita tehtiin siten, että sovellukset voivat kovakoodata arvoja kuten "
+"täytteen (padding) ja reunukset (margin). Vain GTK 4 CSS näytetään "
+"esikatseluna tässä."
 
 #: data/ui/custom_css_group.blp:29
 msgid "GTK 4"
@@ -309,10 +313,12 @@ msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>."
 msgstr ""
+"Kirjoita hakusana jota etsitään <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Communitysta</a>."
 
 #: data/ui/presets_manager_window.blp:84
 msgid "e.g. \"Pretty Purple\""
-msgstr ""
+msgstr "esim. \"Pretty Purple\""
 
 #: data/ui/presets_manager_window.blp:109
 msgid "No Results Found"
@@ -320,7 +326,7 @@ msgstr "Ei tuloksia"
 
 #: data/ui/presets_manager_window.blp:118
 msgid "Offline"
-msgstr ""
+msgstr "Ei verkossa"
 
 #: data/ui/welcome.blp:41
 msgid "Previous"
@@ -420,7 +426,7 @@ msgstr "Lisäasetukset"
 
 #: data/ui/window.blp:122
 msgid "Reset Applied Color Scheme"
-msgstr ""
+msgstr "Nollaa toteutettu väriteema"
 
 #: data/ui/window.blp:126
 msgid "About Gradience"
@@ -428,15 +434,15 @@ msgstr "Tietoja - Gradience"
 
 #: data/ui/window.blp:135
 msgid "Adwaita Demo"
-msgstr ""
+msgstr "Adwaitan demo"
 
 #: data/ui/window.blp:139
 msgid "GTK4 Demo"
-msgstr ""
+msgstr "GTK4:n demo"
 
 #: data/ui/window.blp:143
 msgid "GTK4 Widget Factory"
-msgstr ""
+msgstr "GTK4:n widget-tehdas"
 
 #: src/app_type_dialog.py:46 src/main.py:443
 msgid "Cancel"
@@ -470,11 +476,11 @@ msgstr ""
 
 #: src/main.py:416
 msgid "Reset applied color scheme?"
-msgstr ""
+msgstr "Nollataanko toteutettu väriteema?"
 
 #: src/main.py:417
 msgid "Make sure you have the current settings saved as a preset."
-msgstr ""
+msgstr "Varmista, että nykyiset asetukset on tallennettu esiasetukseksi."
 
 #: src/main.py:419
 msgid "Reset"
@@ -552,11 +558,11 @@ msgstr ""
 
 #: src/option.py:55
 msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr ""
+msgstr "Tämä valinta on vain osittain tuettu adw-gtk3-teeman toimesta."
 
 #: src/option.py:59
 msgid "This option is not supported by the adw-gtk3 theme."
-msgstr ""
+msgstr "Tämä valinta ei ole tuettu adw-gtk3-teeman toimesta."
 
 #: src/option.py:102
 msgid "Not a color, see text value"
@@ -571,6 +577,8 @@ msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can make issues."
 msgstr ""
+"Liitännäiset lisäävät ominaisuuksia Gradienceen. Liitännäiset ovat yhteisön "
+"tekemiä ja ne voivat aiheuttaa ongelmia."
 
 #: src/plugins_list.py:69
 msgid "No plugins found"
@@ -621,12 +629,16 @@ msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets"
 msgstr ""
+"Katso Githubista <a href=\"https://github.com/GradienceTeam/Community\">"
+"GradienceTeam/Community</a> saadaksesi lisää esiasetuksia"
 
 #: src/presets_manager_window.py:232
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab"
 msgstr ""
+"Esiasetusta ei löytynyt! Tuo esiasetus Tuo-painikkeella tai etsi "
+"esiasetuksia Selaa-välilehdeltä"
 
 #: src/settings_schema.py:23
 msgid "Accent Colors"
@@ -755,7 +767,7 @@ msgstr ""
 
 #: src/settings_schema.py:219
 msgid "Backdrop Color"
-msgstr ""
+msgstr "Taustapudotusväri"
 
 #: src/settings_schema.py:221
 msgid ""
@@ -768,7 +780,7 @@ msgstr ""
 #: src/settings_schema.py:227 src/settings_schema.py:252
 #: src/settings_schema.py:301
 msgid "Shade Color"
-msgstr ""
+msgstr "Varjostusväri"
 
 #: src/settings_schema.py:229
 msgid ""
@@ -823,7 +835,7 @@ msgstr ""
 
 #: src/settings_schema.py:309
 msgid "Scrollbar Outline Color"
-msgstr ""
+msgstr "Vierityspalkin uloin väri"
 
 #: src/settings_schema.py:311
 msgid ""
@@ -876,6 +888,8 @@ msgid ""
 "Monet is an engine that generates a Material Design 3 palette from an "
 "image's color."
 msgstr ""
+"Monet on moottori, joka luo Material Design 3 -paletin kuvan väriin "
+"pohjautuen."
 
 #: src/window.py:152
 msgid "Background Image"
@@ -899,7 +913,7 @@ msgstr "Teema"
 
 #: src/window.py:232
 msgid "Unsupported background type"
-msgstr ""
+msgstr "Taustakuvan tyyppi ei ole tuettu"
 
 #: src/window.py:248
 msgid "Palette generated"
@@ -919,3 +933,6 @@ msgid ""
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
 "Interface Guidelines</a>."
 msgstr ""
+"Nimetyt palettivärit ovat joidenkin sovellusten käyttämiä. Oletusvärit "
+"seuraavat <a href=\"https://developer.gnome.org/hig/reference/palette.html\""
+">Gnomen Human Interface Guidelines -ohjeistuksia</a>."
