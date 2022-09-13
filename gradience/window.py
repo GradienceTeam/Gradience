@@ -52,7 +52,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
+        self.presets_dropdown.get_popover().connect(
+            "show", self.on_presets_dropdown_activate
+        )
 
         # Set devel style
         if build_type == "debug":
