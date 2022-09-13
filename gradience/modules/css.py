@@ -37,5 +37,3 @@ def load_preset_from_css(path):
             elif rule.type == rule.STYLE_RULE:
                 css += f"\n{rule.cssText}"
     return variables, palette, css
-
-
