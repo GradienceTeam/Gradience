@@ -39,5 +39,6 @@ def load_preset_from_file(path):
                 css += f"\n{rule.cssText}"
     return css, variables, palette
 
+
 # if __name__ == "__main__":
 #     load_preset_from_file("/home/user/.config/gtk-4.0/gtk.css")
