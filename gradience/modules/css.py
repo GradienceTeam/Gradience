@@ -39,5 +39,3 @@ def load_preset_from_css(path):
     return variables, palette, css
 
 
-# if __name__ == "__main__":
-#     load_preset_from_css("/home/user/.config/gtk-4.0/gtk.css")
