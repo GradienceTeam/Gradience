@@ -144,7 +144,6 @@ class GradiencePresetRow(Adw.ActionRow):
                 "custom_css": custom_css,
             }
             file.write(json.dumps(object_to_write, indent=4))
-            # self.toast_overlay.add_toast(Adw.Toast(title=_("Preset renamed")))
             os.remove(
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
