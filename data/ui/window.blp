@@ -42,11 +42,10 @@ template GradienceMainWindow : Adw.ApplicationWindow {
           }
 
           [end]
-          Button presets_button {
+          MenuButton presets-dropdown {
+            menu-model: presets-menu;
             label: _("Presets");
-            tooltip-text: _("Presets");
             icon-name: "palette-symbolic";
-            clicked => on_presets_button_clicked();
           }
 
           [end]
@@ -66,7 +65,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
             popover: errors-popover;
           }
 
-          
+
 
         }
 
@@ -81,9 +80,9 @@ template GradienceMainWindow : Adw.ApplicationWindow {
               name: "colors";
               title: _("Colors");
               icon-name: "larger-brush-symbolic";
-            
+
               child: Adw.PreferencesPage content { };
-      
+
             }
 
             Adw.ViewStackPage {
@@ -155,6 +154,32 @@ menu preview-menu {
     }
   }
 }
+
+menu presets-menu {
+  section {
+    label: _("Built-in Presets");
+    item {
+      label: "Adwaita";
+      action: "app.load_preset";
+      target: "adwaita";
+    }
+    item {
+      label: "Adwaita Dark";
+      action: "app.load_preset";
+      target: "adwaita-dark";
+    }
+     item {
+      label: "Pretty purple";
+      action: "app.load_preset";
+      target: "pretty-purple";
+    }
+    item {
+      label: "Manage Presets";
+      action: "app.manage_presets";
+    }
+  }
+}
+
 
 Popover errors-popover {
   ListBox errors-list {

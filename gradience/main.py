@@ -19,6 +19,7 @@
 import sys
 import json
 import os
+import traceback
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from material_color_utilities_python import *
 
@@ -40,7 +41,8 @@ from .welcome import GradienceWelcomeWindow
 from .preferences import GradiencePreferencesWindow
 from .modules.utils import to_slug_case, buglog
 from .plugins_list import GradiencePluginsList
-
+from .presets_manager_window import GradiencePresetWindow
+from pathlib import Path
 
 class GradienceApplication(Adw.Application):
     """The main application singleton class."""
@@ -110,6 +112,7 @@ class GradienceApplication(Adw.Application):
         self.create_action(
             "restore_color_scheme", self.show_restore_color_scheme_dialog
         )
+        self.create_action("manage_presets", self.manage_presets)
 
         self.create_action("reset_color_scheme",
                            self.show_reset_color_scheme_dialog)
@@ -118,6 +121,8 @@ class GradienceApplication(Adw.Application):
         self.create_action("about", self.show_about_window)
         self.load_preset_from_css()
 
+        self.reload_user_defined_presets()
+
         if self.first_run:
             buglog("first run")
             welcome = GradienceWelcomeWindow(self.win)
@@ -125,6 +130,114 @@ class GradienceApplication(Adw.Application):
         else:
             buglog("normal run")
             self.win.present()
+
+    def reload_user_defined_presets(self):
+        print("reload")
+        if self.props.active_window.presets_menu.get_n_items() > 1:
+            self.props.active_window.presets_menu.remove(1)
+
+        preset_directory = os.path.join(
+            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+            "presets",
+        )
+        if not os.path.exists(preset_directory):
+            os.makedirs(preset_directory)
+
+        self.custom_presets = {"user": {}}
+        for repo in Path(preset_directory).iterdir():
+            if repo.is_dir():  # repo
+                presets_list = {}
+                for file_name in repo.iterdir():
+                    file_name = str(file_name)
+                    if file_name.endswith(".json"):
+                        try:
+                            with open(
+                                os.path.join(preset_directory, file_name),
+                                "r",
+                                encoding="utf-8",
+                            ) as file:
+                                preset_text = file.read()
+                            preset = json.loads(preset_text)
+                            if preset.get("variables") is None:
+                                raise KeyError("variables")
+                            if preset.get("palette") is None:
+                                raise KeyError("palette")
+                            presets_list[file_name.replace(".json", "")] = preset[
+                                "name"
+                            ]
+                        except Exception:
+                            self.win.toast_overlay.add_toast(
+                                Adw.Toast(title=_("Failed to load preset"))
+                            )
+
+                self.custom_presets[repo.name] = presets_list
+            elif repo.is_file():
+                buglog("file")
+                # keep compatiblity with old presets
+                if repo.name.endswith(".json"):
+                    os.rename(repo, os.path.join(
+                        preset_directory, "user", repo.name))
+
+                    try:
+                        with open(
+                            os.path.join(preset_directory, "user", repo),
+                            "r",
+                            encoding="utf-8",
+                        ) as file:
+                            preset_text = file.read()
+                        preset = json.loads(preset_text)
+                        if preset.get("variables") is None:
+                            raise KeyError("variables")
+                        if preset.get("palette") is None:
+                            raise KeyError("palette")
+                        presets_list["user"][file_name.replace(".json", "")] = preset[
+                            "name"
+                        ]
+                    except Exception:
+                        self.win.toast_overlay.add_toast(
+                            Adw.Toast(title=_("Failed to load preset"))
+                        )
+
+                    buglog(self.custom_presets)
+        print(self.custom_presets)
+
+        custom_menu_section = Gio.Menu()
+        if self.custom_presets["user"] or self.custom_presets["curated"] or self.custom_presets["official"]:
+            for repo, content in self.custom_presets.items():
+
+                for preset, preset_name in content.items():
+                    menu_item = Gio.MenuItem()
+                    menu_item.set_label(preset_name)
+                    if not preset.startswith("error"):
+                        menu_item.set_action_and_target_value(
+                            "app.load_preset", GLib.Variant("s", "custom-" + preset)
+                        )
+                    else:
+                        menu_item.set_action_and_target_value("")
+                    custom_menu_section.append_item(menu_item)
+        else:
+            print("no presets")
+            menu_item = Gio.MenuItem()
+            menu_item.set_label("No presets found")
+            custom_menu_section.append_item(menu_item)
+
+        open_in_file_manager_item = Gio.MenuItem()
+        open_in_file_manager_item.set_label(_("Open in File Manager"))
+        open_in_file_manager_item.set_action_and_target_value(
+            "app.open_preset_directory"
+        )
+
+        # custom_menu_section.append_item(open_in_file_manager_item)
+        self.props.active_window.presets_menu.append_section(
+            _("Installed Presets"), custom_menu_section
+        )
+
+
+    def manage_presets(self, *args):
+        presets = GradiencePresetWindow(self)
+        presets.set_transient_for(self.win)
+        presets.set_modal(True)
+        presets.present()
 
     def load_preset_from_css(self):
         try:
