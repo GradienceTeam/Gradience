@@ -13,7 +13,7 @@ COLORS = [
 ]
 
 
-def load_preset_from_file(path):
+def load_preset_from_css(path):
     css = ""
     variables = {}
     palette = {}
@@ -30,15 +30,15 @@ def load_preset_from_file(path):
                     name, color = css_text.split(" ", 1)[1].split(" ", 1)
                     for color_name in COLORS:
                         if name.startswith(color_name):
-                            palette[name[:-1]][name[-1:]] = color
+                            palette[name[:-1]][name[-1:]] = color[:-1]
                             break
                     else:
-                        variables[name] = color
+                        variables[name] = color[:-1]
                     print(f"{name} = {color}")
             elif rule.type == rule.STYLE_RULE:
                 css += f"\n{rule.cssText}"
-    return css, variables, palette
+    return variables, palette, css
 
 
 # if __name__ == "__main__":
-#     load_preset_from_file("/home/user/.config/gtk-4.0/gtk.css")
+#     load_preset_from_css("/home/user/.config/gtk-4.0/gtk.css")
