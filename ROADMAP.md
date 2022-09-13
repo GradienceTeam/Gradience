@@ -19,7 +19,8 @@ This tool is fully usable, if you want a new feature, open an issue or submit a 
 - [x] Make the code more secure
 - [x] Add preset manager with option to download other users presets
 - [x] Release on Flathub
-- [ ] Add a full theme preview
+- [ ] Add a full theme preview instead of GTK4 Demo
+- [ ] Add autoload theme from CSS 
 - [ ] Add ability to generate preset from one color
 
 # Plugins
