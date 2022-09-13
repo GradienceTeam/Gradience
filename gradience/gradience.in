@@ -22,6 +22,7 @@ import os
 import sys
 import signal
 import locale
+import shutil
 import gettext
 
 is_local = @local_build@
@@ -32,6 +33,11 @@ if is_local:
 
     # In the local use case the installed schemas go in <builddir>/data
     os.environ["XDG_DATA_DIRS"] = '@SCHEMAS_DIR@:' + os.environ.get("XDG_DATA_DIRS", "")
+
+    shutil.copyfile(
+        os.path.join('@BUILD_DIR@', "gradience", "constants.py"),
+        os.path.join('@SOURCE_DIR@', "gradience", "constants.py")
+    )
 
 pkgdatadir = '@PKGDATA_DIR@'
 localedir = '@LOCALE_DIR@'
