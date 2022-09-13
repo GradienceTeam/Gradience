@@ -31,7 +31,6 @@ from .modules.custom_presets import fetch_presets
 from .repo_row import GradienceRepoRow
 from .modules.utils import buglog
 from .constants import rootdir
-from .modules.run_async import RunAsync
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")

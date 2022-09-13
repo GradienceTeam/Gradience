@@ -29,7 +29,6 @@ from .error import GradienceError
 from .settings_schema import settings_schema
 from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
-from .presets_manager_window import GradiencePresetWindow
 from .modules.utils import buglog
 from .constants import rootdir, app_id, build_type
 
@@ -116,8 +115,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             buglog("Window close request")
             self.get_application().show_exit_dialog()
             return True
-        else:
-            self.close()
+        self.close()
 
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
