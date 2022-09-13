@@ -35,6 +35,7 @@ from .constants import (
     help_url,
     project_url,
 )
+from .modules.css import load_preset_from_css
 from .welcome import GradienceWelcomeWindow
 from .preferences import GradiencePreferencesWindow
 from .modules.utils import to_slug_case, buglog
@@ -115,12 +116,7 @@ class GradienceApplication(Adw.Application):
         self.create_action("preferences", self.show_preferences)
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
-
-        if self.style_manager.get_dark():
-            self.load_preset_from_resource(
-                f"{rootdir}/presets/adwaita-dark.json")
-        else:
-            self.load_preset_from_resource(f"{rootdir}/presets/adwaita.json")
+        self.load_preset_from_css()
 
         if self.first_run:
             buglog("first run")
@@ -129,6 +125,31 @@ class GradienceApplication(Adw.Application):
         else:
             buglog("normal run")
             self.win.present()
+
+    def load_preset_from_css(self):
+        try:
+            variables, palette, custom_css = load_preset_from_css(
+                os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "gtk-4.0",
+                    "gtk.css",
+                )
+            )
+            preset = {
+                "name": "User",
+                "variables": variables,
+                "palette": palette,
+                "custom_css": {"gtk4": custom_css},
+            }
+            self.load_preset_variables(preset)
+        except OSError:  # fallback to adwaita
+            if self.style_manager.get_dark():
+                self.load_preset_from_resource(
+                    f"{rootdir}/presets/adwaita-dark.json")
+            else:
+                self.load_preset_from_resource(
+                    f"{rootdir}/presets/adwaita.json")
 
     def open_preset_directory(self, *_args):
         parent = XdpGtk4.parent_new_gtk(self.props.active_window)
