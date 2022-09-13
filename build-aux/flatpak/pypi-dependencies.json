@@ -36,8 +36,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/fb/aa/390071f384435ae3bbda1c30ae8b1ca97575b154694d5ec092bca45d97ef/regex-2022.9.11.tar.gz",
-                    "sha256": "36dc03da451c2aef9a3ea521a453faa43474fc6c1d8b46706aee6c31a57d3552"
+                    "url": "https://files.pythonhosted.org/packages/f8/43/b85d103acc0bfb54939f801908bf83354085579e8422eeaa22c017950c02/regex-2022.9.13.tar.gz",
+                    "sha256": "f07373b6e56a6f3a0df3d75b651a278ca7bd357a796078a26a958ea1ce0588fd"
                 }
             ]
         },
@@ -150,6 +150,20 @@
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/f1/4c/c771fbc77045a45678cdd78f57fd4006259767c363c1f884071debd200f7/Yapsy-1.12.2.tar.gz",
                     "sha256": "d8113d9f9c74eacf65b4663c9c037d278c9cb273b5eee5f0e1803baeedb23f8b"
+                }
+            ]
+        },
+        {
+            "name": "python3-cssutils",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cssutils\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/28/4e/6c6d07b1ab43f7b8b939406b562c652c651a66699b8a01fc6b774cbf69de/cssutils-2.6.0-py3-none-any.whl",
+                    "sha256": "30c72f3a5c5951a11151640600aae7b3bf10e4c0d5c87f5bc505c2cd4a26e0c2"
                 }
             ]
         }
