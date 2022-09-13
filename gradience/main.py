@@ -44,6 +44,7 @@ from .plugins_list import GradiencePluginsList
 from .presets_manager_window import GradiencePresetWindow
 from pathlib import Path
 
+
 class GradienceApplication(Adw.Application):
     """The main application singleton class."""
 
@@ -202,7 +203,11 @@ class GradienceApplication(Adw.Application):
         print(self.custom_presets)
 
         custom_menu_section = Gio.Menu()
-        if self.custom_presets["user"] or self.custom_presets["curated"] or self.custom_presets["official"]:
+        if (
+            self.custom_presets["user"]
+            or self.custom_presets["curated"]
+            or self.custom_presets["official"]
+        ):
             for repo, content in self.custom_presets.items():
 
                 for preset, preset_name in content.items():
@@ -210,7 +215,8 @@ class GradienceApplication(Adw.Application):
                     menu_item.set_label(preset_name)
                     if not preset.startswith("error"):
                         menu_item.set_action_and_target_value(
-                            "app.load_preset", GLib.Variant("s", "custom-" + preset)
+                            "app.load_preset", GLib.Variant(
+                                "s", "custom-" + preset)
                         )
                     else:
                         menu_item.set_action_and_target_value("")
@@ -231,7 +237,6 @@ class GradienceApplication(Adw.Application):
         self.props.active_window.presets_menu.append_section(
             _("Installed Presets"), custom_menu_section
         )
-
 
     def manage_presets(self, *args):
         presets = GradiencePresetWindow(self)
