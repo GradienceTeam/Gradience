@@ -19,7 +19,6 @@
 import sys
 import json
 import os
-import traceback
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from material_color_utilities_python import *
 

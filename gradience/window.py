@@ -29,7 +29,6 @@ from .error import GradienceError
 from .settings_schema import settings_schema
 from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
-from .presets_manager_window import GradiencePresetWindow
 from .modules.utils import buglog
 from .constants import rootdir, app_id, build_type
 
