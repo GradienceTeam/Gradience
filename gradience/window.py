@@ -46,10 +46,13 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     main_menu = Gtk.Template.Child("main-menu")
     errors_button = Gtk.Template.Child("errors-button")
     errors_list = Gtk.Template.Child("errors-list")
+    presets_dropdown = Gtk.Template.Child("presets-dropdown")
+    presets_menu = Gtk.Template.Child("presets-menu")
     monet_image_file = None
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.presets_dropdown.get_popover().connect("show", self.on_presets_dropdown_activate)
 
         # Set devel style
         if build_type == "debug":
@@ -75,7 +78,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             "window-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT
         )
 
-        self.connect("close-request", self.close_window)
+        self.connect("close-request", self.on_close_request)
         self.style_manager = self.get_application().style_manager
         self.first_apply = True
 
@@ -106,9 +109,13 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
 
-    def close_window(self, *args):
+    def on_close_request(self, *args):
         if self.get_application().is_dirty:
-            buglog("app is dirty")
+            buglog("Window close request")
+            self.get_application().show_exit_dialog()
+            return True
+        else:
+            self.close()
 
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
@@ -288,9 +295,5 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 GradienceError(error["error"], error["element"], error["line"])
             )
 
-    @Gtk.Template.Callback()
-    def on_presets_button_clicked(self, *args):
-        presets = GradiencePresetWindow(self.get_application())
-        presets.set_transient_for(self)
-        presets.set_modal(True)
-        presets.present()
+    def on_presets_dropdown_activate(self, *args):
+        self.get_application().reload_user_defined_presets()

@@ -34,7 +34,6 @@ def load_preset_from_css(path):
                             break
                     else:
                         variables[name] = color[:-1]
-                    print(f"{name} = {color}")
             elif rule.type == rule.STYLE_RULE:
                 css += f"\n{rule.cssText}"
     return variables, palette, css

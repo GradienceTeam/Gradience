@@ -72,6 +72,8 @@ class GradiencePresetWindow(Adw.Window):
 
         self.app = Gtk.Application.get_default()
 
+        self.parent = parent
+
         self.settings = parent.settings
 
         self.user_repositories = self.settings.get_value("repos").unpack()
