@@ -58,5 +58,7 @@ if __name__ == '__main__':
         os.path.join(pkgdatadir, 'gradience.gresource'))
     Gio.Resource._register(resource)
 
+    sys.path.insert(1, "/usr/local/lib/python3.10/site-packages")
+
     from gradience import main
     sys.exit(main.main())
