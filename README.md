@@ -81,7 +81,7 @@ yay -S gradience # or gradience-git
 - GTK4 `gtk4`
 - libadwaita (>= 1.2.alpha) `libadwaita`
 - Meson `meson`
-- Ninja `ninja`
+- Ninja `ninja-build`
 
 Install required Python libraries:
 
@@ -104,7 +104,7 @@ sudo ninja -C builddir install
 git clone https://github.com/GradienceTeam/Gradience.git
 cd Gradience
 meson builddir
-meson configure builddir -Dprefix="$(pwd)/builddir/testdir"
+meson configure builddir -Dprefix="$(pwd)/builddir"
 ninja -C builddir install
 ninja -C builddir run
 ```
