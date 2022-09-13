@@ -42,21 +42,29 @@ theme_sources = files([
   'gnome-shell-sass/widgets/_workspace-thumbnails.scss'
 ])
 
-stylesheets = [
-  'gnome-shell-high-contrast.css',
-  'gnome-shell.css'
-]
+version = '43'
 
-foreach stylesheet: stylesheets
-  if not fs.exists(stylesheet)
-    sassc = find_program('sassc')
-    theme_deps += custom_target(stylesheet,
-                                input: fs.replace_suffix(stylesheet, '.scss'),
-                                output: stylesheet,
-                                command: [
-                                  sassc, '-a', '@INPUT@', '@OUTPUT@'
-                                ],
-                                depend_files: theme_sources)
-  endif
-endforeach
+sassc = find_program('sassc')
+
+gnome_shell_high_contrast = custom_target('gnome_shell_high_contrast',
+                            input: 'gnome-shell-high-contrast.scss',
+                            output: 'gnome-shell-high-contrast.css',
+                            command: [
+                                sassc, '-a', '@INPUT@', '@OUTPUT@'
+                            ],
+                            depend_files: theme_sources,
+                            install: true,
+                            install_dir: join_paths(get_option('datadir'), 'gradience', 'theme', version))
+
+
+gnome_shell = custom_target('gnome_shell',
+                            input: 'gnome-shell.scss',
+                            output: 'gnome-shell.css',
+                            command: [
+                                sassc, '-a', '@INPUT@', '@OUTPUT@'
+                            ],
+                            depend_files: theme_sources,
+                            install: true,
+                            install_dir: join_paths(get_option('datadir'), 'gradience', 'theme', version))
+
 
