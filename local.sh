@@ -1,7 +1,9 @@
 #!/usr/bin/bash
+
+# local.sh
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022  Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,8 +21,11 @@
 
 read -p "Do you want to install Python requirements? (yes, no): " answer
 
+#is_venv = "python -c 'import sys; print(sys.prefix == sys.base_prefix)'"
+
+#if [[ "$is_venv" == "True" ]]; then
 if [[ "$answer" == "yes" ]]; then
-    pip3 install --user -r requirements.txt
+    pip3 install -r requirements.txt
 elif [[ "$answer" == "no" ]]; then
     echo "Skipping requirements installation"
 fi
@@ -30,7 +35,7 @@ rm -r builddir
 
 echo "Rebuilding"
 meson builddir
-meson configure builddir -Dprefix="$(pwd)/builddir/testdir" -Dbuildtype=debug
+meson configure builddir -Dprefix="$(pwd)/builddir" -Dbuildtype=debug
 ninja -C builddir install
 
 echo "Running"

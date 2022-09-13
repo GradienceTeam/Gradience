@@ -1,4 +1,4 @@
-#!@PYTHON@
+#!/usr/bin/env python3
 
 # gradience.in
 #
@@ -9,12 +9,12 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
@@ -24,18 +24,20 @@ import signal
 import locale
 import gettext
 
+is_local = @local_build@
+
+if is_local:
+    # In the local use case, use gradience module from the sourcetree
+    sys.path.insert(1, '@PYTHON@')
+
+    # In the local use case the installed schemas go in <builddir>/data
+    os.environ["XDG_DATA_DIRS"] = '@SCHEMAS_DIR@:' + os.environ.get("XDG_DATA_DIRS", "")
+
 pkgdatadir = '@PKGDATA_DIR@'
 localedir = '@LOCALE_DIR@'
 
-builddir = os.environ.get('MESON_BUILD_ROOT')
+sys.dont_write_bytecode = True
 
-if builddir:
-    sys.dont_write_bytecode = True
-    sys.path.insert(1, os.environ['MESON_SOURCE_ROOT'])
-    data_dir = os.path.join(builddir, '@DATA_DIR@')
-    os.putenv('XDG_DATA_DIRS', '%s:%s' % (data_dir, os.getenv('XDG_DATA_DIRS', '/usr/local/share/:/usr/share/')))
-
-sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 gettext.install('gradience', localedir)
 
@@ -51,15 +53,10 @@ if __name__ == '__main__':
     gi.require_version('Xdp', '1.0')
     gi.require_version('XdpGtk4', '1.0')
 
-    if '@BUILD_TYPE@' == "debug":
-       sys.path.append("/usr/local/local/lib/python3.10/site-packages")
-
     from gi.repository import Gio
     resource = Gio.Resource.load(
         os.path.join(pkgdatadir, 'gradience.gresource'))
-    resource._register()
-
-    sys.path.append("/usr/local/lib/python3.10/site-packages/")
+    Gio.Resource._register(resource)
 
     from gradience import main
     sys.exit(main.main())

@@ -21,7 +21,7 @@ import time
 
 from gi.repository import Gtk, Adw, Gio
 
-from .run_async import RunAsync
+from .modules.run_async import RunAsync
 from .modules.utils import buglog
 from .modules.flatpak_overrides import (
     create_gtk_user_override,

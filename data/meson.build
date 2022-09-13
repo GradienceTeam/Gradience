@@ -28,7 +28,7 @@ gnome.compile_resources('gradience',
   source_dir: meson.current_build_dir(),
   install: true,
   install_dir: PKGDATA_DIR,
-  dependencies: blueprints,
+  dependencies: blueprints
 )
 
 appstream_file = i18n.merge_file(
