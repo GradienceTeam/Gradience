@@ -115,8 +115,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             buglog("Window close request")
             self.get_application().show_exit_dialog()
             return True
-        else:
-            self.close()
+        self.close()
 
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
