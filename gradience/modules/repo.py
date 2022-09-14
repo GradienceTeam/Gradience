@@ -1,3 +1,5 @@
+from .utils import buglog, to_slug_case
+from .preset import Preset
 import os
 
 PRESET_DIR = os.path.join(
@@ -5,10 +7,10 @@ PRESET_DIR = os.path.join(
     "presets",
 )
 
-from .preset import Preset
-from .utils import buglog, to_slug_case
+
 class Repo:
     presets = {}
+
     def __init__(self, name):
         self.name = to_slug_case(name)
         self.path = os.path.join(PRESET_DIR, name)
