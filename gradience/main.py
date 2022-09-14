@@ -52,7 +52,6 @@ PRESET_DIR = os.path.join(
 )
 
 
-
 class GradienceApplication(Adw.Application):
     """The main application singleton class."""
 
@@ -144,7 +143,6 @@ class GradienceApplication(Adw.Application):
         print("reload")
         if self.props.active_window.presets_menu.get_n_items() > 1:
             self.props.active_window.presets_menu.remove(1)
-
 
         if not os.path.exists(PRESET_DIR):
             os.makedirs(PRESET_DIR)
@@ -301,6 +299,7 @@ class GradienceApplication(Adw.Application):
             preset_path, 0).get_data().decode()
         self.preset = Preset(text=preset_text)
         self.load_preset_variables_from_preset()
+
     def load_preset_variables_from_preset(self, preset=None):
         if preset is not None:
             self.preset = preset
