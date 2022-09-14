@@ -22,9 +22,9 @@ class Preset:
     name = "new_preset"
 
     def __init__(self, name=None, repo=None, preset_path=None, text=None, preset=None):
-        if text: # load from ressource
+        if text:  # load from ressource
             self.load_preset(text=text)
-        elif preset: # css or dict
+        elif preset:  # css or dict
             self.load_preset(preset=preset)
         else:
             self.preset_name = name
@@ -33,7 +33,8 @@ class Preset:
             if repo is not None:
                 self.repo = repo
             if preset_path is None:
-                self.preset_path = os.path.join(PRESET_DIR, repo, self.name + ".json")
+                self.preset_path = os.path.join(
+                    PRESET_DIR, repo, self.name + ".json")
             else:
                 self.preset_path = preset_path
             self.load_preset()
@@ -47,12 +48,9 @@ class Preset:
                 if text:
                     preset_text = text
                 else:
-                    with open(
-                        self.preset_path, "r", encoding="utf-8"
-                    ) as file:
+                    with open(self.preset_path, "r", encoding="utf-8") as file:
                         preset_text = file.read()
                 preset = json.loads(preset_text)
-
 
             self.name = preset["name"]
             self.preset_name = to_slug_case(self.name)
@@ -69,14 +67,15 @@ class Preset:
 
     def save_preset(self, name=None, plugins_list=None, to=None):
         if to is None:
-            self.preset_path = os.path.join(PRESET_DIR, self.repo, self.name + ".json")
+            self.preset_path = os.path.join(
+                PRESET_DIR, self.repo, self.name + ".json")
         else:
             self.preset_path = to
         if not os.path.exists(
-                os.path.join(
-                    PRESET_DIR,
-                    "user",
-                )
+            os.path.join(
+                PRESET_DIR,
+                "user",
+            )
         ):
             os.makedirs(
                 os.path.join(

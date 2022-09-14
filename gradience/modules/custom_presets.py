@@ -86,11 +86,13 @@ async def _download_preset(name, repo_name, url) -> None:
 
         data = json.dumps(raw)
 
-        print(os.path.join(
-                    PRESET_DIR,
-                    repo_name,
-                    to_slug_case(name) + ".json",
-                ))
+        print(
+            os.path.join(
+                PRESET_DIR,
+                repo_name,
+                to_slug_case(name) + ".json",
+            )
+        )
 
         try:
             with open(
