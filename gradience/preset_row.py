@@ -123,7 +123,6 @@ class GradiencePresetRow(Adw.ActionRow):
 
         self.delete_preset = True
 
-
     def update_value(self):
         self.preset.preset_name = self.name
         self.preset.name = to_slug_case(self.name)
