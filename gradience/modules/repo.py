@@ -1,4 +1,4 @@
-from .utils import buglog, to_slug_case
+from .utils import to_slug_case
 from .preset import Preset
 import os
 
