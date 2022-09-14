@@ -97,13 +97,13 @@ class GradiencePluginsList:
                 "Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."
             )
         )
-        if self.pm:
-            for pluginInfo in self.pm.getAllPlugins():
-                row = GradiencePluginRow(
-                    pluginInfo.plugin_object, preset, self)
-                self.rows[pluginInfo.plugin_object.plugin_id] = row
-                group.add(row)
-        else:
+        empty = True
+        for pluginInfo in self.pm.getAllPlugins():
+            row = GradiencePluginRow(pluginInfo.plugin_object, preset, self)
+            self.rows[pluginInfo.plugin_object.plugin_id] = row
+            group.add(row)
+            empty = False
+        if empty:
             row = Adw.ActionRow()
             row.set_title(_("No plugins found"))
             group.add(row)

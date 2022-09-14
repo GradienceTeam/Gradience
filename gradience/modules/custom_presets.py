@@ -26,22 +26,23 @@ import aiohttp
 import asyncio
 
 
-async def fetch(session, url):
-    async with session.get(url) as response:
-        return await response.text()
+PRESET_DIR = os.path.join(
+    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+    "presets",
+)
 
 
 async def main(repo):
     async with aiohttp.ClientSession() as session:
         try:
-            http = await fetch(session, repo)
+            async with session.get(repo) as http:
+                try:
+                    raw = json.loads(await http.text())
+                except json.JSONDecodeError as error:
+                    buglog(f"Error with decoding JSON data. Exc: {error}")
+                    return False, False
         except aiohttp.ClientError as error:
             buglog(f"Failed to establish a new connection. Exc: {error}")
-            return False, False
-        try:
-            raw = json.loads(http)
-        except json.JSONDecodeError as error:
-            buglog(f"Error with decoding JSON data. Exc: {error}")
             return False, False
 
         preset_dict = {}
@@ -73,25 +74,30 @@ def fetch_presets(repo) -> [dict, list]:
 async def _download_preset(name, repo_name, url) -> None:
     async with aiohttp.ClientSession() as session:
         try:
-            http = await fetch(session, url)
+            async with session.get(url) as http:
+                try:
+                    raw = json.loads(await http.text())
+                except json.JSONDecodeError as error:
+                    buglog(f"Error with decoding JSON data. Exc: {error}")
+                    return False, False
         except aiohttp.ClientError as error:
             buglog(f"Failed to establish a new connection. Exc: {error}")
             return False, False
 
-        try:
-            raw = json.loads(http)
-        except json.JSONDecodeError as error:
-            buglog(f"Error with decoding JSON data. Exc: {error}")
-            return False, False
-
         data = json.dumps(raw)
+
+        print(
+            os.path.join(
+                PRESET_DIR,
+                repo_name,
+                to_slug_case(name) + ".json",
+            )
+        )
 
         try:
             with open(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
+                    PRESET_DIR,
                     repo_name,
                     to_slug_case(name) + ".json",
                 ),
@@ -99,7 +105,6 @@ async def _download_preset(name, repo_name, url) -> None:
                 encoding="utf-8",
             ) as f:
                 f.write(data)
-                f.close()
         except OSError as error:
             buglog(f"Failed to write data to a file. Exc: {error}")
 
