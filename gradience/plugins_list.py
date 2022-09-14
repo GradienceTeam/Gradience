@@ -99,8 +99,7 @@ class GradiencePluginsList:
         )
         empty = True
         for pluginInfo in self.pm.getAllPlugins():
-            row = GradiencePluginRow(
-                pluginInfo.plugin_object, preset, self)
+            row = GradiencePluginRow(pluginInfo.plugin_object, preset, self)
             self.rows[pluginInfo.plugin_object.plugin_id] = row
             group.add(row)
             empty = False
