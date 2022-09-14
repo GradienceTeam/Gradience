@@ -43,6 +43,15 @@ from .plugins_list import GradiencePluginsList
 from .presets_manager_window import GradiencePresetWindow
 from pathlib import Path
 
+from .modules.preset import Preset
+
+
+PRESET_DIR = os.path.join(
+    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+    "presets",
+)
+
+
 
 class GradienceApplication(Adw.Application):
     """The main application singleton class."""
@@ -136,15 +145,12 @@ class GradienceApplication(Adw.Application):
         if self.props.active_window.presets_menu.get_n_items() > 1:
             self.props.active_window.presets_menu.remove(1)
 
-        preset_directory = os.path.join(
-            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
-            "presets",
-        )
-        if not os.path.exists(preset_directory):
-            os.makedirs(preset_directory)
+
+        if not os.path.exists(PRESET_DIR):
+            os.makedirs(PRESET_DIR)
 
         self.custom_presets = {"user": {}}
-        for repo in Path(preset_directory).iterdir():
+        for repo in Path(PRESET_DIR).iterdir():
             if repo.is_dir():  # repo
                 presets_list = {}
                 for file_name in repo.iterdir():
@@ -152,7 +158,7 @@ class GradienceApplication(Adw.Application):
                     if file_name.endswith(".json"):
                         try:
                             with open(
-                                os.path.join(preset_directory, file_name),
+                                os.path.join(PRESET_DIR, file_name),
                                 "r",
                                 encoding="utf-8",
                             ) as file:
@@ -176,11 +182,11 @@ class GradienceApplication(Adw.Application):
                 # keep compatiblity with old presets
                 if repo.name.endswith(".json"):
                     os.rename(repo, os.path.join(
-                        preset_directory, "user", repo.name))
+                        PRESET_DIR, "user", repo.name))
 
                     try:
                         with open(
-                            os.path.join(preset_directory, "user", repo),
+                            os.path.join(PRESET_DIR, "user", repo),
                             "r",
                             encoding="utf-8",
                         ) as file:
@@ -256,7 +262,8 @@ class GradienceApplication(Adw.Application):
                 "palette": palette,
                 "custom_css": {"gtk4": custom_css},
             }
-            self.load_preset_variables(preset)
+            self.preset = Preset(preset=preset)
+            self.load_preset_variables_from_preset()
         except OSError:  # fallback to adwaita
             if self.style_manager.get_dark():
                 self.load_preset_from_resource(
@@ -286,15 +293,35 @@ class GradienceApplication(Adw.Application):
 
     def load_preset_from_file(self, preset_path):
         buglog(f"load preset from file {preset_path}")
-        preset_text = ""
-        with open(preset_path, "r", encoding="utf-8") as file:
-            preset_text = file.read()
-        self.load_preset_variables(json.loads(preset_text))
+        self.preset = Preset(preset_path=preset_path)
+        self.load_preset_variables_from_preset()
 
     def load_preset_from_resource(self, preset_path):
         preset_text = Gio.resources_lookup_data(
             preset_path, 0).get_data().decode()
-        self.load_preset_variables(json.loads(preset_text))
+        self.preset = Preset(text=preset_text)
+        self.load_preset_variables_from_preset()
+    def load_preset_variables_from_preset(self, preset=None):
+        if preset is not None:
+            self.preset = preset
+        self.is_ready = False
+        buglog(self.preset)
+        self.preset_name = self.preset.preset_name
+        self.variables = self.preset.variables
+        self.palette = self.preset.palette
+        self.custom_css = self.preset.custom_css
+
+        for key in self.variables.keys():
+            if key in self.pref_variables:
+                self.pref_variables[key].update_value(self.variables[key])
+        for key in self.palette.keys():
+            if key in self.pref_palette_shades:
+                self.pref_palette_shades[key].update_shades(self.palette[key])
+        self.custom_css_group.load_custom_css(self.custom_css)
+
+        self.clear_dirty()
+
+        self.reload_variables()
 
     def load_preset_variables(self, preset):
         self.is_ready = False
@@ -712,46 +739,10 @@ class GradienceApplication(Adw.Application):
 
     def save_preset(self, _unused, response, entry):
         if response == "save":
-            if not os.path.exists(
-                os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    "user",
-                )
-            ):
-                os.makedirs(
-                    os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "presets",
-                        "user",
-                    )
-                )
-
-            with open(
-                os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    "user",
-                    to_slug_case(entry.get_text()) + ".json",
-                ),
-                "w",
-                encoding="utf-8",
-            ) as file:
-                object_to_write = {
-                    "name": entry.get_text(),
-                    "variables": self.variables,
-                    "palette": self.palette,
-                    "custom_css": self.custom_css,
-                    "plugins": self.plugins_list.save(),
-                }
-                file.write(json.dumps(object_to_write, indent=4))
-                self.clear_dirty()
-                self.win.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Preset saved")))
+            self.preset.save_preset(entry.get_text(), self.plugins_list)
+            self.clear_dirty()
+            self.win.toast_overlay.add_toast(
+                Adw.Toast(title=_("Preset saved")))
         elif response == "discard":
             self.clear_dirty()
             self.win.close()
