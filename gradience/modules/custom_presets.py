@@ -26,6 +26,11 @@ import aiohttp
 import asyncio
 
 
+PRESET_DIR = os.path.join(
+    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+    "presets",
+)
+
 
 async def main(repo):
     async with aiohttp.ClientSession() as session:
@@ -81,12 +86,16 @@ async def _download_preset(name, repo_name, url) -> None:
 
         data = json.dumps(raw)
 
+        print(os.path.join(
+                    PRESET_DIR,
+                    repo_name,
+                    to_slug_case(name) + ".json",
+                ))
+
         try:
             with open(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
+                    PRESET_DIR,
                     repo_name,
                     to_slug_case(name) + ".json",
                 ),
@@ -94,7 +103,6 @@ async def _download_preset(name, repo_name, url) -> None:
                 encoding="utf-8",
             ) as f:
                 f.write(data)
-                f.close()
         except OSError as error:
             buglog(f"Failed to write data to a file. Exc: {error}")
 

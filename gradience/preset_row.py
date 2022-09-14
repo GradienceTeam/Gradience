@@ -21,9 +21,11 @@ import os
 
 from gi.repository import Gtk, Adw
 
+from gradience.modules.custom_presets import PRESET_DIR
+
 from .constants import rootdir
 from .modules.utils import to_slug_case, buglog
-
+from .modules.preset import Preset
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/preset_row.ui")
 class GradiencePresetRow(Adw.ActionRow):
@@ -51,6 +53,8 @@ class GradiencePresetRow(Adw.ActionRow):
         self.app = Gtk.Application.get_default()
         self.win = win
         self.toast_overlay = self.win.toast_overlay
+
+        self.preset = Preset(name, repo_name)
 
         apply_button = Gtk.Template.Child("apply_button")
         rename_button = Gtk.Template.Child("rename_button")
@@ -89,99 +93,52 @@ class GradiencePresetRow(Adw.ActionRow):
         self.delete_toast = Adw.Toast(title=_("Preset removed"))
         self.delete_toast.set_button_label(_("Undo"))
         self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
-        self.delete_toast.connect(
-            "button-clicked", self.on_undo_button_clicked)
 
         self.toast_overlay.add_toast(self.delete_toast)
 
         self.win.old_name = self.name
 
-        self.do_delete_preset()
-
-        self.win.reload_pref_group()
-
-    def update_value(self):
-        with open(
-            os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-                self.prefix,
-                to_slug_case(self.old_name) + ".json",
-            ),
-            "r",
-            encoding="utf-8",
-        ) as file:
-            preset_text = file.read()
-            preset = json.loads(preset_text)
-
-            preset_name = preset["name"]
-            variables = preset["variables"]
-            palette = preset["palette"]
-            if "custom_css" in preset:
-                custom_css = preset["custom_css"]
-            else:
-                custom_css = {
-                    "gtk4": "",
-                    "gtk3": "",
-                }
-
-        with open(
-            os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-                self.prefix,
-                to_slug_case(self.name) + ".json",
-            ),
-            "w",
-            encoding="utf-8",
-        ) as file:
-            object_to_write = {
-                "name": self.name,
-                "variables": variables,
-                "palette": palette,
-                "custom_css": custom_css,
-            }
-            file.write(json.dumps(object_to_write, indent=4))
-            os.remove(
+        try:
+            os.rename(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
+                    os.environ.get(
+                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                    ),
                     "presets",
                     self.prefix,
                     to_slug_case(self.old_name) + ".json",
-                )
+                ),
+                os.path.join(
+                    os.environ.get(
+                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                    ),
+                    "presets",
+                    self.prefix,
+                    to_slug_case(self.old_name) + ".json.to_delete",
+                ),
             )
-        self.old_name = self.name
-
-    def do_delete_preset(self):
-        if self.delete_preset:
-            try:
-                os.rename(
-                    os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "presets",
-                        self.prefix,
-                        to_slug_case(self.old_name) + ".json",
-                    ),
-                    os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "presets",
-                        self.prefix,
-                        to_slug_case(self.old_name) + ".json.to_delete",
-                    ),
-                )
-            except Exception as exception:
-                buglog(exception)
-            finally:
-                self.win.reload_pref_group()
+            print("rename")
+            self.set_name(self.name + "(" +_("Pending deletion") + ")")
+            print("renamed")
+        except Exception as exception:
+            buglog(exception)
 
         self.delete_preset = True
+
+        #self.win.reload_pref_group()
+
+    def update_value(self):
+        self.preset.preset_name = self.name
+        self.preset.name = to_slug_case(self.name)
+        self.preset.save_preset()
+        os.remove(
+            os.path.join(
+                PRESET_DIR,
+                self.prefix,
+                to_slug_case(self.old_name) + ".json",
+            )
+        )
+        self.old_name = self.name
 
     def on_delete_toast_dismissed(self, widget):
         if self.delete_preset:

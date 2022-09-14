@@ -18,6 +18,8 @@ class Preset:
         "gtk3": "",
     }
     plugins = {}
+    repo = "user"
+    name = "new_preset"
 
     def __init__(self, name=None, repo=None, preset_path=None, text=None, preset=None):
         if text: # load from ressource
@@ -26,13 +28,9 @@ class Preset:
             self.load_preset(preset=preset)
         else:
             self.preset_name = name
-            if name is None:
-                self.name = "new_preset"
-            else:
+            if name is not None:
                 self.name = to_slug_case(name)
-            if repo is None:
-                self.repo = "user"
-            else:
+            if repo is not None:
                 self.repo = repo
             if preset_path is None:
                 self.preset_path = os.path.join(PRESET_DIR, repo, self.name + ".json")
@@ -70,6 +68,10 @@ class Preset:
             buglog(error, " -> preset : ", self.preset_path)
 
     def save_preset(self, name=None, plugins_list=None, to=None):
+        if to is None:
+            self.preset_path = os.path.join(PRESET_DIR, self.repo, self.name + ".json")
+        else:
+            self.preset_path = to
         if not os.path.exists(
                 os.path.join(
                     PRESET_DIR,

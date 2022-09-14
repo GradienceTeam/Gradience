@@ -1,41 +1,98 @@
 using Gtk 4.0;
 using Adw 1;
 
+Popover pop_actions {
+  styles [
+    "menu",
+  ]
+
+  Box {
+    orientation: vertical;
+    margin-top: 6;
+    margin-bottom: 6;
+    margin-start: 6;
+    margin-end: 6;
+
+
+    Button remove_button {
+        valign: center;
+        label: _("Remove preset");
+        tooltip-text: _("Remove preset");
+        clicked => on_remove_button_clicked();
+    }
+
+    Separator {
+    }
+
+    .GtkModelButton btn_report {
+      text: _("Report a Bug…");
+    }
+  }
+}
+
 template GradiencePresetRow : Adw.ActionRow {
-  [suffix]
-  Stack value_stack {
-    valign: center;
-    hhomogeneous: false;
-    interpolate-size: true;
-    transition-type: crossfade;
+  Box {
+    spacing: 6;
 
-    Button apply_button {
+    Label label_grade {
       valign: center;
-      icon-name: "checkmark-small-symbolic";
-      tooltip-text: _("Apply preset");
-      clicked => on_apply_button_clicked();
+      label: _("Unknown");
+
+      styles [
+        "tag",
+        "caption",
+      ]
     }
-    Entry name_entry {
-      text: "Name";
-      changed => on_name_entry_changed();
+
+    Separator {
+      margin-top: 12;
+      margin-bottom: 12;
     }
-  }
 
-  [suffix]
-  ToggleButton name_entry_toggle {
-    valign: center;
-    icon-name: "document-edit-symbolic";
-    tooltip-text: _("Edit preset name");
+    Stack value_stack {
+        valign: center;
+        hhomogeneous: false;
+        interpolate-size: true;
+        transition-type: crossfade;
 
-    toggled => on_name_entry_toggled();
-  }
+        Button apply_button {
+        valign: center;
+        icon-name: "checkmark-small-symbolic";
+        tooltip-text: _("Apply preset");
+        clicked => on_apply_button_clicked();
+         styles [
+        "flat",
+      ]
+        }
+        Entry name_entry {
+        text: "Name";
+        changed => on_name_entry_changed();
+        }
+    }
 
-  [suffix]
-  Button remove_button {
-    valign: center;
-    icon-name: "edit-delete-symbolic";
-    tooltip-text: _("Remove preset");
-    clicked => on_remove_button_clicked();
+    ToggleButton name_entry_toggle {
+        valign: center;
+        icon-name: "document-edit-symbolic";
+        tooltip-text: _("Edit preset name");
+
+        toggled => on_name_entry_toggled();
+
+         styles [
+        "flat",
+      ]
+    }
+
+    MenuButton {
+      valign: center;
+      popover: pop_actions;
+      icon-name: "view-more-symbolic";
+
+      styles [
+        "flat",
+      ]
+    }
+
+
   }
 
 }

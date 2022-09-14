@@ -279,6 +279,7 @@ class GradiencePresetWindow(Adw.Window):
         self.reload_pref_group()
 
     def reload_pref_group(self):
+        print("reload")
         preset_directory = os.path.join(
             os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
             "presets",
@@ -348,6 +349,8 @@ class GradiencePresetWindow(Adw.Window):
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
 
+        print("reload 2")
+
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Builtin Presets"))
         for preset, preset_name in self.builtin_presets.items():
@@ -372,6 +375,8 @@ class GradiencePresetWindow(Adw.Window):
         )
         buglog(f"preset_check: {presets_check}")
 
+        print("reload 3")
+
         if presets_check:
             for repo, presets in self.custom_presets.items():
                 for preset, preset_name in presets.items():
@@ -387,6 +392,7 @@ class GradiencePresetWindow(Adw.Window):
             )
             self.preset_list.add(self.preset_empty)
         self.installed.add(self.preset_list)
+        print("reload end")
 
     def reload_repos_group(self):
         self.repos.remove(self.repos_list)
