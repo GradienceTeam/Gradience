@@ -29,7 +29,6 @@ from .error import GradienceError
 from .settings_schema import settings_schema
 from .palette_shades import GradiencePaletteShades
 from .option import GradienceOption
-from .presets_manager_window import GradiencePresetWindow
 from .modules.utils import buglog
 from .constants import rootdir, app_id, build_type
 
@@ -80,7 +79,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             "window-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT
         )
 
-        self.connect("close-request", self.close_window)
+        self.connect("close-request", self.on_close_request)
         self.style_manager = self.get_application().style_manager
         self.first_apply = True
 
@@ -111,9 +110,12 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
 
-    def close_window(self, *args):
+    def on_close_request(self, *args):
         if self.get_application().is_dirty:
-            buglog("app is dirty")
+            buglog("Window close request")
+            self.get_application().show_exit_dialog()
+            return True
+        self.close()
 
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:

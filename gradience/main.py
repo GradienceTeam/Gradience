@@ -19,7 +19,6 @@
 import sys
 import json
 import os
-import traceback
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from material_color_utilities_python import *
 
@@ -200,8 +199,6 @@ class GradienceApplication(Adw.Application):
                         )
 
                     buglog(self.custom_presets)
-        print(self.custom_presets)
-
         custom_menu_section = Gio.Menu()
         if (
             self.custom_presets["user"]
@@ -222,7 +219,6 @@ class GradienceApplication(Adw.Application):
                         menu_item.set_action_and_target_value("")
                     custom_menu_section.append_item(menu_item)
         else:
-            print("no presets")
             menu_item = Gio.MenuItem()
             menu_item.set_label("No presets found")
             custom_menu_section.append_item(menu_item)
@@ -641,6 +637,79 @@ class GradienceApplication(Adw.Application):
 
         dialog.present()
 
+    def show_exit_dialog(self, *_args):
+        dialog = Adw.MessageDialog(
+            transient_for=self.props.active_window,
+            heading=_("You have unsaved changes!"),
+            body=_(
+                "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
+            ).format(
+                os.path.join(
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
+                    "presets",
+                    "user",
+                    to_slug_case(self.preset_name) + ".json",
+                )
+            ),
+            body_use_markup=True,
+        )
+
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("discard", _("Discard"))
+        dialog.add_response("save", _("Save"))
+        dialog.set_response_appearance(
+            "save", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_response_appearance(
+            "discard", Adw.ResponseAppearance.DESTRUCTIVE)
+        dialog.set_default_response("cancel")
+        dialog.set_close_response("cancel")
+
+        preset_entry = Gtk.Entry(placeholder_text="Preset Name")
+        preset_entry.set_text(self.preset_name)
+
+        def on_preset_entry_change(*_args):
+            if len(preset_entry.get_text()) == 0:
+                dialog.set_body(
+                    _(
+                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
+                    ).format(
+                        os.path.join(
+                            os.environ.get(
+                                "XDG_CONFIG_HOME", os.environ["HOME"] +
+                                "/.config"
+                            ),
+                            "presets",
+                            "user",
+                        )
+                    )
+                )
+                dialog.set_response_enabled("save", False)
+            else:
+                dialog.set_body(
+                    _(
+                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
+                    ).format(
+                        os.path.join(
+                            os.environ.get(
+                                "XDG_CONFIG_HOME", os.environ["HOME"] +
+                                "/.config"
+                            ),
+                            "presets",
+                            "user",
+                            to_slug_case(preset_entry.get_text()) + ".json",
+                        )
+                    )
+                )
+                dialog.set_response_enabled("save", True)
+
+        preset_entry.connect("changed", on_preset_entry_change)
+        dialog.set_extra_child(preset_entry)
+
+        dialog.connect("response", self.save_preset, preset_entry)
+
+        dialog.present()
+
     def save_preset(self, _unused, response, entry):
         if response == "save":
             if not os.path.exists(
@@ -683,6 +752,9 @@ class GradienceApplication(Adw.Application):
                 self.clear_dirty()
                 self.win.toast_overlay.add_toast(
                     Adw.Toast(title=_("Preset saved")))
+        elif response == "discard":
+            self.clear_dirty()
+            self.win.close()
 
     def apply_color_scheme(self, widget, response):
         if response == "apply":

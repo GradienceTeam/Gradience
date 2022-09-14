@@ -61,6 +61,8 @@ conf.set('PYTHON', PY_INSTALLDIR.full_path())
 conf.set('VERSION', meson.project_version() + VERSION_SUFFIX)
 conf.set('BUILD_TYPE', get_option('buildtype'))
 conf.set('SCHEMAS_DIR', PKGDATA_DIR)
+conf.set('SOURCE_DIR', meson.current_source_dir())
+conf.set('BUILD_DIR', meson.current_build_dir())
 
 conf.set('local_build', 'False')
 
@@ -73,6 +75,8 @@ local_conf.set('PYTHON', meson.current_source_dir())
 local_conf.set('VERSION', meson.project_version() + VERSION_SUFFIX)
 local_conf.set('BUILD_TYPE', get_option('buildtype'))
 local_conf.set('SCHEMAS_DIR', join_paths(meson.current_build_dir(), 'data'))
+local_conf.set('SOURCE_DIR', meson.current_source_dir())
+local_conf.set('BUILD_DIR', meson.current_build_dir())
 
 local_conf.set('local_build', 'True')
 
@@ -80,8 +84,6 @@ local_conf.set('local_build', 'True')
 subdir('gradience')
 subdir('data')
 subdir('po')
-
-#meson.add_install_script('build-aux/meson_post_install.py')
 
 gnome.post_install(
   glib_compile_schemas: true,
