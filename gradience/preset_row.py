@@ -27,6 +27,7 @@ from .constants import rootdir
 from .modules.utils import to_slug_case, buglog
 from .modules.preset import Preset
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/preset_row.ui")
 class GradiencePresetRow(Adw.ActionRow):
     __gtype_name__ = "GradiencePresetRow"
@@ -101,31 +102,29 @@ class GradiencePresetRow(Adw.ActionRow):
         try:
             os.rename(
                 os.path.join(
-                    os.environ.get(
-                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                    ),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     self.prefix,
                     to_slug_case(self.old_name) + ".json",
                 ),
                 os.path.join(
-                    os.environ.get(
-                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                    ),
+                    os.environ.get("XDG_CONFIG_HOME",
+                                   os.environ["HOME"] + "/.config"),
                     "presets",
                     self.prefix,
                     to_slug_case(self.old_name) + ".json.to_delete",
                 ),
             )
             print("rename")
-            self.set_name(self.name + "(" +_("Pending deletion") + ")")
+            self.set_name(self.name + "(" + _("Pending deletion") + ")")
             print("renamed")
         except Exception as exception:
             buglog(exception)
 
         self.delete_preset = True
 
-        #self.win.reload_pref_group()
+        # self.win.reload_pref_group()
 
     def update_value(self):
         self.preset.preset_name = self.name
