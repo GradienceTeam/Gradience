@@ -26,22 +26,18 @@ import aiohttp
 import asyncio
 
 
-async def fetch(session, url):
-    async with session.get(url) as response:
-        return await response.text()
-
 
 async def main(repo):
     async with aiohttp.ClientSession() as session:
         try:
-            http = await fetch(session, repo)
+            async with session.get(repo) as http:
+                try:
+                    raw = json.loads(await http.text())
+                except json.JSONDecodeError as error:
+                    buglog(f"Error with decoding JSON data. Exc: {error}")
+                    return False, False
         except aiohttp.ClientError as error:
             buglog(f"Failed to establish a new connection. Exc: {error}")
-            return False, False
-        try:
-            raw = json.loads(http)
-        except json.JSONDecodeError as error:
-            buglog(f"Error with decoding JSON data. Exc: {error}")
             return False, False
 
         preset_dict = {}
@@ -73,15 +69,14 @@ def fetch_presets(repo) -> [dict, list]:
 async def _download_preset(name, repo_name, url) -> None:
     async with aiohttp.ClientSession() as session:
         try:
-            http = await fetch(session, url)
+            async with session.get(url) as http:
+                try:
+                    raw = json.loads(await http.text())
+                except json.JSONDecodeError as error:
+                    buglog(f"Error with decoding JSON data. Exc: {error}")
+                    return False, False
         except aiohttp.ClientError as error:
             buglog(f"Failed to establish a new connection. Exc: {error}")
-            return False, False
-
-        try:
-            raw = json.loads(http)
-        except json.JSONDecodeError as error:
-            buglog(f"Error with decoding JSON data. Exc: {error}")
             return False, False
 
         data = json.dumps(raw)
