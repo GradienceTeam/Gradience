@@ -123,7 +123,6 @@ class GradiencePresetRow(Adw.ActionRow):
 
         self.delete_preset = True
 
-        # self.win.reload_pref_group()
 
     def update_value(self):
         self.preset.preset_name = self.name
