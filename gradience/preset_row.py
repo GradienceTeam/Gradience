@@ -60,7 +60,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         apply_button = Gtk.Template.Child("apply_button")
         rename_button = Gtk.Template.Child("rename_button")
 
-        self.btn_report.connect("clicked", self.on_btn_report_clicked)
+        self.btn_report.connect("clicked", self.on_report_btn_clicked)
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
@@ -93,7 +93,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
     def on_report_btn_clicked(self, *_args):
         buglog("report")
 
-        parent = XdpGtk4.parent_new_gtk(self.props.active_window)
+        parent = XdpGtk4.parent_new_gtk(self.win)
 
         def open_dir_callback(_, result):
             self.app.portal.open_uri_finish(result)
