@@ -384,7 +384,9 @@ class GradienceApplication(Adw.Application):
                 "accent_fg_color": self.rgba_from_argb(dark_theme.onPrimaryContainer),
                 "destructive_color": self.rgba_from_argb(dark_theme.error),
                 "destructive_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
-                "destructive_fg_color": self.rgba_from_argb(dark_theme.onErrorContainer),
+                "destructive_fg_color": self.rgba_from_argb(
+                    dark_theme.onErrorContainer
+                ),
                 "success_color": self.rgba_from_argb(dark_theme.tertiary),
                 "success_bg_color": self.rgba_from_argb(dark_theme.onTertiary),
                 "success_fg_color": self.rgba_from_argb(dark_theme.onTertiaryContainer),
@@ -425,13 +427,19 @@ class GradienceApplication(Adw.Application):
                 "accent_fg_color": self.rgba_from_argb(light_theme.onPrimary),
                 "destructive_color": self.rgba_from_argb(light_theme.error),
                 "destructive_bg_color": self.rgba_from_argb(light_theme.errorContainer),
-                "destructive_fg_color": self.rgba_from_argb(light_theme.onErrorContainer),
+                "destructive_fg_color": self.rgba_from_argb(
+                    light_theme.onErrorContainer
+                ),
                 "success_color": self.rgba_from_argb(light_theme.tertiary),
                 "success_bg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
-                "success_fg_color": self.rgba_from_argb(light_theme.onTertiaryContainer),
+                "success_fg_color": self.rgba_from_argb(
+                    light_theme.onTertiaryContainer
+                ),
                 "warning_color": self.rgba_from_argb(light_theme.secondary),
                 "warning_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "warning_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
+                "warning_fg_color": self.rgba_from_argb(
+                    light_theme.onSecondaryContainer
+                ),
                 "error_color": self.rgba_from_argb(light_theme.error),
                 "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
                 "error_fg_color": self.rgba_from_argb(light_theme.onError),
