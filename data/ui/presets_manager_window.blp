@@ -30,7 +30,7 @@ template GradiencePresetWindow : Adw.Window {
             label: _("Delete");
             visible: false;
           }
-          
+
           [title]
           Adw.ViewSwitcherTitle title {
             stack: view_stack;
@@ -58,9 +58,9 @@ template GradiencePresetWindow : Adw.Window {
               name: "installed";
               title: _("Installed");
               icon-name: "larger-brush-symbolic";
-            
+
               child: Adw.PreferencesPage installed { };
-      
+
             }
 
             Adw.ViewStackPage {
@@ -79,10 +79,21 @@ template GradiencePresetWindow : Adw.Window {
                     Gtk.Box {
                       orientation: vertical;
 
-                      Gtk.SearchEntry search_entry {
-                        hexpand: true;
-                        placeholder-text: _("e.g. \"Pretty Purple\"");
-                      }
+                      Gtk.Box {
+						styles ["linked"]
+
+						Gtk.SearchEntry search_entry {
+							hexpand: true;
+							placeholder-text: _("e.g. \"Pretty Purple\"");
+						}
+
+						Gtk.DropDown search_dropdown {
+							model: StringList search_string_list {
+								strings []
+							};
+						}
+					}
+
 
                       Gtk.Stack search_stack {
                         Gtk.StackPage {
@@ -131,9 +142,9 @@ template GradiencePresetWindow : Adw.Window {
               name: "repos";
               title: _("Repositories");
               icon-name: "folder-symbolic";
-            
+
               child: Adw.PreferencesPage repos { };
-      
+
             }
           }
 

@@ -55,6 +55,8 @@ class GradiencePresetWindow(Adw.Window):
     search_stack = Gtk.Template.Child("search_stack")
     search_results = Gtk.Template.Child("search_results")
     search_spinner = Gtk.Template.Child("search_spinner")
+    search_dropdown = Gtk.Template.Child("search_dropdown")
+    search_string_list = Gtk.Template.Child("search_string_list")
 
     custom_presets = {}
 
@@ -145,6 +147,7 @@ class GradiencePresetWindow(Adw.Window):
                 offline = True
 
         for repo_name, repo in self._repos.items():
+            self.search_string_list.append(repo_name)
             fetch(repo_name=repo_name, repo=repo)
 
         if offline:
