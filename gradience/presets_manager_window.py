@@ -231,9 +231,16 @@ class GradiencePresetWindow(Adw.Window):
                 widget.props.visible = True
             else:
                 widget.props.visible = False
-                if search_text.lower() in widget.props.title.lower():
-                    widget.props.visible = True
-                    buglog(widget.props.title)
+                print(dir(self.search_dropdown.props.selected_item))
+                if not self.search_dropdown.props.selected_item.get_string().lower() in "all":
+                    if self.search_dropdown.props.selected_item.get_string().lower() in widget.props.subtitle.lower():
+                        if search_text.lower() in widget.props.title.lower():
+                            widget.props.visible = True
+                            buglog(widget.props.title)
+                else:
+                    if search_text.lower() in widget.props.title.lower():
+                        widget.props.visible = True
+                        buglog(widget.props.title)
 
     def on_search_ended(self, *args):
         for widget in self.search_results_list:

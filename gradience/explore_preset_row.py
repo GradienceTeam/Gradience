@@ -41,7 +41,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
 
         self.set_name(name)
         self.set_title(name)
-        self.set_subtitle(author)
+        self.set_subtitle(repo_name)
 
         self.app = Gtk.Application.get_default()
         self.win = win
