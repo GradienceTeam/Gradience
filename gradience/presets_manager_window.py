@@ -147,8 +147,12 @@ class GradiencePresetWindow(Adw.Window):
                 offline = True
 
         for repo_name, repo in self._repos.items():
-            self.search_string_list.append(repo_name)
-            fetch(repo_name=repo_name, repo=repo)
+            if self.search_dropdown.props.selected_item.get_string().lower() in "all":
+                self.search_string_list.append(repo_name)
+                fetch(repo_name=repo_name, repo=repo)
+            elif self.search_dropdown.props.selected_item.get_string().lower() in repo_name:
+                self.search_string_list.append(repo_name)
+                fetch(repo_name=repo_name, repo=repo)
 
         if offline:
             self.search_spinner.props.visible = False
@@ -231,7 +235,6 @@ class GradiencePresetWindow(Adw.Window):
                 widget.props.visible = True
             else:
                 widget.props.visible = False
-                print(dir(self.search_dropdown.props.selected_item))
                 if not self.search_dropdown.props.selected_item.get_string().lower() in "all":
                     if self.search_dropdown.props.selected_item.get_string().lower() in widget.props.subtitle.lower():
                         if search_text.lower() in widget.props.title.lower():
