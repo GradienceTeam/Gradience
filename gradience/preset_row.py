@@ -28,7 +28,7 @@ from .modules.preset import Preset
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/preset_row.ui")
-class GradiencePresetRow(Adw.ActionRow):
+class GradiencePresetRow(Adw.ExpanderRow):
     __gtype_name__ = "GradiencePresetRow"
 
     name_entry = Gtk.Template.Child("name_entry")
