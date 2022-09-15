@@ -60,7 +60,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         apply_button = Gtk.Template.Child("apply_button")
         rename_button = Gtk.Template.Child("rename_button")
 
-        self.btn_report.connect("clicked", self.on_btn_report_clicked)
+        self.btn_report.connect("clicked", self.on_report_btn_clicked)
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
