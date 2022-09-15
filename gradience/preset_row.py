@@ -94,7 +94,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
     def on_report_btn_clicked(self, *_args):
         buglog("report")
 
-        parent = XdpGtk4.parent_new_gtk(self.props.active_window)
+        parent = XdpGtk4.parent_new_gtk(self.win)
 
         def open_dir_callback(_, result):
             self.app.portal.open_uri_finish(result)
