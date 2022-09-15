@@ -35,6 +35,7 @@ SYSTEM_PLUGIN_DIR = os.path.join(
     "plugins",
 )
 
+
 class GradiencePluginsList:
     """Represent the plugin group in Advanced"""
 
@@ -54,12 +55,7 @@ class GradiencePluginsList:
 
     def reload(self):
         self.pm = PluginManager()
-        self.pm.setPluginPlaces(
-            [
-                USER_PLUGIN_DIR,
-                SYSTEM_PLUGIN_DIR
-            ]
-        )
+        self.pm.setPluginPlaces([USER_PLUGIN_DIR, SYSTEM_PLUGIN_DIR])
         self.pm.collectPlugins()
         for pluginInfo in self.pm.getAllPlugins():
             pluginInfo.plugin_object.activate()
