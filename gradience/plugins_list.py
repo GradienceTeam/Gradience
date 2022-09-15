@@ -21,7 +21,8 @@ import os
 from gi.repository import Adw, GLib
 from yapsy.PluginManager import PluginManager
 from .plugin_row import GradiencePluginRow
-
+from .constants import pkgdatadir
+from .modules.utils import buglog
 
 USER_PLUGIN_DIR = os.path.join(
     os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
@@ -29,6 +30,10 @@ USER_PLUGIN_DIR = os.path.join(
     "plugins",
 )
 
+SYSTEM_PLUGIN_DIR = os.path.join(
+    pkgdatadir,
+    "plugins",
+)
 
 class GradiencePluginsList:
     """Represent the plugin group in Advanced"""
@@ -52,6 +57,7 @@ class GradiencePluginsList:
         self.pm.setPluginPlaces(
             [
                 USER_PLUGIN_DIR,
+                SYSTEM_PLUGIN_DIR
             ]
         )
         self.pm.collectPlugins()
