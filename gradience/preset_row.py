@@ -90,7 +90,6 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.update_value()
             self.value_stack.set_visible_child(self.apply_button)
 
-
     def on_report_btn_clicked(self, *_args):
         buglog("report")
 
