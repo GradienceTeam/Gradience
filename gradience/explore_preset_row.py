@@ -20,6 +20,8 @@ import os
 
 from gi.repository import Gtk, Adw
 
+from gradience.modules.preset import Preset
+
 from .constants import rootdir
 from .modules.custom_presets import download_preset
 from .modules.utils import to_slug_case, buglog
@@ -41,7 +43,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
 
         self.set_name(name)
         self.set_title(name)
-        self.set_subtitle(author)
+        self.set_subtitle(repo_name)
 
         self.app = Gtk.Application.get_default()
         self.win = win

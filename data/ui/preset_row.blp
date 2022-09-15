@@ -30,25 +30,18 @@ Popover pop_actions {
   }
 }
 
-template GradiencePresetRow : Adw.ActionRow {
-  Box {
-    spacing: 6;
-
-    Label label_grade {
+template GradiencePresetRow : Adw.ExpanderRow {
+    [action]
+    Button start_button {
       valign: center;
-      label: _("Unknown");
-
+      icon-name: "star-filled-rounded-symbolic";
       styles [
-        "tag",
-        "caption",
+        "flat",
       ]
     }
 
-    Separator {
-      margin-top: 12;
-      margin-bottom: 12;
-    }
 
+    [action]
     Stack value_stack {
         valign: center;
         hhomogeneous: false;
@@ -70,6 +63,7 @@ template GradiencePresetRow : Adw.ActionRow {
         }
     }
 
+    [action]
     ToggleButton name_entry_toggle {
         valign: center;
         icon-name: "document-edit-symbolic";
@@ -82,6 +76,7 @@ template GradiencePresetRow : Adw.ActionRow {
       ]
     }
 
+    [action]
     MenuButton {
       valign: center;
       popover: pop_actions;
@@ -92,7 +87,132 @@ template GradiencePresetRow : Adw.ActionRow {
       ]
     }
 
+    Gtk.ListBoxRow {
+		activatable: false;
 
-  }
+		Gtk.Grid {
+			styles ["content"]
+
+			row-spacing: 15;
+			column-spacing: 15;
+
+			Gtk.Label {
+				styles ["dim-label"]
+
+				label: _("Description");
+
+				xalign: 0;
+				yalign: 0;
+
+				layout {
+					row: 0;
+					column: 0;
+				}
+			}
+
+			Gtk.Label description_label {
+				xalign: 0;
+				wrap-mode: word;
+				wrap: true;
+				selectable: true;
+
+				layout {
+					row: 0;
+					column: 1;
+				}
+			}
+		}
+	}
+
+	Gtk.ListBoxRow {
+		activatable: false;
+
+		Gtk.Grid {
+			styles ["content"]
+
+			row-spacing: 15;
+			column-spacing: 30;
+
+            Gtk.Label {
+                styles ["dim-label"]
+
+                valign: center;
+                halign: center;
+
+                label: _("By @GradienceTeam");
+
+                xalign: 0;
+                yalign: 0;
+
+                layout {
+                    row: 0;
+                    column: 0;
+                }
+            }
+
+
+            Box {
+
+				layout {
+					row: 0;
+					column: 1;
+				}
+
+                orientation: horizontal;
+                valign: center;
+                spacing: 5;
+
+                CheckButton light {
+                    name: "light";
+                    group: dark;
+                    active: true;
+                    styles ["variant"]
+                }
+
+                CheckButton dark {
+                    name: "dark";
+                    styles ["variant"]
+                }
+
+                Separator s {
+                }
+
+                CheckButton a {
+                    name: "red";
+                    active: true;
+                    styles ["variant"]
+                }
+
+                CheckButton b {
+                    name: "orange";
+                    group: a;
+                    styles ["variant"]
+                }
+
+                CheckButton c {
+                    name: "yellow";
+                    group: a;
+                    styles ["variant"]
+                }
+
+                CheckButton d {
+                    name: "green";
+                    group: a;
+                    styles ["variant"]
+                }
+
+                CheckButton e {
+                    name: "blue";
+                    group: a;
+                    styles ["variant"]
+                }
+            }
+
+
+		}
+	}
+
+
+
 
 }

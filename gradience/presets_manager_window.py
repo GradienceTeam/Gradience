@@ -55,6 +55,8 @@ class GradiencePresetWindow(Adw.Window):
     search_stack = Gtk.Template.Child("search_stack")
     search_results = Gtk.Template.Child("search_results")
     search_spinner = Gtk.Template.Child("search_spinner")
+    search_dropdown = Gtk.Template.Child("search_dropdown")
+    search_string_list = Gtk.Template.Child("search_string_list")
 
     custom_presets = {}
 
@@ -145,7 +147,15 @@ class GradiencePresetWindow(Adw.Window):
                 offline = True
 
         for repo_name, repo in self._repos.items():
-            fetch(repo_name=repo_name, repo=repo)
+            if self.search_dropdown.props.selected_item.get_string().lower() in "all":
+                self.search_string_list.append(repo_name)
+                fetch(repo_name=repo_name, repo=repo)
+            elif (
+                self.search_dropdown.props.selected_item.get_string().lower()
+                in repo_name
+            ):
+                self.search_string_list.append(repo_name)
+                fetch(repo_name=repo_name, repo=repo)
 
         if offline:
             self.search_spinner.props.visible = False
@@ -228,9 +238,21 @@ class GradiencePresetWindow(Adw.Window):
                 widget.props.visible = True
             else:
                 widget.props.visible = False
-                if search_text.lower() in widget.props.title.lower():
-                    widget.props.visible = True
-                    buglog(widget.props.title)
+                if (
+                    not self.search_dropdown.props.selected_item.get_string().lower()
+                    in "all"
+                ):
+                    if (
+                        self.search_dropdown.props.selected_item.get_string().lower()
+                        in widget.props.subtitle.lower()
+                    ):
+                        if search_text.lower() in widget.props.title.lower():
+                            widget.props.visible = True
+                            buglog(widget.props.title)
+                else:
+                    if search_text.lower() in widget.props.title.lower():
+                        widget.props.visible = True
+                        buglog(widget.props.title)
 
     def on_search_ended(self, *args):
         for widget in self.search_results_list:
