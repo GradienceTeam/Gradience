@@ -1,19 +1,19 @@
-<img align="left" alt="Icon" src="https://github.com/GradienceTeam/Gradience/blob/main/data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg">
+<img align="left" alt="Icon" src="https://github.com/GradienceTeam/Gradience/raw/main/data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg">
 
 # Gradience
 
 Change the look of Adwaita, with ease
 
-![Screenshot of interface with Adwaita light theme](https://github.com/GradienceTeam/Design/blob/main/Screenshots/main_screenshot.png)
+![Screenshot of interface with Adwaita light theme](https://github.com/GradienceTeam/Design/raw/main/Screenshots/main_screenshot.png)
 
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 <details>
   <summary>More screenshots</summary>
   
-  ![Screenshot of interface of Monet Tab](https://github.com/GradienceTeam/Design/blob/main/Screenshots/monet_purple.png)
+  ![Screenshot of interface of Monet Tab](https://github.com/GradienceTeam/Design/raw/main/Screenshots/monet_purple.png)
   
-  ![Screenshot of proof that this actually works](https://github.com/GradienceTeam/Design/blob/main/Screenshots/proof_of_work_screenshot.png)
+  ![Screenshot of proof that this actually works](https://github.com/GradienceTeam/Design/raw/main/Screenshots/proof_of_work_screenshot.png)
 </details>
 
 [![Flatpak build](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak.yml/badge.svg)](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak.yml)
