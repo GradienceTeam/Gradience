@@ -374,6 +374,8 @@ class GradienceApplication(Adw.Application):
             else:
                 monet_theme = "light"
 
+        print(theme)
+
         if monet_theme == "dark":
             dark_theme = theme["schemes"]["dark"]
             variable = {
@@ -386,8 +388,8 @@ class GradienceApplication(Adw.Application):
                 "success_color": self.rgba_from_argb(dark_theme.tertiary),
                 "success_bg_color": self.rgba_from_argb(dark_theme.onTertiary),
                 "success_fg_color": self.rgba_from_argb(dark_theme.tertiaryContainer),
-                "warning_color": self.rgba_from_argb(dark_theme.secondaryContainer),
-                "warning_bg_color": self.rgba_from_argb(dark_theme.inversePrimary),
+                "warning_color": self.rgba_from_argb(dark_theme.secondary),
+                "warning_bg_color": self.rgba_from_argb(dark_theme.onSecondary),
                 "warning_fg_color": self.rgba_from_argb(dark_theme.primary, "0.8"),
                 "error_color": self.rgba_from_argb(dark_theme.error),
                 "error_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
@@ -427,8 +429,8 @@ class GradienceApplication(Adw.Application):
                 "success_color": self.rgba_from_argb(light_theme.tertiary),
                 "success_bg_color": self.rgba_from_argb(light_theme.onTertiary),
                 "success_fg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
-                "warning_color": self.rgba_from_argb(light_theme.inversePrimary),
-                "warning_bg_color": self.rgba_from_argb(light_theme.inversePrimary),
+                "warning_color": self.rgba_from_argb(light_theme.secondary),
+                "warning_bg_color": self.rgba_from_argb(light_theme.onSecondary),
                 "warning_fg_color": self.rgba_from_argb(light_theme.primary, "0.8"),
                 "error_color": self.rgba_from_argb(light_theme.error),
                 "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
