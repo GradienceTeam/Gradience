@@ -147,9 +147,6 @@ class GradienceWelcomeWindow(Adw.Window):
 
     def allow_flatpak_theming_user_toggled(self, *args):
         create_gtk_user_override(self, self.gio_settings, "gtk4")
-        buglog(
-            f"user-flatpak-theming: {self.gio_settings.get_boolean('user-flatpak-theming')}"
-        )
 
     def install_runner(self, widget):
         def set_completed(result, error=False):
