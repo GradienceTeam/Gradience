@@ -1,25 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2022 Gradience Team -->
+<?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
+  <!--Created with jdAppdataEdit 5.0-->
   <id>@APP_ID@</id>
-  <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-3.0-or-later</project_license>
-
   <name>Gradience</name>
   <summary>Change the look of Adwaita, with ease.</summary>
-
   <developer_name>Gradience Team</developer_name>
-
-  <recommends>
-    <control>pointing</control>
-    <control>keyboard</control>
-    <control>touch</control>
-  </recommends>
-
+  <launchable type="desktop-id">@APP_ID@.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <update_contact>GradienceTe@proton.me</update_contact>
   <description>
-    <p>
-      Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
-    </p>
+    <p>Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.</p>
     <p>With Gradience you can:</p>
     <ul>
       <li>Change any color of Adwaita theme</li>
@@ -30,46 +21,39 @@
     </ul>
     <p>This app is written in Python and uses GTK 4 and libadwaita.</p>
   </description>
-
   <screenshots>
     <screenshot>
-        <image>https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/colors_purple.png</image>
-        <caption>colors purple</caption>
+      <caption>colors purple</caption>
+      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/colors_purple.png</image>
     </screenshot>
     <screenshot>
-        <image>https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/monet_purple.png</image>
-        <caption>monet purple</caption>
+      <caption>monet purple</caption>
+      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/monet_purple.png</image>
     </screenshot>
     <screenshot>
-        <image>https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/advanced_purple.png</image>
-    <caption>advanced purple</caption>
+      <caption>advanced purple</caption>
+      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/advanced_purple.png</image>
     </screenshot>
   </screenshots>
-
-  <launchable type="desktop-id">@APP_ID@.desktop</launchable>
-
-  <categories>
-    <category>Utility</category>
-  </categories>
-
-  <content_rating type="oars-1.1" />
-
-  <supports>
-    <control>pointing</control>
-    <control>keyboard</control>
-    <control>touch</control>
-    <internet>offline-only</internet>
-
-  </supports>
-
-  <kudos>
-    <kudo>ModernToolkit</kudo>
-    <kudo>HiDpiIcon</kudo>
-  </kudos>
-
   <releases>
-    <release date="2022-8-30" version="0.2.1">
+    <release version="0.3.0" date="2022-09-16" type="stable">
       <description>
+        <p>Gradience 0.3.0 is a major update with many new features and improvements. here is some of them:</p>
+        <ul>
+          <li>Added plugins support, this allows creating plugins for customizing other apps</li>
+          <li>Added support for custom repos, this allows creating own selection of presets</li>
+          <li>Preset Manager performance are significantly enhanced, presets are downloading much faster and app don't freeze on preset removal</li>
+          <li>Added search to Preset Manager</li>
+          <li>Preset Manager is attached to the main window</li>
+          <li>Added Quick Preset Switcher back, with it you can switch presets with less clicks</li>
+          <li>Save dialog now shows up when you close app with unsaved preset</li>
+          <li>Currently applied preset now auto-loads on app start-up</li>
+          <li>Toasts are less annoying</li>
+          <li>Added aarch64 builds</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.1" date="2022-08-30" type="stable"><description>
         <p>A small bug fix release of Gradience.</p>
         <ul>
           <li>Small improvements to the welcome screen</li>
@@ -77,8 +61,7 @@
         </ul>
       </description>
     </release>
-    <release date="2022-8-26" version="0.2.0">
-      <description>
+    <release version="0.2.0" date="2022-08-26" type="stable"><description>
         <p>New Release of Gradience.</p>
         <ul>
           <li>Rebrand</li>
@@ -90,8 +73,7 @@
         </ul>
       </description>
     </release>
-    <release date="2022-8-12" version="0.1.0">
-      <description>
+    <release version="0.1.0" date="2022-08-12" type="stable"><description>
         <p>First release of Gradience.</p>
         <ul>
           <li>Add AdwViewSwitcher in the header bar</li>
@@ -112,11 +94,31 @@
       </description>
     </release>
   </releases>
-
   <url type="homepage">@PROJECT_URL@</url>
   <url type="bugtracker">@BUGTRACKER_URL@</url>
   <url type="help">@HELP_URL@</url>
   <url type="translate">@TRANSLATE_URL@</url>
-
-  <update_contact>GradienceTe@proton.me</update_contact>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <requires>
+    <display_length compare="ge">small</display_length>
+    <display_length compare="le">small</display_length>
+  </requires>
+  <recommends>
+    <display_length compare="ge">small</display_length>
+    <display_length compare="le">small</display_length>
+  </recommends>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>tablet</control>
+    <control>touch</control>
+    <internet>offline-only</internet>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <keywords>
+    <keyword>AdwCustomizer</keyword>
+    <keyword>Adwaita Manager</keyword>
+  </keywords>
 </component>
