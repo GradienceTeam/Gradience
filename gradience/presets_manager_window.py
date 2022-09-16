@@ -35,7 +35,36 @@ from .constants import rootdir
 
 import random
 
-BADGE_COLORS = ["blue", "green", "orange", "purple", "red", "yellow", "black", "white", "brown", "pink", "gray", "silver", "gold", "copper", "bronze", "iron", "steel", "tin", "aluminium", "cobalt", "titanium", "platinium", "lead", "mercury", "uranium", "antimony", "arsenic"]
+BADGE_COLORS = [
+    "blue",
+    "green",
+    "orange",
+    "purple",
+    "red",
+    "yellow",
+    "black",
+    "white",
+    "brown",
+    "pink",
+    "gray",
+    "silver",
+    "gold",
+    "copper",
+    "bronze",
+    "iron",
+    "steel",
+    "tin",
+    "aluminium",
+    "cobalt",
+    "titanium",
+    "platinium",
+    "lead",
+    "mercury",
+    "uranium",
+    "antimony",
+    "arsenic",
+]
+
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
@@ -154,7 +183,9 @@ class GradiencePresetWindow(Adw.Window):
         for repo_name, repo in self._repos.items():
             self.search_string_list.append(repo_name)
             badge_color = random.choice(BADGE_COLORS)
-            buglog(f"Selected badge color: {badge_color} if it's look bad, please report it")
+            buglog(
+                f"Selected badge color: {badge_color} if it's look bad, please report it"
+            )
             fetch(repo_name=repo_name, repo=repo, badge=badge_color)
 
         if offline:
