@@ -1,6 +1,6 @@
 # Maintainers
 
-This application was created by @ArtyIF. Now it's maintained by the Gradience Team.
+This application was created by [@ArtyIF](https://github.com/ArtyIF). Now it's maintained by the Gradience Team.
 
 ## Gradience Team 
 
