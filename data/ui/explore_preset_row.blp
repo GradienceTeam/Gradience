@@ -2,20 +2,41 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradienceExplorePresetRow : Adw.ActionRow {
-  [suffix]
-  Button apply_button {
-    valign: center;
-    icon-name: "checkmark-small-symbolic";
-    tooltip-text: _("Download and apply");
-    clicked => on_apply_button_clicked();
-  }
 
-  [suffix]
-  Button download_button {
-    valign: center;
-    icon-name: "download-symbolic";
-    tooltip-text: _("Download only");
-    clicked => on_download_button_clicked();
-  }
+    Box {
+        spacing: 6;
+
+        Label badge {
+            valign: center;
+            label: _("Unknown");
+
+            styles [
+                "tag",
+                "caption",
+            ]
+        }
+
+        Button apply_button {
+            valign: center;
+            icon-name: "checkmark-small-symbolic";
+            tooltip-text: _("Download and apply");
+            clicked => on_apply_button_clicked();
+
+            styles [
+                "flat",
+            ]
+        }
+        Button download_button {
+            valign: center;
+            icon-name: "download-symbolic";
+            tooltip-text: _("Download only");
+            clicked => on_download_button_clicked();
+
+            styles [
+                "flat",
+            ]
+        }
+    }
+
 
 }

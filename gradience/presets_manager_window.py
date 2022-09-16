@@ -17,6 +17,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import os
+from random import random
 import shutil
 import json
 
@@ -32,6 +33,9 @@ from .repo_row import GradienceRepoRow
 from .modules.utils import buglog
 from .constants import rootdir
 
+import random
+
+BADGE_COLORS = ["blue", "green", "orange", "purple", "red", "yellow", "black", "white", "brown", "pink", "gray", "silver", "gold", "copper", "bronze", "iron", "steel", "tin", "aluminium", "cobalt", "titanium", "platinium", "lead", "mercury", "uranium", "antimony", "arsenic"]
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
@@ -128,7 +132,7 @@ class GradiencePresetWindow(Adw.Window):
 
         offline = False
 
-        def fetch(repo_name, repo):
+        def fetch(repo_name, repo, badge):
             global offline
             explore_presets, urls = fetch_presets(repo)
 
@@ -139,23 +143,19 @@ class GradiencePresetWindow(Adw.Window):
                     explore_presets.items(), urls
                 ):
                     row = GradienceExplorePresetRow(
-                        preset_name, preset_url, self, repo_name
+                        preset_name, preset_url, self, repo_name, badge
                     )
                     self.search_results.append(row)
                     self.search_results_list.append(row)
             else:
                 offline = True
 
+        print(self._repos)
         for repo_name, repo in self._repos.items():
-            if self.search_dropdown.props.selected_item.get_string().lower() in "all":
-                self.search_string_list.append(repo_name)
-                fetch(repo_name=repo_name, repo=repo)
-            elif (
-                self.search_dropdown.props.selected_item.get_string().lower()
-                in repo_name
-            ):
-                self.search_string_list.append(repo_name)
-                fetch(repo_name=repo_name, repo=repo)
+            self.search_string_list.append(repo_name)
+            badge_color = random.choice(BADGE_COLORS)
+            buglog(f"Selected badge color: {badge_color} if it's look bad, please report it")
+            fetch(repo_name=repo_name, repo=repo, badge=badge_color)
 
         if offline:
             self.search_spinner.props.visible = False
@@ -244,7 +244,7 @@ class GradiencePresetWindow(Adw.Window):
                 ):
                     if (
                         self.search_dropdown.props.selected_item.get_string().lower()
-                        in widget.props.subtitle.lower()
+                        in widget.prefix.lower()
                     ):
                         if search_text.lower() in widget.props.title.lower():
                             widget.props.visible = True
