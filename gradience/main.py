@@ -204,29 +204,37 @@ class GradienceApplication(Adw.Application):
 
                     buglog(self.custom_presets)
         custom_menu_section = Gio.Menu()
-        if (
-            self.custom_presets["user"]
-            or self.custom_presets["curated"]
-            or self.custom_presets["official"]
-        ):
-            for repo, content in self.custom_presets.items():
+        try:
+            if (
+                self.custom_presets["user"]
+                or self.custom_presets["curated"]
+                or self.custom_presets["official"]
+            ):
+                for repo, content in self.custom_presets.items():
 
-                for preset, preset_name in content.items():
-                    menu_item = Gio.MenuItem()
-                    menu_item.set_label(preset_name)
-                    if not preset.startswith("error"):
-                        menu_item.set_action_and_target_value(
-                            "app.load_preset", GLib.Variant(
-                                "s", "custom-" + preset)
-                        )
-                    else:
-                        menu_item.set_action_and_target_value("")
-                    custom_menu_section.append_item(menu_item)
-        else:
-            menu_item = Gio.MenuItem()
-            menu_item.set_label("No presets found")
-            custom_menu_section.append_item(menu_item)
+                    for preset, preset_name in content.items():
+                        menu_item = Gio.MenuItem()
+                        menu_item.set_label(preset_name)
+                        if not preset.startswith("error"):
+                            menu_item.set_action_and_target_value(
+                                "app.load_preset", GLib.Variant(
+                                    "s", "custom-" + preset)
+                            )
+                        else:
+                            menu_item.set_action_and_target_value("")
+                        custom_menu_section.append_item(menu_item)
+            else:
+                menu_item = Gio.MenuItem()
+                menu_item.set_label("No presets found")
+                custom_menu_section.append_item(menu_item)
 
+        except KeyError:
+            if not os.path.exists(os.path.json(PRESET_DIR, "user")):
+                os.makedirs(os.path.json(PRESET_DIR, "user"))
+            if not os.path.exists(os.path.json(PRESET_DIR, "curated")):
+                os.makedirs(os.path.json(PRESET_DIR, "curated"))
+            if not os.path.exists(os.path.json(PRESET_DIR, "official")):
+                os.makedirs(os.path.json(PRESET_DIR, "official"))
         open_in_file_manager_item = Gio.MenuItem()
         open_in_file_manager_item.set_label(_("Open in File Manager"))
         open_in_file_manager_item.set_action_and_target_value(
