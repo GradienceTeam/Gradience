@@ -35,6 +35,7 @@ from .constants import rootdir, BADGE_COLORS
 
 import random
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
     __gtype_name__ = "GradiencePresetWindow"
