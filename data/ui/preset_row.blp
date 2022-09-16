@@ -31,14 +31,14 @@ Popover pop_actions {
 }
 
 template GradiencePresetRow : Adw.ExpanderRow {
-    [action]
-    Button start_button {
-      valign: center;
-      icon-name: "star-filled-rounded-symbolic";
-      styles [
-        "flat",
-      ]
-    }
+    // [action]
+    // Button start_button {
+    //   valign: center;
+    //   icon-name: "star-filled-rounded-symbolic";
+    //   styles [
+    //     "flat",
+    //   ]
+    // }
 
 
     [action]
@@ -124,93 +124,93 @@ template GradiencePresetRow : Adw.ExpanderRow {
 		}
 	}
 
-	Gtk.ListBoxRow {
-		activatable: false;
-
-		Gtk.Grid {
-			styles ["content"]
-
-			row-spacing: 6;
-			column-spacing: 6;
-
-            Gtk.Label {
-                styles ["dim-label"]
-
-                valign: center;
-                halign: center;
-
-                label: _("By @GradienceTeam");
-
-                xalign: 0;
-                yalign: 0;
-
-                layout {
-                    row: 0;
-                    column: 0;
-                }
-            }
-
-
-            Box {
-
-				layout {
-					row: 0;
-					column: 1;
-				}
-
-                orientation: horizontal;
-                valign: center;
-                spacing: 8;
-
-                CheckButton light {
-                    name: "light";
-                    group: dark;
-                    active: true;
-                    styles ["variant"]
-                }
-
-                CheckButton dark {
-                    name: "dark";
-                    styles ["variant"]
-                }
-
-                Separator s {
-                }
-
-                CheckButton a {
-                    name: "red";
-                    active: true;
-                    styles ["variant"]
-                }
-
-                CheckButton b {
-                    name: "orange";
-                    group: a;
-                    styles ["variant"]
-                }
-
-                CheckButton c {
-                    name: "yellow";
-                    group: a;
-                    styles ["variant"]
-                }
-
-                CheckButton d {
-                    name: "green";
-                    group: a;
-                    styles ["variant"]
-                }
-
-                CheckButton e {
-                    name: "blue";
-                    group: a;
-                    styles ["variant"]
-                }
-            }
-
-
-		}
-	}
+	//Gtk.ListBoxRow {
+	//	activatable: false;
+//
+	//	Gtk.Grid {
+	//		styles ["content"]
+//
+	//		row-spacing: 6;
+	//		column-spacing: 6;
+//
+    //        Gtk.Label {
+    //            styles ["dim-label"]
+//
+    //            valign: center;
+    //            halign: center;
+//
+    //            label: _("By @GradienceTeam");
+//
+    //            xalign: 0;
+    //            yalign: 0;
+//
+    //            layout {
+    //                row: 0;
+    //                column: 0;
+    //            }
+    //        }
+//
+//
+    //        Box {
+//
+	//			layout {
+	//				row: 0;
+	//				column: 1;
+	//			}
+//
+    //            orientation: horizontal;
+    //            valign: center;
+    //            spacing: 8;
+//
+    //            CheckButton light {
+    //                name: "light";
+    //                group: dark;
+    //                active: true;
+    //                styles ["variant"]
+    //            }
+//
+    //            CheckButton dark {
+    //                name: "dark";
+    //                styles ["variant"]
+    //            }
+//
+    //            Separator s {
+    //            }
+//
+    //            CheckButton a {
+    //                name: "red";
+    //                active: true;
+    //                styles ["variant"]
+    //            }
+//
+    //            CheckButton b {
+    //                name: "orange";
+    //                group: a;
+    //                styles ["variant"]
+    //            }
+//
+    //            CheckButton c {
+    //                name: "yellow";
+    //                group: a;
+    //                styles ["variant"]
+    //            }
+//
+    //            CheckButton d {
+    //                name: "green";
+    //                group: a;
+    //                styles ["variant"]
+    //            }
+//
+    //            CheckButton e {
+    //                name: "blue";
+    //                group: a;
+    //                styles ["variant"]
+    //            }
+    //        }
+//
+//
+	//	}
+	//}
 
 
 

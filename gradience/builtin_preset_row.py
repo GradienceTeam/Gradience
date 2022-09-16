@@ -35,7 +35,6 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
 
         self.set_name(name)
         self.set_title(name)
-        self.set_subtitle(author)
 
         self.app = Gtk.Application.get_default()
 
