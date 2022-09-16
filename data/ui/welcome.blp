@@ -65,6 +65,22 @@ template GradienceWelcomeWindow: Adw.Window {
 
                         }
 
+                        Adw.StatusPage page_agreement {
+                            vexpand: true;
+                            hexpand: true;
+                            icon-name: "dialog-warning-symbolic";
+                            title: _("Warning");
+                            description: _("Please note that changing the colour scheme using such tools can negatively affect contrast and readability in some circumstances, proceed with caution and please do not report theming-related issues to upstream developers");
+
+                            Gtk.Button btn_agree {
+                                styles ["suggested-action", "pill"]
+                                label: _("I agree");
+                                use-underline: true;
+                                halign: center;
+                            }
+                        }
+
+
                         Adw.StatusPage page_gradience {
                             vexpand: true;
                             hexpand: true;

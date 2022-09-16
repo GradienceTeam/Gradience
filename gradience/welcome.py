@@ -41,6 +41,7 @@ class GradienceWelcomeWindow(Adw.Window):
     btn_back = Gtk.Template.Child()
     btn_next = Gtk.Template.Child()
     btn_install = Gtk.Template.Child()
+    btn_agree = Gtk.Template.Child()
 
     switch_system = Gtk.Template.Child()
     switch_adw_gtk3 = Gtk.Template.Child()
@@ -49,7 +50,7 @@ class GradienceWelcomeWindow(Adw.Window):
     img_welcome = Gtk.Template.Child()
     label_skip = Gtk.Template.Child()
 
-    carousel_pages = ["welcome", "gradience",
+    carousel_pages = ["welcome", "agreement", "gradience",
                       "configure", "download", "finish"]
     images = [
         f"{rootdir}/images/welcome.svg",
@@ -72,6 +73,7 @@ class GradienceWelcomeWindow(Adw.Window):
         self.btn_back.connect("clicked", self.previous_page)
         self.btn_next.connect("clicked", self.next_page)
         self.btn_install.connect("clicked", self.install_runner)
+        self.btn_agree.connect("clicked", self.agree)
         self.settings.connect(
             "notify::gtk-application-prefer-dark-theme", self.theme_changed
         )
@@ -103,6 +105,10 @@ class GradienceWelcomeWindow(Adw.Window):
         if page == "finish":
             self.btn_back.set_visible(False)
             self.btn_next.set_visible(False)
+        elif page == "agreement":
+            self.btn_back.set_visible(True)
+            self.btn_next.set_visible(False)
+            self.btn_agree.set_visible(True)
         elif page == "download":
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(False)
@@ -113,6 +119,13 @@ class GradienceWelcomeWindow(Adw.Window):
         else:
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(True)
+
+
+    def agree(self, widget):
+        self.btn_back.set_visible(False)
+        self.btn_next.set_visible(True)
+        self.btn_install.set_visible(False)
+        self.next_page()
 
     @staticmethod
     def quit(widget=False):
