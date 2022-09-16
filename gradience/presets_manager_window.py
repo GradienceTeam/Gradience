@@ -35,36 +35,7 @@ from .constants import rootdir
 
 import random
 
-BADGE_COLORS = [
-    "blue",
-    "green",
-    "orange",
-    "purple",
-    "red",
-    "yellow",
-    "black",
-    "white",
-    "brown",
-    "pink",
-    "gray",
-    "silver",
-    "gold",
-    "copper",
-    "bronze",
-    "iron",
-    "steel",
-    "tin",
-    "aluminium",
-    "cobalt",
-    "titanium",
-    "platinium",
-    "lead",
-    "mercury",
-    "uranium",
-    "antimony",
-    "arsenic",
-]
-
+from constants import BADGE_COLORS
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
