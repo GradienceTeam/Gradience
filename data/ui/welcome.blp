@@ -60,7 +60,7 @@ template GradienceWelcomeWindow: Adw.Window {
 
                             Adw.StatusPage page_welcome {
                                 title: _("Welcome to Gradience");
-                                description: _("Customize Adwaita with ease");
+                                description: _("Change the look of Adwaita, with ease");
                             }
 
                         }
@@ -70,7 +70,7 @@ template GradienceWelcomeWindow: Adw.Window {
                             hexpand: true;
                             icon-name: "larger-brush-symbolic";
                             title: _("Customize Adwaita Theme");
-                            description: _("Change colors of windows, buttons, lists and more with advanced features like adding custom CSS");
+                            description: _("Change colors of windows, buttons, lists and more, with advanced features like adding custom CSS");
                         }
 
                         Adw.StatusPage page_configure {
@@ -82,7 +82,7 @@ template GradienceWelcomeWindow: Adw.Window {
                             Adw.PreferencesPage {
                                 Adw.PreferencesGroup {
                                     Adw.ActionRow configure_adw_gtk3 {
-                                        title: _("adw-gtk3 theme");
+                                        title: _("adw-gtk3 Theme");
                                         activatable-widget: switch_adw_gtk3;
                                         [suffix]
                                         Switch switch_adw_gtk3 {
@@ -109,7 +109,7 @@ template GradienceWelcomeWindow: Adw.Window {
                             vexpand: true;
                             hexpand: true;
                             title: _("Installing Themes");
-                            description: _("Please wait until themes will be installed.");
+                            description: _("Please wait until theme will be installed.");
 
                             Gtk.Box {
                                 orientation: vertical;
@@ -135,7 +135,7 @@ template GradienceWelcomeWindow: Adw.Window {
                             hexpand: true;
                             icon-name: "selection-mode-symbolic";
                             title: _("Done");
-                            description: _("Now you can make your own presets, or download some online.");
+                            description: _("Now you can make your own presets or download some online.");
 
                             Gtk.Box {
                                 orientation: vertical;

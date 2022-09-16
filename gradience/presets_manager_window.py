@@ -374,7 +374,7 @@ class GradiencePresetWindow(Adw.Window):
         print("reload 2")
 
         self.builtin_preset_list = Adw.PreferencesGroup()
-        self.builtin_preset_list.set_title(_("Builtin Presets"))
+        self.builtin_preset_list.set_title(_("Built-in Presets"))
         for preset, preset_name in self.builtin_presets.items():
             row = GradienceBuiltinPresetRow(preset_name, self.toast_overlay)
             self.builtin_preset_list.add(row)
