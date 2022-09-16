@@ -50,8 +50,14 @@ class GradienceWelcomeWindow(Adw.Window):
     img_welcome = Gtk.Template.Child()
     label_skip = Gtk.Template.Child()
 
-    carousel_pages = ["welcome", "agreement", "gradience",
-                      "configure", "download", "finish"]
+    carousel_pages = [
+        "welcome",
+        "agreement",
+        "gradience",
+        "configure",
+        "download",
+        "finish",
+    ]
     images = [
         f"{rootdir}/images/welcome.svg",
         f"{rootdir}/images/welcome-dark.svg",
@@ -119,7 +125,6 @@ class GradienceWelcomeWindow(Adw.Window):
         else:
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(True)
-
 
     def agree(self, widget):
         self.btn_back.set_visible(False)
