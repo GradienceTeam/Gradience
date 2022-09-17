@@ -8,6 +8,8 @@ Change the look of Adwaita, with ease
 
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
+[Gradience, stopthemingmy.app and Adwaita Developers](#gradience-stopthemingmyapp-and-adwaita-developers)
+
 <details>
   <summary>More screenshots</summary>
   
