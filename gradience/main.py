@@ -96,7 +96,13 @@ class GradienceApplication(Adw.Application):
 
         self.win = self.props.active_window
         if not self.win:
-            self.win = GradienceMainWindow(application=self)
+            self.win = GradienceMainWindow(
+                application=self,
+                default_height=self.settings.get_int("window-height"),
+                default_width=self.settings.get_int("window-width"),
+                fullscreened=self.settings.get_boolean("window-fullscreen"),
+                maximized=self.settings.get_boolean("window-maximized")
+            )
         self.plugins_list = GradiencePluginsList(self.win)
         self.setup_plugins()
 

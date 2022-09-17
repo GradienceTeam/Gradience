@@ -64,22 +64,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.settings = Gio.Settings(app_id)
 
-        self.settings.bind(
-            "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT
-        )
-
-        self.settings.bind(
-            "window-height", self, "default-height", Gio.SettingsBindFlags.DEFAULT
-        )
-        self.settings.bind(
-            "window-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT
-        )
-
-        self.settings.bind(
-            "window-fullscreen", self, "fullscreened", Gio.SettingsBindFlags.DEFAULT
-        )
-
         self.connect("close-request", self.on_close_request)
+        self.connect("unrealize", self.save_window_props)
+
         self.style_manager = self.get_application().style_manager
         self.first_apply = True
 
@@ -116,6 +103,15 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             self.get_application().show_exit_dialog()
             return True
         self.close()
+
+    def save_window_props(self, *args):
+        win_size = self.get_default_size()
+
+        self.settings.set_int("window-width", win_size.width)
+        self.settings.set_int("window-height", win_size.height)
+
+        self.settings.set_boolean("window-maximized", self.is_maximized())
+        self.settings.set_boolean("window-fullscreen", self.is_fullscreen())
 
     def on_monet_file_chooser_response(self, widget, response):
         if response == Gtk.ResponseType.ACCEPT:
