@@ -6,7 +6,7 @@ Change the look of Adwaita, with ease
 
 ![Screenshot of interface with Adwaita light theme](https://github.com/GradienceTeam/Design/raw/main/Screenshots/main_screenshot.png)
 
-Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme, see #gradience-stopthemingmyapp-and-adwaita-developers.
+Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 <details>
   <summary>More screenshots</summary>
