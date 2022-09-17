@@ -160,7 +160,7 @@ Gradience was originally named Adwaita Manager.
 
 You can see the meaning of Gradience on [Wiktionary](https://en.wiktionary.org/wiki/gradience).
 
-The icon represents: _A Paint Roller repainting an Adwaita window, keeping it's functionality and improving it's looks_
+The icon represents: _A Paint Roller repainting an Adwaita window, keeping it's functionality._
 
 ## Gradience, [stopthemingmy.app](https://stopthemingmy.app/) and Adwaita Developers
 
