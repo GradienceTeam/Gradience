@@ -235,12 +235,12 @@ class GradienceApplication(Adw.Application):
                 custom_menu_section.append_item(menu_item)
 
         except KeyError:
-            if not os.path.exists(os.path.json(PRESET_DIR, "user")):
-                os.makedirs(os.path.json(PRESET_DIR, "user"))
-            if not os.path.exists(os.path.json(PRESET_DIR, "curated")):
-                os.makedirs(os.path.json(PRESET_DIR, "curated"))
-            if not os.path.exists(os.path.json(PRESET_DIR, "official")):
-                os.makedirs(os.path.json(PRESET_DIR, "official"))
+            if not os.path.exists(os.path.join(PRESET_DIR, "user")):
+                os.makedirs(os.path.join(PRESET_DIR, "user"))
+            if not os.path.exists(os.path.join(PRESET_DIR, "curated")):
+                os.makedirs(os.path.join(PRESET_DIR, "curated"))
+            if not os.path.exists(os.path.join(PRESET_DIR, "official")):
+                os.makedirs(os.path.join(PRESET_DIR, "official"))
         open_in_file_manager_item = Gio.MenuItem()
         open_in_file_manager_item.set_label(_("Open in File Manager"))
         open_in_file_manager_item.set_action_and_target_value(
