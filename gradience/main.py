@@ -101,7 +101,7 @@ class GradienceApplication(Adw.Application):
                 default_height=self.settings.get_int("window-height"),
                 default_width=self.settings.get_int("window-width"),
                 fullscreened=self.settings.get_boolean("window-fullscreen"),
-                maximized=self.settings.get_boolean("window-maximized")
+                maximized=self.settings.get_boolean("window-maximized"),
             )
         self.plugins_list = GradiencePluginsList(self.win)
         self.setup_plugins()
