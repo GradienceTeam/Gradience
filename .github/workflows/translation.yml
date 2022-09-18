@@ -38,11 +38,16 @@ jobs:
           copyright: "Gradience Team"
           license: "GNU GPLv3"
           author: "Gradience Team"
+          commiter: "Gradience Bot"
+          commiter_email: "AdwCustomizerTeam@proton.me"
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Update linguas
         uses: GradienceTeam/action-update-linguas@main
+        with:
+          author: "Gradience Bot"
+          author_email: "AdwCustomizerTeam@proton.me"
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
    
