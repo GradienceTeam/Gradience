@@ -136,7 +136,7 @@ class GradiencePresetWindow(Adw.Window):
             if explore_presets:
                 self.search_spinner.props.visible = False
 
-                for (preset, preset_name), preset_url in zip(
+                for preset_name, preset_url in zip(
                     explore_presets.items(), urls
                 ):
                     row = GradienceExplorePresetRow(

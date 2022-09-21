@@ -38,12 +38,12 @@ class GradiencePluginCore:
         self.palette = palette
 
     def load_custom_settings(self, settings):
-        for setting_key, setting in self.custom_settings:
+        for setting_key in self.custom_settings:
             self.custom_settings[setting_key].set_value(settings[setting_key])
 
     def get_custom_settings_for_preset(self):
         setting_dict = {}
-        for setting_key, setting in self.custom_settings:
+        for setting_key in self.custom_settings:
             return setting_dict[setting_key]
 
     def get_alias_values(self):

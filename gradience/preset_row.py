@@ -57,9 +57,6 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
         self.preset = Preset(name, repo_name)
 
-        apply_button = Gtk.Template.Child("apply_button")
-        rename_button = Gtk.Template.Child("rename_button")
-
         self.btn_report.connect("clicked", self.on_report_btn_clicked)
 
     @Gtk.Template.Callback()
