@@ -33,8 +33,6 @@ from .repo_row import GradienceRepoRow
 from .modules.utils import buglog
 from .constants import rootdir, BADGE_COLORS
 
-import random
-
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
