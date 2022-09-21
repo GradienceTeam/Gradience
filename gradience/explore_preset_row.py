@@ -20,8 +20,6 @@ import os
 
 from gi.repository import Gtk, Adw
 
-from gradience.modules.preset import Preset
-
 from .constants import rootdir
 from .modules.custom_presets import download_preset
 from .modules.utils import to_slug_case, buglog
