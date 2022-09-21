@@ -86,35 +86,35 @@ template GradienceWelcomeWindow: Adw.Window {
                             hexpand: true;
                             icon-name: "larger-brush-symbolic";
                             title: _("Customize Adwaita Theme");
-                            description: _("Change colors of windows, buttons, lists and more, with advanced features like adding custom CSS");
+                            description: _("Change colours of windows, buttons, lists and more, with advanced features like adding custom CSS");
                         }
 
                         Adw.StatusPage page_configure {
                             vexpand: true;
                             hexpand: true;
-                            title: _("Configure Themes");
-                            description: _("Install adw-gtk3 theme for legacy applications.");
+                            title: _("Configure Gradience");
+                            description: _("Install adw-gtk3 theme for legacy applications and configure system for theming.");
 
                             Adw.PreferencesPage {
                                 Adw.PreferencesGroup {
                                     Adw.ActionRow configure_adw_gtk3 {
-                                        title: _("adw-gtk3 Theme");
+                                        title: _("Legacy apps theming");
                                         activatable-widget: switch_adw_gtk3;
                                         [suffix]
                                         Switch switch_adw_gtk3 {
                                             valign: center;
-                                            tooltip-text: _("Allow installation");
+                                            tooltip-text: _("Install adw-gtk3 theme for legacy apps theming");
                                         }
                                     }
 
                                     Adw.ActionRow configure_system {
-                                        title: _("System Configuration");
+                                        title: _("System configuration");
                                         activatable-widget: switch_system;
 
                                         [suffix]
                                         Switch switch_system {
                                             valign: center;
-                                            tooltip-text: _("Allow installation");
+                                            tooltip-text: _("Configure system for theming, enables Flatpak theme override");
                                         }
                                     }
                                 }
@@ -156,7 +156,7 @@ template GradienceWelcomeWindow: Adw.Window {
                             Gtk.Box {
                                 orientation: vertical;
                                 Gtk.Button label_skip {
-                                    label: _("Please Finish the setup first");
+                                    label: _("Please finish the setup first");
                                     margin-bottom: 24;
                                     visible: true;
 
