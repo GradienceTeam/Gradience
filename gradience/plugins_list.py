@@ -22,7 +22,6 @@ from gi.repository import Adw, GLib
 from yapsy.PluginManager import PluginManager
 from .plugin_row import GradiencePluginRow
 from .constants import pkgdatadir
-from .modules.utils import buglog
 
 USER_PLUGIN_DIR = os.path.join(
     os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
