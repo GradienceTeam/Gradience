@@ -143,7 +143,7 @@ class GradienceApplication(Adw.Application):
             buglog("first run")
             buglog(version)
             buglog(self.last_opened_version)
-            welcome = GradienceWelcomeWindow(self.win)
+            welcome = GradienceWelcomeWindow(self.win, update=True)
             welcome.present()
         else:
             buglog("normal run")

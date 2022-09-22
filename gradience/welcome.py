@@ -50,23 +50,25 @@ class GradienceWelcomeWindow(Adw.Window):
     img_welcome = Gtk.Template.Child()
     label_skip = Gtk.Template.Child()
 
-    carousel_pages = [
-        "welcome",
-        "release",
-        "agreement",
-        "gradience",
-        "configure",
-        "download",
-        "finish",
-    ]
     images = [
         f"{rootdir}/images/welcome.svg",
         f"{rootdir}/images/welcome-dark.svg",
     ]
 
-    def __init__(self, window, **kwargs) -> None:
+    carousel_pages = [
+        "welcome", # 0
+        "release", # 1
+        "agreement", # 2
+        "gradience", # 3
+        "configure", # 4
+        "download", # 5
+        "finish", # 6
+    ]
+
+    def __init__(self, window, update=False, **kwargs) -> None:
         super().__init__(**kwargs)
         self.set_transient_for(window)
+        self.update = update
 
         # common variables and references
         self.window = window
@@ -131,7 +133,14 @@ class GradienceWelcomeWindow(Adw.Window):
         self.btn_back.set_visible(False)
         self.btn_next.set_visible(True)
         self.btn_install.set_visible(False)
-        self.next_page()
+        if self.update:
+            self.window.last_opened_version = self.window.settings.set_string("last-opened-version", version)
+            self.btn_close.set_sensitive(True)
+            self.label_skip.set_visible(False)
+            self.next_page(index=5)
+        else:
+            self.next_page()
+
 
     @staticmethod
     def quit(widget=False):
@@ -188,12 +197,14 @@ class GradienceWelcomeWindow(Adw.Window):
         )
 
     def previous_page(self, widget=False):
-        index = int(self.carousel.get_position())
+        if index is None:
+            index = int(self.carousel.get_position())
         previous_page = self.carousel.get_nth_page(index - 1)
         self.carousel.scroll_to(previous_page, True)
 
-    def next_page(self, widget=False):
-        index = int(self.carousel.get_position())
+    def next_page(self, widget=False, index=None):
+        if index is None:
+            index = int(self.carousel.get_position())
         next_page = self.carousel.get_nth_page(index + 1)
         self.carousel.scroll_to(next_page, True)
 
