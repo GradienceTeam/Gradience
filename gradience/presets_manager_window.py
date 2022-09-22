@@ -128,7 +128,6 @@ class GradiencePresetWindow(Adw.Window):
         offline = False
 
         def fetch(repo_name, repo, badge):
-            global offline
             explore_presets, urls = fetch_presets(repo)
 
             if explore_presets:
