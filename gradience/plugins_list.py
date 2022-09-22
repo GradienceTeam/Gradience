@@ -34,6 +34,10 @@ SYSTEM_PLUGIN_DIR = os.path.join(
     "plugins",
 )
 
+print("=======================")
+print(pkgdatadir)
+print(SYSTEM_PLUGIN_DIR)
+
 
 class GradiencePluginsList:
     """Represent the plugin group in Advanced"""
@@ -54,6 +58,7 @@ class GradiencePluginsList:
 
     def reload(self):
         self.pm = PluginManager()
+        print(SYSTEM_PLUGIN_DIR)
         self.pm.setPluginPlaces([USER_PLUGIN_DIR, SYSTEM_PLUGIN_DIR])
         self.pm.collectPlugins()
         for pluginInfo in self.pm.getAllPlugins():
@@ -106,7 +111,7 @@ class GradiencePluginsList:
             empty = False
         if empty:
             row = Adw.ActionRow()
-            row.set_title(_("No plugins found"))
+            row.set_title(_("No plugins found."))
             group.add(row)
         return group
 

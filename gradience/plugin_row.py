@@ -66,7 +66,19 @@ class GradiencePluginRow(Adw.ActionRow):
             USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"
         )
         buglog("remove", plugin_yapsy_file)
-        os.remove(plugin_yapsy_file)
+        try:
+            os.remove(plugin_yapsy_file)
+        except FileNotFoundError:
+            error_dialog = Adw.MessageDialog(
+                #transient_for=self.props.active_window,
+                heading=_("Unable to remove"),
+                body=_(
+                    "This is a system plugin, and cannot be removed. "
+                )
+            )
+            error_dialog.add_response("close", _("Close"))
+            error_dialog.present()
+        buglog("remove", plugin_yapsy_file)
         Gtk.Application.get_default().reload_plugins()
 
     @Gtk.Template.Callback()
