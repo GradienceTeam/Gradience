@@ -84,6 +84,8 @@ class GradienceApplication(Adw.Application):
         self.is_ready = False
 
         self.first_run = self.settings.get_boolean("first-run")
+        self.last_opened_version = self.settings.get_string(
+            "last-opened-version")
 
         self.style_manager = Adw.StyleManager.get_default()
 
@@ -137,8 +139,10 @@ class GradienceApplication(Adw.Application):
 
         self.reload_user_defined_presets()
 
-        if self.first_run:
+        if self.first_run or version != self.last_opened_version:
             buglog("first run")
+            buglog(version)
+            buglog(self.last_opened_version)
             welcome = GradienceWelcomeWindow(self.win)
             welcome.present()
         else:

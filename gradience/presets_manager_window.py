@@ -310,8 +310,8 @@ class GradiencePresetWindow(Adw.Window):
 
         self.custom_presets = {"user": {}}
         self.builtin_presets = {
-            "adwaita-dark": "Adwaita Dark",
             "adwaita": "Adwaita",
+            "adwaita-dark": "Adwaita Dark",
             "pretty-purple": "Pretty Purple",
         }
         for repo in Path(preset_directory).iterdir():

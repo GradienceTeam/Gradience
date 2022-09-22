@@ -33,7 +33,7 @@ template GradienceWelcomeWindow: Adw.Window {
                     [overlay]
                     Gtk.Button btn_back {
                         styles ["circular"]
-                        margin-start: 12;
+                        margin-start: 10;
                         icon-name: "go-previous-symbolic";
                         halign: start;
                         valign: center;
@@ -47,6 +47,8 @@ template GradienceWelcomeWindow: Adw.Window {
                         allow-scroll-wheel: true;
                         allow-mouse-drag: true;
                         allow-long-swipes: false;
+                        margin-start: 10;
+                        margin-end: 10;
 
                         Gtk.Box {
                             orientation: vertical;
@@ -65,6 +67,12 @@ template GradienceWelcomeWindow: Adw.Window {
 
                         }
 
+                        Adw.StatusPage page_release {
+                            icon-name: "software-update-available-symbolic";
+                            title: _("What's new in 0.3.0");
+                            description: _("In this release, we added plugin support, a plugin repository, badges, and a quick preset switcher. We also split the preset repository into an official repository and a curated reposoitory.");
+                        }
+
                         Adw.StatusPage page_agreement {
                             vexpand: true;
                             hexpand: true;
@@ -74,7 +82,9 @@ template GradienceWelcomeWindow: Adw.Window {
 
                             Gtk.Button btn_agree {
                                 styles ["suggested-action", "pill"]
-                                label: _("Ok");
+                                
+                                label: _("I understand all consequences");
+
                                 use-underline: true;
                                 halign: center;
                             }
@@ -176,7 +186,7 @@ template GradienceWelcomeWindow: Adw.Window {
                     [overlay]
                     Gtk.Button btn_next {
                         styles ["circular", "suggested-action"]
-                        margin-end: 12;
+                        margin-end: 10;
                         icon-name: "go-next-symbolic";
                         halign: end;
                         valign: center;

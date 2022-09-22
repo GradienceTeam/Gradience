@@ -1,5 +1,7 @@
 # Contributor Covenant Code of Conduct
 
+The GNOME Code Of Conduct is also applicable here
+
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our
