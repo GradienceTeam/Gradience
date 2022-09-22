@@ -65,6 +65,8 @@ class GradienceWelcomeWindow(Adw.Window):
         "finish", # 6
     ]
 
+    page_welcome = Gtk.Template.Child()
+
     def __init__(self, window, update=False, **kwargs) -> None:
         super().__init__(**kwargs)
         self.set_transient_for(window)
@@ -86,6 +88,9 @@ class GradienceWelcomeWindow(Adw.Window):
         self.settings.connect(
             "notify::gtk-application-prefer-dark-theme", self.theme_changed
         )
+
+        if self.update:
+            self.page_welcome.set_title("Thanks for updating Gradience!")
 
         self.btn_close.set_sensitive(False)
 
@@ -196,7 +201,7 @@ class GradienceWelcomeWindow(Adw.Window):
             callback=set_completed,
         )
 
-    def previous_page(self, widget=False):
+    def previous_page(self, widget=False, index=None):
         if index is None:
             index = int(self.carousel.get_position())
         previous_page = self.carousel.get_nth_page(index - 1)
