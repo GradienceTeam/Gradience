@@ -142,7 +142,8 @@ class GradienceWelcomeWindow(Adw.Window):
         self.btn_next.set_visible(True)
         self.btn_install.set_visible(False)
         if self.update:
-            self.window.last_opened_version = self.window.settings.set_string("last-opened-version", version)
+            self.window.last_opened_version = \
+				self.window.settings.set_string("last-opened-version", version)
             self.btn_close.set_sensitive(True)
             self.label_skip.set_visible(False)
             self.next_page(index=5)

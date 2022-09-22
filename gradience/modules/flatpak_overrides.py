@@ -58,7 +58,13 @@ def get_user_flatpak_path():
     return GLib.build_filenamev([userDataDir, "flatpak"])
 
 
-def user_save_keyfile(toast_overlay, settings, user_keyfile, filename, gtk_ver):
+def user_save_keyfile(
+	toast_overlay,
+	settings,
+	user_keyfile,
+	filename,
+	gtk_ver
+):
     try:
         user_keyfile.save_to_file(filename)
     except GLib.GError as e:
@@ -77,7 +83,13 @@ def user_save_keyfile(toast_overlay, settings, user_keyfile, filename, gtk_ver):
             )
 
 
-def global_save_keyfile(toast_overlay, settings, global_keyfile, filename, gtk_ver):
+def global_save_keyfile(
+	toast_overlay,
+	settings,
+	global_keyfile,
+	filename,
+	gtk_ver
+):
     try:
         global_keyfile.save_to_file(filename)
     except GLib.GError as e:
