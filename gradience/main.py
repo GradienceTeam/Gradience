@@ -84,7 +84,8 @@ class GradienceApplication(Adw.Application):
         self.is_ready = False
 
         self.first_run = self.settings.get_boolean("first-run")
-        self.last_opened_version = self.settings.get_string("last-opened-version")
+        self.last_opened_version = self.settings.get_string(
+            "last-opened-version")
 
         self.style_manager = Adw.StyleManager.get_default()
 
