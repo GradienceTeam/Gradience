@@ -53,7 +53,6 @@ class GradiencePluginsList:
 
     def reload(self):
         self.pm = PluginManager()
-        print(SYSTEM_PLUGIN_DIR)
         self.pm.setPluginPlaces([USER_PLUGIN_DIR, SYSTEM_PLUGIN_DIR])
         self.pm.collectPlugins()
         for pluginInfo in self.pm.getAllPlugins():

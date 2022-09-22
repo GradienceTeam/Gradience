@@ -89,6 +89,8 @@ class GradienceApplication(Adw.Application):
 
         self.style_manager = Adw.StyleManager.get_default()
 
+        self.preset = None
+
     def do_activate(self):
         """Called when the application is activated.
 
@@ -150,7 +152,6 @@ class GradienceApplication(Adw.Application):
             self.win.present()
 
     def reload_user_defined_presets(self):
-        print("reload")
         if self.props.active_window.presets_menu.get_n_items() > 1:
             self.props.active_window.presets_menu.remove(1)
 
@@ -391,8 +392,6 @@ class GradienceApplication(Adw.Application):
                 monet_theme = "dark"
             else:
                 monet_theme = "light"
-
-        print(theme)
 
         if monet_theme == "dark":
             dark_theme = theme["schemes"]["dark"]
