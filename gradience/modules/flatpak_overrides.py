@@ -61,7 +61,7 @@ def get_user_flatpak_path():
 def user_save_keyfile(toast_overlay, settings, user_keyfile, filename, gtk_ver):
     try:
         user_keyfile.save_to_file(filename)
-    except Glib.GError as e:
+    except GLib.GError as e:
         toast_overlay.add_toast(Adw.Toast(title=_("Failed to save override")))
         buglog(f"Failed to save keyfile structure to override. Exc: {e}")
     else:
@@ -80,7 +80,7 @@ def user_save_keyfile(toast_overlay, settings, user_keyfile, filename, gtk_ver):
 def global_save_keyfile(toast_overlay, settings, global_keyfile, filename, gtk_ver):
     try:
         global_keyfile.save_to_file(filename)
-    except Glib.GError as e:
+    except GLib.GError as e:
         toast_overlay.add_toast(Adw.Toast(title=_("Failed to save override")))
         buglog(f"Failed to save keyfile structure to override. Exc: {e}")
     else:
