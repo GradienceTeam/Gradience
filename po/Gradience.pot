@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-22 00:50+0000\n"
+"POT-Creation-Date: 2022-09-22 10:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:919
+#: data/ui/window.blp:5 gradience/main.py:923
 msgid "Gradience"
 msgstr ""
 
@@ -28,7 +28,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:921
+#: gradience/main.py:925
 msgid "Gradience Team"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgid "Report an Issue…"
 msgstr ""
 
 #: data/ui/preset_row.blp:70
-msgid "Edit preset name"
+msgid "Rename preset"
 msgstr ""
 
 #: data/ui/preset_row.blp:102
@@ -311,98 +311,109 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: data/ui/welcome.blp:62
+#: data/ui/welcome.blp:64
 msgid "Welcome to Gradience"
 msgstr ""
 
-#: data/ui/welcome.blp:63
+#: data/ui/welcome.blp:65
 msgid "Change the look of Adwaita, with ease"
 msgstr ""
 
 #: data/ui/welcome.blp:72
-msgid "Warning"
+msgid "What's new in 0.3.0"
 msgstr ""
 
 #: data/ui/welcome.blp:73
+msgid ""
+"In this release, we added plugin support, a plugin repository, badges, and a "
+"quick preset switcher. We also split the preset repository into an official "
+"repository and a curated reposoitory."
+msgstr ""
+
+#: data/ui/welcome.blp:80
+msgid "Warning"
+msgstr ""
+
+#: data/ui/welcome.blp:81
 msgid ""
 "Changing the colour scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
 "developers."
 msgstr ""
 
-#: data/ui/welcome.blp:77
-msgid "Ok"
+#: data/ui/welcome.blp:85
+msgid "I understand all consequences"
 msgstr ""
 
-#: data/ui/welcome.blp:88
+#: data/ui/welcome.blp:96
 msgid "Customize Adwaita Theme"
 msgstr ""
 
-#: data/ui/welcome.blp:89
+#: data/ui/welcome.blp:97
 msgid ""
 "Change colours of windows, buttons, lists and more, with advanced features "
 "like adding custom CSS"
 msgstr ""
 
-#: data/ui/welcome.blp:95
+#: data/ui/welcome.blp:103
 msgid "Configure Gradience"
 msgstr ""
 
-#: data/ui/welcome.blp:96
+#: data/ui/welcome.blp:104
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
 msgstr ""
 
-#: data/ui/welcome.blp:101
+#: data/ui/welcome.blp:109
 msgid "Legacy apps theming"
 msgstr ""
 
-#: data/ui/welcome.blp:106
+#: data/ui/welcome.blp:114
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr ""
 
-#: data/ui/welcome.blp:111
+#: data/ui/welcome.blp:119
 msgid "System configuration"
 msgstr ""
 
-#: data/ui/welcome.blp:117
+#: data/ui/welcome.blp:125
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 
-#: data/ui/welcome.blp:127
+#: data/ui/welcome.blp:135
 msgid "Installing Themes"
 msgstr ""
 
-#: data/ui/welcome.blp:128
+#: data/ui/welcome.blp:136
 msgid "Please wait until theme will be installed."
 msgstr ""
 
-#: data/ui/welcome.blp:134
+#: data/ui/welcome.blp:142
 msgid "Continue"
 msgstr ""
 
-#: data/ui/welcome.blp:153
+#: data/ui/welcome.blp:161
 msgid "Done"
 msgstr ""
 
-#: data/ui/welcome.blp:154
+#: data/ui/welcome.blp:162
 msgid "Now you can make your own presets or download some online."
 msgstr ""
 
-#: data/ui/welcome.blp:159
+#: data/ui/welcome.blp:167
 msgid "Please finish the setup first"
 msgstr ""
 
-#: data/ui/welcome.blp:167
+#: data/ui/welcome.blp:175
 msgid "Start using Gradience"
 msgstr ""
 
-#: data/ui/welcome.blp:184
+#: data/ui/welcome.blp:192
 msgid "Next"
 msgstr ""
 
-#: data/ui/window.blp:23 gradience/main.py:588 gradience/window.py:140
+#: data/ui/window.blp:23 gradience/main.py:592 gradience/window.py:140
 msgid "Apply"
 msgstr ""
 
@@ -462,7 +473,7 @@ msgstr ""
 msgid "Unexpected file error occurred"
 msgstr ""
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:638 gradience/main.py:708
+#: gradience/app_type_dialog.py:44 gradience/main.py:642 gradience/main.py:712
 #: gradience/presets_manager_window.py:190
 msgid "Cancel"
 msgstr ""
@@ -475,99 +486,99 @@ msgstr ""
 msgid "Preset downloaded"
 msgstr ""
 
-#: gradience/main.py:180 gradience/main.py:208
+#: gradience/main.py:184 gradience/main.py:212
 #: gradience/presets_manager_window.py:340
 #: gradience/presets_manager_window.py:367
 msgid "Failed to load preset"
 msgstr ""
 
-#: gradience/main.py:245
+#: gradience/main.py:249
 msgid "Open in File Manager"
 msgstr ""
 
-#: gradience/main.py:252
+#: gradience/main.py:256
 msgid "Installed Presets"
 msgstr ""
 
-#: gradience/main.py:514
+#: gradience/main.py:518
 msgid "Unsaved changes"
 msgstr ""
 
-#: gradience/main.py:525
+#: gradience/main.py:529
 msgid "Save changes"
 msgstr ""
 
-#: gradience/main.py:583
+#: gradience/main.py:587
 msgid "Apply this color scheme?"
 msgstr ""
 
-#: gradience/main.py:585
+#: gradience/main.py:589
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 
-#: gradience/main.py:598
+#: gradience/main.py:602
 msgid "Restore applied color scheme?"
 msgstr ""
 
-#: gradience/main.py:599 gradience/main.py:611
+#: gradience/main.py:603 gradience/main.py:615
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 
-#: gradience/main.py:601
+#: gradience/main.py:605
 msgid "Restore"
 msgstr ""
 
-#: gradience/main.py:610
+#: gradience/main.py:614
 msgid "Reset applied color scheme?"
 msgstr ""
 
-#: gradience/main.py:613
+#: gradience/main.py:617
 msgid "Reset"
 msgstr ""
 
-#: gradience/main.py:623
+#: gradience/main.py:627
 msgid "Save preset as..."
 msgstr ""
 
-#: gradience/main.py:625 gradience/main.py:652 gradience/main.py:668
-#: gradience/main.py:695 gradience/main.py:725 gradience/main.py:741
+#: gradience/main.py:629 gradience/main.py:656 gradience/main.py:672
+#: gradience/main.py:699 gradience/main.py:729 gradience/main.py:745
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
 
-#: gradience/main.py:639 gradience/main.py:710
+#: gradience/main.py:643 gradience/main.py:714
 msgid "Save"
 msgstr ""
 
-#: gradience/main.py:693
+#: gradience/main.py:697
 msgid "You have unsaved changes!"
 msgstr ""
 
-#: gradience/main.py:709
+#: gradience/main.py:713
 msgid "Discard"
 msgstr ""
 
-#: gradience/main.py:768
+#: gradience/main.py:772
 msgid "Preset saved"
 msgstr ""
 
-#: gradience/main.py:833
+#: gradience/main.py:837
 msgid "Preset set sucessfully"
 msgstr ""
 
-#: gradience/main.py:876
+#: gradience/main.py:880
 msgid "Could not restore GTK4 backup"
 msgstr ""
 
-#: gradience/main.py:909
+#: gradience/main.py:913
 msgid "Preset reseted"
 msgstr ""
 
-#: gradience/main.py:953
+#: gradience/main.py:957
 msgid ""
 "\n"
 "                <ul>\n"
@@ -593,7 +604,7 @@ msgid ""
 "            "
 msgstr ""
 
-#: gradience/main.py:973
+#: gradience/main.py:977
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
