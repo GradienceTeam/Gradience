@@ -138,9 +138,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
                     to_slug_case(self.old_name) + ".json.to_delete",
                 ),
             )
-            print("rename")
             self.set_name(self.name + "(" + _("Pending deletion") + ")")
-            print("renamed")
         except Exception as exception:
             buglog(exception)
         else:
