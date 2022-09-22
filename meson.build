@@ -14,8 +14,8 @@ python = import('python')
 # Project information
 PROJECT_URL = 'https://github.com/GradienceTeam/Gradience'
 BUGTRACKER_URL = 'https://github.com/GradienceTeam/Gradience/issues'
-HELP_URL = 'https://github.com/orgs/GradienceTeam/discussions'
-TRANSLATE_URL = 'https://hosted.weblate.org/projects/GradienceTeam/gradience/'
+HELP_URL = 'https://github.com/GradienceTeam/Gradience/discussions'
+TRANSLATE_URL = 'https://hosted.weblate.org/projects/GradienceTeam/gradience'
 
 # Constants
 PROJECT_RDNN_NAME = 'com.github.GradienceTeam.Gradience'
