@@ -34,11 +34,6 @@ SYSTEM_PLUGIN_DIR = os.path.join(
     "plugins",
 )
 
-print("=======================")
-print(pkgdatadir)
-print(SYSTEM_PLUGIN_DIR)
-
-
 class GradiencePluginsList:
     """Represent the plugin group in Advanced"""
 
