@@ -62,10 +62,10 @@ class GradiencePresetWindow(Adw.Window):
     custom_presets = {}
 
     official_repositories = {
-        _(
-            "Official"
-        ): "https://github.com/GradienceTeam/Community/raw/next/official.json",
-        _("Curated"): "https://github.com/GradienceTeam/Community/raw/next/curated.json"
+        _("Official"):
+			"https://github.com/GradienceTeam/Community/raw/next/official.json",
+        _("Curated"):
+			"https://github.com/GradienceTeam/Community/raw/next/curated.json"
     }
 
     search_results_list = []
@@ -291,7 +291,8 @@ class GradiencePresetWindow(Adw.Window):
                         Adw.Toast(title=_("Preset imported")))
             else:
                 self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Unsupported file format, must be .json"))
+                    Adw.Toast(title=_("Unsupported file format, must be \
+						.json"))
                 )
 
         self.reload_pref_group()
@@ -329,9 +330,8 @@ class GradiencePresetWindow(Adw.Window):
                                 raise KeyError("variables")
                             if preset.get("palette") is None:
                                 raise KeyError("palette")
-                            presets_list[file_name.replace(".json", "")] = preset[
-                                "name"
-                            ]
+                            presets_list[file_name.replace(".json", "")] = \
+								preset["name"]
                         except Exception:
                             self.toast_overlay.add_toast(
                                 Adw.Toast(title=_("Failed to load preset"))
@@ -356,9 +356,8 @@ class GradiencePresetWindow(Adw.Window):
                             raise KeyError("variables")
                         if preset.get("palette") is None:
                             raise KeyError("palette")
-                        presets_list["user"][file_name.replace(".json", "")] = preset[
-                            "name"
-                        ]
+                        presets_list["user"][file_name.replace(".json", "")] \
+							= preset["name"]
                     except Exception:
                         self.toast_overlay.add_toast(
                             Adw.Toast(title=_("Failed to load preset"))
@@ -380,7 +379,9 @@ class GradiencePresetWindow(Adw.Window):
         self.preset_list.set_title(_("User Presets"))
         self.preset_list.set_description(
             _(
-                'See <a href="https://github.com/GradienceTeam/Community">GradienceTeam/Community</a> on Github for more presets'
+                'See \
+				<a href="https://github.com/GradienceTeam/Community">GradienceTeam/Community</a> \
+				on Github for more presets'
             )
         )
 
@@ -405,7 +406,8 @@ class GradiencePresetWindow(Adw.Window):
             self.preset_empty = Adw.ActionRow()
             self.preset_empty.set_title(
                 _(
-                    "No preset found! Use the import button to import one or search one on the Explore tab"
+                    "No preset found! Use the import button to import one or \
+					search one on the Explore tab"
                 )
             )
             self.preset_list.add(self.preset_empty)
