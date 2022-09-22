@@ -17,7 +17,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import os
-from random import random
+from random import choice
 import shutil
 import json
 
@@ -148,7 +148,7 @@ class GradiencePresetWindow(Adw.Window):
         print(self._repos)
         for repo_name, repo in self._repos.items():
             self.search_string_list.append(repo_name)
-            badge_color = random.choice(BADGE_COLORS)
+            badge_color = choice(BADGE_COLORS)
             buglog(
                 f"Selected badge color: {badge_color} if it's look bad, please report it"
             )
