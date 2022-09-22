@@ -115,8 +115,6 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
         self.toast_overlay.add_toast(self.delete_toast)
 
-        self.win.old_name = self.name
-
         try:
             os.rename(
                 os.path.join(
@@ -139,6 +137,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
             print("renamed")
         except Exception as exception:
             buglog(exception)
+        else:
+            self.props.visible = False
 
         self.delete_preset = True
 

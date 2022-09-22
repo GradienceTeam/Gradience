@@ -73,3 +73,4 @@ endif
 
 subdir('icons')
 subdir('theme')
+subdir('plugins')

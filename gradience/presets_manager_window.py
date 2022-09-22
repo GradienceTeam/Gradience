@@ -65,6 +65,7 @@ class GradiencePresetWindow(Adw.Window):
         _(
             "Official"
         ): "https://github.com/GradienceTeam/Community/raw/next/official.json",
+        _("Curated"): "https://github.com/GradienceTeam/Community/raw/next/curated.json"
     }
 
     search_results_list = []
@@ -79,9 +80,6 @@ class GradiencePresetWindow(Adw.Window):
         self.settings = parent.settings
 
         self.user_repositories = self.settings.get_value("repos").unpack()
-        self.user_repositories[
-            _("Curated")
-        ] = "https://github.com/GradienceTeam/Community/raw/next/curated.json"
         self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
 
         self.setup_signals()
@@ -420,12 +418,12 @@ class GradiencePresetWindow(Adw.Window):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
 
-        self.add_repo_button = Gtk.Button.new_from_icon_name(
-            "list-add-symbolic")
-        self.add_repo_button.connect(
-            "clicked", self.on_add_repo_button_clicked)
+        # self.add_repo_button = Gtk.Button.new_from_icon_name(
+        #     "list-add-symbolic")
+        # self.add_repo_button.connect(
+        #     "clicked", self.on_add_repo_button_clicked)
 
-        self.repos_list.set_header_suffix(self.add_repo_button)
+        # self.repos_list.set_header_suffix(self.add_repo_button)
 
         for repo_name, repo in self.official_repositories.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
