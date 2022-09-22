@@ -89,6 +89,8 @@ class GradienceApplication(Adw.Application):
 
         self.style_manager = Adw.StyleManager.get_default()
 
+        self.preset = None
+
     def do_activate(self):
         """Called when the application is activated.
 
@@ -143,14 +145,13 @@ class GradienceApplication(Adw.Application):
             buglog("first run")
             buglog(version)
             buglog(self.last_opened_version)
-            welcome = GradienceWelcomeWindow(self.win)
+            welcome = GradienceWelcomeWindow(self.win, update=True)
             welcome.present()
         else:
             buglog("normal run")
             self.win.present()
 
     def reload_user_defined_presets(self):
-        print("reload")
         if self.props.active_window.presets_menu.get_n_items() > 1:
             self.props.active_window.presets_menu.remove(1)
 
@@ -391,8 +392,6 @@ class GradienceApplication(Adw.Application):
                 monet_theme = "dark"
             else:
                 monet_theme = "light"
-
-        print(theme)
 
         if monet_theme == "dark":
             dark_theme = theme["schemes"]["dark"]
@@ -803,6 +802,7 @@ class GradienceApplication(Adw.Application):
                         os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk4_css)
+
             if widget.get_app_types()["gtk3"]:
                 gtk3_dir = os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
@@ -830,6 +830,7 @@ class GradienceApplication(Adw.Application):
                         os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk3_css)
+
             self.reload_plugins()
             self.plugins_list.apply()
 

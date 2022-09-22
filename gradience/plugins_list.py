@@ -34,7 +34,6 @@ SYSTEM_PLUGIN_DIR = os.path.join(
     "plugins",
 )
 
-
 class GradiencePluginsList:
     """Represent the plugin group in Advanced"""
 
@@ -106,7 +105,7 @@ class GradiencePluginsList:
             empty = False
         if empty:
             row = Adw.ActionRow()
-            row.set_title(_("No plugins found"))
+            row.set_title(_("No plugins found."))
             group.add(row)
         return group
 
