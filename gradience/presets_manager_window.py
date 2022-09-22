@@ -65,6 +65,7 @@ class GradiencePresetWindow(Adw.Window):
         _(
             "Official"
         ): "https://github.com/GradienceTeam/Community/raw/next/official.json",
+        _("Curated"): "https://github.com/GradienceTeam/Community/raw/next/curated.json"
     }
 
     search_results_list = []
@@ -79,9 +80,6 @@ class GradiencePresetWindow(Adw.Window):
         self.settings = parent.settings
 
         self.user_repositories = self.settings.get_value("repos").unpack()
-        self.user_repositories[
-            _("Curated")
-        ] = "https://github.com/GradienceTeam/Community/raw/next/curated.json"
         self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
 
         self.setup_signals()
