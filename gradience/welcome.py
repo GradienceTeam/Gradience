@@ -66,6 +66,7 @@ class GradienceWelcomeWindow(Adw.Window):
     ]
 
     page_welcome = Gtk.Template.Child()
+    page_release = Gtk.Template.Child()
 
     def __init__(self, window, update=False, **kwargs) -> None:
         super().__init__(**kwargs)
@@ -91,6 +92,8 @@ class GradienceWelcomeWindow(Adw.Window):
 
         if self.update:
             self.page_welcome.set_title("Thanks for updating Gradience!")
+
+        self.page_release.set_title(f"Gradience {version}")
 
         self.btn_close.set_sensitive(False)
 

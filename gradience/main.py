@@ -144,11 +144,11 @@ class GradienceApplication(Adw.Application):
 
         self.reload_user_defined_presets()
 
-        if self.first_run or version != self.last_opened_version:
-            buglog("first run")
-            buglog(version)
-            buglog(self.last_opened_version)
+        if version != self.last_opened_version:
             welcome = GradienceWelcomeWindow(self.win, update=True)
+            welcome.present()
+        elif self.first_run:
+            welcome = GradienceWelcomeWindow(self.win)
             welcome.present()
         else:
             buglog("normal run")
