@@ -46,6 +46,9 @@ class GradiencePluginRow(Adw.ActionRow):
         self.plugins_list = plugins_list
 
         self.plugin_object = plugin_object
+        if not os.path.exists(USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"):
+            self.remove_button.set_visible(False)
+
         self.set_name(plugin_object.plugin_id)
         self.set_title(plugin_object.title)
         self.set_subtitle("@" + plugin_object.plugin_id)
