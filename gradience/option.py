@@ -34,7 +34,13 @@ class GradienceOption(Adw.ActionRow):
     explanation_button = Gtk.Template.Child("explanation-button")
     explanation_label = Gtk.Template.Child("explanation-label")
 
-    def __init__(self, name, title, explanation, adw_gtk3_support="yes", **kwargs):
+    def __init__(self,
+		name,
+		title,
+		explanation,
+		adw_gtk3_support="yes",
+		**kwargs
+	):
         super().__init__(**kwargs)
 
         self.set_name(name)
@@ -46,7 +52,8 @@ class GradienceOption(Adw.ActionRow):
         elif adw_gtk3_support == "partial":
             self.warning_button.add_css_class("warning")
             self.warning_label.set_label(
-                _("This option is only partially supported by the adw-gtk3 theme.")
+                _("This option is only partially supported by the adw-gtk3 \
+					theme.")
             )
         elif adw_gtk3_support == "no":
             self.warning_button.add_css_class("error")
