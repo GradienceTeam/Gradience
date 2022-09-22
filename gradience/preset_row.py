@@ -76,6 +76,11 @@ class GradiencePresetRow(Adw.ExpanderRow):
             )
         )
 
+    def on_undo_button_clicked(self, *_args):
+        buglog("undo")
+        self.delete_preset = False
+        self.delete_toast.dismiss()
+
     @Gtk.Template.Callback()
     def on_name_entry_changed(self, *_args):
         self.name = self.name_entry.get_text()
@@ -112,6 +117,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.delete_toast = Adw.Toast(title=_("Preset removed"))
         self.delete_toast.set_button_label(_("Undo"))
         self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
+        self.delete_toast.connect("button-clicked", self.on_undo_button_clicked)
 
         self.toast_overlay.add_toast(self.delete_toast)
 
@@ -139,8 +145,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
             buglog(exception)
         else:
             self.props.visible = False
-
-        self.delete_preset = True
+        finally:
+            self.delete_preset = True
 
     def update_value(self):
         self.preset.preset_name = self.name
@@ -156,7 +162,9 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.old_name = self.name
 
     def on_delete_toast_dismissed(self, widget):
+        buglog("dismissed")
         if self.delete_preset:
+            buglog("delete")
             try:
                 os.remove(
                     os.path.join(
@@ -176,6 +184,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
             finally:
                 self.win.reload_pref_group()
         else:
+            buglog("undo")
             try:
                 os.rename(
                     os.path.join(
@@ -202,6 +211,4 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
         self.delete_preset = True
 
-    def on_undo_button_clicked(self, *_args):
-        self.delete_preset = False
-        self.delete_toast.dismiss()
+
