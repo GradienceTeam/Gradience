@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-21 12:19+0000\n"
+"POT-Creation-Date: 2022-09-22 00:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -290,8 +290,8 @@ msgid "Offline"
 msgstr ""
 
 #: data/ui/presets_manager_window.blp:143
-#: gradience/presets_manager_window.py:124
-#: gradience/presets_manager_window.py:423
+#: gradience/presets_manager_window.py:122
+#: gradience/presets_manager_window.py:421
 msgid "Repositories"
 msgstr ""
 
@@ -326,12 +326,12 @@ msgstr ""
 #: data/ui/welcome.blp:73
 msgid ""
 "Changing the colour scheme can negatively affect contrast and readability. "
-"Proceed with caution and please do not report theming-related issues to app "
+"Proceed with caution. Please do not report theming-related issues to app "
 "developers."
 msgstr ""
 
 #: data/ui/welcome.blp:77
-msgid "I agree"
+msgid "Ok"
 msgstr ""
 
 #: data/ui/welcome.blp:88
@@ -340,28 +340,34 @@ msgstr ""
 
 #: data/ui/welcome.blp:89
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colours of windows, buttons, lists and more, with advanced features "
 "like adding custom CSS"
 msgstr ""
 
 #: data/ui/welcome.blp:95
-msgid "Configure Themes"
+msgid "Configure Gradience"
 msgstr ""
 
 #: data/ui/welcome.blp:96
-msgid "Install adw-gtk3 theme for legacy applications."
+msgid ""
+"Install adw-gtk3 theme for legacy applications and configure system for "
+"theming."
 msgstr ""
 
 #: data/ui/welcome.blp:101
-msgid "adw-gtk3 Theme"
+msgid "Legacy apps theming"
 msgstr ""
 
-#: data/ui/welcome.blp:106 data/ui/welcome.blp:117
-msgid "Allow installation"
+#: data/ui/welcome.blp:106
+msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr ""
 
 #: data/ui/welcome.blp:111
-msgid "System Configuration"
+msgid "System configuration"
+msgstr ""
+
+#: data/ui/welcome.blp:117
+msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 
 #: data/ui/welcome.blp:127
@@ -385,7 +391,7 @@ msgid "Now you can make your own presets or download some online."
 msgstr ""
 
 #: data/ui/welcome.blp:159
-msgid "Please Finish the setup first"
+msgid "Please finish the setup first"
 msgstr ""
 
 #: data/ui/welcome.blp:167
@@ -440,7 +446,7 @@ msgstr ""
 msgid "GTK4 Widget Factory"
 msgstr ""
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:378
+#: data/ui/window.blp:160 gradience/presets_manager_window.py:376
 msgid "Built-in Presets"
 msgstr ""
 
@@ -457,21 +463,21 @@ msgid "Unexpected file error occurred"
 msgstr ""
 
 #: gradience/app_type_dialog.py:44 gradience/main.py:638 gradience/main.py:708
-#: gradience/presets_manager_window.py:192
+#: gradience/presets_manager_window.py:190
 msgid "Cancel"
 msgstr ""
 
-#: gradience/explore_preset_row.py:64 gradience/explore_preset_row.py:90
+#: gradience/explore_preset_row.py:62 gradience/explore_preset_row.py:88
 msgid "Preset could not be downloaded"
 msgstr ""
 
-#: gradience/explore_preset_row.py:79 gradience/explore_preset_row.py:95
+#: gradience/explore_preset_row.py:77 gradience/explore_preset_row.py:93
 msgid "Preset downloaded"
 msgstr ""
 
 #: gradience/main.py:180 gradience/main.py:208
-#: gradience/presets_manager_window.py:342
-#: gradience/presets_manager_window.py:369
+#: gradience/presets_manager_window.py:340
+#: gradience/presets_manager_window.py:367
 msgid "Failed to load preset"
 msgstr ""
 
@@ -616,17 +622,17 @@ msgstr ""
 msgid "Not a color, see text value"
 msgstr ""
 
-#: gradience/plugins_list.py:96
+#: gradience/plugins_list.py:95
 msgid "Plugins"
 msgstr ""
 
-#: gradience/plugins_list.py:99
+#: gradience/plugins_list.py:98
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can make issues."
 msgstr ""
 
-#: gradience/plugins_list.py:110
+#: gradience/plugins_list.py:109
 msgid "No plugins found"
 msgstr ""
 
@@ -646,54 +652,54 @@ msgstr ""
 msgid "Unable to delete preset"
 msgstr ""
 
-#: gradience/presets_manager_window.py:68
+#: gradience/presets_manager_window.py:66
 msgid "Official"
 msgstr ""
 
-#: gradience/presets_manager_window.py:85
+#: gradience/presets_manager_window.py:83
 msgid "Curated"
 msgstr ""
 
-#: gradience/presets_manager_window.py:113
+#: gradience/presets_manager_window.py:111
 msgid "Builtin Presets"
 msgstr ""
 
-#: gradience/presets_manager_window.py:118
-#: gradience/presets_manager_window.py:385
+#: gradience/presets_manager_window.py:116
+#: gradience/presets_manager_window.py:383
 msgid "User Presets"
 msgstr ""
 
-#: gradience/presets_manager_window.py:185
+#: gradience/presets_manager_window.py:183
 msgid "Add new repository"
 msgstr ""
 
-#: gradience/presets_manager_window.py:186
+#: gradience/presets_manager_window.py:184
 msgid "Add a repository to install additional presets"
 msgstr ""
 
-#: gradience/presets_manager_window.py:193
+#: gradience/presets_manager_window.py:191
 msgid "Add"
 msgstr ""
 
-#: gradience/presets_manager_window.py:281
+#: gradience/presets_manager_window.py:279
 msgid "Preset already exists"
 msgstr ""
 
-#: gradience/presets_manager_window.py:296
+#: gradience/presets_manager_window.py:294
 msgid "Preset imported"
 msgstr ""
 
-#: gradience/presets_manager_window.py:299
+#: gradience/presets_manager_window.py:297
 msgid "Unsupported file format, must be .json"
 msgstr ""
 
-#: gradience/presets_manager_window.py:388
+#: gradience/presets_manager_window.py:386
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets"
 msgstr ""
 
-#: gradience/presets_manager_window.py:413
+#: gradience/presets_manager_window.py:411
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab"
