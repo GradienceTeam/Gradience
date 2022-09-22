@@ -803,6 +803,7 @@ class GradienceApplication(Adw.Application):
                         os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk4_css)
+
             if widget.get_app_types()["gtk3"]:
                 gtk3_dir = os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
@@ -830,6 +831,7 @@ class GradienceApplication(Adw.Application):
                         os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk3_css)
+
             self.reload_plugins()
             self.plugins_list.apply()
 
