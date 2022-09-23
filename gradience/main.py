@@ -60,10 +60,7 @@ class GradienceApplication(Adw.Application):
     settings = Gio.Settings.new(app_id)
 
     def __init__(self):
-        super().__init__(
-			application_id=app_id,
-			flags=Gio.ApplicationFlags.FLAGS_NONE
-		)
+        super().__init__(application_id=app_id, flags=Gio.ApplicationFlags.FLAGS_NONE)
         self.set_resource_base_path(rootdir)
 
         self.portal = Xdp.Portal()
@@ -180,8 +177,9 @@ class GradienceApplication(Adw.Application):
                                 raise KeyError("variables")
                             if preset.get("palette") is None:
                                 raise KeyError("palette")
-                            presets_list[file_name.replace(".json", "")] \
-								= preset["name"]
+                            presets_list[file_name.replace(".json", "")] = preset[
+                                "name"
+                            ]
                         except Exception:
                             self.win.toast_overlay.add_toast(
                                 Adw.Toast(title=_("Failed to load preset"))
@@ -207,8 +205,9 @@ class GradienceApplication(Adw.Application):
                             raise KeyError("variables")
                         if preset.get("palette") is None:
                             raise KeyError("palette")
-                        presets_list["user"][file_name.replace(".json", "")] \
-							= preset["name"]
+                        presets_list["user"][file_name.replace(".json", "")] = preset[
+                            "name"
+                        ]
                     except Exception:
                         self.win.toast_overlay.add_toast(
                             Adw.Toast(title=_("Failed to load preset"))
@@ -398,59 +397,44 @@ class GradienceApplication(Adw.Application):
             dark_theme = theme["schemes"]["dark"]
             variable = {
                 "accent_color": self.rgba_from_argb(dark_theme.primary),
-                "accent_bg_color":
-					self.rgba_from_argb(dark_theme.primaryContainer),
-                "accent_fg_color":
-					self.rgba_from_argb(dark_theme.onPrimaryContainer),
+                "accent_bg_color": self.rgba_from_argb(dark_theme.primaryContainer),
+                "accent_fg_color": self.rgba_from_argb(dark_theme.onPrimaryContainer),
                 "destructive_color": self.rgba_from_argb(dark_theme.error),
-                "destructive_bg_color":
-					self.rgba_from_argb(dark_theme.errorContainer),
+                "destructive_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
                 "destructive_fg_color": self.rgba_from_argb(
                     dark_theme.onErrorContainer
                 ),
                 "success_color": self.rgba_from_argb(dark_theme.tertiary),
                 "success_bg_color": self.rgba_from_argb(dark_theme.onTertiary),
-                "success_fg_color":
-					self.rgba_from_argb(dark_theme.onTertiaryContainer),
+                "success_fg_color": self.rgba_from_argb(dark_theme.onTertiaryContainer),
                 "warning_color": self.rgba_from_argb(dark_theme.secondary),
-                "warning_bg_color":
-					self.rgba_from_argb(dark_theme.onSecondary),
-                "warning_fg_color":
-					self.rgba_from_argb(dark_theme.primary, "0.8"),
+                "warning_bg_color": self.rgba_from_argb(dark_theme.onSecondary),
+                "warning_fg_color": self.rgba_from_argb(dark_theme.primary, "0.8"),
                 "error_color": self.rgba_from_argb(dark_theme.error),
-                "error_bg_color":
-					self.rgba_from_argb(dark_theme.errorContainer),
+                "error_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
                 "error_fg_color": self.rgba_from_argb(dark_theme.onError),
                 "window_bg_color": self.rgba_from_argb(dark_theme.surface),
                 "window_fg_color": self.rgba_from_argb(dark_theme.onSurface),
                 "view_bg_color": self.rgba_from_argb(dark_theme.surface),
                 "view_fg_color": self.rgba_from_argb(dark_theme.onSurface),
                 "headerbar_bg_color": self.rgba_from_argb(dark_theme.surface),
-                "headerbar_fg_color":
-					self.rgba_from_argb(dark_theme.onSurface),
+                "headerbar_fg_color": self.rgba_from_argb(dark_theme.onSurface),
                 "headerbar_border_color": self.rgba_from_argb(
                     dark_theme.primary, "0.8"
                 ),
                 "headerbar_backdrop_color": "@window_bg_color",
-                "headerbar_shade_color":
-					self.rgba_from_argb(dark_theme.shadow),
-                "card_bg_color":
-					self.rgba_from_argb(dark_theme.primary, "0.05"),
-                "card_fg_color":
-					self.rgba_from_argb(dark_theme.onSecondaryContainer),
+                "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
+                "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
+                "card_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "dialog_bg_color":
-					self.rgba_from_argb(dark_theme.secondaryContainer),
-                "dialog_fg_color":
-					self.rgba_from_argb(dark_theme.onSecondaryContainer),
-                "popover_bg_color":
-					self.rgba_from_argb(dark_theme.secondaryContainer),
+                "dialog_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
+                "dialog_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
+                "popover_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
                 "popover_fg_color": self.rgba_from_argb(
                     dark_theme.onSecondaryContainer
                 ),
                 "shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "scrollbar_outline_color":
-					self.rgba_from_argb(dark_theme.outline),
+                "scrollbar_outline_color": self.rgba_from_argb(dark_theme.outline),
             }
         else:  # light
             light_theme = theme["schemes"]["light"]
@@ -459,38 +443,31 @@ class GradienceApplication(Adw.Application):
                 "accent_bg_color": self.rgba_from_argb(light_theme.primary),
                 "accent_fg_color": self.rgba_from_argb(light_theme.onPrimary),
                 "destructive_color": self.rgba_from_argb(light_theme.error),
-                "destructive_bg_color":
-					self.rgba_from_argb(light_theme.errorContainer),
+                "destructive_bg_color": self.rgba_from_argb(light_theme.errorContainer),
                 "destructive_fg_color": self.rgba_from_argb(
                     light_theme.onErrorContainer
                 ),
                 "success_color": self.rgba_from_argb(light_theme.tertiary),
-                "success_bg_color":
-					self.rgba_from_argb(light_theme.tertiaryContainer),
+                "success_bg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
                 "success_fg_color": self.rgba_from_argb(
                     light_theme.onTertiaryContainer
                 ),
                 "warning_color": self.rgba_from_argb(light_theme.secondary),
-                "warning_bg_color":
-					self.rgba_from_argb(light_theme.secondaryContainer),
+                "warning_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "warning_fg_color": self.rgba_from_argb(
                     light_theme.onSecondaryContainer
                 ),
                 "error_color": self.rgba_from_argb(light_theme.error),
-                "error_bg_color":
-					self.rgba_from_argb(light_theme.errorContainer),
+                "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
                 "error_fg_color": self.rgba_from_argb(light_theme.onError),
-                "window_bg_color":
-					self.rgba_from_argb(light_theme.secondaryContainer),
+                "window_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "window_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "view_bg_color":
-					self.rgba_from_argb(light_theme.secondaryContainer),
+                "view_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "view_fg_color": self.rgba_from_argb(light_theme.onSurface),
                 "headerbar_bg_color": self.rgba_from_argb(
                     light_theme.secondaryContainer
                 ),
-                "headerbar_fg_color":
-					self.rgba_from_argb(light_theme.onSurface),
+                "headerbar_fg_color": self.rgba_from_argb(light_theme.onSurface),
                 "headerbar_border_color": self.rgba_from_argb(
                     light_theme.primary, "0.8"
                 ),
@@ -498,24 +475,19 @@ class GradienceApplication(Adw.Application):
                 "headerbar_shade_color": self.rgba_from_argb(
                     light_theme.secondaryContainer
                 ),
-                "card_bg_color":
-					self.rgba_from_argb(light_theme.primary, "0.05"),
-                "card_fg_color":
-					self.rgba_from_argb(light_theme.onSecondaryContainer),
+                "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
+                "card_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(light_theme.shadow),
-                "dialog_bg_color":
-					self.rgba_from_argb(light_theme.secondaryContainer),
+                "dialog_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "dialog_fg_color": self.rgba_from_argb(
                     light_theme.onSecondaryContainer
                 ),
-                "popover_bg_color":
-					self.rgba_from_argb(light_theme.secondaryContainer),
+                "popover_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
                 "popover_fg_color": self.rgba_from_argb(
                     light_theme.onSecondaryContainer
                 ),
                 "shade_color": self.rgba_from_argb(light_theme.shadow),
-                "scrollbar_outline_color":
-					self.rgba_from_argb(light_theme.outline),
+                "scrollbar_outline_color": self.rgba_from_argb(light_theme.outline),
             }
 
         for key in variable:
@@ -829,16 +801,12 @@ class GradienceApplication(Adw.Application):
                     pass
                 else:
                     with open(
-                        os.path.join(gtk4_dir, "gtk.css.bak"),
-						"w",
-						encoding="utf-8"
+                        os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
                     ) as file:
                         file.write(contents)
                 finally:
                     with open(
-                        os.path.join(gtk4_dir, "gtk.css"),
-						"w",
-						encoding="utf-8"
+                        os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk4_css)
 
@@ -854,25 +822,19 @@ class GradienceApplication(Adw.Application):
                 contents = ""
                 try:
                     with open(
-                        os.path.join(gtk3_dir, "gtk.css"),
-						"r",
-						encoding="utf-8"
+                        os.path.join(gtk3_dir, "gtk.css"), "r", encoding="utf-8"
                     ) as file:
                         contents = file.read()
                 except FileNotFoundError:  # first run
                     pass
                 else:
                     with open(
-                        os.path.join(gtk3_dir, "gtk.css.bak"),
-						"w",
-						encoding="utf-8"
+                        os.path.join(gtk3_dir, "gtk.css.bak"), "w", encoding="utf-8"
                     ) as file:
                         file.write(contents)
                 finally:
                     with open(
-                        os.path.join(gtk3_dir, "gtk.css"),
-						"w",
-						encoding="utf-8"
+                        os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
                     ) as file:
                         file.write(gtk3_css)
 
@@ -980,8 +942,8 @@ class GradienceApplication(Adw.Application):
             artists=["David Lapshin https://github.com/daudix-UFO"],
             designers=["David Lapshin https://github.com/daudix-UFO"],
             # Translators: This is a place to put your credits (formats:
-			# "Name https://example.com" or "Name <email@example.com>",
-			# no quotes) and is not meant to be translated literally.
+            # "Name https://example.com" or "Name <email@example.com>",
+            # no quotes) and is not meant to be translated literally.
             # TODO: Automate this process using CI, because not everyone knows
             # about this
             translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh/

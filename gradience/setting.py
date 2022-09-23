@@ -18,13 +18,7 @@
 
 
 class GradienceSetting:
-    def __init__(self,
-		name,
-		title,
-		value_type,
-		explanation=None,
-		default_value=None
-	):
+    def __init__(self, name, title, value_type, explanation=None, default_value=None):
         # TODO supported types:
         #  text
         #  integer

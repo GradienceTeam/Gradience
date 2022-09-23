@@ -34,6 +34,7 @@ SYSTEM_PLUGIN_DIR = os.path.join(
     "plugins",
 )
 
+
 class GradiencePluginsList:
     """Represent the plugin group in Advanced"""
 
@@ -113,8 +114,7 @@ class GradiencePluginsList:
     def save(self):
         saved = {}
         for pluginInfo in self.pm.getAllPlugins():
-            saved[pluginInfo.plugin_object.plugin_id] = \
-				pluginInfo.plugin_object.save()
+            saved[pluginInfo.plugin_object.plugin_id] = pluginInfo.plugin_object.save()
         return saved
 
     def validate(self):
