@@ -62,12 +62,8 @@ class GradiencePresetWindow(Adw.Window):
     custom_presets = {}
 
     official_repositories = {
-        _(
-            "Official"
-        ): "https://github.com/GradienceTeam/Community/raw/next/official.json",
-        _(
-            "Curated"
-        ): "https://github.com/GradienceTeam/Community/raw/next/curated.json",
+        "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
+        "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json",
     }
 
     search_results_list = []
@@ -343,6 +339,9 @@ class GradiencePresetWindow(Adw.Window):
                 buglog("file")
                 # keep compatiblity with old presets
                 if repo.name.endswith(".json"):
+                    if not os.path.isdir(os.path.join(preset_directory, "user")):
+                        os.mkdir(os.path.join(preset_directory, "user"))
+
                     os.rename(repo, os.path.join(
                         preset_directory, "user", repo.name))
 
