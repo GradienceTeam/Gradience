@@ -127,7 +127,7 @@ Alternatively, open the project with GNOME Builder, then build and run it.
 
 ## Theming Setup
 
-You can also go in `Preferences` and apply overwrite for Flatpak 
+You can also go in `Preferences` and apply override for Flatpak 
 
 ### Libadwaita applications
 
