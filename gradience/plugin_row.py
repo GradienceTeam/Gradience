@@ -46,7 +46,9 @@ class GradiencePluginRow(Adw.ActionRow):
         self.plugins_list = plugins_list
 
         self.plugin_object = plugin_object
-        if not os.path.exists(USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"):
+        if not os.path.exists(
+            USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"
+        ):
             self.remove_button.set_visible(False)
 
         self.set_name(plugin_object.plugin_id)
@@ -73,11 +75,9 @@ class GradiencePluginRow(Adw.ActionRow):
             os.remove(plugin_yapsy_file)
         except FileNotFoundError:
             error_dialog = Adw.MessageDialog(
-                #transient_for=self.props.active_window,
+                # transient_for=self.props.active_window,
                 heading=_("Unable to remove"),
-                body=_(
-                    "This is a system plugin, and cannot be removed. "
-                )
+                body=_("This is a system plugin, and cannot be removed. "),
             )
             error_dialog.add_response("close", _("Close"))
             error_dialog.present()

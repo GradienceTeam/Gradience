@@ -22,14 +22,7 @@ class Preset:
     name = "new_preset"
     badges = {}
 
-    def __init__(
-		self,
-		name=None,
-		repo=None,
-		preset_path=None,
-		text=None,
-		preset=None
-	):
+    def __init__(self, name=None, repo=None, preset_path=None, text=None, preset=None):
         if text:  # load from ressource
             self.load_preset(text=text)
         elif preset:  # css or dict
