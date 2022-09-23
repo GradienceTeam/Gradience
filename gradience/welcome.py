@@ -56,13 +56,13 @@ class GradienceWelcomeWindow(Adw.Window):
     ]
 
     carousel_pages = [
-        "welcome", # 0
-        "release", # 1
-        "agreement", # 2
-        "gradience", # 3
-        "configure", # 4
-        "download", # 5
-        "finish", # 6
+        "welcome",  # 0
+        "release",  # 1
+        "agreement",  # 2
+        "gradience",  # 3
+        "configure",  # 4
+        "download",  # 5
+        "finish",  # 6
     ]
 
     page_welcome = Gtk.Template.Child()
@@ -142,14 +142,14 @@ class GradienceWelcomeWindow(Adw.Window):
         self.btn_next.set_visible(True)
         self.btn_install.set_visible(False)
         if self.update:
-            self.window.last_opened_version = \
-				self.window.settings.set_string("last-opened-version", version)
+            self.window.last_opened_version = self.window.settings.set_string(
+                "last-opened-version", version
+            )
             self.btn_close.set_sensitive(True)
             self.label_skip.set_visible(False)
             self.next_page(index=5)
         else:
             self.next_page()
-
 
     @staticmethod
     def quit(widget=False):

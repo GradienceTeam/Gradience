@@ -275,8 +275,10 @@ settings_schema = {
         {
             "name": "card_colors",
             "title": _("Card Colors"),
-            "description": _("These colors are used for cards and boxed \
-				lists."),
+            "description": _(
+                "These colors are used for cards and boxed \
+				lists."
+            ),
             "variables": [
                 {
                     "name": "card_bg_color",
