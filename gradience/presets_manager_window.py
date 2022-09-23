@@ -386,7 +386,7 @@ class GradiencePresetWindow(Adw.Window):
             _(
                 'See '\
                 '<a href="https://github.com/GradienceTeam/Community">'\
-				'GradienceTeam/Community</a> on Github for more presets'
+			    'GradienceTeam/Community</a> on Github for more presets'
             )
         )
 
