@@ -96,7 +96,7 @@ class GradiencePluginsList:
         group.set_description(
             _(
                 "Plugins add additional features to Gradience, plugins are \
-				made by Gradience community and can make issues."
+                made by Gradience community and can make issues."
             )
         )
         empty = True
