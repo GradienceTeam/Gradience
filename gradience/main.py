@@ -585,8 +585,7 @@ class GradienceApplication(Adw.Application):
         dialog = GradienceAppTypeDialog(
             _("Apply this color scheme?"),
             _(
-                "Warning: any custom CSS files for those app types will be \
-				irreversibly overwritten!"
+                "Warning: any custom CSS files for those app types will be irreversibly overwritten!"
             ),
             "apply",
             _("Apply"),
@@ -626,8 +625,7 @@ class GradienceApplication(Adw.Application):
             transient_for=self.props.active_window,
             heading=_("Save preset as..."),
             body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already \
-				exists, it will be overwritten!"
+                "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
             ).format(
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
@@ -654,8 +652,7 @@ class GradienceApplication(Adw.Application):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset \
-						already exists, it will be overwritten!"
+                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
                             os.environ.get(
@@ -671,8 +668,7 @@ class GradienceApplication(Adw.Application):
             else:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset \
-						already exists, it will be overwritten!"
+                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
                             os.environ.get(
@@ -699,8 +695,7 @@ class GradienceApplication(Adw.Application):
             transient_for=self.props.active_window,
             heading=_("You have unsaved changes!"),
             body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already \
-				exists, it will be overwritten!"
+                "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
             ).format(
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
@@ -730,8 +725,7 @@ class GradienceApplication(Adw.Application):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset \
-						already exists, it will be overwritten!"
+                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
                             os.environ.get(
@@ -747,8 +741,7 @@ class GradienceApplication(Adw.Application):
             else:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset \
-						already exists, it will be overwritten!"
+                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
                             os.environ.get(
@@ -964,32 +957,26 @@ class GradienceApplication(Adw.Application):
             release_notes=_(
                 """
                 <ul>
-        		<li>Add AdwViewSwitcher in the header bar.</li>
-        		<li>Move CSS to the "Advanced" tab</li>
-        		<li>Move the rest to the "Colours" tab</li>
-        		<li>Add Monet tab which generates a theme from a background
-					</li>
-        		<li>Add disk saved and disk unsaved icon in the header bar</li>
-        		<li>Update about dialog</li>
-        		<li>Change license to GNU GPLv3</li>
-        		<li>Begin plugin support</li>
-        		<li>Move preset selector to a drop-down called palette (icon \
-					palette)</li>
-        		<li>Add ability to apply the theme onlyfor dark theme or oy \
-					for light theme</li>
-        		<li>Automaticly use Adwaita-dark preset if the user prefered \
-					scheme is dark.</li>
-        		<li>Added Flatpak CI build</li>
-        		<li>Added issue template for bug and feature request </li>
-        		<li>`Main` branch is now protected by GitHub branch \
-					protection. The development is done on `next` branch </li>
-        		</ul>
-            	"""
+        <li>Add AdwViewSwitcher in the header bar.</li>
+        <li>Move CSS to the "Advanced" tab</li>
+        <li>Move the rest to the "Colours" tab</li>
+        <li>Add Monet tab which generates a theme from a background</li>
+        <li>Add disk saved and disk unsaved icon in the header bar</li>
+        <li>Update about dialog</li>
+        <li>Change license to GNU GPLv3</li>
+        <li>Begin plugin support</li>
+        <li>Move preset selector to a drop-down called palette (icon palette)</li>
+        <li>Add ability to apply the theme onlyfor dark theme or oy for light theme</li>
+        <li>Automaticly use Adwaita-dark preset if the user prefered scheme is dark.</li>
+        <li>Added Flatpak CI build</li>
+        <li>Added issue template for bug and feature request </li>
+        <li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch </li>
+      </ul>
+            """
             ),
             comments=_(
                 """
-Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 \
-theme.
+Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 With Gradience you can:
 
 - Change any color of Adwaita theme
