@@ -133,7 +133,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_description(
             _(
                 "Monet is an engine that generates a Material Design 3 \
-				palette from an image's color."
+                palette from an image's color."
             )
         )
 
@@ -270,9 +270,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         palette_pref_group.set_description(
             _(
                 'Named palette colors used by some applications. Default \
-				colors follow the \
-				<a href="https://developer.gnome.org/hig/reference/palette.html">\
-					GNOME Human Interface Guidelines</a>.'
+                colors follow the \
+                <a href="https://developer.gnome.org/hig/reference/palette.html">\
+                    GNOME Human Interface Guidelines</a>.'
             )
         )
         for color in settings_schema["palette"]:

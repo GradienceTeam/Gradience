@@ -23,8 +23,8 @@ settings_schema = {
             "title": _("Accent Colors"),
             "description": _(
                 "These colors are used across many different widgets, such as \
-				buttons, labels, and entries, to indicate that a widget is \
-				important, interactive, or currently active."
+                buttons, labels, and entries, to indicate that a widget is \
+                important, interactive, or currently active."
             ),
             "variables": [
                 {
@@ -32,9 +32,9 @@ settings_schema = {
                     "title": _("Standalone Color"),
                     "explanation": _(
                         "The standalone colors are similar to the background \
-						ones, but provide better contrast when used as \
-						foreground color on top of a neutral background - for \
-						example, colorful text in a window."
+                        ones, but provide better contrast when used as \
+                        foreground color on top of a neutral background - for \
+                        example, colorful text in a window."
                     ),
                     "adw_gtk3_support": "yes",
                 },
@@ -55,7 +55,7 @@ settings_schema = {
             "title": _("Destructive Colors"),
             "description": _(
                 "These colors are used for buttons to indicate a dangerous \
-				action, such as deleting a file."
+                action, such as deleting a file."
             ),
             "variables": [
                 {
@@ -63,9 +63,9 @@ settings_schema = {
                     "title": _("Standalone Color"),
                     "explanation": _(
                         "The standalone colors are similar to the background \
-						ones, but provide better contrast when used as \
-						foreground color on top of a neutral background - for \
-						example, colorful text in a window."
+                        ones, but provide better contrast when used as \
+                        foreground color on top of a neutral background - for \
+                        example, colorful text in a window."
                     ),
                     "adw_gtk3_support": "yes",
                 },
@@ -86,8 +86,8 @@ settings_schema = {
             "title": _("Success Colors"),
             "description": _(
                 "These colors are used across many different widgets, such as \
-				buttons, labels, entries, and level bars, to indicate a \
-				success or a high level."
+                buttons, labels, entries, and level bars, to indicate a \
+                success or a high level."
             ),
             "variables": [
                 {
@@ -95,9 +95,9 @@ settings_schema = {
                     "title": _("Standalone Color"),
                     "explanation": _(
                         "The standalone colors are similar to the background \
-						ones, but provide better contrast when used as \
-						foreground color on top of a neutral background - for \
-						example, colorful text in a window."
+                        ones, but provide better contrast when used as \
+                        foreground color on top of a neutral background - for \
+                        example, colorful text in a window."
                     ),
                     "adw_gtk3_support": "yes",
                 },
@@ -118,8 +118,8 @@ settings_schema = {
             "title": _("Warning Colors"),
             "description": _(
                 "These colors are used across many different widgets, such as \
-				buttons, labels, entries, and level bars, to indicate a \
-				warning or a low level."
+                buttons, labels, entries, and level bars, to indicate a \
+                warning or a low level."
             ),
             "variables": [
                 {
@@ -127,9 +127,9 @@ settings_schema = {
                     "title": _("Standalone Color"),
                     "explanation": _(
                         "The standalone colors are similar to the background \
-						ones, but provide better contrast when used as \
-						foreground color on top of a neutral background - for \
-						example, colorful text in a window."
+                        ones, but provide better contrast when used as \
+                        foreground color on top of a neutral background - for \
+                        example, colorful text in a window."
                     ),
                     "adw_gtk3_support": "yes",
                 },
@@ -150,7 +150,7 @@ settings_schema = {
             "title": _("Error Colors"),
             "description": _(
                 "These colors are used across many different widgets, such as \
-				buttons, labels, and entries, to indicate a failure."
+                buttons, labels, and entries, to indicate a failure."
             ),
             "variables": [
                 {
@@ -158,9 +158,9 @@ settings_schema = {
                     "title": _("Standalone Color"),
                     "explanation": _(
                         "The standalone colors are similar to the background \
-						ones, but provide better contrast when used as \
-						foreground color on top of a neutral background - for \
-						example, colorful text in a window."
+                        ones, but provide better contrast when used as \
+                        foreground color on top of a neutral background - for \
+                        example, colorful text in a window."
                     ),
                     "adw_gtk3_support": "yes",
                 },
@@ -198,7 +198,7 @@ settings_schema = {
             "title": _("View Colors"),
             "description": _(
                 "These colors are used in a variety of widgets, such as text \
-				views and entries."
+                views and entries."
             ),
             "variables": [
                 {
@@ -218,8 +218,8 @@ settings_schema = {
             "title": _("Header Bar Colors"),
             "description": _(
                 "These colors are used for header bars, as well as widgets \
-				that are meant to be visually attached to it, such as search \
-				bars or tab bars."
+                that are meant to be visually attached to it, such as search \
+                bars or tab bars."
             ),
             "variables": [
                 {
@@ -237,13 +237,13 @@ settings_schema = {
                     "title": _("Border Color"),
                     "explanation": _(
                         "The border color has the same default value as a \
-						foreground color, but doesn't change along with it. \
-						This can be useful if a light window has a dark \
-						header bar with light text; in this case it may be \
-						desirable to keep the border dark. This variable is \
-						only used for vertical borders - for example, \
-						separators between the two header bars in a split \
-						header bar layout."
+                        foreground color, but doesn't change along with it. \
+                        This can be useful if a light window has a dark \
+                        header bar with light text; in this case it may be \
+                        desirable to keep the border dark. This variable is \
+                        only used for vertical borders - for example, \
+                        separators between the two header bars in a split \
+                        header bar layout."
                     ),
                     "adw_gtk3_support": "no",
                 },
@@ -252,11 +252,11 @@ settings_schema = {
                     "title": _("Backdrop Color"),
                     "explanation": _(
                         "The backdrop color is used instead of the background \
-						color when the window is not focused. By default it's \
-						an alias of the window's background color and changes \
-						together with it. When changing this variable, make \
-						sure to set it to a value matching your header bar \
-						background color."
+                        color when the window is not focused. By default it's \
+                        an alias of the window's background color and changes \
+                        together with it. When changing this variable, make \
+                        sure to set it to a value matching your header bar \
+                        background color."
                     ),
                     "adw_gtk3_support": "yes",
                 },
@@ -265,8 +265,8 @@ settings_schema = {
                     "title": _("Shade Color"),
                     "explanation": _(
                         "The shade color is used to provide a dark border for \
-						header bars and similar widgets that separates them \
-						from the main window."
+                        header bars and similar widgets that separates them \
+                        from the main window."
                     ),
                     "adw_gtk3_support": "no",
                 },
@@ -277,7 +277,7 @@ settings_schema = {
             "title": _("Card Colors"),
             "description": _(
                 "These colors are used for cards and boxed \
-				lists."
+                lists."
             ),
             "variables": [
                 {
@@ -295,8 +295,8 @@ settings_schema = {
                     "title": _("Shade Color"),
                     "explanation": _(
                         "The shade color is used for shadows that are used by \
-						cards to separate themselves from the window \
-						background, as well as for row dividers in the cards."
+                        cards to separate themselves from the window \
+                        background, as well as for row dividers in the cards."
                     ),
                     "adw_gtk3_support": "no",
                 },
@@ -346,8 +346,8 @@ settings_schema = {
                     "title": _("Shade Color"),
                     "explanation": _(
                         "The shade color is used by inline tab bars, as well \
-						as the transitions in leaflets and flaps, and info \
-						bar borders."
+                        as the transitions in leaflets and flaps, and info \
+                        bar borders."
                     ),
                     "adw_gtk3_support": "no",
                 },
@@ -356,8 +356,8 @@ settings_schema = {
                     "title": _("Scrollbar Outline Color"),
                     "explanation": _(
                         "The scrollbar outline color is used by scrollbars to \
-						ensure that overlay scrollbars are visible regardless \
-						of the content color."
+                        ensure that overlay scrollbars are visible regardless \
+                        of the content color."
                     ),
                     "adw_gtk3_support": "no",
                 },
