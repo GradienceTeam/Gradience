@@ -155,6 +155,8 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 Press on 3-lines button and press `Reset Applied COlor Scheme`
 
+![hamburger menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
+
 ### Manually:
 
 Remove GTK3 and GTK4 configs
