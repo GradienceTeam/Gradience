@@ -343,8 +343,8 @@ class GradiencePresetWindow(Adw.Window):
                 buglog("file")
                 # keep compatiblity with old presets
                 if repo.name.endswith(".json"):
-                    if not os.path.isdir(os.path.join(PRESET_DIR, "user")):
-                        os.mkdir(os.path.join(PRESET_DIR, "user"))
+                    if not os.path.isdir(os.path.join(preset_directory, "user")):
+                        os.mkdir(os.path.join(preset_directory, "user"))
 
                     os.rename(repo, os.path.join(
                         preset_directory, "user", repo.name))
