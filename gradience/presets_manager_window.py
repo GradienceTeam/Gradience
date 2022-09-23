@@ -427,13 +427,6 @@ class GradiencePresetWindow(Adw.Window):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
 
-        # self.add_repo_button = Gtk.Button.new_from_icon_name(
-        #     "list-add-symbolic")
-        # self.add_repo_button.connect(
-        #     "clicked", self.on_add_repo_button_clicked)
-
-        # self.repos_list.set_header_suffix(self.add_repo_button)
-
         for repo_name, repo in self.official_repositories.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
             self.repos_list.add(row)
