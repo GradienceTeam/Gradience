@@ -427,8 +427,6 @@ class GradiencePresetWindow(Adw.Window):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
 
-
-
         for repo_name, repo in self.official_repositories.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
             self.repos_list.add(row)
