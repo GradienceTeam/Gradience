@@ -47,8 +47,8 @@ class GradienceOption(Adw.ActionRow):
             self.warning_button.add_css_class("warning")
             self.warning_label.set_label(
                 _(
-                    "This option is only partially supported by the adw-gtk3 \
-                    theme."
+                    "This option is only partially supported by the adw-gtk3 "\
+                    "theme."
                 )
             )
         elif adw_gtk3_support == "no":
