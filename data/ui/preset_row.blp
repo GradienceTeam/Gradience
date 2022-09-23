@@ -49,13 +49,13 @@ template GradiencePresetRow : Adw.ExpanderRow {
         transition-type: crossfade;
 
         Button apply_button {
-        valign: center;
-        icon-name: "checkmark-small-symbolic";
-        tooltip-text: _("Apply preset");
-        clicked => on_apply_button_clicked();
-         styles [
-        "flat",
-      ]
+            valign: center;
+            icon-name: "checkmark-small-symbolic";
+            tooltip-text: _("Apply preset");
+            clicked => on_apply_button_clicked();
+                styles [
+                "flat",
+            ]
         }
         Entry name_entry {
         text: "Name";

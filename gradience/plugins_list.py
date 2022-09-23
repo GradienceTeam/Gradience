@@ -34,7 +34,6 @@ SYSTEM_PLUGIN_DIR = os.path.join(
     "plugins",
 )
 
-
 class GradiencePluginsList:
     """Represent the plugin group in Advanced"""
 
@@ -95,7 +94,8 @@ class GradiencePluginsList:
         group.set_title(_("Plugins"))
         group.set_description(
             _(
-                "Plugins add additional features to Gradience, plugins are made by Gradience community and can make issues."
+                "Plugins add additional features to Gradience, plugins are \
+				made by Gradience community and can make issues."
             )
         )
         empty = True
@@ -106,14 +106,15 @@ class GradiencePluginsList:
             empty = False
         if empty:
             row = Adw.ActionRow()
-            row.set_title(_("No plugins found"))
+            row.set_title(_("No plugins found."))
             group.add(row)
         return group
 
     def save(self):
         saved = {}
         for pluginInfo in self.pm.getAllPlugins():
-            saved[pluginInfo.plugin_object.plugin_id] = pluginInfo.plugin_object.save()
+            saved[pluginInfo.plugin_object.plugin_id] = \
+				pluginInfo.plugin_object.save()
         return saved
 
     def validate(self):

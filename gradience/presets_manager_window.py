@@ -17,7 +17,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import os
-from random import random
+from random import choice
 import shutil
 import json
 
@@ -62,9 +62,10 @@ class GradiencePresetWindow(Adw.Window):
     custom_presets = {}
 
     official_repositories = {
-        _(
-            "Official"
-        ): "https://github.com/GradienceTeam/Community/raw/next/official.json",
+        _("Official"):
+			"https://github.com/GradienceTeam/Community/raw/next/official.json",
+        _("Curated"):
+			"https://github.com/GradienceTeam/Community/raw/next/curated.json"
     }
 
     search_results_list = []
@@ -79,9 +80,6 @@ class GradiencePresetWindow(Adw.Window):
         self.settings = parent.settings
 
         self.user_repositories = self.settings.get_value("repos").unpack()
-        self.user_repositories[
-            _("Curated")
-        ] = "https://github.com/GradienceTeam/Community/raw/next/curated.json"
         self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
 
         self.setup_signals()
@@ -130,7 +128,6 @@ class GradiencePresetWindow(Adw.Window):
         offline = False
 
         def fetch(repo_name, repo, badge):
-            global offline
             explore_presets, urls = fetch_presets(repo)
 
             if explore_presets:
@@ -150,7 +147,7 @@ class GradiencePresetWindow(Adw.Window):
         print(self._repos)
         for repo_name, repo in self._repos.items():
             self.search_string_list.append(repo_name)
-            badge_color = random.choice(BADGE_COLORS)
+            badge_color = choice(BADGE_COLORS)
             buglog(
                 f"Selected badge color: {badge_color} if it's look bad, please report it"
             )
@@ -294,7 +291,8 @@ class GradiencePresetWindow(Adw.Window):
                         Adw.Toast(title=_("Preset imported")))
             else:
                 self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Unsupported file format, must be .json"))
+                    Adw.Toast(title=_("Unsupported file format, must be \
+						.json"))
                 )
 
         self.reload_pref_group()
@@ -332,9 +330,8 @@ class GradiencePresetWindow(Adw.Window):
                                 raise KeyError("variables")
                             if preset.get("palette") is None:
                                 raise KeyError("palette")
-                            presets_list[file_name.replace(".json", "")] = preset[
-                                "name"
-                            ]
+                            presets_list[file_name.replace(".json", "")] = \
+								preset["name"]
                         except Exception:
                             self.toast_overlay.add_toast(
                                 Adw.Toast(title=_("Failed to load preset"))
@@ -359,9 +356,8 @@ class GradiencePresetWindow(Adw.Window):
                             raise KeyError("variables")
                         if preset.get("palette") is None:
                             raise KeyError("palette")
-                        presets_list["user"][file_name.replace(".json", "")] = preset[
-                            "name"
-                        ]
+                        presets_list["user"][file_name.replace(".json", "")] \
+							= preset["name"]
                     except Exception:
                         self.toast_overlay.add_toast(
                             Adw.Toast(title=_("Failed to load preset"))
@@ -383,7 +379,9 @@ class GradiencePresetWindow(Adw.Window):
         self.preset_list.set_title(_("User Presets"))
         self.preset_list.set_description(
             _(
-                'See <a href="https://github.com/GradienceTeam/Community">GradienceTeam/Community</a> on Github for more presets'
+                'See \
+				<a href="https://github.com/GradienceTeam/Community">GradienceTeam/Community</a> \
+				on Github for more presets'
             )
         )
 
@@ -408,7 +406,8 @@ class GradiencePresetWindow(Adw.Window):
             self.preset_empty = Adw.ActionRow()
             self.preset_empty.set_title(
                 _(
-                    "No preset found! Use the import button to import one or search one on the Explore tab"
+                    "No preset found! Use the import button to import one or \
+					search one on the Explore tab"
                 )
             )
             self.preset_list.add(self.preset_empty)
@@ -420,12 +419,12 @@ class GradiencePresetWindow(Adw.Window):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
 
-        self.add_repo_button = Gtk.Button.new_from_icon_name(
-            "list-add-symbolic")
-        self.add_repo_button.connect(
-            "clicked", self.on_add_repo_button_clicked)
+        # self.add_repo_button = Gtk.Button.new_from_icon_name(
+        #     "list-add-symbolic")
+        # self.add_repo_button.connect(
+        #     "clicked", self.on_add_repo_button_clicked)
 
-        self.repos_list.set_header_suffix(self.add_repo_button)
+        # self.repos_list.set_header_suffix(self.add_repo_button)
 
         for repo_name, repo in self.official_repositories.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)

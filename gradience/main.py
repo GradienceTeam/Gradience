@@ -60,7 +60,10 @@ class GradienceApplication(Adw.Application):
     settings = Gio.Settings.new(app_id)
 
     def __init__(self):
-        super().__init__(application_id=app_id, flags=Gio.ApplicationFlags.FLAGS_NONE)
+        super().__init__(
+			application_id=app_id,
+			flags=Gio.ApplicationFlags.FLAGS_NONE
+		)
         self.set_resource_base_path(rootdir)
 
         self.portal = Xdp.Portal()
@@ -88,6 +91,8 @@ class GradienceApplication(Adw.Application):
             "last-opened-version")
 
         self.style_manager = Adw.StyleManager.get_default()
+
+        self.preset = None
 
     def do_activate(self):
         """Called when the application is activated.
@@ -139,10 +144,10 @@ class GradienceApplication(Adw.Application):
 
         self.reload_user_defined_presets()
 
-        if self.first_run or version != self.last_opened_version:
-            buglog("first run")
-            buglog(version)
-            buglog(self.last_opened_version)
+        if version != self.last_opened_version:
+            welcome = GradienceWelcomeWindow(self.win, update=True)
+            welcome.present()
+        elif self.first_run:
             welcome = GradienceWelcomeWindow(self.win)
             welcome.present()
         else:
@@ -150,7 +155,6 @@ class GradienceApplication(Adw.Application):
             self.win.present()
 
     def reload_user_defined_presets(self):
-        print("reload")
         if self.props.active_window.presets_menu.get_n_items() > 1:
             self.props.active_window.presets_menu.remove(1)
 
@@ -176,9 +180,8 @@ class GradienceApplication(Adw.Application):
                                 raise KeyError("variables")
                             if preset.get("palette") is None:
                                 raise KeyError("palette")
-                            presets_list[file_name.replace(".json", "")] = preset[
-                                "name"
-                            ]
+                            presets_list[file_name.replace(".json", "")] \
+								= preset["name"]
                         except Exception:
                             self.win.toast_overlay.add_toast(
                                 Adw.Toast(title=_("Failed to load preset"))
@@ -204,9 +207,8 @@ class GradienceApplication(Adw.Application):
                             raise KeyError("variables")
                         if preset.get("palette") is None:
                             raise KeyError("palette")
-                        presets_list["user"][file_name.replace(".json", "")] = preset[
-                            "name"
-                        ]
+                        presets_list["user"][file_name.replace(".json", "")] \
+							= preset["name"]
                     except Exception:
                         self.win.toast_overlay.add_toast(
                             Adw.Toast(title=_("Failed to load preset"))
@@ -392,50 +394,63 @@ class GradienceApplication(Adw.Application):
             else:
                 monet_theme = "light"
 
-        print(theme)
-
         if monet_theme == "dark":
             dark_theme = theme["schemes"]["dark"]
             variable = {
                 "accent_color": self.rgba_from_argb(dark_theme.primary),
-                "accent_bg_color": self.rgba_from_argb(dark_theme.primaryContainer),
-                "accent_fg_color": self.rgba_from_argb(dark_theme.onPrimaryContainer),
+                "accent_bg_color":
+					self.rgba_from_argb(dark_theme.primaryContainer),
+                "accent_fg_color":
+					self.rgba_from_argb(dark_theme.onPrimaryContainer),
                 "destructive_color": self.rgba_from_argb(dark_theme.error),
-                "destructive_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
+                "destructive_bg_color":
+					self.rgba_from_argb(dark_theme.errorContainer),
                 "destructive_fg_color": self.rgba_from_argb(
                     dark_theme.onErrorContainer
                 ),
                 "success_color": self.rgba_from_argb(dark_theme.tertiary),
                 "success_bg_color": self.rgba_from_argb(dark_theme.onTertiary),
-                "success_fg_color": self.rgba_from_argb(dark_theme.onTertiaryContainer),
+                "success_fg_color":
+					self.rgba_from_argb(dark_theme.onTertiaryContainer),
                 "warning_color": self.rgba_from_argb(dark_theme.secondary),
-                "warning_bg_color": self.rgba_from_argb(dark_theme.onSecondary),
-                "warning_fg_color": self.rgba_from_argb(dark_theme.primary, "0.8"),
+                "warning_bg_color":
+					self.rgba_from_argb(dark_theme.onSecondary),
+                "warning_fg_color":
+					self.rgba_from_argb(dark_theme.primary, "0.8"),
                 "error_color": self.rgba_from_argb(dark_theme.error),
-                "error_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
+                "error_bg_color":
+					self.rgba_from_argb(dark_theme.errorContainer),
                 "error_fg_color": self.rgba_from_argb(dark_theme.onError),
                 "window_bg_color": self.rgba_from_argb(dark_theme.surface),
                 "window_fg_color": self.rgba_from_argb(dark_theme.onSurface),
                 "view_bg_color": self.rgba_from_argb(dark_theme.surface),
                 "view_fg_color": self.rgba_from_argb(dark_theme.onSurface),
                 "headerbar_bg_color": self.rgba_from_argb(dark_theme.surface),
-                "headerbar_fg_color": self.rgba_from_argb(dark_theme.onSurface),
+                "headerbar_fg_color":
+					self.rgba_from_argb(dark_theme.onSurface),
                 "headerbar_border_color": self.rgba_from_argb(
                     dark_theme.primary, "0.8"
                 ),
                 "headerbar_backdrop_color": "@window_bg_color",
-                "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
+                "headerbar_shade_color":
+					self.rgba_from_argb(dark_theme.shadow),
+                "card_bg_color":
+					self.rgba_from_argb(dark_theme.primary, "0.05"),
+                "card_fg_color":
+					self.rgba_from_argb(dark_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "dialog_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
-                "dialog_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
-                "popover_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
+                "dialog_bg_color":
+					self.rgba_from_argb(dark_theme.secondaryContainer),
+                "dialog_fg_color":
+					self.rgba_from_argb(dark_theme.onSecondaryContainer),
+                "popover_bg_color":
+					self.rgba_from_argb(dark_theme.secondaryContainer),
                 "popover_fg_color": self.rgba_from_argb(
                     dark_theme.onSecondaryContainer
                 ),
                 "shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "scrollbar_outline_color": self.rgba_from_argb(dark_theme.outline),
+                "scrollbar_outline_color":
+					self.rgba_from_argb(dark_theme.outline),
             }
         else:  # light
             light_theme = theme["schemes"]["light"]
@@ -444,31 +459,38 @@ class GradienceApplication(Adw.Application):
                 "accent_bg_color": self.rgba_from_argb(light_theme.primary),
                 "accent_fg_color": self.rgba_from_argb(light_theme.onPrimary),
                 "destructive_color": self.rgba_from_argb(light_theme.error),
-                "destructive_bg_color": self.rgba_from_argb(light_theme.errorContainer),
+                "destructive_bg_color":
+					self.rgba_from_argb(light_theme.errorContainer),
                 "destructive_fg_color": self.rgba_from_argb(
                     light_theme.onErrorContainer
                 ),
                 "success_color": self.rgba_from_argb(light_theme.tertiary),
-                "success_bg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
+                "success_bg_color":
+					self.rgba_from_argb(light_theme.tertiaryContainer),
                 "success_fg_color": self.rgba_from_argb(
                     light_theme.onTertiaryContainer
                 ),
                 "warning_color": self.rgba_from_argb(light_theme.secondary),
-                "warning_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "warning_bg_color":
+					self.rgba_from_argb(light_theme.secondaryContainer),
                 "warning_fg_color": self.rgba_from_argb(
                     light_theme.onSecondaryContainer
                 ),
                 "error_color": self.rgba_from_argb(light_theme.error),
-                "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
+                "error_bg_color":
+					self.rgba_from_argb(light_theme.errorContainer),
                 "error_fg_color": self.rgba_from_argb(light_theme.onError),
-                "window_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "window_bg_color":
+					self.rgba_from_argb(light_theme.secondaryContainer),
                 "window_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "view_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "view_bg_color":
+					self.rgba_from_argb(light_theme.secondaryContainer),
                 "view_fg_color": self.rgba_from_argb(light_theme.onSurface),
                 "headerbar_bg_color": self.rgba_from_argb(
                     light_theme.secondaryContainer
                 ),
-                "headerbar_fg_color": self.rgba_from_argb(light_theme.onSurface),
+                "headerbar_fg_color":
+					self.rgba_from_argb(light_theme.onSurface),
                 "headerbar_border_color": self.rgba_from_argb(
                     light_theme.primary, "0.8"
                 ),
@@ -476,19 +498,24 @@ class GradienceApplication(Adw.Application):
                 "headerbar_shade_color": self.rgba_from_argb(
                     light_theme.secondaryContainer
                 ),
-                "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
+                "card_bg_color":
+					self.rgba_from_argb(light_theme.primary, "0.05"),
+                "card_fg_color":
+					self.rgba_from_argb(light_theme.onSecondaryContainer),
                 "card_shade_color": self.rgba_from_argb(light_theme.shadow),
-                "dialog_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "dialog_bg_color":
+					self.rgba_from_argb(light_theme.secondaryContainer),
                 "dialog_fg_color": self.rgba_from_argb(
                     light_theme.onSecondaryContainer
                 ),
-                "popover_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
+                "popover_bg_color":
+					self.rgba_from_argb(light_theme.secondaryContainer),
                 "popover_fg_color": self.rgba_from_argb(
                     light_theme.onSecondaryContainer
                 ),
                 "shade_color": self.rgba_from_argb(light_theme.shadow),
-                "scrollbar_outline_color": self.rgba_from_argb(light_theme.outline),
+                "scrollbar_outline_color":
+					self.rgba_from_argb(light_theme.outline),
             }
 
         for key in variable:
@@ -586,7 +613,8 @@ class GradienceApplication(Adw.Application):
         dialog = GradienceAppTypeDialog(
             _("Apply this color scheme?"),
             _(
-                "Warning: any custom CSS files for those app types will be irreversibly overwritten!"
+                "Warning: any custom CSS files for those app types will be \
+				irreversibly overwritten!"
             ),
             "apply",
             _("Apply"),
@@ -626,7 +654,8 @@ class GradienceApplication(Adw.Application):
             transient_for=self.props.active_window,
             heading=_("Save preset as..."),
             body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
+                "Saving preset to <tt>{0}</tt>. If that preset already \
+				exists, it will be overwritten!"
             ).format(
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
@@ -653,7 +682,8 @@ class GradienceApplication(Adw.Application):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
+                        "Saving preset to <tt>{0}</tt>. If that preset \
+						already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
                             os.environ.get(
@@ -669,7 +699,8 @@ class GradienceApplication(Adw.Application):
             else:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
+                        "Saving preset to <tt>{0}</tt>. If that preset \
+						already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
                             os.environ.get(
@@ -696,7 +727,8 @@ class GradienceApplication(Adw.Application):
             transient_for=self.props.active_window,
             heading=_("You have unsaved changes!"),
             body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
+                "Saving preset to <tt>{0}</tt>. If that preset already \
+				exists, it will be overwritten!"
             ).format(
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
@@ -726,7 +758,8 @@ class GradienceApplication(Adw.Application):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
+                        "Saving preset to <tt>{0}</tt>. If that preset \
+						already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
                             os.environ.get(
@@ -742,7 +775,8 @@ class GradienceApplication(Adw.Application):
             else:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
+                        "Saving preset to <tt>{0}</tt>. If that preset \
+						already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
                             os.environ.get(
@@ -795,14 +829,19 @@ class GradienceApplication(Adw.Application):
                     pass
                 else:
                     with open(
-                        os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
+                        os.path.join(gtk4_dir, "gtk.css.bak"),
+						"w",
+						encoding="utf-8"
                     ) as file:
                         file.write(contents)
                 finally:
                     with open(
-                        os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
+                        os.path.join(gtk4_dir, "gtk.css"),
+						"w",
+						encoding="utf-8"
                     ) as file:
                         file.write(gtk4_css)
+
             if widget.get_app_types()["gtk3"]:
                 gtk3_dir = os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
@@ -815,21 +854,28 @@ class GradienceApplication(Adw.Application):
                 contents = ""
                 try:
                     with open(
-                        os.path.join(gtk3_dir, "gtk.css"), "r", encoding="utf-8"
+                        os.path.join(gtk3_dir, "gtk.css"),
+						"r",
+						encoding="utf-8"
                     ) as file:
                         contents = file.read()
                 except FileNotFoundError:  # first run
                     pass
                 else:
                     with open(
-                        os.path.join(gtk3_dir, "gtk.css.bak"), "w", encoding="utf-8"
+                        os.path.join(gtk3_dir, "gtk.css.bak"),
+						"w",
+						encoding="utf-8"
                     ) as file:
                         file.write(contents)
                 finally:
                     with open(
-                        os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
+                        os.path.join(gtk3_dir, "gtk.css"),
+						"w",
+						encoding="utf-8"
                     ) as file:
                         file.write(gtk3_css)
+
             self.reload_plugins()
             self.plugins_list.apply()
 
@@ -933,9 +979,9 @@ class GradienceApplication(Adw.Application):
             ],
             artists=["David Lapshin https://github.com/daudix-UFO"],
             designers=["David Lapshin https://github.com/daudix-UFO"],
-            # Translators: This is a place to put your credits (formats: "Name
-            # https://example.com" or "Name <email@example.com>", no quotes)
-            # and is not meant to be translated literally.
+            # Translators: This is a place to put your credits (formats:
+			# "Name https://example.com" or "Name <email@example.com>",
+			# no quotes) and is not meant to be translated literally.
             # TODO: Automate this process using CI, because not everyone knows
             # about this
             translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh/
@@ -956,26 +1002,32 @@ class GradienceApplication(Adw.Application):
             release_notes=_(
                 """
                 <ul>
-        <li>Add AdwViewSwitcher in the header bar.</li>
-        <li>Move CSS to the "Advanced" tab</li>
-        <li>Move the rest to the "Colours" tab</li>
-        <li>Add Monet tab which generates a theme from a background</li>
-        <li>Add disk saved and disk unsaved icon in the header bar</li>
-        <li>Update about dialog</li>
-        <li>Change license to GNU GPLv3</li>
-        <li>Begin plugin support</li>
-        <li>Move preset selector to a drop-down called palette (icon palette)</li>
-        <li>Add ability to apply the theme onlyfor dark theme or oy for light theme</li>
-        <li>Automaticly use Adwaita-dark preset if the user prefered scheme is dark.</li>
-        <li>Added Flatpak CI build</li>
-        <li>Added issue template for bug and feature request </li>
-        <li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch </li>
-      </ul>
-            """
+        		<li>Add AdwViewSwitcher in the header bar.</li>
+        		<li>Move CSS to the "Advanced" tab</li>
+        		<li>Move the rest to the "Colours" tab</li>
+        		<li>Add Monet tab which generates a theme from a background
+					</li>
+        		<li>Add disk saved and disk unsaved icon in the header bar</li>
+        		<li>Update about dialog</li>
+        		<li>Change license to GNU GPLv3</li>
+        		<li>Begin plugin support</li>
+        		<li>Move preset selector to a drop-down called palette (icon \
+					palette)</li>
+        		<li>Add ability to apply the theme onlyfor dark theme or oy \
+					for light theme</li>
+        		<li>Automaticly use Adwaita-dark preset if the user prefered \
+					scheme is dark.</li>
+        		<li>Added Flatpak CI build</li>
+        		<li>Added issue template for bug and feature request </li>
+        		<li>`Main` branch is now protected by GitHub branch \
+					protection. The development is done on `next` branch </li>
+        		</ul>
+            	"""
             ),
             comments=_(
                 """
-Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 \
+theme.
 With Gradience you can:
 
 - Change any color of Adwaita theme

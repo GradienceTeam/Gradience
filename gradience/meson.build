@@ -22,7 +22,8 @@ configure_file(
     'PROJECT_URL': PROJECT_URL,
     'BUGTRACKER_URL': BUGTRACKER_URL,
     'HELP_URL': HELP_URL,
-    'TRANSLATE_URL': TRANSLATE_URL
+    'TRANSLATE_URL': TRANSLATE_URL,
+    'PKGDATA_DIR': PKGDATA_DIR,
   }),
   install: true,
   install_dir: PY_INSTALLDIR.get_install_dir() / 'gradience',
