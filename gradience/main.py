@@ -588,7 +588,7 @@ class GradienceApplication(Adw.Application):
         dialog = GradienceAppTypeDialog(
             _("Apply this color scheme?"),
             _(
-                "Warning: any custom CSS files for those app types will be "\
+                "Warning: any custom CSS files for those app types will be "
                 "irreversibly overwritten!"
             ),
             "apply",
@@ -629,7 +629,7 @@ class GradienceApplication(Adw.Application):
             transient_for=self.props.active_window,
             heading=_("Save preset as..."),
             body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already "\
+                "Saving preset to <tt>{0}</tt>. If that preset already "
                 "exists, it will be overwritten!"
             ).format(
                 os.path.join(
@@ -657,7 +657,7 @@ class GradienceApplication(Adw.Application):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "\
+                        "Saving preset to <tt>{0}</tt>. If that preset "
                         "already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
@@ -674,7 +674,7 @@ class GradienceApplication(Adw.Application):
             else:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "\
+                        "Saving preset to <tt>{0}</tt>. If that preset "
                         "already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
@@ -702,7 +702,7 @@ class GradienceApplication(Adw.Application):
             transient_for=self.props.active_window,
             heading=_("You have unsaved changes!"),
             body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already "\
+                "Saving preset to <tt>{0}</tt>. If that preset already "
                 "exists, it will be overwritten!"
             ).format(
                 os.path.join(
@@ -733,7 +733,7 @@ class GradienceApplication(Adw.Application):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "\
+                        "Saving preset to <tt>{0}</tt>. If that preset "
                         "already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
@@ -750,7 +750,7 @@ class GradienceApplication(Adw.Application):
             else:
                 dialog.set_body(
                     _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "\
+                        "Saving preset to <tt>{0}</tt>. If that preset "
                         "already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
