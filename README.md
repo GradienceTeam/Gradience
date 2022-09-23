@@ -125,9 +125,9 @@ ninja -C builddir run
 
 Alternatively, open the project with GNOME Builder, then build and run it.
 
-## Setup Tutorial
+## Theming Setup
 
-You can also go in `Preferences` and apply overwrite for Flatpak 
+You can also go in `Preferences` and apply override for Flatpak 
 
 ### Libadwaita applications
 
@@ -148,6 +148,32 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 - For Flatpak applications, you need to override their permissions:
   - Run `sudo flatpak override --filesystem=xdg-config/gtk-3.0` or
   - Use [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-3.0` to **Other files** in the **Filesystem** section of **All Applications**
+
+## Revert Theming
+
+### Using app:
+
+Press on 3-lines button and press `Reset Applied Color Scheme`
+
+![hamburger menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
+
+### Manually:
+
+Remove GTK3 and GTK4 configs
+
+- Run `rm -rf .config/gtk-4.0 .config/gtk-3.0`
+
+Remove adw-gtk3 theme
+
+- Run `flatpak uninstall adw-gtk3` to remove Flatpak adw-gtk3 theme
+- Run `rm -rf .themes/adw-gtk3 .themes/adw-gtk3-dark .local/share/themes/adw-gtk3 .local/share/themes/adw-gtk3-dark` to remove local adw-gtk3 theme
+
+Reset Flatpak overrides
+
+- Run `sudo flatpak override --reset`
+
+> **Warning**
+> This will reset all Flatpak overrides, such as Firefox wayland override
 
 ## Roadmap
 

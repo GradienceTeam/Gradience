@@ -91,7 +91,7 @@ class GradienceWelcomeWindow(Adw.Window):
         )
 
         if self.update:
-            self.page_welcome.set_title("Thanks for updating Gradience!")
+            self.page_welcome.set_title(_("Thanks for updating Gradience!"))
 
         self.page_release.set_title(f"Gradience {version}")
 
