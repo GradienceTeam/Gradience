@@ -223,9 +223,7 @@ class FirefoxGnomeThemePlugin(IPlugin):
             b_blk=self.palette["dark_"]["1"],
         )
         for profile in profiles:
-            profile = (
-                profile / "chrome" / "firefox-gnome-theme" / "customChrome.css"
-            )
+            profile = profile / "chrome" / "firefox-gnome-theme" / "customChrome.css"
             if profile.exists():
                 if self.custom_settings["overwrite"]:
                     with open(profile, "w", encoding="utf-8") as f:
