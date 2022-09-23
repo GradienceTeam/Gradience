@@ -294,10 +294,7 @@ class GradiencePresetWindow(Adw.Window):
             else:
                 self.toast_overlay.add_toast(
                     Adw.Toast(
-                        title=_(
-                            "Unsupported file format, must be \
-                        .json"
-                        )
+                        title=_("Unsupported file format, must be .json")
                     )
                 )
 
@@ -387,9 +384,9 @@ class GradiencePresetWindow(Adw.Window):
         self.preset_list.set_title(_("User Presets"))
         self.preset_list.set_description(
             _(
-                'See \
-                <a href="https://github.com/GradienceTeam/Community">GradienceTeam/Community</a> \
-                on Github for more presets'
+                'See '\
+                '<a href="https://github.com/GradienceTeam/Community">'\
+				'GradienceTeam/Community</a> on Github for more presets'
             )
         )
 
@@ -414,8 +411,8 @@ class GradiencePresetWindow(Adw.Window):
             self.preset_empty = Adw.ActionRow()
             self.preset_empty.set_title(
                 _(
-                    "No preset found! Use the import button to import one or \
-                    search one on the Explore tab"
+                    "No preset found! Use the import button to import one or "\
+                    "search one on the Explore tab"
                 )
             )
             self.preset_list.add(self.preset_empty)
