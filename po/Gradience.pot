@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-23 17:01+0000\n"
+"POT-Creation-Date: 2022-09-24 00:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:931
+#: data/ui/window.blp:5 gradience/main.py:934
 msgid "Gradience"
 msgstr ""
 
@@ -28,7 +28,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:933
+#: gradience/main.py:936
 msgid "Gradience Team"
 msgstr ""
 
@@ -290,8 +290,8 @@ msgid "Offline"
 msgstr ""
 
 #: data/ui/presets_manager_window.blp:143
-#: gradience/presets_manager_window.py:122
-#: gradience/presets_manager_window.py:428
+#: gradience/presets_manager_window.py:118
+#: gradience/presets_manager_window.py:422
 msgid "Repositories"
 msgstr ""
 
@@ -327,7 +327,7 @@ msgstr ""
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a "
 "quick preset switcher. We also split the preset repository into an official "
-"repository and a curated repository."
+"repository and a curated reposoitory."
 msgstr ""
 
 #: data/ui/welcome.blp:80
@@ -413,7 +413,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: data/ui/window.blp:23 gradience/main.py:592 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/main.py:595 gradience/window.py:141
 msgid "Apply"
 msgstr ""
 
@@ -457,7 +457,7 @@ msgstr ""
 msgid "GTK4 Widget Factory"
 msgstr ""
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:380
+#: data/ui/window.blp:160 gradience/presets_manager_window.py:374
 msgid "Built-in Presets"
 msgstr ""
 
@@ -473,8 +473,8 @@ msgstr ""
 msgid "Unexpected file error occurred"
 msgstr ""
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:643 gradience/main.py:716
-#: gradience/presets_manager_window.py:189
+#: gradience/app_type_dialog.py:44 gradience/main.py:646 gradience/main.py:719
+#: gradience/presets_manager_window.py:185
 msgid "Cancel"
 msgstr ""
 
@@ -486,135 +486,127 @@ msgstr ""
 msgid "Preset downloaded"
 msgstr ""
 
-#: gradience/main.py:185 gradience/main.py:213
-#: gradience/presets_manager_window.py:344
-#: gradience/presets_manager_window.py:371
+#: gradience/main.py:185 gradience/main.py:216
+#: gradience/presets_manager_window.py:335
+#: gradience/presets_manager_window.py:365
 msgid "Failed to load preset"
 msgstr ""
 
-#: gradience/main.py:250
+#: gradience/main.py:253
 msgid "Open in File Manager"
 msgstr ""
 
-#: gradience/main.py:257
+#: gradience/main.py:260
 msgid "Installed Presets"
 msgstr ""
 
-#: gradience/main.py:517
+#: gradience/main.py:520
 msgid "Unsaved changes"
 msgstr ""
 
-#: gradience/main.py:528
+#: gradience/main.py:531
 msgid "Save changes"
 msgstr ""
 
-#: gradience/main.py:586
+#: gradience/main.py:589
 msgid "Apply this color scheme?"
 msgstr ""
 
-#: gradience/main.py:588
+#: gradience/main.py:591
 msgid ""
-"Warning: any custom CSS files for those app types will be                 "
-"irreversibly overwritten!"
-msgstr ""
-
-#: gradience/main.py:602
-msgid "Restore applied color scheme?"
-msgstr ""
-
-#: gradience/main.py:603 gradience/main.py:615
-msgid "Make sure you have the current settings saved as a preset."
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
 msgstr ""
 
 #: gradience/main.py:605
+msgid "Restore applied color scheme?"
+msgstr ""
+
+#: gradience/main.py:606 gradience/main.py:618
+msgid "Make sure you have the current settings saved as a preset."
+msgstr ""
+
+#: gradience/main.py:608
 msgid "Restore"
 msgstr ""
 
-#: gradience/main.py:614
+#: gradience/main.py:617
 msgid "Reset applied color scheme?"
 msgstr ""
 
-#: gradience/main.py:617
+#: gradience/main.py:620
 msgid "Reset"
 msgstr ""
 
-#: gradience/main.py:627
+#: gradience/main.py:630
 msgid "Save preset as..."
 msgstr ""
 
-#: gradience/main.py:629 gradience/main.py:702
+#: gradience/main.py:632 gradience/main.py:660 gradience/main.py:677
+#: gradience/main.py:705 gradience/main.py:736 gradience/main.py:753
 #, python-brace-format
 msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already                 "
-"exists, it will be overwritten!"
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
 msgstr ""
 
-#: gradience/main.py:644 gradience/main.py:718
+#: gradience/main.py:647 gradience/main.py:721
 msgid "Save"
 msgstr ""
 
-#: gradience/main.py:657 gradience/main.py:674 gradience/main.py:733
-#: gradience/main.py:750
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset                         "
-"already exists, it will be overwritten!"
-msgstr ""
-
-#: gradience/main.py:700
+#: gradience/main.py:703
 msgid "You have unsaved changes!"
 msgstr ""
 
-#: gradience/main.py:717
+#: gradience/main.py:720
 msgid "Discard"
 msgstr ""
 
-#: gradience/main.py:778
+#: gradience/main.py:781
 msgid "Preset saved"
 msgstr ""
 
-#: gradience/main.py:845
+#: gradience/main.py:848
 msgid "Preset set sucessfully"
 msgstr ""
 
-#: gradience/main.py:888
+#: gradience/main.py:891
 msgid "Could not restore GTK4 backup"
 msgstr ""
 
-#: gradience/main.py:921
+#: gradience/main.py:924
 msgid "Preset reseted"
 msgstr ""
 
-#: gradience/main.py:965
+#: gradience/main.py:968
 msgid ""
 "\n"
 "                <ul>\n"
 "                <li>Add AdwViewSwitcher in the header bar.</li>\n"
 "                <li>Move CSS to the \"Advanced\" tab</li>\n"
 "                <li>Move the rest to the \"Colours\" tab</li>\n"
-"                <li>Add Monet tab which generates a theme from a background\n"
-"                    </li>\n"
+"                <li>Add Monet tab which generates a theme from a background</"
+"li>\n"
 "                <li>Add disk saved and disk unsaved icon in the header bar</"
 "li>\n"
 "                <li>Update about dialog</li>\n"
 "                <li>Change license to GNU GPLv3</li>\n"
 "                <li>Begin plugin support</li>\n"
-"                <li>Move preset selector to a drop-down called palette "
-"(icon                     palette)</li>\n"
-"                <li>Add ability to apply the theme onlyfor dark theme or "
-"oy                     for light theme</li>\n"
-"                <li>Automaticly use Adwaita-dark preset if the user "
-"prefered                     scheme is dark.</li>\n"
+"                <li>Move preset selector to a drop-down called palette (icon "
+"palette)</li>\n"
+"                <li>Add ability to apply the theme onlyfor dark theme or oy "
+"for light theme</li>\n"
+"                <li>Automaticly use Adwaita-dark preset if the user prefered "
+"scheme is dark.</li>\n"
 "                <li>Added Flatpak CI build</li>\n"
 "                <li>Added issue template for bug and feature request </li>\n"
-"                <li>`Main` branch is now protected by GitHub "
-"branch                     protection. The development is done on `next` "
-"branch </li>\n"
+"                <li>`Main` branch is now protected by GitHub branch "
+"protection. The development is done on `next` branch</li>\n"
 "                </ul>\n"
 "                "
 msgstr ""
 
-#: gradience/main.py:990
+#: gradience/main.py:988
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -631,17 +623,15 @@ msgid ""
 "            "
 msgstr ""
 
-#: gradience/option.py:50
-msgid ""
-"This option is only partially supported by the adw-gtk3                     "
-"theme."
+#: gradience/option.py:49
+msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr ""
 
-#: gradience/option.py:57
+#: gradience/option.py:54
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr ""
 
-#: gradience/option.py:100
+#: gradience/option.py:97
 msgid "Not a color, see text value"
 msgstr ""
 
@@ -663,8 +653,8 @@ msgstr ""
 
 #: gradience/plugins_list.py:98
 msgid ""
-"Plugins add additional features to Gradience, plugins are                 "
-"made by Gradience community and can make issues."
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can make issues."
 msgstr ""
 
 #: gradience/plugins_list.py:110
@@ -687,58 +677,49 @@ msgstr ""
 msgid "Unable to delete preset"
 msgstr ""
 
-#: gradience/presets_manager_window.py:66
-msgid "Official"
-msgstr ""
-
-#: gradience/presets_manager_window.py:69
-msgid "Curated"
-msgstr ""
-
-#: gradience/presets_manager_window.py:111
+#: gradience/presets_manager_window.py:107
 msgid "Builtin Presets"
 msgstr ""
 
-#: gradience/presets_manager_window.py:116
-#: gradience/presets_manager_window.py:387
+#: gradience/presets_manager_window.py:112
+#: gradience/presets_manager_window.py:381
 msgid "User Presets"
 msgstr ""
 
-#: gradience/presets_manager_window.py:182
+#: gradience/presets_manager_window.py:178
 msgid "Add new repository"
 msgstr ""
 
-#: gradience/presets_manager_window.py:183
+#: gradience/presets_manager_window.py:179
 msgid "Add a repository to install additional presets"
 msgstr ""
 
-#: gradience/presets_manager_window.py:190
+#: gradience/presets_manager_window.py:186
 msgid "Add"
 msgstr ""
 
-#: gradience/presets_manager_window.py:278
+#: gradience/presets_manager_window.py:274
 msgid "Preset already exists"
 msgstr ""
 
-#: gradience/presets_manager_window.py:293
+#: gradience/presets_manager_window.py:289
 msgid "Preset imported"
 msgstr ""
 
-#: gradience/presets_manager_window.py:298
-msgid "Unsupported file format, must be                         .json"
+#: gradience/presets_manager_window.py:292
+msgid "Unsupported file format, must be .json"
 msgstr ""
 
-#: gradience/presets_manager_window.py:390
+#: gradience/presets_manager_window.py:384
 msgid ""
-"See                 <a href=\"https://github.com/GradienceTeam/"
-"Community\">GradienceTeam/Community</a>                 on Github for more "
-"presets"
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets"
 msgstr ""
 
-#: gradience/presets_manager_window.py:417
+#: gradience/presets_manager_window.py:411
 msgid ""
-"No preset found! Use the import button to import one or                     "
-"search one on the Explore tab"
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab"
 msgstr ""
 
 #: gradience/repo_row.py:60
@@ -751,9 +732,9 @@ msgstr ""
 
 #: gradience/settings_schema.py:25
 msgid ""
-"These colors are used across many different widgets, such as                 "
-"buttons, labels, and entries, to indicate that a widget is                 "
-"important, interactive, or currently active."
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate that a widget is important, interactive, or "
+"currently active."
 msgstr ""
 
 #: gradience/settings_schema.py:32 gradience/settings_schema.py:63
@@ -766,18 +747,17 @@ msgstr ""
 #: gradience/settings_schema.py:97 gradience/settings_schema.py:129
 #: gradience/settings_schema.py:160
 msgid ""
-"The standalone colors are similar to the background                         "
-"ones, but provide better contrast when used as                         "
-"foreground color on top of a neutral background - "
-"for                         example, colorful text in a window."
+"The standalone colors are similar to the background ones, but provide better "
+"contrast when used as foreground color on top of a neutral background - for "
+"example, colorful text in a window."
 msgstr ""
 
 #: gradience/settings_schema.py:43 gradience/settings_schema.py:74
 #: gradience/settings_schema.py:106 gradience/settings_schema.py:138
 #: gradience/settings_schema.py:169 gradience/settings_schema.py:186
 #: gradience/settings_schema.py:206 gradience/settings_schema.py:227
-#: gradience/settings_schema.py:285 gradience/settings_schema.py:312
-#: gradience/settings_schema.py:329
+#: gradience/settings_schema.py:282 gradience/settings_schema.py:309
+#: gradience/settings_schema.py:326
 msgid "Background Color"
 msgstr ""
 
@@ -785,8 +765,8 @@ msgstr ""
 #: gradience/settings_schema.py:111 gradience/settings_schema.py:143
 #: gradience/settings_schema.py:174 gradience/settings_schema.py:191
 #: gradience/settings_schema.py:211 gradience/settings_schema.py:232
-#: gradience/settings_schema.py:290 gradience/settings_schema.py:317
-#: gradience/settings_schema.py:334
+#: gradience/settings_schema.py:287 gradience/settings_schema.py:314
+#: gradience/settings_schema.py:331
 msgid "Foreground Color"
 msgstr ""
 
@@ -796,8 +776,8 @@ msgstr ""
 
 #: gradience/settings_schema.py:57
 msgid ""
-"These colors are used for buttons to indicate a dangerous                 "
-"action, such as deleting a file."
+"These colors are used for buttons to indicate a dangerous action, such as "
+"deleting a file."
 msgstr ""
 
 #: gradience/settings_schema.py:86
@@ -806,9 +786,8 @@ msgstr ""
 
 #: gradience/settings_schema.py:88
 msgid ""
-"These colors are used across many different widgets, such as                 "
-"buttons, labels, entries, and level bars, to indicate a                 "
-"success or a high level."
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a success or a high level."
 msgstr ""
 
 #: gradience/settings_schema.py:118
@@ -817,9 +796,8 @@ msgstr ""
 
 #: gradience/settings_schema.py:120
 msgid ""
-"These colors are used across many different widgets, such as                 "
-"buttons, labels, entries, and level bars, to indicate a                 "
-"warning or a low level."
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a warning or a low level."
 msgstr ""
 
 #: gradience/settings_schema.py:150
@@ -828,8 +806,8 @@ msgstr ""
 
 #: gradience/settings_schema.py:152
 msgid ""
-"These colors are used across many different widgets, such as                 "
-"buttons, labels, and entries, to indicate a failure."
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate a failure."
 msgstr ""
 
 #: gradience/settings_schema.py:181
@@ -846,8 +824,8 @@ msgstr ""
 
 #: gradience/settings_schema.py:200
 msgid ""
-"These colors are used in a variety of widgets, such as text                 "
-"views and entries."
+"These colors are used in a variety of widgets, such as text views and "
+"entries."
 msgstr ""
 
 #: gradience/settings_schema.py:218
@@ -856,9 +834,8 @@ msgstr ""
 
 #: gradience/settings_schema.py:220
 msgid ""
-"These colors are used for header bars, as well as widgets                 "
-"that are meant to be visually attached to it, such as search                 "
-"bars or tab bars."
+"These colors are used for header bars, as well as widgets that are meant to "
+"be visually attached to it, such as search bars or tab bars."
 msgstr ""
 
 #: gradience/settings_schema.py:237
@@ -867,14 +844,11 @@ msgstr ""
 
 #: gradience/settings_schema.py:239
 msgid ""
-"The border color has the same default value as a                         "
-"foreground color, but doesn't change along with it.                         "
-"This can be useful if a light window has a dark                         "
-"header bar with light text; in this case it may be                         "
-"desirable to keep the border dark. This variable is                         "
-"only used for vertical borders - for example,                         "
-"separators between the two header bars in a split                         "
-"header bar layout."
+"The border color has the same default value as a foreground color, but "
+"doesn't change along with it. This can be useful if a light window has a "
+"dark header bar with light text; in this case it may be desirable to keep "
+"the border dark. This variable is only used for vertical borders - for "
+"example, separators between the two header bars in a split header bar layout."
 msgstr ""
 
 #: gradience/settings_schema.py:252
@@ -883,116 +857,111 @@ msgstr ""
 
 #: gradience/settings_schema.py:254
 msgid ""
-"The backdrop color is used instead of the background                         "
-"color when the window is not focused. By default "
-"it's                         an alias of the window's background color and "
-"changes                         together with it. When changing this "
-"variable, make                         sure to set it to a value matching "
-"your header bar                         background color."
+"The backdrop color is used instead of the background color when the window "
+"is not focused. By default it's an alias of the window's background color "
+"and changes together with it. When changing this variable, make sure to set "
+"it to a value matching your header bar background color."
 msgstr ""
 
-#: gradience/settings_schema.py:265 gradience/settings_schema.py:295
-#: gradience/settings_schema.py:346
+#: gradience/settings_schema.py:265 gradience/settings_schema.py:292
+#: gradience/settings_schema.py:343
 msgid "Shade Color"
 msgstr ""
 
 #: gradience/settings_schema.py:267
 msgid ""
-"The shade color is used to provide a dark border for                         "
-"header bars and similar widgets that separates them                         "
-"from the main window."
+"The shade color is used to provide a dark border for header bars and similar "
+"widgets that separates them from the main window."
 msgstr ""
 
 #: gradience/settings_schema.py:277
 msgid "Card Colors"
 msgstr ""
 
-#: gradience/settings_schema.py:279
-msgid "These colors are used for cards and boxed                 lists."
+#: gradience/settings_schema.py:278
+msgid "These colors are used for cards and boxed lists."
 msgstr ""
 
-#: gradience/settings_schema.py:297
+#: gradience/settings_schema.py:294
 msgid ""
-"The shade color is used for shadows that are used by                         "
-"cards to separate themselves from the window                         "
-"background, as well as for row dividers in the cards."
+"The shade color is used for shadows that are used by cards to separate "
+"themselves from the window background, as well as for row dividers in the "
+"cards."
 msgstr ""
 
-#: gradience/settings_schema.py:307
+#: gradience/settings_schema.py:304
 msgid "Dialog Colors"
 msgstr ""
 
-#: gradience/settings_schema.py:308
+#: gradience/settings_schema.py:305
 msgid "These colors are used for message dialogs."
 msgstr ""
 
-#: gradience/settings_schema.py:324
+#: gradience/settings_schema.py:321
 msgid "Popover Colors"
 msgstr ""
 
-#: gradience/settings_schema.py:325
+#: gradience/settings_schema.py:322
 msgid "These colors are used for popovers."
 msgstr ""
 
-#: gradience/settings_schema.py:341
+#: gradience/settings_schema.py:338
 msgid "Miscalleneous Colors"
 msgstr ""
 
-#: gradience/settings_schema.py:342
+#: gradience/settings_schema.py:339
 msgid "Colors that don't fit in any particular group."
 msgstr ""
 
-#: gradience/settings_schema.py:348
+#: gradience/settings_schema.py:345
 msgid ""
-"The shade color is used by inline tab bars, as well                         "
-"as the transitions in leaflets and flaps, and info                         "
-"bar borders."
+"The shade color is used by inline tab bars, as well as the transitions in "
+"leaflets and flaps, and info bar borders."
 msgstr ""
 
-#: gradience/settings_schema.py:356
+#: gradience/settings_schema.py:353
 msgid "Scrollbar Outline Color"
 msgstr ""
 
-#: gradience/settings_schema.py:358
+#: gradience/settings_schema.py:355
 msgid ""
-"The scrollbar outline color is used by scrollbars to                         "
-"ensure that overlay scrollbars are visible "
-"regardless                         of the content color."
+"The scrollbar outline color is used by scrollbars to ensure that overlay "
+"scrollbars are visible regardless of the content color."
 msgstr ""
 
-#: gradience/settings_schema.py:368
+#: gradience/settings_schema.py:365
 msgid "Blue"
 msgstr ""
 
-#: gradience/settings_schema.py:369
+#: gradience/settings_schema.py:366
 msgid "Green"
 msgstr ""
 
-#: gradience/settings_schema.py:370
+#: gradience/settings_schema.py:367
 msgid "Yellow"
 msgstr ""
 
-#: gradience/settings_schema.py:371
+#: gradience/settings_schema.py:368
 msgid "Orange"
 msgstr ""
 
-#: gradience/settings_schema.py:372
+#: gradience/settings_schema.py:369
 msgid "Red"
 msgstr ""
 
-#: gradience/settings_schema.py:373
+#: gradience/settings_schema.py:370
 msgid "Purple"
 msgstr ""
 
-#: gradience/settings_schema.py:374
+#: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr ""
 
-#: gradience/settings_schema.py:375
+#: gradience/settings_schema.py:372
 msgid "Light"
 msgstr ""
 
-#: gradience/settings_schema.py:376
+#: gradience/settings_schema.py:373
 msgid "Dark"
 msgstr ""
 
@@ -1006,8 +975,8 @@ msgstr ""
 
 #: gradience/window.py:135
 msgid ""
-"Monet is an engine that generates a Material Design 3                 "
-"palette from an image's color."
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
 msgstr ""
 
 #: gradience/window.py:147
@@ -1048,8 +1017,7 @@ msgstr ""
 
 #: gradience/window.py:272
 msgid ""
-"Named palette colors used by some applications. Default                 "
-"colors follow the                 <a href=\"https://developer.gnome.org/hig/"
-"reference/palette.html\">                    GNOME Human Interface "
-"Guidelines</a>."
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
 msgstr ""
