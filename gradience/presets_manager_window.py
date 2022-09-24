@@ -68,6 +68,8 @@ class GradiencePresetWindow(Adw.Window):
 
     search_results_list = []
 
+    offline = False
+
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
 
@@ -121,11 +123,22 @@ class GradiencePresetWindow(Adw.Window):
 
     def setup_explore(self):
         self.search_results_list.clear()
-        buglog("Preset list cleared")
 
-        offline = False
+        if self.offline:
+            self.search_spinner.props.visible = False
+            self.search_stack.set_visible_child_name("page_offline")
 
-        def fetch(repo_name, repo, badge):
+    def add_explore_rows(self):
+        buglog(self._repos)
+
+        for repo_name, repo in self._repos.items():
+            badge = choice(BADGE_COLORS)
+            buglog(
+                f"Selected badge color: {badge} if it's look bad, please report it"
+            )
+
+            self.search_string_list.append(repo_name)
+
             explore_presets, urls = fetch_presets(repo)
 
             if explore_presets:
@@ -140,20 +153,9 @@ class GradiencePresetWindow(Adw.Window):
                     self.search_results.append(row)
                     self.search_results_list.append(row)
             else:
-                offline = True
-
-        print(self._repos)
-        for repo_name, repo in self._repos.items():
-            self.search_string_list.append(repo_name)
-            badge_color = choice(BADGE_COLORS)
-            buglog(
-                f"Selected badge color: {badge_color} if it's look bad, please report it"
-            )
-            fetch(repo_name=repo_name, repo=repo, badge=badge_color)
-
-        if offline:
-            self.search_spinner.props.visible = False
-            self.search_stack.set_visible_child_name("page_offline")
+                self.offline = True
+                self.search_spinner.props.visible = False
+                self.search_stack.set_visible_child_name("page_offline")
 
     def add_repo(self, _unused, response, name_entry, url_entry):
         if response == "add":
@@ -295,7 +297,7 @@ class GradiencePresetWindow(Adw.Window):
         self.reload_pref_group()
 
     def reload_pref_group(self):
-        print("reload")
+        buglog("reload")
         preset_directory = os.path.join(
             os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
             "presets",
@@ -368,8 +370,6 @@ class GradiencePresetWindow(Adw.Window):
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
 
-        print("reload 2")
-
         self.builtin_preset_list = Adw.PreferencesGroup()
         self.builtin_preset_list.set_title(_("Built-in Presets"))
         for preset, preset_name in self.builtin_presets.items():
@@ -396,8 +396,6 @@ class GradiencePresetWindow(Adw.Window):
         )
         buglog(f"preset_check: {presets_check}")
 
-        print("reload 3")
-
         if presets_check:
             for repo, presets in self.custom_presets.items():
                 for preset, preset_name in presets.items():
@@ -414,7 +412,6 @@ class GradiencePresetWindow(Adw.Window):
             )
             self.preset_list.add(self.preset_empty)
         self.installed.add(self.preset_list)
-        print("reload end")
 
     def reload_repos_group(self):
         self.repos.remove(self.repos_list)
