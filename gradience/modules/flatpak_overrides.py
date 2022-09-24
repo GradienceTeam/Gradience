@@ -101,7 +101,7 @@ def global_save_keyfile(toast_overlay, settings, global_keyfile, filename, gtk_v
 
 def create_gtk_user_override(toast_overlay, settings, gtk_ver):
     override_dir = GLib.build_filenamev([get_user_flatpak_path(), "overrides"])
-    print(f"override_dir: {override_dir}")
+    buglog(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
 
@@ -178,7 +178,7 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):
 
 def remove_gtk_user_override(toast_overlay, settings, gtk_ver):
     override_dir = GLib.build_filenamev([get_user_flatpak_path(), "overrides"])
-    print(f"override_dir: {override_dir}")
+    buglog(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
 
@@ -243,7 +243,7 @@ def remove_gtk_user_override(toast_overlay, settings, gtk_ver):
 def create_gtk_global_override(toast_overlay, settings, gtk_ver):
     override_dir = GLib.build_filenamev(
         [get_system_flatpak_path(), "overrides"])
-    print(f"override_dir: {override_dir}")
+    buglog(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
 
@@ -323,7 +323,7 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
 def remove_gtk_global_override(toast_overlay, settings, gtk_ver):
     override_dir = GLib.build_filenamev(
         [get_system_flatpak_path(), "overrides"])
-    print(f"override_dir: {override_dir}")
+    buglog(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
 

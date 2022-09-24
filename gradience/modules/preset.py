@@ -40,9 +40,6 @@ class Preset:
                 self.preset_path = preset_path
             self.load_preset()
 
-    def __repr__(self) -> str:
-        return f"Preset <{self.name}> with {self.variables}\n {self.palette}\n {self.custom_css}"
-
     def load_preset(self, text=None, preset=None):
         try:
             if not preset:
@@ -118,5 +115,5 @@ class Preset:
 
 if __name__ == "__main__":
     p = Preset("test", "user")
-    print(p.variables)
-    print(p.palette)
+    buglog(p.variables)
+    buglog(p.palette)
