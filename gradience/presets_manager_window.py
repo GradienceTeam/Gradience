@@ -17,7 +17,6 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import os
-from random import choice
 import shutil
 import json
 
@@ -132,12 +131,14 @@ class GradiencePresetWindow(Adw.Window):
         buglog(self._repos)
 
         for repo_name, repo in self._repos.items():
-            badge = choice(BADGE_COLORS)
-            buglog(
-                f"Selected badge color: {badge} if it's look bad, please report it"
-            )
-
             self.search_string_list.append(repo_name)
+
+            if repo_name == "Official":
+                badge = "black"
+            elif repo_name == "Curated":
+                badge = "white"
+            else:
+                badge = "white"
 
             explore_presets, urls = fetch_presets(repo)
 
