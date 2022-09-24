@@ -1,14 +1,14 @@
 name: 🐛 Bug Report
 description: File a bug report
 title: "bug: "
-labels: ["bug", "triage"]
+labels: "bug"
 assignees:
   - 0xMRTT
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thank you for taking the time to fill out this bug report!
         
   - type: checkboxes
     attributes:
@@ -16,8 +16,7 @@ body:
       description: Please search to see if an issue already exists for your problem.
       options:
         - label: I have searched the existing issues
-    validations:
-      required: true
+          required: true
 
   - type: textarea
     attributes:
@@ -62,7 +61,7 @@ body:
     attributes:
       label: Version
       description: Which version of the app do you use?
-      placeholder: "1.2.0"
+      placeholder: "0.3.0, 0.3.0-7e0386b"
 
   - type: dropdown
     attributes:
@@ -70,13 +69,10 @@ body:
       description: How did you install Gradience ?
       options:
         - Flatpak from Flathub
-        - Flatpak from Github Actions - main
-        - Flatpak from GitHub Actions - next 
-        - Flatpak from manual build - main
-        - Flatpak from manual build - next
+        - Flatpak from Github Actions
+        - Flatpak from manual build
         - AUR
-        - Manual using meson - main
-        - Manual using meson - next
+        - Manual using meson
         - Other
     validations:
       required: true
