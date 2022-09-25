@@ -19,8 +19,12 @@
 import sys
 import json
 import os
-from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
+import threading
+
+from pathlib import Path
 from material_color_utilities_python import *
+
+from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
 from .settings_schema import settings_schema
 from .window import GradienceMainWindow
@@ -41,8 +45,6 @@ from .preferences import GradiencePreferencesWindow
 from .modules.utils import to_slug_case, buglog
 from .plugins_list import GradiencePluginsList
 from .presets_manager_window import GradiencePresetWindow
-from pathlib import Path
-
 from .modules.preset import Preset
 
 
@@ -130,7 +132,7 @@ class GradienceApplication(Adw.Application):
         self.create_action(
             "restore_color_scheme", self.show_restore_color_scheme_dialog
         )
-        self.create_action("manage_presets", self.manage_presets)
+        self.create_action("manage_presets", self.show_presets_manager)
 
         self.create_action("reset_color_scheme",
                            self.show_reset_color_scheme_dialog)
@@ -260,11 +262,14 @@ class GradienceApplication(Adw.Application):
             _("Installed Presets"), custom_menu_section
         )
 
-    def manage_presets(self, *args):
+    def show_presets_manager(self, *args):
         presets = GradiencePresetWindow(self)
         presets.set_transient_for(self.win)
         presets.set_modal(True)
         presets.present()
+
+        add_rows_thread = threading.Thread(target=presets.add_explore_rows)
+        add_rows_thread.start()
 
     def load_preset_from_css(self):
         try:

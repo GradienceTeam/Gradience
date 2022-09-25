@@ -18,12 +18,10 @@
 
 import os
 import json
+import asyncio
+import aiohttp
 
 from .utils import to_slug_case, buglog
-
-
-import aiohttp
-import asyncio
 
 
 PRESET_DIR = os.path.join(
@@ -64,9 +62,6 @@ async def main(repo):
         return preset_dict, url_list
 
 
-# TODO: Modify functions to be asynchronous
-
-
 def fetch_presets(repo) -> [dict, list]:
     return asyncio.run(main(repo))
 
@@ -86,14 +81,6 @@ async def _download_preset(name, repo_name, url) -> None:
 
         data = json.dumps(raw)
 
-        print(
-            os.path.join(
-                PRESET_DIR,
-                repo_name,
-                to_slug_case(name) + ".json",
-            )
-        )
-
         try:
             with open(
                 os.path.join(
@@ -105,6 +92,7 @@ async def _download_preset(name, repo_name, url) -> None:
                 encoding="utf-8",
             ) as f:
                 f.write(data)
+                f.close()
         except OSError as error:
             buglog(f"Failed to write data to a file. Exc: {error}")
 
