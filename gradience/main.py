@@ -143,15 +143,16 @@ class GradienceApplication(Adw.Application):
 
         self.reload_user_defined_presets()
 
-        if version != self.last_opened_version:
-            welcome = GradienceWelcomeWindow(self.win, update=True)
-            welcome.present()
-        elif self.first_run:
+        if self.first_run:
             welcome = GradienceWelcomeWindow(self.win)
             welcome.present()
         else:
-            buglog("normal run")
-            self.win.present()
+            if version != self.last_opened_version:
+                welcome = GradienceWelcomeWindow(self.win, update=True)
+                welcome.present()
+            else:
+                buglog("normal run")
+                self.win.present()
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
