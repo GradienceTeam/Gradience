@@ -147,7 +147,7 @@ class GradienceApplication(Adw.Application):
             welcome = GradienceWelcomeWindow(self.win)
             welcome.present()
         else:
-            if version != self.last_opened_version:
+            if rel_ver != self.last_opened_version:
                 welcome = GradienceWelcomeWindow(self.win, update=True)
                 welcome.present()
             else:

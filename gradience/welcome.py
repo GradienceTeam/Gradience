@@ -26,7 +26,7 @@ from .modules.utils import buglog
 from .modules.flatpak_overrides import (
     create_gtk_user_override,
 )
-from .constants import rootdir, app_id, version
+from .constants import rootdir, app_id, rel_ver
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
@@ -93,7 +93,7 @@ class GradienceWelcomeWindow(Adw.Window):
         if self.update:
             self.page_welcome.set_title(_("Thanks for updating Gradience!"))
 
-        self.page_release.set_title(f"Gradience {version}")
+        self.page_release.set_title(f"Gradience {rel_ver}")
 
         self.btn_close.set_sensitive(False)
 
@@ -142,7 +142,7 @@ class GradienceWelcomeWindow(Adw.Window):
         self.btn_next.set_visible(True)
         self.btn_install.set_visible(False)
         self.window.last_opened_version = self.window.settings.set_string(
-            "last-opened-version", version
+            "last-opened-version", rel_ver
         )
         if self.update:
             self.btn_close.set_sensitive(True)
