@@ -70,7 +70,9 @@ class GradienceWelcomeWindow(Adw.Window):
 
     def __init__(self, window, update=False, **kwargs) -> None:
         super().__init__(**kwargs)
+
         self.set_transient_for(window)
+
         self.update = update
 
         # common variables and references
@@ -79,7 +81,6 @@ class GradienceWelcomeWindow(Adw.Window):
         self.gio_settings = Gio.Settings(app_id)
 
         # connect signals
-        self.connect("close-request", self.quit)
         self.carousel.connect("page-changed", self.page_changed)
         self.btn_close.connect("clicked", self.close_window)
         self.btn_back.connect("clicked", self.previous_page)
@@ -89,6 +90,7 @@ class GradienceWelcomeWindow(Adw.Window):
         self.settings.connect(
             "notify::gtk-application-prefer-dark-theme", self.theme_changed
         )
+        self.connect("close-request", self.quit)
 
         if self.update:
             self.page_welcome.set_title(_("Thanks for updating Gradience!"))
@@ -126,16 +128,20 @@ class GradienceWelcomeWindow(Adw.Window):
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(False)
             self.btn_agree.set_visible(True)
+            self.carousel.set_interactive(False)
         elif page == "download":
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(False)
             self.btn_install.set_visible(True)
+            self.carousel.set_interactive(False)
         elif page == "welcome":
             self.btn_back.set_visible(False)
             self.btn_next.set_visible(True)
+            self.carousel.set_interactive(True)
         else:
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(True)
+            self.carousel.set_interactive(True)
 
     def agree(self, widget):
         self.btn_back.set_visible(False)
