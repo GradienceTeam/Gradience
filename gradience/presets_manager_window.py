@@ -101,6 +101,7 @@ class GradiencePresetWindow(Adw.Window):
 
     def setup_signals(self):
         self.search_entry.connect("search-changed", self.on_search_changed)
+        self.search_dropdown.connect("notify", self.on_search_changed)
         self.search_entry.connect("stop-search", self.on_search_ended)
 
     def setup_builtin_presets(self):
@@ -231,25 +232,24 @@ class GradiencePresetWindow(Adw.Window):
         buglog(f"Search string: {search_text}")
         buglog("Items found:")
         for widget in self.search_results_list:
-            if search_text == "":
-                widget.props.visible = True
-            else:
-                widget.props.visible = False
+            widget.props.visible = False
+            if not (
+                self.search_dropdown.props.selected_item.get_string().lower()
+                in "all"
+            ):
                 if (
-                    not self.search_dropdown.props.selected_item.get_string().lower()
-                    in "all"
+                    self.search_dropdown.props.selected_item.get_string().lower()
+                    in widget.prefix.lower()
                 ):
-                    if (
-                        self.search_dropdown.props.selected_item.get_string().lower()
-                        in widget.prefix.lower()
-                    ):
-                        if search_text.lower() in widget.props.title.lower():
-                            widget.props.visible = True
-                            buglog(widget.props.title)
-                else:
                     if search_text.lower() in widget.props.title.lower():
                         widget.props.visible = True
                         buglog(widget.props.title)
+            else:
+                if search_text.lower() in widget.props.title.lower():
+                    widget.props.visible = True
+                    buglog(widget.props.title)
+                elif search_text == "":
+                    widget.props.visible = True
 
     def on_search_ended(self, *args):
         for widget in self.search_results_list:
