@@ -231,24 +231,32 @@ class GradiencePresetWindow(Adw.Window):
         buglog(f"Presets amount: {len(self.search_results_list)}")
         buglog(f"Search string: {search_text}")
         buglog("Items found:")
-        for widget in self.search_results_list:
-            widget.props.visible = False
-            if not (
-                self.search_dropdown.props.selected_item.get_string().lower() in "all"
-            ):
-                if (
-                    self.search_dropdown.props.selected_item.get_string().lower()
-                    in widget.prefix.lower()
+        items_count = 0
+        if not self.offline:
+            self.search_stack.set_visible_child_name("page_results")
+            for widget in self.search_results_list:
+                widget.props.visible = False
+                if not (
+                    self.search_dropdown.props.selected_item.get_string().lower() in "all"
                 ):
+                    if (
+                        self.search_dropdown.props.selected_item.get_string().lower()
+                        in widget.prefix.lower()
+                    ):
+                        if search_text.lower() in widget.props.title.lower():
+                            widget.props.visible = True
+                            items_count += 1
+                            buglog(widget.props.title)
+                else:
                     if search_text.lower() in widget.props.title.lower():
                         widget.props.visible = True
+                        items_count += 1
                         buglog(widget.props.title)
-            else:
-                if search_text.lower() in widget.props.title.lower():
-                    widget.props.visible = True
-                    buglog(widget.props.title)
-                elif search_text == "":
-                    widget.props.visible = True
+                    elif search_text == "":
+                        widget.props.visible = True
+                        items_count += 1
+            if items_count == 0:
+                self.search_stack.set_visible_child_name("page_empty")
 
     def on_search_ended(self, *args):
         for widget in self.search_results_list:

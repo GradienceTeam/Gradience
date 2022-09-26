@@ -4,7 +4,7 @@ using Adw 1;
 template GradiencePresetWindow : Adw.Window {
   title: _("Presets");
   default-width: 700;
-  default-height: 500;
+  default-height: 520;
 
   Adw.ToastOverlay toast_overlay {
     Adw.Leaflet leaflet {
@@ -116,19 +116,17 @@ template GradiencePresetWindow : Adw.Window {
 
                         Gtk.StackPage {
                           name: "page_empty";
-                          child: Gtk.Label {
-                            label: _("No Results Found");
-                            valign: start;
-                            halign: center;
+                          child: Adw.StatusPage {
+                              icon-name: "system-search-symbolic";
+                              title: _("No Results Found");
                           };
                         }
 
                         Gtk.StackPage {
                           name: "page_offline";
-                          child: Gtk.Label {
-                            label: _("Offline");
-                            valign: start;
-                            halign: center;
+                          child: Adw.StatusPage {
+                              icon-name: "network-wireless-offline-symbolic";
+                              title: _("Offline");
                           };
                         }
                       }
