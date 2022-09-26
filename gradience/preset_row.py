@@ -38,11 +38,11 @@ class GradiencePresetRow(Adw.ExpanderRow):
     remove_button = Gtk.Template.Child("remove_button")
     btn_report = Gtk.Template.Child()
 
-    def __init__(self, name, win, repo_name, author="", **kwargs):
+    def __init__(self, name, win, repo_name, file_name, author="", **kwargs):
         super().__init__(**kwargs)
 
         self.name = name
-        self.old_name = name
+        self.file_name = file_name
 
         self.prefix = to_slug_case(repo_name)
 
@@ -129,16 +129,17 @@ class GradiencePresetRow(Adw.ExpanderRow):
                                    os.environ["HOME"] + "/.config"),
                     "presets",
                     self.prefix,
-                    to_slug_case(self.old_name) + ".json",
+                    self.file_name + ".json",
                 ),
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
                                    os.environ["HOME"] + "/.config"),
                     "presets",
                     self.prefix,
-                    to_slug_case(self.old_name) + ".json.to_delete",
+                    self.file_name + ".json.to_delete",
                 ),
             )
+
             self.set_name(self.name + "(" + _("Pending deletion") + ")")
         except Exception as exception:
             buglog(exception)
@@ -155,10 +156,9 @@ class GradiencePresetRow(Adw.ExpanderRow):
             os.path.join(
                 PRESET_DIR,
                 self.prefix,
-                to_slug_case(self.old_name) + ".json",
+                self.file_name + ".json",
             )
         )
-        self.old_name = self.name
 
     def on_delete_toast_dismissed(self, widget):
         buglog("dismissed")
@@ -172,7 +172,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
                         ),
                         "presets",
                         self.prefix,
-                        to_slug_case(self.old_name) + ".json.to_delete",
+                        self.file_name + ".json.to_delete",
                     )
                 )
             except Exception as exception:
@@ -192,7 +192,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
                         ),
                         "presets",
                         self.prefix,
-                        to_slug_case(self.old_name) + ".json.to_delete",
+                        self.file_name + ".json.to_delete",
                     ),
                     os.path.join(
                         os.environ.get(
@@ -200,7 +200,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
                         ),
                         "presets",
                         self.prefix,
-                        to_slug_case(self.old_name) + ".json",
+                        self.file_name + ".json",
                     ),
                 )
             except Exception as exception:
