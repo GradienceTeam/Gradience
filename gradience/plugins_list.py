@@ -114,18 +114,28 @@ class GradiencePluginsList:
     def save(self):
         saved = {}
         for pluginInfo in self.pm.getAllPlugins():
-            saved[pluginInfo.plugin_object.plugin_id] = pluginInfo.plugin_object.save()
+            try:
+                saved[pluginInfo.plugin_object.plugin_id] = pluginInfo.plugin_object.save()
+            except AttributeError:
+                buglog(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
         return saved
 
     def validate(self):
         errors = []
         for pluginInfo in self.pm.getAllPlugins():
-            error, detail = pluginInfo.plugin_object.validate()
-            if error:
-                errors.append(detail)
+            try:
+                error, detail = pluginInfo.plugin_object.validate()
+                if error:
+                    errors.append(detail)
+            except AttributeError:
+                    buglog(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'validatee'")
         return errors
 
     def apply(self):
         for pluginInfo in self.pm.getAllPlugins():
             if pluginInfo.plugin_object.plugin_id in self.enabled_plugins:
-                pluginInfo.plugin_object.apply()
+                try:
+                    pluginInfo.plugin_object.apply()
+                except AttributeError:
+                    buglog(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
+                 
