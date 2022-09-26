@@ -24,9 +24,9 @@ from gi.repository import Gtk, Adw, Gio
 from .modules.run_async import RunAsync
 from .modules.utils import buglog
 from .modules.flatpak_overrides import (
-    create_gtk_user_override,
+    create_gtk_user_override
 )
-from .constants import rootdir, app_id, version
+from .constants import rootdir, app_id, rel_ver
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
@@ -70,7 +70,9 @@ class GradienceWelcomeWindow(Adw.Window):
 
     def __init__(self, window, update=False, **kwargs) -> None:
         super().__init__(**kwargs)
+
         self.set_transient_for(window)
+
         self.update = update
 
         # common variables and references
@@ -79,7 +81,6 @@ class GradienceWelcomeWindow(Adw.Window):
         self.gio_settings = Gio.Settings(app_id)
 
         # connect signals
-        self.connect("close-request", self.quit)
         self.carousel.connect("page-changed", self.page_changed)
         self.btn_close.connect("clicked", self.close_window)
         self.btn_back.connect("clicked", self.previous_page)
@@ -89,11 +90,12 @@ class GradienceWelcomeWindow(Adw.Window):
         self.settings.connect(
             "notify::gtk-application-prefer-dark-theme", self.theme_changed
         )
+        self.connect("close-request", self.quit)
 
         if self.update:
             self.page_welcome.set_title(_("Thanks for updating Gradience!"))
 
-        self.page_release.set_title(f"Gradience {version}")
+        self.page_release.set_title(f"Gradience {rel_ver}")
 
         self.btn_close.set_sensitive(False)
 
@@ -114,7 +116,7 @@ class GradienceWelcomeWindow(Adw.Window):
     def page_changed(self, widget=False, index=0, *_args):
         """
         This function is called on first load and when the user require
-        to change the page. It sets the widgets' status according to
+        to change the page. It sets the widgets status according to
         the step of the onboard progress.
         """
         page = self.get_page(index)
@@ -122,28 +124,32 @@ class GradienceWelcomeWindow(Adw.Window):
         if page == "finish":
             self.btn_back.set_visible(False)
             self.btn_next.set_visible(False)
+            self.carousel.set_interactive(False)
         elif page == "agreement":
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(False)
             self.btn_agree.set_visible(True)
+            self.carousel.set_interactive(False)
         elif page == "download":
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(False)
             self.btn_install.set_visible(True)
+            self.carousel.set_interactive(False)
         elif page == "welcome":
             self.btn_back.set_visible(False)
             self.btn_next.set_visible(True)
+            self.carousel.set_interactive(True)
         else:
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(True)
+            self.btn_install.set_visible(False)
+            self.carousel.set_interactive(True)
 
     def agree(self, widget):
-        self.btn_back.set_visible(False)
-        self.btn_next.set_visible(True)
-        self.btn_install.set_visible(False)
         self.window.last_opened_version = self.window.settings.set_string(
-            "last-opened-version", version
+            "last-opened-version", rel_ver
         )
+
         if self.update:
             self.btn_close.set_sensitive(True)
             self.label_skip.set_visible(False)
@@ -151,13 +157,12 @@ class GradienceWelcomeWindow(Adw.Window):
         else:
             self.next_page()
 
-    @staticmethod
-    def quit(widget=False):
+    def quit(self, *args):
+        self.destroy()
         sys.exit()
 
     # TODO: Add adw-gtk3 check
-    @staticmethod
-    def check_adw_gtk3():
+    def check_adw_gtk3(self, *args):
         buglog("check if adw-gtk3 installed")
         return True
 
@@ -180,13 +185,6 @@ class GradienceWelcomeWindow(Adw.Window):
             self.next_page()
 
         self.installing = True
-        self.btn_back.set_visible(False)
-        self.btn_next.set_visible(False)
-        self.btn_install.set_visible(False)
-        self.progressbar.set_visible(True)
-        self.carousel.set_allow_long_swipes(False)
-        self.carousel.set_allow_mouse_drag(False)
-        self.carousel.set_allow_scroll_wheel(False)
         self.set_deletable(False)
 
         def install():
@@ -205,17 +203,19 @@ class GradienceWelcomeWindow(Adw.Window):
     def previous_page(self, widget=False, index=None):
         if index is None:
             index = int(self.carousel.get_position())
+
         previous_page = self.carousel.get_nth_page(index - 1)
         self.carousel.scroll_to(previous_page, True)
 
     def next_page(self, widget=False, index=None):
         if index is None:
             index = int(self.carousel.get_position())
+
         next_page = self.carousel.get_nth_page(index + 1)
         self.carousel.scroll_to(next_page, True)
 
     def pulse(self):
-        # This function update the progress bar every 1s.
+        # This function updates the progress bar every 1s.
         while True:
             time.sleep(0.5)
             self.progressbar.pulse()
