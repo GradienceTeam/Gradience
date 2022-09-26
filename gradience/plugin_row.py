@@ -21,6 +21,9 @@ from gi.repository import Gtk, Adw
 from .modules.utils import buglog
 from .constants import rootdir
 from pathlib import Path
+
+from .no_plugin_pref import GradienceNoPluginPrefWindow
+
 import os
 
 USER_PLUGIN_DIR = Path(
@@ -63,7 +66,10 @@ class GradiencePluginRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_settings_plugin_clicked(self, *_args):
-        self.plugin_object.open_settings()
+        has_setting = self.plugin_object.open_settings()
+        if not has_setting:
+            win = GradienceNoPluginPrefWindow()
+            win.present()
 
     @Gtk.Template.Callback()
     def on_remove_plugin_clicked(self, *_args):

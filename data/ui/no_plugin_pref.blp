@@ -1,0 +1,30 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradienceNoPluginPrefWindow: Adw.Window {
+    title: _("");
+    modal: true;
+    default-width: 500;
+    default-height: 500;
+
+
+    Adw.Leaflet leaflet {
+        can-unfold: false;
+
+        Gtk.Box main_view {
+            orientation: vertical;
+
+            Adw.HeaderBar titlebar {
+                styles ["flat"]
+            }
+
+            Adw.StatusPage {
+                name: "empty";
+                title: _("No preferences");
+
+                description: _("This plugin doesn't have any settings");
+            }
+          }
+        }
+
+  }

@@ -53,11 +53,11 @@ class FirefoxGnomeTheme2Plugin(IPlugin):
         return False, None
 
     def open_settings(self):
-        pass
+        return False
 
     def apply(self, dark_theme=False):
         with (
-            next(Path("~/.mozilla/firefox").expanduser().glob("*.default-release"))
+            next(Path("~/.mozilla/firefox").expanduser().glob("*.*"))
             / "chrome/firefox-gnome-theme/customChrome.css"
         ).open("w") as f:
             f.write(self.template.format(**self.variables))
