@@ -64,4 +64,3 @@ class FirefoxGnomeTheme2Plugin(IPlugin):
                 f.write(self.template.format(**self.variables))
         except OSError:
             pass
-       
