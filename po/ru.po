@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-23 17:01+0000\n"
-"PO-Revision-Date: 2022-09-23 19:19+0000\n"
-"Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
+"POT-Creation-Date: 2022-09-27 12:19+0000\n"
+"PO-Revision-Date: 2022-09-27 22:28+0300\n"
+"Last-Translator: David Lapshin <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ru/>\n"
 "Language: ru\n"
@@ -25,11 +25,11 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:931
+#: data/ui/window.blp:5 gradience/main.py:940
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -38,7 +38,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "С легкостью изменяйте внешний вид Adwaita."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:933
+#: gradience/main.py:942
 msgid "Gradience Team"
 msgstr "Команда Gradience"
 
@@ -157,7 +157,9 @@ msgid "Toggle Text Value"
 msgstr "Переключить текстовое значение"
 
 #: data/ui/plugin_row.blp:8
-msgid "Enable plugin"
+#, fuzzy
+#| msgid "Enable plugin"
+msgid "Toggle plugin"
 msgstr "Включить плагин"
 
 #: data/ui/plugin_row.blp:16
@@ -309,7 +311,7 @@ msgstr "например \"Pretty Purple\""
 msgid "All"
 msgstr "Всё"
 
-#: data/ui/presets_manager_window.blp:120
+#: data/ui/presets_manager_window.blp:121
 msgid "No Results Found"
 msgstr "Результатов не найдено"
 
@@ -317,41 +319,41 @@ msgstr "Результатов не найдено"
 msgid "Offline"
 msgstr "Не в сети"
 
-#: data/ui/presets_manager_window.blp:143
-#: gradience/presets_manager_window.py:122
-#: gradience/presets_manager_window.py:428
+#: data/ui/presets_manager_window.blp:141
+#: gradience/presets_manager_window.py:120
+#: gradience/presets_manager_window.py:429
 msgid "Repositories"
 msgstr "Репозитории"
 
-#: data/ui/presets_manager_window.blp:162
+#: data/ui/presets_manager_window.blp:160
 msgid "Import a Preset File (*.json)"
 msgstr "Импортировать файл предустановки (*.json)"
 
-#: data/ui/presets_manager_window.blp:167
+#: data/ui/presets_manager_window.blp:165
 msgid "All files"
 msgstr "Все файлы"
 
-#: data/ui/presets_manager_window.blp:172
+#: data/ui/presets_manager_window.blp:170
 msgid "JSON file (*.json)"
 msgstr "файл JSON (*.json)"
 
-#: data/ui/welcome.blp:41
-msgid "Previous"
-msgstr "Предыдущая"
-
-#: data/ui/welcome.blp:64
+#: data/ui/welcome.blp:5 data/ui/welcome.blp:65
 msgid "Welcome to Gradience"
 msgstr "Добро пожаловать в Gradience"
 
-#: data/ui/welcome.blp:65
+#: data/ui/welcome.blp:42
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: data/ui/welcome.blp:66
 msgid "Change the look of Adwaita, with ease"
 msgstr "С легкостью изменяйте внешний вид Adwaita"
 
-#: data/ui/welcome.blp:72
+#: data/ui/welcome.blp:73
 msgid "What's new in 0.3.0"
 msgstr "Что нового в 0.3.0"
 
-#: data/ui/welcome.blp:73
+#: data/ui/welcome.blp:74
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a "
 "quick preset switcher. We also split the preset repository into an official "
@@ -361,11 +363,11 @@ msgstr ""
 "и быстрый переключатель предустановок. Мы также разделили репозиторий "
 "предустановок на официальный репозиторий и курируемый репозиорий."
 
-#: data/ui/welcome.blp:80
+#: data/ui/welcome.blp:81
 msgid "Warning"
 msgstr "Внимание"
 
-#: data/ui/welcome.blp:81
+#: data/ui/welcome.blp:82
 msgid ""
 "Changing the colour scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -375,15 +377,17 @@ msgstr ""
 "читабельность. Действуйте с осторожностью. Пожалуйста, не сообщайте о "
 "проблемах связанных с темами разработчикам приложений."
 
-#: data/ui/welcome.blp:85
-msgid "I understand all consequences"
+#: data/ui/welcome.blp:86
+#, fuzzy
+#| msgid "I understand all consequences"
+msgid "I understand the consequences"
 msgstr "Я понимаю все последствия"
 
-#: data/ui/welcome.blp:96
+#: data/ui/welcome.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Настройте тему Adwaita"
 
-#: data/ui/welcome.blp:97
+#: data/ui/welcome.blp:98
 msgid ""
 "Change colours of windows, buttons, lists and more, with advanced features "
 "like adding custom CSS"
@@ -391,11 +395,11 @@ msgstr ""
 "Изменяйте цвета окон, кнопок, списков и более, с продвинутыми функциями как "
 "добавление пользовательского CSS"
 
-#: data/ui/welcome.blp:103
+#: data/ui/welcome.blp:104
 msgid "Configure Gradience"
 msgstr "Настроить Gradience"
 
-#: data/ui/welcome.blp:104
+#: data/ui/welcome.blp:105
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
@@ -403,57 +407,57 @@ msgstr ""
 "Установить тему adw-gtk3 для устаревших приложений и настроить систему для "
 "кастомизации."
 
-#: data/ui/welcome.blp:109
+#: data/ui/welcome.blp:110
 msgid "Legacy apps theming"
 msgstr "Кастомизация устаревших приложений"
 
-#: data/ui/welcome.blp:114
+#: data/ui/welcome.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Установить тему adw-gtk3 для кастомизации устаревших приложений"
 
-#: data/ui/welcome.blp:119
+#: data/ui/welcome.blp:120
 msgid "System configuration"
 msgstr "Конфигурация системы"
 
-#: data/ui/welcome.blp:125
+#: data/ui/welcome.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 "Настроить систему для кастомизации, включает переопределение тем Flatpak"
 
-#: data/ui/welcome.blp:135
+#: data/ui/welcome.blp:136
 msgid "Installing Themes"
 msgstr "Установка тем"
 
-#: data/ui/welcome.blp:136
+#: data/ui/welcome.blp:137
 msgid "Please wait until theme will be installed."
 msgstr "Пожалуйста, подождите пока тема не будут установлена."
 
-#: data/ui/welcome.blp:142
+#: data/ui/welcome.blp:143
 msgid "Continue"
 msgstr "Продолжить"
 
-#: data/ui/welcome.blp:161
+#: data/ui/welcome.blp:162
 msgid "Done"
 msgstr "Готово"
 
-#: data/ui/welcome.blp:162
+#: data/ui/welcome.blp:163
 msgid "Now you can make your own presets or download some online."
 msgstr ""
 "Теперь вы можете делать свои предустановки или скачать несколько из сети."
 
-#: data/ui/welcome.blp:167
+#: data/ui/welcome.blp:168
 msgid "Please finish the setup first"
 msgstr "Пожалуйста, сначала завершите настройку"
 
-#: data/ui/welcome.blp:175
+#: data/ui/welcome.blp:176
 msgid "Start using Gradience"
 msgstr "Начать использовать Gradience"
 
-#: data/ui/welcome.blp:192
+#: data/ui/welcome.blp:193
 msgid "Next"
 msgstr "Следующее"
 
-#: data/ui/window.blp:23 gradience/main.py:592 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/main.py:601 gradience/window.py:141
 msgid "Apply"
 msgstr "Применить"
 
@@ -497,7 +501,7 @@ msgstr "GTK4 Demo"
 msgid "GTK4 Widget Factory"
 msgstr "GTK4 Widget Factory"
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:380
+#: data/ui/window.blp:160 gradience/presets_manager_window.py:383
 msgid "Built-in Presets"
 msgstr "Встроенные предустановки"
 
@@ -513,7 +517,7 @@ msgstr "Не удалось сохранить предустановку"
 msgid "Unexpected file error occurred"
 msgstr "Произошла неожиданная ошибка файла"
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:643 gradience/main.py:716
+#: gradience/app_type_dialog.py:44 gradience/main.py:652 gradience/main.py:725
 #: gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "Отменить"
@@ -526,136 +530,162 @@ msgstr "Предустановка не может быть загружена"
 msgid "Preset downloaded"
 msgstr "Предустановка загружена"
 
-#: gradience/main.py:185 gradience/main.py:213
-#: gradience/presets_manager_window.py:344
-#: gradience/presets_manager_window.py:371
+#: gradience/main.py:188 gradience/main.py:219
+#: gradience/presets_manager_window.py:346
+#: gradience/presets_manager_window.py:376
 msgid "Failed to load preset"
 msgstr "Не удалось загрузить предустановку"
 
-#: gradience/main.py:250
+#: gradience/main.py:256
 msgid "Open in File Manager"
 msgstr "Открыть в файловом менеджере"
 
-#: gradience/main.py:257
+#: gradience/main.py:263
 msgid "Installed Presets"
 msgstr "Установленные предустановки"
 
-#: gradience/main.py:517
+#: gradience/main.py:526
 msgid "Unsaved changes"
 msgstr "Несохранённые изменения"
 
-#: gradience/main.py:528
+#: gradience/main.py:537
 msgid "Save changes"
 msgstr "Сохранить изменения"
 
-#: gradience/main.py:586
+#: gradience/main.py:595
 msgid "Apply this color scheme?"
 msgstr "Применить эту цветовую схему?"
 
-#: gradience/main.py:588
+#: gradience/main.py:597
+#, fuzzy
+#| msgid ""
+#| "Warning: any custom CSS files for those app types will be                 "
+#| "irreversibly overwritten!"
 msgid ""
-"Warning: any custom CSS files for those app types will be                 "
-"irreversibly overwritten!"
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
 msgstr ""
 "Внимание: любые пользовательские файлы CSS для этих типов приложений будут "
 "безвозвратно перезаписаны!"
 
-#: gradience/main.py:602
+#: gradience/main.py:611
 msgid "Restore applied color scheme?"
 msgstr "Восстановить применённую цветовую схему?"
 
-#: gradience/main.py:603 gradience/main.py:615
+#: gradience/main.py:612 gradience/main.py:624
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Убедитесь, что Вы сохранили текущие настройки как предустановку."
 
-#: gradience/main.py:605
+#: gradience/main.py:614
 msgid "Restore"
 msgstr "Восстановить"
 
-#: gradience/main.py:614
+#: gradience/main.py:623
 msgid "Reset applied color scheme?"
 msgstr "Сбросить применённую цветовую схему?"
 
-#: gradience/main.py:617
+#: gradience/main.py:626
 msgid "Reset"
 msgstr "Сбросить"
 
-#: gradience/main.py:627
+#: gradience/main.py:636
 msgid "Save preset as..."
 msgstr "Сохранить предустановку как..."
 
-#: gradience/main.py:629 gradience/main.py:702
-#, python-brace-format
+#: gradience/main.py:638 gradience/main.py:666 gradience/main.py:683
+#: gradience/main.py:711 gradience/main.py:742 gradience/main.py:759
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "Saving preset to <tt>{0}</tt>. If that preset \t\t\t\t\t\talready exists, "
+#| "it will be overwritten!"
 msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already                 "
-"exists, it will be overwritten!"
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
 msgstr ""
 "Сохранение предустановки в <tt>{0}</tt>. Если эта предустановка уже "
 "существует то она будут перезаписана!"
 
-#: gradience/main.py:644 gradience/main.py:718
+#: gradience/main.py:653 gradience/main.py:727
 msgid "Save"
 msgstr "Сохранить"
 
-#: gradience/main.py:657 gradience/main.py:674 gradience/main.py:733
-#: gradience/main.py:750
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset                         "
-"already exists, it will be overwritten!"
-msgstr ""
-"Сохранение предустановки в <tt>{0}</tt>. Если эта предустановка уже "
-"существует то она будут перезаписана!"
-
-#: gradience/main.py:700
+#: gradience/main.py:709
 msgid "You have unsaved changes!"
 msgstr "У вас есть не сохранённые изменения!"
 
-#: gradience/main.py:717
+#: gradience/main.py:726
 msgid "Discard"
 msgstr "Отменить"
 
-#: gradience/main.py:778
+#: gradience/main.py:787
 msgid "Preset saved"
 msgstr "Предустановка сохранена"
 
-#: gradience/main.py:845
+#: gradience/main.py:854
 msgid "Preset set sucessfully"
 msgstr "Предустановка успешно установлена"
 
-#: gradience/main.py:888
+#: gradience/main.py:897
 msgid "Could not restore GTK4 backup"
 msgstr "Не удалось восстановить резервную копию GTK4"
 
-#: gradience/main.py:921
+#: gradience/main.py:930
 msgid "Preset reseted"
 msgstr "Предустановка восстановлена"
 
-#: gradience/main.py:965
+#: gradience/main.py:974
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "                <ul>\n"
+#| "                <li>Add AdwViewSwitcher in the header bar.</li>\n"
+#| "                <li>Move CSS to the \"Advanced\" tab</li>\n"
+#| "                <li>Move the rest to the \"Colours\" tab</li>\n"
+#| "                <li>Add Monet tab which generates a theme from a "
+#| "background\n"
+#| "                    </li>\n"
+#| "                <li>Add disk saved and disk unsaved icon in the header "
+#| "bar</li>\n"
+#| "                <li>Update about dialog</li>\n"
+#| "                <li>Change license to GNU GPLv3</li>\n"
+#| "                <li>Begin plugin support</li>\n"
+#| "                <li>Move preset selector to a drop-down called palette "
+#| "(icon                     palette)</li>\n"
+#| "                <li>Add ability to apply the theme onlyfor dark theme or "
+#| "oy                     for light theme</li>\n"
+#| "                <li>Automaticly use Adwaita-dark preset if the user "
+#| "prefered                     scheme is dark.</li>\n"
+#| "                <li>Added Flatpak CI build</li>\n"
+#| "                <li>Added issue template for bug and feature request </"
+#| "li>\n"
+#| "                <li>`Main` branch is now protected by GitHub "
+#| "branch                     protection. The development is done on `next` "
+#| "branch </li>\n"
+#| "                </ul>\n"
+#| "                "
 msgid ""
 "\n"
 "                <ul>\n"
 "                <li>Add AdwViewSwitcher in the header bar.</li>\n"
 "                <li>Move CSS to the \"Advanced\" tab</li>\n"
 "                <li>Move the rest to the \"Colours\" tab</li>\n"
-"                <li>Add Monet tab which generates a theme from a background\n"
-"                    </li>\n"
+"                <li>Add Monet tab which generates a theme from a background</"
+"li>\n"
 "                <li>Add disk saved and disk unsaved icon in the header bar</"
 "li>\n"
 "                <li>Update about dialog</li>\n"
 "                <li>Change license to GNU GPLv3</li>\n"
 "                <li>Begin plugin support</li>\n"
-"                <li>Move preset selector to a drop-down called palette "
-"(icon                     palette)</li>\n"
-"                <li>Add ability to apply the theme onlyfor dark theme or "
-"oy                     for light theme</li>\n"
-"                <li>Automaticly use Adwaita-dark preset if the user "
-"prefered                     scheme is dark.</li>\n"
+"                <li>Move preset selector to a drop-down called palette (icon "
+"palette)</li>\n"
+"                <li>Add ability to apply the theme onlyfor dark theme or oy "
+"for light theme</li>\n"
+"                <li>Automaticly use Adwaita-dark preset if the user prefered "
+"scheme is dark.</li>\n"
 "                <li>Added Flatpak CI build</li>\n"
 "                <li>Added issue template for bug and feature request </li>\n"
-"                <li>`Main` branch is now protected by GitHub "
-"branch                     protection. The development is done on `next` "
-"branch </li>\n"
+"                <li>`Main` branch is now protected by GitHub branch "
+"protection. The development is done on `next` branch</li>\n"
 "                </ul>\n"
 "                "
 msgstr ""
@@ -684,7 +714,7 @@ msgstr ""
 "      </ul>\n"
 "                "
 
-#: gradience/main.py:990
+#: gradience/main.py:994
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -714,45 +744,49 @@ msgstr ""
 "Это приложение написано на Python и использует GTK 4 и libadwaita.\n"
 "            "
 
-#: gradience/option.py:50
-msgid ""
-"This option is only partially supported by the adw-gtk3                     "
-"theme."
-msgstr "Этот параметр лишь частично поддерживается темой adw-gtk3."
+#: gradience/option.py:49
+#, fuzzy
+#| msgid "This option is not supported by the adw-gtk3 theme."
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "Этот параметр не поддерживается темой adw-gtk3."
 
-#: gradience/option.py:57
+#: gradience/option.py:54
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Этот параметр не поддерживается темой adw-gtk3."
 
-#: gradience/option.py:100
+#: gradience/option.py:97
 msgid "Not a color, see text value"
 msgstr "Не является цветом, см. текстовое значение"
 
-#: gradience/plugin_row.py:78
+#: gradience/plugin_row.py:84
 msgid "Unable to remove"
 msgstr "Не удалось удалить"
 
-#: gradience/plugin_row.py:79
+#: gradience/plugin_row.py:85
 msgid "This is a system plugin, and cannot be removed. "
 msgstr "Это системный плагин и он не может быть удален. "
 
-#: gradience/plugin_row.py:81
+#: gradience/plugin_row.py:87
 msgid "Close"
 msgstr "Закрыть"
 
-#: gradience/plugins_list.py:95
+#: gradience/plugins_list.py:96
 msgid "Plugins"
 msgstr "Плагины"
 
-#: gradience/plugins_list.py:98
+#: gradience/plugins_list.py:99
+#, fuzzy
+#| msgid ""
+#| "Plugins add additional features to Gradience, plugins are                 "
+#| "made by Gradience community and can make issues."
 msgid ""
-"Plugins add additional features to Gradience, plugins are                 "
-"made by Gradience community and can make issues."
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can make issues."
 msgstr ""
 "Плагины добавляют дополнительные функции в Gradience, плагины создаются "
 "сообществом Gradience и могут создавать проблемы."
 
-#: gradience/plugins_list.py:110
+#: gradience/plugins_list.py:111
 msgid "No plugins found."
 msgstr "Плагины не найдены."
 
@@ -764,7 +798,7 @@ msgstr "Предустановка удалена"
 msgid "Undo"
 msgstr "Отменить"
 
-#: gradience/preset_row.py:142
+#: gradience/preset_row.py:143
 msgid "Pending deletion"
 msgstr "Ожидает удаления"
 
@@ -772,20 +806,12 @@ msgstr "Ожидает удаления"
 msgid "Unable to delete preset"
 msgstr "Не удалось удалить предустановку"
 
-#: gradience/presets_manager_window.py:66
-msgid "Official"
-msgstr "Оффициальные"
-
-#: gradience/presets_manager_window.py:69
-msgid "Curated"
-msgstr "Курируемые"
-
-#: gradience/presets_manager_window.py:111
+#: gradience/presets_manager_window.py:109
 msgid "Builtin Presets"
 msgstr "Встроенные предустановки"
 
-#: gradience/presets_manager_window.py:116
-#: gradience/presets_manager_window.py:387
+#: gradience/presets_manager_window.py:114
+#: gradience/presets_manager_window.py:390
 msgid "User Presets"
 msgstr "Пользовательские предустановки"
 
@@ -801,30 +827,40 @@ msgstr "Добавить репозиторий для установки доп
 msgid "Add"
 msgstr "Добавить"
 
-#: gradience/presets_manager_window.py:278
+#: gradience/presets_manager_window.py:285
 msgid "Preset already exists"
 msgstr "Предустановка уже существует"
 
-#: gradience/presets_manager_window.py:293
+#: gradience/presets_manager_window.py:300
 msgid "Preset imported"
 msgstr "Предустановка импортирована"
 
-#: gradience/presets_manager_window.py:298
-msgid "Unsupported file format, must be                         .json"
+#: gradience/presets_manager_window.py:303
+#, fuzzy
+#| msgid "Unsupported file format, must be                         .json"
+msgid "Unsupported file format, must be .json"
 msgstr "Неподдерживаемый файловый формат, должен быть .json"
 
-#: gradience/presets_manager_window.py:390
+#: gradience/presets_manager_window.py:393
+#, fuzzy
+#| msgid ""
+#| "See                 <a href=\"https://github.com/GradienceTeam/Community"
+#| "\">GradienceTeam/Community</a>                 on Github for more presets"
 msgid ""
-"See                 <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a>                 on Github for more presets"
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets"
 msgstr ""
 "Смотрите<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> на GitHub для большего количества предустановок"
 
-#: gradience/presets_manager_window.py:417
+#: gradience/presets_manager_window.py:419
+#, fuzzy
+#| msgid ""
+#| "No preset found! Use the import button to import one "
+#| "or                     search one on the Explore tab"
 msgid ""
-"No preset found! Use the import button to import one or                     "
-"search one on the Explore tab"
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab"
 msgstr ""
 "Предустановка не найдена! Используйте кнопку импорта, чтобы импортировать "
 "его или найти его во вкладке Обзор"
@@ -838,10 +874,15 @@ msgid "Accent Colors"
 msgstr "Акцентные цвета"
 
 #: gradience/settings_schema.py:25
+#, fuzzy
+#| msgid ""
+#| "These colors are used across many different widgets, such "
+#| "as                 buttons, labels, and entries, to indicate that a "
+#| "widget is                 important, interactive, or currently active."
 msgid ""
-"These colors are used across many different widgets, such as                 "
-"buttons, labels, and entries, to indicate that a widget is                 "
-"important, interactive, or currently active."
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate that a widget is important, interactive, or "
+"currently active."
 msgstr ""
 "Эти цвета используются во многих различных виджетах, таких как кнопки, "
 "этикетки и поля ввода, чтобы показать, что виджет важный, интерактивный, или "
@@ -856,11 +897,17 @@ msgstr "Отдельный цвет"
 #: gradience/settings_schema.py:34 gradience/settings_schema.py:65
 #: gradience/settings_schema.py:97 gradience/settings_schema.py:129
 #: gradience/settings_schema.py:160
+#, fuzzy
+#| msgid ""
+#| "The standalone colors are similar to the "
+#| "background                         ones, but provide better contrast when "
+#| "used as                         foreground color on top of a neutral "
+#| "background - for                         example, colorful text in a "
+#| "window."
 msgid ""
-"The standalone colors are similar to the background                         "
-"ones, but provide better contrast when used as                         "
-"foreground color on top of a neutral background - "
-"for                         example, colorful text in a window."
+"The standalone colors are similar to the background ones, but provide better "
+"contrast when used as foreground color on top of a neutral background - for "
+"example, colorful text in a window."
 msgstr ""
 "Отдельные цвета похожи на фоновые, но имеют больший контраст при "
 "использовании в качестве цвета переднего плана на нейтральном фоне - "
@@ -870,8 +917,8 @@ msgstr ""
 #: gradience/settings_schema.py:106 gradience/settings_schema.py:138
 #: gradience/settings_schema.py:169 gradience/settings_schema.py:186
 #: gradience/settings_schema.py:206 gradience/settings_schema.py:227
-#: gradience/settings_schema.py:285 gradience/settings_schema.py:312
-#: gradience/settings_schema.py:329
+#: gradience/settings_schema.py:282 gradience/settings_schema.py:309
+#: gradience/settings_schema.py:326
 msgid "Background Color"
 msgstr "Фоновый цвет"
 
@@ -879,8 +926,8 @@ msgstr "Фоновый цвет"
 #: gradience/settings_schema.py:111 gradience/settings_schema.py:143
 #: gradience/settings_schema.py:174 gradience/settings_schema.py:191
 #: gradience/settings_schema.py:211 gradience/settings_schema.py:232
-#: gradience/settings_schema.py:290 gradience/settings_schema.py:317
-#: gradience/settings_schema.py:334
+#: gradience/settings_schema.py:287 gradience/settings_schema.py:314
+#: gradience/settings_schema.py:331
 msgid "Foreground Color"
 msgstr "Цвет переднего плана"
 
@@ -889,9 +936,13 @@ msgid "Destructive Colors"
 msgstr "Цвета разрушительности"
 
 #: gradience/settings_schema.py:57
+#, fuzzy
+#| msgid ""
+#| "These colors are used for buttons to indicate a dangerous                 "
+#| "action, such as deleting a file."
 msgid ""
-"These colors are used for buttons to indicate a dangerous                 "
-"action, such as deleting a file."
+"These colors are used for buttons to indicate a dangerous action, such as "
+"deleting a file."
 msgstr ""
 "Эти цвета используются в кнопках, чтобы показать опасное действие, например, "
 "удаление файла."
@@ -901,10 +952,14 @@ msgid "Success Colors"
 msgstr "Цвета успеха"
 
 #: gradience/settings_schema.py:88
+#, fuzzy
+#| msgid ""
+#| "These colors are used across many different widgets, such "
+#| "as                 buttons, labels, entries, and level bars, to indicate "
+#| "a                 success or a high level."
 msgid ""
-"These colors are used across many different widgets, such as                 "
-"buttons, labels, entries, and level bars, to indicate a                 "
-"success or a high level."
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a success or a high level."
 msgstr ""
 "Эти цвета используются во многих различных виджетах, таких как кнопки, поля "
 "ввода и полоски уровня, чтобы показать успех или высокий уровень."
@@ -914,10 +969,14 @@ msgid "Warning Colors"
 msgstr "Цвета предупреждения"
 
 #: gradience/settings_schema.py:120
+#, fuzzy
+#| msgid ""
+#| "These colors are used across many different widgets, such "
+#| "as                 buttons, labels, entries, and level bars, to indicate "
+#| "a                 warning or a low level."
 msgid ""
-"These colors are used across many different widgets, such as                 "
-"buttons, labels, entries, and level bars, to indicate a                 "
-"warning or a low level."
+"These colors are used across many different widgets, such as buttons, "
+"labels, entries, and level bars, to indicate a warning or a low level."
 msgstr ""
 "Эти цвета используются во многих различных виджетах, таких как кнопки, поля "
 "ввода и полоски уровня, чтобы показать предупреждение или низкий уровень."
@@ -927,9 +986,13 @@ msgid "Error Colors"
 msgstr "Цвета ошибки"
 
 #: gradience/settings_schema.py:152
+#, fuzzy
+#| msgid ""
+#| "These colors are used across many different widgets, such "
+#| "as                 buttons, labels, and entries, to indicate a failure."
 msgid ""
-"These colors are used across many different widgets, such as                 "
-"buttons, labels, and entries, to indicate a failure."
+"These colors are used across many different widgets, such as buttons, "
+"labels, and entries, to indicate a failure."
 msgstr ""
 "Эти цвета используются во многих различных виджетах, таких как кнопки и поля "
 "ввода, чтобы показать ошибку."
@@ -947,9 +1010,13 @@ msgid "View Colors"
 msgstr "Цвета представлений"
 
 #: gradience/settings_schema.py:200
+#, fuzzy
+#| msgid ""
+#| "These colors are used in a variety of widgets, such as "
+#| "text                 views and entries."
 msgid ""
-"These colors are used in a variety of widgets, such as text                 "
-"views and entries."
+"These colors are used in a variety of widgets, such as text views and "
+"entries."
 msgstr ""
 "Эти цвета используются во многих различных виджетах, таких как поля для "
 "ввода текста."
@@ -959,10 +1026,14 @@ msgid "Header Bar Colors"
 msgstr "Цвета заголовков"
 
 #: gradience/settings_schema.py:220
+#, fuzzy
+#| msgid ""
+#| "These colors are used for header bars, as well as widgets                 "
+#| "that are meant to be visually attached to it, such as "
+#| "search                 bars or tab bars."
 msgid ""
-"These colors are used for header bars, as well as widgets                 "
-"that are meant to be visually attached to it, such as search                 "
-"bars or tab bars."
+"These colors are used for header bars, as well as widgets that are meant to "
+"be visually attached to it, such as search bars or tab bars."
 msgstr ""
 "Эти цвета используются для заголовков окон, а также виджетов, которые должны "
 "быть визуально присоединены к ним, например, панели поиска или панели "
@@ -973,15 +1044,22 @@ msgid "Border Color"
 msgstr "Цвет границы"
 
 #: gradience/settings_schema.py:239
+#, fuzzy
+#| msgid ""
+#| "The border color has the same default value as a                         "
+#| "foreground color, but doesn't change along with "
+#| "it.                         This can be useful if a light window has a "
+#| "dark                         header bar with light text; in this case it "
+#| "may be                         desirable to keep the border dark. This "
+#| "variable is                         only used for vertical borders - for "
+#| "example,                         separators between the two header bars "
+#| "in a split                         header bar layout."
 msgid ""
-"The border color has the same default value as a                         "
-"foreground color, but doesn't change along with it.                         "
-"This can be useful if a light window has a dark                         "
-"header bar with light text; in this case it may be                         "
-"desirable to keep the border dark. This variable is                         "
-"only used for vertical borders - for example,                         "
-"separators between the two header bars in a split                         "
-"header bar layout."
+"The border color has the same default value as a foreground color, but "
+"doesn't change along with it. This can be useful if a light window has a "
+"dark header bar with light text; in this case it may be desirable to keep "
+"the border dark. This variable is only used for vertical borders - for "
+"example, separators between the two header bars in a split header bar layout."
 msgstr ""
 "Цвет границы по умолчанию равен цвету переднего плана, но при этом с ним не "
 "меняется. Это полезно, если у светлого окна тёмный заголовок со светлым "
@@ -995,29 +1073,40 @@ msgid "Backdrop Color"
 msgstr "Цвет фона без фокуса"
 
 #: gradience/settings_schema.py:254
+#, fuzzy
+#| msgid ""
+#| "The backdrop color is used instead of the "
+#| "background                         color when the window is not focused. "
+#| "By default it's                         an alias of the window's "
+#| "background color and changes                         together with it. "
+#| "When changing this variable, make                         sure to set it "
+#| "to a value matching your header bar                         background "
+#| "color."
 msgid ""
-"The backdrop color is used instead of the background                         "
-"color when the window is not focused. By default "
-"it's                         an alias of the window's background color and "
-"changes                         together with it. When changing this "
-"variable, make                         sure to set it to a value matching "
-"your header bar                         background color."
+"The backdrop color is used instead of the background color when the window "
+"is not focused. By default it's an alias of the window's background color "
+"and changes together with it. When changing this variable, make sure to set "
+"it to a value matching your header bar background color."
 msgstr ""
 "Цвет фона без фокуса используется вместо обычного фонового цвета, когда окно "
 "без фокуса. Значение по умолчанию является ссылкой на фоновый цвет окна и "
 "меняется вместе с ним. При изменении этой переменной убедитесь, что значение "
 "близко к обычному фоновому цвету заголовка."
 
-#: gradience/settings_schema.py:265 gradience/settings_schema.py:295
-#: gradience/settings_schema.py:346
+#: gradience/settings_schema.py:265 gradience/settings_schema.py:292
+#: gradience/settings_schema.py:343
 msgid "Shade Color"
 msgstr "Цвет тени"
 
 #: gradience/settings_schema.py:267
+#, fuzzy
+#| msgid ""
+#| "The shade color is used to provide a dark border "
+#| "for                         header bars and similar widgets that "
+#| "separates them                         from the main window."
 msgid ""
-"The shade color is used to provide a dark border for                         "
-"header bars and similar widgets that separates them                         "
-"from the main window."
+"The shade color is used to provide a dark border for header bars and similar "
+"widgets that separates them from the main window."
 msgstr ""
 "Цвет тени используется для тёмных границ для заголовков и похожих виджетов, "
 "которые отделяют их от основного окна."
@@ -1026,98 +1115,114 @@ msgstr ""
 msgid "Card Colors"
 msgstr "Цвета карточек"
 
-#: gradience/settings_schema.py:279
-msgid "These colors are used for cards and boxed                 lists."
+#: gradience/settings_schema.py:278
+#, fuzzy
+#| msgid "These colors are used for cards and boxed                 lists."
+msgid "These colors are used for cards and boxed lists."
 msgstr "Эти цвета используются в карточках и списках."
 
-#: gradience/settings_schema.py:297
+#: gradience/settings_schema.py:294
+#, fuzzy
+#| msgid ""
+#| "The shade color is used for shadows that are used "
+#| "by                         cards to separate themselves from the "
+#| "window                         background, as well as for row dividers in "
+#| "the cards."
 msgid ""
-"The shade color is used for shadows that are used by                         "
-"cards to separate themselves from the window                         "
-"background, as well as for row dividers in the cards."
+"The shade color is used for shadows that are used by cards to separate "
+"themselves from the window background, as well as for row dividers in the "
+"cards."
 msgstr ""
 "Цвет тени используются для теней, которыми карточки отделяются от фона окна, "
 "а также для разделителей рядов в списках."
 
-#: gradience/settings_schema.py:307
+#: gradience/settings_schema.py:304
 msgid "Dialog Colors"
 msgstr "Цвета диалогов"
 
-#: gradience/settings_schema.py:308
+#: gradience/settings_schema.py:305
 msgid "These colors are used for message dialogs."
 msgstr "Эти цвета используются для диалогов с сообщениями."
 
-#: gradience/settings_schema.py:324
+#: gradience/settings_schema.py:321
 msgid "Popover Colors"
 msgstr "Цвета поповеров"
 
-#: gradience/settings_schema.py:325
+#: gradience/settings_schema.py:322
 msgid "These colors are used for popovers."
 msgstr "Эти цвета используются для поповеров."
 
-#: gradience/settings_schema.py:341
+#: gradience/settings_schema.py:338
 msgid "Miscalleneous Colors"
 msgstr "Прочие цвета"
 
-#: gradience/settings_schema.py:342
+#: gradience/settings_schema.py:339
 msgid "Colors that don't fit in any particular group."
 msgstr "Цвета, не вписывающиеся ни в одну конкретную группу."
 
-#: gradience/settings_schema.py:348
+#: gradience/settings_schema.py:345
+#, fuzzy
+#| msgid ""
+#| "The shade color is used by inline tab bars, as "
+#| "well                         as the transitions in leaflets and flaps, "
+#| "and info                         bar borders."
 msgid ""
-"The shade color is used by inline tab bars, as well                         "
-"as the transitions in leaflets and flaps, and info                         "
-"bar borders."
+"The shade color is used by inline tab bars, as well as the transitions in "
+"leaflets and flaps, and info bar borders."
 msgstr ""
 "Цвет тени используется во встроенных панелях вкладок, переходах в лифлетах и "
 "флапах (выскользающих сбоку меню) и в границах у панелей информации."
 
-#: gradience/settings_schema.py:356
+#: gradience/settings_schema.py:353
 msgid "Scrollbar Outline Color"
 msgstr "Цвет границы полоски прокрутки"
 
-#: gradience/settings_schema.py:358
+#: gradience/settings_schema.py:355
+#, fuzzy
+#| msgid ""
+#| "The scrollbar outline color is used by scrollbars "
+#| "to                         ensure that overlay scrollbars are visible "
+#| "regardless                         of the content color."
 msgid ""
-"The scrollbar outline color is used by scrollbars to                         "
-"ensure that overlay scrollbars are visible "
-"regardless                         of the content color."
+"The scrollbar outline color is used by scrollbars to ensure that overlay "
+"scrollbars are visible regardless of the content color."
 msgstr ""
 "Цвет границы полосы прокрутки используется полосами прокрутки для гарантии "
 "того, что они будут видны независимо от цвета содержимого."
 
-#: gradience/settings_schema.py:368
+#: gradience/settings_schema.py:365
 msgid "Blue"
 msgstr "Синий"
 
-#: gradience/settings_schema.py:369
+#: gradience/settings_schema.py:366
 msgid "Green"
 msgstr "Зелёный"
 
-#: gradience/settings_schema.py:370
+#: gradience/settings_schema.py:367
 msgid "Yellow"
 msgstr "Жёлтый"
 
-#: gradience/settings_schema.py:371
+#: gradience/settings_schema.py:368
 msgid "Orange"
 msgstr "Оранжевый"
 
-#: gradience/settings_schema.py:372
+#: gradience/settings_schema.py:369
 msgid "Red"
 msgstr "Красный"
 
-#: gradience/settings_schema.py:373
+#: gradience/settings_schema.py:370
 msgid "Purple"
 msgstr "Фиолетовый"
 
-#: gradience/settings_schema.py:374
+#: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Коричневый"
 
-#: gradience/settings_schema.py:375
+#: gradience/settings_schema.py:372
 msgid "Light"
 msgstr "Светлый"
 
-#: gradience/settings_schema.py:376
+#: gradience/settings_schema.py:373
 msgid "Dark"
 msgstr "Тёмный"
 
@@ -1130,9 +1235,13 @@ msgid "Monet Engine"
 msgstr "Движок Monet"
 
 #: gradience/window.py:135
+#, fuzzy
+#| msgid ""
+#| "Monet is an engine that generates a Material Design 3                 "
+#| "palette from an image's color."
 msgid ""
-"Monet is an engine that generates a Material Design 3                 "
-"palette from an image's color."
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
 msgstr ""
 "Monet - движок, генерирующий палитру Material Design 3 из цветов изображения."
 
@@ -1173,11 +1282,16 @@ msgid "Palette Colors"
 msgstr "Цвета палитры"
 
 #: gradience/window.py:272
+#, fuzzy
+#| msgid ""
+#| "Named palette colors used by some applications. Default                 "
+#| "colors follow the                 <a href=\"https://developer.gnome.org/"
+#| "hig/reference/palette.html\">                    GNOME Human Interface "
+#| "Guidelines</a>."
 msgid ""
-"Named palette colors used by some applications. Default                 "
-"colors follow the                 <a href=\"https://developer.gnome.org/hig/"
-"reference/palette.html\">                    GNOME Human Interface "
-"Guidelines</a>."
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
 msgstr ""
 "Цвета палитры с названными цветами, которые используются некоторыми "
 "приложениями. Цвета по умолчанию следуют <a href=\"https://developer.gnome."
@@ -1185,11 +1299,30 @@ msgstr ""
 
 #, python-brace-format
 #~ msgid ""
-#~ "Saving preset to <tt>{0}</tt>. If that preset \t\t\t\t\t\talready exists, "
-#~ "it will be overwritten!"
+#~ "Saving preset to <tt>{0}</tt>. If that preset already                 "
+#~ "exists, it will be overwritten!"
 #~ msgstr ""
 #~ "Сохранение предустановки в <tt>{0}</tt>. Если эта предустановка уже "
 #~ "существует то она будут перезаписана!"
+
+#, python-brace-format
+#~ msgid ""
+#~ "Saving preset to <tt>{0}</tt>. If that preset                         "
+#~ "already exists, it will be overwritten!"
+#~ msgstr ""
+#~ "Сохранение предустановки в <tt>{0}</tt>. Если эта предустановка уже "
+#~ "существует то она будут перезаписана!"
+
+#~ msgid ""
+#~ "This option is only partially supported by the adw-"
+#~ "gtk3                     theme."
+#~ msgstr "Этот параметр лишь частично поддерживается темой adw-gtk3."
+
+#~ msgid "Official"
+#~ msgstr "Оффициальные"
+
+#~ msgid "Curated"
+#~ msgstr "Курируемые"
 
 #~ msgid "colors"
 #~ msgstr "colors"
