@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 12:19+0000\n"
-"PO-Revision-Date: 2022-09-27 22:28+0300\n"
-"Last-Translator: David Lapshin <ddaudix@gmail.com>\n"
+"PO-Revision-Date: 2022-09-27 19:55+0000\n"
+"Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ru/>\n"
 "Language: ru\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
@@ -157,10 +157,8 @@ msgid "Toggle Text Value"
 msgstr "Переключить текстовое значение"
 
 #: data/ui/plugin_row.blp:8
-#, fuzzy
-#| msgid "Enable plugin"
 msgid "Toggle plugin"
-msgstr "Включить плагин"
+msgstr "Переключить плагин"
 
 #: data/ui/plugin_row.blp:16
 msgid "Settings"
@@ -378,10 +376,8 @@ msgstr ""
 "проблемах связанных с темами разработчикам приложений."
 
 #: data/ui/welcome.blp:86
-#, fuzzy
-#| msgid "I understand all consequences"
 msgid "I understand the consequences"
-msgstr "Я понимаю все последствия"
+msgstr "Я понимаю последствия"
 
 #: data/ui/welcome.blp:97
 msgid "Customize Adwaita Theme"
@@ -557,10 +553,6 @@ msgid "Apply this color scheme?"
 msgstr "Применить эту цветовую схему?"
 
 #: gradience/main.py:597
-#, fuzzy
-#| msgid ""
-#| "Warning: any custom CSS files for those app types will be                 "
-#| "irreversibly overwritten!"
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -594,10 +586,7 @@ msgstr "Сохранить предустановку как..."
 
 #: gradience/main.py:638 gradience/main.py:666 gradience/main.py:683
 #: gradience/main.py:711 gradience/main.py:742 gradience/main.py:759
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset \t\t\t\t\t\talready exists, "
-#| "it will be overwritten!"
+#, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
@@ -634,35 +623,6 @@ msgid "Preset reseted"
 msgstr "Предустановка восстановлена"
 
 #: gradience/main.py:974
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                <ul>\n"
-#| "                <li>Add AdwViewSwitcher in the header bar.</li>\n"
-#| "                <li>Move CSS to the \"Advanced\" tab</li>\n"
-#| "                <li>Move the rest to the \"Colours\" tab</li>\n"
-#| "                <li>Add Monet tab which generates a theme from a "
-#| "background\n"
-#| "                    </li>\n"
-#| "                <li>Add disk saved and disk unsaved icon in the header "
-#| "bar</li>\n"
-#| "                <li>Update about dialog</li>\n"
-#| "                <li>Change license to GNU GPLv3</li>\n"
-#| "                <li>Begin plugin support</li>\n"
-#| "                <li>Move preset selector to a drop-down called palette "
-#| "(icon                     palette)</li>\n"
-#| "                <li>Add ability to apply the theme onlyfor dark theme or "
-#| "oy                     for light theme</li>\n"
-#| "                <li>Automaticly use Adwaita-dark preset if the user "
-#| "prefered                     scheme is dark.</li>\n"
-#| "                <li>Added Flatpak CI build</li>\n"
-#| "                <li>Added issue template for bug and feature request </"
-#| "li>\n"
-#| "                <li>`Main` branch is now protected by GitHub "
-#| "branch                     protection. The development is done on `next` "
-#| "branch </li>\n"
-#| "                </ul>\n"
-#| "                "
 msgid ""
 "\n"
 "                <ul>\n"
@@ -745,10 +705,8 @@ msgstr ""
 "            "
 
 #: gradience/option.py:49
-#, fuzzy
-#| msgid "This option is not supported by the adw-gtk3 theme."
 msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "Этот параметр не поддерживается темой adw-gtk3."
+msgstr "Этот параметр поддерживается темой adw-gtk3 только частично."
 
 #: gradience/option.py:54
 msgid "This option is not supported by the adw-gtk3 theme."
@@ -775,10 +733,6 @@ msgid "Plugins"
 msgstr "Плагины"
 
 #: gradience/plugins_list.py:99
-#, fuzzy
-#| msgid ""
-#| "Plugins add additional features to Gradience, plugins are                 "
-#| "made by Gradience community and can make issues."
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can make issues."
@@ -836,16 +790,10 @@ msgid "Preset imported"
 msgstr "Предустановка импортирована"
 
 #: gradience/presets_manager_window.py:303
-#, fuzzy
-#| msgid "Unsupported file format, must be                         .json"
 msgid "Unsupported file format, must be .json"
 msgstr "Неподдерживаемый файловый формат, должен быть .json"
 
 #: gradience/presets_manager_window.py:393
-#, fuzzy
-#| msgid ""
-#| "See                 <a href=\"https://github.com/GradienceTeam/Community"
-#| "\">GradienceTeam/Community</a>                 on Github for more presets"
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets"
@@ -854,10 +802,6 @@ msgstr ""
 "Community</a> на GitHub для большего количества предустановок"
 
 #: gradience/presets_manager_window.py:419
-#, fuzzy
-#| msgid ""
-#| "No preset found! Use the import button to import one "
-#| "or                     search one on the Explore tab"
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab"
@@ -874,11 +818,6 @@ msgid "Accent Colors"
 msgstr "Акцентные цвета"
 
 #: gradience/settings_schema.py:25
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such "
-#| "as                 buttons, labels, and entries, to indicate that a "
-#| "widget is                 important, interactive, or currently active."
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate that a widget is important, interactive, or "
@@ -897,13 +836,6 @@ msgstr "Отдельный цвет"
 #: gradience/settings_schema.py:34 gradience/settings_schema.py:65
 #: gradience/settings_schema.py:97 gradience/settings_schema.py:129
 #: gradience/settings_schema.py:160
-#, fuzzy
-#| msgid ""
-#| "The standalone colors are similar to the "
-#| "background                         ones, but provide better contrast when "
-#| "used as                         foreground color on top of a neutral "
-#| "background - for                         example, colorful text in a "
-#| "window."
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
@@ -936,10 +868,6 @@ msgid "Destructive Colors"
 msgstr "Цвета разрушительности"
 
 #: gradience/settings_schema.py:57
-#, fuzzy
-#| msgid ""
-#| "These colors are used for buttons to indicate a dangerous                 "
-#| "action, such as deleting a file."
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
@@ -952,11 +880,6 @@ msgid "Success Colors"
 msgstr "Цвета успеха"
 
 #: gradience/settings_schema.py:88
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such "
-#| "as                 buttons, labels, entries, and level bars, to indicate "
-#| "a                 success or a high level."
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
@@ -969,11 +892,6 @@ msgid "Warning Colors"
 msgstr "Цвета предупреждения"
 
 #: gradience/settings_schema.py:120
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such "
-#| "as                 buttons, labels, entries, and level bars, to indicate "
-#| "a                 warning or a low level."
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
@@ -986,10 +904,6 @@ msgid "Error Colors"
 msgstr "Цвета ошибки"
 
 #: gradience/settings_schema.py:152
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such "
-#| "as                 buttons, labels, and entries, to indicate a failure."
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
@@ -1010,10 +924,6 @@ msgid "View Colors"
 msgstr "Цвета представлений"
 
 #: gradience/settings_schema.py:200
-#, fuzzy
-#| msgid ""
-#| "These colors are used in a variety of widgets, such as "
-#| "text                 views and entries."
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
@@ -1026,11 +936,6 @@ msgid "Header Bar Colors"
 msgstr "Цвета заголовков"
 
 #: gradience/settings_schema.py:220
-#, fuzzy
-#| msgid ""
-#| "These colors are used for header bars, as well as widgets                 "
-#| "that are meant to be visually attached to it, such as "
-#| "search                 bars or tab bars."
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
@@ -1044,16 +949,6 @@ msgid "Border Color"
 msgstr "Цвет границы"
 
 #: gradience/settings_schema.py:239
-#, fuzzy
-#| msgid ""
-#| "The border color has the same default value as a                         "
-#| "foreground color, but doesn't change along with "
-#| "it.                         This can be useful if a light window has a "
-#| "dark                         header bar with light text; in this case it "
-#| "may be                         desirable to keep the border dark. This "
-#| "variable is                         only used for vertical borders - for "
-#| "example,                         separators between the two header bars "
-#| "in a split                         header bar layout."
 msgid ""
 "The border color has the same default value as a foreground color, but "
 "doesn't change along with it. This can be useful if a light window has a "
@@ -1073,15 +968,6 @@ msgid "Backdrop Color"
 msgstr "Цвет фона без фокуса"
 
 #: gradience/settings_schema.py:254
-#, fuzzy
-#| msgid ""
-#| "The backdrop color is used instead of the "
-#| "background                         color when the window is not focused. "
-#| "By default it's                         an alias of the window's "
-#| "background color and changes                         together with it. "
-#| "When changing this variable, make                         sure to set it "
-#| "to a value matching your header bar                         background "
-#| "color."
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -1099,11 +985,6 @@ msgid "Shade Color"
 msgstr "Цвет тени"
 
 #: gradience/settings_schema.py:267
-#, fuzzy
-#| msgid ""
-#| "The shade color is used to provide a dark border "
-#| "for                         header bars and similar widgets that "
-#| "separates them                         from the main window."
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
@@ -1116,18 +997,10 @@ msgid "Card Colors"
 msgstr "Цвета карточек"
 
 #: gradience/settings_schema.py:278
-#, fuzzy
-#| msgid "These colors are used for cards and boxed                 lists."
 msgid "These colors are used for cards and boxed lists."
 msgstr "Эти цвета используются в карточках и списках."
 
 #: gradience/settings_schema.py:294
-#, fuzzy
-#| msgid ""
-#| "The shade color is used for shadows that are used "
-#| "by                         cards to separate themselves from the "
-#| "window                         background, as well as for row dividers in "
-#| "the cards."
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
@@ -1161,11 +1034,6 @@ msgid "Colors that don't fit in any particular group."
 msgstr "Цвета, не вписывающиеся ни в одну конкретную группу."
 
 #: gradience/settings_schema.py:345
-#, fuzzy
-#| msgid ""
-#| "The shade color is used by inline tab bars, as "
-#| "well                         as the transitions in leaflets and flaps, "
-#| "and info                         bar borders."
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -1178,11 +1046,6 @@ msgid "Scrollbar Outline Color"
 msgstr "Цвет границы полоски прокрутки"
 
 #: gradience/settings_schema.py:355
-#, fuzzy
-#| msgid ""
-#| "The scrollbar outline color is used by scrollbars "
-#| "to                         ensure that overlay scrollbars are visible "
-#| "regardless                         of the content color."
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -1235,15 +1098,12 @@ msgid "Monet Engine"
 msgstr "Движок Monet"
 
 #: gradience/window.py:135
-#, fuzzy
-#| msgid ""
-#| "Monet is an engine that generates a Material Design 3                 "
-#| "palette from an image's color."
 msgid ""
 "Monet is an engine that generates a Material Design 3 palette from an "
 "image's color."
 msgstr ""
-"Monet - движок, генерирующий палитру Material Design 3 из цветов изображения."
+"Monet это движок, генерирующий палитру Material Design 3 из цветов "
+"изображения."
 
 #: gradience/window.py:147
 msgid "Background Image"
@@ -1282,12 +1142,6 @@ msgid "Palette Colors"
 msgstr "Цвета палитры"
 
 #: gradience/window.py:272
-#, fuzzy
-#| msgid ""
-#| "Named palette colors used by some applications. Default                 "
-#| "colors follow the                 <a href=\"https://developer.gnome.org/"
-#| "hig/reference/palette.html\">                    GNOME Human Interface "
-#| "Guidelines</a>."
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
