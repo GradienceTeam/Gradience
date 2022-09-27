@@ -69,6 +69,8 @@ class GradiencePluginRow(Adw.ActionRow):
         has_setting = self.plugin_object.open_settings()
         if not has_setting:
             win = GradienceNoPluginPrefWindow()
+            win.set_transient_for(self.plugins_list.win)
+            win.set_modal(True)
             win.present()
 
     @Gtk.Template.Callback()
