@@ -944,9 +944,10 @@ class GradienceApplication(Adw.Application):
             support_url=help_url,
             issue_url=bugtracker_url,
             developers=[
-                'Artyom "ArtyIF" Fomin https://github.com/ArtyIF',
+                "Artyom Fomin (ArtyIF) https://github.com/ArtyIF"",
                 "0xMRTT https://github.com/0xMRTT",
                 "Verantor https://github.com/Verantor",
+                "Lyes Saadi https://github.com/LyesSaadi",
             ],
             artists=["David Lapshin https://github.com/daudix-UFO"],
             designers=["David Lapshin https://github.com/daudix-UFO"],
@@ -955,17 +956,17 @@ class GradienceApplication(Adw.Application):
             # no quotes) and is not meant to be translated literally.
             # TODO: Automate this process using CI, because not everyone knows
             # about this
-            translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh/
+            translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh
                 FineFindus https://github.com/FineFindus
-                Karol Lademan https://www.transifex.com/user/profile/karlod/
-                Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI/
-                Renato Corrêa https://www.transifex.com/user/profile/renatocrrs/
-                Aggelos Tselios https://www.transifex.com/user/profile/AndroGR/
+                Karol Lademan https://www.transifex.com/user/profile/karlod
+                Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
+                Renato Corrêa https://www.transifex.com/user/profile/renatocrrs
+                Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
                 David Lapshin https://github.com/daudix-UFO
                 0xMRTT https://github.com/0xMRTT
                 tfuxu https://github.com/tfuxu
-                Juanjo Cillero https://www.transifex.com/user/profile/renux918/
-                Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34/""",
+                Juanjo Cillero https://www.transifex.com/user/profile/renux918
+                Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34""",
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
