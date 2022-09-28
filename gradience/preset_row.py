@@ -27,6 +27,8 @@ from .modules.utils import to_slug_case, buglog
 from .modules.preset import Preset
 
 from .share_window import GradienceShareWindow
+
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/preset_row.ui")
 class GradiencePresetRow(Adw.ExpanderRow):
     __gtype_name__ = "GradiencePresetRow"
@@ -72,7 +74,6 @@ class GradiencePresetRow(Adw.ExpanderRow):
         buglog("share")
         win = GradienceShareWindow(self.win)
         win.present()
-
 
     def on_star_button_clicked(self, *_args):
         buglog("star")
