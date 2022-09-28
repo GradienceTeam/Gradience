@@ -951,31 +951,37 @@ class GradienceApplication(Adw.Application):
             support_url=help_url,
             issue_url=bugtracker_url,
             developers=[
-                "Artyom Fomin (ArtyIF) https://github.com/ArtyIF",
                 "0xMRTT https://github.com/0xMRTT",
-                "Verantor https://github.com/Verantor",
+                "Artyom Fomin (ArtyIF) https://github.com/ArtyIF",
                 "Tfuxu https://github.com/tfuxu",
+                "Verantor https://github.com/Verantor",
             ],
             artists=["David Lapshin https://github.com/daudix-UFO"],
             designers=["David Lapshin https://github.com/daudix-UFO"],
             # Translators: This is a place to put your credits (formats:
             # "Name https://example.com" or "Name <email@example.com>",
             # no quotes) and is not meant to be translated literally.
-            # TODO: Automate this process using CI, because not everyone knows
-            # about this
             translator_credits="""
-                Maxime V https://www.transifex.com/user/profile/Adaoh
-                FineFindus https://github.com/FineFindus
-                Karol Lademan https://www.transifex.com/user/profile/karlod
-                Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
-                Renato Corrêa https://www.transifex.com/user/profile/renatocrrs
-                Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
-                David Lapshin https://github.com/daudix-UFO
                 0xMRTT https://github.com/0xMRTT
-                tfuxu https://github.com/tfuxu
+                Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
+                BritishBenji https://github.com/BritishBenji
+                Bittin https://github.com/bittin
+                David Lapshin https://github.com/daudix-UFO
+                Davide Ferracin https://github.com/phaerrax
+                Ewout van Mansom https://github.com/emansom
+                FineFindus https://github.com/FineFindus
+                엘련(Jisu Kim) https://github.com/vbalien
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918
+                Karol Lademan https://www.transifex.com/user/profile/karlod
+                K.B.Dharun Krishna https://github.com/kbdharun
+                Philip Goto https://github.com/flipflop97
+                Maxime V https://www.transifex.com/user/profile/Adaoh
+                Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
+                Renato Corrêa https://github.com/renatocrrs
+                Rene Coty https://github.com/rene-coty
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
-                 K.B.Dharun Krishna https://github.com/kbdharun""",
+                Tfuxu https://github.com/tfuxu
+                """,
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
