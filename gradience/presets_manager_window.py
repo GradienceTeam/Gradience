@@ -147,7 +147,7 @@ class GradiencePresetWindow(Adw.Window):
                 self.search_spinner.props.visible = False
 
                 for (preset, preset_name), preset_url in zip(
-                    OrderedDict(sorted(explore_presets.items())).items(), urls
+                    explore_presets.items(), urls
                 ):
                     row = GradienceExplorePresetRow(
                         preset_name, preset_url, self, repo_name, badge
