@@ -31,7 +31,7 @@ from .modules.custom_presets import fetch_presets
 from .repo_row import GradienceRepoRow
 from .modules.utils import buglog
 from .constants import rootdir
-
+from collections import OrderedDict
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
@@ -147,7 +147,7 @@ class GradiencePresetWindow(Adw.Window):
                 self.search_spinner.props.visible = False
 
                 for (preset, preset_name), preset_url in zip(
-                    explore_presets.items(), urls
+                    OrderedDict(sorted(explore_presets.items())).items(), urls
                 ):
                     row = GradienceExplorePresetRow(
                         preset_name, preset_url, self, repo_name, badge
