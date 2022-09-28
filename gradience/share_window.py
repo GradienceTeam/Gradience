@@ -111,7 +111,6 @@ class GradienceShareWindow(Adw.Window):
             self.btn_install.set_visible(False)
             self.carousel.set_interactive(True)
 
-
     def quit(self, *args):
         self.destroy()
 
