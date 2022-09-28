@@ -157,7 +157,8 @@ class GradienceApplication(Adw.Application):
                 self.win.present()
 
     def save_favourite(self):
-        self.settings.set_value("favourite", GLib.Variant("as", self.favourite))
+        self.settings.set_value(
+            "favourite", GLib.Variant("as", self.favourite))
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
@@ -241,8 +242,8 @@ class GradienceApplication(Adw.Application):
                             menu_item.set_label(preset_name)
                             if not preset.startswith("error"):
                                 menu_item.set_action_and_target_value(
-                                    "app.load_preset", GLib.Variant(
-                                        "s", "custom-" + preset)
+                                    "app.load_preset",
+                                    GLib.Variant("s", "custom-" + preset),
                                 )
                             else:
                                 menu_item.set_action_and_target_value("")
