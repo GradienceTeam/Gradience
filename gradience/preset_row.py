@@ -61,12 +61,19 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.btn_report.connect("clicked", self.on_report_btn_clicked)
         self.star_button.connect("clicked", self.on_star_button_clicked)
 
+        if name in self.win.app.favourite:
+            self.star_button.set_icon_name("starred-symbolic")
+        else:
+            self.star_button.set_icon_name("non-starred-symbolic")
+
     def on_star_button_clicked(self, *_args):
         buglog("star")
         if self.name in self.win.app.favourite:
             self.win.app.favourite.remove(self.name)
+            self.star_button.set_icon_name("non-starred-symbolic")
         else:
             self.win.app.favourite.add(self.name)
+            self.star_button.set_icon_name("starred-symbolic")
         self.win.app.save_favourite()
         self.win.reload_pref_group()
 
