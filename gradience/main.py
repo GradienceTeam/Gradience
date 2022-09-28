@@ -1025,7 +1025,7 @@ This app is written in Python and uses GTK 4 and libadwaita.
             "Plugins",
             [
                 "0xMRTT https://github.com/0xMRTT",
-                "Jan Apisu https://github.com/aspizu",
+                "Apisu https://github.com/aspizu",
             ],
         )
         about.add_credit_section(
