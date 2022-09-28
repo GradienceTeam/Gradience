@@ -268,7 +268,7 @@ class GradienceApplication(Adw.Application):
 
         # custom_menu_section.append_item(open_in_file_manager_item)
         self.props.active_window.presets_menu.append_section(
-            _("Installed Presets"), custom_menu_section
+            _("Favourite Presets"), custom_menu_section
         )
 
     def show_presets_manager(self, *args):
