@@ -26,7 +26,7 @@ from .constants import rootdir
 from .modules.utils import to_slug_case, buglog
 from .modules.preset import Preset
 
-
+from .share_window import GradienceShareWindow
 @Gtk.Template(resource_path=f"{rootdir}/ui/preset_row.ui")
 class GradiencePresetRow(Adw.ExpanderRow):
     __gtype_name__ = "GradiencePresetRow"
@@ -37,6 +37,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
     apply_button = Gtk.Template.Child("apply_button")
     remove_button = Gtk.Template.Child("remove_button")
     btn_report = Gtk.Template.Child("btn_report")
+    btn_share = Gtk.Template.Child("btn_share")
     star_button = Gtk.Template.Child("star_button")
 
     def __init__(self, name, win, repo_name, file_name, author="", **kwargs):
@@ -59,12 +60,19 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.preset = Preset(name, repo_name)
 
         self.btn_report.connect("clicked", self.on_report_btn_clicked)
+        self.btn_share.connect("clicked", self.on_share_btn_clicked)
         self.star_button.connect("clicked", self.on_star_button_clicked)
 
         if name in self.win.app.favourite:
             self.star_button.set_icon_name("starred-symbolic")
         else:
             self.star_button.set_icon_name("non-starred-symbolic")
+
+    def on_share_btn_clicked(self, *_args):
+        buglog("share")
+        win = GradienceShareWindow(self.win)
+        win.present()
+
 
     def on_star_button_clicked(self, *_args):
         buglog("star")

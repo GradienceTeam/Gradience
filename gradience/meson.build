@@ -56,6 +56,7 @@ gradience_sources = [
   'welcome.py',
   'repo_row.py',
   'no_plugin_pref.py',
+  'share_window.py',
 ]
 
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')

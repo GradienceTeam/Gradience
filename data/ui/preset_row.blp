@@ -19,6 +19,14 @@ Popover pop_actions {
         label: _("Remove preset");
         tooltip-text: _("Remove preset");
         clicked => on_remove_button_clicked();
+        styles ["flat"]
+    }
+
+    Button btn_share {
+        valign: center;
+        label: _("Share preset");
+        tooltip-text: _("Share preset");
+        styles ["flat"]
     }
 
     Separator {

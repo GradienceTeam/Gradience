@@ -15,6 +15,7 @@ blueprints = custom_target('blueprints',
     'explore_preset_row.blp',
     'repo_row.blp',
     'no_plugin_pref.blp',
+    'share_window.blp',
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@']
