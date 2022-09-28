@@ -952,7 +952,7 @@ class GradienceApplication(Adw.Application):
             issue_url=bugtracker_url,
             developers=[
                 "0xMRTT https://github.com/0xMRTT",
-                "Artyom Fomin (ArtyIF) https://github.com/ArtyIF",
+                "Artyom Fomin https://github.com/ArtyIF",
                 "Tfuxu https://github.com/tfuxu",
                 "Verantor https://github.com/Verantor",
             ],
@@ -961,8 +961,7 @@ class GradienceApplication(Adw.Application):
             # Translators: This is a place to put your credits (formats:
             # "Name https://example.com" or "Name <email@example.com>",
             # no quotes) and is not meant to be translated literally.
-            translator_credits="""
-                0xMRTT https://github.com/0xMRTT
+            translator_credits="""0xMRTT https://github.com/0xMRTT
                 Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
                 BritishBenji https://github.com/BritishBenji
                 Bittin https://github.com/bittin
@@ -980,8 +979,7 @@ class GradienceApplication(Adw.Application):
                 Renato Corrêa https://github.com/renatocrrs
                 Rene Coty https://github.com/rene-coty
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
-                Tfuxu https://github.com/tfuxu
-                """,
+                Tfuxu https://github.com/tfuxu""",
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
