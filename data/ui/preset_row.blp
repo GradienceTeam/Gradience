@@ -13,15 +13,6 @@ Popover pop_actions {
     margin-start: 6;
     margin-end: 6;
 
-
-    Button remove_button {
-        valign: center;
-        label: _("Remove preset");
-        tooltip-text: _("Remove preset");
-        clicked => on_remove_button_clicked();
-        styles ["flat"]
-    }
-
     Button btn_share {
         valign: center;
         label: _("Share preset");
@@ -102,9 +93,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
 
     Adw.ActionRow {
 
-        title: _("Badges");
-
-        [suffix]
+        [prefix]
         Gtk.Box badge_list {
             spacing: 6;
             margin-start: 6;
@@ -118,6 +107,15 @@ template GradiencePresetRow : Adw.ExpanderRow {
                     "caption",
                 ]
             }
+        }
+
+        [suffix]
+        Button remove_button {
+            valign: center;
+            label: _("Remove preset");
+            tooltip-text: _("Remove preset");
+            clicked => on_remove_button_clicked();
+            styles ["destructive-action"]
         }
 
     }
