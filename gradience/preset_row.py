@@ -36,7 +36,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
     name_entry_toggle = Gtk.Template.Child("name_entry_toggle")
     apply_button = Gtk.Template.Child("apply_button")
     remove_button = Gtk.Template.Child("remove_button")
-    btn_report = Gtk.Template.Child()
+    btn_report = Gtk.Template.Child("btn_report")
+    star_button = Gtk.Template.Child("star_button")
 
     def __init__(self, name, win, repo_name, file_name, author="", **kwargs):
         super().__init__(**kwargs)
@@ -57,10 +58,17 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
         self.preset = Preset(name, repo_name)
 
-        apply_button = Gtk.Template.Child("apply_button")
-        rename_button = Gtk.Template.Child("rename_button")
-
         self.btn_report.connect("clicked", self.on_report_btn_clicked)
+        self.star_button.connect("clicked", self.on_star_button_clicked)
+
+    def on_star_button_clicked(self, *_args):
+        buglog("star")
+        if self.name in self.win.app.favourite:
+            self.win.app.favourite.remove(self.name)
+        else:
+            self.win.app.favourite.add(self.name)
+        self.win.app.save_favourite()
+        self.win.reload_pref_group()
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):

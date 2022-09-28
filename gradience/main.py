@@ -89,6 +89,8 @@ class GradienceApplication(Adw.Application):
         self.last_opened_version = self.settings.get_string(
             "last-opened-version")
 
+        self.favourite = set(self.settings.get_value("favourite"))
+
         self.style_manager = Adw.StyleManager.get_default()
 
         self.preset = None
@@ -153,6 +155,9 @@ class GradienceApplication(Adw.Application):
             else:
                 buglog("normal run")
                 self.win.present()
+
+    def save_favourite(self):
+        self.settings.set_value("favourite", GLib.Variant("as", self.favourite))
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
@@ -230,16 +235,18 @@ class GradienceApplication(Adw.Application):
                 for repo, content in self.custom_presets.items():
 
                     for preset, preset_name in content.items():
-                        menu_item = Gio.MenuItem()
-                        menu_item.set_label(preset_name)
-                        if not preset.startswith("error"):
-                            menu_item.set_action_and_target_value(
-                                "app.load_preset", GLib.Variant(
-                                    "s", "custom-" + preset)
-                            )
-                        else:
-                            menu_item.set_action_and_target_value("")
-                        custom_menu_section.append_item(menu_item)
+                        buglog(preset_name)
+                        if preset_name in self.favourite:
+                            menu_item = Gio.MenuItem()
+                            menu_item.set_label(preset_name)
+                            if not preset.startswith("error"):
+                                menu_item.set_action_and_target_value(
+                                    "app.load_preset", GLib.Variant(
+                                        "s", "custom-" + preset)
+                                )
+                            else:
+                                menu_item.set_action_and_target_value("")
+                            custom_menu_section.append_item(menu_item)
             else:
                 menu_item = Gio.MenuItem()
                 menu_item.set_label("No presets found")
