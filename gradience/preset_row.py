@@ -41,6 +41,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
     btn_report = Gtk.Template.Child("btn_report")
     btn_share = Gtk.Template.Child("btn_share")
     star_button = Gtk.Template.Child("star_button")
+    badge_list = Gtk.Template.Child("badge_list")
+    no_badges = Gtk.Template.Child("no_badges")
 
     def __init__(self, name, win, repo_name, file_name, author="", **kwargs):
         super().__init__(**kwargs)
@@ -60,6 +62,21 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.toast_overlay = self.win.toast_overlay
 
         self.preset = Preset(name, repo_name)
+
+        if self.preset.badges:
+            self.has_badges = True
+            self.no_badges.set_visible(False)
+
+            for badge_name in self.preset.badges:
+                badge = Gtk.Label(label=badge_name.capitalize())
+                badge.get_style_context().add_class("tag")
+                badge.set_valign(Gtk.Align.CENTER)
+                badge.get_style_context().add_class("caption")
+                badge.get_style_context().add_class(f"badge-{badge}")
+                self.badge_list.append(badge)
+        else:
+            self.has_badges = False
+            self.no_badges.set_visible(True)
 
         self.btn_report.connect("clicked", self.on_report_btn_clicked)
         self.btn_share.connect("clicked", self.on_share_btn_clicked)

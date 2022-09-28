@@ -183,6 +183,8 @@ See [`ROADMAP.md`](ROADMAP.md)
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for more informations and a list of contributors
 
+[![Contributors](https://contrib.rocks/image?repo=GradienceTeam/Gradience)](https://github.com/GradienceTeam/Gradience/graphs/contributors)
+
 ## About Name
 
 Gradience was originally named Adwaita Manager.

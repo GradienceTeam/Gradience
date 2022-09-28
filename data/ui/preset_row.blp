@@ -94,44 +94,35 @@ template GradiencePresetRow : Adw.ExpanderRow {
       ]
     }
 
-    Gtk.ListBoxRow {
-		activatable: false;
 
-		Gtk.Grid {
-			styles ["content"]
+    Adw.ActionRow description {
+            title: _("Description");
+            subtitle: _("Sorry, but this preset don't have a description.");
+    }
 
-			row-spacing: 15;
-			column-spacing: 15;
+    Adw.ActionRow {
 
-			Gtk.Label {
-				styles ["dim-label"]
+        title: _("Badges");
 
-				label: _("Description");
+        [suffix]
+        Gtk.Box badge_list {
+            spacing: 6;
+            margin-start: 6;
+            margin-end: 6;
 
-				xalign: 0;
-				yalign: 0;
+            Label no_badges {
+                valign: center;
+                label: _("No badges");
+                styles [
+                    "tag",
+                    "caption",
+                ]
+            }
+        }
 
-				layout {
-					row: 0;
-					column: 0;
-				}
-			}
+    }
 
-			Gtk.Label description_label {
-				xalign: 0;
-				wrap-mode: word;
-				wrap: true;
-				selectable: true;
 
-                label: _("Sorry, but this preset don't have a description.");
-
-				layout {
-					row: 0;
-					column: 1;
-				}
-			}
-		}
-	}
 
 	//Gtk.ListBoxRow {
 	//	activatable: false;
