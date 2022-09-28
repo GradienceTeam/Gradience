@@ -954,7 +954,7 @@ class GradienceApplication(Adw.Application):
                 "Artyom Fomin (ArtyIF) https://github.com/ArtyIF",
                 "0xMRTT https://github.com/0xMRTT",
                 "Verantor https://github.com/Verantor",
-                "Lyes Saadi https://github.com/LyesSaadi",
+                "Tfuxu https://github.com/tfuxu",
             ],
             artists=["David Lapshin https://github.com/daudix-UFO"],
             designers=["David Lapshin https://github.com/daudix-UFO"],
@@ -963,7 +963,8 @@ class GradienceApplication(Adw.Application):
             # no quotes) and is not meant to be translated literally.
             # TODO: Automate this process using CI, because not everyone knows
             # about this
-            translator_credits="""Maxime V https://www.transifex.com/user/profile/Adaoh
+            translator_credits="""
+                Maxime V https://www.transifex.com/user/profile/Adaoh
                 FineFindus https://github.com/FineFindus
                 Karol Lademan https://www.transifex.com/user/profile/karlod
                 Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
@@ -973,7 +974,8 @@ class GradienceApplication(Adw.Application):
                 0xMRTT https://github.com/0xMRTT
                 tfuxu https://github.com/tfuxu
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918
-                Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34""",
+                Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
+                 K.B.Dharun Krishna https://github.com/kbdharun""",
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
@@ -1013,6 +1015,16 @@ With Gradience you can:
 This app is written in Python and uses GTK 4 and libadwaita.
             """
             ),
+        )
+        about.add_credit_section("Plugins", [
+            "0xMRTT https://github.com/0xMRTT",
+            "Jan Apisu https://github.com/aspizu",
+        ]
+        )
+        about.add_credit_section("Packagers", [
+            "0xMRTT https://github.com/0xMRTT",
+            "Lyes Saadi https://github.com/lyessaadi",
+        ]
         )
         about.present()
 
