@@ -944,7 +944,7 @@ class GradienceApplication(Adw.Application):
             support_url=help_url,
             issue_url=bugtracker_url,
             developers=[
-                "Artyom Fomin (ArtyIF) https://github.com/ArtyIF"",
+                "Artyom Fomin (ArtyIF) https://github.com/ArtyIF",
                 "0xMRTT https://github.com/0xMRTT",
                 "Verantor https://github.com/Verantor",
                 "Lyes Saadi https://github.com/LyesSaadi",
