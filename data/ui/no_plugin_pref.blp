@@ -2,12 +2,12 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradienceNoPluginPrefWindow: Adw.Window {
-    title: _("");
+    title: _("Plugin Preferences");
     modal: true;
     default-width: 500;
     default-height: 500;
-    halign: center;
-    valign: center;
+    resizable: true;
+    deletable: true;
 
 
     Adw.Leaflet leaflet {
@@ -20,6 +20,7 @@ template GradienceNoPluginPrefWindow: Adw.Window {
                 styles ["flat"]
             }
 
+
             Adw.StatusPage {
                 name: "empty";
                 title: _("No preferences");
@@ -27,6 +28,7 @@ template GradienceNoPluginPrefWindow: Adw.Window {
 
                 description: _("This plugin doesn't have any settings");
             }
+
           }
         }
 
