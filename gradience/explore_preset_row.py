@@ -31,9 +31,9 @@ class GradienceExplorePresetRow(Adw.ActionRow):
 
     apply_button = Gtk.Template.Child("apply_button")
     download_button = Gtk.Template.Child("download_button")
-    badge = Gtk.Template.Child("badge")
+    # badge = Gtk.Template.Child("badge")
 
-    def __init__(self, name, url, win, repo_name, badge, author="", **kwargs):
+    def __init__(self, name, url, win, repo_name, badge, **kwargs):
         super().__init__(**kwargs)
 
         self.name = name
@@ -42,10 +42,10 @@ class GradienceExplorePresetRow(Adw.ActionRow):
 
         self.set_name(name)
         self.set_title(name)
-        self.set_subtitle(author)
+        self.set_subtitle(repo_name)
 
-        self.badge.set_label(repo_name)
-        self.badge.get_style_context().add_class(f"badge-{badge}")
+        # self.badge.set_label(repo_name)
+        # self.badge.get_style_context().add_class(f"badge-{badge}")
 
         self.app = Gtk.Application.get_default()
         self.win = win
