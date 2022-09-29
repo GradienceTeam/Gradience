@@ -1,10 +1,10 @@
-<img align="left" alt="Icon" src="https://github.com/GradienceTeam/Gradience/raw/main/data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg">
+<img align="left" alt="Gradience" src="https://github.com/GradienceTeam/Gradience/raw/main/data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg">
 
 # Gradience
 
 Change the look of Adwaita, with ease
 
-![Screenshot of interface with Adwaita light theme](https://github.com/GradienceTeam/Design/raw/main/Screenshots/main_screenshot.png)
+![Screenshot of interface with Adwaita Light theme](https://github.com/GradienceTeam/Design/raw/main/Screenshots/main_screenshot.png)
 
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
