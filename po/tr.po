@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 12:19+0000\n"
-"PO-Revision-Date: 2022-09-27 22:28+0300\n"
+"POT-Creation-Date: 2022-09-29 18:16+0000\n"
+"PO-Revision-Date: 2022-09-29 21:31+0300\n"
 "Last-Translator: David Lapshin <ddaudix@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/tr/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:940
+#: data/ui/window.blp:5 gradience/main.py:948
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "Adwaita'nın görünümünü kolaylıkla değiştirin."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:942
+#: gradience/main.py:950
 msgid "Gradience Team"
 msgstr "Gradience Takımı"
 
@@ -90,17 +90,19 @@ msgstr "gelişmiş mor"
 #: data/ui/app_type_dialog.blp:14
 #, fuzzy
 #| msgid "Select app types you want to affect:"
-msgid "Select app types you want to theme:"
+msgid "Select application types you want to theme:"
 msgstr "Değiştirmek istediğiniz uygulama türlerini seçin:"
 
 #: data/ui/app_type_dialog.blp:17
-msgid "Libadwaita and GTK 4 apps"
+#, fuzzy
+#| msgid "Libadwaita and GTK 4 apps"
+msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita ve GTK 4 uygulamaları"
 
 #: data/ui/app_type_dialog.blp:21
 #, fuzzy
 #| msgid "GTK 3 apps (adw-gtk3 theme required)"
-msgid "GTK 3 apps (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme is required)"
 msgstr "GTK 3 uygulamaları (adw-gtk3 teması gerekli)"
 
 #: data/ui/builtin_preset_row.blp:5
@@ -109,8 +111,10 @@ msgstr "GTK 3 uygulamaları (adw-gtk3 teması gerekli)"
 msgid "Made by @GradienceTeam"
 msgstr "Gradience Takımı"
 
-#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:54
-msgid "Apply preset"
+#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:52
+#, fuzzy
+#| msgid "Apply preset"
+msgid "Apply Preset"
 msgstr "Ön ayar uygula"
 
 #: data/ui/custom_css_group.blp:5
@@ -135,16 +139,16 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:11
-msgid "Unknown"
-msgstr ""
-
 #: data/ui/explore_preset_row.blp:22
-msgid "Download and apply"
+#, fuzzy
+#| msgid "Download and apply"
+msgid "Download and Apply"
 msgstr "İndir ve uygula"
 
 #: data/ui/explore_preset_row.blp:32
-msgid "Download only"
+#, fuzzy
+#| msgid "Download only"
+msgid "Download Only"
 msgstr "Sadece indir"
 
 #: data/ui/option.blp:10
@@ -162,27 +166,25 @@ msgstr "Metin Değerini Aç/Kapat"
 #: data/ui/plugin_row.blp:8
 #, fuzzy
 #| msgid "Enable plugin"
-msgid "Toggle plugin"
+msgid "Toggle Plugin"
 msgstr "Eklentiyi etkinleştir"
 
-#: data/ui/plugin_row.blp:16
-msgid "Settings"
-msgstr "Ayarlar"
-
-#: data/ui/plugin_row.blp:24
-msgid "Remove plugin"
-msgstr "Eklenti kaldır"
-
-#: data/ui/preferences.blp:5 data/ui/window.blp:131
+#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:131
 msgid "Preferences"
 msgstr ""
 
+#: data/ui/plugin_row.blp:24
+#, fuzzy
+#| msgid "Remove plugin"
+msgid "Remove Plugin"
+msgstr "Eklenti kaldır"
+
 #: data/ui/preferences.blp:12
-msgid "GTK4 Flatpak Specific"
+msgid "GTK4 Flatpak Applications"
 msgstr ""
 
 #: data/ui/preferences.blp:14
-msgid "Allow GTK4 Flatpak theming"
+msgid "Allow GTK4 Flatpak Applications Theming"
 msgstr ""
 
 #: data/ui/preferences.blp:15
@@ -192,7 +194,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:23
-msgid "Allow GTK4 Flatpak theming (Global)"
+msgid "Allow GTK4 Flatpak Applications Theming (System)"
 msgstr ""
 
 #: data/ui/preferences.blp:24
@@ -202,7 +204,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:32
-msgid "GTK3 Flatpak Specific"
+msgid "GTK3 Flatpak Applications"
 msgstr ""
 
 #: data/ui/preferences.blp:33
@@ -222,7 +224,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:44
-msgid "Allow GTK3 Flatpak theming (Global)"
+msgid "GTK3 Flatpak Applications (System)"
 msgstr ""
 
 #: data/ui/preferences.blp:45
@@ -239,27 +241,49 @@ msgstr ""
 msgid "Custom repository URL address"
 msgstr ""
 
-#: data/ui/preset_row.blp:19 data/ui/preset_row.blp:20
-msgid "Remove preset"
-msgstr "Ön ayarı kaldır"
+#: data/ui/preset_row.blp:18
+#, fuzzy
+#| msgid "Save Preset"
+msgid "Share preset"
+msgstr "Ön Ayarı Kaydet"
 
-#: data/ui/preset_row.blp:28
+#: data/ui/preset_row.blp:19
+#, fuzzy
+#| msgid "Save Preset"
+msgid "Share Preset"
+msgstr "Ön Ayarı Kaydet"
+
+#: data/ui/preset_row.blp:27
 msgid "Report an Issue…"
 msgstr ""
 
-#: data/ui/preset_row.blp:70
+#: data/ui/preset_row.blp:68
 #, fuzzy
 #| msgid "Remove preset"
-msgid "Rename preset"
+msgid "Rename Preset"
 msgstr "Ön ayarı kaldır"
 
-#: data/ui/preset_row.blp:102
+#: data/ui/preset_row.blp:90
 msgid "Description"
 msgstr ""
 
-#: data/ui/preset_row.blp:119
+#: data/ui/preset_row.blp:91
 msgid "Sorry, but this preset don't have a description."
 msgstr ""
+
+#: data/ui/preset_row.blp:104
+msgid "No Badges"
+msgstr ""
+
+#: data/ui/preset_row.blp:115
+msgid "Remove preset"
+msgstr "Ön ayarı kaldır"
+
+#: data/ui/preset_row.blp:116
+#, fuzzy
+#| msgid "Remove preset"
+msgid "Remove Preset"
+msgstr "Ön ayarı kaldır"
 
 #: data/ui/presets_manager_window.blp:5 data/ui/window.blp:47
 msgid "Presets"
@@ -273,8 +297,10 @@ msgstr "İçe Aktar"
 msgid "Delete"
 msgstr "Sil"
 
-#: data/ui/presets_manager_window.blp:41
-msgid "Open in file manager"
+#: data/ui/presets_manager_window.blp:41 gradience/main.py:264
+#, fuzzy
+#| msgid "Open in file manager"
+msgid "Open in File Manager"
 msgstr "Dosya yöneticisinde aç"
 
 #: data/ui/presets_manager_window.blp:59
@@ -356,8 +382,8 @@ msgstr ""
 #: data/ui/welcome.blp:74
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an official "
-"repository and a curated reposoitory."
+"quick preset switcher. We also split the preset repository into an "
+"“Official” repository and a “Curated” reposoitories."
 msgstr ""
 
 #: data/ui/welcome.blp:81
@@ -374,7 +400,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/welcome.blp:86
-msgid "I understand the consequences"
+msgid "I Understand The Consequences"
 msgstr ""
 
 #: data/ui/welcome.blp:97
@@ -388,7 +414,7 @@ msgstr "Adwaita Temasını Özelleştir"
 #| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
-"like adding custom CSS"
+"like adding custom CSS."
 msgstr ""
 "Özel CSS ekleme gibi gelişmiş özelliklerle pencerelerin, düğmelerin, "
 "listelerin ve daha fazlasının renklerini değiştirin"
@@ -408,7 +434,7 @@ msgid ""
 msgstr "Eski uygulamalar için adw-gtk3 temasını kurun."
 
 #: data/ui/welcome.blp:110
-msgid "Legacy apps theming"
+msgid "Legacy Apps Theming"
 msgstr ""
 
 #: data/ui/welcome.blp:115
@@ -418,7 +444,9 @@ msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Eski uygulamalar için adw-gtk3 temasını kurun."
 
 #: data/ui/welcome.blp:120
-msgid "System configuration"
+#, fuzzy
+#| msgid "System configuration"
+msgid "System Configuration"
 msgstr "Sistem yapılandırması"
 
 #: data/ui/welcome.blp:126
@@ -460,14 +488,16 @@ msgid "Please finish the setup first"
 msgstr "Lütfen önce kurulumu tamamlayın"
 
 #: data/ui/welcome.blp:176
-msgid "Start using Gradience"
+#, fuzzy
+#| msgid "Start using Gradience"
+msgid "Start Using Gradience"
 msgstr "Gradience kullanmaya başla"
 
 #: data/ui/welcome.blp:193
 msgid "Next"
 msgstr "Sonraki"
 
-#: data/ui/window.blp:23 gradience/main.py:601 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/main.py:609 gradience/window.py:141
 msgid "Apply"
 msgstr "Uygula"
 
@@ -513,10 +543,10 @@ msgstr "GTK4 Demo"
 msgid "GTK4 Widget Factory"
 msgstr "GTK4 Widget Fabrikası"
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:383
+#: data/ui/window.blp:160 gradience/presets_manager_window.py:109
 #, fuzzy
 #| msgid "Builtin Presets"
-msgid "Built-in Presets"
+msgid "Built-In Presets"
 msgstr "Dahili Ön Ayarlar"
 
 #: gradience/modules/flatpak_overrides.py:65
@@ -533,7 +563,7 @@ msgstr "Ön ayarın yüklenmesi başarısız oldu"
 msgid "Unexpected file error occurred"
 msgstr ""
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:652 gradience/main.py:725
+#: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
 #: gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "İptal"
@@ -546,37 +576,37 @@ msgstr "Ön ayar indirilemedi"
 msgid "Preset downloaded"
 msgstr "Ön ayar indirildi"
 
-#: gradience/main.py:188 gradience/main.py:219
+#: gradience/main.py:194 gradience/main.py:225
 #: gradience/presets_manager_window.py:346
 #: gradience/presets_manager_window.py:376
 msgid "Failed to load preset"
 msgstr "Ön ayarın yüklenmesi başarısız oldu"
 
-#: gradience/main.py:256
+#: gradience/main.py:271
 #, fuzzy
-#| msgid "Open in file manager"
-msgid "Open in File Manager"
-msgstr "Dosya yöneticisinde aç"
+#| msgid "Save Preset"
+msgid "Favourite Presets"
+msgstr "Ön Ayarı Kaydet"
 
-#: gradience/main.py:263
+#: gradience/main.py:534
 #, fuzzy
-#| msgid "Manage Presets"
-msgid "Installed Presets"
-msgstr "Ön Ayarları Yönet"
-
-#: gradience/main.py:526
-msgid "Unsaved changes"
+#| msgid "Unsaved changes"
+msgid "Unsaved Changes"
 msgstr "Kaydedilmemiş değişiklikler"
 
-#: gradience/main.py:537
-msgid "Save changes"
+#: gradience/main.py:545
+#, fuzzy
+#| msgid "Save changes"
+msgid "Save Changes"
 msgstr "Değişiklikleri kaydet"
 
-#: gradience/main.py:595
-msgid "Apply this color scheme?"
+#: gradience/main.py:603
+#, fuzzy
+#| msgid "Apply this color scheme?"
+msgid "Apply This Color Scheme?"
 msgstr "Bu renk şeması uygulansın mı?"
 
-#: gradience/main.py:597
+#: gradience/main.py:605
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -584,34 +614,34 @@ msgstr ""
 "Uyarı: Bu uygulama türleri için bulunan herhangi bir özel CSS dosyasının "
 "üzerine geri alınamaz bir şekilde yazılacaktır!"
 
-#: gradience/main.py:611
+#: gradience/main.py:619
 #, fuzzy
 #| msgid "Reset applied color scheme?"
 msgid "Restore applied color scheme?"
 msgstr "Uygulanan renk şeması sıfırlansın mı?"
 
-#: gradience/main.py:612 gradience/main.py:624
+#: gradience/main.py:620 gradience/main.py:632
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Mevcut ayarların ön ayar olarak kaydedildiğinden emin olun."
 
-#: gradience/main.py:614
+#: gradience/main.py:622
 msgid "Restore"
 msgstr ""
 
-#: gradience/main.py:623
+#: gradience/main.py:631
 msgid "Reset applied color scheme?"
 msgstr "Uygulanan renk şeması sıfırlansın mı?"
 
-#: gradience/main.py:626
+#: gradience/main.py:634
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: gradience/main.py:636
+#: gradience/main.py:644
 msgid "Save preset as..."
 msgstr "Ön ayarı farklı kaydet..."
 
-#: gradience/main.py:638 gradience/main.py:666 gradience/main.py:683
-#: gradience/main.py:711 gradience/main.py:742 gradience/main.py:759
+#: gradience/main.py:646 gradience/main.py:674 gradience/main.py:691
+#: gradience/main.py:719 gradience/main.py:750 gradience/main.py:767
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -620,37 +650,37 @@ msgstr ""
 "<tt>{0}</tt> olarak ön ayar kaydediliyor. Eğer bu ön ayar zaten mevcutsa, "
 "üzerine yazılacaktır!"
 
-#: gradience/main.py:653 gradience/main.py:727
+#: gradience/main.py:661 gradience/main.py:735
 msgid "Save"
 msgstr "Kaydet"
 
-#: gradience/main.py:709
+#: gradience/main.py:717
 #, fuzzy
 #| msgid "Unsaved changes"
 msgid "You have unsaved changes!"
 msgstr "Kaydedilmemiş değişiklikler"
 
-#: gradience/main.py:726
+#: gradience/main.py:734
 msgid "Discard"
 msgstr ""
 
-#: gradience/main.py:787
+#: gradience/main.py:795
 msgid "Preset saved"
 msgstr "Ön ayar kaydedildi"
 
-#: gradience/main.py:854
+#: gradience/main.py:862
 msgid "Preset set sucessfully"
 msgstr "Ön ayar ayarlandı"
 
-#: gradience/main.py:897
+#: gradience/main.py:905
 msgid "Could not restore GTK4 backup"
 msgstr ""
 
-#: gradience/main.py:930
+#: gradience/main.py:938
 msgid "Preset reseted"
 msgstr "Ön ayar yeniden ayarlandı"
 
-#: gradience/main.py:974
+#: gradience/main.py:989
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -725,7 +755,7 @@ msgstr ""
 "      </ul>\n"
 "            "
 
-#: gradience/main.py:994
+#: gradience/main.py:1009
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -767,17 +797,17 @@ msgstr "Bu seçenek adw-gtk3 teması tarafından desteklenmez."
 msgid "Not a color, see text value"
 msgstr "Renk değil, metin değerine bakın"
 
-#: gradience/plugin_row.py:84
+#: gradience/plugin_row.py:85
 #, fuzzy
 #| msgid "Unable to delete preset"
 msgid "Unable to remove"
 msgstr "Ön ayar silinemedi"
 
-#: gradience/plugin_row.py:85
+#: gradience/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed. "
 msgstr ""
 
-#: gradience/plugin_row.py:87
+#: gradience/plugin_row.py:88
 msgid "Close"
 msgstr ""
 
@@ -786,9 +816,13 @@ msgid "Plugins"
 msgstr "Eklentiler"
 
 #: gradience/plugins_list.py:99
+#, fuzzy
+#| msgid ""
+#| "Plugins add additional features to Gradience, plugins are made by "
+#| "Gradience community and can make issues."
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can make issues."
+"community and can cause issues."
 msgstr ""
 "Eklentiler Gradience'a ek özellikler ekler. Eklentiler Gradience topluluğu "
 "tarafından sağlanır ve sorun çıkarabilir."
@@ -796,28 +830,24 @@ msgstr ""
 #: gradience/plugins_list.py:111
 #, fuzzy
 #| msgid "No plugins found"
-msgid "No plugins found."
+msgid "No Plugins Found."
 msgstr "Eklenti bulunamadı"
 
-#: gradience/preset_row.py:117
+#: gradience/preset_row.py:158
 msgid "Preset removed"
 msgstr "Ön ayar kaldırıldı"
 
-#: gradience/preset_row.py:118
+#: gradience/preset_row.py:159
 msgid "Undo"
 msgstr "Geri Al"
 
-#: gradience/preset_row.py:143
-msgid "Pending deletion"
+#: gradience/preset_row.py:184
+msgid "Pending Deletion"
 msgstr ""
 
-#: gradience/preset_row.py:181
+#: gradience/preset_row.py:222
 msgid "Unable to delete preset"
 msgstr "Ön ayar silinemedi"
-
-#: gradience/presets_manager_window.py:109
-msgid "Builtin Presets"
-msgstr "Dahili Ön Ayarlar"
 
 #: gradience/presets_manager_window.py:114
 #: gradience/presets_manager_window.py:390
@@ -829,7 +859,7 @@ msgid "Add new repository"
 msgstr ""
 
 #: gradience/presets_manager_window.py:183
-msgid "Add a repository to install additional presets"
+msgid "Add a repository to install additional presets."
 msgstr ""
 
 #: gradience/presets_manager_window.py:190
@@ -848,18 +878,32 @@ msgstr "Ön ayar içe aktarıldı"
 msgid "Unsupported file format, must be .json"
 msgstr "Desteklenmeyen dosya biçimi, .json olmalı"
 
+#: gradience/presets_manager_window.py:383
+#, fuzzy
+#| msgid "Builtin Presets"
+msgid "Built-in Presets"
+msgstr "Dahili Ön Ayarlar"
+
 #: gradience/presets_manager_window.py:393
+#, fuzzy
+#| msgid ""
+#| "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+#| "Community</a> on Github for more presets"
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets"
+"Community</a> on Github for more presets."
 msgstr ""
 "Daha çok ön ayar için Github'daki <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a> sayfasına bakın"
 
 #: gradience/presets_manager_window.py:419
+#, fuzzy
+#| msgid ""
+#| "No preset found! Use the import button to import one or search one on the "
+#| "Explore tab"
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
-"Explore tab"
+"Explore tab."
 msgstr ""
 "Ön ayar bulunamadı! Birini içe aktarmak için içe aktar düğmesini kullanın "
 "veya Keşfet sekmesinde bir tane arayın"
@@ -1139,11 +1183,11 @@ msgstr "Mor"
 msgid "Brown"
 msgstr "Kahverengi"
 
-#: gradience/settings_schema.py:372
+#: gradience/settings_schema.py:372 gradience/window.py:200
 msgid "Light"
 msgstr "Aydınlık"
 
-#: gradience/settings_schema.py:373
+#: gradience/settings_schema.py:373 gradience/window.py:201
 msgid "Dark"
 msgstr "Karanlık"
 
@@ -1169,7 +1213,9 @@ msgid "Background Image"
 msgstr "Arkaplan Resmi"
 
 #: gradience/window.py:157
-msgid "Choose a file"
+#, fuzzy
+#| msgid "Choose a file"
+msgid "Choose a File"
 msgstr "Dosya Seç"
 
 #: gradience/window.py:177
@@ -1183,6 +1229,10 @@ msgstr "Ton"
 #: gradience/window.py:196
 msgid "Theme"
 msgstr "Tema"
+
+#: gradience/window.py:199
+msgid "Auto"
+msgstr ""
 
 #: gradience/window.py:223
 msgid "Unsupported background type"
@@ -1209,6 +1259,20 @@ msgstr ""
 "Bazı uygulamalar tarafından kullanılan isimlendirilmiş palet renkleri. "
 "Varsayılan renkler <a href=\"https://developer.gnome.org/hig/reference/"
 "palette.html\">GNOME İnsan Arayüzü Yönergeleri</a>ni takip eder."
+
+#~ msgid "Settings"
+#~ msgstr "Ayarlar"
+
+#~ msgid "Open in file manager"
+#~ msgstr "Dosya yöneticisinde aç"
+
+#, fuzzy
+#~| msgid "Manage Presets"
+#~ msgid "Installed Presets"
+#~ msgstr "Ön Ayarları Yönet"
+
+#~ msgid "Builtin Presets"
+#~ msgstr "Dahili Ön Ayarlar"
 
 #~ msgid "colors"
 #~ msgstr "renkler"

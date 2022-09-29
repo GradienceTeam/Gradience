@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 12:19+0000\n"
-"PO-Revision-Date: 2022-09-27 22:29+0300\n"
+"POT-Creation-Date: 2022-09-29 18:16+0000\n"
+"PO-Revision-Date: 2022-09-29 21:32+0300\n"
 "Last-Translator: David Lapshin <ddaudix@gmail.com>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/hr/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:940
+#: data/ui/window.blp:5 gradience/main.py:948
 msgid "Gradience"
 msgstr "Gradijent"
 
@@ -33,7 +33,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "S lakoćom promijenite izgled Adwaite."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:942
+#: gradience/main.py:950
 msgid "Gradience Team"
 msgstr "Gradijent tim"
 
@@ -86,17 +86,19 @@ msgstr "napredna ljubičasta"
 #: data/ui/app_type_dialog.blp:14
 #, fuzzy
 #| msgid "Select app types you want to affect:"
-msgid "Select app types you want to theme:"
+msgid "Select application types you want to theme:"
 msgstr "Odaberite vrste aplikacija na koje želite primijeniti:"
 
 #: data/ui/app_type_dialog.blp:17
-msgid "Libadwaita and GTK 4 apps"
+#, fuzzy
+#| msgid "Libadwaita and GTK 4 apps"
+msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita i GTK 4 aplikacije"
 
 #: data/ui/app_type_dialog.blp:21
 #, fuzzy
 #| msgid "GTK 3 apps (adw-gtk3 theme required)"
-msgid "GTK 3 apps (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme is required)"
 msgstr "GTK 3 aplikacije (potreban je adw-gtk3 teme)"
 
 #: data/ui/builtin_preset_row.blp:5
@@ -105,8 +107,10 @@ msgstr "GTK 3 aplikacije (potreban je adw-gtk3 teme)"
 msgid "Made by @GradienceTeam"
 msgstr "Gradijent tim"
 
-#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:54
-msgid "Apply preset"
+#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:52
+#, fuzzy
+#| msgid "Apply preset"
+msgid "Apply Preset"
 msgstr "Primijeni predložak"
 
 #: data/ui/custom_css_group.blp:5
@@ -131,16 +135,16 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:11
-msgid "Unknown"
-msgstr ""
-
 #: data/ui/explore_preset_row.blp:22
-msgid "Download and apply"
+#, fuzzy
+#| msgid "Download and apply"
+msgid "Download and Apply"
 msgstr "Preuzmi i primijeni"
 
 #: data/ui/explore_preset_row.blp:32
-msgid "Download only"
+#, fuzzy
+#| msgid "Download only"
+msgid "Download Only"
 msgstr "Samo preuzmi"
 
 #: data/ui/option.blp:10
@@ -158,27 +162,25 @@ msgstr "Isklj/Uklj vrijednost teksta"
 #: data/ui/plugin_row.blp:8
 #, fuzzy
 #| msgid "Enable plugin"
-msgid "Toggle plugin"
+msgid "Toggle Plugin"
 msgstr "Omogući priključk"
 
-#: data/ui/plugin_row.blp:16
-msgid "Settings"
-msgstr "Postavke"
-
-#: data/ui/plugin_row.blp:24
-msgid "Remove plugin"
-msgstr "Ukloni priključak"
-
-#: data/ui/preferences.blp:5 data/ui/window.blp:131
+#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:131
 msgid "Preferences"
 msgstr ""
 
+#: data/ui/plugin_row.blp:24
+#, fuzzy
+#| msgid "Remove plugin"
+msgid "Remove Plugin"
+msgstr "Ukloni priključak"
+
 #: data/ui/preferences.blp:12
-msgid "GTK4 Flatpak Specific"
+msgid "GTK4 Flatpak Applications"
 msgstr ""
 
 #: data/ui/preferences.blp:14
-msgid "Allow GTK4 Flatpak theming"
+msgid "Allow GTK4 Flatpak Applications Theming"
 msgstr ""
 
 #: data/ui/preferences.blp:15
@@ -188,7 +190,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:23
-msgid "Allow GTK4 Flatpak theming (Global)"
+msgid "Allow GTK4 Flatpak Applications Theming (System)"
 msgstr ""
 
 #: data/ui/preferences.blp:24
@@ -198,7 +200,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:32
-msgid "GTK3 Flatpak Specific"
+msgid "GTK3 Flatpak Applications"
 msgstr ""
 
 #: data/ui/preferences.blp:33
@@ -218,7 +220,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:44
-msgid "Allow GTK3 Flatpak theming (Global)"
+msgid "GTK3 Flatpak Applications (System)"
 msgstr ""
 
 #: data/ui/preferences.blp:45
@@ -235,27 +237,49 @@ msgstr ""
 msgid "Custom repository URL address"
 msgstr ""
 
-#: data/ui/preset_row.blp:19 data/ui/preset_row.blp:20
-msgid "Remove preset"
-msgstr "Ukloni predložak"
+#: data/ui/preset_row.blp:18
+#, fuzzy
+#| msgid "Save Preset"
+msgid "Share preset"
+msgstr "Spremi predložak"
 
-#: data/ui/preset_row.blp:28
+#: data/ui/preset_row.blp:19
+#, fuzzy
+#| msgid "Save Preset"
+msgid "Share Preset"
+msgstr "Spremi predložak"
+
+#: data/ui/preset_row.blp:27
 msgid "Report an Issue…"
 msgstr ""
 
-#: data/ui/preset_row.blp:70
+#: data/ui/preset_row.blp:68
 #, fuzzy
 #| msgid "Remove preset"
-msgid "Rename preset"
+msgid "Rename Preset"
 msgstr "Ukloni predložak"
 
-#: data/ui/preset_row.blp:102
+#: data/ui/preset_row.blp:90
 msgid "Description"
 msgstr ""
 
-#: data/ui/preset_row.blp:119
+#: data/ui/preset_row.blp:91
 msgid "Sorry, but this preset don't have a description."
 msgstr ""
+
+#: data/ui/preset_row.blp:104
+msgid "No Badges"
+msgstr ""
+
+#: data/ui/preset_row.blp:115
+msgid "Remove preset"
+msgstr "Ukloni predložak"
+
+#: data/ui/preset_row.blp:116
+#, fuzzy
+#| msgid "Remove preset"
+msgid "Remove Preset"
+msgstr "Ukloni predložak"
 
 #: data/ui/presets_manager_window.blp:5 data/ui/window.blp:47
 msgid "Presets"
@@ -269,8 +293,10 @@ msgstr "Uvezi"
 msgid "Delete"
 msgstr "Obriši"
 
-#: data/ui/presets_manager_window.blp:41
-msgid "Open in file manager"
+#: data/ui/presets_manager_window.blp:41 gradience/main.py:264
+#, fuzzy
+#| msgid "Open in file manager"
+msgid "Open in File Manager"
 msgstr "Otvori s preglednikom datoteka"
 
 #: data/ui/presets_manager_window.blp:59
@@ -352,8 +378,8 @@ msgstr ""
 #: data/ui/welcome.blp:74
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an official "
-"repository and a curated reposoitory."
+"quick preset switcher. We also split the preset repository into an "
+"“Official” repository and a “Curated” reposoitories."
 msgstr ""
 
 #: data/ui/welcome.blp:81
@@ -370,7 +396,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/welcome.blp:86
-msgid "I understand the consequences"
+msgid "I Understand The Consequences"
 msgstr ""
 
 #: data/ui/welcome.blp:97
@@ -384,7 +410,7 @@ msgstr "Prilagodba Adwaita teme"
 #| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
-"like adding custom CSS"
+"like adding custom CSS."
 msgstr ""
 "Promijenite boje prozora, tipki, popisa i još mnogo toga s naprednim "
 "značajkama poput dodavanja prilagođenog CSS-a"
@@ -404,7 +430,7 @@ msgid ""
 msgstr "Instalirajte adw-gtk3 temu za zastarjele aplikacije."
 
 #: data/ui/welcome.blp:110
-msgid "Legacy apps theming"
+msgid "Legacy Apps Theming"
 msgstr ""
 
 #: data/ui/welcome.blp:115
@@ -414,7 +440,9 @@ msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Instalirajte adw-gtk3 temu za zastarjele aplikacije."
 
 #: data/ui/welcome.blp:120
-msgid "System configuration"
+#, fuzzy
+#| msgid "System configuration"
+msgid "System Configuration"
 msgstr "Podešavanje sustava"
 
 #: data/ui/welcome.blp:126
@@ -454,14 +482,16 @@ msgid "Please finish the setup first"
 msgstr "Prvo završite postavljanje"
 
 #: data/ui/welcome.blp:176
-msgid "Start using Gradience"
+#, fuzzy
+#| msgid "Start using Gradience"
+msgid "Start Using Gradience"
 msgstr "Započnite koristiti Gradijent"
 
 #: data/ui/welcome.blp:193
 msgid "Next"
 msgstr "Sljedeće"
 
-#: data/ui/window.blp:23 gradience/main.py:601 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/main.py:609 gradience/window.py:141
 msgid "Apply"
 msgstr "Primijeni"
 
@@ -507,10 +537,10 @@ msgstr "GTK4 Demo"
 msgid "GTK4 Widget Factory"
 msgstr "GTK4 Widget Factory"
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:383
+#: data/ui/window.blp:160 gradience/presets_manager_window.py:109
 #, fuzzy
 #| msgid "Builtin Presets"
-msgid "Built-in Presets"
+msgid "Built-In Presets"
 msgstr "Ugrađeni predlošci"
 
 #: gradience/modules/flatpak_overrides.py:65
@@ -527,7 +557,7 @@ msgstr "Neuspjelo učitavanje predloška"
 msgid "Unexpected file error occurred"
 msgstr ""
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:652 gradience/main.py:725
+#: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
 #: gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "Odustani"
@@ -540,37 +570,37 @@ msgstr "Predložak se ne može preuzeti"
 msgid "Preset downloaded"
 msgstr "Predložak je preuzet"
 
-#: gradience/main.py:188 gradience/main.py:219
+#: gradience/main.py:194 gradience/main.py:225
 #: gradience/presets_manager_window.py:346
 #: gradience/presets_manager_window.py:376
 msgid "Failed to load preset"
 msgstr "Neuspjelo učitavanje predloška"
 
-#: gradience/main.py:256
+#: gradience/main.py:271
 #, fuzzy
-#| msgid "Open in file manager"
-msgid "Open in File Manager"
-msgstr "Otvori s preglednikom datoteka"
+#| msgid "Save Preset"
+msgid "Favourite Presets"
+msgstr "Spremi predložak"
 
-#: gradience/main.py:263
+#: gradience/main.py:534
 #, fuzzy
-#| msgid "Installed"
-msgid "Installed Presets"
-msgstr "Instaliran"
-
-#: gradience/main.py:526
-msgid "Unsaved changes"
+#| msgid "Unsaved changes"
+msgid "Unsaved Changes"
 msgstr "Nespremljene promjene"
 
-#: gradience/main.py:537
-msgid "Save changes"
+#: gradience/main.py:545
+#, fuzzy
+#| msgid "Save changes"
+msgid "Save Changes"
 msgstr "Spremi promjene"
 
-#: gradience/main.py:595
-msgid "Apply this color scheme?"
+#: gradience/main.py:603
+#, fuzzy
+#| msgid "Apply this color scheme?"
+msgid "Apply This Color Scheme?"
 msgstr "Primijeni ovu shemu boja?"
 
-#: gradience/main.py:597
+#: gradience/main.py:605
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -578,34 +608,34 @@ msgstr ""
 "Upozorenje: svaka prilagođena CSS datoteka za te vrste datoteka biti će "
 "nepovratno prebrisana!"
 
-#: gradience/main.py:611
+#: gradience/main.py:619
 #, fuzzy
 #| msgid "Reset applied color scheme?"
 msgid "Restore applied color scheme?"
 msgstr "Vrati izvornu shemu boje?"
 
-#: gradience/main.py:612 gradience/main.py:624
+#: gradience/main.py:620 gradience/main.py:632
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Osigurajte da imate trenutne postavke spremljene u predložak."
 
-#: gradience/main.py:614
+#: gradience/main.py:622
 msgid "Restore"
 msgstr ""
 
-#: gradience/main.py:623
+#: gradience/main.py:631
 msgid "Reset applied color scheme?"
 msgstr "Vrati izvornu shemu boje?"
 
-#: gradience/main.py:626
+#: gradience/main.py:634
 msgid "Reset"
 msgstr "Vrati izvorno"
 
-#: gradience/main.py:636
+#: gradience/main.py:644
 msgid "Save preset as..."
 msgstr "Spremi predložak kao..."
 
-#: gradience/main.py:638 gradience/main.py:666 gradience/main.py:683
-#: gradience/main.py:711 gradience/main.py:742 gradience/main.py:759
+#: gradience/main.py:646 gradience/main.py:674 gradience/main.py:691
+#: gradience/main.py:719 gradience/main.py:750 gradience/main.py:767
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -614,37 +644,37 @@ msgstr ""
 "Spremanje predloška u <tt>{0}</tt>. Ako taj predložak već postoji, biti će "
 "prebrisan!"
 
-#: gradience/main.py:653 gradience/main.py:727
+#: gradience/main.py:661 gradience/main.py:735
 msgid "Save"
 msgstr "Spremi"
 
-#: gradience/main.py:709
+#: gradience/main.py:717
 #, fuzzy
 #| msgid "Unsaved changes"
 msgid "You have unsaved changes!"
 msgstr "Nespremljene promjene"
 
-#: gradience/main.py:726
+#: gradience/main.py:734
 msgid "Discard"
 msgstr ""
 
-#: gradience/main.py:787
+#: gradience/main.py:795
 msgid "Preset saved"
 msgstr "Predložak je spremljen"
 
-#: gradience/main.py:854
+#: gradience/main.py:862
 msgid "Preset set sucessfully"
 msgstr "Predložak je uspješno postavljen"
 
-#: gradience/main.py:897
+#: gradience/main.py:905
 msgid "Could not restore GTK4 backup"
 msgstr ""
 
-#: gradience/main.py:930
+#: gradience/main.py:938
 msgid "Preset reseted"
 msgstr "Predložak je vraćen na izvorno"
 
-#: gradience/main.py:974
+#: gradience/main.py:989
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -718,7 +748,7 @@ msgstr ""
 "      </ul>\n"
 "            "
 
-#: gradience/main.py:994
+#: gradience/main.py:1009
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -759,17 +789,17 @@ msgstr "Ova mogućnost njije podržana od strane adw-gtk3 tema."
 msgid "Not a color, see text value"
 msgstr "Nije boja, pogledajte tekstnu vrijednost"
 
-#: gradience/plugin_row.py:84
+#: gradience/plugin_row.py:85
 #, fuzzy
 #| msgid "Unable to delete preset"
 msgid "Unable to remove"
 msgstr "Nemoguće brisanje predloška"
 
-#: gradience/plugin_row.py:85
+#: gradience/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed. "
 msgstr ""
 
-#: gradience/plugin_row.py:87
+#: gradience/plugin_row.py:88
 msgid "Close"
 msgstr ""
 
@@ -778,9 +808,13 @@ msgid "Plugins"
 msgstr "Priključci"
 
 #: gradience/plugins_list.py:99
+#, fuzzy
+#| msgid ""
+#| "Plugins add additional features to Gradience, plugins are made by "
+#| "Gradience community and can make issues."
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can make issues."
+"community and can cause issues."
 msgstr ""
 "Priključci dodaju dodatne značajke Gradijentu, priključci su stvoreni od "
 "strane Gradijent zajednice i mogu prouzrokovati probleme."
@@ -788,28 +822,24 @@ msgstr ""
 #: gradience/plugins_list.py:111
 #, fuzzy
 #| msgid "No plugins found"
-msgid "No plugins found."
+msgid "No Plugins Found."
 msgstr "Nema pronađenih priključaka"
 
-#: gradience/preset_row.py:117
+#: gradience/preset_row.py:158
 msgid "Preset removed"
 msgstr "Predložak je uklonjen"
 
-#: gradience/preset_row.py:118
+#: gradience/preset_row.py:159
 msgid "Undo"
 msgstr "Vrati"
 
-#: gradience/preset_row.py:143
-msgid "Pending deletion"
+#: gradience/preset_row.py:184
+msgid "Pending Deletion"
 msgstr ""
 
-#: gradience/preset_row.py:181
+#: gradience/preset_row.py:222
 msgid "Unable to delete preset"
 msgstr "Nemoguće brisanje predloška"
-
-#: gradience/presets_manager_window.py:109
-msgid "Builtin Presets"
-msgstr "Ugrađeni predlošci"
 
 #: gradience/presets_manager_window.py:114
 #: gradience/presets_manager_window.py:390
@@ -821,7 +851,7 @@ msgid "Add new repository"
 msgstr ""
 
 #: gradience/presets_manager_window.py:183
-msgid "Add a repository to install additional presets"
+msgid "Add a repository to install additional presets."
 msgstr ""
 
 #: gradience/presets_manager_window.py:190
@@ -840,18 +870,32 @@ msgstr "Predložak je uvezen"
 msgid "Unsupported file format, must be .json"
 msgstr "Nepodržana vrsta datoteke, mora biti .json"
 
+#: gradience/presets_manager_window.py:383
+#, fuzzy
+#| msgid "Builtin Presets"
+msgid "Built-in Presets"
+msgstr "Ugrađeni predlošci"
+
 #: gradience/presets_manager_window.py:393
+#, fuzzy
+#| msgid ""
+#| "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+#| "Community</a> on Github for more presets"
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets"
+"Community</a> on Github for more presets."
 msgstr ""
 "Pogledajte <a href=\"https://github.com/GradienceTeam/Community\">Gradience "
 "tim/Zajednicu</a> na Githubu za više predložaka"
 
 #: gradience/presets_manager_window.py:419
+#, fuzzy
+#| msgid ""
+#| "No preset found! Use the import button to import one or search one on the "
+#| "Explore tab"
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
-"Explore tab"
+"Explore tab."
 msgstr ""
 "Nema pronađenih predložaka! Koristite tipku uvoza za uvoz jednog predloška "
 "ili pretragu jednog u Istraži kartici"
@@ -1130,11 +1174,11 @@ msgstr "Ljubičasta"
 msgid "Brown"
 msgstr "Smeđa"
 
-#: gradience/settings_schema.py:372
+#: gradience/settings_schema.py:372 gradience/window.py:200
 msgid "Light"
 msgstr "Svjetla"
 
-#: gradience/settings_schema.py:373
+#: gradience/settings_schema.py:373 gradience/window.py:201
 msgid "Dark"
 msgstr "Tamna"
 
@@ -1159,7 +1203,9 @@ msgid "Background Image"
 msgstr "Slika pozadine"
 
 #: gradience/window.py:157
-msgid "Choose a file"
+#, fuzzy
+#| msgid "Choose a file"
+msgid "Choose a File"
 msgstr "Odaberi datoteku"
 
 #: gradience/window.py:177
@@ -1173,6 +1219,10 @@ msgstr "Ton"
 #: gradience/window.py:196
 msgid "Theme"
 msgstr "Tema"
+
+#: gradience/window.py:199
+msgid "Auto"
+msgstr ""
 
 #: gradience/window.py:223
 msgid "Unsupported background type"
@@ -1199,6 +1249,20 @@ msgstr ""
 "Navedite boje palete koje koristi neka aplikacija. Zadane boje slijede <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
 "Interface Guidelines</a>."
+
+#~ msgid "Settings"
+#~ msgstr "Postavke"
+
+#~ msgid "Open in file manager"
+#~ msgstr "Otvori s preglednikom datoteka"
+
+#, fuzzy
+#~| msgid "Installed"
+#~ msgid "Installed Presets"
+#~ msgstr "Instaliran"
+
+#~ msgid "Builtin Presets"
+#~ msgstr "Ugrađeni predlošci"
 
 #~ msgid "colors"
 #~ msgstr "boje"

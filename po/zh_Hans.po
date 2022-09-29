@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 12:19+0000\n"
-"PO-Revision-Date: 2022-09-27 22:27+0300\n"
+"POT-Creation-Date: 2022-09-29 18:16+0000\n"
+"PO-Revision-Date: 2022-09-29 21:33+0300\n"
 "Last-Translator: David Lapshin <ddaudix@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "GradienceTeam/gradience/zh_Hans/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:940
+#: data/ui/window.blp:5 gradience/main.py:948
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -32,7 +32,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "轻松改变 Adwaita 的外观。"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:942
+#: gradience/main.py:950
 msgid "Gradience Team"
 msgstr "Gradience 团队"
 
@@ -85,17 +85,19 @@ msgstr "高级紫"
 #: data/ui/app_type_dialog.blp:14
 #, fuzzy
 #| msgid "Select app types you want to affect:"
-msgid "Select app types you want to theme:"
+msgid "Select application types you want to theme:"
 msgstr "选择您想要影响的应用类型："
 
 #: data/ui/app_type_dialog.blp:17
-msgid "Libadwaita and GTK 4 apps"
+#, fuzzy
+#| msgid "Libadwaita and GTK 4 apps"
+msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita 和 GTK 4 应用程序"
 
 #: data/ui/app_type_dialog.blp:21
 #, fuzzy
 #| msgid "GTK 3 apps (adw-gtk3 theme required)"
-msgid "GTK 3 apps (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme is required)"
 msgstr "GTK 3 应用（需要 adw-gtk3 主题）"
 
 #: data/ui/builtin_preset_row.blp:5
@@ -104,8 +106,10 @@ msgstr "GTK 3 应用（需要 adw-gtk3 主题）"
 msgid "Made by @GradienceTeam"
 msgstr "Gradience 团队"
 
-#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:54
-msgid "Apply preset"
+#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:52
+#, fuzzy
+#| msgid "Apply preset"
+msgid "Apply Preset"
 msgstr "应用预设"
 
 #: data/ui/custom_css_group.blp:5
@@ -129,16 +133,16 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:11
-msgid "Unknown"
-msgstr ""
-
 #: data/ui/explore_preset_row.blp:22
-msgid "Download and apply"
+#, fuzzy
+#| msgid "Download and apply"
+msgid "Download and Apply"
 msgstr "下载并应用"
 
 #: data/ui/explore_preset_row.blp:32
-msgid "Download only"
+#, fuzzy
+#| msgid "Download only"
+msgid "Download Only"
 msgstr "仅下载"
 
 #: data/ui/option.blp:10
@@ -156,27 +160,25 @@ msgstr "切换文本值"
 #: data/ui/plugin_row.blp:8
 #, fuzzy
 #| msgid "Enable plugin"
-msgid "Toggle plugin"
+msgid "Toggle Plugin"
 msgstr "启用插件"
 
-#: data/ui/plugin_row.blp:16
-msgid "Settings"
-msgstr "设置"
-
-#: data/ui/plugin_row.blp:24
-msgid "Remove plugin"
-msgstr "删除插件"
-
-#: data/ui/preferences.blp:5 data/ui/window.blp:131
+#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:131
 msgid "Preferences"
 msgstr ""
 
+#: data/ui/plugin_row.blp:24
+#, fuzzy
+#| msgid "Remove plugin"
+msgid "Remove Plugin"
+msgstr "删除插件"
+
 #: data/ui/preferences.blp:12
-msgid "GTK4 Flatpak Specific"
+msgid "GTK4 Flatpak Applications"
 msgstr ""
 
 #: data/ui/preferences.blp:14
-msgid "Allow GTK4 Flatpak theming"
+msgid "Allow GTK4 Flatpak Applications Theming"
 msgstr ""
 
 #: data/ui/preferences.blp:15
@@ -186,7 +188,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:23
-msgid "Allow GTK4 Flatpak theming (Global)"
+msgid "Allow GTK4 Flatpak Applications Theming (System)"
 msgstr ""
 
 #: data/ui/preferences.blp:24
@@ -196,7 +198,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:32
-msgid "GTK3 Flatpak Specific"
+msgid "GTK3 Flatpak Applications"
 msgstr ""
 
 #: data/ui/preferences.blp:33
@@ -216,7 +218,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:44
-msgid "Allow GTK3 Flatpak theming (Global)"
+msgid "GTK3 Flatpak Applications (System)"
 msgstr ""
 
 #: data/ui/preferences.blp:45
@@ -233,27 +235,49 @@ msgstr ""
 msgid "Custom repository URL address"
 msgstr ""
 
-#: data/ui/preset_row.blp:19 data/ui/preset_row.blp:20
-msgid "Remove preset"
-msgstr "删除预设"
+#: data/ui/preset_row.blp:18
+#, fuzzy
+#| msgid "Save Preset"
+msgid "Share preset"
+msgstr "保存预设"
 
-#: data/ui/preset_row.blp:28
+#: data/ui/preset_row.blp:19
+#, fuzzy
+#| msgid "Save Preset"
+msgid "Share Preset"
+msgstr "保存预设"
+
+#: data/ui/preset_row.blp:27
 msgid "Report an Issue…"
 msgstr ""
 
-#: data/ui/preset_row.blp:70
+#: data/ui/preset_row.blp:68
 #, fuzzy
 #| msgid "Remove preset"
-msgid "Rename preset"
+msgid "Rename Preset"
 msgstr "删除预设"
 
-#: data/ui/preset_row.blp:102
+#: data/ui/preset_row.blp:90
 msgid "Description"
 msgstr ""
 
-#: data/ui/preset_row.blp:119
+#: data/ui/preset_row.blp:91
 msgid "Sorry, but this preset don't have a description."
 msgstr ""
+
+#: data/ui/preset_row.blp:104
+msgid "No Badges"
+msgstr ""
+
+#: data/ui/preset_row.blp:115
+msgid "Remove preset"
+msgstr "删除预设"
+
+#: data/ui/preset_row.blp:116
+#, fuzzy
+#| msgid "Remove preset"
+msgid "Remove Preset"
+msgstr "删除预设"
 
 #: data/ui/presets_manager_window.blp:5 data/ui/window.blp:47
 msgid "Presets"
@@ -267,8 +291,10 @@ msgstr "导入"
 msgid "Delete"
 msgstr "删除"
 
-#: data/ui/presets_manager_window.blp:41
-msgid "Open in file manager"
+#: data/ui/presets_manager_window.blp:41 gradience/main.py:264
+#, fuzzy
+#| msgid "Open in file manager"
+msgid "Open in File Manager"
 msgstr "在文件管理器中打开"
 
 #: data/ui/presets_manager_window.blp:59
@@ -350,8 +376,8 @@ msgstr ""
 #: data/ui/welcome.blp:74
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an official "
-"repository and a curated reposoitory."
+"quick preset switcher. We also split the preset repository into an "
+"“Official” repository and a “Curated” reposoitories."
 msgstr ""
 
 #: data/ui/welcome.blp:81
@@ -368,7 +394,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/welcome.blp:86
-msgid "I understand the consequences"
+msgid "I Understand The Consequences"
 msgstr ""
 
 #: data/ui/welcome.blp:97
@@ -382,7 +408,7 @@ msgstr "定制 Adwaita 主题"
 #| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
-"like adding custom CSS"
+"like adding custom CSS."
 msgstr "使用添加自定义CSS等高级功能更改窗口，按钮，列表等的颜色"
 
 #: data/ui/welcome.blp:104
@@ -400,7 +426,7 @@ msgid ""
 msgstr "为旧版应用程序安装 adw-gtk3 主题。"
 
 #: data/ui/welcome.blp:110
-msgid "Legacy apps theming"
+msgid "Legacy Apps Theming"
 msgstr ""
 
 #: data/ui/welcome.blp:115
@@ -410,7 +436,9 @@ msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "为旧版应用程序安装 adw-gtk3 主题。"
 
 #: data/ui/welcome.blp:120
-msgid "System configuration"
+#, fuzzy
+#| msgid "System configuration"
+msgid "System Configuration"
 msgstr "系统配置"
 
 #: data/ui/welcome.blp:126
@@ -450,14 +478,16 @@ msgid "Please finish the setup first"
 msgstr "请先完成设置"
 
 #: data/ui/welcome.blp:176
-msgid "Start using Gradience"
+#, fuzzy
+#| msgid "Start using Gradience"
+msgid "Start Using Gradience"
 msgstr "开始使用 Gradience"
 
 #: data/ui/welcome.blp:193
 msgid "Next"
 msgstr "下一步"
 
-#: data/ui/window.blp:23 gradience/main.py:601 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/main.py:609 gradience/window.py:141
 msgid "Apply"
 msgstr "应用"
 
@@ -503,10 +533,10 @@ msgstr "GTK4 演示"
 msgid "GTK4 Widget Factory"
 msgstr "GTK4 Widget Factory"
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:383
+#: data/ui/window.blp:160 gradience/presets_manager_window.py:109
 #, fuzzy
 #| msgid "Builtin Presets"
-msgid "Built-in Presets"
+msgid "Built-In Presets"
 msgstr "内置预设"
 
 #: gradience/modules/flatpak_overrides.py:65
@@ -523,7 +553,7 @@ msgstr "加载预设失败"
 msgid "Unexpected file error occurred"
 msgstr ""
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:652 gradience/main.py:725
+#: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
 #: gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "取消"
@@ -536,107 +566,107 @@ msgstr "无法下载预设"
 msgid "Preset downloaded"
 msgstr "预设已下载"
 
-#: gradience/main.py:188 gradience/main.py:219
+#: gradience/main.py:194 gradience/main.py:225
 #: gradience/presets_manager_window.py:346
 #: gradience/presets_manager_window.py:376
 msgid "Failed to load preset"
 msgstr "加载预设失败"
 
-#: gradience/main.py:256
+#: gradience/main.py:271
 #, fuzzy
-#| msgid "Open in file manager"
-msgid "Open in File Manager"
-msgstr "在文件管理器中打开"
+#| msgid "Save Preset"
+msgid "Favourite Presets"
+msgstr "保存预设"
 
-#: gradience/main.py:263
+#: gradience/main.py:534
 #, fuzzy
-#| msgid "Manage Presets"
-msgid "Installed Presets"
-msgstr "管理预设"
-
-#: gradience/main.py:526
-msgid "Unsaved changes"
+#| msgid "Unsaved changes"
+msgid "Unsaved Changes"
 msgstr "未保存的更改"
 
-#: gradience/main.py:537
-msgid "Save changes"
+#: gradience/main.py:545
+#, fuzzy
+#| msgid "Save changes"
+msgid "Save Changes"
 msgstr "保存更改"
 
-#: gradience/main.py:595
-msgid "Apply this color scheme?"
+#: gradience/main.py:603
+#, fuzzy
+#| msgid "Apply this color scheme?"
+msgid "Apply This Color Scheme?"
 msgstr "应用此配色方案？"
 
-#: gradience/main.py:597
+#: gradience/main.py:605
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr "警告：这些应用类型的任何自定义CSS文件都将被不可逆转地覆盖!"
 
-#: gradience/main.py:611
+#: gradience/main.py:619
 #, fuzzy
 #| msgid "Reset applied color scheme?"
 msgid "Restore applied color scheme?"
 msgstr "重置应用的配色方案？"
 
-#: gradience/main.py:612 gradience/main.py:624
+#: gradience/main.py:620 gradience/main.py:632
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "确保你将当前的设置保存为预设。"
 
-#: gradience/main.py:614
+#: gradience/main.py:622
 msgid "Restore"
 msgstr ""
 
-#: gradience/main.py:623
+#: gradience/main.py:631
 msgid "Reset applied color scheme?"
 msgstr "重置应用的配色方案？"
 
-#: gradience/main.py:626
+#: gradience/main.py:634
 msgid "Reset"
 msgstr "重置"
 
-#: gradience/main.py:636
+#: gradience/main.py:644
 msgid "Save preset as..."
 msgstr "将预设另存为..."
 
-#: gradience/main.py:638 gradience/main.py:666 gradience/main.py:683
-#: gradience/main.py:711 gradience/main.py:742 gradience/main.py:759
+#: gradience/main.py:646 gradience/main.py:674 gradience/main.py:691
+#: gradience/main.py:719 gradience/main.py:750 gradience/main.py:767
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr "存储预设为 <tt>{0}</tt>.如果该预设已存在，它将被覆盖！"
 
-#: gradience/main.py:653 gradience/main.py:727
+#: gradience/main.py:661 gradience/main.py:735
 msgid "Save"
 msgstr "保存"
 
-#: gradience/main.py:709
+#: gradience/main.py:717
 #, fuzzy
 #| msgid "Unsaved changes"
 msgid "You have unsaved changes!"
 msgstr "未保存的更改"
 
-#: gradience/main.py:726
+#: gradience/main.py:734
 msgid "Discard"
 msgstr ""
 
-#: gradience/main.py:787
+#: gradience/main.py:795
 msgid "Preset saved"
 msgstr "预设已保存"
 
-#: gradience/main.py:854
+#: gradience/main.py:862
 msgid "Preset set sucessfully"
 msgstr "预设设置成功"
 
-#: gradience/main.py:897
+#: gradience/main.py:905
 msgid "Could not restore GTK4 backup"
 msgstr ""
 
-#: gradience/main.py:930
+#: gradience/main.py:938
 msgid "Preset reseted"
 msgstr "预设已重置"
 
-#: gradience/main.py:974
+#: gradience/main.py:989
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -706,7 +736,7 @@ msgstr ""
 "      </ul>\n"
 "            "
 
-#: gradience/main.py:994
+#: gradience/main.py:1009
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -747,17 +777,17 @@ msgstr "adw-gtk3主题不支持这个选项。"
 msgid "Not a color, see text value"
 msgstr "不是颜色，见文本值"
 
-#: gradience/plugin_row.py:84
+#: gradience/plugin_row.py:85
 #, fuzzy
 #| msgid "Unable to delete preset"
 msgid "Unable to remove"
 msgstr "无法删除预设"
 
-#: gradience/plugin_row.py:85
+#: gradience/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed. "
 msgstr ""
 
-#: gradience/plugin_row.py:87
+#: gradience/plugin_row.py:88
 msgid "Close"
 msgstr ""
 
@@ -766,9 +796,13 @@ msgid "Plugins"
 msgstr "插件"
 
 #: gradience/plugins_list.py:99
+#, fuzzy
+#| msgid ""
+#| "Plugins add additional features to Gradience, plugins are made by "
+#| "Gradience community and can make issues."
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can make issues."
+"community and can cause issues."
 msgstr ""
 "插件为 Gradience 添加了额外的功能，插件是由 Gradience 社区制作的，可能会出现"
 "问题。"
@@ -776,28 +810,24 @@ msgstr ""
 #: gradience/plugins_list.py:111
 #, fuzzy
 #| msgid "No plugins found"
-msgid "No plugins found."
+msgid "No Plugins Found."
 msgstr "未找到插件"
 
-#: gradience/preset_row.py:117
+#: gradience/preset_row.py:158
 msgid "Preset removed"
 msgstr "预设已删除"
 
-#: gradience/preset_row.py:118
+#: gradience/preset_row.py:159
 msgid "Undo"
 msgstr "撤消"
 
-#: gradience/preset_row.py:143
-msgid "Pending deletion"
+#: gradience/preset_row.py:184
+msgid "Pending Deletion"
 msgstr ""
 
-#: gradience/preset_row.py:181
+#: gradience/preset_row.py:222
 msgid "Unable to delete preset"
 msgstr "无法删除预设"
-
-#: gradience/presets_manager_window.py:109
-msgid "Builtin Presets"
-msgstr "内置预设"
 
 #: gradience/presets_manager_window.py:114
 #: gradience/presets_manager_window.py:390
@@ -809,7 +839,7 @@ msgid "Add new repository"
 msgstr ""
 
 #: gradience/presets_manager_window.py:183
-msgid "Add a repository to install additional presets"
+msgid "Add a repository to install additional presets."
 msgstr ""
 
 #: gradience/presets_manager_window.py:190
@@ -828,18 +858,32 @@ msgstr "预设已导入"
 msgid "Unsupported file format, must be .json"
 msgstr "不支持的文件格式，必须为 .json"
 
+#: gradience/presets_manager_window.py:383
+#, fuzzy
+#| msgid "Builtin Presets"
+msgid "Built-in Presets"
+msgstr "内置预设"
+
 #: gradience/presets_manager_window.py:393
+#, fuzzy
+#| msgid ""
+#| "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+#| "Community</a> on Github for more presets"
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets"
+"Community</a> on Github for more presets."
 msgstr ""
 "参见Github上的<a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> 以获得更多的预设"
 
 #: gradience/presets_manager_window.py:419
+#, fuzzy
+#| msgid ""
+#| "No preset found! Use the import button to import one or search one on the "
+#| "Explore tab"
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
-"Explore tab"
+"Explore tab."
 msgstr "未找到预设！使用导入按钮导入一个或在“浏览”选项卡上搜索一个"
 
 #: gradience/repo_row.py:60
@@ -1094,11 +1138,11 @@ msgstr "紫色"
 msgid "Brown"
 msgstr "棕色"
 
-#: gradience/settings_schema.py:372
+#: gradience/settings_schema.py:372 gradience/window.py:200
 msgid "Light"
 msgstr "亮色"
 
-#: gradience/settings_schema.py:373
+#: gradience/settings_schema.py:373 gradience/window.py:201
 msgid "Dark"
 msgstr "深色"
 
@@ -1123,7 +1167,9 @@ msgid "Background Image"
 msgstr "背景图片"
 
 #: gradience/window.py:157
-msgid "Choose a file"
+#, fuzzy
+#| msgid "Choose a file"
+msgid "Choose a File"
 msgstr "选择文件"
 
 #: gradience/window.py:177
@@ -1137,6 +1183,10 @@ msgstr "音色"
 #: gradience/window.py:196
 msgid "Theme"
 msgstr "主题"
+
+#: gradience/window.py:199
+msgid "Auto"
+msgstr ""
 
 #: gradience/window.py:223
 msgid "Unsupported background type"
@@ -1162,6 +1212,20 @@ msgid ""
 msgstr ""
 "一些应用程序所使用的命名调色板颜色。默认颜色遵循<a href=\"https://developer."
 "gnome.org/hig/reference/palette.html\">GNOME 人机界面指南</a>。"
+
+#~ msgid "Settings"
+#~ msgstr "设置"
+
+#~ msgid "Open in file manager"
+#~ msgstr "在文件管理器中打开"
+
+#, fuzzy
+#~| msgid "Manage Presets"
+#~ msgid "Installed Presets"
+#~ msgstr "管理预设"
+
+#~ msgid "Builtin Presets"
+#~ msgstr "内置预设"
 
 #~ msgid "colors"
 #~ msgstr "颜色"

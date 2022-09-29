@@ -9,21 +9,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 12:19+0000\n"
-"PO-Revision-Date: 2022-09-28 16:21+0000\n"
-"Last-Translator: 0xMRTT <0xMRTT@tuta.io>\n"
-"Language-Team: Tamil <https://hosted.weblate.org/projects/GradienceTeam/"
-"gradience/ta/>\n"
+"POT-Creation-Date: 2022-09-29 18:16+0000\n"
+"PO-Revision-Date: 2022-09-29 21:31+0300\n"
+"Last-Translator: David Lapshin <ddaudix@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/GradienceTeam/gradience/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5 data/ui/window.blp:5
-#: gradience/main.py:940
+#: gradience/main.py:948
 msgid "Gradience"
 msgstr "கிரேடியன்ஸ்"
 
@@ -31,7 +30,7 @@ msgstr "கிரேடியன்ஸ்"
 msgid "Change the look of Adwaita, with ease."
 msgstr "அத்வைதாவின் தோற்றத்தை எளிதில் மாற்றுங்கள்."
 
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7 gradience/main.py:942
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7 gradience/main.py:950
 msgid "Gradience Team"
 msgstr "கிரேடியன்ஸ் குழு"
 
@@ -82,23 +81,31 @@ msgid "advanced purple"
 msgstr "மேம்பட்ட ஊதா"
 
 #: data/ui/app_type_dialog.blp:14
-msgid "Select app types you want to theme:"
+#, fuzzy
+#| msgid "Select app types you want to theme:"
+msgid "Select application types you want to theme:"
 msgstr "நீங்கள் தீம் செய்ய விரும்பும் ஆப்ஸ் வகைகளைத் தேர்ந்தெடுக்கவும்:"
 
 #: data/ui/app_type_dialog.blp:17
-msgid "Libadwaita and GTK 4 apps"
+#, fuzzy
+#| msgid "Libadwaita and GTK 4 apps"
+msgid "Libadwaita and GTK 4 Applications"
 msgstr "லிபட்வைதா மற்றும் GTK 4 ஆப்ஸ்"
 
 #: data/ui/app_type_dialog.blp:21
-msgid "GTK 3 apps (adw-gtk3 theme is required)"
+#, fuzzy
+#| msgid "GTK 3 apps (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme is required)"
 msgstr "GTK 3 பயன்பாடுகள் (adw-gtk3 தீம் தேவை)"
 
 #: data/ui/builtin_preset_row.blp:5
 msgid "Made by @GradienceTeam"
 msgstr "@GradienceTeam ஆல் உருவாக்கப்பட்டது"
 
-#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:54
-msgid "Apply preset"
+#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:52
+#, fuzzy
+#| msgid "Apply preset"
+msgid "Apply Preset"
 msgstr "முன்னமைவைப் பயன்படுத்தவும்"
 
 #: data/ui/custom_css_group.blp:5
@@ -108,12 +115,11 @@ msgstr "தனிப்பயன் CSS"
 #: data/ui/custom_css_group.blp:6
 msgid ""
 "Changing this may break some programs. Keep in mind that Libadwaita was made so that "
-"applications could hardcode values like paddings and margins. Only GTK 4 CSS will be "
-"previewed here."
+"applications could hardcode values like paddings and margins. Only GTK 4 CSS will be previewed "
+"here."
 msgstr ""
-"இதை மாற்றினால் சில புரோகிராம்கள் உடைந்து போகலாம். லிபத்வைதா உருவாக்கப்பட்டது"
-", அதனால் பயன்பாடுகள் பேடிங் மற்றும் ஓரங்கள் போன்ற மதிப்புகளை ஹார்ட்கோட் செய்"
-"ய முடியும் என்பதை நினைவில் கொள்ளவும். GTK 4 CSS மட்டுமே இங்கு "
+"இதை மாற்றினால் சில புரோகிராம்கள் உடைந்து போகலாம். லிபத்வைதா உருவாக்கப்பட்டது, அதனால் பயன்பாடுகள் பேடிங் மற்றும் "
+"ஓரங்கள் போன்ற மதிப்புகளை ஹார்ட்கோட் செய்ய முடியும் என்பதை நினைவில் கொள்ளவும். GTK 4 CSS மட்டுமே இங்கு "
 "முன்னோட்டமிடப்படும்."
 
 #: data/ui/custom_css_group.blp:33
@@ -124,16 +130,16 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:11
-msgid "Unknown"
-msgstr "தெரியாதது"
-
 #: data/ui/explore_preset_row.blp:22
-msgid "Download and apply"
+#, fuzzy
+#| msgid "Download and apply"
+msgid "Download and Apply"
 msgstr "பதிவிறக்கம் செய்து விண்ணப்பிக்கவும்"
 
 #: data/ui/explore_preset_row.blp:32
-msgid "Download only"
+#, fuzzy
+#| msgid "Download only"
+msgid "Download Only"
 msgstr "பதிவிறக்கம் மட்டும்"
 
 #: data/ui/option.blp:10
@@ -149,27 +155,31 @@ msgid "Toggle Text Value"
 msgstr "உரை மதிப்பை நிலைமாற்று"
 
 #: data/ui/plugin_row.blp:8
-msgid "Toggle plugin"
+#, fuzzy
+#| msgid "Toggle plugin"
+msgid "Toggle Plugin"
 msgstr "செருகுநிரலை நிலைமாற்றவும்"
 
-#: data/ui/plugin_row.blp:16
-msgid "Settings"
-msgstr "அமைப்புகள்"
-
-#: data/ui/plugin_row.blp:24
-msgid "Remove plugin"
-msgstr "செருகுநிரலை அகற்று"
-
-#: data/ui/preferences.blp:5 data/ui/window.blp:131
+#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:131
 msgid "Preferences"
 msgstr "விருப்பத்தேர்வுகள்"
 
+#: data/ui/plugin_row.blp:24
+#, fuzzy
+#| msgid "Remove plugin"
+msgid "Remove Plugin"
+msgstr "செருகுநிரலை அகற்று"
+
 #: data/ui/preferences.blp:12
-msgid "GTK4 Flatpak Specific"
+#, fuzzy
+#| msgid "GTK4 Flatpak Specific"
+msgid "GTK4 Flatpak Applications"
 msgstr "GTK4 பிளாட்பேக் குறிப்பிட்டது"
 
 #: data/ui/preferences.blp:14
-msgid "Allow GTK4 Flatpak theming"
+#, fuzzy
+#| msgid "Allow GTK4 Flatpak theming"
+msgid "Allow GTK4 Flatpak Applications Theming"
 msgstr "GTK4 பிளாட்பேக் தீமிங்கை அனுமதிக்கவும்"
 
 #: data/ui/preferences.blp:15
@@ -177,23 +187,27 @@ msgid ""
 "Override Flatpak permissions for current user to allow GTK4 Flatpak applications to access "
 "custom themes."
 msgstr ""
-"தனிப்பயன் தீம்களை அணுக GTK4 பிளாட்பேக் பயன்பாடுகளை அனுமதிக்க தற்போதைய "
-"பயனருக்கான பிளாட்பேக் அனுமதிகளை மேலெழுதவும்."
+"தனிப்பயன் தீம்களை அணுக GTK4 பிளாட்பேக் பயன்பாடுகளை அனுமதிக்க தற்போதைய பயனருக்கான பிளாட்பேக் அனுமதிகளை "
+"மேலெழுதவும்."
 
 #: data/ui/preferences.blp:23
-msgid "Allow GTK4 Flatpak theming (Global)"
-msgstr "GTK4 பிளாட்பேக் தீமிங்கை அனுமதிக்கவும்(உலகளாவிய)"
+#, fuzzy
+#| msgid "Allow GTK4 Flatpak theming"
+msgid "Allow GTK4 Flatpak Applications Theming (System)"
+msgstr "GTK4 பிளாட்பேக் தீமிங்கை அனுமதிக்கவும்"
 
 #: data/ui/preferences.blp:24
 msgid ""
-"Override Flatpak permissions for all users to allow GTK4 Flatpak applications to access "
-"custom themes. (Requires root access)"
+"Override Flatpak permissions for all users to allow GTK4 Flatpak applications to access custom "
+"themes. (Requires root access)"
 msgstr ""
-"தனிப்பயன் தீம்களை அணுக GTK4 பிளாட்பேக் பயன்பாடுகளை அனுமதிக்க அனைத்து "
-"பயனர்களுக்கும் பிளாட்பேக் அனுமதிகளை மேலெழுதவும். (ரூட் அணுகல் தேவை)"
+"தனிப்பயன் தீம்களை அணுக GTK4 பிளாட்பேக் பயன்பாடுகளை அனுமதிக்க அனைத்து பயனர்களுக்கும் பிளாட்பேக் அனுமதிகளை "
+"மேலெழுதவும். (ரூட் அணுகல் தேவை)"
 
 #: data/ui/preferences.blp:32
-msgid "GTK3 Flatpak Specific"
+#, fuzzy
+#| msgid "GTK3 Flatpak Specific"
+msgid "GTK3 Flatpak Applications"
 msgstr "GTK3 பிளாட்பேக் குறிப்பிட்டது"
 
 #: data/ui/preferences.blp:33
@@ -201,8 +215,8 @@ msgid ""
 "Remember to install adw-gtk3 theme (as a Flatpak package) in order to get custom presets "
 "working in GTK3 Flatpak applications."
 msgstr ""
-"GTK3 பிளாட்பேக் பயன்பாடுகளில் தனிப்பயன் முன்னமைவுகள் வேலை செய்ய, adw-gtk3 "
-"தீம் (பிளாட்பேக் தொகுப்பாக) நிறுவ நினைவில் கொள்ளுங்கள்."
+"GTK3 பிளாட்பேக் பயன்பாடுகளில் தனிப்பயன் முன்னமைவுகள் வேலை செய்ய, adw-gtk3 தீம் (பிளாட்பேக் தொகுப்பாக) நிறுவ "
+"நினைவில் கொள்ளுங்கள்."
 
 #: data/ui/preferences.blp:35
 msgid "Allow GTK3 Flatpak theming"
@@ -210,23 +224,23 @@ msgstr "GTK3 பிளாட்பாக் தீமிங்கை அனு�
 
 #: data/ui/preferences.blp:36
 msgid ""
-"Override Flatpak permissions for current user to allow GTK3 Flatpak applications to access "
-"adw-gtk3 theme."
+"Override Flatpak permissions for current user to allow GTK3 Flatpak applications to access adw-"
+"gtk3 theme."
 msgstr ""
-"adw-gtk3 தீம் அணுக GTK3 பிளாட்பாக் பயன்பாடுகளை அனுமதிக்க தற்போதைய பயனருக்கான "
-"பிளாட்பாக் அனுமதிகளை மேலெழுதவும்."
+"adw-gtk3 தீம் அணுக GTK3 பிளாட்பாக் பயன்பாடுகளை அனுமதிக்க தற்போதைய பயனருக்கான பிளாட்பாக் அனுமதிகளை "
+"மேலெழுதவும்."
 
 #: data/ui/preferences.blp:44
-msgid "Allow GTK3 Flatpak theming (Global)"
-msgstr "GTK3 பிளாட்பாக் தீமிங்கை அனுமதிக்கவும் (உலகளாவிய)"
+msgid "GTK3 Flatpak Applications (System)"
+msgstr ""
 
 #: data/ui/preferences.blp:45
 msgid ""
 "Override Flatpak permissions for all users to allow GTK3 Flatpak applications to access adw-"
 "gtk3 theme. (Requires root access)"
 msgstr ""
-"GTK3 பிளாட்பாக் பயன்பாடுகளை adw-gtk3 தீம் அணுக அனுமதிக்க அனைத்து "
-"பயனர்களுக்கும் பிளாட்பாக் அனுமதிகளை மேலெழுதவும். (ரூட் அணுகல் தேவை)"
+"GTK3 பிளாட்பாக் பயன்பாடுகளை adw-gtk3 தீம் அணுக அனுமதிக்க அனைத்து பயனர்களுக்கும் பிளாட்பாக் அனுமதிகளை "
+"மேலெழுதவும். (ரூட் அணுகல் தேவை)"
 
 #: data/ui/preferences.blp:54
 msgid "Custom Preset Repositories"
@@ -236,25 +250,49 @@ msgstr "தனிப்பயன் முன்னமைக்கப்பட�
 msgid "Custom repository URL address"
 msgstr "தனிப்பயன் களஞ்சிய URL முகவரி"
 
-#: data/ui/preset_row.blp:19 data/ui/preset_row.blp:20
-msgid "Remove preset"
-msgstr "முன்னமைவை அகற்று"
+#: data/ui/preset_row.blp:18
+#, fuzzy
+#| msgid "Rename preset"
+msgid "Share preset"
+msgstr "முன்னமைவை மறுபெயரிடவும்"
 
-#: data/ui/preset_row.blp:28
+#: data/ui/preset_row.blp:19
+#, fuzzy
+#| msgid "Rename preset"
+msgid "Share Preset"
+msgstr "முன்னமைவை மறுபெயரிடவும்"
+
+#: data/ui/preset_row.blp:27
 msgid "Report an Issue…"
 msgstr "சிக்கலைப் புகாரளி…"
 
-#: data/ui/preset_row.blp:70
-msgid "Rename preset"
+#: data/ui/preset_row.blp:68
+#, fuzzy
+#| msgid "Rename preset"
+msgid "Rename Preset"
 msgstr "முன்னமைவை மறுபெயரிடவும்"
 
-#: data/ui/preset_row.blp:102
+#: data/ui/preset_row.blp:90
 msgid "Description"
 msgstr "விளக்கம்"
 
-#: data/ui/preset_row.blp:119
+#: data/ui/preset_row.blp:91
 msgid "Sorry, but this preset don't have a description."
 msgstr "மன்னிக்கவும், ஆனால் இந்த முன்னமைவில் விளக்கம் இல்லை."
+
+#: data/ui/preset_row.blp:104
+msgid "No Badges"
+msgstr ""
+
+#: data/ui/preset_row.blp:115
+msgid "Remove preset"
+msgstr "முன்னமைவை அகற்று"
+
+#: data/ui/preset_row.blp:116
+#, fuzzy
+#| msgid "Remove preset"
+msgid "Remove Preset"
+msgstr "முன்னமைவை அகற்று"
 
 #: data/ui/presets_manager_window.blp:5 data/ui/window.blp:47
 msgid "Presets"
@@ -268,9 +306,9 @@ msgstr "இறக்குமதி"
 msgid "Delete"
 msgstr "அழி"
 
-#: data/ui/presets_manager_window.blp:41
-msgid "Open in file manager"
-msgstr "கோப்பு மேலாளரில் திறக்கவும்"
+#: data/ui/presets_manager_window.blp:41 gradience/main.py:264
+msgid "Open in File Manager"
+msgstr ""
 
 #: data/ui/presets_manager_window.blp:59
 msgid "Installed"
@@ -286,11 +324,11 @@ msgstr "முன்னமைவுகளைத் தேடுங்கள்"
 
 #: data/ui/presets_manager_window.blp:74
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/presets"
-"\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/presets\">GradienceTeam/"
+"Community</a>."
 msgstr ""
-"<a href=\"https://gradienceteam.github.io/presets\">GradienceTeam/Community</"
-"a> இல் தேடுவதற்கு ஒரு முக்கிய சொல்லை உள்ளிடவும்."
+"<a href=\"https://gradienceteam.github.io/presets\">GradienceTeam/Community</a> இல் தேடுவதற்கு "
+"ஒரு முக்கிய சொல்லை உள்ளிடவும்."
 
 #: data/ui/presets_manager_window.blp:87
 msgid "e.g. \"Pretty Purple\""
@@ -342,15 +380,19 @@ msgid "What's new in 0.3.0"
 msgstr "0.3.0 இல் புதிதாக என்ன இருக்கிறது"
 
 #: data/ui/welcome.blp:74
+#, fuzzy
+#| msgid ""
+#| "In this release, we added plugin support, a plugin repository, badges, and a quick preset "
+#| "switcher. We also split the preset repository into an official repository and a curated "
+#| "reposoitory."
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a quick preset "
-"switcher. We also split the preset repository into an official repository and a curated "
-"reposoitory."
+"switcher. We also split the preset repository into an “Official” repository and a “Curated” "
+"reposoitories."
 msgstr ""
-"இந்த வெளியீட்டில், செருகுநிரல் ஆதரவு, செருகுநிரல் களஞ்சியம், பேட்ஜ்கள் "
-"மற்றும் விரைவான முன்னமைக்கப்பட்ட மாற்றி ஆகியவற்றைச் சேர்த்துள்ளோம். "
-"முன்னமைக்கப்பட்ட களஞ்சியத்தை உத்தியோகபூர்வ களஞ்சியமாகவும் க்யூரேட்டட் "
-"களஞ்சியமாகவும் பிரிக்கிறோம்."
+"இந்த வெளியீட்டில், செருகுநிரல் ஆதரவு, செருகுநிரல் களஞ்சியம், பேட்ஜ்கள் மற்றும் விரைவான முன்னமைக்கப்பட்ட மாற்றி "
+"ஆகியவற்றைச் சேர்த்துள்ளோம். முன்னமைக்கப்பட்ட களஞ்சியத்தை உத்தியோகபூர்வ களஞ்சியமாகவும் க்யூரேட்டட் களஞ்சியமாகவும் "
+"பிரிக்கிறோம்."
 
 #: data/ui/welcome.blp:81
 msgid "Warning"
@@ -358,15 +400,16 @@ msgstr "எச்சரிக்கை"
 
 #: data/ui/welcome.blp:82
 msgid ""
-"Changing the color scheme can negatively affect contrast and readability. Proceed with "
-"caution. Please do not report theming-related issues to app developers."
+"Changing the color scheme can negatively affect contrast and readability. Proceed with caution. "
+"Please do not report theming-related issues to app developers."
 msgstr ""
-"வண்ணத் திட்டத்தை மாற்றுவது மாறுபாடு மற்றும் வாசிப்புத்திறனை எதிர்மறையாக "
-"பாதிக்கும். எச்சரிக்கையுடன் தொடரவும். ஆப்ஸ் டெவலப்பர்களிடம் தீமிங் தொடர்பான "
-"சிக்கல்களைப் புகாரளிக்க வேண்டாம்."
+"வண்ணத் திட்டத்தை மாற்றுவது மாறுபாடு மற்றும் வாசிப்புத்திறனை எதிர்மறையாக பாதிக்கும். எச்சரிக்கையுடன் தொடரவும். "
+"ஆப்ஸ் டெவலப்பர்களிடம் தீமிங் தொடர்பான சிக்கல்களைப் புகாரளிக்க வேண்டாம்."
 
 #: data/ui/welcome.blp:86
-msgid "I understand the consequences"
+#, fuzzy
+#| msgid "I understand the consequences"
+msgid "I Understand The Consequences"
 msgstr "விளைவுகளை நான் புரிந்துகொள்கிறேன்"
 
 #: data/ui/welcome.blp:97
@@ -374,12 +417,16 @@ msgid "Customize Adwaita Theme"
 msgstr "அத்வைதா தீம் தனிப்பயனாக்கு"
 
 #: data/ui/welcome.blp:98
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features like adding custom "
+#| "CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features like adding custom "
-"CSS"
+"CSS."
 msgstr ""
-"தனிப்பயன் CSSஐச் சேர்ப்பது போன்ற மேம்பட்ட அம்சங்களுடன் சாளரம், பொத்தான்கள், "
-"பட்டியல்கள் மற்றும் பலவற்றின் நிறத்தை மாற்றவும்"
+"தனிப்பயன் CSSஐச் சேர்ப்பது போன்ற மேம்பட்ட அம்சங்களுடன் சாளரம், பொத்தான்கள், பட்டியல்கள் மற்றும் பலவற்றின் நிறத்தை "
+"மாற்றவும்"
 
 #: data/ui/welcome.blp:104
 msgid "Configure Gradience"
@@ -387,12 +434,10 @@ msgstr "கிரேடியன்ஸை உள்ளமைக்கவும�
 
 #: data/ui/welcome.blp:105
 msgid "Install adw-gtk3 theme for legacy applications and configure system for theming."
-msgstr ""
-"மரபு பயன்பாடுகளுக்கு adw-gtk3 தீம் நிறுவவும் மற்றும் தீமிங்கிற்கான அமைப்பை "
-"உள்ளமைக்கவும்."
+msgstr "மரபு பயன்பாடுகளுக்கு adw-gtk3 தீம் நிறுவவும் மற்றும் தீமிங்கிற்கான அமைப்பை உள்ளமைக்கவும்."
 
 #: data/ui/welcome.blp:110
-msgid "Legacy apps theming"
+msgid "Legacy Apps Theming"
 msgstr ""
 
 #: data/ui/welcome.blp:115
@@ -400,7 +445,7 @@ msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr ""
 
 #: data/ui/welcome.blp:120
-msgid "System configuration"
+msgid "System Configuration"
 msgstr ""
 
 #: data/ui/welcome.blp:126
@@ -432,14 +477,16 @@ msgid "Please finish the setup first"
 msgstr ""
 
 #: data/ui/welcome.blp:176
-msgid "Start using Gradience"
-msgstr ""
+#, fuzzy
+#| msgid "Configure Gradience"
+msgid "Start Using Gradience"
+msgstr "கிரேடியன்ஸை உள்ளமைக்கவும்"
 
 #: data/ui/welcome.blp:193
 msgid "Next"
 msgstr ""
 
-#: data/ui/window.blp:23 gradience/main.py:601 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/main.py:609 gradience/window.py:141
 msgid "Apply"
 msgstr ""
 
@@ -483,9 +530,11 @@ msgstr ""
 msgid "GTK4 Widget Factory"
 msgstr ""
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:383
-msgid "Built-in Presets"
-msgstr ""
+#: data/ui/window.blp:160 gradience/presets_manager_window.py:109
+#, fuzzy
+#| msgid "Presets"
+msgid "Built-In Presets"
+msgstr "முன்னமைவுகள்"
 
 #: gradience/modules/flatpak_overrides.py:65 gradience/modules/flatpak_overrides.py:84
 msgid "Failed to save override"
@@ -496,7 +545,7 @@ msgstr ""
 msgid "Unexpected file error occurred"
 msgstr ""
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:652 gradience/main.py:725
+#: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
 #: gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr ""
@@ -509,94 +558,90 @@ msgstr ""
 msgid "Preset downloaded"
 msgstr ""
 
-#: gradience/main.py:188 gradience/main.py:219 gradience/presets_manager_window.py:346
+#: gradience/main.py:194 gradience/main.py:225 gradience/presets_manager_window.py:346
 #: gradience/presets_manager_window.py:376
 msgid "Failed to load preset"
 msgstr ""
 
-#: gradience/main.py:256
-msgid "Open in File Manager"
+#: gradience/main.py:271
+msgid "Favourite Presets"
 msgstr ""
 
-#: gradience/main.py:263
-msgid "Installed Presets"
+#: gradience/main.py:534
+msgid "Unsaved Changes"
 msgstr ""
 
-#: gradience/main.py:526
-msgid "Unsaved changes"
+#: gradience/main.py:545
+msgid "Save Changes"
 msgstr ""
 
-#: gradience/main.py:537
-msgid "Save changes"
+#: gradience/main.py:603
+msgid "Apply This Color Scheme?"
 msgstr ""
 
-#: gradience/main.py:595
-msgid "Apply this color scheme?"
-msgstr ""
-
-#: gradience/main.py:597
+#: gradience/main.py:605
 msgid "Warning: any custom CSS files for those app types will be irreversibly overwritten!"
 msgstr ""
 
-#: gradience/main.py:611
+#: gradience/main.py:619
 msgid "Restore applied color scheme?"
 msgstr ""
 
-#: gradience/main.py:612 gradience/main.py:624
+#: gradience/main.py:620 gradience/main.py:632
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 
-#: gradience/main.py:614
+#: gradience/main.py:622
 msgid "Restore"
 msgstr ""
 
-#: gradience/main.py:623
+#: gradience/main.py:631
 msgid "Reset applied color scheme?"
 msgstr ""
 
-#: gradience/main.py:626
+#: gradience/main.py:634
 msgid "Reset"
 msgstr ""
 
-#: gradience/main.py:636
+#: gradience/main.py:644
 msgid "Save preset as..."
 msgstr ""
 
-#: gradience/main.py:638 gradience/main.py:666 gradience/main.py:683 gradience/main.py:711
-#: gradience/main.py:742 gradience/main.py:759
+#: gradience/main.py:646 gradience/main.py:674 gradience/main.py:691 gradience/main.py:719
+#: gradience/main.py:750 gradience/main.py:767
 #, python-brace-format
 msgid "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be overwritten!"
 msgstr ""
 
-#: gradience/main.py:653 gradience/main.py:727
+#: gradience/main.py:661 gradience/main.py:735
 msgid "Save"
 msgstr ""
 
-#: gradience/main.py:709
+#: gradience/main.py:717
 msgid "You have unsaved changes!"
 msgstr ""
 
-#: gradience/main.py:726
+#: gradience/main.py:734
 msgid "Discard"
 msgstr ""
 
-#: gradience/main.py:787
+#: gradience/main.py:795
 msgid "Preset saved"
 msgstr ""
 
-#: gradience/main.py:854
+#: gradience/main.py:862
 msgid "Preset set sucessfully"
 msgstr ""
 
-#: gradience/main.py:897
+#: gradience/main.py:905
 msgid "Could not restore GTK4 backup"
 msgstr ""
 
-#: gradience/main.py:930
+#: gradience/main.py:938
 msgid "Preset reseted"
 msgstr ""
 
-#: gradience/main.py:974
+#: gradience/main.py:989
 msgid ""
 "\n"
 "                <ul>\n"
@@ -615,13 +660,13 @@ msgid ""
 "li>\n"
 "                <li>Added Flatpak CI build</li>\n"
 "                <li>Added issue template for bug and feature request </li>\n"
-"                <li>`Main` branch is now protected by GitHub branch protection. The "
-"development is done on `next` branch</li>\n"
+"                <li>`Main` branch is now protected by GitHub branch protection. The development "
+"is done on `next` branch</li>\n"
 "                </ul>\n"
 "                "
 msgstr ""
 
-#: gradience/main.py:994
+#: gradience/main.py:1009
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.\n"
@@ -649,15 +694,15 @@ msgstr ""
 msgid "Not a color, see text value"
 msgstr ""
 
-#: gradience/plugin_row.py:84
+#: gradience/plugin_row.py:85
 msgid "Unable to remove"
 msgstr ""
 
-#: gradience/plugin_row.py:85
+#: gradience/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed. "
 msgstr ""
 
-#: gradience/plugin_row.py:87
+#: gradience/plugin_row.py:88
 msgid "Close"
 msgstr ""
 
@@ -668,31 +713,29 @@ msgstr ""
 #: gradience/plugins_list.py:99
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience community and can "
-"make issues."
+"cause issues."
 msgstr ""
 
 #: gradience/plugins_list.py:111
-msgid "No plugins found."
-msgstr ""
+#, fuzzy
+#| msgid "No Results Found"
+msgid "No Plugins Found."
+msgstr "முடிவுகள் எதுவும் கிடைக்கவில்லை"
 
-#: gradience/preset_row.py:117
+#: gradience/preset_row.py:158
 msgid "Preset removed"
 msgstr ""
 
-#: gradience/preset_row.py:118
+#: gradience/preset_row.py:159
 msgid "Undo"
 msgstr ""
 
-#: gradience/preset_row.py:143
-msgid "Pending deletion"
+#: gradience/preset_row.py:184
+msgid "Pending Deletion"
 msgstr ""
 
-#: gradience/preset_row.py:181
+#: gradience/preset_row.py:222
 msgid "Unable to delete preset"
-msgstr ""
-
-#: gradience/presets_manager_window.py:109
-msgid "Builtin Presets"
 msgstr ""
 
 #: gradience/presets_manager_window.py:114 gradience/presets_manager_window.py:390
@@ -704,7 +747,7 @@ msgid "Add new repository"
 msgstr ""
 
 #: gradience/presets_manager_window.py:183
-msgid "Add a repository to install additional presets"
+msgid "Add a repository to install additional presets."
 msgstr ""
 
 #: gradience/presets_manager_window.py:190
@@ -723,14 +766,18 @@ msgstr ""
 msgid "Unsupported file format, must be .json"
 msgstr ""
 
+#: gradience/presets_manager_window.py:383
+msgid "Built-in Presets"
+msgstr ""
+
 #: gradience/presets_manager_window.py:393
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a> on "
-"Github for more presets"
+"Github for more presets."
 msgstr ""
 
 #: gradience/presets_manager_window.py:419
-msgid "No preset found! Use the import button to import one or search one on the Explore tab"
+msgid "No preset found! Use the import button to import one or search one on the Explore tab."
 msgstr ""
 
 #: gradience/repo_row.py:60
@@ -747,19 +794,16 @@ msgid ""
 "indicate that a widget is important, interactive, or currently active."
 msgstr ""
 
-#: gradience/settings_schema.py:32 gradience/settings_schema.py:63
-#: gradience/settings_schema.py:95 gradience/settings_schema.py:127
-#: gradience/settings_schema.py:158
+#: gradience/settings_schema.py:32 gradience/settings_schema.py:63 gradience/settings_schema.py:95
+#: gradience/settings_schema.py:127 gradience/settings_schema.py:158
 msgid "Standalone Color"
 msgstr ""
 
-#: gradience/settings_schema.py:34 gradience/settings_schema.py:65
-#: gradience/settings_schema.py:97 gradience/settings_schema.py:129
-#: gradience/settings_schema.py:160
+#: gradience/settings_schema.py:34 gradience/settings_schema.py:65 gradience/settings_schema.py:97
+#: gradience/settings_schema.py:129 gradience/settings_schema.py:160
 msgid ""
-"The standalone colors are similar to the background ones, but provide better contrast when "
-"used as foreground color on top of a neutral background - for example, colorful text in a "
-"window."
+"The standalone colors are similar to the background ones, but provide better contrast when used "
+"as foreground color on top of a neutral background - for example, colorful text in a window."
 msgstr ""
 
 #: gradience/settings_schema.py:43 gradience/settings_schema.py:74
@@ -785,8 +829,7 @@ msgid "Destructive Colors"
 msgstr ""
 
 #: gradience/settings_schema.py:57
-msgid ""
-"These colors are used for buttons to indicate a dangerous action, such as deleting a file."
+msgid "These colors are used for buttons to indicate a dangerous action, such as deleting a file."
 msgstr ""
 
 #: gradience/settings_schema.py:86
@@ -930,8 +973,8 @@ msgstr ""
 
 #: gradience/settings_schema.py:355
 msgid ""
-"The scrollbar outline color is used by scrollbars to ensure that overlay scrollbars are "
-"visible regardless of the content color."
+"The scrollbar outline color is used by scrollbars to ensure that overlay scrollbars are visible "
+"regardless of the content color."
 msgstr ""
 
 #: gradience/settings_schema.py:365
@@ -962,11 +1005,11 @@ msgstr ""
 msgid "Brown"
 msgstr ""
 
-#: gradience/settings_schema.py:372
+#: gradience/settings_schema.py:372 gradience/window.py:200
 msgid "Light"
 msgstr ""
 
-#: gradience/settings_schema.py:373
+#: gradience/settings_schema.py:373 gradience/window.py:201
 msgid "Dark"
 msgstr ""
 
@@ -987,7 +1030,7 @@ msgid "Background Image"
 msgstr ""
 
 #: gradience/window.py:157
-msgid "Choose a file"
+msgid "Choose a File"
 msgstr ""
 
 #: gradience/window.py:177
@@ -1000,6 +1043,10 @@ msgstr ""
 
 #: gradience/window.py:196
 msgid "Theme"
+msgstr ""
+
+#: gradience/window.py:199
+msgid "Auto"
 msgstr ""
 
 #: gradience/window.py:223
@@ -1023,6 +1070,21 @@ msgid ""
 "Named palette colors used by some applications. Default colors follow the <a href=\"https://"
 "developer.gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."
 msgstr ""
+
+#~ msgid "Unknown"
+#~ msgstr "தெரியாதது"
+
+#~ msgid "Settings"
+#~ msgstr "அமைப்புகள்"
+
+#~ msgid "Allow GTK4 Flatpak theming (Global)"
+#~ msgstr "GTK4 பிளாட்பேக் தீமிங்கை அனுமதிக்கவும்(உலகளாவிய)"
+
+#~ msgid "Allow GTK3 Flatpak theming (Global)"
+#~ msgstr "GTK3 பிளாட்பாக் தீமிங்கை அனுமதிக்கவும் (உலகளாவிய)"
+
+#~ msgid "Open in file manager"
+#~ msgstr "கோப்பு மேலாளரில் திறக்கவும்"
 
 #~ msgid "colors"
 #~ msgstr "வண்ணங்கள்"

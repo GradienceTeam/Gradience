@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 12:19+0000\n"
-"PO-Revision-Date: 2022-09-27 22:28+0300\n"
+"POT-Creation-Date: 2022-09-29 18:16+0000\n"
+"PO-Revision-Date: 2022-09-29 21:31+0300\n"
 "Last-Translator: David Lapshin <ddaudix@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "GradienceTeam/gradience/pt_BR/>\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:940
+#: data/ui/window.blp:5 gradience/main.py:948
 msgid "Gradience"
 msgstr "Gradiente"
 
@@ -37,7 +37,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "Modifique a aparência do Adwaita, com facilidade."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:942
+#: gradience/main.py:950
 msgid "Gradience Team"
 msgstr "Time to Gradiente"
 
@@ -92,17 +92,19 @@ msgstr "avançado púrpura"
 #: data/ui/app_type_dialog.blp:14
 #, fuzzy
 #| msgid "Select app types you want to affect:"
-msgid "Select app types you want to theme:"
+msgid "Select application types you want to theme:"
 msgstr "Seleicione os tipos de aplicativos que você quer alterar:"
 
 #: data/ui/app_type_dialog.blp:17
-msgid "Libadwaita and GTK 4 apps"
+#, fuzzy
+#| msgid "Libadwaita and GTK 4 apps"
+msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita e aplicativos GTK 4"
 
 #: data/ui/app_type_dialog.blp:21
 #, fuzzy
 #| msgid "GTK 3 apps (adw-gtk3 theme required)"
-msgid "GTK 3 apps (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme is required)"
 msgstr "Aplicativos GTK 3 (requer o tema adw-gtk3)"
 
 #: data/ui/builtin_preset_row.blp:5
@@ -111,8 +113,10 @@ msgstr "Aplicativos GTK 3 (requer o tema adw-gtk3)"
 msgid "Made by @GradienceTeam"
 msgstr "Time to Gradiente"
 
-#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:54
-msgid "Apply preset"
+#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:52
+#, fuzzy
+#| msgid "Apply preset"
+msgid "Apply Preset"
 msgstr "Aplicar predefinição"
 
 #: data/ui/custom_css_group.blp:5
@@ -137,16 +141,16 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:11
-msgid "Unknown"
-msgstr ""
-
 #: data/ui/explore_preset_row.blp:22
-msgid "Download and apply"
+#, fuzzy
+#| msgid "Download and apply"
+msgid "Download and Apply"
 msgstr "Baixe e aplique"
 
 #: data/ui/explore_preset_row.blp:32
-msgid "Download only"
+#, fuzzy
+#| msgid "Download only"
+msgid "Download Only"
 msgstr "Apenas faça o download"
 
 #: data/ui/option.blp:10
@@ -164,27 +168,25 @@ msgstr "Alterar o texto"
 #: data/ui/plugin_row.blp:8
 #, fuzzy
 #| msgid "Enable plugin"
-msgid "Toggle plugin"
+msgid "Toggle Plugin"
 msgstr "Habilitar o plugin"
 
-#: data/ui/plugin_row.blp:16
-msgid "Settings"
-msgstr "Configurações"
-
-#: data/ui/plugin_row.blp:24
-msgid "Remove plugin"
-msgstr "Remover o plugin"
-
-#: data/ui/preferences.blp:5 data/ui/window.blp:131
+#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:131
 msgid "Preferences"
 msgstr ""
 
+#: data/ui/plugin_row.blp:24
+#, fuzzy
+#| msgid "Remove plugin"
+msgid "Remove Plugin"
+msgstr "Remover o plugin"
+
 #: data/ui/preferences.blp:12
-msgid "GTK4 Flatpak Specific"
+msgid "GTK4 Flatpak Applications"
 msgstr ""
 
 #: data/ui/preferences.blp:14
-msgid "Allow GTK4 Flatpak theming"
+msgid "Allow GTK4 Flatpak Applications Theming"
 msgstr ""
 
 #: data/ui/preferences.blp:15
@@ -194,7 +196,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:23
-msgid "Allow GTK4 Flatpak theming (Global)"
+msgid "Allow GTK4 Flatpak Applications Theming (System)"
 msgstr ""
 
 #: data/ui/preferences.blp:24
@@ -204,7 +206,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:32
-msgid "GTK3 Flatpak Specific"
+msgid "GTK3 Flatpak Applications"
 msgstr ""
 
 #: data/ui/preferences.blp:33
@@ -224,7 +226,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/preferences.blp:44
-msgid "Allow GTK3 Flatpak theming (Global)"
+msgid "GTK3 Flatpak Applications (System)"
 msgstr ""
 
 #: data/ui/preferences.blp:45
@@ -241,27 +243,49 @@ msgstr ""
 msgid "Custom repository URL address"
 msgstr ""
 
-#: data/ui/preset_row.blp:19 data/ui/preset_row.blp:20
-msgid "Remove preset"
-msgstr "Remover predefinição"
+#: data/ui/preset_row.blp:18
+#, fuzzy
+#| msgid "Save Preset"
+msgid "Share preset"
+msgstr "Salvar configurações"
 
-#: data/ui/preset_row.blp:28
+#: data/ui/preset_row.blp:19
+#, fuzzy
+#| msgid "Save Preset"
+msgid "Share Preset"
+msgstr "Salvar configurações"
+
+#: data/ui/preset_row.blp:27
 msgid "Report an Issue…"
 msgstr ""
 
-#: data/ui/preset_row.blp:70
+#: data/ui/preset_row.blp:68
 #, fuzzy
 #| msgid "Remove preset"
-msgid "Rename preset"
+msgid "Rename Preset"
 msgstr "Remover predefinição"
 
-#: data/ui/preset_row.blp:102
+#: data/ui/preset_row.blp:90
 msgid "Description"
 msgstr ""
 
-#: data/ui/preset_row.blp:119
+#: data/ui/preset_row.blp:91
 msgid "Sorry, but this preset don't have a description."
 msgstr ""
+
+#: data/ui/preset_row.blp:104
+msgid "No Badges"
+msgstr ""
+
+#: data/ui/preset_row.blp:115
+msgid "Remove preset"
+msgstr "Remover predefinição"
+
+#: data/ui/preset_row.blp:116
+#, fuzzy
+#| msgid "Remove preset"
+msgid "Remove Preset"
+msgstr "Remover predefinição"
 
 #: data/ui/presets_manager_window.blp:5 data/ui/window.blp:47
 msgid "Presets"
@@ -275,8 +299,10 @@ msgstr "Importar"
 msgid "Delete"
 msgstr "Deletar"
 
-#: data/ui/presets_manager_window.blp:41
-msgid "Open in file manager"
+#: data/ui/presets_manager_window.blp:41 gradience/main.py:264
+#, fuzzy
+#| msgid "Open in file manager"
+msgid "Open in File Manager"
 msgstr "Abrir no gestor de arquivos"
 
 #: data/ui/presets_manager_window.blp:59
@@ -358,8 +384,8 @@ msgstr ""
 #: data/ui/welcome.blp:74
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an official "
-"repository and a curated reposoitory."
+"quick preset switcher. We also split the preset repository into an "
+"“Official” repository and a “Curated” reposoitories."
 msgstr ""
 
 #: data/ui/welcome.blp:81
@@ -376,7 +402,7 @@ msgid ""
 msgstr ""
 
 #: data/ui/welcome.blp:86
-msgid "I understand the consequences"
+msgid "I Understand The Consequences"
 msgstr ""
 
 #: data/ui/welcome.blp:97
@@ -390,7 +416,7 @@ msgstr "Customize o tema Adwaita"
 #| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
-"like adding custom CSS"
+"like adding custom CSS."
 msgstr ""
 "Modifique as cores das janelas, botões, listas e mais com recursos avançados "
 "como adicionar CSS customizados"
@@ -410,7 +436,7 @@ msgid ""
 msgstr "Instale o tema adw-gtk3 para aplicações legadas."
 
 #: data/ui/welcome.blp:110
-msgid "Legacy apps theming"
+msgid "Legacy Apps Theming"
 msgstr ""
 
 #: data/ui/welcome.blp:115
@@ -420,7 +446,9 @@ msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Instale o tema adw-gtk3 para aplicações legadas."
 
 #: data/ui/welcome.blp:120
-msgid "System configuration"
+#, fuzzy
+#| msgid "System configuration"
+msgid "System Configuration"
 msgstr "Configuração do sistema"
 
 #: data/ui/welcome.blp:126
@@ -461,14 +489,16 @@ msgid "Please finish the setup first"
 msgstr "Por favor termine a configuração antes"
 
 #: data/ui/welcome.blp:176
-msgid "Start using Gradience"
+#, fuzzy
+#| msgid "Start using Gradience"
+msgid "Start Using Gradience"
 msgstr "Comece a usar o Gradience"
 
 #: data/ui/welcome.blp:193
 msgid "Next"
 msgstr "Próximo"
 
-#: data/ui/window.blp:23 gradience/main.py:601 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/main.py:609 gradience/window.py:141
 msgid "Apply"
 msgstr "Aplicar"
 
@@ -514,10 +544,10 @@ msgstr "Demonstração GTK4"
 msgid "GTK4 Widget Factory"
 msgstr "GTK4 Widget Factory"
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:383
+#: data/ui/window.blp:160 gradience/presets_manager_window.py:109
 #, fuzzy
 #| msgid "Builtin Presets"
-msgid "Built-in Presets"
+msgid "Built-In Presets"
 msgstr "Configurações predefinidas"
 
 #: gradience/modules/flatpak_overrides.py:65
@@ -534,7 +564,7 @@ msgstr "Falha ao carregar a configuração"
 msgid "Unexpected file error occurred"
 msgstr ""
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:652 gradience/main.py:725
+#: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
 #: gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "Cancelar"
@@ -547,37 +577,37 @@ msgstr "Predefinição não pode ser baixada"
 msgid "Preset downloaded"
 msgstr "Predefinição baixada"
 
-#: gradience/main.py:188 gradience/main.py:219
+#: gradience/main.py:194 gradience/main.py:225
 #: gradience/presets_manager_window.py:346
 #: gradience/presets_manager_window.py:376
 msgid "Failed to load preset"
 msgstr "Falha ao carregar a configuração"
 
-#: gradience/main.py:256
+#: gradience/main.py:271
 #, fuzzy
-#| msgid "Open in file manager"
-msgid "Open in File Manager"
-msgstr "Abrir no gestor de arquivos"
+#| msgid "Save Preset"
+msgid "Favourite Presets"
+msgstr "Salvar configurações"
 
-#: gradience/main.py:263
+#: gradience/main.py:534
 #, fuzzy
-#| msgid "Manage Presets"
-msgid "Installed Presets"
-msgstr "Gerenciar Predefinições"
-
-#: gradience/main.py:526
-msgid "Unsaved changes"
+#| msgid "Unsaved changes"
+msgid "Unsaved Changes"
 msgstr "Modificações não salvas"
 
-#: gradience/main.py:537
-msgid "Save changes"
+#: gradience/main.py:545
+#, fuzzy
+#| msgid "Save changes"
+msgid "Save Changes"
 msgstr "Salvar alterações"
 
-#: gradience/main.py:595
-msgid "Apply this color scheme?"
+#: gradience/main.py:603
+#, fuzzy
+#| msgid "Apply this color scheme?"
+msgid "Apply This Color Scheme?"
 msgstr "Aplicar este esquema de cores?"
 
-#: gradience/main.py:597
+#: gradience/main.py:605
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -585,36 +615,36 @@ msgstr ""
 "Aviso: qualquer arquivo CSS customizado para estes tipos de aplicações serão "
 "irreversivelmente sobrescritos!"
 
-#: gradience/main.py:611
+#: gradience/main.py:619
 #, fuzzy
 #| msgid "Reset applied color scheme?"
 msgid "Restore applied color scheme?"
 msgstr "Redefinir o esquema de cores aplicado?"
 
-#: gradience/main.py:612 gradience/main.py:624
+#: gradience/main.py:620 gradience/main.py:632
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Certifique-se que você salvou as configurações atuais como uma configuração "
 "predefinida."
 
-#: gradience/main.py:614
+#: gradience/main.py:622
 msgid "Restore"
 msgstr ""
 
-#: gradience/main.py:623
+#: gradience/main.py:631
 msgid "Reset applied color scheme?"
 msgstr "Redefinir o esquema de cores aplicado?"
 
-#: gradience/main.py:626
+#: gradience/main.py:634
 msgid "Reset"
 msgstr "Redefinir"
 
-#: gradience/main.py:636
+#: gradience/main.py:644
 msgid "Save preset as..."
 msgstr "Salvas configurações como..."
 
-#: gradience/main.py:638 gradience/main.py:666 gradience/main.py:683
-#: gradience/main.py:711 gradience/main.py:742 gradience/main.py:759
+#: gradience/main.py:646 gradience/main.py:674 gradience/main.py:691
+#: gradience/main.py:719 gradience/main.py:750 gradience/main.py:767
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -623,37 +653,37 @@ msgstr ""
 "Salvando configurações como <tt>{0}</tt>. Se esta predefinição já existe, "
 "será substituída!"
 
-#: gradience/main.py:653 gradience/main.py:727
+#: gradience/main.py:661 gradience/main.py:735
 msgid "Save"
 msgstr "Salvar"
 
-#: gradience/main.py:709
+#: gradience/main.py:717
 #, fuzzy
 #| msgid "Unsaved changes"
 msgid "You have unsaved changes!"
 msgstr "Modificações não salvas"
 
-#: gradience/main.py:726
+#: gradience/main.py:734
 msgid "Discard"
 msgstr ""
 
-#: gradience/main.py:787
+#: gradience/main.py:795
 msgid "Preset saved"
 msgstr "Predefinição salva"
 
-#: gradience/main.py:854
+#: gradience/main.py:862
 msgid "Preset set sucessfully"
 msgstr "Predefinição definida com sucesso"
 
-#: gradience/main.py:897
+#: gradience/main.py:905
 msgid "Could not restore GTK4 backup"
 msgstr ""
 
-#: gradience/main.py:930
+#: gradience/main.py:938
 msgid "Preset reseted"
 msgstr "Predefinição redefinida"
 
-#: gradience/main.py:974
+#: gradience/main.py:989
 #, fuzzy
 msgid ""
 "\n"
@@ -707,7 +737,7 @@ msgstr ""
 "      </ul>\n"
 "            "
 
-#: gradience/main.py:994
+#: gradience/main.py:1009
 #, fuzzy
 msgid ""
 "\n"
@@ -750,17 +780,17 @@ msgstr "Esta opção não é suportada pelo tema adw-gtk3."
 msgid "Not a color, see text value"
 msgstr "Não é uma cor, verifique o valor em texto"
 
-#: gradience/plugin_row.py:84
+#: gradience/plugin_row.py:85
 #, fuzzy
 #| msgid "Unable to delete preset"
 msgid "Unable to remove"
 msgstr "Falha ao apagar a predefinição"
 
-#: gradience/plugin_row.py:85
+#: gradience/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed. "
 msgstr ""
 
-#: gradience/plugin_row.py:87
+#: gradience/plugin_row.py:88
 msgid "Close"
 msgstr ""
 
@@ -769,9 +799,13 @@ msgid "Plugins"
 msgstr "Plugins"
 
 #: gradience/plugins_list.py:99
+#, fuzzy
+#| msgid ""
+#| "Plugins add additional features to Gradience, plugins are made by "
+#| "Gradience community and can make issues."
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can make issues."
+"community and can cause issues."
 msgstr ""
 "Plugins adicionam recursos ao Gradience, plugins são feitos pela comunidade "
 "Gradience e podem causar problemas."
@@ -779,28 +813,24 @@ msgstr ""
 #: gradience/plugins_list.py:111
 #, fuzzy
 #| msgid "No plugins found"
-msgid "No plugins found."
+msgid "No Plugins Found."
 msgstr "Não foram encontrados plugins"
 
-#: gradience/preset_row.py:117
+#: gradience/preset_row.py:158
 msgid "Preset removed"
 msgstr "Predefinição removida"
 
-#: gradience/preset_row.py:118
+#: gradience/preset_row.py:159
 msgid "Undo"
 msgstr "Desfazer"
 
-#: gradience/preset_row.py:143
-msgid "Pending deletion"
+#: gradience/preset_row.py:184
+msgid "Pending Deletion"
 msgstr ""
 
-#: gradience/preset_row.py:181
+#: gradience/preset_row.py:222
 msgid "Unable to delete preset"
 msgstr "Falha ao apagar a predefinição"
-
-#: gradience/presets_manager_window.py:109
-msgid "Builtin Presets"
-msgstr "Configurações predefinidas"
 
 #: gradience/presets_manager_window.py:114
 #: gradience/presets_manager_window.py:390
@@ -812,7 +842,7 @@ msgid "Add new repository"
 msgstr ""
 
 #: gradience/presets_manager_window.py:183
-msgid "Add a repository to install additional presets"
+msgid "Add a repository to install additional presets."
 msgstr ""
 
 #: gradience/presets_manager_window.py:190
@@ -831,18 +861,32 @@ msgstr "Predefinição importada"
 msgid "Unsupported file format, must be .json"
 msgstr "Formato de arquivo não suportado, precisa ser .json"
 
+#: gradience/presets_manager_window.py:383
+#, fuzzy
+#| msgid "Builtin Presets"
+msgid "Built-in Presets"
+msgstr "Configurações predefinidas"
+
 #: gradience/presets_manager_window.py:393
+#, fuzzy
+#| msgid ""
+#| "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+#| "Community</a> on Github for more presets"
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets"
+"Community</a> on Github for more presets."
 msgstr ""
 "Veja <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> no Github para mais predefinições"
 
 #: gradience/presets_manager_window.py:419
+#, fuzzy
+#| msgid ""
+#| "No preset found! Use the import button to import one or search one on the "
+#| "Explore tab"
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
-"Explore tab"
+"Explore tab."
 msgstr ""
 "Nehuma predefinição encontrada! Use o botão de importação para importar uma "
 "ou busque pela aba Explorar"
@@ -1120,11 +1164,11 @@ msgstr "Roxo"
 msgid "Brown"
 msgstr "Marrom"
 
-#: gradience/settings_schema.py:372
+#: gradience/settings_schema.py:372 gradience/window.py:200
 msgid "Light"
 msgstr "Claro"
 
-#: gradience/settings_schema.py:373
+#: gradience/settings_schema.py:373 gradience/window.py:201
 msgid "Dark"
 msgstr "Escuro"
 
@@ -1151,7 +1195,9 @@ msgid "Background Image"
 msgstr "Imagem do Plano de Fundo"
 
 #: gradience/window.py:157
-msgid "Choose a file"
+#, fuzzy
+#| msgid "Choose a file"
+msgid "Choose a File"
 msgstr "Selecionar um arquivo"
 
 #: gradience/window.py:177
@@ -1165,6 +1211,10 @@ msgstr "Tom"
 #: gradience/window.py:196
 msgid "Theme"
 msgstr "Tema"
+
+#: gradience/window.py:199
+msgid "Auto"
+msgstr ""
 
 #: gradience/window.py:223
 msgid "Unsupported background type"
@@ -1191,6 +1241,20 @@ msgstr ""
 "Nomes de paleta de cores utilizados por alguns aplicativos. As cores padrão "
 "seguem as <a href=\"https://developer.gnome.org/hig/reference/palette.html"
 "\">Diretrizes de Interface Humana do GNOME</a>."
+
+#~ msgid "Settings"
+#~ msgstr "Configurações"
+
+#~ msgid "Open in file manager"
+#~ msgstr "Abrir no gestor de arquivos"
+
+#, fuzzy
+#~| msgid "Manage Presets"
+#~ msgid "Installed Presets"
+#~ msgstr "Gerenciar Predefinições"
+
+#~ msgid "Builtin Presets"
+#~ msgstr "Configurações predefinidas"
 
 #~ msgid "colors"
 #~ msgstr "cores"
