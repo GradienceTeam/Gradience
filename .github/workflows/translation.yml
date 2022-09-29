@@ -50,4 +50,13 @@ jobs:
           author_email: "AdwCustomizerTeam@proton.me"
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          
+      - name: Update po
+        uses: GradienceTeam/action-update-po@main
+        with:
+          author: "Gradience Bot"
+          pot_file: "Gradience.pot"
+          author_email: "AdwCustomizerTeam@proton.me"
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
    
