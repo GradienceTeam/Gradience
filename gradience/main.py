@@ -531,7 +531,7 @@ class GradienceApplication(Adw.Application):
         self.props.active_window.save_preset_button.add_css_class("warning")
 
         self.props.active_window.save_preset_button.get_child().set_tooltip_text(
-            _("Unsaved changes")
+            _("Unsaved Changes")
         )
 
     def clear_dirty(self):
@@ -542,7 +542,7 @@ class GradienceApplication(Adw.Application):
         self.props.active_window.save_preset_button.remove_css_class("warning")
         self.props.active_window.save_preset_button.get_child().set_label("")
         self.props.active_window.save_preset_button.get_child().set_tooltip_text(
-            _("Save changes")
+            _("Save Changes")
         )
 
     def reload_variables(self):
@@ -600,7 +600,7 @@ class GradienceApplication(Adw.Application):
 
     def show_apply_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
-            _("Apply this color scheme?"),
+            _("Apply This Color Scheme?"),
             _(
                 "Warning: any custom CSS files for those app types will be "
                 "irreversibly overwritten!"
@@ -990,7 +990,7 @@ class GradienceApplication(Adw.Application):
                 <ul>
                 <li>Add AdwViewSwitcher in the header bar.</li>
                 <li>Move CSS to the "Advanced" tab</li>
-                <li>Move the rest to the "Colours" tab</li>
+                <li>Move the rest to the "colors" tab</li>
                 <li>Add Monet tab which generates a theme from a background</li>
                 <li>Add disk saved and disk unsaved icon in the header bar</li>
                 <li>Update about dialog</li>

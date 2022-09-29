@@ -1,0 +1,318 @@
+Source code	README.md	/^# Source code$/;"	c
+Modules	README.md	/^## Modules$/;"	s	chapter:Source code
+gradience	README.md	/^## gradience $/;"	s	chapter:Source code
+GradienceAppTypeDialog	app_type_dialog.py	/^class GradienceAppTypeDialog(Adw.MessageDialog):$/;"	c
+__gtype_name__	app_type_dialog.py	/^    __gtype_name__ = "GradienceAppTypeDialog"$/;"	v	class:GradienceAppTypeDialog	file:
+gtk4_app_type	app_type_dialog.py	/^    gtk4_app_type = Gtk.Template.Child("gtk4-app-type")$/;"	v	class:GradienceAppTypeDialog
+gtk3_app_type	app_type_dialog.py	/^    gtk3_app_type = Gtk.Template.Child("gtk3-app-type")$/;"	v	class:GradienceAppTypeDialog
+__init__	app_type_dialog.py	/^    def __init__($/;"	m	class:GradienceAppTypeDialog
+get_app_types	app_type_dialog.py	/^    def get_app_types(self):$/;"	m	class:GradienceAppTypeDialog
+GradienceBuiltinPresetRow	builtin_preset_row.py	/^class GradienceBuiltinPresetRow(Adw.ActionRow):$/;"	c
+__gtype_name__	builtin_preset_row.py	/^    __gtype_name__ = "GradienceBuiltinPresetRow"$/;"	v	class:GradienceBuiltinPresetRow	file:
+apply_button	builtin_preset_row.py	/^    apply_button = Gtk.Template.Child("apply_button")$/;"	v	class:GradienceBuiltinPresetRow
+__init__	builtin_preset_row.py	/^    def __init__(self, name, toast_overlay, author="", **kwargs):$/;"	m	class:GradienceBuiltinPresetRow
+on_apply_button_clicked	builtin_preset_row.py	/^    def on_apply_button_clicked(self, *_args):$/;"	m	class:GradienceBuiltinPresetRow
+rootdir	constants.py.in	/^rootdir          = '\/com\/github\/GradienceTeam\/Gradience'$/;"	v
+pkgdatadir	constants.py.in	/^pkgdatadir       = '@PKGDATA_DIR@'$/;"	v
+localedir	constants.py.in	/^localedir        = '@LOCALE_DIR@'$/;"	v
+app_id	constants.py.in	/^app_id           = '@APP_ID@'$/;"	v
+rel_ver	constants.py.in	/^rel_ver          = '@RELEASE_VER@'$/;"	v
+version	constants.py.in	/^version          = '@VERSION@'$/;"	v
+build_type	constants.py.in	/^build_type       = '@BUILD_TYPE@'$/;"	v
+project_url	constants.py.in	/^project_url      = '@PROJECT_URL@'$/;"	v
+bugtracker_url	constants.py.in	/^bugtracker_url   = '@BUGTRACKER_URL@'$/;"	v
+help_url	constants.py.in	/^help_url         = '@HELP_URL@'$/;"	v
+translate_url	constants.py.in	/^translate_url    = '@TRANSLATE_URL@'$/;"	v
+GradienceCustomCSSGroup	custom_css_group.py	/^class GradienceCustomCSSGroup(Adw.PreferencesGroup):$/;"	c
+__gtype_name__	custom_css_group.py	/^    __gtype_name__ = "GradienceCustomCSSGroup"$/;"	v	class:GradienceCustomCSSGroup	file:
+app_type_dropdown	custom_css_group.py	/^    app_type_dropdown = Gtk.Template.Child("app-type-dropdown")$/;"	v	class:GradienceCustomCSSGroup
+custom_css_text_view	custom_css_group.py	/^    custom_css_text_view = Gtk.Template.Child("custom-css-text-view")$/;"	v	class:GradienceCustomCSSGroup
+__init__	custom_css_group.py	/^    def __init__(self, **kwargs):$/;"	m	class:GradienceCustomCSSGroup
+load_custom_css	custom_css_group.py	/^    def load_custom_css(self, custom_css):$/;"	m	class:GradienceCustomCSSGroup
+on_custom_css_changed	custom_css_group.py	/^    def on_custom_css_changed(self, buffer):$/;"	m	class:GradienceCustomCSSGroup
+on_dropdown_notify	custom_css_group.py	/^    def on_dropdown_notify(self, _unused, pspec):$/;"	m	class:GradienceCustomCSSGroup
+GradienceError	error.py	/^class GradienceError(Gtk.ListBoxRow):$/;"	c
+__gtype_name__	error.py	/^    __gtype_name__ = "GradienceError"$/;"	v	class:GradienceError	file:
+error_label	error.py	/^    error_label = Gtk.Template.Child("error-label")$/;"	v	class:GradienceError
+element_label	error.py	/^    element_label = Gtk.Template.Child("element-label")$/;"	v	class:GradienceError
+line_label	error.py	/^    line_label = Gtk.Template.Child("line-label")$/;"	v	class:GradienceError
+__init__	error.py	/^    def __init__(self, error, element, line, **kwargs):$/;"	m	class:GradienceError
+GradienceNoPluginPrefWindow	no_plugin_pref.py	/^class GradienceNoPluginPrefWindow(Adw.Window):$/;"	c
+__gtype_name__	no_plugin_pref.py	/^    __gtype_name__ = "GradienceNoPluginPrefWindow"$/;"	v	class:GradienceNoPluginPrefWindow	file:
+__init__	no_plugin_pref.py	/^    def __init__(self, **kwargs):$/;"	m	class:GradienceNoPluginPrefWindow
+GradienceOption	option.py	/^class GradienceOption(Adw.ActionRow):$/;"	c
+__gtype_name__	option.py	/^    __gtype_name__ = "GradienceOption"$/;"	v	class:GradienceOption	file:
+color_value	option.py	/^    color_value = Gtk.Template.Child("color-value")$/;"	v	class:GradienceOption
+text_value	option.py	/^    text_value = Gtk.Template.Child("text-value")$/;"	v	class:GradienceOption
+value_stack	option.py	/^    value_stack = Gtk.Template.Child("value-stack")$/;"	v	class:GradienceOption
+text_value_toggle	option.py	/^    text_value_toggle = Gtk.Template.Child("text-value-toggle")$/;"	v	class:GradienceOption
+warning_button	option.py	/^    warning_button = Gtk.Template.Child("warning-button")$/;"	v	class:GradienceOption
+warning_label	option.py	/^    warning_label = Gtk.Template.Child("warning-label")$/;"	v	class:GradienceOption
+explanation_button	option.py	/^    explanation_button = Gtk.Template.Child("explanation-button")$/;"	v	class:GradienceOption
+explanation_label	option.py	/^    explanation_label = Gtk.Template.Child("explanation-label")$/;"	v	class:GradienceOption
+__init__	option.py	/^    def __init__(self, name, title, explanation, adw_gtk3_support="yes", **kwargs):$/;"	m	class:GradienceOption
+on_color_value_changed	option.py	/^    def on_color_value_changed(self, *_args):$/;"	m	class:GradienceOption
+on_text_value_changed	option.py	/^    def on_text_value_changed(self, *_args):$/;"	m	class:GradienceOption
+on_text_value_toggled	option.py	/^    def on_text_value_toggled(self, *_args):$/;"	m	class:GradienceOption
+update_value	option.py	/^    def update_value(self, new_value, **kwargs):$/;"	m	class:GradienceOption
+GradiencePaletteShades	palette_shades.py	/^class GradiencePaletteShades(Adw.ActionRow):$/;"	c
+__gtype_name__	palette_shades.py	/^    __gtype_name__ = "GradiencePaletteShades"$/;"	v	class:GradiencePaletteShades	file:
+__init__	palette_shades.py	/^    def __init__(self, prefix, color_title, n_shades, **kwargs):$/;"	m	class:GradiencePaletteShades
+on_color_changed	palette_shades.py	/^    def on_color_changed(self, *_args):$/;"	m	class:GradiencePaletteShades
+update_shades	palette_shades.py	/^    def update_shades(self, shades, **kwargs):$/;"	m	class:GradiencePaletteShades
+USER_PLUGIN_DIR	plugins_list.py	/^USER_PLUGIN_DIR = os.path.join($/;"	v
+SYSTEM_PLUGIN_DIR	plugins_list.py	/^SYSTEM_PLUGIN_DIR = os.path.join($/;"	v
+GradiencePluginsList	plugins_list.py	/^class GradiencePluginsList:$/;"	c
+__init__	plugins_list.py	/^    def __init__(self, win):$/;"	m	class:GradiencePluginsList
+reload	plugins_list.py	/^    def reload(self):$/;"	m	class:GradiencePluginsList
+save_enabled_plugins	plugins_list.py	/^    def save_enabled_plugins(self):$/;"	m	class:GradiencePluginsList
+enable_plugin	plugins_list.py	/^    def enable_plugin(self, plugin_id):$/;"	m	class:GradiencePluginsList
+disable_plugin	plugins_list.py	/^    def disable_plugin(self, plugin_id):$/;"	m	class:GradiencePluginsList
+check_if_plugin_dir_exists	plugins_list.py	/^    def check_if_plugin_dir_exists():$/;"	m	class:GradiencePluginsList
+to_group	plugins_list.py	/^    def to_group(self):$/;"	m	class:GradiencePluginsList
+save	plugins_list.py	/^    def save(self):$/;"	m	class:GradiencePluginsList
+validate	plugins_list.py	/^    def validate(self):$/;"	m	class:GradiencePluginsList
+apply	plugins_list.py	/^    def apply(self):$/;"	m	class:GradiencePluginsList
+GradiencePreferencesWindow	preferences.py	/^class GradiencePreferencesWindow(Adw.PreferencesWindow):$/;"	c
+__gtype_name__	preferences.py	/^    __gtype_name__ = "GradiencePreferencesWindow"$/;"	v	class:GradiencePreferencesWindow	file:
+allow_gtk4_flatpak_theming_user	preferences.py	/^    allow_gtk4_flatpak_theming_user = Gtk.Template.Child()$/;"	v	class:GradiencePreferencesWindow
+allow_gtk4_flatpak_theming_global	preferences.py	/^    allow_gtk4_flatpak_theming_global = Gtk.Template.Child()$/;"	v	class:GradiencePreferencesWindow
+allow_gtk3_flatpak_theming_user	preferences.py	/^    allow_gtk3_flatpak_theming_user = Gtk.Template.Child()$/;"	v	class:GradiencePreferencesWindow
+allow_gtk3_flatpak_theming_global	preferences.py	/^    allow_gtk3_flatpak_theming_global = Gtk.Template.Child()$/;"	v	class:GradiencePreferencesWindow
+__init__	preferences.py	/^    def __init__(self, parent, **kwargs):$/;"	m	class:GradiencePreferencesWindow
+setup	preferences.py	/^    def setup(self):$/;"	m	class:GradiencePreferencesWindow
+setup_flatpak_group	preferences.py	/^    def setup_flatpak_group(self):$/;"	m	class:GradiencePreferencesWindow
+on_allow_gtk4_flatpak_theming_user_toggled	preferences.py	/^    def on_allow_gtk4_flatpak_theming_user_toggled(self, *args):$/;"	m	class:GradiencePreferencesWindow
+on_allow_gtk3_flatpak_theming_user_toggled	preferences.py	/^    def on_allow_gtk3_flatpak_theming_user_toggled(self, *args):$/;"	m	class:GradiencePreferencesWindow
+on_allow_gtk4_flatpak_theming_global_toggled	preferences.py	/^    def on_allow_gtk4_flatpak_theming_global_toggled(self, *args):$/;"	m	class:GradiencePreferencesWindow
+on_allow_gtk3_flatpak_theming_global_toggled	preferences.py	/^    def on_allow_gtk3_flatpak_theming_global_toggled(self, *args):$/;"	m	class:GradiencePreferencesWindow
+settings_schema	settings_schema.py	/^settings_schema = {$/;"	v
+GradienceWelcomeWindow	welcome.py	/^class GradienceWelcomeWindow(Adw.Window):$/;"	c
+__gtype_name__	welcome.py	/^    __gtype_name__ = "GradienceWelcomeWindow"$/;"	v	class:GradienceWelcomeWindow	file:
+settings	welcome.py	/^    settings = Gtk.Settings.get_default()$/;"	v	class:GradienceWelcomeWindow
+carousel	welcome.py	/^    carousel = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+btn_close	welcome.py	/^    btn_close = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+btn_back	welcome.py	/^    btn_back = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+btn_next	welcome.py	/^    btn_next = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+btn_install	welcome.py	/^    btn_install = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+btn_agree	welcome.py	/^    btn_agree = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+switch_system	welcome.py	/^    switch_system = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+switch_adw_gtk3	welcome.py	/^    switch_adw_gtk3 = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+progressbar	welcome.py	/^    progressbar = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+img_welcome	welcome.py	/^    img_welcome = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+label_skip	welcome.py	/^    label_skip = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+images	welcome.py	/^    images = [$/;"	v	class:GradienceWelcomeWindow
+carousel_pages	welcome.py	/^    carousel_pages = [$/;"	v	class:GradienceWelcomeWindow
+page_welcome	welcome.py	/^    page_welcome = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+page_release	welcome.py	/^    page_release = Gtk.Template.Child()$/;"	v	class:GradienceWelcomeWindow
+__init__	welcome.py	/^    def __init__(self, window, update=False, **kwargs) -> None:$/;"	m	class:GradienceWelcomeWindow	typeref:typename:None
+theme_changed	welcome.py	/^    def theme_changed(self, settings, key):$/;"	m	class:GradienceWelcomeWindow
+get_page	welcome.py	/^    def get_page(self, index):$/;"	m	class:GradienceWelcomeWindow
+page_changed	welcome.py	/^    def page_changed(self, widget=False, index=0, *_args):$/;"	m	class:GradienceWelcomeWindow
+agree	welcome.py	/^    def agree(self, widget):$/;"	m	class:GradienceWelcomeWindow
+quit	welcome.py	/^    def quit(self, *args):$/;"	m	class:GradienceWelcomeWindow
+check_adw_gtk3	welcome.py	/^    def check_adw_gtk3(self, *args):$/;"	m	class:GradienceWelcomeWindow
+adw_gtk3	welcome.py	/^    def adw_gtk3(self):$/;"	m	class:GradienceWelcomeWindow
+configure_system	welcome.py	/^    def configure_system(self):$/;"	m	class:GradienceWelcomeWindow
+allow_flatpak_theming_user_toggled	welcome.py	/^    def allow_flatpak_theming_user_toggled(self, *args):$/;"	m	class:GradienceWelcomeWindow
+install_runner	welcome.py	/^    def install_runner(self, widget):$/;"	m	class:GradienceWelcomeWindow
+set_completed	welcome.py	/^        def set_completed(result, error=False):$/;"	f	member:GradienceWelcomeWindow.install_runner	file:
+install	welcome.py	/^        def install():$/;"	f	member:GradienceWelcomeWindow.install_runner	file:
+previous_page	welcome.py	/^    def previous_page(self, widget=False, index=None):$/;"	m	class:GradienceWelcomeWindow
+next_page	welcome.py	/^    def next_page(self, widget=False, index=None):$/;"	m	class:GradienceWelcomeWindow
+pulse	welcome.py	/^    def pulse(self):$/;"	m	class:GradienceWelcomeWindow
+close_window	welcome.py	/^    def close_window(self, widget):$/;"	m	class:GradienceWelcomeWindow
+USER_PLUGIN_DIR	plugin_row.py	/^USER_PLUGIN_DIR = Path($/;"	v
+GradiencePluginRow	plugin_row.py	/^class GradiencePluginRow(Adw.ActionRow):$/;"	c
+__gtype_name__	plugin_row.py	/^    __gtype_name__ = "GradiencePluginRow"$/;"	v	class:GradiencePluginRow	file:
+switch	plugin_row.py	/^    switch = Gtk.Template.Child("switch")$/;"	v	class:GradiencePluginRow
+settings_button	plugin_row.py	/^    settings_button = Gtk.Template.Child("settings-button")$/;"	v	class:GradiencePluginRow
+remove_button	plugin_row.py	/^    remove_button = Gtk.Template.Child("remove-button")$/;"	v	class:GradiencePluginRow
+__init__	plugin_row.py	/^    def __init__(self, plugin_object, preset, plugins_list, **kwargs):$/;"	m	class:GradiencePluginRow
+on_settings_plugin_clicked	plugin_row.py	/^    def on_settings_plugin_clicked(self, *_args):$/;"	m	class:GradiencePluginRow
+on_remove_plugin_clicked	plugin_row.py	/^    def on_remove_plugin_clicked(self, *_args):$/;"	m	class:GradiencePluginRow
+on_switch_toggled	plugin_row.py	/^    def on_switch_toggled(self, *_args):$/;"	m	class:GradiencePluginRow
+give_preset_settings	plugin_row.py	/^    def give_preset_settings(self, preset_settings):$/;"	m	class:GradiencePluginRow
+GradienceExplorePresetRow	explore_preset_row.py	/^class GradienceExplorePresetRow(Adw.ActionRow):$/;"	c
+__gtype_name__	explore_preset_row.py	/^    __gtype_name__ = "GradienceExplorePresetRow"$/;"	v	class:GradienceExplorePresetRow	file:
+apply_button	explore_preset_row.py	/^    apply_button = Gtk.Template.Child("apply_button")$/;"	v	class:GradienceExplorePresetRow
+download_button	explore_preset_row.py	/^    download_button = Gtk.Template.Child("download_button")$/;"	v	class:GradienceExplorePresetRow
+__init__	explore_preset_row.py	/^    def __init__(self, name, url, win, repo_name, badge, **kwargs):$/;"	m	class:GradienceExplorePresetRow
+on_apply_button_clicked	explore_preset_row.py	/^    def on_apply_button_clicked(self, *_args):$/;"	m	class:GradienceExplorePresetRow
+on_download_button_clicked	explore_preset_row.py	/^    def on_download_button_clicked(self, *_args):$/;"	m	class:GradienceExplorePresetRow
+launcher	meson.build	/^launcher = join_paths(meson.project_build_root(), 'gradience', 'local-' + meson.project_name())$/;"	V
+run	meson.build	/^run_target('run',$/;"	r
+gradience_sources	meson.build	/^gradience_sources = [$/;"	V
+gradience_modules	meson.build	/^gradience_modules = [$/;"	V
+GradiencePresetRow	preset_row.py	/^class GradiencePresetRow(Adw.ExpanderRow):$/;"	c
+__gtype_name__	preset_row.py	/^    __gtype_name__ = "GradiencePresetRow"$/;"	v	class:GradiencePresetRow	file:
+name_entry	preset_row.py	/^    name_entry = Gtk.Template.Child("name_entry")$/;"	v	class:GradiencePresetRow
+value_stack	preset_row.py	/^    value_stack = Gtk.Template.Child("value_stack")$/;"	v	class:GradiencePresetRow
+name_entry_toggle	preset_row.py	/^    name_entry_toggle = Gtk.Template.Child("name_entry_toggle")$/;"	v	class:GradiencePresetRow
+apply_button	preset_row.py	/^    apply_button = Gtk.Template.Child("apply_button")$/;"	v	class:GradiencePresetRow
+remove_button	preset_row.py	/^    remove_button = Gtk.Template.Child("remove_button")$/;"	v	class:GradiencePresetRow
+btn_report	preset_row.py	/^    btn_report = Gtk.Template.Child("btn_report")$/;"	v	class:GradiencePresetRow
+btn_share	preset_row.py	/^    btn_share = Gtk.Template.Child("btn_share")$/;"	v	class:GradiencePresetRow
+star_button	preset_row.py	/^    star_button = Gtk.Template.Child("star_button")$/;"	v	class:GradiencePresetRow
+badge_list	preset_row.py	/^    badge_list = Gtk.Template.Child("badge_list")$/;"	v	class:GradiencePresetRow
+no_badges	preset_row.py	/^    no_badges = Gtk.Template.Child("no_badges")$/;"	v	class:GradiencePresetRow
+__init__	preset_row.py	/^    def __init__(self, name, win, repo_name, file_name, author="", **kwargs):$/;"	m	class:GradiencePresetRow
+on_share_btn_clicked	preset_row.py	/^    def on_share_btn_clicked(self, *_args):$/;"	m	class:GradiencePresetRow
+on_star_button_clicked	preset_row.py	/^    def on_star_button_clicked(self, *_args):$/;"	m	class:GradiencePresetRow
+on_apply_button_clicked	preset_row.py	/^    def on_apply_button_clicked(self, *_args):$/;"	m	class:GradiencePresetRow
+on_undo_button_clicked	preset_row.py	/^    def on_undo_button_clicked(self, *_args):$/;"	m	class:GradiencePresetRow
+on_name_entry_changed	preset_row.py	/^    def on_name_entry_changed(self, *_args):$/;"	m	class:GradiencePresetRow
+on_name_entry_toggled	preset_row.py	/^    def on_name_entry_toggled(self, *_args):$/;"	m	class:GradiencePresetRow
+on_report_btn_clicked	preset_row.py	/^    def on_report_btn_clicked(self, *_args):$/;"	m	class:GradiencePresetRow
+open_dir_callback	preset_row.py	/^        def open_dir_callback(_, result):$/;"	f	member:GradiencePresetRow.on_report_btn_clicked	file:
+on_remove_button_clicked	preset_row.py	/^    def on_remove_button_clicked(self, *_args):$/;"	m	class:GradiencePresetRow
+update_value	preset_row.py	/^    def update_value(self):$/;"	m	class:GradiencePresetRow
+on_delete_toast_dismissed	preset_row.py	/^    def on_delete_toast_dismissed(self, widget):$/;"	m	class:GradiencePresetRow
+GradienceShareWindow	share_window.py	/^class GradienceShareWindow(Adw.Window):$/;"	c
+__gtype_name__	share_window.py	/^    __gtype_name__ = "GradienceShareWindow"$/;"	v	class:GradienceShareWindow	file:
+settings	share_window.py	/^    settings = Gtk.Settings.get_default()$/;"	v	class:GradienceShareWindow
+btn_close	share_window.py	/^    btn_close = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+btn_back	share_window.py	/^    btn_back = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+btn_next	share_window.py	/^    btn_next = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+btn_install	share_window.py	/^    btn_install = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+btn_agree	share_window.py	/^    btn_agree = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+carousel	share_window.py	/^    carousel = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+switch_system	share_window.py	/^    switch_system = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+switch_adw_gtk3	share_window.py	/^    switch_adw_gtk3 = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+progressbar	share_window.py	/^    progressbar = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+img_welcome	share_window.py	/^    img_welcome = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+label_skip	share_window.py	/^    label_skip = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+images	share_window.py	/^    images = [$/;"	v	class:GradienceShareWindow
+carousel_pages	share_window.py	/^    carousel_pages = [$/;"	v	class:GradienceShareWindow
+page_welcome	share_window.py	/^    page_welcome = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+page_release	share_window.py	/^    page_release = Gtk.Template.Child()$/;"	v	class:GradienceShareWindow
+__init__	share_window.py	/^    def __init__(self, window, **kwargs) -> None:$/;"	m	class:GradienceShareWindow	typeref:typename:None
+theme_changed	share_window.py	/^    def theme_changed(self, settings, key):$/;"	m	class:GradienceShareWindow
+get_page	share_window.py	/^    def get_page(self, index):$/;"	m	class:GradienceShareWindow
+page_changed	share_window.py	/^    def page_changed(self, widget=False, index=0, *_args):$/;"	m	class:GradienceShareWindow
+quit	share_window.py	/^    def quit(self, *args):$/;"	m	class:GradienceShareWindow
+install_runner	share_window.py	/^    def install_runner(self, widget):$/;"	m	class:GradienceShareWindow
+set_completed	share_window.py	/^        def set_completed(result, error=False):$/;"	f	member:GradienceShareWindow.install_runner	file:
+install	share_window.py	/^        def install():$/;"	f	member:GradienceShareWindow.install_runner	file:
+previous_page	share_window.py	/^    def previous_page(self, widget=False, index=None):$/;"	m	class:GradienceShareWindow
+next_page	share_window.py	/^    def next_page(self, widget=False, index=None):$/;"	m	class:GradienceShareWindow
+pulse	share_window.py	/^    def pulse(self):$/;"	m	class:GradienceShareWindow
+close_window	share_window.py	/^    def close_window(self, widget):$/;"	m	class:GradienceShareWindow
+PRESET_DIR	main.py	/^PRESET_DIR = os.path.join($/;"	v
+GradienceApplication	main.py	/^class GradienceApplication(Adw.Application):$/;"	c
+__gtype_name__	main.py	/^    __gtype_name__ = "GradienceApplication"$/;"	v	class:GradienceApplication	file:
+settings	main.py	/^    settings = Gio.Settings.new(app_id)$/;"	v	class:GradienceApplication
+__init__	main.py	/^    def __init__(self):$/;"	m	class:GradienceApplication
+do_activate	main.py	/^    def do_activate(self):$/;"	m	class:GradienceApplication
+save_favourite	main.py	/^    def save_favourite(self):$/;"	m	class:GradienceApplication
+reload_user_defined_presets	main.py	/^    def reload_user_defined_presets(self):$/;"	m	class:GradienceApplication
+show_presets_manager	main.py	/^    def show_presets_manager(self, *args):$/;"	m	class:GradienceApplication
+load_preset_from_css	main.py	/^    def load_preset_from_css(self):$/;"	m	class:GradienceApplication
+open_preset_directory	main.py	/^    def open_preset_directory(self, *_args):$/;"	m	class:GradienceApplication
+open_dir_callback	main.py	/^        def open_dir_callback(_, result):$/;"	f	member:GradienceApplication.open_preset_directory	file:
+load_preset_from_file	main.py	/^    def load_preset_from_file(self, preset_path):$/;"	m	class:GradienceApplication
+load_preset_from_resource	main.py	/^    def load_preset_from_resource(self, preset_path):$/;"	m	class:GradienceApplication
+load_preset_variables_from_preset	main.py	/^    def load_preset_variables_from_preset(self, preset=None):$/;"	m	class:GradienceApplication
+load_preset_variables	main.py	/^    def load_preset_variables(self, preset):$/;"	m	class:GradienceApplication
+rgba_from_argb	main.py	/^    def rgba_from_argb(argb, alpha=None) -> str:$/;"	m	class:GradienceApplication	typeref:typename:str
+update_theme_from_monet	main.py	/^    def update_theme_from_monet(self, theme, tone, monet_theme):$/;"	m	class:GradienceApplication
+generate_gtk_css	main.py	/^    def generate_gtk_css(self, app_type):$/;"	m	class:GradienceApplication
+mark_as_dirty	main.py	/^    def mark_as_dirty(self):$/;"	m	class:GradienceApplication
+clear_dirty	main.py	/^    def clear_dirty(self):$/;"	m	class:GradienceApplication
+reload_variables	main.py	/^    def reload_variables(self):$/;"	m	class:GradienceApplication
+on_error	main.py	/^        def on_error(_, section, error):$/;"	f	member:GradienceApplication.reload_variables	file:
+load_preset_action	main.py	/^    def load_preset_action(self, _unused, *args):$/;"	m	class:GradienceApplication
+show_apply_color_scheme_dialog	main.py	/^    def show_apply_color_scheme_dialog(self, *_args):$/;"	m	class:GradienceApplication
+show_restore_color_scheme_dialog	main.py	/^    def show_restore_color_scheme_dialog(self, *_args):$/;"	m	class:GradienceApplication
+show_reset_color_scheme_dialog	main.py	/^    def show_reset_color_scheme_dialog(self, *_args):$/;"	m	class:GradienceApplication
+show_save_preset_dialog	main.py	/^    def show_save_preset_dialog(self, *_args):$/;"	m	class:GradienceApplication
+on_preset_entry_change	main.py	/^        def on_preset_entry_change(*_args):$/;"	f	member:GradienceApplication.show_save_preset_dialog	file:
+show_exit_dialog	main.py	/^    def show_exit_dialog(self, *_args):$/;"	m	class:GradienceApplication
+on_preset_entry_change	main.py	/^        def on_preset_entry_change(*_args):$/;"	f	member:GradienceApplication.show_exit_dialog	file:
+save_preset	main.py	/^    def save_preset(self, _unused, response, entry):$/;"	m	class:GradienceApplication
+apply_color_scheme	main.py	/^    def apply_color_scheme(self, widget, response):$/;"	m	class:GradienceApplication
+restore_color_scheme	main.py	/^    def restore_color_scheme(self, widget, response):$/;"	m	class:GradienceApplication
+reset_color_scheme	main.py	/^    def reset_color_scheme(self, widget, response):$/;"	m	class:GradienceApplication
+show_preferences	main.py	/^    def show_preferences(self, *_args):$/;"	m	class:GradienceApplication
+show_about_window	main.py	/^    def show_about_window(self, *_args):$/;"	m	class:GradienceApplication
+update_custom_css_text	main.py	/^    def update_custom_css_text(self, app_type, new_value):$/;"	m	class:GradienceApplication
+create_action	main.py	/^    def create_action(self, name, callback, shortcuts=None):$/;"	m	class:GradienceApplication
+create_stateful_action	main.py	/^    def create_stateful_action($/;"	m	class:GradienceApplication
+setup_plugins	main.py	/^    def setup_plugins(self):$/;"	m	class:GradienceApplication
+reload_plugins	main.py	/^    def reload_plugins(self):$/;"	m	class:GradienceApplication
+show_adwaita_demo	main.py	/^    def show_adwaita_demo(*_args):$/;"	m	class:GradienceApplication
+show_gtk4_demo	main.py	/^    def show_gtk4_demo(*_args):$/;"	m	class:GradienceApplication
+show_gtk4_widget_factory	main.py	/^    def show_gtk4_widget_factory(*_args):$/;"	m	class:GradienceApplication
+main	main.py	/^def main():$/;"	f
+GradienceMainWindow	window.py	/^class GradienceMainWindow(Adw.ApplicationWindow):$/;"	c
+__gtype_name__	window.py	/^    __gtype_name__ = "GradienceMainWindow"$/;"	v	class:GradienceMainWindow	file:
+content	window.py	/^    content = Gtk.Template.Child()$/;"	v	class:GradienceMainWindow
+toast_overlay	window.py	/^    toast_overlay = Gtk.Template.Child()$/;"	v	class:GradienceMainWindow
+content_monet	window.py	/^    content_monet = Gtk.Template.Child("content_monet")$/;"	v	class:GradienceMainWindow
+content_plugins	window.py	/^    content_plugins = Gtk.Template.Child("content_plugins")$/;"	v	class:GradienceMainWindow
+save_preset_button	window.py	/^    save_preset_button = Gtk.Template.Child("save-preset-button")$/;"	v	class:GradienceMainWindow
+main_menu	window.py	/^    main_menu = Gtk.Template.Child("main-menu")$/;"	v	class:GradienceMainWindow
+errors_button	window.py	/^    errors_button = Gtk.Template.Child("errors-button")$/;"	v	class:GradienceMainWindow
+errors_list	window.py	/^    errors_list = Gtk.Template.Child("errors-list")$/;"	v	class:GradienceMainWindow
+presets_dropdown	window.py	/^    presets_dropdown = Gtk.Template.Child("presets-dropdown")$/;"	v	class:GradienceMainWindow
+presets_menu	window.py	/^    presets_menu = Gtk.Template.Child("presets-menu")$/;"	v	class:GradienceMainWindow
+monet_image_file	window.py	/^    monet_image_file = None$/;"	v	class:GradienceMainWindow
+__init__	window.py	/^    def __init__(self, **kwargs):$/;"	m	class:GradienceMainWindow
+get_default_wallpaper	window.py	/^    def get_default_wallpaper(self):$/;"	m	class:GradienceMainWindow
+on_file_picker_button_clicked	window.py	/^    def on_file_picker_button_clicked(self, *args):$/;"	m	class:GradienceMainWindow
+on_close_request	window.py	/^    def on_close_request(self, *args):$/;"	m	class:GradienceMainWindow
+save_window_props	window.py	/^    def save_window_props(self, *args):$/;"	m	class:GradienceMainWindow
+on_monet_file_chooser_response	window.py	/^    def on_monet_file_chooser_response(self, widget, response):$/;"	m	class:GradienceMainWindow
+setup_monet_page	window.py	/^    def setup_monet_page(self):$/;"	m	class:GradienceMainWindow
+on_apply_button	window.py	/^    def on_apply_button(self, *_args):$/;"	m	class:GradienceMainWindow
+setup_colors_page	window.py	/^    def setup_colors_page(self):$/;"	m	class:GradienceMainWindow
+update_errors	window.py	/^    def update_errors(self, errors):$/;"	m	class:GradienceMainWindow
+on_presets_dropdown_activate	window.py	/^    def on_presets_dropdown_activate(self, *args):$/;"	m	class:GradienceMainWindow
+GradienceRepoRow	repo_row.py	/^class GradienceRepoRow(Adw.ActionRow):$/;"	c
+__gtype_name__	repo_row.py	/^    __gtype_name__ = "GradienceRepoRow"$/;"	v	class:GradienceRepoRow	file:
+remove_button	repo_row.py	/^    remove_button = Gtk.Template.Child("remove_button")$/;"	v	class:GradienceRepoRow
+__init__	repo_row.py	/^    def __init__(self, repo, repo_name, win, deletable=True, **kwargs):$/;"	m	class:GradienceRepoRow
+on_remove_button_clicked	repo_row.py	/^    def on_remove_button_clicked(self, *_args):$/;"	m	class:GradienceRepoRow
+GradiencePresetWindow	presets_manager_window.py	/^class GradiencePresetWindow(Adw.Window):$/;"	c
+__gtype_name__	presets_manager_window.py	/^    __gtype_name__ = "GradiencePresetWindow"$/;"	v	class:GradiencePresetWindow	file:
+installed	presets_manager_window.py	/^    installed = Gtk.Template.Child()$/;"	v	class:GradiencePresetWindow
+repos	presets_manager_window.py	/^    repos = Gtk.Template.Child()$/;"	v	class:GradiencePresetWindow
+main_view	presets_manager_window.py	/^    main_view = Gtk.Template.Child()$/;"	v	class:GradiencePresetWindow
+toast_overlay	presets_manager_window.py	/^    toast_overlay = Gtk.Template.Child()$/;"	v	class:GradiencePresetWindow
+import_button	presets_manager_window.py	/^    import_button = Gtk.Template.Child()$/;"	v	class:GradiencePresetWindow
+import_file_chooser	presets_manager_window.py	/^    import_file_chooser = Gtk.Template.Child()$/;"	v	class:GradiencePresetWindow
+all_filter	presets_manager_window.py	/^    all_filter = Gtk.Template.Child()$/;"	v	class:GradiencePresetWindow
+json_filter	presets_manager_window.py	/^    json_filter = Gtk.Template.Child()$/;"	v	class:GradiencePresetWindow
+remove_button	presets_manager_window.py	/^    remove_button = Gtk.Template.Child("remove_button")$/;"	v	class:GradiencePresetWindow
+file_manager_button	presets_manager_window.py	/^    file_manager_button = Gtk.Template.Child("file_manager_button")$/;"	v	class:GradiencePresetWindow
+search_entry	presets_manager_window.py	/^    search_entry = Gtk.Template.Child("search_entry")$/;"	v	class:GradiencePresetWindow
+search_stack	presets_manager_window.py	/^    search_stack = Gtk.Template.Child("search_stack")$/;"	v	class:GradiencePresetWindow
+search_results	presets_manager_window.py	/^    search_results = Gtk.Template.Child("search_results")$/;"	v	class:GradiencePresetWindow
+search_spinner	presets_manager_window.py	/^    search_spinner = Gtk.Template.Child("search_spinner")$/;"	v	class:GradiencePresetWindow
+search_dropdown	presets_manager_window.py	/^    search_dropdown = Gtk.Template.Child("search_dropdown")$/;"	v	class:GradiencePresetWindow
+search_string_list	presets_manager_window.py	/^    search_string_list = Gtk.Template.Child("search_string_list")$/;"	v	class:GradiencePresetWindow
+custom_presets	presets_manager_window.py	/^    custom_presets = {}$/;"	v	class:GradiencePresetWindow
+official_repositories	presets_manager_window.py	/^    official_repositories = {$/;"	v	class:GradiencePresetWindow
+search_results_list	presets_manager_window.py	/^    search_results_list = []$/;"	v	class:GradiencePresetWindow
+offline	presets_manager_window.py	/^    offline = False$/;"	v	class:GradiencePresetWindow
+__init__	presets_manager_window.py	/^    def __init__(self, parent, **kwargs):$/;"	m	class:GradiencePresetWindow
+setup	presets_manager_window.py	/^    def setup(self):$/;"	m	class:GradiencePresetWindow
+setup_signals	presets_manager_window.py	/^    def setup_signals(self):$/;"	m	class:GradiencePresetWindow
+setup_builtin_presets	presets_manager_window.py	/^    def setup_builtin_presets(self):$/;"	m	class:GradiencePresetWindow
+setup_user_presets	presets_manager_window.py	/^    def setup_user_presets(self):$/;"	m	class:GradiencePresetWindow
+setup_repos	presets_manager_window.py	/^    def setup_repos(self):$/;"	m	class:GradiencePresetWindow
+setup_explore	presets_manager_window.py	/^    def setup_explore(self):$/;"	m	class:GradiencePresetWindow
+add_explore_rows	presets_manager_window.py	/^    def add_explore_rows(self):$/;"	m	class:GradiencePresetWindow
+add_repo	presets_manager_window.py	/^    def add_repo(self, _unused, response, name_entry, url_entry):$/;"	m	class:GradiencePresetWindow
+remove_repo	presets_manager_window.py	/^    def remove_repo(self, repo_name):$/;"	m	class:GradiencePresetWindow
+save_repos	presets_manager_window.py	/^    def save_repos(self):$/;"	m	class:GradiencePresetWindow
+on_add_repo_button_clicked	presets_manager_window.py	/^    def on_add_repo_button_clicked(self, *args):$/;"	m	class:GradiencePresetWindow
+on_name_entry_change	presets_manager_window.py	/^        def on_name_entry_change(*_args):$/;"	f	member:GradiencePresetWindow.on_add_repo_button_clicked	file:
+on_url_entry_change	presets_manager_window.py	/^        def on_url_entry_change(*_args):$/;"	f	member:GradiencePresetWindow.on_add_repo_button_clicked	file:
+on_search_changed	presets_manager_window.py	/^    def on_search_changed(self, *args):$/;"	m	class:GradiencePresetWindow
+on_search_ended	presets_manager_window.py	/^    def on_search_ended(self, *args):$/;"	m	class:GradiencePresetWindow
+on_file_manager_button_clicked	presets_manager_window.py	/^    def on_file_manager_button_clicked(self, *_args):$/;"	m	class:GradiencePresetWindow
+on_import_button_clicked	presets_manager_window.py	/^    def on_import_button_clicked(self, *_args):$/;"	m	class:GradiencePresetWindow
+on_file_chooser_response	presets_manager_window.py	/^    def on_file_chooser_response(self, widget, response):$/;"	m	class:GradiencePresetWindow
+reload_pref_group	presets_manager_window.py	/^    def reload_pref_group(self):$/;"	m	class:GradiencePresetWindow
+reload_repos_group	presets_manager_window.py	/^    def reload_repos_group(self):$/;"	m	class:GradiencePresetWindow

@@ -2,7 +2,7 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradienceShareWindow: Adw.Window {
-    title: _("Share your preset");
+    title: _("Share Preset");
     resizable: true;
     deletable: true;
     modal: true;
@@ -79,11 +79,11 @@ template GradienceShareWindow: Adw.Window {
                             hexpand: true;
                             icon-name: "dialog-warning-symbolic";
                             title: _("Warning");
-                            description: _("Changing the colour scheme can negatively affect contrast and readability. Proceed with caution. Please do not report theming-related issues to app developers.");
+                            description: _("Changing the color scheme can negatively affect contrast and readability. Proceed with caution. Please do not report theming-related issues to app developers.");
 
                             Gtk.Button btn_agree {
                                 styles ["suggested-action", "pill"]
-                                label: _("I understand the consequences");
+                                label: _("I Understand The Consequences");
                                 use-underline: true;
                                 halign: center;
                             }
@@ -95,7 +95,7 @@ template GradienceShareWindow: Adw.Window {
                             hexpand: true;
                             icon-name: "larger-brush-symbolic";
                             title: _("Customize Adwaita Theme");
-                            description: _("Change colours of windows, buttons, lists and more, with advanced features like adding custom CSS");
+                            description: _("Change colors of windows, buttons, lists and more, with advanced features like adding custom CSS");
                         }
 
                         Adw.StatusPage page_configure {
@@ -173,7 +173,7 @@ template GradienceShareWindow: Adw.Window {
 
                                 Gtk.Button btn_close {
                                     styles ["suggested-action", "pill"]
-                                    label: _("Start using Gradience");
+                                    label: _("Start Using Gradience");
                                     use-underline: true;
                                     halign: center;
                                     visible: true;

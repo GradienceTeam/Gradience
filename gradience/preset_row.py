@@ -181,7 +181,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
                 ),
             )
 
-            self.set_name(self.name + "(" + _("Pending deletion") + ")")
+            self.set_name(self.name + "(" + _("Pending Deletion") + ")")
         except Exception as exception:
             buglog(exception)
         else:

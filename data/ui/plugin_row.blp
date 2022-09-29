@@ -5,7 +5,7 @@ template GradiencePluginRow : Adw.ActionRow {
   [suffix]
   Switch switch {
     valign: center;
-    tooltip-text: _("Toggle plugin");
+    tooltip-text: _("Toggle Plugin");
     state-set => on_switch_toggled();
   }
 
@@ -13,7 +13,7 @@ template GradiencePluginRow : Adw.ActionRow {
   Button settings-button {
     valign: center;
     icon-name: "settings-symbolic";
-    tooltip-text: _("Settings");
+    tooltip-text: _("Preferences");
     clicked => on_settings_plugin_clicked();
   }
 
@@ -21,7 +21,7 @@ template GradiencePluginRow : Adw.ActionRow {
   Button remove-button {
     valign: center;
     icon-name: "user-trash-symbolic";
-    tooltip-text: _("Remove plugin");
+    tooltip-text: _("Remove Plugin");
     clicked => on_remove_plugin_clicked();
   }
 

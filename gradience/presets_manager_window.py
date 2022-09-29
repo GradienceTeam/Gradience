@@ -106,7 +106,7 @@ class GradiencePresetWindow(Adw.Window):
 
     def setup_builtin_presets(self):
         self.builtin_preset_list = Adw.PreferencesGroup()
-        self.builtin_preset_list.set_title(_("Builtin Presets"))
+        self.builtin_preset_list.set_title(_("Built-In Presets"))
         self.installed.add(self.builtin_preset_list)
 
     def setup_user_presets(self):
@@ -180,7 +180,7 @@ class GradiencePresetWindow(Adw.Window):
         dialog = Adw.MessageDialog(
             transient_for=self,
             heading=_("Add new repository"),
-            body=_("Add a repository to install additional presets"),
+            body=_("Add a repository to install additional presets."),
             body_use_markup=True,
         )
 
@@ -195,7 +195,7 @@ class GradiencePresetWindow(Adw.Window):
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
 
         name_entry = Gtk.Entry(placeholder_text="Preset Name")
-        name_entry.set_text("My Repo")
+        name_entry.set_text("Custom Repo")
 
         def on_name_entry_change(*_args):
             if len(name_entry.get_text()) == 0:
@@ -206,7 +206,7 @@ class GradiencePresetWindow(Adw.Window):
         name_entry.connect("changed", on_name_entry_change)
 
         url_entry = Gtk.Entry(
-            placeholder_text="https://website.com/raw/presets.json")
+            placeholder_text="https://example.com/raw/presets.json")
 
         def on_url_entry_change(*_args):
             if len(url_entry.get_text()) == 0:
@@ -392,7 +392,7 @@ class GradiencePresetWindow(Adw.Window):
             _(
                 "See "
                 '<a href="https://github.com/GradienceTeam/Community">'
-                "GradienceTeam/Community</a> on Github for more presets"
+                "GradienceTeam/Community</a> on Github for more presets."
             )
         )
 
@@ -417,7 +417,7 @@ class GradiencePresetWindow(Adw.Window):
             self.preset_empty.set_title(
                 _(
                     "No preset found! Use the import button to import one or "
-                    "search one on the Explore tab"
+                    "search one on the Explore tab."
                 )
             )
             self.preset_list.add(self.preset_empty)

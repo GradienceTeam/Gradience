@@ -16,7 +16,7 @@ Popover pop_actions {
     Button btn_share {
         valign: center;
         label: _("Share preset");
-        tooltip-text: _("Share preset");
+        tooltip-text: _("Share Preset");
         styles ["flat"]
     }
 
@@ -49,7 +49,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
         Button apply_button {
             valign: center;
             icon-name: "checkmark-large-symbolic";
-            tooltip-text: _("Apply preset");
+            tooltip-text: _("Apply Preset");
             clicked => on_apply_button_clicked();
                 styles [
                 "flat",
@@ -65,7 +65,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
     ToggleButton name_entry_toggle {
         valign: center;
         icon-name: "document-edit-symbolic";
-        tooltip-text: _("Rename preset");
+        tooltip-text: _("Rename Preset");
 
         toggled => on_name_entry_toggled();
 
@@ -101,7 +101,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
 
             Label no_badges {
                 valign: center;
-                label: _("No badges");
+                label: _("No Badges");
                 styles [
                     "tag",
                     "caption",
@@ -113,7 +113,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
         Button remove_button {
             valign: center;
             label: _("Remove preset");
-            tooltip-text: _("Remove preset");
+            tooltip-text: _("Remove Preset");
             clicked => on_remove_button_clicked();
             styles ["destructive-action"]
         }

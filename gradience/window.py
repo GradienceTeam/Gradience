@@ -154,7 +154,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         child_button = Gtk.Box()
         label = Gtk.Label()
-        label.set_label(_("Choose a file"))
+        label.set_label(_("Choose a File"))
         child_button.append(label)
 
         icon = Gtk.Image()
@@ -196,9 +196,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_theme_row.set_title(_("Theme"))
 
         store = Gtk.StringList()
-        store.append("Auto")
-        store.append("Dark")
-        store.append("Light")
+        store.append(_("Auto"))
+        store.append(_("Light"))
+        store.append(_("Dark"))
         self.monet_theme_row.set_model(store)
         self.monet_pref_group.add(self.monet_theme_row)
 

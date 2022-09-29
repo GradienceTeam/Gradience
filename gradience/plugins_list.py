@@ -97,7 +97,7 @@ class GradiencePluginsList:
         group.set_description(
             _(
                 "Plugins add additional features to Gradience, plugins are "
-                "made by Gradience community and can make issues."
+                "made by Gradience community and can cause issues."
             )
         )
         empty = True
@@ -108,7 +108,7 @@ class GradiencePluginsList:
             empty = False
         if empty:
             row = Adw.ActionRow()
-            row.set_title(_("No plugins found."))
+            row.set_title(_("No Plugins Found."))
             group.add(row)
         return group
 
