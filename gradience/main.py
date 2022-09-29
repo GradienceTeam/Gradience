@@ -641,7 +641,7 @@ class GradienceApplication(Adw.Application):
     def show_save_preset_dialog(self, *_args):
         dialog = Adw.MessageDialog(
             transient_for=self.props.active_window,
-            heading=_("Save preset as..."),
+            heading=_("Save preset as…"),
             body=_(
                 "Saving preset to <tt>{0}</tt>. If that preset already "
                 "exists, it will be overwritten!"

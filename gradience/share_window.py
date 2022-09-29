@@ -125,7 +125,7 @@ class GradienceShareWindow(Adw.Window):
         self.set_deletable(False)
 
         def install():
-            print("Installing Gradience...")
+            print("Installing Gradience…")
 
         RunAsync(self.pulse)
         RunAsync(

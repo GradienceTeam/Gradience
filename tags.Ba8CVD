@@ -1,0 +1,76 @@
+Contributor Covenant Code of Conduct	CODE_OF_CONDUCT.md	/^# Contributor Covenant Code of Conduct$/;"	c
+Our Pledge	CODE_OF_CONDUCT.md	/^## Our Pledge$/;"	s	chapter:Contributor Covenant Code of Conduct
+Our Standards	CODE_OF_CONDUCT.md	/^## Our Standards$/;"	s	chapter:Contributor Covenant Code of Conduct
+Enforcement Responsibilities	CODE_OF_CONDUCT.md	/^## Enforcement Responsibilities$/;"	s	chapter:Contributor Covenant Code of Conduct
+Scope	CODE_OF_CONDUCT.md	/^## Scope$/;"	s	chapter:Contributor Covenant Code of Conduct
+Enforcement	CODE_OF_CONDUCT.md	/^## Enforcement$/;"	s	chapter:Contributor Covenant Code of Conduct
+Enforcement Guidelines	CODE_OF_CONDUCT.md	/^## Enforcement Guidelines$/;"	s	chapter:Contributor Covenant Code of Conduct
+1. Correction	CODE_OF_CONDUCT.md	/^### 1. Correction$/;"	S	section:Contributor Covenant Code of Conduct""Enforcement Guidelines
+2. Warning	CODE_OF_CONDUCT.md	/^### 2. Warning$/;"	S	section:Contributor Covenant Code of Conduct""Enforcement Guidelines
+3. Temporary Ban	CODE_OF_CONDUCT.md	/^### 3. Temporary Ban$/;"	S	section:Contributor Covenant Code of Conduct""Enforcement Guidelines
+4. Permanent Ban	CODE_OF_CONDUCT.md	/^### 4. Permanent Ban$/;"	S	section:Contributor Covenant Code of Conduct""Enforcement Guidelines
+Attribution	CODE_OF_CONDUCT.md	/^## Attribution$/;"	s	chapter:Contributor Covenant Code of Conduct
+Contributing	CONTRIBUTING.md	/^# Contributing$/;"	c
+Code	CONTRIBUTING.md	/^### Code$/;"	S	chapter:Contributing
+Localisation	CONTRIBUTING.md	/^### Localisation $/;"	S	chapter:Contributing
+Contributors ✨	CONTRIBUTING.md	/^## Contributors ✨$/;"	s	chapter:Contributing
+Maintainers	MAINTAINERS.md	/^# Maintainers$/;"	c
+Gradience Team	MAINTAINERS.md	/^## Gradience Team $/;"	s	chapter:Maintainers
+install	Makefile	/^install:$/;"	t
+global	Makefile	/^global:$/;"	t
+release	Makefile	/^release:$/;"	t
+user	Makefile	/^user:$/;"	t
+Roadmap	ROADMAP.md	/^# Roadmap $/;"	c
+Base features	ROADMAP.md	/^# Base features$/;"	c
+Plugins	ROADMAP.md	/^# Plugins$/;"	c
+Security Policy	SECURITY.md	/^# Security Policy$/;"	c
+Supported Versions	SECURITY.md	/^## Supported Versions$/;"	s	chapter:Security Policy
+Reporting a Vulnerability	SECURITY.md	/^## Reporting a Vulnerability$/;"	s	chapter:Security Policy
+gradience	meson.build	/^project('gradience',$/;"	P
+gnome	meson.build	/^gnome = import('gnome')$/;"	V
+i18n	meson.build	/^i18n = import('i18n')$/;"	V
+python	meson.build	/^python = import('python')$/;"	V
+PROJECT_URL	meson.build	/^PROJECT_URL = 'https:\/\/github.com\/GradienceTeam\/Gradience'$/;"	V
+BUGTRACKER_URL	meson.build	/^BUGTRACKER_URL = 'https:\/\/github.com\/GradienceTeam\/Gradience\/issues'$/;"	V
+HELP_URL	meson.build	/^HELP_URL = 'https:\/\/github.com\/GradienceTeam\/Gradience\/discussions'$/;"	V
+TRANSLATE_URL	meson.build	/^TRANSLATE_URL = 'https:\/\/hosted.weblate.org\/projects\/GradienceTeam\/gradience'$/;"	V
+PROJECT_RDNN_NAME	meson.build	/^PROJECT_RDNN_NAME = 'com.github.GradienceTeam.Gradience'$/;"	V
+VCS_TAG	meson.build	/^  VCS_TAG = run_command('git', 'rev-parse', '--short', 'HEAD').stdout().strip()$/;"	V
+VCS_TAG	meson.build	/^  if VCS_TAG == ''$/;"	V
+VERSION_SUFFIX	meson.build	/^    VERSION_SUFFIX = '-devel'$/;"	V
+VERSION_SUFFIX	meson.build	/^    VERSION_SUFFIX = '-@0@'.format(VCS_TAG)$/;"	V
+APPLICATION_ID	meson.build	/^  APPLICATION_ID = '@0@.Devel'.format(PROJECT_RDNN_NAME)$/;"	V
+VERSION_SUFFIX	meson.build	/^  VERSION_SUFFIX = ''$/;"	V
+APPLICATION_ID	meson.build	/^  APPLICATION_ID = PROJECT_RDNN_NAME$/;"	V
+PY_INSTALLDIR	meson.build	/^PY_INSTALLDIR = python.find_installation('python3', required: true, modules: ['lxml'])$/;"	V
+PKGDATA_DIR	meson.build	/^PKGDATA_DIR = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())$/;"	V
+MODULE_DIR	meson.build	/^MODULE_DIR = join_paths(PKGDATA_DIR, 'gradience')$/;"	V
+PLUGINS_DIR	meson.build	/^PLUGINS_DIR = join_paths(PKGDATA_DIR, 'gradience', 'plugins')$/;"	V
+conf	meson.build	/^conf = configuration_data()$/;"	V
+local_conf	meson.build	/^local_conf = configuration_data()$/;"	V
+gradience	meson.build	/^subdir('gradience')$/;"	S
+data	meson.build	/^subdir('data')$/;"	S
+po	meson.build	/^subdir('po')$/;"	S
+Gradience	README.md	/^# Gradience$/;"	c
+Download	README.md	/^## Download$/;"	s	chapter:Gradience
+Building and Installing	README.md	/^## Building and Installing$/;"	s	chapter:Gradience
+Flatpak	README.md	/^### Flatpak$/;"	S	section:Gradience""Building and Installing
+COPR	README.md	/^### COPR $/;"	S	section:Gradience""Building and Installing
+Debian (And derivates)	README.md	/^### Debian (And derivates)$/;"	S	section:Gradience""Building and Installing
+AUR	README.md	/^### AUR $/;"	S	section:Gradience""Building and Installing
+Building from source	README.md	/^### Building from source$/;"	S	section:Gradience""Building and Installing
+Requirements	README.md	/^#### Requirements$/;"	t	subsection:Gradience""Building and Installing""Building from source
+Global installation	README.md	/^### Global installation$/;"	S	section:Gradience""Building and Installing
+Local build (for testing and development purposes)	README.md	/^### Local build (for testing and development purposes)$/;"	S	section:Gradience""Building and Installing
+Building using flatpak-builder	README.md	/^### Building using flatpak-builder$/;"	S	section:Gradience""Building and Installing
+Theming Setup	README.md	/^## Theming Setup$/;"	s	chapter:Gradience
+Libadwaita applications	README.md	/^### Libadwaita applications$/;"	S	section:Gradience""Theming Setup
+Vanilla GTK 4 applications	README.md	/^### Vanilla GTK 4 applications$/;"	S	section:Gradience""Theming Setup
+GTK 3 applications	README.md	/^### GTK 3 applications$/;"	S	section:Gradience""Theming Setup
+Revert Theming	README.md	/^## Revert Theming$/;"	s	chapter:Gradience
+Using app:	README.md	/^### Using app:$/;"	S	section:Gradience""Revert Theming
+Manually:	README.md	/^### Manually:$/;"	S	section:Gradience""Revert Theming
+Roadmap	README.md	/^## Roadmap$/;"	s	chapter:Gradience
+Contribute	README.md	/^## Contribute$/;"	s	chapter:Gradience
+About Name	README.md	/^## About Name$/;"	s	chapter:Gradience
+Gradience, [stopthemingmy.app](https://stopthemingmy.app/) and Adwaita Developers	README.md	/^## Gradience, [stopthemingmy.app](https:\/\/stopthemingmy.app\/) and Adwaita Developers$/;"	s	chapter:Gradience
