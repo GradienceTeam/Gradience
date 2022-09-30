@@ -439,7 +439,7 @@ class GradienceApplication(Adw.Application):
                 "headerbar_border_color": self.rgba_from_argb(
                     dark_theme.primary, "0.8"
                 ),
-                "headerbar_backdrop_color": "@window_bg_color",
+                "headerbar_backdrop_color": "@headerbar_bg_color",
                 "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
                 "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
                 "card_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
@@ -488,7 +488,7 @@ class GradienceApplication(Adw.Application):
                 "headerbar_border_color": self.rgba_from_argb(
                     light_theme.primary, "0.8"
                 ),
-                "headerbar_backdrop_color": "@window_bg_color",
+                "headerbar_backdrop_color": "@headerbar_bg_color",
                 "headerbar_shade_color": self.rgba_from_argb(
                     light_theme.secondaryContainer
                 ),
