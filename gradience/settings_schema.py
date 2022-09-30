@@ -335,7 +335,7 @@ settings_schema = {
         },
         {
             "name": "misc_colors",
-            "title": _("Miscalleneous Colors"),
+            "title": _("Miscellaneous Colors"),
             "description": _("Colors that don't fit in any particular group."),
             "variables": [
                 {
