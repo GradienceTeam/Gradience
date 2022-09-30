@@ -22,6 +22,7 @@ This tool is fully usable, if you want a new feature, open an issue or submit a 
 - [ ] Add a full theme preview instead of GTK4 Demo
 - [x] Add autoload theme from CSS 
 - [ ] Add ability to generate preset from one color
+- [ ] Add ability to create light/dark presets
 
 # Plugins
 
