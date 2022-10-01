@@ -250,7 +250,7 @@ class GradienceApplication(Adw.Application):
                             custom_menu_section.append_item(menu_item)
             else:
                 menu_item = Gio.MenuItem()
-                menu_item.set_label("No presets found")
+                menu_item.set_label(_("No presets found"))
                 custom_menu_section.append_item(menu_item)
 
         except KeyError:
