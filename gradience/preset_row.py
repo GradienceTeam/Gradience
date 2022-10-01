@@ -84,8 +84,10 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
         if name in self.win.app.favourite:
             self.star_button.set_icon_name("starred-symbolic")
+            self.star_button.set_tooltip_text(_("Remove from Favourites"))
         else:
             self.star_button.set_icon_name("non-starred-symbolic")
+            self.star_button.set_tooltip_text(_("Add to Favourites"))
 
     def on_share_btn_clicked(self, *_args):
         buglog("share")
@@ -97,9 +99,11 @@ class GradiencePresetRow(Adw.ExpanderRow):
         if self.name in self.win.app.favourite:
             self.win.app.favourite.remove(self.name)
             self.star_button.set_icon_name("non-starred-symbolic")
+            self.star_button.set_tooltip_text(_("Add to Favourites"))
         else:
             self.win.app.favourite.add(self.name)
             self.star_button.set_icon_name("starred-symbolic")
+            self.star_button.set_tooltip_text(_("Remove from Favourites"))
         self.win.app.save_favourite()
         self.win.reload_pref_group()
 

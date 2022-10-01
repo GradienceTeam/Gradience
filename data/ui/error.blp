@@ -8,20 +8,24 @@ template GradienceError : ListBoxRow {
     margin-bottom: 6;
     margin-start: 12;
     margin-end: 12;
+
     Box {
       orientation: horizontal;
       spacing: 6;
+
       Label error-label {
+        halign: start;
+        justify: left;
         styles ["heading", "error"]
-        halign: start;
-        justify: left;
       }
+
       Label element-label {
-        styles ["dim-label", "error"]
         halign: start;
         justify: left;
+        styles ["dim-label", "error"]
       }
     }
+
     Label line-label {
       halign: start;
       wrap: true;

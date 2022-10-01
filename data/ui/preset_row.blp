@@ -14,10 +14,10 @@ Popover pop_actions {
     margin-end: 6;
 
     Button btn_share {
-        valign: center;
-        label: _("Share preset");
-        tooltip-text: _("Share Preset");
-        styles ["flat"]
+      valign: center;
+      label: _("Share preset");
+      tooltip-text: _("Share Preset");
+      styles ["flat"]
     }
 
     Separator {
@@ -30,98 +30,90 @@ Popover pop_actions {
 }
 
 template GradiencePresetRow : Adw.ExpanderRow {
-    [action]
-    Button star_button {
+  [action]
+  Button star_button {
+    valign: center;
+    styles [
+      "flat",
+    ]
+  }
+
+  [action]
+  Stack value_stack {
+    valign: center;
+    hhomogeneous: false;
+    interpolate-size: true;
+    transition-type: crossfade;
+
+    Button apply_button {
       valign: center;
-      tooltip-text: _("Add as a Favourite");
+      icon-name: "checkmark-large-symbolic";
+      tooltip-text: _("Apply Preset");
+      clicked => on_apply_button_clicked();
       styles [
         "flat",
       ]
     }
 
+    Entry name_entry {
+      text: "Name";
+      changed => on_name_entry_changed();
+    }
+  }
 
-    [action]
-    Stack value_stack {
+  [action]
+  ToggleButton name_entry_toggle {
+    valign: center;
+    icon-name: "document-edit-symbolic";
+    tooltip-text: _("Rename Preset");
+    toggled => on_name_entry_toggled();
+    styles [
+      "flat",
+    ]
+  }
+
+  [action]
+  MenuButton {
+    valign: center;
+    popover: pop_actions;
+    icon-name: "view-more-symbolic";
+    tooltip-text: _("More Options");
+    styles [
+      "flat",
+    ]
+  }
+
+  Adw.ActionRow description {
+    title: _("Description");
+    subtitle: _("Sorry, but this preset don't have a description.");
+  }
+
+  Adw.ActionRow {
+    [prefix]
+    Gtk.Box badge_list {
+      spacing: 6;
+      margin-start: 6;
+      margin-end: 6;
+
+      Label no_badges {
         valign: center;
-        hhomogeneous: false;
-        interpolate-size: true;
-        transition-type: crossfade;
-
-        Button apply_button {
-            valign: center;
-            icon-name: "checkmark-large-symbolic";
-            tooltip-text: _("Apply Preset");
-            clicked => on_apply_button_clicked();
-                styles [
-                "flat",
-            ]
-        }
-        Entry name_entry {
-        text: "Name";
-        changed => on_name_entry_changed();
-        }
+        label: _("No Badges");
+        styles [
+          "tag",
+          "caption",
+        ]
+      }
     }
 
-    [action]
-    ToggleButton name_entry_toggle {
-        valign: center;
-        icon-name: "document-edit-symbolic";
-        tooltip-text: _("Rename Preset");
-
-        toggled => on_name_entry_toggled();
-
-         styles [
-        "flat",
-      ]
-    }
-
-    [action]
-    MenuButton {
+    [suffix]
+    Button remove_button {
       valign: center;
-      popover: pop_actions;
-      icon-name: "view-more-symbolic";
-      tooltip-text: _("More Options");
-      styles [
-        "flat",
-      ]
+      label: _("Remove preset");
+      tooltip-text: _("Remove Preset");
+      clicked => on_remove_button_clicked();
+      styles ["destructive-action"]
     }
-
-
-    Adw.ActionRow description {
-            title: _("Description");
-            subtitle: _("Sorry, but this preset don't have a description.");
-    }
-
-    Adw.ActionRow {
-
-        [prefix]
-        Gtk.Box badge_list {
-            spacing: 6;
-            margin-start: 6;
-            margin-end: 6;
-
-            Label no_badges {
-                valign: center;
-                label: _("No Badges");
-                styles [
-                    "tag",
-                    "caption",
-                ]
-            }
-        }
-
-        [suffix]
-        Button remove_button {
-            valign: center;
-            label: _("Remove preset");
-            tooltip-text: _("Remove Preset");
-            clicked => on_remove_button_clicked();
-            styles ["destructive-action"]
-        }
-
-    }
-
-
+  }
 
 	//Gtk.ListBoxRow {
 	//	activatable: false;
@@ -210,8 +202,4 @@ template GradiencePresetRow : Adw.ExpanderRow {
 //
 	//	}
 	//}
-
-
-
-
 }

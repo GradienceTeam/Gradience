@@ -236,14 +236,9 @@ class GradiencePresetWindow(Adw.Window):
             self.search_stack.set_visible_child_name("page_results")
             for widget in self.search_results_list:
                 widget.props.visible = False
-                if not (
-                    self.search_dropdown.props.selected_item.get_string().lower()
-                    in "all"
-                ):
-                    if (
-                        self.search_dropdown.props.selected_item.get_string().lower()
-                        in widget.prefix.lower()
-                    ):
+                selected_item_name = self.search_dropdown.props.selected_item.get_string().lower()
+                if not selected_item_name in "all":
+                    if selected_item_name in widget.prefix.lower():
                         if search_text.lower() in widget.props.title.lower():
                             widget.props.visible = True
                             items_count += 1
