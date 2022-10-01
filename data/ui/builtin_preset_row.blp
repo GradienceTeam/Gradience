@@ -10,5 +10,8 @@ template GradienceBuiltinPresetRow : Adw.ActionRow {
     icon-name: "checkmark-large-symbolic";
     tooltip-text: _("Apply Preset");
     clicked => on_apply_button_clicked();
+    styles [
+      "flat",
+    ]
   }
 }
