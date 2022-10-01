@@ -2,12 +2,13 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradienceBuiltinPresetRow : Adw.ActionRow {
-    subtitle: _("Made by @GradienceTeam");
+  subtitle: _("Made by @GradienceTeam");
+
   [suffix]
   Button apply_button {
-      valign: center;
-      icon-name: "checkmark-large-symbolic";
-      tooltip-text: _("Apply Preset");
-      clicked => on_apply_button_clicked();
+    valign: center;
+    icon-name: "checkmark-large-symbolic";
+    tooltip-text: _("Apply Preset");
+    clicked => on_apply_button_clicked();
   }
 }

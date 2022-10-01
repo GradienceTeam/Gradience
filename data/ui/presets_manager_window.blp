@@ -81,20 +81,19 @@ template GradiencePresetWindow : Adw.Window {
                       orientation: vertical;
 
                       Gtk.Box {
-						styles ["linked"]
+                        styles ["linked"]
 
-						Gtk.SearchEntry search_entry {
-							hexpand: true;
-							placeholder-text: _("e.g. \"Pretty Purple\"");
-						}
+                        Gtk.SearchEntry search_entry {
+                          hexpand: true;
+                          placeholder-text: _("e.g. \"Pretty Purple\"");
+                        }
 
-						Gtk.DropDown search_dropdown {
-							model: StringList search_string_list {
-								strings [_("All")]
-							};
-						}
-					}
-
+                        Gtk.DropDown search_dropdown {
+                          model: StringList search_string_list {
+                            strings [_("All")]
+                          };
+                        }
+                      }
 
                       Gtk.Stack search_stack {
                         Gtk.StackPage {
@@ -118,16 +117,16 @@ template GradiencePresetWindow : Adw.Window {
                         Gtk.StackPage {
                           name: "page_empty";
                           child: Adw.StatusPage {
-                              icon-name: "system-search-symbolic";
-                              title: _("No Results Found");
+                            icon-name: "system-search-symbolic";
+                            title: _("No Results Found");
                           };
                         }
 
                         Gtk.StackPage {
                           name: "page_offline";
                           child: Adw.StatusPage {
-                              icon-name: "network-wireless-offline-symbolic";
-                              title: _("Offline");
+                            icon-name: "network-wireless-offline-symbolic";
+                            title: _("Offline");
                           };
                         }
                       }

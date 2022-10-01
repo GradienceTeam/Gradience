@@ -2,72 +2,80 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradiencePreferencesWindow : Adw.PreferencesWindow {
-    title: _("Preferences");
-    default-height: 400;
-    default-width: 600;
-    modal: true;
+  title: _("Preferences");
+  default-height: 400;
+  default-width: 600;
+  modal: true;
 
-    Adw.PreferencesPage {
-        Adw.PreferencesGroup flatpak_group {
-            title: _("GTK4 Flatpak Applications");
-            Adw.ActionRow {
-                title: _("Allow GTK4 Flatpak Applications Theming");
-                subtitle: _("Override Flatpak permissions for current user to allow GTK4 Flatpak applications to access custom themes.");
-                activatable-widget: allow_gtk4_flatpak_theming_user;
-                Gtk.Switch allow_gtk4_flatpak_theming_user {
-                    valign: center;
-                }
-            }
-            Adw.ActionRow {
-                visible: false;
-                title: _("Allow GTK4 Flatpak Applications Theming (System)");
-                subtitle: _("Override Flatpak permissions for all users to allow GTK4 Flatpak applications to access custom themes. (Requires root access)");
-                activatable-widget: allow_gtk4_flatpak_theming_global;
-                Gtk.Switch allow_gtk4_flatpak_theming_global {
-                    valign: center;
-                }
-            }
-        }
-        Adw.PreferencesGroup gtk3_flatpak_group {
-            title: _("GTK3 Flatpak Applications");
-            description: _("Remember to install adw-gtk3 theme (as a Flatpak package) in order to get custom presets working in GTK3 Flatpak applications.");
-            Adw.ActionRow {
-                title: _("Allow GTK3 Flatpak theming");
-                subtitle: _("Override Flatpak permissions for current user to allow GTK3 Flatpak applications to access adw-gtk3 theme.");
-                activatable-widget: allow_gtk3_flatpak_theming_user;
-                Gtk.Switch allow_gtk3_flatpak_theming_user {
-                    valign: center;
-                }
-            }
-            Adw.ActionRow {
-                visible: false;
-                title: _("GTK3 Flatpak Applications (System)");
-                subtitle: _("Override Flatpak permissions for all users to allow GTK3 Flatpak applications to access adw-gtk3 theme. (Requires root access)");
-                activatable-widget: allow_gtk3_flatpak_theming_global;
-                Gtk.Switch allow_gtk3_flatpak_theming_global {
-                    valign: center;
-                }
-            }
-        }
-        Adw.PreferencesGroup custom_repository_group {
-            visible: false;
-            title: _("Custom Preset Repositories");
-            Adw.ActionRow {
-                title: _("Custom repository URL address");
-                Gtk.Box {
-                    styles ["linked"]
-                    orientation: horizontal;
+  Adw.PreferencesPage {
+    Adw.PreferencesGroup flatpak_group {
+      title: _("GTK4 Flatpak Applications");
 
-                    Gtk.Entry custom_repository_entry {
-                        valign: center;
-                    }
-
-                    Gtk.Button custom_repository_apply {
-                        valign: center;
-                        icon-name: "checkmark-large-symbolic";
-                    }
-                }
-            }
+      Adw.ActionRow {
+        title: _("Allow GTK4 Flatpak Applications Theming");
+        subtitle: _("Override Flatpak permissions for current user to allow GTK4 Flatpak applications to access custom themes.");
+        activatable-widget: allow_gtk4_flatpak_theming_user;
+        Gtk.Switch allow_gtk4_flatpak_theming_user {
+          valign: center;
         }
+      }
+
+      Adw.ActionRow {
+        visible: false;
+        title: _("Allow GTK4 Flatpak Applications Theming (System)");
+        subtitle: _("Override Flatpak permissions for all users to allow GTK4 Flatpak applications to access custom themes. (Requires root access)");
+        activatable-widget: allow_gtk4_flatpak_theming_global;
+        Gtk.Switch allow_gtk4_flatpak_theming_global {
+          valign: center;
+        }
+      }
     }
+
+    Adw.PreferencesGroup gtk3_flatpak_group {
+      title: _("GTK3 Flatpak Applications");
+      description: _("Remember to install adw-gtk3 theme (as a Flatpak package) in order to get custom presets working in GTK3 Flatpak applications.");
+
+      Adw.ActionRow {
+        title: _("Allow GTK3 Flatpak theming");
+        subtitle: _("Override Flatpak permissions for current user to allow GTK3 Flatpak applications to access adw-gtk3 theme.");
+        activatable-widget: allow_gtk3_flatpak_theming_user;
+        Gtk.Switch allow_gtk3_flatpak_theming_user {
+          valign: center;
+        }
+      }
+
+      Adw.ActionRow {
+        visible: false;
+        title: _("GTK3 Flatpak Applications (System)");
+        subtitle: _("Override Flatpak permissions for all users to allow GTK3 Flatpak applications to access adw-gtk3 theme. (Requires root access)");
+        activatable-widget: allow_gtk3_flatpak_theming_global;
+        Gtk.Switch allow_gtk3_flatpak_theming_global {
+          valign: center;
+        }
+      }
+    }
+
+    Adw.PreferencesGroup custom_repository_group {
+      visible: false;
+      title: _("Custom Preset Repositories");
+
+      Adw.ActionRow {
+        title: _("Custom repository URL address");
+
+        Gtk.Box {
+          styles ["linked"]
+          orientation: horizontal;
+
+          Gtk.Entry custom_repository_entry {
+            valign: center;
+          }
+
+          Gtk.Button custom_repository_apply {
+            valign: center;
+            icon-name: "checkmark-large-symbolic";
+          }
+        }
+      }
+    }
+  }
 }

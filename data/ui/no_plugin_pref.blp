@@ -2,34 +2,30 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradienceNoPluginPrefWindow: Adw.Window {
-    title: _("Plugin Preferences");
-    modal: true;
-    default-width: 400;
-    default-height: 400;
-    resizable: true;
-    deletable: true;
+  title: _("Plugin Preferences");
+  modal: true;
+  default-width: 400;
+  default-height: 400;
+  resizable: true;
+  deletable: true;
 
 
-    Adw.Leaflet leaflet {
-        can-unfold: false;
+  Adw.Leaflet leaflet {
+    can-unfold: false;
 
-        Gtk.Box main_view {
-            orientation: vertical;
+    Gtk.Box main_view {
+      orientation: vertical;
 
-            Adw.HeaderBar titlebar {
-                styles ["flat"]
-            }
+      Adw.HeaderBar titlebar {
+        styles ["flat"]
+      }
 
-
-            Adw.StatusPage {
-                name: "empty";
-                title: _("No Preferences");
-                icon-name: "action-unavailable-symbolic";
-
-                description: _("This plugin doesn't have any preferences.");
-            }
-
-          }
-        }
-
+      Adw.StatusPage {
+        name: "empty";
+        icon-name: "action-unavailable-symbolic";
+        title: _("No Preferences");
+        description: _("This plugin doesn't have any preferences.");
+      }
+    }
   }
+}
