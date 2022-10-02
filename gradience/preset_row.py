@@ -20,7 +20,7 @@ import os
 
 from gi.repository import Gtk, Adw, Xdp, XdpGtk4
 
-from gradience.modules.custom_presets import PRESET_DIR
+from gradience.modules.preset import presets_dir
 
 from .constants import rootdir
 from .modules.utils import to_slug_case, buglog
@@ -113,9 +113,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
         self.app.load_preset_from_file(
             os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
+                presets_dir,
                 self.prefix,
                 to_slug_case(self.name) + ".json",
             )
@@ -170,16 +168,12 @@ class GradiencePresetRow(Adw.ExpanderRow):
         try:
             os.rename(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
+                    presets_dir,
                     self.prefix,
                     self.file_name + ".json",
                 ),
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
+                    presets_dir,
                     self.prefix,
                     self.file_name + ".json.to_delete",
                 ),
@@ -199,7 +193,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.preset.save_preset()
         os.remove(
             os.path.join(
-                PRESET_DIR,
+                presets_dir,
                 self.prefix,
                 self.file_name + ".json",
             )
@@ -212,10 +206,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
             try:
                 os.remove(
                     os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "presets",
+                        presets_dir,
                         self.prefix,
                         self.file_name + ".json.to_delete",
                     )
@@ -232,18 +223,12 @@ class GradiencePresetRow(Adw.ExpanderRow):
             try:
                 os.rename(
                     os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "presets",
+                        presets_dir,
                         self.prefix,
                         self.file_name + ".json.to_delete",
                     ),
                     os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "presets",
+                        presets_dir,
                         self.prefix,
                         self.file_name + ".json",
                     ),

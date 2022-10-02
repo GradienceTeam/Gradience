@@ -45,13 +45,7 @@ from .preferences import GradiencePreferencesWindow
 from .modules.utils import to_slug_case, buglog
 from .plugins_list import GradiencePluginsList
 from .presets_manager_window import GradiencePresetWindow
-from .modules.preset import Preset
-
-
-PRESET_DIR = os.path.join(
-    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
-    "presets",
-)
+from .modules.preset import Preset, presets_dir
 
 
 class GradienceApplication(Adw.Application):
@@ -164,11 +158,11 @@ class GradienceApplication(Adw.Application):
         if self.props.active_window.presets_menu.get_n_items() > 1:
             self.props.active_window.presets_menu.remove(1)
 
-        if not os.path.exists(PRESET_DIR):
-            os.makedirs(PRESET_DIR)
+        if not os.path.exists(presets_dir):
+            os.makedirs(presets_dir)
 
         self.custom_presets = {"user": {}}
-        for repo in Path(PRESET_DIR).iterdir():
+        for repo in Path(presets_dir).iterdir():
             if repo.is_dir():  # repo
                 presets_list = {}
                 for file_name in repo.iterdir():
@@ -176,7 +170,7 @@ class GradienceApplication(Adw.Application):
                     if file_name.endswith(".json"):
                         try:
                             with open(
-                                os.path.join(PRESET_DIR, file_name),
+                                os.path.join(presets_dir, file_name),
                                 "r",
                                 encoding="utf-8",
                             ) as file:
@@ -199,15 +193,15 @@ class GradienceApplication(Adw.Application):
                 buglog("file")
                 # keep compatiblity with old presets
                 if repo.name.endswith(".json"):
-                    if not os.path.isdir(os.path.join(PRESET_DIR, "user")):
-                        os.mkdir(os.path.join(PRESET_DIR, "user"))
+                    if not os.path.isdir(os.path.join(presets_dir, "user")):
+                        os.mkdir(os.path.join(presets_dir, "user"))
 
                     os.rename(repo, os.path.join(
-                        PRESET_DIR, "user", repo.name))
+                        presets_dir, "user", repo.name))
 
                     try:
                         with open(
-                            os.path.join(PRESET_DIR, "user", repo),
+                            os.path.join(presets_dir, "user", repo),
                             "r",
                             encoding="utf-8",
                         ) as file:
@@ -254,12 +248,12 @@ class GradienceApplication(Adw.Application):
                 custom_menu_section.append_item(menu_item)
 
         except KeyError:
-            if not os.path.exists(os.path.join(PRESET_DIR, "user")):
-                os.makedirs(os.path.join(PRESET_DIR, "user"))
-            if not os.path.exists(os.path.join(PRESET_DIR, "curated")):
-                os.makedirs(os.path.join(PRESET_DIR, "curated"))
-            if not os.path.exists(os.path.join(PRESET_DIR, "official")):
-                os.makedirs(os.path.join(PRESET_DIR, "official"))
+            if not os.path.exists(os.path.join(presets_dir, "user")):
+                os.makedirs(os.path.join(presets_dir, "user"))
+            if not os.path.exists(os.path.join(presets_dir, "curated")):
+                os.makedirs(os.path.join(presets_dir, "curated"))
+            if not os.path.exists(os.path.join(presets_dir, "official")):
+                os.makedirs(os.path.join(presets_dir, "official"))
         open_in_file_manager_item = Gio.MenuItem()
         open_in_file_manager_item.set_label(_("Open in File Manager"))
         open_in_file_manager_item.set_action_and_target_value(

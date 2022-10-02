@@ -20,6 +20,7 @@ import os
 import shutil
 import json
 
+from collections import OrderedDict
 from pathlib import Path
 
 from gi.repository import Gtk, Adw, GLib
@@ -29,9 +30,9 @@ from .builtin_preset_row import GradienceBuiltinPresetRow
 from .explore_preset_row import GradienceExplorePresetRow
 from .modules.custom_presets import fetch_presets
 from .repo_row import GradienceRepoRow
+from .modules.preset import presets_dir
 from .modules.utils import buglog
 from .constants import rootdir
-from collections import OrderedDict
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
@@ -283,11 +284,7 @@ class GradiencePresetWindow(Adw.Window):
                     shutil.copy(
                         self.preset_path.get_path(),
                         os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "presets",
+                            presets_dir,
                             preset_file,
                         ),
                     )
@@ -302,12 +299,9 @@ class GradiencePresetWindow(Adw.Window):
 
     def reload_pref_group(self):
         buglog("reload")
-        preset_directory = os.path.join(
-            os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
-            "presets",
-        )
-        if not os.path.exists(preset_directory):
-            os.makedirs(preset_directory)
+
+        if not os.path.exists(presets_dir):
+            os.makedirs(presets_dir)
 
         self.custom_presets = {"user": {}}
         self.builtin_presets = {
@@ -315,7 +309,8 @@ class GradiencePresetWindow(Adw.Window):
             "adwaita-dark": "Adwaita Dark",
             "pretty-purple": "Pretty Purple",
         }
-        for repo in Path(preset_directory).iterdir():
+
+        for repo in Path(presets_dir).iterdir():
             if repo.is_dir():  # repo
                 presets_list = {}
                 for file_name in repo.iterdir():
@@ -323,7 +318,7 @@ class GradiencePresetWindow(Adw.Window):
                     if file_name.endswith(".json"):
                         try:
                             with open(
-                                os.path.join(preset_directory, file_name),
+                                os.path.join(presets_dir, file_name),
                                 "r",
                                 encoding="utf-8",
                             ) as file:
@@ -345,15 +340,15 @@ class GradiencePresetWindow(Adw.Window):
                 buglog("file")
                 # keep compatiblity with old presets
                 if repo.name.endswith(".json"):
-                    if not os.path.isdir(os.path.join(preset_directory, "user")):
-                        os.mkdir(os.path.join(preset_directory, "user"))
+                    if not os.path.isdir(os.path.join(presets_dir, "user")):
+                        os.mkdir(os.path.join(presets_dir, "user"))
 
                     os.rename(repo, os.path.join(
-                        preset_directory, "user", repo.name))
+                        presets_dir, "user", repo.name))
 
                     try:
                         with open(
-                            os.path.join(preset_directory, "user", repo),
+                            os.path.join(presets_dir, "user", repo),
                             "r",
                             encoding="utf-8",
                         ) as file:
