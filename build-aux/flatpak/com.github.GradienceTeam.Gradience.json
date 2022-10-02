@@ -1,7 +1,7 @@
 {
     "app-id" : "com.github.GradienceTeam.Gradience",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "42",
+    "runtime-version" : "43",
     "sdk" : "org.gnome.Sdk",
     "command" : "gradience",
     "finish-args" : [
@@ -10,7 +10,7 @@
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland",
-        "--filesystem=xdg-data/flatpak:create",
+        "--filesystem=xdg-data/flatpak/overrides:create",
         "--filesystem=xdg-config/gtk-3.0",
         "--filesystem=xdg-config/gtk-4.0",
         "--filesystem=xdg-run/dconf",
@@ -53,7 +53,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-                    "branch" : "main"
+                    "branch" : "v0.4.0"
                 }
             ]
         },
@@ -63,7 +63,7 @@
             "build-commands": [
                 "autoreconf --force --install",
                 "./configure --enable-shared --prefix=/app",
-                "make",
+                "make -j4",
                 "make install"
             ],
             "sources": [
@@ -80,7 +80,7 @@
             "build-commands": [
                 "autoreconf --force --install",
                 "./configure --prefix=/app",
-                "make",
+                "make -j4",
                 "make install"
             ],
             "sources": [
@@ -88,23 +88,6 @@
                     "type": "git",
                     "url": "https://github.com/sass/sassc.git",
                     "tag": "3.6.2"
-                }
-            ]
-        },
-        {
-            "name": "libadwaita",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dvapi=false",
-                "-Dtests=false",
-                "-Dexamples=false",
-                "-Dintrospection=enabled"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                    "tag": "1.2.beta"
                 }
             ]
         },
