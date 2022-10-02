@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-01 12:17+0000\n"
-"PO-Revision-Date: 2022-10-01 06:19+0000\n"
+"POT-Creation-Date: 2022-10-02 01:00+0000\n"
+"PO-Revision-Date: 2022-10-02 04:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ko/>\n"
@@ -104,7 +104,8 @@ msgstr "GTK 3 애플리케이션(adw-gtk3 테마 필요)"
 msgid "Made by @GradienceTeam"
 msgstr "@GradenceTeam 제작"
 
-#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:52
+#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:51
+#: data/ui/window.blp:24
 #, fuzzy
 msgid "Apply Preset"
 msgstr "사전 설정 적용"
@@ -131,7 +132,7 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:22
+#: data/ui/explore_preset_row.blp:21
 #, fuzzy
 msgid "Download and Apply"
 msgstr "다운로드 및 적용"
@@ -140,6 +141,21 @@ msgstr "다운로드 및 적용"
 #, fuzzy
 msgid "Download Only"
 msgstr "다운로드만"
+
+#: data/ui/no_plugin_pref.blp:5
+#, fuzzy
+msgid "Plugin Preferences"
+msgstr "플러그인 기본 설정"
+
+#: data/ui/no_plugin_pref.blp:26
+#, fuzzy
+msgid "No Preferences"
+msgstr "기본 설정 없음"
+
+#: data/ui/no_plugin_pref.blp:27
+#, fuzzy
+msgid "This plugin doesn't have any preferences."
+msgstr "이 플러그인에는 기본 설정이 없습니다."
 
 #: data/ui/option.blp:10
 msgid "GTK 3 Support Warning"
@@ -158,7 +174,7 @@ msgstr "텍스트 값 토글"
 msgid "Toggle Plugin"
 msgstr "토글 플러그인"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:131
+#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:129
 #, fuzzy
 msgid "Preferences"
 msgstr "기본 설정"
@@ -173,12 +189,12 @@ msgstr "플러그인 삭제"
 msgid "GTK4 Flatpak Applications"
 msgstr "GTK4 플랫팩 애플리케이션"
 
-#: data/ui/preferences.blp:14
+#: data/ui/preferences.blp:15
 #, fuzzy
 msgid "Allow GTK4 Flatpak Applications Theming"
 msgstr "GTK4 Flatpak 애플리케이션 테마 허용"
 
-#: data/ui/preferences.blp:15
+#: data/ui/preferences.blp:16
 #, fuzzy
 msgid ""
 "Override Flatpak permissions for current user to allow GTK4 Flatpak "
@@ -187,12 +203,12 @@ msgstr ""
 "GTK4 Flatpak 애플리케이션이 사용자 정의 테마에 액세스할 수 있도록 현재 사용자"
 "에 대한 Flatpak 권한을 재정의합니다."
 
-#: data/ui/preferences.blp:23
+#: data/ui/preferences.blp:25
 #, fuzzy
 msgid "Allow GTK4 Flatpak Applications Theming (System)"
 msgstr "GTK4 Flatpak 애플리케이션 테마 허용(시스템)"
 
-#: data/ui/preferences.blp:24
+#: data/ui/preferences.blp:26
 #, fuzzy
 msgid ""
 "Override Flatpak permissions for all users to allow GTK4 Flatpak "
@@ -201,12 +217,12 @@ msgstr ""
 "GTK4 Flatpak 애플리케이션이 사용자 정의 테마에 액세스할 수 있도록 모든 사용자"
 "에 대한 Flatpak 권한을 재정의합니다. (루트 액세스 필요)"
 
-#: data/ui/preferences.blp:32
+#: data/ui/preferences.blp:35
 #, fuzzy
 msgid "GTK3 Flatpak Applications"
 msgstr "GTK3 플랫팩 애플리케이션"
 
-#: data/ui/preferences.blp:33
+#: data/ui/preferences.blp:36
 #, fuzzy
 msgid ""
 "Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
@@ -215,12 +231,12 @@ msgstr ""
 "GTK3 Flatpak 애플리케이션에서 작동하는 사용자 정의 사전 설정을 얻으려면 adw-"
 "gtk3 테마(Flatpak 패키지로)를 설치해야 합니다."
 
-#: data/ui/preferences.blp:35
+#: data/ui/preferences.blp:39
 #, fuzzy
 msgid "Allow GTK3 Flatpak theming"
 msgstr "GTK3 Flatpak 테마 허용"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences.blp:40
 #, fuzzy
 msgid ""
 "Override Flatpak permissions for current user to allow GTK3 Flatpak "
@@ -229,12 +245,12 @@ msgstr ""
 "GTK3 Flatpak 애플리케이션이 adw-gtk3 테마에 액세스할 수 있도록 현재 사용자에 "
 "대한 Flatpak 권한을 재정의합니다."
 
-#: data/ui/preferences.blp:44
+#: data/ui/preferences.blp:49
 #, fuzzy
 msgid "GTK3 Flatpak Applications (System)"
 msgstr "GTK3 Flatpak 애플리케이션(시스템)"
 
-#: data/ui/preferences.blp:45
+#: data/ui/preferences.blp:50
 #, fuzzy
 msgid ""
 "Override Flatpak permissions for all users to allow GTK3 Flatpak "
@@ -243,12 +259,12 @@ msgstr ""
 "GTK3 Flatpak 애플리케이션이 adw-gtk3 테마에 액세스할 수 있도록 모든 사용자에 "
 "대한 Flatpak 권한을 재정의합니다. (루트 액세스 필요)"
 
-#: data/ui/preferences.blp:54
+#: data/ui/preferences.blp:60
 #, fuzzy
 msgid "Custom Preset Repositories"
 msgstr "사용자 정의 사전 설정 저장소"
 
-#: data/ui/preferences.blp:56
+#: data/ui/preferences.blp:63
 #, fuzzy
 msgid "Custom repository URL address"
 msgstr "사용자 지정 저장소 URL 주소"
@@ -258,7 +274,7 @@ msgstr "사용자 지정 저장소 URL 주소"
 msgid "Share preset"
 msgstr "사전 설정 공유"
 
-#: data/ui/preset_row.blp:19
+#: data/ui/preset_row.blp:19 data/ui/share_window.blp:5
 #, fuzzy
 msgid "Share Preset"
 msgstr "프리셋 공유"
@@ -273,31 +289,36 @@ msgstr "문제 보고"
 msgid "Rename Preset"
 msgstr "사전 설정 이름 바꾸기"
 
-#: data/ui/preset_row.blp:90
+#: data/ui/preset_row.blp:80
+#, fuzzy
+msgid "More Options"
+msgstr "옵션 더 보기"
+
+#: data/ui/preset_row.blp:87
 #, fuzzy
 msgid "Description"
 msgstr "설명"
 
-#: data/ui/preset_row.blp:91
+#: data/ui/preset_row.blp:88
 #, fuzzy
 msgid "Sorry, but this preset don't have a description."
 msgstr "죄송합니다. 이 사전 설정에는 설명이 없습니다."
 
-#: data/ui/preset_row.blp:104
+#: data/ui/preset_row.blp:100
 #, fuzzy
 msgid "No Badges"
 msgstr "배지 없음"
 
-#: data/ui/preset_row.blp:115
+#: data/ui/preset_row.blp:111
 msgid "Remove preset"
 msgstr "사전 설정 삭제"
 
-#: data/ui/preset_row.blp:116
+#: data/ui/preset_row.blp:112
 #, fuzzy
 msgid "Remove Preset"
 msgstr "사진설정 삭제"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:47
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:49
 msgid "Presets"
 msgstr "사전 설정"
 
@@ -305,28 +326,33 @@ msgstr "사전 설정"
 msgid "Import"
 msgstr "가져오기"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:24
+#, fuzzy
+msgid "Import a Preset File"
+msgstr "사전 설정 파일 가져오기"
+
+#: data/ui/presets_manager_window.blp:31
 msgid "Delete"
 msgstr "삭제"
 
-#: data/ui/presets_manager_window.blp:41 gradience/main.py:264
+#: data/ui/presets_manager_window.blp:42 gradience/main.py:264
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "파일 매니저에서 열기"
 
-#: data/ui/presets_manager_window.blp:59
+#: data/ui/presets_manager_window.blp:60
 msgid "Installed"
 msgstr "설치됨"
 
-#: data/ui/presets_manager_window.blp:68
+#: data/ui/presets_manager_window.blp:69
 msgid "Explore"
 msgstr "탐색"
 
-#: data/ui/presets_manager_window.blp:73
+#: data/ui/presets_manager_window.blp:74
 msgid "Search for presets"
 msgstr "사전 설정 검색"
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 #, fuzzy
 msgid ""
 "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
@@ -335,11 +361,11 @@ msgstr ""
 "<a href=\"https://gradienceteam.github.io/presets\">GradienceTeam/Community</"
 "a>에서 검색할 키워드를 입력하세요."
 
-#: data/ui/presets_manager_window.blp:87
+#: data/ui/presets_manager_window.blp:88
 msgid "e.g. \"Pretty Purple\""
 msgstr "예시: \"Pretty Purple\""
 
-#: data/ui/presets_manager_window.blp:92
+#: data/ui/presets_manager_window.blp:93
 #, fuzzy
 msgid "All"
 msgstr "모두"
@@ -354,7 +380,7 @@ msgstr "오프라인"
 
 #: data/ui/presets_manager_window.blp:141
 #: gradience/presets_manager_window.py:120
-#: gradience/presets_manager_window.py:429
+#: gradience/presets_manager_window.py:424
 #, fuzzy
 msgid "Repositories"
 msgstr "저장소"
@@ -374,13 +400,143 @@ msgstr "모든 파일"
 msgid "JSON file (*.json)"
 msgstr "JSON 파일(*.json)"
 
+#: data/ui/share_window.blp:42 data/ui/welcome.blp:42
+msgid "Previous"
+msgstr "이전"
+
+#: data/ui/share_window.blp:65
+#, fuzzy
+msgid "Share your preset"
+msgstr "사전 설정 공유"
+
+#: data/ui/share_window.blp:66
+#, fuzzy
+msgid "Share your preset with the world!"
+msgstr "전 세계와 사전 설정을 공유하십시오!"
+
+#: data/ui/share_window.blp:73
+#, fuzzy
+msgid "How it's work?"
+msgstr "일은 어때?"
+
+#: data/ui/share_window.blp:74
+#, fuzzy
+msgid ""
+"Gradience use GitHub to share your preset. You need to create a GitHub "
+"account and fork <a href='https://github.com/GradienceTeam/"
+"Community'>GradienceTeam/Community</a>. Then, you can upload your preset, "
+"make a pull request and share it with the world!"
+msgstr ""
+"Gradience는 GitHub를 사용하여 사전 설정을 공유합니다. GitHub 계정을 만들고 "
+"<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a>를 분기해야 합니다. 그런 다음 프리셋을 업로드하고 풀 리퀘스트를 "
+"하여 전 세계와 공유할 수 있습니다!"
+
+#: data/ui/share_window.blp:81 data/ui/welcome.blp:81
+#, fuzzy
+msgid "Warning"
+msgstr "경고"
+
+#: data/ui/share_window.blp:82 data/ui/welcome.blp:82
+#, fuzzy
+msgid ""
+"Changing the color scheme can negatively affect contrast and readability. "
+"Proceed with caution. Please do not report theming-related issues to app "
+"developers."
+msgstr ""
+"색 구성표를 변경하면 대비와 가독성에 부정적인 영향을 줄 수 있습니다. 조심해"
+"서 진행해라. 앱 개발자에게 테마 관련 문제를 보고하지 마세요."
+
+#: data/ui/share_window.blp:86 data/ui/welcome.blp:86
+#, fuzzy
+msgid "I Understand The Consequences"
+msgstr "나는 결과를 이해한다"
+
+#: data/ui/share_window.blp:97 data/ui/welcome.blp:97
+msgid "Customize Adwaita Theme"
+msgstr "Adwaita 테마를 커스터마이징"
+
+#: data/ui/share_window.blp:98
+#, fuzzy
+msgid ""
+"Change colors of windows, buttons, lists and more, with advanced features "
+"like adding custom CSS"
+msgstr ""
+"사용자 정의 CSS 추가와 같은 고급 기능으로 창, 버튼, 목록 등의 색상 변경"
+
+#: data/ui/share_window.blp:104 data/ui/welcome.blp:104
+#, fuzzy
+msgid "Configure Gradience"
+msgstr "그라데이션 구성"
+
+#: data/ui/share_window.blp:105 data/ui/welcome.blp:105
+#, fuzzy
+msgid ""
+"Install adw-gtk3 theme for legacy applications and configure system for "
+"theming."
+msgstr ""
+"레거시 애플리케이션용 adw-gtk3 테마를 설치하고 테마용 시스템을 구성합니다."
+
+#: data/ui/share_window.blp:110
+#, fuzzy
+msgid "Legacy apps theming"
+msgstr "기존 앱 테마"
+
+#: data/ui/share_window.blp:115 data/ui/welcome.blp:115
+#, fuzzy
+msgid "Install adw-gtk3 theme for legacy apps theming"
+msgstr "레거시 앱 테마를 위한 adw-gtk3 테마 설치"
+
+#: data/ui/share_window.blp:120
+msgid "System configuration"
+msgstr "시스템 설정"
+
+#: data/ui/share_window.blp:126 data/ui/welcome.blp:126
+#, fuzzy
+msgid "Configure system for theming, enables Flatpak theme override"
+msgstr "테마에 대한 시스템 구성, Flatpak 테마 재정의 활성화"
+
+#: data/ui/share_window.blp:136 data/ui/welcome.blp:136
+#, fuzzy
+msgid "Installing Themes"
+msgstr "테마 설치"
+
+#: data/ui/share_window.blp:137 data/ui/welcome.blp:137
+#, fuzzy
+msgid "Please wait until theme will be installed."
+msgstr "테마가 설치될 때까지 기다려 주세요."
+
+#: data/ui/share_window.blp:143 data/ui/welcome.blp:143
+msgid "Continue"
+msgstr "계속"
+
+#: data/ui/share_window.blp:162 data/ui/welcome.blp:162
+msgid "Done"
+msgstr "완료"
+
+#: data/ui/share_window.blp:163 data/ui/welcome.blp:163
+#, fuzzy
+msgid "Now you can make your own presets or download some online."
+msgstr ""
+"이제 자신만의 사전 설정을 만들거나 온라인에서 일부를 다운로드할 수 있습니다."
+
+#: data/ui/share_window.blp:168 data/ui/welcome.blp:168
+#, fuzzy
+msgid "Please finish the setup first"
+msgstr "먼저 설정을 완료하세요"
+
+#: data/ui/share_window.blp:176 data/ui/welcome.blp:176
+#, fuzzy
+msgid "Start Using Gradience"
+msgstr "Gradience 시작"
+
+#: data/ui/share_window.blp:193 data/ui/welcome.blp:193
+msgid "Next"
+msgstr "다음"
+
 #: data/ui/welcome.blp:5 data/ui/welcome.blp:65
 msgid "Welcome to Gradience"
 msgstr "Gradience에 오신 것을 환영합니다."
-
-#: data/ui/welcome.blp:42
-msgid "Previous"
-msgstr "이전"
 
 #: data/ui/welcome.blp:66
 #, fuzzy
@@ -403,30 +559,6 @@ msgstr ""
 "를 추가했습니다. 또한 사전 설정 리포지토리를 \"공식\" 리포지토리와 \"큐레이트"
 "\" 리포지토리로 나눕니다."
 
-#: data/ui/welcome.blp:81
-#, fuzzy
-msgid "Warning"
-msgstr "경고"
-
-#: data/ui/welcome.blp:82
-#, fuzzy
-msgid ""
-"Changing the color scheme can negatively affect contrast and readability. "
-"Proceed with caution. Please do not report theming-related issues to app "
-"developers."
-msgstr ""
-"색 구성표를 변경하면 대비와 가독성에 부정적인 영향을 줄 수 있습니다. 조심해"
-"서 진행해라. 앱 개발자에게 테마 관련 문제를 보고하지 마세요."
-
-#: data/ui/welcome.blp:86
-#, fuzzy
-msgid "I Understand The Consequences"
-msgstr "나는 결과를 이해한다"
-
-#: data/ui/welcome.blp:97
-msgid "Customize Adwaita Theme"
-msgstr "Adwaita 테마를 커스터마이징"
-
 #: data/ui/welcome.blp:98
 #, fuzzy
 msgid ""
@@ -435,111 +567,66 @@ msgid ""
 msgstr ""
 "사용자 정의 CSS 추가와 같은 고급 기능으로 창, 버튼, 목록 등의 색상 변경"
 
-#: data/ui/welcome.blp:104
-#, fuzzy
-msgid "Configure Gradience"
-msgstr "그라데이션 구성"
-
-#: data/ui/welcome.blp:105
-#, fuzzy
-msgid ""
-"Install adw-gtk3 theme for legacy applications and configure system for "
-"theming."
-msgstr ""
-"레거시 애플리케이션용 adw-gtk3 테마를 설치하고 테마용 시스템을 구성합니다."
-
 #: data/ui/welcome.blp:110
 #, fuzzy
 msgid "Legacy Apps Theming"
 msgstr "레거시 앱 테마"
-
-#: data/ui/welcome.blp:115
-#, fuzzy
-msgid "Install adw-gtk3 theme for legacy apps theming"
-msgstr "레거시 앱 테마를 위한 adw-gtk3 테마 설치"
 
 #: data/ui/welcome.blp:120
 #, fuzzy
 msgid "System Configuration"
 msgstr "시스템 설정"
 
-#: data/ui/welcome.blp:126
-#, fuzzy
-msgid "Configure system for theming, enables Flatpak theme override"
-msgstr "테마에 대한 시스템 구성, Flatpak 테마 재정의 활성화"
-
-#: data/ui/welcome.blp:136
-#, fuzzy
-msgid "Installing Themes"
-msgstr "테마 설치"
-
-#: data/ui/welcome.blp:137
-#, fuzzy
-msgid "Please wait until theme will be installed."
-msgstr "테마가 설치될 때까지 기다려 주세요."
-
-#: data/ui/welcome.blp:143
-msgid "Continue"
-msgstr "계속"
-
-#: data/ui/welcome.blp:162
-msgid "Done"
-msgstr "완료"
-
-#: data/ui/welcome.blp:163
-#, fuzzy
-msgid "Now you can make your own presets or download some online."
-msgstr ""
-"이제 자신만의 사전 설정을 만들거나 온라인에서 일부를 다운로드할 수 있습니다."
-
-#: data/ui/welcome.blp:168
-#, fuzzy
-msgid "Please finish the setup first"
-msgstr "먼저 설정을 완료하세요"
-
-#: data/ui/welcome.blp:176
-#, fuzzy
-msgid "Start Using Gradience"
-msgstr "Gradience 시작"
-
-#: data/ui/welcome.blp:193
-msgid "Next"
-msgstr "다음"
-
 #: data/ui/window.blp:23 gradience/main.py:609 gradience/window.py:141
 msgid "Apply"
 msgstr "적용"
 
-#: data/ui/window.blp:54
+#: data/ui/window.blp:41
+#, fuzzy
+msgid "Main Menu"
+msgstr "주 메뉴"
+
+#: data/ui/window.blp:50
+#, fuzzy
+#| msgid "Presets"
+msgid "Presets Menu"
+msgstr "프리셋 메뉴"
+
+#: data/ui/window.blp:57
 msgid "Save Preset"
 msgstr "사전 설정 저장"
+
+#: data/ui/window.blp:66
+#, fuzzy
+msgid "CSS Errors"
+msgstr "CSS 오류"
 
 #: data/ui/window.blp:81
 msgid "Colors"
 msgstr "색상"
 
-#: data/ui/window.blp:90
+#: data/ui/window.blp:89
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:98
+#: data/ui/window.blp:97
 msgid "Advanced"
 msgstr "고급"
 
-#: data/ui/window.blp:121
+#: data/ui/window.blp:118
 #, fuzzy
 msgid "Restore Applied Color Scheme"
 msgstr "적용된 색 구성표 복원"
 
-#: data/ui/window.blp:125
+#: data/ui/window.blp:123
 msgid "Reset Applied Color Scheme"
 msgstr "적용된 색 구성표 재설정"
 
-#: data/ui/window.blp:135
+#: data/ui/window.blp:134
 msgid "About Gradience"
 msgstr "Gradience에 대하여"
 
-#: data/ui/window.blp:144
+#: data/ui/window.blp:143
 msgid "Adwaita Demo"
 msgstr "Adwaita 데모"
 
@@ -547,14 +634,19 @@ msgstr "Adwaita 데모"
 msgid "GTK4 Demo"
 msgstr "GTK4 데모"
 
-#: data/ui/window.blp:152
+#: data/ui/window.blp:153
 msgid "GTK4 Widget Factory"
 msgstr "GTK4 위젝 팩토리"
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:109
+#: data/ui/window.blp:161 gradience/presets_manager_window.py:109
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "내장 사전 설정"
+
+#: data/ui/window.blp:182
+#, fuzzy
+msgid "Manage Presets"
+msgstr "사전 설정 관리"
 
 #: gradience/modules/flatpak_overrides.py:65
 #: gradience/modules/flatpak_overrides.py:84
@@ -584,10 +676,16 @@ msgid "Preset downloaded"
 msgstr "사전 설정 다운로드됨"
 
 #: gradience/main.py:194 gradience/main.py:225
-#: gradience/presets_manager_window.py:346
-#: gradience/presets_manager_window.py:376
+#: gradience/presets_manager_window.py:341
+#: gradience/presets_manager_window.py:371
 msgid "Failed to load preset"
 msgstr "사전 설정을 로드하지 못했습니다."
+
+#: gradience/main.py:253
+#, fuzzy
+#| msgid "No Results Found"
+msgid "No presets found"
+msgstr "사전 설정을 찾을 수 없습니다."
 
 #: gradience/main.py:271
 #, fuzzy
@@ -817,25 +915,35 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "플러그인을 찾을 수 없습니다."
 
-#: gradience/preset_row.py:158
+#: gradience/preset_row.py:87 gradience/preset_row.py:106
+#, fuzzy
+msgid "Remove from Favourites"
+msgstr "즐겨찾기에서 제거"
+
+#: gradience/preset_row.py:90 gradience/preset_row.py:102
+#, fuzzy
+msgid "Add to Favourites"
+msgstr "즐겨찾기에 추가"
+
+#: gradience/preset_row.py:162
 msgid "Preset removed"
 msgstr "사전 설정 제거됨"
 
-#: gradience/preset_row.py:159
+#: gradience/preset_row.py:163
 msgid "Undo"
 msgstr "실행 취소"
 
-#: gradience/preset_row.py:184
+#: gradience/preset_row.py:188
 #, fuzzy
 msgid "Pending Deletion"
 msgstr "삭제 보류 중"
 
-#: gradience/preset_row.py:222
+#: gradience/preset_row.py:226
 msgid "Unable to delete preset"
 msgstr "사전 설정을 삭제할 수 없습니다"
 
 #: gradience/presets_manager_window.py:114
-#: gradience/presets_manager_window.py:390
+#: gradience/presets_manager_window.py:385
 msgid "User Presets"
 msgstr "사용자 사전 설정"
 
@@ -854,24 +962,24 @@ msgstr "추가 사전 설정을 설치하려면 저장소를 추가하십시오.
 msgid "Add"
 msgstr "Add"
 
-#: gradience/presets_manager_window.py:285
+#: gradience/presets_manager_window.py:280
 msgid "Preset already exists"
 msgstr "사전 설정이 이미 있습니다"
 
-#: gradience/presets_manager_window.py:300
+#: gradience/presets_manager_window.py:295
 msgid "Preset imported"
 msgstr "가져온 사전 설정"
 
-#: gradience/presets_manager_window.py:303
+#: gradience/presets_manager_window.py:298
 msgid "Unsupported file format, must be .json"
 msgstr "지원되지 않는 파일 형식, 파일형식은 .json이어야 합니다"
 
-#: gradience/presets_manager_window.py:383
+#: gradience/presets_manager_window.py:378
 #, fuzzy
 msgid "Built-in Presets"
 msgstr "내장 사전 설정"
 
-#: gradience/presets_manager_window.py:393
+#: gradience/presets_manager_window.py:388
 #, fuzzy
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
@@ -880,7 +988,7 @@ msgstr ""
 "더 많은 사전 설정은 Github에서 <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>를 참조"
 
-#: gradience/presets_manager_window.py:419
+#: gradience/presets_manager_window.py:414
 #, fuzzy
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
@@ -1443,9 +1551,6 @@ msgstr ""
 #~ msgid "Allow installation"
 #~ msgstr "설치 허용"
 
-#~ msgid "System configuration"
-#~ msgstr "시스템 설정"
-
 #, fuzzy
 #~ msgid "Installing themes"
 #~ msgstr "테마 설치"
@@ -1532,13 +1637,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Toggle plugin"
 #~ msgstr "플러그인 활성화"
-
-#, fuzzy
-#~ msgid ""
-#~ "Change colors of windows, buttons, lists and more, with advanced features "
-#~ "like adding custom CSS"
-#~ msgstr ""
-#~ "사용자 정의 CSS 추가와 같은 고급 기능으로 창, 버튼, 목록 등의 색상 변경"
 
 #, fuzzy
 #~ msgid "No plugins found."
