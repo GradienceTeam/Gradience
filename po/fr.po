@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-01 12:17+0000\n"
-"PO-Revision-Date: 2022-10-01 11:21+0000\n"
+"POT-Creation-Date: 2022-10-02 12:16+0000\n"
+"PO-Revision-Date: 2022-10-02 12:16+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/fr/>\n"
@@ -106,7 +106,8 @@ msgstr "Applications GTK 3 (le thème adw-gtk3 est requis)"
 msgid "Made by @GradienceTeam"
 msgstr "Crée par @GradienceTeam"
 
-#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:52
+#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:51
+#: data/ui/window.blp:24
 msgid "Apply Preset"
 msgstr "Appliquer la pré-configuration"
 
@@ -133,13 +134,30 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:22
+#: data/ui/explore_preset_row.blp:21
 msgid "Download and Apply"
 msgstr "Télécharger et appliquer"
 
 #: data/ui/explore_preset_row.blp:32
 msgid "Download Only"
 msgstr "Télécharger seulement"
+
+#: data/ui/no_plugin_pref.blp:5
+#, fuzzy
+#| msgid "Preferences"
+msgid "Plugin Preferences"
+msgstr "Préférences du plugin"
+
+#: data/ui/no_plugin_pref.blp:26
+#, fuzzy
+#| msgid "Preferences"
+msgid "No Preferences"
+msgstr "Sans préférence"
+
+#: data/ui/no_plugin_pref.blp:27
+#, fuzzy
+msgid "This plugin doesn't have any preferences."
+msgstr "Ce plugin n'a pas de préférences."
 
 #: data/ui/option.blp:10
 msgid "GTK 3 Support Warning"
@@ -157,7 +175,7 @@ msgstr "Changer la valeur du texte"
 msgid "Toggle Plugin"
 msgstr "Activer / Désactiver le greffon"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:131
+#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:129
 msgid "Preferences"
 msgstr "Préférences"
 
@@ -169,11 +187,11 @@ msgstr "Supprimer le greffon"
 msgid "GTK4 Flatpak Applications"
 msgstr "Applications GTK4 Flatpak"
 
-#: data/ui/preferences.blp:14
+#: data/ui/preferences.blp:15
 msgid "Allow GTK4 Flatpak Applications Theming"
 msgstr "Autoriser la modification du thème des applications GTK4 Flatpak"
 
-#: data/ui/preferences.blp:15
+#: data/ui/preferences.blp:16
 msgid ""
 "Override Flatpak permissions for current user to allow GTK4 Flatpak "
 "applications to access custom themes."
@@ -181,12 +199,12 @@ msgstr ""
 "Remplace les permissions Flatpak de l’utilisateur actuel pour permettre aux "
 "applications GTK4 Flatpak d’accéder aux thèmes personnalisés."
 
-#: data/ui/preferences.blp:23
+#: data/ui/preferences.blp:25
 msgid "Allow GTK4 Flatpak Applications Theming (System)"
 msgstr ""
 "Autoriser la modification du thème des applications GTK4 Flatpak (système)"
 
-#: data/ui/preferences.blp:24
+#: data/ui/preferences.blp:26
 msgid ""
 "Override Flatpak permissions for all users to allow GTK4 Flatpak "
 "applications to access custom themes. (Requires root access)"
@@ -195,11 +213,11 @@ msgstr ""
 "permettre aux applications GTK4 Flatpak d'accéder aux thèmes personnalisés. "
 "(Nécessite un accès root)"
 
-#: data/ui/preferences.blp:32
+#: data/ui/preferences.blp:35
 msgid "GTK3 Flatpak Applications"
 msgstr "Applications GTK3 Flatpak"
 
-#: data/ui/preferences.blp:33
+#: data/ui/preferences.blp:36
 msgid ""
 "Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
 "custom presets working in GTK3 Flatpak applications."
@@ -208,11 +226,11 @@ msgstr ""
 "afin de faire fonctionner les pré-configurations personnalisées dans les "
 "applications Flatpak GTK3."
 
-#: data/ui/preferences.blp:35
+#: data/ui/preferences.blp:39
 msgid "Allow GTK3 Flatpak theming"
 msgstr "Autoriser la modification du thème GTK3 Flatpak"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences.blp:40
 msgid ""
 "Override Flatpak permissions for current user to allow GTK3 Flatpak "
 "applications to access adw-gtk3 theme."
@@ -220,11 +238,11 @@ msgstr ""
 "Remplace les permissions Flatpak de l’utilisateur actuel pour permettre aux "
 "applications Flatpak GTK3 d’accéder au thème adw-gtk3."
 
-#: data/ui/preferences.blp:44
+#: data/ui/preferences.blp:49
 msgid "GTK3 Flatpak Applications (System)"
 msgstr "Applications GTK3 Flatpak (système)"
 
-#: data/ui/preferences.blp:45
+#: data/ui/preferences.blp:50
 msgid ""
 "Override Flatpak permissions for all users to allow GTK3 Flatpak "
 "applications to access adw-gtk3 theme. (Requires root access)"
@@ -233,11 +251,11 @@ msgstr ""
 "permettre aux applications Flatpak GTK3 d’accéder au thème adw-gtk3. "
 "(Nécessite un accès root)"
 
-#: data/ui/preferences.blp:54
+#: data/ui/preferences.blp:60
 msgid "Custom Preset Repositories"
 msgstr "Dépôt de pré-configurations personnalisées"
 
-#: data/ui/preferences.blp:56
+#: data/ui/preferences.blp:63
 msgid "Custom repository URL address"
 msgstr "Adresse URL du dépôt personnalisé"
 
@@ -245,7 +263,7 @@ msgstr "Adresse URL du dépôt personnalisé"
 msgid "Share preset"
 msgstr "Partager la pré-configuration"
 
-#: data/ui/preset_row.blp:19
+#: data/ui/preset_row.blp:19 data/ui/share_window.blp:5
 msgid "Share Preset"
 msgstr "Partager la pré-configuration"
 
@@ -257,27 +275,32 @@ msgstr "Signaler un problème…"
 msgid "Rename Preset"
 msgstr "Renommer la pré-configuration"
 
-#: data/ui/preset_row.blp:90
+#: data/ui/preset_row.blp:80
+#, fuzzy
+msgid "More Options"
+msgstr "Plus d'options"
+
+#: data/ui/preset_row.blp:87
 msgid "Description"
 msgstr "Description"
 
-#: data/ui/preset_row.blp:91
+#: data/ui/preset_row.blp:88
 msgid "Sorry, but this preset don't have a description."
 msgstr "Désolé, mais cette pré-configuration n’a pas de description."
 
-#: data/ui/preset_row.blp:104
+#: data/ui/preset_row.blp:100
 msgid "No Badges"
 msgstr "Pas de badges"
 
-#: data/ui/preset_row.blp:115
+#: data/ui/preset_row.blp:111
 msgid "Remove preset"
 msgstr "Supprimer la pré-configuration"
 
-#: data/ui/preset_row.blp:116
+#: data/ui/preset_row.blp:112
 msgid "Remove Preset"
 msgstr "Supprimer la pré-configuration"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:47
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:49
 msgid "Presets"
 msgstr "Préréglages"
 
@@ -285,27 +308,33 @@ msgstr "Préréglages"
 msgid "Import"
 msgstr "Importer"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:24
+#, fuzzy
+#| msgid "Import a Preset File (*.json)"
+msgid "Import a Preset File"
+msgstr "Importer un fichier de préréglage"
+
+#: data/ui/presets_manager_window.blp:31
 msgid "Delete"
 msgstr "Supprimer"
 
-#: data/ui/presets_manager_window.blp:41 gradience/main.py:264
+#: data/ui/presets_manager_window.blp:42 gradience/main.py:264
 msgid "Open in File Manager"
 msgstr "Ouvrir dans le gestionnaire de fichiers"
 
-#: data/ui/presets_manager_window.blp:59
+#: data/ui/presets_manager_window.blp:60
 msgid "Installed"
 msgstr "Installé"
 
-#: data/ui/presets_manager_window.blp:68
+#: data/ui/presets_manager_window.blp:69
 msgid "Explore"
 msgstr "Explorer"
 
-#: data/ui/presets_manager_window.blp:73
+#: data/ui/presets_manager_window.blp:74
 msgid "Search for presets"
 msgstr "Rechercher des pré-configurations"
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 msgid ""
 "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
 "presets\">GradienceTeam/Community</a>."
@@ -313,11 +342,11 @@ msgstr ""
 "Entrez un mot-clé pour chercher sur <a href=\"https://gradienceteam.github."
 "io/presets\">l’équipe Gradience / la communauté</a>."
 
-#: data/ui/presets_manager_window.blp:87
+#: data/ui/presets_manager_window.blp:88
 msgid "e.g. \"Pretty Purple\""
 msgstr "par ex. : « Joli violet »"
 
-#: data/ui/presets_manager_window.blp:92
+#: data/ui/presets_manager_window.blp:93
 msgid "All"
 msgstr "Tout"
 
@@ -331,7 +360,7 @@ msgstr "Hors ligne"
 
 #: data/ui/presets_manager_window.blp:141
 #: gradience/presets_manager_window.py:120
-#: gradience/presets_manager_window.py:429
+#: gradience/presets_manager_window.py:424
 msgid "Repositories"
 msgstr "Référentiels"
 
@@ -347,13 +376,135 @@ msgstr "Tous les fichiers"
 msgid "JSON file (*.json)"
 msgstr "Fichiers JSON (*.json)"
 
+#: data/ui/share_window.blp:42 data/ui/welcome.blp:42
+msgid "Previous"
+msgstr "Précédent"
+
+#: data/ui/share_window.blp:65
+#, fuzzy
+#| msgid "Share preset"
+msgid "Share your preset"
+msgstr "Partagez votre présélection"
+
+#: data/ui/share_window.blp:66
+#, fuzzy
+msgid "Share your preset with the world!"
+msgstr "Partagez votre présélection avec le monde entier !"
+
+#: data/ui/share_window.blp:73
+#, fuzzy
+msgid "How it's work?"
+msgstr "Comment ça marche ?"
+
+#: data/ui/share_window.blp:74
+#, fuzzy
+msgid ""
+"Gradience use GitHub to share your preset. You need to create a GitHub "
+"account and fork <a href='https://github.com/GradienceTeam/"
+"Community'>GradienceTeam/Community</a>. Then, you can upload your preset, "
+"make a pull request and share it with the world!"
+msgstr ""
+"Gradience utilise GitHub pour partager votre présélection. Vous devez créer "
+"un compte GitHub et forker <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>. Ensuite, vous pouvez télécharger "
+"votre preset, faire une demande de pull et le partager avec le monde entier !"
+
+#: data/ui/share_window.blp:81 data/ui/welcome.blp:81
+msgid "Warning"
+msgstr "Avertissement"
+
+#: data/ui/share_window.blp:82 data/ui/welcome.blp:82
+msgid ""
+"Changing the color scheme can negatively affect contrast and readability. "
+"Proceed with caution. Please do not report theming-related issues to app "
+"developers."
+msgstr ""
+"La modification de la palette de couleurs peut avoir un effet négatif sur le "
+"contraste et la lisibilité. Faites preuve de prudence. Ne signalez pas les "
+"problèmes liés aux thèmes aux développeurs d'applications."
+
+#: data/ui/share_window.blp:86 data/ui/welcome.blp:86
+msgid "I Understand The Consequences"
+msgstr "Je comprends les conséquences"
+
+#: data/ui/share_window.blp:97 data/ui/welcome.blp:97
+msgid "Customize Adwaita Theme"
+msgstr "Customisez le thème d’Adwaita"
+
+#: data/ui/share_window.blp:98
+msgid ""
+"Change colors of windows, buttons, lists and more, with advanced features "
+"like adding custom CSS"
+msgstr ""
+"Changez les couleurs des fenêtres, boutons, listes et plus encore avec des "
+"fonctionnalités avancées comme l’ajout d’un CSS personnalisé"
+
+#: data/ui/share_window.blp:104 data/ui/welcome.blp:104
+msgid "Configure Gradience"
+msgstr "Configurer Gradience"
+
+#: data/ui/share_window.blp:105 data/ui/welcome.blp:105
+msgid ""
+"Install adw-gtk3 theme for legacy applications and configure system for "
+"theming."
+msgstr ""
+"Installez le thème adw-gtk3 pour les applications anciennes et configurez le "
+"système pour appliquer les thèmes."
+
+#: data/ui/share_window.blp:110
+msgid "Legacy apps theming"
+msgstr "Thèmes des applications anciennes"
+
+#: data/ui/share_window.blp:115 data/ui/welcome.blp:115
+msgid "Install adw-gtk3 theme for legacy apps theming"
+msgstr "Installez le thème adw-gtk3 pour les applications anciennes"
+
+#: data/ui/share_window.blp:120
+msgid "System configuration"
+msgstr "Configuration système"
+
+#: data/ui/share_window.blp:126 data/ui/welcome.blp:126
+msgid "Configure system for theming, enables Flatpak theme override"
+msgstr ""
+"Configurer le système pour les thèmes, permet de remplacer les thèmes Flatpak"
+
+#: data/ui/share_window.blp:136 data/ui/welcome.blp:136
+msgid "Installing Themes"
+msgstr "Installation des thèmes"
+
+#: data/ui/share_window.blp:137 data/ui/welcome.blp:137
+msgid "Please wait until theme will be installed."
+msgstr "Merci de patienter jusqu’à ce que les thèmes soient installés."
+
+#: data/ui/share_window.blp:143 data/ui/welcome.blp:143
+msgid "Continue"
+msgstr "Continuer"
+
+#: data/ui/share_window.blp:162 data/ui/welcome.blp:162
+msgid "Done"
+msgstr "Fait"
+
+#: data/ui/share_window.blp:163 data/ui/welcome.blp:163
+msgid "Now you can make your own presets or download some online."
+msgstr ""
+"Maintenant vous pouvez faire vos propres configurations, ou télécharger une "
+"pré-configuration en ligne."
+
+#: data/ui/share_window.blp:168 data/ui/welcome.blp:168
+msgid "Please finish the setup first"
+msgstr "Merci de terminer l’installation d’abord"
+
+#: data/ui/share_window.blp:176 data/ui/welcome.blp:176
+msgid "Start Using Gradience"
+msgstr "Commencer à utiliser Gradience"
+
+#: data/ui/share_window.blp:193 data/ui/welcome.blp:193
+msgid "Next"
+msgstr "Suivant"
+
 #: data/ui/welcome.blp:5 data/ui/welcome.blp:65
 msgid "Welcome to Gradience"
 msgstr "Bienvenue dans Gradience"
-
-#: data/ui/welcome.blp:42
-msgid "Previous"
-msgstr "Précédent"
 
 #: data/ui/welcome.blp:66
 msgid "Change the look of Adwaita, with ease"
@@ -374,28 +525,6 @@ msgstr ""
 "configurations. Nous avons également divisé le dépôt de pré-configurations "
 "en un dépôt « Officiel » et un dépôt « Maintenu »."
 
-#: data/ui/welcome.blp:81
-msgid "Warning"
-msgstr "Avertissement"
-
-#: data/ui/welcome.blp:82
-msgid ""
-"Changing the color scheme can negatively affect contrast and readability. "
-"Proceed with caution. Please do not report theming-related issues to app "
-"developers."
-msgstr ""
-"La modification de la palette de couleurs peut avoir un effet négatif sur le "
-"contraste et la lisibilité. Faites preuve de prudence. Ne signalez pas les "
-"problèmes liés aux thèmes aux développeurs d'applications."
-
-#: data/ui/welcome.blp:86
-msgid "I Understand The Consequences"
-msgstr "Je comprends les conséquences"
-
-#: data/ui/welcome.blp:97
-msgid "Customize Adwaita Theme"
-msgstr "Customisez le thème d’Adwaita"
-
 #: data/ui/welcome.blp:98
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
@@ -404,102 +533,63 @@ msgstr ""
 "Changez les couleurs des fenêtres, boutons, listes et plus encore avec des "
 "fonctionnalités avancées comme l’ajout d’un CSS personnalisé."
 
-#: data/ui/welcome.blp:104
-msgid "Configure Gradience"
-msgstr "Configurer Gradience"
-
-#: data/ui/welcome.blp:105
-msgid ""
-"Install adw-gtk3 theme for legacy applications and configure system for "
-"theming."
-msgstr ""
-"Installez le thème adw-gtk3 pour les applications anciennes et configurez le "
-"système pour appliquer les thèmes."
-
 #: data/ui/welcome.blp:110
 msgid "Legacy Apps Theming"
 msgstr "Modification du thème des applications anciennes"
-
-#: data/ui/welcome.blp:115
-msgid "Install adw-gtk3 theme for legacy apps theming"
-msgstr "Installez le thème adw-gtk3 pour les applications anciennes"
 
 #: data/ui/welcome.blp:120
 msgid "System Configuration"
 msgstr "Configuration système"
 
-#: data/ui/welcome.blp:126
-msgid "Configure system for theming, enables Flatpak theme override"
-msgstr ""
-"Configurer le système pour les thèmes, permet de remplacer les thèmes Flatpak"
-
-#: data/ui/welcome.blp:136
-msgid "Installing Themes"
-msgstr "Installation des thèmes"
-
-#: data/ui/welcome.blp:137
-msgid "Please wait until theme will be installed."
-msgstr "Merci de patienter jusqu’à ce que les thèmes soient installés."
-
-#: data/ui/welcome.blp:143
-msgid "Continue"
-msgstr "Continuer"
-
-#: data/ui/welcome.blp:162
-msgid "Done"
-msgstr "Fait"
-
-#: data/ui/welcome.blp:163
-msgid "Now you can make your own presets or download some online."
-msgstr ""
-"Maintenant vous pouvez faire vos propres configurations, ou télécharger une "
-"pré-configuration en ligne."
-
-#: data/ui/welcome.blp:168
-msgid "Please finish the setup first"
-msgstr "Merci de terminer l’installation d’abord"
-
-#: data/ui/welcome.blp:176
-msgid "Start Using Gradience"
-msgstr "Commencer à utiliser Gradience"
-
-#: data/ui/welcome.blp:193
-msgid "Next"
-msgstr "Suivant"
-
 #: data/ui/window.blp:23 gradience/main.py:609 gradience/window.py:141
 msgid "Apply"
 msgstr "Appliquer"
 
-#: data/ui/window.blp:54
+#: data/ui/window.blp:41
+#, fuzzy
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: data/ui/window.blp:50
+#, fuzzy
+#| msgid "Presets"
+msgid "Presets Menu"
+msgstr "Menu des préréglages"
+
+#: data/ui/window.blp:57
 msgid "Save Preset"
 msgstr "Sauvegarder la pré-configuration"
+
+#: data/ui/window.blp:66
+#, fuzzy
+msgid "CSS Errors"
+msgstr "Erreurs CSS"
 
 #: data/ui/window.blp:81
 msgid "Colors"
 msgstr "Couleurs"
 
-#: data/ui/window.blp:90
+#: data/ui/window.blp:89
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:98
+#: data/ui/window.blp:97
 msgid "Advanced"
 msgstr "Avancé"
 
-#: data/ui/window.blp:121
+#: data/ui/window.blp:118
 msgid "Restore Applied Color Scheme"
 msgstr "Rétablir le schéma de couleurs appliqué"
 
-#: data/ui/window.blp:125
+#: data/ui/window.blp:123
 msgid "Reset Applied Color Scheme"
 msgstr "Appliquer la configuration par défaut"
 
-#: data/ui/window.blp:135
+#: data/ui/window.blp:134
 msgid "About Gradience"
 msgstr "À propos de Gradience"
 
-#: data/ui/window.blp:144
+#: data/ui/window.blp:143
 msgid "Adwaita Demo"
 msgstr "Démo Adwaita"
 
@@ -507,13 +597,19 @@ msgstr "Démo Adwaita"
 msgid "GTK4 Demo"
 msgstr "GTK4 Demo"
 
-#: data/ui/window.blp:152
+#: data/ui/window.blp:153
 msgid "GTK4 Widget Factory"
 msgstr "Fabrique de widgets GTK4"
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:109
+#: data/ui/window.blp:161 gradience/presets_manager_window.py:109
 msgid "Built-In Presets"
 msgstr "Pré-configurations incluses"
+
+#: data/ui/window.blp:182
+#, fuzzy
+#| msgid "Rename Preset"
+msgid "Manage Presets"
+msgstr "Gérer les préréglages"
 
 #: gradience/modules/flatpak_overrides.py:65
 #: gradience/modules/flatpak_overrides.py:84
@@ -541,10 +637,16 @@ msgid "Preset downloaded"
 msgstr "Pré-configuration téléchargée"
 
 #: gradience/main.py:194 gradience/main.py:225
-#: gradience/presets_manager_window.py:346
-#: gradience/presets_manager_window.py:376
+#: gradience/presets_manager_window.py:341
+#: gradience/presets_manager_window.py:371
 msgid "Failed to load preset"
 msgstr "Le chargement de la configuration à échoué"
+
+#: gradience/main.py:253
+#, fuzzy
+#| msgid "No Results Found"
+msgid "No presets found"
+msgstr "Aucun préréglage trouvé"
 
 #: gradience/main.py:271
 msgid "Favourite Presets"
@@ -765,24 +867,34 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "Aucun greffon trouvé."
 
-#: gradience/preset_row.py:158
+#: gradience/preset_row.py:87 gradience/preset_row.py:106
+#, fuzzy
+msgid "Remove from Favourites"
+msgstr "Supprimer des favoris"
+
+#: gradience/preset_row.py:90 gradience/preset_row.py:102
+#, fuzzy
+msgid "Add to Favourites"
+msgstr "Ajouter aux favoris"
+
+#: gradience/preset_row.py:162
 msgid "Preset removed"
 msgstr "Pré-configuration supprimée"
 
-#: gradience/preset_row.py:159
+#: gradience/preset_row.py:163
 msgid "Undo"
 msgstr "Annuler"
 
-#: gradience/preset_row.py:184
+#: gradience/preset_row.py:188
 msgid "Pending Deletion"
 msgstr "Suppression en cours"
 
-#: gradience/preset_row.py:222
+#: gradience/preset_row.py:226
 msgid "Unable to delete preset"
 msgstr "La suppression de la configuration a échoué"
 
 #: gradience/presets_manager_window.py:114
-#: gradience/presets_manager_window.py:390
+#: gradience/presets_manager_window.py:385
 msgid "User Presets"
 msgstr "Configurations de l’utilisateur"
 
@@ -799,23 +911,23 @@ msgstr ""
 msgid "Add"
 msgstr "Ajouter"
 
-#: gradience/presets_manager_window.py:285
+#: gradience/presets_manager_window.py:280
 msgid "Preset already exists"
 msgstr "La pré-configuration existe déjà"
 
-#: gradience/presets_manager_window.py:300
+#: gradience/presets_manager_window.py:295
 msgid "Preset imported"
 msgstr "Pré-configuration importée"
 
-#: gradience/presets_manager_window.py:303
+#: gradience/presets_manager_window.py:298
 msgid "Unsupported file format, must be .json"
 msgstr "Format de fichier non pris en charge, il devrait être .json"
 
-#: gradience/presets_manager_window.py:383
+#: gradience/presets_manager_window.py:378
 msgid "Built-in Presets"
 msgstr "Pré-configurations incluses"
 
-#: gradience/presets_manager_window.py:393
+#: gradience/presets_manager_window.py:388
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -823,7 +935,7 @@ msgstr ""
 "Voir <a href=\"https://github.com/GradienceTeam/Community\">l’équipe / la "
 "communauté Gradience</a> sur Github pour plus de pré-configurations."
 
-#: gradience/presets_manager_window.py:419
+#: gradience/presets_manager_window.py:414
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -1410,9 +1522,6 @@ msgstr ""
 #~ msgid "Allow installation"
 #~ msgstr "Autoriser l’installation"
 
-#~ msgid "System configuration"
-#~ msgstr "Configuration système"
-
 #, fuzzy
 #~ msgid "Installing themes"
 #~ msgstr "Installation des thèmes"
@@ -1532,9 +1641,6 @@ msgstr ""
 #~ msgid "I understand the consequences"
 #~ msgstr "Je comprends les conséquences"
 
-#~ msgid "Legacy apps theming"
-#~ msgstr "Thèmes des applications anciennes"
-
 #~ msgid "Pending deletion"
 #~ msgstr "Suppression en cours"
 
@@ -1550,13 +1656,6 @@ msgstr ""
 
 #~ msgid "Toggle plugin"
 #~ msgstr "Activer le greffon"
-
-#~ msgid ""
-#~ "Change colors of windows, buttons, lists and more, with advanced features "
-#~ "like adding custom CSS"
-#~ msgstr ""
-#~ "Changez les couleurs des fenêtres, boutons, listes et plus encore avec "
-#~ "des fonctionnalités avancées comme l’ajout d’un CSS personnalisé"
 
 #~ msgid "No plugins found."
 #~ msgstr "Aucun greffon trouvé."
