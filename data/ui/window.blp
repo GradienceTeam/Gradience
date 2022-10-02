@@ -21,6 +21,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
           Button apply-button {
             styles ["suggested-action"]
             label: _("Apply");
+            tooltip-text: _("Apply Preset");
             action-name: "app.apply_color_scheme";
           }
           // [start]
@@ -37,6 +38,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
 
           [end]
           Gtk.MenuButton {
+            tooltip-text: _("Main Menu");
             icon-name: "open-menu-symbolic";
             menu-model: main-menu;
           }
@@ -45,6 +47,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
           MenuButton presets-dropdown {
             menu-model: presets-menu;
             label: _("Presets");
+            tooltip-text: _("Presets Menu");
             icon-name: "palette-symbolic";
           }
 
@@ -57,16 +60,13 @@ template GradienceMainWindow : Adw.ApplicationWindow {
             }
           }
 
-
           [end]
           MenuButton errors-button {
             styles ["raised", "error"]
+            tooltip-text: _("CSS Errors");
             icon-name: "dialog-warning-symbolic";
             popover: errors-popover;
           }
-
-
-
         }
 
         Gtk.Box {
@@ -82,7 +82,6 @@ template GradienceMainWindow : Adw.ApplicationWindow {
               icon-name: "larger-brush-symbolic";
 
               child: Adw.PreferencesPage content { };
-
             }
 
             Adw.ViewStackPage {
@@ -98,9 +97,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
               title: _("Advanced");
               icon-name: "settings-symbolic";
 
-
               child: Adw.PreferencesPage content_plugins { };
-
             }
           }
 
@@ -121,6 +118,7 @@ menu main-menu {
       label: _("Restore Applied Color Scheme");
       action: "app.restore_color_scheme";
     }
+
     item {
       label: _("Reset Applied Color Scheme");
       action: "app.reset_color_scheme";
@@ -131,6 +129,7 @@ menu main-menu {
       label: _("Preferences");
       action: "app.preferences";
     }
+
     item {
       label: _("About Gradience");
       action: "app.about";
@@ -144,10 +143,12 @@ menu preview-menu {
       label: _("Adwaita Demo");
       action: "app.show_adwaita_demo";
     }
+
     item {
       label: _("GTK4 Demo");
       action: "app.show_gtk4_demo";
     }
+
     item {
       label: _("GTK4 Widget Factory");
       action: "app.show_gtk4_widget_factory";
@@ -158,23 +159,27 @@ menu preview-menu {
 menu presets-menu {
   section {
     label: _("Built-In Presets");
+
     item {
       label: "Adwaita";
       action: "app.load_preset";
       target: "adwaita";
     }
+
     item {
       label: "Adwaita Dark";
       action: "app.load_preset";
       target: "adwaita-dark";
     }
+
      item {
       label: "Pretty Purple";
       action: "app.load_preset";
       target: "pretty-purple";
     }
+
     item {
-      label: "Manage Presets";
+      label: _("Manage Presets");
       action: "app.manage_presets";
     }
   }
@@ -184,6 +189,7 @@ menu presets-menu {
 Popover errors-popover {
   ListBox errors-list {
     selection-mode: none;
+
     [placeholder]
     Label {
       margin-top: 6;

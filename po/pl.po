@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-01 12:17+0000\n"
-"PO-Revision-Date: 2022-09-30 21:23+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2022-10-02 12:16+0000\n"
+"PO-Revision-Date: 2022-10-02 15:17+0000\n"
+"Last-Translator: tfuxu <tfuxu@tutanota.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/pl/>\n"
 "Language: pl\n"
@@ -31,7 +31,7 @@ msgstr "Gradience"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
 msgid "Change the look of Adwaita, with ease."
-msgstr "Zmieniaj wygląd Adwaity w prosty sposób."
+msgstr "Zmieniaj z łatwością wygląd Adwaity."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
 #: gradience/main.py:950
@@ -89,27 +89,23 @@ msgid "advanced purple"
 msgstr "sekcja 'Zaawansowane' z zaaplikowanym profilem kolorów 'purple'"
 
 #: data/ui/app_type_dialog.blp:14
-#, fuzzy
 msgid "Select application types you want to theme:"
-msgstr "Wybierz typy aplikacji, które chcesz poddać tematowi:"
+msgstr "Wybierz typy aplikacji, w których chcesz zmienić motyw:"
 
 #: data/ui/app_type_dialog.blp:17
-#, fuzzy
 msgid "Libadwaita and GTK 4 Applications"
-msgstr "Libadwaita i aplikacje GTK 4"
+msgstr "Aplikacje Libadwaita i GTK 4"
 
 #: data/ui/app_type_dialog.blp:21
-#, fuzzy
 msgid "GTK 3 Applications (adw-gtk3 theme is required)"
 msgstr "Aplikacje GTK 3 (wymagany jest motyw adw-gtk3)"
 
 #: data/ui/builtin_preset_row.blp:5
-#, fuzzy
 msgid "Made by @GradienceTeam"
-msgstr "Made by @GradienceTeam"
+msgstr "Stworzone przez @GradienceTeam"
 
-#: data/ui/builtin_preset_row.blp:10 data/ui/preset_row.blp:52
-#, fuzzy
+#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:51
+#: data/ui/window.blp:24
 msgid "Apply Preset"
 msgstr "Zastosuj profil"
 
@@ -136,15 +132,25 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:22
-#, fuzzy
+#: data/ui/explore_preset_row.blp:21
 msgid "Download and Apply"
 msgstr "Pobierz i zastosuj"
 
 #: data/ui/explore_preset_row.blp:32
-#, fuzzy
 msgid "Download Only"
 msgstr "Tylko pobierz"
+
+#: data/ui/no_plugin_pref.blp:5
+msgid "Plugin Preferences"
+msgstr "Preferencje wtyczek"
+
+#: data/ui/no_plugin_pref.blp:26
+msgid "No Preferences"
+msgstr "Brak preferencji"
+
+#: data/ui/no_plugin_pref.blp:27
+msgid "This plugin doesn't have any preferences."
+msgstr "Ta wtyczka nie posiada żadnych opcji."
 
 #: data/ui/option.blp:10
 msgid "GTK 3 Support Warning"
@@ -159,32 +165,26 @@ msgid "Toggle Text Value"
 msgstr "Przełączenie wstawienia wartości tekstowej"
 
 #: data/ui/plugin_row.blp:8
-#, fuzzy
 msgid "Toggle Plugin"
-msgstr "Toggle Plugin"
+msgstr "Aktywuj wtyczkę"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:131
-#, fuzzy
+#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:129
 msgid "Preferences"
 msgstr "Preferencje"
 
 #: data/ui/plugin_row.blp:24
-#, fuzzy
 msgid "Remove Plugin"
-msgstr "Usuń wtyczki"
+msgstr "Usuń wtyczkę"
 
 #: data/ui/preferences.blp:12
-#, fuzzy
 msgid "GTK4 Flatpak Applications"
 msgstr "Aplikacje GTK4 Flatpak"
 
-#: data/ui/preferences.blp:14
-#, fuzzy
-msgid "Allow GTK4 Flatpak Applications Theming"
-msgstr "Zezwalaj na tworzenie aplikacji GTK4 Flatpak"
-
 #: data/ui/preferences.blp:15
-#, fuzzy
+msgid "Allow GTK4 Flatpak Applications Theming"
+msgstr "Zezwól na zmianę motywu w aplikacjach GTK4 Flatpak"
+
+#: data/ui/preferences.blp:16
 msgid ""
 "Override Flatpak permissions for current user to allow GTK4 Flatpak "
 "applications to access custom themes."
@@ -192,118 +192,104 @@ msgstr ""
 "Nadpisuje uprawnienia Flatpak dla bieżącego użytkownika, aby umożliwić "
 "aplikacjom GTK4 Flatpak dostęp do niestandardowych motywów."
 
-#: data/ui/preferences.blp:23
-#, fuzzy
+#: data/ui/preferences.blp:25
 msgid "Allow GTK4 Flatpak Applications Theming (System)"
-msgstr "Zezwalaj na osadzanie aplikacji GTK4 Flatpak (system)"
+msgstr "Zezwól na zmianę motywu w aplikacjach GTK4 Flatpak (System)"
 
-#: data/ui/preferences.blp:24
-#, fuzzy
+#: data/ui/preferences.blp:26
 msgid ""
 "Override Flatpak permissions for all users to allow GTK4 Flatpak "
 "applications to access custom themes. (Requires root access)"
 msgstr ""
-"Nadpisanie uprawnień Flatpak dla wszystkich użytkowników, aby umożliwić "
+"Nadpisuje uprawnienia Flatpak dla wszystkich użytkowników, aby umożliwić "
 "aplikacjom GTK4 Flatpak dostęp do niestandardowych motywów. (Wymaga dostępu "
 "do roota)"
 
-#: data/ui/preferences.blp:32
-#, fuzzy
+#: data/ui/preferences.blp:35
 msgid "GTK3 Flatpak Applications"
 msgstr "Aplikacje GTK3 Flatpak"
 
-#: data/ui/preferences.blp:33
-#, fuzzy
+#: data/ui/preferences.blp:36
 msgid ""
 "Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
 "custom presets working in GTK3 Flatpak applications."
 msgstr ""
-"Pamiętaj, aby zainstalować motyw adw-gtk3 (jako pakiet Flatpak), aby "
-"niestandardowe ustawienia wstępne działały w aplikacjach GTK3 Flatpak."
+"Pamiętaj, aby zainstalować motyw adw-gtk3 (jako paczka Flatpak), aby profile "
+"niestandardowe działały w aplikacjach GTK3 Flatpak."
 
-#: data/ui/preferences.blp:35
-#, fuzzy
+#: data/ui/preferences.blp:39
 msgid "Allow GTK3 Flatpak theming"
-msgstr "Zezwalaj na tematyczność GTK3 Flatpak"
+msgstr "Zezwól na zmianę motywu w aplikacjach GTK3 Flatpak"
 
-#: data/ui/preferences.blp:36
-#, fuzzy
+#: data/ui/preferences.blp:40
 msgid ""
 "Override Flatpak permissions for current user to allow GTK3 Flatpak "
 "applications to access adw-gtk3 theme."
 msgstr ""
-"Nadpisanie uprawnień Flatpak dla bieżącego użytkownika, aby umożliwić "
-"aplikacjom GTK3 Flatpak dostęp do tematu adw-gtk3."
+"Nadpisuje uprawnienia Flatpak dla bieżącego użytkownika, aby umożliwić "
+"aplikacjom GTK3 Flatpak dostęp do motywu adw-gtk3."
 
-#: data/ui/preferences.blp:44
-#, fuzzy
+#: data/ui/preferences.blp:49
 msgid "GTK3 Flatpak Applications (System)"
 msgstr "Aplikacje GTK3 Flatpak (System)"
 
-#: data/ui/preferences.blp:45
-#, fuzzy
+#: data/ui/preferences.blp:50
 msgid ""
 "Override Flatpak permissions for all users to allow GTK3 Flatpak "
 "applications to access adw-gtk3 theme. (Requires root access)"
 msgstr ""
-"Nadpisanie uprawnień Flatpak dla wszystkich użytkowników, aby umożliwić "
+"Nadpisuje uprawnienia Flatpak dla wszystkich użytkowników, aby umożliwić "
 "aplikacjom GTK3 Flatpak dostęp do motywu adw-gtk3. (Wymaga dostępu do roota)"
 
-#: data/ui/preferences.blp:54
-#, fuzzy
+#: data/ui/preferences.blp:60
 msgid "Custom Preset Repositories"
-msgstr "Własne Repozytoria Ustawień Wstępnych"
+msgstr "Własne Repozytoria Profili"
 
-#: data/ui/preferences.blp:56
-#, fuzzy
+#: data/ui/preferences.blp:63
 msgid "Custom repository URL address"
 msgstr "Niestandardowy adres URL repozytorium"
 
 #: data/ui/preset_row.blp:18
-#, fuzzy
 msgid "Share preset"
-msgstr "Udostępnij ustawienie"
+msgstr "Udostępnij profil"
 
-#: data/ui/preset_row.blp:19
-#, fuzzy
+#: data/ui/preset_row.blp:19 data/ui/share_window.blp:5
 msgid "Share Preset"
-msgstr "Share Preset"
+msgstr "Udostępnij Profil"
 
 #: data/ui/preset_row.blp:27
-#, fuzzy
 msgid "Report an Issue…"
-msgstr "Zgłoś problem"
+msgstr "Zgłoś problem…"
 
 #: data/ui/preset_row.blp:68
-#, fuzzy
 msgid "Rename Preset"
-msgstr "Zmień nazwę ustawienia wstępnego"
+msgstr "Zmień nazwę profilu"
 
-#: data/ui/preset_row.blp:90
-#, fuzzy
+#: data/ui/preset_row.blp:80
+msgid "More Options"
+msgstr "Więcej opcji"
+
+#: data/ui/preset_row.blp:87
 msgid "Description"
 msgstr "Opis"
 
-#: data/ui/preset_row.blp:91
-#, fuzzy
+#: data/ui/preset_row.blp:88
 msgid "Sorry, but this preset don't have a description."
-msgstr "Przepraszamy, ale ten preset nie ma opisu."
+msgstr "Przepraszamy, ale ten profil nie ma opisu."
 
-#: data/ui/preset_row.blp:104
-#, fuzzy
+#: data/ui/preset_row.blp:100
 msgid "No Badges"
 msgstr "Brak odznak"
 
-#: data/ui/preset_row.blp:115
+#: data/ui/preset_row.blp:111
 msgid "Remove preset"
 msgstr "Usuń profil"
 
-#: data/ui/preset_row.blp:116
-#, fuzzy
+#: data/ui/preset_row.blp:112
 msgid "Remove Preset"
-msgstr "Usuń profil"
+msgstr "Usuń Profil"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:47
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:49
 msgid "Presets"
 msgstr "Profile"
 
@@ -311,29 +297,31 @@ msgstr "Profile"
 msgid "Import"
 msgstr "Importuj"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:24
+msgid "Import a Preset File"
+msgstr "Importuj plik profilu"
+
+#: data/ui/presets_manager_window.blp:31
 msgid "Delete"
 msgstr "Usuń"
 
-#: data/ui/presets_manager_window.blp:41 gradience/main.py:264
-#, fuzzy
+#: data/ui/presets_manager_window.blp:42 gradience/main.py:264
 msgid "Open in File Manager"
 msgstr "Otwórz w menedżerze plików"
 
-#: data/ui/presets_manager_window.blp:59
+#: data/ui/presets_manager_window.blp:60
 msgid "Installed"
 msgstr "Zainstalowane"
 
-#: data/ui/presets_manager_window.blp:68
+#: data/ui/presets_manager_window.blp:69
 msgid "Explore"
 msgstr "Odkryj"
 
-#: data/ui/presets_manager_window.blp:73
+#: data/ui/presets_manager_window.blp:74
 msgid "Search for presets"
 msgstr "Odkrywaj profile innych"
 
-#: data/ui/presets_manager_window.blp:74
-#, fuzzy
+#: data/ui/presets_manager_window.blp:75
 msgid ""
 "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
 "presets\">GradienceTeam/Community</a>."
@@ -341,12 +329,11 @@ msgstr ""
 "Wpisz słowo kluczowe, aby wyszukać w <a href=\"https://gradienceteam.github."
 "io/presets\">GradienceTeam/Community</a>."
 
-#: data/ui/presets_manager_window.blp:87
+#: data/ui/presets_manager_window.blp:88
 msgid "e.g. \"Pretty Purple\""
 msgstr "np. \"Pretty Purple\""
 
-#: data/ui/presets_manager_window.blp:92
-#, fuzzy
+#: data/ui/presets_manager_window.blp:93
 msgid "All"
 msgstr "Wszystkie"
 
@@ -360,197 +347,226 @@ msgstr "Offline"
 
 #: data/ui/presets_manager_window.blp:141
 #: gradience/presets_manager_window.py:120
-#: gradience/presets_manager_window.py:429
-#, fuzzy
+#: gradience/presets_manager_window.py:424
 msgid "Repositories"
 msgstr "Repozytoria"
 
 #: data/ui/presets_manager_window.blp:160
-#, fuzzy
 msgid "Import a Preset File (*.json)"
-msgstr "Importuj plik ustawień wstępnych (*.json)"
+msgstr "Importuj plik profilu (*.json)"
 
 #: data/ui/presets_manager_window.blp:165
-#, fuzzy
 msgid "All files"
 msgstr "Wszystkie pliki"
 
 #: data/ui/presets_manager_window.blp:170
-#, fuzzy
 msgid "JSON file (*.json)"
 msgstr "Plik JSON (*.json)"
 
-#: data/ui/welcome.blp:5 data/ui/welcome.blp:65
-msgid "Welcome to Gradience"
-msgstr "Witamy w Gradience"
-
-#: data/ui/welcome.blp:42
+#: data/ui/share_window.blp:42 data/ui/welcome.blp:42
 msgid "Previous"
 msgstr "Poprzedni"
 
-#: data/ui/welcome.blp:66
-#, fuzzy
-msgid "Change the look of Adwaita, with ease"
-msgstr "Zmieniaj wygląd Adwaity w prosty sposób."
+#: data/ui/share_window.blp:65
+msgid "Share your preset"
+msgstr "Udostępnij swój profil"
 
-#: data/ui/welcome.blp:73
-#, fuzzy
-msgid "What's new in 0.3.0"
-msgstr "Co nowego w 0.3.0"
+#: data/ui/share_window.blp:66
+msgid "Share your preset with the world!"
+msgstr "Podziel się swoim profilem z całym światem!"
 
-#: data/ui/welcome.blp:74
-#, fuzzy
+#: data/ui/share_window.blp:73
+msgid "How it's work?"
+msgstr "Jak to działa?"
+
+#: data/ui/share_window.blp:74
 msgid ""
-"In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an "
-"“Official” repository and a “Curated” reposoitories."
+"Gradience use GitHub to share your preset. You need to create a GitHub "
+"account and fork <a href='https://github.com/GradienceTeam/"
+"Community'>GradienceTeam/Community</a>. Then, you can upload your preset, "
+"make a pull request and share it with the world!"
 msgstr ""
-"W tym wydaniu dodaliśmy obsługę wtyczek, repozytorium wtyczek, odznaki i "
-"szybki przełącznik presetów. Podzieliliśmy również repozytorium presetów na "
-"\"Official\" i \"Curated\"."
+"Gradience korzysta z GitHuba w celu udostępnienia twojego profilu. Musisz "
+"założyć konto na GitHubie, oraz zforkować <a href=\"https://github.com/"
+"GradienceTeam/Community\">GradienceTeam/Community</a>. Następnie możesz "
+"przesłać swój profil, utworzyć Pull Request i podzielić się swoim profilem z "
+"całym światem!"
 
-#: data/ui/welcome.blp:81
-#, fuzzy
+#: data/ui/share_window.blp:81 data/ui/welcome.blp:81
 msgid "Warning"
 msgstr "Ostrzeżenie"
 
-#: data/ui/welcome.blp:82
-#, fuzzy
+#: data/ui/share_window.blp:82 data/ui/welcome.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
 "developers."
 msgstr ""
 "Zmiana schematu kolorów może negatywnie wpłynąć na kontrast i czytelność. "
-"Postępuj ostrożnie. Nie należy zgłaszać problemów związanych z tematami "
-"twórcom aplikacji."
+"Postępuj ostrożnie. Nie zgłaszaj problemów związanych z motywami twórcom "
+"aplikacji."
 
-#: data/ui/welcome.blp:86
-#, fuzzy
+#: data/ui/share_window.blp:86 data/ui/welcome.blp:86
 msgid "I Understand The Consequences"
-msgstr "Rozumiem konsekwencje."
+msgstr "Rozumiem konsekwencje"
 
-#: data/ui/welcome.blp:97
+#: data/ui/share_window.blp:97 data/ui/welcome.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Dostosuj Motyw Adwaita"
 
-#: data/ui/welcome.blp:98
-#, fuzzy
+#: data/ui/share_window.blp:98
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
-"like adding custom CSS."
+"like adding custom CSS"
 msgstr ""
 "Zmieniaj kolory okien, przycisków, list i wielu innych dzięki zaawansowanym "
 "funkcjom, takim jak dodawanie własnego kodu CSS"
 
-#: data/ui/welcome.blp:104
-#, fuzzy
+#: data/ui/share_window.blp:104 data/ui/welcome.blp:104
 msgid "Configure Gradience"
-msgstr "Konfiguracja Gradience"
+msgstr "Skonfiguruj Gradience"
 
-#: data/ui/welcome.blp:105
-#, fuzzy
+#: data/ui/share_window.blp:105 data/ui/welcome.blp:105
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
 msgstr ""
 "Zainstaluj motyw adw-gtk3 dla starszych aplikacji i skonfiguruj system dla "
-"themingu."
+"motywów."
 
-#: data/ui/welcome.blp:110
-#, fuzzy
-msgid "Legacy Apps Theming"
-msgstr "Aplikacje dziedziczne Programowanie"
+#: data/ui/share_window.blp:110
+msgid "Legacy apps theming"
+msgstr "Modyfikowanie starszych aplikacji"
 
-#: data/ui/welcome.blp:115
-#, fuzzy
+#: data/ui/share_window.blp:115 data/ui/welcome.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
-msgstr "Zainstaluj motyw adw-gtk3 dla starszych aplikacji."
+msgstr "Zainstaluj motyw adw-gtk3 dla starszych aplikacji"
 
-#: data/ui/welcome.blp:120
-#, fuzzy
-msgid "System Configuration"
+#: data/ui/share_window.blp:120
+msgid "System configuration"
 msgstr "Konfiguracja systemu"
 
-#: data/ui/welcome.blp:126
-#, fuzzy
+#: data/ui/share_window.blp:126 data/ui/welcome.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
-msgstr ""
-"Konfiguracja systemu dla themingu, umożliwia nadpisanie motywów Flatpaka"
+msgstr "Skonfiguruj system dla motywów, umożliwia nadpisanie motywów Flatpaka"
 
-#: data/ui/welcome.blp:136
-#, fuzzy
+#: data/ui/share_window.blp:136 data/ui/welcome.blp:136
 msgid "Installing Themes"
 msgstr "Instalowanie motywów"
 
-#: data/ui/welcome.blp:137
-#, fuzzy
+#: data/ui/share_window.blp:137 data/ui/welcome.blp:137
 msgid "Please wait until theme will be installed."
 msgstr "Proszę poczekać zanim motywy zostaną zainstalowane."
 
-#: data/ui/welcome.blp:143
+#: data/ui/share_window.blp:143 data/ui/welcome.blp:143
 msgid "Continue"
 msgstr "Kontynuuj"
 
-#: data/ui/welcome.blp:162
+#: data/ui/share_window.blp:162 data/ui/welcome.blp:162
 msgid "Done"
 msgstr "Gotowe"
 
-#: data/ui/welcome.blp:163
-#, fuzzy
+#: data/ui/share_window.blp:163 data/ui/welcome.blp:163
 msgid "Now you can make your own presets or download some online."
 msgstr ""
-"Od teraz możesz tworzyć swoje profile, lub pobrań trochę profili "
+"Od teraz możesz tworzyć swoje profile, lub pobrać trochę profili "
 "użytkowników z internetu."
 
-#: data/ui/welcome.blp:168
-#, fuzzy
+#: data/ui/share_window.blp:168 data/ui/welcome.blp:168
 msgid "Please finish the setup first"
-msgstr "Prosimy o ukończenie przygotowania w pierwszej kolejności"
+msgstr "Proszę najpierw ukończyć konfigurację"
 
-#: data/ui/welcome.blp:176
-#, fuzzy
+#: data/ui/share_window.blp:176 data/ui/welcome.blp:176
 msgid "Start Using Gradience"
 msgstr "Zacznij korzystać z Gradience"
 
-#: data/ui/welcome.blp:193
+#: data/ui/share_window.blp:193 data/ui/welcome.blp:193
 msgid "Next"
 msgstr "Następne"
+
+#: data/ui/welcome.blp:5 data/ui/welcome.blp:65
+msgid "Welcome to Gradience"
+msgstr "Witamy w Gradience"
+
+#: data/ui/welcome.blp:66
+msgid "Change the look of Adwaita, with ease"
+msgstr "Zmieniaj z łatwością wygląd Adwaity"
+
+#: data/ui/welcome.blp:73
+msgid "What's new in 0.3.0"
+msgstr "Co nowego w 0.3.0"
+
+#: data/ui/welcome.blp:74
+msgid ""
+"In this release, we added plugin support, a plugin repository, badges, and a "
+"quick preset switcher. We also split the preset repository into an "
+"“Official” repository and a “Curated” reposoitories."
+msgstr ""
+"W tym wydaniu dodaliśmy obsługę wtyczek, repozytorium wtyczek, odznaki i "
+"szybki przełącznik profili. Podzieliliśmy również repozytorium profili na "
+"\"Official\" i \"Curated\"."
+
+#: data/ui/welcome.blp:98
+msgid ""
+"Change colors of windows, buttons, lists and more, with advanced features "
+"like adding custom CSS."
+msgstr ""
+"Zmieniaj kolory okien, przycisków, list i wielu innych dzięki zaawansowanym "
+"funkcjom, takim jak dodawanie własnego kodu CSS."
+
+#: data/ui/welcome.blp:110
+msgid "Legacy Apps Theming"
+msgstr "Modyfikowanie starszych aplikacji"
+
+#: data/ui/welcome.blp:120
+msgid "System Configuration"
+msgstr "Konfiguracja systemu"
 
 #: data/ui/window.blp:23 gradience/main.py:609 gradience/window.py:141
 msgid "Apply"
 msgstr "Zastosuj"
 
-#: data/ui/window.blp:54
+#: data/ui/window.blp:41
+msgid "Main Menu"
+msgstr "Główne menu"
+
+#: data/ui/window.blp:50
+msgid "Presets Menu"
+msgstr "Menu profili"
+
+#: data/ui/window.blp:57
 msgid "Save Preset"
 msgstr "Zapisz profil kolorów"
+
+#: data/ui/window.blp:66
+msgid "CSS Errors"
+msgstr "Błędy CSS"
 
 #: data/ui/window.blp:81
 msgid "Colors"
 msgstr "Kolory"
 
-#: data/ui/window.blp:90
+#: data/ui/window.blp:89
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:98
+#: data/ui/window.blp:97
 msgid "Advanced"
 msgstr "Zaawansowany"
 
-#: data/ui/window.blp:121
-#, fuzzy
+#: data/ui/window.blp:118
 msgid "Restore Applied Color Scheme"
 msgstr "Przywróć zastosowany schemat kolorów"
 
-#: data/ui/window.blp:125
+#: data/ui/window.blp:123
 msgid "Reset Applied Color Scheme"
 msgstr "Zresetuj zastosowany schemat kolorów"
 
-#: data/ui/window.blp:135
+#: data/ui/window.blp:134
 msgid "About Gradience"
 msgstr "O Gradience"
 
-#: data/ui/window.blp:144
+#: data/ui/window.blp:143
 msgid "Adwaita Demo"
 msgstr "Adwaita Demo"
 
@@ -558,26 +574,27 @@ msgstr "Adwaita Demo"
 msgid "GTK4 Demo"
 msgstr "GTK4 Demo"
 
-#: data/ui/window.blp:152
+#: data/ui/window.blp:153
 msgid "GTK4 Widget Factory"
 msgstr "GTK4 Widget Factory"
 
-#: data/ui/window.blp:160 gradience/presets_manager_window.py:109
-#, fuzzy
+#: data/ui/window.blp:161 gradience/presets_manager_window.py:109
 msgid "Built-In Presets"
-msgstr "Wbudowane profile kolorów"
+msgstr "Wbudowane Profile"
+
+#: data/ui/window.blp:182
+msgid "Manage Presets"
+msgstr "Zarządzaj profilami"
 
 #: gradience/modules/flatpak_overrides.py:65
 #: gradience/modules/flatpak_overrides.py:84
-#, fuzzy
 msgid "Failed to save override"
-msgstr "Nie udało się zapisać nadpisu"
+msgstr "Nie udało się zapisać nadpisu ustawień"
 
 #: gradience/modules/flatpak_overrides.py:152
 #: gradience/modules/flatpak_overrides.py:212
 #: gradience/modules/flatpak_overrides.py:295
 #: gradience/modules/flatpak_overrides.py:357
-#, fuzzy
 msgid "Unexpected file error occurred"
 msgstr "Wystąpił nieoczekiwany błąd pliku"
 
@@ -595,28 +612,28 @@ msgid "Preset downloaded"
 msgstr "Profil pobrany"
 
 #: gradience/main.py:194 gradience/main.py:225
-#: gradience/presets_manager_window.py:346
-#: gradience/presets_manager_window.py:376
+#: gradience/presets_manager_window.py:341
+#: gradience/presets_manager_window.py:371
 msgid "Failed to load preset"
 msgstr "Nie udało się załadować profilu"
 
+#: gradience/main.py:253
+msgid "No presets found"
+msgstr "Nie znaleziono profili"
+
 #: gradience/main.py:271
-#, fuzzy
 msgid "Favourite Presets"
-msgstr "Ulubione ustawienia"
+msgstr "Ulubione profile"
 
 #: gradience/main.py:534
-#, fuzzy
 msgid "Unsaved Changes"
 msgstr "Niezapisane zmiany"
 
 #: gradience/main.py:545
-#, fuzzy
 msgid "Save Changes"
 msgstr "Zapisz zmiany"
 
 #: gradience/main.py:603
-#, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "Zastosować ten schemat kolorów?"
 
@@ -629,7 +646,6 @@ msgstr ""
 "nieodwracalnie nadpisane!"
 
 #: gradience/main.py:619
-#, fuzzy
 msgid "Restore applied color scheme?"
 msgstr "Przywrócić zastosowany schemat kolorów?"
 
@@ -639,9 +655,8 @@ msgstr ""
 "Upewnij się, że bieżące ustawienia zostały zapisane jako profil kolorów."
 
 #: gradience/main.py:622
-#, fuzzy
 msgid "Restore"
-msgstr "Przywracanie"
+msgstr "Przywróć"
 
 #: gradience/main.py:631
 msgid "Reset applied color scheme?"
@@ -670,12 +685,10 @@ msgid "Save"
 msgstr "Zapisz"
 
 #: gradience/main.py:717
-#, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Masz niezapisane zmiany!"
 
 #: gradience/main.py:734
-#, fuzzy
 msgid "Discard"
 msgstr "Odrzuć"
 
@@ -688,16 +701,14 @@ msgid "Preset set sucessfully"
 msgstr "Profil ustawiony pomyślnie"
 
 #: gradience/main.py:905
-#, fuzzy
 msgid "Could not restore GTK4 backup"
-msgstr "Nie można przywrócić kopii zapasowej GTK4"
+msgstr "Nie można przywrócić kopii zapasowej motywu GTK4"
 
 #: gradience/main.py:938
 msgid "Preset reseted"
 msgstr "Profil zresetowany"
 
 #: gradience/main.py:989
-#, fuzzy
 msgid ""
 "\n"
 "<ul>\n"
@@ -721,45 +732,28 @@ msgid ""
 "</ul>\n"
 msgstr ""
 "\n"
-"                <ul>\n"
-"        <li>Dodano AdwViewSwitcher do headerbara.</li>\n"
-"        <li>Przeniesiono edytor CSS do karty \"Zaawansowane\"</li>\n"
-"        <li>Przeniesiono resztę do karty \"Kolory\"</li>\n"
-"        <li>Dodano kartę \"Monet\" która generuje motywy z obrazów</li>\n"
-"        <li>Dodano ikonę zapisanego i niezapisanego pliku w headerbarze</"
-"li>\n"
-"        <li>Zaktualizowano dialog \"O aplikacji\"</li>\n"
-"        <li>Zmieniono licencję na GNU GPLv3</li>\n"
-"        <li>Rozpoczęto prace nad wsparciem wtyczek</li>\n"
-"        <li>Przeniesiono selektor profili do rozwijanego menu nazwanego "
-"\"paleta\" (ikona palety)</li>\n"
-"        <li>Dodano możliwość zastosowania motywu tylko dla ciemnego motywu "
-"lub jasnego</li>\n"
-"        <li>Automatycznie używa profilu \"Adwaita-Dark\" jeżeli preferowany "
-"schemat kolorów to ciemny.</li>\n"
-"        <li>Dodano buildy CI Flatpaków</li>\n"
-"        <li>Dodano szablon problemów dla błędów i próśb o funkcje</li>\n"
-"        <li>Gałąź `Main` jest teraz chroniona przez ochronę gałęzi Githuba. "
-"Prace nad programem odbywają się w gałęzi `next`</li>\n"
-"      </ul>\n"
-"            "
+"<ul>\n"
+"<li>Dodano AdwViewSwitcher do headerbara.</li>\n"
+"<li>Przeniesiono edytor CSS do karty \"Zaawansowane\"</li>\n"
+"<li>Przeniesiono resztę do karty \"Kolory\"</li>\n"
+"<li>Dodano kartę \"Monet\" która generuje motywy z obrazów</li>\n"
+"<li>Dodano ikonę zapisanego i niezapisanego pliku w headerbarze</li>\n"
+"<li>Zaktualizowano dialog \"O aplikacji\"</li>\n"
+"<li>Zmieniono licencję na GNU GPLv3</li>\n"
+"<li>Rozpoczęto prace nad wsparciem wtyczek</li>\n"
+"<li>Przeniesiono selektor profili do rozwijanego menu nazwanego \"paleta"
+"\" (ikona palety)</li>\n"
+"<li>Dodano możliwość zastosowania motywu tylko dla ciemnego motywu lub "
+"jasnego</li>\n"
+"<li>Automatycznie używa profilu \"Adwaita-Dark\" jeżeli preferowany schemat "
+"kolorów to ciemny.</li>\n"
+"<li>Dodano buildy CI Flatpaków</li>\n"
+"<li>Dodano szablon problemów dla błędów i próśb o funkcje</li>\n"
+"<li>Gałąź `Main` jest teraz chroniona przez ochronę gałęzi Githuba. Prace "
+"nad programem odbywają się w gałęzi `next`</li>\n"
+"</ul>\n"
 
 #: gradience/main.py:1009
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Gradience is a tool for customizing Libadwaita applications and the adw-"
-#| "gtk3 theme.\n"
-#| "With Gradience you can:\n"
-#| "\n"
-#| "- Change any color of Adwaita theme\n"
-#| "- Apply Material 3 colors from wallaper\n"
-#| "- Use other users presets\n"
-#| "- Change advanced options with CSS\n"
-#| "- Extend functionality using plugins\n"
-#| "\n"
-#| "This app is written in Python and uses GTK 4 and libadwaita.\n"
-#| "            "
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -779,15 +773,14 @@ msgstr ""
 "adw-gtk3.\n"
 "Z Gradience możesz:\n"
 "\n"
-"    - Zmieniać kolory aplikacji używających Adwaita\n"
-"    - Nakładać kolory Material 3 ze swojej tapety\n"
-"    - Korzystać z profili kolorów innych użytkowników\n"
-"    - Zmieniać zaawansowane opcje z CSS\n"
-"    - Rozszerzać możliwości przy użyciu wtyczek\n"
+" - Zmieniać kolory aplikacji używających motywu Adwaita\n"
+"- Nakładać kolory Material 3 ze swojej tapety\n"
+"- Korzystać z profili kolorów innych użytkowników\n"
+"- Zmieniać zaawansowane opcje z CSS\n"
+"- Rozszerzać możliwości przy użyciu wtyczek\n"
 "\n"
 "Ta aplikacja została napisana w języku Python oraz korzysta z frameworku GTK "
 "4 i Libadwaita.\n"
-"            "
 
 #: gradience/option.py:49
 msgid "This option is only partially supported by the adw-gtk3 theme."
@@ -802,17 +795,14 @@ msgid "Not a color, see text value"
 msgstr "To nie jest kolor, spójrz na wartość tekstową"
 
 #: gradience/plugin_row.py:85
-#, fuzzy
 msgid "Unable to remove"
 msgstr "Nie można usunąć"
 
 #: gradience/plugin_row.py:86
-#, fuzzy
 msgid "This is a system plugin, and cannot be removed. "
 msgstr "Jest to wtyczka systemowa i nie można jej usunąć. "
 
 #: gradience/plugin_row.py:88
-#, fuzzy
 msgid "Close"
 msgstr "Zamknij"
 
@@ -821,7 +811,6 @@ msgid "Plugins"
 msgstr "Wtyczki"
 
 #: gradience/plugins_list.py:99
-#, fuzzy
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -830,86 +819,85 @@ msgstr ""
 "społeczność Gradience i mogą czasem powodować problemy."
 
 #: gradience/plugins_list.py:111
-#, fuzzy
 msgid "No Plugins Found."
-msgstr "No Plugins Found."
+msgstr "Nie znaleziono żadnych wtyczek."
 
-#: gradience/preset_row.py:158
+#: gradience/preset_row.py:87 gradience/preset_row.py:106
+msgid "Remove from Favourites"
+msgstr "Usuń z ulubionych"
+
+#: gradience/preset_row.py:90 gradience/preset_row.py:102
+msgid "Add to Favourites"
+msgstr "Dodaj do ulubionych"
+
+#: gradience/preset_row.py:162
 msgid "Preset removed"
 msgstr "Profil usunięty"
 
-#: gradience/preset_row.py:159
+#: gradience/preset_row.py:163
 msgid "Undo"
 msgstr "Cofnij"
 
-#: gradience/preset_row.py:184
-#, fuzzy
+#: gradience/preset_row.py:188
 msgid "Pending Deletion"
 msgstr "Oczekujące na usunięcie"
 
-#: gradience/preset_row.py:222
+#: gradience/preset_row.py:226
 msgid "Unable to delete preset"
 msgstr "Nie udało się usunąć profilu"
 
 #: gradience/presets_manager_window.py:114
-#: gradience/presets_manager_window.py:390
+#: gradience/presets_manager_window.py:385
 msgid "User Presets"
 msgstr "Profile użytkowników"
 
 #: gradience/presets_manager_window.py:182
-#, fuzzy
 msgid "Add new repository"
 msgstr "Dodaj nowe repozytorium"
 
 #: gradience/presets_manager_window.py:183
-#, fuzzy
 msgid "Add a repository to install additional presets."
-msgstr "Dodaj repozytorium, aby zainstalować dodatkowe presety."
+msgstr "Dodaj repozytorium, aby zainstalować dodatkowe profile."
 
 #: gradience/presets_manager_window.py:190
-#, fuzzy
 msgid "Add"
 msgstr "Dodaj"
 
-#: gradience/presets_manager_window.py:285
+#: gradience/presets_manager_window.py:280
 msgid "Preset already exists"
 msgstr "Profil już istnieje"
 
-#: gradience/presets_manager_window.py:300
+#: gradience/presets_manager_window.py:295
 msgid "Preset imported"
 msgstr "Profil zaimportowany"
 
-#: gradience/presets_manager_window.py:303
+#: gradience/presets_manager_window.py:298
 msgid "Unsupported file format, must be .json"
 msgstr "Niewspierany format pliku, musi być .json"
 
-#: gradience/presets_manager_window.py:383
-#, fuzzy
+#: gradience/presets_manager_window.py:378
 msgid "Built-in Presets"
-msgstr "Wbudowane profile kolorów"
+msgstr "Wbudowane Profile"
 
-#: gradience/presets_manager_window.py:393
-#, fuzzy
+#: gradience/presets_manager_window.py:388
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
 msgstr ""
 "Zobacz <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> na Githubie po więcej profili"
+"Community</a> na Githubie po więcej profili."
 
-#: gradience/presets_manager_window.py:419
-#, fuzzy
+#: gradience/presets_manager_window.py:414
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
 msgstr ""
 "Nie znaleziono profili! Użyj przycisku \"Importuj\" aby zaimportować jakiś, "
-"lub wyszukaj profili w karcie \"Eksploruj\""
+"lub wyszukaj profili w karcie \"Eksploruj\"."
 
 #: gradience/repo_row.py:60
-#, fuzzy
 msgid "Repository removed"
-msgstr "Usunięto repozytorium."
+msgstr "Usunięto repozytorium"
 
 #: gradience/settings_schema.py:23
 msgid "Accent Colors"
@@ -1126,8 +1114,6 @@ msgid "These colors are used for popovers."
 msgstr "Te kolory są używane w wyskakujących dymkach."
 
 #: gradience/settings_schema.py:338
-#, fuzzy
-#| msgid "Miscalleneous Colors"
 msgid "Miscellaneous Colors"
 msgstr "Inne kolory"
 
@@ -1193,9 +1179,8 @@ msgid "Dark"
 msgstr "Ciemny"
 
 #: gradience/welcome.py:94
-#, fuzzy
 msgid "Thanks for updating Gradience!"
-msgstr "Dzięki za aktualizację Gradience!"
+msgstr "Dziękujemy za zaktualizowanie Gradience!"
 
 #: gradience/window.py:132
 msgid "Monet Engine"
@@ -1213,7 +1198,6 @@ msgid "Background Image"
 msgstr "Obraz tła"
 
 #: gradience/window.py:157
-#, fuzzy
 msgid "Choose a File"
 msgstr "Wybierz plik"
 
@@ -1230,7 +1214,6 @@ msgid "Theme"
 msgstr "Motyw"
 
 #: gradience/window.py:199
-#, fuzzy
 msgid "Auto"
 msgstr "Automatyczny"
 
@@ -1477,9 +1460,6 @@ msgstr ""
 #~ msgid "Allow installation"
 #~ msgstr "Zezwól na instalację"
 
-#~ msgid "System configuration"
-#~ msgstr "Konfiguracja systemu"
-
 #, fuzzy
 #~ msgid "Installing themes"
 #~ msgstr "Instalowanie motywów"
@@ -1581,14 +1561,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Toggle plugin"
 #~ msgstr "Aktywuj wtyczkę"
-
-#, fuzzy
-#~ msgid ""
-#~ "Change colors of windows, buttons, lists and more, with advanced features "
-#~ "like adding custom CSS"
-#~ msgstr ""
-#~ "Zmieniaj kolory okien, przycisków, list i wielu innych dzięki "
-#~ "zaawansowanym funkcjom, takim jak dodawanie własnego kodu CSS"
 
 #, fuzzy
 #~ msgid "No plugins found."
