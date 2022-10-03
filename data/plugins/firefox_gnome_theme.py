@@ -114,11 +114,16 @@ class FirefoxGnomeTheme2Plugin(IPlugin):
         return False
 
     def apply(self, dark_theme=False):
-        try:
-            with (
-                next(Path("~/.mozilla/firefox").expanduser().glob("*.*"))
-                / "chrome/firefox-gnome-theme/customChrome.css"
-            ).open("w") as f:
-                f.write(self.template.format(**self.variables))
-        except OSError:
-            pass
+        for path in ["~/.mozilla/firefox", "~/.librewolf",
+                     "~/.var/app/org.mozilla.firefox/.mozilla/firefox",
+                     "~/.var/app/io.gitlab.librewolf-community/.librewolf"]:
+            try:
+                with (
+                    next(Path("firefox").expanduser().glob("*.*"))
+                    / "chrome/firefox-gnome-theme/customChrome.css"
+                ).open("w") as f:
+                    f.write(self.template.format(**self.variables))
+            except OSError:
+                pass
+            except StopIteration:
+                pass
