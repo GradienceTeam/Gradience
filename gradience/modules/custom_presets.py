@@ -39,10 +39,6 @@ def fetch_presets(repo) -> [dict, list]:
         else:
             buglog(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
             return False, False
-    '''except urllib3.exceptions.MaxRetryError as e:
-        buglog(f"Maximum number of retries exceeded. Exc: {e}")
-        return False, False'''
-
     try:
         raw = json.loads(body.get_data())
     except json.JSONDecodeError as e:
@@ -78,10 +74,6 @@ def download_preset(name, repo_name, repo) -> None:
         else:
             buglog(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
             return False, False
-    '''except urllib3.exceptions.MaxRetryError as e:
-        buglog(f"Maximum number of retries exceeded. Exc: {e}")
-        return False, False'''
-
     try:
         raw = json.loads(body.get_data())
     except json.JSONDecodeError as e:
