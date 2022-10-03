@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 12:16+0000\n"
-"PO-Revision-Date: 2022-10-02 04:21+0000\n"
+"POT-Creation-Date: 2022-10-03 00:52+0000\n"
+"PO-Revision-Date: 2022-10-03 03:17+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ko/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:948
+#: data/ui/window.blp:5 gradience/main.py:972
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -32,7 +32,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "Adwaita의 외관을 쉽게 변경하세요."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:950
+#: gradience/main.py:974
 msgid "Gradience Team"
 msgstr "Gradience팀"
 
@@ -663,7 +663,7 @@ msgid "Unexpected file error occurred"
 msgstr "예기치 않은 파일 오류가 발생했습니다."
 
 #: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
-#: gradience/presets_manager_window.py:189
+#: gradience/main.py:874 gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "취소"
 
@@ -773,16 +773,31 @@ msgstr "사전 설정 저장됨"
 msgid "Preset set sucessfully"
 msgstr "사전 설정이 성공적으로 적용되었습니다!"
 
-#: gradience/main.py:905
+#: gradience/main.py:867
+#, fuzzy
+msgid "Log out ?"
+msgstr "로그 아웃 ?"
+
+#: gradience/main.py:869
+#, fuzzy
+msgid "For the changes to take effect, you need to log out. "
+msgstr "변경 사항을 적용하려면 로그아웃해야 합니다. "
+
+#: gradience/main.py:875
+#, fuzzy
+msgid "Logout"
+msgstr "로그아웃"
+
+#: gradience/main.py:929
 #, fuzzy
 msgid "Could not restore GTK4 backup"
 msgstr "GTK4 백업을 복원할 수 없습니다."
 
-#: gradience/main.py:938
+#: gradience/main.py:962
 msgid "Preset reseted"
 msgstr "사전 설정 재설정됨"
 
-#: gradience/main.py:989
+#: gradience/main.py:1013
 #, fuzzy
 msgid ""
 "\n"
@@ -827,7 +842,7 @@ msgstr ""
 "서 수행됩니다.</li>\n"
 "\n"
 
-#: gradience/main.py:1009
+#: gradience/main.py:1033
 #, fuzzy
 #| msgid ""
 #| "\n"

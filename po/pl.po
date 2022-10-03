@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 12:16+0000\n"
+"POT-Creation-Date: 2022-10-03 00:52+0000\n"
 "PO-Revision-Date: 2022-10-02 15:17+0000\n"
 "Last-Translator: tfuxu <tfuxu@tutanota.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:948
+#: data/ui/window.blp:5 gradience/main.py:972
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "Zmieniaj z łatwością wygląd Adwaity."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:950
+#: gradience/main.py:974
 msgid "Gradience Team"
 msgstr "Zespół Gradience"
 
@@ -599,7 +599,7 @@ msgid "Unexpected file error occurred"
 msgstr "Wystąpił nieoczekiwany błąd pliku"
 
 #: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
-#: gradience/presets_manager_window.py:189
+#: gradience/main.py:874 gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "Anuluj"
 
@@ -700,15 +700,27 @@ msgstr "Profil zapisany"
 msgid "Preset set sucessfully"
 msgstr "Profil ustawiony pomyślnie"
 
-#: gradience/main.py:905
+#: gradience/main.py:867
+msgid "Log out ?"
+msgstr ""
+
+#: gradience/main.py:869
+msgid "For the changes to take effect, you need to log out. "
+msgstr ""
+
+#: gradience/main.py:875
+msgid "Logout"
+msgstr ""
+
+#: gradience/main.py:929
 msgid "Could not restore GTK4 backup"
 msgstr "Nie można przywrócić kopii zapasowej motywu GTK4"
 
-#: gradience/main.py:938
+#: gradience/main.py:962
 msgid "Preset reseted"
 msgstr "Profil zresetowany"
 
-#: gradience/main.py:989
+#: gradience/main.py:1013
 msgid ""
 "\n"
 "<ul>\n"
@@ -753,7 +765,7 @@ msgstr ""
 "nad programem odbywają się w gałęzi `next`</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1009
+#: gradience/main.py:1033
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
