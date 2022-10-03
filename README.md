@@ -23,7 +23,7 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 [![Copr build status](https://img.shields.io/badge/dynamic/json?color=blue&label=copr&query=builds.latest.state&url=https%3A%2F%2Fcopr.fedorainfracloud.org%2Fapi_3%2Fpackage%3Fownername%3Dlyessaadi%26projectname%3Dgradience%26packagename%3Dgradience%26with_latest_build%3DTrue)](https://copr.fedorainfracloud.org/coprs/lyessaadi/gradience/package/gradience/)
 [![Flathub](https://img.shields.io/badge/dynamic/json?color=informational&label=downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Fcom.github.GradienceTeam.Gradience)](https://flathub.org/apps/details/com.github.GradienceTeam.Gradience)
 [![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam)
-[![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#Gradience:matrix.org)
+![Chat on Matrix](https://img.shields.io/matrix/Gradience:matrix.org?logo=matrix)
 [![Chat on Discord](https://img.shields.io/discord/1013779899821064202?label=discord&logo=discord&logoColor=white)](https://discord.com/invite/MYa8Sr7btJ)
 
 <!--[![Flatpak build - Nightly](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml)-->
@@ -120,14 +120,15 @@ ninja -C builddir run
 
 1. Open Terminal
 2. Run `git clone https://github.com/GradienceTeam/Gradience.git && cd Gradience`
-3. Install the `42` version of GNOME SDK: `flatpak install org.gnome.Sdk/x86_64/42 org.gnome.Platform/x86_64/42`
+3. Install the `43` version of GNOME runtime and SDK: `flatpak install org.gnome.Sdk//43 org.gnome.Platform//43`
 4. Run: `flatpak-builder --install --user --force-clean repo/ build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json`
 
 Alternatively, open the project with GNOME Builder, then build and run it.
 
 ## Theming Setup
 
-You can also go in `Preferences` and apply override for Flatpak 
+> **Note** 
+> You can also go to `Preferences` and apply overrides for Flatpak
 
 ### Libadwaita applications
 
@@ -155,25 +156,25 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 Press on 3-lines button and press `Reset Applied Color Scheme`
 
-![hamburger menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
+![Main Gradience menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
 
 ### Manually:
 
-Remove GTK3 and GTK4 configs
+Remove GTK3 and GTK4 configs:
 
 - Run `rm -rf .config/gtk-4.0 .config/gtk-3.0`
 
-Remove adw-gtk3 theme
+Remove adw-gtk3 theme:
 
 - Run `flatpak uninstall adw-gtk3` to remove Flatpak adw-gtk3 theme
 - Run `rm -rf .themes/adw-gtk3 .themes/adw-gtk3-dark .local/share/themes/adw-gtk3 .local/share/themes/adw-gtk3-dark` to remove local adw-gtk3 theme
 
-Reset Flatpak overrides
+Reset Flatpak overrides:
 
 - Run `sudo flatpak override --reset`
 
 > **Warning**
-> This will reset all Flatpak overrides, such as Firefox wayland override
+> This will reset all Flatpak overrides, such as Firefox Wayland override
 
 ## Roadmap
 
