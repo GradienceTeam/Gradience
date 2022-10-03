@@ -18,84 +18,81 @@
 
 import os
 import json
-import asyncio
-import aiohttp
 
+from gi.repository import GLib, Soup
+
+from .preset import presets_dir
 from .utils import to_slug_case, buglog
 
 
-PRESET_DIR = os.path.join(
-    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
-    "presets",
-)
-
-
-async def main(repo):
-    async with aiohttp.ClientSession() as session:
-        try:
-            async with session.get(repo) as http:
-                try:
-                    raw = json.loads(await http.text())
-                except json.JSONDecodeError as error:
-                    buglog(f"Error with decoding JSON data. Exc: {error}")
-                    return False, False
-        except aiohttp.ClientError as error:
-            buglog(f"Failed to establish a new connection. Exc: {error}")
-            return False, False
-
-        preset_dict = {}
-        url_list = []
-
-        for data in raw.items():
-            data = list(data)
-            data.insert(0, to_slug_case(data[0]))
-
-            url = data[2]
-            data.pop(2)  # Remove preset URL from list
-
-            to_dict = iter(data)
-            # Convert list back to dict
-            preset_dict.update(dict(zip(to_dict, to_dict)))
-
-            url_list.append(url)
-
-        return preset_dict, url_list
-
+# Open Soup3 session
+session = Soup.Session()
 
 def fetch_presets(repo) -> [dict, list]:
-    return asyncio.run(main(repo))
-
-
-async def _download_preset(name, repo_name, url) -> None:
-    async with aiohttp.ClientSession() as session:
-        try:
-            async with session.get(url) as http:
-                try:
-                    raw = json.loads(await http.text())
-                except json.JSONDecodeError as error:
-                    buglog(f"Error with decoding JSON data. Exc: {error}")
-                    return False, False
-        except aiohttp.ClientError as error:
-            buglog(f"Failed to establish a new connection. Exc: {error}")
+    try:
+        request = Soup.Message.new("GET", repo)
+        body = session.send_and_read(request, None)
+    except GLib.GError as e: # offline
+        if e.code == 1:
+            buglog(f"Failed to establish a new connection. Exc: {e}")
             return False, False
+        else:
+            buglog(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
+            return False, False
+    try:
+        raw = json.loads(body.get_data())
+    except json.JSONDecodeError as e:
+        buglog(f"Error with decoding JSON data. Exc: {e}")
+        return False, False
 
-        data = json.dumps(raw)
+    preset_dict = {}
+    url_list = []
 
-        try:
-            with open(
-                os.path.join(
-                    PRESET_DIR,
-                    repo_name,
-                    to_slug_case(name) + ".json",
-                ),
-                "w",
-                encoding="utf-8",
-            ) as f:
-                f.write(data)
-                f.close()
-        except OSError as error:
-            buglog(f"Failed to write data to a file. Exc: {error}")
+    for data in raw.items():
+        data = list(data)
+        data.insert(0, to_slug_case(data[0]))
 
+        url = data[2]
+        data.pop(2)  # Remove preset URL from list
 
-def download_preset(name, repo_name, url) -> None:
-    asyncio.run(_download_preset(name, repo_name, url))
+        to_dict = iter(data)
+        # Convert list back to dict
+        preset_dict.update(dict(zip(to_dict, to_dict)))
+
+        url_list.append(url)
+
+    return preset_dict, url_list
+
+def download_preset(name, repo_name, repo) -> None:
+    try:
+        request = Soup.Message.new("GET", repo)
+        body = session.send_and_read(request, None)
+    except GLib.GError as e: # offline
+        if e.code == 1:
+            buglog(f"Failed to establish a new connection. Exc: {e}")
+            return False, False
+        else:
+            buglog(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
+            return False, False
+    try:
+        raw = json.loads(body.get_data())
+    except json.JSONDecodeError as e:
+        buglog(f"Error with decoding JSON data. Exc: {e}")
+        return False, False
+
+    data = json.dumps(raw)
+
+    try:
+        with open(
+            os.path.join(
+                presets_dir,
+                repo_name,
+                to_slug_case(name) + ".json",
+            ),
+            "w",
+            encoding="utf-8",
+        ) as f:
+            f.write(data)
+            f.close()
+    except OSError as e:
+        buglog(f"Failed to write data to a file. Exc: {e}")

@@ -1,10 +1,29 @@
-from ..settings_schema import settings_schema
+# preset.py
+#
+# Change the look of Adwaita, with ease
+# Copyright (C) 2022 Gradience Team
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
 import json
 import os
 
+from ..settings_schema import settings_schema
 from .utils import buglog, to_slug_case
 
-PRESET_DIR = os.path.join(
+
+presets_dir = os.path.join(
     os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
     "presets",
 )
@@ -35,7 +54,7 @@ class Preset:
                 self.repo = repo
             if preset_path is None:
                 self.preset_path = os.path.join(
-                    PRESET_DIR, repo, self.name + ".json")
+                    presets_dir, repo, self.name + ".json")
             else:
                 self.preset_path = preset_path
             self.load_preset()
@@ -71,18 +90,18 @@ class Preset:
     def save_preset(self, name=None, plugins_list=None, to=None):
         if to is None:
             self.preset_path = os.path.join(
-                PRESET_DIR, self.repo, self.name + ".json")
+                presets_dir, self.repo, self.name + ".json")
         else:
             self.preset_path = to
         if not os.path.exists(
             os.path.join(
-                PRESET_DIR,
+                presets_dir,
                 "user",
             )
         ):
             os.makedirs(
                 os.path.join(
-                    PRESET_DIR,
+                    presets_dir,
                     "user",
                 )
             )
