@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 12:16+0000\n"
+"POT-Creation-Date: 2022-10-03 00:52+0000\n"
 "PO-Revision-Date: 2022-10-02 14:34+0800\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:948
+#: data/ui/window.blp:5 gradience/main.py:972
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -32,7 +32,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "轻松改变 Adwaita 的外观。"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:950
+#: gradience/main.py:974
 msgid "Gradience Team"
 msgstr "Gradience 团队"
 
@@ -576,7 +576,7 @@ msgid "Unexpected file error occurred"
 msgstr "发生意外的文件错误"
 
 #: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
-#: gradience/presets_manager_window.py:189
+#: gradience/main.py:874 gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "取消"
 
@@ -672,15 +672,27 @@ msgstr "预设已保存"
 msgid "Preset set sucessfully"
 msgstr "预设设置成功"
 
-#: gradience/main.py:905
+#: gradience/main.py:867
+msgid "Log out ?"
+msgstr ""
+
+#: gradience/main.py:869
+msgid "For the changes to take effect, you need to log out. "
+msgstr ""
+
+#: gradience/main.py:875
+msgid "Logout"
+msgstr ""
+
+#: gradience/main.py:929
 msgid "Could not restore GTK4 backup"
 msgstr "无法还原 GTK4 备份"
 
-#: gradience/main.py:938
+#: gradience/main.py:962
 msgid "Preset reseted"
 msgstr "预设已重置"
 
-#: gradience/main.py:989
+#: gradience/main.py:1013
 msgid ""
 "\n"
 "<ul>\n"
@@ -721,7 +733,7 @@ msgstr ""
 "<li>“Main”分支现在受 GitHub 分支保护。开发在“next”分支上完成 </li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1009
+#: gradience/main.py:1033
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
