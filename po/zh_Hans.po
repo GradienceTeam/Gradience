@@ -9,21 +9,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 12:16+0000\n"
-"PO-Revision-Date: 2022-10-02 14:34+0800\n"
+"POT-Creation-Date: 2022-10-03 12:20+0000\n"
+"PO-Revision-Date: 2022-10-03 03:17+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "GradienceTeam/gradience/zh_Hans/>\n"
-"Language: zh\n"
+"Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:948
+#: data/ui/window.blp:5 gradience/main.py:972
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -32,7 +32,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "轻松改变 Adwaita 的外观。"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:950
+#: gradience/main.py:974
 msgid "Gradience Team"
 msgstr "Gradience 团队"
 
@@ -576,7 +576,7 @@ msgid "Unexpected file error occurred"
 msgstr "发生意外的文件错误"
 
 #: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
-#: gradience/presets_manager_window.py:189
+#: gradience/main.py:874 gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "取消"
 
@@ -672,15 +672,27 @@ msgstr "预设已保存"
 msgid "Preset set sucessfully"
 msgstr "预设设置成功"
 
-#: gradience/main.py:905
+#: gradience/main.py:867
+msgid "Log out ?"
+msgstr "注销 ？"
+
+#: gradience/main.py:869
+msgid "For the changes to take effect, you need to log out. "
+msgstr "要使更改生效，您需要注销。 "
+
+#: gradience/main.py:875
+msgid "Logout"
+msgstr "注销"
+
+#: gradience/main.py:929
 msgid "Could not restore GTK4 backup"
 msgstr "无法还原 GTK4 备份"
 
-#: gradience/main.py:938
+#: gradience/main.py:962
 msgid "Preset reseted"
 msgstr "预设已重置"
 
-#: gradience/main.py:989
+#: gradience/main.py:1013
 msgid ""
 "\n"
 "<ul>\n"
@@ -708,7 +720,7 @@ msgstr ""
 "<li>在标题栏中添加 AdwViewSwitcher。</li>\n"
 "<li>将 CSS 移动到“高级”选项卡</li>\n"
 "<li>将其余部分移至“颜色”选项卡</li>\n"
-"<li>添加从背景生成主题的“获利”选项卡</li>\n"
+"<li>添加从背景生成主题的“Monet”选项卡</li>\n"
 "<li>在标题栏中添加已保存的磁盘和未保存的磁盘图标</li>\n"
 "<li>更新“关于”对话框</li>\n"
 "<li>将许可证更改为 GNU GPLv3</li>\n"
@@ -721,7 +733,7 @@ msgstr ""
 "<li>“Main”分支现在受 GitHub 分支保护。开发在“next”分支上完成 </li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1009
+#: gradience/main.py:1033
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "

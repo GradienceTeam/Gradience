@@ -42,7 +42,7 @@ from .constants import (
 from .modules.css import load_preset_from_css
 from .welcome import GradienceWelcomeWindow
 from .preferences import GradiencePreferencesWindow
-from .modules.utils import to_slug_case, buglog
+from .modules.utils import to_slug_case, buglog, run_command
 from .plugins_list import GradiencePluginsList
 from .presets_manager_window import GradiencePresetWindow
 from .modules.preset import Preset, presets_dir
@@ -855,6 +855,30 @@ class GradienceApplication(Adw.Application):
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset set sucessfully"))
             )
+
+            dialog = Adw.MessageDialog(
+                transient_for=self.props.active_window,
+                heading=_("Log out ?"),
+                body=_(
+                    "For the changes to take effect, you need to log out. "
+                ),
+                body_use_markup=True,
+            )
+
+            dialog.add_response("cancel", _("Cancel"))
+            dialog.add_response("logout", _("Logout"))
+            dialog.set_response_appearance(
+                "logout", Adw.ResponseAppearance.DESTRUCTIVE)
+            dialog.set_default_response("cancel")
+            dialog.set_close_response("cancel")
+
+            dialog.connect('response', self.on_logout_dialog_response)
+            dialog.present()
+
+    def on_logout_dialog_response (self, dialog, response):
+        if response == "logout":
+            #run_command(['gnome-session-quit', '--no-prompt'])
+            print("logout")
 
     def restore_color_scheme(self, widget, response):
         if response == "restore":

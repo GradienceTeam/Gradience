@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 12:16+0000\n"
-"PO-Revision-Date: 2022-10-02 12:16+0000\n"
+"POT-Creation-Date: 2022-10-03 12:20+0000\n"
+"PO-Revision-Date: 2022-10-03 12:20+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ru/>\n"
@@ -29,7 +29,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:948
+#: data/ui/window.blp:5 gradience/main.py:972
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -38,7 +38,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "С легкостью изменяйте внешний вид Adwaita."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:950
+#: gradience/main.py:974
 msgid "Gradience Team"
 msgstr "Команда Gradience"
 
@@ -619,7 +619,7 @@ msgid "Unexpected file error occurred"
 msgstr "Произошла неожиданная ошибка файла"
 
 #: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
-#: gradience/presets_manager_window.py:189
+#: gradience/main.py:874 gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -721,15 +721,30 @@ msgstr "Предустановка сохранена"
 msgid "Preset set sucessfully"
 msgstr "Предустановка успешно установлена"
 
-#: gradience/main.py:905
+#: gradience/main.py:867
+#, fuzzy
+msgid "Log out ?"
+msgstr "Выйти из системы?"
+
+#: gradience/main.py:869
+#, fuzzy
+msgid "For the changes to take effect, you need to log out. "
+msgstr "Чтобы изменения вступили в силу, необходимо выйти из системы. "
+
+#: gradience/main.py:875
+#, fuzzy
+msgid "Logout"
+msgstr "Выйти"
+
+#: gradience/main.py:929
 msgid "Could not restore GTK4 backup"
 msgstr "Не удалось восстановить резервную копию GTK4"
 
-#: gradience/main.py:938
+#: gradience/main.py:962
 msgid "Preset reseted"
 msgstr "Предустановка восстановлена"
 
-#: gradience/main.py:989
+#: gradience/main.py:1013
 msgid ""
 "\n"
 "<ul>\n"
@@ -775,7 +790,7 @@ msgstr ""
 "Разработка будет идти в ветке `next`</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1009
+#: gradience/main.py:1033
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "

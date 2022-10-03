@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 12:16+0000\n"
-"PO-Revision-Date: 2022-10-02 13:21+0000\n"
+"POT-Creation-Date: 2022-10-03 12:20+0000\n"
+"PO-Revision-Date: 2022-10-02 15:17+0000\n"
 "Last-Translator: tfuxu <tfuxu@tutanota.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/pl/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:948
+#: data/ui/window.blp:5 gradience/main.py:972
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "Zmieniaj z łatwością wygląd Adwaity."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:950
+#: gradience/main.py:974
 msgid "Gradience Team"
 msgstr "Zespół Gradience"
 
@@ -373,11 +373,11 @@ msgstr "Udostępnij swój profil"
 
 #: data/ui/share_window.blp:66
 msgid "Share your preset with the world!"
-msgstr ""
+msgstr "Podziel się swoim profilem z całym światem!"
 
 #: data/ui/share_window.blp:73
 msgid "How it's work?"
-msgstr ""
+msgstr "Jak to działa?"
 
 #: data/ui/share_window.blp:74
 msgid ""
@@ -386,6 +386,11 @@ msgid ""
 "Community'>GradienceTeam/Community</a>. Then, you can upload your preset, "
 "make a pull request and share it with the world!"
 msgstr ""
+"Gradience korzysta z GitHuba w celu udostępnienia twojego profilu. Musisz "
+"założyć konto na GitHubie, oraz zforkować <a href=\"https://github.com/"
+"GradienceTeam/Community\">GradienceTeam/Community</a>. Następnie możesz "
+"przesłać swój profil, utworzyć Pull Request i podzielić się swoim profilem z "
+"całym światem!"
 
 #: data/ui/share_window.blp:81 data/ui/welcome.blp:81
 msgid "Warning"
@@ -410,7 +415,6 @@ msgid "Customize Adwaita Theme"
 msgstr "Dostosuj Motyw Adwaita"
 
 #: data/ui/share_window.blp:98
-#, fuzzy
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom CSS"
@@ -431,8 +435,6 @@ msgstr ""
 "motywów."
 
 #: data/ui/share_window.blp:110
-#, fuzzy
-#| msgid "Legacy Apps Theming"
 msgid "Legacy apps theming"
 msgstr "Modyfikowanie starszych aplikacji"
 
@@ -488,7 +490,7 @@ msgstr "Witamy w Gradience"
 
 #: data/ui/welcome.blp:66
 msgid "Change the look of Adwaita, with ease"
-msgstr "Zmieniaj z łatwością wygląd Adwaity."
+msgstr "Zmieniaj z łatwością wygląd Adwaity"
 
 #: data/ui/welcome.blp:73
 msgid "What's new in 0.3.0"
@@ -526,13 +528,11 @@ msgstr "Zastosuj"
 
 #: data/ui/window.blp:41
 msgid "Main Menu"
-msgstr ""
+msgstr "Główne menu"
 
 #: data/ui/window.blp:50
-#, fuzzy
-#| msgid "Presets"
 msgid "Presets Menu"
-msgstr "Profile"
+msgstr "Menu profili"
 
 #: data/ui/window.blp:57
 msgid "Save Preset"
@@ -540,7 +540,7 @@ msgstr "Zapisz profil kolorów"
 
 #: data/ui/window.blp:66
 msgid "CSS Errors"
-msgstr ""
+msgstr "Błędy CSS"
 
 #: data/ui/window.blp:81
 msgid "Colors"
@@ -583,10 +583,8 @@ msgid "Built-In Presets"
 msgstr "Wbudowane Profile"
 
 #: data/ui/window.blp:182
-#, fuzzy
-#| msgid "Rename Preset"
 msgid "Manage Presets"
-msgstr "Zmień nazwę profilu"
+msgstr "Zarządzaj profilami"
 
 #: gradience/modules/flatpak_overrides.py:65
 #: gradience/modules/flatpak_overrides.py:84
@@ -601,7 +599,7 @@ msgid "Unexpected file error occurred"
 msgstr "Wystąpił nieoczekiwany błąd pliku"
 
 #: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
-#: gradience/presets_manager_window.py:189
+#: gradience/main.py:874 gradience/presets_manager_window.py:189
 msgid "Cancel"
 msgstr "Anuluj"
 
@@ -620,10 +618,8 @@ msgid "Failed to load preset"
 msgstr "Nie udało się załadować profilu"
 
 #: gradience/main.py:253
-#, fuzzy
-#| msgid "No Results Found"
 msgid "No presets found"
-msgstr "Nie znaleziono wyników"
+msgstr "Nie znaleziono profili"
 
 #: gradience/main.py:271
 msgid "Favourite Presets"
@@ -704,15 +700,27 @@ msgstr "Profil zapisany"
 msgid "Preset set sucessfully"
 msgstr "Profil ustawiony pomyślnie"
 
-#: gradience/main.py:905
+#: gradience/main.py:867
+msgid "Log out ?"
+msgstr ""
+
+#: gradience/main.py:869
+msgid "For the changes to take effect, you need to log out. "
+msgstr ""
+
+#: gradience/main.py:875
+msgid "Logout"
+msgstr ""
+
+#: gradience/main.py:929
 msgid "Could not restore GTK4 backup"
 msgstr "Nie można przywrócić kopii zapasowej motywu GTK4"
 
-#: gradience/main.py:938
+#: gradience/main.py:962
 msgid "Preset reseted"
 msgstr "Profil zresetowany"
 
-#: gradience/main.py:989
+#: gradience/main.py:1013
 msgid ""
 "\n"
 "<ul>\n"
@@ -757,7 +765,7 @@ msgstr ""
 "nad programem odbywają się w gałęzi `next`</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1009
+#: gradience/main.py:1033
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -828,11 +836,11 @@ msgstr "Nie znaleziono żadnych wtyczek."
 
 #: gradience/preset_row.py:87 gradience/preset_row.py:106
 msgid "Remove from Favourites"
-msgstr ""
+msgstr "Usuń z ulubionych"
 
 #: gradience/preset_row.py:90 gradience/preset_row.py:102
 msgid "Add to Favourites"
-msgstr ""
+msgstr "Dodaj do ulubionych"
 
 #: gradience/preset_row.py:162
 msgid "Preset removed"

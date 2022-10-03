@@ -18,7 +18,9 @@
 
 import re
 import logging
+import os
 
+from subprocess import run
 from anyascii import anyascii
 from gradience.constants import build_type
 
@@ -41,3 +43,12 @@ def to_slug_case(non_slug):
 # Gradience is build in release mode
 def buglog(*args):
     logging.debug(*args)
+
+def run_command(command, *args, **kwargs):
+
+    if isinstance(command, str):
+        command = [command]
+    if os.environ.get('FLATPAK_ID'):
+        command = ['flatpak-spawn', '--host'] + command
+
+    return run(command, *args, **kwargs)
