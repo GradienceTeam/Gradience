@@ -154,7 +154,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 ### Using app:
 
-Press on 3-lines button and press `Reset Applied Color Scheme`
+Press on the menu button in the headerbar and press `Reset Applied Color Scheme`
 
 ![Main Gradience menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
 
