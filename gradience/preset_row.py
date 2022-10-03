@@ -44,11 +44,10 @@ class GradiencePresetRow(Adw.ExpanderRow):
     badge_list = Gtk.Template.Child("badge_list")
     no_badges = Gtk.Template.Child("no_badges")
 
-    def __init__(self, name, win, repo_name, file_name, author="", **kwargs):
+    def __init__(self, name, win, repo_name, author="", **kwargs):
         super().__init__(**kwargs)
 
         self.name = name
-        self.file_name = file_name
 
         self.prefix = to_slug_case(repo_name)
 
@@ -170,12 +169,12 @@ class GradiencePresetRow(Adw.ExpanderRow):
                 os.path.join(
                     presets_dir,
                     self.prefix,
-                    self.file_name + ".json",
+                    self.preset.name + ".json",
                 ),
                 os.path.join(
                     presets_dir,
                     self.prefix,
-                    self.file_name + ".json.to_delete",
+                    self.preset.name + ".json.to_delete",
                 ),
             )
 
@@ -195,7 +194,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
             os.path.join(
                 presets_dir,
                 self.prefix,
-                self.file_name + ".json",
+                self.preset.name + ".json",
             )
         )
 
@@ -208,7 +207,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
                     os.path.join(
                         presets_dir,
                         self.prefix,
-                        self.file_name + ".json.to_delete",
+                        self.preset.name + ".json.to_delete",
                     )
                 )
             except Exception as exception:
@@ -225,12 +224,12 @@ class GradiencePresetRow(Adw.ExpanderRow):
                     os.path.join(
                         presets_dir,
                         self.prefix,
-                        self.file_name + ".json.to_delete",
+                        self.preset.name + ".json.to_delete",
                     ),
                     os.path.join(
                         presets_dir,
                         self.prefix,
-                        self.file_name + ".json",
+                        self.preset.name + ".json",
                     ),
                 )
             except Exception as exception:

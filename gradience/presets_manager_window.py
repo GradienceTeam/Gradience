@@ -399,7 +399,7 @@ class GradiencePresetWindow(Adw.Window):
             for repo, presets in self.custom_presets.items():
                 for preset_file, preset_name in presets.items():
                     row = GradiencePresetRow(
-                        preset_name, self, repo, preset_file)
+                        preset_name, self, repo)
                     self.preset_list.add(row)
 
         else:
