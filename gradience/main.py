@@ -970,8 +970,8 @@ class GradienceApplication(Adw.Application):
             support_url=help_url,
             issue_url=bugtracker_url,
             developers=[
-                "0xMRTT https://github.com/0xMRTT",
                 "Artyom Fomin https://github.com/ArtyIF",
+                "0xMRTT https://github.com/0xMRTT",
                 "tfuxu https://github.com/tfuxu",
                 "Verantor https://github.com/Verantor",
                 "u1F98E https://github.com/u1f98e",
