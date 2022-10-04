@@ -1051,6 +1051,28 @@ This app is written in Python and uses GTK 4 and libadwaita.
             ],
         )
         about.add_credit_section(
+            "Presets",
+            [
+                "0xMRTT https://github.com/0xMRTT",
+                "David Lapshin https://github.com/daudix-UFO",
+                "José Hunter https://github.com/halfmexican",
+                "Kainoa Kanter https://github.com/ThatOneCalculator",
+                "tfuxu https://github.com/tfuxu",
+                "cmagnificent https://github.com/cmagnificent",
+                "Ben Mitchell https://github.com/crispyricepc",
+                "zehkira https://github.com/zehkira",
+                "TeryVeneno https://github.com/TeryVeneno",
+                "Luis David López https://github.com/lopeztel",
+                "Sal Watson https://github.com/salarua",
+                "hericiumvevo https://github.com/hericiumvevo",
+                "Mohammad Saleh Kamyab https://github.com/mskf1383",
+                "arslee https://github.com/arslee07",
+                "Link Dupont https://github.com/subpop",
+                "badlydrawnface https://github.com/badlydrawnface",
+                "JoshM-Yoru https://github.com/JoshM-Yoru",
+            ],
+        )
+        about.add_credit_section(
             "Packagers",
             [
                 "0xMRTT https://github.com/0xMRTT",
