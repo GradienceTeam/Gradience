@@ -989,7 +989,7 @@ class GradienceApplication(Adw.Application):
                 Davide Ferracin https://github.com/phaerrax
                 Ewout van Mansom https://github.com/emansom
                 FineFindus https://github.com/FineFindus
-                                    엘련(Jisu Kim) https://github.com/vbalien
+                                    엘련 (Jisu Kim) https://github.com/vbalien
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918
                 Karol Lademan https://www.transifex.com/user/profile/karlod
                 K.B.Dharun Krishna https://github.com/kbdharun
