@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-03 12:20+0000\n"
-"PO-Revision-Date: 2022-10-03 12:20+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2022-10-04 01:01+0000\n"
+"PO-Revision-Date: 2022-10-03 23:25+0000\n"
+"Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ru/>\n"
 "Language: ru\n"
@@ -29,7 +29,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:972
+#: data/ui/window.blp:5 gradience/main.py:966
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -38,7 +38,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "С легкостью изменяйте внешний вид Adwaita."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:974
+#: gradience/main.py:968
 msgid "Gradience Team"
 msgstr "Команда Gradience"
 
@@ -142,21 +142,16 @@ msgid "Download Only"
 msgstr "Только загрузить"
 
 #: data/ui/no_plugin_pref.blp:5
-#, fuzzy
-#| msgid "Preferences"
 msgid "Plugin Preferences"
-msgstr "Предпочтения плагина"
+msgstr "Параметры плагина"
 
 #: data/ui/no_plugin_pref.blp:26
-#, fuzzy
-#| msgid "Preferences"
 msgid "No Preferences"
-msgstr "Без предпочтений"
+msgstr "Нет параметров"
 
 #: data/ui/no_plugin_pref.blp:27
-#, fuzzy
 msgid "This plugin doesn't have any preferences."
-msgstr "У этого плагина нет никаких предпочтений."
+msgstr "У этого плагина нет никаких параметров."
 
 #: data/ui/option.blp:10
 msgid "GTK 3 Support Warning"
@@ -272,7 +267,6 @@ msgid "Rename Preset"
 msgstr "Переименовать предустановку"
 
 #: data/ui/preset_row.blp:80
-#, fuzzy
 msgid "More Options"
 msgstr "Больше вариантов"
 
@@ -305,16 +299,14 @@ msgid "Import"
 msgstr "Импорт"
 
 #: data/ui/presets_manager_window.blp:24
-#, fuzzy
-#| msgid "Import a Preset File (*.json)"
 msgid "Import a Preset File"
-msgstr "Импорт файла предустановки"
+msgstr "Импортировать файл предустановки"
 
 #: data/ui/presets_manager_window.blp:31
 msgid "Delete"
 msgstr "Удалить"
 
-#: data/ui/presets_manager_window.blp:42 gradience/main.py:264
+#: data/ui/presets_manager_window.blp:42 gradience/main.py:258
 msgid "Open in File Manager"
 msgstr "Открыть в файловом менеджере"
 
@@ -355,8 +347,8 @@ msgid "Offline"
 msgstr "Не в сети"
 
 #: data/ui/presets_manager_window.blp:141
-#: gradience/presets_manager_window.py:120
-#: gradience/presets_manager_window.py:424
+#: gradience/presets_manager_window.py:121
+#: gradience/presets_manager_window.py:419
 msgid "Repositories"
 msgstr "Репозитории"
 
@@ -377,34 +369,29 @@ msgid "Previous"
 msgstr "Предыдущая"
 
 #: data/ui/share_window.blp:65
-#, fuzzy
-#| msgid "Share preset"
 msgid "Share your preset"
 msgstr "Поделитесь своей предустановкой"
 
 #: data/ui/share_window.blp:66
-#, fuzzy
 msgid "Share your preset with the world!"
 msgstr "Поделитесь своей предустановкой со всем миром!"
 
 #: data/ui/share_window.blp:73
-#, fuzzy
 msgid "How it's work?"
 msgstr "Как это работает?"
 
 #: data/ui/share_window.blp:74
-#, fuzzy
 msgid ""
 "Gradience use GitHub to share your preset. You need to create a GitHub "
 "account and fork <a href='https://github.com/GradienceTeam/"
 "Community'>GradienceTeam/Community</a>. Then, you can upload your preset, "
 "make a pull request and share it with the world!"
 msgstr ""
-"Gradience использует GitHub для обмена своими пресетами. Вам нужно создать "
-"учетную запись на GitHub и создать форк <a href=\"https://github.com/"
+"Gradience использует GitHub для выкладывания предустановки. Вам нужно "
+"создать учетную запись GitHub и форкнуть <a href=\"https://github.com/"
 "GradienceTeam/Community\">GradienceTeam/Community</a>. Затем вы можете "
-"загрузить свой пресет, сделать запрос на исправление и поделиться им со всем "
-"миром!"
+"выгрузить свою предустановку, сделать запрос на совмещение и поделиться им "
+"со всем миром!"
 
 #: data/ui/share_window.blp:81 data/ui/welcome.blp:81
 msgid "Warning"
@@ -536,18 +523,15 @@ msgstr "Кастомизация устаревших приложений"
 msgid "System Configuration"
 msgstr "Конфигурация системы"
 
-#: data/ui/window.blp:23 gradience/main.py:609 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/main.py:603 gradience/window.py:141
 msgid "Apply"
 msgstr "Применить"
 
 #: data/ui/window.blp:41
-#, fuzzy
 msgid "Main Menu"
 msgstr "Главное меню"
 
 #: data/ui/window.blp:50
-#, fuzzy
-#| msgid "Presets"
 msgid "Presets Menu"
 msgstr "Меню предустановок"
 
@@ -556,7 +540,6 @@ msgid "Save Preset"
 msgstr "Сохранить предустановку"
 
 #: data/ui/window.blp:66
-#, fuzzy
 msgid "CSS Errors"
 msgstr "Ошибки CSS"
 
@@ -596,13 +579,11 @@ msgstr "GTK4 Demo"
 msgid "GTK4 Widget Factory"
 msgstr "GTK4 Widget Factory"
 
-#: data/ui/window.blp:161 gradience/presets_manager_window.py:109
+#: data/ui/window.blp:161 gradience/presets_manager_window.py:110
 msgid "Built-In Presets"
 msgstr "Встроенные предустановки"
 
 #: data/ui/window.blp:182
-#, fuzzy
-#| msgid "Rename Preset"
 msgid "Manage Presets"
 msgstr "Управление предустановками"
 
@@ -618,8 +599,8 @@ msgstr "Не удалось сохранить предустановку"
 msgid "Unexpected file error occurred"
 msgstr "Произошла неожиданная ошибка файла"
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:660 gradience/main.py:733
-#: gradience/main.py:874 gradience/presets_manager_window.py:189
+#: gradience/app_type_dialog.py:44 gradience/main.py:654 gradience/main.py:727
+#: gradience/main.py:868 gradience/presets_manager_window.py:190
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -631,35 +612,33 @@ msgstr "Предустановка не может быть загружена"
 msgid "Preset downloaded"
 msgstr "Предустановка загружена"
 
-#: gradience/main.py:194 gradience/main.py:225
-#: gradience/presets_manager_window.py:341
-#: gradience/presets_manager_window.py:371
+#: gradience/main.py:188 gradience/main.py:219
+#: gradience/presets_manager_window.py:336
+#: gradience/presets_manager_window.py:366
 msgid "Failed to load preset"
 msgstr "Не удалось загрузить предустановку"
 
-#: gradience/main.py:253
-#, fuzzy
-#| msgid "No Results Found"
+#: gradience/main.py:247
 msgid "No presets found"
 msgstr "Предустановки не найдены"
 
-#: gradience/main.py:271
+#: gradience/main.py:265
 msgid "Favourite Presets"
 msgstr "Избранные предустановки"
 
-#: gradience/main.py:534
+#: gradience/main.py:528
 msgid "Unsaved Changes"
 msgstr "Несохранённые изменения"
 
-#: gradience/main.py:545
+#: gradience/main.py:539
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: gradience/main.py:603
+#: gradience/main.py:597
 msgid "Apply This Color Scheme?"
 msgstr "Применить эту цветовую схему?"
 
-#: gradience/main.py:605
+#: gradience/main.py:599
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -667,32 +646,32 @@ msgstr ""
 "Внимание: любые пользовательские файлы CSS для этих типов приложений будут "
 "безвозвратно перезаписаны!"
 
-#: gradience/main.py:619
+#: gradience/main.py:613
 msgid "Restore applied color scheme?"
 msgstr "Восстановить применённую цветовую схему?"
 
-#: gradience/main.py:620 gradience/main.py:632
+#: gradience/main.py:614 gradience/main.py:626
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Убедитесь, что Вы сохранили текущие настройки как предустановку."
 
-#: gradience/main.py:622
+#: gradience/main.py:616
 msgid "Restore"
 msgstr "Восстановить"
 
-#: gradience/main.py:631
+#: gradience/main.py:625
 msgid "Reset applied color scheme?"
 msgstr "Сбросить применённую цветовую схему?"
 
-#: gradience/main.py:634
+#: gradience/main.py:628
 msgid "Reset"
 msgstr "Сбросить"
 
-#: gradience/main.py:644
+#: gradience/main.py:638
 msgid "Save preset as…"
 msgstr "Сохранить предустановку как…"
 
-#: gradience/main.py:646 gradience/main.py:674 gradience/main.py:691
-#: gradience/main.py:719 gradience/main.py:750 gradience/main.py:767
+#: gradience/main.py:640 gradience/main.py:668 gradience/main.py:685
+#: gradience/main.py:713 gradience/main.py:744 gradience/main.py:761
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -701,50 +680,47 @@ msgstr ""
 "Сохранение предустановки в <tt>{0}</tt>. Если эта предустановка уже "
 "существует то она будут перезаписана!"
 
-#: gradience/main.py:661 gradience/main.py:735
+#: gradience/main.py:655 gradience/main.py:729
 msgid "Save"
 msgstr "Сохранить"
 
-#: gradience/main.py:717
+#: gradience/main.py:711
 msgid "You have unsaved changes!"
 msgstr "У вас есть не сохранённые изменения!"
 
-#: gradience/main.py:734
+#: gradience/main.py:728
 msgid "Discard"
 msgstr "Отменить"
 
-#: gradience/main.py:795
+#: gradience/main.py:789
 msgid "Preset saved"
 msgstr "Предустановка сохранена"
 
-#: gradience/main.py:862
+#: gradience/main.py:856
 msgid "Preset set sucessfully"
 msgstr "Предустановка успешно установлена"
 
-#: gradience/main.py:867
-#, fuzzy
+#: gradience/main.py:861
 msgid "Log out ?"
-msgstr "Выйти из системы?"
+msgstr "Выйти ?"
+
+#: gradience/main.py:863
+msgid "For the changes to take effect, you need to log out. "
+msgstr "Чтобы изменения вступили в силу вам необходимо выйти из системы. "
 
 #: gradience/main.py:869
-#, fuzzy
-msgid "For the changes to take effect, you need to log out. "
-msgstr "Чтобы изменения вступили в силу, необходимо выйти из системы. "
-
-#: gradience/main.py:875
-#, fuzzy
 msgid "Logout"
 msgstr "Выйти"
 
-#: gradience/main.py:929
+#: gradience/main.py:923
 msgid "Could not restore GTK4 backup"
 msgstr "Не удалось восстановить резервную копию GTK4"
 
-#: gradience/main.py:962
+#: gradience/main.py:956
 msgid "Preset reseted"
 msgstr "Предустановка восстановлена"
 
-#: gradience/main.py:1013
+#: gradience/main.py:1007
 msgid ""
 "\n"
 "<ul>\n"
@@ -790,7 +766,7 @@ msgstr ""
 "Разработка будет идти в ветке `next`</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1033
+#: gradience/main.py:1027
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -858,66 +834,64 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "Плагины не найдены."
 
-#: gradience/preset_row.py:87 gradience/preset_row.py:106
-#, fuzzy
+#: gradience/preset_row.py:86 gradience/preset_row.py:105
 msgid "Remove from Favourites"
 msgstr "Удалить из избранного"
 
-#: gradience/preset_row.py:90 gradience/preset_row.py:102
-#, fuzzy
+#: gradience/preset_row.py:89 gradience/preset_row.py:101
 msgid "Add to Favourites"
-msgstr "Добавить в Избранное"
+msgstr "Добавить в избранное"
 
-#: gradience/preset_row.py:162
+#: gradience/preset_row.py:159
 msgid "Preset removed"
 msgstr "Предустановка удалена"
 
-#: gradience/preset_row.py:163
+#: gradience/preset_row.py:160
 msgid "Undo"
 msgstr "Отменить"
 
-#: gradience/preset_row.py:188
+#: gradience/preset_row.py:181
 msgid "Pending Deletion"
 msgstr "Ожидает удаления"
 
-#: gradience/preset_row.py:226
+#: gradience/preset_row.py:216
 msgid "Unable to delete preset"
 msgstr "Не удалось удалить предустановку"
 
-#: gradience/presets_manager_window.py:114
-#: gradience/presets_manager_window.py:385
+#: gradience/presets_manager_window.py:115
+#: gradience/presets_manager_window.py:380
 msgid "User Presets"
 msgstr "Пользовательские предустановки"
 
-#: gradience/presets_manager_window.py:182
+#: gradience/presets_manager_window.py:183
 msgid "Add new repository"
 msgstr "Добавить новый репозиторий"
 
-#: gradience/presets_manager_window.py:183
+#: gradience/presets_manager_window.py:184
 msgid "Add a repository to install additional presets."
 msgstr "Добавить репозиторий для установки дополнительных предустановок."
 
-#: gradience/presets_manager_window.py:190
+#: gradience/presets_manager_window.py:191
 msgid "Add"
 msgstr "Добавить"
 
-#: gradience/presets_manager_window.py:280
+#: gradience/presets_manager_window.py:281
 msgid "Preset already exists"
 msgstr "Предустановка уже существует"
 
-#: gradience/presets_manager_window.py:295
+#: gradience/presets_manager_window.py:292
 msgid "Preset imported"
 msgstr "Предустановка импортирована"
 
-#: gradience/presets_manager_window.py:298
+#: gradience/presets_manager_window.py:295
 msgid "Unsupported file format, must be .json"
 msgstr "Не поддерживаемый файловый формат, должен быть .json"
 
-#: gradience/presets_manager_window.py:378
+#: gradience/presets_manager_window.py:373
 msgid "Built-in Presets"
 msgstr "Встроенные предустановки"
 
-#: gradience/presets_manager_window.py:388
+#: gradience/presets_manager_window.py:383
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -925,7 +899,7 @@ msgstr ""
 "Смотрите<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> на GitHub для большего количества предустановок."
 
-#: gradience/presets_manager_window.py:414
+#: gradience/presets_manager_window.py:409
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
