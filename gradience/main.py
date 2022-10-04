@@ -983,7 +983,7 @@ class GradienceApplication(Adw.Application):
             translator_credits="""0xMRTT https://github.com/0xMRTT
                 Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
                 BritishBenji https://github.com/BritishBenji
-                Bittin https://github.com/bittin
+                Luna Jernberg https://github.com/bittin
                 David Lapshin https://github.com/daudix-UFO
                 Davide Ferracin https://github.com/phaerrax
                 Ewout van Mansom https://github.com/emansom
@@ -998,7 +998,9 @@ class GradienceApplication(Adw.Application):
                 Renato Corrêa https://github.com/renatocrrs
                 Rene Coty https://github.com/rene-coty
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
-                Tfuxu https://github.com/tfuxu""",
+                tfuxu https://github.com/tfuxu
+                renatocrrs https://github.com/renatocrrs
+                muzena https://github.com/muzena""",
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
