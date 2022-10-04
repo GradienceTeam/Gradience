@@ -1044,14 +1044,14 @@ This app is written in Python and uses GTK 4 and libadwaita.
             ),
         )
         about.add_credit_section(
-            "Plugins",
+            _("Plugins by"),
             [
                 "0xMRTT https://github.com/0xMRTT",
                 "Apisu https://github.com/aspizu",
             ],
         )
         about.add_credit_section(
-            "Presets",
+            _("Presets by"),
             [
                 "0xMRTT https://github.com/0xMRTT",
                 "David Lapshin https://github.com/daudix-UFO",
@@ -1073,14 +1073,14 @@ This app is written in Python and uses GTK 4 and libadwaita.
             ],
         )
         about.add_credit_section(
-            "Packagers",
+            _("Packages by"),
             [
                 "0xMRTT https://github.com/0xMRTT",
                 "Lyes Saadi https://github.com/lyessaadi",
             ],
         )
         about.add_credit_section(
-            "Others",
+            _("Fixes by"),
             [
                 "Sabri Ünal https://github.com/libreajans",
                 "Erick Howard https://github.com/DivineBicycle",
