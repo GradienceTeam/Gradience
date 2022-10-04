@@ -972,8 +972,9 @@ class GradienceApplication(Adw.Application):
             developers=[
                 "0xMRTT https://github.com/0xMRTT",
                 "Artyom Fomin https://github.com/ArtyIF",
-                "Tfuxu https://github.com/tfuxu",
+                "tfuxu https://github.com/tfuxu",
                 "Verantor https://github.com/Verantor",
+                "u1F98E https://github.com/u1f98e",
             ],
             artists=["David Lapshin https://github.com/daudix-UFO"],
             designers=["David Lapshin https://github.com/daudix-UFO"],
@@ -988,7 +989,7 @@ class GradienceApplication(Adw.Application):
                 Davide Ferracin https://github.com/phaerrax
                 Ewout van Mansom https://github.com/emansom
                 FineFindus https://github.com/FineFindus
-                엘련(Jisu Kim) https://github.com/vbalien
+                                    엘련(Jisu Kim) https://github.com/vbalien
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918
                 Karol Lademan https://www.transifex.com/user/profile/karlod
                 K.B.Dharun Krishna https://github.com/kbdharun
@@ -1000,7 +1001,8 @@ class GradienceApplication(Adw.Application):
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
                 tfuxu https://github.com/tfuxu
                 renatocrrs https://github.com/renatocrrs
-                muzena https://github.com/muzena""",
+                muzena https://github.com/muzena
+                yangyangdaji https://github.com/yangyangdaji""",
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
             version=version,
@@ -1055,6 +1057,13 @@ This app is written in Python and uses GTK 4 and libadwaita.
                 "Lyes Saadi https://github.com/lyessaadi",
             ],
         )
+        about.add_credit_section(
+            "Others",
+            [
+                "halfmexican https://github.com/halfmexican",
+            ],
+        )
+
         about.present()
 
     def update_custom_css_text(self, app_type, new_value):
