@@ -1030,7 +1030,7 @@ theme.
 With Gradience you can:
 
 - Change any color of Adwaita theme
-- Apply Material 3 colors from wallaper
+- Apply Material 3 colors from wallpaper
 - Use other users presets
 - Change advanced options with CSS
 - Extend functionality using plugins
