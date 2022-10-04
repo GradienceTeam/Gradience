@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-04 12:20+0000\n"
-"PO-Revision-Date: 2022-09-30 16:21+0000\n"
+"PO-Revision-Date: 2022-10-04 13:51+0000\n"
 "Last-Translator: Davide <davide.ferracin@protonmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/it/>\n"
@@ -137,20 +137,16 @@ msgid "Download Only"
 msgstr "Scarica soltanto"
 
 #: data/ui/no_plugin_pref.blp:5
-#, fuzzy
-#| msgid "Preferences"
 msgid "Plugin Preferences"
-msgstr "Preferenze"
+msgstr "Preferenze dei plugin"
 
 #: data/ui/no_plugin_pref.blp:26
-#, fuzzy
-#| msgid "Preferences"
 msgid "No Preferences"
-msgstr "Preferenze"
+msgstr "Nessuna preferenza"
 
 #: data/ui/no_plugin_pref.blp:27
 msgid "This plugin doesn't have any preferences."
-msgstr ""
+msgstr "Questo plugin non ha preferenze."
 
 #: data/ui/option.blp:10
 msgid "GTK 3 Support Warning"
@@ -269,7 +265,7 @@ msgstr "Rinomina configurazione"
 
 #: data/ui/preset_row.blp:80
 msgid "More Options"
-msgstr ""
+msgstr "Più opzioni"
 
 #: data/ui/preset_row.blp:87
 msgid "Description"
@@ -300,10 +296,8 @@ msgid "Import"
 msgstr "Importa"
 
 #: data/ui/presets_manager_window.blp:24
-#, fuzzy
-#| msgid "Import a Preset File (*.json)"
 msgid "Import a Preset File"
-msgstr "Importare un file di configurazione (*.json)"
+msgstr "Importare un file di configurazione"
 
 #: data/ui/presets_manager_window.blp:31
 msgid "Delete"
@@ -372,18 +366,16 @@ msgid "Previous"
 msgstr "Precedente"
 
 #: data/ui/share_window.blp:65
-#, fuzzy
-#| msgid "Share preset"
 msgid "Share your preset"
 msgstr "Condividi configurazione"
 
 #: data/ui/share_window.blp:66
 msgid "Share your preset with the world!"
-msgstr ""
+msgstr "Condividi la tua configurazione con altri utenti"
 
 #: data/ui/share_window.blp:73
 msgid "How it's work?"
-msgstr ""
+msgstr "Come funziona?"
 
 #: data/ui/share_window.blp:74
 msgid ""
@@ -392,6 +384,11 @@ msgid ""
 "Community'>GradienceTeam/Community</a>. Then, you can upload your preset, "
 "make a pull request and share it with the world!"
 msgstr ""
+"Gradience usa GitHub per condividere le configurazioni degli utenti. È "
+"necessario creare un account GitHub ed effettuare il fork di <a href=\"https"
+"://github.com/GradienceTeam/Community\">GradienceTeam/Community</a>. A quel "
+"punto è possibile caricare la propria configurazione, effettuare una pull "
+"request e condividerla con gli altri utenti!"
 
 #: data/ui/share_window.blp:81 data/ui/welcome.blp:81
 msgid "Warning"
@@ -533,13 +530,11 @@ msgstr "Applica"
 
 #: data/ui/window.blp:41
 msgid "Main Menu"
-msgstr ""
+msgstr "Menù principale"
 
 #: data/ui/window.blp:50
-#, fuzzy
-#| msgid "Presets"
 msgid "Presets Menu"
-msgstr "Configurazioni"
+msgstr "Menù configurazioni"
 
 #: data/ui/window.blp:57
 msgid "Save Preset"
@@ -547,7 +542,7 @@ msgstr "Salva configurazione"
 
 #: data/ui/window.blp:66
 msgid "CSS Errors"
-msgstr ""
+msgstr "Errori CSS"
 
 #: data/ui/window.blp:81
 msgid "Colors"
@@ -590,10 +585,8 @@ msgid "Built-In Presets"
 msgstr "Configurazioni preinstallate"
 
 #: data/ui/window.blp:182
-#, fuzzy
-#| msgid "Rename Preset"
 msgid "Manage Presets"
-msgstr "Rinomina configurazione"
+msgstr "Gestisci configurazioni"
 
 #: gradience/modules/flatpak_overrides.py:65
 #: gradience/modules/flatpak_overrides.py:84
@@ -627,10 +620,8 @@ msgid "Failed to load preset"
 msgstr "Caricamento della configurazione non riuscito"
 
 #: gradience/main.py:247
-#, fuzzy
-#| msgid "No Results Found"
 msgid "No presets found"
-msgstr "Nessun risultato trovato"
+msgstr "Nessuna configurazione trovata"
 
 #: gradience/main.py:265
 msgid "Favourite Presets"
@@ -713,15 +704,17 @@ msgstr "Configurazione applicata con successo"
 
 #: gradience/main.py:861
 msgid "Log out ?"
-msgstr ""
+msgstr "Terminare la sessione?"
 
 #: gradience/main.py:863
 msgid "For the changes to take effect, you need to log out. "
 msgstr ""
+"È necessario terminare la propria sessione affinché le modifiche abbiano "
+"effetto. "
 
 #: gradience/main.py:869
 msgid "Logout"
-msgstr ""
+msgstr "Termina sessione"
 
 #: gradience/main.py:923
 msgid "Could not restore GTK4 backup"
@@ -732,7 +725,6 @@ msgid "Preset reseted"
 msgstr "Configurazione reimpostata"
 
 #: gradience/main.py:1007
-#, fuzzy
 msgid ""
 "\n"
 "<ul>\n"
@@ -756,7 +748,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 "\n"
-"                <ul>\n"
+"<ul>\n"
 "        <li>Aggiunto AdwViewSwitcher nella barra superiore</li>\n"
 "        <li>CSS spostato nella scheda «Avanzate»</li>\n"
 "        <li>Spostato il resto nella scheda «Colori»</li>\n"
@@ -764,8 +756,8 @@ msgstr ""
 "sfondo</li>\n"
 "        <li>Aggiunte icone «salvato su disco» e «non salvato su disco» nella "
 "barra superiore</li>\n"
-"        <li>Aggiornata la finestra di dialogo «Informazioni su Gradience»</"
-"li>\n"
+"        <li>Aggiornata la finestra di dialogo «Informazioni su "
+"Gradience»</li>\n"
 "        <li>Cambiata la licenza in GNU GPLv3</li>\n"
 "        <li>Debutto del supporto ai plugin</li>\n"
 "        <li>Selettore delle configurazioni spostato in un menù a cascata "
@@ -780,7 +772,6 @@ msgstr ""
 "        <li>Il branch «main» è ora protetto da GitHub branch protection. Lo "
 "sviluppo avviene sul branch «next»</li>\n"
 "      </ul>\n"
-"                "
 
 #: gradience/main.py:1027
 #, fuzzy
@@ -868,11 +859,11 @@ msgstr "Nessun plugin trovato."
 
 #: gradience/preset_row.py:86 gradience/preset_row.py:105
 msgid "Remove from Favourites"
-msgstr ""
+msgstr "Rimuovi dai preferiti"
 
 #: gradience/preset_row.py:89 gradience/preset_row.py:101
 msgid "Add to Favourites"
-msgstr ""
+msgstr "Aggiungi ai preferiti"
 
 #: gradience/preset_row.py:159
 msgid "Preset removed"
@@ -1161,8 +1152,6 @@ msgid "These colors are used for popovers."
 msgstr "Questi colori vengono utilizzati per i popover."
 
 #: gradience/settings_schema.py:338
-#, fuzzy
-#| msgid "Miscalleneous Colors"
 msgid "Miscellaneous Colors"
 msgstr "Colori miscellanei"
 
