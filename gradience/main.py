@@ -972,8 +972,8 @@ class GradienceApplication(Adw.Application):
             developers=[
                 "Artyom Fomin https://github.com/ArtyIF",
                 "0xMRTT https://github.com/0xMRTT",
-                "tfuxu https://github.com/tfuxu",
                 "Verantor https://github.com/Verantor",
+                "tfuxu https://github.com/tfuxu",
                 "u1F98E https://github.com/u1f98e",
             ],
             artists=["David Lapshin https://github.com/daudix-UFO"],
@@ -982,26 +982,26 @@ class GradienceApplication(Adw.Application):
             # "Name https://example.com" or "Name <email@example.com>",
             # no quotes) and is not meant to be translated literally.
             translator_credits="""0xMRTT https://github.com/0xMRTT
+                                    엘련 (Jisu Kim) https://github.com/vbalien
                 Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
                 BritishBenji https://github.com/BritishBenji
-                Luna Jernberg https://github.com/bittin
                 David Lapshin https://github.com/daudix-UFO
                 Davide Ferracin https://github.com/phaerrax
                 Ewout van Mansom https://github.com/emansom
                 FineFindus https://github.com/FineFindus
-                                    엘련 (Jisu Kim) https://github.com/vbalien
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918
-                Karol Lademan https://www.transifex.com/user/profile/karlod
                 K.B.Dharun Krishna https://github.com/kbdharun
-                Philip Goto https://github.com/flipflop97
+                Karol Lademan https://www.transifex.com/user/profile/karlod
+                Luna Jernberg https://github.com/bittin
                 Maxime V https://www.transifex.com/user/profile/Adaoh
                 Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
+                Philip Goto https://github.com/flipflop97
                 Renato Corrêa https://github.com/renatocrrs
                 Rene Coty https://github.com/rene-coty
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
-                tfuxu https://github.com/tfuxu
-                renatocrrs https://github.com/renatocrrs
                 muzena https://github.com/muzena
+                renatocrrs https://github.com/renatocrrs
+                tfuxu https://github.com/tfuxu
                 yangyangdaji https://github.com/yangyangdaji""",
             copyright="© 2022 Gradience Team",
             license_type=Gtk.License.GPL_3_0,
@@ -1055,21 +1055,21 @@ This app is written in Python and uses GTK 4 and libadwaita.
             [
                 "0xMRTT https://github.com/0xMRTT",
                 "David Lapshin https://github.com/daudix-UFO",
-                "José Hunter https://github.com/halfmexican",
-                "Kainoa Kanter https://github.com/ThatOneCalculator",
-                "tfuxu https://github.com/tfuxu",
-                "cmagnificent https://github.com/cmagnificent",
-                "Ben Mitchell https://github.com/crispyricepc",
-                "zehkira https://github.com/zehkira",
-                "TeryVeneno https://github.com/TeryVeneno",
-                "Luis David López https://github.com/lopeztel",
-                "Sal Watson https://github.com/salarua",
-                "hericiumvevo https://github.com/hericiumvevo",
-                "Mohammad Saleh Kamyab https://github.com/mskf1383",
-                "arslee https://github.com/arslee07",
-                "Link Dupont https://github.com/subpop",
-                "badlydrawnface https://github.com/badlydrawnface",
                 "JoshM-Yoru https://github.com/JoshM-Yoru",
+                "tfuxu https://github.com/tfuxu",
+                "badlydrawnface https://github.com/badlydrawnface",
+                "Link Dupont https://github.com/subpop",
+                "arslee https://github.com/arslee07",
+                "Luis David López https://github.com/lopeztel",
+                "Kainoa Kanter https://github.com/ThatOneCalculator",
+                "Mohammad Saleh Kamyab https://github.com/mskf1383",
+                "Ben Mitchell https://github.com/crispyricepc",
+                "TeryVeneno https://github.com/TeryVeneno",
+                "zehkira https://github.com/zehkira",
+                "cmagnificent https://github.com/cmagnificent",
+                "hericiumvevo https://github.com/hericiumvevo",
+                "Sal Watson https://github.com/salarua",
+                "José Hunter https://github.com/halfmexican",
             ],
         )
         about.add_credit_section(
