@@ -1086,7 +1086,6 @@ This app is written in Python and uses GTK 4 and libadwaita.
                 "Erick Howard https://github.com/DivineBicycle",
                 "Hari Rana https://github.com/TheEvilSkeleton",
                 "José Hunter https://github.com/halfmexican",
-                "José Hunter https://github.com/halfmexican",
                 "Sal Watson https://github.com/salarua",
             ],
         )
