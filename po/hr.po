@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-04 13:51+0000\n"
-"PO-Revision-Date: 2022-10-04 17:26+0000\n"
+"POT-Creation-Date: 2022-10-04 21:06+0000\n"
+"PO-Revision-Date: 2022-10-04 21:06+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/hr/>\n"
@@ -380,9 +380,9 @@ msgid ""
 "make a pull request and share it with the world!"
 msgstr ""
 "Gradience koristi GitHub za dijeljenje predložaka. Morate stvoriti GitHub "
-"račun i fork <a href=\"https://github.com/GradienceTeam/Community\""
-">Gradience tim/zajednicu</a>. Zatim, možete poslati svoj predložak, stvorite "
-"podnesak i podijelite ga s ostalim korisnicima!"
+"račun i fork <a href=\"https://github.com/GradienceTeam/Community"
+"\">Gradience tim/zajednicu</a>. Zatim, možete poslati svoj predložak, "
+"stvorite podnesak i podijelite ga s ostalim korisnicima!"
 
 #: data/ui/share_window.blp:81 data/ui/welcome.blp:81
 msgid "Warning"
@@ -710,8 +710,7 @@ msgstr "Nemoguća obnova GTK4 sigurnosne kopije"
 msgid "Preset reseted"
 msgstr "Predložak je vraćen na izvorno"
 
-#: gradience/main.py:1007
-#, fuzzy
+#: gradience/main.py:1011
 msgid ""
 "\n"
 "<ul>\n"
@@ -735,29 +734,30 @@ msgid ""
 "</ul>\n"
 msgstr ""
 "\n"
-"                <ul>\n"
+"<ul>\n"
 "        <li>Dodan je AdwViewSwitcher u traku zaglavlja.</li>\n"
 "        <li>CSS je premješten u \"Napredno\" karticu</li>\n"
-"        <li>Move the rest to the \"colors\" tab</li>\n"
-"        <li>Add Monet tab which generates a theme from a background</li>\n"
-"        <li>Add disk saved and disk unsaved icon in the header bar</li>\n"
-"        <li>Update about dialog</li>\n"
-"        <li>Change license to GNU GPLv3</li>\n"
-"        <li>Begin plugin support</li>\n"
-"        <li>Move preset selector to a drop-down called palette (icon "
-"palette)</li>\n"
-"        <li>Add ability to apply the theme onlyfor dark theme or oy for "
-"light theme</li>\n"
-"        <li>Automaticly use Adwaita-dark preset if the user prefered scheme "
-"is dark.</li>\n"
-"        <li>Added Flatpak CI build</li>\n"
-"        <li>Added issue template for bug and feature request </li>\n"
-"        <li>`Main` branch is now protected by GitHub branch protection. The "
-"development is done on `next` branch </li>\n"
+"        <li>Ostalo je premješteno u karticu \"boje\"</li>\n"
+"        <li>Dodana je Monet kartica koja stvara temu iz pozadine</li>\n"
+"        <li>Dodana je ikona spremljenog i nespremljenog diska u traku "
+"zaglavlja</li>\n"
+"        <li>Nadopunjen je dijalog O Gradijentu</li>\n"
+"        <li>Licenca je promijenjena u GNU GPLv3</li>\n"
+"        <li>Započeta je podrška za priključke</li>\n"
+"        <li>Premješten je odabiratelj predlošaka u padajući izbornik pod "
+"nazivom paleta (ikona paleta)</li>\n"
+"        <li>Dodana je mogućnost primjene teme samo za tamnu temu ili samo za "
+"svijetlu temu</li>\n"
+"        <li>Automatski se koristi Adwaita-tamno predložak ako je shema koju "
+"korisnik koristi tamna.</li>\n"
+"        <li>Dodana je Flatpak CI izgradnja</li>\n"
+"        <li>Dodan je predložak problema za prijavak grešaka i zahtjev za "
+"novu značajku </li>\n"
+"        <li>`Main` ogranak je sada zaštićen GitHub zaštitom ogranka. Razvoj "
+"se odvija `next` ogranku </li>\n"
 "      </ul>\n"
-"            "
 
-#: gradience/main.py:1027
+#: gradience/main.py:1031
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -799,6 +799,26 @@ msgstr ""
 "\n"
 "Ova aplikacija napisana je u Pythonu i koristi GTK 4 i libadwaitu.\n"
 "            "
+
+#: gradience/main.py:1047
+#, fuzzy
+#| msgid "Plugins"
+msgid "Plugins by"
+msgstr "Priključci"
+
+#: gradience/main.py:1054
+#, fuzzy
+#| msgid "Presets"
+msgid "Presets by"
+msgstr "Predlošci"
+
+#: gradience/main.py:1076
+msgid "Packages by"
+msgstr ""
+
+#: gradience/main.py:1083
+msgid "Fixes by"
+msgstr ""
 
 #: gradience/option.py:49
 msgid "This option is only partially supported by the adw-gtk3 theme."
@@ -842,11 +862,11 @@ msgstr "Nema pronađenih priključaka."
 
 #: gradience/preset_row.py:86 gradience/preset_row.py:105
 msgid "Remove from Favourites"
-msgstr ""
+msgstr "Ukloni iz omiljenih"
 
 #: gradience/preset_row.py:89 gradience/preset_row.py:101
 msgid "Add to Favourites"
-msgstr ""
+msgstr "Dodaj u omiljene"
 
 #: gradience/preset_row.py:159
 msgid "Preset removed"
@@ -1130,8 +1150,6 @@ msgid "These colors are used for popovers."
 msgstr "Ove boje se koriste za skočne prozore."
 
 #: gradience/settings_schema.py:338
-#, fuzzy
-#| msgid "Miscalleneous Colors"
 msgid "Miscellaneous Colors"
 msgstr "Ostale boje"
 
