@@ -1060,7 +1060,7 @@ This app is written in Python and uses GTK 4 and libadwaita.
         about.add_credit_section(
             "Others",
             [
-                "halfmexican https://github.com/halfmexican",
+                "José Hunter https://github.com/halfmexican",
             ],
         )
 
