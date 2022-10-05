@@ -13,11 +13,7 @@
         "--socket=session-bus",
         "--filesystem=xdg-data/flatpak/overrides:create",
         "--filesystem=xdg-config/gtk-3.0",
-        "--filesystem=xdg-config/gtk-4.0",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--filesystem=xdg-config/gtk-4.0"
     ],
     "cleanup" : [
         "/include",
