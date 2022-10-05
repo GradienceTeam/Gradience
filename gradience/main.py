@@ -1100,7 +1100,6 @@ This app is written in Python and uses GTK 4 and libadwaita.
             [
                 "Artyom Fomin https://github.com/ArtyIF",
                 "Weblate https://weblate.org",
-                "You",
             ],
         )
 
