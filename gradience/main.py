@@ -990,6 +990,7 @@ class GradienceApplication(Adw.Application):
                 Ewout van Mansom https://github.com/emansom
                 FineFindus https://github.com/FineFindus
                 Juanjo Cillero https://www.transifex.com/user/profile/renux918
+                JungHee Lee https://github.com/MarongHappy
                 K.B.Dharun Krishna https://github.com/kbdharun
                 Karol Lademan https://www.transifex.com/user/profile/karlod
                 Luna Jernberg https://github.com/bittin
