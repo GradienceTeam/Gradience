@@ -46,9 +46,9 @@ def buglog(*args):
 
 def run_command(command, *args, **kwargs):
 
-    if isinstance(command, str):
+    if isinstance(command, str): # run on the host
         command = [command]
-    if os.environ.get('FLATPAK_ID'):
+    if os.environ.get('FLATPAK_ID'): # run in flatpak
         command = ['flatpak-spawn', '--host'] + command
 
     return run(command, *args, **kwargs)

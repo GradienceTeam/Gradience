@@ -877,8 +877,8 @@ class GradienceApplication(Adw.Application):
 
     def on_logout_dialog_response (self, dialog, response):
         if response == "logout":
-            #run_command(['gnome-session-quit', '--no-prompt'])
             print("logout")
+            run_command(['gnome-session-quit', '--no-prompt'])
 
     def restore_color_scheme(self, widget, response):
         if response == "restore":
