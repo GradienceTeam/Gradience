@@ -999,6 +999,7 @@ class GradienceApplication(Adw.Application):
                 Philip Goto https://github.com/flipflop97
                 Renato Corrêa https://github.com/renatocrrs
                 Rene Coty https://github.com/rene-coty
+                Sabri Ünal https://github.com/libreajans
                 Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
                 muzena https://github.com/muzena
                 renatocrrs https://github.com/renatocrrs
