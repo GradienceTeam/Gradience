@@ -51,41 +51,49 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-                    "branch" : "v0.4.0"
-                }
-            ]
-        },
-        {
-            "name": "libsass",
-            "buildsystem": "simple",
-            "build-commands": [
-                "autoreconf --force --install",
-                "./configure --enable-shared --prefix=/app",
-                "make -j4",
-                "make install"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/sass/libsass.git",
-                    "tag": "3.6.5"
+                    "tag" : "v0.4.0"
                 }
             ]
         },
         {
             "name": "sassc",
-            "buildsystem": "simple",
-            "build-commands": [
-                "autoreconf --force --install",
-                "./configure --prefix=/app",
-                "make -j4",
-                "make install"
-            ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/sass/sassc.git",
                     "tag": "3.6.2"
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "autogen.sh",
+                    "commands": [
+                        "autoreconf -si"
+                    ]
+                }
+            ],
+            "cleanup": [
+                "*"
+            ],
+            "modules": [
+                {
+                    "name": "libsass",
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/sass/libsass.git",
+                            "tag": "3.6.5"
+                        },
+                        {
+                            "type": "script",
+                            "dest-filename": "autogen.sh",
+                            "commands": [
+                                "autoreconf -si"
+                            ]
+                        }
+                    ],
+                    "cleanup": [
+                        "*"
+                    ]
                 }
             ]
         },
@@ -119,8 +127,5 @@
                 }
             ]
         }
-    ],
-    "build-options" : {
-        "env" : {        }
-    }
+    ]
 }
