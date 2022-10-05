@@ -970,14 +970,18 @@ class GradienceApplication(Adw.Application):
             support_url=help_url,
             issue_url=bugtracker_url,
             developers=[
-                "Artyom Fomin https://github.com/ArtyIF",
                 "0xMRTT https://github.com/0xMRTT",
+                "Artyom Fomin https://github.com/ArtyIF",
                 "Verantor https://github.com/Verantor",
                 "tfuxu https://github.com/tfuxu",
                 "u1F98E https://github.com/u1f98e",
             ],
             artists=["David Lapshin https://github.com/daudix-UFO"],
             designers=["David Lapshin https://github.com/daudix-UFO"],
+            documenters=[
+                "0xMRTT https://github.com/0xMRTT",
+                "David Lapshin https://github.com/daudix-UFO"
+            ],
             # Translators: This is a place to put your credits (formats:
             # "Name https://example.com" or "Name <email@example.com>",
             # no quotes) and is not meant to be translated literally.
@@ -1056,22 +1060,22 @@ This app is written in Python and uses GTK 4 and libadwaita.
             _("Presets by"),
             [
                 "0xMRTT https://github.com/0xMRTT",
+                "Ben Mitchell https://github.com/crispyricepc",
                 "David Lapshin https://github.com/daudix-UFO",
                 "JoshM-Yoru https://github.com/JoshM-Yoru",
-                "tfuxu https://github.com/tfuxu",
-                "badlydrawnface https://github.com/badlydrawnface",
-                "Link Dupont https://github.com/subpop",
-                "arslee https://github.com/arslee07",
-                "Luis David López https://github.com/lopeztel",
+                "José Hunter https://github.com/halfmexican",
                 "Kainoa Kanter https://github.com/ThatOneCalculator",
+                "Link Dupont https://github.com/subpop",
+                "Luis David López https://github.com/lopeztel",
                 "Mohammad Saleh Kamyab https://github.com/mskf1383",
-                "Ben Mitchell https://github.com/crispyricepc",
+                "Sal Watson https://github.com/salarua",
                 "TeryVeneno https://github.com/TeryVeneno",
-                "zehkira https://github.com/zehkira",
+                "arslee https://github.com/arslee07",
+                "badlydrawnface https://github.com/badlydrawnface",
                 "cmagnificent https://github.com/cmagnificent",
                 "hericiumvevo https://github.com/hericiumvevo",
-                "Sal Watson https://github.com/salarua",
-                "José Hunter https://github.com/halfmexican",
+                "tfuxu https://github.com/tfuxu",
+                "zehkira https://github.com/zehkira",
             ],
         )
         about.add_credit_section(
@@ -1084,11 +1088,19 @@ This app is written in Python and uses GTK 4 and libadwaita.
         about.add_credit_section(
             _("Fixes by"),
             [
-                "Sabri Ünal https://github.com/libreajans",
                 "Erick Howard https://github.com/DivineBicycle",
                 "Hari Rana https://github.com/TheEvilSkeleton",
                 "José Hunter https://github.com/halfmexican",
+                "Sabri Ünal https://github.com/libreajans",
                 "Sal Watson https://github.com/salarua",
+            ],
+        )
+        about.add_acknowledgement_section(
+            _("Special thanks to"),
+            [
+                "Artyom Fomin https://github.com/ArtyIF",
+                "Weblate https://weblate.org",
+                "You",
             ],
         )
 
