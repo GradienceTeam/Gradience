@@ -1000,6 +1000,7 @@ class GradienceApplication(Adw.Application):
                 Karol Lademan https://www.transifex.com/user/profile/karlod
                 Luna Jernberg https://github.com/bittin
                 Maxime V https://www.transifex.com/user/profile/Adaoh
+                Michal S. <michal@getcryst.al>
                 Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
                 Philip Goto https://github.com/flipflop97
                 Renato Corrêa https://github.com/renatocrrs
