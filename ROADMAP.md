@@ -19,15 +19,15 @@ This tool is fully usable, if you want a new feature, open an issue or submit a 
 - [x] Make the code more secure
 - [x] Add preset manager with option to download other users presets
 - [x] Release on Flathub
-- [ ] Add a full theme preview instead of GTK4 Demo
 - [x] Add autoload theme from CSS 
+- [ ] Add ability to create light/dark presets **(High priority)**
+- [ ] Add a full theme preview instead of GTK4 Demo
 - [ ] Add ability to generate preset from one color
-- [ ] Add ability to create light/dark presets
 
 # Plugins
 
 - [x] Add plugin support. Will help integration with others tools.
+- [x] Customize Firefox GNOME theme
 - [ ] Customize GNOME Shell **(High priority)**
 - [ ] Customize GDM **(High priority)**
 - [ ] Customize KvLibadwaita
-- [x] Customize Firefox GNOME theme
