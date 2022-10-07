@@ -1027,13 +1027,13 @@ class GradienceApplication(Adw.Application):
 <li>Added preset search filter to search by repo</li>
 <li>Added "No Preferences" window for plugins</li>
 <li>Added "Offline" and "Nothing Found" page to preset manager</li>
-<li>Makeed all text follow GNOME Writing Guidelines</li>
+<li>Maked all text follow GNOME Writing Guidelines</li>
 <li>Switched from aiohttp to Libsoup3</li>
 <li>Added all contributors to "About" window</li>
 <li>Changed some symbolics and removed unnecessary hardcoded symbolics</li>
 <li>Fixed Flatpak thheme override</li>
-<li>Updated trranslations</li>
-<li>Migrates SDK to GNOME 43</li>
+<li>Updated translations</li>
+<li>Migrated SDK to GNOME 43</li>
 </ul>
 """
             ),
