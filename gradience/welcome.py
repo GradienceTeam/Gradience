@@ -118,11 +118,11 @@ class GradienceWelcomeWindow(Adw.Window):
         the step of the onboard progress.
         """
         page = self.get_page(index)
-
+	
+        self.carousel.set_interactive(True)
         if page == "finish":
             self.btn_back.set_visible(False)
             self.btn_next.set_visible(False)
-            self.carousel.set_interactive(False)
         elif page == "agreement":
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(False)
@@ -136,13 +136,12 @@ class GradienceWelcomeWindow(Adw.Window):
         elif page == "welcome":
             self.btn_back.set_visible(False)
             self.btn_next.set_visible(True)
-            self.carousel.set_interactive(True)
         else:
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(True)
             self.btn_install.set_visible(False)
             self.carousel.set_interactive(True)
-
+     
     def agree(self, widget):
         self.window.last_opened_version = self.window.settings.set_string(
             "last-opened-version", rel_ver
