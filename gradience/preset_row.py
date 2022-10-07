@@ -39,7 +39,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
     apply_button = Gtk.Template.Child("apply_button")
     remove_button = Gtk.Template.Child("remove_button")
     btn_report = Gtk.Template.Child("btn_report")
-    btn_share = Gtk.Template.Child("btn_share")
+    # btn_share = Gtk.Template.Child("btn_share")
     star_button = Gtk.Template.Child("star_button")
     badge_list = Gtk.Template.Child("badge_list")
     no_badges = Gtk.Template.Child("no_badges")
@@ -78,7 +78,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.no_badges.set_visible(True)
 
         self.btn_report.connect("clicked", self.on_report_btn_clicked)
-        self.btn_share.connect("clicked", self.on_share_btn_clicked)
+        # self.btn_share.connect("clicked", self.on_share_btn_clicked)
         self.star_button.connect("clicked", self.on_star_button_clicked)
 
         if name in self.win.app.favourite:
@@ -88,10 +88,10 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.star_button.set_icon_name("non-starred-symbolic")
             self.star_button.set_tooltip_text(_("Add to Favourites"))
 
-    def on_share_btn_clicked(self, *_args):
-        buglog("share")
-        win = GradienceShareWindow(self.win)
-        win.present()
+    # def on_share_btn_clicked(self, *_args):
+    #     buglog("share")
+    #     win = GradienceShareWindow(self.win)
+    #     win.present()
 
     def on_star_button_clicked(self, *_args):
         buglog("star")
