@@ -123,6 +123,7 @@ class GradienceWelcomeWindow(Adw.Window):
         if page == "finish":
             self.btn_back.set_visible(False)
             self.btn_next.set_visible(False)
+            self.carousel.set_interactive(False)
         elif page == "agreement":
             self.btn_back.set_visible(True)
             self.btn_next.set_visible(False)
