@@ -1020,20 +1020,20 @@ class GradienceApplication(Adw.Application):
             release_notes=_(
 """
 <ul>
-<li>Add AdwViewSwitcher in the header bar.</li>
-<li>Move CSS to the "Advanced" tab</li>
-<li>Move the rest to the "colors" tab</li>
-<li>Add Monet tab which generates a theme from a background</li>
-<li>Add disk saved and disk unsaved icon in the header bar</li>
-<li>Update about dialog</li>
-<li>Change license to GNU GPLv3</li>
-<li>Begin plugin support</li>
-<li>Move preset selector to a drop-down called palette (icon palette)</li>
-<li>Add ability to apply the theme only for dark theme or oy for light theme</li>
-<li>Automaticly use Adwaita-dark preset if the user prefered scheme is dark.</li>
-<li>Added Flatpak CI build</li>
-<li>Added issue template for bug and feature request </li>
-<li>`Main` branch is now protected by GitHub branch protection. The development is done on `next` branch</li>
+<li>Added ability to star preset to display it in Quick Preset Switcher</li>
+<li>Updated Firefox GNOME Theme plugin</li>
+<li>Welcome screen improvements</li>
+<li>Fixed info popovers margin</li>
+<li>Added preset search filter to search by repo</li>
+<li>Added "No Preferences" window for plugins</li>
+<li>Added "Offline" and "Nothing Found" page to preset manager</li>
+<li>Makeed all text follow GNOME Writing Guidelines</li>
+<li>Switched from aiohttp to Libsoup3</li>
+<li>Added all contributors to "About" window</li>
+<li>Changed some symbolics and removed unnecessary hardcoded symbolics</li>
+<li>Fixed Flatpak thheme override</li>
+<li>Updated trranslations</li>
+<li>Migrates SDK to GNOME 43</li>
 </ul>
 """
             ),
