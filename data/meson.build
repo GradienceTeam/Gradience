@@ -72,5 +72,4 @@ if compile_schemas.found()
 endif
 
 subdir('icons')
-subdir('theme')
 subdir('plugins')
