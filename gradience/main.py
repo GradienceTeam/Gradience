@@ -1032,6 +1032,7 @@ class GradienceApplication(Adw.Application):
 <li>Switch from aiohttp to Libsoup3</li>
 <li>Migrate to GNOME SDK 43</li>
 <li>All contributors have been added to "About" window</li>
+<li>Added "Log Out" dialog after preset apply</li>
 <li>Some symbolics have changed, removed unnecessary hardcoded symbolics</li>
 <li>Flatpak theme override now fixed</li>
 <li>New and updated translations</li>
