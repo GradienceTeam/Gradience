@@ -1020,20 +1020,21 @@ class GradienceApplication(Adw.Application):
             release_notes=_(
 """
 <ul>
-<li>Added ability to star preset to display it in Quick Preset Switcher</li>
+<li>Added ability to star preset to display it in Palette</li>
 <li>Updated Firefox GNOME Theme plugin</li>
-<li>Welcome screen improvements</li>
-<li>Fixed info popovers margin</li>
-<li>Added preset search filter to search by repo</li>
-<li>Added "No Preferences" window for plugins</li>
-<li>Added "Offline" and "Nothing Found" page to preset manager</li>
-<li>Maked all text follow GNOME Writing Guidelines</li>
-<li>Switched from aiohttp to Libsoup3</li>
-<li>Added all contributors to "About" window</li>
-<li>Changed some symbolics and removed unnecessary hardcoded symbolics</li>
-<li>Fixed Flatpak thheme override</li>
-<li>Updated translations</li>
-<li>Migrated SDK to GNOME 43</li>
+<li>Welcome screen have been improved</li>
+<li>Margins in color info popovers are fixed</li>
+<li>Added filter to search presets by repo</li>
+<li>Added "No Preferences" window</li>
+<li>Preset Manager window size have changed</li>
+<li>"Offline" and "Nothing Found" pages have been added to Preset Manager</li>
+<li>All text have been rewritten to follow GNOME Writing Guides</li>
+<li>Switch from aiohttp to Libsoup3</li>
+<li>Migrate to GNOME SDK 43</li>
+<li>All contributors have been added to "About" window</li>
+<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</li>
+<li>Flatpak theme override now fixed</li>
+<li>New and updated translations</li>
 </ul>
 """
             ),

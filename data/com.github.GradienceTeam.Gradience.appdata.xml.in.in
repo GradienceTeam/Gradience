@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with jdAppdataEdit 5.0-->
+  <!--Created with jdAppdataEdit 5.1-->
   <id>@APP_ID@</id>
   <name>Gradience</name>
   <summary>Change the look of Adwaita, with ease.</summary>
   <developer_name>Gradience Team</developer_name>
   <launchable type="desktop-id">@APP_ID@.desktop</launchable>
-  <metadata_license>CC0-1.0</metadata_license>
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <update_contact>GradienceTe@proton.me</update_contact>
   <description>
@@ -36,8 +36,29 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.3.0" date="2022-09-16" type="stable">
+    <release version="0.3.1" date="2022-10-07" type="stable">
       <description>
+        <p>Gradience 0.3.1 release focuses on user interface polish and bug fixes, as well as some new features:</p>
+        <ul>
+          <li>Added ability to star preset to display it in Palette</li>
+          <li>Updated Firefox GNOME Theme plugin</li>
+          <li>Welcome screen have been improved</li>
+          <li>Margins in color info popovers are fixed</li>
+          <li>Added filter to search presets by repo</li>
+          <li>Added "No Preferences" window</li>
+          <li>Preset Manager window size have changed</li>
+          <li>"Offline" and "Nothing Found" pages have been added to Preset Manager</li>
+          <li>All text have been rewritten to follow GNOME Writing Guides</li>
+          <li>Switch from aiohttp to Libsoup3</li>
+          <li>Migrate to GNOME SDK 43</li>
+          <li>All contributors have been added to "About" window</li>
+          <li>Some symbolics have changed, removed unnecessary hardcoded symbolics</li>
+          <li>Flatpak theme override now fixed</li>
+          <li>New and updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.0" date="2022-09-16" type="stable"><description>
         <p>Gradience 0.3.0 is a major update with many new features and improvements. Here are some of them:</p>
         <ul>
           <li>Added plugins support, this allows the creation of plugins to customize other apps</li>
