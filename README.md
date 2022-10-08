@@ -126,7 +126,7 @@ Fork this repository, then create a push request when you're done adding feature
 You can help Gradience translate into your native language. If you found any typos
 or think you can improve a translation, you can use the [Weblate](https://hosted.weblate.org/engage/GradienceTeam) platform.
 
-[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
+[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/horizontal-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 
 
 ## ✨️ Contributors
