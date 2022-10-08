@@ -82,8 +82,8 @@ yay -S gradience # or gradience-git
 - Python 3 `python`
 - PyGObject `python-gobject`
 - Blueprint [`blueprint-compiler`](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/setup.html)
-- GTK4 `gtk4`
-- libadwaita (>= 1.2.alpha) `libadwaita`
+- GTK 4 `gtk4`
+- Libadwaita (>= 1.2.alpha) `Libadwaita`
 - Meson `meson`
 - Ninja `ninja-build`
 
@@ -160,7 +160,7 @@ Press on the menu button in the headerbar and press `Reset Applied Color Scheme`
 
 ### Manually:
 
-Remove GTK3 and GTK4 configs:
+Remove GTK 3 and GTK 4 configs:
 
 - Run `rm -rf .config/gtk-4.0 .config/gtk-3.0`
 

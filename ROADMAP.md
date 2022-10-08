@@ -7,8 +7,8 @@ This tool is fully usable, if you want a new feature, open an issue or submit a 
 - [x] Customize named colors, either with a color picker or with text
 - [x] Explanations for some named colors
 - [x] Partial theme preview
-- [x] Built-in presets for Adwaita and Adwaita Dark (based on default libadwaita colors)
-- [x] Apply changes to libadwaita, GTK4 (with extracted libadwaita theme) and GTK3 (with the adw-gtk3 theme) applications
+- [x] Built-in presets for Adwaita and Adwaita Dark (based on default Libadwaita colors)
+- [x] Apply changes to Libadwaita, GTK 4 (with extracted Libadwaita theme) and GTK 3 (with the adw-gtk3 theme) applications
 - [x] Load and create custom presets
 - [x] View adw-gtk3's support of variables
 - [x] View parsing errors
@@ -21,7 +21,7 @@ This tool is fully usable, if you want a new feature, open an issue or submit a 
 - [x] Release on Flathub
 - [x] Add autoload theme from CSS 
 - [ ] Add ability to create light/dark presets **(High priority)**
-- [ ] Add a full theme preview instead of GTK4 Demo
+- [ ] Add a full theme preview instead of GTK 4 Demo
 - [ ] Add ability to generate preset from one color
 
 # Plugins

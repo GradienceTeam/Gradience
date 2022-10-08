@@ -920,7 +920,7 @@ class GradienceApplication(Adw.Application):
                     gtk4css.close()
                 except FileNotFoundError:
                     self.win.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Could not restore GTK4 backup"))
+                        Adw.Toast(title=_("Could not restore GTK 4 backup"))
                     )
 
     def reset_color_scheme(self, widget, response):
@@ -1051,7 +1051,7 @@ With Gradience you can:
 - Change advanced options with CSS
 - Extend functionality using plugins
 
-This app is written in Python and uses GTK 4 and libadwaita.
+This app is written in Python and uses GTK 4 and Libadwaita.
 """
             ),
         )
