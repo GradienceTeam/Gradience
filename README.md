@@ -116,7 +116,7 @@ ninja -C builddir run
 > During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
 
 
-## 🙌 Help translate Kooha
+## 🙌 Help translate Gradience 
 
 You can help Gradience translate into your native language. If you found any typos
 or think you can improve a translation, you can use the [Weblate](https://hosted.weblate.org/engage/GradienceTeam) platform.
