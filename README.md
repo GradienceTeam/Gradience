@@ -116,10 +116,23 @@ ninja -C builddir run
 > During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
 
 
-## 🙌 Help translate Gradience 
+## 🙌 Contribute to Gradience 
+
+### Code
+Fork this repository, then create a push request when you're done adding features or fixing bugs.
+
+### Localisation 
 
 You can help Gradience translate into your native language. If you found any typos
 or think you can improve a translation, you can use the [Weblate](https://hosted.weblate.org/engage/GradienceTeam) platform.
+
+[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/multi-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
+
+
+## ✨️ Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=GradienceTeam/Gradience)](https://github.com/GradienceTeam/Gradience/graphs/contributors)
+
 
 ## 🏷️ About the Name
 
