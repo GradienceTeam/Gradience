@@ -83,7 +83,7 @@ yay -S gradience # or gradience-git
 - PyGObject `python-gobject`
 - Blueprint [`blueprint-compiler`](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/setup.html)
 - GTK 4 `gtk4`
-- Libadwaita (>= 1.2.alpha) `Libadwaita`
+- Libadwaita (>= 1.2.alpha) `libadwaita`
 - Meson `meson`
 - Ninja `ninja-build`
 
