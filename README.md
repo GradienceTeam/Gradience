@@ -21,7 +21,7 @@
   <a href="https://hosted.weblate.org/engage/GradienceTeam">
     <img alt="Translation status" src="https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg"/>
   </a>
-  <a href="https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak.yml">
+  <a href="https://github.com/GradienceTeam/Gradience/actions/workflows/CI.yml">
     <img alt="CI status" src="https://github.com/GradienceTeam/Gradience/actions/workflows/CI.yml/badge.svg"/>
   </a>
   <a href="https://flathub.org/apps/details/com.github.GradienceTeam.Gradience">
