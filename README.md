@@ -84,6 +84,7 @@ yay -S gradience # or gradience-git
 - Blueprint [`blueprint-compiler`](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/setup.html)
 - GTK 4 `gtk4`
 - Libadwaita (>= 1.2.alpha) `libadwaita`
+- Libsoup 3 (>= 3.2.0) `libsoup`
 - Meson `meson`
 - Ninja `ninja-build`
 
