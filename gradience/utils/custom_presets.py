@@ -21,8 +21,8 @@ import json
 
 from gi.repository import GLib, Soup
 
-from .preset import presets_dir
-from .utils import to_slug_case, buglog
+from gradience.utils.preset import presets_dir
+from gradience.utils.utils import to_slug_case, buglog
 
 
 # Open Soup3 session

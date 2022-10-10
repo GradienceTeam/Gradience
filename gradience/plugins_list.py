@@ -22,8 +22,8 @@ from gi.repository import Adw, GLib
 from yapsy.PluginManager import PluginManager
 
 from gradience.ui.plugin_row import GradiencePluginRow
-from gradience.constants import pkgdatadir
 from gradience.utils.utils import buglog
+from gradience.constants import pkgdatadir
 
 
 USER_PLUGIN_DIR = os.path.join(

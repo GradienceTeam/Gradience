@@ -1,5 +1,5 @@
-from .utils import to_slug_case
-from .preset import Preset, presets_dir
+from gradience.utils.utils import to_slug_case
+from gradience.utils.preset import Preset, presets_dir
 import os
 
 
