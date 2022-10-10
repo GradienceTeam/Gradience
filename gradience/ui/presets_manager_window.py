@@ -29,9 +29,9 @@ from gradience.ui.preset_row import GradiencePresetRow
 from gradience.ui.builtin_preset_row import GradienceBuiltinPresetRow
 from gradience.ui.explore_preset_row import GradienceExplorePresetRow
 from gradience.ui.repo_row import GradienceRepoRow
-from gradience.modules.custom_presets import fetch_presets
-from gradience.modules.preset import presets_dir
-from gradience.modules.utils import buglog
+from gradience.utils.custom_presets import fetch_presets
+from gradience.utils.preset import presets_dir
+from gradience.utils.utils import buglog
 from gradience.constants import rootdir
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")

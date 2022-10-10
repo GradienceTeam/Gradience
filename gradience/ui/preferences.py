@@ -20,15 +20,15 @@
 from gi.repository import Gtk, Adw
 
 from gradience.constants import rootdir
-from gradience.modules.flatpak_overrides import (
+from gradience.utils.flatpak_overrides import (
     create_gtk_user_override,
     remove_gtk_user_override,
 )
-from gradience.modules.flatpak_overrides import (
+from gradience.utils.flatpak_overrides import (
     create_gtk_global_override,
     remove_gtk_global_override,
 )
-from gradience.modules.utils import buglog
+from gradience.utils.utils import buglog
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/preferences.ui")

@@ -44,20 +44,20 @@ gradience_sources = [
 ]
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
 
-# Install modules
-gradience_modules = [
-  'modules/__init__.py',
-  'modules/custom_presets.py',
-  'modules/flatpak_overrides.py',
-  'modules/utils.py',
-  'modules/run_async.py',
-  'modules/css.py',
-  'modules/preset.py',
-  'modules/repo.py',
+# Install utility modules
+gradience_utils = [
+  'utils/__init__.py',
+  'utils/custom_presets.py',
+  'utils/flatpak_overrides.py',
+  'utils/utils.py',
+  'utils/run_async.py',
+  'utils/css.py',
+  'utils/preset.py',
+  'utils/repo.py',
 ]
-PY_INSTALLDIR.install_sources(gradience_modules, subdir: 'gradience/modules')
+PY_INSTALLDIR.install_sources(gradience_utils, subdir: 'gradience/utils')
 
-# Install UI related Python modules
+# Install ui Python modules
 gradience_ui_modules = [
   'ui/error.py',
   'ui/palette_shades.py',

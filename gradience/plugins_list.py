@@ -23,7 +23,7 @@ from yapsy.PluginManager import PluginManager
 
 from gradience.ui.plugin_row import GradiencePluginRow
 from gradience.constants import pkgdatadir
-from gradience.modules.utils import buglog
+from gradience.utils.utils import buglog
 
 
 USER_PLUGIN_DIR = os.path.join(

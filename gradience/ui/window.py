@@ -29,7 +29,7 @@ from gradience.ui.error import GradienceError
 from gradience.settings_schema import settings_schema
 from gradience.ui.palette_shades import GradiencePaletteShades
 from gradience.ui.option import GradienceOption
-from gradience.modules.utils import buglog
+from gradience.utils.utils import buglog
 from gradience.constants import rootdir, app_id, build_type
 
 

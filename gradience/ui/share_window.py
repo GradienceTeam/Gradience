@@ -3,9 +3,9 @@ import time
 
 from gi.repository import Gtk, Adw, Gio
 
-from gradience.modules.run_async import RunAsync
-from gradience.modules.utils import buglog
-from gradience.modules.flatpak_overrides import create_gtk_user_override
+from gradience.utils.run_async import RunAsync
+from gradience.utils.utils import buglog
+from gradience.utils.flatpak_overrides import create_gtk_user_override
 from gradience.constants import rootdir, app_id, rel_ver
 
 

@@ -21,8 +21,8 @@ import os
 from gi.repository import Gtk, Adw
 
 from gradience.constants import rootdir
-from gradience.modules.utils import to_slug_case, buglog
-from gradience.modules.custom_presets import download_preset
+from gradience.utils.utils import to_slug_case, buglog
+from gradience.utils.custom_presets import download_preset
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/explore_preset_row.ui")

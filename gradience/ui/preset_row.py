@@ -20,11 +20,11 @@ import os
 
 from gi.repository import Gtk, Adw, Xdp, XdpGtk4
 
-from gradience.modules.preset import presets_dir
+from gradience.utils.preset import presets_dir
 
 from gradience.constants import rootdir
-from gradience.modules.utils import to_slug_case, buglog
-from gradience.modules.preset import Preset
+from gradience.utils.utils import to_slug_case, buglog
+from gradience.utils.preset import Preset
 
 from gradience.ui.share_window import GradienceShareWindow
 

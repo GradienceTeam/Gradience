@@ -39,13 +39,13 @@ from gradience.constants import (
     help_url,
     project_url,
 )
-from gradience.modules.css import load_preset_from_css
+from gradience.utils.css import load_preset_from_css
 from gradience.ui.welcome import GradienceWelcomeWindow
 from gradience.ui.preferences import GradiencePreferencesWindow
-from gradience.modules.utils import to_slug_case, buglog, run_command
+from gradience.utils.utils import to_slug_case, buglog, run_command
 from gradience.plugins_list import GradiencePluginsList
 from gradience.ui.presets_manager_window import GradiencePresetWindow
-from gradience.modules.preset import Preset, presets_dir
+from gradience.utils.preset import Preset, presets_dir
 
 
 class GradienceApplication(Adw.Application):
