@@ -1,4 +1,4 @@
-# window.py
+# app_type_dialog.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Gradience Team
