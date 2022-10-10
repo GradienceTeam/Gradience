@@ -16,15 +16,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+import os
+
+from pathlib import Path
 from gi.repository import Gtk, Adw
 
-from .modules.utils import buglog
-from .constants import rootdir
-from pathlib import Path
+from gradience.constants import rootdir
+from gradience.modules.utils import buglog
+from gradience.ui.no_plugin_pref import GradienceNoPluginPrefWindow
 
-from .no_plugin_pref import GradienceNoPluginPrefWindow
-
-import os
 
 USER_PLUGIN_DIR = Path(
     os.path.join(

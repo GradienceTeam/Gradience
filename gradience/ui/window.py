@@ -25,12 +25,12 @@ from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
 from material_color_utilities_python import *
 
-from .error import GradienceError
-from .settings_schema import settings_schema
-from .palette_shades import GradiencePaletteShades
-from .option import GradienceOption
-from .modules.utils import buglog
-from .constants import rootdir, app_id, build_type
+from gradience.ui.error import GradienceError
+from gradience.settings_schema import settings_schema
+from gradience.ui.palette_shades import GradiencePaletteShades
+from gradience.ui.option import GradienceOption
+from gradience.modules.utils import buglog
+from gradience.constants import rootdir, app_id, build_type
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")

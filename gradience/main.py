@@ -26,11 +26,11 @@ from material_color_utilities_python import *
 
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
-from .settings_schema import settings_schema
-from .window import GradienceMainWindow
-from .app_type_dialog import GradienceAppTypeDialog
-from .custom_css_group import GradienceCustomCSSGroup
-from .constants import (
+from gradience.settings_schema import settings_schema
+from gradience.ui.window import GradienceMainWindow
+from gradience.ui.app_type_dialog import GradienceAppTypeDialog
+from gradience.ui.custom_css_group import GradienceCustomCSSGroup
+from gradience.constants import (
     rootdir,
     app_id,
     rel_ver,
@@ -39,13 +39,13 @@ from .constants import (
     help_url,
     project_url,
 )
-from .modules.css import load_preset_from_css
-from .welcome import GradienceWelcomeWindow
-from .preferences import GradiencePreferencesWindow
-from .modules.utils import to_slug_case, buglog, run_command
-from .plugins_list import GradiencePluginsList
-from .presets_manager_window import GradiencePresetWindow
-from .modules.preset import Preset, presets_dir
+from gradience.modules.css import load_preset_from_css
+from gradience.ui.welcome import GradienceWelcomeWindow
+from gradience.ui.preferences import GradiencePreferencesWindow
+from gradience.modules.utils import to_slug_case, buglog, run_command
+from gradience.plugins_list import GradiencePluginsList
+from gradience.ui.presets_manager_window import GradiencePresetWindow
+from gradience.modules.preset import Preset, presets_dir
 
 
 class GradienceApplication(Adw.Application):

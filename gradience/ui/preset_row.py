@@ -22,11 +22,11 @@ from gi.repository import Gtk, Adw, Xdp, XdpGtk4
 
 from gradience.modules.preset import presets_dir
 
-from .constants import rootdir
-from .modules.utils import to_slug_case, buglog
-from .modules.preset import Preset
+from gradience.constants import rootdir
+from gradience.modules.utils import to_slug_case, buglog
+from gradience.modules.preset import Preset
 
-from .share_window import GradienceShareWindow
+from gradience.ui.share_window import GradienceShareWindow
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/preset_row.ui")

@@ -20,9 +20,11 @@ import os
 
 from gi.repository import Adw, GLib
 from yapsy.PluginManager import PluginManager
-from .plugin_row import GradiencePluginRow
-from .constants import pkgdatadir
-from .modules.utils import buglog
+
+from gradience.ui.plugin_row import GradiencePluginRow
+from gradience.constants import pkgdatadir
+from gradience.modules.utils import buglog
+
 
 USER_PLUGIN_DIR = os.path.join(
     os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
@@ -139,4 +141,4 @@ class GradiencePluginsList:
                     pluginInfo.plugin_object.apply()
                 except AttributeError:
                     buglog(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
-                 
+
