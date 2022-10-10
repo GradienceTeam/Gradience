@@ -33,7 +33,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/GradienceTeam/Design/raw/main/Screenshots/colors.png" alt="Preview"/>
+  <img src="https://github.com/GradienceTeam/Design/raw/main/Screenshots/preview.png" alt="Preview"/>
 </p>
 
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
