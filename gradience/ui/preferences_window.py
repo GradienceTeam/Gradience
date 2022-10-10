@@ -1,4 +1,4 @@
-# preferences.py
+# preferences_window.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Gradience Team
@@ -30,7 +30,7 @@ from gradience.utils.flatpak_overrides import (
 from gradience.utils.utils import buglog
 
 
-@Gtk.Template(resource_path=f"{rootdir}/ui/preferences.ui")
+@Gtk.Template(resource_path=f"{rootdir}/ui/preferences_window.ui")
 class GradiencePreferencesWindow(Adw.PreferencesWindow):
     __gtype_name__ = "GradiencePreferencesWindow"
 

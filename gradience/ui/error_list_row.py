@@ -1,7 +1,7 @@
-# no_plugin_pref.py
+# error_list_row.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022  Adwaita Manager Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,14 +16,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, Adw
+from gi.repository import Gtk
 
 from gradience.constants import rootdir
 
 
-@Gtk.Template(resource_path=f"{rootdir}/ui/no_plugin_pref.ui")
-class GradienceNoPluginPrefWindow(Adw.Window):
-    __gtype_name__ = "GradienceNoPluginPrefWindow"
+@Gtk.Template(resource_path=f"{rootdir}/ui/error_list_row.ui")
+class GradienceErrorListRow(Gtk.ListBoxRow):
+    __gtype_name__ = "GradienceErrorListRow"
 
-    def __init__(self, **kwargs):
+    error_label = Gtk.Template.Child("error-label")
+    element_label = Gtk.Template.Child("element-label")
+    line_label = Gtk.Template.Child("line-label")
+
+    def __init__(self, error, element, line, **kwargs):
         super().__init__(**kwargs)
+
+        self.error_label.set_label(error)
+        self.element_label.set_label(element)
+        self.line_label.set_label(line)

@@ -59,21 +59,21 @@ PY_INSTALLDIR.install_sources(gradience_utils, subdir: 'gradience/utils')
 
 # Install ui Python modules
 gradience_ui_modules = [
-  'ui/error.py',
+  'ui/error_list_row.py',
   'ui/palette_shades.py',
-  'ui/option.py',
+  'ui/option_row.py',
   'ui/window.py',
   'ui/app_type_dialog.py',
   'ui/custom_css_group.py',
   'ui/presets_manager_window.py',
-  'ui/preferences.py',
+  'ui/preferences_window.py',
   'ui/plugin_row.py',
   'ui/explore_preset_row.py',
   'ui/builtin_preset_row.py',
   'ui/preset_row.py',
-  'ui/welcome.py',
+  'ui/welcome_window.py',
   'ui/repo_row.py',
-  'ui/no_plugin_pref.py',
+  'ui/no_plugin_window.py',
   'ui/share_window.py',
 ]
 PY_INSTALLDIR.install_sources(gradience_ui_modules, subdir: 'gradience/ui')

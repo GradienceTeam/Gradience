@@ -1,4 +1,4 @@
-# welcome.py
+# welcome_window.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Gradience Team
@@ -27,7 +27,7 @@ from gradience.utils.flatpak_overrides import create_gtk_user_override
 from gradience.constants import rootdir, app_id, rel_ver
 
 
-@Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
+@Gtk.Template(resource_path=f"{rootdir}/ui/welcome_window.ui")
 class GradienceWelcomeWindow(Adw.Window):
     __gtype_name__ = "GradienceWelcomeWindow"
 

@@ -24,9 +24,9 @@ from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
 from material_color_utilities_python import *
 
-from gradience.ui.error import GradienceError
+from gradience.ui.error_list_row import GradienceErrorListRow
 from gradience.ui.palette_shades import GradiencePaletteShades
-from gradience.ui.option import GradienceOption
+from gradience.ui.option_row import GradienceOptionRow
 from gradience.utils.utils import buglog
 from gradience.settings_schema import settings_schema
 from gradience.constants import rootdir, app_id, build_type
@@ -251,7 +251,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             pref_group.set_description(group["description"])
 
             for variable in group["variables"]:
-                pref_variable = GradienceOption(
+                pref_variable = GradienceOptionRow(
                     variable["name"],
                     variable["title"],
                     variable.get("explanation"),
@@ -291,7 +291,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.errors_button.set_visible(len(errors) > 0)
         for error in errors:
             self.errors_list.append(
-                GradienceError(error["error"], error["element"], error["line"])
+                GradienceErrorListRow(error["error"], error["element"], error["line"])
             )
 
     def on_presets_dropdown_activate(self, *args):
