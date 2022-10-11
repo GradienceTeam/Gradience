@@ -137,6 +137,7 @@ class GradiencePluginsList:
     def apply(self):
         for pluginInfo in self.pm.getAllPlugins():
             if pluginInfo.plugin_object.plugin_id in self.enabled_plugins:
+                print(buglog(pluginInfo.plugin_object))
                 try:
                     pluginInfo.plugin_object.apply()
                 except AttributeError:

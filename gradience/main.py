@@ -87,7 +87,7 @@ class GradienceApplication(Adw.Application):
 
         self.style_manager = Adw.StyleManager.get_default()
 
-        self.preset = None
+        self.preset: Preset = None
 
     def do_activate(self):
         """Called when the application is activated.
@@ -781,9 +781,9 @@ class GradienceApplication(Adw.Application):
 
         dialog.present()
 
-    def save_preset(self, _unused, response, entry):
+    def save_preset(self, _unused, response, preset_entry):
         if response == "save":
-            self.preset.save_preset(entry.get_text(), self.plugins_list)
+            self.preset.save_preset(preset_entry.get_text(), self.plugins_list)
             self.clear_dirty()
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset saved")))
