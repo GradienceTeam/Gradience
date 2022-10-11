@@ -88,6 +88,7 @@ class Preset:
             buglog(error, " -> preset : ", self.preset_path)
 
     def save_preset(self, name=None, plugins_list=None, to=None):
+        self.name = name if name else self.name
         if to is None:
             self.preset_path = os.path.join(
                 presets_dir, self.repo, self.name + ".json")
