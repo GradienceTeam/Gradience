@@ -386,7 +386,7 @@ class GradiencePresetWindow(Adw.Window):
             )
         )
 
-        buglog(f"custom_presets values: {self.custom_presets.values()}")
+        buglog(f"custom_presets: {self.custom_presets}")
 
         presets_check = not (
             len(self.custom_presets["user"]) == 0
