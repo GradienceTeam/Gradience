@@ -1,4 +1,4 @@
-# option.py
+# option_row.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Gradience Team
@@ -18,12 +18,12 @@
 
 from gi.repository import Gtk, Gdk, Adw
 
-from .constants import rootdir
+from gradience.constants import rootdir
 
 
-@Gtk.Template(resource_path=f"{rootdir}/ui/option.ui")
-class GradienceOption(Adw.ActionRow):
-    __gtype_name__ = "GradienceOption"
+@Gtk.Template(resource_path=f"{rootdir}/ui/option_row.ui")
+class GradienceOptionRow(Adw.ActionRow):
+    __gtype_name__ = "GradienceOptionRow"
 
     color_value = Gtk.Template.Child("color-value")
     text_value = Gtk.Template.Child("text-value")

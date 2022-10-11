@@ -18,7 +18,7 @@
 
 from gi.repository import Gtk, Adw
 
-from .constants import rootdir
+from gradience.constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/custom_css_group.ui")

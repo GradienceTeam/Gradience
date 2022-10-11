@@ -19,8 +19,8 @@
 import json
 import os
 
-from ..settings_schema import settings_schema
-from .utils import buglog, to_slug_case
+from gradience.settings_schema import settings_schema
+from gradience.utils.utils import buglog, to_slug_case
 
 
 presets_dir = os.path.join(

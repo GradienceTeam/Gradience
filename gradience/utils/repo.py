@@ -1,7 +1,7 @@
-# error.py
+# repo.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Adwaita Manager Team
+# Copyright (C) 2022 Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,22 +16,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk
+from gradience.utils.utils import to_slug_case
+from gradience.utils.preset import Preset, presets_dir
+import os
 
-from .constants import rootdir
 
+class Repo:
+    presets = {}
 
-@Gtk.Template(resource_path=f"{rootdir}/ui/error.ui")
-class GradienceError(Gtk.ListBoxRow):
-    __gtype_name__ = "GradienceError"
+    def __init__(self, name):
+        self.name = to_slug_case(name)
+        self.path = os.path.join(presets_dir, name)
+        self.presets = self.get_presets()
 
-    error_label = Gtk.Template.Child("error-label")
-    element_label = Gtk.Template.Child("element-label")
-    line_label = Gtk.Template.Child("line-label")
-
-    def __init__(self, error, element, line, **kwargs):
-        super().__init__(**kwargs)
-
-        self.error_label.set_label(error)
-        self.element_label.set_label(element)
-        self.line_label.set_label(line)
+    def get_presets(self):
+        presets = {}
+        for preset in os.listdir(self.path):
+            if preset.endswith(".json"):
+                presets[preset[:-5]] = Preset(preset[:-5], self.name)
+        return presets
