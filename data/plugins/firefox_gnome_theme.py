@@ -118,11 +118,11 @@ class FirefoxGnomeTheme2Plugin(IPlugin):
                      "~/.var/app/org.mozilla.firefox/.mozilla/firefox",
                      "~/.var/app/io.gitlab.librewolf-community/.librewolf"]:
             try:
-                with (
-                    next(Path("firefox").expanduser().glob("*.*"))
-                    / "chrome/firefox-gnome-theme/customChrome.css"
-                ).open("w") as f:
-                    f.write(self.template.format(**self.variables))
+                for result in Path(path).expanduser().glob("*.*"):
+                    if Path.is_dir(result):
+                        with open(f"{result}/chrome/firefox-gnome-theme/customChrome.css","w") as f:
+                            print(result)
+                            f.write(self.template.format(**self.variables))
             except OSError:
                 pass
             except StopIteration:
