@@ -783,7 +783,7 @@ class GradienceApplication(Adw.Application):
 
     def save_preset(self, _unused, response, preset_entry):
         if response == "save":
-            self.preset.save_preset(to_slug_case(preset_entry.get_text()), self.plugins_list)
+            self.preset.save_preset(preset_entry.get_text(), self.plugins_list)
             self.clear_dirty()
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset saved")))
