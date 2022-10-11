@@ -335,7 +335,7 @@ class GradienceApplication(Adw.Application):
             self.preset = preset
         self.is_ready = False
         buglog(self.preset)
-        self.preset_name = self.preset.preset_name
+        self.preset_name = self.preset.display_name
         self.variables = self.preset.variables
         self.palette = self.preset.palette
         self.custom_css = self.preset.custom_css

@@ -111,7 +111,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
             os.path.join(
                 presets_dir,
                 self.prefix,
-                to_slug_case(self.name) + ".json",
+                to_slug_case(to_slug_case(self.name)) + ".json",
             )
         )
 
@@ -166,12 +166,12 @@ class GradiencePresetRow(Adw.ExpanderRow):
                 os.path.join(
                     presets_dir,
                     self.prefix,
-                    self.preset.name + ".json",
+                    to_slug_case(self.preset.filename) + ".json",
                 ),
                 os.path.join(
                     presets_dir,
                     self.prefix,
-                    self.preset.name + ".json.to_delete",
+                    to_slug_case(self.preset.filename) + ".json.to_delete",
                 ),
             )
 
@@ -184,14 +184,19 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.delete_preset = True
 
     def update_value(self):
-        self.preset.preset_name = self.name
-        self.preset.name = to_slug_case(self.name)
-        self.preset.save_preset()
+        print(self.name_entry.get_text())
+        old = self.preset.filename
+        self.preset.save_preset(self.name_entry.get_text())
+        print(os.path.join(
+                presets_dir,
+                self.prefix,
+                to_slug_case(old) + ".json",
+            ))
         os.remove(
             os.path.join(
                 presets_dir,
                 self.prefix,
-                self.preset.name + ".json",
+                to_slug_case(old) + ".json",
             )
         )
 
@@ -200,11 +205,16 @@ class GradiencePresetRow(Adw.ExpanderRow):
         if self.delete_preset:
             buglog("delete")
             try:
+                buglog(os.path.join(
+                        presets_dir,
+                        self.prefix,
+                        to_slug_case(self.preset.filename) + ".json.to_delete",
+                    ))
                 os.remove(
                     os.path.join(
                         presets_dir,
                         self.prefix,
-                        self.preset.name + ".json.to_delete",
+                        to_slug_case(self.preset.filename) + ".json.to_delete",
                     )
                 )
             except Exception as exception:
@@ -221,12 +231,12 @@ class GradiencePresetRow(Adw.ExpanderRow):
                     os.path.join(
                         presets_dir,
                         self.prefix,
-                        self.preset.name + ".json.to_delete",
+                        to_slug_case(self.preset.filename) + ".json.to_delete",
                     ),
                     os.path.join(
                         presets_dir,
                         self.prefix,
-                        self.preset.name + ".json",
+                        to_slug_case(self.preset.filename) + ".json",
                     ),
                 )
             except Exception as exception:
