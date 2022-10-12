@@ -71,6 +71,7 @@ gradience_modules = [
   'modules/css.py',
   'modules/preset.py',
   'modules/repo.py',
+  'modules/themes.py',
 ]
 
 PY_INSTALLDIR.install_sources(gradience_modules, subdir: 'gradience/modules')
