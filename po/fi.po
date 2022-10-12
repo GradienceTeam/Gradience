@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-11 00:52+0000\n"
+"POT-Creation-Date: 2022-10-12 01:05+0000\n"
 "PO-Revision-Date: 2022-10-08 00:50+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -138,27 +138,27 @@ msgstr "Lataa ja toteuta"
 msgid "Download Only"
 msgstr "Lataa ainoastaan"
 
-#: data/ui/no_plugin_pref.blp:5
+#: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
 msgstr "Liitännäisen asetukset"
 
-#: data/ui/no_plugin_pref.blp:26
+#: data/ui/no_plugin_window.blp:26
 msgid "No Preferences"
 msgstr "Ei asetuksia"
 
-#: data/ui/no_plugin_pref.blp:27
+#: data/ui/no_plugin_window.blp:27
 msgid "This plugin doesn't have any preferences."
 msgstr "Tämä liitännäinen ei sisällä asetuksia."
 
-#: data/ui/option.blp:10
+#: data/ui/option_row.blp:10
 msgid "GTK 3 Support Warning"
 msgstr "GTK 3 -tuen varoitus"
 
-#: data/ui/option.blp:18
+#: data/ui/option_row.blp:18
 msgid "Explanation"
 msgstr "Selitys"
 
-#: data/ui/option.blp:43
+#: data/ui/option_row.blp:43
 msgid "Toggle Text Value"
 msgstr ""
 
@@ -167,7 +167,8 @@ msgstr ""
 msgid "Toggle Plugin"
 msgstr "Käytä liitännäistä"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:129
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/window.blp:129
 msgid "Preferences"
 msgstr "Asetukset"
 
@@ -175,65 +176,65 @@ msgstr "Asetukset"
 msgid "Remove Plugin"
 msgstr "Poista liitännäinen"
 
-#: data/ui/preferences.blp:12
+#: data/ui/preferences_window.blp:12
 msgid "GTK 4 Flatpak Applications"
 msgstr "GTK 4 Flatpak -sovellukset"
 
-#: data/ui/preferences.blp:15
+#: data/ui/preferences_window.blp:15
 msgid "Allow GTK 4 Flatpak Applications Theming"
 msgstr "Salli GTK 4 Flatpak -sovellusten teemoitus"
 
-#: data/ui/preferences.blp:16
+#: data/ui/preferences_window.blp:16
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 4 Flatpak "
 "applications to access custom themes."
 msgstr ""
 
-#: data/ui/preferences.blp:25
+#: data/ui/preferences_window.blp:25
 msgid "Allow GTK 4 Flatpak Applications Theming (System)"
 msgstr "Salli GTK 4 Flatpak -sovellusten teemoitus (järjestelmä)"
 
-#: data/ui/preferences.blp:26
+#: data/ui/preferences_window.blp:26
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 4 Flatpak "
 "applications to access custom themes. (Requires root access)"
 msgstr ""
 
-#: data/ui/preferences.blp:35
+#: data/ui/preferences_window.blp:35
 msgid "GTK 3 Flatpak Applications"
 msgstr "GTK 3 Flatpak -sovellukset"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences_window.blp:36
 msgid ""
 "Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
 "custom presets working in GTK 3 Flatpak applications."
 msgstr ""
 
-#: data/ui/preferences.blp:39
+#: data/ui/preferences_window.blp:39
 msgid "Allow GTK 3 Flatpak theming"
 msgstr "Salli GTK 3 Flatpak -teemoitus"
 
-#: data/ui/preferences.blp:40
+#: data/ui/preferences_window.blp:40
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme."
 msgstr ""
 
-#: data/ui/preferences.blp:49
+#: data/ui/preferences_window.blp:49
 msgid "GTK 3 Flatpak Applications (System)"
 msgstr "GTK 3 Flatpak -sovellukset (järjestelmä)"
 
-#: data/ui/preferences.blp:50
+#: data/ui/preferences_window.blp:50
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme. (Requires root access)"
 msgstr ""
 
-#: data/ui/preferences.blp:60
+#: data/ui/preferences_window.blp:60
 msgid "Custom Preset Repositories"
 msgstr "Mukautetut esiasetusten tietovarastot"
 
-#: data/ui/preferences.blp:63
+#: data/ui/preferences_window.blp:63
 msgid "Custom repository URL address"
 msgstr "Mukautetun tietovaraston URL-osoite"
 
@@ -326,8 +327,8 @@ msgid "Offline"
 msgstr "Ei verkossa"
 
 #: data/ui/presets_manager_window.blp:141
-#: gradience/presets_manager_window.py:121
-#: gradience/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:121
+#: gradience/ui/presets_manager_window.py:419
 msgid "Repositories"
 msgstr "Tietovarastot"
 
@@ -347,7 +348,7 @@ msgstr "JSON-tiedosto (*.json)"
 msgid "Share Preset"
 msgstr "Jaa esiasetus"
 
-#: data/ui/share_window.blp:42 data/ui/welcome.blp:42
+#: data/ui/share_window.blp:42 data/ui/welcome_window.blp:42
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -371,22 +372,22 @@ msgid ""
 "make a pull request and share it with the world!"
 msgstr ""
 
-#: data/ui/share_window.blp:81 data/ui/welcome.blp:81
+#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:81
 msgid "Warning"
 msgstr "Varoitus"
 
-#: data/ui/share_window.blp:82 data/ui/welcome.blp:82
+#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
 "developers."
 msgstr ""
 
-#: data/ui/share_window.blp:86 data/ui/welcome.blp:86
+#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:86
 msgid "I Understand The Consequences"
 msgstr "Ymmärrän seuraukset"
 
-#: data/ui/share_window.blp:97 data/ui/welcome.blp:97
+#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Mukauta Adwaita-teemaa"
 
@@ -398,11 +399,11 @@ msgstr ""
 "Mukauta ikkunoiden, painikkeiden, luettelojen ja muiden elementtien väriä ja "
 "käytä lisäominaisuuksia kuten omavalintaista CSS:ää"
 
-#: data/ui/share_window.blp:104 data/ui/welcome.blp:104
+#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:104
 msgid "Configure Gradience"
 msgstr "Muokkaa Gradiencea"
 
-#: data/ui/share_window.blp:105 data/ui/welcome.blp:105
+#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:105
 #, fuzzy
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
@@ -413,7 +414,7 @@ msgstr "Asenna adw-gtk3-teema vanhoja sovelluksia varten."
 msgid "Legacy apps theming"
 msgstr ""
 
-#: data/ui/share_window.blp:115 data/ui/welcome.blp:115
+#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:115
 #, fuzzy
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Asenna adw-gtk3-teema vanhoja sovelluksia varten."
@@ -422,62 +423,62 @@ msgstr "Asenna adw-gtk3-teema vanhoja sovelluksia varten."
 msgid "System configuration"
 msgstr "Järjestelmän määritys"
 
-#: data/ui/share_window.blp:126 data/ui/welcome.blp:126
+#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 
-#: data/ui/share_window.blp:136 data/ui/welcome.blp:136
+#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:136
 msgid "Installing Themes"
 msgstr "Asennetaan teemoja"
 
-#: data/ui/share_window.blp:137 data/ui/welcome.blp:137
+#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:137
 msgid "Please wait until theme will be installed."
 msgstr "Odota kunnes teema on asennettu."
 
-#: data/ui/share_window.blp:143 data/ui/welcome.blp:143
+#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:143
 msgid "Continue"
 msgstr "Jatka"
 
-#: data/ui/share_window.blp:162 data/ui/welcome.blp:162
+#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:162
 msgid "Done"
 msgstr "Valmis"
 
-#: data/ui/share_window.blp:163 data/ui/welcome.blp:163
+#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:163
 msgid "Now you can make your own presets or download some online."
 msgstr "Voit nyt tehdä omia esiasetuksia tai ladata niitä verkosta."
 
-#: data/ui/share_window.blp:168 data/ui/welcome.blp:168
+#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:168
 msgid "Please finish the setup first"
 msgstr "Viimeistele määritys ensin"
 
-#: data/ui/share_window.blp:176 data/ui/welcome.blp:176
+#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:176
 msgid "Start Using Gradience"
 msgstr "Aloita Gradiencen käyttäminen"
 
-#: data/ui/share_window.blp:193 data/ui/welcome.blp:193
+#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:193
 msgid "Next"
 msgstr "Seuraava"
 
-#: data/ui/welcome.blp:5 data/ui/welcome.blp:65
+#: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:65
 msgid "Welcome to Gradience"
 msgstr "Tervetuloa, tämä on Gradience"
 
-#: data/ui/welcome.blp:66
+#: data/ui/welcome_window.blp:66
 msgid "Change the look of Adwaita, with ease"
 msgstr "Muuta Adwaitan ulkoasua vaivatta"
 
-#: data/ui/welcome.blp:73
+#: data/ui/welcome_window.blp:73
 msgid "What's new in 0.3.0"
 msgstr ""
 
-#: data/ui/welcome.blp:74
+#: data/ui/welcome_window.blp:74
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a "
 "quick preset switcher. We also split the preset repository into an "
 "“Official” repository and a “Curated” repositories."
 msgstr ""
 
-#: data/ui/welcome.blp:98
+#: data/ui/welcome_window.blp:98
 #, fuzzy
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
@@ -486,16 +487,16 @@ msgstr ""
 "Mukauta ikkunoiden, painikkeiden, luettelojen ja muiden elementtien väriä ja "
 "käytä lisäominaisuuksia kuten omavalintaista CSS:ää"
 
-#: data/ui/welcome.blp:110
+#: data/ui/welcome_window.blp:110
 msgid "Legacy Apps Theming"
 msgstr ""
 
-#: data/ui/welcome.blp:120
+#: data/ui/welcome_window.blp:120
 #, fuzzy
 msgid "System Configuration"
 msgstr "Järjestelmän määritys"
 
-#: data/ui/window.blp:23 gradience/main.py:603 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/ui/window.py:140 gradience/main.py:603
 msgid "Apply"
 msgstr "Toteuta"
 
@@ -551,7 +552,7 @@ msgstr "GTK 4:n demo"
 msgid "GTK 4 Widget Factory"
 msgstr "GTK 4:n widget-tehdas"
 
-#: data/ui/window.blp:161 gradience/presets_manager_window.py:110
+#: data/ui/window.blp:161 gradience/ui/presets_manager_window.py:110
 msgid "Built-In Presets"
 msgstr "Sisäänrakennetut esiasetukset"
 
@@ -559,37 +560,213 @@ msgstr "Sisäänrakennetut esiasetukset"
 msgid "Manage Presets"
 msgstr "Hallitse esiasetuksia"
 
-#: gradience/modules/flatpak_overrides.py:65
-#: gradience/modules/flatpak_overrides.py:84
+#: gradience/utils/flatpak_overrides.py:65
+#: gradience/utils/flatpak_overrides.py:84
 #, fuzzy
 msgid "Failed to save override"
 msgstr "Esiasetuksen lataaminen epäonnistui"
 
-#: gradience/modules/flatpak_overrides.py:152
-#: gradience/modules/flatpak_overrides.py:212
-#: gradience/modules/flatpak_overrides.py:295
-#: gradience/modules/flatpak_overrides.py:357
+#: gradience/utils/flatpak_overrides.py:152
+#: gradience/utils/flatpak_overrides.py:212
+#: gradience/utils/flatpak_overrides.py:295
+#: gradience/utils/flatpak_overrides.py:357
 msgid "Unexpected file error occurred"
 msgstr ""
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:654 gradience/main.py:727
-#: gradience/main.py:868 gradience/presets_manager_window.py:190
+#: gradience/ui/app_type_dialog.py:44
+#: gradience/ui/presets_manager_window.py:190 gradience/main.py:654
+#: gradience/main.py:727 gradience/main.py:868
 msgid "Cancel"
 msgstr "Peru"
 
-#: gradience/explore_preset_row.py:62 gradience/explore_preset_row.py:88
+#: gradience/ui/explore_preset_row.py:62 gradience/ui/explore_preset_row.py:88
 msgid "Preset could not be downloaded"
 msgstr "Esiasetusta ei voitu ladata"
 
-#: gradience/explore_preset_row.py:77 gradience/explore_preset_row.py:93
+#: gradience/ui/explore_preset_row.py:77 gradience/ui/explore_preset_row.py:93
 msgid "Preset downloaded"
 msgstr "Esiasetus ladattu"
 
-#: gradience/main.py:188 gradience/main.py:219
-#: gradience/presets_manager_window.py:336
-#: gradience/presets_manager_window.py:366
+#: gradience/ui/option_row.py:49
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "Tämä valinta on vain osittain tuettu adw-gtk3-teeman toimesta."
+
+#: gradience/ui/option_row.py:54
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "Tämä valinta ei ole tuettu adw-gtk3-teeman toimesta."
+
+#: gradience/ui/option_row.py:97
+msgid "Not a color, see text value"
+msgstr "Ei väri, katso tekstiarvo"
+
+#: gradience/ui/plugin_row.py:86
+msgid "Unable to remove"
+msgstr "Poistaminen ei onnistunut"
+
+#: gradience/ui/plugin_row.py:87
+msgid "This is a system plugin, and cannot be removed. "
+msgstr "Tämä on järjestelmäliitännäinen, sitä ei voi poistaa. "
+
+#: gradience/ui/plugin_row.py:89
+msgid "Close"
+msgstr "Sulje"
+
+#: gradience/ui/preset_row.py:83 gradience/ui/preset_row.py:102
+msgid "Remove from Favourites"
+msgstr "Poista suosikeista"
+
+#: gradience/ui/preset_row.py:86 gradience/ui/preset_row.py:98
+msgid "Add to Favourites"
+msgstr "Lisää suosikkeihin"
+
+#: gradience/ui/preset_row.py:156
+msgid "Preset removed"
+msgstr "Esiasetus poistettu"
+
+#: gradience/ui/preset_row.py:157
+msgid "Undo"
+msgstr "Kumoa"
+
+#: gradience/ui/preset_row.py:178
+msgid "Pending Deletion"
+msgstr "Odottaa poistoa"
+
+#: gradience/ui/preset_row.py:223
+msgid "Unable to delete preset"
+msgstr "Esiasetusta ei voitu poistaa"
+
+#: gradience/ui/presets_manager_window.py:115
+#: gradience/ui/presets_manager_window.py:380
+msgid "User Presets"
+msgstr "Käyttäjien esiasetukset"
+
+#: gradience/ui/presets_manager_window.py:183
+msgid "Add new repository"
+msgstr "Lisää uusi tietovarasto"
+
+#: gradience/ui/presets_manager_window.py:184
+msgid "Add a repository to install additional presets."
+msgstr "Lisää tietovarasto, josta on mahdollista asentaa lisää esiasetuksia."
+
+#: gradience/ui/presets_manager_window.py:191
+msgid "Add"
+msgstr "Lisää"
+
+#: gradience/ui/presets_manager_window.py:281
+msgid "Preset already exists"
+msgstr "Esiasetus on jo olemassa"
+
+#: gradience/ui/presets_manager_window.py:292
+msgid "Preset imported"
+msgstr "Esiasetus tuotu"
+
+#: gradience/ui/presets_manager_window.py:295
+msgid "Unsupported file format, must be .json"
+msgstr "Tiedostomuoto ei ole tuettu, täytyy olla .json"
+
+#: gradience/ui/presets_manager_window.py:336
+#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/main.py:219
 msgid "Failed to load preset"
 msgstr "Esiasetuksen lataaminen epäonnistui"
+
+#: gradience/ui/presets_manager_window.py:373
+msgid "Built-in Presets"
+msgstr "Sisäänrakennetut esiasetukset"
+
+#: gradience/ui/presets_manager_window.py:383
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Katso Githubista <a href=\"https://github.com/GradienceTeam/Community"
+"\">GradienceTeam/Community</a> saadaksesi lisää esiasetuksia"
+
+#: gradience/ui/presets_manager_window.py:409
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Esiasetusta ei löytynyt! Tuo esiasetus Tuo-painikkeella tai etsi "
+"esiasetuksia Selaa-välilehdeltä."
+
+#: gradience/ui/repo_row.py:60
+msgid "Repository removed"
+msgstr "Tietovarasto poistettu"
+
+#: gradience/ui/welcome_window.py:94
+msgid "Thanks for updating Gradience!"
+msgstr "Kiitos kun päivitit Gradiencen!"
+
+#: gradience/ui/window.py:131
+msgid "Monet Engine"
+msgstr "Monet-moottori"
+
+#: gradience/ui/window.py:134
+msgid ""
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
+msgstr ""
+"Monet on moottori, joka luo Material Design 3 -paletin kuvan väriin "
+"pohjautuen."
+
+#: gradience/ui/window.py:146
+msgid "Background Image"
+msgstr "Taustakuva"
+
+#: gradience/ui/window.py:156
+msgid "Choose a File"
+msgstr "Valitse tiedosto"
+
+#: gradience/ui/window.py:176
+msgid "Monet Palette"
+msgstr "Monet-paletti"
+
+#: gradience/ui/window.py:183
+msgid "Tone"
+msgstr "Sävy"
+
+#: gradience/ui/window.py:195
+msgid "Theme"
+msgstr "Teema"
+
+#: gradience/ui/window.py:198
+msgid "Auto"
+msgstr ""
+
+#: gradience/ui/window.py:199 gradience/settings_schema.py:372
+msgid "Light"
+msgstr "Vaalea"
+
+#: gradience/ui/window.py:200 gradience/settings_schema.py:373
+msgid "Dark"
+msgstr "Tumma"
+
+#: gradience/ui/window.py:222
+msgid "Unsupported background type"
+msgstr "Taustakuvan tyyppi ei ole tuettu"
+
+#: gradience/ui/window.py:239
+msgid "Palette generated"
+msgstr "Paletti luotu"
+
+#: gradience/ui/window.py:243
+msgid "Select a background first"
+msgstr "Valitse ensin tausta"
+
+#: gradience/ui/window.py:268
+msgid "Palette Colors"
+msgstr "Palettivärit"
+
+#: gradience/ui/window.py:271
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"Nimetyt palettivärit ovat joidenkin sovellusten käyttämiä. Oletusvärit "
+"seuraavat <a href=\"https://developer.gnome.org/hig/reference/palette.html"
+"\">Gnomen Human Interface Guidelines -ohjeistuksia</a>."
 
 #: gradience/main.py:247
 msgid "No presets found"
@@ -755,35 +932,11 @@ msgstr ""
 msgid "Special thanks to"
 msgstr "Erikoiskiitokset"
 
-#: gradience/option.py:49
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "Tämä valinta on vain osittain tuettu adw-gtk3-teeman toimesta."
-
-#: gradience/option.py:54
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "Tämä valinta ei ole tuettu adw-gtk3-teeman toimesta."
-
-#: gradience/option.py:97
-msgid "Not a color, see text value"
-msgstr "Ei väri, katso tekstiarvo"
-
-#: gradience/plugin_row.py:85
-msgid "Unable to remove"
-msgstr "Poistaminen ei onnistunut"
-
-#: gradience/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed. "
-msgstr "Tämä on järjestelmäliitännäinen, sitä ei voi poistaa. "
-
-#: gradience/plugin_row.py:88
-msgid "Close"
-msgstr "Sulje"
-
-#: gradience/plugins_list.py:96
+#: gradience/plugins_list.py:98
 msgid "Plugins"
 msgstr "Liitännäiset"
 
-#: gradience/plugins_list.py:99
+#: gradience/plugins_list.py:101
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -791,86 +944,9 @@ msgstr ""
 "Liitännäiset lisäävät ominaisuuksia Gradienceen. Liitännäiset ovat yhteisön "
 "tekemiä ja ne voivat aiheuttaa ongelmia."
 
-#: gradience/plugins_list.py:111
+#: gradience/plugins_list.py:113
 msgid "No Plugins Found."
 msgstr "Liitännäisiä ei löytynyt."
-
-#: gradience/preset_row.py:86 gradience/preset_row.py:105
-msgid "Remove from Favourites"
-msgstr "Poista suosikeista"
-
-#: gradience/preset_row.py:89 gradience/preset_row.py:101
-msgid "Add to Favourites"
-msgstr "Lisää suosikkeihin"
-
-#: gradience/preset_row.py:159
-msgid "Preset removed"
-msgstr "Esiasetus poistettu"
-
-#: gradience/preset_row.py:160
-msgid "Undo"
-msgstr "Kumoa"
-
-#: gradience/preset_row.py:181
-msgid "Pending Deletion"
-msgstr "Odottaa poistoa"
-
-#: gradience/preset_row.py:216
-msgid "Unable to delete preset"
-msgstr "Esiasetusta ei voitu poistaa"
-
-#: gradience/presets_manager_window.py:115
-#: gradience/presets_manager_window.py:380
-msgid "User Presets"
-msgstr "Käyttäjien esiasetukset"
-
-#: gradience/presets_manager_window.py:183
-msgid "Add new repository"
-msgstr "Lisää uusi tietovarasto"
-
-#: gradience/presets_manager_window.py:184
-msgid "Add a repository to install additional presets."
-msgstr "Lisää tietovarasto, josta on mahdollista asentaa lisää esiasetuksia."
-
-#: gradience/presets_manager_window.py:191
-msgid "Add"
-msgstr "Lisää"
-
-#: gradience/presets_manager_window.py:281
-msgid "Preset already exists"
-msgstr "Esiasetus on jo olemassa"
-
-#: gradience/presets_manager_window.py:292
-msgid "Preset imported"
-msgstr "Esiasetus tuotu"
-
-#: gradience/presets_manager_window.py:295
-msgid "Unsupported file format, must be .json"
-msgstr "Tiedostomuoto ei ole tuettu, täytyy olla .json"
-
-#: gradience/presets_manager_window.py:373
-msgid "Built-in Presets"
-msgstr "Sisäänrakennetut esiasetukset"
-
-#: gradience/presets_manager_window.py:383
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Katso Githubista <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a> saadaksesi lisää esiasetuksia"
-
-#: gradience/presets_manager_window.py:409
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Esiasetusta ei löytynyt! Tuo esiasetus Tuo-painikkeella tai etsi "
-"esiasetuksia Selaa-välilehdeltä."
-
-#: gradience/repo_row.py:60
-msgid "Repository removed"
-msgstr "Tietovarasto poistettu"
 
 #: gradience/settings_schema.py:23
 msgid "Accent Colors"
@@ -1102,80 +1178,6 @@ msgstr "Liila"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Ruskea"
-
-#: gradience/settings_schema.py:372 gradience/window.py:200
-msgid "Light"
-msgstr "Vaalea"
-
-#: gradience/settings_schema.py:373 gradience/window.py:201
-msgid "Dark"
-msgstr "Tumma"
-
-#: gradience/welcome.py:94
-msgid "Thanks for updating Gradience!"
-msgstr "Kiitos kun päivitit Gradiencen!"
-
-#: gradience/window.py:132
-msgid "Monet Engine"
-msgstr "Monet-moottori"
-
-#: gradience/window.py:135
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr ""
-"Monet on moottori, joka luo Material Design 3 -paletin kuvan väriin "
-"pohjautuen."
-
-#: gradience/window.py:147
-msgid "Background Image"
-msgstr "Taustakuva"
-
-#: gradience/window.py:157
-msgid "Choose a File"
-msgstr "Valitse tiedosto"
-
-#: gradience/window.py:177
-msgid "Monet Palette"
-msgstr "Monet-paletti"
-
-#: gradience/window.py:184
-msgid "Tone"
-msgstr "Sävy"
-
-#: gradience/window.py:196
-msgid "Theme"
-msgstr "Teema"
-
-#: gradience/window.py:199
-msgid "Auto"
-msgstr ""
-
-#: gradience/window.py:223
-msgid "Unsupported background type"
-msgstr "Taustakuvan tyyppi ei ole tuettu"
-
-#: gradience/window.py:240
-msgid "Palette generated"
-msgstr "Paletti luotu"
-
-#: gradience/window.py:244
-msgid "Select a background first"
-msgstr "Valitse ensin tausta"
-
-#: gradience/window.py:269
-msgid "Palette Colors"
-msgstr "Palettivärit"
-
-#: gradience/window.py:272
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"Nimetyt palettivärit ovat joidenkin sovellusten käyttämiä. Oletusvärit "
-"seuraavat <a href=\"https://developer.gnome.org/hig/reference/palette.html"
-"\">Gnomen Human Interface Guidelines -ohjeistuksia</a>."
 
 #~ msgid "Share preset"
 #~ msgstr "Jaa esiasetus"
