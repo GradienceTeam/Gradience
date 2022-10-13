@@ -21,8 +21,8 @@
   <a href="https://hosted.weblate.org/engage/GradienceTeam">
     <img alt="Translation status" src="https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg"/>
   </a>
-  <a href="https://github.com/GradienceTeam/Gradience/actions/workflows/CI.yml">
-    <img alt="CI status" src="https://github.com/GradienceTeam/Gradience/actions/workflows/CI.yml/badge.svg"/>
+  <a href="https://github.com/GradienceTeam/Gradience/actions/workflows/ci.yml">
+    <img alt="CI status" src="https://github.com/GradienceTeam/Gradience/actions/workflows/ci.yml/badge.svg"/>
   </a>
   <a href="https://flathub.org/apps/details/com.github.GradienceTeam.Gradience">
     <img alt="Flathub downloads" src="https://img.shields.io/badge/dynamic/json?color=informational&label=downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Fcom.github.GradienceTeam.Gradience"/>
