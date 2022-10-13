@@ -90,6 +90,21 @@ dnf install gradience
 
 Gradience is available on AUR:
 
+Using [Paru](https://github.com/morganamilo/paru):
+    
+```shell
+paru -S gradience
+```
+
+For latest changes:
+
+```shell
+paru -S gradience-git
+```
+
+<details>
+  <summary>🪛️ Without AUR helpers</summary>
+
 ```shell
 git clone https://aur.archlinux.org/gradience.git
 cd gradience
@@ -104,17 +119,7 @@ cd gradience-git
 makepkg -sic
 ```
 
-#### Using [Paru](https://github.com/morganamilo/paru)
-    
-```shell
-paru -S gradience
-```
-
-For latest changes:
-
-```shell
-paru -S gradience-git
-```
+</details>
 
 
 ## 🏗️ Building from source
