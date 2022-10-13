@@ -67,6 +67,64 @@ The main features of Gradience include the following:
 </details>
 
 
+## 🎨️ Theming setup
+
+> **Note** 
+> You can go to `Preferences` and apply overrides for Flatpak
+
+<details>
+  <summary>🪛️ Manual setup</summary>
+
+### Libadwaita applications
+
+No additional setup is required for native Libadwaita applications.
+
+For Flatpak Libadwaita applications, you need to override their permissions:
+
+- Run `sudo flatpak override --filesystem=xdg-config/gtk-4.0` or
+- Use [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-4.0` to **Other files** in the **Filesystem** section of **All Applications**
+
+### Vanilla GTK 4 applications
+
+Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to theme vanilla GTK 4 applications.
+
+### GTK 3 applications
+
+- Install and apply the [adw-gtk3](https://github.com/lassekongo83/adw-gtk3#readme) theme (don't forget to install the Flatpak package!)
+- For Flatpak applications, you need to override their permissions:
+  - Run `sudo flatpak override --filesystem=xdg-config/gtk-3.0` or
+  - Use [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-3.0` to **Other files** in the **Filesystem** section of **All Applications**
+
+</details>
+
+## 🔄 Revert Theming
+
+> **Note** 
+> You can press on the menu button in the headerbar and press `Reset Applied Color Scheme`
+> ![Main Gradience menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
+
+<details>
+  <summary>🪛️ Manual revert</summary>
+
+### Remove GTK 3 and GTK 4 configs
+
+- Run `rm -rf .config/gtk-4.0 .config/gtk-3.0`
+
+### Remove adw-gtk3 theme
+
+- Run `flatpak uninstall adw-gtk3` to remove Flatpak adw-gtk3 theme
+- Run `rm -rf .themes/adw-gtk3 .themes/adw-gtk3-dark .local/share/themes/adw-gtk3 .local/share/themes/adw-gtk3-dark` to remove local adw-gtk3 theme
+
+### Reset Flatpak overrides
+
+- Run `sudo flatpak override --reset`
+
+> **Warning**
+> This will reset all Flatpak overrides, such as Firefox Wayland override
+
+</details>
+
+
 ## 📦️ Alternative installation methods
 
 > **Warning**
@@ -179,64 +237,6 @@ ninja -C builddir run
 
 > **Note** 
 > During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
-
-
-## 🎨️ Theming setup
-
-> **Note** 
-> You can go to `Preferences` and apply overrides for Flatpak
-
-<details>
-  <summary>🪛️ Manual setup</summary>
-
-### Libadwaita applications
-
-No additional setup is required for native Libadwaita applications.
-
-For Flatpak Libadwaita applications, you need to override their permissions:
-
-- Run `sudo flatpak override --filesystem=xdg-config/gtk-4.0` or
-- Use [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-4.0` to **Other files** in the **Filesystem** section of **All Applications**
-
-### Vanilla GTK 4 applications
-
-Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to theme vanilla GTK 4 applications.
-
-### GTK 3 applications
-
-- Install and apply the [adw-gtk3](https://github.com/lassekongo83/adw-gtk3#readme) theme (don't forget to install the Flatpak package!)
-- For Flatpak applications, you need to override their permissions:
-  - Run `sudo flatpak override --filesystem=xdg-config/gtk-3.0` or
-  - Use [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-3.0` to **Other files** in the **Filesystem** section of **All Applications**
-
-</details>
-
-## 🔄 Revert Theming
-
-> **Note** 
-> You can press on the menu button in the headerbar and press `Reset Applied Color Scheme`
-> ![Main Gradience menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
-
-<details>
-  <summary>🪛️ Manual revert</summary>
-
-### Remove GTK 3 and GTK 4 configs
-
-- Run `rm -rf .config/gtk-4.0 .config/gtk-3.0`
-
-### Remove adw-gtk3 theme
-
-- Run `flatpak uninstall adw-gtk3` to remove Flatpak adw-gtk3 theme
-- Run `rm -rf .themes/adw-gtk3 .themes/adw-gtk3-dark .local/share/themes/adw-gtk3 .local/share/themes/adw-gtk3-dark` to remove local adw-gtk3 theme
-
-### Reset Flatpak overrides
-
-- Run `sudo flatpak override --reset`
-
-> **Warning**
-> This will reset all Flatpak overrides, such as Firefox Wayland override
-
-</details>
 
 
 ## 🙌 Contribute to Gradience 
