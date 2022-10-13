@@ -253,6 +253,6 @@ Gradience Team is not against [stopthemingmy.app](https://stopthemingmy.app) and
 Special thanks to:
 
 - Original author of Gradience, [Artyom Fomin](https://github.com/ArtyIF) for creating this project
-- Weblate for providing translation platform
+- [Weblate](https://weblate.org) for providing translation platform
 
 This README is based on README from [Kooha](https://github.com/SeaDve/Kooha) by [Dave Patrick Caberto](https://github.com/SeaDve)
