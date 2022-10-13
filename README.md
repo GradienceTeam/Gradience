@@ -242,7 +242,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 ### Code
 Fork this repository, then create a push request when you're done adding features or fixing bugs.
 
-### Localisation 
+### Localization 
 
 You can help Gradience translate into your native language. If you found any typos
 or think you can improve a translation, you can use the [Weblate](https://hosted.weblate.org/engage/GradienceTeam) platform.
