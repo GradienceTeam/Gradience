@@ -184,8 +184,7 @@ Fork this repository, then create a push request when you're done adding feature
 You can help Gradience translate into your native language. If you found any typos
 or think you can improve a translation, you can use the [Weblate](https://hosted.weblate.org/engage/GradienceTeam) platform.
 
-[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/horizontal-auto.svg)](https://hosted.weblate.org/engage/GradienceTeam)
-
+[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/gradience/287x66-white.png)](https://hosted.weblate.org/engage/GradienceTeam/)
 
 ## ✨️ Contributors
 
@@ -200,9 +199,11 @@ You can see the meaning of Gradience on [Wiktionary](https://en.wiktionary.org/w
 
 The icon represents: _A Paint Roller repainting an Adwaita window, keeping it's functionality._
 
+
 ## 🌱️ Gradience, [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers
 
 Gradience Team is not against [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers idea, Gradience is a tool for tinkers that want to theme their desktops at their liking, and not a tool for distributions to change theme in them by default, Gradience Team agrees with importance of unified look of Adwaita to make sure that all apps work right and Developers have unified and stable tool for creating their apps.
+
 
 ## 💝 Acknowledgment
 
