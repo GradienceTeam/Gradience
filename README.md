@@ -33,6 +33,15 @@
 </p>
 
 <p align="center">
+  <a href="https://matrix.to/#/#Gradience:matrix.org">
+    <img alt="Chat on Matrix" src="https://img.shields.io/matrix/Gradience:matrix.org?label=matrix&logo=matrix"/>
+  </a>
+  <a href="https://discord.com/invite/4njFDtfGEZ">
+    <img alt="Chat on Discord" src="https://img.shields.io/discord/1013779899821064202?label=discord&logo=discord&logoColor=white"/>
+  </a>
+</p>
+
+<p align="center">
   <img src="https://github.com/GradienceTeam/Design/raw/main/Covers/preview.png" alt="Preview"/>
 </p>
 
