@@ -128,6 +128,9 @@ ninja -C builddir run
 
 ## 📦️ Alternative installation methods
 
+> **Warning**
+> The main installation method is Flatpak from Flathub
+
 ### COPR 
 
 Gradience is available on COPR. You can install it using the following command:
