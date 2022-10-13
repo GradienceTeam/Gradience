@@ -52,11 +52,11 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 
 The main features of Gradience include the following:
 
-* 🎨️ Changing any color of Adwaita theme
-* 🖼️ Applying Material 3 color scheme from wallpaper
-* 🎁️ Usage of other users presets
-* ⚙️ Changing advanced options with CSS
-* 🧩️ Extending functionality using plugins
+- 🎨️ Changing any color of Adwaita theme
+- 🖼️ Applying Material 3 color scheme from wallpaper
+- 🎁️ Usage of other users presets
+- ⚙️ Changing advanced options with CSS
+- 🧩️ Extending functionality using plugins
 
 <details>
   <summary>📷️ More screenshots</summary>
@@ -64,6 +64,59 @@ The main features of Gradience include the following:
   ![Monet Tab](https://github.com/GradienceTeam/Design/raw/main/Screenshots/monet_purple.png)
   
   ![Proof of Work](https://github.com/GradienceTeam/Design/raw/main/Screenshots/proof_purple.png)
+</details>
+
+
+## 📦️ Alternative installation methods
+
+> **Warning**
+> The main installation method is Flatpak from Flathub
+
+### COPR 
+
+Gradience is available on COPR. You can install it using the following command:
+
+```shell
+dnf copr enable lyessaadi/gradience
+dnf install gradience
+```
+
+### Debian (And derivates)
+
+> **Warning**
+> Not available yet.
+
+### AUR 
+
+Gradience is available on AUR:
+
+```shell
+git clone https://aur.archlinux.org/gradience.git
+cd gradience
+makepkg -sic
+```
+
+For latest changes:
+
+```shell
+git clone https://aur.archlinux.org/gradience-git.git
+cd gradience-git
+makepkg -sic
+```
+
+<details>
+    <summary>Using [Paru](https://github.com/morganamilo/paru):</summary>
+    
+```shell
+paru -S gradience
+```
+
+For latest changes:
+
+```shell
+paru -S gradience-git
+```
+
 </details>
 
 
@@ -124,59 +177,6 @@ ninja -C builddir run
 
 > **Note** 
 > During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
-
-
-## 📦️ Alternative installation methods
-
-> **Warning**
-> The main installation method is Flatpak from Flathub
-
-### COPR 
-
-Gradience is available on COPR. You can install it using the following command:
-
-```shell
-dnf copr enable lyessaadi/gradience
-dnf install gradience
-```
-
-### Debian (And derivates)
-
-> **Warning**
-> Not available yet.
-
-### AUR 
-
-Gradience is available on AUR. You can install it using the following command:
-
-```shell
-git clone https://aur.archlinux.org/gradience.git
-cd gradience
-makepkg -sic
-```
-
-For latest changes:
-
-```shell
-git clone https://aur.archlinux.org/gradience-git.git
-cd gradience-git
-makepkg -sic
-```
-
-<details>
-    <summary>Paru method:</summary>
-    
-```shell
-paru -S gradience
-```
-
-For latest changes:
-
-```shell
-paru -S gradience-git
-```
-
-</details>
 
 
 ## 🎨️ Theming setup
