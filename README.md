@@ -24,7 +24,7 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 [![Flathub](https://img.shields.io/badge/dynamic/json?color=informational&label=downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Fcom.github.GradienceTeam.Gradience)](https://beta.flathub.org/apps/details/com.github.GradienceTeam.Gradience)
 [![Translate on Weblate](https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg)](https://hosted.weblate.org/engage/GradienceTeam)
 [![Chat on Matrix](https://img.shields.io/matrix/Gradience:matrix.org?label=matrix&logo=matrix)](https://matrix.to/#/#Gradience:matrix.org)
-[![Chat on Discord](https://img.shields.io/discord/1013779899821064202?label=discord&logo=discord&logoColor=white)](https://discord.com/invite/MYa8Sr7btJ)
+[![Chat on Discord](https://img.shields.io/discord/1013779899821064202?label=discord&logo=discord&logoColor=white)](https://discord.com/invite/4njFDtfGEZ)
 
 <!--[![Flatpak build - Nightly](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml/badge.svg)](https://github.com/GradienceTeam/Gradience/actions/workflows/flatpak-nightly.yml)-->
 
