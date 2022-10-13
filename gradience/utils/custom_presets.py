@@ -80,7 +80,7 @@ def download_preset(name, repo_name, repo) -> None:
         buglog(f"Error with decoding JSON data. Exc: {e}")
         return False, False
 
-    data = json.dumps(raw)
+    data = json.dumps(raw, indent=4)
 
     try:
         with open(
