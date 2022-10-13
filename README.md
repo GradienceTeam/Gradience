@@ -85,13 +85,14 @@ environment cross-distro. Thus, it is highly recommended you use it.
 
 The following packages are required to build Gradience:
 
-* python3
-* python-gobject
-* [blueprint-compiler](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/setup.html)
-* gtk4
-* libadwaita (>= 1.2)
-* meson
-* ninja-build
+- Python 3 `python`
+- PyGObject `python-gobject`
+- Blueprint [`blueprint-compiler`](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/setup.html)
+- GTK 4 `gtk4`
+- Libadwaita (>= 1.2.alpha) `libadwaita`
+- Libsoup 3 (>= 3.2.0) `libsoup`
+- Meson `meson`
+- Ninja `ninja-build`
 
 Required Python libraries:
 
@@ -127,9 +128,6 @@ ninja -C builddir run
 
 ## 📦️ Alternative installation methods
 
-> **Warning**
-> The main installation method is Flatpak from Flathub
-
 ### COPR 
 
 Gradience is available on COPR. You can install it using the following command:
@@ -149,6 +147,23 @@ dnf install gradience
 Gradience is available on AUR. You can install it using the following command:
 
 ```shell
+git clone https://aur.archlinux.org/gradience.git
+cd gradience
+makepkg -sic
+```
+
+For latest changes:
+
+```shell
+git clone https://aur.archlinux.org/gradience-git.git
+cd gradience-git
+makepkg -sic
+```
+
+<details>
+    <summary>Paru method:</summary>
+    
+```shell
 paru -S gradience
 ```
 
@@ -157,6 +172,8 @@ For latest changes:
 ```shell
 paru -S gradience-git
 ```
+
+</details>
 
 
 ## 🎨️ Theming setup
