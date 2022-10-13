@@ -18,8 +18,8 @@
 
 from gi.repository import Gtk, Adw
 
-from .constants import rootdir
-from .modules.utils import to_slug_case, buglog
+from gradience.utils.utils import to_slug_case, buglog
+from gradience.constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/builtin_preset_row.ui")

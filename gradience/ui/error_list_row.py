@@ -1,7 +1,7 @@
-# constants.py.in
+# error_list_row.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022  Adwaita Manager Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,16 +16,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-rootdir          = '/com/github/GradienceTeam/Gradience'
-pkgdatadir       = '@PKGDATA_DIR@'
-localedir        = '@LOCALE_DIR@'
+from gi.repository import Gtk
 
-app_id           = '@APP_ID@'
-rel_ver          = '@RELEASE_VER@'
-version          = '@VERSION@'
-build_type       = '@BUILD_TYPE@'
+from gradience.constants import rootdir
 
-project_url      = '@PROJECT_URL@'
-bugtracker_url   = '@BUGTRACKER_URL@'
-help_url         = '@HELP_URL@'
-translate_url    = '@TRANSLATE_URL@'
+
+@Gtk.Template(resource_path=f"{rootdir}/ui/error_list_row.ui")
+class GradienceErrorListRow(Gtk.ListBoxRow):
+    __gtype_name__ = "GradienceErrorListRow"
+
+    error_label = Gtk.Template.Child("error-label")
+    element_label = Gtk.Template.Child("element-label")
+    line_label = Gtk.Template.Child("line-label")
+
+    def __init__(self, error, element, line, **kwargs):
+        super().__init__(**kwargs)
+
+        self.error_label.set_label(error)
+        self.element_label.set_label(element)
+        self.line_label.set_label(line)

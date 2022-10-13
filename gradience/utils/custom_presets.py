@@ -21,8 +21,8 @@ import json
 
 from gi.repository import GLib, Soup
 
-from .preset import presets_dir
-from .utils import to_slug_case, buglog
+from gradience.utils.preset import presets_dir
+from gradience.utils.utils import to_slug_case, buglog
 
 
 # Open Soup3 session
@@ -80,7 +80,7 @@ def download_preset(name, repo_name, repo) -> None:
         buglog(f"Error with decoding JSON data. Exc: {e}")
         return False, False
 
-    data = json.dumps(raw)
+    data = json.dumps(raw, indent=4)
 
     try:
         with open(

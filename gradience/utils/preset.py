@@ -19,8 +19,8 @@
 import json
 import os
 
-from ..settings_schema import settings_schema
-from .utils import buglog, to_slug_case
+from gradience.settings_schema import settings_schema
+from gradience.utils.utils import buglog, to_slug_case
 
 
 presets_dir = os.path.join(
@@ -38,7 +38,8 @@ class Preset:
     }
     plugins = {}
     repo = "user"
-    name = "new_preset"
+    display_name = "New Preset"
+    filename = "new_preset"
     badges = {}
 
     def __init__(self, name=None, repo=None, preset_path=None, text=None, preset=None):
@@ -47,14 +48,13 @@ class Preset:
         elif preset:  # css or dict
             self.load_preset(preset=preset)
         else:
-            self.preset_name = name
             if name is not None:
-                self.name = to_slug_case(name)
+                self.filename = to_slug_case(name)
             if repo is not None:
                 self.repo = repo
             if preset_path is None:
                 self.preset_path = os.path.join(
-                    presets_dir, repo, self.name + ".json")
+                    presets_dir, repo, self.filename + ".json")
             else:
                 self.preset_path = preset_path
             self.load_preset()
@@ -69,8 +69,8 @@ class Preset:
                         preset_text = file.read()
                 preset = json.loads(preset_text)
 
-            self.name = preset["name"]
-            self.preset_name = to_slug_case(self.name)
+            self.display_name = preset["name"]
+            self.filename = to_slug_case(self.display_name)
             self.variables = preset["variables"]
             self.palette = preset["palette"]
 
@@ -88,9 +88,12 @@ class Preset:
             buglog(error, " -> preset : ", self.preset_path)
 
     def save_preset(self, name=None, plugins_list=None, to=None):
+        self.display_name = name if name else self.display_name
+        self.filename = to_slug_case(name) if name else self.filename
+
         if to is None:
             self.preset_path = os.path.join(
-                presets_dir, self.repo, self.name + ".json")
+                presets_dir, self.repo, self.filename + ".json")
         else:
             self.preset_path = to
         if not os.path.exists(
@@ -106,13 +109,12 @@ class Preset:
                 )
             )
 
-        if name is None:
-            name = self.preset_name
-
         if plugins_list is None:
             plugins_list = {}
         else:
             plugins_list = plugins_list.save()
+
+        print(self.preset_path)
 
         with open(
             self.preset_path,
@@ -120,7 +122,7 @@ class Preset:
             encoding="utf-8",
         ) as file:
             object_to_write = {
-                "name": name,
+                "name": self.display_name,
                 "variables": self.variables,
                 "palette": self.palette,
                 "custom_css": self.custom_css,

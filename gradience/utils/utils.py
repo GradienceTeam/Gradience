@@ -22,6 +22,7 @@ import os
 
 from subprocess import run
 from anyascii import anyascii
+
 from gradience.constants import build_type
 
 

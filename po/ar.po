@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-08 00:50+0000\n"
-"PO-Revision-Date: 2022-10-08 00:50+0000\n"
+"POT-Creation-Date: 2022-10-13 00:56+0000\n"
+"PO-Revision-Date: 2022-10-12 14:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ar/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.15-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
@@ -143,32 +143,32 @@ msgstr "تحميل وتطبيق"
 msgid "Download Only"
 msgstr "تحميل فقط"
 
-#: data/ui/no_plugin_pref.blp:5
+#: data/ui/no_plugin_window.blp:5
 #, fuzzy
 #| msgid "Preferences"
 msgid "Plugin Preferences"
 msgstr "تفضيلات البرنامج المساعد"
 
-#: data/ui/no_plugin_pref.blp:26
+#: data/ui/no_plugin_window.blp:26
 #, fuzzy
 #| msgid "Preferences"
 msgid "No Preferences"
 msgstr "لا توجد تفضيلات"
 
-#: data/ui/no_plugin_pref.blp:27
+#: data/ui/no_plugin_window.blp:27
 #, fuzzy
 msgid "This plugin doesn't have any preferences."
 msgstr "هذا البرنامج المساعد ليس لديه أي تفضيلات."
 
-#: data/ui/option.blp:10
+#: data/ui/option_row.blp:10
 msgid "GTK 3 Support Warning"
 msgstr "تحذير دعم GTK 3"
 
-#: data/ui/option.blp:18
+#: data/ui/option_row.blp:18
 msgid "Explanation"
 msgstr "تفسير"
 
-#: data/ui/option.blp:43
+#: data/ui/option_row.blp:43
 msgid "Toggle Text Value"
 msgstr "تبديل قيمة النص"
 
@@ -177,7 +177,8 @@ msgstr "تبديل قيمة النص"
 msgid "Toggle Plugin"
 msgstr "تبديل البرنامج المساعد"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:129
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/window.blp:129
 msgid "Preferences"
 msgstr "تفضيلات"
 
@@ -186,17 +187,17 @@ msgstr "تفضيلات"
 msgid "Remove Plugin"
 msgstr "إزالة البرنامج المساعد"
 
-#: data/ui/preferences.blp:12
+#: data/ui/preferences_window.blp:12
 #, fuzzy
 msgid "GTK 4 Flatpak Applications"
 msgstr "تطبيقات GTK 4 Flatpak"
 
-#: data/ui/preferences.blp:15
+#: data/ui/preferences_window.blp:15
 #, fuzzy
 msgid "Allow GTK 4 Flatpak Applications Theming"
 msgstr "السماح بتصميم تطبيقات GTK 4 Flatpak"
 
-#: data/ui/preferences.blp:16
+#: data/ui/preferences_window.blp:16
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 4 Flatpak "
 "applications to access custom themes."
@@ -204,12 +205,12 @@ msgstr ""
 "تجاوز أذونات Flatpak للمستخدم الحالي للسماح لتطبيقات GTK 4 Flatpak بالوصول "
 "إلى السمات المخصصة."
 
-#: data/ui/preferences.blp:25
+#: data/ui/preferences_window.blp:25
 #, fuzzy
 msgid "Allow GTK 4 Flatpak Applications Theming (System)"
 msgstr "السماح بتصميم تطبيقات GTK 4 Flatpak (النظام)"
 
-#: data/ui/preferences.blp:26
+#: data/ui/preferences_window.blp:26
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 4 Flatpak "
 "applications to access custom themes. (Requires root access)"
@@ -217,12 +218,12 @@ msgstr ""
 "تجاوز أذونات Flatpak لجميع المستخدمين للسماح لتطبيقات GTK 4 Flatpak بالوصول "
 "إلى السمات المخصصة. (يتطلب الوصول إلى الجذر)"
 
-#: data/ui/preferences.blp:35
+#: data/ui/preferences_window.blp:35
 #, fuzzy
 msgid "GTK 3 Flatpak Applications"
 msgstr "تطبيقات GTK 3 Flatpak"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences_window.blp:36
 msgid ""
 "Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
 "custom presets working in GTK 3 Flatpak applications."
@@ -230,11 +231,11 @@ msgstr ""
 "تذكر تثبيت سمة adw-gtk3 (كحزمة Flatpak) من أجل الحصول على إعدادات مسبقة "
 "مخصصة تعمل في تطبيقات GTK 3 Flatpak."
 
-#: data/ui/preferences.blp:39
+#: data/ui/preferences_window.blp:39
 msgid "Allow GTK 3 Flatpak theming"
 msgstr "السماح بتخصيص سمات GTK 3 Flatpak"
 
-#: data/ui/preferences.blp:40
+#: data/ui/preferences_window.blp:40
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme."
@@ -242,12 +243,12 @@ msgstr ""
 "تجاوز أذونات Flatpak للمستخدم الحالي للسماح لتطبيقات GTK 3 Flatpak بالوصول "
 "إلى سمة adw-gtk3."
 
-#: data/ui/preferences.blp:49
+#: data/ui/preferences_window.blp:49
 #, fuzzy
 msgid "GTK 3 Flatpak Applications (System)"
 msgstr "تطبيقات GTK 3 Flatpak (نظام)"
 
-#: data/ui/preferences.blp:50
+#: data/ui/preferences_window.blp:50
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme. (Requires root access)"
@@ -255,11 +256,11 @@ msgstr ""
 "تجاوز أذونات Flatpak لجميع المستخدمين للسماح لتطبيقات GTK 3 Flatpak بالوصول "
 "إلى سمة adw-gtk3. (يتطلب الوصول إلى الجذر)"
 
-#: data/ui/preferences.blp:60
+#: data/ui/preferences_window.blp:60
 msgid "Custom Preset Repositories"
 msgstr "مستودعات مخصصة محددة مسبقا"
 
-#: data/ui/preferences.blp:63
+#: data/ui/preferences_window.blp:63
 msgid "Custom repository URL address"
 msgstr "عنوان URL للمستودع المخصص"
 
@@ -358,8 +359,8 @@ msgid "Offline"
 msgstr "غير متصل"
 
 #: data/ui/presets_manager_window.blp:141
-#: gradience/presets_manager_window.py:121
-#: gradience/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:121
+#: gradience/ui/presets_manager_window.py:419
 msgid "Repositories"
 msgstr "مستودعات"
 
@@ -380,7 +381,7 @@ msgstr "ملف JSON (* .json)"
 msgid "Share Preset"
 msgstr "مشاركة الضبط المسبق"
 
-#: data/ui/share_window.blp:42 data/ui/welcome.blp:42
+#: data/ui/share_window.blp:42 data/ui/welcome_window.blp:42
 msgid "Previous"
 msgstr "السابق"
 
@@ -412,11 +413,11 @@ msgstr ""
 "Community </a>. بعد ذلك ، يمكنك تحميل إعدادك المسبق وتقديم طلب سحب ومشاركته "
 "مع العالم!"
 
-#: data/ui/share_window.blp:81 data/ui/welcome.blp:81
+#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:81
 msgid "Warning"
 msgstr "إنذار"
 
-#: data/ui/share_window.blp:82 data/ui/welcome.blp:82
+#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -425,12 +426,12 @@ msgstr ""
 "يمكن أن يؤثر تغيير نظام الألوان سلبًا على التباين وقابلية القراءة. التقدم "
 "بحذر. يرجى عدم الإبلاغ عن المشكلات المتعلقة بالسمات لمطوري التطبيقات."
 
-#: data/ui/share_window.blp:86 data/ui/welcome.blp:86
+#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:86
 #, fuzzy
 msgid "I Understand The Consequences"
 msgstr "أنا أفهم العواقب"
 
-#: data/ui/share_window.blp:97 data/ui/welcome.blp:97
+#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "تخصيص موضوع Adwaita"
 
@@ -442,11 +443,11 @@ msgstr ""
 "يمكنك تغيير ألوان النوافذ والأزرار والقوائم والمزيد ، باستخدام ميزات متقدمة "
 "مثل إضافة CSS مخصص"
 
-#: data/ui/share_window.blp:104 data/ui/welcome.blp:104
+#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:104
 msgid "Configure Gradience"
 msgstr "تكوين التدرج"
 
-#: data/ui/share_window.blp:105 data/ui/welcome.blp:105
+#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:105
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
@@ -456,7 +457,7 @@ msgstr "ثبّت سمة adw-gtk3 للتطبيقات القديمة وقم بته
 msgid "Legacy apps theming"
 msgstr "ثيمات التطبيقات القديمة"
 
-#: data/ui/share_window.blp:115 data/ui/welcome.blp:115
+#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "قم بتثبيت سمة adw-gtk3 لتخصيص التطبيقات القديمة"
 
@@ -464,57 +465,57 @@ msgstr "قم بتثبيت سمة adw-gtk3 لتخصيص التطبيقات الق
 msgid "System configuration"
 msgstr "ضبط النظام"
 
-#: data/ui/share_window.blp:126 data/ui/welcome.blp:126
+#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr "تكوين النظام من أجل السمات ، يتيح تجاوز سمة Flatpak"
 
-#: data/ui/share_window.blp:136 data/ui/welcome.blp:136
+#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:136
 msgid "Installing Themes"
 msgstr "تثبيت ثيمات"
 
-#: data/ui/share_window.blp:137 data/ui/welcome.blp:137
+#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:137
 msgid "Please wait until theme will be installed."
 msgstr "يرجى الانتظار حتى يتم تثبيت السمة."
 
-#: data/ui/share_window.blp:143 data/ui/welcome.blp:143
+#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:143
 msgid "Continue"
 msgstr "استمرار"
 
-#: data/ui/share_window.blp:162 data/ui/welcome.blp:162
+#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:162
 msgid "Done"
 msgstr "انهاء"
 
-#: data/ui/share_window.blp:163 data/ui/welcome.blp:163
+#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:163
 msgid "Now you can make your own presets or download some online."
 msgstr ""
 "يمكنك الآن إنشاء الإعدادات المسبقة الخاصة بك أو تنزيل بعضها عبر الإنترنت."
 
-#: data/ui/share_window.blp:168 data/ui/welcome.blp:168
+#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:168
 msgid "Please finish the setup first"
 msgstr "يرجى إنهاء الإعداد أولاً"
 
-#: data/ui/share_window.blp:176 data/ui/welcome.blp:176
+#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:176
 #, fuzzy
 msgid "Start Using Gradience"
 msgstr "ابدأ باستخدام Gradience"
 
-#: data/ui/share_window.blp:193 data/ui/welcome.blp:193
+#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:193
 msgid "Next"
 msgstr "التالى"
 
-#: data/ui/welcome.blp:5 data/ui/welcome.blp:65
+#: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:65
 msgid "Welcome to Gradience"
 msgstr "مرحبًا بك في Gradience"
 
-#: data/ui/welcome.blp:66
+#: data/ui/welcome_window.blp:66
 msgid "Change the look of Adwaita, with ease"
 msgstr "غير مظهر Adwaita بكل سهولة"
 
-#: data/ui/welcome.blp:73
+#: data/ui/welcome_window.blp:73
 msgid "What's new in 0.3.0"
 msgstr "ما الجديد في 0.3.0"
 
-#: data/ui/welcome.blp:74
+#: data/ui/welcome_window.blp:74
 #, fuzzy
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a "
@@ -525,7 +526,7 @@ msgstr ""
 "وشارات ، ومحولًا سريعًا محددًا مسبقًا. قمنا أيضًا بتقسيم المستودع المُعد مسبقًا إلى "
 "مستودع رسمي ومستودع منظم."
 
-#: data/ui/welcome.blp:98
+#: data/ui/welcome_window.blp:98
 #, fuzzy
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
@@ -534,17 +535,17 @@ msgstr ""
 "يمكنك تغيير ألوان النوافذ والأزرار والقوائم والمزيد ، باستخدام ميزات متقدمة "
 "مثل إضافة CSS مخصص"
 
-#: data/ui/welcome.blp:110
+#: data/ui/welcome_window.blp:110
 #, fuzzy
 msgid "Legacy Apps Theming"
 msgstr "تراث تطبيقات Theming"
 
-#: data/ui/welcome.blp:120
+#: data/ui/welcome_window.blp:120
 #, fuzzy
 msgid "System Configuration"
 msgstr "ضبط النظام"
 
-#: data/ui/window.blp:23 gradience/main.py:603 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/ui/window.py:140 gradience/main.py:603
 msgid "Apply"
 msgstr "تطبيق"
 
@@ -604,7 +605,7 @@ msgstr "GTK 4 تجريبي"
 msgid "GTK 4 Widget Factory"
 msgstr "مصنع قطع GTK"
 
-#: data/ui/window.blp:161 gradience/presets_manager_window.py:110
+#: data/ui/window.blp:161 gradience/ui/presets_manager_window.py:110
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "المدمج في المسبقة"
@@ -614,36 +615,218 @@ msgstr "المدمج في المسبقة"
 msgid "Manage Presets"
 msgstr "إدارة الإعدادات المسبقة"
 
-#: gradience/modules/flatpak_overrides.py:65
-#: gradience/modules/flatpak_overrides.py:84
+#: gradience/utils/flatpak_overrides.py:65
+#: gradience/utils/flatpak_overrides.py:84
 msgid "Failed to save override"
 msgstr "فشل في حفظ التجاوز"
 
-#: gradience/modules/flatpak_overrides.py:152
-#: gradience/modules/flatpak_overrides.py:212
-#: gradience/modules/flatpak_overrides.py:295
-#: gradience/modules/flatpak_overrides.py:357
+#: gradience/utils/flatpak_overrides.py:152
+#: gradience/utils/flatpak_overrides.py:212
+#: gradience/utils/flatpak_overrides.py:295
+#: gradience/utils/flatpak_overrides.py:357
 msgid "Unexpected file error occurred"
 msgstr "حدث خطأ غير متوقع في الملف"
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:654 gradience/main.py:727
-#: gradience/main.py:868 gradience/presets_manager_window.py:190
+#: gradience/ui/app_type_dialog.py:44
+#: gradience/ui/presets_manager_window.py:190 gradience/main.py:654
+#: gradience/main.py:727 gradience/main.py:868
 msgid "Cancel"
 msgstr "الغاء"
 
-#: gradience/explore_preset_row.py:62 gradience/explore_preset_row.py:88
+#: gradience/ui/explore_preset_row.py:62 gradience/ui/explore_preset_row.py:88
 msgid "Preset could not be downloaded"
 msgstr "لا يمكن تنزيل الإعداد المسبق"
 
-#: gradience/explore_preset_row.py:77 gradience/explore_preset_row.py:93
+#: gradience/ui/explore_preset_row.py:77 gradience/ui/explore_preset_row.py:93
 msgid "Preset downloaded"
 msgstr "تم تنزيل الإعداد المسبق"
 
-#: gradience/main.py:188 gradience/main.py:219
-#: gradience/presets_manager_window.py:336
-#: gradience/presets_manager_window.py:366
+#: gradience/ui/option_row.py:49
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "هذا الخِيار مدعوم جزئيًا فقط بواسطة سمة adw-gtk3."
+
+#: gradience/ui/option_row.py:54
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "هذا الخِيار غير مدعوم في سمة adw-gtk3."
+
+#: gradience/ui/option_row.py:97
+msgid "Not a color, see text value"
+msgstr "ليس لونًا، انظر لقيمة النص"
+
+#: gradience/ui/plugin_row.py:86
+msgid "Unable to remove"
+msgstr "غير قادر على الإزالة"
+
+#: gradience/ui/plugin_row.py:87
+msgid "This is a system plugin, and cannot be removed. "
+msgstr "هذا مكون إضافي للنظام ولا يمكن إزالته. "
+
+#: gradience/ui/plugin_row.py:89
+msgid "Close"
+msgstr "إغلاق"
+
+#: gradience/ui/preset_row.py:83 gradience/ui/preset_row.py:102
+#, fuzzy
+msgid "Remove from Favourites"
+msgstr "حذف من المفضلة"
+
+#: gradience/ui/preset_row.py:86 gradience/ui/preset_row.py:98
+#, fuzzy
+msgid "Add to Favourites"
+msgstr "أضافه إلى المفضلة"
+
+#: gradience/ui/preset_row.py:156
+msgid "Preset removed"
+msgstr "تمت إزالة الإعداد المسبق"
+
+#: gradience/ui/preset_row.py:157
+msgid "Undo"
+msgstr "تراجع"
+
+#: gradience/ui/preset_row.py:178
+#, fuzzy
+msgid "Pending Deletion"
+msgstr "في انتظار الحذف"
+
+#: gradience/ui/preset_row.py:223
+msgid "Unable to delete preset"
+msgstr "تعذر حذف الإعداد المسبق"
+
+#: gradience/ui/presets_manager_window.py:115
+#: gradience/ui/presets_manager_window.py:380
+msgid "User Presets"
+msgstr "مسبقات المستخدم"
+
+#: gradience/ui/presets_manager_window.py:183
+msgid "Add new repository"
+msgstr "إضافة مستودع جديد"
+
+#: gradience/ui/presets_manager_window.py:184
+#, fuzzy
+msgid "Add a repository to install additional presets."
+msgstr "أضف مستودعًا لتثبيت إعدادات مسبقة إضافية"
+
+#: gradience/ui/presets_manager_window.py:191
+msgid "Add"
+msgstr "اضف"
+
+#: gradience/ui/presets_manager_window.py:281
+msgid "Preset already exists"
+msgstr "الإعداد المسبق موجود بالفعل"
+
+#: gradience/ui/presets_manager_window.py:292
+msgid "Preset imported"
+msgstr "تم استيراد الإعداد المسبق"
+
+#: gradience/ui/presets_manager_window.py:295
+msgid "Unsupported file format, must be .json"
+msgstr "تنسيق الملف غير المدعوم ، يجب أن يكون .json"
+
+#: gradience/ui/presets_manager_window.py:336
+#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/main.py:219
 msgid "Failed to load preset"
 msgstr "أخفق في تفعيل الإعداد المسبق"
+
+#: gradience/ui/presets_manager_window.py:373
+msgid "Built-in Presets"
+msgstr "المدمج في المسبقة"
+
+#: gradience/ui/presets_manager_window.py:383
+#, fuzzy
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"راجع <a href=\"https://github.com/GradienceTeam/Community\"> GradienceTeam / "
+"Community </a> على Github للحصول على مزيد من الإعدادات المسبقة"
+
+#: gradience/ui/presets_manager_window.py:409
+#, fuzzy
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"لم يتم العثور على إعداد مسبق! استخدم زر الاستيراد لاستيراد واحد أو البحث عن "
+"واحد في علامة التبويب استكشاف"
+
+#: gradience/ui/repo_row.py:60
+msgid "Repository removed"
+msgstr "تمت إزالة المستودع"
+
+#: gradience/ui/welcome_window.py:94
+msgid "Thanks for updating Gradience!"
+msgstr "شكرا لتحديث Gradience!"
+
+#: gradience/ui/window.py:131
+msgid "Monet Engine"
+msgstr "محرك مونيه"
+
+#: gradience/ui/window.py:134
+msgid ""
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
+msgstr "Monet هو محرك يقوم بإنشاء لوحة Material Design 3 من لون الصورة."
+
+#: gradience/ui/window.py:146
+msgid "Background Image"
+msgstr "الخلفية"
+
+#: gradience/ui/window.py:156
+#, fuzzy
+msgid "Choose a File"
+msgstr "اختيار ملف"
+
+#: gradience/ui/window.py:176
+msgid "Monet Palette"
+msgstr "لوحة مونيه"
+
+#: gradience/ui/window.py:183
+msgid "Tone"
+msgstr "النبرة"
+
+#: gradience/ui/window.py:195
+msgid "Theme"
+msgstr "مظهر"
+
+#: gradience/ui/window.py:198
+#, fuzzy
+msgid "Auto"
+msgstr "أوتوماتيك"
+
+#: gradience/ui/window.py:199 gradience/settings_schema.py:372
+msgid "Light"
+msgstr "إضاءة"
+
+#: gradience/ui/window.py:200 gradience/settings_schema.py:373
+msgid "Dark"
+msgstr "داكن"
+
+#: gradience/ui/window.py:222
+msgid "Unsupported background type"
+msgstr "نوع الخلفية غير مدعوم"
+
+#: gradience/ui/window.py:239
+msgid "Palette generated"
+msgstr "تم إنشاء لوحة"
+
+#: gradience/ui/window.py:243
+msgid "Select a background first"
+msgstr "حدد الخلفية أولاً"
+
+#: gradience/ui/window.py:268
+msgid "Palette Colors"
+msgstr "ألوان لوحة"
+
+#: gradience/ui/window.py:271
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"ألوان لوح الأسماء المستخدمة في بعض التطبيقات. الألوان الافتراضية تتبع "
+"القواعد الارشادية ل <a href=\"https://developer.gnome.org/hig/reference/"
+"palette.html\"> GNOME Human Interface </a>"
 
 #: gradience/main.py:247
 #, fuzzy
@@ -756,6 +939,7 @@ msgid "Preset reseted"
 msgstr "إعادة الضبط المسبق"
 
 #: gradience/main.py:1021
+#, fuzzy
 msgid ""
 "\n"
 "<ul>\n"
@@ -779,6 +963,26 @@ msgid ""
 "<li>New and updated translations</li>\n"
 "</ul>\n"
 msgstr ""
+"\n"
+"<ul>\n"
+"<li> تمت إضافة إمكانية تمييز النجمة مسبقًا لعرضها في لوحة الألوان \n"
+"</li><li> تحديث مكون Firefox GNOME Theme الإضافي </li>\n"
+"<li> تم تحسين شاشة الترحيب \n"
+"</li><li> إصلاح الهوامش في صفحات معلومات اللون \n"
+"</li><li> تمت إضافة فلتر للبحث عن الإعدادات المسبقة عن طريق الريبو \n"
+"</li><li> تمت إضافة نافذة \"لا توجد تفضيلات\" \n"
+"</li><li> تغير حجم نافذة \"مدير الإعداد المسبق\" \n"
+"</li><li> تمت إضافة الصفحات \"بلا اتصال\" و \"لم يتم العثور على شيء\" إلى "
+"مدير الإعداد المسبق \n"
+"</li><li> تمت إعادة كتابة جميع النصوص لتتبع أدلة كتابة جنوم </li>\n"
+"<li> التبديل من aiohttp إلى Libsoup3 </li>\n"
+"<li> الانتقال إلى GNOME SDK 43 </li>\n"
+"<li> تمت إضافة جميع المساهمين إلى نافذة \"حول\" \n"
+"</li><li> تمت إضافة مربع حوار \"تسجيل الخروج\" بعد تطبيق الإعداد المسبق \n"
+"</li><li> تغيرت بعض الرموز وأزلت الرموز غير الضرورية غير الضرورية \n"
+"</li><li> تم إصلاح تجاوز مظهر Flatpak الآن \n"
+"</li><li> ترجمات جديدة ومحدثة \n"
+"</li></ul>\n"
 
 #: gradience/main.py:1043
 #, fuzzy
@@ -820,7 +1024,7 @@ msgstr ""
 "- تغيير الخيارات المتقدمة باستخدام CSS\n"
 "- توسيع الوظائف باستخدام الإضافات\n"
 "\n"
-"هذا التطبيق مكتوب بلغة Python ويستخدم GTK 4 و Libadwaita.\n"
+"هذا التطبيق مكتوب بلغة Python ويستخدم GTK 4 و libadwaita.\n"
 
 #: gradience/main.py:1059
 #, fuzzy
@@ -849,35 +1053,11 @@ msgstr "إصلاحات بواسطة"
 msgid "Special thanks to"
 msgstr "شكر خاص ل"
 
-#: gradience/option.py:49
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "هذا الخِيار مدعوم جزئيًا فقط بواسطة سمة adw-gtk3."
-
-#: gradience/option.py:54
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "هذا الخِيار غير مدعوم في سمة adw-gtk3."
-
-#: gradience/option.py:97
-msgid "Not a color, see text value"
-msgstr "ليس لونًا، انظر لقيمة النص"
-
-#: gradience/plugin_row.py:85
-msgid "Unable to remove"
-msgstr "غير قادر على الإزالة"
-
-#: gradience/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed. "
-msgstr "هذا مكون إضافي للنظام ولا يمكن إزالته. "
-
-#: gradience/plugin_row.py:88
-msgid "Close"
-msgstr "إغلاق"
-
-#: gradience/plugins_list.py:96
+#: gradience/plugins_list.py:98
 msgid "Plugins"
 msgstr "إضافات"
 
-#: gradience/plugins_list.py:99
+#: gradience/plugins_list.py:101
 #, fuzzy
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
@@ -886,93 +1066,10 @@ msgstr ""
 "تضيف المكونات الإضافية ميزات إضافية إلى Gradience ، ويتم إنشاء المكونات "
 "الإضافية بواسطة مجتمع Gradience ويمكن أن تحدث مشكلات."
 
-#: gradience/plugins_list.py:111
+#: gradience/plugins_list.py:113
 #, fuzzy
 msgid "No Plugins Found."
 msgstr "لم يتم العثور على مكونات إضافية."
-
-#: gradience/preset_row.py:86 gradience/preset_row.py:105
-#, fuzzy
-msgid "Remove from Favourites"
-msgstr "حذف من المفضلة"
-
-#: gradience/preset_row.py:89 gradience/preset_row.py:101
-#, fuzzy
-msgid "Add to Favourites"
-msgstr "أضافه إلى المفضلة"
-
-#: gradience/preset_row.py:159
-msgid "Preset removed"
-msgstr "تمت إزالة الإعداد المسبق"
-
-#: gradience/preset_row.py:160
-msgid "Undo"
-msgstr "تراجع"
-
-#: gradience/preset_row.py:181
-#, fuzzy
-msgid "Pending Deletion"
-msgstr "في انتظار الحذف"
-
-#: gradience/preset_row.py:216
-msgid "Unable to delete preset"
-msgstr "تعذر حذف الإعداد المسبق"
-
-#: gradience/presets_manager_window.py:115
-#: gradience/presets_manager_window.py:380
-msgid "User Presets"
-msgstr "مسبقات المستخدم"
-
-#: gradience/presets_manager_window.py:183
-msgid "Add new repository"
-msgstr "إضافة مستودع جديد"
-
-#: gradience/presets_manager_window.py:184
-#, fuzzy
-msgid "Add a repository to install additional presets."
-msgstr "أضف مستودعًا لتثبيت إعدادات مسبقة إضافية"
-
-#: gradience/presets_manager_window.py:191
-msgid "Add"
-msgstr "اضف"
-
-#: gradience/presets_manager_window.py:281
-msgid "Preset already exists"
-msgstr "الإعداد المسبق موجود بالفعل"
-
-#: gradience/presets_manager_window.py:292
-msgid "Preset imported"
-msgstr "تم استيراد الإعداد المسبق"
-
-#: gradience/presets_manager_window.py:295
-msgid "Unsupported file format, must be .json"
-msgstr "تنسيق الملف غير المدعوم ، يجب أن يكون .json"
-
-#: gradience/presets_manager_window.py:373
-msgid "Built-in Presets"
-msgstr "المدمج في المسبقة"
-
-#: gradience/presets_manager_window.py:383
-#, fuzzy
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"راجع <a href=\"https://github.com/GradienceTeam/Community\"> GradienceTeam / "
-"Community </a> على Github للحصول على مزيد من الإعدادات المسبقة"
-
-#: gradience/presets_manager_window.py:409
-#, fuzzy
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"لم يتم العثور على إعداد مسبق! استخدم زر الاستيراد لاستيراد واحد أو البحث عن "
-"واحد في علامة التبويب استكشاف"
-
-#: gradience/repo_row.py:60
-msgid "Repository removed"
-msgstr "تمت إزالة المستودع"
 
 #: gradience/settings_schema.py:23
 msgid "Accent Colors"
@@ -1238,80 +1335,6 @@ msgstr "أرجواني"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "بني"
-
-#: gradience/settings_schema.py:372 gradience/window.py:200
-msgid "Light"
-msgstr "إضاءة"
-
-#: gradience/settings_schema.py:373 gradience/window.py:201
-msgid "Dark"
-msgstr "داكن"
-
-#: gradience/welcome.py:94
-msgid "Thanks for updating Gradience!"
-msgstr "شكرا لتحديث Gradience!"
-
-#: gradience/window.py:132
-msgid "Monet Engine"
-msgstr "محرك مونيه"
-
-#: gradience/window.py:135
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr "Monet هو محرك يقوم بإنشاء لوحة Material Design 3 من لون الصورة."
-
-#: gradience/window.py:147
-msgid "Background Image"
-msgstr "الخلفية"
-
-#: gradience/window.py:157
-#, fuzzy
-msgid "Choose a File"
-msgstr "اختيار ملف"
-
-#: gradience/window.py:177
-msgid "Monet Palette"
-msgstr "لوحة مونيه"
-
-#: gradience/window.py:184
-msgid "Tone"
-msgstr "النبرة"
-
-#: gradience/window.py:196
-msgid "Theme"
-msgstr "مظهر"
-
-#: gradience/window.py:199
-#, fuzzy
-msgid "Auto"
-msgstr "أوتوماتيك"
-
-#: gradience/window.py:223
-msgid "Unsupported background type"
-msgstr "نوع الخلفية غير مدعوم"
-
-#: gradience/window.py:240
-msgid "Palette generated"
-msgstr "تم إنشاء لوحة"
-
-#: gradience/window.py:244
-msgid "Select a background first"
-msgstr "حدد الخلفية أولاً"
-
-#: gradience/window.py:269
-msgid "Palette Colors"
-msgstr "ألوان لوحة"
-
-#: gradience/window.py:272
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"ألوان لوح الأسماء المستخدمة في بعض التطبيقات. الألوان الافتراضية تتبع "
-"القواعد الارشادية ل <a href=\"https://developer.gnome.org/hig/reference/"
-"palette.html\"> GNOME Human Interface </a>"
 
 #, fuzzy
 #~ msgid ""

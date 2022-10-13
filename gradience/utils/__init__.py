@@ -1,4 +1,4 @@
-# constants.py.in
+# __init__.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
@@ -15,17 +15,3 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
-
-rootdir          = '/com/github/GradienceTeam/Gradience'
-pkgdatadir       = '@PKGDATA_DIR@'
-localedir        = '@LOCALE_DIR@'
-
-app_id           = '@APP_ID@'
-rel_ver          = '@RELEASE_VER@'
-version          = '@VERSION@'
-build_type       = '@BUILD_TYPE@'
-
-project_url      = '@PROJECT_URL@'
-bugtracker_url   = '@BUGTRACKER_URL@'
-help_url         = '@HELP_URL@'
-translate_url    = '@TRANSLATE_URL@'

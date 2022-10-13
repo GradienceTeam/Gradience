@@ -26,11 +26,18 @@ from material_color_utilities_python import *
 
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
-from .settings_schema import settings_schema
-from .window import GradienceMainWindow
-from .app_type_dialog import GradienceAppTypeDialog
-from .custom_css_group import GradienceCustomCSSGroup
-from .constants import (
+from gradience.ui.window import GradienceMainWindow
+from gradience.ui.welcome_window import GradienceWelcomeWindow
+from gradience.ui.app_type_dialog import GradienceAppTypeDialog
+from gradience.ui.custom_css_group import GradienceCustomCSSGroup
+from gradience.ui.presets_manager_window import GradiencePresetWindow
+from gradience.ui.preferences_window import GradiencePreferencesWindow
+from gradience.utils.css import load_preset_from_css
+from gradience.utils.utils import to_slug_case, buglog, run_command
+from gradience.utils.preset import Preset, presets_dir
+from gradience.settings_schema import settings_schema
+from gradience.plugins_list import GradiencePluginsList
+from gradience.constants import (
     rootdir,
     app_id,
     rel_ver,
@@ -39,13 +46,6 @@ from .constants import (
     help_url,
     project_url,
 )
-from .modules.css import load_preset_from_css
-from .welcome import GradienceWelcomeWindow
-from .preferences import GradiencePreferencesWindow
-from .modules.utils import to_slug_case, buglog, run_command
-from .plugins_list import GradiencePluginsList
-from .presets_manager_window import GradiencePresetWindow
-from .modules.preset import Preset, presets_dir
 
 
 class GradienceApplication(Adw.Application):
@@ -87,7 +87,7 @@ class GradienceApplication(Adw.Application):
 
         self.style_manager = Adw.StyleManager.get_default()
 
-        self.preset = None
+        self.preset: Preset = None
 
     def do_activate(self):
         """Called when the application is activated.
@@ -335,7 +335,7 @@ class GradienceApplication(Adw.Application):
             self.preset = preset
         self.is_ready = False
         buglog(self.preset)
-        self.preset_name = self.preset.preset_name
+        self.preset_name = self.preset.display_name
         self.variables = self.preset.variables
         self.palette = self.preset.palette
         self.custom_css = self.preset.custom_css
@@ -781,9 +781,9 @@ class GradienceApplication(Adw.Application):
 
         dialog.present()
 
-    def save_preset(self, _unused, response, entry):
+    def save_preset(self, _unused, response, preset_entry):
         if response == "save":
-            self.preset.save_preset(entry.get_text(), self.plugins_list)
+            self.preset.save_preset(preset_entry.get_text(), self.plugins_list)
             self.clear_dirty()
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset saved")))

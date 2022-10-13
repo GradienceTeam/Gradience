@@ -1,4 +1,4 @@
-# window.py
+# app_type_dialog.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Gradience Team
@@ -18,7 +18,7 @@
 
 from gi.repository import Gtk, Adw
 
-from .constants import rootdir
+from gradience.constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/app_type_dialog.ui")

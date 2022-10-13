@@ -1,4 +1,4 @@
-# welcome.py
+# welcome_window.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Gradience Team
@@ -21,13 +21,13 @@ import time
 
 from gi.repository import Gtk, Adw, Gio
 
-from .modules.run_async import RunAsync
-from .modules.utils import buglog
-from .modules.flatpak_overrides import create_gtk_user_override
-from .constants import rootdir, app_id, rel_ver
+from gradience.utils.run_async import RunAsync
+from gradience.utils.utils import buglog
+from gradience.utils.flatpak_overrides import create_gtk_user_override
+from gradience.constants import rootdir, app_id, rel_ver
 
 
-@Gtk.Template(resource_path=f"{rootdir}/ui/welcome.ui")
+@Gtk.Template(resource_path=f"{rootdir}/ui/welcome_window.ui")
 class GradienceWelcomeWindow(Adw.Window):
     __gtype_name__ = "GradienceWelcomeWindow"
 
@@ -118,7 +118,7 @@ class GradienceWelcomeWindow(Adw.Window):
         the step of the onboard progress.
         """
         page = self.get_page(index)
-	
+
         self.carousel.set_interactive(True)
         if page == "finish":
             self.btn_back.set_visible(False)
@@ -142,7 +142,7 @@ class GradienceWelcomeWindow(Adw.Window):
             self.btn_next.set_visible(True)
             self.btn_install.set_visible(False)
             self.carousel.set_interactive(True)
-     
+
     def agree(self, widget):
         self.window.last_opened_version = self.window.settings.set_string(
             "last-opened-version", rel_ver

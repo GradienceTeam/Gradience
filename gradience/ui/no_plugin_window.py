@@ -1,4 +1,4 @@
-# constants.py.in
+# no_plugin_window.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
@@ -16,16 +16,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-rootdir          = '/com/github/GradienceTeam/Gradience'
-pkgdatadir       = '@PKGDATA_DIR@'
-localedir        = '@LOCALE_DIR@'
+from gi.repository import Gtk, Adw
 
-app_id           = '@APP_ID@'
-rel_ver          = '@RELEASE_VER@'
-version          = '@VERSION@'
-build_type       = '@BUILD_TYPE@'
+from gradience.constants import rootdir
 
-project_url      = '@PROJECT_URL@'
-bugtracker_url   = '@BUGTRACKER_URL@'
-help_url         = '@HELP_URL@'
-translate_url    = '@TRANSLATE_URL@'
+
+@Gtk.Template(resource_path=f"{rootdir}/ui/no_plugin_window.ui")
+class GradienceNoPluginPrefWindow(Adw.Window):
+    __gtype_name__ = "GradienceNoPluginPrefWindow"
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-08 00:50+0000\n"
-"PO-Revision-Date: 2022-10-08 00:50+0000\n"
+"POT-Creation-Date: 2022-10-13 00:56+0000\n"
+"PO-Revision-Date: 2022-10-12 14:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/tr/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.15-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
@@ -138,27 +138,27 @@ msgstr "İndir ve Uygula"
 msgid "Download Only"
 msgstr "Sadece İndir"
 
-#: data/ui/no_plugin_pref.blp:5
+#: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
 msgstr "Eklenti Tercihleri"
 
-#: data/ui/no_plugin_pref.blp:26
+#: data/ui/no_plugin_window.blp:26
 msgid "No Preferences"
 msgstr "Tercih Yok"
 
-#: data/ui/no_plugin_pref.blp:27
+#: data/ui/no_plugin_window.blp:27
 msgid "This plugin doesn't have any preferences."
 msgstr "Bu eklentinin herhangi bir tercihi yoktur."
 
-#: data/ui/option.blp:10
+#: data/ui/option_row.blp:10
 msgid "GTK 3 Support Warning"
 msgstr "GTK 3 Destek Uyarısı"
 
-#: data/ui/option.blp:18
+#: data/ui/option_row.blp:18
 msgid "Explanation"
 msgstr "Açıklama"
 
-#: data/ui/option.blp:43
+#: data/ui/option_row.blp:43
 msgid "Toggle Text Value"
 msgstr "Metin Değerini Aç/Kapat"
 
@@ -166,7 +166,8 @@ msgstr "Metin Değerini Aç/Kapat"
 msgid "Toggle Plugin"
 msgstr "Eklentiyi Aç/Kapat"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences.blp:5 data/ui/window.blp:129
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/window.blp:129
 msgid "Preferences"
 msgstr "Tercihler"
 
@@ -174,15 +175,15 @@ msgstr "Tercihler"
 msgid "Remove Plugin"
 msgstr "Eklentiyi Kaldır"
 
-#: data/ui/preferences.blp:12
+#: data/ui/preferences_window.blp:12
 msgid "GTK 4 Flatpak Applications"
 msgstr "GTK 4 Flatpak Uygulamaları"
 
-#: data/ui/preferences.blp:15
+#: data/ui/preferences_window.blp:15
 msgid "Allow GTK 4 Flatpak Applications Theming"
 msgstr "GTK 4 Flatpak Uygulamalarının Temalandırılmasına İzin Ver"
 
-#: data/ui/preferences.blp:16
+#: data/ui/preferences_window.blp:16
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 4 Flatpak "
 "applications to access custom themes."
@@ -190,11 +191,11 @@ msgstr ""
 "GTK 4 Flatpak uygulamalarının özel temalara erişmesine izin vermek için "
 "mevcut kullanıcı için Flatpak izinlerinin üzerine yaz."
 
-#: data/ui/preferences.blp:25
+#: data/ui/preferences_window.blp:25
 msgid "Allow GTK 4 Flatpak Applications Theming (System)"
 msgstr "GTK 4 Flatpak Uygulamalarının Temalandırılmasına İzin Ver (Sistem)"
 
-#: data/ui/preferences.blp:26
+#: data/ui/preferences_window.blp:26
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 4 Flatpak "
 "applications to access custom themes. (Requires root access)"
@@ -202,11 +203,11 @@ msgstr ""
 "GTK 4 Flatpak uygulamalarının özel temalara erişmesine izin vermek için tüm "
 "kullanıcılar için Flatpak izinlerinin üzerine yaz. (Root erişimi gerektirir)"
 
-#: data/ui/preferences.blp:35
+#: data/ui/preferences_window.blp:35
 msgid "GTK 3 Flatpak Applications"
 msgstr "GTK 3 Flatpak Uygulamaları"
 
-#: data/ui/preferences.blp:36
+#: data/ui/preferences_window.blp:36
 msgid ""
 "Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
 "custom presets working in GTK 3 Flatpak applications."
@@ -214,11 +215,11 @@ msgstr ""
 "GTK 3 Flatpak uygulamalarında özel ön ayarların çalışmasını sağlamak için "
 "adw-gtk3 temasını (Flatpak paketi olarak) yüklemeyi unutmayın."
 
-#: data/ui/preferences.blp:39
+#: data/ui/preferences_window.blp:39
 msgid "Allow GTK 3 Flatpak theming"
 msgstr "GTK 3 Flatpak temalandırmasına izin ver"
 
-#: data/ui/preferences.blp:40
+#: data/ui/preferences_window.blp:40
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme."
@@ -226,11 +227,11 @@ msgstr ""
 "GTK 3 Flatpak uygulamalarının adw-gtk3 temasına erişmesine izin vermek için "
 "geçerli kullanıcı için Flatpak izinlerinin üzerine yaz."
 
-#: data/ui/preferences.blp:49
+#: data/ui/preferences_window.blp:49
 msgid "GTK 3 Flatpak Applications (System)"
 msgstr "GTK 3 Flatpak Uygulamaları (Sistem)"
 
-#: data/ui/preferences.blp:50
+#: data/ui/preferences_window.blp:50
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme. (Requires root access)"
@@ -239,11 +240,11 @@ msgstr ""
 "tüm kullanıcılar için Flatpak izinlerinin üzerine yaz. (Root erişimi "
 "gerektirir)"
 
-#: data/ui/preferences.blp:60
+#: data/ui/preferences_window.blp:60
 msgid "Custom Preset Repositories"
 msgstr "Özel Ön Ayar Depoları"
 
-#: data/ui/preferences.blp:63
+#: data/ui/preferences_window.blp:63
 msgid "Custom repository URL address"
 msgstr "Özel depo URL adresi"
 
@@ -336,8 +337,8 @@ msgid "Offline"
 msgstr "Çevrim Dışı"
 
 #: data/ui/presets_manager_window.blp:141
-#: gradience/presets_manager_window.py:121
-#: gradience/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:121
+#: gradience/ui/presets_manager_window.py:419
 msgid "Repositories"
 msgstr "Depolar"
 
@@ -357,7 +358,7 @@ msgstr "JSON dosyası (*.json)"
 msgid "Share Preset"
 msgstr "Ön Ayarı Paylaş"
 
-#: data/ui/share_window.blp:42 data/ui/welcome.blp:42
+#: data/ui/share_window.blp:42 data/ui/welcome_window.blp:42
 msgid "Previous"
 msgstr "Önceki"
 
@@ -386,11 +387,11 @@ msgstr ""
 "ayarınızı yükleyebilir, bir çekme isteği oluşturabilir ve dünyayla "
 "paylaşabilirsiniz!"
 
-#: data/ui/share_window.blp:81 data/ui/welcome.blp:81
+#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:81
 msgid "Warning"
 msgstr "Uyarı"
 
-#: data/ui/share_window.blp:82 data/ui/welcome.blp:82
+#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -400,11 +401,11 @@ msgstr ""
 "etkileyebilir. Dikkatli davranın. Lütfen tema ile ilgili sorunları uygulama "
 "geliştiricilerine bildirmeyin."
 
-#: data/ui/share_window.blp:86 data/ui/welcome.blp:86
+#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:86
 msgid "I Understand The Consequences"
 msgstr "Sonuçlarını Anlıyorum"
 
-#: data/ui/share_window.blp:97 data/ui/welcome.blp:97
+#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Adwaita Temasını Özelleştir"
 
@@ -416,11 +417,11 @@ msgstr ""
 "Özel CSS ekleme gibi gelişmiş özelliklerle pencerelerin, düğmelerin, "
 "listelerin ve daha fazlasının renklerini değiştirin"
 
-#: data/ui/share_window.blp:104 data/ui/welcome.blp:104
+#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:104
 msgid "Configure Gradience"
 msgstr "Gradience Uygulamasını Yapılandır"
 
-#: data/ui/share_window.blp:105 data/ui/welcome.blp:105
+#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:105
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
@@ -432,7 +433,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "Eski uygulama temaları"
 
-#: data/ui/share_window.blp:115 data/ui/welcome.blp:115
+#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Eski uygulama temalandırma için adw-gtk3 temasını yükle"
 
@@ -440,59 +441,59 @@ msgstr "Eski uygulama temalandırma için adw-gtk3 temasını yükle"
 msgid "System configuration"
 msgstr "Sistem yapılandırması"
 
-#: data/ui/share_window.blp:126 data/ui/welcome.blp:126
+#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 "Temalandırma için sistemi yapılandır, Flatpak temasının üzerine yazılmasını "
 "sağlar"
 
-#: data/ui/share_window.blp:136 data/ui/welcome.blp:136
+#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:136
 msgid "Installing Themes"
 msgstr "Temalar Yükleniyor"
 
-#: data/ui/share_window.blp:137 data/ui/welcome.blp:137
+#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:137
 msgid "Please wait until theme will be installed."
 msgstr "Lütfen temalar yüklenene kadar bekleyin."
 
-#: data/ui/share_window.blp:143 data/ui/welcome.blp:143
+#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:143
 msgid "Continue"
 msgstr "Devam"
 
-#: data/ui/share_window.blp:162 data/ui/welcome.blp:162
+#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:162
 msgid "Done"
 msgstr "Tamamlandı"
 
-#: data/ui/share_window.blp:163 data/ui/welcome.blp:163
+#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:163
 msgid "Now you can make your own presets or download some online."
 msgstr ""
 "Artık kendi ön ayarlarınızı yapabilir veya bazılarını çevrimiçi olarak "
 "indirebilirsiniz."
 
-#: data/ui/share_window.blp:168 data/ui/welcome.blp:168
+#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:168
 msgid "Please finish the setup first"
 msgstr "Lütfen önce kurulumu tamamlayın"
 
-#: data/ui/share_window.blp:176 data/ui/welcome.blp:176
+#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:176
 msgid "Start Using Gradience"
 msgstr "Gradience Kullanmaya Başlayın"
 
-#: data/ui/share_window.blp:193 data/ui/welcome.blp:193
+#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:193
 msgid "Next"
 msgstr "Sonraki"
 
-#: data/ui/welcome.blp:5 data/ui/welcome.blp:65
+#: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:65
 msgid "Welcome to Gradience"
 msgstr "Gradience'e Hoş Geldiniz"
 
-#: data/ui/welcome.blp:66
+#: data/ui/welcome_window.blp:66
 msgid "Change the look of Adwaita, with ease"
 msgstr "Adwaita'nın görünümünü kolaylıkla değiştirin"
 
-#: data/ui/welcome.blp:73
+#: data/ui/welcome_window.blp:73
 msgid "What's new in 0.3.0"
 msgstr "0.3.0'daki yenilikler"
 
-#: data/ui/welcome.blp:74
+#: data/ui/welcome_window.blp:74
 msgid ""
 "In this release, we added plugin support, a plugin repository, badges, and a "
 "quick preset switcher. We also split the preset repository into an "
@@ -502,7 +503,7 @@ msgstr ""
 "değiştirici ekledik. Ayrıca ön ayar deposunu \"Resmi\" depo ve \"Seçilmiş\" "
 "depo olarak ikiye ayırdık."
 
-#: data/ui/welcome.blp:98
+#: data/ui/welcome_window.blp:98
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom CSS."
@@ -510,15 +511,15 @@ msgstr ""
 "Özel CSS ekleme gibi gelişmiş özelliklerle pencerelerin, düğmelerin, "
 "listelerin ve daha fazlasının renklerini değiştirin."
 
-#: data/ui/welcome.blp:110
+#: data/ui/welcome_window.blp:110
 msgid "Legacy Apps Theming"
 msgstr "Eski Uygulamalar Temalandırması"
 
-#: data/ui/welcome.blp:120
+#: data/ui/welcome_window.blp:120
 msgid "System Configuration"
 msgstr "Sistem Yapılandırması"
 
-#: data/ui/window.blp:23 gradience/main.py:603 gradience/window.py:141
+#: data/ui/window.blp:23 gradience/ui/window.py:140 gradience/main.py:603
 msgid "Apply"
 msgstr "Uygula"
 
@@ -574,7 +575,7 @@ msgstr "GTK 4 Demo"
 msgid "GTK 4 Widget Factory"
 msgstr "GTK 4 Widget Fabrikası"
 
-#: data/ui/window.blp:161 gradience/presets_manager_window.py:110
+#: data/ui/window.blp:161 gradience/ui/presets_manager_window.py:110
 msgid "Built-In Presets"
 msgstr "Yerleşik Ön Ayarlar"
 
@@ -582,36 +583,211 @@ msgstr "Yerleşik Ön Ayarlar"
 msgid "Manage Presets"
 msgstr "Ön Ayarları Yönet"
 
-#: gradience/modules/flatpak_overrides.py:65
-#: gradience/modules/flatpak_overrides.py:84
+#: gradience/utils/flatpak_overrides.py:65
+#: gradience/utils/flatpak_overrides.py:84
 msgid "Failed to save override"
 msgstr "Üzerine yazma kaydedilemedi"
 
-#: gradience/modules/flatpak_overrides.py:152
-#: gradience/modules/flatpak_overrides.py:212
-#: gradience/modules/flatpak_overrides.py:295
-#: gradience/modules/flatpak_overrides.py:357
+#: gradience/utils/flatpak_overrides.py:152
+#: gradience/utils/flatpak_overrides.py:212
+#: gradience/utils/flatpak_overrides.py:295
+#: gradience/utils/flatpak_overrides.py:357
 msgid "Unexpected file error occurred"
 msgstr "Beklenmeyen dosya hatası oluştu"
 
-#: gradience/app_type_dialog.py:44 gradience/main.py:654 gradience/main.py:727
-#: gradience/main.py:868 gradience/presets_manager_window.py:190
+#: gradience/ui/app_type_dialog.py:44
+#: gradience/ui/presets_manager_window.py:190 gradience/main.py:654
+#: gradience/main.py:727 gradience/main.py:868
 msgid "Cancel"
 msgstr "İptal"
 
-#: gradience/explore_preset_row.py:62 gradience/explore_preset_row.py:88
+#: gradience/ui/explore_preset_row.py:62 gradience/ui/explore_preset_row.py:88
 msgid "Preset could not be downloaded"
 msgstr "Ön ayar indirilemedi"
 
-#: gradience/explore_preset_row.py:77 gradience/explore_preset_row.py:93
+#: gradience/ui/explore_preset_row.py:77 gradience/ui/explore_preset_row.py:93
 msgid "Preset downloaded"
 msgstr "Ön ayar indirildi"
 
-#: gradience/main.py:188 gradience/main.py:219
-#: gradience/presets_manager_window.py:336
-#: gradience/presets_manager_window.py:366
+#: gradience/ui/option_row.py:49
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "Bu seçenek, adw-gtk3 teması tarafından yalnızca kısmen desteklenir."
+
+#: gradience/ui/option_row.py:54
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "Bu seçenek adw-gtk3 teması tarafından desteklenmez."
+
+#: gradience/ui/option_row.py:97
+msgid "Not a color, see text value"
+msgstr "Renk değil, metin değerine bakın"
+
+#: gradience/ui/plugin_row.py:86
+msgid "Unable to remove"
+msgstr "Kaldırılamadı"
+
+#: gradience/ui/plugin_row.py:87
+msgid "This is a system plugin, and cannot be removed. "
+msgstr "Bu bir sistem eklentisidir ve kaldırılamaz. "
+
+#: gradience/ui/plugin_row.py:89
+msgid "Close"
+msgstr "Kapat"
+
+#: gradience/ui/preset_row.py:83 gradience/ui/preset_row.py:102
+msgid "Remove from Favourites"
+msgstr "Favorilerden Kaldır"
+
+#: gradience/ui/preset_row.py:86 gradience/ui/preset_row.py:98
+msgid "Add to Favourites"
+msgstr "Favorilere Ekle"
+
+#: gradience/ui/preset_row.py:156
+msgid "Preset removed"
+msgstr "Ön ayar kaldırıldı"
+
+#: gradience/ui/preset_row.py:157
+msgid "Undo"
+msgstr "Geri Al"
+
+#: gradience/ui/preset_row.py:178
+msgid "Pending Deletion"
+msgstr "Silinmeyi Bekliyor"
+
+#: gradience/ui/preset_row.py:223
+msgid "Unable to delete preset"
+msgstr "Ön ayar silinemedi"
+
+#: gradience/ui/presets_manager_window.py:115
+#: gradience/ui/presets_manager_window.py:380
+msgid "User Presets"
+msgstr "Kullanıcı Ön Ayarları"
+
+#: gradience/ui/presets_manager_window.py:183
+msgid "Add new repository"
+msgstr "Yeni depo ekle"
+
+#: gradience/ui/presets_manager_window.py:184
+msgid "Add a repository to install additional presets."
+msgstr "Ek ön ayarlar yüklemek için bir depo ekleyin."
+
+#: gradience/ui/presets_manager_window.py:191
+msgid "Add"
+msgstr "Ekle"
+
+#: gradience/ui/presets_manager_window.py:281
+msgid "Preset already exists"
+msgstr "Ön ayar zaten var"
+
+#: gradience/ui/presets_manager_window.py:292
+msgid "Preset imported"
+msgstr "Ön ayar içe aktarıldı"
+
+#: gradience/ui/presets_manager_window.py:295
+msgid "Unsupported file format, must be .json"
+msgstr "Desteklenmeyen dosya biçimi, .json olmalı"
+
+#: gradience/ui/presets_manager_window.py:336
+#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/main.py:219
 msgid "Failed to load preset"
 msgstr "Ön ayarın yüklenmesi başarısız oldu"
+
+#: gradience/ui/presets_manager_window.py:373
+msgid "Built-in Presets"
+msgstr "Yerleşik Ön Ayarlar"
+
+#: gradience/ui/presets_manager_window.py:383
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Daha çok ön ayar için Github'daki <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a> sayfasına bakın."
+
+#: gradience/ui/presets_manager_window.py:409
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Ön ayar bulunamadı! Birini içe aktarmak için içe aktar düğmesini kullanın "
+"veya Keşfet sekmesinde bir tane arayın."
+
+#: gradience/ui/repo_row.py:60
+msgid "Repository removed"
+msgstr "Depo kaldırıldı"
+
+#: gradience/ui/welcome_window.py:94
+msgid "Thanks for updating Gradience!"
+msgstr "Gradience'ı güncellediğiniz için teşekkürler!"
+
+#: gradience/ui/window.py:131
+msgid "Monet Engine"
+msgstr "Monet Motoru"
+
+#: gradience/ui/window.py:134
+msgid ""
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
+msgstr ""
+"Monet, görüntü renklerinden Material Design 3 paleti oluşturan bir motordur."
+
+#: gradience/ui/window.py:146
+msgid "Background Image"
+msgstr "Arkaplan Resmi"
+
+#: gradience/ui/window.py:156
+msgid "Choose a File"
+msgstr "Dosya Seç"
+
+#: gradience/ui/window.py:176
+msgid "Monet Palette"
+msgstr "Monet Paleti"
+
+#: gradience/ui/window.py:183
+msgid "Tone"
+msgstr "Ton"
+
+#: gradience/ui/window.py:195
+msgid "Theme"
+msgstr "Tema"
+
+#: gradience/ui/window.py:198
+msgid "Auto"
+msgstr "Otomatik"
+
+#: gradience/ui/window.py:199 gradience/settings_schema.py:372
+msgid "Light"
+msgstr "Aydınlık"
+
+#: gradience/ui/window.py:200 gradience/settings_schema.py:373
+msgid "Dark"
+msgstr "Karanlık"
+
+#: gradience/ui/window.py:222
+msgid "Unsupported background type"
+msgstr "Desteklenmeyen arka plan türü"
+
+#: gradience/ui/window.py:239
+msgid "Palette generated"
+msgstr "Palet oluşturuldu"
+
+#: gradience/ui/window.py:243
+msgid "Select a background first"
+msgstr "Önce arka plan seçin"
+
+#: gradience/ui/window.py:268
+msgid "Palette Colors"
+msgstr "Palet Renkleri"
+
+#: gradience/ui/window.py:271
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"Bazı uygulamalar tarafından kullanılan isimlendirilmiş palet renkleri. "
+"Varsayılan renkler <a href=\"https://developer.gnome.org/hig/reference/"
+"palette.html\">GNOME İnsan Arayüzü Yönergeleri</a>ni takip eder."
 
 #: gradience/main.py:247
 msgid "No presets found"
@@ -788,35 +964,11 @@ msgstr "Düzeltmeler"
 msgid "Special thanks to"
 msgstr "Özel teşekkürler"
 
-#: gradience/option.py:49
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "Bu seçenek, adw-gtk3 teması tarafından yalnızca kısmen desteklenir."
-
-#: gradience/option.py:54
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "Bu seçenek adw-gtk3 teması tarafından desteklenmez."
-
-#: gradience/option.py:97
-msgid "Not a color, see text value"
-msgstr "Renk değil, metin değerine bakın"
-
-#: gradience/plugin_row.py:85
-msgid "Unable to remove"
-msgstr "Kaldırılamadı"
-
-#: gradience/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed. "
-msgstr "Bu bir sistem eklentisidir ve kaldırılamaz. "
-
-#: gradience/plugin_row.py:88
-msgid "Close"
-msgstr "Kapat"
-
-#: gradience/plugins_list.py:96
+#: gradience/plugins_list.py:98
 msgid "Plugins"
 msgstr "Eklentiler"
 
-#: gradience/plugins_list.py:99
+#: gradience/plugins_list.py:101
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -824,86 +976,9 @@ msgstr ""
 "Eklentiler Gradience'a ek özellikler ekler. Eklentiler Gradience topluluğu "
 "tarafından sağlanır ve sorun çıkarabilir."
 
-#: gradience/plugins_list.py:111
+#: gradience/plugins_list.py:113
 msgid "No Plugins Found."
 msgstr "Eklenti bulunamadı."
-
-#: gradience/preset_row.py:86 gradience/preset_row.py:105
-msgid "Remove from Favourites"
-msgstr "Favorilerden Kaldır"
-
-#: gradience/preset_row.py:89 gradience/preset_row.py:101
-msgid "Add to Favourites"
-msgstr "Favorilere Ekle"
-
-#: gradience/preset_row.py:159
-msgid "Preset removed"
-msgstr "Ön ayar kaldırıldı"
-
-#: gradience/preset_row.py:160
-msgid "Undo"
-msgstr "Geri Al"
-
-#: gradience/preset_row.py:181
-msgid "Pending Deletion"
-msgstr "Silinmeyi Bekliyor"
-
-#: gradience/preset_row.py:216
-msgid "Unable to delete preset"
-msgstr "Ön ayar silinemedi"
-
-#: gradience/presets_manager_window.py:115
-#: gradience/presets_manager_window.py:380
-msgid "User Presets"
-msgstr "Kullanıcı Ön Ayarları"
-
-#: gradience/presets_manager_window.py:183
-msgid "Add new repository"
-msgstr "Yeni depo ekle"
-
-#: gradience/presets_manager_window.py:184
-msgid "Add a repository to install additional presets."
-msgstr "Ek ön ayarlar yüklemek için bir depo ekleyin."
-
-#: gradience/presets_manager_window.py:191
-msgid "Add"
-msgstr "Ekle"
-
-#: gradience/presets_manager_window.py:281
-msgid "Preset already exists"
-msgstr "Ön ayar zaten var"
-
-#: gradience/presets_manager_window.py:292
-msgid "Preset imported"
-msgstr "Ön ayar içe aktarıldı"
-
-#: gradience/presets_manager_window.py:295
-msgid "Unsupported file format, must be .json"
-msgstr "Desteklenmeyen dosya biçimi, .json olmalı"
-
-#: gradience/presets_manager_window.py:373
-msgid "Built-in Presets"
-msgstr "Yerleşik Ön Ayarlar"
-
-#: gradience/presets_manager_window.py:383
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Daha çok ön ayar için Github'daki <a href=\"https://github.com/GradienceTeam/"
-"Community\">GradienceTeam/Community</a> sayfasına bakın."
-
-#: gradience/presets_manager_window.py:409
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Ön ayar bulunamadı! Birini içe aktarmak için içe aktar düğmesini kullanın "
-"veya Keşfet sekmesinde bir tane arayın."
-
-#: gradience/repo_row.py:60
-msgid "Repository removed"
-msgstr "Depo kaldırıldı"
 
 #: gradience/settings_schema.py:23
 msgid "Accent Colors"
@@ -1173,79 +1248,6 @@ msgstr "Mor"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Kahverengi"
-
-#: gradience/settings_schema.py:372 gradience/window.py:200
-msgid "Light"
-msgstr "Aydınlık"
-
-#: gradience/settings_schema.py:373 gradience/window.py:201
-msgid "Dark"
-msgstr "Karanlık"
-
-#: gradience/welcome.py:94
-msgid "Thanks for updating Gradience!"
-msgstr "Gradience'ı güncellediğiniz için teşekkürler!"
-
-#: gradience/window.py:132
-msgid "Monet Engine"
-msgstr "Monet Motoru"
-
-#: gradience/window.py:135
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr ""
-"Monet, görüntü renklerinden Material Design 3 paleti oluşturan bir motordur."
-
-#: gradience/window.py:147
-msgid "Background Image"
-msgstr "Arkaplan Resmi"
-
-#: gradience/window.py:157
-msgid "Choose a File"
-msgstr "Dosya Seç"
-
-#: gradience/window.py:177
-msgid "Monet Palette"
-msgstr "Monet Paleti"
-
-#: gradience/window.py:184
-msgid "Tone"
-msgstr "Ton"
-
-#: gradience/window.py:196
-msgid "Theme"
-msgstr "Tema"
-
-#: gradience/window.py:199
-msgid "Auto"
-msgstr "Otomatik"
-
-#: gradience/window.py:223
-msgid "Unsupported background type"
-msgstr "Desteklenmeyen arka plan türü"
-
-#: gradience/window.py:240
-msgid "Palette generated"
-msgstr "Palet oluşturuldu"
-
-#: gradience/window.py:244
-msgid "Select a background first"
-msgstr "Önce arka plan seçin"
-
-#: gradience/window.py:269
-msgid "Palette Colors"
-msgstr "Palet Renkleri"
-
-#: gradience/window.py:272
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"Bazı uygulamalar tarafından kullanılan isimlendirilmiş palet renkleri. "
-"Varsayılan renkler <a href=\"https://developer.gnome.org/hig/reference/"
-"palette.html\">GNOME İnsan Arayüzü Yönergeleri</a>ni takip eder."
 
 #~ msgid ""
 #~ "\n"

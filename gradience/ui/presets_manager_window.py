@@ -25,14 +25,14 @@ from pathlib import Path
 
 from gi.repository import Gtk, Adw, GLib
 
-from .preset_row import GradiencePresetRow
-from .builtin_preset_row import GradienceBuiltinPresetRow
-from .explore_preset_row import GradienceExplorePresetRow
-from .modules.custom_presets import fetch_presets
-from .repo_row import GradienceRepoRow
-from .modules.preset import presets_dir
-from .modules.utils import buglog
-from .constants import rootdir
+from gradience.ui.preset_row import GradiencePresetRow
+from gradience.ui.builtin_preset_row import GradienceBuiltinPresetRow
+from gradience.ui.explore_preset_row import GradienceExplorePresetRow
+from gradience.ui.repo_row import GradienceRepoRow
+from gradience.utils.custom_presets import fetch_presets
+from gradience.utils.preset import presets_dir
+from gradience.utils.utils import buglog
+from gradience.constants import rootdir
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
@@ -386,7 +386,7 @@ class GradiencePresetWindow(Adw.Window):
             )
         )
 
-        buglog(f"custom_presets values: {self.custom_presets.values()}")
+        buglog(f"custom_presets: {self.custom_presets}")
 
         presets_check = not (
             len(self.custom_presets["user"]) == 0

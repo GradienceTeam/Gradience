@@ -1,4 +1,4 @@
-# preferences.py
+# preferences_window.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Gradience Team
@@ -16,22 +16,21 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-
 from gi.repository import Gtk, Adw
 
-from .constants import rootdir
-from .modules.flatpak_overrides import (
+from gradience.constants import rootdir
+from gradience.utils.flatpak_overrides import (
     create_gtk_user_override,
     remove_gtk_user_override,
 )
-from .modules.flatpak_overrides import (
+from gradience.utils.flatpak_overrides import (
     create_gtk_global_override,
     remove_gtk_global_override,
 )
-from .modules.utils import buglog
+from gradience.utils.utils import buglog
 
 
-@Gtk.Template(resource_path=f"{rootdir}/ui/preferences.ui")
+@Gtk.Template(resource_path=f"{rootdir}/ui/preferences_window.ui")
 class GradiencePreferencesWindow(Adw.PreferencesWindow):
     __gtype_name__ = "GradiencePreferencesWindow"
 
