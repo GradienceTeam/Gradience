@@ -104,8 +104,7 @@ cd gradience-git
 makepkg -sic
 ```
 
-<details>
-    <summary>Using [Paru](https://github.com/morganamilo/paru):</summary>
+#### Using [Paru](https://github.com/morganamilo/paru)
     
 ```shell
 paru -S gradience
@@ -116,8 +115,6 @@ For latest changes:
 ```shell
 paru -S gradience-git
 ```
-
-</details>
 
 
 ## 🏗️ Building from source
