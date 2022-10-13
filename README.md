@@ -116,6 +116,37 @@ ninja -C builddir run
 > During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
 
 
+## Alternative installation methods
+
+### COPR 
+
+Gradience is available on COPR. You can install it using the following command:
+
+```shell
+dnf copr enable lyessaadi/gradience
+dnf install gradience
+```
+
+### Debian (And derivates)
+
+> **Warning**
+> Not available yet. If you want, submit a PR.
+
+### AUR 
+
+Gradience is available on AUR. You can install it using the following command:
+
+```shell
+paru -S gradience
+```
+
+For latest changes:
+
+```shell
+paru -S gradience-git
+```
+
+
 ## 🎨️ Theming setup
 
 > **Note** 
