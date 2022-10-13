@@ -116,7 +116,10 @@ ninja -C builddir run
 > During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
 
 
-## Alternative installation methods
+## 📦️ Alternative installation methods
+
+> **Warning**
+> The main installation method is Flatpak from Flathub
 
 ### COPR 
 
