@@ -5,14 +5,17 @@
 
 $is_highcontrast: "false";
 
-$_dark_base_color: darken(desaturate(#241f31, 100%), 2%);
+// This file is filled with values from the gradience theme and after, sassc is run.
+// It's using jinja template language to fill in the values (see https://jinja.palletsprojects.com/en/3.0.x/templates/)
+
+$_dark_base_color: darken(desaturate({{window_bg_color}}, 100%), 2%);
 
 $base_color: if($variant == 'light', #fff, $_dark_base_color);
 $bg_color: if($variant == 'light', #f6f5f4, lighten($base_color, 5%));
 $fg_color: if($variant == 'light', transparentize(black, .2), white);
 
 $selected_fg_color: #fff;
-$selected_bg_color: #3584e4;
+$selected_bg_color: {{accent_bg_color}};
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
 
 $borders_color: if($variant == 'light', transparentize($fg_color, .5), transparentize($fg_color, .9));
