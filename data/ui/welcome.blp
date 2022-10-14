@@ -7,7 +7,7 @@ template GradienceWelcomeWindow: Adw.Window {
     deletable: true;
     modal: true;
     default-width: 500;
-    default-height: 500;
+    default-height: 510;
 
     Adw.ToastOverlay toast_overlay {
         Adw.Leaflet leaflet {
@@ -102,18 +102,40 @@ template GradienceWelcomeWindow: Adw.Window {
                             vexpand: true;
                             hexpand: true;
                             title: _("Configure Gradience");
-                            description: _("Install adw-gtk3 theme for legacy applications and configure system for theming.");
+                            description: _("Setup adw-gtk3 theme for legacy applications and configure system for theming.");
 
                             Adw.PreferencesPage {
                                 Adw.PreferencesGroup {
-                                    Adw.ActionRow configure_adw_gtk3 {
+                                    Adw.ExpanderRow configure_adw_gtk3 {
                                         title: _("Legacy Apps Theming");
-                                        activatable-widget: switch_adw_gtk3;
-                                        [suffix]
+
+                                        [action]
                                         Switch switch_adw_gtk3 {
                                             valign: center;
-                                            tooltip-text: _("Install adw-gtk3 theme for legacy apps theming");
+                                            tooltip-text: _("Setup adw-gtk3 theme for legacy apps theming");
                                         }
+
+                                        Adw.ActionRow row_switch_adw_gtk3_dark {
+                                          title: _("Enable Dark Theme");
+                                          subtitle: _("Enable dark theme for legacy apps");
+
+                                          Gtk.CheckButton switch_adw_gtk3_dark {
+                                            valign: center;
+                                            tooltip-text: _("Enable dark theme for legacy apps");
+                                            active: bind switch_adw_gtk3_light.active inverted bidirectional;
+                                          }
+                                        }
+
+                                        Adw.ActionRow row_switch_adw_gtk3_light {
+                                          title: _("Enable Light Theme");
+                                          subtitle: _("Enable light theme for legacy apps");
+
+                                          Gtk.CheckButton switch_adw_gtk3_light {
+                                            valign: center;
+                                            tooltip-text: _("Enable light theme for legacy apps");
+                                          }
+                                        }
+
                                     }
 
                                     Adw.ActionRow configure_system {

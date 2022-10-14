@@ -118,7 +118,7 @@ class GradienceWelcomeWindow(Adw.Window):
         the step of the onboard progress.
         """
         page = self.get_page(index)
-	
+
         self.carousel.set_interactive(True)
         if page == "finish":
             self.btn_back.set_visible(False)
@@ -142,7 +142,7 @@ class GradienceWelcomeWindow(Adw.Window):
             self.btn_next.set_visible(True)
             self.btn_install.set_visible(False)
             self.carousel.set_interactive(True)
-     
+
     def agree(self, widget):
         self.window.last_opened_version = self.window.settings.set_string(
             "last-opened-version", rel_ver
@@ -159,14 +159,9 @@ class GradienceWelcomeWindow(Adw.Window):
         self.destroy()
         sys.exit()
 
-    # TODO: Add adw-gtk3 check
-    def check_adw_gtk3(self, *args):
-        buglog("check if adw-gtk3 installed")
-        return True
-
     def adw_gtk3(self):
-        if not self.check_adw_gtk3():  # install
-            buglog("install adw-gtk3")
+        buglog("setup adw-gtk3")
+        theme_settings = Gio.Settings("org.gnome.desktop.interface")
 
     def configure_system(self):
         buglog("configure system")
