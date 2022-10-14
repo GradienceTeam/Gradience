@@ -16,8 +16,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+import logging
+
 import cssutils
 
+# Adwaita palette color name dict
 COLORS = [
     "blue_",
     "green_",
@@ -30,6 +33,13 @@ COLORS = [
     "dark_",
 ]
 
+# Override cssutils preferences
+cssutils.ser.prefs.minimizeColorHash = False
+cssutils.ser.prefs.indentClosingBrace = False
+cssutils.ser.prefs.omitLastSemicolon = False
+
+# Set cssutils module logging to level FATAL
+cssutils.log.setLevel(logging.FATAL)
 
 def load_preset_from_css(path):
     css = ""
@@ -53,5 +63,5 @@ def load_preset_from_css(path):
                     else:
                         variables[name] = color[:-1]
             elif rule.type == rule.STYLE_RULE:
-                css += f"\n{rule.cssText}"
+                css += f"\n{rule.cssText}\n"
     return variables, palette, css
