@@ -11,6 +11,9 @@ gnome = import('gnome')
 i18n = import('i18n')
 python = import('python')
 
+# Subprojects
+adw_gtk3 = subproject('adw-gtk3')
+
 # Project information
 PROJECT_URL = 'https://github.com/GradienceTeam/Gradience'
 BUGTRACKER_URL = 'https://github.com/GradienceTeam/Gradience/issues'
