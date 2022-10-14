@@ -32,7 +32,7 @@ from gradience.ui.app_type_dialog import GradienceAppTypeDialog
 from gradience.ui.custom_css_group import GradienceCustomCSSGroup
 from gradience.ui.presets_manager_window import GradiencePresetWindow
 from gradience.ui.preferences_window import GradiencePreferencesWindow
-from gradience.utils.css import load_preset_from_css
+from gradience.utils.css import parse_css
 from gradience.utils.utils import to_slug_case, buglog, run_command
 from gradience.utils.preset import Preset, presets_dir
 from gradience.settings_schema import settings_schema
@@ -276,7 +276,7 @@ class GradienceApplication(Adw.Application):
 
     def load_preset_from_css(self):
         try:
-            variables, palette, custom_css = load_preset_from_css(
+            variables, palette, custom_css = parse_css(
                 os.path.join(
                     os.environ.get("XDG_CONFIG_HOME",
                                    os.environ["HOME"] + "/.config"),
@@ -293,6 +293,7 @@ class GradienceApplication(Adw.Application):
             self.preset = Preset(preset=preset)
             self.load_preset_variables_from_preset()
         except OSError:  # fallback to adwaita
+            buglog("Custom preset not found. Fallback to Adwaita")
             if self.style_manager.get_dark():
                 self.load_preset_from_resource(
                     f"{rootdir}/presets/adwaita-dark.json")

@@ -16,11 +16,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import logging
+import re
 
-import cssutils
 
-# Adwaita palette color name dict
+# Adwaita named palette colors dict
 COLORS = [
     "blue_",
     "green_",
@@ -33,15 +32,11 @@ COLORS = [
     "dark_",
 ]
 
-# Override cssutils preferences
-cssutils.ser.prefs.minimizeColorHash = False
-cssutils.ser.prefs.indentClosingBrace = False
-cssutils.ser.prefs.omitLastSemicolon = False
+# Regular expressions
+define_color = re.compile(r"(@define-color .*[^\s])")
+not_define_color = re.compile(r"(^(?:(?!@define-color).)*$)")
 
-# Set cssutils module logging to level FATAL
-cssutils.log.setLevel(logging.FATAL)
-
-def load_preset_from_css(path):
+def parse_css(path):
     css = ""
     variables = {}
     palette = {}
@@ -49,19 +44,22 @@ def load_preset_from_css(path):
     for color in COLORS:
         palette[color] = {}
 
-    with open(path, "r", encoding="utf-8") as f:
-        sheet = cssutils.parseString(f.read())
-        for rule in sheet:
-            css_text = rule.cssText
-            if rule.type == rule.UNKNOWN_RULE:
-                if css_text.startswith("@define-color"):
-                    name, color = css_text.split(" ", 1)[1].split(" ", 1)
-                    for color_name in COLORS:
-                        if name.startswith(color_name):
-                            palette[name[:-1]][name[-1:]] = color[:-1]
-                            break
-                    else:
+    with open(path, "r", encoding="utf-8") as sheet:
+        for line in sheet:
+            cdefine_match = re.search(define_color, line)
+            not_cdefine_match = re.search(not_define_color, line)
+            if cdefine_match != None: # If @define-color variable declarations were found
+                palette_part = cdefine_match.__getitem__(1) # Get the second item of the re.Match object
+                name, color = palette_part.split(" ", 1)[1].split(" ", 1)
+                for color_name in COLORS:
+                    if name.startswith(color_name): # Palette colors
+                        palette[name[:-1]][name[-1:]] = color[:-1]
+                        break
+                    else: # Other color variables
                         variables[name] = color[:-1]
-            elif rule.type == rule.STYLE_RULE:
-                css += f"\n{rule.cssText}\n"
-    return variables, palette, css
+            elif not_cdefine_match != None: # If CSS rules were found
+                css_part = not_cdefine_match.__getitem__(1)
+                css += f"{css_part}\n"
+
+        sheet.close()
+        return variables, palette, css
