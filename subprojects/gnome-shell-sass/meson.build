@@ -16,6 +16,8 @@ theme_sources = files([
     '_high-contrast-colors.scss',
     '_palette.scss',
     '_widgets.scss',
+    'gnome-shell.scss',
+    'gnome-shell-high-contrast.scss',
 ])
 
 install_data(theme_sources, install_dir : gnome_shell_sass_dir)
