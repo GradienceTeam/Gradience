@@ -43,6 +43,8 @@ class GradienceWelcomeWindow(Adw.Window):
 
     switch_system = Gtk.Template.Child()
     switch_adw_gtk3 = Gtk.Template.Child()
+    switch_adw_gtk3_dark = Gtk.Template.Child()
+    switch_adw_gtk3_light = Gtk.Template.Child()
 
     progressbar = Gtk.Template.Child()
     img_welcome = Gtk.Template.Child()
@@ -162,6 +164,13 @@ class GradienceWelcomeWindow(Adw.Window):
     def adw_gtk3(self):
         buglog("setup adw-gtk3")
         theme_settings = Gio.Settings("org.gnome.desktop.interface")
+        if self.switch_adw_gtk3_dark.get_active():
+            theme_settings.set_string("gtk-theme", "adw-gtk3-dark")
+            theme_settings.set_string("color-scheme", "prefer-dark")
+        else:
+            theme_settings.set_string("gtk-theme", "adw-gtk3")
+            theme_settings.set_string("color-scheme", "default")
+
 
     def configure_system(self):
         buglog("configure system")
