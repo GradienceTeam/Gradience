@@ -13,6 +13,7 @@ python = import('python')
 
 # Subprojects
 adw_gtk3 = subproject('adw-gtk3')
+gnome_shell_sass = subproject('gnome-shell-sass')
 
 # Project information
 PROJECT_URL = 'https://github.com/GradienceTeam/Gradience'
