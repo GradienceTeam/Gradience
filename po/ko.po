@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-13 00:56+0000\n"
+"POT-Creation-Date: 2022-10-16 12:16+0000\n"
 "PO-Revision-Date: 2022-10-12 14:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:966
+#: data/ui/window.blp:5 gradience/main.py:967
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -33,7 +33,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "Adwaita의 외관을 쉽게 변경하세요."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:968
+#: gradience/main.py:969
 msgid "Gradience Team"
 msgstr "Gradience팀"
 
@@ -111,10 +111,14 @@ msgid "Custom CSS"
 msgstr "커스텀 CSS"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Keep in mind that Libadwaita was "
+#| "made so that applications could hardcode values like paddings and "
+#| "margins. Only GTK 4 CSS will be previewed here."
 msgid ""
 "Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins. Only "
-"GTK 4 CSS will be previewed here."
+"so that applications could hardcode values like paddings and margins."
 msgstr ""
 "이것을 변경하면 일부 프로그램이 깨질 수 있습니다. Libadwaita는 응용 프로그램"
 "이 패딩 및 여백과 같은 값을 하드코딩할 수 있도록 만들어졌습니다. 여기에서는 "
@@ -511,7 +515,7 @@ msgstr "기존 앱 테마적용"
 msgid "System Configuration"
 msgstr "시스템 구성"
 
-#: data/ui/window.blp:23 gradience/ui/window.py:140 gradience/main.py:603
+#: data/ui/window.blp:23 gradience/ui/window.py:140 gradience/main.py:604
 msgid "Apply"
 msgstr "적용"
 
@@ -588,8 +592,8 @@ msgid "Unexpected file error occurred"
 msgstr "예기치 않은 파일 오류가 발생했습니다"
 
 #: gradience/ui/app_type_dialog.py:44
-#: gradience/ui/presets_manager_window.py:190 gradience/main.py:654
-#: gradience/main.py:727 gradience/main.py:868
+#: gradience/ui/presets_manager_window.py:190 gradience/main.py:655
+#: gradience/main.py:728 gradience/main.py:869
 msgid "Cancel"
 msgstr "취소"
 
@@ -789,19 +793,19 @@ msgstr "프리셋을 찾을 수 없습니다"
 msgid "Favourite Presets"
 msgstr "좋아하는 프리셋"
 
-#: gradience/main.py:528
+#: gradience/main.py:529
 msgid "Unsaved Changes"
 msgstr "저장되지 않은 변경사항"
 
-#: gradience/main.py:539
+#: gradience/main.py:540
 msgid "Save Changes"
 msgstr "변경사항 저장하기"
 
-#: gradience/main.py:597
+#: gradience/main.py:598
 msgid "Apply This Color Scheme?"
 msgstr "이 색 구성표를 적용하시겠습니까?"
 
-#: gradience/main.py:599
+#: gradience/main.py:600
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -809,32 +813,32 @@ msgstr ""
 "경고: 해당 앱 유형에 대한 모든 사용자 정의 CSS 파일은 되돌릴 수 없도록 덮어씁"
 "니다!"
 
-#: gradience/main.py:613
+#: gradience/main.py:614
 msgid "Restore applied color scheme?"
 msgstr "적용된 색 구성표를 복원하시겠습니까?"
 
-#: gradience/main.py:614 gradience/main.py:626
+#: gradience/main.py:615 gradience/main.py:627
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "현재 설정이 사전 설정으로 저장되어 있는지 확인해주세요."
 
-#: gradience/main.py:616
+#: gradience/main.py:617
 msgid "Restore"
 msgstr "복원하기"
 
-#: gradience/main.py:625
+#: gradience/main.py:626
 msgid "Reset applied color scheme?"
 msgstr "적용된 색 구성표를 재설정하시겠습니까?"
 
-#: gradience/main.py:628
+#: gradience/main.py:629
 msgid "Reset"
 msgstr "초기화"
 
-#: gradience/main.py:638
+#: gradience/main.py:639
 msgid "Save preset as…"
 msgstr "프리셋을 다른 이름으로 저장…"
 
-#: gradience/main.py:640 gradience/main.py:668 gradience/main.py:685
-#: gradience/main.py:713 gradience/main.py:744 gradience/main.py:761
+#: gradience/main.py:641 gradience/main.py:669 gradience/main.py:686
+#: gradience/main.py:714 gradience/main.py:745 gradience/main.py:762
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -843,47 +847,47 @@ msgstr ""
 "사전 설정을 <tt>{0}</tt>에 저장하는 중입니다. 해당 사전 설정이 이미 있는 경"
 "우 덮어씁니다!"
 
-#: gradience/main.py:655 gradience/main.py:729
+#: gradience/main.py:656 gradience/main.py:730
 msgid "Save"
 msgstr "저장"
 
-#: gradience/main.py:711
+#: gradience/main.py:712
 msgid "You have unsaved changes!"
 msgstr "저장하지 않은 변경사항이 있습니다!"
 
-#: gradience/main.py:728
+#: gradience/main.py:729
 msgid "Discard"
 msgstr "버리기"
 
-#: gradience/main.py:789
+#: gradience/main.py:790
 msgid "Preset saved"
 msgstr "사전 설정 저장됨"
 
-#: gradience/main.py:856
+#: gradience/main.py:857
 msgid "Preset set sucessfully"
 msgstr "사전 설정이 성공적으로 적용되었습니다!"
 
-#: gradience/main.py:861
+#: gradience/main.py:862
 msgid "Log out ?"
 msgstr "로그아웃하시겠습니까?"
 
-#: gradience/main.py:863
+#: gradience/main.py:864
 msgid "For the changes to take effect, you need to log out. "
 msgstr "변경 사항을 적용하려면 로그아웃해야 합니다. "
 
-#: gradience/main.py:869
+#: gradience/main.py:870
 msgid "Logout"
 msgstr "로그아웃"
 
-#: gradience/main.py:923
+#: gradience/main.py:924
 msgid "Could not restore GTK 4 backup"
 msgstr "GTK 4 백업을 복원할 수 없습니다"
 
-#: gradience/main.py:956
+#: gradience/main.py:957
 msgid "Preset reseted"
 msgstr "사전 설정 재설정됨"
 
-#: gradience/main.py:1021
+#: gradience/main.py:1022
 #, fuzzy
 msgid ""
 "\n"
@@ -930,7 +934,7 @@ msgstr ""
 "<li>새로운 번역 및 업데이트된 번역</li>\n"
 "\n"
 
-#: gradience/main.py:1043
+#: gradience/main.py:1044
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -958,23 +962,23 @@ msgstr ""
 "\n"
 "이 앱은 Python으로 작성되었으며 GTK 4 및 Libadwaita를 사용합니다.\n"
 
-#: gradience/main.py:1059
+#: gradience/main.py:1060
 msgid "Plugins by"
 msgstr "플러그인"
 
-#: gradience/main.py:1066
+#: gradience/main.py:1067
 msgid "Presets by"
 msgstr "프리셋"
 
-#: gradience/main.py:1088
+#: gradience/main.py:1089
 msgid "Packages by"
 msgstr "패키지"
 
-#: gradience/main.py:1095
+#: gradience/main.py:1096
 msgid "Fixes by"
 msgstr "버그수정"
 
-#: gradience/main.py:1105
+#: gradience/main.py:1106
 msgid "Special thanks to"
 msgstr "특별히 고마운 분들"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-13 00:56+0000\n"
+"POT-Creation-Date: 2022-10-16 12:16+0000\n"
 "PO-Revision-Date: 2022-10-12 14:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:966
+#: data/ui/window.blp:5 gradience/main.py:967
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -32,7 +32,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "轻松改变 Adwaita 的外观。"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:968
+#: gradience/main.py:969
 msgid "Gradience Team"
 msgstr "Gradience 团队"
 
@@ -108,10 +108,14 @@ msgid "Custom CSS"
 msgstr "自定义 CSS"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Keep in mind that Libadwaita was "
+#| "made so that applications could hardcode values like paddings and "
+#| "margins. Only GTK 4 CSS will be previewed here."
 msgid ""
 "Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins. Only "
-"GTK 4 CSS will be previewed here."
+"so that applications could hardcode values like paddings and margins."
 msgstr ""
 "改变这一点可能会破坏一些程序。请记住，Libadwaita 是为了让应用程序可以硬编码诸"
 "如 paddings 和 margins 的值。这里将只预览GTK 4的CSS。"
@@ -497,7 +501,7 @@ msgstr "旧版应用程序主题"
 msgid "System Configuration"
 msgstr "系统配置"
 
-#: data/ui/window.blp:23 gradience/ui/window.py:140 gradience/main.py:603
+#: data/ui/window.blp:23 gradience/ui/window.py:140 gradience/main.py:604
 msgid "Apply"
 msgstr "应用"
 
@@ -574,8 +578,8 @@ msgid "Unexpected file error occurred"
 msgstr "发生意外的文件错误"
 
 #: gradience/ui/app_type_dialog.py:44
-#: gradience/ui/presets_manager_window.py:190 gradience/main.py:654
-#: gradience/main.py:727 gradience/main.py:868
+#: gradience/ui/presets_manager_window.py:190 gradience/main.py:655
+#: gradience/main.py:728 gradience/main.py:869
 msgid "Cancel"
 msgstr "取消"
 
@@ -771,97 +775,97 @@ msgstr "未找到预设"
 msgid "Favourite Presets"
 msgstr "最喜欢的预设"
 
-#: gradience/main.py:528
+#: gradience/main.py:529
 msgid "Unsaved Changes"
 msgstr "未保存更改"
 
-#: gradience/main.py:539
+#: gradience/main.py:540
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: gradience/main.py:597
+#: gradience/main.py:598
 msgid "Apply This Color Scheme?"
 msgstr "应用此配色方案？"
 
-#: gradience/main.py:599
+#: gradience/main.py:600
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr "警告：这些应用类型的任何自定义 CSS 文件都将被不可逆转地覆盖!"
 
-#: gradience/main.py:613
+#: gradience/main.py:614
 msgid "Restore applied color scheme?"
 msgstr "恢复应用的配色方案？"
 
-#: gradience/main.py:614 gradience/main.py:626
+#: gradience/main.py:615 gradience/main.py:627
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "确保你将当前的设置保存为预设。"
 
-#: gradience/main.py:616
+#: gradience/main.py:617
 msgid "Restore"
 msgstr "恢复"
 
-#: gradience/main.py:625
+#: gradience/main.py:626
 msgid "Reset applied color scheme?"
 msgstr "重置应用的配色方案？"
 
-#: gradience/main.py:628
+#: gradience/main.py:629
 msgid "Reset"
 msgstr "重置"
 
-#: gradience/main.py:638
+#: gradience/main.py:639
 msgid "Save preset as…"
 msgstr "将预设另存为…"
 
-#: gradience/main.py:640 gradience/main.py:668 gradience/main.py:685
-#: gradience/main.py:713 gradience/main.py:744 gradience/main.py:761
+#: gradience/main.py:641 gradience/main.py:669 gradience/main.py:686
+#: gradience/main.py:714 gradience/main.py:745 gradience/main.py:762
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr "存储预设为 <tt>{0}</tt>.如果该预设已存在，它将被覆盖！"
 
-#: gradience/main.py:655 gradience/main.py:729
+#: gradience/main.py:656 gradience/main.py:730
 msgid "Save"
 msgstr "保存"
 
-#: gradience/main.py:711
+#: gradience/main.py:712
 msgid "You have unsaved changes!"
 msgstr "您有未保存更改！"
 
-#: gradience/main.py:728
+#: gradience/main.py:729
 msgid "Discard"
 msgstr "放弃"
 
-#: gradience/main.py:789
+#: gradience/main.py:790
 msgid "Preset saved"
 msgstr "预设已保存"
 
-#: gradience/main.py:856
+#: gradience/main.py:857
 msgid "Preset set sucessfully"
 msgstr "预设设置成功"
 
-#: gradience/main.py:861
+#: gradience/main.py:862
 msgid "Log out ?"
 msgstr "注销 ？"
 
-#: gradience/main.py:863
+#: gradience/main.py:864
 msgid "For the changes to take effect, you need to log out. "
 msgstr "要使更改生效，您需要注销。 "
 
-#: gradience/main.py:869
+#: gradience/main.py:870
 msgid "Logout"
 msgstr "注销"
 
-#: gradience/main.py:923
+#: gradience/main.py:924
 msgid "Could not restore GTK 4 backup"
 msgstr "无法还原 GTK 4 备份"
 
-#: gradience/main.py:956
+#: gradience/main.py:957
 msgid "Preset reseted"
 msgstr "预设已重置"
 
-#: gradience/main.py:1021
+#: gradience/main.py:1022
 msgid ""
 "\n"
 "<ul>\n"
@@ -905,7 +909,7 @@ msgstr ""
 "<li>新的和更新的翻译</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1043
+#: gradience/main.py:1044
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -932,23 +936,23 @@ msgstr ""
 "\n"
 "这个程序是用 Python 开发的并使用 GTK 4 和 Libadwaita。\n"
 
-#: gradience/main.py:1059
+#: gradience/main.py:1060
 msgid "Plugins by"
 msgstr "插件作者"
 
-#: gradience/main.py:1066
+#: gradience/main.py:1067
 msgid "Presets by"
 msgstr "预设作者"
 
-#: gradience/main.py:1088
+#: gradience/main.py:1089
 msgid "Packages by"
 msgstr "包作者"
 
-#: gradience/main.py:1095
+#: gradience/main.py:1096
 msgid "Fixes by"
 msgstr "修复者"
 
-#: gradience/main.py:1105
+#: gradience/main.py:1106
 msgid "Special thanks to"
 msgstr "特别感谢"
 

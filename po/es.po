@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-13 00:56+0000\n"
+"POT-Creation-Date: 2022-10-16 12:16+0000\n"
 "PO-Revision-Date: 2022-10-12 14:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/window.blp:5 gradience/main.py:966
+#: data/ui/window.blp:5 gradience/main.py:967
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -33,7 +33,7 @@ msgid "Change the look of Adwaita, with ease."
 msgstr "Cambie el aspecto de Adwaita, con facilidad."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:7
-#: gradience/main.py:968
+#: gradience/main.py:969
 msgid "Gradience Team"
 msgstr "Equipo de Gradience"
 
@@ -116,10 +116,14 @@ msgid "Custom CSS"
 msgstr "CSS personalizado"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Keep in mind that Libadwaita was "
+#| "made so that applications could hardcode values like paddings and "
+#| "margins. Only GTK 4 CSS will be previewed here."
 msgid ""
 "Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins. Only "
-"GTK 4 CSS will be previewed here."
+"so that applications could hardcode values like paddings and margins."
 msgstr ""
 "Cambiar esto puede romper algunos programas. Tenga en cuenta que Libadwaita "
 "se hizo para que las aplicaciones pudieran codificar valores como el relleno "
@@ -578,7 +582,7 @@ msgstr "Tematización de aplicaciones heredadas"
 msgid "System Configuration"
 msgstr "Configuración del sistema"
 
-#: data/ui/window.blp:23 gradience/ui/window.py:140 gradience/main.py:603
+#: data/ui/window.blp:23 gradience/ui/window.py:140 gradience/main.py:604
 msgid "Apply"
 msgstr "Aplicar"
 
@@ -662,8 +666,8 @@ msgid "Unexpected file error occurred"
 msgstr "Se ha producido un error de archivo inesperado"
 
 #: gradience/ui/app_type_dialog.py:44
-#: gradience/ui/presets_manager_window.py:190 gradience/main.py:654
-#: gradience/main.py:727 gradience/main.py:868
+#: gradience/ui/presets_manager_window.py:190 gradience/main.py:655
+#: gradience/main.py:728 gradience/main.py:869
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -881,22 +885,22 @@ msgstr "No se han encontrado preajustes"
 msgid "Favourite Presets"
 msgstr "Preselecciones favoritas"
 
-#: gradience/main.py:528
+#: gradience/main.py:529
 #, fuzzy
 msgid "Unsaved Changes"
 msgstr "Cambios no guardados"
 
-#: gradience/main.py:539
+#: gradience/main.py:540
 #, fuzzy
 msgid "Save Changes"
 msgstr "Guardar Cambios"
 
-#: gradience/main.py:597
+#: gradience/main.py:598
 #, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "¿Aplicar esta combinación de colores?"
 
-#: gradience/main.py:599
+#: gradience/main.py:600
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -904,35 +908,35 @@ msgstr ""
 "¡Advertencia: los archivos CSS personalizados para esos tipos de "
 "aplicaciones se sobrescribirán de forma irreversible!"
 
-#: gradience/main.py:613
+#: gradience/main.py:614
 #, fuzzy
 msgid "Restore applied color scheme?"
 msgstr "¿Restablecer la combinación de colores aplicada?"
 
-#: gradience/main.py:614 gradience/main.py:626
+#: gradience/main.py:615 gradience/main.py:627
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Asegúrese de que tiene la configuración actual guardada como un diseño."
 
-#: gradience/main.py:616
+#: gradience/main.py:617
 #, fuzzy
 msgid "Restore"
 msgstr "Restaurar"
 
-#: gradience/main.py:625
+#: gradience/main.py:626
 msgid "Reset applied color scheme?"
 msgstr "¿Restablecer el esquema de colores aplicado?"
 
-#: gradience/main.py:628
+#: gradience/main.py:629
 msgid "Reset"
 msgstr "Restablecer"
 
-#: gradience/main.py:638
+#: gradience/main.py:639
 msgid "Save preset as…"
 msgstr "Guardar diseño como…"
 
-#: gradience/main.py:640 gradience/main.py:668 gradience/main.py:685
-#: gradience/main.py:713 gradience/main.py:744 gradience/main.py:761
+#: gradience/main.py:641 gradience/main.py:669 gradience/main.py:686
+#: gradience/main.py:714 gradience/main.py:745 gradience/main.py:762
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -940,50 +944,50 @@ msgid ""
 msgstr ""
 "Guardar diseño en <tt>{0}</tt>. ¡Si ese diseño ya existe, se sobrescribirá!"
 
-#: gradience/main.py:655 gradience/main.py:729
+#: gradience/main.py:656 gradience/main.py:730
 msgid "Save"
 msgstr "Guardar"
 
-#: gradience/main.py:711
+#: gradience/main.py:712
 #, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Tiene cambios sin guardar"
 
-#: gradience/main.py:728
+#: gradience/main.py:729
 #, fuzzy
 msgid "Discard"
 msgstr "Descartar"
 
-#: gradience/main.py:789
+#: gradience/main.py:790
 msgid "Preset saved"
 msgstr "Diseño guardado"
 
-#: gradience/main.py:856
+#: gradience/main.py:857
 msgid "Preset set sucessfully"
 msgstr "Diseño establecido con éxito"
 
-#: gradience/main.py:861
+#: gradience/main.py:862
 msgid "Log out ?"
 msgstr "¿Cerrar la sesión?"
 
-#: gradience/main.py:863
+#: gradience/main.py:864
 msgid "For the changes to take effect, you need to log out. "
 msgstr "Para que los cambios surtan efecto, debes cerrar la sesión. "
 
-#: gradience/main.py:869
+#: gradience/main.py:870
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: gradience/main.py:923
+#: gradience/main.py:924
 #, fuzzy
 msgid "Could not restore GTK 4 backup"
 msgstr "No se ha podido restaurar la copia de seguridad de GTK 4"
 
-#: gradience/main.py:956
+#: gradience/main.py:957
 msgid "Preset reseted"
 msgstr "Diseño restablecido"
 
-#: gradience/main.py:1021
+#: gradience/main.py:1022
 msgid ""
 "\n"
 "<ul>\n"
@@ -1008,7 +1012,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1043
+#: gradience/main.py:1044
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1051,29 +1055,29 @@ msgstr ""
 "\n"
 "Esta aplicación está escrita en Python y utiliza GTK 4 y Libadwaita.\n"
 
-#: gradience/main.py:1059
+#: gradience/main.py:1060
 #, fuzzy
 #| msgid "Plugins"
 msgid "Plugins by"
 msgstr "Plugins de"
 
-#: gradience/main.py:1066
+#: gradience/main.py:1067
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Preselecciones de"
 
-#: gradience/main.py:1088
+#: gradience/main.py:1089
 #, fuzzy
 msgid "Packages by"
 msgstr "Paquetes de"
 
-#: gradience/main.py:1095
+#: gradience/main.py:1096
 #, fuzzy
 msgid "Fixes by"
 msgstr "Arreglos de"
 
-#: gradience/main.py:1105
+#: gradience/main.py:1106
 #, fuzzy
 msgid "Special thanks to"
 msgstr "Un agradecimiento especial a"
