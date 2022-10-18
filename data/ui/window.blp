@@ -61,6 +61,15 @@ template GradienceMainWindow : Adw.ApplicationWindow {
           }
 
           [end]
+          Button switch_theme {
+            action-name: "app.switch_theme";
+            tooltip-text: _("Switch Theme");
+            Adw.ButtonContent {
+              icon-name: "preferences-desktop-theme-symbolic";
+            }
+          }
+
+          [end]
           MenuButton errors-button {
             styles ["raised", "error"]
             tooltip-text: _("CSS Errors");

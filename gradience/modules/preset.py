@@ -40,107 +40,158 @@ AMAZING_NAMES = [
 ]
 
 
-class ItWasAPreset:
+class BasePreset:
     variables = {}
     palette = {}
     custom_css = {
         "gtk4": "",
         "gtk3": "",
     }
-    plugins = {}
-    repo = "user"
-    name = "new_preset"
-    badges = {}
 
-    def __init__(self, name=None, repo=None, preset_path=None, text=None, preset=None):
-        if text:  # load from ressource
-            self.load_preset(text=text)
-        elif preset:  # css or dict
-            self.load_preset(preset=preset)
+    def __init__(self, css=None, preset=None, preset_path=None):
+        if css:
+            self.load_preset_from_css(css)
+        elif preset:
+            self.load_preset_from_json(preset)
+        elif preset_path:
+            self.load_preset_from_path(preset_path)
         else:
-            self.preset_name = name
-            if name is not None:
-                self.name = to_slug_case(name)
-            if repo is not None:
-                self.repo = repo
-            if preset_path is None:
-                self.preset_path = os.path.join(
-                    presets_dir, repo, self.name + ".json")
-            else:
-                self.preset_path = preset_path
-            self.load_preset()
+            self.no_preset()
 
-    def load_preset(self, text=None, preset=None):
-        try:
-            if not preset:
-                if text:
-                    preset_text = text
-                else:
-                    with open(self.preset_path, "r", encoding="utf-8") as file:
-                        preset_text = file.read()
-                preset = json.loads(preset_text)
+    def no_preset(self):
+        self.variables = {
+            "accent_color": "rgb(220,138,221)",
+            "accent_bg_color": "rgb(145,65,172)",
+            "accent_fg_color": "#ffffff",
+            "destructive_color": "#ff7b63",
+            "destructive_bg_color": "#c01c28",
+            "destructive_fg_color": "#ffffff",
+            "success_color": "#8ff0a4",
+            "success_bg_color": "#26a269",
+            "success_fg_color": "#ffffff",
+            "warning_color": "#f8e45c",
+            "warning_bg_color": "#cd9309",
+            "warning_fg_color": "rgba(0, 0, 0, 0.8)",
+            "error_color": "#ff7b63",
+            "error_bg_color": "#c01c28",
+            "error_fg_color": "#ffffff",
+            "window_bg_color": "rgb(36,31,49)",
+            "window_fg_color": "rgb(255,255,255)",
+            "view_bg_color": "rgb(36,31,49)",
+            "view_fg_color": "#ffffff",
+            "headerbar_bg_color": "rgb(36,31,49)",
+            "headerbar_fg_color": "#ffffff",
+            "headerbar_border_color": "rgba(0,0,0,0)",
+            "headerbar_backdrop_color": "@window_bg_color",
+            "headerbar_shade_color": "rgba(0,0,0,0.25)",
+            "card_bg_color": "rgba(255,255,255,0.08)",
+            "card_fg_color": "#ffffff",
+            "card_shade_color": "rgba(0,0,0,0.25)",
+            "dialog_bg_color": "rgb(36,31,49)",
+            "dialog_fg_color": "#ffffff",
+            "popover_bg_color": "rgb(36,31,49)",
+            "popover_fg_color": "#ffffff",
+            "shade_color": "rgba(0,0,0,0.36)",
+            "scrollbar_outline_color": "rgb(0,0,0)"
+        }
+        self.palette = {
 
-            self.name = preset["name"]
-            self.preset_name = to_slug_case(self.name)
-            self.variables = preset["variables"]
-            self.palette = preset["palette"]
-
-            if "badges" in preset:
-                self.badges = preset["badges"]
-            else:
-                self.badges = {}
-
-            if "custom_css" in preset:
-                self.custom_css = preset["custom_css"]
-            else:
-                for app_type in settings_schema["custom_css_app_types"]:
-                    self.custom_css[app_type] = ""
-        except Exception as error:
-            buglog(error, " -> preset : ", self.preset_path)
-
-    def save_preset(self, name=None, plugins_list=None, to=None):
-        if to is None:
-            self.preset_path = os.path.join(
-                presets_dir, self.repo, self.name + ".json")
-        else:
-            self.preset_path = to
-        if not os.path.exists(
-            os.path.join(
-                presets_dir,
-                "user",
-            )
-        ):
-            os.makedirs(
-                os.path.join(
-                    presets_dir,
-                    "user",
-                )
-            )
-
-        if name is None:
-            name = self.preset_name
-
-        if plugins_list is None:
-            plugins_list = {}
-        else:
-            plugins_list = plugins_list.save()
-
-        with open(
-            self.preset_path,
-            "w",
-            encoding="utf-8",
-        ) as file:
-            object_to_write = {
-                "name": name,
-                "variables": self.variables,
-                "palette": self.palette,
-                "custom_css": self.custom_css,
-                "plugins": plugins_list,
+            "blue_": {
+                "1": "#99c1f1",
+                "2": "#62a0ea",
+                "3": "#3584e4",
+                "4": "#1c71d8",
+                "5": "#1a5fb4"
+            },
+            "green_": {
+                "1": "#8ff0a4",
+                "2": "#57e389",
+                "3": "#33d17a",
+                "4": "#2ec27e",
+                "5": "#26a269"
+            },
+            "yellow_": {
+                "1": "#f9f06b",
+                "2": "#f8e45c",
+                "3": "#f6d32d",
+                "4": "#f5c211",
+                "5": "#e5a50a"
+            },
+            "orange_": {
+                "1": "#ffbe6f",
+                "2": "#ffa348",
+                "3": "#ff7800",
+                "4": "#e66100",
+                "5": "#c64600"
+            },
+            "red_": {
+                "1": "#f66151",
+                "2": "#ed333b",
+                "3": "#e01b24",
+                "4": "#c01c28",
+                "5": "#a51d2d"
+            },
+            "purple_": {
+                "1": "#dc8add",
+                "2": "#c061cb",
+                "3": "#9141ac",
+                "4": "#813d9c",
+                "5": "#613583"
+            },
+            "brown_": {
+                "1": "#cdab8f",
+                "2": "#b5835a",
+                "3": "#986a44",
+                "4": "#865e3c",
+                "5": "#63452c"
+            },
+            "light_": {
+                "1": "#ffffff",
+                "2": "#f6f5f4",
+                "3": "#deddda",
+                "4": "#c0bfbc",
+                "5": "#9a9996"
+            },
+            "dark_": {
+                "1": "#77767b",
+                "2": "#5e5c64",
+                "3": "#3d3846",
+                "4": "#241f31",
+                "5": "#000000"
             }
-            file.write(json.dumps(object_to_write, indent=4))
+        }
 
-    def validate(self):
-        return True
+    def load_preset_from_path(self, preset_path):
+        with open(preset_path, "r", encoding="utf-8") as file:
+            self.load_preset_from_json(json.loads(file.read()))
+
+    def load_preset_from_json(self, preset):
+        self.variables = preset["variables"]
+        self.palette = preset["palette"]
+        if "custom_css" in preset:
+            self.custom_css = preset["custom_css"]
+
+    def load_preset_from_css(self, css):
+        self.variables, self.palette, self.custom_css = load_preset_from_css(
+            css)
+
+    def to_json(self):
+        return {
+            "variables": self.variables,
+            "palette": self.palette,
+            "custom_css": self.custom_css,
+        }
+
+    def to_css(self, app_type):
+        final_css = ""
+        for key in self.variables.keys():
+            final_css += f"@define-color {key} {self.variables[key]};\n"
+        for prefix_key in self.palette.keys():
+            for key in self.palette[prefix_key].keys():
+                final_css += f"@define-color {prefix_key + key} {self.palette[prefix_key][key]};\n"
+        final_css += self.custom_css.get(app_type, "")
+        return final_css
+
 
 class DarkPreset(BasePreset):
     def no_preset(self):
@@ -401,13 +452,16 @@ class Preset():
         # user/preset.json
         # -2    -1
         self.repo = path.split("/")[-2]
-        self.name = data["name"] if "name" in data else random.choice(AMAZING_NAMES)
+        self.name = data["name"] if "name" in data else random.choice(
+            AMAZING_NAMES)
         self.filename = to_slug_case(self.name)
         self.description = data["description"] if "description" in data else ""
         self.badges = data["badges"] if "badges" in data else {}
         self.default = data["default"] if "default" in data else "light"
-        self.dark = DarkPreset(preset=data["dark"]) if "dark" in data else DarkPreset()
-        self.light = LightPreset(preset=data["light"]) if "light" in data else LightPreset()
+        self.dark = DarkPreset(
+            preset=data["dark"]) if "dark" in data else DarkPreset()
+        self.light = LightPreset(
+            preset=data["light"]) if "light" in data else LightPreset()
 
     def __repr__(self):
         return f"Preset({self.name})"
@@ -436,6 +490,7 @@ class Preset():
             to = os.path.join(presets_dir, self.repo, self.filename + ".json")
         with open(to, "w", encoding="utf-8") as file:
             file.write(json.dumps(self.to_json(), indent=4))
+
 
 if __name__ == "__main__":
     p = Preset()
