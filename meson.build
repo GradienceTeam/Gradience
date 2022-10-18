@@ -55,13 +55,15 @@ endif
 PKGDATA_DIR = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
 MODULE_DIR = join_paths(PKGDATA_DIR, 'gradience')
 PLUGINS_DIR = join_paths(PKGDATA_DIR, 'gradience', 'plugins')
+DATA_DIR = join_paths(get_option('prefix'), get_option('datadir'))
+LOCALE_DIR = join_paths(get_option('prefix'), get_option('localedir'))
 
 # Install configuration data
 conf = configuration_data()
 conf.set('APP_ID', APPLICATION_ID)
 conf.set('PKGDATA_DIR', PKGDATA_DIR)
-conf.set('DATA_DIR', join_paths(get_option('prefix'), get_option('datadir')))
-conf.set('LOCALE_DIR', join_paths(get_option('prefix'), get_option('localedir')))
+conf.set('DATA_DIR', DATA_DIR)
+conf.set('LOCALE_DIR', LOCALE_DIR)
 conf.set('PYTHON', PY_INSTALLDIR.full_path())
 conf.set('VERSION', meson.project_version() + VERSION_SUFFIX)
 conf.set('BUILD_TYPE', get_option('buildtype'))
