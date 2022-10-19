@@ -11,4 +11,6 @@ def cli(ctx):
 
 
 from gradience.commands import apply_preset
+from gradience.commands import monet
 cli.add_command(apply_preset.apply_preset, "apply")
+cli.add_command(monet.monet, "monet")

@@ -232,6 +232,7 @@ class DarkPreset(BasePreset):
             "scrollbar_outline_color": "rgba(0,0,0,0.5)"
         }
 
+
 class LightPreset(BasePreset):
 
     def no_preset(self):
@@ -276,39 +277,40 @@ class PrettyPurple(BasePreset):
     def no_preset(self):
         self.variables = {
             "accent_color": "rgb(220,138,221)",
-        "accent_bg_color": "rgb(145,65,172)",
-        "accent_fg_color": "#ffffff",
-        "destructive_color": "#ff7b63",
-        "destructive_bg_color": "#c01c28",
-        "destructive_fg_color": "#ffffff",
-        "success_color": "#8ff0a4",
-        "success_bg_color": "#26a269",
-        "success_fg_color": "#ffffff",
-        "warning_color": "#f8e45c",
-        "warning_bg_color": "#cd9309",
-        "warning_fg_color": "rgba(0, 0, 0, 0.8)",
-        "error_color": "#ff7b63",
-        "error_bg_color": "#c01c28",
-        "error_fg_color": "#ffffff",
-        "window_bg_color": "rgb(36,31,49)",
-        "window_fg_color": "rgb(255,255,255)",
-        "view_bg_color": "rgb(36,31,49)",
-        "view_fg_color": "#ffffff",
-        "headerbar_bg_color": "rgb(36,31,49)",
-        "headerbar_fg_color": "#ffffff",
-        "headerbar_border_color": "rgba(0,0,0,0)",
-        "headerbar_backdrop_color": "@window_bg_color",
-        "headerbar_shade_color": "rgba(0,0,0,0.25)",
-        "card_bg_color": "rgba(255,255,255,0.08)",
-        "card_fg_color": "#ffffff",
-        "card_shade_color": "rgba(0,0,0,0.25)",
-        "dialog_bg_color": "rgb(36,31,49)",
-        "dialog_fg_color": "#ffffff",
-        "popover_bg_color": "rgb(36,31,49)",
-        "popover_fg_color": "#ffffff",
-        "shade_color": "rgba(0,0,0,0.36)",
-        "scrollbar_outline_color": "rgb(0,0,0)"
+            "accent_bg_color": "rgb(145,65,172)",
+            "accent_fg_color": "#ffffff",
+            "destructive_color": "#ff7b63",
+            "destructive_bg_color": "#c01c28",
+            "destructive_fg_color": "#ffffff",
+            "success_color": "#8ff0a4",
+            "success_bg_color": "#26a269",
+            "success_fg_color": "#ffffff",
+            "warning_color": "#f8e45c",
+            "warning_bg_color": "#cd9309",
+            "warning_fg_color": "rgba(0, 0, 0, 0.8)",
+            "error_color": "#ff7b63",
+            "error_bg_color": "#c01c28",
+            "error_fg_color": "#ffffff",
+            "window_bg_color": "rgb(36,31,49)",
+            "window_fg_color": "rgb(255,255,255)",
+            "view_bg_color": "rgb(36,31,49)",
+            "view_fg_color": "#ffffff",
+            "headerbar_bg_color": "rgb(36,31,49)",
+            "headerbar_fg_color": "#ffffff",
+            "headerbar_border_color": "rgba(0,0,0,0)",
+            "headerbar_backdrop_color": "@window_bg_color",
+            "headerbar_shade_color": "rgba(0,0,0,0.25)",
+            "card_bg_color": "rgba(255,255,255,0.08)",
+            "card_fg_color": "#ffffff",
+            "card_shade_color": "rgba(0,0,0,0.25)",
+            "dialog_bg_color": "rgb(36,31,49)",
+            "dialog_fg_color": "#ffffff",
+            "popover_bg_color": "rgb(36,31,49)",
+            "popover_fg_color": "#ffffff",
+            "shade_color": "rgba(0,0,0,0.36)",
+            "scrollbar_outline_color": "rgb(0,0,0)"
         }
+
 
 class Preset():
     description = ""
@@ -354,12 +356,8 @@ class Preset():
 
     def load_from_file(self, path):
         with open(path, "r", encoding="utf-8") as file:
-            #file = file.read()
-            #print(file)
             data = json.load(file)
 
-        # user/preset.json
-        # -2    -1
         self.repo = path.split("/")[-2]
         self.name = data["name"] if "name" in data else random.choice(
             AMAZING_NAMES)

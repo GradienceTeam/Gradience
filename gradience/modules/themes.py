@@ -244,7 +244,10 @@ class Theme:
         self.create_gtk4_light()
 
         config_path = Path("~/.config/gtk-4.0").expanduser()
-        shutil.rmtree(config_path)
+        try:
+            shutil.rmtree(config_path)
+        except OSError:
+            os.remove(config_path)
         os.symlink(gtk4_path, Path("~/.config/gtk-4.0").expanduser())
 
     def create_gtk4_dark(self):
