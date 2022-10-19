@@ -58,6 +58,7 @@ gradience_sources = [
   'repo_row.py',
   'no_plugin_pref.py',
   'share_window.py',
+  'cli.py',
 ]
 
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
@@ -76,3 +77,11 @@ gradience_modules = [
 ]
 
 PY_INSTALLDIR.install_sources(gradience_modules, subdir: 'gradience/modules')
+
+# Install commands
+gradience_commands = [
+  'commands/__init__.py',
+  'commands/apply_preset.py',
+]
+
+PY_INSTALLDIR.install_sources(gradience_commands, subdir: 'gradience/commands')
