@@ -67,5 +67,13 @@ if __name__ == '__main__':
 
     sys.path.insert(1, "/usr/local/lib/python3.10/site-packages")
 
-    from gradience import main
-    sys.exit(main.main())
+    # Testing modules
+    from gradience.modules import themes, preset
+    p = preset.Preset()
+    p.dark = preset.PrettyPurple()
+    t = themes.Theme("oxmrtt", p)
+    t.create()
+
+    # UI
+    # from gradience import main
+    # sys.exit(main.main())
