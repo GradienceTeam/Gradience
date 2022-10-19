@@ -412,32 +412,32 @@ class Preset():
     name = ""
     default = "light"
 
-    def __init__(self, name=None, repo="user", dark=None, dark_path=None, dark_css=None, light=None, light_path=None, light_css=None, default="light"):
-        if dark:
-            self.dark = DarkPreset(preset=dark)
-        elif dark_path:
-            self.dark = DarkPreset(preset_path=dark_path)
-        elif dark_css:
-            self.dark = DarkPreset(css=dark_css)
+    def __init__(self, name=None, repo="user", dark=None, dark_css=None, light=None, light_css=None, preset_path=None, default="light"):
+        if preset_path:
+            self.load_from_file(preset_path)
         else:
-            self.dark = DarkPreset()
 
-        if light:
-            self.light = LightPreset(preset=light)
-        elif light_path:
-            self.light = LightPreset(preset_path=light_path)
-        elif light_css:
-            self.light = LightPreset(css=light_css)
-        else:
-            self.light = LightPreset()
+            if dark:
+                self.dark = DarkPreset(preset=dark)
+            elif dark_css:
+                self.dark = DarkPreset(css=dark_css)
+            else:
+                self.dark = DarkPreset()
 
-        if name is not None:
-            self.name = name
-        else:
-            self.name = random.choice(AMAZING_NAMES)
-        self.filename = to_slug_case(self.name)
-        self.repo = repo
-        self.default = default
+            if light:
+                self.light = LightPreset(preset=light)
+            elif light_css:
+                self.light = LightPreset(css=light_css)
+            else:
+                self.light = LightPreset()
+
+            if name is not None:
+                self.name = name
+            else:
+                self.name = random.choice(AMAZING_NAMES)
+            self.filename = to_slug_case(self.name)
+            self.repo = repo
+            self.default = default
 
     def load_dark(self, css=None, preset=None, preset_path=None):
         self.dark = DarkPreset(css, preset, preset_path)
