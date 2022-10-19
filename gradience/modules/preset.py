@@ -354,7 +354,9 @@ class Preset():
 
     def load_from_file(self, path):
         with open(path, "r", encoding="utf-8") as file:
-            data = json.load(file.read())
+            #file = file.read()
+            #print(file)
+            data = json.load(file)
 
         # user/preset.json
         # -2    -1

@@ -204,6 +204,7 @@ class Theme:
         return f"Theme({self.name})"
 
     def create(self):
+        shutil.rmtree(self.path)
         self.create_gtk3()
         self.create_gtk4()
         self.create_gnome_shell()
@@ -243,7 +244,7 @@ class Theme:
         self.create_gtk4_light()
 
         config_path = Path("~/.config/gtk-4.0").expanduser()
-        os.remove(config_path)
+        shutil.rmtree(config_path)
         os.symlink(gtk4_path, Path("~/.config/gtk-4.0").expanduser())
 
     def create_gtk4_dark(self):
