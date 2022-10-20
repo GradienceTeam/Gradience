@@ -63,9 +63,9 @@ def fetch_presets(repo) -> [dict, list]:
 
     return preset_dict, url_list
 
-def download_preset(name, repo_name, repo) -> None:
+def download_preset(name, repo_name, url) -> None:
     try:
-        request = Soup.Message.new("GET", repo)
+        request = Soup.Message.new("GET", url)
         body = session.send_and_read(request, None)
     except GLib.GError as e: # offline
         if e.code == 1:
