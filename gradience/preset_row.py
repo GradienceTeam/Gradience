@@ -28,6 +28,8 @@ from .modules.preset import Preset
 
 from .share_window import GradienceShareWindow
 
+SUPPORT_URL = "https://github.com/GradienceTeam/Community/issues/new?assignees=daudix-UFO&labels=bug&template=preset_issue.yml&title=preset%3A+"
+
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/preset_row.ui")
 class GradiencePresetRow(Adw.ExpanderRow):
@@ -147,7 +149,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
         self.app.portal.open_uri(
             parent,
-            "https://github.com/GradienceTeam/Community/issues/new?assignees=daudix-UFO&labels=bug&template=preset_issue.yml&title=preset%3A+",
+            SUPPORT_URL,
             Xdp.OpenUriFlags.NONE,
             None,
             open_dir_callback,
