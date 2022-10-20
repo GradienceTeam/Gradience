@@ -27,7 +27,7 @@ import random
 
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
-from material_color_utilities_python import *
+from material_color_utilities_python import redFromArgb, greenFromArgb, blueFromArgb, alphaFromArgb, themeFromImage, Image
 
 
 def rgba_from_argb(argb, alpha=None) -> str:
@@ -418,7 +418,7 @@ class Preset:
             file.write(json.dumps(self.to_json(), indent=4))
 
     @classmethod
-    def new_from_background(cls, background, name, tone):
+    def new_from_background(cls, background, name):
         if str(background).endswith(".svg"):
             drawing = svg2rlg(background)
             background = os.path.join(
