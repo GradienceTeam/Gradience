@@ -29,33 +29,33 @@ ARTISTS = ["David Lapshin https://github.com/daudix-UFO"]
 DESIGNERS = ["David Lapshin https://github.com/daudix-UFO"]
 
 TRANSLATORS = """0xMRTT https://github.com/0xMRTT
-                                엘련 (Jisu Kim) https://github.com/vbalien
-            Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
-            BritishBenji https://github.com/BritishBenji
-            David Lapshin https://github.com/daudix-UFO
-            Davide Ferracin https://github.com/phaerrax
-            Ewout van Mansom https://github.com/emansom
-            FineFindus https://github.com/FineFindus
-            Gabriel Lemos https://github.com/gbrlgn
-            Juanjo Cillero https://www.transifex.com/user/profile/renux918
-            JungHee Lee https://github.com/MarongHappy
-            K.B.Dharun Krishna https://github.com/kbdharun
-            Karol Lademan https://www.transifex.com/user/profile/karlod
-            Luna Jernberg https://github.com/bittin
-            Maxime V https://www.transifex.com/user/profile/Adaoh
-            Michal S. <michal@getcryst.al>
-            Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
-            Philip Goto https://github.com/flipflop97
-            Renato Corrêa https://github.com/renatocrrs
-            Rene Coty https://github.com/rene-coty
-            Sabri Ünal https://github.com/libreajans
-            Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
-            bzizmza https://github.com/bzizmza
-            muzena https://github.com/muzena
-            renatocrrs https://github.com/renatocrrs
-            tfuxu https://github.com/tfuxu
-            yangyangdaji https://github.com/yangyangdaji
-            Óscar Fernández Díaz https://github.com/oscfdezdz"""
+엘련 (Jisu Kim) https://github.com/vbalien
+Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
+BritishBenji https://github.com/BritishBenji
+David Lapshin https://github.com/daudix-UFO
+Davide Ferracin https://github.com/phaerrax
+Ewout van Mansom https://github.com/emansom
+FineFindus https://github.com/FineFindus
+Gabriel Lemos https://github.com/gbrlgn
+Juanjo Cillero https://www.transifex.com/user/profile/renux918
+JungHee Lee https://github.com/MarongHappy
+K.B.Dharun Krishna https://github.com/kbdharun
+Karol Lademan https://www.transifex.com/user/profile/karlod
+Luna Jernberg https://github.com/bittin
+Maxime V https://www.transifex.com/user/profile/Adaoh
+Michal S. <michal@getcryst.al>
+Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
+Philip Goto https://github.com/flipflop97
+Renato Corrêa https://github.com/renatocrrs
+Rene Coty https://github.com/rene-coty
+Sabri Ünal https://github.com/libreajans
+Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
+bzizmza https://github.com/bzizmza
+muzena https://github.com/muzena
+renatocrrs https://github.com/renatocrrs
+tfuxu https://github.com/tfuxu
+yangyangdaji https://github.com/yangyangdaji
+Óscar Fernández Díaz https://github.com/oscfdezdz"""
 
 RELEASE_NOTES = _(
     """
