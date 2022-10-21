@@ -64,29 +64,5 @@ gradience_sources = [
 
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
 
-# Install modules
-gradience_modules = [
-  'modules/__init__.py',
-  'modules/custom_presets.py',
-  'modules/flatpak_overrides.py',
-  'modules/utils.py',
-  'modules/run_async.py',
-  'modules/css.py',
-  'modules/preset.py',
-  'modules/repo.py',
-  'modules/themes.py',
-  'modules/exceptions.py',
-  'modules/manager.py',
-]
-
-PY_INSTALLDIR.install_sources(gradience_modules, subdir: 'gradience/modules')
-
-# Install commands
-gradience_commands = [
-  'commands/__init__.py',
-  'commands/apply_preset.py',
-  'commands/monet.py',
-  'commands/about.py',
-]
-
-PY_INSTALLDIR.install_sources(gradience_commands, subdir: 'gradience/commands')
+subdir('modules')
+subdir('commands')
