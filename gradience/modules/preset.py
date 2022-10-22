@@ -24,6 +24,7 @@ from .utils import buglog, to_slug_case
 from .css import load_preset_from_css
 from .exceptions import GradienceMonetUnsupportedBackgroundError
 import random
+import semver
 
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
@@ -348,6 +349,7 @@ class Preset:
         self,
         name=None,
         repo="user",
+        version=semver.Version.parse("0.1.0"),
         dark=None,
         dark_css=None,
         light=None,
@@ -355,6 +357,7 @@ class Preset:
         preset_path=None,
         default="light",
     ):
+        self.version = version
         if preset_path:
             self.load_from_file(preset_path)
         else:
@@ -392,6 +395,7 @@ class Preset:
             data = json.load(file)
 
         self.repo = path.split("/")[-2]
+        self.version = semver.Version.parse(data["version"]) if "version" in data else semver.Version.parse("0.1.0")
         self.name = data["name"] if "name" in data else random.choice(AMAZING_NAMES)
         self.filename = to_slug_case(self.name)
         self.description = data["description"] if "description" in data else ""
@@ -413,9 +417,31 @@ class Preset:
     def pallette(self):
         return self.light.palette if self.default == "light" else self.dark.palette
 
+    def __eq__(self, other: object) -> bool:
+        return self.name == other.name and self.version == other.version
+
+    def __gt__(self, other: object) -> bool:
+        return self.version > other.version
+
+    def __ge__(self, other: object) -> bool:
+        return self.version >= other.version
+
+    def __lt__(self, other: object) -> bool:
+        return self.version < other.version
+
+    def __le__(self, other: object) -> bool:
+        return self.version <= other.version
+
+    def __ne__(self, other: object) -> bool:
+        return not self.__eq__(other)
+
+    def __int__(self):
+        return int(self.version)
+
     def to_json(self):
         return {
             "name": self.name,
+            "version": str(self.version),
             "description": self.description,
             "plugins": self.plugins,
             "badges": self.badges,
