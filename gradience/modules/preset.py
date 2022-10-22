@@ -356,6 +356,7 @@ class Preset:
         light_css=None,
         preset_path=None,
         default="light",
+        url=None,
     ):
         self.version = version
         if preset_path:
@@ -384,6 +385,15 @@ class Preset:
             self.repo = repo
             self.default = default
 
+        if repo == "curated":
+            self.url = f"https://raw.githubusercontent.com/GradienceTeam/Community/next/{self.filename}.json"
+        elif repo == "official":
+            self.url = f"https://raw.githubusercontent.com/GradienceTeam/Community/next/{self.filename}.json"
+        else:
+            self.url = url
+
+
+
     def load_dark(self, css=None, preset=None, preset_path=None):
         self.dark = DarkPreset(css, preset, preset_path)
 
@@ -406,6 +416,14 @@ class Preset:
             LightPreset(preset=data["light"]) if "light" in data else LightPreset()
         )
 
+    def update_from_json(self, data):
+        self.badges = data["badges"] if "badges" in data else {}
+        self.version = semver.Version.parse(data["version"]) if "version" in data else semver.Version.parse("0.1.0")
+        self.description = data["description"] if "description" in data else ""
+        self.default = data["default"] if "default" in data else "light"
+        self.dark = DarkPreset(preset=data["dark"]) if "dark" in data else DarkPreset()
+        self.light = LightPreset(preset=data["light"]) if "light" in data else LightPreset()
+        self.save()
     def __repr__(self):
         return f"Preset({self.name})"
 

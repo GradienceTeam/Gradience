@@ -64,25 +64,28 @@ def fetch_presets(repo) -> [dict, list]:
 
     return preset_dict, url_list
 
-
-def download_preset(name, repo_name, url) -> None:
+def get_as_json(url):
     try:
         request = Soup.Message.new("GET", url)
         body = session.send_and_read(request, None)
-    except GLib.GError as e:  # offline
-        if e.code == 1:
-            buglog(f"Failed to establish a new connection. Exc: {e}")
+    except GLib.GError as error:  # offline
+        if error.code == 1:
+            buglog(f"Failed to establish a new connection. Exc: {error}")
             return False, False
         else:
-            buglog(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
+            buglog(f"Unhandled Libsoup3 GLib.GError error code {error.code}. Exc: {error}")
             return False, False
     try:
         raw = json.loads(body.get_data())
-    except json.JSONDecodeError as e:
-        buglog(f"Error with decoding JSON data. Exc: {e}")
+    except json.JSONDecodeError as error:
+        buglog(f"Error with decoding JSON data. Exc: {error}")
         return False, False
 
-    data = json.dumps(raw)
+    return json.dumps(raw)
+
+
+def download_preset(name, repo_name, url) -> None:
+    data = get_as_json(url)
 
     try:
         with open(

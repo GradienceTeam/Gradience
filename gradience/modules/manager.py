@@ -1,17 +1,18 @@
+from pickletools import string1
 import shutil
 
 from gradience.modules.utils import to_slug_case
 from .preset import presets_dir, Preset
-from .custom_presets import download_preset
+from .custom_presets import download_preset, fetch_presets, get_as_json
 
 import os
 from pathlib import Path
-
+import semver
 
 class PresetManager:
-    def __init__(self):
+    def __init__(self, user_repo={}):
         self.presets_dir = Path(presets_dir)
-        self.presets = {"user": {}, "official": {}, "curated": {}}
+        self.presets = {"user": {}, "official": {}, "curated": {}, **user_repo}
         self.populate()
 
     def populate(self):
@@ -55,3 +56,21 @@ class PresetManager:
             preset_path=self.presets_dir / repo / to_slug_case(preset_name) + ".json"
         )
         self.add_preset(preset, repo)
+
+    def update_all(self):
+        for repo in self.presets:
+            self.update_repo(repo)
+
+    def update(self, preset: Preset):
+        url = preset.url
+        data_online = get_as_json(url)
+        version = semver.Version.parse(data_online["version"])
+        if version != preset.version:
+            preset.update_from_json(data_online)
+
+
+    def update_repo(self, repo: str):
+        if repo == "user": # user repo is not updated
+            return
+        for preset in self.presets[repo]:
+            self.update(preset)
