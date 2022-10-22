@@ -34,6 +34,7 @@ from .modules.preset import presets_dir
 from .modules.utils import buglog
 from .constants import rootdir
 
+
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
     __gtype_name__ = "GradiencePresetWindow"
@@ -97,8 +98,7 @@ class GradiencePresetWindow(Adw.Window):
         self.import_file_chooser.add_filter(self.all_filter)
         self.import_file_chooser.add_filter(self.json_filter)
 
-        self.import_file_chooser.connect(
-            "response", self.on_file_chooser_response)
+        self.import_file_chooser.connect("response", self.on_file_chooser_response)
 
     def setup_signals(self):
         self.search_entry.connect("search-changed", self.on_search_changed)
@@ -172,8 +172,7 @@ class GradiencePresetWindow(Adw.Window):
         self.save_repos()
 
     def save_repos(self):
-        self.settings.set_value("repos", GLib.Variant(
-            "a{sv}", self.user_repositories))
+        self.settings.set_value("repos", GLib.Variant("a{sv}", self.user_repositories))
         self.reload_repos_group()
         self.setup_explore()
 
@@ -206,8 +205,7 @@ class GradiencePresetWindow(Adw.Window):
 
         name_entry.connect("changed", on_name_entry_change)
 
-        url_entry = Gtk.Entry(
-            placeholder_text="https://example.com/raw/presets.json")
+        url_entry = Gtk.Entry(placeholder_text="https://example.com/raw/presets.json")
 
         def on_url_entry_change(*_args):
             if len(url_entry.get_text()) == 0:
@@ -237,7 +235,9 @@ class GradiencePresetWindow(Adw.Window):
             self.search_stack.set_visible_child_name("page_results")
             for widget in self.search_results_list:
                 widget.props.visible = False
-                selected_item_name = self.search_dropdown.props.selected_item.get_string().lower()
+                selected_item_name = (
+                    self.search_dropdown.props.selected_item.get_string().lower()
+                )
                 if not selected_item_name in "all":
                     if selected_item_name in widget.prefix.lower():
                         if search_text.lower() in widget.props.title.lower():
@@ -288,8 +288,7 @@ class GradiencePresetWindow(Adw.Window):
                             preset_file,
                         ),
                     )
-                    self.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Preset imported")))
+                    self.toast_overlay.add_toast(Adw.Toast(title=_("Preset imported")))
             else:
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Unsupported file format, must be .json"))
@@ -343,8 +342,7 @@ class GradiencePresetWindow(Adw.Window):
                     if not os.path.isdir(os.path.join(presets_dir, "user")):
                         os.mkdir(os.path.join(presets_dir, "user"))
 
-                    os.rename(repo, os.path.join(
-                        presets_dir, "user", repo.name))
+                    os.rename(repo, os.path.join(presets_dir, "user", repo.name))
 
                     try:
                         with open(
@@ -398,8 +396,7 @@ class GradiencePresetWindow(Adw.Window):
         if presets_check:
             for repo, presets in self.custom_presets.items():
                 for preset_file, preset_name in presets.items():
-                    row = GradiencePresetRow(
-                        preset_name, self, repo)
+                    row = GradiencePresetRow(preset_name, self, repo)
                     self.preset_list.add(row)
 
         else:

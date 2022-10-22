@@ -11,11 +11,7 @@ from pathlib import Path
 class PresetManager:
     def __init__(self):
         self.presets_dir = Path(presets_dir)
-        self.presets = {
-            "user": {},
-            "official": {},
-            "curated": {}
-        }
+        self.presets = {"user": {}, "official": {}, "curated": {}}
         self.populate()
 
     def populate(self):
@@ -44,7 +40,9 @@ class PresetManager:
                 # old presets
                 # gradience move them to .config/presets/user
                 shutil.move(repo, self.presets_dir / "user" / repo.name)
-                self.add_preset(Preset(preset_path=self.presets_dir / "user" / repo.name), "user")
+                self.add_preset(
+                    Preset(preset_path=self.presets_dir / "user" / repo.name), "user"
+                )
 
     def add_preset(self, preset, repo_name="user"):
         """Add a preset to the presets dictionary."""
@@ -52,7 +50,8 @@ class PresetManager:
 
     def download(self, preset_name, repo, url):
         """Download a preset from the official repository."""
-        download_preset(preset_name ,repo, url)
-        preset = Preset(preset_path=self.presets_dir / repo / to_slug_case(preset_name) + ".json")
+        download_preset(preset_name, repo, url)
+        preset = Preset(
+            preset_path=self.presets_dir / repo / to_slug_case(preset_name) + ".json"
+        )
         self.add_preset(preset, repo)
-

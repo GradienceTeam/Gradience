@@ -4,6 +4,7 @@ gradience_commands = [
   '__init__.py',
   'apply_preset.py',
   'monet.py',
+  'plugins.py',
   'about.py',
 ]
 

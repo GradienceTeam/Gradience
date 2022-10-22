@@ -143,9 +143,9 @@ $bubble_button_radius:$base_border_radius*1.25;
   &:hover { @include button(hover, $c:$bubble_buttons_color);}
   &:active { @include button(active, $c:$bubble_buttons_color);}
   &:checked { @include button(checked, $c:$bubble_buttons_color);}
-  
+
   &:first-child:ltr {
-    border-radius: 0 0 0 $bubble_button_radius; 
+    border-radius: 0 0 0 $bubble_button_radius;
   }
 
   &:last-child:ltr {

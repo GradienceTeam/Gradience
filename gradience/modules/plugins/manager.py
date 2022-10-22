@@ -4,7 +4,7 @@ import random
 import pluggy
 
 from ..preset import Preset
-from .import hookspecs
+from . import hookspecs
 
 from gradience.constants import pkgdatadir
 import os
@@ -42,14 +42,10 @@ class PluginManager:
         self.hook = hook
 
     def apply(self, preset: Preset):
-        results = self.hook.apply(
-            preset
-        )
+        results = self.hook.apply(preset)
 
     def validate(self, preset: Preset):
-        results = self.hook.validate(
-            preset
-        )
+        results = self.hook.validate(preset)
 
     def enable_all(self):
         return self.hook.enable()
@@ -61,6 +57,4 @@ class PluginManager:
         return self.hook.check()
 
     def save(self, preset: Preset):
-        results = self.hook.save(
-            preset
-        )
+        results = self.hook.save(preset)

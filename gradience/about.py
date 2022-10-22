@@ -22,7 +22,7 @@ DEVELOPERS = [
 
 DOCUMENTERS = [
     "0xMRTT https://github.com/0xMRTT",
-    "David Lapshin https://github.com/daudix-UFO"
+    "David Lapshin https://github.com/daudix-UFO",
 ]
 
 ARTISTS = ["David Lapshin https://github.com/daudix-UFO"]
@@ -121,18 +121,22 @@ PRESETS = [
     "zehkira https://github.com/zehkira",
 ]
 
-PACKAGERS = [
-    "0xMRTT https://github.com/0xMRTT",
-    "Lyes Saaudi https://github.com/lyessaadi",
-],
+PACKAGERS = (
+    [
+        "0xMRTT https://github.com/0xMRTT",
+        "Lyes Saaudi https://github.com/lyessaadi",
+    ],
+)
 
-FIXES = [
-    "Erick Howard https://github.com/DivineBicycle",
-    "Hari Rana https://github.com/TheEvilSkeleton",
-    "José Hunter https://github.com/halfmexican",
-    "Sabri Ünal https://github.com/libreajans",
-    "Sal Watson https://github.com/salarua",
-],
+FIXES = (
+    [
+        "Erick Howard https://github.com/DivineBicycle",
+        "Hari Rana https://github.com/TheEvilSkeleton",
+        "José Hunter https://github.com/halfmexican",
+        "Sabri Ünal https://github.com/libreajans",
+        "Sal Watson https://github.com/salarua",
+    ],
+)
 
 THANKS = [
     "Artyom Fomin https://github.com/ArtyIF",

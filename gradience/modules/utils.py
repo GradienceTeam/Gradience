@@ -44,11 +44,12 @@ def to_slug_case(non_slug):
 def buglog(*args):
     logging.debug(*args)
 
+
 def run_command(command, *args, **kwargs):
 
-    if isinstance(command, str): # run on the host
+    if isinstance(command, str):  # run on the host
         command = [command]
-    if os.environ.get('FLATPAK_ID'): # run in flatpak
-        command = ['flatpak-spawn', '--host'] + command
+    if os.environ.get("FLATPAK_ID"):  # run in flatpak
+        command = ["flatpak-spawn", "--host"] + command
 
     return run(command, *args, **kwargs)

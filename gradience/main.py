@@ -80,8 +80,7 @@ class GradienceApplication(Adw.Application):
         self.is_ready = False
 
         self.first_run = self.settings.get_boolean("first-run")
-        self.last_opened_version = self.settings.get_string(
-            "last-opened-version")
+        self.last_opened_version = self.settings.get_string("last-opened-version")
 
         self.favourite = set(self.settings.get_value("favourite"))
 
@@ -115,13 +114,11 @@ class GradienceApplication(Adw.Application):
             GLib.Variant("s", "adwaita"),
             self.load_preset_action,
         )
-        self.create_action("apply_color_scheme",
-                           self.show_apply_color_scheme_dialog)
+        self.create_action("apply_color_scheme", self.show_apply_color_scheme_dialog)
 
         self.create_action("show_adwaita_demo", self.show_adwaita_demo)
 
-        self.create_action("show_gtk4_widget_factory",
-                           self.show_gtk4_widget_factory)
+        self.create_action("show_gtk4_widget_factory", self.show_gtk4_widget_factory)
 
         self.create_action("show_gtk4_demo", self.show_gtk4_demo)
 
@@ -130,8 +127,7 @@ class GradienceApplication(Adw.Application):
         )
         self.create_action("manage_presets", self.show_presets_manager)
 
-        self.create_action("reset_color_scheme",
-                           self.show_reset_color_scheme_dialog)
+        self.create_action("reset_color_scheme", self.show_reset_color_scheme_dialog)
         self.create_action("preferences", self.show_preferences)
         self.create_action("save_preset", self.show_save_preset_dialog)
         self.create_action("about", self.show_about_window)
@@ -151,8 +147,7 @@ class GradienceApplication(Adw.Application):
                 self.win.present()
 
     def save_favourite(self):
-        self.settings.set_value(
-            "favourite", GLib.Variant("as", self.favourite))
+        self.settings.set_value("favourite", GLib.Variant("as", self.favourite))
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
@@ -196,8 +191,7 @@ class GradienceApplication(Adw.Application):
                     if not os.path.isdir(os.path.join(presets_dir, "user")):
                         os.mkdir(os.path.join(presets_dir, "user"))
 
-                    os.rename(repo, os.path.join(
-                        presets_dir, "user", repo.name))
+                    os.rename(repo, os.path.join(presets_dir, "user", repo.name))
 
                     try:
                         with open(
@@ -278,8 +272,7 @@ class GradienceApplication(Adw.Application):
         try:
             variables, palette, custom_css = load_preset_from_css(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "gtk-4.0",
                     "gtk.css",
                 )
@@ -294,11 +287,9 @@ class GradienceApplication(Adw.Application):
             self.load_preset_variables_from_preset()
         except OSError:  # fallback to adwaita
             if self.style_manager.get_dark():
-                self.load_preset_from_resource(
-                    f"{rootdir}/presets/adwaita-dark.json")
+                self.load_preset_from_resource(f"{rootdir}/presets/adwaita-dark.json")
             else:
-                self.load_preset_from_resource(
-                    f"{rootdir}/presets/adwaita.json")
+                self.load_preset_from_resource(f"{rootdir}/presets/adwaita.json")
 
     def open_preset_directory(self, *_args):
         parent = XdpGtk4.parent_new_gtk(self.props.active_window)
@@ -310,8 +301,7 @@ class GradienceApplication(Adw.Application):
             parent,
             "file://"
             + os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
+                os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                 "presets",
             ),
             Xdp.OpenUriFlags.NONE,
@@ -325,8 +315,7 @@ class GradienceApplication(Adw.Application):
         self.load_preset_variables_from_preset()
 
     def load_preset_from_resource(self, preset_path):
-        preset_text = Gio.resources_lookup_data(
-            preset_path, 0).get_data().decode()
+        preset_text = Gio.resources_lookup_data(preset_path, 0).get_data().decode()
         self.preset = Preset(text=preset_text)
         self.load_preset_variables_from_preset()
 
@@ -560,8 +549,7 @@ class GradienceApplication(Adw.Application):
 
         css_provider.connect("parsing-error", on_error)
         css_provider.load_from_data(gtk_css.encode())
-        self.props.active_window.update_errors(
-            self.global_errors + parsing_errors)
+        self.props.active_window.update_errors(self.global_errors + parsing_errors)
         # loading with the priority above user to override the applied config
         if self.current_css_provider is not None:
             Gtk.StyleContext.remove_provider_for_display(
@@ -580,8 +568,7 @@ class GradienceApplication(Adw.Application):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "presets",
                     args[0].get_string().replace("custom-", "", 1) + ".json",
                 )
@@ -641,8 +628,7 @@ class GradienceApplication(Adw.Application):
                 "exists, it will be overwritten!"
             ).format(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "presets",
                     "user",
                     to_slug_case(self.preset_name) + ".json",
@@ -653,8 +639,7 @@ class GradienceApplication(Adw.Application):
 
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("save", _("Save"))
-        dialog.set_response_appearance(
-            "save", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
 
@@ -670,8 +655,7 @@ class GradienceApplication(Adw.Application):
                     ).format(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
                             ),
                             "presets",
                             "user",
@@ -687,8 +671,7 @@ class GradienceApplication(Adw.Application):
                     ).format(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
                             ),
                             "presets",
                             "user",
@@ -714,8 +697,7 @@ class GradienceApplication(Adw.Application):
                 "exists, it will be overwritten!"
             ).format(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "presets",
                     "user",
                     to_slug_case(self.preset_name) + ".json",
@@ -727,10 +709,8 @@ class GradienceApplication(Adw.Application):
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("discard", _("Discard"))
         dialog.add_response("save", _("Save"))
-        dialog.set_response_appearance(
-            "save", Adw.ResponseAppearance.SUGGESTED)
-        dialog.set_response_appearance(
-            "discard", Adw.ResponseAppearance.DESTRUCTIVE)
+        dialog.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_response_appearance("discard", Adw.ResponseAppearance.DESTRUCTIVE)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
 
@@ -746,8 +726,7 @@ class GradienceApplication(Adw.Application):
                     ).format(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
                             ),
                             "presets",
                             "user",
@@ -763,8 +742,7 @@ class GradienceApplication(Adw.Application):
                     ).format(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
                             ),
                             "presets",
                             "user",
@@ -785,8 +763,7 @@ class GradienceApplication(Adw.Application):
         if response == "save":
             self.preset.save_preset(entry.get_text(), self.plugins_list)
             self.clear_dirty()
-            self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset saved")))
+            self.win.toast_overlay.add_toast(Adw.Toast(title=_("Preset saved")))
         elif response == "discard":
             self.clear_dirty()
             self.win.close()
@@ -795,8 +772,7 @@ class GradienceApplication(Adw.Application):
         if response == "apply":
             if widget.get_app_types()["gtk4"]:
                 gtk4_dir = os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "gtk-4.0",
                 )
                 if not os.path.exists(gtk4_dir):
@@ -823,8 +799,7 @@ class GradienceApplication(Adw.Application):
 
             if widget.get_app_types()["gtk3"]:
                 gtk3_dir = os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "gtk-3.0",
                 )
                 if not os.path.exists(gtk3_dir):
@@ -859,26 +834,23 @@ class GradienceApplication(Adw.Application):
             dialog = Adw.MessageDialog(
                 transient_for=self.props.active_window,
                 heading=_("Log out ?"),
-                body=_(
-                    "For the changes to take effect, you need to log out. "
-                ),
+                body=_("For the changes to take effect, you need to log out. "),
                 body_use_markup=True,
             )
 
             dialog.add_response("cancel", _("Cancel"))
             dialog.add_response("logout", _("Logout"))
-            dialog.set_response_appearance(
-                "logout", Adw.ResponseAppearance.DESTRUCTIVE)
+            dialog.set_response_appearance("logout", Adw.ResponseAppearance.DESTRUCTIVE)
             dialog.set_default_response("cancel")
             dialog.set_close_response("cancel")
 
-            dialog.connect('response', self.on_logout_dialog_response)
+            dialog.connect("response", self.on_logout_dialog_response)
             dialog.present()
 
-    def on_logout_dialog_response (self, dialog, response):
+    def on_logout_dialog_response(self, dialog, response):
         if response == "logout":
             print("logout")
-            run_command(['gnome-session-quit', '--no-prompt'])
+            run_command(["gnome-session-quit", "--no-prompt"])
 
     def restore_color_scheme(self, widget, response):
         if response == "restore":
@@ -895,8 +867,7 @@ class GradienceApplication(Adw.Application):
                     backup = open(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
                             ),
                             "gtk-4.0/gtk.css.bak",
                         ),
@@ -908,8 +879,7 @@ class GradienceApplication(Adw.Application):
                     gtk4css = open(
                         os.path.join(
                             os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
+                                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
                             ),
                             "gtk-4.0/gtk.css",
                         ),
@@ -952,8 +922,7 @@ class GradienceApplication(Adw.Application):
                     file.delete()
                 except Exception:
                     pass
-            self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset reseted")))
+            self.win.toast_overlay.add_toast(Adw.Toast(title=_("Preset reseted")))
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)
@@ -980,7 +949,7 @@ class GradienceApplication(Adw.Application):
             designers=["David Lapshin https://github.com/daudix-UFO"],
             documenters=[
                 "0xMRTT https://github.com/0xMRTT",
-                "David Lapshin https://github.com/daudix-UFO"
+                "David Lapshin https://github.com/daudix-UFO",
             ],
             # Translators: This is a place to put your credits (formats:
             # "Name https://example.com" or "Name <email@example.com>",
@@ -1018,7 +987,7 @@ class GradienceApplication(Adw.Application):
             version=version,
             release_notes_version=rel_ver,
             release_notes=_(
-"""
+                """
 <ul>
 <li>Added ability to star preset to display it in Palette</li>
 <li>Updated Firefox GNOME Theme plugin</li>
@@ -1040,7 +1009,7 @@ class GradienceApplication(Adw.Application):
 """
             ),
             comments=_(
-"""
+                """
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 \
 theme.
 With Gradience you can:
@@ -1134,8 +1103,7 @@ This app is written in Python and uses GTK 4 and Libadwaita.
         self, name, parameter_type, initial_state, callback, shortcuts=None
     ):
         """Add a stateful application action."""
-        action = Gio.SimpleAction.new_stateful(
-            name, parameter_type, initial_state)
+        action = Gio.SimpleAction.new_stateful(name, parameter_type, initial_state)
         action.connect("activate", callback)
         self.add_action(action)
         if shortcuts:
@@ -1157,8 +1125,7 @@ This app is written in Python and uses GTK 4 and Libadwaita.
 
         plugins_errors = self.plugins_list.validate()
 
-        self.props.active_window.update_errors(
-            self.global_errors + plugins_errors)
+        self.props.active_window.update_errors(self.global_errors + plugins_errors)
 
     def reload_plugins(self):
         self.plugins_list.reload()
@@ -1180,18 +1147,15 @@ This app is written in Python and uses GTK 4 and Libadwaita.
 
         plugins_errors = self.plugins_list.validate()
 
-        self.props.active_window.update_errors(
-            self.global_errors + plugins_errors)
+        self.props.active_window.update_errors(self.global_errors + plugins_errors)
 
     @staticmethod
     def show_adwaita_demo(*_args):
-        GLib.spawn_command_line_async(
-            'sh -c "/bin/adwaita-1-demo > /dev/null 2>&1"')
+        GLib.spawn_command_line_async('sh -c "/bin/adwaita-1-demo > /dev/null 2>&1"')
 
     @staticmethod
     def show_gtk4_demo(*_args):
-        GLib.spawn_command_line_async(
-            'sh -c "/bin/gtk4-demo > /dev/null 2>&1"')
+        GLib.spawn_command_line_async('sh -c "/bin/gtk4-demo > /dev/null 2>&1"')
 
     @staticmethod
     def show_gtk4_widget_factory(*_args):

@@ -28,11 +28,12 @@ from .utils import to_slug_case, buglog
 # Open Soup3 session
 session = Soup.Session()
 
+
 def fetch_presets(repo) -> [dict, list]:
     try:
         request = Soup.Message.new("GET", repo)
         body = session.send_and_read(request, None)
-    except GLib.GError as e: # offline
+    except GLib.GError as e:  # offline
         if e.code == 1:
             buglog(f"Failed to establish a new connection. Exc: {e}")
             return False, False
@@ -63,11 +64,12 @@ def fetch_presets(repo) -> [dict, list]:
 
     return preset_dict, url_list
 
+
 def download_preset(name, repo_name, url) -> None:
     try:
         request = Soup.Message.new("GET", url)
         body = session.send_and_read(request, None)
-    except GLib.GError as e: # offline
+    except GLib.GError as e:  # offline
         if e.code == 1:
             buglog(f"Failed to establish a new connection. Exc: {e}")
             return False, False

@@ -13,9 +13,9 @@ Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 the
 
 <details>
   <summary>More screenshots</summary>
-  
+
   ![Monet Tab](https://github.com/GradienceTeam/Design/raw/main/Screenshots/monet_purple.png)
-  
+
   ![Proof of work](https://github.com/GradienceTeam/Design/raw/main/Screenshots/proof_purple.png)
 </details>
 
@@ -53,7 +53,7 @@ Gradience is available on Flathub. You can install it using the following comman
 flatpak install flathub com.github.GradienceTeam.Gradience
 ```
 
-### COPR 
+### COPR
 
 Gradience is available on COPR. You can install it using the following command:
 
@@ -67,7 +67,7 @@ dnf install gradience
 > **Warning**
 > Not available yet. If you want, submit a PR.
 
-### AUR 
+### AUR
 
 Gradience is available on AUR. You can install it using the following command:
 
@@ -114,7 +114,7 @@ ninja -C builddir install
 ninja -C builddir run
 ```
 
-> **Note** 
+> **Note**
 > During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
 
 ### Building using flatpak-builder
@@ -128,7 +128,7 @@ Alternatively, open the project with GNOME Builder, then build and run it.
 
 ## Theming Setup
 
-> **Note** 
+> **Note**
 > You can also go to `Preferences` and apply overrides for Flatpak
 
 ### Libadwaita applications

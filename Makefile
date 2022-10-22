@@ -9,7 +9,7 @@ global:
 release:
 	sudo meson builddir --prefix=/usr --Dbuildtype=release --wipe
 	sudo ninja -C builddir install
-    
+
 user:
 	meson builddir --prefix="$(shell pwd)/builddir" --buildtype=debug --wipe
 	ninja -C builddir install

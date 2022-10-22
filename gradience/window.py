@@ -176,8 +176,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_palette_shades = GradiencePaletteShades(
             "monet", _("Monet Palette"), 6
         )
-        self.get_application(
-        ).pref_palette_shades["monet"] = self.monet_palette_shades
+        self.get_application().pref_palette_shades["monet"] = self.monet_palette_shades
         self.monet_pref_group.add(self.monet_palette_shades)
 
         self.tone_row = Adw.ComboRow()
@@ -259,8 +258,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                     variable["adw_gtk3_support"],
                 )
                 pref_group.add(pref_variable)
-                self.get_application(
-                ).pref_variables[variable["name"]] = pref_variable
+                self.get_application().pref_variables[variable["name"]] = pref_variable
 
             self.content.add(pref_group)
 
@@ -280,8 +278,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 color["prefix"], color["title"], color["n_shades"]
             )
             palette_pref_group.add(palette_shades)
-            self.get_application(
-            ).pref_palette_shades[color["prefix"]] = palette_shades
+            self.get_application().pref_palette_shades[color["prefix"]] = palette_shades
         self.content.add(palette_pref_group)
 
     def update_errors(self, errors):

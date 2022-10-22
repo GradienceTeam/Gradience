@@ -4,6 +4,7 @@ import shutil
 from ..constants import data_dir
 from .utils import to_slug_case
 import subprocess
+
 THEME_DIR = Path(data_dir) / "themes"
 USER_THEME_DIR = Path("~/.themes").expanduser()
 USER_THEME_DIR.mkdir(parents=True, exist_ok=True)
@@ -175,6 +176,7 @@ ADW_GTK3_TO_REPLACE_DARK = """@define-color blue_1 #99c1f1;
 @define-color shade_color rgba(0, 0, 0, 0.36);
 @define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);"""
 
+
 class Theme:
     def __init__(
         self,
@@ -224,16 +226,28 @@ class Theme:
     def create_gtk3_dark(self):
         gtk3_dark_path = self.path / "gtk-3.0" / "gtk-dark.css"
         shutil.copy(ADW_GTK3_CSS_DARK, gtk3_dark_path)
-        with (open(ADW_GTK3_CSS_DARK, "r", encoding="utf-8") as original,
-              open(gtk3_dark_path, "w", encoding="utf-8") as modified):
-            modified.write(original.read().replace(ADW_GTK3_TO_REPLACE_DARK, self.preset.dark.to_css("gtk3")))
+        with (
+            open(ADW_GTK3_CSS_DARK, "r", encoding="utf-8") as original,
+            open(gtk3_dark_path, "w", encoding="utf-8") as modified,
+        ):
+            modified.write(
+                original.read().replace(
+                    ADW_GTK3_TO_REPLACE_DARK, self.preset.dark.to_css("gtk3")
+                )
+            )
 
     def create_gtk3_light(self):
         gtk3_light_path = self.path / "gtk-3.0" / "gtk.css"
         shutil.copy(ADW_GTK3_CSS, gtk3_light_path)
-        with (open(ADW_GTK3_CSS, "r", encoding="utf-8") as original,
-              open(gtk3_light_path, "w", encoding="utf-8") as modified):
-            modified.write(original.read().replace(ADW_GTK3_TO_REPLACE, self.preset.light.to_css("gtk3")))
+        with (
+            open(ADW_GTK3_CSS, "r", encoding="utf-8") as original,
+            open(gtk3_light_path, "w", encoding="utf-8") as modified,
+        ):
+            modified.write(
+                original.read().replace(
+                    ADW_GTK3_TO_REPLACE, self.preset.light.to_css("gtk3")
+                )
+            )
 
     def create_gtk4(self):
         gtk4_path = self.path / "gtk-4.0"
@@ -264,7 +278,9 @@ class Theme:
         pass
 
     def apply_theme(self):
-        subprocess.run(["gsettings", "set", "org.gnome.desktop.interface", "gtk-theme", self.name])
+        subprocess.run(
+            ["gsettings", "set", "org.gnome.desktop.interface", "gtk-theme", self.name]
+        )
 
     def create_index(self, *args, **kwargs):
         index_theme = self.path / "index.theme"

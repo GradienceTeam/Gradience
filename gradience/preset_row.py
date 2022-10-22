@@ -161,8 +161,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.delete_toast = Adw.Toast(title=_("Preset removed"))
         self.delete_toast.set_button_label(_("Undo"))
         self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
-        self.delete_toast.connect(
-            "button-clicked", self.on_undo_button_clicked)
+        self.delete_toast.connect("button-clicked", self.on_undo_button_clicked)
 
         self.toast_overlay.add_toast(self.delete_toast)
 

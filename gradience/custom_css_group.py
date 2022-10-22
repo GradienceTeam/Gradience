@@ -35,16 +35,14 @@ class GradienceCustomCSSGroup(Adw.PreferencesGroup):
     def load_custom_css(self, custom_css):
         self.custom_css = custom_css
         self.custom_css_text_view.get_buffer().set_text(
-            list(self.custom_css.values())[
-                self.app_type_dropdown.get_selected()]
+            list(self.custom_css.values())[self.app_type_dropdown.get_selected()]
         )
 
     @Gtk.Template.Callback()
     def on_custom_css_changed(self, buffer):
         Gtk.Application.get_default().mark_as_dirty()
         Gtk.Application.get_default().update_custom_css_text(
-            list(self.custom_css.keys())[
-                self.app_type_dropdown.get_selected()],
+            list(self.custom_css.keys())[self.app_type_dropdown.get_selected()],
             buffer.props.text,
         )
 
@@ -52,6 +50,5 @@ class GradienceCustomCSSGroup(Adw.PreferencesGroup):
     def on_dropdown_notify(self, _unused, pspec):
         if pspec.name == "selected":
             self.custom_css_text_view.get_buffer().set_text(
-                list(self.custom_css.values())[
-                    self.app_type_dropdown.get_selected()]
+                list(self.custom_css.values())[self.app_type_dropdown.get_selected()]
             )

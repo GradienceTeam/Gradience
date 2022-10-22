@@ -9,4 +9,4 @@ Global description
 
 ## Screenshot
 
-If applicable 
+If applicable

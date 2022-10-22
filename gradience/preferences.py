@@ -62,12 +62,10 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
             "user-flatpak-theming-gtk3"
         )
 
-        self.allow_gtk4_flatpak_theming_user.set_state(
-            user_flatpak_theming_gtk4)
+        self.allow_gtk4_flatpak_theming_user.set_state(user_flatpak_theming_gtk4)
         # self.allow_gtk4_flatpak_theming_global.set_state(global_flatpak_theming_gtk4)
 
-        self.allow_gtk3_flatpak_theming_user.set_state(
-            user_flatpak_theming_gtk3)
+        self.allow_gtk3_flatpak_theming_user.set_state(user_flatpak_theming_gtk3)
         # self.allow_gtk3_flatpak_theming_global.set_state(global_flatpak_theming_gtk3)
 
         self.allow_gtk4_flatpak_theming_user.connect(

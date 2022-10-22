@@ -1,4 +1,4 @@
-# Roadmap 
+# Roadmap
 
 This tool is fully usable, if you want a new feature, open an issue or submit a PR
 
@@ -19,7 +19,7 @@ This tool is fully usable, if you want a new feature, open an issue or submit a 
 - [x] Make the code more secure
 - [x] Add preset manager with option to download other users presets
 - [x] Release on Flathub
-- [x] Add autoload theme from CSS 
+- [x] Add autoload theme from CSS
 - [ ] Add ability to create light/dark presets **(High priority)**
 - [ ] Add a full theme preview instead of GTK 4 Demo
 - [ ] Add ability to generate preset from one color

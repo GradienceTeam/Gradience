@@ -93,15 +93,13 @@ class GradienceOption(Adw.ActionRow):
             else:
                 rgba.parse("rgba(0,0,0,0)")
                 self.color_value.set_rgba(rgba)
-                self.color_value.set_tooltip_text(
-                    _("Not a color, see text value"))
+                self.color_value.set_tooltip_text(_("Not a color, see text value"))
 
         if (
             Gtk.Application.get_default().is_ready
             and kwargs.get("update_from") == "text_value"
             and new_value != ""
         ):
-            Gtk.Application.get_default(
-            ).variables[self.get_name()] = new_value
+            Gtk.Application.get_default().variables[self.get_name()] = new_value
             Gtk.Application.get_default().mark_as_dirty()
             Gtk.Application.get_default().reload_variables()
