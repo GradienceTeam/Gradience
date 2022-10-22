@@ -2,6 +2,7 @@ from gradience.commands import about
 from gradience.commands import monet
 from gradience.commands import apply_preset
 from gradience.commands import plugins
+from gradience.commands import presets
 import click
 import sys
 
@@ -20,3 +21,4 @@ cli.add_command(apply_preset.apply_preset, "apply")
 cli.add_command(monet.monet, "monet")
 cli.add_command(about.about, "about")
 cli.add_command(plugins.plugins, "plugins")
+cli.add_command(presets.presets, "presets")

@@ -6,6 +6,7 @@ gradience_commands = [
   'monet.py',
   'plugins.py',
   'about.py',
+  'presets.py',
 ]
 
 PY_INSTALLDIR.install_sources(gradience_commands, subdir: 'gradience/commands')

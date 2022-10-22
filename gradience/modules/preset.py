@@ -22,7 +22,7 @@ import os
 from ..settings_schema import settings_schema
 from .utils import buglog, to_slug_case
 from .css import load_preset_from_css
-from .exceptions import GradienceMonetUnsupportedBackgroundError
+from .exceptions import GradienceMonetUnsupportedBackgroundError, GradienceError
 import random
 import semver
 
@@ -349,7 +349,7 @@ class Preset:
         self,
         name=None,
         repo="user",
-        version=semver.Version.parse("0.1.0"),
+        version=semver.parse_version_info("0.1.0"),
         dark=None,
         dark_css=None,
         light=None,
@@ -384,13 +384,18 @@ class Preset:
             self.filename = to_slug_case(self.name)
             self.repo = repo
             self.default = default
+        print(f"Loaded preset {self.name}")
+        print(f"Version       {self.version}")
+        print(f"Repo          {self.repo}")
 
         if repo == "curated":
-            self.url = f"https://raw.githubusercontent.com/GradienceTeam/Community/next/{self.filename}.json"
+            self.url = f"https://raw.githubusercontent.com/GradienceTeam/Community/next/{self.repo}/{self.filename}.json"
         elif repo == "official":
-            self.url = f"https://raw.githubusercontent.com/GradienceTeam/Community/next/{self.filename}.json"
+            self.url = f"https://raw.githubusercontent.com/GradienceTeam/Community/next/{self.repo}/{self.filename}.json"
         else:
             self.url = url
+
+        print(f"URL:          {self.url}")
 
 
 
@@ -401,11 +406,14 @@ class Preset:
         self.light = LightPreset(css, preset, preset_path)
 
     def load_from_file(self, path):
-        with open(path, "r", encoding="utf-8") as file:
-            data = json.load(file)
+        try:
+            with open(path, "r", encoding="utf-8") as file:
+                data = json.load(file)
+        except Exception as exc:
+            raise GradienceError(f"Could not load preset from {path}") from exc
 
-        self.repo = path.split("/")[-2]
-        self.version = semver.Version.parse(data["version"]) if "version" in data else semver.Version.parse("0.1.0")
+        self.repo = path.parent.name
+        self.version = semver.parse_version_info(data["version"]) if "version" in data else semver.parse_version_info("0.1.0")
         self.name = data["name"] if "name" in data else random.choice(AMAZING_NAMES)
         self.filename = to_slug_case(self.name)
         self.description = data["description"] if "description" in data else ""
@@ -418,7 +426,7 @@ class Preset:
 
     def update_from_json(self, data):
         self.badges = data["badges"] if "badges" in data else {}
-        self.version = semver.Version.parse(data["version"]) if "version" in data else semver.Version.parse("0.1.0")
+        self.version = semver.parse_version_info(data["version"]) if "version" in data else semver.parse_version_info("0.1.0")
         self.description = data["description"] if "description" in data else ""
         self.default = data["default"] if "default" in data else "light"
         self.dark = DarkPreset(preset=data["dark"]) if "dark" in data else DarkPreset()

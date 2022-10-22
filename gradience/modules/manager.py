@@ -4,10 +4,15 @@ import shutil
 from gradience.modules.utils import to_slug_case
 from .preset import presets_dir, Preset
 from .custom_presets import download_preset, fetch_presets, get_as_json
+from .exceptions import GradienceError
 
 import os
 from pathlib import Path
 import semver
+
+BASE_COMMUNITY_URL = "https://raw.githubusercontent.com/GradienceTeam/Community-experiment/next/"
+CURATED_PRESETS_URL = BASE_COMMUNITY_URL + "curated/{}.json"
+OFFICIAL_PRESETS_URL = BASE_COMMUNITY_URL + "official/{}.json"
 
 class PresetManager:
     def __init__(self, user_repo={}):
@@ -36,7 +41,7 @@ class PresetManager:
                 for preset in repo.iterdir():
                     # .config/presets/official/tango.json for example
                     if preset.is_file():
-                        self.add_preset(Preset(preset_path=preset), repo.name)
+                        self.add_preset(Preset(preset_path=preset, repo=repo.name), repo.name)
             elif repo.is_file():
                 # old presets
                 # gradience move them to .config/presets/user
@@ -49,11 +54,17 @@ class PresetManager:
         """Add a preset to the presets dictionary."""
         self.presets[repo_name][preset.name] = preset
 
-    def download(self, preset_name, repo, url):
+    def download(self, preset_name, repo, url=None):
         """Download a preset from the official repository."""
+        preset_name = to_slug_case(preset_name)
+        if url is None:
+            if repo == "official":
+                url = OFFICIAL_PRESETS_URL.format(preset_name)
+            elif repo == "curated":
+                url = CURATED_PRESETS_URL.format(preset_name)
         download_preset(preset_name, repo, url)
         preset = Preset(
-            preset_path=self.presets_dir / repo / to_slug_case(preset_name) + ".json"
+            preset_path=self.presets_dir / repo / f"{to_slug_case(preset_name)}.json", repo=repo
         )
         self.add_preset(preset, repo)
 
@@ -62,15 +73,22 @@ class PresetManager:
             self.update_repo(repo)
 
     def update(self, preset: Preset):
+        print(print(f"Updating {preset.name}..."))
         url = preset.url
-        data_online = get_as_json(url)
-        version = semver.Version.parse(data_online["version"])
-        if version != preset.version:
-            preset.update_from_json(data_online)
+        status, data_online = get_as_json(url)
+        if status:
+            try:
+                version = semver.parse_version_info(data_online["version"])
+                if version != preset.version:
+                    preset.update_from_json(data_online)
+            except TypeError:
+                raise GradienceError("Presets must have a version attribute.")
+        else:
+            raise GradienceError(f"Could not update {preset.name}.")
 
 
     def update_repo(self, repo: str):
         if repo == "user": # user repo is not updated
             return
-        for preset in self.presets[repo]:
+        for preset in self.presets[repo].values():
             self.update(preset)

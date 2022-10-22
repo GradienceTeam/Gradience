@@ -23,7 +23,7 @@ from gi.repository import GLib, Soup
 
 from .preset import presets_dir
 from .utils import to_slug_case, buglog
-
+from .exceptions import GradienceError
 
 # Open Soup3 session
 session = Soup.Session()
@@ -65,39 +65,45 @@ def fetch_presets(repo) -> [dict, list]:
     return preset_dict, url_list
 
 def get_as_json(url):
+    print(f"Downloading preset from {url}...")
+
     try:
         request = Soup.Message.new("GET", url)
         body = session.send_and_read(request, None)
     except GLib.GError as error:  # offline
         if error.code == 1:
-            buglog(f"Failed to establish a new connection. Exc: {error}")
+            print(f"Failed to establish a new connection. Exc: {error}")
             return False, False
         else:
-            buglog(f"Unhandled Libsoup3 GLib.GError error code {error.code}. Exc: {error}")
+            print(f"Unhandled Libsoup3 GLib.GError error code {error.code}. Exc: {error}")
             return False, False
     try:
-        raw = json.loads(body.get_data())
+        data = body.get_data()
+        raw = json.loads(data)
     except json.JSONDecodeError as error:
-        buglog(f"Error with decoding JSON data. Exc: {error}")
+        print(f"Error with decoding JSON data. Exc: {error}")
         return False, False
 
-    return json.dumps(raw)
+    return True, json.dumps(raw)
 
 
 def download_preset(name, repo_name, url) -> None:
-    data = get_as_json(url)
+    status, data = get_as_json(url)
 
-    try:
-        with open(
-            os.path.join(
-                presets_dir,
-                repo_name,
-                to_slug_case(name) + ".json",
-            ),
-            "w",
-            encoding="utf-8",
-        ) as f:
-            f.write(data)
-            f.close()
-    except OSError as e:
-        buglog(f"Failed to write data to a file. Exc: {e}")
+    if status:
+        try:
+            with open(
+                os.path.join(
+                    presets_dir,
+                    repo_name,
+                    to_slug_case(name) + ".json",
+                ),
+                "w",
+                encoding="utf-8",
+            ) as f:
+                f.write(data)
+                f.close()
+        except OSError as e:
+            buglog(f"Failed to write data to a file. Exc: {e}")
+    else:
+        raise GradienceError("Failed to download preset.")
