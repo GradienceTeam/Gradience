@@ -19,12 +19,12 @@
 import json
 import os
 
-from ..settings_schema import settings_schema
 from .utils import buglog, to_slug_case
 from .css import load_preset_from_css
 from .exceptions import GradienceMonetUnsupportedBackgroundError, GradienceError
 import random
 import semver
+from pathlib import Path
 
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
@@ -198,7 +198,8 @@ class BasePreset:
             self.custom_css = preset["custom_css"]
 
     def load_preset_from_css(self, css):
-        self.variables, self.palette, self.custom_css = load_preset_from_css(css)
+        self.variables, self.palette, self.custom_css = load_preset_from_css(
+            css)
 
     def to_json(self):
         return {
@@ -362,15 +363,18 @@ class Preset:
         if preset_path:
             self.load_from_file(preset_path)
         else:
-
-            if dark:
+            if isinstance(dark, DarkPreset):
+                self.dark = dark
+            elif dark:
                 self.dark = DarkPreset(preset=dark)
             elif dark_css:
                 self.dark = DarkPreset(css=dark_css)
             else:
                 self.dark = DarkPreset()
 
-            if light:
+            if isinstance(light, LightPreset):
+                self.light = light
+            elif light:
                 self.light = LightPreset(preset=light)
             elif light_css:
                 self.light = LightPreset(css=light_css)
@@ -397,8 +401,6 @@ class Preset:
 
         print(f"URL:          {self.url}")
 
-
-
     def load_dark(self, css=None, preset=None, preset_path=None):
         self.dark = DarkPreset(css, preset, preset_path)
 
@@ -413,25 +415,33 @@ class Preset:
             raise GradienceError(f"Could not load preset from {path}") from exc
 
         self.repo = path.parent.name
-        self.version = semver.parse_version_info(data["version"]) if "version" in data else semver.parse_version_info("0.1.0")
-        self.name = data["name"] if "name" in data else random.choice(AMAZING_NAMES)
+        self.version = semver.parse_version_info(
+            data["version"]) if "version" in data else semver.parse_version_info("0.1.0")
+        self.name = data["name"] if "name" in data else random.choice(
+            AMAZING_NAMES)
         self.filename = to_slug_case(self.name)
         self.description = data["description"] if "description" in data else ""
         self.badges = data["badges"] if "badges" in data else {}
         self.default = data["default"] if "default" in data else "light"
-        self.dark = DarkPreset(preset=data["dark"]) if "dark" in data else DarkPreset()
+        self.dark = DarkPreset(
+            preset=data["dark"]) if "dark" in data else DarkPreset()
         self.light = (
-            LightPreset(preset=data["light"]) if "light" in data else LightPreset()
+            LightPreset(preset=data["light"]
+                        ) if "light" in data else LightPreset()
         )
 
     def update_from_json(self, data):
         self.badges = data["badges"] if "badges" in data else {}
-        self.version = semver.parse_version_info(data["version"]) if "version" in data else semver.parse_version_info("0.1.0")
+        self.version = semver.parse_version_info(
+            data["version"]) if "version" in data else semver.parse_version_info("0.1.0")
         self.description = data["description"] if "description" in data else ""
         self.default = data["default"] if "default" in data else "light"
-        self.dark = DarkPreset(preset=data["dark"]) if "dark" in data else DarkPreset()
-        self.light = LightPreset(preset=data["light"]) if "light" in data else LightPreset()
+        self.dark = DarkPreset(
+            preset=data["dark"]) if "dark" in data else DarkPreset()
+        self.light = LightPreset(
+            preset=data["light"]) if "light" in data else LightPreset()
         self.save()
+
     def __repr__(self):
         return f"Preset({self.name})"
 
@@ -688,6 +698,42 @@ class Preset:
                 }
 
                 return cls(name, dark=dark_preset, light=light_preset)
+
+
+class OldPreset(BasePreset):
+    description = ""
+    plugins = {}
+    badges = {}
+    repo = ""
+    filename = ""
+    name = ""
+
+    def __init__(self, name=None, repo="user"):
+        self.name = name
+        self.repo = repo
+        self.filename = to_slug_case(name) + ".json"
+        try:
+            self.load_preset_from_path(
+                Path(presets_dir) / self.repo / self.filename)
+        except KeyError as exc:
+            raise GradienceError("Already using the new preset format") from exc
+
+    def port(self) -> Preset:
+        if self.name.lower().endswith("dark"):
+            self.name = self.name[:-5]  # Dark + space
+        elif self.name.lower().endswith("light"):
+            self.name = self.name[:-6]  # light + space
+        self.name.capitalize()
+        self.filename = to_slug_case(self.name) + ".json"
+        preset = Preset(
+            name=self.name,
+            repo=self.repo,
+            light=self.to_json(),
+        )
+        preset.description = self.description
+        preset.plugins = self.plugins
+        preset.badges = self.badges
+        return preset
 
 
 if __name__ == "__main__":
