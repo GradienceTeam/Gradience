@@ -25,6 +25,7 @@ from .exceptions import GradienceMonetUnsupportedBackgroundError, GradienceError
 import random
 import semver
 from pathlib import Path
+from typing import Dict
 
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
@@ -37,6 +38,10 @@ from material_color_utilities_python import (
     Image,
 )
 
+try:
+    import tomllib
+except ImportError:
+    import tomli as tomllib
 
 def rgba_from_argb(argb, alpha=None) -> str:
     base = "rgba({}, {}, {}, {})"
@@ -68,25 +73,7 @@ AMAZING_NAMES = [
 
 
 class BasePreset:
-    variables = {}
-    palette = {}
-    custom_css = {
-        "gtk4": "",
-        "gtk3": "",
-    }
-
-    def __init__(self, css=None, preset=None, preset_path=None):
-        if css:
-            self.load_preset_from_css(css)
-        elif preset:
-            self.load_preset_from_json(preset)
-        elif preset_path:
-            self.load_preset_from_path(preset_path)
-        else:
-            self.no_preset()
-
-    def no_preset(self):
-        self.variables = {
+    variables = {
             "accent_color": "rgb(220,138,221)",
             "accent_bg_color": "rgb(145,65,172)",
             "accent_fg_color": "#ffffff",
@@ -121,7 +108,7 @@ class BasePreset:
             "shade_color": "rgba(0,0,0,0.36)",
             "scrollbar_outline_color": "rgb(0,0,0)",
         }
-        self.palette = {
+    palette = {
             "blue_": {
                 "1": "#99c1f1",
                 "2": "#62a0ea",
@@ -186,22 +173,31 @@ class BasePreset:
                 "5": "#000000",
             },
         }
+    custom_css = {
+        "gtk4": "",
+        "gtk3": "",
+    }
 
-    def load_preset_from_path(self, preset_path):
-        with open(preset_path, "r", encoding="utf-8") as file:
-            self.load_preset_from_json(json.loads(file.read()))
+    def __init__(self, css=None, preset=None):
+        if css:
+            self.load_preset_from_css(css)
+        elif preset:
+            self.load_preset_from_toml(preset)
 
-    def load_preset_from_json(self, preset):
+    def load_preset_from_toml(self, preset):
         self.variables = preset["variables"]
         self.palette = preset["palette"]
         if "custom_css" in preset:
-            self.custom_css = preset["custom_css"]
+            if "gtk3" in preset["custom_css"]:
+                self.custom_css["gtk3"] = preset["custom_css"]["gtk3"]
+            if "gtk4" in preset["custom_css"]:
+                self.custom_css["gtk4"] = preset["custom_css"]["gtk4"]
 
     def load_preset_from_css(self, css):
         self.variables, self.palette, self.custom_css = load_preset_from_css(
             css)
 
-    def to_json(self):
+    def __dict__(self):
         return {
             "variables": self.variables,
             "palette": self.palette,
@@ -220,209 +216,201 @@ class BasePreset:
 
 
 class DarkPreset(BasePreset):
-    def no_preset(self):
-
-        self.variables = {
-            "accent_color": "#78aeed",
-            "accent_bg_color": "#3584e4",
-            "accent_fg_color": "#ffffff",
-            "destructive_color": "#ff7b63",
-            "destructive_bg_color": "#c01c28",
-            "destructive_fg_color": "#ffffff",
-            "success_color": "#8ff0a4",
-            "success_bg_color": "#26a269",
-            "success_fg_color": "#ffffff",
-            "warning_color": "#f8e45c",
-            "warning_bg_color": "#cd9309",
-            "warning_fg_color": "rgba(0, 0, 0, 0.8)",
-            "error_color": "#ff7b63",
-            "error_bg_color": "#c01c28",
-            "error_fg_color": "#ffffff",
-            "window_bg_color": "#242424",
-            "window_fg_color": "#ffffff",
-            "view_bg_color": "#1e1e1e",
-            "view_fg_color": "#ffffff",
-            "headerbar_bg_color": "#303030",
-            "headerbar_fg_color": "#ffffff",
-            "headerbar_border_color": "#ffffff",
-            "headerbar_backdrop_color": "@window_bg_color",
-            "headerbar_shade_color": "rgba(0, 0, 0, 0.36)",
-            "card_bg_color": "rgba(255, 255, 255, 0.08)",
-            "card_fg_color": "#ffffff",
-            "card_shade_color": "rgba(0, 0, 0, 0.36)",
-            "dialog_bg_color": "#383838",
-            "dialog_fg_color": "#ffffff",
-            "popover_bg_color": "#383838",
-            "popover_fg_color": "#ffffff",
-            "shade_color": "rgba(0,0,0,0.36)",
-            "scrollbar_outline_color": "rgba(0,0,0,0.5)",
-        }
+    variables = {
+        "accent_color": "#78aeed",
+        "accent_bg_color": "#3584e4",
+        "accent_fg_color": "#ffffff",
+        "destructive_color": "#ff7b63",
+        "destructive_bg_color": "#c01c28",
+        "destructive_fg_color": "#ffffff",
+        "success_color": "#8ff0a4",
+        "success_bg_color": "#26a269",
+        "success_fg_color": "#ffffff",
+        "warning_color": "#f8e45c",
+        "warning_bg_color": "#cd9309",
+        "warning_fg_color": "rgba(0, 0, 0, 0.8)",
+        "error_color": "#ff7b63",
+        "error_bg_color": "#c01c28",
+        "error_fg_color": "#ffffff",
+        "window_bg_color": "#242424",
+        "window_fg_color": "#ffffff",
+        "view_bg_color": "#1e1e1e",
+        "view_fg_color": "#ffffff",
+        "headerbar_bg_color": "#303030",
+        "headerbar_fg_color": "#ffffff",
+        "headerbar_border_color": "#ffffff",
+        "headerbar_backdrop_color": "@window_bg_color",
+        "headerbar_shade_color": "rgba(0, 0, 0, 0.36)",
+        "card_bg_color": "rgba(255, 255, 255, 0.08)",
+        "card_fg_color": "#ffffff",
+        "card_shade_color": "rgba(0, 0, 0, 0.36)",
+        "dialog_bg_color": "#383838",
+        "dialog_fg_color": "#ffffff",
+        "popover_bg_color": "#383838",
+        "popover_fg_color": "#ffffff",
+        "shade_color": "rgba(0,0,0,0.36)",
+        "scrollbar_outline_color": "rgba(0,0,0,0.5)",
+    }
 
 
 class LightPreset(BasePreset):
-    def no_preset(self):
-        self.variables = {
-            "accent_color": "#1c71d8",
-            "accent_bg_color": "#3584e4",
-            "accent_fg_color": "#ffffff",
-            "destructive_color": "#c01c28",
-            "destructive_bg_color": "#e01b24",
-            "destructive_fg_color": "#ffffff",
-            "success_color": "#26a269",
-            "success_bg_color": "#2ec27e",
-            "success_fg_color": "#ffffff",
-            "warning_color": "#ae7b03",
-            "warning_bg_color": "#e5a50a",
-            "warning_fg_color": "rgba(0, 0, 0, 0.8)",
-            "error_color": "#c01c28",
-            "error_bg_color": "#e01b24",
-            "error_fg_color": "#ffffff",
-            "window_bg_color": "#fafafa",
-            "window_fg_color": "rgba(0, 0, 0, 0.8)",
-            "view_bg_color": "#ffffff",
-            "view_fg_color": "#000000",
-            "headerbar_bg_color": "#ebebeb",
-            "headerbar_fg_color": "rgba(0, 0, 0, 0.8)",
-            "headerbar_border_color": "rgba(0, 0, 0, 0.8)",
-            "headerbar_backdrop_color": "@window_bg_color",
-            "headerbar_shade_color": "rgba(0, 0, 0, 0.07)",
-            "card_bg_color": "#ffffff",
-            "card_fg_color": "rgba(0, 0, 0, 0.8)",
-            "card_shade_color": "rgba(0, 0, 0, 0.07)",
-            "dialog_bg_color": "#fafafa",
-            "dialog_fg_color": "rgba(0, 0, 0, 0.8)",
-            "popover_bg_color": "#ffffff",
-            "popover_fg_color": "rgba(0, 0, 0, 0.8)",
-            "shade_color": "rgba(0,0,0,0.07)",
-            "scrollbar_outline_color": "rgb(255,255,255)",
-        }
-
-
-class PrettyPurple(BasePreset):
-    def no_preset(self):
-        self.variables = {
-            "accent_color": "rgb(220,138,221)",
-            "accent_bg_color": "rgb(145,65,172)",
-            "accent_fg_color": "#ffffff",
-            "destructive_color": "#ff7b63",
-            "destructive_bg_color": "#c01c28",
-            "destructive_fg_color": "#ffffff",
-            "success_color": "#8ff0a4",
-            "success_bg_color": "#26a269",
-            "success_fg_color": "#ffffff",
-            "warning_color": "#f8e45c",
-            "warning_bg_color": "#cd9309",
-            "warning_fg_color": "rgba(0, 0, 0, 0.8)",
-            "error_color": "#ff7b63",
-            "error_bg_color": "#c01c28",
-            "error_fg_color": "#ffffff",
-            "window_bg_color": "rgb(36,31,49)",
-            "window_fg_color": "rgb(255,255,255)",
-            "view_bg_color": "rgb(36,31,49)",
-            "view_fg_color": "#ffffff",
-            "headerbar_bg_color": "rgb(36,31,49)",
-            "headerbar_fg_color": "#ffffff",
-            "headerbar_border_color": "rgba(0,0,0,0)",
-            "headerbar_backdrop_color": "@window_bg_color",
-            "headerbar_shade_color": "rgba(0,0,0,0.25)",
-            "card_bg_color": "rgba(255,255,255,0.08)",
-            "card_fg_color": "#ffffff",
-            "card_shade_color": "rgba(0,0,0,0.25)",
-            "dialog_bg_color": "rgb(36,31,49)",
-            "dialog_fg_color": "#ffffff",
-            "popover_bg_color": "rgb(36,31,49)",
-            "popover_fg_color": "#ffffff",
-            "shade_color": "rgba(0,0,0,0.36)",
-            "scrollbar_outline_color": "rgb(0,0,0)",
-        }
+    variables = {
+        "accent_color": "#1c71d8",
+        "accent_bg_color": "#3584e4",
+        "accent_fg_color": "#ffffff",
+        "destructive_color": "#c01c28",
+        "destructive_bg_color": "#e01b24",
+        "destructive_fg_color": "#ffffff",
+        "success_color": "#26a269",
+        "success_bg_color": "#2ec27e",
+        "success_fg_color": "#ffffff",
+        "warning_color": "#ae7b03",
+        "warning_bg_color": "#e5a50a",
+        "warning_fg_color": "rgba(0, 0, 0, 0.8)",
+        "error_color": "#c01c28",
+        "error_bg_color": "#e01b24",
+        "error_fg_color": "#ffffff",
+        "window_bg_color": "#fafafa",
+        "window_fg_color": "rgba(0, 0, 0, 0.8)",
+        "view_bg_color": "#ffffff",
+        "view_fg_color": "#000000",
+        "headerbar_bg_color": "#ebebeb",
+        "headerbar_fg_color": "rgba(0, 0, 0, 0.8)",
+        "headerbar_border_color": "rgba(0, 0, 0, 0.8)",
+        "headerbar_backdrop_color": "@window_bg_color",
+        "headerbar_shade_color": "rgba(0, 0, 0, 0.07)",
+        "card_bg_color": "#ffffff",
+        "card_fg_color": "rgba(0, 0, 0, 0.8)",
+        "card_shade_color": "rgba(0, 0, 0, 0.07)",
+        "dialog_bg_color": "#fafafa",
+        "dialog_fg_color": "rgba(0, 0, 0, 0.8)",
+        "popover_bg_color": "#ffffff",
+        "popover_fg_color": "rgba(0, 0, 0, 0.8)",
+        "shade_color": "rgba(0,0,0,0.07)",
+        "scrollbar_outline_color": "rgb(255,255,255)",
+    }
 
 
 class Preset:
+    name = random.choice(AMAZING_NAMES)
+    version = "0.0.1"
     description = ""
-    plugins = {}
     badges = {}
-    repo = ""
-    filename = ""
-    name = ""
-    default = "light"
+    author = ""
+    maintainer = ""
+    plugins = {}
+
+    # internal fields
+    repo = "user"
+    path: Path = None
+
+    dark: DarkPreset = None
+    light: LightPreset = None
+    variants: Dict[str, BasePreset] = {}
 
     def __init__(
         self,
-        name=None,
-        repo="user",
-        version=semver.parse_version_info("0.1.0"),
+        name: str = None,
+        version: str = None,
+        description: str = None,
+        badges: dict = None,
+        author: str = None,
+        maintainer: str = None,
+        plugins: dict = None,
+
+        repo: str = None,
+        path: Path = None,
+
         dark=None,
         dark_css=None,
         light=None,
         light_css=None,
-        preset_path=None,
-        default="light",
-        url=None,
+
+        url: str = None,
     ):
-        self.version = version
-        if preset_path:
-            self.load_from_file(preset_path)
-        else:
-            if isinstance(dark, DarkPreset):
-                self.dark = dark
-            elif dark:
-                self.dark = DarkPreset(preset=dark)
-            elif dark_css:
-                self.dark = DarkPreset(css=dark_css)
-            else:
-                self.dark = DarkPreset()
 
-            if isinstance(light, LightPreset):
-                self.light = light
-            elif light:
-                self.light = LightPreset(preset=light)
-            elif light_css:
-                self.light = LightPreset(css=light_css)
-            else:
-                self.light = LightPreset()
+        if name is not None:
+            self.name = name
 
-            if name is not None:
-                self.name = name
-            else:
-                self.name = random.choice(AMAZING_NAMES)
-            self.filename = to_slug_case(self.name)
+        if version is not None:
+            self.version = version
+
+        if description is not None:
+            self.description = description
+
+        if badges is not None:
+            self.badges = badges
+
+        if author is not None:
+            self.author = author
+
+        if maintainer is not None:
+            self.maintainer = maintainer
+
+        if plugins is not None:
+            self.plugins = plugins
+
+        if repo is not None:
             self.repo = repo
-            self.default = default
+
+        if url is None: # download preset
+            self.download_from_url(url)
+        else:
+            if path:
+                self.path = Path(path)
+                self.load_from_file()
+            else:
+                if isinstance(dark, DarkPreset):
+                    self.dark = dark
+                elif dark:
+                    self.dark = DarkPreset(preset=dark)
+                elif dark_css:
+                    self.dark = DarkPreset(css=dark_css)
+                else:
+                    self.dark = DarkPreset()
+
+                if isinstance(light, LightPreset):
+                    self.light = light
+                elif light:
+                    self.light = LightPreset(preset=light)
+                elif light_css:
+                    self.light = LightPreset(css=light_css)
+                else:
+                    self.light = LightPreset()
+
         print(f"Loaded preset {self.name}")
         print(f"Version       {self.version}")
         print(f"Repo          {self.repo}")
 
-        if repo == "curated":
-            self.url = f"https://raw.githubusercontent.com/GradienceTeam/Community/next/{self.repo}/{self.filename}.json"
-        elif repo == "official":
-            self.url = f"https://raw.githubusercontent.com/GradienceTeam/Community/next/{self.repo}/{self.filename}.json"
-        else:
-            self.url = url
+    def load_dark(self, css=None, preset=None):
+        self.dark = DarkPreset(css, preset)
 
-        print(f"URL:          {self.url}")
+    def load_light(self, css=None, preset=None):
+        self.light = LightPreset(css, preset)
 
-    def load_dark(self, css=None, preset=None, preset_path=None):
-        self.dark = DarkPreset(css, preset, preset_path)
+    def download_from_url(self, url):
+        print("TODO: download")
 
-    def load_light(self, css=None, preset=None, preset_path=None):
-        self.light = LightPreset(css, preset, preset_path)
-
-    def load_from_file(self, path):
+    def load_from_file(self, path=None):
+        if path is not None:
+            self.path = path
         try:
-            with open(path, "r", encoding="utf-8") as file:
-                data = json.load(file)
+            with open(self.path, "rb") as file:
+                data = tomllib.load(file)
         except Exception as exc:
             raise GradienceError(f"Could not load preset from {path}") from exc
 
         self.repo = path.parent.name
-        self.version = semver.parse_version_info(
-            data["version"]) if "version" in data else semver.parse_version_info("0.1.0")
-        self.name = data["name"] if "name" in data else random.choice(
-            AMAZING_NAMES)
-        self.filename = to_slug_case(self.name)
-        self.description = data["description"] if "description" in data else ""
-        self.badges = data["badges"] if "badges" in data else {}
-        self.default = data["default"] if "default" in data else "light"
+        self.path = path
+
+        self.name = data.get("name", self.name)
+        self.version = data.get("version", self.version)
+        self.description = data.get("description", self.description)
+        self.badges = data.get("badges", self.badges)
+        self.author = data.get("author", self.author)
+        self.maintainer = data.get("maintainer", self.maintainer)
+        self.plugins = data.get("plugins", self.plugins)
+
         self.dark = DarkPreset(
             preset=data["dark"]) if "dark" in data else DarkPreset()
         self.light = (
@@ -446,33 +434,12 @@ class Preset:
         return f"Preset({self.name})"
 
     @property
-    def variables(self):
+    def dark(self):
         return self.light.variables if self.default == "light" else self.dark.variables
 
     @property
     def pallette(self):
         return self.light.palette if self.default == "light" else self.dark.palette
-
-    def __eq__(self, other: object) -> bool:
-        return self.name == other.name and self.version == other.version
-
-    def __gt__(self, other: object) -> bool:
-        return self.version > other.version
-
-    def __ge__(self, other: object) -> bool:
-        return self.version >= other.version
-
-    def __lt__(self, other: object) -> bool:
-        return self.version < other.version
-
-    def __le__(self, other: object) -> bool:
-        return self.version <= other.version
-
-    def __ne__(self, other: object) -> bool:
-        return not self.__eq__(other)
-
-    def __int__(self):
-        return int(self.version)
 
     def to_json(self):
         return {
