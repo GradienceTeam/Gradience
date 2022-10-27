@@ -48,7 +48,7 @@
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
 > **Warning**
-> [Gradience, stopthemingmy.app and Adwaita Developers](#gradience-stopthemingmyapp-and-adwaita-developers)
+> [Gradience, stopthemingmy.app and Adwaita Developers](#%EF%B8%8F-gradience-stopthemingmyapp-and-adwaita-developers)
 
 The main features of Gradience include the following:
 
