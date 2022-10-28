@@ -16,7 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import json
 import os
 
 from .utils import buglog, to_slug_case
@@ -42,6 +41,8 @@ try:
     import tomllib
 except ImportError:
     import tomli as tomllib
+
+import tomli_w
 
 def rgba_from_argb(argb, alpha=None) -> str:
     base = "rgba({}, {}, {}, {})"
@@ -353,7 +354,7 @@ class Preset:
         if repo is not None:
             self.repo = repo
 
-        if url is None: # download preset
+        if url is not None: # download preset
             self.download_from_url(url)
         else:
             if path:
@@ -378,6 +379,8 @@ class Preset:
                 else:
                     self.light = LightPreset()
 
+                self.save()
+
         print(f"Loaded preset {self.name}")
         print(f"Version       {self.version}")
         print(f"Repo          {self.repo}")
@@ -389,19 +392,36 @@ class Preset:
         self.light = LightPreset(css, preset)
 
     def download_from_url(self, url):
-        print("TODO: download")
-
-    def load_from_file(self, path=None):
-        if path is not None:
-            self.path = path
         try:
-            with open(self.path, "rb") as file:
-                data = tomllib.load(file)
-        except Exception as exc:
-            raise GradienceError(f"Could not load preset from {path}") from exc
+            request = Soup.Message.new("GET", url)
+            body = session.send_and_read(request, None)
+        except GLib.GError as error:  # offline
+            if error.code == 1:
+                print(f"Failed to establish a new connection. Exc: {error}")
+                return False, False
+            else:
+                print(f"Unhandled Libsoup3 GLib.GError error code {error.code}. Exc: {error}")
+                return False, False
 
-        self.repo = path.parent.name
-        self.path = path
+        self.load_from_file(data=body.get_data())
+
+    def rename(self, new_name:str):
+        self.name = new_name
+        self.save()
+
+    def load_from_file(self, path=None, data=None):
+        if data is None:
+            print(self.path)
+            if path is not None:
+                self.path = path
+            try:
+                with open(self.path, "rb") as file:
+                    data = tomllib.load(file)
+            except Exception as exc:
+                raise GradienceError(f"Could not load preset from {path}") from exc
+        else:
+            data = tomllib.load(data)
+        self.repo = self.path.parent.name
 
         self.name = data.get("name", self.name)
         self.version = data.get("version", self.version)
@@ -411,6 +431,7 @@ class Preset:
         self.maintainer = data.get("maintainer", self.maintainer)
         self.plugins = data.get("plugins", self.plugins)
 
+        self.dark = None
         self.dark = DarkPreset(
             preset=data["dark"]) if "dark" in data else DarkPreset()
         self.light = (
@@ -433,31 +454,23 @@ class Preset:
     def __repr__(self):
         return f"Preset({self.name})"
 
-    @property
-    def dark(self):
-        return self.light.variables if self.default == "light" else self.dark.variables
-
-    @property
-    def pallette(self):
-        return self.light.palette if self.default == "light" else self.dark.palette
-
-    def to_json(self):
-        return {
+    def to_toml(self):
+        return tomli_w.dumps({
             "name": self.name,
             "version": str(self.version),
             "description": self.description,
-            "plugins": self.plugins,
             "badges": self.badges,
+            "author": self.author,
+            "maintainer": self.maintainer,
+            "plugins": self.plugins,
             "dark": self.dark.to_json(),
-            "light": self.light.to_json(),
-            "default": self.default,
-        }
+            "light": self.light.to_json()
+        })
 
-    def save(self, to=None):
-        if to is None:
-            to = os.path.join(presets_dir, self.repo, self.filename + ".json")
+    def save(self, to:Path=None):
+        self.path = Path(presets_dir) / self.repo / f"{to_slug_case(self.name)}.toml" if to is None else to
         with open(to, "w", encoding="utf-8") as file:
-            file.write(json.dumps(self.to_json(), indent=4))
+            file.write(self.to_toml())
 
     @classmethod
     def new_from_background(cls, background, name):

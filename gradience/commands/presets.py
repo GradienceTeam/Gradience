@@ -42,3 +42,11 @@ def merge(dark, light, name, repo):
     dark = DarkPreset(preset_path=dark)
     merged = Preset(name=name, repo=repo, dark=dark, light=light)
     merged.save()
+
+@presets.command()
+def list():
+    """List all the presets."""
+    pm = PresetManager()
+    for repo in pm.presets:
+        for preset in pm.presets[repo]:
+            print(preset)

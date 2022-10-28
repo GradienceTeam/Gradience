@@ -41,14 +41,7 @@ class PresetManager:
                 for preset in repo.iterdir():
                     # .config/presets/official/tango.json for example
                     if preset.is_file():
-                        self.add_preset(Preset(preset_path=preset, repo=repo.name), repo.name)
-            elif repo.is_file():
-                # old presets
-                # gradience move them to .config/presets/user
-                shutil.move(repo, self.presets_dir / "user" / repo.name)
-                self.add_preset(
-                    Preset(preset_path=self.presets_dir / "user" / repo.name), "user"
-                )
+                        self.add_preset(Preset(path=preset, repo=repo.name), repo.name)
 
     def add_preset(self, preset, repo_name="user"):
         """Add a preset to the presets dictionary."""
@@ -64,7 +57,7 @@ class PresetManager:
                 url = CURATED_PRESETS_URL.format(preset_name)
         download_preset(preset_name, repo, url)
         preset = Preset(
-            preset_path=self.presets_dir / repo / f"{to_slug_case(preset_name)}.json", repo=repo
+            path=self.presets_dir / repo / f"{to_slug_case(preset_name)}.json", repo=repo
         )
         self.add_preset(preset, repo)
 
