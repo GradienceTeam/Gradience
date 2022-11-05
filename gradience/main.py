@@ -191,7 +191,7 @@ class GradienceApplication(Adw.Application):
                 self.custom_presets[repo.name] = presets_list
             elif repo.is_file():
                 buglog("file")
-                # keep compatiblity with old presets
+                # keep compatibility with old presets
                 if repo.name.endswith(".json"):
                     if not os.path.isdir(os.path.join(presets_dir, "user")):
                         os.mkdir(os.path.join(presets_dir, "user"))
@@ -854,7 +854,7 @@ class GradienceApplication(Adw.Application):
             self.plugins_list.apply()
 
             self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset set sucessfully"))
+                Adw.Toast(title=_("Preset set successfully"))
             )
 
             dialog = Adw.MessageDialog(
@@ -921,7 +921,7 @@ class GradienceApplication(Adw.Application):
                     gtk4css.close()
                 except FileNotFoundError:
                     self.win.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Could not restore GTK 4 backup"))
+                        Adw.Toast(title=_("Unable to restore GTK 4 backup"))
                     )
 
     def reset_color_scheme(self, widget, response):
@@ -938,7 +938,9 @@ class GradienceApplication(Adw.Application):
                 try:
                     file.delete()
                 except Exception:
-                    pass
+                    self.win.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Unable to delete current preset"))
+                    )
 
             if widget.get_app_types()["gtk3"]:
                 file = Gio.File.new_for_path(
@@ -952,9 +954,9 @@ class GradienceApplication(Adw.Application):
                 try:
                     file.delete()
                 except Exception:
-                    pass
-            self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset reseted")))
+                    self.win.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Unable to delete current preset"))
+                    )
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)

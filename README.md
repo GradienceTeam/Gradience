@@ -236,7 +236,7 @@ ninja -C builddir run
 ```
 
 > **Note** 
-> During testing and developement, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
+> During testing and development, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
 
 
 ## 🙌 Contribute to Gradience 
