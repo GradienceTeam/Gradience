@@ -921,7 +921,7 @@ class GradienceApplication(Adw.Application):
                     gtk4css.close()
                 except FileNotFoundError:
                     self.win.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Could not restore GTK 4 backup"))
+                        Adw.Toast(title=_("Unable to restore GTK 4 backup"))
                     )
 
     def reset_color_scheme(self, widget, response):
@@ -938,7 +938,9 @@ class GradienceApplication(Adw.Application):
                 try:
                     file.delete()
                 except Exception:
-                    pass
+                    self.win.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Unable to delete current preset"))
+                    )
 
             if widget.get_app_types()["gtk3"]:
                 file = Gio.File.new_for_path(
@@ -952,9 +954,9 @@ class GradienceApplication(Adw.Application):
                 try:
                     file.delete()
                 except Exception:
-                    pass
-            self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset reset")))
+                    self.win.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Unable to delete current preset"))
+                    )
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)
