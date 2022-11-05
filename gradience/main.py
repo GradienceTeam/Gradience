@@ -191,7 +191,7 @@ class GradienceApplication(Adw.Application):
                 self.custom_presets[repo.name] = presets_list
             elif repo.is_file():
                 buglog("file")
-                # keep compatiblity with old presets
+                # keep compatibility with old presets
                 if repo.name.endswith(".json"):
                     if not os.path.isdir(os.path.join(presets_dir, "user")):
                         os.mkdir(os.path.join(presets_dir, "user"))
@@ -854,7 +854,7 @@ class GradienceApplication(Adw.Application):
             self.plugins_list.apply()
 
             self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset set sucessfully"))
+                Adw.Toast(title=_("Preset set successfully"))
             )
 
             dialog = Adw.MessageDialog(
@@ -954,7 +954,7 @@ class GradienceApplication(Adw.Application):
                 except Exception:
                     pass
             self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset reseted")))
+                Adw.Toast(title=_("Preset reset")))
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)

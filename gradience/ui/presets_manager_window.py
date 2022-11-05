@@ -338,7 +338,7 @@ class GradiencePresetWindow(Adw.Window):
                 self.custom_presets[repo.name] = presets_list
             elif repo.is_file():
                 buglog("file")
-                # keep compatiblity with old presets
+                # keep compatibility with old presets
                 if repo.name.endswith(".json"):
                     if not os.path.isdir(os.path.join(presets_dir, "user")):
                         os.mkdir(os.path.join(presets_dir, "user"))
