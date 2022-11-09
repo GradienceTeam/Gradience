@@ -14,7 +14,11 @@
         "--filesystem=xdg-data/flatpak/overrides:create",
         "--filesystem=xdg-config/gtk-3.0",
         "--filesystem=xdg-config/gtk-4.0",
-        "--filesystem=xdg-run/gvfsd"
+        "--filesystem=xdg-run/gvfsd",
+        "--filesystem=~/.mozilla/firefox",
+        "--filesystem=~/.librewolf",
+        "--filesystem=~/.var/app/org.mozilla.firefox/.mozilla/firefox",
+        "--filesystem=~/.var/app/io.gitlab.librewolf-community/.librewolf"
     ],
     "cleanup" : [
         "/include",
