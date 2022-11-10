@@ -147,6 +147,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.monet_file_chooser_dialog = Gtk.FileChooserNative()
         self.monet_file_chooser_dialog.set_transient_for(self)
+        self.monet_file_chooser_dialog.set_modal(True)
 
         self.monet_file_chooser_button = Gtk.Button()
         self.monet_file_chooser_button.set_valign(Gtk.Align.CENTER)
