@@ -652,11 +652,11 @@ class GradienceApplication(Adw.Application):
             body_use_markup=True,
         )
 
-        dialog.add_response("cancel", _("Cancel"))
-        dialog.add_response("save", _("Save"))
+        dialog.add_response("cancel", _("_Cancel"))
+        dialog.add_response("save", _("_Save"))
         dialog.set_response_appearance(
             "save", Adw.ResponseAppearance.SUGGESTED)
-        dialog.set_default_response("cancel")
+        dialog.set_default_response("save")
         dialog.set_close_response("cancel")
 
         preset_entry = Gtk.Entry(placeholder_text="Preset Name")

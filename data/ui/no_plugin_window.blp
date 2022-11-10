@@ -9,6 +9,12 @@ template GradienceNoPluginPrefWindow: Adw.Window {
   resizable: true;
   deletable: true;
 
+  ShortcutController {
+    Shortcut {
+      trigger: "Escape";
+      action: "action(window.close)";
+    }
+  }
 
   Adw.Leaflet leaflet {
     can-unfold: false;

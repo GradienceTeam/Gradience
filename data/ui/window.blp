@@ -6,6 +6,13 @@ template GradienceMainWindow : Adw.ApplicationWindow {
   default-width: 1000;
   default-height: 700;
 
+  ShortcutController {
+    Shortcut {
+      trigger: "Escape";
+      action: "action(window.close)";
+    }
+  }
+
   Adw.ToastOverlay toast_overlay {
     Adw.Leaflet leaflet {
       can-navigate-back: true;
