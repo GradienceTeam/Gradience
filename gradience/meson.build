@@ -24,6 +24,7 @@ configure_file(
     'HELP_URL': HELP_URL,
     'TRANSLATE_URL': TRANSLATE_URL,
     'PKGDATA_DIR': PKGDATA_DIR,
+    'LOCALE_DIR': conf.get('LOCALE_DIR'),
   }),
   install: true,
   install_dir: PY_INSTALLDIR.get_install_dir() / 'gradience',
