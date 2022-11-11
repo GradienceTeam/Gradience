@@ -601,7 +601,7 @@ class GradienceApplication(Adw.Application):
                 "irreversibly overwritten!"
             ),
             "apply",
-            _("Apply"),
+            _("_Apply"),
             Adw.ResponseAppearance.SUGGESTED,
             transient_for=self.props.active_window,
         )
@@ -614,7 +614,7 @@ class GradienceApplication(Adw.Application):
             _("Restore applied color scheme?"),
             _("Make sure you have the current settings saved as a preset."),
             "restore",
-            _("Restore"),
+            _("_Restore"),
             Adw.ResponseAppearance.DESTRUCTIVE,
             transient_for=self.props.active_window,
         )
@@ -626,7 +626,7 @@ class GradienceApplication(Adw.Application):
             _("Reset applied color scheme?"),
             _("Make sure you have the current settings saved as a preset."),
             "reset",
-            _("Reset"),
+            _("_Reset"),
             Adw.ResponseAppearance.DESTRUCTIVE,
             transient_for=self.props.active_window,
         )

@@ -41,7 +41,7 @@ class GradienceAppTypeDialog(Adw.MessageDialog):
         self.set_heading(heading)
         self.set_body(body)
 
-        self.add_response("cancel", _("Cancel"))
+        self.add_response("cancel", _("_Cancel"))
         self.add_response(ok_response_name, ok_response_label)
         self.set_response_appearance(ok_response_name, ok_response_appearance)
         self.set_default_response("cancel")
