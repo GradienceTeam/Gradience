@@ -118,6 +118,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             image_basename = self.monet_image_file.get_basename()
             self.monet_file_chooser_button.set_label(image_basename)
             self.monet_file_chooser_button.set_tooltip_text(image_basename)
+        
         self.monet_file_chooser_dialog.hide()
 
         if response == Gtk.ResponseType.ACCEPT:
@@ -147,6 +148,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.monet_file_chooser_dialog = Gtk.FileChooserNative()
         self.monet_file_chooser_dialog.set_transient_for(self)
+        self.monet_file_chooser_dialog.set_modal(True)
 
         self.monet_file_chooser_button = Gtk.Button()
         self.monet_file_chooser_button.set_valign(Gtk.Align.CENTER)

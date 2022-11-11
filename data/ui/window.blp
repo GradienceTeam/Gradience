@@ -6,6 +6,13 @@ template GradienceMainWindow : Adw.ApplicationWindow {
   default-width: 1000;
   default-height: 700;
 
+  ShortcutController {
+    Shortcut {
+      trigger: "<primary>q";
+      action: "action(window.close)";
+    }
+  }
+
   Adw.ToastOverlay toast_overlay {
     Adw.Leaflet leaflet {
       can-navigate-back: true;
@@ -17,7 +24,6 @@ template GradienceMainWindow : Adw.ApplicationWindow {
         Adw.HeaderBar titlebar {
           centering-policy: strict;
 
-          [start]
           Button apply-button {
             styles ["suggested-action"]
             label: _("Apply");

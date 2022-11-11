@@ -6,6 +6,13 @@ template GradiencePresetWindow : Adw.Window {
   default-width: 700;
   default-height: 550;
 
+  ShortcutController {
+    Shortcut {
+      trigger: "Escape";
+      action: "action(window.close)";
+    }
+  }
+
   Adw.ToastOverlay toast_overlay {
     Adw.Leaflet leaflet {
       can-navigate-back: true;
@@ -17,7 +24,6 @@ template GradiencePresetWindow : Adw.Window {
         Adw.HeaderBar titlebar {
           centering-policy: strict;
 
-          [start]
           Button import_button {
             styles ["suggested-action"]
             label: _("Import");
@@ -25,7 +31,6 @@ template GradiencePresetWindow : Adw.Window {
             clicked => on_import_button_clicked();
           }
 
-          [start]
           Button remove_button {
             styles ["danger"]
             label: _("Delete");
