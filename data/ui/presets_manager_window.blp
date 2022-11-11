@@ -24,7 +24,6 @@ template GradiencePresetWindow : Adw.Window {
         Adw.HeaderBar titlebar {
           centering-policy: strict;
 
-          [start]
           Button import_button {
             styles ["suggested-action"]
             label: _("Import");
@@ -32,7 +31,6 @@ template GradiencePresetWindow : Adw.Window {
             clicked => on_import_button_clicked();
           }
 
-          [start]
           Button remove_button {
             styles ["danger"]
             label: _("Delete");
