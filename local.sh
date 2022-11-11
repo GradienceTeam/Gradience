@@ -18,12 +18,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+read -p "Do you want to install Python requirements? [N/y] " answer
 
-read -p "Do you want to install Python requirements? (yes, no): " answer
-
-#is_venv = "python -c 'import sys; print(sys.prefix == sys.base_prefix)'"
-
-#if [[ "$is_venv" == "True" ]]; then
 if [[ "$answer" == "yes" ]]; then
     pip3 install -r requirements.txt
 elif [[ "$answer" == "no" ]]; then
@@ -34,7 +30,7 @@ echo "Cleaning builddir directory"
 rm -r builddir
 
 echo "Rebuilding"
-meson builddir
+meson setup builddir
 meson configure builddir -Dprefix="$(pwd)/builddir" -Dbuildtype=debug
 ninja -C builddir install
 

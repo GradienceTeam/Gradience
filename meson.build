@@ -22,7 +22,7 @@ PROJECT_RDNN_NAME = 'com.github.GradienceTeam.Gradience'
 
 # Set APPLICATION_ID and VERSION_SUFFIX
 if get_option('buildtype') == 'debug'
-  VCS_TAG = run_command('git', 'rev-parse', '--short', 'HEAD').stdout().strip()
+  VCS_TAG = run_command('git', 'rev-parse', '--short', 'HEAD', check: true).stdout().strip()
   if VCS_TAG == ''
     VERSION_SUFFIX = '-devel'
   else
