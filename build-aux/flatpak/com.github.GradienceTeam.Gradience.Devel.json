@@ -102,22 +102,6 @@
             ]
         },
         {
-            "name": "libportal",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Ddocs=false",
-                "-Dvapi=false",
-                "-Dbackends=gtk4"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/flatpak/libportal",
-                    "tag": "main"
-                }
-            ]
-        },
-        {
             "name" : "gradience",
             "builddir" : true,
             "buildsystem" : "meson",
