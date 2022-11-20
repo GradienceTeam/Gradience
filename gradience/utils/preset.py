@@ -87,16 +87,14 @@ class Preset:
 
     # Rename an existing preset
     def rename_preset(self, name):
-        new_path = os.path.join(
+        self.display_name = name
+        old_path = self.preset_path
+        self.preset_path = os.path.join(
                 os.path.dirname(self.preset_path),
                 to_slug_case(name) + ".json")
 
-        os.rename(
-            self.preset_path,
-            new_path
-        )
-
-        self.preset_path = new_path
+        self.save_preset(to=self.preset_path)
+        os.remove(old_path)
 
     # Save a new user preset (or overwrite one)
     def save_preset(self, name=None, plugins_list=None, to=None):
