@@ -1045,17 +1045,14 @@ class GradienceApplication(Adw.Application):
             ),
             comments=_(
 """
-Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 \
-theme.
-With Gradience you can:
+Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
+The main features of Gradience include the following:
 
-- Change any color of Adwaita theme
-- Apply Material 3 colors from wallpaper
-- Use other users presets
-- Change advanced options with CSS
-- Extend functionality using plugins
-
-This app is written in Python and uses GTK 4 and Libadwaita.
+🎨️ Changing any color of Adwaita theme
+🖼️ Applying Material 3 color scheme from wallpaper
+🎁️ Usage of other users presets
+⚙️ Changing advanced options with CSS
+🧩️ Extending functionality using plugins
 """
             ),
         )
