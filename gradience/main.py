@@ -1034,10 +1034,10 @@ class GradienceApplication(Adw.Application):
 <li>Тransition from cssutils to an in-house solution</li>
 <li>Fixed issues with the CSS parser</li>
 <li>Fixed an issue with presets always being saved as User.json</li>
-<li>The presets are now removed correctly</li>
-<li>Internal structure was refactored</li>
+<li>Presets are now removed correctly</li>
+<li>The Internal structure was refactored</li>
 <li>Various typos were fixed</li>
-<li>README was fully rewritten</li>
+<li>The README was fully rewritten</li>
 <li>All screenshots were taken in high resolution</li>
 <li>New and updated translations</li>
 </ul>
