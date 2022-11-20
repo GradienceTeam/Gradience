@@ -285,6 +285,7 @@ class GradiencePresetWindow(Adw.Window):
                         self.preset_path.get_path(),
                         os.path.join(
                             presets_dir,
+                            "user",
                             preset_file,
                         ),
                     )
@@ -311,6 +312,7 @@ class GradiencePresetWindow(Adw.Window):
         }
 
         for repo in Path(presets_dir).iterdir():
+            buglog(f"presets_dir.iterdir: {repo}")
             if repo.is_dir():  # repo
                 presets_list = {}
                 for file_name in repo.iterdir():
@@ -331,7 +333,8 @@ class GradiencePresetWindow(Adw.Window):
                             presets_list[file_name] = preset[
                                 "name"
                             ]
-                        except Exception:
+                        except Exception as e:
+                            buglog(f"reload_pref_group exception: {e}")
                             self.toast_overlay.add_toast(
                                 Adw.Toast(title=_("Failed to load preset"))
                             )
@@ -361,7 +364,8 @@ class GradiencePresetWindow(Adw.Window):
                         presets_list["user"][file_name] = preset[
                             "name"
                         ]
-                    except Exception:
+                    except Exception as e:
+                        buglog(f"reload_pref_group exception: {e}")
                         self.toast_overlay.add_toast(
                             Adw.Toast(title=_("Failed to load preset"))
                         )
