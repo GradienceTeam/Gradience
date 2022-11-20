@@ -37,40 +37,36 @@ class Preset:
         "gtk3": "",
     }
     plugins = {}
-    repo = "user"
     display_name = "New Preset"
-    filename = "new_preset"
+    preset_path = "new_preset"
     badges = {}
 
-    def __init__(self, name=None, repo=None, preset_path=None, text=None, preset=None):
-        if text:  # load from resource
+    def __init__(self, preset_path=None, text=None, preset=None):
+        if preset_path:
+            self.load_preset(preset_path=preset_path)
+        elif text:  # load from resource
             self.load_preset(text=text)
         elif preset:  # css or dict
             self.load_preset(preset=preset)
         else:
-            if name is not None:
-                self.filename = to_slug_case(name)
-            if repo is not None:
-                self.repo = repo
-            if preset_path is None:
-                self.preset_path = os.path.join(
-                    presets_dir, repo, self.filename + ".json")
-            else:
-                self.preset_path = preset_path
-            self.load_preset()
+            raise Exception("Preset created without content")
 
-    def load_preset(self, text=None, preset=None):
+    def load_preset(self, preset_path=None, text=None, preset=None):
         try:
             if not preset:
                 if text:
                     preset_text = text
-                else:
+                elif preset_path:
+                    print(self.preset_path)
+                    self.preset_path = preset_path
                     with open(self.preset_path, "r", encoding="utf-8") as file:
                         preset_text = file.read()
+                else:
+                    raise Exception("load_preset must be called with a path, text, or preset")
+
                 preset = json.loads(preset_text)
 
             self.display_name = preset["name"]
-            self.filename = to_slug_case(self.display_name)
             self.variables = preset["variables"]
             self.palette = preset["palette"]
 
@@ -85,7 +81,10 @@ class Preset:
                 for app_type in settings_schema["custom_css_app_types"]:
                     self.custom_css[app_type] = ""
         except Exception as error:
-            buglog(error, " -> preset : ", self.preset_path)
+            if self.preset_path:
+                buglog(error, " -> preset : ", self.preset_path)
+            else:
+                buglog(error, " -> preset : unknown path")
 
     def save_preset(self, name=None, plugins_list=None, to=None):
         self.display_name = name if name else self.display_name
