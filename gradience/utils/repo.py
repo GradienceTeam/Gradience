@@ -30,10 +30,8 @@ class Repo:
         self.presets = self.get_presets()
 
     def get_presets(self):
-        print("get presets in Repo")
         presets = {}
         for preset in os.listdir(self.path):
-            print(preset)
             if preset.endswith(".json"):
                 presets[preset[:-5]] = Preset(os.path.join(self.path, preset))
         return presets

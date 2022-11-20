@@ -57,7 +57,6 @@ class Preset:
                 if text:
                     preset_text = text
                 elif preset_path:
-                    print(self.preset_path)
                     self.preset_path = preset_path
                     with open(self.preset_path, "r", encoding="utf-8") as file:
                         preset_text = file.read()
@@ -112,8 +111,6 @@ class Preset:
             plugins_list = {}
         else:
             plugins_list = plugins_list.save()
-
-        print(self.preset_path)
 
         with open(
             self.preset_path,
