@@ -1023,22 +1023,21 @@ class GradienceApplication(Adw.Application):
             release_notes=_(
 """
 <ul>
-<li>Firefox GNOME theme plugin now correctly parses installations with multiple profiles</li>
-<li>Esc now closes dialogs and Preset Manager</li>
-<li>Added mnemonics for dialogs</li>
-<li>Save is now a default response in dialogs</li>
-<li>Plugins rows now look cleaner and correctly placed</li>
-<li>File picker is now modal and sticks with the parent window</li>
-<li>Gradience now can be closed with Ctrl+Q</li>
-<li>"Favourite(s)" was renamed to "Favorite(s)"</li>
-<li>Тransition from cssutils to a in-house solution</li>
-<li>Fixed issues with CSS parser</li>
-<li>Fixed issue when presets always saved as User.json</li>
-<li>Presets now removes correctly</li>
-<li>Internal structure was refactored</li>
-<li>Various typos were fixed</li>
-<li>README was fully rewritten</li>
-<li>All screenshots were taken in high resolution</li>
+<li>Added ability to star preset to display it in Palette</li>
+<li>Updated Firefox GNOME Theme plugin</li>
+<li>Welcome screen have been improved</li>
+<li>Margins in color info popovers are fixed</li>
+<li>Added filter to search presets by repo</li>
+<li>Added "No Preferences" window</li>
+<li>Preset Manager window size have changed</li>
+<li>"Offline" and "Nothing Found" pages have been added to Preset Manager</li>
+<li>All text have been rewritten to follow GNOME Writing Guides</li>
+<li>Switch from aiohttp to Libsoup3</li>
+<li>Migrate to GNOME SDK 43</li>
+<li>All contributors have been added to "About" window</li>
+<li>Added "Log Out" dialog after preset apply</li>
+<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</li>
+<li>Flatpak theme override now fixed</li>
 <li>New and updated translations</li>
 </ul>
 """
