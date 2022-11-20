@@ -3,6 +3,13 @@ using Adw 1;
 
 template GradiencePluginRow : Adw.ActionRow {
   [suffix]
+  Switch switch {
+    valign: center;
+    tooltip-text: _("Toggle Plugin");
+    state-set => on_switch_toggled();
+  }
+
+  [suffix]
   Button settings-button {
     valign: center;
     icon-name: "settings-symbolic";
@@ -15,13 +22,6 @@ template GradiencePluginRow : Adw.ActionRow {
   }
 
   [suffix]
-  Switch switch {
-    valign: center;
-    tooltip-text: _("Toggle Plugin");
-    state-set => on_switch_toggled();
-  }
-
-  [suffix]
   Button remove-button {
     valign: center;
     icon-name: "user-trash-symbolic";
@@ -29,3 +29,4 @@ template GradiencePluginRow : Adw.ActionRow {
     clicked => on_remove_plugin_clicked();
   }
 }
+
