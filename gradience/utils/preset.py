@@ -49,7 +49,7 @@ class Preset:
         elif preset:  # css or dict
             self.load_preset(preset=preset)
         else:
-            raise Exception("Preset created without content")
+            raise Exception("Failed to create a new Preset object: Preset created without content")
 
     def load_preset(self, preset_path=None, text=None, preset=None):
         try:
@@ -60,6 +60,7 @@ class Preset:
                     self.preset_path = preset_path
                     with open(self.preset_path, "r", encoding="utf-8") as file:
                         preset_text = file.read()
+                        file.close()
                 else:
                     raise Exception("load_preset must be called with a path, text, or preset")
 
@@ -79,11 +80,11 @@ class Preset:
             else:
                 for app_type in settings_schema["custom_css_app_types"]:
                     self.custom_css[app_type] = ""
-        except Exception as error:
+        except Exception as e:
             if self.preset_path:
-                buglog(error, " -> preset : ", self.preset_path)
+                buglog(f"Failed to load preset {self.preset_path}. Exc: {e}")
             else:
-                buglog(error, " -> preset : unknown path")
+                buglog(f"Failed to load preset with unknown path. Exc: {e}")
 
     # Rename an existing preset
     def rename_preset(self, name):
@@ -125,11 +126,7 @@ class Preset:
         else:
             plugins_list = plugins_list.save()
 
-        with open(
-            self.preset_path,
-            "w",
-            encoding="utf-8",
-        ) as file:
+        with open(self.preset_path, "w", encoding="utf-8") as file:
             object_to_write = {
                 "name": self.display_name,
                 "variables": self.variables,
@@ -138,12 +135,7 @@ class Preset:
                 "plugins": plugins_list,
             }
             file.write(json.dumps(object_to_write, indent=4))
+            file.close()
 
     def validate(self):
         return True
-
-
-if __name__ == "__main__":
-    p = Preset("test", "user")
-    buglog(p.variables)
-    buglog(p.palette)
