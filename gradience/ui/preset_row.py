@@ -125,7 +125,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         if self.name_entry_toggle.get_active():
             self.value_stack.set_visible_child(self.name_entry)
         else:
-            self.update_value()
+            self.preset.rename_preset(self.name_entry.get_text())
             self.value_stack.set_visible_child(self.apply_button)
 
     def on_report_btn_clicked(self, *_args):
@@ -168,14 +168,6 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.props.visible = False
         finally:
             self.delete_preset = True
-
-    def update_value(self):
-        print(self.name_entry.get_text())
-        old = self.preset.preset_path
-        self.preset.save_preset(self.name_entry.get_text())
-        os.remove(
-            self.preset.preset_path
-        )
 
     def on_delete_toast_dismissed(self, widget):
         buglog("dismissed")

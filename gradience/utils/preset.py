@@ -85,15 +85,30 @@ class Preset:
             else:
                 buglog(error, " -> preset : unknown path")
 
+    # Rename an existing preset
+    def rename_preset(self, name):
+        new_path = os.path.join(
+                os.path.dirname(self.preset_path),
+                to_slug_case(name) + ".json")
+
+        os.rename(
+            self.preset_path,
+            new_path
+        )
+
+        self.preset_path = new_path
+
+    # Save a new user preset (or overwrite one)
     def save_preset(self, name=None, plugins_list=None, to=None):
         self.display_name = name if name else self.display_name
-        self.filename = to_slug_case(name) if name else self.filename
 
         if to is None:
+            filename = to_slug_case(name) if name else "new_preset"
             self.preset_path = os.path.join(
-                presets_dir, self.repo, self.filename + ".json")
+                presets_dir, "user", filename + ".json")
         else:
             self.preset_path = to
+
         if not os.path.exists(
             os.path.join(
                 presets_dir,
