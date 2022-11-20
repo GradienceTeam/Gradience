@@ -1027,14 +1027,14 @@ class GradienceApplication(Adw.Application):
 <li>Esc now closes dialogs and Preset Manager</li>
 <li>Added mnemonics for dialogs</li>
 <li>Save is now a default response in dialogs</li>
-<li>Plugins rows now look cleaner and correctly placed</li>
-<li>File picker is now modal and sticks with the parent window</li>
-<li>Gradience now can be closed with Ctrl+Q</li>
+<li>Plugins rows now look cleaner and are correctly placed</li>
+<li>File picker is now modal and sticks to the parent window</li>
+<li>Grandience can now be closed with Ctrl+Q</li>
 <li>"Favourite(s)" was renamed to "Favorite(s)"</li>
-<li>Тransition from cssutils to a in-house solution</li>
-<li>Fixed issues with CSS parser</li>
-<li>Fixed issue when presets always saved as User.json</li>
-<li>Presets now removes correctly</li>
+<li>Тransition from cssutils to an in-house solution</li>
+<li>Fixed issues with the CSS parser</li>
+<li>Fixed an issue with presets always being saved as User.json</li>
+<li>The presets are now removed correctly</li>
 <li>Internal structure was refactored</li>
 <li>Various typos were fixed</li>
 <li>README was fully rewritten</li>
