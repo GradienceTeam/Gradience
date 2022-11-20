@@ -276,7 +276,7 @@ class GradiencePresetWindow(Adw.Window):
         if response == Gtk.ResponseType.ACCEPT:
             if preset_file.endswith(".json"):
 
-                if preset_file.strip(".json") in self.custom_presets:
+                if preset_file in self.custom_presets:
                     self.toast_overlay.add_toast(
                         Adw.Toast(title=_("Preset already exists"))
                     )
@@ -285,6 +285,7 @@ class GradiencePresetWindow(Adw.Window):
                         self.preset_path.get_path(),
                         os.path.join(
                             presets_dir,
+                            "user",
                             preset_file,
                         ),
                     )
@@ -311,6 +312,7 @@ class GradiencePresetWindow(Adw.Window):
         }
 
         for repo in Path(presets_dir).iterdir():
+            buglog(f"presets_dir.iterdir: {repo}")
             if repo.is_dir():  # repo
                 presets_list = {}
                 for file_name in repo.iterdir():
@@ -328,10 +330,11 @@ class GradiencePresetWindow(Adw.Window):
                                 raise KeyError("variables")
                             if preset.get("palette") is None:
                                 raise KeyError("palette")
-                            presets_list[file_name.replace(".json", "")] = preset[
+                            presets_list[file_name] = preset[
                                 "name"
                             ]
-                        except Exception:
+                        except Exception as e:
+                            buglog(f"reload_pref_group exception: {e}")
                             self.toast_overlay.add_toast(
                                 Adw.Toast(title=_("Failed to load preset"))
                             )
@@ -358,10 +361,11 @@ class GradiencePresetWindow(Adw.Window):
                             raise KeyError("variables")
                         if preset.get("palette") is None:
                             raise KeyError("palette")
-                        presets_list["user"][file_name.replace(".json", "")] = preset[
+                        presets_list["user"][file_name] = preset[
                             "name"
                         ]
-                    except Exception:
+                    except Exception as e:
+                        buglog(f"reload_pref_group exception: {e}")
                         self.toast_overlay.add_toast(
                             Adw.Toast(title=_("Failed to load preset"))
                         )
@@ -399,7 +403,7 @@ class GradiencePresetWindow(Adw.Window):
             for repo, presets in self.custom_presets.items():
                 for preset_file, preset_name in presets.items():
                     row = GradiencePresetRow(
-                        preset_name, self, repo)
+                        preset_name, preset_file, self, repo)
                     self.preset_list.add(row)
 
         else:

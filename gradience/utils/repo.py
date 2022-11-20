@@ -33,5 +33,5 @@ class Repo:
         presets = {}
         for preset in os.listdir(self.path):
             if preset.endswith(".json"):
-                presets[preset[:-5]] = Preset(preset[:-5], self.name)
+                presets[preset[:-5]] = Preset(os.path.join(self.path, preset))
         return presets

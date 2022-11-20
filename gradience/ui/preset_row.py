@@ -41,7 +41,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
     badge_list = Gtk.Template.Child("badge_list")
     no_badges = Gtk.Template.Child("no_badges")
 
-    def __init__(self, name, win, repo_name, author="", **kwargs):
+    def __init__(self, name, preset_path, win, repo_name, author="", **kwargs):
         super().__init__(**kwargs)
 
         self.name = name
@@ -57,7 +57,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.win = win
         self.toast_overlay = self.win.toast_overlay
 
-        self.preset = Preset(name, repo_name)
+        self.preset = Preset(preset_path)
 
         if self.preset.badges:
             self.has_badges = True
@@ -107,13 +107,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
     def on_apply_button_clicked(self, *_args):
         buglog("apply")
 
-        self.app.load_preset_from_file(
-            os.path.join(
-                presets_dir,
-                self.prefix,
-                to_slug_case(to_slug_case(self.name)) + ".json",
-            )
-        )
+        self.app.load_preset_from_file(self.preset.preset_path)
 
     def on_undo_button_clicked(self, *_args):
         buglog("undo")
@@ -131,7 +125,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         if self.name_entry_toggle.get_active():
             self.value_stack.set_visible_child(self.name_entry)
         else:
-            self.update_value()
+            self.preset.rename_preset(self.name_entry.get_text())
             self.value_stack.set_visible_child(self.apply_button)
 
     def on_report_btn_clicked(self, *_args):
@@ -163,16 +157,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
         try:
             os.rename(
-                os.path.join(
-                    presets_dir,
-                    self.prefix,
-                    to_slug_case(self.preset.filename) + ".json",
-                ),
-                os.path.join(
-                    presets_dir,
-                    self.prefix,
-                    to_slug_case(self.preset.filename) + ".json.to_delete",
-                ),
+                self.preset.preset_path,
+                self.preset.preset_path + ".to_delete",
             )
 
             self.set_name(self.name + "(" + _("Pending Deletion") + ")")
@@ -183,40 +169,13 @@ class GradiencePresetRow(Adw.ExpanderRow):
         finally:
             self.delete_preset = True
 
-    def update_value(self):
-        print(self.name_entry.get_text())
-        old = self.preset.filename
-        self.preset.save_preset(self.name_entry.get_text())
-        print(os.path.join(
-                presets_dir,
-                self.prefix,
-                to_slug_case(old) + ".json",
-            ))
-        os.remove(
-            os.path.join(
-                presets_dir,
-                self.prefix,
-                to_slug_case(old) + ".json",
-            )
-        )
-
     def on_delete_toast_dismissed(self, widget):
         buglog("dismissed")
         if self.delete_preset:
             buglog("delete")
             try:
-                buglog(os.path.join(
-                        presets_dir,
-                        self.prefix,
-                        to_slug_case(self.preset.filename) + ".json.to_delete",
-                    ))
-                os.remove(
-                    os.path.join(
-                        presets_dir,
-                        self.prefix,
-                        to_slug_case(self.preset.filename) + ".json.to_delete",
-                    )
-                )
+                buglog(self.preset.preset_path + ".to_delete")
+                os.remove(self.preset.preset_path + ".to_delete")
             except Exception as exception:
                 buglog(exception)
                 self.toast_overlay.add_toast(
@@ -228,16 +187,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
             buglog("undo")
             try:
                 os.rename(
-                    os.path.join(
-                        presets_dir,
-                        self.prefix,
-                        to_slug_case(self.preset.filename) + ".json.to_delete",
-                    ),
-                    os.path.join(
-                        presets_dir,
-                        self.prefix,
-                        to_slug_case(self.preset.filename) + ".json",
-                    ),
+                    self.preset.preset_path + ".to_delete",
+                    self.preset.preset_path
                 )
             except Exception as exception:
                 buglog(exception)
