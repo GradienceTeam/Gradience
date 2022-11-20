@@ -1208,4 +1208,3 @@ def main():
     """The application's entry point."""
     app = GradienceApplication()
     return app.run(sys.argv)
-
