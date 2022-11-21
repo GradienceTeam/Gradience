@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 12:26+0000\n"
+"POT-Creation-Date: 2022-11-21 00:46+0000\n"
 "PO-Revision-Date: 2022-10-12 14:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -181,16 +181,16 @@ msgstr "Explicación"
 msgid "Toggle Text Value"
 msgstr "Conmutar el valor del texto"
 
-#: data/ui/plugin_row.blp:9 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:8
+#, fuzzy
+msgid "Toggle Plugin"
+msgstr "Plugin de alternancia"
+
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:135
 #, fuzzy
 msgid "Preferences"
 msgstr "Preferencias"
-
-#: data/ui/plugin_row.blp:20
-#, fuzzy
-msgid "Toggle Plugin"
-msgstr "Plugin de alternancia"
 
 #: data/ui/plugin_row.blp:28
 #, fuzzy
@@ -385,7 +385,7 @@ msgstr "Desconectado"
 
 #: data/ui/presets_manager_window.blp:146
 #: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:423
 #, fuzzy
 msgid "Repositories"
 msgstr "Repositorios"
@@ -551,20 +551,15 @@ msgstr "Le damos la bienvenida a Gradience"
 
 #: data/ui/welcome_window.blp:73
 #, fuzzy
-msgid "What's new in 0.3.0"
+msgid "What's new in 0.3.2"
 msgstr "Novedades de la versión 0.3.0"
 
 #: data/ui/welcome_window.blp:74
-#, fuzzy
 msgid ""
-"In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an "
-"“Official” repository and a “Curated” repositories."
+"In this release, we fixed the Firefox GNOME theme plugin, issues with "
+"presets always being saved with the same name, as well as some UX polish, "
+"and more."
 msgstr ""
-"En esta versión, hemos añadido soporte para plugins, un repositorio de "
-"plugins, insignias y un conmutador rápido de preajustes. También hemos "
-"dividido el repositorio de preajustes en un repositorio \"oficial\" y un "
-"repositorio \"curado\"."
 
 #: data/ui/welcome_window.blp:98
 #, fuzzy
@@ -739,7 +734,7 @@ msgid "Unable to delete preset"
 msgstr "No se ha podido eliminar el diseño"
 
 #: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:380
+#: gradience/ui/presets_manager_window.py:384
 msgid "User Presets"
 msgstr "Diseños del usuario"
 
@@ -767,26 +762,26 @@ msgstr "Agregar"
 msgid "Preset already exists"
 msgstr "El diseño ya existe"
 
-#: gradience/ui/presets_manager_window.py:292
+#: gradience/ui/presets_manager_window.py:293
 msgid "Preset imported"
 msgstr "Diseño importado"
 
-#: gradience/ui/presets_manager_window.py:295
+#: gradience/ui/presets_manager_window.py:296
 msgid "Unsupported file format, must be .json"
 msgstr "Formato de archivo no admitido, debe ser .json"
 
-#: gradience/ui/presets_manager_window.py:336
-#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/ui/presets_manager_window.py:339
+#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
 #: gradience/main.py:219
 msgid "Failed to load preset"
 msgstr "No se ha podido cargar el diseño"
 
-#: gradience/ui/presets_manager_window.py:373
+#: gradience/ui/presets_manager_window.py:377
 #, fuzzy
 msgid "Built-in Presets"
 msgstr "Diseños integrados"
 
-#: gradience/ui/presets_manager_window.py:383
+#: gradience/ui/presets_manager_window.py:387
 #, fuzzy
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
@@ -795,7 +790,7 @@ msgstr ""
 "Consulte <a href=\"https://github.com/GradienceTeam/Community\">Equipo de "
 "Gradience/Comunidad</a> en Github para ver más diseños"
 
-#: gradience/ui/presets_manager_window.py:409
+#: gradience/ui/presets_manager_window.py:413
 #, fuzzy
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
@@ -1021,28 +1016,28 @@ msgstr "No se ha podido eliminar el diseño"
 msgid ""
 "\n"
 "<ul>\n"
-"<li>Added ability to star preset to display it in Palette</li>\n"
-"<li>Updated Firefox GNOME Theme plugin</li>\n"
-"<li>Welcome screen have been improved</li>\n"
-"<li>Margins in color info popovers are fixed</li>\n"
-"<li>Added filter to search presets by repo</li>\n"
-"<li>Added \"No Preferences\" window</li>\n"
-"<li>Preset Manager window size have changed</li>\n"
-"<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
-"Manager</li>\n"
-"<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
-"<li>Switch from aiohttp to Libsoup3</li>\n"
-"<li>Migrate to GNOME SDK 43</li>\n"
-"<li>All contributors have been added to \"About\" window</li>\n"
-"<li>Added \"Log Out\" dialog after preset apply</li>\n"
-"<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
-"li>\n"
-"<li>Flatpak theme override now fixed</li>\n"
+"<li>Firefox GNOME theme plugin now correctly parses installations with "
+"multiple profiles</li>\n"
+"<li>Esc now closes dialogs and Preset Manager</li>\n"
+"<li>Added mnemonics for dialogs</li>\n"
+"<li>Save is now a default response in dialogs</li>\n"
+"<li>Plugins rows now look cleaner and are correctly placed</li>\n"
+"<li>File picker is now modal and sticks to the parent window</li>\n"
+"<li>Grandience can now be closed with Ctrl+Q</li>\n"
+"<li>\"Favourite(s)\" was renamed to \"Favorite(s)\"</li>\n"
+"<li>Тransition from cssutils to an in-house solution</li>\n"
+"<li>Fixed issues with the CSS parser</li>\n"
+"<li>Fixed an issue with presets always being saved as User.json</li>\n"
+"<li>Presets are now removed correctly</li>\n"
+"<li>The Internal structure was refactored</li>\n"
+"<li>Various typos were fixed</li>\n"
+"<li>The README was fully rewritten</li>\n"
+"<li>All screenshots were taken in high resolution</li>\n"
 "<li>New and updated translations</li>\n"
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1046
+#: gradience/main.py:1047
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1062,15 +1057,13 @@ msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme.\n"
-"With Gradience you can:\n"
+"The main features of Gradience include the following:\n"
 "\n"
-"- Change any color of Adwaita theme\n"
-"- Apply Material 3 colors from wallpaper\n"
-"- Use other users presets\n"
-"- Change advanced options with CSS\n"
-"- Extend functionality using plugins\n"
-"\n"
-"This app is written in Python and uses GTK 4 and Libadwaita.\n"
+"🎨️ Changing any color of Adwaita theme\n"
+"🖼️ Applying Material 3 color scheme from wallpaper\n"
+"🎁️ Usage of other users presets\n"
+"⚙️ Changing advanced options with CSS\n"
+"🧩️ Extending functionality using plugins\n"
 msgstr ""
 "\n"
 "Gradience es una herramienta para personalizar las aplicaciones Libadwaita y "
@@ -1085,29 +1078,29 @@ msgstr ""
 "\n"
 "Esta aplicación está escrita en Python y utiliza GTK 4 y Libadwaita.\n"
 
-#: gradience/main.py:1062
+#: gradience/main.py:1060
 #, fuzzy
 #| msgid "Plugins"
 msgid "Plugins by"
 msgstr "Plugins de"
 
-#: gradience/main.py:1069
+#: gradience/main.py:1067
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Preselecciones de"
 
-#: gradience/main.py:1091
+#: gradience/main.py:1089
 #, fuzzy
 msgid "Packages by"
 msgstr "Paquetes de"
 
-#: gradience/main.py:1098
+#: gradience/main.py:1096
 #, fuzzy
 msgid "Fixes by"
 msgstr "Arreglos de"
 
-#: gradience/main.py:1108
+#: gradience/main.py:1106
 #, fuzzy
 msgid "Special thanks to"
 msgstr "Un agradecimiento especial a"
@@ -1404,6 +1397,17 @@ msgstr "Morado"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Marrón"
+
+#, fuzzy
+#~ msgid ""
+#~ "In this release, we added plugin support, a plugin repository, badges, "
+#~ "and a quick preset switcher. We also split the preset repository into an "
+#~ "“Official” repository and a “Curated” repositories."
+#~ msgstr ""
+#~ "En esta versión, hemos añadido soporte para plugins, un repositorio de "
+#~ "plugins, insignias y un conmutador rápido de preajustes. También hemos "
+#~ "dividido el repositorio de preajustes en un repositorio \"oficial\" y un "
+#~ "repositorio \"curado\"."
 
 #~ msgid "Change the look of Adwaita, with ease."
 #~ msgstr "Cambie el aspecto de Adwaita, con facilidad."

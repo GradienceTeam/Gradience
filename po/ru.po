@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 12:26+0000\n"
+"POT-Creation-Date: 2022-11-21 00:46+0000\n"
 "PO-Revision-Date: 2022-11-05 01:36+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -172,14 +172,14 @@ msgstr "Объяснение"
 msgid "Toggle Text Value"
 msgstr "Переключить текстовое значение"
 
-#: data/ui/plugin_row.blp:9 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:8
+msgid "Toggle Plugin"
+msgstr "Переключить плагин"
+
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:135
 msgid "Preferences"
 msgstr "Параметры"
-
-#: data/ui/plugin_row.blp:20
-msgid "Toggle Plugin"
-msgstr "Переключить плагин"
 
 #: data/ui/plugin_row.blp:28
 msgid "Remove Plugin"
@@ -348,7 +348,7 @@ msgstr "Не в сети"
 
 #: data/ui/presets_manager_window.blp:146
 #: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:423
 msgid "Repositories"
 msgstr "Репозитории"
 
@@ -494,18 +494,17 @@ msgid "Welcome to Gradience"
 msgstr "Добро пожаловать в Gradience"
 
 #: data/ui/welcome_window.blp:73
-msgid "What's new in 0.3.0"
+#, fuzzy
+#| msgid "What's new in 0.3.0"
+msgid "What's new in 0.3.2"
 msgstr "Что нового в 0.3.0"
 
 #: data/ui/welcome_window.blp:74
 msgid ""
-"In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an "
-"“Official” repository and a “Curated” repositories."
+"In this release, we fixed the Firefox GNOME theme plugin, issues with "
+"presets always being saved with the same name, as well as some UX polish, "
+"and more."
 msgstr ""
-"В этом выпуске мы добавили поддержку плагинов, репозиторий плагинов, значки "
-"и быстрый переключатель предустановок. Мы также разделили репозиторий "
-"предустановок на “Официальный” репозиторий и “Курируемый” репозиорий."
 
 #: data/ui/welcome_window.blp:98
 msgid ""
@@ -666,7 +665,7 @@ msgid "Unable to delete preset"
 msgstr "Не удалось удалить предустановку"
 
 #: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:380
+#: gradience/ui/presets_manager_window.py:384
 msgid "User Presets"
 msgstr "Пользовательские предустановки"
 
@@ -691,25 +690,25 @@ msgstr "Добавить"
 msgid "Preset already exists"
 msgstr "Предустановка уже существует"
 
-#: gradience/ui/presets_manager_window.py:292
+#: gradience/ui/presets_manager_window.py:293
 msgid "Preset imported"
 msgstr "Предустановка импортирована"
 
-#: gradience/ui/presets_manager_window.py:295
+#: gradience/ui/presets_manager_window.py:296
 msgid "Unsupported file format, must be .json"
 msgstr "Не поддерживаемый файловый формат, должен быть .json"
 
-#: gradience/ui/presets_manager_window.py:336
-#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/ui/presets_manager_window.py:339
+#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
 #: gradience/main.py:219
 msgid "Failed to load preset"
 msgstr "Не удалось загрузить предустановку"
 
-#: gradience/ui/presets_manager_window.py:373
+#: gradience/ui/presets_manager_window.py:377
 msgid "Built-in Presets"
 msgstr "Встроенные предустановки"
 
-#: gradience/ui/presets_manager_window.py:383
+#: gradience/ui/presets_manager_window.py:387
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -717,7 +716,7 @@ msgstr ""
 "Смотрите<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> на GitHub для большего количества предустановок."
 
-#: gradience/ui/presets_manager_window.py:409
+#: gradience/ui/presets_manager_window.py:413
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -933,64 +932,53 @@ msgstr "Не удалось удалить предустановку"
 msgid ""
 "\n"
 "<ul>\n"
-"<li>Added ability to star preset to display it in Palette</li>\n"
-"<li>Updated Firefox GNOME Theme plugin</li>\n"
-"<li>Welcome screen have been improved</li>\n"
-"<li>Margins in color info popovers are fixed</li>\n"
-"<li>Added filter to search presets by repo</li>\n"
-"<li>Added \"No Preferences\" window</li>\n"
-"<li>Preset Manager window size have changed</li>\n"
-"<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
-"Manager</li>\n"
-"<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
-"<li>Switch from aiohttp to Libsoup3</li>\n"
-"<li>Migrate to GNOME SDK 43</li>\n"
-"<li>All contributors have been added to \"About\" window</li>\n"
-"<li>Added \"Log Out\" dialog after preset apply</li>\n"
-"<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
-"li>\n"
-"<li>Flatpak theme override now fixed</li>\n"
+"<li>Firefox GNOME theme plugin now correctly parses installations with "
+"multiple profiles</li>\n"
+"<li>Esc now closes dialogs and Preset Manager</li>\n"
+"<li>Added mnemonics for dialogs</li>\n"
+"<li>Save is now a default response in dialogs</li>\n"
+"<li>Plugins rows now look cleaner and are correctly placed</li>\n"
+"<li>File picker is now modal and sticks to the parent window</li>\n"
+"<li>Grandience can now be closed with Ctrl+Q</li>\n"
+"<li>\"Favourite(s)\" was renamed to \"Favorite(s)\"</li>\n"
+"<li>Тransition from cssutils to an in-house solution</li>\n"
+"<li>Fixed issues with the CSS parser</li>\n"
+"<li>Fixed an issue with presets always being saved as User.json</li>\n"
+"<li>Presets are now removed correctly</li>\n"
+"<li>The Internal structure was refactored</li>\n"
+"<li>Various typos were fixed</li>\n"
+"<li>The README was fully rewritten</li>\n"
+"<li>All screenshots were taken in high resolution</li>\n"
 "<li>New and updated translations</li>\n"
 "</ul>\n"
 msgstr ""
-"\n"
-"<ul>\n"
-"<li>Добавлена возможность добавлять предустановки в избранное для "
-"отображения их в Палитре</li>\n"
-"<li>Обновлён плагин Firefox GNOME Theme</li>\n"
-"<li>Экран приветствия был улучшен</li>\n"
-"<li>Исправлены зазоры в поповерах информации о цветах</li>\n"
-"<li>Добавлен фильтр для поиска предустановок в определенных репозиториях</"
-"li>\n"
-"<li>Добавлено окно \"Нет параметров\"</li>\n"
-"<li>Изменён размер окна Менеджера Предустановок</li>\n"
-"<li>Страницы \"Оффлайн\" и \"Ничего не найдено\" были добавлены в Менеджер "
-"Предустановок</li>\n"
-"<li>Весь текст был переписан для следования GNOME Writing Guides</li>\n"
-"<li>Перемещение с aiohttp на Libsoup3</li>\n"
-"<li>Миграция на GNOME SDK 43</li>\n"
-"<li>Все участники были добавлены в окно \"О Приложении\"</li>\n"
-"<li>Добавлено сообщение \"Выйти\" после применения предустановки</li>\n"
-"<li>Некоторые символьные иконки были заменены, удалены необязательные "
-"неизменяемые символьные иконки</li>\n"
-"<li>Переопределение темы Flatpak теперь исправлено</li>\n"
-"<li>Новые и обновлённые переводы</li>\n"
-"</ul>\n"
 
-#: gradience/main.py:1046
+#: gradience/main.py:1047
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Gradience is a tool for customizing Libadwaita applications and the adw-"
+#| "gtk3 theme.\n"
+#| "With Gradience you can:\n"
+#| "\n"
+#| "- Change any color of Adwaita theme\n"
+#| "- Apply Material 3 colors from wallpaper\n"
+#| "- Use other users presets\n"
+#| "- Change advanced options with CSS\n"
+#| "- Extend functionality using plugins\n"
+#| "\n"
+#| "This app is written in Python and uses GTK 4 and Libadwaita.\n"
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme.\n"
-"With Gradience you can:\n"
+"The main features of Gradience include the following:\n"
 "\n"
-"- Change any color of Adwaita theme\n"
-"- Apply Material 3 colors from wallpaper\n"
-"- Use other users presets\n"
-"- Change advanced options with CSS\n"
-"- Extend functionality using plugins\n"
-"\n"
-"This app is written in Python and uses GTK 4 and Libadwaita.\n"
+"🎨️ Changing any color of Adwaita theme\n"
+"🖼️ Applying Material 3 color scheme from wallpaper\n"
+"🎁️ Usage of other users presets\n"
+"⚙️ Changing advanced options with CSS\n"
+"🧩️ Extending functionality using plugins\n"
 msgstr ""
 "\n"
 "Gradience - это инструмент для кастомизации приложений Libadwaita и темы adw-"
@@ -1005,23 +993,23 @@ msgstr ""
 "\n"
 "Это приложение написано на Python и использует GTK 4 и Libadwaita.\n"
 
-#: gradience/main.py:1062
+#: gradience/main.py:1060
 msgid "Plugins by"
 msgstr "Плагины"
 
-#: gradience/main.py:1069
+#: gradience/main.py:1067
 msgid "Presets by"
 msgstr "Предустановки"
 
-#: gradience/main.py:1091
+#: gradience/main.py:1089
 msgid "Packages by"
 msgstr "Пакеты"
 
-#: gradience/main.py:1098
+#: gradience/main.py:1096
 msgid "Fixes by"
 msgstr "Исправления"
 
-#: gradience/main.py:1108
+#: gradience/main.py:1106
 msgid "Special thanks to"
 msgstr "Особое спасибо"
 
@@ -1308,6 +1296,63 @@ msgstr "Фиолетовый"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Коричневый"
+
+#~ msgid ""
+#~ "In this release, we added plugin support, a plugin repository, badges, "
+#~ "and a quick preset switcher. We also split the preset repository into an "
+#~ "“Official” repository and a “Curated” repositories."
+#~ msgstr ""
+#~ "В этом выпуске мы добавили поддержку плагинов, репозиторий плагинов, "
+#~ "значки и быстрый переключатель предустановок. Мы также разделили "
+#~ "репозиторий предустановок на “Официальный” репозиторий и “Курируемый” "
+#~ "репозиорий."
+
+#~ msgid ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Added ability to star preset to display it in Palette</li>\n"
+#~ "<li>Updated Firefox GNOME Theme plugin</li>\n"
+#~ "<li>Welcome screen have been improved</li>\n"
+#~ "<li>Margins in color info popovers are fixed</li>\n"
+#~ "<li>Added filter to search presets by repo</li>\n"
+#~ "<li>Added \"No Preferences\" window</li>\n"
+#~ "<li>Preset Manager window size have changed</li>\n"
+#~ "<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
+#~ "Manager</li>\n"
+#~ "<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
+#~ "<li>Switch from aiohttp to Libsoup3</li>\n"
+#~ "<li>Migrate to GNOME SDK 43</li>\n"
+#~ "<li>All contributors have been added to \"About\" window</li>\n"
+#~ "<li>Added \"Log Out\" dialog after preset apply</li>\n"
+#~ "<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
+#~ "li>\n"
+#~ "<li>Flatpak theme override now fixed</li>\n"
+#~ "<li>New and updated translations</li>\n"
+#~ "</ul>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Добавлена возможность добавлять предустановки в избранное для "
+#~ "отображения их в Палитре</li>\n"
+#~ "<li>Обновлён плагин Firefox GNOME Theme</li>\n"
+#~ "<li>Экран приветствия был улучшен</li>\n"
+#~ "<li>Исправлены зазоры в поповерах информации о цветах</li>\n"
+#~ "<li>Добавлен фильтр для поиска предустановок в определенных репозиториях</"
+#~ "li>\n"
+#~ "<li>Добавлено окно \"Нет параметров\"</li>\n"
+#~ "<li>Изменён размер окна Менеджера Предустановок</li>\n"
+#~ "<li>Страницы \"Оффлайн\" и \"Ничего не найдено\" были добавлены в "
+#~ "Менеджер Предустановок</li>\n"
+#~ "<li>Весь текст был переписан для следования GNOME Writing Guides</li>\n"
+#~ "<li>Перемещение с aiohttp на Libsoup3</li>\n"
+#~ "<li>Миграция на GNOME SDK 43</li>\n"
+#~ "<li>Все участники были добавлены в окно \"О Приложении\"</li>\n"
+#~ "<li>Добавлено сообщение \"Выйти\" после применения предустановки</li>\n"
+#~ "<li>Некоторые символьные иконки были заменены, удалены необязательные "
+#~ "неизменяемые символьные иконки</li>\n"
+#~ "<li>Переопределение темы Flatpak теперь исправлено</li>\n"
+#~ "<li>Новые и обновлённые переводы</li>\n"
+#~ "</ul>\n"
 
 #~ msgid "Change the look of Adwaita, with ease."
 #~ msgstr "С легкостью изменяйте внешний вид Adwaita."

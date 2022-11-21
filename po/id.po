@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 12:26+0000\n"
+"POT-Creation-Date: 2022-11-21 00:46+0000\n"
 "PO-Revision-Date: 2022-11-05 05:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -180,16 +180,16 @@ msgstr "Penjelasan"
 msgid "Toggle Text Value"
 msgstr "Mengalihkan Nilai Teks"
 
-#: data/ui/plugin_row.blp:9 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:8
+#, fuzzy
+msgid "Toggle Plugin"
+msgstr "Toggle Plugin"
+
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:135
 #, fuzzy
 msgid "Preferences"
 msgstr "Preferensi"
-
-#: data/ui/plugin_row.blp:20
-#, fuzzy
-msgid "Toggle Plugin"
-msgstr "Toggle Plugin"
 
 #: data/ui/plugin_row.blp:28
 #, fuzzy
@@ -382,7 +382,7 @@ msgstr "Offline"
 
 #: data/ui/presets_manager_window.blp:146
 #: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:423
 #, fuzzy
 msgid "Repositories"
 msgstr "Repositori"
@@ -552,19 +552,15 @@ msgstr "Selamat Datang di Gradience"
 
 #: data/ui/welcome_window.blp:73
 #, fuzzy
-msgid "What's new in 0.3.0"
+msgid "What's new in 0.3.2"
 msgstr "Apa yang baru di 0.3.0"
 
 #: data/ui/welcome_window.blp:74
-#, fuzzy
 msgid ""
-"In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an "
-"“Official” repository and a “Curated” repositories."
+"In this release, we fixed the Firefox GNOME theme plugin, issues with "
+"presets always being saved with the same name, as well as some UX polish, "
+"and more."
 msgstr ""
-"Dalam rilis ini, kami menambahkan dukungan plugin, repositori plugin, "
-"lencana, dan pengalih preset cepat. Kami juga membagi repositori preset "
-"menjadi repositori \"Resmi\" dan repositori \"Dikurasi\"."
 
 #: data/ui/welcome_window.blp:98
 #, fuzzy
@@ -743,7 +739,7 @@ msgid "Unable to delete preset"
 msgstr "Tidak dapat menghapus preset"
 
 #: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:380
+#: gradience/ui/presets_manager_window.py:384
 #, fuzzy
 msgid "User Presets"
 msgstr "Aturan Lanjut"
@@ -773,29 +769,29 @@ msgstr "Tambahkan"
 msgid "Preset already exists"
 msgstr "Preset sudah ada"
 
-#: gradience/ui/presets_manager_window.py:292
+#: gradience/ui/presets_manager_window.py:293
 #, fuzzy
 msgid "Preset imported"
 msgstr "Preset yang diimpor"
 
-#: gradience/ui/presets_manager_window.py:295
+#: gradience/ui/presets_manager_window.py:296
 #, fuzzy
 msgid "Unsupported file format, must be .json"
 msgstr "Format file yang tidak didukung, harus .json"
 
-#: gradience/ui/presets_manager_window.py:336
-#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/ui/presets_manager_window.py:339
+#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
 #: gradience/main.py:219
 #, fuzzy
 msgid "Failed to load preset"
 msgstr "Gagal memuat preset"
 
-#: gradience/ui/presets_manager_window.py:373
+#: gradience/ui/presets_manager_window.py:377
 #, fuzzy
 msgid "Built-in Presets"
 msgstr "Preset Built-in"
 
-#: gradience/ui/presets_manager_window.py:383
+#: gradience/ui/presets_manager_window.py:387
 #, fuzzy
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
@@ -804,7 +800,7 @@ msgstr ""
 "Lihat <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> di Github untuk lebih banyak preset."
 
-#: gradience/ui/presets_manager_window.py:409
+#: gradience/ui/presets_manager_window.py:413
 #, fuzzy
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
@@ -1043,55 +1039,31 @@ msgid "Unable to delete current preset"
 msgstr "Tidak dapat menghapus preset"
 
 #: gradience/main.py:1024
-#, fuzzy
 msgid ""
 "\n"
 "<ul>\n"
-"<li>Added ability to star preset to display it in Palette</li>\n"
-"<li>Updated Firefox GNOME Theme plugin</li>\n"
-"<li>Welcome screen have been improved</li>\n"
-"<li>Margins in color info popovers are fixed</li>\n"
-"<li>Added filter to search presets by repo</li>\n"
-"<li>Added \"No Preferences\" window</li>\n"
-"<li>Preset Manager window size have changed</li>\n"
-"<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
-"Manager</li>\n"
-"<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
-"<li>Switch from aiohttp to Libsoup3</li>\n"
-"<li>Migrate to GNOME SDK 43</li>\n"
-"<li>All contributors have been added to \"About\" window</li>\n"
-"<li>Added \"Log Out\" dialog after preset apply</li>\n"
-"<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
-"li>\n"
-"<li>Flatpak theme override now fixed</li>\n"
+"<li>Firefox GNOME theme plugin now correctly parses installations with "
+"multiple profiles</li>\n"
+"<li>Esc now closes dialogs and Preset Manager</li>\n"
+"<li>Added mnemonics for dialogs</li>\n"
+"<li>Save is now a default response in dialogs</li>\n"
+"<li>Plugins rows now look cleaner and are correctly placed</li>\n"
+"<li>File picker is now modal and sticks to the parent window</li>\n"
+"<li>Grandience can now be closed with Ctrl+Q</li>\n"
+"<li>\"Favourite(s)\" was renamed to \"Favorite(s)\"</li>\n"
+"<li>Тransition from cssutils to an in-house solution</li>\n"
+"<li>Fixed issues with the CSS parser</li>\n"
+"<li>Fixed an issue with presets always being saved as User.json</li>\n"
+"<li>Presets are now removed correctly</li>\n"
+"<li>The Internal structure was refactored</li>\n"
+"<li>Various typos were fixed</li>\n"
+"<li>The README was fully rewritten</li>\n"
+"<li>All screenshots were taken in high resolution</li>\n"
 "<li>New and updated translations</li>\n"
 "</ul>\n"
 msgstr ""
-"\n"
-"<ul>\n"
-"<li>Menambahkan kemampuan untuk membintangi preset untuk menampilkannya di "
-"Palette</li>\n"
-"<li> Plugin Tema GNOME Firefox yang diperbarui</li>\n"
-"<li>Layar selamat datang telah diperbaiki</li>\n"
-"<li>Margin dalam popover info warna telah diperbaiki</li>\n"
-"<li>Tambah filter untuk mencari preset berdasarkan repo</li>\n"
-"<li> Ditambah jendela \"No Preferences\"</li>\n"
-"<li> Ukuran jendela Preset Manager telah berubah</li>\n"
-"<li>Halaman \"Offline\" dan \"Nothing Found\" telah ditambahkan ke Preset "
-"Manager</li>\n"
-"<li>Semua teks telah ditulis ulang untuk mengikuti Panduan Penulisan GNOME</"
-"li>\n"
-"<li> Beralih dari aiohttp ke Libsoup3</li>\n"
-"<li> Bermigrasi ke GNOME SDK 43</li>\n"
-"<li>Semua kontributor telah ditambahkan ke jendela \"Tentang\"</li>\n"
-"<li>Dialog \"Log Out\" telah ditambahkan setelah preset berlaku</li>\n"
-"<li> Beberapa simbol telah berubah, menghapus simbolik hardcoded yang tidak "
-"perlu</li>\n"
-"<li> Pengabaian tema flatpak sekarang sudah diperbaiki</li>\n"
-"<li> Terjemahan baru dan diperbarui</li>\n"
-"</ul>\n"
 
-#: gradience/main.py:1046
+#: gradience/main.py:1047
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1111,15 +1083,13 @@ msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme.\n"
-"With Gradience you can:\n"
+"The main features of Gradience include the following:\n"
 "\n"
-"- Change any color of Adwaita theme\n"
-"- Apply Material 3 colors from wallpaper\n"
-"- Use other users presets\n"
-"- Change advanced options with CSS\n"
-"- Extend functionality using plugins\n"
-"\n"
-"This app is written in Python and uses GTK 4 and Libadwaita.\n"
+"🎨️ Changing any color of Adwaita theme\n"
+"🖼️ Applying Material 3 color scheme from wallpaper\n"
+"🎁️ Usage of other users presets\n"
+"⚙️ Changing advanced options with CSS\n"
+"🧩️ Extending functionality using plugins\n"
 msgstr ""
 "\n"
 "Gradience adalah alat untuk menyesuaikan aplikasi Libadwaita dan tema adw-"
@@ -1134,28 +1104,28 @@ msgstr ""
 "\n"
 "Aplikasi ini ditulis dengan Python dan menggunakan GTK 4 dan libadwaita.\n"
 
-#: gradience/main.py:1062
+#: gradience/main.py:1060
 #, fuzzy
 msgid "Plugins by"
 msgstr "Plugin oleh"
 
-#: gradience/main.py:1069
+#: gradience/main.py:1067
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Preset oleh"
 
-#: gradience/main.py:1091
+#: gradience/main.py:1089
 #, fuzzy
 msgid "Packages by"
 msgstr "Paket oleh"
 
-#: gradience/main.py:1098
+#: gradience/main.py:1096
 #, fuzzy
 msgid "Fixes by"
 msgstr "Perbaikan oleh"
 
-#: gradience/main.py:1108
+#: gradience/main.py:1106
 #, fuzzy
 msgid "Special thanks to"
 msgstr "Terima kasih khusus kepada"
@@ -1495,6 +1465,64 @@ msgstr "Ungu"
 #, fuzzy
 msgid "Brown"
 msgstr "Cokelat"
+
+#, fuzzy
+#~ msgid ""
+#~ "In this release, we added plugin support, a plugin repository, badges, "
+#~ "and a quick preset switcher. We also split the preset repository into an "
+#~ "“Official” repository and a “Curated” repositories."
+#~ msgstr ""
+#~ "Dalam rilis ini, kami menambahkan dukungan plugin, repositori plugin, "
+#~ "lencana, dan pengalih preset cepat. Kami juga membagi repositori preset "
+#~ "menjadi repositori \"Resmi\" dan repositori \"Dikurasi\"."
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Added ability to star preset to display it in Palette</li>\n"
+#~ "<li>Updated Firefox GNOME Theme plugin</li>\n"
+#~ "<li>Welcome screen have been improved</li>\n"
+#~ "<li>Margins in color info popovers are fixed</li>\n"
+#~ "<li>Added filter to search presets by repo</li>\n"
+#~ "<li>Added \"No Preferences\" window</li>\n"
+#~ "<li>Preset Manager window size have changed</li>\n"
+#~ "<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
+#~ "Manager</li>\n"
+#~ "<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
+#~ "<li>Switch from aiohttp to Libsoup3</li>\n"
+#~ "<li>Migrate to GNOME SDK 43</li>\n"
+#~ "<li>All contributors have been added to \"About\" window</li>\n"
+#~ "<li>Added \"Log Out\" dialog after preset apply</li>\n"
+#~ "<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
+#~ "li>\n"
+#~ "<li>Flatpak theme override now fixed</li>\n"
+#~ "<li>New and updated translations</li>\n"
+#~ "</ul>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Menambahkan kemampuan untuk membintangi preset untuk menampilkannya "
+#~ "di Palette</li>\n"
+#~ "<li> Plugin Tema GNOME Firefox yang diperbarui</li>\n"
+#~ "<li>Layar selamat datang telah diperbaiki</li>\n"
+#~ "<li>Margin dalam popover info warna telah diperbaiki</li>\n"
+#~ "<li>Tambah filter untuk mencari preset berdasarkan repo</li>\n"
+#~ "<li> Ditambah jendela \"No Preferences\"</li>\n"
+#~ "<li> Ukuran jendela Preset Manager telah berubah</li>\n"
+#~ "<li>Halaman \"Offline\" dan \"Nothing Found\" telah ditambahkan ke Preset "
+#~ "Manager</li>\n"
+#~ "<li>Semua teks telah ditulis ulang untuk mengikuti Panduan Penulisan "
+#~ "GNOME</li>\n"
+#~ "<li> Beralih dari aiohttp ke Libsoup3</li>\n"
+#~ "<li> Bermigrasi ke GNOME SDK 43</li>\n"
+#~ "<li>Semua kontributor telah ditambahkan ke jendela \"Tentang\"</li>\n"
+#~ "<li>Dialog \"Log Out\" telah ditambahkan setelah preset berlaku</li>\n"
+#~ "<li> Beberapa simbol telah berubah, menghapus simbolik hardcoded yang "
+#~ "tidak perlu</li>\n"
+#~ "<li> Pengabaian tema flatpak sekarang sudah diperbaiki</li>\n"
+#~ "<li> Terjemahan baru dan diperbarui</li>\n"
+#~ "</ul>\n"
 
 #~ msgid "Change the look of Adwaita, with ease."
 #~ msgstr "Ubah tampilan Adwaita, dengan mudah."

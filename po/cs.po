@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 12:26+0000\n"
+"POT-Creation-Date: 2022-11-21 00:46+0000\n"
 "PO-Revision-Date: 2022-10-17 12:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -177,16 +177,16 @@ msgstr "Vysvětlení"
 msgid "Toggle Text Value"
 msgstr "Přepnout textovou hodnotu"
 
-#: data/ui/plugin_row.blp:9 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:8
+#, fuzzy
+msgid "Toggle Plugin"
+msgstr "Přepínání zásuvného modulu"
+
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:135
 #, fuzzy
 msgid "Preferences"
 msgstr "Předvolby"
-
-#: data/ui/plugin_row.blp:20
-#, fuzzy
-msgid "Toggle Plugin"
-msgstr "Přepínání zásuvného modulu"
 
 #: data/ui/plugin_row.blp:28
 #, fuzzy
@@ -388,7 +388,7 @@ msgstr "Offline"
 
 #: data/ui/presets_manager_window.blp:146
 #: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:423
 #, fuzzy
 msgid "Repositories"
 msgstr "Repozitáře"
@@ -563,19 +563,15 @@ msgstr "Vítejte v Gradience"
 
 #: data/ui/welcome_window.blp:73
 #, fuzzy
-msgid "What's new in 0.3.0"
+msgid "What's new in 0.3.2"
 msgstr "Novinky ve verzi 0.3.0"
 
 #: data/ui/welcome_window.blp:74
-#, fuzzy
 msgid ""
-"In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an "
-"“Official” repository and a “Curated” repositories."
+"In this release, we fixed the Firefox GNOME theme plugin, issues with "
+"presets always being saved with the same name, as well as some UX polish, "
+"and more."
 msgstr ""
-"V této verzi jsme přidali podporu zásuvných modulů, úložiště zásuvných "
-"modulů, odznaky a rychlý přepínač předvoleb. Rozdělili jsme také repozitář "
-"předvoleb na \"oficiální\" a \"kurátorský\" repozitář."
 
 #: data/ui/welcome_window.blp:98
 #, fuzzy
@@ -762,7 +758,7 @@ msgid "Unable to delete preset"
 msgstr "Nelze odstranit předvolbu"
 
 #: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:380
+#: gradience/ui/presets_manager_window.py:384
 #, fuzzy
 msgid "User Presets"
 msgstr "Uživatelská přednastavení"
@@ -792,28 +788,28 @@ msgstr "Přidat"
 msgid "Preset already exists"
 msgstr "Předvolba již existuje"
 
-#: gradience/ui/presets_manager_window.py:292
+#: gradience/ui/presets_manager_window.py:293
 #, fuzzy
 msgid "Preset imported"
 msgstr "Přednastavené importované"
 
-#: gradience/ui/presets_manager_window.py:295
+#: gradience/ui/presets_manager_window.py:296
 #, fuzzy
 msgid "Unsupported file format, must be .json"
 msgstr "Nepodporovaný formát souboru, musí být .json"
 
-#: gradience/ui/presets_manager_window.py:336
-#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/ui/presets_manager_window.py:339
+#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
 #: gradience/main.py:219
 msgid "Failed to load preset"
 msgstr "Nepodařilo se načíst předvolbu"
 
-#: gradience/ui/presets_manager_window.py:373
+#: gradience/ui/presets_manager_window.py:377
 #, fuzzy
 msgid "Built-in Presets"
 msgstr "Vestavěné předvolby"
 
-#: gradience/ui/presets_manager_window.py:383
+#: gradience/ui/presets_manager_window.py:387
 #, fuzzy
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
@@ -822,7 +818,7 @@ msgstr ""
 "Další předvolby najdete <a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> na Githubu."
 
-#: gradience/ui/presets_manager_window.py:409
+#: gradience/ui/presets_manager_window.py:413
 #, fuzzy
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
@@ -1054,67 +1050,43 @@ msgid "Unable to delete current preset"
 msgstr "Nelze odstranit předvolbu"
 
 #: gradience/main.py:1024
-#, fuzzy
 msgid ""
 "\n"
 "<ul>\n"
-"<li>Added ability to star preset to display it in Palette</li>\n"
-"<li>Updated Firefox GNOME Theme plugin</li>\n"
-"<li>Welcome screen have been improved</li>\n"
-"<li>Margins in color info popovers are fixed</li>\n"
-"<li>Added filter to search presets by repo</li>\n"
-"<li>Added \"No Preferences\" window</li>\n"
-"<li>Preset Manager window size have changed</li>\n"
-"<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
-"Manager</li>\n"
-"<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
-"<li>Switch from aiohttp to Libsoup3</li>\n"
-"<li>Migrate to GNOME SDK 43</li>\n"
-"<li>All contributors have been added to \"About\" window</li>\n"
-"<li>Added \"Log Out\" dialog after preset apply</li>\n"
-"<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
-"li>\n"
-"<li>Flatpak theme override now fixed</li>\n"
+"<li>Firefox GNOME theme plugin now correctly parses installations with "
+"multiple profiles</li>\n"
+"<li>Esc now closes dialogs and Preset Manager</li>\n"
+"<li>Added mnemonics for dialogs</li>\n"
+"<li>Save is now a default response in dialogs</li>\n"
+"<li>Plugins rows now look cleaner and are correctly placed</li>\n"
+"<li>File picker is now modal and sticks to the parent window</li>\n"
+"<li>Grandience can now be closed with Ctrl+Q</li>\n"
+"<li>\"Favourite(s)\" was renamed to \"Favorite(s)\"</li>\n"
+"<li>Тransition from cssutils to an in-house solution</li>\n"
+"<li>Fixed issues with the CSS parser</li>\n"
+"<li>Fixed an issue with presets always being saved as User.json</li>\n"
+"<li>Presets are now removed correctly</li>\n"
+"<li>The Internal structure was refactored</li>\n"
+"<li>Various typos were fixed</li>\n"
+"<li>The README was fully rewritten</li>\n"
+"<li>All screenshots were taken in high resolution</li>\n"
 "<li>New and updated translations</li>\n"
 "</ul>\n"
 msgstr ""
-"\n"
-"<ul>\n"
-"<li>Přidána možnost zobrazit předvolbu s hvězdičkou v paletě</li>\n"
-"<li>Aktualizován doplněk pro Firefox GNOME Theme</li>\n"
-"<li>Vylepšena uvítací obrazovka</li>\n"
-"<li>Opraveny okraje ve vyskakovacích oknech s informacemi o barvách</li>\n"
-"<li>Přidán filtr pro vyhledávání předvoleb podle repozitářů</li>\n"
-"<li>Přidáno okno \"Žádné předvolby\"</li>\n"
-"<li>Změněna velikost okna Správce předvoleb</li>\n"
-"<li>Do Správce předvoleb byly přidány stránky \"Offline\" a \"Nic nenalezeno"
-"\"</li>\n"
-"<li>Všechny texty byly přepsány podle příruček pro psaní GNOME</li>\n"
-"<li>Přechod z aiohttp na Libsoup3</li>\n"
-"<li>Přechod na GNOME SDK 43</li>\n"
-"<li>Všichni přispěvatelé byli přidáni do okna \"O aplikaci\"</li>\n"
-"<li>Přidáno dialogové okno \"Odhlásit se\" po použití předvolby</li>\n"
-"<li>Změněny některé symboly, odstraněny nepotřebné natvrdo kódované symboly</"
-"li>\n"
-"<li>Opraveno přepsání tématu Flatpak</li>\n"
-"<li>Nové a aktualizované překlady</li>\n"
-"</ul>\n"
 
-#: gradience/main.py:1046
+#: gradience/main.py:1047
 #, fuzzy
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme.\n"
-"With Gradience you can:\n"
+"The main features of Gradience include the following:\n"
 "\n"
-"- Change any color of Adwaita theme\n"
-"- Apply Material 3 colors from wallpaper\n"
-"- Use other users presets\n"
-"- Change advanced options with CSS\n"
-"- Extend functionality using plugins\n"
-"\n"
-"This app is written in Python and uses GTK 4 and Libadwaita.\n"
+"🎨️ Changing any color of Adwaita theme\n"
+"🖼️ Applying Material 3 color scheme from wallpaper\n"
+"🎁️ Usage of other users presets\n"
+"⚙️ Changing advanced options with CSS\n"
+"🧩️ Extending functionality using plugins\n"
 msgstr ""
 "\n"
 "Gradience je nástroj pro přizpůsobení aplikací Libadwaita a tématu adw-"
@@ -1129,28 +1101,28 @@ msgstr ""
 "\n"
 "Tato aplikace je napsána v jazyce Python a používá GTK 4 a Libadwaita.\n"
 
-#: gradience/main.py:1062
+#: gradience/main.py:1060
 #, fuzzy
 msgid "Plugins by"
 msgstr "Zásuvné moduly od"
 
-#: gradience/main.py:1069
+#: gradience/main.py:1067
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Předvolby od"
 
-#: gradience/main.py:1091
+#: gradience/main.py:1089
 #, fuzzy
 msgid "Packages by"
 msgstr "Balíčky od"
 
-#: gradience/main.py:1098
+#: gradience/main.py:1096
 #, fuzzy
 msgid "Fixes by"
 msgstr "Opravy podle"
 
-#: gradience/main.py:1108
+#: gradience/main.py:1106
 #, fuzzy
 msgid "Special thanks to"
 msgstr "Zvláštní poděkování patří"
@@ -1441,6 +1413,62 @@ msgstr "Fialová"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Hnědá"
+
+#, fuzzy
+#~ msgid ""
+#~ "In this release, we added plugin support, a plugin repository, badges, "
+#~ "and a quick preset switcher. We also split the preset repository into an "
+#~ "“Official” repository and a “Curated” repositories."
+#~ msgstr ""
+#~ "V této verzi jsme přidali podporu zásuvných modulů, úložiště zásuvných "
+#~ "modulů, odznaky a rychlý přepínač předvoleb. Rozdělili jsme také "
+#~ "repozitář předvoleb na \"oficiální\" a \"kurátorský\" repozitář."
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Added ability to star preset to display it in Palette</li>\n"
+#~ "<li>Updated Firefox GNOME Theme plugin</li>\n"
+#~ "<li>Welcome screen have been improved</li>\n"
+#~ "<li>Margins in color info popovers are fixed</li>\n"
+#~ "<li>Added filter to search presets by repo</li>\n"
+#~ "<li>Added \"No Preferences\" window</li>\n"
+#~ "<li>Preset Manager window size have changed</li>\n"
+#~ "<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
+#~ "Manager</li>\n"
+#~ "<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
+#~ "<li>Switch from aiohttp to Libsoup3</li>\n"
+#~ "<li>Migrate to GNOME SDK 43</li>\n"
+#~ "<li>All contributors have been added to \"About\" window</li>\n"
+#~ "<li>Added \"Log Out\" dialog after preset apply</li>\n"
+#~ "<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
+#~ "li>\n"
+#~ "<li>Flatpak theme override now fixed</li>\n"
+#~ "<li>New and updated translations</li>\n"
+#~ "</ul>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Přidána možnost zobrazit předvolbu s hvězdičkou v paletě</li>\n"
+#~ "<li>Aktualizován doplněk pro Firefox GNOME Theme</li>\n"
+#~ "<li>Vylepšena uvítací obrazovka</li>\n"
+#~ "<li>Opraveny okraje ve vyskakovacích oknech s informacemi o barvách</li>\n"
+#~ "<li>Přidán filtr pro vyhledávání předvoleb podle repozitářů</li>\n"
+#~ "<li>Přidáno okno \"Žádné předvolby\"</li>\n"
+#~ "<li>Změněna velikost okna Správce předvoleb</li>\n"
+#~ "<li>Do Správce předvoleb byly přidány stránky \"Offline\" a \"Nic "
+#~ "nenalezeno\"</li>\n"
+#~ "<li>Všechny texty byly přepsány podle příruček pro psaní GNOME</li>\n"
+#~ "<li>Přechod z aiohttp na Libsoup3</li>\n"
+#~ "<li>Přechod na GNOME SDK 43</li>\n"
+#~ "<li>Všichni přispěvatelé byli přidáni do okna \"O aplikaci\"</li>\n"
+#~ "<li>Přidáno dialogové okno \"Odhlásit se\" po použití předvolby</li>\n"
+#~ "<li>Změněny některé symboly, odstraněny nepotřebné natvrdo kódované "
+#~ "symboly</li>\n"
+#~ "<li>Opraveno přepsání tématu Flatpak</li>\n"
+#~ "<li>Nové a aktualizované překlady</li>\n"
+#~ "</ul>\n"
 
 #, fuzzy
 #~ msgid "Change the look of Adwaita, with ease."

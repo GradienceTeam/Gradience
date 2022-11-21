@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 12:26+0000\n"
+"POT-Creation-Date: 2022-11-21 00:46+0000\n"
 "PO-Revision-Date: 2022-11-19 13:48+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -152,14 +152,14 @@ msgstr "解释"
 msgid "Toggle Text Value"
 msgstr "切换文本值"
 
-#: data/ui/plugin_row.blp:9 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:8
+msgid "Toggle Plugin"
+msgstr "切换插件"
+
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:135
 msgid "Preferences"
 msgstr "首选项"
-
-#: data/ui/plugin_row.blp:20
-msgid "Toggle Plugin"
-msgstr "切换插件"
 
 #: data/ui/plugin_row.blp:28
 msgid "Remove Plugin"
@@ -326,7 +326,7 @@ msgstr "离线"
 
 #: data/ui/presets_manager_window.blp:146
 #: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:423
 msgid "Repositories"
 msgstr "存储库"
 
@@ -463,17 +463,17 @@ msgid "Welcome to Gradience"
 msgstr "欢迎来到 Gradience"
 
 #: data/ui/welcome_window.blp:73
-msgid "What's new in 0.3.0"
+#, fuzzy
+#| msgid "What's new in 0.3.0"
+msgid "What's new in 0.3.2"
 msgstr "0.3.0 中的新内容"
 
 #: data/ui/welcome_window.blp:74
 msgid ""
-"In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an "
-"“Official” repository and a “Curated” repositories."
+"In this release, we fixed the Firefox GNOME theme plugin, issues with "
+"presets always being saved with the same name, as well as some UX polish, "
+"and more."
 msgstr ""
-"在此版本中，我们添加了插件支持、插件存储库、徽章和快速预设切换器。我们还将预"
-"设存储库拆分为“官方”存储库和“策划”存储库。"
 
 #: data/ui/welcome_window.blp:98
 msgid ""
@@ -626,7 +626,7 @@ msgid "Unable to delete preset"
 msgstr "无法删除预设"
 
 #: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:380
+#: gradience/ui/presets_manager_window.py:384
 msgid "User Presets"
 msgstr "用户预设"
 
@@ -651,25 +651,25 @@ msgstr "添加"
 msgid "Preset already exists"
 msgstr "预设已存在"
 
-#: gradience/ui/presets_manager_window.py:292
+#: gradience/ui/presets_manager_window.py:293
 msgid "Preset imported"
 msgstr "预设已导入"
 
-#: gradience/ui/presets_manager_window.py:295
+#: gradience/ui/presets_manager_window.py:296
 msgid "Unsupported file format, must be .json"
 msgstr "不支持的文件格式，必须为 .json"
 
-#: gradience/ui/presets_manager_window.py:336
-#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/ui/presets_manager_window.py:339
+#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
 #: gradience/main.py:219
 msgid "Failed to load preset"
 msgstr "加载预设失败"
 
-#: gradience/ui/presets_manager_window.py:373
+#: gradience/ui/presets_manager_window.py:377
 msgid "Built-in Presets"
 msgstr "内置预设"
 
-#: gradience/ui/presets_manager_window.py:383
+#: gradience/ui/presets_manager_window.py:387
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -677,7 +677,7 @@ msgstr ""
 "参见Github上的<a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> 以获得更多的预设"
 
-#: gradience/ui/presets_manager_window.py:409
+#: gradience/ui/presets_manager_window.py:413
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -868,60 +868,53 @@ msgstr "无法删除当前预设"
 msgid ""
 "\n"
 "<ul>\n"
-"<li>Added ability to star preset to display it in Palette</li>\n"
-"<li>Updated Firefox GNOME Theme plugin</li>\n"
-"<li>Welcome screen have been improved</li>\n"
-"<li>Margins in color info popovers are fixed</li>\n"
-"<li>Added filter to search presets by repo</li>\n"
-"<li>Added \"No Preferences\" window</li>\n"
-"<li>Preset Manager window size have changed</li>\n"
-"<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
-"Manager</li>\n"
-"<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
-"<li>Switch from aiohttp to Libsoup3</li>\n"
-"<li>Migrate to GNOME SDK 43</li>\n"
-"<li>All contributors have been added to \"About\" window</li>\n"
-"<li>Added \"Log Out\" dialog after preset apply</li>\n"
-"<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
-"li>\n"
-"<li>Flatpak theme override now fixed</li>\n"
+"<li>Firefox GNOME theme plugin now correctly parses installations with "
+"multiple profiles</li>\n"
+"<li>Esc now closes dialogs and Preset Manager</li>\n"
+"<li>Added mnemonics for dialogs</li>\n"
+"<li>Save is now a default response in dialogs</li>\n"
+"<li>Plugins rows now look cleaner and are correctly placed</li>\n"
+"<li>File picker is now modal and sticks to the parent window</li>\n"
+"<li>Grandience can now be closed with Ctrl+Q</li>\n"
+"<li>\"Favourite(s)\" was renamed to \"Favorite(s)\"</li>\n"
+"<li>Тransition from cssutils to an in-house solution</li>\n"
+"<li>Fixed issues with the CSS parser</li>\n"
+"<li>Fixed an issue with presets always being saved as User.json</li>\n"
+"<li>Presets are now removed correctly</li>\n"
+"<li>The Internal structure was refactored</li>\n"
+"<li>Various typos were fixed</li>\n"
+"<li>The README was fully rewritten</li>\n"
+"<li>All screenshots were taken in high resolution</li>\n"
 "<li>New and updated translations</li>\n"
 "</ul>\n"
 msgstr ""
-"\n"
-"<ul>\n"
-"<li>添加了星形预设以在调色板中显示它的功能</li>\n"
-"<li>更新了 Firefox GNOME 主题插件</li>\n"
-"<li>改进了欢迎屏幕</li>\n"
-"<li>颜色信息弹出框的边距是固定的</li>\n"
-"<li>添加了通过 repo 搜索预设的过滤器</li>\n"
-"<li>添加了“无首选项”窗口</li>\n"
-"<li>预设管理器窗口大小已更改</li>\n"
-"<li>“离线”和“未找到”页面已添加到预设管理器中</li>\n"
-"<li>所有文本均已重写以遵循 GNOME 写作指南</li>\n"
-"<li>从 aiohttp 切换到 Libsoup3</li>\n"
-"<li>迁移到 GNOME SDK 43</li>\n"
-"<li>所有贡献者都已添加到“关于”窗口中</li>\n"
-"<li>预设应用后添加“注销”对话框</li>\n"
-"<li>一些符号已更改，删除了不必要的硬编码符号</li>\n"
-"<li>Flatpak 主题覆盖现已修复</li>\n"
-"<li>新的和更新的翻译</li>\n"
-"</ul>\n"
 
-#: gradience/main.py:1046
+#: gradience/main.py:1047
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Gradience is a tool for customizing Libadwaita applications and the adw-"
+#| "gtk3 theme.\n"
+#| "With Gradience you can:\n"
+#| "\n"
+#| "- Change any color of Adwaita theme\n"
+#| "- Apply Material 3 colors from wallpaper\n"
+#| "- Use other users presets\n"
+#| "- Change advanced options with CSS\n"
+#| "- Extend functionality using plugins\n"
+#| "\n"
+#| "This app is written in Python and uses GTK 4 and Libadwaita.\n"
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme.\n"
-"With Gradience you can:\n"
+"The main features of Gradience include the following:\n"
 "\n"
-"- Change any color of Adwaita theme\n"
-"- Apply Material 3 colors from wallpaper\n"
-"- Use other users presets\n"
-"- Change advanced options with CSS\n"
-"- Extend functionality using plugins\n"
-"\n"
-"This app is written in Python and uses GTK 4 and Libadwaita.\n"
+"🎨️ Changing any color of Adwaita theme\n"
+"🖼️ Applying Material 3 color scheme from wallpaper\n"
+"🎁️ Usage of other users presets\n"
+"⚙️ Changing advanced options with CSS\n"
+"🧩️ Extending functionality using plugins\n"
 msgstr ""
 "\n"
 "Gradience 是用于自定义 Libadwaita 应用程序和 adw-gtk3 主题的工具。\n"
@@ -935,23 +928,23 @@ msgstr ""
 "\n"
 "这个程序是用 Python 开发的并使用 GTK 4 和 Libadwaita。\n"
 
-#: gradience/main.py:1062
+#: gradience/main.py:1060
 msgid "Plugins by"
 msgstr "插件作者"
 
-#: gradience/main.py:1069
+#: gradience/main.py:1067
 msgid "Presets by"
 msgstr "预设作者"
 
-#: gradience/main.py:1091
+#: gradience/main.py:1089
 msgid "Packages by"
 msgstr "包作者"
 
-#: gradience/main.py:1098
+#: gradience/main.py:1096
 msgid "Fixes by"
 msgstr "修复者"
 
-#: gradience/main.py:1108
+#: gradience/main.py:1106
 msgid "Special thanks to"
 msgstr "特别感谢"
 
@@ -1216,6 +1209,57 @@ msgstr "紫色"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "棕色"
+
+#~ msgid ""
+#~ "In this release, we added plugin support, a plugin repository, badges, "
+#~ "and a quick preset switcher. We also split the preset repository into an "
+#~ "“Official” repository and a “Curated” repositories."
+#~ msgstr ""
+#~ "在此版本中，我们添加了插件支持、插件存储库、徽章和快速预设切换器。我们还将"
+#~ "预设存储库拆分为“官方”存储库和“策划”存储库。"
+
+#~ msgid ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Added ability to star preset to display it in Palette</li>\n"
+#~ "<li>Updated Firefox GNOME Theme plugin</li>\n"
+#~ "<li>Welcome screen have been improved</li>\n"
+#~ "<li>Margins in color info popovers are fixed</li>\n"
+#~ "<li>Added filter to search presets by repo</li>\n"
+#~ "<li>Added \"No Preferences\" window</li>\n"
+#~ "<li>Preset Manager window size have changed</li>\n"
+#~ "<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
+#~ "Manager</li>\n"
+#~ "<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
+#~ "<li>Switch from aiohttp to Libsoup3</li>\n"
+#~ "<li>Migrate to GNOME SDK 43</li>\n"
+#~ "<li>All contributors have been added to \"About\" window</li>\n"
+#~ "<li>Added \"Log Out\" dialog after preset apply</li>\n"
+#~ "<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
+#~ "li>\n"
+#~ "<li>Flatpak theme override now fixed</li>\n"
+#~ "<li>New and updated translations</li>\n"
+#~ "</ul>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>添加了星形预设以在调色板中显示它的功能</li>\n"
+#~ "<li>更新了 Firefox GNOME 主题插件</li>\n"
+#~ "<li>改进了欢迎屏幕</li>\n"
+#~ "<li>颜色信息弹出框的边距是固定的</li>\n"
+#~ "<li>添加了通过 repo 搜索预设的过滤器</li>\n"
+#~ "<li>添加了“无首选项”窗口</li>\n"
+#~ "<li>预设管理器窗口大小已更改</li>\n"
+#~ "<li>“离线”和“未找到”页面已添加到预设管理器中</li>\n"
+#~ "<li>所有文本均已重写以遵循 GNOME 写作指南</li>\n"
+#~ "<li>从 aiohttp 切换到 Libsoup3</li>\n"
+#~ "<li>迁移到 GNOME SDK 43</li>\n"
+#~ "<li>所有贡献者都已添加到“关于”窗口中</li>\n"
+#~ "<li>预设应用后添加“注销”对话框</li>\n"
+#~ "<li>一些符号已更改，删除了不必要的硬编码符号</li>\n"
+#~ "<li>Flatpak 主题覆盖现已修复</li>\n"
+#~ "<li>新的和更新的翻译</li>\n"
+#~ "</ul>\n"
 
 #~ msgid "Change the look of Adwaita, with ease."
 #~ msgstr "轻松改变 Adwaita 的外观。"

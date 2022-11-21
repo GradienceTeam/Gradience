@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 12:26+0000\n"
+"POT-Creation-Date: 2022-11-21 00:46+0000\n"
 "PO-Revision-Date: 2022-10-12 14:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -178,15 +178,15 @@ msgstr "Azalpena"
 msgid "Toggle Text Value"
 msgstr "Testuaren balioa kommutatu"
 
-#: data/ui/plugin_row.blp:9 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
-msgid "Preferences"
-msgstr ""
-
-#: data/ui/plugin_row.blp:20
+#: data/ui/plugin_row.blp:8
 #, fuzzy
 msgid "Toggle Plugin"
 msgstr "Aktibatu plugina"
+
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/window.blp:135
+msgid "Preferences"
+msgstr ""
 
 #: data/ui/plugin_row.blp:28
 #, fuzzy
@@ -349,7 +349,7 @@ msgstr "Deskonektatuta"
 
 #: data/ui/presets_manager_window.blp:146
 #: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:423
 #, fuzzy
 msgid "Repositories"
 msgstr "Diseinua kenduta"
@@ -496,14 +496,14 @@ msgid "Welcome to Gradience"
 msgstr "Ongi etorri Gradiencera"
 
 #: data/ui/welcome_window.blp:73
-msgid "What's new in 0.3.0"
+msgid "What's new in 0.3.2"
 msgstr ""
 
 #: data/ui/welcome_window.blp:74
 msgid ""
-"In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an "
-"“Official” repository and a “Curated” repositories."
+"In this release, we fixed the Firefox GNOME theme plugin, issues with "
+"presets always being saved with the same name, as well as some UX polish, "
+"and more."
 msgstr ""
 
 #: data/ui/welcome_window.blp:98
@@ -670,7 +670,7 @@ msgid "Unable to delete preset"
 msgstr "Ezin izan da diseinua ezabatu"
 
 #: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:380
+#: gradience/ui/presets_manager_window.py:384
 msgid "User Presets"
 msgstr "Erabiltzailearen diseinuak"
 
@@ -695,26 +695,26 @@ msgstr ""
 msgid "Preset already exists"
 msgstr "Diseinua badago jada"
 
-#: gradience/ui/presets_manager_window.py:292
+#: gradience/ui/presets_manager_window.py:293
 msgid "Preset imported"
 msgstr "Diseinu inportatua"
 
-#: gradience/ui/presets_manager_window.py:295
+#: gradience/ui/presets_manager_window.py:296
 msgid "Unsupported file format, must be .json"
 msgstr "Onartu gabeko fitxategi-formatua, .json izan behar du"
 
-#: gradience/ui/presets_manager_window.py:336
-#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/ui/presets_manager_window.py:339
+#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
 #: gradience/main.py:219
 msgid "Failed to load preset"
 msgstr "Ezin izan da diseinua kargatu"
 
-#: gradience/ui/presets_manager_window.py:373
+#: gradience/ui/presets_manager_window.py:377
 #, fuzzy
 msgid "Built-in Presets"
 msgstr "Diseinu integratuak"
 
-#: gradience/ui/presets_manager_window.py:383
+#: gradience/ui/presets_manager_window.py:387
 #, fuzzy
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
@@ -723,7 +723,7 @@ msgstr ""
 "Kontsultatu <a href=\"https://github.com/GradienceTeam/Community\">Gradience/"
 "Komunitate Taldea</a> Github-en diseinu gehiago ikusteko"
 
-#: gradience/ui/presets_manager_window.py:409
+#: gradience/ui/presets_manager_window.py:413
 #, fuzzy
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
@@ -945,28 +945,28 @@ msgstr "Ezin izan da diseinua ezabatu"
 msgid ""
 "\n"
 "<ul>\n"
-"<li>Added ability to star preset to display it in Palette</li>\n"
-"<li>Updated Firefox GNOME Theme plugin</li>\n"
-"<li>Welcome screen have been improved</li>\n"
-"<li>Margins in color info popovers are fixed</li>\n"
-"<li>Added filter to search presets by repo</li>\n"
-"<li>Added \"No Preferences\" window</li>\n"
-"<li>Preset Manager window size have changed</li>\n"
-"<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
-"Manager</li>\n"
-"<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
-"<li>Switch from aiohttp to Libsoup3</li>\n"
-"<li>Migrate to GNOME SDK 43</li>\n"
-"<li>All contributors have been added to \"About\" window</li>\n"
-"<li>Added \"Log Out\" dialog after preset apply</li>\n"
-"<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
-"li>\n"
-"<li>Flatpak theme override now fixed</li>\n"
+"<li>Firefox GNOME theme plugin now correctly parses installations with "
+"multiple profiles</li>\n"
+"<li>Esc now closes dialogs and Preset Manager</li>\n"
+"<li>Added mnemonics for dialogs</li>\n"
+"<li>Save is now a default response in dialogs</li>\n"
+"<li>Plugins rows now look cleaner and are correctly placed</li>\n"
+"<li>File picker is now modal and sticks to the parent window</li>\n"
+"<li>Grandience can now be closed with Ctrl+Q</li>\n"
+"<li>\"Favourite(s)\" was renamed to \"Favorite(s)\"</li>\n"
+"<li>Тransition from cssutils to an in-house solution</li>\n"
+"<li>Fixed issues with the CSS parser</li>\n"
+"<li>Fixed an issue with presets always being saved as User.json</li>\n"
+"<li>Presets are now removed correctly</li>\n"
+"<li>The Internal structure was refactored</li>\n"
+"<li>Various typos were fixed</li>\n"
+"<li>The README was fully rewritten</li>\n"
+"<li>All screenshots were taken in high resolution</li>\n"
 "<li>New and updated translations</li>\n"
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1046
+#: gradience/main.py:1047
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -986,15 +986,13 @@ msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme.\n"
-"With Gradience you can:\n"
+"The main features of Gradience include the following:\n"
 "\n"
-"- Change any color of Adwaita theme\n"
-"- Apply Material 3 colors from wallpaper\n"
-"- Use other users presets\n"
-"- Change advanced options with CSS\n"
-"- Extend functionality using plugins\n"
-"\n"
-"This app is written in Python and uses GTK 4 and Libadwaita.\n"
+"🎨️ Changing any color of Adwaita theme\n"
+"🖼️ Applying Material 3 color scheme from wallpaper\n"
+"🎁️ Usage of other users presets\n"
+"⚙️ Changing advanced options with CSS\n"
+"🧩️ Extending functionality using plugins\n"
 msgstr ""
 "\n"
 "Gradience Libadwaita aplikazioak eta adw-gtk3 gaia pertsonalizatzeko tresna "
@@ -1011,27 +1009,27 @@ msgstr ""
 "ditu.\n"
 "            "
 
-#: gradience/main.py:1062
+#: gradience/main.py:1060
 #, fuzzy
 #| msgid "Plugins"
 msgid "Plugins by"
 msgstr "Pluginak"
 
-#: gradience/main.py:1069
+#: gradience/main.py:1067
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Diseinuak"
 
-#: gradience/main.py:1091
+#: gradience/main.py:1089
 msgid "Packages by"
 msgstr ""
 
-#: gradience/main.py:1098
+#: gradience/main.py:1096
 msgid "Fixes by"
 msgstr ""
 
-#: gradience/main.py:1108
+#: gradience/main.py:1106
 msgid "Special thanks to"
 msgstr ""
 

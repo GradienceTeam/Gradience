@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 12:26+0000\n"
+"POT-Creation-Date: 2022-11-21 00:46+0000\n"
 "PO-Revision-Date: 2022-11-20 02:47+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -157,14 +157,14 @@ msgstr "Açıklama"
 msgid "Toggle Text Value"
 msgstr "Metin Değerini Aç/Kapat"
 
-#: data/ui/plugin_row.blp:9 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:8
+msgid "Toggle Plugin"
+msgstr "Eklentiyi Aç/Kapat"
+
+#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:135
 msgid "Preferences"
 msgstr "Tercihler"
-
-#: data/ui/plugin_row.blp:20
-msgid "Toggle Plugin"
-msgstr "Eklentiyi Aç/Kapat"
 
 #: data/ui/plugin_row.blp:28
 msgid "Remove Plugin"
@@ -333,7 +333,7 @@ msgstr "Çevrim Dışı"
 
 #: data/ui/presets_manager_window.blp:146
 #: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:419
+#: gradience/ui/presets_manager_window.py:423
 msgid "Repositories"
 msgstr "Depolar"
 
@@ -481,18 +481,17 @@ msgid "Welcome to Gradience"
 msgstr "Gradience'e Hoş Geldiniz"
 
 #: data/ui/welcome_window.blp:73
-msgid "What's new in 0.3.0"
+#, fuzzy
+#| msgid "What's new in 0.3.0"
+msgid "What's new in 0.3.2"
 msgstr "0.3.0'daki yenilikler"
 
 #: data/ui/welcome_window.blp:74
 msgid ""
-"In this release, we added plugin support, a plugin repository, badges, and a "
-"quick preset switcher. We also split the preset repository into an "
-"“Official” repository and a “Curated” repositories."
+"In this release, we fixed the Firefox GNOME theme plugin, issues with "
+"presets always being saved with the same name, as well as some UX polish, "
+"and more."
 msgstr ""
-"Bu sürümde, eklenti desteği, eklenti deposu, rozetler ve hızlı bir ön ayar "
-"değiştirici ekledik. Ayrıca ön ayar deposunu \"Resmi\" depo ve \"Seçilmiş\" "
-"depo olarak ikiye ayırdık."
 
 #: data/ui/welcome_window.blp:98
 msgid ""
@@ -647,7 +646,7 @@ msgid "Unable to delete preset"
 msgstr "Ön ayar silinemedi"
 
 #: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:380
+#: gradience/ui/presets_manager_window.py:384
 msgid "User Presets"
 msgstr "Kullanıcı Ön Ayarları"
 
@@ -672,25 +671,25 @@ msgstr "Ekle"
 msgid "Preset already exists"
 msgstr "Ön ayar zaten var"
 
-#: gradience/ui/presets_manager_window.py:292
+#: gradience/ui/presets_manager_window.py:293
 msgid "Preset imported"
 msgstr "Ön ayar içe aktarıldı"
 
-#: gradience/ui/presets_manager_window.py:295
+#: gradience/ui/presets_manager_window.py:296
 msgid "Unsupported file format, must be .json"
 msgstr "Desteklenmeyen dosya biçimi, .json olmalı"
 
-#: gradience/ui/presets_manager_window.py:336
-#: gradience/ui/presets_manager_window.py:366 gradience/main.py:188
+#: gradience/ui/presets_manager_window.py:339
+#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
 #: gradience/main.py:219
 msgid "Failed to load preset"
 msgstr "Ön ayarın yüklenmesi başarısız oldu"
 
-#: gradience/ui/presets_manager_window.py:373
+#: gradience/ui/presets_manager_window.py:377
 msgid "Built-in Presets"
 msgstr "Yerleşik Ön Ayarlar"
 
-#: gradience/ui/presets_manager_window.py:383
+#: gradience/ui/presets_manager_window.py:387
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -698,7 +697,7 @@ msgstr ""
 "Daha çok ön ayar için Github'daki <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a> sayfasına bakın."
 
-#: gradience/ui/presets_manager_window.py:409
+#: gradience/ui/presets_manager_window.py:413
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -897,64 +896,53 @@ msgstr "Geçerli ön ayar silinemedi"
 msgid ""
 "\n"
 "<ul>\n"
-"<li>Added ability to star preset to display it in Palette</li>\n"
-"<li>Updated Firefox GNOME Theme plugin</li>\n"
-"<li>Welcome screen have been improved</li>\n"
-"<li>Margins in color info popovers are fixed</li>\n"
-"<li>Added filter to search presets by repo</li>\n"
-"<li>Added \"No Preferences\" window</li>\n"
-"<li>Preset Manager window size have changed</li>\n"
-"<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
-"Manager</li>\n"
-"<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
-"<li>Switch from aiohttp to Libsoup3</li>\n"
-"<li>Migrate to GNOME SDK 43</li>\n"
-"<li>All contributors have been added to \"About\" window</li>\n"
-"<li>Added \"Log Out\" dialog after preset apply</li>\n"
-"<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
-"li>\n"
-"<li>Flatpak theme override now fixed</li>\n"
+"<li>Firefox GNOME theme plugin now correctly parses installations with "
+"multiple profiles</li>\n"
+"<li>Esc now closes dialogs and Preset Manager</li>\n"
+"<li>Added mnemonics for dialogs</li>\n"
+"<li>Save is now a default response in dialogs</li>\n"
+"<li>Plugins rows now look cleaner and are correctly placed</li>\n"
+"<li>File picker is now modal and sticks to the parent window</li>\n"
+"<li>Grandience can now be closed with Ctrl+Q</li>\n"
+"<li>\"Favourite(s)\" was renamed to \"Favorite(s)\"</li>\n"
+"<li>Тransition from cssutils to an in-house solution</li>\n"
+"<li>Fixed issues with the CSS parser</li>\n"
+"<li>Fixed an issue with presets always being saved as User.json</li>\n"
+"<li>Presets are now removed correctly</li>\n"
+"<li>The Internal structure was refactored</li>\n"
+"<li>Various typos were fixed</li>\n"
+"<li>The README was fully rewritten</li>\n"
+"<li>All screenshots were taken in high resolution</li>\n"
 "<li>New and updated translations</li>\n"
 "</ul>\n"
 msgstr ""
-"\n"
-"<ul>\n"
-"<li>Palette görüntülemek için ön ayara yıldız ekleme özelliği eklendi</li>\n"
-"<li>Güncellenmiş Firefox GNOME Tema eklentisi</li>\n"
-"<li>Hoş geldiniz ekranı geliştirildi</li>\n"
-"<li>Renk bilgisi açılır pencerelerindeki kenar boşlukları düzeltildi</li>\n"
-"<li>Ön ayarları repoya göre aramak için filtre eklendi</li>\n"
-"<li>\"Tercih Yok\" penceresi eklendi</li>\n"
-"<li>Preset Manager pencere boyutu değişti</li>\n"
-"<li>\"Çevrimdışı\" ve \"Hiçbir Şey Bulunamadı\" sayfaları Ön Ayar "
-"Yöneticisine eklendi</li>\n"
-"<li>Tüm metinler GNOME Yazım Kılavuzlarına uygun olarak yeniden yazılmıştır</"
-"li>\n"
-"<li>Aiohttp'den Libsoup3'e geçiş</li>\n"
-"<li>GNOME SDK 43'e geçiş yapın</li>\n"
-"<li>Tüm katkıda bulunanlar \"Hakkında\" penceresine eklendi</li>\n"
-"<li>Ön ayar uygulandıktan sonra \"Oturumu Kapat\" iletişim kutusu eklendi</"
-"li>\n"
-"<li>Bazı sembolikler değişti, gereksiz kodlanmış sembolikler kaldırıldı</"
-"li>\n"
-"<li>Flatpak temasının geçersiz kılınması artık düzeltildi</li>\n"
-"<li>Yeni ve güncellenmiş çeviriler</li>\n"
-"</ul>\n"
 
-#: gradience/main.py:1046
+#: gradience/main.py:1047
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Gradience is a tool for customizing Libadwaita applications and the adw-"
+#| "gtk3 theme.\n"
+#| "With Gradience you can:\n"
+#| "\n"
+#| "- Change any color of Adwaita theme\n"
+#| "- Apply Material 3 colors from wallpaper\n"
+#| "- Use other users presets\n"
+#| "- Change advanced options with CSS\n"
+#| "- Extend functionality using plugins\n"
+#| "\n"
+#| "This app is written in Python and uses GTK 4 and Libadwaita.\n"
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme.\n"
-"With Gradience you can:\n"
+"The main features of Gradience include the following:\n"
 "\n"
-"- Change any color of Adwaita theme\n"
-"- Apply Material 3 colors from wallpaper\n"
-"- Use other users presets\n"
-"- Change advanced options with CSS\n"
-"- Extend functionality using plugins\n"
-"\n"
-"This app is written in Python and uses GTK 4 and Libadwaita.\n"
+"🎨️ Changing any color of Adwaita theme\n"
+"🖼️ Applying Material 3 color scheme from wallpaper\n"
+"🎁️ Usage of other users presets\n"
+"⚙️ Changing advanced options with CSS\n"
+"🧩️ Extending functionality using plugins\n"
 msgstr ""
 "\n"
 "Gradience, Libadwaita uygulamalarını ve adw-gtk3 temasını özelleştirmek için "
@@ -969,23 +957,23 @@ msgstr ""
 "\n"
 "Bu uygulama Python ile yazılmış olup GTK 4 ve Libadwaita kullanmaktadır.\n"
 
-#: gradience/main.py:1062
+#: gradience/main.py:1060
 msgid "Plugins by"
 msgstr "Eklentiler"
 
-#: gradience/main.py:1069
+#: gradience/main.py:1067
 msgid "Presets by"
 msgstr "Ön Ayarlar"
 
-#: gradience/main.py:1091
+#: gradience/main.py:1089
 msgid "Packages by"
 msgstr "Paketler"
 
-#: gradience/main.py:1098
+#: gradience/main.py:1096
 msgid "Fixes by"
 msgstr "Düzeltmeler"
 
-#: gradience/main.py:1108
+#: gradience/main.py:1106
 msgid "Special thanks to"
 msgstr "Özel teşekkürler"
 
@@ -1273,6 +1261,64 @@ msgstr "Mor"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Kahverengi"
+
+#~ msgid ""
+#~ "In this release, we added plugin support, a plugin repository, badges, "
+#~ "and a quick preset switcher. We also split the preset repository into an "
+#~ "“Official” repository and a “Curated” repositories."
+#~ msgstr ""
+#~ "Bu sürümde, eklenti desteği, eklenti deposu, rozetler ve hızlı bir ön "
+#~ "ayar değiştirici ekledik. Ayrıca ön ayar deposunu \"Resmi\" depo ve "
+#~ "\"Seçilmiş\" depo olarak ikiye ayırdık."
+
+#~ msgid ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Added ability to star preset to display it in Palette</li>\n"
+#~ "<li>Updated Firefox GNOME Theme plugin</li>\n"
+#~ "<li>Welcome screen have been improved</li>\n"
+#~ "<li>Margins in color info popovers are fixed</li>\n"
+#~ "<li>Added filter to search presets by repo</li>\n"
+#~ "<li>Added \"No Preferences\" window</li>\n"
+#~ "<li>Preset Manager window size have changed</li>\n"
+#~ "<li>\"Offline\" and \"Nothing Found\" pages have been added to Preset "
+#~ "Manager</li>\n"
+#~ "<li>All text have been rewritten to follow GNOME Writing Guides</li>\n"
+#~ "<li>Switch from aiohttp to Libsoup3</li>\n"
+#~ "<li>Migrate to GNOME SDK 43</li>\n"
+#~ "<li>All contributors have been added to \"About\" window</li>\n"
+#~ "<li>Added \"Log Out\" dialog after preset apply</li>\n"
+#~ "<li>Some symbolics have changed, removed unnecessary hardcoded symbolics</"
+#~ "li>\n"
+#~ "<li>Flatpak theme override now fixed</li>\n"
+#~ "<li>New and updated translations</li>\n"
+#~ "</ul>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Palette görüntülemek için ön ayara yıldız ekleme özelliği eklendi</"
+#~ "li>\n"
+#~ "<li>Güncellenmiş Firefox GNOME Tema eklentisi</li>\n"
+#~ "<li>Hoş geldiniz ekranı geliştirildi</li>\n"
+#~ "<li>Renk bilgisi açılır pencerelerindeki kenar boşlukları düzeltildi</"
+#~ "li>\n"
+#~ "<li>Ön ayarları repoya göre aramak için filtre eklendi</li>\n"
+#~ "<li>\"Tercih Yok\" penceresi eklendi</li>\n"
+#~ "<li>Preset Manager pencere boyutu değişti</li>\n"
+#~ "<li>\"Çevrimdışı\" ve \"Hiçbir Şey Bulunamadı\" sayfaları Ön Ayar "
+#~ "Yöneticisine eklendi</li>\n"
+#~ "<li>Tüm metinler GNOME Yazım Kılavuzlarına uygun olarak yeniden "
+#~ "yazılmıştır</li>\n"
+#~ "<li>Aiohttp'den Libsoup3'e geçiş</li>\n"
+#~ "<li>GNOME SDK 43'e geçiş yapın</li>\n"
+#~ "<li>Tüm katkıda bulunanlar \"Hakkında\" penceresine eklendi</li>\n"
+#~ "<li>Ön ayar uygulandıktan sonra \"Oturumu Kapat\" iletişim kutusu "
+#~ "eklendi</li>\n"
+#~ "<li>Bazı sembolikler değişti, gereksiz kodlanmış sembolikler kaldırıldı</"
+#~ "li>\n"
+#~ "<li>Flatpak temasının geçersiz kılınması artık düzeltildi</li>\n"
+#~ "<li>Yeni ve güncellenmiş çeviriler</li>\n"
+#~ "</ul>\n"
 
 #~ msgid "Change the look of Adwaita, with ease."
 #~ msgstr "Adwaita'nın görünümünü kolaylıkla değiştirin."
