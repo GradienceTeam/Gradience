@@ -1,6 +1,6 @@
 # Contributor Covenant Code of Conduct
 
-The GNOME Code Of Conduct is also applicable here
+The [GNOME Code Of Conduct](https://wiki.gnome.org/Foundation/CodeOfConduct) is also applicable here
 
 ## Our Pledge
 
