@@ -256,11 +256,6 @@ or think you can improve a translation, you can use the [Weblate](https://hosted
 [![Contributors](https://contrib.rocks/image?repo=GradienceTeam/Gradience)](https://github.com/GradienceTeam/Gradience/graphs/contributors)
 
 
-## 📊️ Stats
-
-![Statistics](https://repobeats.axiom.co/api/embed/0313a8b1bb2eb1896fba6a69ee1d26922c2df3cc.svg "Repobeats analytics image")
-
-
 ## 🏷️ About the Name
 
 Gradience was originally named Adwaita Manager.
