@@ -859,27 +859,23 @@ class GradienceApplication(Adw.Application):
 
             dialog = Adw.MessageDialog(
                 transient_for=self.props.active_window,
-                heading=_("Log out ?"),
+                heading=_("Log out"),
                 body=_(
                     "For the changes to take effect, you need to log out. "
                 ),
                 body_use_markup=True,
             )
 
-            dialog.add_response("cancel", _("Cancel"))
-            dialog.add_response("logout", _("Logout"))
-            dialog.set_response_appearance(
-                "logout", Adw.ResponseAppearance.DESTRUCTIVE)
-            dialog.set_default_response("cancel")
-            dialog.set_close_response("cancel")
+            dialog.add_response("ok", _("OK"))
+            dialog.set_default_response("ok")
+            dialog.set_close_response("ok")
 
-            dialog.connect('response', self.on_logout_dialog_response)
+            dialog.connect('response', self.on_theme_set_dialog_response)
             dialog.present()
 
-    def on_logout_dialog_response (self, dialog, response):
-        if response == "logout":
-            print("logout")
-            run_command(['gnome-session-quit', '--no-prompt'])
+    def on_theme_set_dialog_response (self, dialog, response):
+        if response == "ok":
+            print("theme_set_dialog_ok")
 
     def restore_color_scheme(self, widget, response):
         if response == "restore":
@@ -924,6 +920,26 @@ class GradienceApplication(Adw.Application):
                         Adw.Toast(title=_("Unable to restore GTK 4 backup"))
                     )
 
+            dialog = Adw.MessageDialog(
+                transient_for=self.props.active_window,
+                heading=_("Log out"),
+                body=_(
+                    "For the changes to take effect, you need to log out. "
+                ),
+                body_use_markup=True,
+            )
+
+            dialog.add_response("ok", _("OK"))
+            dialog.set_default_response("ok")
+            dialog.set_close_response("ok")
+
+            dialog.connect('response', self.on_theme_restore_dialog_response)
+            dialog.present()
+
+    def on_theme_restore_dialog_response (self, dialog, response):
+        if response == "ok":
+            print("theme_restore_dialog_ok")
+
     def reset_color_scheme(self, widget, response):
         if response == "reset":
             if widget.get_app_types()["gtk4"]:
@@ -957,6 +973,26 @@ class GradienceApplication(Adw.Application):
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to delete current preset"))
                     )
+
+            dialog = Adw.MessageDialog(
+                transient_for=self.props.active_window,
+                heading=_("Log out"),
+                body=_(
+                    "For the changes to take effect, you need to log out. "
+                ),
+                body_use_markup=True,
+            )
+
+            dialog.add_response("ok", _("OK"))
+            dialog.set_default_response("ok")
+            dialog.set_close_response("ok")
+
+            dialog.connect('response', self.on_theme_reset_dialog_response)
+            dialog.present()
+
+    def on_theme_reset_dialog_response (self, dialog, response):
+        if response == "ok":
+            print("theme_reset_dialog_ok")
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)
