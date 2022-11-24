@@ -1029,7 +1029,7 @@ class GradienceApplication(Adw.Application):
 <li>Save is now a default response in dialogs</li>
 <li>Plugins rows now look cleaner and are correctly placed</li>
 <li>File picker is now modal and sticks to the parent window</li>
-<li>Grandience can now be closed with Ctrl+Q</li>
+<li>Gradience can now be closed with Ctrl+Q</li>
 <li>"Favourite(s)" was renamed to "Favorite(s)"</li>
 <li>Тransition from cssutils to an in-house solution</li>
 <li>Fixed issues with the CSS parser</li>
