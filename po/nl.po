@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-11-19 13:48+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Pas gemakkelijk het uiterlijk van Adwaita aan"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "Gradience-team"
 
@@ -333,11 +333,11 @@ msgstr "Zoeken naar voorinstellingen"
 #: data/ui/presets_manager_window.blp:80
 #, fuzzy
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
-"Voer een trefwoord in om te zoeken op <a href=\"https://gradienceteam.github."
-"io/presets\">GradienceTeam/Community</a>."
+"Voer een zoekterm in om te zoeken in <a href=\"https://github.com/"
+"GradienceTeam/Community\">GradienceTeam/Community</a>."
 
 #: data/ui/presets_manager_window.blp:93
 msgid "e.g. \"Pretty Purple\""
@@ -723,7 +723,6 @@ msgid "Add a repository to install additional presets."
 msgstr "Voeg een opslagplaats toe om extra voorinstellingen te installeren."
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "Annuleren"
 
@@ -957,30 +956,32 @@ msgstr "Voorinstelling opgeslagen"
 msgid "Preset set successfully"
 msgstr "Voorinstelling succesvol ingesteld"
 
-#: gradience/main.py:862
-msgid "Log out ?"
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#, fuzzy
+#| msgid "Log out ?"
+msgid "Log out"
 msgstr "Uitloggen?"
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 msgid "For the changes to take effect, you need to log out. "
 msgstr "Om de wijzigingen door te voeren, moet u zich afmelden. "
 
-#: gradience/main.py:870
-msgid "Logout"
-msgstr "Uitloggen"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "Kan GTK 4 back-up niet herstellen"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 #, fuzzy
 #| msgid "Unable to delete preset"
 msgid "Unable to delete current preset"
 msgstr "Kan voorinstelling niet verwijderen"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -1005,7 +1006,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 #, fuzzy
 msgid ""
 "\n"
@@ -1032,23 +1033,23 @@ msgstr ""
 "\n"
 "Deze app is geschreven in Python en gebruikt GTK 4 en Libadwaita.\n"
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 msgid "Plugins by"
 msgstr "Plug-ins door"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 msgid "Presets by"
 msgstr "Voorinstellingen door"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 msgid "Packages by"
 msgstr "Pakketten door"
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 msgid "Fixes by"
 msgstr "Foutoplossingen door"
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 msgid "Special thanks to"
 msgstr "Speciale dank aan"
 
@@ -1340,6 +1341,17 @@ msgstr "Bruin"
 
 #, fuzzy
 #~ msgid ""
+#~ "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
+#~ "presets\">GradienceTeam/Community</a>."
+#~ msgstr ""
+#~ "Voer een trefwoord in om te zoeken op <a href=\"https://gradienceteam."
+#~ "github.io/presets\">GradienceTeam/Community</a>."
+
+#~ msgid "Logout"
+#~ msgstr "Uitloggen"
+
+#, fuzzy
+#~ msgid ""
 #~ "In this release, we added plugin support, a plugin repository, badges, "
 #~ "and a quick preset switcher. We also split the preset repository into an "
 #~ "“Official” repository and a “Curated” repositories."
@@ -1607,14 +1619,6 @@ msgstr "Bruin"
 
 #~ msgid "Open in file manager"
 #~ msgstr "Openen in bestandsbeheerder"
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#~ "Community\">GradienceTeam/Community</a>."
-#~ msgstr ""
-#~ "Voer een zoekterm in om te zoeken in <a href=\"https://github.com/"
-#~ "GradienceTeam/Community\">GradienceTeam/Community</a>."
 
 #~ msgid "Customize Adwaita with ease"
 #~ msgstr "Personaliseer Adwaita gemakkelijk"

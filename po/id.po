@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-11-05 05:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Ubah tampilan Adwaita, dengan mudah."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "Tim Gradience"
 
@@ -357,11 +357,11 @@ msgstr "Cari preset"
 #: data/ui/presets_manager_window.blp:80
 #, fuzzy
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
-"Masukkan kata kunci untuk mencari di <a href=\"https://gradienceteam.github."
-"io/presets\">GradienceTeam/Community</a>."
+"Masukkan kata kunci untuk ditelusuri di <a href=\"https://github.com/"
+"GradienceTeam/Community\">GradienceTeam/Community</a>."
 
 #: data/ui/presets_manager_window.blp:93
 msgid "e.g. \"Pretty Purple\""
@@ -755,7 +755,6 @@ msgid "Add a repository to install additional presets."
 msgstr "Tambahkan repositori untuk menginstal preset tambahan."
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "Membatalkan"
 
@@ -1013,32 +1012,31 @@ msgstr "Preset disimpan"
 msgid "Preset set successfully"
 msgstr "Preset berhasil disetel"
 
-#: gradience/main.py:862
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
 #, fuzzy
-msgid "Log out ?"
+msgid "Log out"
 msgstr "Keluar?"
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 #, fuzzy
 msgid "For the changes to take effect, you need to log out. "
 msgstr "Agar perubahan berlaku, Anda harus log keluar. "
 
-#: gradience/main.py:870
-#, fuzzy
-msgid "Logout"
-msgstr "Keluar"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "Tidak dapat memulihkan cadangan GTK 4"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "Tidak dapat menghapus preset"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -1063,7 +1061,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1104,28 +1102,28 @@ msgstr ""
 "\n"
 "Aplikasi ini ditulis dengan Python dan menggunakan GTK 4 dan libadwaita.\n"
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 #, fuzzy
 msgid "Plugins by"
 msgstr "Plugin oleh"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Preset oleh"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 #, fuzzy
 msgid "Packages by"
 msgstr "Paket oleh"
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 #, fuzzy
 msgid "Fixes by"
 msgstr "Perbaikan oleh"
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 #, fuzzy
 msgid "Special thanks to"
 msgstr "Terima kasih khusus kepada"
@@ -1468,6 +1466,18 @@ msgstr "Cokelat"
 
 #, fuzzy
 #~ msgid ""
+#~ "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
+#~ "presets\">GradienceTeam/Community</a>."
+#~ msgstr ""
+#~ "Masukkan kata kunci untuk mencari di <a href=\"https://gradienceteam."
+#~ "github.io/presets\">GradienceTeam/Community</a>."
+
+#, fuzzy
+#~ msgid "Logout"
+#~ msgstr "Keluar"
+
+#, fuzzy
+#~ msgid ""
 #~ "In this release, we added plugin support, a plugin repository, badges, "
 #~ "and a quick preset switcher. We also split the preset repository into an "
 #~ "“Official” repository and a “Curated” repositories."
@@ -1785,14 +1795,6 @@ msgstr "Cokelat"
 
 #~ msgid "Open in file manager"
 #~ msgstr "Buka di pengelola file"
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#~ "Community\">GradienceTeam/Community</a>."
-#~ msgstr ""
-#~ "Masukkan kata kunci untuk ditelusuri di <a href=\"https://github.com/"
-#~ "GradienceTeam/Community\">GradienceTeam/Community</a>."
 
 #~ msgid "Customize Adwaita with ease"
 #~ msgstr "Sesuaikan Adwaita dengan mudah"

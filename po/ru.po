@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-11-24 17:23+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -40,7 +40,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "С легкостью изменяйте внешний вид Adwaita"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "Команда Gradience"
 
@@ -314,11 +314,11 @@ msgstr "Поиск предустановок"
 
 #: data/ui/presets_manager_window.blp:80
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
-"Введите ключевое слово для поиска в <a href=\"https://gradienceteam.github."
-"io/presets\">GradienceTeam/Community</a>."
+"Введите ключевое слово для поиска в <a href=\"https://github.com/"
+"GradiencetTeam.github.io/presets/Community\">GradienceTeam/Community</a>."
 
 #: data/ui/presets_manager_window.blp:93
 msgid "e.g. \"Pretty Purple\""
@@ -663,7 +663,6 @@ msgid "Add a repository to install additional presets."
 msgstr "Добавить репозиторий для установки дополнительных предустановок."
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -877,27 +876,29 @@ msgstr "Предустановка сохранена"
 msgid "Preset set successfully"
 msgstr "Предустановка успешно установлена"
 
-#: gradience/main.py:862
-msgid "Log out ?"
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#, fuzzy
+#| msgid "Log out ?"
+msgid "Log out"
 msgstr "Выйти ?"
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 msgid "For the changes to take effect, you need to log out. "
 msgstr "Чтобы изменения вступили в силу вам необходимо выйти из системы. "
 
-#: gradience/main.py:870
-msgid "Logout"
-msgstr "Выйти"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 msgid "Unable to restore GTK 4 backup"
 msgstr "Не удалось восстановить резервную копию GTK 4"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 msgid "Unable to delete current preset"
 msgstr "Не удалось удалить текущую предустановку"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -929,11 +930,11 @@ msgstr ""
 "<li>Добавлена мнемоника для диалогов</li>\n"
 "<li>\"Сохранить\" теперь является ответом по умолчанию в диалогах</li>\n"
 "<li>Строки плагинов теперь выглядят чище и расположены правильно</li>\n"
-"<li>Окно выбора файлов теперь модальное и привязано к родительскому окну</li>"
-"\n"
+"<li>Окно выбора файлов теперь модальное и привязано к родительскому окну</"
+"li>\n"
 "<li>Gradience теперь можно закрыть с помощью Ctrl+Q</li>\n"
-"<li>\"Favourite(s)\" было переименовано в \"Favorite(s)\" (На "
-"Английском)</li>\n"
+"<li>\"Favourite(s)\" было переименовано в \"Favorite(s)\" (На Английском)</"
+"li>\n"
 "<li>Переход с cssutils на собственное решение</li>\n"
 "<li>Исправлены проблемы с парсером CSS</li>\n"
 "<li>Исправлена ошибка, из-за которой предустановки всегда сохранялись как "
@@ -946,7 +947,7 @@ msgstr ""
 "<li>Новые и обновленные переводы</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -970,23 +971,23 @@ msgstr ""
 "⚙️ Изменение продвинутых параметров с помощью CSS\n"
 "🧩️ Расширение функционала используя плагины\n"
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 msgid "Plugins by"
 msgstr "Плагины"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 msgid "Presets by"
 msgstr "Предустановки"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 msgid "Packages by"
 msgstr "Пакеты"
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 msgid "Fixes by"
 msgstr "Исправления"
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 msgid "Special thanks to"
 msgstr "Особое спасибо"
 
@@ -1273,6 +1274,16 @@ msgstr "Фиолетовый"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Коричневый"
+
+#~ msgid ""
+#~ "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
+#~ "presets\">GradienceTeam/Community</a>."
+#~ msgstr ""
+#~ "Введите ключевое слово для поиска в <a href=\"https://gradienceteam."
+#~ "github.io/presets\">GradienceTeam/Community</a>."
+
+#~ msgid "Logout"
+#~ msgstr "Выйти"
 
 #~ msgid ""
 #~ "In this release, we added plugin support, a plugin repository, badges, "
@@ -1584,13 +1595,6 @@ msgstr "Коричневый"
 
 #~ msgid "Open in file manager"
 #~ msgstr "Открыть в файловом менеджере"
-
-#~ msgid ""
-#~ "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#~ "Community\">GradienceTeam/Community</a>."
-#~ msgstr ""
-#~ "Введите ключевое слово для поиска в <a href=\"https://github.com/"
-#~ "GradiencetTeam.github.io/presets/Community\">GradienceTeam/Community</a>."
 
 #~ msgid "Customize Adwaita with ease"
 #~ msgstr "Настройте Adwaita с легкостью"

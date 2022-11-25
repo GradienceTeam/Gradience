@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-11-23 01:48+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "Gradijent"
 
@@ -35,7 +35,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "S lakoćom, promijenite izgled Adwaite"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "Gradijent tim"
 
@@ -304,9 +304,10 @@ msgid "Search for presets"
 msgstr "Pretraži predložak"
 
 #: data/ui/presets_manager_window.blp:80
+#, fuzzy
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
 "Upišite ključnu riječ za pretragu na <a href=\"https://gradienceteam.github."
 "io/presets\">Gradience timu/Zajednici</a>."
@@ -649,7 +650,6 @@ msgid "Add a repository to install additional presets."
 msgstr "Dodajte repozitorij kako bi instalirali dodatne predloške."
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "Odustani"
 
@@ -861,27 +861,29 @@ msgstr "Predložak je spremljen"
 msgid "Preset set successfully"
 msgstr "Predložak je uspješno postavljen"
 
-#: gradience/main.py:862
-msgid "Log out ?"
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#, fuzzy
+#| msgid "Log out ?"
+msgid "Log out"
 msgstr "Odjava?"
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 msgid "For the changes to take effect, you need to log out. "
 msgstr "Kako bi se promjene primijenile, trebate se odjaviti. "
 
-#: gradience/main.py:870
-msgid "Logout"
-msgstr "Odjava"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 msgid "Unable to restore GTK 4 backup"
 msgstr "Nemoguća obnova GTK 4 sigurnosne kopije"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 msgid "Unable to delete current preset"
 msgstr "Nemoguće brisanje aktualnog predloška"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -906,7 +908,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -929,23 +931,23 @@ msgstr ""
 "⚙️ Mijenjanje naprednih mogućnosti sa CSS-om\n"
 "🧩️ Proširenje funkcionalnosti pomoću dodataka\n"
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 msgid "Plugins by"
 msgstr "Priključci od"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 msgid "Presets by"
 msgstr "Predlošci od"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 msgid "Packages by"
 msgstr "Paketi od"
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 msgid "Fixes by"
 msgstr "Ispravci od"
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 msgid "Special thanks to"
 msgstr "Posebno hvala:"
 
@@ -1234,6 +1236,16 @@ msgid "Brown"
 msgstr "Smeđa"
 
 #~ msgid ""
+#~ "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
+#~ "presets\">GradienceTeam/Community</a>."
+#~ msgstr ""
+#~ "Upišite ključnu riječ za pretragu na <a href=\"https://gradienceteam."
+#~ "github.io/presets\">Gradience timu/Zajednici</a>."
+
+#~ msgid "Logout"
+#~ msgstr "Odjava"
+
+#~ msgid ""
 #~ "In this release, we added plugin support, a plugin repository, badges, "
 #~ "and a quick preset switcher. We also split the preset repository into an "
 #~ "“Official” repository and a “Curated” repositories."
@@ -1499,14 +1511,6 @@ msgstr "Smeđa"
 
 #~ msgid "Open in file manager"
 #~ msgstr "Otvori s preglednikom datoteka"
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#~ "Community\">GradienceTeam/Community</a>."
-#~ msgstr ""
-#~ "Upišite ključnu riječ za pretragu na <a href=\"https://gradienceteam."
-#~ "github.io/presets\">Gradience timu/Zajednici</a>."
 
 #~ msgid "Customize Adwaita with ease"
 #~ msgstr "S lakoćom prilagodite Adwaitu"

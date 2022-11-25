@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-11-24 18:48+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -33,7 +33,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "轻松改变 Adwaita 的外观"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "Gradience 团队"
 
@@ -301,9 +301,10 @@ msgid "Search for presets"
 msgstr "搜索预设"
 
 #: data/ui/presets_manager_window.blp:80
+#, fuzzy
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
 "输入关键字以在 <a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> 上搜索。"
@@ -370,8 +371,8 @@ msgid ""
 "make a pull request and share it with the world!"
 msgstr ""
 "Gradience 使用 GitHub 分享您的预设。您需要创建一个 GitHub 帐户并 fork <a "
-"href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a>。然后，您可以上传您的预设，提出拉取请求并与全世界分享！"
+"href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</"
+"a>。然后，您可以上传您的预设，提出拉取请求并与全世界分享！"
 
 #: data/ui/share_window.blp:81 data/ui/welcome_window.blp:81
 msgid "Warning"
@@ -639,7 +640,6 @@ msgid "Add a repository to install additional presets."
 msgstr "添加存储库以安装其他预设。"
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "取消"
 
@@ -844,27 +844,29 @@ msgstr "预设已保存"
 msgid "Preset set successfully"
 msgstr "预设设置成功"
 
-#: gradience/main.py:862
-msgid "Log out ?"
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#, fuzzy
+#| msgid "Log out ?"
+msgid "Log out"
 msgstr "注销 ？"
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 msgid "For the changes to take effect, you need to log out. "
 msgstr "要使更改生效，您需要注销。 "
 
-#: gradience/main.py:870
-msgid "Logout"
-msgstr "注销"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 msgid "Unable to restore GTK 4 backup"
 msgstr "无法恢复 GTK 4 备份"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 msgid "Unable to delete current preset"
 msgstr "无法删除当前预设"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -909,7 +911,7 @@ msgstr ""
 "<li>新的和更新的翻译</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -932,23 +934,23 @@ msgstr ""
 "⚙️ 使用 CSS 更改高级选项\n"
 "🧩️ 使用插件扩展功能\n"
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 msgid "Plugins by"
 msgstr "插件作者"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 msgid "Presets by"
 msgstr "预设作者"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 msgid "Packages by"
 msgstr "包作者"
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 msgid "Fixes by"
 msgstr "修复者"
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 msgid "Special thanks to"
 msgstr "特别感谢"
 
@@ -1213,6 +1215,16 @@ msgstr "紫色"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "棕色"
+
+#~ msgid ""
+#~ "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
+#~ "presets\">GradienceTeam/Community</a>."
+#~ msgstr ""
+#~ "输入关键字以在 <a href=\"https://github.com/GradienceTeam/Community"
+#~ "\">GradienceTeam/Community</a> 上搜索。"
+
+#~ msgid "Logout"
+#~ msgstr "注销"
 
 #~ msgid ""
 #~ "In this release, we added plugin support, a plugin repository, badges, "
@@ -1525,14 +1537,6 @@ msgstr "棕色"
 
 #~ msgid "Open in file manager"
 #~ msgstr "在文件管理器中打开"
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#~ "Community\">GradienceTeam/Community</a>."
-#~ msgstr ""
-#~ "输入关键字以在 <a href=\"https://github.com/GradienceTeam/Community"
-#~ "\">GradienceTeam/Community</a> 上搜索。"
 
 #~ msgid "Customize Adwaita with ease"
 #~ msgstr "轻松定制 Adwaita"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-10-12 14:21+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Occitan <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Modificatz l’aparéncia d’Adwaita facilament."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "La còla de Gradience"
 
@@ -331,8 +331,8 @@ msgstr ""
 
 #: data/ui/presets_manager_window.blp:80
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
 
 #: data/ui/presets_manager_window.blp:93
@@ -695,7 +695,6 @@ msgid "Add a repository to install additional presets."
 msgstr ""
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "Anullar"
 
@@ -923,30 +922,29 @@ msgstr "Prereglatges"
 msgid "Preset set successfully"
 msgstr "Esquèma corrèctament aplicat !"
 
-#: gradience/main.py:862
-msgid "Log out ?"
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+msgid "Log out"
 msgstr ""
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 msgid "For the changes to take effect, you need to log out. "
 msgstr ""
 
-#: gradience/main.py:870
-#, fuzzy
-msgid "Logout"
-msgstr "Logout"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "Lo cargament de la configuracion a pas reüssit"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "Lo cargament de la configuracion a pas reüssit"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -971,7 +969,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -985,26 +983,26 @@ msgid ""
 "🧩️ Extending functionality using plugins\n"
 msgstr ""
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 #, fuzzy
 msgid "Plugins by"
 msgstr "Extensions"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Prereglatges"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 msgid "Packages by"
 msgstr ""
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 msgid "Fixes by"
 msgstr ""
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 msgid "Special thanks to"
 msgstr ""
 
@@ -1255,6 +1253,10 @@ msgstr "Violet"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Marron"
+
+#, fuzzy
+#~ msgid "Logout"
+#~ msgstr "Logout"
 
 #~ msgid "Change the look of Adwaita, with ease."
 #~ msgstr "Modificatz l’aparéncia d’Adwaita facilament."

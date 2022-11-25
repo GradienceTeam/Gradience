@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-11-24 17:23+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "கிரேடியன்ஸ்"
 
@@ -33,7 +33,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "அத்வைதாவின் தோற்றத்தை எளிதில் மாற்றுங்கள்"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "கிரேடியன்ஸ் குழு"
 
@@ -305,9 +305,13 @@ msgid "Search for presets"
 msgstr "முன்னமைவுகளைத் தேடுங்கள்"
 
 #: data/ui/presets_manager_window.blp:80
+#, fuzzy
+#| msgid ""
+#| "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
+#| "presets\">GradienceTeam/Community</a>."
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
 "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> இல் தேடுவதற்கு ஒரு முக்கிய சொல்லை உள்ளிடவும்."
@@ -483,9 +487,8 @@ msgid ""
 "presets always being saved with the same name, as well as some UX polish, "
 "and more."
 msgstr ""
-"இந்த வெளியீட்டில், பயர்பாக்ஸ் GNOME தீம் செருகுநிரல், ப்ரீசெட்கள் எப்போதும் "
-"ஒரே பெயரில் சேமிக்கப்படும் சிக்கல்கள், சில UX பாலிஷ் மற்றும் பலவற்றை சரி "
-"செய்துள்ளோம்."
+"இந்த வெளியீட்டில், பயர்பாக்ஸ் GNOME தீம் செருகுநிரல், ப்ரீசெட்கள் எப்போதும் ஒரே பெயரில் "
+"சேமிக்கப்படும் சிக்கல்கள், சில UX பாலிஷ் மற்றும் பலவற்றை சரி செய்துள்ளோம்."
 
 #: data/ui/welcome_window.blp:98
 msgid ""
@@ -653,7 +656,6 @@ msgid "Add a repository to install additional presets."
 msgstr "கூடுதல் முன்னமைவுகளை நிறுவ ஒரு களஞ்சியத்தைச் சேர்க்கவும்."
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
@@ -866,27 +868,29 @@ msgstr "முன்னமைவு சேமிக்கப்பட்டத�
 msgid "Preset set successfully"
 msgstr "முன்னமைவு வெற்றிகரமாக அமைக்கப்பட்டது"
 
-#: gradience/main.py:862
-msgid "Log out ?"
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#, fuzzy
+#| msgid "Log out ?"
+msgid "Log out"
 msgstr "வெளியேறவா?"
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 msgid "For the changes to take effect, you need to log out. "
 msgstr "மாற்றங்கள் நடைமுறைக்கு வர, நீங்கள் வெளியேற வேண்டும். "
 
-#: gradience/main.py:870
-msgid "Logout"
-msgstr "வெளியேறு"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 காப்புப்பிரதியை மீட்டெடுக்க முடியவில்லை"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 msgid "Unable to delete current preset"
 msgstr "தற்போதைய முன்னமைவை நீக்க முடியவில்லை"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -911,7 +915,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -935,23 +939,23 @@ msgstr ""
 "⚙️ CSS உடன் மேம்பட்ட விருப்பங்களை மாற்றுதல் \n"
 "🧩️ செருகுநிரல்களைப் பயன்படுத்தி செயல்பாட்டை நீட்டித்தல்\n"
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 msgid "Plugins by"
 msgstr "செருகுநிரல்கள் பைய்"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 msgid "Presets by"
 msgstr "முன்னமைவுகள் பைய்"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 msgid "Packages by"
 msgstr "தொகுப்புகள் பைய்"
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 msgid "Fixes by"
 msgstr "திருத்தங்கள் பைய்"
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 msgid "Special thanks to"
 msgstr "சிறப்பு நன்றிகள்"
 
@@ -1236,6 +1240,9 @@ msgstr "ஊதா"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "பழுப்பு"
+
+#~ msgid "Logout"
+#~ msgstr "வெளியேறு"
 
 #~ msgid ""
 #~ "\n"

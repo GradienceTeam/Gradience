@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-11-05 01:37+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -33,7 +33,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Modificați cu ușurință aspectul aplicațiilor Adwaita"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "Echipa Gradience"
 
@@ -319,9 +319,13 @@ msgid "Search for presets"
 msgstr "Căutați presetări"
 
 #: data/ui/presets_manager_window.blp:80
+#, fuzzy
+#| msgid ""
+#| "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
+#| "presets\">GradienceTeam/Community</a>."
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
 "Introduceți un termen de căutare pentru a căuta pe <a href=\"https://"
 "gradienceteam.github.io/presets\">GradienceTeam/Community</a>."
@@ -676,7 +680,6 @@ msgid "Add a repository to install additional presets."
 msgstr "Adăugați un depozit pentru a instala presetări suplimentare."
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "Anulare"
 
@@ -902,32 +905,34 @@ msgstr "Presetare salvată"
 msgid "Preset set successfully"
 msgstr "Presetare aplicată cu succes"
 
-#: gradience/main.py:862
-msgid "Log out ?"
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#, fuzzy
+#| msgid "Log out ?"
+msgid "Log out"
 msgstr "Ieșiți din sesiune?"
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 msgid "For the changes to take effect, you need to log out. "
 msgstr ""
 "Pentru ca modificările să se poată aplica, trebuie să ieșiți din sesiune. "
 
-#: gradience/main.py:870
-msgid "Logout"
-msgstr "Ieșiți din sesiune"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 #, fuzzy
 #| msgid "Could not restore GTK 4 backup"
 msgid "Unable to restore GTK 4 backup"
 msgstr "Nu s-a putut restaura copia de rezervă GTK 4"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 #, fuzzy
 #| msgid "Unable to delete preset"
 msgid "Unable to delete current preset"
 msgstr "Nu se poate înlătura presetarea"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -952,7 +957,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -966,23 +971,23 @@ msgid ""
 "🧩️ Extending functionality using plugins\n"
 msgstr ""
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 msgid "Plugins by"
 msgstr "Module de"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 msgid "Presets by"
 msgstr "Presetări de"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 msgid "Packages by"
 msgstr "Pachete de"
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 msgid "Fixes by"
 msgstr "Corecții de"
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 msgid "Special thanks to"
 msgstr "Mulțumiri speciale către"
 
@@ -1275,6 +1280,9 @@ msgstr "Violet"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Maro"
+
+#~ msgid "Logout"
+#~ msgstr "Ieșiți din sesiune"
 
 #~ msgid ""
 #~ "In this release, we added plugin support, a plugin repository, badges, "

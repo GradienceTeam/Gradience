@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-11-24 20:48+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -35,7 +35,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Adwaita'nın görünümünü kolaylıkla değiştirin"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "Gradience Takımı"
 
@@ -308,9 +308,10 @@ msgid "Search for presets"
 msgstr "Ön ayar ara"
 
 #: data/ui/presets_manager_window.blp:80
+#, fuzzy
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
 "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> içinde arama yapmak için kelime girin."
@@ -660,7 +661,6 @@ msgid "Add a repository to install additional presets."
 msgstr "Ek ön ayarlar yüklemek için bir depo ekleyin."
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "İptal"
 
@@ -873,27 +873,29 @@ msgstr "Ön ayar kaydedildi"
 msgid "Preset set successfully"
 msgstr "Ön ayar ayarlandı"
 
-#: gradience/main.py:862
-msgid "Log out ?"
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#, fuzzy
+#| msgid "Log out ?"
+msgid "Log out"
 msgstr "Oturum kapatılsın mı?"
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 msgid "For the changes to take effect, you need to log out. "
 msgstr "Değişikliklerin etkili olması için oturumu kapatmanız gerekir. "
 
-#: gradience/main.py:870
-msgid "Logout"
-msgstr "Oturumu kapat"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 yedeği geri yüklenemedi"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 msgid "Unable to delete current preset"
 msgstr "Geçerli ön ayar silinemedi"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -918,7 +920,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -942,23 +944,23 @@ msgstr ""
 "⚙️ CSS ile gelişmiş seçenekleri değiştirme\n"
 "🧩️ Eklentileri kullanarak işlevselliği genişletme\n"
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 msgid "Plugins by"
 msgstr "Eklentiler"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 msgid "Presets by"
 msgstr "Ön Ayarlar"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 msgid "Packages by"
 msgstr "Paketler"
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 msgid "Fixes by"
 msgstr "Düzeltmeler"
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 msgid "Special thanks to"
 msgstr "Özel teşekkürler"
 
@@ -1246,6 +1248,16 @@ msgstr "Mor"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "Kahverengi"
+
+#~ msgid ""
+#~ "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
+#~ "presets\">GradienceTeam/Community</a>."
+#~ msgstr ""
+#~ "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+#~ "Community</a> içinde arama yapmak için kelime girin."
+
+#~ msgid "Logout"
+#~ msgstr "Oturumu kapat"
 
 #~ msgid ""
 #~ "In this release, we added plugin support, a plugin repository, badges, "
@@ -1559,14 +1571,6 @@ msgstr "Kahverengi"
 
 #~ msgid "Open in file manager"
 #~ msgstr "Dosya yöneticisinde aç"
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#~ "Community\">GradienceTeam/Community</a>."
-#~ msgstr ""
-#~ "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-#~ "Community</a> içinde arama yapmak için kelime girin."
 
 #~ msgid "Customize Adwaita with ease"
 #~ msgstr "Adwaita görünümünü kolaylıkla özelleştir"

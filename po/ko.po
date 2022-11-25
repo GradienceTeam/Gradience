@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2022-11-24 12:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-25 00:42+0000\n"
 "PO-Revision-Date: 2022-11-24 18:48+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:969
+#: data/ui/window.blp:5 gradience/main.py:1005
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Adwaita의 외관을 쉽게 변경합니다"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:971
+#: gradience/main.py:1007
 msgid "Gradience Team"
 msgstr "Gradience팀"
 
@@ -311,9 +311,10 @@ msgid "Search for presets"
 msgstr "사전 설정 검색"
 
 #: data/ui/presets_manager_window.blp:80
+#, fuzzy
 msgid ""
-"Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
-"presets\">GradienceTeam/Community</a>."
+"Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>."
 msgstr ""
 "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a>에서 검색할 키워드를 입력하세요."
@@ -659,7 +660,6 @@ msgid "Add a repository to install additional presets."
 msgstr "추가 프리셋을 설치하려면 저장소를 추가하십시오."
 
 #: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
-#: gradience/main.py:869
 msgid "Cancel"
 msgstr "취소"
 
@@ -878,29 +878,31 @@ msgstr "사전 설정 저장됨"
 msgid "Preset set successfully"
 msgstr "사전 설정이 성공적으로 적용되었습니다!"
 
-#: gradience/main.py:862
-msgid "Log out ?"
+#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#, fuzzy
+#| msgid "Log out ?"
+msgid "Log out"
 msgstr "로그아웃하시겠습니까?"
 
-#: gradience/main.py:864
+#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
 msgid "For the changes to take effect, you need to log out. "
 msgstr "변경 사항을 적용하려면 로그아웃해야 합니다. "
 
-#: gradience/main.py:870
-msgid "Logout"
-msgstr "로그아웃"
+#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+msgid "OK"
+msgstr ""
 
-#: gradience/main.py:924
+#: gradience/main.py:920
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 백업을 복원할 수 없습니다"
 
-#: gradience/main.py:942 gradience/main.py:958
+#: gradience/main.py:958 gradience/main.py:974
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "사전 설정을 삭제할 수 없습니다"
 
-#: gradience/main.py:1024
+#: gradience/main.py:1060
 msgid ""
 "\n"
 "<ul>\n"
@@ -925,7 +927,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/main.py:1047
+#: gradience/main.py:1083
 #, fuzzy
 msgid ""
 "\n"
@@ -952,23 +954,23 @@ msgstr ""
 "\n"
 "이 앱은 Python으로 작성되었으며 GTK 4 및 Libadwaita를 사용합니다.\n"
 
-#: gradience/main.py:1060
+#: gradience/main.py:1096
 msgid "Plugins by"
 msgstr "플러그인"
 
-#: gradience/main.py:1067
+#: gradience/main.py:1103
 msgid "Presets by"
 msgstr "프리셋"
 
-#: gradience/main.py:1089
+#: gradience/main.py:1125
 msgid "Packages by"
 msgstr "패키지"
 
-#: gradience/main.py:1096
+#: gradience/main.py:1132
 msgid "Fixes by"
 msgstr "버그수정"
 
-#: gradience/main.py:1106
+#: gradience/main.py:1142
 msgid "Special thanks to"
 msgstr "특별히 고마운 분들"
 
@@ -1246,6 +1248,16 @@ msgstr "보라색"
 #: gradience/settings_schema.py:371
 msgid "Brown"
 msgstr "갈색"
+
+#~ msgid ""
+#~ "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
+#~ "presets\">GradienceTeam/Community</a>."
+#~ msgstr ""
+#~ "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+#~ "Community</a>에서 검색할 키워드를 입력하세요."
+
+#~ msgid "Logout"
+#~ msgstr "로그아웃"
 
 #~ msgid ""
 #~ "In this release, we added plugin support, a plugin repository, badges, "
@@ -1552,14 +1564,6 @@ msgstr "갈색"
 
 #~ msgid "Open in file manager"
 #~ msgstr "파일 관리자로 열기"
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#~ "Community\">GradienceTeam/Community</a>."
-#~ msgstr ""
-#~ "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-#~ "Community</a>에서 검색할 키워드를 입력하세요."
 
 #~ msgid "Customize Adwaita with ease"
 #~ msgstr "Adwaita를 쉽게 커스터마이징"
