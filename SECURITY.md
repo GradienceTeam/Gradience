@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-We only officially support two latest version but we provide some help for older versions
+We only officially support two latest versions but we provide some help for older versions.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -12,7 +12,7 @@ We only officially support two latest version but we provide some help for older
 
 ## Reporting a Vulnerability
 
-Normally Gradience can't have security issues because it's only generating CSS and generating JSON.
+Normally Gradience can't have security issues because it's only generating CSS and JSON.
 
 BUT If you found a vulnerability please don't submit a public issue.
 Report this vulnerability to AdwCustomizerTeam@proton.me and include as much details as possible.
