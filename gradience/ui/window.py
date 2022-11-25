@@ -71,7 +71,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.get_default_wallpaper()
 
-    # FIXME: This function works only when build using meson, because Flatpak
+    # FIXME: This function works only when building using meson, because Flatpak
     # can't access host's dconf with current config/impl
     def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
