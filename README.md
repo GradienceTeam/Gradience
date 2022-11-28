@@ -251,7 +251,7 @@ The following command will make Gradience show welcome screen on next launch, li
 flatpak run --command=gsettings com.github.GradienceTeam.Gradience reset com.github.GradienceTeam.Gradience first-run
 ```
 
-#### Other installation methods
+#### Alternative installation methods
 
 ```shell
 gsettings reset com.github.GradienceTeam.Gradience first-run
