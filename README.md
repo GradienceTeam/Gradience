@@ -239,9 +239,29 @@ ninja -C builddir run
 > During testing and development, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
 
 
+## 🎛️ Miscellaneous
+
+### Show welcome window again
+
+The following command will make Gradience show welcome screen on next launch, like you just installed it
+
+#### Flatpak
+
+```shell
+flatpak run --command=gsettings com.github.GradienceTeam.Gradience reset com.github.GradienceTeam.Gradience first-run
+```
+
+#### Other installation methods
+
+```shell
+gsettings reset com.github.GradienceTeam.Gradience first-run
+```
+
+
 ## 🙌 Contribute to Gradience 
 
 ### Code
+
 Fork this repository, then create a push request when you're done adding features or fixing bugs.
 
 ### Localization 
