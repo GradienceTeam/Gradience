@@ -1,4 +1,5 @@
 from pathlib import Path
+from configparser import ConfigParser
 
 from yapsy.IPlugin import IPlugin
 
@@ -114,14 +115,34 @@ class FirefoxGnomeTheme2Plugin(IPlugin):
         return False
 
     def apply(self, dark_theme=False):
-        for path in ["~/.mozilla/firefox", "~/.librewolf",
-                     "~/.var/app/org.mozilla.firefox/.mozilla/firefox",
-                     "~/.var/app/io.gitlab.librewolf-community/.librewolf"]:
+        for path in [
+            "~/.mozilla/firefox",
+            "~/.librewolf",
+            "~/.var/app/org.mozilla.firefox/.mozilla/firefox",
+            "~/.var/app/io.gitlab.librewolf-community/.librewolf",
+        ]:
             try:
-                for result in Path(path).expanduser().glob("*.*"):
-                    if Path.is_dir(result):
-                        with open(f"{result}/chrome/firefox-gnome-theme/customChrome.css","w") as f:
-                            f.write(self.template.format(**self.variables))
+                directory = Path(path).expanduser()
+                cp = ConfigParser()
+                cp.read(str(directory / "profiles.ini"))
+                results = []
+                for section in cp.sections():
+                    if not section.startswith("Profile"):
+                        continue
+                    if cp[section]["IsRelative"] == 0:
+                        results.append(Path(cp[section]["Path"]))
+                    else:
+                        results.append(directory / Path(cp[section]["Path"]))
+                for result in results:
+                    try:
+                        if result.resolve().is_dir():
+                            with open(
+                                f"{result}/chrome/firefox-gnome-theme/customChrome.css",
+                                "w",
+                            ) as f:
+                                f.write(self.template.format(**self.variables))
+                    except OSError:
+                        pass
             except OSError:
                 pass
             except StopIteration:
