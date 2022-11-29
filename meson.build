@@ -1,5 +1,5 @@
 project('gradience',
-          version: '0.3.2',
+          version: '0.3.3',
     meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2',
                      'werror=false',

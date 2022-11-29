@@ -1059,23 +1059,11 @@ class GradienceApplication(Adw.Application):
             release_notes=_(
 """
 <ul>
-<li>Firefox GNOME theme plugin now correctly parses installations with multiple profiles</li>
-<li>Esc now closes dialogs and Preset Manager</li>
-<li>Added mnemonics for dialogs</li>
-<li>Save is now a default response in dialogs</li>
-<li>Plugins rows now look cleaner and are correctly placed</li>
-<li>File picker is now modal and sticks to the parent window</li>
-<li>Gradience can now be closed with Ctrl+Q</li>
-<li>"Favourite(s)" was renamed to "Favorite(s)"</li>
-<li>Тransition from cssutils to an in-house solution</li>
-<li>Fixed issues with the CSS parser</li>
-<li>Fixed an issue with presets always being saved as User.json</li>
-<li>Presets are now removed correctly</li>
-<li>The Internal structure was refactored</li>
-<li>Various typos were fixed</li>
-<li>The README was fully rewritten</li>
-<li>All screenshots were taken in high resolution</li>
-<li>New and updated translations</li>
+<li>Theme Preview button enabled back</li>
+<li>The Firefox GNOME theme plugin settings button moved to the right of the switch</li>
+<li>Details tab in About dialog has been improved</li>
+<li>The "Log out" dialog logic have been changed, now it only asks for logout, but does not provide a button to logout</li>
+<li>Updated translations</li>
 </ul>
 """
             ),
