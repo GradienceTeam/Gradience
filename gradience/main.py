@@ -1085,6 +1085,7 @@ The main features of Gradience include the following:
             [
                 "0xMRTT https://github.com/0xMRTT",
                 "Apisu https://github.com/aspizu",
+                "Jonathan Lestrelin https://github.com/jle64",
             ],
         )
         about.add_credit_section(
