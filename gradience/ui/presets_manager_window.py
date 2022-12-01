@@ -29,7 +29,7 @@ from gradience.ui.preset_row import GradiencePresetRow
 from gradience.ui.builtin_preset_row import GradienceBuiltinPresetRow
 from gradience.ui.explore_preset_row import GradienceExplorePresetRow
 from gradience.ui.repo_row import GradienceRepoRow
-from gradience.utils.custom_presets import fetch_presets
+from gradience.utils.preset_downloader import fetch_presets
 from gradience.utils.preset import presets_dir
 from gradience.utils.utils import buglog
 from gradience.constants import rootdir

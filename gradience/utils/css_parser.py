@@ -1,4 +1,4 @@
-# css.py
+# css_parser.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team

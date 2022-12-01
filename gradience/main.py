@@ -32,7 +32,7 @@ from gradience.ui.app_type_dialog import GradienceAppTypeDialog
 from gradience.ui.custom_css_group import GradienceCustomCSSGroup
 from gradience.ui.presets_manager_window import GradiencePresetWindow
 from gradience.ui.preferences_window import GradiencePreferencesWindow
-from gradience.utils.css import parse_css
+from gradience.utils.css_parser import parse_css
 from gradience.utils.utils import to_slug_case, buglog, run_command
 from gradience.utils.preset import Preset, presets_dir
 from gradience.settings_schema import settings_schema

@@ -1,4 +1,4 @@
-# custom_presets.py
+# preset_downloader.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team

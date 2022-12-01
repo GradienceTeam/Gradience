@@ -21,7 +21,7 @@ import os
 from gi.repository import Gtk, Adw
 
 from gradience.utils.utils import to_slug_case, buglog
-from gradience.utils.custom_presets import download_preset
+from gradience.utils.preset_downloader import download_preset
 from gradience.constants import rootdir
 
 

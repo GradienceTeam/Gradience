@@ -48,11 +48,11 @@ PY_INSTALLDIR.install_sources(gradience_sources, subdir: 'gradience')
 # Install utility modules
 gradience_utils = [
   'utils/__init__.py',
-  'utils/custom_presets.py',
+  'utils/preset_downloader.py',
   'utils/flatpak_overrides.py',
   'utils/utils.py',
   'utils/run_async.py',
-  'utils/css.py',
+  'utils/css_parser.py',
   'utils/preset.py',
   'utils/repo.py',
 ]
