@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+
+# gradience.in
+#
+# Change the look of Adwaita, with ease
+# Copyright (C) 2022 Gradience Team
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+import os
+import sys
+import signal
+import locale
+import shutil
+import gettext
+
+is_local = @local_build@
+
+if is_local:
+    # In the local use case, use gradience module from the sourcetree
+    sys.path.insert(1, '@PYTHON@')
+
+    # In the local use case the installed schemas go in <builddir>/data
+    os.environ["XDG_DATA_DIRS"] = '@SCHEMAS_DIR@:' + os.environ.get("XDG_DATA_DIRS", "")
+
+    shutil.copyfile(
+        os.path.join('@BUILD_DIR@', "gradience/backend", "constants.py"),
+        os.path.join('@SOURCE_DIR@', "gradience/backend", "constants.py")
+    )
+
+pkgdatadir = '@PKGDATA_DIR@'
+localedir = '@LOCALE_DIR@'
+
+sys.dont_write_bytecode = True
+
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+gettext.install('gradience', localedir)
+
+locale.bindtextdomain('gradience', localedir)
+locale.textdomain('gradience')
+
+
+if __name__ == '__main__':
+    import gi
+
+    gi.require_version('Gtk', '4.0')
+    gi.require_version('Adw', '1')
+    gi.require_version('Xdp', '1.0')
+    gi.require_version('XdpGtk4', '1.0')
+    gi.require_version('Soup', '3.0')
+
+    from gi.repository import Gio
+    resource = Gio.Resource.load(
+        os.path.join(pkgdatadir, 'gradience.gresource'))
+    Gio.Resource._register(resource)
+
+    sys.path.insert(1, "/usr/local/lib/python3.10/site-packages")
+
+    from gradience.frontend import main
+    sys.exit(main.main())
