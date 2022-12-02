@@ -20,7 +20,7 @@ import re
 
 
 # Adwaita named palette colors dict
-COLORS = [
+adw_colors = [
     "blue_",
     "green_",
     "yellow_",
@@ -41,7 +41,7 @@ def parse_css(path):
     variables = {}
     palette = {}
 
-    for color in COLORS:
+    for color in adw_colors:
         palette[color] = {}
 
     with open(path, "r", encoding="utf-8") as sheet:
@@ -51,7 +51,7 @@ def parse_css(path):
             if cdefine_match != None: # If @define-color variable declarations were found
                 palette_part = cdefine_match.__getitem__(1) # Get the second item of the re.Match object
                 name, color = palette_part.split(" ", 1)[1].split(" ", 1)
-                for color_name in COLORS:
+                for color_name in adw_colors:
                     if name.startswith(color_name): # Palette colors
                         palette[name[:-1]][name[-1:]] = color[:-1]
                         break

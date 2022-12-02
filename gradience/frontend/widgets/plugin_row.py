@@ -26,7 +26,6 @@ from gradience.backend.utils.common import buglog
 from gradience.backend.constants import rootdir
 
 
-
 USER_PLUGIN_DIR = Path(
     os.path.join(
         os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),

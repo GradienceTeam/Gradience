@@ -22,17 +22,18 @@ import json
 
 from collections import OrderedDict
 from pathlib import Path
-
 from gi.repository import Gtk, Adw, GLib
+
+from gradience.backend.preset_downloader import fetch_presets
+from gradience.backend.models.preset import presets_dir
+from gradience.backend.utils.common import buglog
+from gradience.backend.constants import rootdir
 
 from gradience.frontend.widgets.preset_row import GradiencePresetRow
 from gradience.frontend.widgets.builtin_preset_row import GradienceBuiltinPresetRow
 from gradience.frontend.widgets.explore_preset_row import GradienceExplorePresetRow
 from gradience.frontend.widgets.repo_row import GradienceRepoRow
-from gradience.backend.preset_downloader import fetch_presets
-from gradience.backend.models.preset import presets_dir
-from gradience.backend.utils.common import buglog
-from gradience.backend.constants import rootdir
+
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
 class GradiencePresetWindow(Adw.Window):
