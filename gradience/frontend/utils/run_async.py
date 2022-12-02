@@ -22,7 +22,7 @@ import traceback
 
 from gi.repository import GLib
 
-from gradience.backend.utils.utils import buglog
+from gradience.backend.utils.common import buglog
 
 
 class RunAsync(threading.Thread):

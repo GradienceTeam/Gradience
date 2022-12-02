@@ -27,7 +27,7 @@ from material_color_utilities_python import *
 from gradience.frontend.widgets.error_list_row import GradienceErrorListRow
 from gradience.frontend.widgets.palette_shades import GradiencePaletteShades
 from gradience.frontend.widgets.option_row import GradienceOptionRow
-from gradience.backend.utils.utils import buglog
+from gradience.backend.utils.common import buglog
 from gradience.frontend.settings_schema import settings_schema
 from gradience.backend.constants import rootdir, app_id, build_type
 

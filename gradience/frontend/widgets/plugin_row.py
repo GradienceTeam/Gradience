@@ -22,7 +22,7 @@ from pathlib import Path
 from gi.repository import Gtk, Adw
 
 from gradience.frontend.dialogs.no_plugin_window import GradienceNoPluginPrefWindow
-from gradience.backend.utils.utils import buglog
+from gradience.backend.utils.common import buglog
 from gradience.backend.constants import rootdir
 
 

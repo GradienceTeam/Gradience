@@ -21,7 +21,7 @@ import os
 from gi.repository import Gtk, Adw, Xdp, XdpGtk4
 
 from gradience.frontend.views.share_window import GradienceShareWindow
-from gradience.backend.utils.utils import to_slug_case, buglog
+from gradience.backend.utils.common import to_slug_case, buglog
 from gradience.backend.models.preset import Preset, presets_dir
 from gradience.backend.constants import rootdir
 

@@ -20,7 +20,7 @@ import json
 import os
 
 from gradience.frontend.settings_schema import settings_schema
-from gradience.backend.utils.utils import buglog, to_slug_case
+from gradience.backend.utils.common import buglog, to_slug_case
 
 
 presets_dir = os.path.join(

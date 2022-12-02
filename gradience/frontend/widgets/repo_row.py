@@ -21,7 +21,7 @@ import os
 from gi.repository import Gtk, Adw
 
 from gradience.backend.constants import rootdir
-from gradience.backend.utils.utils import to_slug_case
+from gradience.backend.utils.common import to_slug_case
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/repo_row.ui")

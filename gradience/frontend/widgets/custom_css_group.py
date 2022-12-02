@@ -18,7 +18,7 @@
 
 from gi.repository import Gtk, Adw
 
-from gradience.backend.utils.utils import buglog
+from gradience.backend.utils.common import buglog
 from gradience.backend.constants import rootdir
 
 

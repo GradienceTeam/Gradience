@@ -31,7 +31,7 @@ from gradience.frontend.widgets.explore_preset_row import GradienceExplorePreset
 from gradience.frontend.widgets.repo_row import GradienceRepoRow
 from gradience.backend.preset_downloader import fetch_presets
 from gradience.backend.models.preset import presets_dir
-from gradience.backend.utils.utils import buglog
+from gradience.backend.utils.common import buglog
 from gradience.backend.constants import rootdir
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")

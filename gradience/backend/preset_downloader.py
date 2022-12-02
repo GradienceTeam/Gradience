@@ -22,7 +22,7 @@ import json
 from gi.repository import GLib, Soup
 
 from gradience.backend.models.preset import presets_dir
-from gradience.backend.utils.utils import to_slug_case, buglog
+from gradience.backend.utils.common import to_slug_case, buglog
 
 
 # Open Soup3 session

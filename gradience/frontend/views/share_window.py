@@ -22,7 +22,7 @@ import time
 from gi.repository import Gtk, Adw, Gio
 
 from gradience.frontend.utils.run_async import RunAsync
-from gradience.backend.utils.utils import buglog
+from gradience.backend.utils.common import buglog
 from gradience.backend.flatpak_overrides import create_gtk_user_override
 from gradience.backend.constants import rootdir, app_id, rel_ver
 

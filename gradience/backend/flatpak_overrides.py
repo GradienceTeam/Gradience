@@ -20,7 +20,7 @@ import os
 
 from gi.repository import GLib, Gio, Adw
 
-from gradience.backend.utils.utils import buglog
+from gradience.backend.utils.common import buglog
 
 
 """ Custom exception class """

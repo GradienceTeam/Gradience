@@ -22,7 +22,7 @@ from gi.repository import Adw, GLib
 from yapsy.PluginManager import PluginManager
 
 from gradience.frontend.widgets.plugin_row import GradiencePluginRow
-from gradience.backend.utils.utils import buglog
+from gradience.backend.utils.common import buglog
 from gradience.backend.constants import pkgdatadir
 
 

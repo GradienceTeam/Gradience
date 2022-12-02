@@ -33,7 +33,7 @@ from gradience.frontend.widgets.custom_css_group import GradienceCustomCSSGroup
 from gradience.frontend.views.presets_manager_window import GradiencePresetWindow
 from gradience.frontend.views.preferences_window import GradiencePreferencesWindow
 from gradience.backend.css_parser import parse_css
-from gradience.backend.utils.utils import to_slug_case, buglog, run_command
+from gradience.backend.utils.common import to_slug_case, buglog, run_command
 from gradience.backend.models.preset import Preset, presets_dir
 from gradience.frontend.settings_schema import settings_schema
 from gradience.frontend.views.plugins_list import GradiencePluginsList

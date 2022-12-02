@@ -27,7 +27,7 @@ from gradience.backend.flatpak_overrides import (
     create_gtk_global_override,
     remove_gtk_global_override,
 )
-from gradience.backend.utils.utils import buglog
+from gradience.backend.utils.common import buglog
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/preferences_window.ui")
