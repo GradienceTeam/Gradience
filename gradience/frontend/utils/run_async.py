@@ -22,7 +22,9 @@ import traceback
 
 from gi.repository import GLib
 
-from gradience.backend.utils.common import buglog
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 class RunAsync(threading.Thread):
@@ -45,14 +47,14 @@ class RunAsync(threading.Thread):
         result = None
         error = None
 
-        buglog(f"Running async job [{self.task_func}].")
+        logging.debug(f"Running async job [{self.task_func}].")
 
         try:
             result = self.task_func(*args, **kwargs)
-        except Exception as exception:
-            buglog(
+        except Exception as e:
+            logging.error(
                 "Error while running async job: "
-                f"{self.task_func}\nException: {exception}"
+                f"{self.task_func}\nExc: {e}"
             )
 
             error = exception
@@ -60,6 +62,6 @@ class RunAsync(threading.Thread):
             traceback.print_tb(trace)
             traceback_info = "\n".join(traceback.format_tb(trace))
 
-            buglog([str(exception), traceback_info])
+            logging.error([str(exception), traceback_info])
         self.source_id = GLib.idle_add(self.callback, result, error)
         return self.source_id

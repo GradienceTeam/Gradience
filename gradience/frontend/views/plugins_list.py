@@ -22,8 +22,11 @@ from gi.repository import Adw, GLib
 from yapsy.PluginManager import PluginManager
 
 from gradience.frontend.widgets.plugin_row import GradiencePluginRow
-from gradience.backend.utils.common import buglog
 from gradience.backend.constants import pkgdatadir
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 USER_PLUGIN_DIR = os.path.join(
@@ -120,7 +123,7 @@ class GradiencePluginsList:
             try:
                 saved[pluginInfo.plugin_object.plugin_id] = pluginInfo.plugin_object.save()
             except AttributeError:
-                buglog(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
+                logging.warning(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
         return saved
 
     def validate(self):
@@ -131,15 +134,15 @@ class GradiencePluginsList:
                 if error:
                     errors.append(detail)
             except AttributeError:
-                    buglog(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'validatee'")
+                    logging.error(f"Plugin {pluginInfo.plugin_object.plugin_id} doesn't have 'validatee'")
         return errors
 
     def apply(self):
         for pluginInfo in self.pm.getAllPlugins():
             if pluginInfo.plugin_object.plugin_id in self.enabled_plugins:
-                print(buglog(pluginInfo.plugin_object))
+                logging.debug(pluginInfo.plugin_object)
                 try:
                     pluginInfo.plugin_object.apply()
                 except AttributeError:
-                    buglog(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
+                    logging.error(f"Plugin {pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
 

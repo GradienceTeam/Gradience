@@ -27,7 +27,10 @@ from gradience.backend.flatpak_overrides import (
     create_gtk_global_override,
     remove_gtk_global_override,
 )
-from gradience.backend.utils.common import buglog
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/preferences_window.ui")
@@ -85,7 +88,7 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         else:
             remove_gtk_user_override(self, self.settings, "gtk4")
 
-            buglog(
+            logging.debug(
                 f"user-flatpak-theming-gtk4: {self.settings.get_boolean('user-flatpak-theming-gtk4')}"
             )
 
@@ -97,7 +100,7 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         else:
             remove_gtk_user_override(self, self.settings, "gtk3")
 
-            buglog(
+            logging.debug(
                 f"user-flatpak-theming-gtk3: {self.settings.get_boolean('user-flatpak-theming-gtk3')}"
             )
 
@@ -109,7 +112,7 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         else:
             remove_gtk_global_override(self, self.settings, "gtk4")
 
-            buglog(
+            logging.debug(
                 f"global-flatpak-theming-gtk4: {self.settings.get_boolean('global-flatpak-theming-gtk4')}"
             )
 
@@ -121,6 +124,6 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         else:
             remove_gtk_global_override(self, self.settings, "gtk3")
 
-            buglog(
+            logging.debug(
                 f"global-flatpak-theming-gtk3: {self.settings.get_boolean('global-flatpak-theming-gtk3')}"
             )

@@ -26,13 +26,16 @@ from gi.repository import Gtk, Adw, GLib
 
 from gradience.backend.preset_downloader import fetch_presets
 from gradience.backend.models.preset import presets_dir
-from gradience.backend.utils.common import buglog
 from gradience.backend.constants import rootdir
 
 from gradience.frontend.widgets.preset_row import GradiencePresetRow
 from gradience.frontend.widgets.builtin_preset_row import GradienceBuiltinPresetRow
 from gradience.frontend.widgets.explore_preset_row import GradienceExplorePresetRow
 from gradience.frontend.widgets.repo_row import GradienceRepoRow
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/presets_manager_window.ui")
@@ -131,7 +134,7 @@ class GradiencePresetWindow(Adw.Window):
             self.search_stack.set_visible_child_name("page_offline")
 
     def add_explore_rows(self):
-        buglog(self._repos)
+        logging.debug(self._repos)
 
         for repo_name, repo in self._repos.items():
             self.search_string_list.append(repo_name)
@@ -229,10 +232,10 @@ class GradiencePresetWindow(Adw.Window):
 
     def on_search_changed(self, *args):
         search_text = self.search_entry.props.text
-        buglog("[New search query]")
-        buglog(f"Presets amount: {len(self.search_results_list)}")
-        buglog(f"Search string: {search_text}")
-        buglog("Items found:")
+        logging.debug("[New search query]")
+        logging.debug(f"Presets amount: {len(self.search_results_list)}")
+        logging.debug(f"Search string: {search_text}")
+        logging.debug("Items found:")
         items_count = 0
         if not self.offline:
             self.search_stack.set_visible_child_name("page_results")
@@ -244,12 +247,12 @@ class GradiencePresetWindow(Adw.Window):
                         if search_text.lower() in widget.props.title.lower():
                             widget.props.visible = True
                             items_count += 1
-                            buglog(widget.props.title)
+                            logging.debug(widget.props.title)
                 else:
                     if search_text.lower() in widget.props.title.lower():
                         widget.props.visible = True
                         items_count += 1
-                        buglog(widget.props.title)
+                        logging.debug(widget.props.title)
                     elif search_text == "":
                         widget.props.visible = True
                         items_count += 1
@@ -300,7 +303,7 @@ class GradiencePresetWindow(Adw.Window):
         self.reload_pref_group()
 
     def reload_pref_group(self):
-        buglog("reload")
+        logging.debug("reload")
 
         if not os.path.exists(presets_dir):
             os.makedirs(presets_dir)
@@ -313,7 +316,7 @@ class GradiencePresetWindow(Adw.Window):
         }
 
         for repo in Path(presets_dir).iterdir():
-            buglog(f"presets_dir.iterdir: {repo}")
+            logging.debug(f"presets_dir.iterdir: {repo}")
             if repo.is_dir():  # repo
                 presets_list = {}
                 for file_name in repo.iterdir():
@@ -335,13 +338,13 @@ class GradiencePresetWindow(Adw.Window):
                                 "name"
                             ]
                         except Exception as e:
-                            buglog(f"reload_pref_group exception: {e}")
+                            logging.error(f"reload_pref_group exception: {e}")
                             self.toast_overlay.add_toast(
                                 Adw.Toast(title=_("Failed to load preset"))
                             )
                 self.custom_presets[repo.name] = presets_list
             elif repo.is_file():
-                buglog("file")
+                logging.debug("file")
                 # keep compatibility with old presets
                 if repo.name.endswith(".json"):
                     if not os.path.isdir(os.path.join(presets_dir, "user")):
@@ -366,11 +369,11 @@ class GradiencePresetWindow(Adw.Window):
                             "name"
                         ]
                     except Exception as e:
-                        buglog(f"reload_pref_group exception: {e}")
+                        logging.error(f"reload_pref_group exception: {e}")
                         self.toast_overlay.add_toast(
                             Adw.Toast(title=_("Failed to load preset"))
                         )
-                    buglog(self.custom_presets)
+                    logging.debug(self.custom_presets)
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
 
@@ -391,14 +394,14 @@ class GradiencePresetWindow(Adw.Window):
             )
         )
 
-        buglog(f"custom_presets: {self.custom_presets}")
+        logging.debug(f"custom_presets: {self.custom_presets}")
 
         presets_check = not (
             len(self.custom_presets["user"]) == 0
             and len(self.custom_presets["official"]) == 0
             and len(self.custom_presets["curated"]) == 0
         )
-        buglog(f"preset_check: {presets_check}")
+        logging.debug(f"preset_check: {presets_check}")
 
         if presets_check:
             for repo, presets in self.custom_presets.items():

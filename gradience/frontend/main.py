@@ -27,7 +27,7 @@ from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset, presets_dir
-from gradience.backend.utils.common import to_slug_case, buglog, run_command
+from gradience.backend.utils.common import to_slug_case
 from gradience.backend.constants import *
 
 from gradience.frontend.views.main_window import GradienceMainWindow
@@ -40,6 +40,10 @@ from gradience.frontend.dialogs.app_type_dialog import GradienceAppTypeDialog
 from gradience.frontend.widgets.custom_css_group import GradienceCustomCSSGroup
 
 from gradience.frontend.settings_schema import settings_schema
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 class GradienceApplication(Adw.Application):
@@ -141,7 +145,7 @@ class GradienceApplication(Adw.Application):
                 welcome = GradienceWelcomeWindow(self.win, update=True)
                 welcome.present()
             else:
-                buglog("normal run")
+                logging.debug("normal run")
                 self.win.present()
 
     def save_favourite(self):
@@ -184,7 +188,7 @@ class GradienceApplication(Adw.Application):
 
                 self.custom_presets[repo.name] = presets_list
             elif repo.is_file():
-                buglog("file")
+                logging.debug("file")
                 # keep compatibility with old presets
                 if repo.name.endswith(".json"):
                     if not os.path.isdir(os.path.join(presets_dir, "user")):
@@ -213,7 +217,7 @@ class GradienceApplication(Adw.Application):
                             Adw.Toast(title=_("Failed to load preset"))
                         )
 
-                    buglog(self.custom_presets)
+                    logging.debug(self.custom_presets)
         custom_menu_section = Gio.Menu()
         try:
             if (
@@ -224,7 +228,7 @@ class GradienceApplication(Adw.Application):
                 for repo, content in self.custom_presets.items():
 
                     for preset, preset_name in content.items():
-                        buglog(preset_name)
+                        logging.debug(preset_name)
                         if preset_name in self.favourite:
                             menu_item = Gio.MenuItem()
                             menu_item.set_label(preset_name)
@@ -287,7 +291,7 @@ class GradienceApplication(Adw.Application):
             self.preset = Preset(preset=preset)
             self.load_preset_variables_from_preset()
         except OSError:  # fallback to adwaita
-            buglog("Custom preset not found. Fallback to Adwaita")
+            logging.warning("Custom preset not found. Fallback to Adwaita")
             if self.style_manager.get_dark():
                 self.load_preset_from_resource(
                     f"{rootdir}/presets/adwaita-dark.json")
@@ -315,7 +319,7 @@ class GradienceApplication(Adw.Application):
         )
 
     def load_preset_from_file(self, preset_path):
-        buglog(f"load preset from file {preset_path}")
+        logging.debug(f"load preset from file {preset_path}")
         self.preset = Preset(preset_path=preset_path)
         self.load_preset_variables_from_preset()
 
@@ -329,7 +333,7 @@ class GradienceApplication(Adw.Application):
         if preset is not None:
             self.preset = preset
         self.is_ready = False
-        buglog(self.preset)
+        logging.debug(self.preset)
         self.preset_name = self.preset.display_name
         self.variables = self.preset.variables
         self.palette = self.preset.palette
@@ -1162,7 +1166,7 @@ The main features of Gradience include the following:
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
     def setup_plugins(self):
-        buglog("setup plugins")
+        logging.debug("setup plugins")
         self.plugins_group = self.plugins_list.to_group()
 
         self.win.content_plugins.add(self.plugins_group)
@@ -1182,7 +1186,7 @@ The main features of Gradience include the following:
 
     def reload_plugins(self):
         self.plugins_list.reload()
-        buglog("reload plugins")
+        logging.debug("reload plugins")
         self.win.content_plugins.remove(self.plugins_group)
         self.win.content_plugins.remove(self.custom_css_group)
 

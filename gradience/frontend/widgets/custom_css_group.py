@@ -18,8 +18,11 @@
 
 from gi.repository import Gtk, Adw
 
-from gradience.backend.utils.common import buglog
 from gradience.backend.constants import rootdir
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/custom_css_group.ui")
@@ -52,8 +55,8 @@ class GradienceCustomCSSGroup(Adw.PreferencesGroup):
     @Gtk.Template.Callback()
     def on_dropdown_notify(self, _unused, pspec):
         if pspec.name == "selected":
-            buglog(f"Custom CSS values: {self.custom_css.values()}")
-            buglog(f"Selected app type in dropdown: {self.app_type_dropdown.get_selected()}")
+            logging.debug(f"Custom CSS values: {self.custom_css.values()}")
+            logging.debug(f"Selected app type in dropdown: {self.app_type_dropdown.get_selected()}")
             self.custom_css_text_view.get_buffer().set_text(
                 list(self.custom_css.values())[
                     self.app_type_dropdown.get_selected()]

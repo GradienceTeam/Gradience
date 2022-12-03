@@ -22,9 +22,12 @@ import time
 from gi.repository import Gtk, Adw, Gio
 
 from gradience.frontend.utils.run_async import RunAsync
-from gradience.backend.utils.common import buglog
 from gradience.backend.flatpak_overrides import create_gtk_user_override
 from gradience.backend.constants import rootdir, app_id, rel_ver
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/share_window.ui")

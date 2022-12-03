@@ -17,39 +17,19 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import re
-import logging
 import os
+import subprocess
 
-from subprocess import run
 from anyascii import anyascii
-
-from gradience.backend.constants import build_type
-
-
-if build_type == "debug":
-    logging.basicConfig(
-        level=logging.DEBUG, format="[%(levelname)s] [%(name)s] %(message)s"
-    )
-else:
-    logging.basicConfig(
-        level=logging.WARNING, format="[%(levelname)s] [%(name)s] %(message)s"
-    )
 
 
 def to_slug_case(non_slug):
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
-
-# Use it instead of print(), so there isn't any output in stdout if
-# Gradience is build in release mode
-def buglog(*args):
-    logging.debug(*args)
-
 def run_command(command, *args, **kwargs):
-
     if isinstance(command, str): # run on the host
         command = [command]
     if os.environ.get('FLATPAK_ID'): # run in flatpak
         command = ['flatpak-spawn', '--host'] + command
 
-    return run(command, *args, **kwargs)
+    return subprocess.run(command, *args, **kwargs)
