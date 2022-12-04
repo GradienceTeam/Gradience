@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-03 12:12+0000\n"
+"POT-Creation-Date: 2022-12-04 00:40+0000\n"
 "PO-Revision-Date: 2022-12-02 21:47+0000\n"
 "Last-Translator: rene-coty <irenee.thirion@e.email>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -29,7 +29,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:1005
+#: data/ui/window.blp:5 gradience/frontend/main.py:999
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -39,7 +39,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Changez l’apparence d’Adwaita simplement"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:1007
+#: gradience/frontend/main.py:1001
 msgid "Gradience Team"
 msgstr "L’équipe Gradience"
 
@@ -299,7 +299,7 @@ msgstr "Importer un fichier de pré-configuration"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: data/ui/presets_manager_window.blp:47 gradience/main.py:258
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:252
 msgid "Open in File Manager"
 msgstr "Ouvrir dans le gestionnaire de fichiers"
 
@@ -340,8 +340,8 @@ msgid "Offline"
 msgstr "Hors ligne"
 
 #: data/ui/presets_manager_window.blp:146
-#: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:423
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:424
 msgid "Repositories"
 msgstr "Référentiels"
 
@@ -517,9 +517,13 @@ msgstr "Modification du thème des applications anciennes"
 msgid "System Configuration"
 msgstr "Configuration système"
 
-#: data/ui/window.blp:29 gradience/ui/window.py:141
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:141
 msgid "Apply"
 msgstr "Appliquer"
+
+#: data/ui/window.blp:37
+msgid "Preview Theme in…"
+msgstr ""
 
 #: data/ui/window.blp:47
 msgid "Main Menu"
@@ -573,7 +577,8 @@ msgstr "GTK 4 Demo"
 msgid "GTK 4 Widget Factory"
 msgstr "Fabrique de widgets GTK 4"
 
-#: data/ui/window.blp:167 gradience/ui/presets_manager_window.py:110
+#: data/ui/window.blp:167
+#: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "Pré-configurations incluses"
 
@@ -581,123 +586,129 @@ msgstr "Pré-configurations incluses"
 msgid "Manage Presets"
 msgstr "Gérer les pré-configurations"
 
-#: gradience/utils/flatpak_overrides.py:65
-#: gradience/utils/flatpak_overrides.py:84
+#: gradience/backend/flatpak_overrides.py:65
+#: gradience/backend/flatpak_overrides.py:84
 msgid "Failed to save override"
 msgstr "Échec de l'enregistrement du pré réglage"
 
-#: gradience/utils/flatpak_overrides.py:152
-#: gradience/utils/flatpak_overrides.py:212
-#: gradience/utils/flatpak_overrides.py:295
-#: gradience/utils/flatpak_overrides.py:357
+#: gradience/backend/flatpak_overrides.py:152
+#: gradience/backend/flatpak_overrides.py:212
+#: gradience/backend/flatpak_overrides.py:295
+#: gradience/backend/flatpak_overrides.py:357
 msgid "Unexpected file error occurred"
 msgstr "Une erreur de fichier inattendue s’est produite"
 
-#: gradience/ui/app_type_dialog.py:44 gradience/main.py:655
+#: gradience/frontend/dialogs/app_type_dialog.py:44
+#: gradience/frontend/main.py:649
 msgid "_Cancel"
 msgstr "A_nnuler"
 
-#: gradience/ui/explore_preset_row.py:62 gradience/ui/explore_preset_row.py:88
+#: gradience/frontend/widgets/explore_preset_row.py:62
+#: gradience/frontend/widgets/explore_preset_row.py:88
 msgid "Preset could not be downloaded"
 msgstr "La pré-configuration n’a pas pu être téléchargée"
 
-#: gradience/ui/explore_preset_row.py:77 gradience/ui/explore_preset_row.py:93
+#: gradience/frontend/widgets/explore_preset_row.py:77
+#: gradience/frontend/widgets/explore_preset_row.py:93
 msgid "Preset downloaded"
 msgstr "Pré-configuration téléchargée"
 
-#: gradience/ui/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:49
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr "Cette option n'est que partiellement supportée par le thème adw-gtk3."
 
-#: gradience/ui/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:54
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Cette option n'est pas supportée par le thème adw-gtk3."
 
-#: gradience/ui/option_row.py:97
+#: gradience/frontend/widgets/option_row.py:97
 msgid "Not a color, see text value"
 msgstr "Couleur invalide, voir la valeur du texte"
 
-#: gradience/ui/plugin_row.py:86
+#: gradience/frontend/widgets/plugin_row.py:85
 msgid "Unable to remove"
 msgstr "Impossible de supprimer"
 
-#: gradience/ui/plugin_row.py:87
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed. "
 msgstr "Il s’agit d’un greffon système, qui ne peut être supprimé. "
 
-#: gradience/ui/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:88
 msgid "Close"
 msgstr "Fermer"
 
-#: gradience/ui/preset_row.py:83 gradience/ui/preset_row.py:102
+#: gradience/frontend/widgets/preset_row.py:83
+#: gradience/frontend/widgets/preset_row.py:102
 msgid "Remove from Favorites"
 msgstr "Supprimer des favoris"
 
-#: gradience/ui/preset_row.py:86 gradience/ui/preset_row.py:98
+#: gradience/frontend/widgets/preset_row.py:86
+#: gradience/frontend/widgets/preset_row.py:98
 msgid "Add to Favorites"
 msgstr "Ajouter aux favoris"
 
-#: gradience/ui/preset_row.py:150
+#: gradience/frontend/widgets/preset_row.py:150
 msgid "Preset removed"
 msgstr "Pré-configuration supprimée"
 
-#: gradience/ui/preset_row.py:151
+#: gradience/frontend/widgets/preset_row.py:151
 msgid "Undo"
 msgstr "Annuler"
 
-#: gradience/ui/preset_row.py:164
+#: gradience/frontend/widgets/preset_row.py:164
 msgid "Pending Deletion"
 msgstr "Suppression en cours"
 
-#: gradience/ui/preset_row.py:182
+#: gradience/frontend/widgets/preset_row.py:182
 msgid "Unable to delete preset"
 msgstr "La suppression de la configuration a échoué"
 
-#: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:384
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:385
 msgid "User Presets"
 msgstr "Configurations de l’utilisateur"
 
-#: gradience/ui/presets_manager_window.py:183
+#: gradience/frontend/views/presets_manager_window.py:184
 msgid "Add new repository"
 msgstr "Ajouter un nouveau référentiel"
 
-#: gradience/ui/presets_manager_window.py:184
+#: gradience/frontend/views/presets_manager_window.py:185
 msgid "Add a repository to install additional presets."
 msgstr ""
 "Ajoutez un dépôt pour installer des pré-configurations supplémentaires."
 
-#: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
+#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/main.py:722
 msgid "Cancel"
 msgstr "Annuler"
 
-#: gradience/ui/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 msgid "Add"
 msgstr "Ajouter"
 
-#: gradience/ui/presets_manager_window.py:281
+#: gradience/frontend/views/presets_manager_window.py:282
 msgid "Preset already exists"
 msgstr "La pré-configuration existe déjà"
 
-#: gradience/ui/presets_manager_window.py:293
+#: gradience/frontend/views/presets_manager_window.py:294
 msgid "Preset imported"
 msgstr "Pré-configuration importée"
 
-#: gradience/ui/presets_manager_window.py:296
+#: gradience/frontend/views/presets_manager_window.py:297
 msgid "Unsupported file format, must be .json"
 msgstr "Format de fichier non pris en charge, il devrait être .json"
 
-#: gradience/ui/presets_manager_window.py:339
-#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
-#: gradience/main.py:219
+#: gradience/frontend/views/presets_manager_window.py:340
+#: gradience/frontend/views/presets_manager_window.py:371
+#: gradience/frontend/main.py:182 gradience/frontend/main.py:213
 msgid "Failed to load preset"
 msgstr "Le chargement de la configuration à échoué"
 
-#: gradience/ui/presets_manager_window.py:377
+#: gradience/frontend/views/presets_manager_window.py:378
 msgid "Built-in Presets"
 msgstr "Pré-configurations incluses"
 
-#: gradience/ui/presets_manager_window.py:387
+#: gradience/frontend/views/presets_manager_window.py:388
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -705,7 +716,7 @@ msgstr ""
 "Voir <a href=\"https://github.com/GradienceTeam/Community\">l’équipe / la "
 "communauté Gradience</a> sur Github pour plus de pré-configurations."
 
-#: gradience/ui/presets_manager_window.py:413
+#: gradience/frontend/views/presets_manager_window.py:414
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -713,19 +724,19 @@ msgstr ""
 "Aucune pré-configuration trouvée ! Utilisez le bouton d’importation pour en "
 "importer une ou cherchez-en une dans l’onglet Explorer."
 
-#: gradience/ui/repo_row.py:60
+#: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "Dépôt supprimé"
 
-#: gradience/ui/welcome_window.py:94
+#: gradience/frontend/views/welcome_window.py:94
 msgid "Thanks for updating Gradience!"
 msgstr "Merci d’avoir mis à jour Gradience !"
 
-#: gradience/ui/window.py:132
+#: gradience/frontend/views/main_window.py:132
 msgid "Monet Engine"
 msgstr "Générateur Monet"
 
-#: gradience/ui/window.py:135
+#: gradience/frontend/views/main_window.py:135
 msgid ""
 "Monet is an engine that generates a Material Design 3 palette from an "
 "image's color."
@@ -733,55 +744,57 @@ msgstr ""
 "Monet est un générateur qui génère une palette Material Design 3 depuis les "
 "couleurs d’une image."
 
-#: gradience/ui/window.py:147
+#: gradience/frontend/views/main_window.py:147
 msgid "Background Image"
 msgstr "Image d'arrière plan"
 
-#: gradience/ui/window.py:158
+#: gradience/frontend/views/main_window.py:158
 msgid "Choose a File"
 msgstr "Choisir un fichier"
 
-#: gradience/ui/window.py:178
+#: gradience/frontend/views/main_window.py:178
 msgid "Monet Palette"
 msgstr "Palette Monet"
 
-#: gradience/ui/window.py:185
+#: gradience/frontend/views/main_window.py:185
 msgid "Tone"
 msgstr "Ton"
 
-#: gradience/ui/window.py:197
+#: gradience/frontend/views/main_window.py:197
 msgid "Theme"
 msgstr "Theme"
 
-#: gradience/ui/window.py:200
+#: gradience/frontend/views/main_window.py:200
 msgid "Auto"
 msgstr "Auto"
 
-#: gradience/ui/window.py:201 gradience/settings_schema.py:372
+#: gradience/frontend/views/main_window.py:201
+#: gradience/frontend/settings_schema.py:372
 msgid "Light"
 msgstr "Clair"
 
-#: gradience/ui/window.py:202 gradience/settings_schema.py:373
+#: gradience/frontend/views/main_window.py:202
+#: gradience/frontend/settings_schema.py:373
 msgid "Dark"
 msgstr "Sombre"
 
-#: gradience/ui/window.py:224
+#: gradience/frontend/views/main_window.py:224
 msgid "Unsupported background type"
 msgstr "Type d’arrière-plan non pris en charge"
 
-#: gradience/ui/window.py:241
+#: gradience/frontend/views/main_window.py:241
 msgid "Palette generated"
 msgstr "Palette générée"
 
-#: gradience/ui/window.py:245
+#: gradience/frontend/views/main_window.py:245
 msgid "Select a background first"
 msgstr "Sélectionnez d’abord un arrière-plan"
 
-#: gradience/ui/window.py:270
+#: gradience/frontend/views/main_window.py:270
 msgid "Palette Colors"
 msgstr "Palette de couleurs"
 
-#: gradience/ui/window.py:273
+#: gradience/frontend/views/main_window.py:273
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -791,27 +804,27 @@ msgstr ""
 "couleurs par défaut suivent les <a href=\"https://developer.gnome.org/hig/"
 "reference/palette.html\">directives de l'interface utilisateur GNOME.</a>."
 
-#: gradience/main.py:247
+#: gradience/frontend/main.py:241
 msgid "No presets found"
 msgstr "Aucune pré-configuration trouvée"
 
-#: gradience/main.py:265
+#: gradience/frontend/main.py:259
 msgid "Favorite Presets"
 msgstr "Pré-configurations préférées"
 
-#: gradience/main.py:529
+#: gradience/frontend/main.py:523
 msgid "Unsaved Changes"
 msgstr "Changements non sauvegardés"
 
-#: gradience/main.py:540
+#: gradience/frontend/main.py:534
 msgid "Save Changes"
 msgstr "Enregistrer les changements"
 
-#: gradience/main.py:598
+#: gradience/frontend/main.py:592
 msgid "Apply This Color Scheme?"
 msgstr "Appliquer ce schéma de couleurs ?"
 
-#: gradience/main.py:600
+#: gradience/frontend/main.py:594
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -819,38 +832,39 @@ msgstr ""
 "Attention : tous les fichiers CSS personnalisés pour ces types "
 "d’applications seront écrasés !"
 
-#: gradience/main.py:604
+#: gradience/frontend/main.py:598
 msgid "_Apply"
 msgstr "_Appliquer"
 
-#: gradience/main.py:614
+#: gradience/frontend/main.py:608
 msgid "Restore applied color scheme?"
 msgstr "Rétablir le schéma de couleurs appliqué ?"
 
-#: gradience/main.py:615 gradience/main.py:627
+#: gradience/frontend/main.py:609 gradience/frontend/main.py:621
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Assurez-vous d’avoir vos réglages actuels sauvegardés en tant que "
 "configuration."
 
-#: gradience/main.py:617
+#: gradience/frontend/main.py:611
 msgid "_Restore"
 msgstr "_Restaurer"
 
-#: gradience/main.py:626
+#: gradience/frontend/main.py:620
 msgid "Reset applied color scheme?"
 msgstr "Réinitialiser le thème de couleurs ?"
 
-#: gradience/main.py:629
+#: gradience/frontend/main.py:623
 msgid "_Reset"
 msgstr "_Réinitialiser"
 
-#: gradience/main.py:639
+#: gradience/frontend/main.py:633
 msgid "Save preset as…"
 msgstr "Enregistrer la configuration sous…"
 
-#: gradience/main.py:641 gradience/main.py:669 gradience/main.py:686
-#: gradience/main.py:714 gradience/main.py:745 gradience/main.py:762
+#: gradience/frontend/main.py:635 gradience/frontend/main.py:663
+#: gradience/frontend/main.py:680 gradience/frontend/main.py:708
+#: gradience/frontend/main.py:739 gradience/frontend/main.py:756
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -859,51 +873,54 @@ msgstr ""
 "Enregistrement de la configuration vers <tt>{0}</tt>. Si elle existe déjà, "
 "elle sera écrasée !"
 
-#: gradience/main.py:656
+#: gradience/frontend/main.py:650
 msgid "_Save"
 msgstr "_Sauvegarder"
 
-#: gradience/main.py:712
+#: gradience/frontend/main.py:706
 msgid "You have unsaved changes!"
 msgstr "Vous avez des changements non enregistrés !"
 
-#: gradience/main.py:729
+#: gradience/frontend/main.py:723
 msgid "Discard"
 msgstr "Jeter"
 
-#: gradience/main.py:730
+#: gradience/frontend/main.py:724
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: gradience/main.py:790
+#: gradience/frontend/main.py:784
 msgid "Preset saved"
 msgstr "Pré-configuration enregistrée"
 
-#: gradience/main.py:857
+#: gradience/frontend/main.py:851
 msgid "Preset set successfully"
 msgstr "Pré-configuration appliquée avec succès"
 
-#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#: gradience/frontend/main.py:856 gradience/frontend/main.py:919
+#: gradience/frontend/main.py:973
 msgid "Log out"
 msgstr "Se déconnecter"
 
-#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
+#: gradience/frontend/main.py:858 gradience/frontend/main.py:921
+#: gradience/frontend/main.py:975
 msgid "For the changes to take effect, you need to log out. "
 msgstr "Pour que les changements prennent effet, vous devez vous déconnecter. "
 
-#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+#: gradience/frontend/main.py:863 gradience/frontend/main.py:926
+#: gradience/frontend/main.py:980
 msgid "OK"
 msgstr "OK"
 
-#: gradience/main.py:920
+#: gradience/frontend/main.py:914
 msgid "Unable to restore GTK 4 backup"
 msgstr "Impossible de restaurer la sauvegarde de GTK 4"
 
-#: gradience/main.py:958 gradience/main.py:974
+#: gradience/frontend/main.py:952 gradience/frontend/main.py:968
 msgid "Unable to delete current preset"
 msgstr "La suppression de la configuration actuelle a échoué"
 
-#: gradience/main.py:1060
+#: gradience/frontend/main.py:1054
 msgid ""
 "\n"
 "<ul>\n"
@@ -927,7 +944,7 @@ msgstr ""
 "<li>Traductions mises à jour</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1071
+#: gradience/frontend/main.py:1065
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -951,31 +968,31 @@ msgstr ""
 "⚙️ Modifier les options avancées avec CSS\n"
 "🧩️ Étendre les fonctionnalités avec des greffons\n"
 
-#: gradience/main.py:1084
+#: gradience/frontend/main.py:1078
 msgid "Plugins by"
 msgstr "Greffons par"
 
-#: gradience/main.py:1092
+#: gradience/frontend/main.py:1086
 msgid "Presets by"
 msgstr "Pré-configurations par"
 
-#: gradience/main.py:1114
+#: gradience/frontend/main.py:1108
 msgid "Packages by"
 msgstr "Packages par"
 
-#: gradience/main.py:1121
+#: gradience/frontend/main.py:1115
 msgid "Fixes by"
 msgstr "Corrections par"
 
-#: gradience/main.py:1131
+#: gradience/frontend/main.py:1125
 msgid "Special thanks to"
 msgstr "Remerciements particuliers à"
 
-#: gradience/plugins_list.py:98
+#: gradience/frontend/views/plugins_list.py:98
 msgid "Plugins"
 msgstr "Greffons"
 
-#: gradience/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:101
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -983,15 +1000,15 @@ msgstr ""
 "Les greffons ajoutent des fonctionnalités à Gradience, ils sont faits par la "
 "communauté Gradience et peuvent contenir des bogues."
 
-#: gradience/plugins_list.py:113
+#: gradience/frontend/views/plugins_list.py:113
 msgid "No Plugins Found."
 msgstr "Aucun greffon trouvé."
 
-#: gradience/settings_schema.py:23
+#: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
 msgstr "Couleurs d'accent"
 
-#: gradience/settings_schema.py:25
+#: gradience/frontend/settings_schema.py:25
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate that a widget is important, interactive, or "
@@ -1001,15 +1018,19 @@ msgstr ""
 "étiquettes et les entrées texte, pour indiquer qu'un widget est important, "
 "interactif ou actif."
 
-#: gradience/settings_schema.py:32 gradience/settings_schema.py:63
-#: gradience/settings_schema.py:95 gradience/settings_schema.py:127
-#: gradience/settings_schema.py:158
+#: gradience/frontend/settings_schema.py:32
+#: gradience/frontend/settings_schema.py:63
+#: gradience/frontend/settings_schema.py:95
+#: gradience/frontend/settings_schema.py:127
+#: gradience/frontend/settings_schema.py:158
 msgid "Standalone Color"
 msgstr "Couleur indépendante"
 
-#: gradience/settings_schema.py:34 gradience/settings_schema.py:65
-#: gradience/settings_schema.py:97 gradience/settings_schema.py:129
-#: gradience/settings_schema.py:160
+#: gradience/frontend/settings_schema.py:34
+#: gradience/frontend/settings_schema.py:65
+#: gradience/frontend/settings_schema.py:97
+#: gradience/frontend/settings_schema.py:129
+#: gradience/frontend/settings_schema.py:160
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
@@ -1020,29 +1041,39 @@ msgstr ""
 "couleur d'avant-plan sur un fond de couleur neutre - par exemple, un texte "
 "coloré dans une fenêtre."
 
-#: gradience/settings_schema.py:43 gradience/settings_schema.py:74
-#: gradience/settings_schema.py:106 gradience/settings_schema.py:138
-#: gradience/settings_schema.py:169 gradience/settings_schema.py:186
-#: gradience/settings_schema.py:206 gradience/settings_schema.py:227
-#: gradience/settings_schema.py:282 gradience/settings_schema.py:309
-#: gradience/settings_schema.py:326
+#: gradience/frontend/settings_schema.py:43
+#: gradience/frontend/settings_schema.py:74
+#: gradience/frontend/settings_schema.py:106
+#: gradience/frontend/settings_schema.py:138
+#: gradience/frontend/settings_schema.py:169
+#: gradience/frontend/settings_schema.py:186
+#: gradience/frontend/settings_schema.py:206
+#: gradience/frontend/settings_schema.py:227
+#: gradience/frontend/settings_schema.py:282
+#: gradience/frontend/settings_schema.py:309
+#: gradience/frontend/settings_schema.py:326
 msgid "Background Color"
 msgstr "Couleur d'arrière-plan"
 
-#: gradience/settings_schema.py:48 gradience/settings_schema.py:79
-#: gradience/settings_schema.py:111 gradience/settings_schema.py:143
-#: gradience/settings_schema.py:174 gradience/settings_schema.py:191
-#: gradience/settings_schema.py:211 gradience/settings_schema.py:232
-#: gradience/settings_schema.py:287 gradience/settings_schema.py:314
-#: gradience/settings_schema.py:331
+#: gradience/frontend/settings_schema.py:48
+#: gradience/frontend/settings_schema.py:79
+#: gradience/frontend/settings_schema.py:111
+#: gradience/frontend/settings_schema.py:143
+#: gradience/frontend/settings_schema.py:174
+#: gradience/frontend/settings_schema.py:191
+#: gradience/frontend/settings_schema.py:211
+#: gradience/frontend/settings_schema.py:232
+#: gradience/frontend/settings_schema.py:287
+#: gradience/frontend/settings_schema.py:314
+#: gradience/frontend/settings_schema.py:331
 msgid "Foreground Color"
 msgstr "Couleur d'avant-plan"
 
-#: gradience/settings_schema.py:55
+#: gradience/frontend/settings_schema.py:55
 msgid "Destructive Colors"
 msgstr "Couleurs destructives"
 
-#: gradience/settings_schema.py:57
+#: gradience/frontend/settings_schema.py:57
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
@@ -1050,11 +1081,11 @@ msgstr ""
 "Ces couleurs sont utilisées pour les boutons qui pointent vers une action "
 "dangereuse, comme la suppression d'un fichier."
 
-#: gradience/settings_schema.py:86
+#: gradience/frontend/settings_schema.py:86
 msgid "Success Colors"
 msgstr "Couleurs du succès"
 
-#: gradience/settings_schema.py:88
+#: gradience/frontend/settings_schema.py:88
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
@@ -1063,11 +1094,11 @@ msgstr ""
 "boutons, les étiquettes, les entrées et les barres de niveau, pour indiquer "
 "un succès ou un haut niveau."
 
-#: gradience/settings_schema.py:118
+#: gradience/frontend/settings_schema.py:118
 msgid "Warning Colors"
 msgstr "Couleurs d'avertissement"
 
-#: gradience/settings_schema.py:120
+#: gradience/frontend/settings_schema.py:120
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
@@ -1076,11 +1107,11 @@ msgstr ""
 "boutons, les étiquettes, les entrées et les barres de niveau, pour indiquer "
 "un avertissement ou un bas niveau."
 
-#: gradience/settings_schema.py:150
+#: gradience/frontend/settings_schema.py:150
 msgid "Error Colors"
 msgstr "Couleurs d'erreur"
 
-#: gradience/settings_schema.py:152
+#: gradience/frontend/settings_schema.py:152
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
@@ -1089,19 +1120,19 @@ msgstr ""
 "boutons, les étiquettes et les entrées pour indiquer qu'une erreur s'est "
 "produite."
 
-#: gradience/settings_schema.py:181
+#: gradience/frontend/settings_schema.py:181
 msgid "Window Colors"
 msgstr "Couleurs de fenêtre"
 
-#: gradience/settings_schema.py:182
+#: gradience/frontend/settings_schema.py:182
 msgid "These colors are used primarily for windows."
 msgstr "Ces couleurs sont principalement utilisées pour les fenêtres."
 
-#: gradience/settings_schema.py:198
+#: gradience/frontend/settings_schema.py:198
 msgid "View Colors"
 msgstr "Couleurs de vues"
 
-#: gradience/settings_schema.py:200
+#: gradience/frontend/settings_schema.py:200
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
@@ -1109,11 +1140,11 @@ msgstr ""
 "Ces couleurs sont utilisées dans plusieurs types de widgets, tels que les "
 "boites de dialogue et les entrées."
 
-#: gradience/settings_schema.py:218
+#: gradience/frontend/settings_schema.py:218
 msgid "Header Bar Colors"
 msgstr "Couleurs de barre d'en-tête"
 
-#: gradience/settings_schema.py:220
+#: gradience/frontend/settings_schema.py:220
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
@@ -1121,11 +1152,11 @@ msgstr ""
 "Ces couleurs sont utilisées pour les barres d'en-tête, ainsi que les widgets "
 "qui y sont attachés, tels que les barres de recherche ou des onglets."
 
-#: gradience/settings_schema.py:237
+#: gradience/frontend/settings_schema.py:237
 msgid "Border Color"
 msgstr "Couleurs de bordure"
 
-#: gradience/settings_schema.py:239
+#: gradience/frontend/settings_schema.py:239
 msgid ""
 "The border color has the same default value as a foreground color, but "
 "doesn't change along with it. This can be useful if a light window has a "
@@ -1141,11 +1172,11 @@ msgstr ""
 "entre les deux barres d'en-tête dans une disposition de barres d'en-tête "
 "divisées."
 
-#: gradience/settings_schema.py:252
+#: gradience/frontend/settings_schema.py:252
 msgid "Backdrop Color"
 msgstr "Couleur du fond"
 
-#: gradience/settings_schema.py:254
+#: gradience/frontend/settings_schema.py:254
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -1157,12 +1188,13 @@ msgstr ""
 "d'arrière plan et il change avec. Assurez vous d'insérer une valeur qui "
 "fonctionne avec votre barre d'en-tête ainsi que la couleur de fond."
 
-#: gradience/settings_schema.py:265 gradience/settings_schema.py:292
-#: gradience/settings_schema.py:343
+#: gradience/frontend/settings_schema.py:265
+#: gradience/frontend/settings_schema.py:292
+#: gradience/frontend/settings_schema.py:343
 msgid "Shade Color"
 msgstr "Couleur d'ombre"
 
-#: gradience/settings_schema.py:267
+#: gradience/frontend/settings_schema.py:267
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
@@ -1171,15 +1203,15 @@ msgstr ""
 "barres d'en-tête et les widgets similaires qui les séparent de la fenêtre "
 "principale."
 
-#: gradience/settings_schema.py:277
+#: gradience/frontend/settings_schema.py:277
 msgid "Card Colors"
 msgstr "Couleur des cartes"
 
-#: gradience/settings_schema.py:278
+#: gradience/frontend/settings_schema.py:278
 msgid "These colors are used for cards and boxed lists."
 msgstr "Ces couleurs sont utilisées pour les cartes et les listes de boites."
 
-#: gradience/settings_schema.py:294
+#: gradience/frontend/settings_schema.py:294
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
@@ -1189,31 +1221,31 @@ msgstr ""
 "pour se séparer de l'arrière-plan de la fenêtre, ainsi que pour les "
 "séparateurs de lignes dans les cartes."
 
-#: gradience/settings_schema.py:304
+#: gradience/frontend/settings_schema.py:304
 msgid "Dialog Colors"
 msgstr "Couleurs de dialogue"
 
-#: gradience/settings_schema.py:305
+#: gradience/frontend/settings_schema.py:305
 msgid "These colors are used for message dialogs."
 msgstr "Ces couleurs sont utilisées pour les boîtes de dialogue de message."
 
-#: gradience/settings_schema.py:321
+#: gradience/frontend/settings_schema.py:321
 msgid "Popover Colors"
 msgstr "Couleurs des popovers"
 
-#: gradience/settings_schema.py:322
+#: gradience/frontend/settings_schema.py:322
 msgid "These colors are used for popovers."
 msgstr "Ces couleurs sont utilisées pour les popovers."
 
-#: gradience/settings_schema.py:338
+#: gradience/frontend/settings_schema.py:338
 msgid "Miscellaneous Colors"
 msgstr "Couleurs diverses"
 
-#: gradience/settings_schema.py:339
+#: gradience/frontend/settings_schema.py:339
 msgid "Colors that don't fit in any particular group."
 msgstr "Couleurs qui ne rentrent dans aucun groupe particulier."
 
-#: gradience/settings_schema.py:345
+#: gradience/frontend/settings_schema.py:345
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -1222,11 +1254,11 @@ msgstr ""
 "transitions dans les dépliants et les rabats, et les bordures de la barre "
 "d'informations."
 
-#: gradience/settings_schema.py:353
+#: gradience/frontend/settings_schema.py:353
 msgid "Scrollbar Outline Color"
 msgstr "Couleur du contour de la barre de défilement"
 
-#: gradience/settings_schema.py:355
+#: gradience/frontend/settings_schema.py:355
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -1235,31 +1267,31 @@ msgstr ""
 "de défilement pour garantir que les barres de défilement superposées sont "
 "visibles quelle que soit la couleur du contenu."
 
-#: gradience/settings_schema.py:365
+#: gradience/frontend/settings_schema.py:365
 msgid "Blue"
 msgstr "Bleu"
 
-#: gradience/settings_schema.py:366
+#: gradience/frontend/settings_schema.py:366
 msgid "Green"
 msgstr "Vert"
 
-#: gradience/settings_schema.py:367
+#: gradience/frontend/settings_schema.py:367
 msgid "Yellow"
 msgstr "Jaune"
 
-#: gradience/settings_schema.py:368
+#: gradience/frontend/settings_schema.py:368
 msgid "Orange"
 msgstr "Orange"
 
-#: gradience/settings_schema.py:369
+#: gradience/frontend/settings_schema.py:369
 msgid "Red"
 msgstr "Rouge"
 
-#: gradience/settings_schema.py:370
+#: gradience/frontend/settings_schema.py:370
 msgid "Purple"
 msgstr "Violet"
 
-#: gradience/settings_schema.py:371
+#: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "Marron"
 
