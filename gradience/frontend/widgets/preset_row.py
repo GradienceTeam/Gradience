@@ -21,9 +21,13 @@ import os
 from gi.repository import Gtk, Adw, Xdp, XdpGtk4
 
 from gradience.frontend.views.share_window import GradienceShareWindow
-from gradience.backend.utils.common import to_slug_case, buglog
+from gradience.backend.utils.common import to_slug_case
 from gradience.backend.models.preset import Preset, presets_dir
 from gradience.backend.constants import rootdir
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/preset_row.ui")
@@ -86,12 +90,10 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.star_button.set_tooltip_text(_("Add to Favorites"))
 
     # def on_share_btn_clicked(self, *_args):
-    #     buglog("share")
     #     win = GradienceShareWindow(self.win)
     #     win.present()
 
     def on_star_button_clicked(self, *_args):
-        buglog("star")
         if self.name in self.win.app.favourite:
             self.win.app.favourite.remove(self.name)
             self.star_button.set_icon_name("non-starred-symbolic")
@@ -105,12 +107,9 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
-        buglog("apply")
-
         self.app.load_preset_from_file(self.preset.preset_path)
 
     def on_undo_button_clicked(self, *_args):
-        buglog("undo")
         self.delete_preset = False
         self.delete_toast.dismiss()
 
@@ -129,8 +128,6 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.value_stack.set_visible_child(self.apply_button)
 
     def on_report_btn_clicked(self, *_args):
-        buglog("report")
-
         parent = XdpGtk4.parent_new_gtk(self.win)
 
         def open_dir_callback(_, result):
@@ -162,36 +159,34 @@ class GradiencePresetRow(Adw.ExpanderRow):
             )
 
             self.set_name(self.name + "(" + _("Pending Deletion") + ")")
-        except Exception as exception:
-            buglog(exception)
+        except Exception as e:
+            logging.error(f"Unable to rename an preset for later deletion. Exc: {e}")
         else:
             self.props.visible = False
         finally:
             self.delete_preset = True
 
     def on_delete_toast_dismissed(self, widget):
-        buglog("dismissed")
         if self.delete_preset:
-            buglog("delete")
+            logging.debug(f"Deleting preset {self.preset.display_name}")
             try:
-                buglog(self.preset.preset_path + ".to_delete")
+                logging.debug("Preset filename:" + self.preset.preset_path + ".to_delete")
                 os.remove(self.preset.preset_path + ".to_delete")
-            except Exception as exception:
-                buglog(exception)
+            except Exception as e:
+                logging.error(f"Unable to delete an preset. Exc: {e}")
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Unable to delete preset"))
                 )
             finally:
                 self.win.reload_pref_group()
         else:
-            buglog("undo")
             try:
                 os.rename(
                     self.preset.preset_path + ".to_delete",
                     self.preset.preset_path
                 )
-            except Exception as exception:
-                buglog(exception)
+            except Exception as e:
+                logging.error(f"Unable to rename an preset. Exc: {e}")
             finally:
                 self.win.reload_pref_group()
 

@@ -22,7 +22,11 @@ import json
 from gi.repository import GLib, Soup
 
 from gradience.backend.models.preset import presets_dir
-from gradience.backend.utils.common import to_slug_case, buglog
+from gradience.backend.utils.common import to_slug_case
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 # Open Soup3 session
@@ -34,15 +38,15 @@ def fetch_presets(repo) -> [dict, list]:
         body = session.send_and_read(request, None)
     except GLib.GError as e: # offline
         if e.code == 1:
-            buglog(f"Failed to establish a new connection. Exc: {e}")
+            logging.error(f"Failed to establish a new connection. Exc: {e}")
             return False, False
         else:
-            buglog(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
+            logging.error(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
             return False, False
     try:
         raw = json.loads(body.get_data())
     except json.JSONDecodeError as e:
-        buglog(f"Error with decoding JSON data. Exc: {e}")
+        logging.error(f"Error with decoding JSON data. Exc: {e}")
         return False, False
 
     preset_dict = {}
@@ -69,15 +73,15 @@ def download_preset(name, repo_name, repo) -> None:
         body = session.send_and_read(request, None)
     except GLib.GError as e: # offline
         if e.code == 1:
-            buglog(f"Failed to establish a new connection. Exc: {e}")
+            logging.error(f"Failed to establish a new connection. Exc: {e}")
             return False, False
         else:
-            buglog(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
+            logging.error(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
             return False, False
     try:
         raw = json.loads(body.get_data())
     except json.JSONDecodeError as e:
-        buglog(f"Error with decoding JSON data. Exc: {e}")
+        logging.error(f"Error with decoding JSON data. Exc: {e}")
         return False, False
 
     data = json.dumps(raw, indent=4)
@@ -95,4 +99,4 @@ def download_preset(name, repo_name, repo) -> None:
             f.write(data)
             f.close()
     except OSError as e:
-        buglog(f"Failed to write data to a file. Exc: {e}")
+        logging.error(f"Failed to write data to a file. Exc: {e}")

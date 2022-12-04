@@ -18,8 +18,12 @@
 
 from gi.repository import Gtk, Adw
 
-from gradience.backend.utils.common import to_slug_case, buglog
+from gradience.backend.utils.common import to_slug_case
 from gradience.backend.constants import rootdir
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/builtin_preset_row.ui")
@@ -44,7 +48,7 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
-        buglog("apply")
+        logging.debug("apply")
 
         self.app.load_preset_from_resource(
             f"{rootdir}/presets/" + to_slug_case(self.name) + ".json"

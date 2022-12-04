@@ -26,6 +26,7 @@ gradience_sources = [
     '__init__.py',
     'css_parser.py',
     'flatpak_overrides.py',
+    'logger.py',
     'preset_downloader.py'
 ]
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: backenddir)

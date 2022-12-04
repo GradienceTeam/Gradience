@@ -23,13 +23,16 @@ from reportlab.graphics import renderPM
 from material_color_utilities_python import *
 from gi.repository import Gtk, Adw, Gio
 
-from gradience.backend.utils.common import buglog
 from gradience.backend.constants import rootdir, app_id, build_type
 
 from gradience.frontend.widgets.error_list_row import GradienceErrorListRow
 from gradience.frontend.widgets.palette_shades import GradiencePaletteShades
 from gradience.frontend.widgets.option_row import GradienceOptionRow
 from gradience.frontend.settings_schema import settings_schema
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/window.ui")
@@ -79,17 +82,17 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             picture_uri = background_settings.get_string("picture-uri-dark")
         else:
             picture_uri = background_settings.get_string("picture-uri")
-        buglog(picture_uri)
+        logging.debug(picture_uri)
         if picture_uri.startswith("file://"):
             self.monet_image_file = Gio.File.new_for_uri(picture_uri)
         else:
             self.monet_image_file = Gio.File.new_for_path(picture_uri)
         image_basename = self.monet_image_file.get_basename()
-        buglog(image_basename)
+        logging.debug(image_basename)
         self.monet_image_file = self.monet_image_file.get_path()
         self.monet_file_chooser_button.set_label(image_basename)
         self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
-        buglog(self.monet_image_file)
+        logging.debug(self.monet_image_file)
         # self.on_apply_button() # Comment out for now, because it always shows
         # that annoying toast on startup
 
@@ -98,7 +101,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     def on_close_request(self, *args):
         if self.get_application().is_dirty:
-            buglog("Window close request")
+            logging.debug("Window close request")
             self.get_application().show_exit_dialog()
             return True
         self.close()
@@ -215,7 +218,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 renderPM.drawToFile(drawing, self.monet_image_file, fmt="PNG")
 
             if self.monet_image_file.endswith(".xml"):
-                buglog("XML WIP")
+                logging.debug("XML WIP")
 
             try:
                 self.monet_img = Image.open(self.monet_image_file)

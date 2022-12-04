@@ -22,8 +22,11 @@ from pathlib import Path
 from gi.repository import Gtk, Adw
 
 from gradience.frontend.dialogs.no_plugin_window import GradienceNoPluginPrefWindow
-from gradience.backend.utils.common import buglog
 from gradience.backend.constants import rootdir
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 USER_PLUGIN_DIR = Path(
@@ -77,17 +80,17 @@ class GradiencePluginRow(Adw.ActionRow):
         plugin_yapsy_file = (
             USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"
         )
-        buglog("remove", plugin_yapsy_file)
+        logging.debug("remove", plugin_yapsy_file)
         try:
             os.remove(plugin_yapsy_file)
         except FileNotFoundError:
             error_dialog = Adw.MessageDialog(
                 heading=_("Unable to remove"),
-                body=_("This is a system plugin, and cannot be removed. "),
+                body=_("This is a system plugin, and cannot be removed."),
             )
             error_dialog.add_response("close", _("Close"))
             error_dialog.present()
-        buglog("remove", plugin_yapsy_file)
+        logging.debug("remove", plugin_yapsy_file)
         Gtk.Application.get_default().reload_plugins()
 
     @Gtk.Template.Callback()

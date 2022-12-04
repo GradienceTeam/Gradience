@@ -20,7 +20,11 @@ import json
 import os
 
 from gradience.frontend.settings_schema import settings_schema
-from gradience.backend.utils.common import buglog, to_slug_case
+from gradience.backend.utils.common import to_slug_case
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 presets_dir = os.path.join(
@@ -82,9 +86,9 @@ class Preset:
                     self.custom_css[app_type] = ""
         except Exception as e:
             if self.preset_path:
-                buglog(f"Failed to load preset {self.preset_path}. Exc: {e}")
+                logging.error(f"Failed to load preset {self.preset_path}. Exc: {e}")
             else:
-                buglog(f"Failed to load preset with unknown path. Exc: {e}")
+                logging.error(f"Failed to load preset with unknown path. Exc: {e}")
 
     # Rename an existing preset
     def rename_preset(self, name):

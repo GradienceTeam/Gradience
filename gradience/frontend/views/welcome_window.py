@@ -22,9 +22,12 @@ import time
 from gi.repository import Gtk, Adw, Gio
 
 from gradience.frontend.utils.run_async import RunAsync
-from gradience.backend.utils.common import buglog
 from gradience.backend.flatpak_overrides import create_gtk_user_override
 from gradience.backend.constants import rootdir, app_id, rel_ver
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/welcome_window.ui")
@@ -161,15 +164,15 @@ class GradienceWelcomeWindow(Adw.Window):
 
     # TODO: Add adw-gtk3 check
     def check_adw_gtk3(self, *args):
-        buglog("check if adw-gtk3 installed")
+        logging.debug("check if adw-gtk3 installed")
         return True
 
     def adw_gtk3(self):
         if not self.check_adw_gtk3():  # install
-            buglog("install adw-gtk3")
+            logging.debug("install adw-gtk3")
 
     def configure_system(self):
-        buglog("configure system")
+        logging.debug("configure system")
         self.allow_flatpak_theming_user_toggled()
 
     def allow_flatpak_theming_user_toggled(self, *args):

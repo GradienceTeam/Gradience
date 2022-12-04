@@ -20,9 +20,13 @@ import os
 
 from gi.repository import Gtk, Adw
 
-from gradience.backend.utils.common import to_slug_case, buglog
+from gradience.backend.utils.common import to_slug_case
 from gradience.backend.preset_downloader import download_preset
 from gradience.backend.constants import rootdir
+
+from gradience.backend.logger import Logger
+
+logging = Logger()
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/explore_preset_row.ui")
@@ -57,11 +61,11 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     def on_apply_button_clicked(self, *_args):
         try:
             download_preset(to_slug_case(self.name), self.prefix, self.url)
-        except Exception as exception:
+        except Exception as e:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
-            buglog(exception)
+            logging.error(f"An error occurred while trying to download a preset. Exc: {e}")
         else:
             self.app.load_preset_from_file(
                 os.path.join(
@@ -77,19 +81,19 @@ class GradienceExplorePresetRow(Adw.ActionRow):
                 Adw.Toast(title=_("Preset downloaded")))
             self.win.reload_pref_group()
 
-            buglog("Apply and download compeleted")
+            logging.debug("Apply and download compeleted")
 
     @Gtk.Template.Callback()
     def on_download_button_clicked(self, *_args):
         try:
             download_preset(to_slug_case(self.name), self.prefix, self.url)
-        except Exception as exception:
+        except Exception as e:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
-            buglog(exception)
+            logging.error(f"An error occurred while trying to download a preset. Exc: {e}")
         else:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset downloaded")))
             self.win.reload_pref_group()
-            buglog("Download compeleted")
+            logging.debug("Download compeleted")
