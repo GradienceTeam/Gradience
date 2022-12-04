@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-03 12:12+0000\n"
+"POT-Creation-Date: 2022-12-04 00:40+0000\n"
 "PO-Revision-Date: 2022-12-02 21:47+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -26,7 +26,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:1005
+#: data/ui/window.blp:5 gradience/frontend/main.py:999
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -36,7 +36,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Adwaita'nın görünümünü kolaylıkla değiştirin"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:1007
+#: gradience/frontend/main.py:1001
 msgid "Gradience Team"
 msgstr "Gradience Takımı"
 
@@ -292,7 +292,7 @@ msgstr "Ön Ayar Dosyasını İçe Aktar"
 msgid "Delete"
 msgstr "Sil"
 
-#: data/ui/presets_manager_window.blp:47 gradience/main.py:258
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:252
 msgid "Open in File Manager"
 msgstr "Dosya Yöneticisinde Aç"
 
@@ -333,8 +333,8 @@ msgid "Offline"
 msgstr "Çevrim Dışı"
 
 #: data/ui/presets_manager_window.blp:146
-#: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:423
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:424
 msgid "Repositories"
 msgstr "Depolar"
 
@@ -511,9 +511,13 @@ msgstr "Eski Uygulamalar Temalandırması"
 msgid "System Configuration"
 msgstr "Sistem Yapılandırması"
 
-#: data/ui/window.blp:29 gradience/ui/window.py:141
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:141
 msgid "Apply"
 msgstr "Uygula"
+
+#: data/ui/window.blp:37
+msgid "Preview Theme in…"
+msgstr ""
 
 #: data/ui/window.blp:47
 msgid "Main Menu"
@@ -567,7 +571,8 @@ msgstr "GTK 4 Demo"
 msgid "GTK 4 Widget Factory"
 msgstr "GTK 4 Widget Fabrikası"
 
-#: data/ui/window.blp:167 gradience/ui/presets_manager_window.py:110
+#: data/ui/window.blp:167
+#: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "Yerleşik Ön Ayarlar"
 
@@ -575,122 +580,128 @@ msgstr "Yerleşik Ön Ayarlar"
 msgid "Manage Presets"
 msgstr "Ön Ayarları Yönet"
 
-#: gradience/utils/flatpak_overrides.py:65
-#: gradience/utils/flatpak_overrides.py:84
+#: gradience/backend/flatpak_overrides.py:65
+#: gradience/backend/flatpak_overrides.py:84
 msgid "Failed to save override"
 msgstr "Üzerine yazma kaydedilemedi"
 
-#: gradience/utils/flatpak_overrides.py:152
-#: gradience/utils/flatpak_overrides.py:212
-#: gradience/utils/flatpak_overrides.py:295
-#: gradience/utils/flatpak_overrides.py:357
+#: gradience/backend/flatpak_overrides.py:152
+#: gradience/backend/flatpak_overrides.py:212
+#: gradience/backend/flatpak_overrides.py:295
+#: gradience/backend/flatpak_overrides.py:357
 msgid "Unexpected file error occurred"
 msgstr "Beklenmeyen dosya hatası oluştu"
 
-#: gradience/ui/app_type_dialog.py:44 gradience/main.py:655
+#: gradience/frontend/dialogs/app_type_dialog.py:44
+#: gradience/frontend/main.py:649
 msgid "_Cancel"
 msgstr "_İptal"
 
-#: gradience/ui/explore_preset_row.py:62 gradience/ui/explore_preset_row.py:88
+#: gradience/frontend/widgets/explore_preset_row.py:62
+#: gradience/frontend/widgets/explore_preset_row.py:88
 msgid "Preset could not be downloaded"
 msgstr "Ön ayar indirilemedi"
 
-#: gradience/ui/explore_preset_row.py:77 gradience/ui/explore_preset_row.py:93
+#: gradience/frontend/widgets/explore_preset_row.py:77
+#: gradience/frontend/widgets/explore_preset_row.py:93
 msgid "Preset downloaded"
 msgstr "Ön ayar indirildi"
 
-#: gradience/ui/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:49
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr "Bu seçenek, adw-gtk3 teması tarafından yalnızca kısmen desteklenir."
 
-#: gradience/ui/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:54
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Bu seçenek adw-gtk3 teması tarafından desteklenmez."
 
-#: gradience/ui/option_row.py:97
+#: gradience/frontend/widgets/option_row.py:97
 msgid "Not a color, see text value"
 msgstr "Renk değil, metin değerine bakın"
 
-#: gradience/ui/plugin_row.py:86
+#: gradience/frontend/widgets/plugin_row.py:85
 msgid "Unable to remove"
 msgstr "Kaldırılamadı"
 
-#: gradience/ui/plugin_row.py:87
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed. "
 msgstr "Bu bir sistem eklentisidir ve kaldırılamaz. "
 
-#: gradience/ui/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:88
 msgid "Close"
 msgstr "Kapat"
 
-#: gradience/ui/preset_row.py:83 gradience/ui/preset_row.py:102
+#: gradience/frontend/widgets/preset_row.py:83
+#: gradience/frontend/widgets/preset_row.py:102
 msgid "Remove from Favorites"
 msgstr "Favorilerden Kaldır"
 
-#: gradience/ui/preset_row.py:86 gradience/ui/preset_row.py:98
+#: gradience/frontend/widgets/preset_row.py:86
+#: gradience/frontend/widgets/preset_row.py:98
 msgid "Add to Favorites"
 msgstr "Favorilere Ekle"
 
-#: gradience/ui/preset_row.py:150
+#: gradience/frontend/widgets/preset_row.py:150
 msgid "Preset removed"
 msgstr "Ön ayar kaldırıldı"
 
-#: gradience/ui/preset_row.py:151
+#: gradience/frontend/widgets/preset_row.py:151
 msgid "Undo"
 msgstr "Geri Al"
 
-#: gradience/ui/preset_row.py:164
+#: gradience/frontend/widgets/preset_row.py:164
 msgid "Pending Deletion"
 msgstr "Silinmeyi Bekliyor"
 
-#: gradience/ui/preset_row.py:182
+#: gradience/frontend/widgets/preset_row.py:182
 msgid "Unable to delete preset"
 msgstr "Ön ayar silinemedi"
 
-#: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:384
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:385
 msgid "User Presets"
 msgstr "Kullanıcı Ön Ayarları"
 
-#: gradience/ui/presets_manager_window.py:183
+#: gradience/frontend/views/presets_manager_window.py:184
 msgid "Add new repository"
 msgstr "Yeni depo ekle"
 
-#: gradience/ui/presets_manager_window.py:184
+#: gradience/frontend/views/presets_manager_window.py:185
 msgid "Add a repository to install additional presets."
 msgstr "Ek ön ayarlar yüklemek için bir depo ekleyin."
 
-#: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
+#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/main.py:722
 msgid "Cancel"
 msgstr "İptal"
 
-#: gradience/ui/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 msgid "Add"
 msgstr "Ekle"
 
-#: gradience/ui/presets_manager_window.py:281
+#: gradience/frontend/views/presets_manager_window.py:282
 msgid "Preset already exists"
 msgstr "Ön ayar zaten var"
 
-#: gradience/ui/presets_manager_window.py:293
+#: gradience/frontend/views/presets_manager_window.py:294
 msgid "Preset imported"
 msgstr "Ön ayar içe aktarıldı"
 
-#: gradience/ui/presets_manager_window.py:296
+#: gradience/frontend/views/presets_manager_window.py:297
 msgid "Unsupported file format, must be .json"
 msgstr "Desteklenmeyen dosya biçimi, .json olmalı"
 
-#: gradience/ui/presets_manager_window.py:339
-#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
-#: gradience/main.py:219
+#: gradience/frontend/views/presets_manager_window.py:340
+#: gradience/frontend/views/presets_manager_window.py:371
+#: gradience/frontend/main.py:182 gradience/frontend/main.py:213
 msgid "Failed to load preset"
 msgstr "Ön ayarın yüklenmesi başarısız oldu"
 
-#: gradience/ui/presets_manager_window.py:377
+#: gradience/frontend/views/presets_manager_window.py:378
 msgid "Built-in Presets"
 msgstr "Yerleşik Ön Ayarlar"
 
-#: gradience/ui/presets_manager_window.py:387
+#: gradience/frontend/views/presets_manager_window.py:388
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -698,7 +709,7 @@ msgstr ""
 "Daha çok ön ayar için Github'daki <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a> sayfasına bakın."
 
-#: gradience/ui/presets_manager_window.py:413
+#: gradience/frontend/views/presets_manager_window.py:414
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -706,74 +717,76 @@ msgstr ""
 "Ön ayar bulunamadı! Birini içe aktarmak için içe aktar düğmesini kullanın "
 "veya Keşfet sekmesinde bir tane arayın."
 
-#: gradience/ui/repo_row.py:60
+#: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "Depo kaldırıldı"
 
-#: gradience/ui/welcome_window.py:94
+#: gradience/frontend/views/welcome_window.py:94
 msgid "Thanks for updating Gradience!"
 msgstr "Gradience'ı güncellediğiniz için teşekkürler!"
 
-#: gradience/ui/window.py:132
+#: gradience/frontend/views/main_window.py:132
 msgid "Monet Engine"
 msgstr "Monet Motoru"
 
-#: gradience/ui/window.py:135
+#: gradience/frontend/views/main_window.py:135
 msgid ""
 "Monet is an engine that generates a Material Design 3 palette from an "
 "image's color."
 msgstr ""
 "Monet, görüntü renklerinden Material Design 3 paleti oluşturan bir motordur."
 
-#: gradience/ui/window.py:147
+#: gradience/frontend/views/main_window.py:147
 msgid "Background Image"
 msgstr "Arkaplan Resmi"
 
-#: gradience/ui/window.py:158
+#: gradience/frontend/views/main_window.py:158
 msgid "Choose a File"
 msgstr "Dosya Seç"
 
-#: gradience/ui/window.py:178
+#: gradience/frontend/views/main_window.py:178
 msgid "Monet Palette"
 msgstr "Monet Paleti"
 
-#: gradience/ui/window.py:185
+#: gradience/frontend/views/main_window.py:185
 msgid "Tone"
 msgstr "Ton"
 
-#: gradience/ui/window.py:197
+#: gradience/frontend/views/main_window.py:197
 msgid "Theme"
 msgstr "Tema"
 
-#: gradience/ui/window.py:200
+#: gradience/frontend/views/main_window.py:200
 msgid "Auto"
 msgstr "Otomatik"
 
-#: gradience/ui/window.py:201 gradience/settings_schema.py:372
+#: gradience/frontend/views/main_window.py:201
+#: gradience/frontend/settings_schema.py:372
 msgid "Light"
 msgstr "Aydınlık"
 
-#: gradience/ui/window.py:202 gradience/settings_schema.py:373
+#: gradience/frontend/views/main_window.py:202
+#: gradience/frontend/settings_schema.py:373
 msgid "Dark"
 msgstr "Karanlık"
 
-#: gradience/ui/window.py:224
+#: gradience/frontend/views/main_window.py:224
 msgid "Unsupported background type"
 msgstr "Desteklenmeyen arka plan türü"
 
-#: gradience/ui/window.py:241
+#: gradience/frontend/views/main_window.py:241
 msgid "Palette generated"
 msgstr "Palet oluşturuldu"
 
-#: gradience/ui/window.py:245
+#: gradience/frontend/views/main_window.py:245
 msgid "Select a background first"
 msgstr "Önce arka plan seçin"
 
-#: gradience/ui/window.py:270
+#: gradience/frontend/views/main_window.py:270
 msgid "Palette Colors"
 msgstr "Palet Renkleri"
 
-#: gradience/ui/window.py:273
+#: gradience/frontend/views/main_window.py:273
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -783,27 +796,27 @@ msgstr ""
 "Varsayılan renkler <a href=\"https://developer.gnome.org/hig/reference/"
 "palette.html\">GNOME İnsan Arayüzü Yönergeleri</a>ni takip eder."
 
-#: gradience/main.py:247
+#: gradience/frontend/main.py:241
 msgid "No presets found"
 msgstr "Ön ayar bulunamadı"
 
-#: gradience/main.py:265
+#: gradience/frontend/main.py:259
 msgid "Favorite Presets"
 msgstr "Favori Ön Ayarlar"
 
-#: gradience/main.py:529
+#: gradience/frontend/main.py:523
 msgid "Unsaved Changes"
 msgstr "Kaydedilmemiş Değişiklikler"
 
-#: gradience/main.py:540
+#: gradience/frontend/main.py:534
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
 
-#: gradience/main.py:598
+#: gradience/frontend/main.py:592
 msgid "Apply This Color Scheme?"
 msgstr "Bu Renk Şeması Uygulansın Mı?"
 
-#: gradience/main.py:600
+#: gradience/frontend/main.py:594
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -811,36 +824,37 @@ msgstr ""
 "Uyarı: Bu uygulama türleri için bulunan herhangi bir özel CSS dosyasının "
 "üzerine geri alınamaz bir şekilde yazılacaktır!"
 
-#: gradience/main.py:604
+#: gradience/frontend/main.py:598
 msgid "_Apply"
 msgstr "_Uygula"
 
-#: gradience/main.py:614
+#: gradience/frontend/main.py:608
 msgid "Restore applied color scheme?"
 msgstr "Uygulanan renk şeması geri yüklensin mi?"
 
-#: gradience/main.py:615 gradience/main.py:627
+#: gradience/frontend/main.py:609 gradience/frontend/main.py:621
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Mevcut ayarların ön ayar olarak kaydedildiğinden emin olun."
 
-#: gradience/main.py:617
+#: gradience/frontend/main.py:611
 msgid "_Restore"
 msgstr "_Geri Yükle"
 
-#: gradience/main.py:626
+#: gradience/frontend/main.py:620
 msgid "Reset applied color scheme?"
 msgstr "Uygulanan renk şeması sıfırlansın mı?"
 
-#: gradience/main.py:629
+#: gradience/frontend/main.py:623
 msgid "_Reset"
 msgstr "_Sıfırla"
 
-#: gradience/main.py:639
+#: gradience/frontend/main.py:633
 msgid "Save preset as…"
 msgstr "Ön ayarı farklı kaydet…"
 
-#: gradience/main.py:641 gradience/main.py:669 gradience/main.py:686
-#: gradience/main.py:714 gradience/main.py:745 gradience/main.py:762
+#: gradience/frontend/main.py:635 gradience/frontend/main.py:663
+#: gradience/frontend/main.py:680 gradience/frontend/main.py:708
+#: gradience/frontend/main.py:739 gradience/frontend/main.py:756
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -849,51 +863,54 @@ msgstr ""
 "<tt>{0}</tt> olarak ön ayar kaydediliyor. Eğer bu ön ayar zaten mevcutsa, "
 "üzerine yazılacaktır!"
 
-#: gradience/main.py:656
+#: gradience/frontend/main.py:650
 msgid "_Save"
 msgstr "_Kaydet"
 
-#: gradience/main.py:712
+#: gradience/frontend/main.py:706
 msgid "You have unsaved changes!"
 msgstr "Kaydedilmemiş değişiklikleriniz var!"
 
-#: gradience/main.py:729
+#: gradience/frontend/main.py:723
 msgid "Discard"
 msgstr "Gözden Çıkar"
 
-#: gradience/main.py:730
+#: gradience/frontend/main.py:724
 msgid "Save"
 msgstr "Kaydet"
 
-#: gradience/main.py:790
+#: gradience/frontend/main.py:784
 msgid "Preset saved"
 msgstr "Ön ayar kaydedildi"
 
-#: gradience/main.py:857
+#: gradience/frontend/main.py:851
 msgid "Preset set successfully"
 msgstr "Ön ayar ayarlandı"
 
-#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#: gradience/frontend/main.py:856 gradience/frontend/main.py:919
+#: gradience/frontend/main.py:973
 msgid "Log out"
 msgstr "Oturumu kapat"
 
-#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
+#: gradience/frontend/main.py:858 gradience/frontend/main.py:921
+#: gradience/frontend/main.py:975
 msgid "For the changes to take effect, you need to log out. "
 msgstr "Değişikliklerin etkili olması için oturumu kapatmanız gerekir. "
 
-#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+#: gradience/frontend/main.py:863 gradience/frontend/main.py:926
+#: gradience/frontend/main.py:980
 msgid "OK"
 msgstr "Tamam"
 
-#: gradience/main.py:920
+#: gradience/frontend/main.py:914
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 yedeği geri yüklenemedi"
 
-#: gradience/main.py:958 gradience/main.py:974
+#: gradience/frontend/main.py:952 gradience/frontend/main.py:968
 msgid "Unable to delete current preset"
 msgstr "Geçerli ön ayar silinemedi"
 
-#: gradience/main.py:1060
+#: gradience/frontend/main.py:1054
 msgid ""
 "\n"
 "<ul>\n"
@@ -918,7 +935,7 @@ msgstr ""
 "<li>Çeviriler güncellendi</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1071
+#: gradience/frontend/main.py:1065
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -942,31 +959,31 @@ msgstr ""
 "⚙️ CSS ile gelişmiş seçenekleri değiştirme\n"
 "🧩️ Eklentileri kullanarak işlevselliği genişletme\n"
 
-#: gradience/main.py:1084
+#: gradience/frontend/main.py:1078
 msgid "Plugins by"
 msgstr "Eklentiler"
 
-#: gradience/main.py:1092
+#: gradience/frontend/main.py:1086
 msgid "Presets by"
 msgstr "Ön Ayarlar"
 
-#: gradience/main.py:1114
+#: gradience/frontend/main.py:1108
 msgid "Packages by"
 msgstr "Paketler"
 
-#: gradience/main.py:1121
+#: gradience/frontend/main.py:1115
 msgid "Fixes by"
 msgstr "Düzeltmeler"
 
-#: gradience/main.py:1131
+#: gradience/frontend/main.py:1125
 msgid "Special thanks to"
 msgstr "Özel teşekkürler"
 
-#: gradience/plugins_list.py:98
+#: gradience/frontend/views/plugins_list.py:98
 msgid "Plugins"
 msgstr "Eklentiler"
 
-#: gradience/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:101
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -974,15 +991,15 @@ msgstr ""
 "Eklentiler Gradience'a ek özellikler ekler. Eklentiler Gradience topluluğu "
 "tarafından sağlanır ve sorun çıkarabilir."
 
-#: gradience/plugins_list.py:113
+#: gradience/frontend/views/plugins_list.py:113
 msgid "No Plugins Found."
 msgstr "Eklenti bulunamadı."
 
-#: gradience/settings_schema.py:23
+#: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
 msgstr "Vurgu Renkleri"
 
-#: gradience/settings_schema.py:25
+#: gradience/frontend/settings_schema.py:25
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate that a widget is important, interactive, or "
@@ -992,15 +1009,19 @@ msgstr ""
 "pencere öğesinin önemli, etkileşimli veya aktif olduğunu belirtmek için "
 "kullanılır."
 
-#: gradience/settings_schema.py:32 gradience/settings_schema.py:63
-#: gradience/settings_schema.py:95 gradience/settings_schema.py:127
-#: gradience/settings_schema.py:158
+#: gradience/frontend/settings_schema.py:32
+#: gradience/frontend/settings_schema.py:63
+#: gradience/frontend/settings_schema.py:95
+#: gradience/frontend/settings_schema.py:127
+#: gradience/frontend/settings_schema.py:158
 msgid "Standalone Color"
 msgstr "Bağımsız Renk"
 
-#: gradience/settings_schema.py:34 gradience/settings_schema.py:65
-#: gradience/settings_schema.py:97 gradience/settings_schema.py:129
-#: gradience/settings_schema.py:160
+#: gradience/frontend/settings_schema.py:34
+#: gradience/frontend/settings_schema.py:65
+#: gradience/frontend/settings_schema.py:97
+#: gradience/frontend/settings_schema.py:129
+#: gradience/frontend/settings_schema.py:160
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
@@ -1010,29 +1031,39 @@ msgstr ""
 "nötr bir arkaplan üzerinde kullanıldığında daha iyi kontrast sağlar - "
 "örneğin, bir penceredeki renkli metin."
 
-#: gradience/settings_schema.py:43 gradience/settings_schema.py:74
-#: gradience/settings_schema.py:106 gradience/settings_schema.py:138
-#: gradience/settings_schema.py:169 gradience/settings_schema.py:186
-#: gradience/settings_schema.py:206 gradience/settings_schema.py:227
-#: gradience/settings_schema.py:282 gradience/settings_schema.py:309
-#: gradience/settings_schema.py:326
+#: gradience/frontend/settings_schema.py:43
+#: gradience/frontend/settings_schema.py:74
+#: gradience/frontend/settings_schema.py:106
+#: gradience/frontend/settings_schema.py:138
+#: gradience/frontend/settings_schema.py:169
+#: gradience/frontend/settings_schema.py:186
+#: gradience/frontend/settings_schema.py:206
+#: gradience/frontend/settings_schema.py:227
+#: gradience/frontend/settings_schema.py:282
+#: gradience/frontend/settings_schema.py:309
+#: gradience/frontend/settings_schema.py:326
 msgid "Background Color"
 msgstr "Arkaplan Rengi"
 
-#: gradience/settings_schema.py:48 gradience/settings_schema.py:79
-#: gradience/settings_schema.py:111 gradience/settings_schema.py:143
-#: gradience/settings_schema.py:174 gradience/settings_schema.py:191
-#: gradience/settings_schema.py:211 gradience/settings_schema.py:232
-#: gradience/settings_schema.py:287 gradience/settings_schema.py:314
-#: gradience/settings_schema.py:331
+#: gradience/frontend/settings_schema.py:48
+#: gradience/frontend/settings_schema.py:79
+#: gradience/frontend/settings_schema.py:111
+#: gradience/frontend/settings_schema.py:143
+#: gradience/frontend/settings_schema.py:174
+#: gradience/frontend/settings_schema.py:191
+#: gradience/frontend/settings_schema.py:211
+#: gradience/frontend/settings_schema.py:232
+#: gradience/frontend/settings_schema.py:287
+#: gradience/frontend/settings_schema.py:314
+#: gradience/frontend/settings_schema.py:331
 msgid "Foreground Color"
 msgstr "Önplan Rengi"
 
-#: gradience/settings_schema.py:55
+#: gradience/frontend/settings_schema.py:55
 msgid "Destructive Colors"
 msgstr "Yıkıcı Renkler"
 
-#: gradience/settings_schema.py:57
+#: gradience/frontend/settings_schema.py:57
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
@@ -1040,11 +1071,11 @@ msgstr ""
 "Bu renkler, bir dosyayı silmek gibi tehlikeli bir eylemi belirtmek için "
 "butonlarda kullanılır."
 
-#: gradience/settings_schema.py:86
+#: gradience/frontend/settings_schema.py:86
 msgid "Success Colors"
 msgstr "Başarı Renkleri"
 
-#: gradience/settings_schema.py:88
+#: gradience/frontend/settings_schema.py:88
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
@@ -1053,11 +1084,11 @@ msgstr ""
 "etiketler, girişler ve düzey çubukları gibi birçok farklı pencere öğesinde "
 "kullanılır."
 
-#: gradience/settings_schema.py:118
+#: gradience/frontend/settings_schema.py:118
 msgid "Warning Colors"
 msgstr "Uyarı Renkleri"
 
-#: gradience/settings_schema.py:120
+#: gradience/frontend/settings_schema.py:120
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
@@ -1066,11 +1097,11 @@ msgstr ""
 "etiketler, girişler ve düzey çubukları gibi birçok farklı pencere öğesinde "
 "kullanılır."
 
-#: gradience/settings_schema.py:150
+#: gradience/frontend/settings_schema.py:150
 msgid "Error Colors"
 msgstr "Hata Renkleri"
 
-#: gradience/settings_schema.py:152
+#: gradience/frontend/settings_schema.py:152
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
@@ -1078,30 +1109,30 @@ msgstr ""
 "Bu renkler, bir arızayı belirtmek için düğmeler, etiketler ve girişler gibi "
 "birçok farklı pencere öğesinde kullanılır."
 
-#: gradience/settings_schema.py:181
+#: gradience/frontend/settings_schema.py:181
 msgid "Window Colors"
 msgstr "Pencere Renkleri"
 
-#: gradience/settings_schema.py:182
+#: gradience/frontend/settings_schema.py:182
 msgid "These colors are used primarily for windows."
 msgstr "Bu renkler öncelikli olarak pencereler için kullanılır."
 
-#: gradience/settings_schema.py:198
+#: gradience/frontend/settings_schema.py:198
 msgid "View Colors"
 msgstr "Görünüm Renkleri"
 
-#: gradience/settings_schema.py:200
+#: gradience/frontend/settings_schema.py:200
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
 msgstr ""
 "Bu renkler, metin görünümleri ve girişler gibi çeşitli araçlarda kullanılır."
 
-#: gradience/settings_schema.py:218
+#: gradience/frontend/settings_schema.py:218
 msgid "Header Bar Colors"
 msgstr "Başlık Çubuğu Renkleri"
 
-#: gradience/settings_schema.py:220
+#: gradience/frontend/settings_schema.py:220
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
@@ -1109,11 +1140,11 @@ msgstr ""
 "Bu renkler, başlık çubuklarının yanı sıra, arama çubukları veya sekme "
 "çubukları gibi görsel olarak eklenmesi amaçlanan öğeler için kullanılır."
 
-#: gradience/settings_schema.py:237
+#: gradience/frontend/settings_schema.py:237
 msgid "Border Color"
 msgstr "Kenarlık Rengi"
 
-#: gradience/settings_schema.py:239
+#: gradience/frontend/settings_schema.py:239
 msgid ""
 "The border color has the same default value as a foreground color, but "
 "doesn't change along with it. This can be useful if a light window has a "
@@ -1128,11 +1159,11 @@ msgstr ""
 "kullanılır - örneğin, bölünmüş başlık çubuğu düzeninde iki başlık çubuğu "
 "arasındaki ayırıcılar."
 
-#: gradience/settings_schema.py:252
+#: gradience/frontend/settings_schema.py:252
 msgid "Backdrop Color"
 msgstr "Zemin Rengi"
 
-#: gradience/settings_schema.py:254
+#: gradience/frontend/settings_schema.py:254
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -1144,12 +1175,13 @@ msgstr ""
 "birlikte değişir. Bu değişkeni değiştirirken, başlık çubuğu arka plan "
 "renginizle eşleşen bir değere ayarladığınızdan emin olun."
 
-#: gradience/settings_schema.py:265 gradience/settings_schema.py:292
-#: gradience/settings_schema.py:343
+#: gradience/frontend/settings_schema.py:265
+#: gradience/frontend/settings_schema.py:292
+#: gradience/frontend/settings_schema.py:343
 msgid "Shade Color"
 msgstr "Gölge Rengi"
 
-#: gradience/settings_schema.py:267
+#: gradience/frontend/settings_schema.py:267
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
@@ -1157,15 +1189,15 @@ msgstr ""
 "Gölge rengi, başlık çubukları ve bunları ana pencereden ayıran benzer öğeler "
 "için koyu bir kenarlık sağlamak amacıyla kullanılır."
 
-#: gradience/settings_schema.py:277
+#: gradience/frontend/settings_schema.py:277
 msgid "Card Colors"
 msgstr "Kart Renkleri"
 
-#: gradience/settings_schema.py:278
+#: gradience/frontend/settings_schema.py:278
 msgid "These colors are used for cards and boxed lists."
 msgstr "Bu renkler kartlar ve kutu listeleri için kullanılır."
 
-#: gradience/settings_schema.py:294
+#: gradience/frontend/settings_schema.py:294
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
@@ -1174,31 +1206,31 @@ msgstr ""
 "Gölge rengi, kartlar tarafından kendilerini pencere arka planından ayırmak "
 "için kullanılan gölgeler ve kartlardaki satır ayırıcılar için kullanılır."
 
-#: gradience/settings_schema.py:304
+#: gradience/frontend/settings_schema.py:304
 msgid "Dialog Colors"
 msgstr "İletişim Kutusu Renkleri"
 
-#: gradience/settings_schema.py:305
+#: gradience/frontend/settings_schema.py:305
 msgid "These colors are used for message dialogs."
 msgstr "Bu renkler mesaj diyalogları için kullanılır."
 
-#: gradience/settings_schema.py:321
+#: gradience/frontend/settings_schema.py:321
 msgid "Popover Colors"
 msgstr "Popover Renkleri"
 
-#: gradience/settings_schema.py:322
+#: gradience/frontend/settings_schema.py:322
 msgid "These colors are used for popovers."
 msgstr "Bu renkler popoverlar için kullanılır."
 
-#: gradience/settings_schema.py:338
+#: gradience/frontend/settings_schema.py:338
 msgid "Miscellaneous Colors"
 msgstr "Çeşitli Renkler"
 
-#: gradience/settings_schema.py:339
+#: gradience/frontend/settings_schema.py:339
 msgid "Colors that don't fit in any particular group."
 msgstr "Belirli bir gruba uymayan renkler."
 
-#: gradience/settings_schema.py:345
+#: gradience/frontend/settings_schema.py:345
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -1206,11 +1238,11 @@ msgstr ""
 "Gölge rengi, satır içi sekme çubuklarının yanı sıra broşür ve kanatlardaki "
 "geçişler ve bilgi çubuğu kenarlıkları tarafından kullanılır."
 
-#: gradience/settings_schema.py:353
+#: gradience/frontend/settings_schema.py:353
 msgid "Scrollbar Outline Color"
 msgstr "Kaydırma Çubuğu Dış Hat Rengi"
 
-#: gradience/settings_schema.py:355
+#: gradience/frontend/settings_schema.py:355
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -1219,31 +1251,31 @@ msgstr ""
 "kaydırma çubuklarının görünür olmasını sağlamak için kaydırma çubukları "
 "tarafından kullanılır."
 
-#: gradience/settings_schema.py:365
+#: gradience/frontend/settings_schema.py:365
 msgid "Blue"
 msgstr "Mavi"
 
-#: gradience/settings_schema.py:366
+#: gradience/frontend/settings_schema.py:366
 msgid "Green"
 msgstr "Yeşil"
 
-#: gradience/settings_schema.py:367
+#: gradience/frontend/settings_schema.py:367
 msgid "Yellow"
 msgstr "Sarı"
 
-#: gradience/settings_schema.py:368
+#: gradience/frontend/settings_schema.py:368
 msgid "Orange"
 msgstr "Turuncu"
 
-#: gradience/settings_schema.py:369
+#: gradience/frontend/settings_schema.py:369
 msgid "Red"
 msgstr "Kırmızı"
 
-#: gradience/settings_schema.py:370
+#: gradience/frontend/settings_schema.py:370
 msgid "Purple"
 msgstr "Mor"
 
-#: gradience/settings_schema.py:371
+#: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "Kahverengi"
 

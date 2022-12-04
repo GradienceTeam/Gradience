@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-03 12:12+0000\n"
+"POT-Creation-Date: 2022-12-04 00:40+0000\n"
 "PO-Revision-Date: 2022-12-02 18:01+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/main.py:1005
+#: data/ui/window.blp:5 gradience/frontend/main.py:999
 msgid "Gradience"
 msgstr "கிரேடியன்ஸ்"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "அத்வைதாவின் தோற்றத்தை எளிதில் மாற்றுங்கள்"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/main.py:1007
+#: gradience/frontend/main.py:1001
 msgid "Gradience Team"
 msgstr "கிரேடியன்ஸ் குழு"
 
@@ -289,7 +289,7 @@ msgstr "முன்னமைக்கப்பட்ட கோப்பை இ�
 msgid "Delete"
 msgstr "அழி"
 
-#: data/ui/presets_manager_window.blp:47 gradience/main.py:258
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:252
 msgid "Open in File Manager"
 msgstr "கோப்பு மேலாளரில் திறக்கவும்"
 
@@ -330,8 +330,8 @@ msgid "Offline"
 msgstr "ஆஃப்லைன்"
 
 #: data/ui/presets_manager_window.blp:146
-#: gradience/ui/presets_manager_window.py:121
-#: gradience/ui/presets_manager_window.py:423
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:424
 msgid "Repositories"
 msgstr "களஞ்சியங்கள்"
 
@@ -503,9 +503,13 @@ msgstr "லெகஸி ஆப்ஸ் தீமிங்"
 msgid "System Configuration"
 msgstr "கணினி கட்டமைப்பு"
 
-#: data/ui/window.blp:29 gradience/ui/window.py:141
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:141
 msgid "Apply"
 msgstr "விண்ணப்பிக்கவும்"
+
+#: data/ui/window.blp:37
+msgid "Preview Theme in…"
+msgstr ""
 
 #: data/ui/window.blp:47
 msgid "Main Menu"
@@ -559,7 +563,8 @@ msgstr "GTK 4 டெமோ"
 msgid "GTK 4 Widget Factory"
 msgstr "GTK 4 விட்ஜெட் தொழிற்சாலை"
 
-#: data/ui/window.blp:167 gradience/ui/presets_manager_window.py:110
+#: data/ui/window.blp:167
+#: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "உள்ளமைக்கப்பட்ட முன்னமைவுகள்"
 
@@ -567,122 +572,128 @@ msgstr "உள்ளமைக்கப்பட்ட முன்னமைவ�
 msgid "Manage Presets"
 msgstr "முன்னமைவுகளை நிர்வகிக்கவும்"
 
-#: gradience/utils/flatpak_overrides.py:65
-#: gradience/utils/flatpak_overrides.py:84
+#: gradience/backend/flatpak_overrides.py:65
+#: gradience/backend/flatpak_overrides.py:84
 msgid "Failed to save override"
 msgstr "மேலெழுதலைச் சேமிக்க முடியவில்லை"
 
-#: gradience/utils/flatpak_overrides.py:152
-#: gradience/utils/flatpak_overrides.py:212
-#: gradience/utils/flatpak_overrides.py:295
-#: gradience/utils/flatpak_overrides.py:357
+#: gradience/backend/flatpak_overrides.py:152
+#: gradience/backend/flatpak_overrides.py:212
+#: gradience/backend/flatpak_overrides.py:295
+#: gradience/backend/flatpak_overrides.py:357
 msgid "Unexpected file error occurred"
 msgstr "எதிர்பாராத கோப்பு பிழை ஏற்பட்டது"
 
-#: gradience/ui/app_type_dialog.py:44 gradience/main.py:655
+#: gradience/frontend/dialogs/app_type_dialog.py:44
+#: gradience/frontend/main.py:649
 msgid "_Cancel"
 msgstr "_ரத்துசெய்"
 
-#: gradience/ui/explore_preset_row.py:62 gradience/ui/explore_preset_row.py:88
+#: gradience/frontend/widgets/explore_preset_row.py:62
+#: gradience/frontend/widgets/explore_preset_row.py:88
 msgid "Preset could not be downloaded"
 msgstr "முன்னமைவைப் பதிவிறக்க முடியவில்லை"
 
-#: gradience/ui/explore_preset_row.py:77 gradience/ui/explore_preset_row.py:93
+#: gradience/frontend/widgets/explore_preset_row.py:77
+#: gradience/frontend/widgets/explore_preset_row.py:93
 msgid "Preset downloaded"
 msgstr "முன்னமைவு பதிவிறக்கப்பட்டது"
 
-#: gradience/ui/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:49
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr "இந்த விருப்பம் adw-gtk3 தீம் மூலம் ஓரளவு மட்டுமே ஆதரிக்கப்படுகிறது."
 
-#: gradience/ui/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:54
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "இந்த விருப்பத்தை adw-gtk3 தீம் ஆதரிக்கவில்லை."
 
-#: gradience/ui/option_row.py:97
+#: gradience/frontend/widgets/option_row.py:97
 msgid "Not a color, see text value"
 msgstr "நிறம் அல்ல, உரை மதிப்பைப் பார்க்கவும்"
 
-#: gradience/ui/plugin_row.py:86
+#: gradience/frontend/widgets/plugin_row.py:85
 msgid "Unable to remove"
 msgstr "அகற்ற முடியவில்லை"
 
-#: gradience/ui/plugin_row.py:87
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed. "
 msgstr "இது ஒரு சிஸ்டம் செருகுநிரல், அதை அகற்ற முடியாது. "
 
-#: gradience/ui/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:88
 msgid "Close"
 msgstr "மூடுங்கள்"
 
-#: gradience/ui/preset_row.py:83 gradience/ui/preset_row.py:102
+#: gradience/frontend/widgets/preset_row.py:83
+#: gradience/frontend/widgets/preset_row.py:102
 msgid "Remove from Favorites"
 msgstr "பிடித்தவையிலிருந்து அகற்று"
 
-#: gradience/ui/preset_row.py:86 gradience/ui/preset_row.py:98
+#: gradience/frontend/widgets/preset_row.py:86
+#: gradience/frontend/widgets/preset_row.py:98
 msgid "Add to Favorites"
 msgstr "பிடித்தவையில் சேர்க்கவும்"
 
-#: gradience/ui/preset_row.py:150
+#: gradience/frontend/widgets/preset_row.py:150
 msgid "Preset removed"
 msgstr "முன்னமைவு அகற்றப்பட்டது"
 
-#: gradience/ui/preset_row.py:151
+#: gradience/frontend/widgets/preset_row.py:151
 msgid "Undo"
 msgstr "செயல்தவிர்"
 
-#: gradience/ui/preset_row.py:164
+#: gradience/frontend/widgets/preset_row.py:164
 msgid "Pending Deletion"
 msgstr "நிலுவையில் உள்ள நீக்கம்"
 
-#: gradience/ui/preset_row.py:182
+#: gradience/frontend/widgets/preset_row.py:182
 msgid "Unable to delete preset"
 msgstr "முன்னமைவை நீக்க முடியவில்லை"
 
-#: gradience/ui/presets_manager_window.py:115
-#: gradience/ui/presets_manager_window.py:384
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:385
 msgid "User Presets"
 msgstr "பயனர் முன்னமைவுகள்"
 
-#: gradience/ui/presets_manager_window.py:183
+#: gradience/frontend/views/presets_manager_window.py:184
 msgid "Add new repository"
 msgstr "புதிய களஞ்சியத்தைச் சேர்க்கவும்"
 
-#: gradience/ui/presets_manager_window.py:184
+#: gradience/frontend/views/presets_manager_window.py:185
 msgid "Add a repository to install additional presets."
 msgstr "கூடுதல் முன்னமைவுகளை நிறுவ ஒரு களஞ்சியத்தைச் சேர்க்கவும்."
 
-#: gradience/ui/presets_manager_window.py:190 gradience/main.py:728
+#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/main.py:722
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
-#: gradience/ui/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 msgid "Add"
 msgstr "சேர்"
 
-#: gradience/ui/presets_manager_window.py:281
+#: gradience/frontend/views/presets_manager_window.py:282
 msgid "Preset already exists"
 msgstr "முன்னமைவு ஏற்கனவே உள்ளது"
 
-#: gradience/ui/presets_manager_window.py:293
+#: gradience/frontend/views/presets_manager_window.py:294
 msgid "Preset imported"
 msgstr "முன்னமைவு இறக்குமதி செய்யப்பட்டது"
 
-#: gradience/ui/presets_manager_window.py:296
+#: gradience/frontend/views/presets_manager_window.py:297
 msgid "Unsupported file format, must be .json"
 msgstr "ஆதரிக்கப்படாத கோப்பு வடிவம், .json ஆக இருக்க வேண்டும்"
 
-#: gradience/ui/presets_manager_window.py:339
-#: gradience/ui/presets_manager_window.py:370 gradience/main.py:188
-#: gradience/main.py:219
+#: gradience/frontend/views/presets_manager_window.py:340
+#: gradience/frontend/views/presets_manager_window.py:371
+#: gradience/frontend/main.py:182 gradience/frontend/main.py:213
 msgid "Failed to load preset"
 msgstr "முன்னமைவை ஏற்றுவதில் தோல்வி"
 
-#: gradience/ui/presets_manager_window.py:377
+#: gradience/frontend/views/presets_manager_window.py:378
 msgid "Built-in Presets"
 msgstr "உள்ளமைக்கப்பட்ட முன்னமைவுகள்"
 
-#: gradience/ui/presets_manager_window.py:387
+#: gradience/frontend/views/presets_manager_window.py:388
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -690,7 +701,7 @@ msgstr ""
 "மேலும் முன்னமைவுகளுக்கு Github இல் <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a> பார்க்கவும்."
 
-#: gradience/ui/presets_manager_window.py:413
+#: gradience/frontend/views/presets_manager_window.py:414
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -698,19 +709,19 @@ msgstr ""
 "முன்னமைவு எதுவும் இல்லை! ஒன்றை இறக்குமதி செய்ய இறக்குமதி பொத்தானைப் பயன்படுத்தவும் அல்லது "
 "ஆய்வு தாவலில் ஒன்றைத் தேடவும்."
 
-#: gradience/ui/repo_row.py:60
+#: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "களஞ்சியம் அகற்றப்பட்டது"
 
-#: gradience/ui/welcome_window.py:94
+#: gradience/frontend/views/welcome_window.py:94
 msgid "Thanks for updating Gradience!"
 msgstr "கிரேடியன்ஸைப் புதுப்பித்ததற்கு நன்றி!"
 
-#: gradience/ui/window.py:132
+#: gradience/frontend/views/main_window.py:132
 msgid "Monet Engine"
 msgstr "மோனெட் எஞ்சின்"
 
-#: gradience/ui/window.py:135
+#: gradience/frontend/views/main_window.py:135
 msgid ""
 "Monet is an engine that generates a Material Design 3 palette from an "
 "image's color."
@@ -718,55 +729,57 @@ msgstr ""
 "மோனெட் என்பது ஒரு படத்தின் நிறத்தில் இருந்து மெட்டீரியல் டிசைன் 3 பேலட்டை உருவாக்கும் ஒரு "
 "மோனெட் எஞ்சின்."
 
-#: gradience/ui/window.py:147
+#: gradience/frontend/views/main_window.py:147
 msgid "Background Image"
 msgstr "பின்னணி படம்"
 
-#: gradience/ui/window.py:158
+#: gradience/frontend/views/main_window.py:158
 msgid "Choose a File"
 msgstr "ஒரு கோப்பைத் தேர்ந்தெடுக்கவும்"
 
-#: gradience/ui/window.py:178
+#: gradience/frontend/views/main_window.py:178
 msgid "Monet Palette"
 msgstr "மோனெட் தட்டு"
 
-#: gradience/ui/window.py:185
+#: gradience/frontend/views/main_window.py:185
 msgid "Tone"
 msgstr "டோன்"
 
-#: gradience/ui/window.py:197
+#: gradience/frontend/views/main_window.py:197
 msgid "Theme"
 msgstr "தீம்"
 
-#: gradience/ui/window.py:200
+#: gradience/frontend/views/main_window.py:200
 msgid "Auto"
 msgstr "ஆட்டோ"
 
-#: gradience/ui/window.py:201 gradience/settings_schema.py:372
+#: gradience/frontend/views/main_window.py:201
+#: gradience/frontend/settings_schema.py:372
 msgid "Light"
 msgstr "ஒளி"
 
-#: gradience/ui/window.py:202 gradience/settings_schema.py:373
+#: gradience/frontend/views/main_window.py:202
+#: gradience/frontend/settings_schema.py:373
 msgid "Dark"
 msgstr "இருட்டு"
 
-#: gradience/ui/window.py:224
+#: gradience/frontend/views/main_window.py:224
 msgid "Unsupported background type"
 msgstr "ஆதரிக்கப்படாத பின்னணி வகை"
 
-#: gradience/ui/window.py:241
+#: gradience/frontend/views/main_window.py:241
 msgid "Palette generated"
 msgstr "தட்டு உருவாக்கப்பட்டது"
 
-#: gradience/ui/window.py:245
+#: gradience/frontend/views/main_window.py:245
 msgid "Select a background first"
 msgstr "முதலில் பின்னணியைத் தேர்ந்தெடுக்கவும்"
 
-#: gradience/ui/window.py:270
+#: gradience/frontend/views/main_window.py:270
 msgid "Palette Colors"
 msgstr "தட்டு நிறங்கள்"
 
-#: gradience/ui/window.py:273
+#: gradience/frontend/views/main_window.py:273
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -776,63 +789,64 @@ msgstr ""
 "<a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME "
 "மனித இடைமுக வழிகாட்டுதல்களைப்</a> பின்பற்றுகின்றன."
 
-#: gradience/main.py:247
+#: gradience/frontend/main.py:241
 msgid "No presets found"
 msgstr "முன்னமைவுகள் எதுவும் கிடைக்கவில்லை"
 
-#: gradience/main.py:265
+#: gradience/frontend/main.py:259
 msgid "Favorite Presets"
 msgstr "பிடித்த முன்னமைவுகள்"
 
-#: gradience/main.py:529
+#: gradience/frontend/main.py:523
 msgid "Unsaved Changes"
 msgstr "சேமிக்கப்படாத மாற்றங்கள்"
 
-#: gradience/main.py:540
+#: gradience/frontend/main.py:534
 msgid "Save Changes"
 msgstr "மாற்றங்களை சேமியுங்கள்"
 
-#: gradience/main.py:598
+#: gradience/frontend/main.py:592
 msgid "Apply This Color Scheme?"
 msgstr "இந்த வண்ணத் திட்டத்தைப் பயன்படுத்தவா?"
 
-#: gradience/main.py:600
+#: gradience/frontend/main.py:594
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 "எச்சரிக்கை: அந்த ஆப்ஸ் வகைகளுக்கான தனிப்பயன் CSS கோப்புகள் மாற்றமுடியாமல் மேலெழுதப்படும்!"
 
-#: gradience/main.py:604
+#: gradience/frontend/main.py:598
 msgid "_Apply"
 msgstr "_விண்ணப்பிக்கவும்"
 
-#: gradience/main.py:614
+#: gradience/frontend/main.py:608
 msgid "Restore applied color scheme?"
 msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டெடுக்கவா?"
 
-#: gradience/main.py:615 gradience/main.py:627
+#: gradience/frontend/main.py:609 gradience/frontend/main.py:621
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "தற்போதைய அமைப்புகளை முன்னமைவாகச் சேமித்து வைத்திருப்பதை உறுதிசெய்யவும்."
 
-#: gradience/main.py:617
+#: gradience/frontend/main.py:611
 msgid "_Restore"
 msgstr "_மீட்டமை"
 
-#: gradience/main.py:626
+#: gradience/frontend/main.py:620
 msgid "Reset applied color scheme?"
 msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டமைக்கவா?"
 
-#: gradience/main.py:629
+#: gradience/frontend/main.py:623
 msgid "_Reset"
 msgstr "_மீட்டமைக்கவும்"
 
-#: gradience/main.py:639
+#: gradience/frontend/main.py:633
 msgid "Save preset as…"
 msgstr "முன்னமைவை இவ்வாறு சேமிக்கவும்…"
 
-#: gradience/main.py:641 gradience/main.py:669 gradience/main.py:686
-#: gradience/main.py:714 gradience/main.py:745 gradience/main.py:762
+#: gradience/frontend/main.py:635 gradience/frontend/main.py:663
+#: gradience/frontend/main.py:680 gradience/frontend/main.py:708
+#: gradience/frontend/main.py:739 gradience/frontend/main.py:756
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -841,51 +855,54 @@ msgstr ""
 "முன்னமைவை <tt>{0}</tt> இல் சேமிக்கிறது. அந்த முன்னமைவு ஏற்கனவே இருந்தால், அது "
 "மேலெழுதப்படும்!"
 
-#: gradience/main.py:656
+#: gradience/frontend/main.py:650
 msgid "_Save"
 msgstr "_சேமிக்கவும்"
 
-#: gradience/main.py:712
+#: gradience/frontend/main.py:706
 msgid "You have unsaved changes!"
 msgstr "உங்களிடம் சேமிக்கப்படாத மாற்றங்கள் உள்ளன!"
 
-#: gradience/main.py:729
+#: gradience/frontend/main.py:723
 msgid "Discard"
 msgstr "அப்புறப்படுத்து"
 
-#: gradience/main.py:730
+#: gradience/frontend/main.py:724
 msgid "Save"
 msgstr "சேமிக்கவும்"
 
-#: gradience/main.py:790
+#: gradience/frontend/main.py:784
 msgid "Preset saved"
 msgstr "முன்னமைவு சேமிக்கப்பட்டது"
 
-#: gradience/main.py:857
+#: gradience/frontend/main.py:851
 msgid "Preset set successfully"
 msgstr "முன்னமைவு வெற்றிகரமாக அமைக்கப்பட்டது"
 
-#: gradience/main.py:862 gradience/main.py:925 gradience/main.py:979
+#: gradience/frontend/main.py:856 gradience/frontend/main.py:919
+#: gradience/frontend/main.py:973
 msgid "Log out"
 msgstr "வெளியேறு"
 
-#: gradience/main.py:864 gradience/main.py:927 gradience/main.py:981
+#: gradience/frontend/main.py:858 gradience/frontend/main.py:921
+#: gradience/frontend/main.py:975
 msgid "For the changes to take effect, you need to log out. "
 msgstr "மாற்றங்கள் நடைமுறைக்கு வர, நீங்கள் வெளியேற வேண்டும். "
 
-#: gradience/main.py:869 gradience/main.py:932 gradience/main.py:986
+#: gradience/frontend/main.py:863 gradience/frontend/main.py:926
+#: gradience/frontend/main.py:980
 msgid "OK"
 msgstr "சரி"
 
-#: gradience/main.py:920
+#: gradience/frontend/main.py:914
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 காப்புப்பிரதியை மீட்டெடுக்க முடியவில்லை"
 
-#: gradience/main.py:958 gradience/main.py:974
+#: gradience/frontend/main.py:952 gradience/frontend/main.py:968
 msgid "Unable to delete current preset"
 msgstr "தற்போதைய முன்னமைவை நீக்க முடியவில்லை"
 
-#: gradience/main.py:1060
+#: gradience/frontend/main.py:1054
 msgid ""
 "\n"
 "<ul>\n"
@@ -909,7 +926,7 @@ msgstr ""
 "<li>மேம்படுத்தப்பட்ட மொழிபெயர்ப்புகள்</li>\n"
 "</ul>\n"
 
-#: gradience/main.py:1071
+#: gradience/frontend/main.py:1065
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -933,31 +950,31 @@ msgstr ""
 "⚙️ CSS உடன் மேம்பட்ட விருப்பங்களை மாற்றுதல் \n"
 "🧩️ செருகுநிரல்களைப் பயன்படுத்தி செயல்பாட்டை நீட்டித்தல்\n"
 
-#: gradience/main.py:1084
+#: gradience/frontend/main.py:1078
 msgid "Plugins by"
 msgstr "செருகுநிரல்கள் பைய்"
 
-#: gradience/main.py:1092
+#: gradience/frontend/main.py:1086
 msgid "Presets by"
 msgstr "முன்னமைவுகள் பைய்"
 
-#: gradience/main.py:1114
+#: gradience/frontend/main.py:1108
 msgid "Packages by"
 msgstr "தொகுப்புகள் பைய்"
 
-#: gradience/main.py:1121
+#: gradience/frontend/main.py:1115
 msgid "Fixes by"
 msgstr "திருத்தங்கள் பைய்"
 
-#: gradience/main.py:1131
+#: gradience/frontend/main.py:1125
 msgid "Special thanks to"
 msgstr "சிறப்பு நன்றிகள்"
 
-#: gradience/plugins_list.py:98
+#: gradience/frontend/views/plugins_list.py:98
 msgid "Plugins"
 msgstr "செருகுநிரல்கள்"
 
-#: gradience/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:101
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -965,15 +982,15 @@ msgstr ""
 "செருகுநிரல்கள் கிரேடியன்ஸில் கூடுதல் அம்சங்களைச் சேர்க்கின்றன, செருகுநிரல்கள் கிரேடியன்ஸ் "
 "சமூகத்தால் உருவாக்கப்பட்டவை மற்றும் சிக்கல்களை ஏற்படுத்தலாம்."
 
-#: gradience/plugins_list.py:113
+#: gradience/frontend/views/plugins_list.py:113
 msgid "No Plugins Found."
 msgstr "செருகுநிரல்கள் எதுவும் கிடைக்கவில்லை."
 
-#: gradience/settings_schema.py:23
+#: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
 msgstr "உச்சரிப்பு நிறங்கள்"
 
-#: gradience/settings_schema.py:25
+#: gradience/frontend/settings_schema.py:25
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate that a widget is important, interactive, or "
@@ -983,15 +1000,19 @@ msgstr ""
 "பயன்படுத்தப்படுகின்றன, ஒரு விட்ஜெட் முக்கியமானது, ஊடாடும் அல்லது தற்போது செயலில் உள்ளது "
 "என்பதைக் குறிக்க."
 
-#: gradience/settings_schema.py:32 gradience/settings_schema.py:63
-#: gradience/settings_schema.py:95 gradience/settings_schema.py:127
-#: gradience/settings_schema.py:158
+#: gradience/frontend/settings_schema.py:32
+#: gradience/frontend/settings_schema.py:63
+#: gradience/frontend/settings_schema.py:95
+#: gradience/frontend/settings_schema.py:127
+#: gradience/frontend/settings_schema.py:158
 msgid "Standalone Color"
 msgstr "தனித்த நிறம்"
 
-#: gradience/settings_schema.py:34 gradience/settings_schema.py:65
-#: gradience/settings_schema.py:97 gradience/settings_schema.py:129
-#: gradience/settings_schema.py:160
+#: gradience/frontend/settings_schema.py:34
+#: gradience/frontend/settings_schema.py:65
+#: gradience/frontend/settings_schema.py:97
+#: gradience/frontend/settings_schema.py:129
+#: gradience/frontend/settings_schema.py:160
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
@@ -1001,29 +1022,39 @@ msgstr ""
 "முன்புற நிறமாகப் பயன்படுத்தும்போது சிறந்த மாறுபாட்டை வழங்கும் - எடுத்துக்காட்டாக, ஒரு "
 "சாளரத்தில் வண்ணமயமான உரை."
 
-#: gradience/settings_schema.py:43 gradience/settings_schema.py:74
-#: gradience/settings_schema.py:106 gradience/settings_schema.py:138
-#: gradience/settings_schema.py:169 gradience/settings_schema.py:186
-#: gradience/settings_schema.py:206 gradience/settings_schema.py:227
-#: gradience/settings_schema.py:282 gradience/settings_schema.py:309
-#: gradience/settings_schema.py:326
+#: gradience/frontend/settings_schema.py:43
+#: gradience/frontend/settings_schema.py:74
+#: gradience/frontend/settings_schema.py:106
+#: gradience/frontend/settings_schema.py:138
+#: gradience/frontend/settings_schema.py:169
+#: gradience/frontend/settings_schema.py:186
+#: gradience/frontend/settings_schema.py:206
+#: gradience/frontend/settings_schema.py:227
+#: gradience/frontend/settings_schema.py:282
+#: gradience/frontend/settings_schema.py:309
+#: gradience/frontend/settings_schema.py:326
 msgid "Background Color"
 msgstr "பின்னணி நிறம்"
 
-#: gradience/settings_schema.py:48 gradience/settings_schema.py:79
-#: gradience/settings_schema.py:111 gradience/settings_schema.py:143
-#: gradience/settings_schema.py:174 gradience/settings_schema.py:191
-#: gradience/settings_schema.py:211 gradience/settings_schema.py:232
-#: gradience/settings_schema.py:287 gradience/settings_schema.py:314
-#: gradience/settings_schema.py:331
+#: gradience/frontend/settings_schema.py:48
+#: gradience/frontend/settings_schema.py:79
+#: gradience/frontend/settings_schema.py:111
+#: gradience/frontend/settings_schema.py:143
+#: gradience/frontend/settings_schema.py:174
+#: gradience/frontend/settings_schema.py:191
+#: gradience/frontend/settings_schema.py:211
+#: gradience/frontend/settings_schema.py:232
+#: gradience/frontend/settings_schema.py:287
+#: gradience/frontend/settings_schema.py:314
+#: gradience/frontend/settings_schema.py:331
 msgid "Foreground Color"
 msgstr "முன்புற நிறம்"
 
-#: gradience/settings_schema.py:55
+#: gradience/frontend/settings_schema.py:55
 msgid "Destructive Colors"
 msgstr "அழிவு நிறங்கள்"
 
-#: gradience/settings_schema.py:57
+#: gradience/frontend/settings_schema.py:57
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
@@ -1031,11 +1062,11 @@ msgstr ""
 "கோப்பை நீக்குவது போன்ற ஆபத்தான செயலைக் குறிக்க இந்த வண்ணங்கள் பொத்தான்களுக்குப் "
 "பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:86
+#: gradience/frontend/settings_schema.py:86
 msgid "Success Colors"
 msgstr "வெற்றி நிறங்கள்"
 
-#: gradience/settings_schema.py:88
+#: gradience/frontend/settings_schema.py:88
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
@@ -1043,11 +1074,11 @@ msgstr ""
 "பொத்தான்கள், லேபிள்கள், உள்ளீடுகள் மற்றும் லெவல் பார்கள் போன்ற பல்வேறு விட்ஜெட்டுகளில் வெற்றி "
 "அல்லது உயர்நிலையைக் குறிக்க இந்த வண்ணங்கள் பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:118
+#: gradience/frontend/settings_schema.py:118
 msgid "Warning Colors"
 msgstr "எச்சரிக்கை நிறங்கள்"
 
-#: gradience/settings_schema.py:120
+#: gradience/frontend/settings_schema.py:120
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
@@ -1055,11 +1086,11 @@ msgstr ""
 "இந்த வண்ணங்கள் பொத்தான்கள், லேபிள்கள், உள்ளீடுகள் மற்றும் லெவல் பார்கள் போன்ற பல்வேறு "
 "விட்ஜெட்டுகளில் எச்சரிக்கை அல்லது குறைந்த அளவைக் குறிக்கப் பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:150
+#: gradience/frontend/settings_schema.py:150
 msgid "Error Colors"
 msgstr "பிழை வண்ணங்கள்"
 
-#: gradience/settings_schema.py:152
+#: gradience/frontend/settings_schema.py:152
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
@@ -1067,19 +1098,19 @@ msgstr ""
 "பொத்தான்கள், லேபிள்கள் மற்றும் உள்ளீடுகள் போன்ற பல்வேறு விட்ஜெட்டுகளில் தோல்வியைக் குறிக்க இந்த "
 "வண்ணங்கள் பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:181
+#: gradience/frontend/settings_schema.py:181
 msgid "Window Colors"
 msgstr "சாளர நிறங்கள்"
 
-#: gradience/settings_schema.py:182
+#: gradience/frontend/settings_schema.py:182
 msgid "These colors are used primarily for windows."
 msgstr "இந்த வண்ணங்கள் முதன்மையாக சாளரங்களுக்குப் பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:198
+#: gradience/frontend/settings_schema.py:198
 msgid "View Colors"
 msgstr "வண்ணங்களைக் காண்க"
 
-#: gradience/settings_schema.py:200
+#: gradience/frontend/settings_schema.py:200
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
@@ -1087,11 +1118,11 @@ msgstr ""
 "இந்த வண்ணங்கள் உரை காட்சிகள் மற்றும் உள்ளீடுகள் போன்ற பல்வேறு விட்ஜெட்களில் "
 "பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:218
+#: gradience/frontend/settings_schema.py:218
 msgid "Header Bar Colors"
 msgstr "தலைப்பு பட்டி வண்ணங்கள்"
 
-#: gradience/settings_schema.py:220
+#: gradience/frontend/settings_schema.py:220
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
@@ -1099,11 +1130,11 @@ msgstr ""
 "இந்த வண்ணங்கள் தலைப்புப் பட்டிகளுக்கும், தேடல் பார்கள் அல்லது டேப் பார்கள் போன்ற பார்வைக்கு "
 "இணைக்கப்பட வேண்டிய விட்ஜெட்டுகளுக்கும் பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:237
+#: gradience/frontend/settings_schema.py:237
 msgid "Border Color"
 msgstr "பார்டர் நிறம்"
 
-#: gradience/settings_schema.py:239
+#: gradience/frontend/settings_schema.py:239
 msgid ""
 "The border color has the same default value as a foreground color, but "
 "doesn't change along with it. This can be useful if a light window has a "
@@ -1117,11 +1148,11 @@ msgstr ""
 "மாறியானது செங்குத்து எல்லைகளுக்கு மட்டுமே பயன்படுத்தப்படுகிறது - எடுத்துக்காட்டாக, "
 "பிளவுபட்ட தலைப்புப் பட்டி அமைப்பில் உள்ள இரண்டு தலைப்புப் பட்டைகளுக்கு இடையே பிரிப்பான்கள்."
 
-#: gradience/settings_schema.py:252
+#: gradience/frontend/settings_schema.py:252
 msgid "Backdrop Color"
 msgstr "பின்னணி நிறம்"
 
-#: gradience/settings_schema.py:254
+#: gradience/frontend/settings_schema.py:254
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -1133,12 +1164,13 @@ msgstr ""
 "அதனுடன் ஒன்றாக மாறுகிறது. இந்த மாறியை மாற்றும்போது, உங்கள் தலைப்புப் பட்டியின் பின்னணி "
 "நிறத்துடன் பொருந்தக்கூடிய மதிப்பிற்கு அதை அமைக்கவும்."
 
-#: gradience/settings_schema.py:265 gradience/settings_schema.py:292
-#: gradience/settings_schema.py:343
+#: gradience/frontend/settings_schema.py:265
+#: gradience/frontend/settings_schema.py:292
+#: gradience/frontend/settings_schema.py:343
 msgid "Shade Color"
 msgstr "நிழல் நிறம்"
 
-#: gradience/settings_schema.py:267
+#: gradience/frontend/settings_schema.py:267
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
@@ -1146,15 +1178,15 @@ msgstr ""
 "தலைப்புப் பட்டைகள் மற்றும் பிரதான சாளரத்திலிருந்து அவற்றைப் பிரிக்கும் ஒத்த "
 "விட்ஜெட்டுகளுக்கு இருண்ட எல்லையை வழங்க நிழல் வண்ணம் பயன்படுத்தப்படுகிறது."
 
-#: gradience/settings_schema.py:277
+#: gradience/frontend/settings_schema.py:277
 msgid "Card Colors"
 msgstr "அட்டை நிறங்கள்"
 
-#: gradience/settings_schema.py:278
+#: gradience/frontend/settings_schema.py:278
 msgid "These colors are used for cards and boxed lists."
 msgstr "இந்த வண்ணங்கள் அட்டைகள் மற்றும் பெட்டி பட்டியல்களுக்குப் பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:294
+#: gradience/frontend/settings_schema.py:294
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
@@ -1163,31 +1195,31 @@ msgstr ""
 "ஜன்னல் பின்னணியில் இருந்து தங்களைப் பிரித்துக் கொள்ள கார்டுகளால் பயன்படுத்தப்படும் "
 "நிழல்களுக்கும், கார்டுகளில் உள்ள வரிசை பிரிப்பான்களுக்கும் நிழல் வண்ணம் பயன்படுத்தப்படுகிறது."
 
-#: gradience/settings_schema.py:304
+#: gradience/frontend/settings_schema.py:304
 msgid "Dialog Colors"
 msgstr "உரையாடல் நிறங்கள்"
 
-#: gradience/settings_schema.py:305
+#: gradience/frontend/settings_schema.py:305
 msgid "These colors are used for message dialogs."
 msgstr "இந்த வண்ணங்கள் செய்தி உரையாடல்களுக்குப் பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:321
+#: gradience/frontend/settings_schema.py:321
 msgid "Popover Colors"
 msgstr "பாப்ஓவர் நிறங்கள்"
 
-#: gradience/settings_schema.py:322
+#: gradience/frontend/settings_schema.py:322
 msgid "These colors are used for popovers."
 msgstr "இந்த நிறங்கள் பாப்ஓவர்களுக்காக பயன்படுத்தப்படுகின்றன."
 
-#: gradience/settings_schema.py:338
+#: gradience/frontend/settings_schema.py:338
 msgid "Miscellaneous Colors"
 msgstr "இதர நிறங்கள்"
 
-#: gradience/settings_schema.py:339
+#: gradience/frontend/settings_schema.py:339
 msgid "Colors that don't fit in any particular group."
 msgstr "எந்த குறிப்பிட்ட குழுவிற்கும் பொருந்தாத வண்ணங்கள்."
 
-#: gradience/settings_schema.py:345
+#: gradience/frontend/settings_schema.py:345
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -1195,11 +1227,11 @@ msgstr ""
 "நிழல் வண்ணம் இன்லைன் டேப் பார்கள், துண்டுப் பிரசுரங்கள் மற்றும் மடிப்புகளின் மாற்றங்கள் மற்றும் "
 "தகவல் பட்டி பார்டர்களால் பயன்படுத்தப்படுகிறது."
 
-#: gradience/settings_schema.py:353
+#: gradience/frontend/settings_schema.py:353
 msgid "Scrollbar Outline Color"
 msgstr "ஸ்க்ரோல்பார் அவுட்லைன் நிறம்"
 
-#: gradience/settings_schema.py:355
+#: gradience/frontend/settings_schema.py:355
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -1207,31 +1239,31 @@ msgstr ""
 "உள்ளடக்கத்தின் நிறத்தைப் பொருட்படுத்தாமல் மேலடுக்கு ஸ்க்ரோல்பார்கள் தெரியும் என்பதை "
 "உறுதிப்படுத்த, ஸ்க்ரோல்பார் அவுட்லைன் வண்ணம் ஸ்க்ரோல்பார்களால் பயன்படுத்தப்படுகிறது."
 
-#: gradience/settings_schema.py:365
+#: gradience/frontend/settings_schema.py:365
 msgid "Blue"
 msgstr "நீலம்"
 
-#: gradience/settings_schema.py:366
+#: gradience/frontend/settings_schema.py:366
 msgid "Green"
 msgstr "பச்சை"
 
-#: gradience/settings_schema.py:367
+#: gradience/frontend/settings_schema.py:367
 msgid "Yellow"
 msgstr "மஞ்சள்"
 
-#: gradience/settings_schema.py:368
+#: gradience/frontend/settings_schema.py:368
 msgid "Orange"
 msgstr "ஆரஞ்சு"
 
-#: gradience/settings_schema.py:369
+#: gradience/frontend/settings_schema.py:369
 msgid "Red"
 msgstr "சிவப்பு"
 
-#: gradience/settings_schema.py:370
+#: gradience/frontend/settings_schema.py:370
 msgid "Purple"
 msgstr "ஊதா"
 
-#: gradience/settings_schema.py:371
+#: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "பழுப்பு"
 
