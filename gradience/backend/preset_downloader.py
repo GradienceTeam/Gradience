@@ -21,7 +21,7 @@ import json
 
 from gi.repository import GLib, Soup
 
-from gradience.backend.models.preset import presets_dir
+from gradience.backend.globals import presets_dir
 from gradience.backend.utils.common import to_slug_case
 
 from gradience.backend.logger import Logger

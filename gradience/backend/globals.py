@@ -1,4 +1,4 @@
-# repo.py
+# globals.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
@@ -18,23 +18,8 @@
 
 import os
 
-from gradience.backend.utils.common import to_slug_case
-from gradience.backend.globals import presets_dir
-from gradience.backend.models.preset import Preset
 
-
-class Repo:
-    presets = {}
-
-    def __init__(self, name):
-        self.name = to_slug_case(name)
-        self.path = os.path.join(presets_dir, name)
-        self.presets = self.get_presets()
-
-    def get_presets(self):
-        presets = {}
-        for preset in os.listdir(self.path):
-            if preset.endswith(".json"):
-                preset_path = os.path.join(self.path, preset)
-                presets[preset[:-5]] = Preset().new_from_path(preset_path)
-        return presets
+presets_dir = os.path.join(
+    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
+    "presets",
+)

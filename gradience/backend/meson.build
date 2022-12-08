@@ -26,6 +26,7 @@ gradience_sources = [
     '__init__.py',
     'css_parser.py',
     'flatpak_overrides.py',
+    'globals.py',
     'logger.py',
     'preset_downloader.py'
 ]

@@ -25,8 +25,10 @@ from pathlib import Path
 from material_color_utilities_python import *
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
+from gradience.backend.globals import presets_dir
 from gradience.backend.css_parser import parse_css
-from gradience.backend.models.preset import Preset, presets_dir
+from gradience.backend.models.preset import Preset
+from gradience.backend.utils.colors import rgba_from_argb
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.constants import *
 
@@ -288,7 +290,7 @@ class GradienceApplication(Adw.Application):
                 "palette": palette,
                 "custom_css": {"gtk4": custom_css},
             }
-            self.preset = Preset(preset=preset)
+            self.preset = Preset().new_from_dict(preset)
             self.load_preset_variables_from_preset()
         except OSError:  # fallback to adwaita
             logging.warning("Custom preset not found. Fallback to Adwaita")
@@ -320,13 +322,13 @@ class GradienceApplication(Adw.Application):
 
     def load_preset_from_file(self, preset_path):
         logging.debug(f"load preset from file {preset_path}")
-        self.preset = Preset(preset_path=preset_path)
+        self.preset = Preset().new_from_path(preset_path)
         self.load_preset_variables_from_preset()
 
     def load_preset_from_resource(self, preset_path):
         preset_text = Gio.resources_lookup_data(
             preset_path, 0).get_data().decode()
-        self.preset = Preset(text=preset_text)
+        self.preset = Preset().new_from_resource(text=preset_text)
         self.load_preset_variables_from_preset()
 
     def load_preset_variables_from_preset(self, preset=None):
@@ -374,29 +376,17 @@ class GradienceApplication(Adw.Application):
 
         self.reload_variables()
 
-    @staticmethod
-    def rgba_from_argb(argb, alpha=None) -> str:
-        base = "rgba({}, {}, {}, {})"
-
-        red = redFromArgb(argb)
-        green = greenFromArgb(argb)
-        blue = blueFromArgb(argb)
-        if not alpha:
-            alpha = alphaFromArgb(argb)
-
-        return base.format(red, green, blue, alpha)
-
-    def update_theme_from_monet(self, theme, tone, monet_theme):
-        palettes = theme["palettes"]
+    def update_theme_from_monet(self, monet, tone, monet_theme):
+        palettes = monet["palettes"]
 
         monet_theme = monet_theme.get_string().lower()  # dark / light
 
         palette = {}
-        i = 0
-        for color in palettes.values():
-            i += 1
+
+        for i, color in zip(range(1, 7), palettes.values()):
             palette[str(i)] = hexFromArgb(color.tone(int(tone.get_string())))
         self.pref_palette_shades["monet"].update_shades(palette)
+
         if monet_theme == "auto":
             if self.style_manager.get_dark():
                 monet_theme = "dark"
@@ -506,6 +496,7 @@ class GradienceApplication(Adw.Application):
 
         self.reload_variables()
 
+    # TODO: Move to backend/utils modules
     def generate_gtk_css(self, app_type):
         final_css = ""
         for key in self.variables.keys():
@@ -782,7 +773,7 @@ class GradienceApplication(Adw.Application):
 
     def save_preset(self, _unused, response, preset_entry):
         if response == "save":
-            self.preset.save_preset(preset_entry.get_text(), self.plugins_list)
+            self.preset.save_to_file(preset_entry.get_text(), self.plugins_list)
             self.clear_dirty()
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset saved")))

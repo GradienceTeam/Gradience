@@ -25,7 +25,7 @@ from pathlib import Path
 from gi.repository import Gtk, Adw, GLib
 
 from gradience.backend.preset_downloader import fetch_presets
-from gradience.backend.models.preset import presets_dir
+from gradience.backend.globals import presets_dir
 from gradience.backend.constants import rootdir
 
 from gradience.frontend.widgets.preset_row import GradiencePresetRow
