@@ -514,6 +514,7 @@ class GradienceApplication(Adw.Application):
             Adw.ResponseAppearance.DESTRUCTIVE,
             transient_for=self.props.active_window,
         )
+        dialog.gtk3_app_type.set_sensitive(False)
         dialog.connect("response", self.restore_color_scheme)
         dialog.present()
 
@@ -691,60 +692,10 @@ class GradienceApplication(Adw.Application):
     def apply_color_scheme(self, widget, response):
         if response == "apply":
             if widget.get_app_types()["gtk4"]:
-                gtk4_dir = os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "gtk-4.0",
-                )
-                if not os.path.exists(gtk4_dir):
-                    os.makedirs(gtk4_dir)
-                gtk4_css = self.generate_gtk_css("gtk4")
-                contents = ""
-                try:
-                    with open(
-                        os.path.join(gtk4_dir, "gtk.css"), "r", encoding="utf-8"
-                    ) as file:
-                        contents = file.read()
-                except FileNotFoundError:  # first run
-                    pass
-                else:
-                    with open(
-                        os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
-                    ) as file:
-                        file.write(contents)
-                finally:
-                    with open(
-                        os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
-                    ) as file:
-                        file.write(gtk4_css)
+                PresetUtils().apply_preset("gtk4", self.preset)
 
             if widget.get_app_types()["gtk3"]:
-                gtk3_dir = os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "gtk-3.0",
-                )
-                if not os.path.exists(gtk3_dir):
-                    os.makedirs(gtk3_dir)
-                gtk3_css = self.generate_gtk_css("gtk3")
-                contents = ""
-                try:
-                    with open(
-                        os.path.join(gtk3_dir, "gtk.css"), "r", encoding="utf-8"
-                    ) as file:
-                        contents = file.read()
-                except FileNotFoundError:  # first run
-                    pass
-                else:
-                    with open(
-                        os.path.join(gtk3_dir, "gtk.css.bak"), "w", encoding="utf-8"
-                    ) as file:
-                        file.write(contents)
-                finally:
-                    with open(
-                        os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
-                    ) as file:
-                        file.write(gtk3_css)
+                PresetUtils().apply_preset("gtk3", self.preset)
 
             self.reload_plugins()
             self.plugins_list.apply()
@@ -753,11 +704,12 @@ class GradienceApplication(Adw.Application):
                 Adw.Toast(title=_("Preset set successfully"))
             )
 
+            # TODO: Make it as a seperate widget
             dialog = Adw.MessageDialog(
                 transient_for=self.props.active_window,
                 heading=_("Log out"),
                 body=_(
-                    "For the changes to take effect, you need to log out. "
+                    "For the changes to take full effect, you need to log out."
                 ),
                 body_use_markup=True,
             )
@@ -776,42 +728,9 @@ class GradienceApplication(Adw.Application):
     def restore_color_scheme(self, widget, response):
         if response == "restore":
             if widget.get_app_types()["gtk4"]:
-                file = Gio.File.new_for_path(
-                    os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "gtk-4.0/gtk.css.bak",
-                    )
-                )
                 try:
-                    backup = open(
-                        os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "gtk-4.0/gtk.css.bak",
-                        ),
-                        "r",
-                        encoding="utf-8",
-                    )
-                    contents = backup.read()
-                    backup.close()
-                    gtk4css = open(
-                        os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "gtk-4.0/gtk.css",
-                        ),
-                        "w",
-                        encoding="utf-8",
-                    )
-                    gtk4css.write(contents)
-                    gtk4css.close()
-                except FileNotFoundError:
+                    PresetUtils().restore_gtk4_preset()
+                except Exception:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to restore GTK 4 backup"))
                     )
@@ -820,7 +739,7 @@ class GradienceApplication(Adw.Application):
                 transient_for=self.props.active_window,
                 heading=_("Log out"),
                 body=_(
-                    "For the changes to take effect, you need to log out. "
+                    "For the changes to take full effect, you need to log out."
                 ),
                 body_use_markup=True,
             )
@@ -839,32 +758,16 @@ class GradienceApplication(Adw.Application):
     def reset_color_scheme(self, widget, response):
         if response == "reset":
             if widget.get_app_types()["gtk4"]:
-                file = Gio.File.new_for_path(
-                    os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "gtk-4.0/gtk.css",
-                    )
-                )
                 try:
-                    file.delete()
+                    PresetUtils().reset_preset("gtk4")
                 except Exception:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to delete current preset"))
                     )
 
             if widget.get_app_types()["gtk3"]:
-                file = Gio.File.new_for_path(
-                    os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "gtk-3.0/gtk.css",
-                    )
-                )
                 try:
-                    file.delete()
+                    PresetUtils().reset_preset("gtk3")
                 except Exception:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to delete current preset"))
@@ -874,7 +777,7 @@ class GradienceApplication(Adw.Application):
                 transient_for=self.props.active_window,
                 heading=_("Log out"),
                 body=_(
-                    "For the changes to take effect, you need to log out. "
+                    "For the changes to take full effect, you need to log out."
                 ),
                 body_use_markup=True,
             )
@@ -895,6 +798,7 @@ class GradienceApplication(Adw.Application):
         prefs.set_transient_for(self.win)
         prefs.present()
 
+    # TODO: Move it to seperate frontend module
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,

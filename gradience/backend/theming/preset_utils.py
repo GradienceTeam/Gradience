@@ -16,12 +16,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+import os
 import json
-import material_color_utilities_python as monet
+
+from gi.repository import GLib, Gio
 
 from gradience.backend.theming.monet import Monet
 from gradience.backend.models.preset import Preset
 from gradience.backend.utils.colors import rgba_from_argb
+
+from gradience.backend.globals import get_gtk_theme_dir
 
 from gradience.backend.logger import Logger
 
@@ -31,6 +35,24 @@ logging = Logger()
 class PresetUtils:
     def __init__(self):
         self.preset = Preset()
+
+    def generate_gtk_css(self, app_type: str, preset: Preset) -> str:
+        variables = preset.variables
+        palette = preset.palette
+        custom_css = preset.custom_css
+
+        final_css = ""
+
+        for key in variables.keys():
+            final_css += f"@define-color {key} {variables[key]};\n"
+
+        for prefix_key in palette.keys():
+            for key in palette[prefix_key].keys():
+                final_css += f"@define-color {prefix_key + key} {palette[prefix_key][key]};\n"
+
+        final_css += custom_css.get(app_type, "")
+
+        return final_css
 
     def new_preset_from_monet(self, name=None, monet_palette=None, props=None, vars_only=False) -> dict or bool:
         if props:
@@ -160,10 +182,130 @@ class PresetUtils:
             self.preset.save_to_file(name=name)
         except Exception as e:
             # TODO: Move exception handling to model/preset module
-            logging.error(f"Unexpected file error while trying to generate preset from generated Monet palette. Exc: {e}")
+            logging.error(f"Unexpected file error while trying to generate preset from Monet palette. Exc: {e}")
             return False
 
         return True
+
+    def apply_preset(self, app_type: str, preset: Preset) -> None:
+        if app_type == "gtk4":
+            theme_dir = get_gtk_theme_dir(app_type)
+
+            if not os.path.exists(theme_dir):
+                os.makedirs(theme_dir)
+
+            gtk4_css = self.generate_gtk_css("gtk4", preset)
+            contents = ""
+
+            try:
+                with open(
+                    os.path.join(theme_dir, "gtk.css"), "r", encoding="utf-8"
+                ) as file:
+                    contents = file.read()
+            except FileNotFoundError: # first run
+                pass
+            else:
+                with open(
+                    os.path.join(theme_dir, "gtk.css.bak"), "w", encoding="utf-8"
+                ) as file:
+                    file.write(contents)
+            finally:
+                with open(
+                    os.path.join(theme_dir, "gtk.css"), "w", encoding="utf-8"
+                ) as file:
+                    file.write(gtk4_css)
+        elif app_type == "gtk3":
+            theme_dir = get_gtk_theme_dir(app_type)
+
+            if not os.path.exists(theme_dir):
+                os.makedirs(theme_dir)
+
+            gtk3_css = self.generate_gtk_css("gtk3", preset)
+            contents = ""
+
+            try:
+                with open(
+                    os.path.join(theme_dir, "gtk.css"), "r", encoding="utf-8"
+                ) as file:
+                    contents = file.read()
+            except FileNotFoundError: # first run
+                pass
+            else:
+                with open(
+                    os.path.join(theme_dir, "gtk.css.bak"), "w", encoding="utf-8"
+                ) as file:
+                    file.write(contents)
+            finally:
+                with open(
+                    os.path.join(theme_dir, "gtk.css"), "w", encoding="utf-8"
+                ) as file:
+                    file.write(gtk3_css)
+
+    def restore_gtk4_preset(self):
+        try:
+            with open(
+                os.path.join(
+                    os.environ.get(
+                        "XDG_CONFIG_HOME", os.environ["HOME"] +
+                        "/.config"
+                    ),
+                    "gtk-4.0/gtk.css.bak",
+                ),
+                "r",
+                encoding="utf-8",
+            ) as backup:
+                contents = backup.read()
+                backup.close()
+
+            with open(
+                os.path.join(
+                    os.environ.get(
+                        "XDG_CONFIG_HOME", os.environ["HOME"] +
+                        "/.config"
+                    ),
+                    "gtk-4.0/gtk.css",
+                ),
+                "w",
+                encoding="utf-8",
+            ) as gtk4css:
+                gtk4css.write(contents)
+                gtk4css.close()
+        except OSError as e:
+            logging.error(f"Unable to restore Gtk4 backup. Exc: {e}")
+            raise
+
+    def reset_preset(self, app_type: str) -> None:
+        if app_type == "gtk4":
+            file = Gio.File.new_for_path(
+                os.path.join(
+                    os.environ.get(
+                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                    ),
+                    "gtk-4.0/gtk.css",
+                )
+            )
+
+            try:
+                file.delete()
+            except GLib.GError as e:
+                logging.error(f"Unable to delete current preset. Exc: {e}")
+                raise
+        elif app_type == "gtk3":
+            file = Gio.File.new_for_path(
+                os.path.join(
+                    os.environ.get(
+                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+                    ),
+                    "gtk-3.0/gtk.css",
+                )
+            )
+
+            try:
+                file.delete()
+            except GLib.GError as e:
+                logging.error(f"Unable to delete current preset. Exc: {e}")
+                raise
+
 
 if __name__ == "__main__":
     preset_utils = PresetUtils()
