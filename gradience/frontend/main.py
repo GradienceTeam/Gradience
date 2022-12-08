@@ -28,6 +28,7 @@ from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from gradience.backend.globals import presets_dir
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
+from gradience.backend.theming.preset_utils import PresetUtils
 from gradience.backend.utils.colors import rgba_from_argb
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.constants import *
@@ -393,102 +394,8 @@ class GradienceApplication(Adw.Application):
             else:
                 monet_theme = "light"
 
-        if monet_theme == "dark":
-            dark_theme = theme["schemes"]["dark"]
-            variable = {
-                "accent_color": self.rgba_from_argb(dark_theme.primary),
-                "accent_bg_color": self.rgba_from_argb(dark_theme.primaryContainer),
-                "accent_fg_color": self.rgba_from_argb(dark_theme.onPrimaryContainer),
-                "destructive_color": self.rgba_from_argb(dark_theme.error),
-                "destructive_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
-                "destructive_fg_color": self.rgba_from_argb(
-                    dark_theme.onErrorContainer
-                ),
-                "success_color": self.rgba_from_argb(dark_theme.tertiary),
-                "success_bg_color": self.rgba_from_argb(dark_theme.onTertiary),
-                "success_fg_color": self.rgba_from_argb(dark_theme.onTertiaryContainer),
-                "warning_color": self.rgba_from_argb(dark_theme.secondary),
-                "warning_bg_color": self.rgba_from_argb(dark_theme.onSecondary),
-                "warning_fg_color": self.rgba_from_argb(dark_theme.primary, "0.8"),
-                "error_color": self.rgba_from_argb(dark_theme.error),
-                "error_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
-                "error_fg_color": self.rgba_from_argb(dark_theme.onError),
-                "window_bg_color": self.rgba_from_argb(dark_theme.surface),
-                "window_fg_color": self.rgba_from_argb(dark_theme.onSurface),
-                "view_bg_color": self.rgba_from_argb(dark_theme.surface),
-                "view_fg_color": self.rgba_from_argb(dark_theme.onSurface),
-                "headerbar_bg_color": self.rgba_from_argb(dark_theme.surface),
-                "headerbar_fg_color": self.rgba_from_argb(dark_theme.onSurface),
-                "headerbar_border_color": self.rgba_from_argb(
-                    dark_theme.primary, "0.8"
-                ),
-                "headerbar_backdrop_color": "@headerbar_bg_color",
-                "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
-                "card_shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "dialog_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
-                "dialog_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
-                "popover_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
-                "popover_fg_color": self.rgba_from_argb(
-                    dark_theme.onSecondaryContainer
-                ),
-                "shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "scrollbar_outline_color": self.rgba_from_argb(dark_theme.outline),
-            }
-        else:  # light
-            light_theme = theme["schemes"]["light"]
-            variable = {
-                "accent_color": self.rgba_from_argb(light_theme.primary),
-                "accent_bg_color": self.rgba_from_argb(light_theme.primary),
-                "accent_fg_color": self.rgba_from_argb(light_theme.onPrimary),
-                "destructive_color": self.rgba_from_argb(light_theme.error),
-                "destructive_bg_color": self.rgba_from_argb(light_theme.errorContainer),
-                "destructive_fg_color": self.rgba_from_argb(
-                    light_theme.onErrorContainer
-                ),
-                "success_color": self.rgba_from_argb(light_theme.tertiary),
-                "success_bg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
-                "success_fg_color": self.rgba_from_argb(
-                    light_theme.onTertiaryContainer
-                ),
-                "warning_color": self.rgba_from_argb(light_theme.secondary),
-                "warning_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "warning_fg_color": self.rgba_from_argb(
-                    light_theme.onSecondaryContainer
-                ),
-                "error_color": self.rgba_from_argb(light_theme.error),
-                "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
-                "error_fg_color": self.rgba_from_argb(light_theme.onError),
-                "window_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "window_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "view_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "view_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "headerbar_bg_color": self.rgba_from_argb(
-                    light_theme.secondaryContainer
-                ),
-                "headerbar_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "headerbar_border_color": self.rgba_from_argb(
-                    light_theme.primary, "0.8"
-                ),
-                "headerbar_backdrop_color": "@headerbar_bg_color",
-                "headerbar_shade_color": self.rgba_from_argb(
-                    light_theme.secondaryContainer
-                ),
-                "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
-                "card_shade_color": self.rgba_from_argb(light_theme.shadow),
-                "dialog_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "dialog_fg_color": self.rgba_from_argb(
-                    light_theme.onSecondaryContainer
-                ),
-                "popover_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "popover_fg_color": self.rgba_from_argb(
-                    light_theme.onSecondaryContainer
-                ),
-                "shade_color": self.rgba_from_argb(light_theme.shadow),
-                "scrollbar_outline_color": self.rgba_from_argb(light_theme.outline),
-            }
+        variable = PresetUtils().new_preset_from_monet(monet_palette=monet,
+                                                        props=[tone, monet_theme], vars_only=True)
 
         for key in variable:
             if key in self.pref_variables:
@@ -864,7 +771,7 @@ class GradienceApplication(Adw.Application):
 
     def on_theme_set_dialog_response (self, dialog, response):
         if response == "ok":
-            print("theme_set_dialog_ok")
+            logging.debug("theme_set_dialog_ok")
 
     def restore_color_scheme(self, widget, response):
         if response == "restore":
@@ -927,7 +834,7 @@ class GradienceApplication(Adw.Application):
 
     def on_theme_restore_dialog_response (self, dialog, response):
         if response == "ok":
-            print("theme_restore_dialog_ok")
+            logging.debug("theme_restore_dialog_ok")
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
@@ -981,7 +888,7 @@ class GradienceApplication(Adw.Application):
 
     def on_theme_reset_dialog_response (self, dialog, response):
         if response == "ok":
-            print("theme_reset_dialog_ok")
+            logging.debug("theme_reset_dialog_ok")
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)

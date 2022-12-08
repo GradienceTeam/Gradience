@@ -23,6 +23,7 @@ from reportlab.graphics import renderPM
 from material_color_utilities_python import *
 from gi.repository import Gtk, Adw, Gio
 
+from gradience.backend.theming.monet import Monet
 from gradience.backend.constants import rootdir, app_id, build_type
 
 from gradience.frontend.widgets.error_list_row import GradienceErrorListRow
@@ -70,11 +71,11 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.connect("unrealize", self.save_window_props)
 
         self.style_manager = self.get_application().style_manager
-        self.first_apply = True
+        #self.first_apply = True
 
         self.get_default_wallpaper()
 
-    # FIXME: This function works only when building using meson, because Flatpak
+    # FIXME: This function works only when building using meson, because Flatpak \
     # can't access host's dconf with current config/impl
     def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
@@ -210,39 +211,23 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     def on_apply_button(self, *_args):
         if self.monet_image_file:
-            if self.monet_image_file.endswith(".svg"):
-                drawing = svg2rlg(self.monet_image_file)
-                self.monet_image_file = os.path.join(
-                    os.environ.get("XDG_RUNTIME_DIR"), "gradience_bg.png"
-                )
-                renderPM.drawToFile(drawing, self.monet_image_file, fmt="PNG")
-
-            if self.monet_image_file.endswith(".xml"):
-                logging.debug("XML WIP")
-
             try:
-                self.monet_img = Image.open(self.monet_image_file)
-            except Exception:
-                self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Unsupported background type"))
-                )
-            else:
-                basewidth = 64
-                wpercent = basewidth / float(self.monet_img.size[0])
-                hsize = int((float(self.monet_img.size[1]) * float(wpercent)))
-                self.monet_img = self.monet_img.resize(
-                    (basewidth, hsize), Image.Resampling.LANCZOS
-                )
-                self.theme = themeFromImage(self.monet_img)
+                self.theme = Monet().generate_from_image(self.monet_image_file)
+
                 self.tone = self.tone_row.get_selected_item()
                 self.monet_theme = self.monet_theme_row.get_selected_item()
                 self.get_application().update_theme_from_monet(
                     self.theme, self.tone, self.monet_theme
                 )
-                if not self.first_apply:
-                    self.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Palette generated"))
-                    )
+            except Exception as e:
+                logging.error(f"Failed to generate Monet palette. Exc: {e}")
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Failed to generate Monet palette"))
+                )
+            else:
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Palette generated"))
+                )
         else:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Select a background first"))

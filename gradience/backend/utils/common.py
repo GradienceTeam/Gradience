@@ -23,7 +23,7 @@ import subprocess
 from anyascii import anyascii
 
 
-def to_slug_case(non_slug):
+def to_slug_case(non_slug) -> str:
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
 def run_command(command, *args, **kwargs):
