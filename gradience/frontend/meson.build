@@ -13,6 +13,7 @@ configure_file(
   configuration: local_conf
 )
 
+subdir('cli')
 subdir('dialogs')
 subdir('utils')
 subdir('views')

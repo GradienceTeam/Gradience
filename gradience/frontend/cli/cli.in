@@ -1,0 +1,170 @@
+#!/usr/bin/env python3
+
+# cli.py
+#
+# Change the look of Adwaita, with ease
+# Copyright (C) 2022 Gradience Team
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+import sys
+import json
+import signal
+import argparse
+
+from gradience.backend.theming.monet import Monet
+from gradience.backend.models.preset import Preset
+from gradience.backend.theming.preset_utils import PresetUtils
+
+
+version = "@VERSION@"
+
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+
+class CLI:
+    def __init__(self):
+        self.parser = argparse.ArgumentParser(description="Gradience - change the look of Adwaita, with ease")
+        self.parser.add_argument("-V", "--version", action="version", version=f"Gradience, version {version}")
+        #self.parser.add_argument('-J', '--pretty-json', dest='pretty_json', action='store_true', help='pretty-print JSON output')
+
+        subparsers = self.parser.add_subparsers(dest="command")
+
+        #info_parser = subparsers.add_parser("info", help="show information about Gradience")
+
+        presets_parser = subparsers.add_parser("presets", help="list installed presets")
+
+        favorites_parser = subparsers.add_parser("favorites", help="list favorited presets")
+        favorites_parser.add_argument("-a", "--add-preset", metavar="PRESET_NAME", help="add preset to favorites")
+        favorites_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove preset from favorites")
+
+        apply_parser = subparsers.add_parser("apply", help="apply an preset")
+        apply_group = apply_parser.add_mutually_exclusive_group(required=True)
+        apply_group.add_argument("-n", "--preset-name", help="preset's display name")
+        apply_group.add_argument("-p", "--preset-path", help="absolute path to a preset file")
+        apply_parser.add_argument("--gtk", choices=["gtk4", "gtk3", "both"], default="gtk4", help="types of applications you want to theme (default: gtk4)")
+        apply_parser.add_argument("--flatpak", choices=["gtk4", "gtk3", "both"], help="types of Flatpak applications you want to theme (for GTK3 option, make sure you have adw-gtk3 installed as Flatpak)")
+
+        new_parser = subparsers.add_parser("new", help="create a new preset")
+        #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
+        new_parser.add_argument("-n", "--name", help="preset's display name", required=True)
+        new_parser.add_argument("--colors", help="", required=True)
+        new_parser.add_argument("--palette", help="")
+        new_parser.add_argument("--custom-css", help="")
+        new_parser.add_argument("--preset-stdout", action="store_true", help="print out preset in JSON format directly to stdout")
+
+        download_parser = subparsers.add_parser("download", help="download preset from internet")
+        #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
+        download_parser.add_argument("-n", "--preset-name", help="", required=True)
+        #download_parser.add_argument("--custom-url", help="use custom repository's presets.json to download other presets")
+
+        monet_parser = subparsers.add_parser("monet", help="generate Material You preset from image")
+        monet_parser.add_argument("-n", "--preset-name", help="name for a generated preset", required=True)
+        monet_parser.add_argument("-p", "--image-path", help="abosulte path to image", required=True)
+        monet_parser.add_argument("--tone", default=20, help="set a tone for colors (default: 20)")
+        monet_parser.add_argument("--theme", choices=["light", "dark"], default="light", help="choose whatever it should be a light or dark theme (default: light)")
+        monet_parser.add_argument("--preset-stdout", action="store_true", help="print out preset in JSON format directly to stdout")
+
+        overrides_parser = subparsers.add_parser("flatpak-overrides", help="enable or disable Flatpak theming")
+        overrides_group = overrides_parser.add_mutually_exclusive_group(required=True)
+        overrides_group.add_argument("-e", "--enable-theming", action="store_true", help="enable overrides for Flatpak theming")
+        overrides_group.add_argument("-d", "--disable-theming", action="store_true", help="disable overrides for Flatpak theming")
+
+        self.__parse_args()
+
+    def __print_json(self, data, pretty=False):
+        if pretty:
+            print(json.dumps(data, indent=4))
+        else:
+            print(json.dumps(data))
+
+    def __parse_args(self):
+        args = self.parser.parse_args()
+
+        if not args.command:
+            print(self.parser.format_help())
+
+        if args.command == "presets":
+            self.list_presets(args)
+
+        elif args.command == "favorites":
+            self.favorite_presets(args)
+
+        elif args.command == "apply":
+            self.apply_preset(args)
+
+        elif args.command == "new":
+            self.new_preset(args)
+
+        elif args.command == "download":
+            self.download_preset(args)
+
+        elif args.command == "monet":
+            self.generate_monet(args)
+
+        elif args.command == "flatpak-overrides":
+            self.flatpak_theming(args)
+
+    def list_presets(self, args):
+        pass
+
+    def favorite_presets(self, args):
+        pass
+
+    def apply_preset(self, args):
+        _preset_name = args.preset_name
+        _preset_path = args.preset_path
+        _gtk = args.gtk
+        _flatpak = args.flatpak
+
+        print(_preset_name)
+
+    def new_preset(self, args):
+        #_interactive = args.interactive
+        _name = args.name
+        _colors = args.colors
+        _palette = args.palette
+        _custom_css = args.custom_css
+        _preset_stdout = args.preset_stdout
+
+    def download_preset(self, args):
+        #_interactive = args.interactive
+        _preset_name = args.preset_name
+        #_custom_url = args.custom_url
+
+    def generate_monet(self, args):
+        _preset_name = args.preset_name
+        _image_path = args.image_path
+        _tone = args.tone
+        _theme = args.theme
+        _preset_stdout = args.preset_stdout
+
+        palette = Monet().generate_from_image(_image_path)
+        props = [_tone, _theme]
+
+        if _preset_stdout:
+            preset = PresetUtils().new_preset_from_monet(name=_preset_name, monet_palette=palette, props=props, obj_only=True)
+            preset_json = preset.get_preset_json()
+
+            return print(preset_json)
+
+        monet_preset = PresetUtils().new_preset_from_monet(_preset_name, palette, props)
+
+    def flatpak_theming(self, args):
+        _enable_theming = args.enable_theming
+        _disable_theming = args.disable_theming
+
+
+if __name__ == "__main__":
+    cli = CLI()
