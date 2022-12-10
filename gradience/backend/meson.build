@@ -20,6 +20,7 @@ configure_file(
 )
 
 subdir('models')
+subdir('theming')
 subdir('utils')
 
 gradience_sources = [
