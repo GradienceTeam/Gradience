@@ -394,25 +394,16 @@ class GradienceApplication(Adw.Application):
             else:
                 monet_theme = "light"
 
-        variable = PresetUtils().new_preset_from_monet(monet_palette=monet,
-                                                        props=[tone, monet_theme], vars_only=True)
+        preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
+                                                            props=[tone, monet_theme], obj_only=True)
+
+        variable = preset_object.variables
 
         for key in variable:
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(variable[key])
 
         self.reload_variables()
-
-    # TODO: Move to backend/utils modules
-    def generate_gtk_css(self, app_type):
-        final_css = ""
-        for key in self.variables.keys():
-            final_css += f"@define-color {key} {self.variables[key]};\n"
-        for prefix_key in self.palette.keys():
-            for key in self.palette[prefix_key].keys():
-                final_css += f"@define-color {prefix_key + key} {self.palette[prefix_key][key]};\n"
-        final_css += self.custom_css.get(app_type, "")
-        return final_css
 
     def mark_as_dirty(self):
         self.is_dirty = True
@@ -438,7 +429,7 @@ class GradienceApplication(Adw.Application):
 
     def reload_variables(self):
         parsing_errors = []
-        gtk_css = self.generate_gtk_css("gtk4")
+        gtk_css = PresetUtils().generate_gtk_css("gtk4", self.preset)
         css_provider = Gtk.CssProvider()
 
         def on_error(_, section, error):

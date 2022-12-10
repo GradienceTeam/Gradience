@@ -54,7 +54,7 @@ class PresetUtils:
 
         return final_css
 
-    def new_preset_from_monet(self, name=None, monet_palette=None, props=None, vars_only=False) -> dict or bool:
+    def new_preset_from_monet(self, name=None, monet_palette=None, props=None, obj_only=False) -> Preset or None:
         if props:
             tone = props[0]
             theme = props[1]
@@ -161,31 +161,28 @@ class PresetUtils:
                 "scrollbar_outline_color": rgba_from_argb(light_theme.outline),
             }
 
-        if vars_only == False and not name:
-            raise Exception("You either need to set 'vars_only' property to True, or add value to 'name' property")
+        if obj_only == False and not name:
+            raise Exception("You either need to set 'obj_only' property to True, or add value to 'name' property")
 
-        if vars_only:
-            return variable
+        if obj_only:
+            if name:
+                print("with name, obj_only")
+                self.preset.new(variables=variable, display_name=name)
+            else:
+                print("no name, obj_only")
+                self.preset.new(variables=variable)
+            return self.preset
 
-        self.preset.new(display_name=name, variables=variable)
+        if obj_only == False:
+            print("no obj_only, name")
+            self.preset.new(variables=variable, display_name=name)
 
-        '''preset_dict = {
-            "name": self.preset.display_name,
-            "variables": self.preset.variables,
-            "palette": self.preset.palette,
-            "custom_css": self.preset.custom_css,
-            "plugins": self.preset.plugins,
-        }
-        logging.debug("Generated Monet preset:\n" + json.dumps(preset_dict, indent=4))'''
-
-        try:
-            self.preset.save_to_file(name=name)
-        except Exception as e:
-            # TODO: Move exception handling to model/preset module
-            logging.error(f"Unexpected file error while trying to generate preset from Monet palette. Exc: {e}")
-            return False
-
-        return True
+            try:
+                self.preset.save_to_file()
+            except Exception as e:
+                # TODO: Move exception handling to model/preset module
+                logging.error(f"Unexpected file error while trying to generate preset from Monet palette. Exc: {e}")
+                raise
 
     def apply_preset(self, app_type: str, preset: Preset) -> None:
         if app_type == "gtk4":
@@ -305,12 +302,3 @@ class PresetUtils:
             except GLib.GError as e:
                 logging.error(f"Unable to delete current preset. Exc: {e}")
                 raise
-
-
-if __name__ == "__main__":
-    preset_utils = PresetUtils()
-
-    monet_palette = Monet().generate_from_image("/home/tfuxc/Pictures/Wallpapers/wallhaven-57kzw1.png")
-    props = [20, "dark"]
-
-    preset_utils.new_preset_from_monet("My awesome Monet", monet_palette, props)

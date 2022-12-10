@@ -106,15 +106,17 @@ class Preset:
     plugins = {}
     display_name = "New Preset"
     preset_path = "new_preset"
+    plugins_list = {}
     badges = {}
 
     def __init__(self):
         pass
 
-    def new(self, display_name: str, variables: dict, palette=None, custom_css=None, badges=None):
-        self.display_name = display_name
+    def new(self, variables: dict, display_name=None, palette=None, custom_css=None, badges=None):
         self.variables = variables
 
+        if display_name:
+            self.display_name = display_name
         if palette:
             self.palette = palette
         if custom_css:
@@ -188,12 +190,24 @@ class Preset:
         self.save_to_file(to=self.preset_path)
         os.remove(old_path)
 
+    def get_preset_json(self, indent=None):
+        preset_dict = {
+            "name": self.display_name,
+            "variables": self.variables,
+            "palette": self.palette,
+            "custom_css": self.custom_css,
+            "plugins": self.plugins_list
+        }
+        json_output = json.dumps(preset_dict, indent=indent)
+
+        return json_output
+
     # Save a new user preset (or overwrite one)
     def save_to_file(self, name=None, plugins_list=None, to=None):
         self.display_name = name if name else self.display_name
 
         if to is None:
-            filename = to_slug_case(name) if name else "new_preset"
+            filename = to_slug_case(name) if name else to_slug_case(self.display_name)
             self.preset_path = os.path.join(
                 presets_dir, "user", filename + ".json")
         else:
@@ -212,20 +226,12 @@ class Preset:
                 )
             )
 
-        if plugins_list is None:
-            plugins_list = {}
-        else:
+        if plugins_list:
             plugins_list = plugins_list.save()
 
         with open(self.preset_path, "w", encoding="utf-8") as file:
-            object_to_write = {
-                "name": self.display_name,
-                "variables": self.variables,
-                "palette": self.palette,
-                "custom_css": self.custom_css,
-                "plugins": plugins_list,
-            }
-            file.write(json.dumps(object_to_write, indent=4))
+            content = self.get_preset_json(indent=4)
+            file.write(content)
             file.close()
 
     # TODO: Add validation
