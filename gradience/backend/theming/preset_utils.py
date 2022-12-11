@@ -238,7 +238,7 @@ class PresetUtils:
                 ) as file:
                     file.write(gtk3_css)
 
-    def restore_gtk4_preset(self):
+    def restore_gtk4_preset(self) -> None:
         try:
             with open(
                 os.path.join(

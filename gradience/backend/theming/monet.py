@@ -34,8 +34,6 @@ class Monet:
         self.palette = None
 
     def generate_from_image(self, image_path: str) -> dict:
-        #TODO: Test SVG support? I don't know what's that gradience_bg.png /
-        # and why it is used for SVG images
         if image_path.endswith(".svg"):
             drawing = svg2rlg(image_path)
             image_path = os.path.join(

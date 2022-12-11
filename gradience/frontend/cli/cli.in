@@ -22,10 +22,18 @@ import sys
 import json
 import signal
 import argparse
+import warnings
+
+warnings.filterwarnings("ignore") # suppress GTK warnings
+from gi.repository import Gio
+
+from gradience.backend.globals import preset_repos
 
 from gradience.backend.theming.monet import Monet
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.preset_utils import PresetUtils
+from gradience.backend.preset_downloader import fetch_presets, download_preset
+from gradience.backend.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
 
 
 version = "@VERSION@"
@@ -34,6 +42,8 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
 class CLI:
+    settings = Gio.Settings.new("@APP_ID@")
+
     def __init__(self):
         self.parser = argparse.ArgumentParser(description="Gradience - change the look of Adwaita, with ease")
         self.parser.add_argument("-V", "--version", action="version", version=f"Gradience, version {version}")
@@ -49,12 +59,15 @@ class CLI:
         favorites_parser.add_argument("-a", "--add-preset", metavar="PRESET_NAME", help="add preset to favorites")
         favorites_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove preset from favorites")
 
+        import_parser = subparsers.add_parser("import", help="import an preset")
+        import_parser.add_argument("-p", "--preset-path", help="absolute path to a preset file", required=True)
+
         apply_parser = subparsers.add_parser("apply", help="apply an preset")
         apply_group = apply_parser.add_mutually_exclusive_group(required=True)
         apply_group.add_argument("-n", "--preset-name", help="preset's display name")
         apply_group.add_argument("-p", "--preset-path", help="absolute path to a preset file")
         apply_parser.add_argument("--gtk", choices=["gtk4", "gtk3", "both"], default="gtk4", help="types of applications you want to theme (default: gtk4)")
-        apply_parser.add_argument("--flatpak", choices=["gtk4", "gtk3", "both"], help="types of Flatpak applications you want to theme (for GTK3 option, make sure you have adw-gtk3 installed as Flatpak)")
+        #apply_parser.add_argument("--flatpak", choices=["gtk4", "gtk3", "both"], help="types of Flatpak applications you want to theme (for GTK3 option, make sure you have adw-gtk3 installed as Flatpak)")
 
         new_parser = subparsers.add_parser("new", help="create a new preset")
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
@@ -78,8 +91,8 @@ class CLI:
 
         overrides_parser = subparsers.add_parser("flatpak-overrides", help="enable or disable Flatpak theming")
         overrides_group = overrides_parser.add_mutually_exclusive_group(required=True)
-        overrides_group.add_argument("-e", "--enable-theming", action="store_true", help="enable overrides for Flatpak theming")
-        overrides_group.add_argument("-d", "--disable-theming", action="store_true", help="disable overrides for Flatpak theming")
+        overrides_group.add_argument("-e", "--enable-theming", choices=["gtk4", "gtk3", "both"], default="gtk4", help="enable overrides for Flatpak theming")
+        overrides_group.add_argument("-d", "--disable-theming", choices=["gtk4", "gtk3", "both"], default="gtk4", help="disable overrides for Flatpak theming")
 
         self.__parse_args()
 
@@ -100,6 +113,9 @@ class CLI:
 
         elif args.command == "favorites":
             self.favorite_presets(args)
+
+        elif args.command == "import":
+            self.import_preset(args)
 
         elif args.command == "apply":
             self.apply_preset(args)
@@ -122,13 +138,26 @@ class CLI:
     def favorite_presets(self, args):
         pass
 
+    def import_preset(self, args):
+        pass
+
     def apply_preset(self, args):
         _preset_name = args.preset_name
         _preset_path = args.preset_path
         _gtk = args.gtk
-        _flatpak = args.flatpak
+        #_flatpak = args.flatpak
 
-        print(_preset_name)
+        if _preset_name:
+            sys.stdout.write("Preset name option not implemented yet\n")
+            exit(1)
+        elif _preset_path:
+            preset = Preset().new_from_path(_preset_path)
+
+        if _gtk == "gtk4":
+            PresetUtils().apply_preset("gtk4", preset)
+        elif _gtk == "gtk3":
+            PresetUtils().apply_preset("gtk3", preset)
+        sys.stdout.write("Note: In order for changes to take full effect, you need to log out.\n")
 
     def new_preset(self, args):
         #_interactive = args.interactive
@@ -143,6 +172,16 @@ class CLI:
         _preset_name = args.preset_name
         #_custom_url = args.custom_url
 
+        for repo_name, repo in preset_repos.items():
+            explore_presets, urls = fetch_presets(repo)
+            if explore_presets:
+                for (preset, preset_name), preset_url in zip(explore_presets.items(), urls):
+                    if _preset_name.lower() in preset_name.lower():
+                        print(preset_name, preset_url)
+            else:
+                sys.stdout.write("Error: A transaction between server and recepient couldn't been finished.")
+                exit(1)
+
     def generate_monet(self, args):
         _preset_name = args.preset_name
         _image_path = args.image_path
@@ -154,16 +193,35 @@ class CLI:
         props = [_tone, _theme]
 
         if _preset_stdout:
-            preset = PresetUtils().new_preset_from_monet(name=_preset_name, monet_palette=palette, props=props, obj_only=True)
+            preset = PresetUtils().new_preset_from_monet(name=_preset_name, monet_palette=palette,
+                                                            props=props, obj_only=True)
             preset_json = preset.get_preset_json()
+            sys.stdout.write(f"{preset_json}\n")
+            exit(0)
 
-            return print(preset_json)
+        PresetUtils().new_preset_from_monet(_preset_name, palette, props)
+        sys.stdout.write("Note: In order for changes to take full effect, you need to log out.\n")
 
-        monet_preset = PresetUtils().new_preset_from_monet(_preset_name, palette, props)
-
+    # FIXME: Doesn't work in local build (settings variable doesn't have access to local settings schema)
     def flatpak_theming(self, args):
         _enable_theming = args.enable_theming
         _disable_theming = args.disable_theming
+
+        if _enable_theming == "gtk4":
+            create_gtk_user_override(self.settings, "gtk4")
+        elif _enable_theming == "gtk3":
+            create_gtk_user_override(self.settings, "gtk3")
+        elif _enable_theming == "both":
+            create_gtk_user_override(self.settings, "gtk4")
+            create_gtk_user_override(self.settings, "gtk3")
+
+        if _disable_theming == "gtk4":
+            remove_gtk_user_override(self.settings, "gtk4")
+        elif _disable_theming == "gtk3":
+            remove_gtk_user_override(self.settings, "gtk3")
+        elif _disable_theming == "both":
+            remove_gtk_user_override(self.settings, "gtk4")
+            remove_gtk_user_override(self.settings, "gtk3")
 
 
 if __name__ == "__main__":
