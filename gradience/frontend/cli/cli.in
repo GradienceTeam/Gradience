@@ -18,16 +18,19 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+import os
 import sys
 import json
+import shutil
 import signal
 import argparse
 import warnings
 
 warnings.filterwarnings("ignore") # suppress GTK warnings
-from gi.repository import Gio
+from gi.repository import GLib, Gio
 
-from gradience.backend.globals import preset_repos
+from gradience.backend.utils.common import to_slug_case
+from gradience.backend.globals import preset_repos, presets_dir
 
 from gradience.backend.theming.monet import Monet
 from gradience.backend.models.preset import Preset
@@ -139,7 +142,24 @@ class CLI:
         pass
 
     def import_preset(self, args):
-        pass
+        _preset_path = args.preset_path
+
+        preset_file = GLib.path_get_basename(_preset_path)
+        sys.stdout.write(f"Importing preset: {preset_file.strip()}\n")
+
+        # TODO: Check if preset is already imported
+        if _preset_path.endswith(".json"):
+            shutil.copy(
+                _preset_path,
+                os.path.join(
+                    presets_dir,
+                    "user",
+                    preset_file.strip()
+                )
+            )
+        else:
+            sys.stdout.write("Error: Unsupported file format, must be .json\n")
+            exit(1)
 
     def apply_preset(self, args):
         _preset_name = args.preset_name
@@ -148,7 +168,7 @@ class CLI:
         #_flatpak = args.flatpak
 
         if _preset_name:
-            sys.stdout.write("Preset name option not implemented yet\n")
+            sys.stdout.write("Error: Preset name option not implemented yet\n")
             exit(1)
         elif _preset_path:
             preset = Preset().new_from_path(_preset_path)
@@ -173,13 +193,18 @@ class CLI:
         #_custom_url = args.custom_url
 
         for repo_name, repo in preset_repos.items():
-            explore_presets, urls = PresetDownloader().fetch_presets(repo=repo)
+            explore_presets, urls = PresetDownloader().fetch_presets(repo)
             if explore_presets:
                 for (preset, preset_name), preset_url in zip(explore_presets.items(), urls):
                     if _preset_name.lower() in preset_name.lower():
-                        print(preset_name, preset_url)
+                        sys.stdout.write(f"Downloading preset: {preset_name}\n")
+                        try:
+                            PresetDownloader().download_preset(preset_name, to_slug_case(repo_name), preset_url)
+                        except (GLib.GError, json.JSONDecodeError, OSError) as e:
+                            sys.stdout.write(f"Error: An exception occurred while downloading a preset. Exc: {e}\n")
+                            exit(1)
             else:
-                sys.stdout.write("Error: A transaction between server and recepient couldn't been finished.")
+                sys.stdout.write(f"Error: An error occurred while trying to fetch presets from repository. Exc: {e}\n")
                 exit(1)
 
     def generate_monet(self, args):
@@ -202,7 +227,7 @@ class CLI:
         PresetUtils().new_preset_from_monet(_preset_name, palette, props)
         sys.stdout.write("Note: In order for changes to take full effect, you need to log out.\n")
 
-    # FIXME: Doesn't work in local build (settings variable doesn't have access to local settings schema)
+    # FIXME: Doesn't work in local builds (settings variable doesn't have access to local settings schema)
     def flatpak_theming(self, args):
         _enable_theming = args.enable_theming
         _disable_theming = args.disable_theming

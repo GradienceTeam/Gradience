@@ -310,6 +310,7 @@ class GradiencePresetWindow(Adw.Window):
             "pretty-purple": "Pretty Purple",
         }
 
+        # TODO: Move this from frontend to backend
         for repo in Path(presets_dir).iterdir():
             logging.debug(f"presets_dir.iterdir: {repo}")
             if repo.is_dir():  # repo
