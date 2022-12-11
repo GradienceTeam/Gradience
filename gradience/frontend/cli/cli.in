@@ -32,7 +32,7 @@ from gradience.backend.globals import preset_repos
 from gradience.backend.theming.monet import Monet
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.preset_utils import PresetUtils
-from gradience.backend.preset_downloader import fetch_presets, download_preset
+from gradience.backend.preset_downloader import PresetDownloader
 from gradience.backend.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
 
 
@@ -173,7 +173,7 @@ class CLI:
         #_custom_url = args.custom_url
 
         for repo_name, repo in preset_repos.items():
-            explore_presets, urls = fetch_presets(repo)
+            explore_presets, urls = PresetDownloader().fetch_presets(repo=repo)
             if explore_presets:
                 for (preset, preset_name), preset_url in zip(explore_presets.items(), urls):
                     if _preset_name.lower() in preset_name.lower():

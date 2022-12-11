@@ -219,20 +219,28 @@ class Preset:
                 "user",
             )
         ):
-            os.makedirs(
-                os.path.join(
-                    presets_dir,
-                    "user",
+            try:
+                os.makedirs(
+                    os.path.join(
+                        presets_dir,
+                        "user",
+                    )
                 )
-            )
+            except OSError as e:
+                logging.error(f"Failed to create a new preset directory. Exc: {e}")
+                raise
 
         if plugins_list:
             plugins_list = plugins_list.save()
 
-        with open(self.preset_path, "w", encoding="utf-8") as file:
-            content = self.get_preset_json(indent=4)
-            file.write(content)
-            file.close()
+        try:
+            with open(self.preset_path, "w", encoding="utf-8") as file:
+                content = self.get_preset_json(indent=4)
+                file.write(content)
+                file.close()
+        except OSError as e:
+            logging.error(f"Failed to save preset as a file. Exc: {e}")
+            raise
 
     # TODO: Add validation
     def validate(self):

@@ -24,7 +24,7 @@ from collections import OrderedDict
 from pathlib import Path
 from gi.repository import Gtk, Adw, GLib
 
-from gradience.backend.preset_downloader import fetch_presets
+from gradience.backend.preset_downloader import PresetDownloader
 from gradience.backend.globals import presets_dir, preset_repos
 from gradience.backend.constants import rootdir
 
@@ -141,7 +141,7 @@ class GradiencePresetWindow(Adw.Window):
             else:
                 badge = "white"
 
-            explore_presets, urls = fetch_presets(repo)
+            explore_presets, urls = PresetDownloader().fetch_presets(repo)
 
             if explore_presets:
                 self.search_spinner.props.visible = False
