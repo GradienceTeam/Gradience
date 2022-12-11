@@ -21,21 +21,26 @@ import os
 
 presets_dir = os.path.join(
     os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
-    "presets",
+    "presets"
 )
+
+preset_repos = {
+    "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
+    "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json"
+}
 
 def get_gtk_theme_dir(app_type):
     if app_type == "gtk4":
         theme_dir = os.path.join(
             os.environ.get("XDG_CONFIG_HOME",
                             os.environ["HOME"] + "/.config"),
-            "gtk-4.0",
+            "gtk-4.0"
         )
     elif app_type == "gtk3":
         theme_dir = os.path.join(
             os.environ.get("XDG_CONFIG_HOME",
                             os.environ["HOME"] + "/.config"),
-            "gtk-3.0",
+            "gtk-3.0"
         )
 
     return theme_dir

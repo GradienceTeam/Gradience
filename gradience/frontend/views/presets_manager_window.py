@@ -25,7 +25,7 @@ from pathlib import Path
 from gi.repository import Gtk, Adw, GLib
 
 from gradience.backend.preset_downloader import fetch_presets
-from gradience.backend.globals import presets_dir
+from gradience.backend.globals import presets_dir, preset_repos
 from gradience.backend.constants import rootdir
 
 from gradience.frontend.widgets.preset_row import GradiencePresetRow
@@ -64,11 +64,6 @@ class GradiencePresetWindow(Adw.Window):
     search_string_list = Gtk.Template.Child("search_string_list")
 
     custom_presets = {}
-
-    official_repositories = {
-        "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
-        "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json",
-    }
 
     search_results_list = []
 
@@ -426,7 +421,7 @@ class GradiencePresetWindow(Adw.Window):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
 
-        for repo_name, repo in self.official_repositories.items():
+        for repo_name, repo in preset_repos.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
             self.repos_list.add(row)
 
@@ -436,4 +431,4 @@ class GradiencePresetWindow(Adw.Window):
 
         self.repos.add(self.repos_list)
 
-        self._repos = {**self.user_repositories, **self.official_repositories}
+        self._repos = {**self.user_repositories, **preset_repos}
