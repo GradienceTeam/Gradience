@@ -57,45 +57,46 @@ class CLI:
         #info_parser = subparsers.add_parser("info", help="show information about Gradience")
 
         presets_parser = subparsers.add_parser("presets", help="list installed presets")
+        presets_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove a preset from the list")
 
-        favorites_parser = subparsers.add_parser("favorites", help="list favorited presets")
-        favorites_parser.add_argument("-a", "--add-preset", metavar="PRESET_NAME", help="add preset to favorites")
-        favorites_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove preset from favorites")
+        favorites_parser = subparsers.add_parser("favorites", help="list favorite presets")
+        favorites_parser.add_argument("-a", "--add-preset", metavar="PRESET_NAME", help="add a preset to favorites")
+        favorites_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove a preset from favorites")
 
-        import_parser = subparsers.add_parser("import", help="import an preset")
+        import_parser = subparsers.add_parser("import", help="import a preset")
         import_parser.add_argument("-p", "--preset-path", help="absolute path to a preset file", required=True)
 
-        apply_parser = subparsers.add_parser("apply", help="apply an preset")
+        apply_parser = subparsers.add_parser("apply", help="apply a preset")
         apply_group = apply_parser.add_mutually_exclusive_group(required=True)
-        apply_group.add_argument("-n", "--preset-name", help="preset's display name")
+        apply_group.add_argument("-n", "--preset-name", help="display name for a preset")
         apply_group.add_argument("-p", "--preset-path", help="absolute path to a preset file")
         apply_parser.add_argument("--gtk", choices=["gtk4", "gtk3", "both"], default="gtk4", help="types of applications you want to theme (default: gtk4)")
         #apply_parser.add_argument("--flatpak", choices=["gtk4", "gtk3", "both"], help="types of Flatpak applications you want to theme (for GTK3 option, make sure you have adw-gtk3 installed as Flatpak)")
 
         new_parser = subparsers.add_parser("new", help="create a new preset")
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
-        new_parser.add_argument("-n", "--name", help="preset's display name", required=True)
+        new_parser.add_argument("-n", "--name", help="display name for a preset", required=True)
         new_parser.add_argument("--colors", help="", required=True)
         new_parser.add_argument("--palette", help="")
         new_parser.add_argument("--custom-css", help="")
         new_parser.add_argument("--preset-stdout", action="store_true", help="print out preset in JSON format directly to stdout")
 
-        download_parser = subparsers.add_parser("download", help="download preset from internet")
+        download_parser = subparsers.add_parser("download", help="download preset from preset repository")
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
-        download_parser.add_argument("-n", "--preset-name", help="", required=True)
+        download_parser.add_argument("-n", "--preset-name", help="name of a preset you want to get", required=True)
         #download_parser.add_argument("--custom-url", help="use custom repository's presets.json to download other presets")
 
         monet_parser = subparsers.add_parser("monet", help="generate Material You preset from image")
         monet_parser.add_argument("-n", "--preset-name", help="name for a generated preset", required=True)
         monet_parser.add_argument("-p", "--image-path", help="abosulte path to image", required=True)
-        monet_parser.add_argument("--tone", default=20, help="set a tone for colors (default: 20)")
+        monet_parser.add_argument("--tone", default=20, help="a tone for colors (default: 20)")
         monet_parser.add_argument("--theme", choices=["light", "dark"], default="light", help="choose whatever it should be a light or dark theme (default: light)")
         monet_parser.add_argument("--preset-stdout", action="store_true", help="print out preset in JSON format directly to stdout")
 
         overrides_parser = subparsers.add_parser("flatpak-overrides", help="enable or disable Flatpak theming")
         overrides_group = overrides_parser.add_mutually_exclusive_group(required=True)
-        overrides_group.add_argument("-e", "--enable-theming", choices=["gtk4", "gtk3", "both"], default="gtk4", help="enable overrides for Flatpak theming")
-        overrides_group.add_argument("-d", "--disable-theming", choices=["gtk4", "gtk3", "both"], default="gtk4", help="disable overrides for Flatpak theming")
+        overrides_group.add_argument("-e", "--enable-theming", choices=["gtk4", "gtk3", "both"], help="enable overrides for Flatpak theming")
+        overrides_group.add_argument("-d", "--disable-theming", choices=["gtk4", "gtk3", "both"], help="disable overrides for Flatpak theming")
 
         self.__parse_args()
 
@@ -201,10 +202,10 @@ class CLI:
                         try:
                             PresetDownloader().download_preset(preset_name, to_slug_case(repo_name), preset_url)
                         except (GLib.GError, json.JSONDecodeError, OSError) as e:
-                            sys.stdout.write(f"Error: An exception occurred while downloading a preset. Exc: {e}\n")
+                            sys.stdout.write(f"Error: An error occurred while downloading a preset. Exc: {e}\n")
                             exit(1)
             else:
-                sys.stdout.write(f"Error: An error occurred while trying to fetch presets from repository. Exc: {e}\n")
+                sys.stdout.write(f"Error: An error occurred while trying to fetch presets from repository.\n")
                 exit(1)
 
     def generate_monet(self, args):
