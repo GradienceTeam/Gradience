@@ -26,7 +26,20 @@ import signal
 import argparse
 import warnings
 
+version = "@VERSION@"
+is_local = @local_build@
+
+if is_local:
+    # In the local use case, use gradience module from the sourcetree
+    sys.path.insert(1, '@PYTHON@')
+
+    # In the local use case the installed schemas go in <builddir>/data
+    os.environ["XDG_DATA_DIRS"] = '@SCHEMAS_DIR@:' + os.environ.get("XDG_DATA_DIRS", "")
+
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
 warnings.filterwarnings("ignore") # suppress GTK warnings
+
 from gi.repository import GLib, Gio
 
 from gradience.backend.utils.common import to_slug_case
@@ -43,17 +56,13 @@ from gradience.backend.logger import Logger
 logging = Logger()
 
 
-version = "@VERSION@"
-
-signal.signal(signal.SIGINT, signal.SIG_DFL)
-
-
 class CLI:
     settings = Gio.Settings.new("@APP_ID@")
 
     def __init__(self):
         self.parser = argparse.ArgumentParser(description="Gradience - change the look of Adwaita, with ease")
         self.parser.add_argument("-V", "--version", action="version", version=f"Gradience, version {version}")
+        #self.parser.add_argument("-j", "--json", action="store_true", help="print out a result of the command directly in JSON format")
         #self.parser.add_argument('-J', '--pretty-json', dest='pretty_json', action='store_true', help='pretty-print JSON output')
 
         subparsers = self.parser.add_subparsers(dest="command")
@@ -61,8 +70,8 @@ class CLI:
         #info_parser = subparsers.add_parser("info", help="show information about Gradience")
 
         presets_parser = subparsers.add_parser("presets", help="list installed presets")
-        presets_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove a preset from the list")
-        presets_parser.add_argument("-j", "--json", help="print out a result of this command directly in JSON format")
+        #presets_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove a preset from the list")
+        presets_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
 
         favorites_parser = subparsers.add_parser("favorites", help="list favorite presets")
         favorites_parser.add_argument("-a", "--add-preset", metavar="PRESET_NAME", help="add a preset to favorites")
@@ -79,13 +88,13 @@ class CLI:
         apply_parser.add_argument("--gtk", choices=["gtk4", "gtk3", "both"], default="gtk4", help="types of applications you want to theme (default: gtk4)")
         #apply_parser.add_argument("--flatpak", choices=["gtk4", "gtk3", "both"], help="types of Flatpak applications you want to theme (for GTK3 option, make sure you have adw-gtk3 installed as Flatpak)")
 
-        new_parser = subparsers.add_parser("new", help="create a new preset")
+        #new_parser = subparsers.add_parser("new", help="create a new preset")
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
-        new_parser.add_argument("-n", "--name", help="display name for a preset", required=True)
-        new_parser.add_argument("--colors", help="", required=True)
-        new_parser.add_argument("--palette", help="")
-        new_parser.add_argument("--custom-css", help="")
-        new_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
+        #new_parser.add_argument("-n", "--name", help="display name for a preset", required=True)
+        #new_parser.add_argument("--colors", help="", required=True)
+        #new_parser.add_argument("--palette", help="")
+        #new_parser.add_argument("--custom-css", help="")
+        #new_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
 
         download_parser = subparsers.add_parser("download", help="download preset from preset repository")
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
@@ -143,10 +152,68 @@ class CLI:
             self.flatpak_theming(args)
 
     def list_presets(self, args):
-        pass
+        #_remove_preset = args.remove_preset
+        _json = args.json
+
+        if _json:
+            presets_list = PresetUtils().get_presets_list(json_output=True)
+            print(presets_list)
+            exit(0)
+
+        presets_list = PresetUtils().get_presets_list()
+
+        # TODO: Modify this output to look more like a table (maybe use ncurses?)
+        print("\033[1;37mPreset name\033[0m | \033[1;37mPreset path\033[0m")
+        for key in presets_list:
+            print(f"{presets_list[key]} -> {key}")
 
     def favorite_presets(self, args):
-        pass
+        _add_preset = args.add_preset
+        _remove_preset = args.remove_preset
+        _json = args.json
+
+        favorite = set(self.settings.get_value("favourite"))
+        presets_list = PresetUtils().get_presets_list()
+        presets_name = list(presets_list.values())
+
+        print(presets_name)
+        print(favorite)
+
+        if _json and not _add_preset and not _remove_preset:
+            favorites_json = {"favorites": list(favorite), "amount": len(favorite)}
+            json_output = json.dumps(favorites_json)
+            print(json_output)
+            exit(0)
+        elif _json and _add_preset or _json and _remove_preset:
+            logging.error("JSON output option isn't available for --add-preset and --remove-preset options.")
+            exit(1)
+
+        if _add_preset:
+            if _add_preset in presets_name:
+                favorite.add(_add_preset)
+                self.settings.set_value("favourite", GLib.Variant("as", favorite))
+                exit(0)
+            else:
+                logging.error(f"Preset named {_add_preset} isn't installed in Gradience. "
+                    "Check if you typed the correct preset name, or try importing your preset using `import` command.")
+                exit(1)
+
+        if _remove_preset:
+            if _remove_preset in favorite:
+                favorite.remove(_remove_preset)
+                self.settings.set_value("favourite", GLib.Variant("as", favorite))
+                exit(0)
+            else:
+                logging.error(f"Preset named {_remove_preset} doesn't exist in favorites list. "
+                    "Check if you typed the correct preset name.")
+                exit(1)
+
+        logging.info("Favorite presets list:")
+        for i, preset in enumerate(favorite):
+            print(preset)
+
+        logging.info(f"Favorites amount: {len(favorite)}")
+        exit(0)
 
     def import_preset(self, args):
         _preset_path = args.preset_path
@@ -194,15 +261,25 @@ class CLI:
         _custom_css = args.custom_css
         _json = args.json
 
+        # TODO: Do the logic code for `new` command
+
+        logging.error("This command isn't implemented yet")
+        exit(1)
+
     def download_preset(self, args):
         #_interactive = args.interactive
         _preset_name = args.preset_name
         #_custom_url = args.custom_url
 
         for repo_name, repo in preset_repos.items():
-            explore_presets, urls = PresetDownloader().fetch_presets(repo)
-            if explore_presets:
+            try:
+                explore_presets, urls = PresetDownloader().fetch_presets(repo)
+            except (GLib.GError, json.JSONDecodeError) as e:
+                logging.error(f"An error occurred while fetching presets from remote repository. Exc: {e}")
+                exit(1)
+            else:
                 for (preset, preset_name), preset_url in zip(explore_presets.items(), urls):
+                    # TODO: Add handling of two or more presets with the same elements in name
                     if _preset_name.lower() in preset_name.lower():
                         logging.info(f"Downloading preset: {preset_name}")
                         try:
@@ -210,9 +287,9 @@ class CLI:
                         except (GLib.GError, json.JSONDecodeError, OSError) as e:
                             logging.error(f"An error occurred while downloading a preset. Exc: {e}")
                             exit(1)
-            else:
-                sys.stdout.write(f"Error: An error occurred while trying to fetch presets from repository.\n")
-                exit(1)
+                    else:
+                        logging.error(f"No presets found with text: {_preset_name}")
+                        exit(1)
 
     def generate_monet(self, args):
         _preset_name = args.preset_name
@@ -228,7 +305,6 @@ class CLI:
             preset = PresetUtils().new_preset_from_monet(name=_preset_name, monet_palette=palette,
                                                             props=props, obj_only=True)
             preset_json = preset.get_preset_json()
-            logging.info("Generated monet preset:")
             print(preset_json)
             exit(0)
 
