@@ -38,6 +38,10 @@ from gradience.backend.theming.preset_utils import PresetUtils
 from gradience.backend.preset_downloader import PresetDownloader
 from gradience.backend.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
 
+from gradience.backend.logger import Logger
+
+logging = Logger()
+
 
 version = "@VERSION@"
 
@@ -58,10 +62,12 @@ class CLI:
 
         presets_parser = subparsers.add_parser("presets", help="list installed presets")
         presets_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove a preset from the list")
+        presets_parser.add_argument("-j", "--json", help="print out a result of this command directly in JSON format")
 
         favorites_parser = subparsers.add_parser("favorites", help="list favorite presets")
         favorites_parser.add_argument("-a", "--add-preset", metavar="PRESET_NAME", help="add a preset to favorites")
         favorites_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove a preset from favorites")
+        favorites_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
 
         import_parser = subparsers.add_parser("import", help="import a preset")
         import_parser.add_argument("-p", "--preset-path", help="absolute path to a preset file", required=True)
@@ -79,7 +85,7 @@ class CLI:
         new_parser.add_argument("--colors", help="", required=True)
         new_parser.add_argument("--palette", help="")
         new_parser.add_argument("--custom-css", help="")
-        new_parser.add_argument("--preset-stdout", action="store_true", help="print out preset in JSON format directly to stdout")
+        new_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
 
         download_parser = subparsers.add_parser("download", help="download preset from preset repository")
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
@@ -91,7 +97,7 @@ class CLI:
         monet_parser.add_argument("-p", "--image-path", help="abosulte path to image", required=True)
         monet_parser.add_argument("--tone", default=20, help="a tone for colors (default: 20)")
         monet_parser.add_argument("--theme", choices=["light", "dark"], default="light", help="choose whatever it should be a light or dark theme (default: light)")
-        monet_parser.add_argument("--preset-stdout", action="store_true", help="print out preset in JSON format directly to stdout")
+        monet_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
 
         overrides_parser = subparsers.add_parser("flatpak-overrides", help="enable or disable Flatpak theming")
         overrides_group = overrides_parser.add_mutually_exclusive_group(required=True)
@@ -146,7 +152,7 @@ class CLI:
         _preset_path = args.preset_path
 
         preset_file = GLib.path_get_basename(_preset_path)
-        sys.stdout.write(f"Importing preset: {preset_file.strip()}\n")
+        logging.info(f"Importing preset: {preset_file.strip()}")
 
         # TODO: Check if preset is already imported
         if _preset_path.endswith(".json"):
@@ -159,7 +165,7 @@ class CLI:
                 )
             )
         else:
-            sys.stdout.write("Error: Unsupported file format, must be .json\n")
+            logging.error("Unsupported file format, must be .json")
             exit(1)
 
     def apply_preset(self, args):
@@ -169,7 +175,7 @@ class CLI:
         #_flatpak = args.flatpak
 
         if _preset_name:
-            sys.stdout.write("Error: Preset name option not implemented yet\n")
+            logging.error("Preset name option not implemented yet")
             exit(1)
         elif _preset_path:
             preset = Preset().new_from_path(_preset_path)
@@ -178,7 +184,7 @@ class CLI:
             PresetUtils().apply_preset("gtk4", preset)
         elif _gtk == "gtk3":
             PresetUtils().apply_preset("gtk3", preset)
-        sys.stdout.write("Note: In order for changes to take full effect, you need to log out.\n")
+        logging.info("In order for changes to take full effect, you need to log out.")
 
     def new_preset(self, args):
         #_interactive = args.interactive
@@ -186,7 +192,7 @@ class CLI:
         _colors = args.colors
         _palette = args.palette
         _custom_css = args.custom_css
-        _preset_stdout = args.preset_stdout
+        _json = args.json
 
     def download_preset(self, args):
         #_interactive = args.interactive
@@ -198,11 +204,11 @@ class CLI:
             if explore_presets:
                 for (preset, preset_name), preset_url in zip(explore_presets.items(), urls):
                     if _preset_name.lower() in preset_name.lower():
-                        sys.stdout.write(f"Downloading preset: {preset_name}\n")
+                        logging.info(f"Downloading preset: {preset_name}")
                         try:
                             PresetDownloader().download_preset(preset_name, to_slug_case(repo_name), preset_url)
                         except (GLib.GError, json.JSONDecodeError, OSError) as e:
-                            sys.stdout.write(f"Error: An error occurred while downloading a preset. Exc: {e}\n")
+                            logging.error(f"An error occurred while downloading a preset. Exc: {e}")
                             exit(1)
             else:
                 sys.stdout.write(f"Error: An error occurred while trying to fetch presets from repository.\n")
@@ -213,20 +219,21 @@ class CLI:
         _image_path = args.image_path
         _tone = args.tone
         _theme = args.theme
-        _preset_stdout = args.preset_stdout
+        _json = args.json
 
         palette = Monet().generate_from_image(_image_path)
         props = [_tone, _theme]
 
-        if _preset_stdout:
+        if _json:
             preset = PresetUtils().new_preset_from_monet(name=_preset_name, monet_palette=palette,
                                                             props=props, obj_only=True)
             preset_json = preset.get_preset_json()
-            sys.stdout.write(f"{preset_json}\n")
+            logging.info("Generated monet preset:")
+            print(preset_json)
             exit(0)
 
         PresetUtils().new_preset_from_monet(_preset_name, palette, props)
-        sys.stdout.write("Note: In order for changes to take full effect, you need to log out.\n")
+        logging.info("In order for changes to take full effect, you need to log out.")
 
     # FIXME: Doesn't work in local builds (settings variable doesn't have access to local settings schema)
     def flatpak_theming(self, args):
