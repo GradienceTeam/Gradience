@@ -141,9 +141,19 @@ class GradiencePresetWindow(Adw.Window):
             else:
                 badge = "white"
 
-            explore_presets, urls = PresetDownloader().fetch_presets(repo)
-
-            if explore_presets:
+            try:
+                explore_presets, urls = PresetDownloader().fetch_presets(repo)
+            except GLib.GError as e:
+                if e.code == 1:
+                    self.offline = True
+                    self.search_spinner.props.visible = False
+                    self.search_stack.set_visible_child_name("page_offline")
+                else:
+                    self.search_spinner.props.visible = False
+            # TODO: Create a new page to show for other errors eg. "page_error"
+            except json.JSONDecodeError as e:
+                self.search_spinner.props.visible = False
+            else:
                 self.search_spinner.props.visible = False
 
                 for (preset, preset_name), preset_url in zip(
@@ -154,10 +164,6 @@ class GradiencePresetWindow(Adw.Window):
                     )
                     self.search_results.append(row)
                     self.search_results_list.append(row)
-            else:
-                self.offline = True
-                self.search_spinner.props.visible = False
-                self.search_stack.set_visible_child_name("page_offline")
 
     def add_repo(self, _unused, response, name_entry, url_entry):
         if response == "add":

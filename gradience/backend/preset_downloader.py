@@ -31,24 +31,25 @@ logging = Logger()
 
 class PresetDownloader:
     def __init__(self):
-        self.session = Soup.Session() # Open Soup3 session
+        # Open Soup3 session
+        self.session = Soup.Session()
 
-    def fetch_presets(self, repo) -> [dict, list] or [bool, bool]:
+    def fetch_presets(self, repo) -> [dict, list]:
         try:
             request = Soup.Message.new("GET", repo)
             body = self.session.send_and_read(request, None)
-        except GLib.GError as e: # offline
-            if e.code == 1:
+        except GLib.GError as e:
+            if e.code == 1: # offline
                 logging.error(f"Failed to establish a new connection. Exc: {e}")
-                return False, False
+                raise
             else:
                 logging.error(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
-                return False, False
+                raise
         try:
             raw = json.loads(body.get_data())
         except json.JSONDecodeError as e:
             logging.error(f"Error while decoding JSON data. Exc: {e}")
-            return False, False
+            raise
 
         preset_dict = {}
         url_list = []
@@ -72,8 +73,8 @@ class PresetDownloader:
         try:
             request = Soup.Message.new("GET", repo)
             body = self.session.send_and_read(request, None)
-        except GLib.GError as e: # offline
-            if e.code == 1:
+        except GLib.GError as e:
+            if e.code == 1: # offline
                 logging.error(f"Failed to establish a new connection. Exc: {e}")
                 raise
             else:

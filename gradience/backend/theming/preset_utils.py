@@ -18,6 +18,7 @@
 
 import os
 import json
+from pathlib import Path
 
 from gi.repository import GLib, Gio
 
@@ -25,7 +26,7 @@ from gradience.backend.theming.monet import Monet
 from gradience.backend.models.preset import Preset
 from gradience.backend.utils.colors import rgba_from_argb
 
-from gradience.backend.globals import get_gtk_theme_dir
+from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 
 from gradience.backend.logger import Logger
 
@@ -183,6 +184,67 @@ class PresetUtils:
                 # TODO: Move exception handling to model/preset module
                 logging.error(f"Unexpected file error while trying to generate preset from Monet palette. Exc: {e}")
                 raise
+
+    def get_presets_list(self, json_output=False) -> dict:
+        presets_list = {}
+
+        for repo in Path(presets_dir).iterdir():
+            logging.debug(f"presets_dir.iterdir: {repo}")
+            if repo.is_dir():
+                for file_name in repo.iterdir():
+                    file_name = str(file_name)
+                    if file_name.endswith(".json"):
+                        try:
+                            with open(
+                                os.path.join(presets_dir, file_name),
+                                "r",
+                                encoding="utf-8",
+                            ) as file:
+                                preset_text = file.read()
+                                file.close()
+                            preset = json.loads(preset_text)
+                            if preset.get("variables") is None:
+                                raise KeyError("'variables' section missing in loaded preset file")
+                            if preset.get("palette") is None:
+                                raise KeyError("'palette' section missing in loaded preset file")
+                            presets_list[file_name] = preset[
+                                "name"
+                            ]
+                        except (OSError, KeyError) as e:
+                            logging.error(f"Failed to load an preset information. Exc: {e}")
+                            raise
+            elif repo.is_file():
+                # this exists to keep compatibility with old presets
+                if repo.name.endswith(".json"):
+                    logging.warning("Legacy preset found. Moving to new structure.")
+                    if not os.path.isdir(os.path.join(presets_dir, "user")):
+                        os.mkdir(os.path.join(presets_dir, "user"))
+
+                    os.rename(repo, os.path.join(
+                        presets_dir, "user", repo.name))
+
+                    try:
+                        with open(
+                            os.path.join(presets_dir, "user", repo),
+                            "r",
+                            encoding="utf-8",
+                        ) as file:
+                            preset_text = file.read()
+                        preset = json.loads(preset_text)
+                        if preset.get("variables") is None:
+                            raise KeyError("'variables' section missing in loaded preset file")
+                        if preset.get("palette") is None:
+                            raise KeyError("'palette' section missing in loaded preset file")
+                        presets_list["user"][file_name] = preset[
+                            "name"
+                        ]
+                    except (OSError, KeyError) as e:
+                        logging.error(f"Failed to load an preset information. Exc: {e}")
+                        raise
+        if json_output:
+            json_output = json.dumps(presets_list)
+            return json_output
+        return presets_list
 
     def apply_preset(self, app_type: str, preset: Preset) -> None:
         if app_type == "gtk4":

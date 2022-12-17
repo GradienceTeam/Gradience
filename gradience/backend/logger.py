@@ -25,9 +25,13 @@ class Logger(logging.getLoggerClass()):
     """
     This is a wrapper of `logging` module. It provides
     custom formatting for log messages.
+
+    Attributes:
+        logger_name (str): Custom name of the logger.
+        formatter (dict): Custom formatter for the logger.
     """
     log_colors = {
-        "debug": 37,
+        "debug": 32,
         "info": 36,
         "warning": 33,
         "error": 31,
@@ -35,21 +39,31 @@ class Logger(logging.getLoggerClass()):
     }
 
     log_format = {
-        'fmt': '\033[1m[%(levelname)s]\033[0m [%(name)s] %(message)s'
+        'fmt': '[%(name)s] %(message)s'
     }
 
-    def __set_color(self, level, message: str):
+    def __set_level_color(self, level, message: str):
         if message is not None and "\n" in message:
             message = message.replace("\n", "\n\t") + "\n"
         color_id = self.log_colors[level]
-        return "\033[%dm%s\033[0m" % (color_id, message)
+        return "\033[1;%dm%s:\033[0m %s" % (color_id, level.upper(), message)
 
-    def __init__(self, formatter=None):
+    def __init__(self, logger_name=None, formatter=None):
+        """
+        The constructor for Logger class.
+
+        When initializing this class, you should specify a logger name for debugging purposes,
+        even if you didn't wrote any debug messages in your code.
+        The logger name should usually be a name of your module's main class or module name.
+        """
         if formatter is None:
             formatter = self.log_format
         formatter = logging.Formatter(**formatter)
 
-        self.root.name = "gradience"
+        if logger_name:
+            self.root.name = "Gradience.%s" % (logger_name)
+        else:
+            self.root.name = "Gradience"
 
         if build_type == "debug":
             self.root.setLevel(logging.DEBUG)
@@ -62,19 +76,19 @@ class Logger(logging.getLoggerClass()):
         self.root.addHandler(handler)
 
     def debug(self, message, **kwargs):
-        self.root.debug(self.__set_color("debug", str(message)), )
+        self.root.debug(self.__set_level_color("debug", str(message)), )
 
     def info(self, message, **kwargs):
-        self.root.info(self.__set_color("info", str(message)), )
+        self.root.info(self.__set_level_color("info", str(message)), )
 
     def warning(self, message, **kwargs):
-        self.root.warning(self.__set_color("warning", str(message)),)
+        self.root.warning(self.__set_level_color("warning", str(message)),)
 
     def error(self, message, **kwargs):
-        self.root.error(self.__set_color("error", str(message)), )
+        self.root.error(self.__set_level_color("error", str(message)), )
 
     def critical(self, message, **kwargs):
-        self.root.critical(self.__set_color("critical", str(message)), )
+        self.root.critical(self.__set_level_color("critical", str(message)), )
 
     def set_silent(self):
         self.root.handlers = []
