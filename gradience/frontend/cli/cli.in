@@ -279,6 +279,8 @@ class CLI:
         _preset_name = args.preset_name
         #_custom_url = args.custom_url
 
+        repo_no = 1
+        repos_amount = len(preset_repos.items())
         for repo_name, repo in preset_repos.items():
             try:
                 explore_presets, urls = PresetDownloader().fetch_presets(repo)
@@ -286,6 +288,8 @@ class CLI:
                 logging.error(f"An error occurred while fetching presets from remote repository. Exc: {e}")
                 exit(1)
             else:
+                preset_no = 1
+                presets_amount = len(explore_presets.items())
                 for (preset, preset_name), preset_url in zip(explore_presets.items(), urls):
                     # TODO: Add handling of two or more presets with the same elements in name
                     if _preset_name.lower() in preset_name.lower():
@@ -297,9 +301,14 @@ class CLI:
                             exit(1)
                         else:
                             logging.info("Preset downloaded successfully.")
+                            exit(0)
                     else:
-                        logging.error(f"No presets found with text: {_preset_name}")
-                        exit(1)
+                        if repo_no == repos_amount and preset_no == presets_amount:
+                            logging.error(f"No presets found with text: {_preset_name}")
+                            exit(1)
+                        preset_no += 1
+                        continue
+                repo_no += 1
 
     # TODO: Fix support for Flatpak builds \
     # Current issue: Monet class can't generate Monet palette from image located in host, because it doesn't have any permissions to read user directories. \
