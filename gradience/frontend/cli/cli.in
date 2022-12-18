@@ -190,6 +190,7 @@ class CLI:
             if _add_preset in presets_name:
                 favorite.add(_add_preset)
                 self.settings.set_value("favourite", GLib.Variant("as", favorite))
+                logging.info(f"Preset {_add_preset} has been added to favorites.")
                 exit(0)
             else:
                 logging.error(f"Preset named {_add_preset} isn't installed in Gradience. "
@@ -200,6 +201,7 @@ class CLI:
             if _remove_preset in favorite:
                 favorite.remove(_remove_preset)
                 self.settings.set_value("favourite", GLib.Variant("as", favorite))
+                logging.info(f"Preset {_add_preset} has been removed from favorites.")
                 exit(0)
             else:
                 logging.error(f"Preset named {_remove_preset} doesn't exist in favorites list. "
@@ -229,6 +231,7 @@ class CLI:
                     preset_file.strip()
                 )
             )
+            logging.info("Preset imported successfully.")
         else:
             logging.error("Unsupported file format, must be .json")
             exit(1)
@@ -239,16 +242,23 @@ class CLI:
         _gtk = args.gtk
         #_flatpak = args.flatpak
 
+        presets_list = PresetUtils().get_presets_list()
+        presets_name = list(presets_list.values())
+
         if _preset_name:
-            logging.error("Preset name option not implemented yet")
-            exit(1)
+            if _preset_name in presets_name:
+                for path, name in presets_list.items():
+                    if name == _preset_name:
+                        preset = Preset().new_from_path(path)
         elif _preset_path:
             preset = Preset().new_from_path(_preset_path)
 
         if _gtk == "gtk4":
             PresetUtils().apply_preset("gtk4", preset)
+            logging.info(f"Preset {preset.display_name} applied successfully for Gtk 4 applications.")
         elif _gtk == "gtk3":
             PresetUtils().apply_preset("gtk3", preset)
+            logging.info(f"Preset {preset.display_name} applied successfully for Gtk 3 applications.")
         logging.info("In order for changes to take full effect, you need to log out.")
 
     def new_preset(self, args):
@@ -285,6 +295,8 @@ class CLI:
                         except (GLib.GError, json.JSONDecodeError, OSError) as e:
                             logging.error(f"An error occurred while downloading a preset. Exc: {e}")
                             exit(1)
+                        else:
+                            logging.info("Preset downloaded successfully.")
                     else:
                         logging.error(f"No presets found with text: {_preset_name}")
                         exit(1)
@@ -324,19 +336,25 @@ class CLI:
 
         if _enable_theming == "gtk4":
             create_gtk_user_override(self.settings, "gtk4")
+            logging.info("Flatpak theming for Gtk 4 applications has been enabled.")
         elif _enable_theming == "gtk3":
             create_gtk_user_override(self.settings, "gtk3")
+            logging.info("Flatpak theming for Gtk 3 applications has been enabled.")
         elif _enable_theming == "both":
             create_gtk_user_override(self.settings, "gtk4")
             create_gtk_user_override(self.settings, "gtk3")
+            logging.info("Flatpak theming for Gtk 4 and Gtk 3 applications has been enabled.")
 
         if _disable_theming == "gtk4":
             remove_gtk_user_override(self.settings, "gtk4")
+            logging.info("Flatpak theming for Gtk 4 applications has been disabled.")
         elif _disable_theming == "gtk3":
             remove_gtk_user_override(self.settings, "gtk3")
+            logging.info("Flatpak theming for Gtk 3 applications has been disabled.")
         elif _disable_theming == "both":
             remove_gtk_user_override(self.settings, "gtk4")
             remove_gtk_user_override(self.settings, "gtk3")
+            logging.info("Flatpak theming for Gtk 4 and Gtk 3 applications has been disabled.")
 
 
 if __name__ == "__main__":

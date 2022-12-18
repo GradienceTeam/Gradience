@@ -19,7 +19,6 @@
 import json
 import os
 
-from gradience.frontend.settings_schema import settings_schema
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.globals import presets_dir
 
@@ -94,6 +93,11 @@ adw_palette = {
         "5": "#000000",
     }
 }
+
+custom_css_app_types = [
+    "gtk4",
+    "gtk3"
+]
 
 
 class Preset:
@@ -174,7 +178,7 @@ class Preset:
             if "custom_css" in preset:
                 self.custom_css = preset["custom_css"]
             else:
-                for app_type in settings_schema["custom_css_app_types"]:
+                for app_type in custom_css_app_types:
                     self.custom_css[app_type] = ""
         except Exception as e:
             logging.error(f"Failed to create a new preset object. Exc: {e}")

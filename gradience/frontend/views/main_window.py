@@ -75,8 +75,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.get_default_wallpaper()
 
-    # FIXME: This function works only when building using meson, because Flatpak \
-    # can't access host's dconf with current config/impl
+    # TODO: Check if org.freedesktop.portal.Settings portal will allow us to \
+    # read org.gnome.desktop.background DConf key
     def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
         if self.style_manager.get_dark():
