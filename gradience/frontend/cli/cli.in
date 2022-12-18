@@ -40,7 +40,7 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 warnings.filterwarnings("ignore") # suppress GTK warnings
 
-from gi.repository import GLib, Gio
+from gi.repository import GLib, Gio, Xdp
 
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.globals import preset_repos, presets_dir
@@ -58,6 +58,7 @@ logging = Logger()
 
 class CLI:
     settings = Gio.Settings.new("@APP_ID@")
+    portal = Xdp.Portal()
 
     def __init__(self):
         self.parser = argparse.ArgumentParser(description="Gradience - change the look of Adwaita, with ease")
@@ -176,9 +177,6 @@ class CLI:
         presets_list = PresetUtils().get_presets_list()
         presets_name = list(presets_list.values())
 
-        print(presets_name)
-        print(favorite)
-
         if _json and not _add_preset and not _remove_preset:
             favorites_json = {"favorites": list(favorite), "amount": len(favorite)}
             json_output = json.dumps(favorites_json)
@@ -195,7 +193,7 @@ class CLI:
                 exit(0)
             else:
                 logging.error(f"Preset named {_add_preset} isn't installed in Gradience. "
-                    "Check if you typed the correct preset name, or try importing your preset using `import` command.")
+                    "Check if you typed the correct preset name, or try importing your preset using 'import' command.")
                 exit(1)
 
         if _remove_preset:
@@ -291,12 +289,21 @@ class CLI:
                         logging.error(f"No presets found with text: {_preset_name}")
                         exit(1)
 
+    # TODO: Fix support for Flatpak builds \
+    # Current issue: Monet class can't generate Monet palette from image located in host, because it doesn't have any permissions to read user directories. \
+    # It is recommended to use portals instead of just allowing Gradience to read all user files. For this purpose, we can should be able to use one of the available portals. \
+    # Possible useful portals: org.freedesktop.portal.Documents (support missing in libportal, only D-Bus calls), org.freedesktop.portal.FileChooser
     def generate_monet(self, args):
         _preset_name = args.preset_name
         _image_path = args.image_path
         _tone = args.tone
         _theme = args.theme
         _json = args.json
+
+        is_sandboxed = self.portal.running_under_sandbox()
+        if is_sandboxed:
+            logging.error("Preset generation in 'monet' command isn't yet available for Flatpak installations.")
+            exit(1)
 
         palette = Monet().generate_from_image(_image_path)
         props = [_tone, _theme]
@@ -311,7 +318,6 @@ class CLI:
         PresetUtils().new_preset_from_monet(_preset_name, palette, props)
         logging.info("In order for changes to take full effect, you need to log out.")
 
-    # FIXME: Doesn't work in local builds (settings variable doesn't have access to local settings schema)
     def flatpak_theming(self, args):
         _enable_theming = args.enable_theming
         _disable_theming = args.disable_theming
