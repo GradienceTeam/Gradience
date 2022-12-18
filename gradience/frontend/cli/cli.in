@@ -61,7 +61,7 @@ class CLI:
     portal = Xdp.Portal()
 
     def __init__(self):
-        self.parser = argparse.ArgumentParser(description="Gradience - change the look of Adwaita, with ease")
+        self.parser = argparse.ArgumentParser(description="Gradience - Change the look of Adwaita, with ease")
         self.parser.add_argument("-V", "--version", action="version", version=f"Gradience, version {version}")
         #self.parser.add_argument("-j", "--json", action="store_true", help="print out a result of the command directly in JSON format")
         #self.parser.add_argument('-J', '--pretty-json', dest='pretty_json', action='store_true', help='pretty-print JSON output')
@@ -97,12 +97,12 @@ class CLI:
         #new_parser.add_argument("--custom-css", help="")
         #new_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
 
-        download_parser = subparsers.add_parser("download", help="download preset from preset repository")
+        download_parser = subparsers.add_parser("download", help="download preset from a preset repository")
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
         download_parser.add_argument("-n", "--preset-name", help="name of a preset you want to get", required=True)
         #download_parser.add_argument("--custom-url", help="use custom repository's presets.json to download other presets")
 
-        monet_parser = subparsers.add_parser("monet", help="generate Material You preset from image")
+        monet_parser = subparsers.add_parser("monet", help="generate Material You preset from an image")
         monet_parser.add_argument("-n", "--preset-name", help="name for a generated preset", required=True)
         monet_parser.add_argument("-p", "--image-path", help="abosulte path to image", required=True)
         monet_parser.add_argument("--tone", default=20, help="a tone for colors (default: 20)")
