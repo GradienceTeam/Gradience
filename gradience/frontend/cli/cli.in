@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# cli.py
+# cli.in
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
@@ -49,7 +49,7 @@ from gradience.backend.theming.monet import Monet
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.preset_utils import PresetUtils
 from gradience.backend.preset_downloader import PresetDownloader
-from gradience.backend.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
+from gradience.backend.flatpak_overrides import list_file_access, allow_file_access, disallow_file_access, create_gtk_user_override, remove_gtk_user_override
 
 from gradience.backend.logger import Logger
 
@@ -109,6 +109,12 @@ class CLI:
         monet_parser.add_argument("--theme", choices=["light", "dark"], default="light", help="choose whatever it should be a light or dark theme (default: light)")
         monet_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
 
+        access_parser = subparsers.add_parser("access-file", help="allow or disallow Gradience to access a certain file or directory")
+        access_parser.add_argument("-l", "--list", action="store_true", help="list allowed directories and files")
+        access_group = access_parser.add_mutually_exclusive_group(required=False)
+        access_group.add_argument("-a", "--allow", metavar="PATH", help="allow Gradience access to this file or directory")
+        access_group.add_argument("-d", "--disallow", metavar="PATH", help="disallow Gradience access to this file or directory")
+
         overrides_parser = subparsers.add_parser("flatpak-overrides", help="enable or disable Flatpak theming")
         overrides_group = overrides_parser.add_mutually_exclusive_group(required=True)
         overrides_group.add_argument("-e", "--enable-theming", choices=["gtk4", "gtk3", "both"], help="enable overrides for Flatpak theming")
@@ -148,6 +154,9 @@ class CLI:
 
         elif args.command == "monet":
             self.generate_monet(args)
+
+        elif args.command == "access-file":
+            self.access_file(args)
 
         elif args.command == "flatpak-overrides":
             self.flatpak_theming(args)
@@ -223,14 +232,18 @@ class CLI:
 
         # TODO: Check if preset is already imported
         if _preset_path.endswith(".json"):
-            shutil.copy(
-                _preset_path,
-                os.path.join(
-                    presets_dir,
-                    "user",
-                    preset_file.strip()
+            try:
+                shutil.copy(
+                    _preset_path,
+                    os.path.join(
+                        presets_dir,
+                        "user",
+                        preset_file.strip()
+                    )
                 )
-            )
+            except FileNotFoundError as e:
+                logging.error(f"Preset could not be imported. Exc: {e}")
+                exit(1)
             logging.info("Preset imported successfully.")
         else:
             logging.error("Unsupported file format, must be .json")
@@ -338,6 +351,48 @@ class CLI:
 
         PresetUtils().new_preset_from_monet(_preset_name, palette, props)
         logging.info("In order for changes to take full effect, you need to log out.")
+
+    # TODO: Add path and xdg-* values parsing
+    def access_file(self, args):
+        _list = args.list
+        _allow = args.allow
+        _disallow = args.disallow
+
+        if _list:
+            try:
+                access_list = list_file_access()
+            except GLib.GError as e:
+                logging.error(f"An error occurred while accessing allowed files list. Exc: {e}")
+                exit(1)
+            else:
+                logging.info("Allowed files:")
+                if access_list:
+                    for value in access_list:
+                        print(value)
+                    exit(0)
+                else:
+                    print("0 allows found")
+                    exit(0)
+
+        if _allow:
+            try:
+                allow_file_access(_allow)
+            except GLib.GError as e:
+                logging.error(f"An error occurred while setting file access. Exc: {e}")
+                exit(1)
+            else:
+                logging.info(f"Path {_allow} added to access list")
+                exit(0)
+
+        if _disallow:
+            try:
+                disallow_file_access(_disallow)
+            except GLib.GError as e:
+                logging.error(f"An error occurred while setting file access. Exc: {e}")
+                exit(1)
+            else:
+                logging.info(f"Path {_disallow} removed from access list")
+                exit(0)
 
     def flatpak_theming(self, args):
         _enable_theming = args.enable_theming
