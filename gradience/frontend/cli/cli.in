@@ -40,7 +40,7 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 warnings.filterwarnings("ignore") # suppress GTK warnings
 
-from gi.repository import GLib, Gio, Xdp
+from gi.repository import GLib, Gio
 
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.globals import preset_repos, presets_dir
@@ -58,7 +58,6 @@ logging = Logger()
 
 class CLI:
     settings = Gio.Settings.new("@APP_ID@")
-    portal = Xdp.Portal()
 
     def __init__(self):
         self.parser = argparse.ArgumentParser(description="Gradience - Change the look of Adwaita, with ease")
@@ -323,21 +322,13 @@ class CLI:
                         continue
                 repo_no += 1
 
-    # TODO: Fix support for Flatpak builds \
-    # Current issue: Monet class can't generate Monet palette from image located in host, because it doesn't have any permissions to read user directories. \
-    # It is recommended to use portals instead of just allowing Gradience to read all user files. For this purpose, we can should be able to use one of the available portals. \
-    # Possible useful portals: org.freedesktop.portal.Documents (support missing in libportal, only D-Bus calls), org.freedesktop.portal.FileChooser
+    # NOTE: Possible useful portals to use in future: org.freedesktop.portal.Documents (support missing in libportal, only D-Bus calls), org.freedesktop.portal.FileChooser
     def generate_monet(self, args):
         _preset_name = args.preset_name
         _image_path = args.image_path
         _tone = args.tone
         _theme = args.theme
         _json = args.json
-
-        is_sandboxed = self.portal.running_under_sandbox()
-        if is_sandboxed:
-            logging.error("Preset generation in 'monet' command isn't yet available for Flatpak installations.")
-            exit(1)
 
         palette = Monet().generate_from_image(_image_path)
         props = [_tone, _theme]
@@ -371,7 +362,7 @@ class CLI:
                         print(value)
                     exit(0)
                 else:
-                    print("0 allows found")
+                    print("0 paths found")
                     exit(0)
 
         if _allow:

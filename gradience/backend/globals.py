@@ -18,6 +18,8 @@
 
 import os
 
+from gi.repository import Xdp
+
 
 presets_dir = os.path.join(
     os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
@@ -44,3 +46,13 @@ def get_gtk_theme_dir(app_type):
         )
 
     return theme_dir
+
+def is_sandboxed():
+    portal = Xdp.Portal()
+
+    is_sandboxed = self.portal.running_under_sandbox()
+
+    return is_sandboxed
+
+def get_available_sassc():
+    pass
