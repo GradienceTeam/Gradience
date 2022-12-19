@@ -72,7 +72,7 @@ The main features of Gradience include the following:
 > **Note** 
 > You can go to `Preferences` and apply overrides for Flatpak
 
-<details>
+<details open>
   <summary>🪛️ Manual setup</summary>
 
 ### Libadwaita applications
@@ -191,6 +191,38 @@ environment cross-distro. Thus, it is highly recommended you use it.
 1. Download [GNOME Builder](https://flathub.org/apps/details/org.gnome.Builder).
 2. In Builder, click the "Clone Repository" button at the bottom, using `https://github.com/GradienceTeam/Gradience.git` as the URL.
 3. Click the build button at the top once the project is loaded.
+
+### Flatpak Builder
+
+`flatpak-builder` is a wrapper around the `flatpak build` command that automates the building of applications and their dependencies.
+It uses Flatpak manifests to download and pack needed dependencies with compiled program into a single Flatpak image that can be later distributed or installed on your system. We recommend this method if you have problems with GNOME Builder.
+
+#### Prerequisites
+
+- Flatpak Builder `flatpak-builder`
+- GNOME SDK runtime `org.gnome.Sdk//43`
+- GNOME Platform runtime `org.gnome.Platform//43`
+
+Install required runtimes:
+```shell
+flatpak install org.gnome.Sdk//43 org.gnome.Platform//43
+```
+
+#### Build Instruction
+
+##### User installation
+```shell
+git clone https://github.com/GradienceTeam/Gradience.git
+cd Gradience
+flatpak-builder --install --user --force-clean repo/ build-aux/flatpak/com.github.GradienceTeam.Gradience.json
+```
+
+##### System installation
+```shell
+git clone https://github.com/GradienceTeam/Gradience.git
+cd Gradience
+flatpak-builder --install --system --force-clean repo/ build-aux/flatpak/com.github.GradienceTeam.Gradience.json
+```
 
 ### Meson
 
