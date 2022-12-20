@@ -1,7 +1,9 @@
-# common.py
+#!/usr/bin/bash
+
+# local_cli.sh
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022  Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,20 +18,4 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import re
-import os
-import subprocess
-
-from anyascii import anyascii
-
-
-def to_slug_case(non_slug) -> str:
-    return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
-
-def run_command(command, *args, **kwargs):
-    if isinstance(command, str): # run on the host
-        command = [command]
-    if os.environ.get('FLATPAK_ID'): # run in flatpak
-        command = ['flatpak-spawn', '--host'] + command
-
-    return subprocess.run(command, *args, **kwargs)
+python builddir/gradience/frontend/gradience-cli "$@"

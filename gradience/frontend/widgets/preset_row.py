@@ -22,7 +22,7 @@ from gi.repository import Gtk, Adw, Xdp, XdpGtk4
 
 from gradience.frontend.views.share_window import GradienceShareWindow
 from gradience.backend.utils.common import to_slug_case
-from gradience.backend.models.preset import Preset, presets_dir
+from gradience.backend.models.preset import Preset
 from gradience.backend.constants import rootdir
 
 from gradience.backend.logger import Logger
@@ -61,7 +61,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.win = win
         self.toast_overlay = self.win.toast_overlay
 
-        self.preset = Preset(preset_path)
+        self.preset = Preset().new_from_path(preset_path)
 
         if self.preset.badges:
             self.has_badges = True
@@ -124,7 +124,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         if self.name_entry_toggle.get_active():
             self.value_stack.set_visible_child(self.name_entry)
         else:
-            self.preset.rename_preset(self.name_entry.get_text())
+            self.preset.rename(self.name_entry.get_text())
             self.value_stack.set_visible_child(self.apply_button)
 
     def on_report_btn_clicked(self, *_args):

@@ -20,6 +20,8 @@ import os
 
 from gi.repository import GLib, Gio, Adw
 
+from gradience.backend.constants import app_id
+
 from gradience.backend.logger import Logger
 
 logging = Logger()
@@ -32,10 +34,10 @@ class InvalidGTKVersion(Exception):
     pass
 
 
-""" Internal helper functions (shouldn't be used outside this file) """
+""" Internal helper functions (shouldn't be used outside this module) """
 
 
-def get_system_flatpak_path():
+def __get_system_flatpak_path():
     systemPath = GLib.getenv("FLATPAK_SYSTEM_DIR")
     logging.debug(f"systemPath: {systemPath}")
 
@@ -47,7 +49,7 @@ def get_system_flatpak_path():
     return GLib.build_filenamev([systemDataDir, "flatpak"])
 
 
-def get_user_flatpak_path():
+def __get_user_flatpak_path():
     userPath = GLib.getenv("FLATPAK_USER_DIR")
     logging.debug(f"userPath: {userPath}")
 
@@ -60,49 +62,196 @@ def get_user_flatpak_path():
     return GLib.build_filenamev([userDataDir, "flatpak"])
 
 
-def user_save_keyfile(toast_overlay, settings, user_keyfile, filename, gtk_ver):
+def __user_save_keyfile(user_keyfile, filename, settings=None, gtk_ver=None, toast_overlay=None):
     try:
         user_keyfile.save_to_file(filename)
     except GLib.GError as e:
-        toast_overlay.add_toast(Adw.Toast(title=_("Failed to save override")))
+        if toast_overlay:
+            toast_overlay.add_toast(Adw.Toast(title=_("Failed to save override")))
         logging.error(f"Failed to save keyfile structure to override. Exc: {e}")
     else:
-        if gtk_ver == "gtk4":
+        if gtk_ver == "gtk4" and settings:
             settings.set_boolean("user-flatpak-theming-gtk4", True)
             logging.debug(
                 f"user-flatpak-theming-gtk4: {settings.get_boolean('user-flatpak-theming-gtk4')}"
             )
-        elif gtk_ver == "gtk3":
+        elif gtk_ver == "gtk3" and settings:
             settings.set_boolean("user-flatpak-theming-gtk3", True)
             logging.debug(
                 f"user-flatpak-theming-gtk3: {settings.get_boolean('user-flatpak-theming-gtk3')}"
             )
+        elif not gtk_ver and not settings:
+            logging.debug("DEV WARNING: 'gtk_ver' and 'settings' parameters aren't set for '__user_save_keyfile' function. Unless you aren't using '{create,remove}_*_override' functions, this is a bug.")
 
 
-def global_save_keyfile(toast_overlay, settings, global_keyfile, filename, gtk_ver):
+def __global_save_keyfile(global_keyfile, filename, settings=None, gtk_ver=None, toast_overlay=None):
     try:
         global_keyfile.save_to_file(filename)
     except GLib.GError as e:
-        toast_overlay.add_toast(Adw.Toast(title=_("Failed to save override")))
+        if toast_overlay:
+            toast_overlay.add_toast(Adw.Toast(title=_("Failed to save override")))
         logging.error(f"Failed to save keyfile structure to override. Exc: {e}")
     else:
-        if gtk_ver == "gtk4":
+        if gtk_ver == "gtk4" and settings:
             settings.set_boolean("global-flatpak-theming-gtk4", True)
             logging.debug(
                 f"global-flatpak-theming-gtk4: {settings.get_boolean('global-flatpak-theming-gtk4')}"
             )
-        elif gtk_ver == "gtk3":
+        elif gtk_ver == "gtk3" and settings:
             settings.set_boolean("global-flatpak-theming-gtk3", True)
             logging.debug(
                 f"global-flatpak-theming-gtk3: {settings.get_boolean('global-flatpak-theming-gtk3')}"
             )
+        elif not gtk_ver and not settings:
+            logging.debug("DEV WARNING: 'gtk_ver' and 'settings' parameters aren't set for '__global_save_keyfile' function. Unless you aren't using '{create,remove}_*_override' functions, this is a bug.")
 
 
 """ Main functions """
 
 
-def create_gtk_user_override(toast_overlay, settings, gtk_ver):
-    override_dir = GLib.build_filenamev([get_user_flatpak_path(), "overrides"])
+def list_file_access():
+    override_dir = GLib.build_filenamev([__get_user_flatpak_path(), "overrides"])
+    logging.debug(f"override_dir: {override_dir}")
+
+    filename = GLib.build_filenamev([override_dir, app_id])
+
+    user_keyfile = GLib.KeyFile.new()
+
+    try:
+        user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
+    except GLib.GError as e:
+        if e.code == 4:
+            logging.debug("Gradience overrides file doesn't exist")
+            return False
+        else:
+            logging.error(f"Unhandled GLib.FileError error code. Exc: {e}")
+            raise
+    else:
+        try:
+            filesys_list = user_keyfile.get_string_list(
+                "Context", "filesystems")
+        except GLib.GError:
+            logging.debug("No values in 'filesystems' override")
+            return False
+        else:
+            return filesys_list
+
+
+# TODO: Frontend: Show information to user to relaunch Gradience, as this function modifies \
+# Gradience's overrides.
+def allow_file_access(directory, toast_overlay=None):
+    override_dir = GLib.build_filenamev([__get_user_flatpak_path(), "overrides"])
+    logging.debug(f"override_dir: {override_dir}")
+
+    without_access_spec = (
+        not ":ro" in directory
+        and not ":rw" in directory
+        and not ":create" in directory
+    )
+
+    if without_access_spec:
+        directory += ":ro"
+
+    filename = GLib.build_filenamev([override_dir, app_id])
+
+    user_keyfile = GLib.KeyFile.new()
+
+    try:
+        user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
+    except GLib.GError as e:
+        if e.code == 4:
+            logging.debug("File doesn't exist. Attempting to create one")
+            if not os.path.exists(override_dir):
+                try:
+                    dirs = Gio.File.new_for_path(override_dir)
+                    dirs.make_directory_with_parents(None)
+                except GLib.GError as e:
+                    logging.error(f"Unable to create directories. Exc: {e}")
+                    raise
+                else:
+                    logging.debug("Directories created.")
+
+            file = Gio.File.new_for_path(filename)
+            file.create(Gio.FileCreateFlags.NONE, None)
+
+            user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
+            user_keyfile.set_string("Context", "filesystems", directory)
+
+            __user_save_keyfile(user_keyfile, filename,
+                                toast_overlay=toast_overlay)
+        else:
+            if toast_overlay:
+                toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unexpected file error occurred"))
+                )
+            logging.error(f"Unhandled GLib.FileError error code. Exc: {e}")
+    else:
+        try:
+            filesys_list = user_keyfile.get_string_list(
+                "Context", "filesystems")
+        except GLib.GError:
+            user_keyfile.set_string("Context", "filesystems", directory)
+            __user_save_keyfile(user_keyfile, filename,
+                                toast_overlay=toast_overlay)
+        else:
+            if directory not in filesys_list:
+                user_keyfile.set_string_list(
+                    "Context", "filesystems", filesys_list + [directory]
+                )
+                __user_save_keyfile(user_keyfile, filename,
+                                    toast_overlay=toast_overlay)
+            else:
+                logging.info("Path is already allowed")
+
+
+# TODO: Frontend: Show information to user to relaunch Gradience, as this function modifies \
+# Gradience's overrides.
+def disallow_file_access(directory, toast_overlay=None):
+    override_dir = GLib.build_filenamev([__get_user_flatpak_path(), "overrides"])
+    logging.debug(f"override_dir: {override_dir}")
+
+    filename = GLib.build_filenamev([override_dir, app_id])
+
+    user_keyfile = GLib.KeyFile.new()
+
+    try:
+        user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
+    except GLib.GError as e:
+        if e.code == 4:
+            logging.debug("File doesn't exist")
+            return
+        else:
+            if toast_overlay:
+                toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unexpected file error occurred"))
+                )
+            logging.error(f"Unhandled GLib.FileError error code. Exc: {e}")
+            raise
+    else:
+        try:
+            filesys_list = user_keyfile.get_string_list(
+                "Context", "filesystems")
+        except GLib.GError:
+            logging.debug("Group/key not found")
+            return
+        else:
+            if directory in filesys_list:
+                logging.debug(f"before: {filesys_list}")
+                filesys_list.remove(directory)
+                logging.debug(f"after: {filesys_list}")
+
+                user_keyfile.set_string_list(
+                    "Context", "filesystems", filesys_list)
+                __user_save_keyfile(user_keyfile, filename,
+                                    toast_overlay=toast_overlay)
+                logging.debug("Path removed")
+            else:
+                logging.debug("Path doesn't exist in overrides")
+                return
+
+
+def create_gtk_user_override(settings, gtk_ver, toast_overlay=None):
+    override_dir = GLib.build_filenamev([__get_user_flatpak_path(), "overrides"])
     logging.debug(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
@@ -147,12 +296,13 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):
             user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
             user_keyfile.set_string("Context", "filesystems", gtk_path)
 
-            user_save_keyfile(toast_overlay, settings,
-                              user_keyfile, filename, gtk_ver)
+            __user_save_keyfile(user_keyfile, filename,
+                                settings, gtk_ver, toast_overlay)
         else:
-            toast_overlay.add_toast(
-                Adw.Toast(title=_("Unexpected file error occurred"))
-            )
+            if toast_overlay:
+                toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unexpected file error occurred"))
+                )
             logging.error(f"Unhandled GLib.FileError error code. Exc: {e}")
     else:
         try:
@@ -160,16 +310,15 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):
                 "Context", "filesystems")
         except GLib.GError:
             user_keyfile.set_string("Context", "filesystems", gtk_path)
-            user_save_keyfile(toast_overlay, settings,
-                              user_keyfile, filename, gtk_ver)
+            __user_save_keyfile(user_keyfile, filename,
+                                settings, gtk_ver, toast_overlay)
         else:
             if gtk_path not in filesys_list:
                 user_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list + [gtk_path]
                 )
-                user_save_keyfile(
-                    toast_overlay, settings, user_keyfile, filename, gtk_ver
-                )
+                __user_save_keyfile(user_keyfile, filename,
+                                    settings, gtk_ver, toast_overlay)
             else:
                 if is_gtk4:
                     settings.set_boolean("user-flatpak-theming-gtk4", True)
@@ -178,8 +327,8 @@ def create_gtk_user_override(toast_overlay, settings, gtk_ver):
                 logging.debug("Value already exists.")
 
 
-def remove_gtk_user_override(toast_overlay, settings, gtk_ver):
-    override_dir = GLib.build_filenamev([get_user_flatpak_path(), "overrides"])
+def remove_gtk_user_override(settings, gtk_ver, toast_overlay=None):
+    override_dir = GLib.build_filenamev([__get_user_flatpak_path(), "overrides"])
     logging.debug(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
@@ -210,9 +359,10 @@ def remove_gtk_user_override(toast_overlay, settings, gtk_ver):
             set_theming()
             logging.warning("remove override: File doesn't exist")
         else:
-            toast_overlay.add_toast(
-                Adw.Toast(title=_("Unexpected file error occurred"))
-            )
+            if toast_overlay:
+                toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unexpected file error occurred"))
+                )
             logging.error(f"Unhandled GLib.FileError error code. Exc: {e}")
     else:
         try:
@@ -229,9 +379,8 @@ def remove_gtk_user_override(toast_overlay, settings, gtk_ver):
 
                 user_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list)
-                user_save_keyfile(
-                    toast_overlay, settings, user_keyfile, filename, gtk_ver
-                )
+                __user_save_keyfile(user_keyfile, filename,
+                                    settings, gtk_ver, toast_overlay)
                 logging.debug("remove override: Value removed.")
             else:
                 set_theming()
@@ -242,9 +391,9 @@ def remove_gtk_user_override(toast_overlay, settings, gtk_ver):
 # TODO: Implement user authentication using Polkit
 
 
-def create_gtk_global_override(toast_overlay, settings, gtk_ver):
+def create_gtk_global_override(settings, gtk_ver, toast_overlay=None):
     override_dir = GLib.build_filenamev(
-        [get_system_flatpak_path(), "overrides"])
+        [__get_system_flatpak_path(), "overrides"])
     logging.debug(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
@@ -289,13 +438,13 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
             global_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
             global_keyfile.set_string("Context", "filesystems", gtk_path)
 
-            global_save_keyfile(
-                toast_overlay, settings, global_keyfile, filename, gtk_ver
-            )
+            __global_save_keyfile(global_keyfile, filename,
+                                    settings, gtk_ver, toast_overlay)
         else:
-            toast_overlay.add_toast(
-                Adw.Toast(title=_("Unexpected file error occurred"))
-            )
+            if toast_overlay:
+                toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unexpected file error occurred"))
+                )
             logging.error(f"Unhandled GLib.FileError error code. Exc: {e}")
     else:
         try:
@@ -303,17 +452,15 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
                 "Context", "filesystems")
         except GLib.GError:
             global_keyfile.set_string("Context", "filesystems", gtk_path)
-            global_save_keyfile(
-                toast_overlay, settings, global_keyfile, filename, gtk_ver
-            )
+            __global_save_keyfile(global_keyfile, filename,
+                                    settings, gtk_ver, toast_overlay)
         else:
             if gtk_path not in filesys_list:
                 global_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list + [gtk_path]
                 )
-                global_save_keyfile(
-                    toast_overlay, settings, global_keyfile, filename, gtk_ver
-                )
+                __global_save_keyfile(global_keyfile, filename,
+                                        settings, gtk_ver, toast_overlay)
             else:
                 if is_gtk4:
                     settings.set_boolean("global-flatpak-theming-gtk4", True)
@@ -322,9 +469,9 @@ def create_gtk_global_override(toast_overlay, settings, gtk_ver):
                 logging.debug("Value already exists.")
 
 
-def remove_gtk_global_override(toast_overlay, settings, gtk_ver):
+def remove_gtk_global_override(settings, gtk_ver, toast_overlay=None):
     override_dir = GLib.build_filenamev(
-        [get_system_flatpak_path(), "overrides"])
+        [__get_system_flatpak_path(), "overrides"])
     logging.debug(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
@@ -355,9 +502,10 @@ def remove_gtk_global_override(toast_overlay, settings, gtk_ver):
             set_theming()
             logging.warning("remove override: File doesn't exist")
         else:
-            toast_overlay.add_toast(
-                Adw.Toast(title=_("Unexpected file error occurred"))
-            )
+            if toast_overlay:
+                toast_overlay.add_toast(
+                    Adw.Toast(title=_("Unexpected file error occurred"))
+                )
             logging.error(f"Unhandled GLib.FileError error code. Exc: {e}")
     else:
         try:
@@ -374,9 +522,8 @@ def remove_gtk_global_override(toast_overlay, settings, gtk_ver):
 
                 global_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list)
-                global_save_keyfile(
-                    toast_overlay, settings, global_keyfile, filename, gtk_ver
-                )
+                __global_save_keyfile(global_keyfile, filename,
+                                        settings, gtk_ver, toast_overlay)
                 logging.debug("remove override: Value removed.")
             else:
                 set_theming()

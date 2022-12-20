@@ -84,9 +84,9 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         state = self.allow_gtk4_flatpak_theming_user.props.state
 
         if not state:
-            create_gtk_user_override(self, self.settings, "gtk4")
+            create_gtk_user_override(self.settings, "gtk4", self)
         else:
-            remove_gtk_user_override(self, self.settings, "gtk4")
+            remove_gtk_user_override(self.settings, "gtk4", self)
 
             logging.debug(
                 f"user-flatpak-theming-gtk4: {self.settings.get_boolean('user-flatpak-theming-gtk4')}"
@@ -96,9 +96,9 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         state = self.allow_gtk3_flatpak_theming_user.props.state
 
         if not state:
-            create_gtk_user_override(self, self.settings, "gtk3")
+            create_gtk_user_override(self.settings, "gtk3", self)
         else:
-            remove_gtk_user_override(self, self.settings, "gtk3")
+            remove_gtk_user_override(self.settings, "gtk3", self)
 
             logging.debug(
                 f"user-flatpak-theming-gtk3: {self.settings.get_boolean('user-flatpak-theming-gtk3')}"
@@ -108,9 +108,9 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         state = self.allow_gtk4_flatpak_theming_global.props.state
 
         if not state:
-            create_gtk_global_override(self, self.settings, "gtk4")
+            create_gtk_global_override(self.settings, "gtk4", self)
         else:
-            remove_gtk_global_override(self, self.settings, "gtk4")
+            remove_gtk_global_override(self.settings, "gtk4", self)
 
             logging.debug(
                 f"global-flatpak-theming-gtk4: {self.settings.get_boolean('global-flatpak-theming-gtk4')}"
@@ -120,9 +120,9 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         state = self.allow_gtk3_flatpak_theming_global.props.state
 
         if not state:
-            create_gtk_global_override(self, self.settings, "gtk3")
+            create_gtk_global_override(self.settings, "gtk3", self)
         else:
-            remove_gtk_global_override(self, self.settings, "gtk3")
+            remove_gtk_global_override(self.settings, "gtk3", self)
 
             logging.debug(
                 f"global-flatpak-theming-gtk3: {self.settings.get_boolean('global-flatpak-theming-gtk3')}"

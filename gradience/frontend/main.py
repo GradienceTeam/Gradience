@@ -25,8 +25,11 @@ from pathlib import Path
 from material_color_utilities_python import *
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
+from gradience.backend.globals import presets_dir
 from gradience.backend.css_parser import parse_css
-from gradience.backend.models.preset import Preset, presets_dir
+from gradience.backend.models.preset import Preset
+from gradience.backend.theming.preset_utils import PresetUtils
+from gradience.backend.utils.colors import rgba_from_argb
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.constants import *
 
@@ -288,7 +291,7 @@ class GradienceApplication(Adw.Application):
                 "palette": palette,
                 "custom_css": {"gtk4": custom_css},
             }
-            self.preset = Preset(preset=preset)
+            self.preset = Preset().new_from_dict(preset)
             self.load_preset_variables_from_preset()
         except OSError:  # fallback to adwaita
             logging.warning("Custom preset not found. Fallback to Adwaita")
@@ -320,13 +323,13 @@ class GradienceApplication(Adw.Application):
 
     def load_preset_from_file(self, preset_path):
         logging.debug(f"load preset from file {preset_path}")
-        self.preset = Preset(preset_path=preset_path)
+        self.preset = Preset().new_from_path(preset_path)
         self.load_preset_variables_from_preset()
 
     def load_preset_from_resource(self, preset_path):
         preset_text = Gio.resources_lookup_data(
             preset_path, 0).get_data().decode()
-        self.preset = Preset(text=preset_text)
+        self.preset = Preset().new_from_resource(text=preset_text)
         self.load_preset_variables_from_preset()
 
     def load_preset_variables_from_preset(self, preset=None):
@@ -374,147 +377,33 @@ class GradienceApplication(Adw.Application):
 
         self.reload_variables()
 
-    @staticmethod
-    def rgba_from_argb(argb, alpha=None) -> str:
-        base = "rgba({}, {}, {}, {})"
-
-        red = redFromArgb(argb)
-        green = greenFromArgb(argb)
-        blue = blueFromArgb(argb)
-        if not alpha:
-            alpha = alphaFromArgb(argb)
-
-        return base.format(red, green, blue, alpha)
-
-    def update_theme_from_monet(self, theme, tone, monet_theme):
-        palettes = theme["palettes"]
+    def update_theme_from_monet(self, monet, tone, monet_theme):
+        palettes = monet["palettes"]
 
         monet_theme = monet_theme.get_string().lower()  # dark / light
 
         palette = {}
-        i = 0
-        for color in palettes.values():
-            i += 1
+
+        for i, color in zip(range(1, 7), palettes.values()):
             palette[str(i)] = hexFromArgb(color.tone(int(tone.get_string())))
         self.pref_palette_shades["monet"].update_shades(palette)
+
         if monet_theme == "auto":
             if self.style_manager.get_dark():
                 monet_theme = "dark"
             else:
                 monet_theme = "light"
 
-        if monet_theme == "dark":
-            dark_theme = theme["schemes"]["dark"]
-            variable = {
-                "accent_color": self.rgba_from_argb(dark_theme.primary),
-                "accent_bg_color": self.rgba_from_argb(dark_theme.primaryContainer),
-                "accent_fg_color": self.rgba_from_argb(dark_theme.onPrimaryContainer),
-                "destructive_color": self.rgba_from_argb(dark_theme.error),
-                "destructive_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
-                "destructive_fg_color": self.rgba_from_argb(
-                    dark_theme.onErrorContainer
-                ),
-                "success_color": self.rgba_from_argb(dark_theme.tertiary),
-                "success_bg_color": self.rgba_from_argb(dark_theme.onTertiary),
-                "success_fg_color": self.rgba_from_argb(dark_theme.onTertiaryContainer),
-                "warning_color": self.rgba_from_argb(dark_theme.secondary),
-                "warning_bg_color": self.rgba_from_argb(dark_theme.onSecondary),
-                "warning_fg_color": self.rgba_from_argb(dark_theme.primary, "0.8"),
-                "error_color": self.rgba_from_argb(dark_theme.error),
-                "error_bg_color": self.rgba_from_argb(dark_theme.errorContainer),
-                "error_fg_color": self.rgba_from_argb(dark_theme.onError),
-                "window_bg_color": self.rgba_from_argb(dark_theme.surface),
-                "window_fg_color": self.rgba_from_argb(dark_theme.onSurface),
-                "view_bg_color": self.rgba_from_argb(dark_theme.surface),
-                "view_fg_color": self.rgba_from_argb(dark_theme.onSurface),
-                "headerbar_bg_color": self.rgba_from_argb(dark_theme.surface),
-                "headerbar_fg_color": self.rgba_from_argb(dark_theme.onSurface),
-                "headerbar_border_color": self.rgba_from_argb(
-                    dark_theme.primary, "0.8"
-                ),
-                "headerbar_backdrop_color": "@headerbar_bg_color",
-                "headerbar_shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "card_bg_color": self.rgba_from_argb(dark_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
-                "card_shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "dialog_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
-                "dialog_fg_color": self.rgba_from_argb(dark_theme.onSecondaryContainer),
-                "popover_bg_color": self.rgba_from_argb(dark_theme.secondaryContainer),
-                "popover_fg_color": self.rgba_from_argb(
-                    dark_theme.onSecondaryContainer
-                ),
-                "shade_color": self.rgba_from_argb(dark_theme.shadow),
-                "scrollbar_outline_color": self.rgba_from_argb(dark_theme.outline),
-            }
-        else:  # light
-            light_theme = theme["schemes"]["light"]
-            variable = {
-                "accent_color": self.rgba_from_argb(light_theme.primary),
-                "accent_bg_color": self.rgba_from_argb(light_theme.primary),
-                "accent_fg_color": self.rgba_from_argb(light_theme.onPrimary),
-                "destructive_color": self.rgba_from_argb(light_theme.error),
-                "destructive_bg_color": self.rgba_from_argb(light_theme.errorContainer),
-                "destructive_fg_color": self.rgba_from_argb(
-                    light_theme.onErrorContainer
-                ),
-                "success_color": self.rgba_from_argb(light_theme.tertiary),
-                "success_bg_color": self.rgba_from_argb(light_theme.tertiaryContainer),
-                "success_fg_color": self.rgba_from_argb(
-                    light_theme.onTertiaryContainer
-                ),
-                "warning_color": self.rgba_from_argb(light_theme.secondary),
-                "warning_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "warning_fg_color": self.rgba_from_argb(
-                    light_theme.onSecondaryContainer
-                ),
-                "error_color": self.rgba_from_argb(light_theme.error),
-                "error_bg_color": self.rgba_from_argb(light_theme.errorContainer),
-                "error_fg_color": self.rgba_from_argb(light_theme.onError),
-                "window_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "window_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "view_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "view_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "headerbar_bg_color": self.rgba_from_argb(
-                    light_theme.secondaryContainer
-                ),
-                "headerbar_fg_color": self.rgba_from_argb(light_theme.onSurface),
-                "headerbar_border_color": self.rgba_from_argb(
-                    light_theme.primary, "0.8"
-                ),
-                "headerbar_backdrop_color": "@headerbar_bg_color",
-                "headerbar_shade_color": self.rgba_from_argb(
-                    light_theme.secondaryContainer
-                ),
-                "card_bg_color": self.rgba_from_argb(light_theme.primary, "0.05"),
-                "card_fg_color": self.rgba_from_argb(light_theme.onSecondaryContainer),
-                "card_shade_color": self.rgba_from_argb(light_theme.shadow),
-                "dialog_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "dialog_fg_color": self.rgba_from_argb(
-                    light_theme.onSecondaryContainer
-                ),
-                "popover_bg_color": self.rgba_from_argb(light_theme.secondaryContainer),
-                "popover_fg_color": self.rgba_from_argb(
-                    light_theme.onSecondaryContainer
-                ),
-                "shade_color": self.rgba_from_argb(light_theme.shadow),
-                "scrollbar_outline_color": self.rgba_from_argb(light_theme.outline),
-            }
+        preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
+                                                            props=[tone, monet_theme], obj_only=True)
+
+        variable = preset_object.variables
 
         for key in variable:
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(variable[key])
 
         self.reload_variables()
-
-    def generate_gtk_css(self, app_type):
-        final_css = ""
-        for key in self.variables.keys():
-            final_css += f"@define-color {key} {self.variables[key]};\n"
-        for prefix_key in self.palette.keys():
-            for key in self.palette[prefix_key].keys():
-                final_css += f"@define-color {prefix_key + key} {self.palette[prefix_key][key]};\n"
-        final_css += self.custom_css.get(app_type, "")
-        return final_css
 
     def mark_as_dirty(self):
         self.is_dirty = True
@@ -540,7 +429,7 @@ class GradienceApplication(Adw.Application):
 
     def reload_variables(self):
         parsing_errors = []
-        gtk_css = self.generate_gtk_css("gtk4")
+        gtk_css = PresetUtils().generate_gtk_css("gtk4", self.preset)
         css_provider = Gtk.CssProvider()
 
         def on_error(_, section, error):
@@ -616,6 +505,7 @@ class GradienceApplication(Adw.Application):
             Adw.ResponseAppearance.DESTRUCTIVE,
             transient_for=self.props.active_window,
         )
+        dialog.gtk3_app_type.set_sensitive(False)
         dialog.connect("response", self.restore_color_scheme)
         dialog.present()
 
@@ -782,7 +672,7 @@ class GradienceApplication(Adw.Application):
 
     def save_preset(self, _unused, response, preset_entry):
         if response == "save":
-            self.preset.save_preset(preset_entry.get_text(), self.plugins_list)
+            self.preset.save_to_file(preset_entry.get_text(), self.plugins_list)
             self.clear_dirty()
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset saved")))
@@ -793,60 +683,10 @@ class GradienceApplication(Adw.Application):
     def apply_color_scheme(self, widget, response):
         if response == "apply":
             if widget.get_app_types()["gtk4"]:
-                gtk4_dir = os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "gtk-4.0",
-                )
-                if not os.path.exists(gtk4_dir):
-                    os.makedirs(gtk4_dir)
-                gtk4_css = self.generate_gtk_css("gtk4")
-                contents = ""
-                try:
-                    with open(
-                        os.path.join(gtk4_dir, "gtk.css"), "r", encoding="utf-8"
-                    ) as file:
-                        contents = file.read()
-                except FileNotFoundError:  # first run
-                    pass
-                else:
-                    with open(
-                        os.path.join(gtk4_dir, "gtk.css.bak"), "w", encoding="utf-8"
-                    ) as file:
-                        file.write(contents)
-                finally:
-                    with open(
-                        os.path.join(gtk4_dir, "gtk.css"), "w", encoding="utf-8"
-                    ) as file:
-                        file.write(gtk4_css)
+                PresetUtils().apply_preset("gtk4", self.preset)
 
             if widget.get_app_types()["gtk3"]:
-                gtk3_dir = os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "gtk-3.0",
-                )
-                if not os.path.exists(gtk3_dir):
-                    os.makedirs(gtk3_dir)
-                gtk3_css = self.generate_gtk_css("gtk3")
-                contents = ""
-                try:
-                    with open(
-                        os.path.join(gtk3_dir, "gtk.css"), "r", encoding="utf-8"
-                    ) as file:
-                        contents = file.read()
-                except FileNotFoundError:  # first run
-                    pass
-                else:
-                    with open(
-                        os.path.join(gtk3_dir, "gtk.css.bak"), "w", encoding="utf-8"
-                    ) as file:
-                        file.write(contents)
-                finally:
-                    with open(
-                        os.path.join(gtk3_dir, "gtk.css"), "w", encoding="utf-8"
-                    ) as file:
-                        file.write(gtk3_css)
+                PresetUtils().apply_preset("gtk3", self.preset)
 
             self.reload_plugins()
             self.plugins_list.apply()
@@ -855,11 +695,12 @@ class GradienceApplication(Adw.Application):
                 Adw.Toast(title=_("Preset set successfully"))
             )
 
+            # TODO: Make it as a seperate widget
             dialog = Adw.MessageDialog(
                 transient_for=self.props.active_window,
                 heading=_("Log out"),
                 body=_(
-                    "For the changes to take effect, you need to log out. "
+                    "For the changes to take full effect, you need to log out."
                 ),
                 body_use_markup=True,
             )
@@ -873,47 +714,14 @@ class GradienceApplication(Adw.Application):
 
     def on_theme_set_dialog_response (self, dialog, response):
         if response == "ok":
-            print("theme_set_dialog_ok")
+            logging.debug("theme_set_dialog_ok")
 
     def restore_color_scheme(self, widget, response):
         if response == "restore":
             if widget.get_app_types()["gtk4"]:
-                file = Gio.File.new_for_path(
-                    os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "gtk-4.0/gtk.css.bak",
-                    )
-                )
                 try:
-                    backup = open(
-                        os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "gtk-4.0/gtk.css.bak",
-                        ),
-                        "r",
-                        encoding="utf-8",
-                    )
-                    contents = backup.read()
-                    backup.close()
-                    gtk4css = open(
-                        os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "gtk-4.0/gtk.css",
-                        ),
-                        "w",
-                        encoding="utf-8",
-                    )
-                    gtk4css.write(contents)
-                    gtk4css.close()
-                except FileNotFoundError:
+                    PresetUtils().restore_gtk4_preset()
+                except Exception:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to restore GTK 4 backup"))
                     )
@@ -922,7 +730,7 @@ class GradienceApplication(Adw.Application):
                 transient_for=self.props.active_window,
                 heading=_("Log out"),
                 body=_(
-                    "For the changes to take effect, you need to log out. "
+                    "For the changes to take full effect, you need to log out."
                 ),
                 body_use_markup=True,
             )
@@ -936,37 +744,21 @@ class GradienceApplication(Adw.Application):
 
     def on_theme_restore_dialog_response (self, dialog, response):
         if response == "ok":
-            print("theme_restore_dialog_ok")
+            logging.debug("theme_restore_dialog_ok")
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
             if widget.get_app_types()["gtk4"]:
-                file = Gio.File.new_for_path(
-                    os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "gtk-4.0/gtk.css",
-                    )
-                )
                 try:
-                    file.delete()
+                    PresetUtils().reset_preset("gtk4")
                 except Exception:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to delete current preset"))
                     )
 
             if widget.get_app_types()["gtk3"]:
-                file = Gio.File.new_for_path(
-                    os.path.join(
-                        os.environ.get(
-                            "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                        ),
-                        "gtk-3.0/gtk.css",
-                    )
-                )
                 try:
-                    file.delete()
+                    PresetUtils().reset_preset("gtk3")
                 except Exception:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to delete current preset"))
@@ -976,7 +768,7 @@ class GradienceApplication(Adw.Application):
                 transient_for=self.props.active_window,
                 heading=_("Log out"),
                 body=_(
-                    "For the changes to take effect, you need to log out. "
+                    "For the changes to take full effect, you need to log out."
                 ),
                 body_use_markup=True,
             )
@@ -990,13 +782,14 @@ class GradienceApplication(Adw.Application):
 
     def on_theme_reset_dialog_response (self, dialog, response):
         if response == "ok":
-            print("theme_reset_dialog_ok")
+            logging.debug("theme_reset_dialog_ok")
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)
         prefs.set_transient_for(self.win)
         prefs.present()
 
+    # TODO: Move it to seperate frontend module
     def show_about_window(self, *_args):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,

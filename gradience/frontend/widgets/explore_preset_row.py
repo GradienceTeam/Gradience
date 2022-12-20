@@ -21,7 +21,7 @@ import os
 from gi.repository import Gtk, Adw
 
 from gradience.backend.utils.common import to_slug_case
-from gradience.backend.preset_downloader import download_preset
+from gradience.backend.preset_downloader import PresetDownloader
 from gradience.backend.constants import rootdir
 
 from gradience.backend.logger import Logger
@@ -60,7 +60,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         try:
-            download_preset(to_slug_case(self.name), self.prefix, self.url)
+            PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
         except Exception as e:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
@@ -86,7 +86,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_download_button_clicked(self, *_args):
         try:
-            download_preset(to_slug_case(self.name), self.prefix, self.url)
+            PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
         except Exception as e:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))

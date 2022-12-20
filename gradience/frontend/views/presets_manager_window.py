@@ -24,8 +24,8 @@ from collections import OrderedDict
 from pathlib import Path
 from gi.repository import Gtk, Adw, GLib
 
-from gradience.backend.preset_downloader import fetch_presets
-from gradience.backend.models.preset import presets_dir
+from gradience.backend.preset_downloader import PresetDownloader
+from gradience.backend.globals import presets_dir, preset_repos
 from gradience.backend.constants import rootdir
 
 from gradience.frontend.widgets.preset_row import GradiencePresetRow
@@ -64,11 +64,6 @@ class GradiencePresetWindow(Adw.Window):
     search_string_list = Gtk.Template.Child("search_string_list")
 
     custom_presets = {}
-
-    official_repositories = {
-        "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
-        "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json",
-    }
 
     search_results_list = []
 
@@ -146,9 +141,19 @@ class GradiencePresetWindow(Adw.Window):
             else:
                 badge = "white"
 
-            explore_presets, urls = fetch_presets(repo)
-
-            if explore_presets:
+            try:
+                explore_presets, urls = PresetDownloader().fetch_presets(repo)
+            except GLib.GError as e:
+                if e.code == 1:
+                    self.offline = True
+                    self.search_spinner.props.visible = False
+                    self.search_stack.set_visible_child_name("page_offline")
+                else:
+                    self.search_spinner.props.visible = False
+            # TODO: Create a new page to show for other errors eg. "page_error"
+            except json.JSONDecodeError as e:
+                self.search_spinner.props.visible = False
+            else:
                 self.search_spinner.props.visible = False
 
                 for (preset, preset_name), preset_url in zip(
@@ -159,10 +164,6 @@ class GradiencePresetWindow(Adw.Window):
                     )
                     self.search_results.append(row)
                     self.search_results_list.append(row)
-            else:
-                self.offline = True
-                self.search_spinner.props.visible = False
-                self.search_stack.set_visible_child_name("page_offline")
 
     def add_repo(self, _unused, response, name_entry, url_entry):
         if response == "add":
@@ -315,6 +316,7 @@ class GradiencePresetWindow(Adw.Window):
             "pretty-purple": "Pretty Purple",
         }
 
+        # TODO: Move this from frontend to backend
         for repo in Path(presets_dir).iterdir():
             logging.debug(f"presets_dir.iterdir: {repo}")
             if repo.is_dir():  # repo
@@ -426,7 +428,7 @@ class GradiencePresetWindow(Adw.Window):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
 
-        for repo_name, repo in self.official_repositories.items():
+        for repo_name, repo in preset_repos.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
             self.repos_list.add(row)
 
@@ -436,4 +438,4 @@ class GradiencePresetWindow(Adw.Window):
 
         self.repos.add(self.repos_list)
 
-        self._repos = {**self.user_repositories, **self.official_repositories}
+        self._repos = {**self.user_repositories, **preset_repos}

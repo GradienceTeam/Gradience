@@ -1,4 +1,4 @@
-# repo.py
+# colors.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
@@ -16,25 +16,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import os
-
-from gradience.backend.utils.common import to_slug_case
-from gradience.backend.globals import presets_dir
-from gradience.backend.models.preset import Preset
+import material_color_utilities_python as monet
 
 
-class Repo:
-    presets = {}
+def rgba_from_argb(argb, alpha=None) -> str:
+    base = "rgba({}, {}, {}, {})"
 
-    def __init__(self, name):
-        self.name = to_slug_case(name)
-        self.path = os.path.join(presets_dir, name)
-        self.presets = self.get_presets()
+    red = monet.redFromArgb(argb)
+    green = monet.greenFromArgb(argb)
+    blue = monet.blueFromArgb(argb)
+    if not alpha:
+        alpha = monet.alphaFromArgb(argb)
 
-    def get_presets(self):
-        presets = {}
-        for preset in os.listdir(self.path):
-            if preset.endswith(".json"):
-                preset_path = os.path.join(self.path, preset)
-                presets[preset[:-5]] = Preset().new_from_path(preset_path)
-        return presets
+    return base.format(red, green, blue, alpha)
