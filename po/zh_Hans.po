@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-20 12:14+0000\n"
+"POT-Creation-Date: 2022-12-21 00:36+0000\n"
 "PO-Revision-Date: 2022-12-07 10:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:1003
+#: data/ui/window.blp:5 gradience/frontend/main.py:796
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "轻松改变 Adwaita 的外观"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:1005
+#: gradience/frontend/main.py:798
 msgid "Gradience Team"
 msgstr "Gradience 团队"
 
@@ -285,7 +285,7 @@ msgstr "导入一个预设文件"
 msgid "Delete"
 msgstr "删除"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:256
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:259
 msgid "Open in File Manager"
 msgstr "在文件管理器中打开"
 
@@ -326,8 +326,8 @@ msgid "Offline"
 msgstr "离线"
 
 #: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:125
-#: gradience/frontend/views/presets_manager_window.py:427
+#: gradience/frontend/views/presets_manager_window.py:120
+#: gradience/frontend/views/presets_manager_window.py:429
 msgid "Repositories"
 msgstr "存储库"
 
@@ -490,7 +490,7 @@ msgstr "旧版应用程序主题"
 msgid "System Configuration"
 msgstr "系统配置"
 
-#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:144
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:145
 msgid "Apply"
 msgstr "应用"
 
@@ -551,7 +551,7 @@ msgid "GTK 4 Widget Factory"
 msgstr "GTK 4 小工具工厂"
 
 #: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:114
+#: gradience/frontend/views/presets_manager_window.py:109
 msgid "Built-In Presets"
 msgstr "内置预设"
 
@@ -559,20 +559,22 @@ msgstr "内置预设"
 msgid "Manage Presets"
 msgstr "管理预设"
 
-#: gradience/backend/flatpak_overrides.py:67
-#: gradience/backend/flatpak_overrides.py:86
+#: gradience/backend/flatpak_overrides.py:70
+#: gradience/backend/flatpak_overrides.py:92
 msgid "Failed to save override"
 msgstr "无法保存覆盖"
 
-#: gradience/backend/flatpak_overrides.py:154
-#: gradience/backend/flatpak_overrides.py:214
-#: gradience/backend/flatpak_overrides.py:297
-#: gradience/backend/flatpak_overrides.py:359
+#: gradience/backend/flatpak_overrides.py:185
+#: gradience/backend/flatpak_overrides.py:226
+#: gradience/backend/flatpak_overrides.py:304
+#: gradience/backend/flatpak_overrides.py:364
+#: gradience/backend/flatpak_overrides.py:446
+#: gradience/backend/flatpak_overrides.py:507
 msgid "Unexpected file error occurred"
 msgstr "发生意外的文件错误"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:653
+#: gradience/frontend/main.py:543
 msgid "_Cancel"
 msgstr "取消 (C)"
 
@@ -636,51 +638,51 @@ msgstr "待删除"
 msgid "Unable to delete preset"
 msgstr "无法删除预设"
 
-#: gradience/frontend/views/presets_manager_window.py:119
-#: gradience/frontend/views/presets_manager_window.py:388
+#: gradience/frontend/views/presets_manager_window.py:114
+#: gradience/frontend/views/presets_manager_window.py:390
 msgid "User Presets"
 msgstr "用户预设"
 
-#: gradience/frontend/views/presets_manager_window.py:187
+#: gradience/frontend/views/presets_manager_window.py:188
 msgid "Add new repository"
 msgstr "添加新存储库"
 
-#: gradience/frontend/views/presets_manager_window.py:188
+#: gradience/frontend/views/presets_manager_window.py:189
 msgid "Add a repository to install additional presets."
 msgstr "添加存储库以安装其他预设。"
 
-#: gradience/frontend/views/presets_manager_window.py:194
-#: gradience/frontend/main.py:726
+#: gradience/frontend/views/presets_manager_window.py:195
+#: gradience/frontend/main.py:616
 msgid "Cancel"
 msgstr "取消"
 
-#: gradience/frontend/views/presets_manager_window.py:195
+#: gradience/frontend/views/presets_manager_window.py:196
 msgid "Add"
 msgstr "添加"
 
-#: gradience/frontend/views/presets_manager_window.py:285
+#: gradience/frontend/views/presets_manager_window.py:286
 msgid "Preset already exists"
 msgstr "预设已存在"
 
-#: gradience/frontend/views/presets_manager_window.py:297
+#: gradience/frontend/views/presets_manager_window.py:298
 msgid "Preset imported"
 msgstr "预设已导入"
 
-#: gradience/frontend/views/presets_manager_window.py:300
+#: gradience/frontend/views/presets_manager_window.py:301
 msgid "Unsupported file format, must be .json"
 msgstr "不支持的文件格式，必须为 .json"
 
-#: gradience/frontend/views/presets_manager_window.py:343
-#: gradience/frontend/views/presets_manager_window.py:374
-#: gradience/frontend/main.py:186 gradience/frontend/main.py:217
+#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:376
+#: gradience/frontend/main.py:189 gradience/frontend/main.py:220
 msgid "Failed to load preset"
 msgstr "加载预设失败"
 
-#: gradience/frontend/views/presets_manager_window.py:381
+#: gradience/frontend/views/presets_manager_window.py:383
 msgid "Built-in Presets"
 msgstr "内置预设"
 
-#: gradience/frontend/views/presets_manager_window.py:391
+#: gradience/frontend/views/presets_manager_window.py:393
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -688,7 +690,7 @@ msgstr ""
 "参见Github上的<a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> 以获得更多的预设。"
 
-#: gradience/frontend/views/presets_manager_window.py:417
+#: gradience/frontend/views/presets_manager_window.py:419
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -702,67 +704,67 @@ msgstr "存储库已删除"
 msgid "Thanks for updating Gradience!"
 msgstr "谢谢你更新 Gradience!"
 
-#: gradience/frontend/views/main_window.py:135
+#: gradience/frontend/views/main_window.py:136
 msgid "Monet Engine"
 msgstr "Monet 引擎"
 
-#: gradience/frontend/views/main_window.py:138
+#: gradience/frontend/views/main_window.py:139
 msgid ""
 "Monet is an engine that generates a Material Design 3 palette from an "
 "image's color."
 msgstr "Monet 是一个从图像颜色生成 Material Design 3 调色板的引擎。"
 
-#: gradience/frontend/views/main_window.py:150
+#: gradience/frontend/views/main_window.py:151
 msgid "Background Image"
 msgstr "背景图片"
 
-#: gradience/frontend/views/main_window.py:161
+#: gradience/frontend/views/main_window.py:162
 msgid "Choose a File"
 msgstr "选择文件"
 
-#: gradience/frontend/views/main_window.py:181
+#: gradience/frontend/views/main_window.py:182
 msgid "Monet Palette"
 msgstr "Monet 调色板"
 
-#: gradience/frontend/views/main_window.py:188
+#: gradience/frontend/views/main_window.py:189
 msgid "Tone"
 msgstr "音色"
 
-#: gradience/frontend/views/main_window.py:200
+#: gradience/frontend/views/main_window.py:201
 msgid "Theme"
 msgstr "主题"
 
-#: gradience/frontend/views/main_window.py:203
+#: gradience/frontend/views/main_window.py:204
 msgid "Auto"
 msgstr "自动"
 
-#: gradience/frontend/views/main_window.py:204
+#: gradience/frontend/views/main_window.py:205
 #: gradience/frontend/settings_schema.py:372
 msgid "Light"
 msgstr "亮色"
 
-#: gradience/frontend/views/main_window.py:205
+#: gradience/frontend/views/main_window.py:206
 #: gradience/frontend/settings_schema.py:373
 msgid "Dark"
 msgstr "深色"
 
-#: gradience/frontend/views/main_window.py:227
-msgid "Unsupported background type"
-msgstr "不支持的背景类型"
+#: gradience/frontend/views/main_window.py:225
+msgid "Failed to generate Monet palette"
+msgstr ""
 
-#: gradience/frontend/views/main_window.py:244
+#: gradience/frontend/views/main_window.py:229
 msgid "Palette generated"
 msgstr "产生的调色板"
 
-#: gradience/frontend/views/main_window.py:248
+#: gradience/frontend/views/main_window.py:233
 msgid "Select a background first"
 msgstr "先选择背景"
 
-#: gradience/frontend/views/main_window.py:273
+#: gradience/frontend/views/main_window.py:258
 msgid "Palette Colors"
 msgstr "调色板颜色"
 
-#: gradience/frontend/views/main_window.py:276
+#: gradience/frontend/views/main_window.py:261
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -771,117 +773,119 @@ msgstr ""
 "一些应用程序所使用的命名调色板颜色。默认颜色遵循<a href=\"https://developer."
 "gnome.org/hig/reference/palette.html\">GNOME 人机界面指南</a>。"
 
-#: gradience/frontend/main.py:245
+#: gradience/frontend/main.py:248
 msgid "No presets found"
 msgstr "未找到预设"
 
-#: gradience/frontend/main.py:263
+#: gradience/frontend/main.py:266
 msgid "Favorite Presets"
 msgstr "最喜欢的预设"
 
-#: gradience/frontend/main.py:527
+#: gradience/frontend/main.py:416
 msgid "Unsaved Changes"
 msgstr "未保存更改"
 
-#: gradience/frontend/main.py:538
+#: gradience/frontend/main.py:427
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: gradience/frontend/main.py:596
+#: gradience/frontend/main.py:485
 msgid "Apply This Color Scheme?"
 msgstr "应用此配色方案？"
 
-#: gradience/frontend/main.py:598
+#: gradience/frontend/main.py:487
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr "警告：这些应用类型的任何自定义 CSS 文件都将被不可逆转地覆盖!"
 
-#: gradience/frontend/main.py:602
+#: gradience/frontend/main.py:491
 msgid "_Apply"
 msgstr "应用 (A)"
 
-#: gradience/frontend/main.py:612
+#: gradience/frontend/main.py:501
 msgid "Restore applied color scheme?"
 msgstr "恢复应用的配色方案？"
 
-#: gradience/frontend/main.py:613 gradience/frontend/main.py:625
+#: gradience/frontend/main.py:502 gradience/frontend/main.py:515
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "确保你将当前的设置保存为预设。"
 
-#: gradience/frontend/main.py:615
+#: gradience/frontend/main.py:504
 msgid "_Restore"
 msgstr "恢复 (R)"
 
-#: gradience/frontend/main.py:624
+#: gradience/frontend/main.py:514
 msgid "Reset applied color scheme?"
 msgstr "重置应用的配色方案？"
 
-#: gradience/frontend/main.py:627
+#: gradience/frontend/main.py:517
 msgid "_Reset"
 msgstr "重置 (R)"
 
-#: gradience/frontend/main.py:637
+#: gradience/frontend/main.py:527
 msgid "Save preset as…"
 msgstr "将预设另存为…"
 
-#: gradience/frontend/main.py:639 gradience/frontend/main.py:667
-#: gradience/frontend/main.py:684 gradience/frontend/main.py:712
-#: gradience/frontend/main.py:743 gradience/frontend/main.py:760
+#: gradience/frontend/main.py:529 gradience/frontend/main.py:557
+#: gradience/frontend/main.py:574 gradience/frontend/main.py:602
+#: gradience/frontend/main.py:633 gradience/frontend/main.py:650
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr "存储预设为 <tt>{0}</tt>.如果该预设已存在，它将被覆盖！"
 
-#: gradience/frontend/main.py:654
+#: gradience/frontend/main.py:544
 msgid "_Save"
 msgstr "保存 (S)"
 
-#: gradience/frontend/main.py:710
+#: gradience/frontend/main.py:600
 msgid "You have unsaved changes!"
 msgstr "您有未保存更改！"
 
-#: gradience/frontend/main.py:727
+#: gradience/frontend/main.py:617
 msgid "Discard"
 msgstr "放弃"
 
-#: gradience/frontend/main.py:728
+#: gradience/frontend/main.py:618
 msgid "Save"
 msgstr "保存"
 
-#: gradience/frontend/main.py:788
+#: gradience/frontend/main.py:678
 msgid "Preset saved"
 msgstr "预设已保存"
 
-#: gradience/frontend/main.py:855
+#: gradience/frontend/main.py:695
 msgid "Preset set successfully"
 msgstr "预设设置成功"
 
-#: gradience/frontend/main.py:860 gradience/frontend/main.py:923
-#: gradience/frontend/main.py:977
+#: gradience/frontend/main.py:701 gradience/frontend/main.py:731
+#: gradience/frontend/main.py:769
 msgid "Log out"
 msgstr "注销"
 
-#: gradience/frontend/main.py:862 gradience/frontend/main.py:925
-#: gradience/frontend/main.py:979
-msgid "For the changes to take effect, you need to log out. "
+#: gradience/frontend/main.py:703 gradience/frontend/main.py:733
+#: gradience/frontend/main.py:771
+#, fuzzy
+#| msgid "For the changes to take effect, you need to log out. "
+msgid "For the changes to take full effect, you need to log out."
 msgstr "要使更改生效，您需要注销。 "
 
-#: gradience/frontend/main.py:867 gradience/frontend/main.py:930
-#: gradience/frontend/main.py:984
+#: gradience/frontend/main.py:708 gradience/frontend/main.py:738
+#: gradience/frontend/main.py:776
 msgid "OK"
 msgstr "确定"
 
-#: gradience/frontend/main.py:918
+#: gradience/frontend/main.py:726
 msgid "Unable to restore GTK 4 backup"
 msgstr "无法恢复 GTK 4 备份"
 
-#: gradience/frontend/main.py:956 gradience/frontend/main.py:972
+#: gradience/frontend/main.py:756 gradience/frontend/main.py:764
 msgid "Unable to delete current preset"
 msgstr "无法删除当前预设"
 
-#: gradience/frontend/main.py:1058
+#: gradience/frontend/main.py:851
 msgid ""
 "\n"
 "<ul>\n"
@@ -903,7 +907,7 @@ msgstr ""
 "<li>更新翻译</li>\n"
 "</ul>\n"
 
-#: gradience/frontend/main.py:1069
+#: gradience/frontend/main.py:862
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -926,23 +930,23 @@ msgstr ""
 "⚙️ 使用 CSS 更改高级选项\n"
 "🧩️ 使用插件扩展功能\n"
 
-#: gradience/frontend/main.py:1082
+#: gradience/frontend/main.py:875
 msgid "Plugins by"
 msgstr "插件作者"
 
-#: gradience/frontend/main.py:1090
+#: gradience/frontend/main.py:883
 msgid "Presets by"
 msgstr "预设作者"
 
-#: gradience/frontend/main.py:1112
+#: gradience/frontend/main.py:905
 msgid "Packages by"
 msgstr "包作者"
 
-#: gradience/frontend/main.py:1119
+#: gradience/frontend/main.py:912
 msgid "Fixes by"
 msgstr "修复者"
 
-#: gradience/frontend/main.py:1129
+#: gradience/frontend/main.py:922
 msgid "Special thanks to"
 msgstr "特别感谢"
 
@@ -1222,6 +1226,9 @@ msgstr "紫色"
 #: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "棕色"
+
+#~ msgid "Unsupported background type"
+#~ msgstr "不支持的背景类型"
 
 #~ msgid ""
 #~ "\n"

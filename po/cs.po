@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-20 12:14+0000\n"
+"POT-Creation-Date: 2022-12-21 00:36+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:1003
+#: data/ui/window.blp:5 gradience/frontend/main.py:796
 #, fuzzy
 msgid "Gradience"
 msgstr "Gradience"
@@ -40,7 +40,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Změňte vzhled Adwaita snadno"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:1005
+#: gradience/frontend/main.py:798
 #, fuzzy
 msgid "Gradience Team"
 msgstr "Tým Gradience"
@@ -339,7 +339,7 @@ msgstr "Import souboru s předvolbou"
 msgid "Delete"
 msgstr "Smazat"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:256
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:259
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Otevřít v průzkumníku souborů"
@@ -389,8 +389,8 @@ msgid "Offline"
 msgstr "Offline"
 
 #: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:125
-#: gradience/frontend/views/presets_manager_window.py:427
+#: gradience/frontend/views/presets_manager_window.py:120
+#: gradience/frontend/views/presets_manager_window.py:429
 #, fuzzy
 msgid "Repositories"
 msgstr "Repozitáře"
@@ -594,7 +594,7 @@ msgstr "Témata starších aplikací"
 msgid "System Configuration"
 msgstr "Nastavení systému"
 
-#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:144
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:145
 msgid "Apply"
 msgstr "Použít"
 
@@ -667,7 +667,7 @@ msgid "GTK 4 Widget Factory"
 msgstr "Továrna na widgety GTK 4"
 
 #: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:114
+#: gradience/frontend/views/presets_manager_window.py:109
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "Vestavěné předvolby"
@@ -677,22 +677,24 @@ msgstr "Vestavěné předvolby"
 msgid "Manage Presets"
 msgstr "Správa předvoleb"
 
-#: gradience/backend/flatpak_overrides.py:67
-#: gradience/backend/flatpak_overrides.py:86
+#: gradience/backend/flatpak_overrides.py:70
+#: gradience/backend/flatpak_overrides.py:92
 #, fuzzy
 msgid "Failed to save override"
 msgstr "Nepodařilo se uložit přepis"
 
-#: gradience/backend/flatpak_overrides.py:154
-#: gradience/backend/flatpak_overrides.py:214
-#: gradience/backend/flatpak_overrides.py:297
-#: gradience/backend/flatpak_overrides.py:359
+#: gradience/backend/flatpak_overrides.py:185
+#: gradience/backend/flatpak_overrides.py:226
+#: gradience/backend/flatpak_overrides.py:304
+#: gradience/backend/flatpak_overrides.py:364
+#: gradience/backend/flatpak_overrides.py:446
+#: gradience/backend/flatpak_overrides.py:507
 #, fuzzy
 msgid "Unexpected file error occurred"
 msgstr "Došlo k neočekávané chybě souboru"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:653
+#: gradience/frontend/main.py:543
 #, fuzzy
 #| msgid "Cancel"
 msgid "_Cancel"
@@ -768,59 +770,59 @@ msgstr "Čeká se na vymazání"
 msgid "Unable to delete preset"
 msgstr "Nelze odstranit předvolbu"
 
-#: gradience/frontend/views/presets_manager_window.py:119
-#: gradience/frontend/views/presets_manager_window.py:388
+#: gradience/frontend/views/presets_manager_window.py:114
+#: gradience/frontend/views/presets_manager_window.py:390
 #, fuzzy
 msgid "User Presets"
 msgstr "Uživatelská přednastavení"
 
-#: gradience/frontend/views/presets_manager_window.py:187
+#: gradience/frontend/views/presets_manager_window.py:188
 #, fuzzy
 msgid "Add new repository"
 msgstr "Přidat nový repozitář"
 
-#: gradience/frontend/views/presets_manager_window.py:188
+#: gradience/frontend/views/presets_manager_window.py:189
 #, fuzzy
 msgid "Add a repository to install additional presets."
 msgstr "Přidání úložiště pro instalaci dalších předvoleb."
 
-#: gradience/frontend/views/presets_manager_window.py:194
-#: gradience/frontend/main.py:726
+#: gradience/frontend/views/presets_manager_window.py:195
+#: gradience/frontend/main.py:616
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: gradience/frontend/views/presets_manager_window.py:195
+#: gradience/frontend/views/presets_manager_window.py:196
 #, fuzzy
 msgid "Add"
 msgstr "Přidat"
 
-#: gradience/frontend/views/presets_manager_window.py:285
+#: gradience/frontend/views/presets_manager_window.py:286
 #, fuzzy
 msgid "Preset already exists"
 msgstr "Předvolba již existuje"
 
-#: gradience/frontend/views/presets_manager_window.py:297
+#: gradience/frontend/views/presets_manager_window.py:298
 #, fuzzy
 msgid "Preset imported"
 msgstr "Přednastavené importované"
 
-#: gradience/frontend/views/presets_manager_window.py:300
+#: gradience/frontend/views/presets_manager_window.py:301
 #, fuzzy
 msgid "Unsupported file format, must be .json"
 msgstr "Nepodporovaný formát souboru, musí být .json"
 
-#: gradience/frontend/views/presets_manager_window.py:343
-#: gradience/frontend/views/presets_manager_window.py:374
-#: gradience/frontend/main.py:186 gradience/frontend/main.py:217
+#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:376
+#: gradience/frontend/main.py:189 gradience/frontend/main.py:220
 msgid "Failed to load preset"
 msgstr "Nepodařilo se načíst předvolbu"
 
-#: gradience/frontend/views/presets_manager_window.py:381
+#: gradience/frontend/views/presets_manager_window.py:383
 #, fuzzy
 msgid "Built-in Presets"
 msgstr "Vestavěné předvolby"
 
-#: gradience/frontend/views/presets_manager_window.py:391
+#: gradience/frontend/views/presets_manager_window.py:393
 #, fuzzy
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
@@ -829,7 +831,7 @@ msgstr ""
 "Další předvolby najdete <a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> na Githubu."
 
-#: gradience/frontend/views/presets_manager_window.py:417
+#: gradience/frontend/views/presets_manager_window.py:419
 #, fuzzy
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
@@ -848,12 +850,12 @@ msgstr "Repozitář odstraněn."
 msgid "Thanks for updating Gradience!"
 msgstr "Díky za aktualizaci Gradience!"
 
-#: gradience/frontend/views/main_window.py:135
+#: gradience/frontend/views/main_window.py:136
 #, fuzzy
 msgid "Monet Engine"
 msgstr "Motor Monet"
 
-#: gradience/frontend/views/main_window.py:138
+#: gradience/frontend/views/main_window.py:139
 #, fuzzy
 msgid ""
 "Monet is an engine that generates a Material Design 3 palette from an "
@@ -861,66 +863,65 @@ msgid ""
 msgstr ""
 "Monet je engine, který z barev obrázku generuje paletu Material Design 3."
 
-#: gradience/frontend/views/main_window.py:150
+#: gradience/frontend/views/main_window.py:151
 #, fuzzy
 msgid "Background Image"
 msgstr "Obrázek na pozadí"
 
-#: gradience/frontend/views/main_window.py:161
+#: gradience/frontend/views/main_window.py:162
 #, fuzzy
 msgid "Choose a File"
 msgstr "Vybrat soubor"
 
-#: gradience/frontend/views/main_window.py:181
+#: gradience/frontend/views/main_window.py:182
 #, fuzzy
 msgid "Monet Palette"
 msgstr "Monetova paleta"
 
-#: gradience/frontend/views/main_window.py:188
+#: gradience/frontend/views/main_window.py:189
 #, fuzzy
 msgid "Tone"
 msgstr "Tón"
 
-#: gradience/frontend/views/main_window.py:200
+#: gradience/frontend/views/main_window.py:201
 #, fuzzy
 msgid "Theme"
 msgstr "Vzhled"
 
-#: gradience/frontend/views/main_window.py:203
+#: gradience/frontend/views/main_window.py:204
 #, fuzzy
 msgid "Auto"
 msgstr "Auto"
 
-#: gradience/frontend/views/main_window.py:204
+#: gradience/frontend/views/main_window.py:205
 #: gradience/frontend/settings_schema.py:372
 msgid "Light"
 msgstr "Světlá"
 
-#: gradience/frontend/views/main_window.py:205
+#: gradience/frontend/views/main_window.py:206
 #: gradience/frontend/settings_schema.py:373
 msgid "Dark"
 msgstr "Tmavá"
 
-#: gradience/frontend/views/main_window.py:227
-#, fuzzy
-msgid "Unsupported background type"
-msgstr "Nepodporovaný typ pozadí"
+#: gradience/frontend/views/main_window.py:225
+msgid "Failed to generate Monet palette"
+msgstr ""
 
-#: gradience/frontend/views/main_window.py:244
+#: gradience/frontend/views/main_window.py:229
 #, fuzzy
 msgid "Palette generated"
 msgstr "Vygenerovaná paleta"
 
-#: gradience/frontend/views/main_window.py:248
+#: gradience/frontend/views/main_window.py:233
 #, fuzzy
 msgid "Select a background first"
 msgstr "Nejprve vyberte pozadí"
 
-#: gradience/frontend/views/main_window.py:273
+#: gradience/frontend/views/main_window.py:258
 msgid "Palette Colors"
 msgstr "Paleta barev"
 
-#: gradience/frontend/views/main_window.py:276
+#: gradience/frontend/views/main_window.py:261
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -930,32 +931,32 @@ msgstr ""
 "nastaveny podle <a href=\"https://developer.gnome.org/hig/reference/palette."
 "html\">GNOME Human Interface Guidelines</a>."
 
-#: gradience/frontend/main.py:245
+#: gradience/frontend/main.py:248
 #, fuzzy
 msgid "No presets found"
 msgstr "Nebyly nalezeny žádné předvolby"
 
-#: gradience/frontend/main.py:263
+#: gradience/frontend/main.py:266
 #, fuzzy
 msgid "Favorite Presets"
 msgstr "Oblíbené předvolby"
 
-#: gradience/frontend/main.py:527
+#: gradience/frontend/main.py:416
 #, fuzzy
 msgid "Unsaved Changes"
 msgstr "Neuložené změny"
 
-#: gradience/frontend/main.py:538
+#: gradience/frontend/main.py:427
 #, fuzzy
 msgid "Save Changes"
 msgstr "Uložit změny"
 
-#: gradience/frontend/main.py:596
+#: gradience/frontend/main.py:485
 #, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "Použít toto barevné schéma?"
 
-#: gradience/frontend/main.py:598
+#: gradience/frontend/main.py:487
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -963,43 +964,43 @@ msgstr ""
 "Varování: Všechny vlastní CSS soubory pro tyto typy aplikací budou nevratně "
 "přepsány!"
 
-#: gradience/frontend/main.py:602
+#: gradience/frontend/main.py:491
 #, fuzzy
 #| msgid "Apply"
 msgid "_Apply"
 msgstr "Použít"
 
-#: gradience/frontend/main.py:612
+#: gradience/frontend/main.py:501
 #, fuzzy
 msgid "Restore applied color scheme?"
 msgstr "Obnovit použité barevné schéma?"
 
-#: gradience/frontend/main.py:613 gradience/frontend/main.py:625
+#: gradience/frontend/main.py:502 gradience/frontend/main.py:515
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Ujistěte se, že máte aktuální nastavení uložené jako předvolbu."
 
-#: gradience/frontend/main.py:615
+#: gradience/frontend/main.py:504
 #, fuzzy
 msgid "_Restore"
 msgstr "Obnovit"
 
-#: gradience/frontend/main.py:624
+#: gradience/frontend/main.py:514
 msgid "Reset applied color scheme?"
 msgstr "Obnovit aplikované barevné schéma?"
 
-#: gradience/frontend/main.py:627
+#: gradience/frontend/main.py:517
 #, fuzzy
 #| msgid "Reset"
 msgid "_Reset"
 msgstr "Obnovit"
 
-#: gradience/frontend/main.py:637
+#: gradience/frontend/main.py:527
 msgid "Save preset as…"
 msgstr "Uložit předvolbu jako…"
 
-#: gradience/frontend/main.py:639 gradience/frontend/main.py:667
-#: gradience/frontend/main.py:684 gradience/frontend/main.py:712
-#: gradience/frontend/main.py:743 gradience/frontend/main.py:760
+#: gradience/frontend/main.py:529 gradience/frontend/main.py:557
+#: gradience/frontend/main.py:574 gradience/frontend/main.py:602
+#: gradience/frontend/main.py:633 gradience/frontend/main.py:650
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -1008,64 +1009,64 @@ msgstr ""
 "Uložení předvolby do <tt>{0}</tt>. Pokud předvolba již existuje, bude "
 "přepsána!"
 
-#: gradience/frontend/main.py:654
+#: gradience/frontend/main.py:544
 #, fuzzy
 #| msgid "Save"
 msgid "_Save"
 msgstr "Uložit"
 
-#: gradience/frontend/main.py:710
+#: gradience/frontend/main.py:600
 #, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Máte neuložené změny."
 
-#: gradience/frontend/main.py:727
+#: gradience/frontend/main.py:617
 #, fuzzy
 msgid "Discard"
 msgstr "Zahodit"
 
-#: gradience/frontend/main.py:728
+#: gradience/frontend/main.py:618
 msgid "Save"
 msgstr "Uložit"
 
-#: gradience/frontend/main.py:788
+#: gradience/frontend/main.py:678
 #, fuzzy
 msgid "Preset saved"
 msgstr "Mix byl uložen!"
 
-#: gradience/frontend/main.py:855
+#: gradience/frontend/main.py:695
 #, fuzzy
 msgid "Preset set successfully"
 msgstr "Úspěšně nastavená předvolba"
 
-#: gradience/frontend/main.py:860 gradience/frontend/main.py:923
-#: gradience/frontend/main.py:977
+#: gradience/frontend/main.py:701 gradience/frontend/main.py:731
+#: gradience/frontend/main.py:769
 #, fuzzy
 msgid "Log out"
 msgstr "Odhlásit se ?"
 
-#: gradience/frontend/main.py:862 gradience/frontend/main.py:925
-#: gradience/frontend/main.py:979
+#: gradience/frontend/main.py:703 gradience/frontend/main.py:733
+#: gradience/frontend/main.py:771
 #, fuzzy
-msgid "For the changes to take effect, you need to log out. "
+msgid "For the changes to take full effect, you need to log out."
 msgstr "Aby se změny projevily, je třeba se odhlásit. "
 
-#: gradience/frontend/main.py:867 gradience/frontend/main.py:930
-#: gradience/frontend/main.py:984
+#: gradience/frontend/main.py:708 gradience/frontend/main.py:738
+#: gradience/frontend/main.py:776
 msgid "OK"
 msgstr ""
 
-#: gradience/frontend/main.py:918
+#: gradience/frontend/main.py:726
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "Nelze obnovit zálohu GTK 4"
 
-#: gradience/frontend/main.py:956 gradience/frontend/main.py:972
+#: gradience/frontend/main.py:756 gradience/frontend/main.py:764
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "Nelze odstranit předvolbu"
 
-#: gradience/frontend/main.py:1058
+#: gradience/frontend/main.py:851
 msgid ""
 "\n"
 "<ul>\n"
@@ -1079,7 +1080,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/frontend/main.py:1069
+#: gradience/frontend/main.py:862
 #, fuzzy
 msgid ""
 "\n"
@@ -1106,28 +1107,28 @@ msgstr ""
 "\n"
 "Tato aplikace je napsána v jazyce Python a používá GTK 4 a Libadwaita.\n"
 
-#: gradience/frontend/main.py:1082
+#: gradience/frontend/main.py:875
 #, fuzzy
 msgid "Plugins by"
 msgstr "Zásuvné moduly od"
 
-#: gradience/frontend/main.py:1090
+#: gradience/frontend/main.py:883
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Předvolby od"
 
-#: gradience/frontend/main.py:1112
+#: gradience/frontend/main.py:905
 #, fuzzy
 msgid "Packages by"
 msgstr "Balíčky od"
 
-#: gradience/frontend/main.py:1119
+#: gradience/frontend/main.py:912
 #, fuzzy
 msgid "Fixes by"
 msgstr "Opravy podle"
 
-#: gradience/frontend/main.py:1129
+#: gradience/frontend/main.py:922
 #, fuzzy
 msgid "Special thanks to"
 msgstr "Zvláštní poděkování patří"
@@ -1433,6 +1434,10 @@ msgstr "Fialová"
 #: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "Hnědá"
+
+#, fuzzy
+#~ msgid "Unsupported background type"
+#~ msgstr "Nepodporovaný typ pozadí"
 
 #, fuzzy
 #~ msgid ""
