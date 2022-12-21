@@ -163,25 +163,24 @@ class PresetUtils:
             }
 
         if obj_only == False and not name:
-            raise Exception("You either need to set 'obj_only' property to True, or add value to 'name' property")
+            raise AttributeError("You either need to set 'obj_only' property to True, or add value to 'name' property")
 
         if obj_only:
             if name:
-                print("with name, obj_only")
+                logging.debug("with name, obj_only")
                 self.preset.new(variables=variable, display_name=name)
             else:
-                print("no name, obj_only")
+                logging.debug("no name, obj_only")
                 self.preset.new(variables=variable)
             return self.preset
 
         if obj_only == False:
-            print("no obj_only, name")
+            logging.debug("no obj_only, name")
             self.preset.new(variables=variable, display_name=name)
 
             try:
                 self.preset.save_to_file()
             except Exception as e:
-                # TODO: Move exception handling to model/preset module
                 logging.error(f"Unexpected file error while trying to generate preset from Monet palette. Exc: {e}")
                 raise
 

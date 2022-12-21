@@ -12,6 +12,7 @@ configure_file(
     'BUGTRACKER_URL': BUGTRACKER_URL,
     'HELP_URL': HELP_URL,
     'TRANSLATE_URL': TRANSLATE_URL,
+    'DATA_DIR': conf.get('DATA_DIR'),
     'PKGDATA_DIR': PKGDATA_DIR,
     'LOCALE_DIR': conf.get('LOCALE_DIR'),
   }),

@@ -29,3 +29,27 @@ def rgba_from_argb(argb, alpha=None) -> str:
         alpha = monet.alphaFromArgb(argb)
 
     return base.format(red, green, blue, alpha)
+
+def argb_to_color_code(argb, alpha=None) -> str:
+    """
+    This function can return either an hexadecimal or rgba-formatted color code.
+
+    By default this function returns hexadecimal color codes.
+    If alpha parameter is specified, then the function will return
+    an rgba-formatted color code.
+    """
+    hex_base = "#{0:x}{1:x}{2:x}"
+    rgba_base = "rgba({0}, {1}, {2}, {3})"
+
+    red_chnl = monet.redFromArgb(argb)
+    green_chnl = monet.greenFromArgb(argb)
+    blue_chnl = monet.blueFromArgb(argb)
+    alpha_chnl = alpha
+
+    if not alpha:
+        alpha_chnl = monet.alphaFromArgb(argb)
+
+    if alpha_chnl == 255 or alpha_chnl == 0.0:
+        return hex_base.format(red_chnl, green_chnl, blue_chnl)
+
+    return rgba_base.format(red_chnl, green_chnl, blue_chnl, alpha_chnl)
