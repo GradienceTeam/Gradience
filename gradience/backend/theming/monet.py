@@ -42,14 +42,14 @@ class Monet:
             renderPM.drawToFile(drawing, image_path, fmt="PNG")
 
         if image_path.endswith(".xml"):
-            logging.error(f"XML files are unsupported by Gradience's Monet implementation.")
-            return False
+            # TODO: Use custom exception in future
+            raise Exception("XML files are unsupported by Gradience's Monet implementation")
 
         try:
             monet_img = monet.Image.open(image_path)
         except Exception as e:
             logging.error(f"An error occurred while generating a Monet palette. Exc: {e}")
-            return False
+            raise
         else:
             basewidth = 64
             wpercent = basewidth / float(monet_img.size[0])

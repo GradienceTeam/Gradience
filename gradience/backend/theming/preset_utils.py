@@ -60,10 +60,10 @@ class PresetUtils:
             tone = props[0]
             theme = props[1]
         else:
-            raise Exception("Properties 'tone' and/or 'theme' missing")
+            raise AttributeError("Properties 'tone' and/or 'theme' missing")
 
         if not monet_palette:
-            raise Exception("Property 'monet_palette' missing")
+            raise AttributeError("Property 'monet_palette' missing")
 
         if theme == "dark":
             dark_theme = monet_palette["schemes"]["dark"]
@@ -180,15 +180,13 @@ class PresetUtils:
 
             try:
                 self.preset.save_to_file()
-            except Exception as e:
-                logging.error(f"Unexpected file error while trying to generate preset from Monet palette. Exc: {e}")
+            except OSError:
                 raise
 
-    def get_presets_list(self, json_output=False) -> dict:
+    def get_presets_list(self, repo=None, full_list=False) -> dict:
         presets_list = {}
 
-        for repo in Path(presets_dir).iterdir():
-            logging.debug(f"presets_dir.iterdir: {repo}")
+        def get_repo_presets(repo):
             if repo.is_dir():
                 for file_name in repo.iterdir():
                     file_name = str(file_name)
@@ -201,6 +199,10 @@ class PresetUtils:
                             ) as file:
                                 preset_text = file.read()
                                 file.close()
+                        except (OSError, KeyError) as e:
+                            logging.error(f"Failed to load preset information. Exc: {e}")
+                            raise
+                        else:
                             preset = json.loads(preset_text)
                             if preset.get("variables") is None:
                                 raise KeyError("'variables' section missing in loaded preset file")
@@ -209,26 +211,29 @@ class PresetUtils:
                             presets_list[file_name] = preset[
                                 "name"
                             ]
-                        except (OSError, KeyError) as e:
-                            logging.error(f"Failed to load an preset information. Exc: {e}")
-                            raise
             elif repo.is_file():
                 # this exists to keep compatibility with old presets
                 if repo.name.endswith(".json"):
                     logging.warning("Legacy preset found. Moving to new structure.")
-                    if not os.path.isdir(os.path.join(presets_dir, "user")):
-                        os.mkdir(os.path.join(presets_dir, "user"))
-
-                    os.rename(repo, os.path.join(
-                        presets_dir, "user", repo.name))
 
                     try:
+                        if not os.path.isdir(os.path.join(presets_dir, "user")):
+                            os.mkdir(os.path.join(presets_dir, "user"))
+
+                        os.rename(repo, os.path.join(
+                            presets_dir, "user", repo.name))
+
                         with open(
                             os.path.join(presets_dir, "user", repo),
                             "r",
                             encoding="utf-8",
                         ) as file:
                             preset_text = file.read()
+                            file.close()
+                    except (OSError, KeyError) as e:
+                        logging.error(f"Failed to load preset information. Exc: {e}")
+                        raise
+                    else:
                         preset = json.loads(preset_text)
                         if preset.get("variables") is None:
                             raise KeyError("'variables' section missing in loaded preset file")
@@ -237,13 +242,17 @@ class PresetUtils:
                         presets_list["user"][file_name] = preset[
                             "name"
                         ]
-                    except (OSError, KeyError) as e:
-                        logging.error(f"Failed to load an preset information. Exc: {e}")
-                        raise
-        if json_output:
-            json_output = json.dumps(presets_list)
-            return json_output
-        return presets_list
+
+        if full_list:
+            for repo in Path(presets_dir).iterdir():
+                logging.debug(f"presets_dir.iterdir: {repo}")
+                get_repo_presets(repo)
+                return presets_list
+        elif repo:
+            get_repo_presets(repo)
+            return presets_list
+        else:
+            raise AttributeError("You either need to set 'repo' property, or change 'full_list' property to True")
 
     def apply_preset(self, app_type: str, preset: Preset) -> None:
         if app_type == "gtk4":

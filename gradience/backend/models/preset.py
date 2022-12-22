@@ -94,6 +94,7 @@ adw_palette = {
     }
 }
 
+# Supported app types that can utilize custom CSS
 custom_css_app_types = [
     "gtk4",
     "gtk3"
@@ -137,11 +138,13 @@ class Preset:
                 file.close()
         except OSError as e:
             logging.error(f"Failed to read contents of a preset in location: {self.preset_path}. Exc: {e}")
+            raise
 
         try:
             preset = json.loads(preset_text)
         except json.JSONDecodeError as e:
             logging.error(f"Error while decoding JSON data. Exc: {e}")
+            raise
 
         self.__load_values(preset)
 
@@ -154,6 +157,7 @@ class Preset:
             preset = json.loads(preset_text)
         except json.JSONDecodeError as e:
             logging.error(f"Error while decoding JSON data. Exc: {e}")
+            raise
 
         self.__load_values(preset)
 
@@ -182,6 +186,7 @@ class Preset:
                     self.custom_css[app_type] = ""
         except Exception as e:
             logging.error(f"Failed to create a new preset object. Exc: {e}")
+            raise
 
     # Rename an existing preset
     def rename(self, name):

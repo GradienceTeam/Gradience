@@ -164,12 +164,16 @@ class CLI:
         #_remove_preset = args.remove_preset
         _json = args.json
 
-        if _json:
-            presets_list = PresetUtils().get_presets_list(json_output=True)
-            print(presets_list)
-            exit(0)
+        try:
+            presets_list = PresetUtils().get_presets_list(full_list=True)
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+            exit(1)
 
-        presets_list = PresetUtils().get_presets_list()
+        if _json:
+            json_output = json.dumps(presets_list)
+            print(json_output)
+            exit(0)
 
         # TODO: Modify this output to look more like a table (maybe use ncurses?)
         print("\033[1;37mPreset name\033[0m | \033[1;37mPreset path\033[0m")
@@ -182,7 +186,13 @@ class CLI:
         _json = args.json
 
         favorite = set(self.settings.get_value("favourite"))
-        presets_list = PresetUtils().get_presets_list()
+
+        try:
+            presets_list = PresetUtils().get_presets_list(full_list=True)
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+            exit(1)
+
         presets_name = list(presets_list.values())
 
         if _json and not _add_preset and not _remove_preset:
@@ -254,7 +264,12 @@ class CLI:
         _gtk = args.gtk
         #_flatpak = args.flatpak
 
-        presets_list = PresetUtils().get_presets_list()
+        try:
+            presets_list = PresetUtils().get_presets_list(full_list=True)
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+            exit(1)
+
         presets_name = list(presets_list.values())
 
         if _preset_name:
@@ -330,20 +345,36 @@ class CLI:
         _theme = args.theme
         _json = args.json
 
-        palette = Monet().generate_from_image(_image_path)
+        try:
+            palette = Monet().generate_from_image(_image_path)
+        except Exception as e:
+            logging.error(f"Failed to generate Monet palette. Exc: {e}")
+            exit(1)
+
         props = [_tone, _theme]
 
         if _json:
-            preset = PresetUtils().new_preset_from_monet(name=_preset_name, monet_palette=palette,
-                                                            props=props, obj_only=True)
-            preset_json = preset.get_preset_json()
-            print(preset_json)
+            try:
+                preset = PresetUtils().new_preset_from_monet(_preset_name,
+                                    palette, props, True)
+            except (OSError, AttributeError) as e:
+                logging.error(f"Unexpected error while generating preset from Monet palette. Exc: {e}")
+                exit(1)
+            else:
+                preset_json = preset.get_preset_json()
+                print(preset_json)
+                exit(0)
+
+        try:
+            PresetUtils().new_preset_from_monet(_preset_name, palette, props)
+        except (OSError, AttributeError) as e:
+            logging.error(f"Unexpected error while generating preset from Monet palette. Exc: {e}")
+            exit(1)
+        else:
+            logging.info("In order for changes to take full effect, you need to log out.")
             exit(0)
 
-        PresetUtils().new_preset_from_monet(_preset_name, palette, props)
-        logging.info("In order for changes to take full effect, you need to log out.")
-
-    # TODO: Add path and xdg-* values parsing
+    # TODO: Add path and xdg-* value parsing
     def access_file(self, args):
         _list = args.list
         _allow = args.allow

@@ -163,65 +163,22 @@ class GradienceApplication(Adw.Application):
             os.makedirs(presets_dir)
 
         self.custom_presets = {"user": {}}
+
         for repo in Path(presets_dir).iterdir():
-            if repo.is_dir():  # repo
-                presets_list = {}
-                for file_name in repo.iterdir():
-                    file_name = str(file_name)
-                    if file_name.endswith(".json"):
-                        try:
-                            with open(
-                                os.path.join(presets_dir, file_name),
-                                "r",
-                                encoding="utf-8",
-                            ) as file:
-                                preset_text = file.read()
-                            preset = json.loads(preset_text)
-                            if preset.get("variables") is None:
-                                raise KeyError("variables")
-                            if preset.get("palette") is None:
-                                raise KeyError("palette")
-                            presets_list[file_name.replace(".json", "")] = preset[
-                                "name"
-                            ]
-                        except Exception:
-                            self.win.toast_overlay.add_toast(
-                                Adw.Toast(title=_("Failed to load preset"))
-                            )
+            logging.debug(f"presets_dir.iterdir: {repo}")
 
+            try:
+                presets_list = PresetUtils().get_presets_list(repo)
+            except (OSError, KeyError, AttributeError) as e:
+                logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Failed to load list of presets"))
+                )
+            else:
                 self.custom_presets[repo.name] = presets_list
-            elif repo.is_file():
-                logging.debug("file")
-                # keep compatibility with old presets
-                if repo.name.endswith(".json"):
-                    if not os.path.isdir(os.path.join(presets_dir, "user")):
-                        os.mkdir(os.path.join(presets_dir, "user"))
 
-                    os.rename(repo, os.path.join(
-                        presets_dir, "user", repo.name))
-
-                    try:
-                        with open(
-                            os.path.join(presets_dir, "user", repo),
-                            "r",
-                            encoding="utf-8",
-                        ) as file:
-                            preset_text = file.read()
-                        preset = json.loads(preset_text)
-                        if preset.get("variables") is None:
-                            raise KeyError("variables")
-                        if preset.get("palette") is None:
-                            raise KeyError("palette")
-                        presets_list["user"][file_name.replace(".json", "")] = preset[
-                            "name"
-                        ]
-                    except Exception:
-                        self.win.toast_overlay.add_toast(
-                            Adw.Toast(title=_("Failed to load preset"))
-                        )
-
-                    logging.debug(self.custom_presets)
         custom_menu_section = Gio.Menu()
+
         try:
             if (
                 self.custom_presets["user"]
@@ -394,8 +351,14 @@ class GradienceApplication(Adw.Application):
             else:
                 monet_theme = "light"
 
-        preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
-                                                            props=[tone, monet_theme], obj_only=True)
+        try:
+            preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
+                                props=[tone, monet_theme], obj_only=True)
+        except (OSError, AttributeError) as e:
+            logging.error(f"Unexpected error while generating preset from Monet palette. Exc: {e}")
+            self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Failed to generate preset from Monet palette"))
+            )
 
         variable = preset_object.variables
 
@@ -721,7 +684,7 @@ class GradienceApplication(Adw.Application):
             if widget.get_app_types()["gtk4"]:
                 try:
                     PresetUtils().restore_gtk4_preset()
-                except Exception:
+                except OSError:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to restore GTK 4 backup"))
                     )
@@ -751,7 +714,7 @@ class GradienceApplication(Adw.Application):
             if widget.get_app_types()["gtk4"]:
                 try:
                     PresetUtils().reset_preset("gtk4")
-                except Exception:
+                except GLib.GError:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to delete current preset"))
                     )
@@ -759,7 +722,7 @@ class GradienceApplication(Adw.Application):
             if widget.get_app_types()["gtk3"]:
                 try:
                     PresetUtils().reset_preset("gtk3")
-                except Exception:
+                except GLib.GError:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to delete current preset"))
                     )

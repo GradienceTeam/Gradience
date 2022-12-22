@@ -61,7 +61,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     def on_apply_button_clicked(self, *_args):
         try:
             PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
-        except Exception as e:
+        except (GLib.GError, json.JSONDecodeError, OSError) as e:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
@@ -87,7 +87,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     def on_download_button_clicked(self, *_args):
         try:
             PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
-        except Exception as e:
+        except (GLib.GError, json.JSONDecodeError, OSError) as e:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )

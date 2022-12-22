@@ -11,7 +11,7 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# GNU General Public License for more details.``
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
@@ -20,11 +20,11 @@ import os
 import shutil
 import json
 
-from collections import OrderedDict
 from pathlib import Path
 from gi.repository import Gtk, Adw, GLib
 
 from gradience.backend.preset_downloader import PresetDownloader
+from gradience.backend.theming.preset_utils import PresetUtils
 from gradience.backend.globals import presets_dir, preset_repos
 from gradience.backend.constants import rootdir
 
@@ -313,69 +313,22 @@ class GradiencePresetWindow(Adw.Window):
         self.builtin_presets = {
             "adwaita": "Adwaita",
             "adwaita-dark": "Adwaita Dark",
-            "pretty-purple": "Pretty Purple",
+            "pretty-purple": "Pretty Purple"
         }
 
-        # TODO: Move this from frontend to backend
         for repo in Path(presets_dir).iterdir():
             logging.debug(f"presets_dir.iterdir: {repo}")
-            if repo.is_dir():  # repo
-                presets_list = {}
-                for file_name in repo.iterdir():
-                    file_name = str(file_name)
-                    if file_name.endswith(".json"):
-                        try:
-                            with open(
-                                os.path.join(presets_dir, file_name),
-                                "r",
-                                encoding="utf-8",
-                            ) as file:
-                                preset_text = file.read()
-                            preset = json.loads(preset_text)
-                            if preset.get("variables") is None:
-                                raise KeyError("variables")
-                            if preset.get("palette") is None:
-                                raise KeyError("palette")
-                            presets_list[file_name] = preset[
-                                "name"
-                            ]
-                        except Exception as e:
-                            logging.error(f"reload_pref_group exception: {e}")
-                            self.toast_overlay.add_toast(
-                                Adw.Toast(title=_("Failed to load preset"))
-                            )
+
+            try:
+                presets_list = PresetUtils().get_presets_list(repo)
+            except (OSError, KeyError, AttributeError) as e:
+                logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Failed to load list of presets"))
+                )
+            else:
                 self.custom_presets[repo.name] = presets_list
-            elif repo.is_file():
-                logging.debug("file")
-                # keep compatibility with old presets
-                if repo.name.endswith(".json"):
-                    if not os.path.isdir(os.path.join(presets_dir, "user")):
-                        os.mkdir(os.path.join(presets_dir, "user"))
 
-                    os.rename(repo, os.path.join(
-                        presets_dir, "user", repo.name))
-
-                    try:
-                        with open(
-                            os.path.join(presets_dir, "user", repo),
-                            "r",
-                            encoding="utf-8",
-                        ) as file:
-                            preset_text = file.read()
-                        preset = json.loads(preset_text)
-                        if preset.get("variables") is None:
-                            raise KeyError("variables")
-                        if preset.get("palette") is None:
-                            raise KeyError("palette")
-                        presets_list["user"][file_name] = preset[
-                            "name"
-                        ]
-                    except Exception as e:
-                        logging.error(f"reload_pref_group exception: {e}")
-                        self.toast_overlay.add_toast(
-                            Adw.Toast(title=_("Failed to load preset"))
-                        )
-                    logging.debug(self.custom_presets)
         self.installed.remove(self.preset_list)
         self.installed.remove(self.builtin_preset_list)
 
