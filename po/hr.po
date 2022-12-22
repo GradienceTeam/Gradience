@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2022-12-21 12:13+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-22 00:38+0000\n"
 "PO-Revision-Date: 2022-12-21 15:50+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -21,13 +21,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.15.1-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:796
+#: data/ui/window.blp:5 gradience/frontend/main.py:759
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -37,7 +37,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "S lakoćom promijenite izgled Adwaita aplikacija"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:798
+#: gradience/frontend/main.py:761
 msgid "Gradience Team"
 msgstr "Gradience tim"
 
@@ -289,7 +289,7 @@ msgstr "Uvezi datoteku predloška"
 msgid "Delete"
 msgstr "Obriši"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:259
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:216
 msgid "Open in File Manager"
 msgstr "Otvori u pregledniku datoteka"
 
@@ -331,7 +331,7 @@ msgstr "Nije povezano"
 
 #: data/ui/presets_manager_window.blp:146
 #: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:429
+#: gradience/frontend/views/presets_manager_window.py:382
 msgid "Repositories"
 msgstr "Repozitoriji"
 
@@ -588,7 +588,7 @@ msgid "Unexpected file error occurred"
 msgstr "Pojavila se neočekivana greška datoteke"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:543
+#: gradience/frontend/main.py:506
 msgid "_Cancel"
 msgstr "O_dustani"
 
@@ -653,7 +653,7 @@ msgid "Unable to delete preset"
 msgstr "Nemoguće brisanje predloška"
 
 #: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:390
+#: gradience/frontend/views/presets_manager_window.py:343
 msgid "User Presets"
 msgstr "Korisnikovi predlošci"
 
@@ -666,7 +666,7 @@ msgid "Add a repository to install additional presets."
 msgstr "Dodajte repozitorij kako bi instalirali dodatne predloške."
 
 #: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:616
+#: gradience/frontend/main.py:579
 msgid "Cancel"
 msgstr "Odustani"
 
@@ -686,17 +686,18 @@ msgstr "Predložak je uvezen"
 msgid "Unsupported file format, must be .json"
 msgstr "Nepodržana vrsta datoteke, mora biti .json"
 
-#: gradience/frontend/views/presets_manager_window.py:345
-#: gradience/frontend/views/presets_manager_window.py:376
-#: gradience/frontend/main.py:189 gradience/frontend/main.py:220
-msgid "Failed to load preset"
+#: gradience/frontend/views/presets_manager_window.py:327
+#: gradience/frontend/main.py:175
+#, fuzzy
+#| msgid "Failed to load preset"
+msgid "Failed to load list of presets"
 msgstr "Neuspjelo učitavanje predloška"
 
-#: gradience/frontend/views/presets_manager_window.py:383
+#: gradience/frontend/views/presets_manager_window.py:336
 msgid "Built-in Presets"
 msgstr "Ugrađeni predlošci"
 
-#: gradience/frontend/views/presets_manager_window.py:393
+#: gradience/frontend/views/presets_manager_window.py:346
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -704,7 +705,7 @@ msgstr ""
 "Pogledajte <a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> na Githubu za više predložaka."
 
-#: gradience/frontend/views/presets_manager_window.py:419
+#: gradience/frontend/views/presets_manager_window.py:372
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -790,27 +791,33 @@ msgstr ""
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
 "Interface Guidelines</a>."
 
-#: gradience/frontend/main.py:248
+#: gradience/frontend/main.py:205
 msgid "No presets found"
 msgstr "Nema pronađenih predloška"
 
-#: gradience/frontend/main.py:266
+#: gradience/frontend/main.py:223
 msgid "Favorite Presets"
 msgstr "Predlošci omiljenih"
 
-#: gradience/frontend/main.py:416
+#: gradience/frontend/main.py:360
+#, fuzzy
+#| msgid "Failed to generate Monet palette"
+msgid "Failed to generate preset from Monet palette"
+msgstr "Neuspjelo generiranje Monet palete"
+
+#: gradience/frontend/main.py:379
 msgid "Unsaved Changes"
 msgstr "Nespremljene promjene"
 
-#: gradience/frontend/main.py:427
+#: gradience/frontend/main.py:390
 msgid "Save Changes"
 msgstr "Spremi promjene"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:448
 msgid "Apply This Color Scheme?"
 msgstr "Primijeni ovu shemu boja?"
 
-#: gradience/frontend/main.py:487
+#: gradience/frontend/main.py:450
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -818,37 +825,37 @@ msgstr ""
 "Upozorenje: svaka prilagođena CSS datoteka za te vrste datoteka biti će "
 "nepovratno prebrisana!"
 
-#: gradience/frontend/main.py:491
+#: gradience/frontend/main.py:454
 msgid "_Apply"
 msgstr "_Primijeni"
 
-#: gradience/frontend/main.py:501
+#: gradience/frontend/main.py:464
 msgid "Restore applied color scheme?"
 msgstr "Vrati primijenjenu shemu boje?"
 
-#: gradience/frontend/main.py:502 gradience/frontend/main.py:515
+#: gradience/frontend/main.py:465 gradience/frontend/main.py:478
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Osigurajte da imate trenutne postavke spremljene u predložak."
 
-#: gradience/frontend/main.py:504
+#: gradience/frontend/main.py:467
 msgid "_Restore"
 msgstr "Ob_novi"
 
-#: gradience/frontend/main.py:514
+#: gradience/frontend/main.py:477
 msgid "Reset applied color scheme?"
 msgstr "Vrati izvornu shemu boje?"
 
-#: gradience/frontend/main.py:517
+#: gradience/frontend/main.py:480
 msgid "_Reset"
 msgstr "_Vrati izvorno"
 
-#: gradience/frontend/main.py:527
+#: gradience/frontend/main.py:490
 msgid "Save preset as…"
 msgstr "Spremi predložak kao…"
 
-#: gradience/frontend/main.py:529 gradience/frontend/main.py:557
-#: gradience/frontend/main.py:574 gradience/frontend/main.py:602
-#: gradience/frontend/main.py:633 gradience/frontend/main.py:650
+#: gradience/frontend/main.py:492 gradience/frontend/main.py:520
+#: gradience/frontend/main.py:537 gradience/frontend/main.py:565
+#: gradience/frontend/main.py:596 gradience/frontend/main.py:613
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -857,54 +864,54 @@ msgstr ""
 "Spremanje predloška u <tt>{0}</tt>. Ako taj predložak već postoji, biti će "
 "prebrisan!"
 
-#: gradience/frontend/main.py:544
+#: gradience/frontend/main.py:507
 msgid "_Save"
 msgstr "_Spremi"
 
-#: gradience/frontend/main.py:600
+#: gradience/frontend/main.py:563
 msgid "You have unsaved changes!"
 msgstr "Imate nespremljene promjene!"
 
-#: gradience/frontend/main.py:617
+#: gradience/frontend/main.py:580
 msgid "Discard"
 msgstr "Odbaci"
 
-#: gradience/frontend/main.py:618
+#: gradience/frontend/main.py:581
 msgid "Save"
 msgstr "Spremi"
 
-#: gradience/frontend/main.py:678
+#: gradience/frontend/main.py:641
 msgid "Preset saved"
 msgstr "Predložak je spremljen"
 
-#: gradience/frontend/main.py:695
+#: gradience/frontend/main.py:658
 msgid "Preset set successfully"
 msgstr "Predložak je uspješno postavljen"
 
-#: gradience/frontend/main.py:701 gradience/frontend/main.py:731
-#: gradience/frontend/main.py:769
+#: gradience/frontend/main.py:664 gradience/frontend/main.py:694
+#: gradience/frontend/main.py:732
 msgid "Log out"
 msgstr "Odjavi se"
 
-#: gradience/frontend/main.py:703 gradience/frontend/main.py:733
-#: gradience/frontend/main.py:771
+#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
+#: gradience/frontend/main.py:734
 msgid "For the changes to take full effect, you need to log out."
 msgstr "Kako bi se promjene primijenile, trebate se odjaviti."
 
-#: gradience/frontend/main.py:708 gradience/frontend/main.py:738
-#: gradience/frontend/main.py:776
+#: gradience/frontend/main.py:671 gradience/frontend/main.py:701
+#: gradience/frontend/main.py:739
 msgid "OK"
 msgstr "U redu"
 
-#: gradience/frontend/main.py:726
+#: gradience/frontend/main.py:689
 msgid "Unable to restore GTK 4 backup"
 msgstr "Nemoguća obnova GTK 4 sigurnosne kopije"
 
-#: gradience/frontend/main.py:756 gradience/frontend/main.py:764
+#: gradience/frontend/main.py:719 gradience/frontend/main.py:727
 msgid "Unable to delete current preset"
 msgstr "Nemoguće brisanje aktualnog predloška"
 
-#: gradience/frontend/main.py:851
+#: gradience/frontend/main.py:814
 msgid ""
 "\n"
 "<ul>\n"
@@ -918,7 +925,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/frontend/main.py:862
+#: gradience/frontend/main.py:825
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -941,23 +948,23 @@ msgstr ""
 "⚙️ Mijenjanje naprednih mogućnosti sa CSS-om\n"
 "🧩️ Proširenje funkcionalnosti pomoću dodataka\n"
 
-#: gradience/frontend/main.py:875
+#: gradience/frontend/main.py:838
 msgid "Plugins by"
 msgstr "Priključci od"
 
-#: gradience/frontend/main.py:883
+#: gradience/frontend/main.py:846
 msgid "Presets by"
 msgstr "Predlošci od"
 
-#: gradience/frontend/main.py:905
+#: gradience/frontend/main.py:868
 msgid "Packages by"
 msgstr "Paketi od"
 
-#: gradience/frontend/main.py:912
+#: gradience/frontend/main.py:875
 msgid "Fixes by"
 msgstr "Ispravci od"
 
-#: gradience/frontend/main.py:922
+#: gradience/frontend/main.py:885
 msgid "Special thanks to"
 msgstr "Posebno hvala:"
 

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-21 12:13+0000\n"
+"POT-Creation-Date: 2022-12-22 00:38+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:796
+#: data/ui/window.blp:5 gradience/frontend/main.py:759
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -40,7 +40,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Changez l’apparence d’Adwaita simplement"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:798
+#: gradience/frontend/main.py:761
 msgid "Gradience Team"
 msgstr "L’équipe Gradience"
 
@@ -300,7 +300,7 @@ msgstr "Importer un fichier de pré-configuration"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:259
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:216
 msgid "Open in File Manager"
 msgstr "Ouvrir dans le gestionnaire de fichiers"
 
@@ -342,7 +342,7 @@ msgstr "Hors ligne"
 
 #: data/ui/presets_manager_window.blp:146
 #: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:429
+#: gradience/frontend/views/presets_manager_window.py:382
 msgid "Repositories"
 msgstr "Référentiels"
 
@@ -602,7 +602,7 @@ msgid "Unexpected file error occurred"
 msgstr "Une erreur de fichier inattendue s’est produite"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:543
+#: gradience/frontend/main.py:506
 msgid "_Cancel"
 msgstr "A_nnuler"
 
@@ -667,7 +667,7 @@ msgid "Unable to delete preset"
 msgstr "La suppression de la configuration a échoué"
 
 #: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:390
+#: gradience/frontend/views/presets_manager_window.py:343
 msgid "User Presets"
 msgstr "Configurations de l’utilisateur"
 
@@ -681,7 +681,7 @@ msgstr ""
 "Ajoutez un dépôt pour installer des pré-configurations supplémentaires."
 
 #: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:616
+#: gradience/frontend/main.py:579
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -701,17 +701,18 @@ msgstr "Pré-configuration importée"
 msgid "Unsupported file format, must be .json"
 msgstr "Format de fichier non pris en charge, il devrait être .json"
 
-#: gradience/frontend/views/presets_manager_window.py:345
-#: gradience/frontend/views/presets_manager_window.py:376
-#: gradience/frontend/main.py:189 gradience/frontend/main.py:220
-msgid "Failed to load preset"
+#: gradience/frontend/views/presets_manager_window.py:327
+#: gradience/frontend/main.py:175
+#, fuzzy
+#| msgid "Failed to load preset"
+msgid "Failed to load list of presets"
 msgstr "Le chargement de la configuration à échoué"
 
-#: gradience/frontend/views/presets_manager_window.py:383
+#: gradience/frontend/views/presets_manager_window.py:336
 msgid "Built-in Presets"
 msgstr "Pré-configurations incluses"
 
-#: gradience/frontend/views/presets_manager_window.py:393
+#: gradience/frontend/views/presets_manager_window.py:346
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -719,7 +720,7 @@ msgstr ""
 "Voir <a href=\"https://github.com/GradienceTeam/Community\">l’équipe / la "
 "communauté Gradience</a> sur Github pour plus de pré-configurations."
 
-#: gradience/frontend/views/presets_manager_window.py:419
+#: gradience/frontend/views/presets_manager_window.py:372
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -807,27 +808,31 @@ msgstr ""
 "couleurs par défaut suivent les <a href=\"https://developer.gnome.org/hig/"
 "reference/palette.html\">directives de l'interface utilisateur GNOME.</a>."
 
-#: gradience/frontend/main.py:248
+#: gradience/frontend/main.py:205
 msgid "No presets found"
 msgstr "Aucune pré-configuration trouvée"
 
-#: gradience/frontend/main.py:266
+#: gradience/frontend/main.py:223
 msgid "Favorite Presets"
 msgstr "Pré-configurations préférées"
 
-#: gradience/frontend/main.py:416
+#: gradience/frontend/main.py:360
+msgid "Failed to generate preset from Monet palette"
+msgstr ""
+
+#: gradience/frontend/main.py:379
 msgid "Unsaved Changes"
 msgstr "Changements non sauvegardés"
 
-#: gradience/frontend/main.py:427
+#: gradience/frontend/main.py:390
 msgid "Save Changes"
 msgstr "Enregistrer les changements"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:448
 msgid "Apply This Color Scheme?"
 msgstr "Appliquer ce schéma de couleurs ?"
 
-#: gradience/frontend/main.py:487
+#: gradience/frontend/main.py:450
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -835,39 +840,39 @@ msgstr ""
 "Attention : tous les fichiers CSS personnalisés pour ces types "
 "d’applications seront écrasés !"
 
-#: gradience/frontend/main.py:491
+#: gradience/frontend/main.py:454
 msgid "_Apply"
 msgstr "_Appliquer"
 
-#: gradience/frontend/main.py:501
+#: gradience/frontend/main.py:464
 msgid "Restore applied color scheme?"
 msgstr "Rétablir le schéma de couleurs appliqué ?"
 
-#: gradience/frontend/main.py:502 gradience/frontend/main.py:515
+#: gradience/frontend/main.py:465 gradience/frontend/main.py:478
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Assurez-vous d’avoir vos réglages actuels sauvegardés en tant que "
 "configuration."
 
-#: gradience/frontend/main.py:504
+#: gradience/frontend/main.py:467
 msgid "_Restore"
 msgstr "_Restaurer"
 
-#: gradience/frontend/main.py:514
+#: gradience/frontend/main.py:477
 msgid "Reset applied color scheme?"
 msgstr "Réinitialiser le thème de couleurs ?"
 
-#: gradience/frontend/main.py:517
+#: gradience/frontend/main.py:480
 msgid "_Reset"
 msgstr "_Réinitialiser"
 
-#: gradience/frontend/main.py:527
+#: gradience/frontend/main.py:490
 msgid "Save preset as…"
 msgstr "Enregistrer la configuration sous…"
 
-#: gradience/frontend/main.py:529 gradience/frontend/main.py:557
-#: gradience/frontend/main.py:574 gradience/frontend/main.py:602
-#: gradience/frontend/main.py:633 gradience/frontend/main.py:650
+#: gradience/frontend/main.py:492 gradience/frontend/main.py:520
+#: gradience/frontend/main.py:537 gradience/frontend/main.py:565
+#: gradience/frontend/main.py:596 gradience/frontend/main.py:613
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -876,56 +881,56 @@ msgstr ""
 "Enregistrement de la configuration vers <tt>{0}</tt>. Si elle existe déjà, "
 "elle sera écrasée !"
 
-#: gradience/frontend/main.py:544
+#: gradience/frontend/main.py:507
 msgid "_Save"
 msgstr "_Sauvegarder"
 
-#: gradience/frontend/main.py:600
+#: gradience/frontend/main.py:563
 msgid "You have unsaved changes!"
 msgstr "Vous avez des changements non enregistrés !"
 
-#: gradience/frontend/main.py:617
+#: gradience/frontend/main.py:580
 msgid "Discard"
 msgstr "Jeter"
 
-#: gradience/frontend/main.py:618
+#: gradience/frontend/main.py:581
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: gradience/frontend/main.py:678
+#: gradience/frontend/main.py:641
 msgid "Preset saved"
 msgstr "Pré-configuration enregistrée"
 
-#: gradience/frontend/main.py:695
+#: gradience/frontend/main.py:658
 msgid "Preset set successfully"
 msgstr "Pré-configuration appliquée avec succès"
 
-#: gradience/frontend/main.py:701 gradience/frontend/main.py:731
-#: gradience/frontend/main.py:769
+#: gradience/frontend/main.py:664 gradience/frontend/main.py:694
+#: gradience/frontend/main.py:732
 msgid "Log out"
 msgstr "Se déconnecter"
 
-#: gradience/frontend/main.py:703 gradience/frontend/main.py:733
-#: gradience/frontend/main.py:771
+#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
+#: gradience/frontend/main.py:734
 #, fuzzy
 #| msgid "For the changes to take effect, you need to log out. "
 msgid "For the changes to take full effect, you need to log out."
 msgstr "Pour que les changements prennent effet, vous devez vous déconnecter. "
 
-#: gradience/frontend/main.py:708 gradience/frontend/main.py:738
-#: gradience/frontend/main.py:776
+#: gradience/frontend/main.py:671 gradience/frontend/main.py:701
+#: gradience/frontend/main.py:739
 msgid "OK"
 msgstr "OK"
 
-#: gradience/frontend/main.py:726
+#: gradience/frontend/main.py:689
 msgid "Unable to restore GTK 4 backup"
 msgstr "Impossible de restaurer la sauvegarde de GTK 4"
 
-#: gradience/frontend/main.py:756 gradience/frontend/main.py:764
+#: gradience/frontend/main.py:719 gradience/frontend/main.py:727
 msgid "Unable to delete current preset"
 msgstr "La suppression de la configuration actuelle a échoué"
 
-#: gradience/frontend/main.py:851
+#: gradience/frontend/main.py:814
 msgid ""
 "\n"
 "<ul>\n"
@@ -949,7 +954,7 @@ msgstr ""
 "<li>Traductions mises à jour</li>\n"
 "</ul>\n"
 
-#: gradience/frontend/main.py:862
+#: gradience/frontend/main.py:825
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -973,23 +978,23 @@ msgstr ""
 "⚙️ Modifier les options avancées avec CSS\n"
 "🧩️ Étendre les fonctionnalités avec des greffons\n"
 
-#: gradience/frontend/main.py:875
+#: gradience/frontend/main.py:838
 msgid "Plugins by"
 msgstr "Greffons par"
 
-#: gradience/frontend/main.py:883
+#: gradience/frontend/main.py:846
 msgid "Presets by"
 msgstr "Pré-configurations par"
 
-#: gradience/frontend/main.py:905
+#: gradience/frontend/main.py:868
 msgid "Packages by"
 msgstr "Packages par"
 
-#: gradience/frontend/main.py:912
+#: gradience/frontend/main.py:875
 msgid "Fixes by"
 msgstr "Corrections par"
 
-#: gradience/frontend/main.py:922
+#: gradience/frontend/main.py:885
 msgid "Special thanks to"
 msgstr "Remerciements particuliers à"
 
