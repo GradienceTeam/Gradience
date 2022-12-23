@@ -29,7 +29,6 @@ from gradience.backend.globals import presets_dir
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.preset_utils import PresetUtils
-from gradience.backend.utils.colors import rgba_from_argb
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.constants import *
 
@@ -42,7 +41,7 @@ from gradience.frontend.views.preferences_window import GradiencePreferencesWind
 from gradience.frontend.dialogs.app_type_dialog import GradienceAppTypeDialog
 from gradience.frontend.widgets.custom_css_group import GradienceCustomCSSGroup
 
-from gradience.frontend.settings_schema import settings_schema
+from gradience.frontend.schemas.preset_schema import preset_schema
 
 from gradience.backend.logger import Logger
 
@@ -320,7 +319,7 @@ class GradienceApplication(Adw.Application):
         if "custom_css" in preset:
             self.custom_css = preset["custom_css"]
         else:
-            for app_type in settings_schema["custom_css_app_types"]:
+            for app_type in preset_schema["custom_css_app_types"]:
                 self.custom_css[app_type] = ""
         for key in self.variables.keys():
             if key in self.pref_variables:
@@ -651,6 +650,9 @@ class GradienceApplication(Adw.Application):
             if widget.get_app_types()["gtk3"]:
                 PresetUtils().apply_preset("gtk3", self.preset)
 
+            if widget.get_app_types()["shell"]:
+                PresetUtils().apply_preset("shell", self.preset)
+
             self.reload_plugins()
             self.plugins_list.apply()
 
@@ -929,7 +931,7 @@ The main features of Gradience include the following:
         self.plugins_group = self.plugins_group
 
         self.custom_css_group = GradienceCustomCSSGroup()
-        for app_type in settings_schema["custom_css_app_types"]:
+        for app_type in preset_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
         self.custom_css_group.load_custom_css(self.custom_css)
         self.win.content_plugins.add(self.custom_css_group)
@@ -952,7 +954,7 @@ The main features of Gradience include the following:
         self.plugins_group = self.plugins_group
 
         self.custom_css_group = GradienceCustomCSSGroup()
-        for app_type in settings_schema["custom_css_app_types"]:
+        for app_type in preset_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
         self.custom_css_group.load_custom_css(self.custom_css)
         self.win.content_plugins.add(self.custom_css_group)

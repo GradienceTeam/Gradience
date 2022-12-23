@@ -1,4 +1,4 @@
-# settings_schema.py
+# preset_schema.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022  Gradience Team
@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-settings_schema = {
+preset_schema = {
     "groups": [
         {
             "name": "accent_colors",

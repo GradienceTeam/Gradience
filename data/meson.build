@@ -73,3 +73,4 @@ endif
 
 subdir('icons')
 subdir('plugins')
+subdir('shell')

@@ -29,7 +29,8 @@ from gradience.backend.constants import rootdir, app_id, build_type
 from gradience.frontend.widgets.error_list_row import GradienceErrorListRow
 from gradience.frontend.widgets.palette_shades import GradiencePaletteShades
 from gradience.frontend.widgets.option_row import GradienceOptionRow
-from gradience.frontend.settings_schema import settings_schema
+from gradience.frontend.schemas.shell_schema import shell_schema
+from gradience.frontend.schemas.preset_schema import preset_schema
 
 from gradience.backend.logger import Logger
 
@@ -129,7 +130,38 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             self.monet_image_file = self.monet_image_file.get_path()
             self.on_apply_button()
 
+    def setup_shell_group(self):
+        shell_pref_group = Adw.PreferencesGroup()
+        shell_pref_group.set_name("shell-group")
+        shell_pref_group.set_title("GNOME Shell Theming")
+        shell_pref_group.set_description(
+            _(
+                "This section allows you to customize colors that will be "
+                "used in GNOME Shell theme.\n"
+                "WARNING: Extensions modifying Shell stylesheet can cause "
+                "issues with Shell themes."
+            )
+        )
+
+        for variable in shell_schema["variables"]:
+            pref_variable = GradienceOptionRow(
+                variable["name"],
+                variable["title"]
+                #"The One Piece is real!!11!!",
+                #variable.get("explanation"),
+            )
+            shell_pref_group.add(pref_variable)
+            self.get_application(
+            ).pref_variables[variable["name"]] = pref_variable
+
+        #self.shell_test_row = Adw.ActionRow()
+        #self.shell_test_row.set_title(_("Background Color"))
+        #shell_pref_group.add(self.shell_test_row)
+
+        self.content_monet.add(shell_pref_group)
+
     def setup_monet_page(self):
+        self.setup_shell_group()
 
         self.monet_pref_group = Adw.PreferencesGroup()
         self.monet_pref_group.set_name("monet")
@@ -144,8 +176,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.apply_button = Gtk.Button()
         self.apply_button.set_label(_("Apply"))
         self.apply_button.set_valign(Gtk.Align.CENTER)
-        self.apply_button.connect("clicked", self.on_apply_button)
         self.apply_button.set_css_classes("suggested-action")
+        self.apply_button.connect("clicked", self.on_apply_button)
+
         self.monet_pref_group.set_header_suffix(self.apply_button)
         self.monet_file_chooser_row = Adw.ActionRow()
         self.monet_file_chooser_row.set_title(_("Background Image"))
@@ -234,7 +267,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             )
 
     def setup_colors_page(self):
-        for group in settings_schema["groups"]:
+        for group in preset_schema["groups"]:
             pref_group = Adw.PreferencesGroup()
             pref_group.set_name(group["name"])
             pref_group.set_title(group["title"])
@@ -264,7 +297,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 "GNOME Human Interface Guidelines</a>."
             )
         )
-        for color in settings_schema["palette"]:
+        for color in preset_schema["palette"]:
             palette_shades = GradiencePaletteShades(
                 color["prefix"], color["title"], color["n_shades"]
             )

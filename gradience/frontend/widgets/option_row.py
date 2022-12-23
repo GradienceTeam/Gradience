@@ -34,19 +34,19 @@ class GradienceOptionRow(Adw.ActionRow):
     explanation_button = Gtk.Template.Child("explanation-button")
     explanation_label = Gtk.Template.Child("explanation-label")
 
-    def __init__(self, name, title, explanation, adw_gtk3_support="yes", **kwargs):
+    def __init__(self, name, title, explanation=None, adw_gtk3_support=None, **kwargs):
         super().__init__(**kwargs)
 
         self.set_name(name)
         self.set_title(title)
         self.set_subtitle("@" + name)
 
-        if adw_gtk3_support == "yes":
+        if adw_gtk3_support == "yes" or not adw_gtk3_support:
             self.warning_button.set_visible(False)
         elif adw_gtk3_support == "partial":
             self.warning_button.add_css_class("warning")
             self.warning_label.set_label(
-                _("This option is only partially supported by the adw-gtk3 " "theme.")
+                _("This option is only partially supported by the adw-gtk3 theme.")
             )
         elif adw_gtk3_support == "no":
             self.warning_button.add_css_class("error")
@@ -55,7 +55,7 @@ class GradienceOptionRow(Adw.ActionRow):
             )
 
         self.explanation_label.set_label(explanation or "")
-        if explanation is None:
+        if not explanation:
             self.explanation_button.set_visible(False)
 
     @Gtk.Template.Callback()
@@ -75,6 +75,7 @@ class GradienceOptionRow(Adw.ActionRow):
         else:
             self.value_stack.set_visible_child(self.color_value)
 
+    # TODO: See issue: #642, #666
     def update_value(self, new_value, **kwargs):
         rgba = Gdk.RGBA()
         if kwargs.get("update_from") != "text_value":
