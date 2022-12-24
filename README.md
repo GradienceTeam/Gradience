@@ -214,6 +214,11 @@ gsettings reset com.github.GradienceTeam.Gradience first-run
 ```
 
 
+## ℹ️ FAQ
+
+_To be done_
+
+
 ## 🙌 Contribute to Gradience 
 
 See [HACKING.md](HACKING.md)
