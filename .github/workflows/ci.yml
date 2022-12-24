@@ -43,7 +43,6 @@ jobs:
     strategy:
       matrix:
         arch: [x86_64, aarch64]
-        # arch: [x86_64]
       # Don't fail the whole workflow if one architecture fails
       fail-fast: false
     steps:
@@ -54,10 +53,10 @@ jobs:
           dnf -y install docker
       - name: Set up QEMU
         id: qemu
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v2.1.0
         with:
           platforms: arm64
-      - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+      - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
         with:
           bundle: com.github.GradienceTeam.Gradience.Devel.flatpak
           manifest-path: build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
