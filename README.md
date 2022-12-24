@@ -72,7 +72,7 @@ The main features of Gradience include the following:
 > **Note** 
 > You can go to `Preferences` and apply overrides for Flatpak
 
-<details open>
+<details>
   <summary>🪛️ Manual setup</summary>
 
 ### Libadwaita applications
