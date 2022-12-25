@@ -33,8 +33,8 @@ jobs:
       # Don't fail the whole workflow if one architecture fails
       fail-fast: false
     steps:
-    - uses: actions/checkout@v3
-    # Docker is required by the docker/setup-qemu-action which enables emulation
+    - name: Checkout
+      uses: actions/checkout@v3
     - name: Install deps
       run: |
         dnf -y install docker
@@ -46,7 +46,7 @@ jobs:
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       with:
         repository-name: gnome-nightly
-        bundle: gradience-dev.flatpak
+        bundle: gradience-devel.flatpak
         manifest-path: build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
         cache-key: flatpak-builder-${{ github.sha }}
         arch: ${{ matrix.arch }}
