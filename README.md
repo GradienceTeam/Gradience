@@ -72,7 +72,7 @@ The main features of Gradience include the following:
 > **Note** 
 > You can go to `Preferences` and apply overrides for Flatpak
 
-<details open>
+<details>
   <summary>🪛️ Manual setup</summary>
 
 ### Libadwaita applications
@@ -192,83 +192,7 @@ environment cross-distro. Thus, it is highly recommended you use it.
 2. In Builder, click the "Clone Repository" button at the bottom, using `https://github.com/GradienceTeam/Gradience.git` as the URL.
 3. Click the build button at the top once the project is loaded.
 
-### Flatpak Builder
-
-`flatpak-builder` is a wrapper around the `flatpak build` command that automates the building of applications and their dependencies.
-It uses Flatpak manifests to download and pack needed dependencies with compiled program into a single Flatpak image that can be later distributed or installed on your system. We recommend this method if you have problems with GNOME Builder.
-
-#### Prerequisites
-
-- Flatpak Builder `flatpak-builder`
-- GNOME SDK runtime `org.gnome.Sdk//43`
-- GNOME Platform runtime `org.gnome.Platform//43`
-
-Install required runtimes:
-```shell
-flatpak install org.gnome.Sdk//43 org.gnome.Platform//43
-```
-
-#### Build Instruction
-
-##### User installation
-```shell
-git clone https://github.com/GradienceTeam/Gradience.git
-cd Gradience
-flatpak-builder --install --user --force-clean repo/ build-aux/flatpak/com.github.GradienceTeam.Gradience.json
-```
-
-##### System installation
-```shell
-git clone https://github.com/GradienceTeam/Gradience.git
-cd Gradience
-flatpak-builder --install --system --force-clean repo/ build-aux/flatpak/com.github.GradienceTeam.Gradience.json
-```
-
-### Meson
-
-#### Prerequisites
-
-The following packages are required to build Gradience:
-
-- Python 3 `python`
-- PyGObject `python-gobject`
-- Blueprint [`blueprint-compiler`](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/setup.html)
-- GTK 4 `gtk4`
-- Libadwaita (>= 1.2.alpha) `libadwaita`
-- Libsoup 3 (>= 3.2.0) `libsoup`
-- Meson `meson`
-- Ninja `ninja-build`
-
-Required Python libraries:
-
-```shell
-pip install -r requirements.txt
-```
-
-#### Build Instruction
-
-##### Global installation
-
-```shell
-git clone https://github.com/GradienceTeam/Gradience.git
-cd Gradience
-meson builddir --prefix=/usr/local
-sudo ninja -C builddir install
-```
-
-##### Local build (for testing and development purposes)
-
-```shell
-git clone https://github.com/GradienceTeam/Gradience.git
-cd Gradience
-meson builddir
-meson configure builddir -Dprefix="$(pwd)/builddir"
-ninja -C builddir install
-ninja -C builddir run
-```
-
-> **Note** 
-> During testing and development, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
+For more building and installation methods, see [HACKING.md](HACKING.md)
 
 
 ## 🎛️ Miscellaneous
@@ -290,18 +214,15 @@ gsettings reset com.github.GradienceTeam.Gradience first-run
 ```
 
 
+## ℹ️ FAQ
+
+_To be done_
+
+
 ## 🙌 Contribute to Gradience 
 
-### Code
+See [HACKING.md](HACKING.md)
 
-Fork this repository, then create a push request when you're done adding features or fixing bugs.
-
-### Localization 
-
-You can help Gradience translate into your native language. If you found any typos
-or think you can improve a translation, you can use the [Weblate](https://hosted.weblate.org/engage/GradienceTeam) platform.
-
-[![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/gradience/287x66-white.png)](https://hosted.weblate.org/engage/GradienceTeam/)
 
 ## ✨️ Contributors
 

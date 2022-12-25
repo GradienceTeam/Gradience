@@ -248,7 +248,7 @@ class PresetUtils:
             for repo in Path(presets_dir).iterdir():
                 logging.debug(f"presets_dir.iterdir: {repo}")
                 get_repo_presets(repo)
-                return presets_list
+            return presets_list
         elif repo:
             get_repo_presets(repo)
             return presets_list
