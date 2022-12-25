@@ -15,24 +15,11 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 
-name: CI
 on:
   push:
-    branches: 
-      - "main"
-    path: 
-      # all python files
-      - "**.py"
-      - "gradience/**"
-      # all meson files
-      - "**.build"
-      # flatpak manifest
-      - "build-aux/flatpak/*.json"
-      # github action itself
-      - ".github/workflows/flatpak.yml"
-      # data
-      - "data/**"
-
+    branches: [update-ci]
+  pull_request:
+name: CI
 jobs:
   flatpak:
     name: "Flatpak"
@@ -46,19 +33,20 @@ jobs:
       # Don't fail the whole workflow if one architecture fails
       fail-fast: false
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install deps
-        run: |
-          dnf -y install docker
-      - name: Set up QEMU
-        id: qemu
-        uses: docker/setup-qemu-action@v2.1.0
-        with:
-          platforms: arm64
-      - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
-        with:
-          bundle: com.github.GradienceTeam.Gradience.Devel.flatpak
-          manifest-path: build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
-          cache-key: flatpak-builder-${{ github.sha }}
-          arch: ${{ matrix.arch }}
+    - uses: actions/checkout@v3
+    # Docker is required by the docker/setup-qemu-action which enables emulation
+    - name: Install deps
+      run: |
+        dnf -y install docker
+    - name: Set up QEMU
+      id: qemu
+      uses: docker/setup-qemu-action@v2.1.0
+      with:
+        platforms: arm64
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
+      with:
+        bundle: gradience-git.flatpak
+        manifest-path: build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
+        cache-key: flatpak-builder-${{ github.sha }}
+        arch: ${{ matrix.arch }}
+        
