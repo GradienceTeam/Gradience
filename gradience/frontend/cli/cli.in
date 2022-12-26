@@ -166,8 +166,8 @@ class CLI:
 
         try:
             presets_list = PresetUtils().get_presets_list(full_list=True)
-        except (OSError, KeyError, AttributeError) as e:
-            logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+        except (OSError, KeyError, AttributeError):
+            logging.error(f"Failed to retrieve a list of presets.")
             exit(1)
 
         if _json:
@@ -189,8 +189,8 @@ class CLI:
 
         try:
             presets_list = PresetUtils().get_presets_list(full_list=True)
-        except (OSError, KeyError, AttributeError) as e:
-            logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+        except (OSError, KeyError, AttributeError):
+            logging.error(f"Failed to retrieve a list of presets.")
             exit(1)
 
         presets_name = list(presets_list.values())
@@ -251,11 +251,12 @@ class CLI:
                     )
                 )
             except FileNotFoundError as e:
-                logging.error(f"Preset could not be imported. Exc: {e}")
+                logging.error(f"Preset could not be imported.", exc=e)
                 exit(1)
-            logging.info("Preset imported successfully.")
+            else:
+                logging.info("Preset imported successfully.")
         else:
-            logging.error("Unsupported file format, must be .json")
+            logging.error("Unsupported preset file format, must be .json")
             exit(1)
 
     def apply_preset(self, args):
@@ -266,8 +267,8 @@ class CLI:
 
         try:
             presets_list = PresetUtils().get_presets_list(full_list=True)
-        except (OSError, KeyError, AttributeError) as e:
-            logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+        except (OSError, KeyError, AttributeError):
+            logging.error(f"Failed to retrieve a list of presets.")
             exit(1)
 
         presets_name = list(presets_list.values())
@@ -311,8 +312,8 @@ class CLI:
         for repo_name, repo in preset_repos.items():
             try:
                 explore_presets, urls = PresetDownloader().fetch_presets(repo)
-            except (GLib.GError, json.JSONDecodeError) as e:
-                logging.error(f"An error occurred while fetching presets from remote repository. Exc: {e}")
+            except (GLib.GError, json.JSONDecodeError):
+                logging.error(f"An error occurred while fetching presets from remote repository.")
                 exit(1)
             else:
                 preset_no = 1
@@ -323,8 +324,8 @@ class CLI:
                         logging.info(f"Downloading preset: {preset_name}")
                         try:
                             PresetDownloader().download_preset(preset_name, to_slug_case(repo_name), preset_url)
-                        except (GLib.GError, json.JSONDecodeError, OSError) as e:
-                            logging.error(f"An error occurred while downloading a preset. Exc: {e}")
+                        except (GLib.GError, json.JSONDecodeError, OSError):
+                            logging.error(f"An error occurred while downloading a preset.")
                             exit(1)
                         else:
                             logging.info("Preset downloaded successfully.")
@@ -347,8 +348,8 @@ class CLI:
 
         try:
             palette = Monet().generate_from_image(_image_path)
-        except Exception as e:
-            logging.error(f"Failed to generate Monet palette. Exc: {e}")
+        except ValueError:
+            logging.error(f"Failed to generate Monet palette.")
             exit(1)
 
         props = [_tone, _theme]
@@ -357,8 +358,8 @@ class CLI:
             try:
                 preset = PresetUtils().new_preset_from_monet(_preset_name,
                                     palette, props, True)
-            except (OSError, AttributeError) as e:
-                logging.error(f"Unexpected error while generating preset from Monet palette. Exc: {e}")
+            except (OSError, AttributeError):
+                logging.error(f"Unexpected error while generating preset from Monet palette.")
                 exit(1)
             else:
                 preset_json = preset.get_preset_json()
@@ -367,8 +368,8 @@ class CLI:
 
         try:
             PresetUtils().new_preset_from_monet(_preset_name, palette, props)
-        except (OSError, AttributeError) as e:
-            logging.error(f"Unexpected error while generating preset from Monet palette. Exc: {e}")
+        except (OSError, AttributeError):
+            logging.error(f"Unexpected error while generating preset from Monet palette.")
             exit(1)
         else:
             logging.info("In order for changes to take full effect, you need to log out.")
@@ -383,8 +384,8 @@ class CLI:
         if _list:
             try:
                 access_list = list_file_access()
-            except GLib.GError as e:
-                logging.error(f"An error occurred while accessing allowed files list. Exc: {e}")
+            except GLib.GError:
+                logging.error(f"An error occurred while accessing allowed files list.")
                 exit(1)
             else:
                 logging.info("Allowed files:")
@@ -399,8 +400,8 @@ class CLI:
         if _allow:
             try:
                 allow_file_access(_allow)
-            except GLib.GError as e:
-                logging.error(f"An error occurred while setting file access. Exc: {e}")
+            except GLib.GError:
+                logging.error(f"An error occurred while setting file access.")
                 exit(1)
             else:
                 logging.info(f"Path {_allow} added to access list")
@@ -409,8 +410,8 @@ class CLI:
         if _disallow:
             try:
                 disallow_file_access(_disallow)
-            except GLib.GError as e:
-                logging.error(f"An error occurred while setting file access. Exc: {e}")
+            except GLib.GError:
+                logging.error(f"An error occurred while setting file access.")
                 exit(1)
             else:
                 logging.info(f"Path {_disallow} removed from access list")

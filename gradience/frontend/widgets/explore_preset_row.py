@@ -62,10 +62,10 @@ class GradienceExplorePresetRow(Adw.ActionRow):
         try:
             PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
         except (GLib.GError, json.JSONDecodeError, OSError) as e:
+            logging.error(f"An error occurred while trying to download a preset.")
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
-            logging.error(f"An error occurred while trying to download a preset. Exc: {e}")
         else:
             self.app.load_preset_from_file(
                 os.path.join(
@@ -87,11 +87,11 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     def on_download_button_clicked(self, *_args):
         try:
             PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
-        except (GLib.GError, json.JSONDecodeError, OSError) as e:
+        except (GLib.GError, json.JSONDecodeError, OSError):
+            logging.error(f"An error occurred while trying to download a preset.")
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
-            logging.error(f"An error occurred while trying to download a preset. Exc: {e}")
         else:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset downloaded")))

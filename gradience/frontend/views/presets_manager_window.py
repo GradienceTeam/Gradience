@@ -321,8 +321,8 @@ class GradiencePresetWindow(Adw.Window):
 
             try:
                 presets_list = PresetUtils().get_presets_list(repo)
-            except (OSError, KeyError, AttributeError) as e:
-                logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+            except (OSError, KeyError, AttributeError):
+                logging.error(f"Failed to retrieve a list of presets.")
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Failed to load list of presets"))
                 )
