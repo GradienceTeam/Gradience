@@ -429,12 +429,12 @@ class GradienceApplication(Adw.Application):
                     os.environ.get("XDG_CONFIG_HOME",
                                    os.environ["HOME"] + "/.config"),
                     "presets",
-                    args[0].get_string().replace("custom-", "", 1) + ".json",
+                    args[0].get_string().replace("custom-", "", 1),
                 )
             )
         else:
             self.load_preset_from_resource(
-                f"{rootdir}/presets/" + args[0].get_string() + ".json"
+                f"{rootdir}/presets/" + args[0].get_string()
             )
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
