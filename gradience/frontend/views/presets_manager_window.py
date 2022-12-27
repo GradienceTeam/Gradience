@@ -151,7 +151,7 @@ class GradiencePresetWindow(Adw.Window):
                 else:
                     self.search_spinner.props.visible = False
             # TODO: Create a new page to show for other errors eg. "page_error"
-            except json.JSONDecodeError as e:
+            except json.JSONDecodeError:
                 self.search_spinner.props.visible = False
             else:
                 self.search_spinner.props.visible = False
@@ -322,7 +322,7 @@ class GradiencePresetWindow(Adw.Window):
             try:
                 presets_list = PresetUtils().get_presets_list(repo)
             except (OSError, KeyError, AttributeError):
-                logging.error(f"Failed to retrieve a list of presets.")
+                logging.error("Failed to retrieve a list of presets.")
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Failed to load list of presets"))
                 )

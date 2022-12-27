@@ -18,11 +18,11 @@
 
 import os
 import json
+
 from pathlib import Path
 
 from gi.repository import GLib, Gio
 
-from gradience.backend.theming.monet import Monet
 from gradience.backend.models.preset import Preset
 from gradience.backend.utils.colors import rgba_from_argb
 
@@ -200,7 +200,7 @@ class PresetUtils:
                                 preset_text = file.read()
                                 file.close()
                         except (OSError, KeyError) as e:
-                            logging.error(f"Failed to load preset information.", exc=e)
+                            logging.error("Failed to load preset information.", exc=e)
                             raise
                         else:
                             preset = json.loads(preset_text)
@@ -231,7 +231,7 @@ class PresetUtils:
                             preset_text = file.read()
                             file.close()
                     except (OSError, KeyError) as e:
-                        logging.error(f"Failed to load preset information.", exc=e)
+                        logging.error("Failed to load preset information.", exc=e)
                         raise
                     else:
                         preset = json.loads(preset_text)
@@ -338,7 +338,7 @@ class PresetUtils:
                 gtk4css.write(contents)
                 gtk4css.close()
         except OSError as e:
-            logging.error(f"Unable to restore Gtk4 backup.", exc=e)
+            logging.error("Unable to restore Gtk4 backup.", exc=e)
             raise
 
     def reset_preset(self, app_type: str) -> None:
@@ -355,7 +355,7 @@ class PresetUtils:
             try:
                 file.delete()
             except GLib.GError as e:
-                logging.error(f"Unable to delete current preset.", exc=e)
+                logging.error("Unable to delete current preset.", exc=e)
                 raise
         elif app_type == "gtk3":
             file = Gio.File.new_for_path(
@@ -370,5 +370,5 @@ class PresetUtils:
             try:
                 file.delete()
             except GLib.GError as e:
-                logging.error(f"Unable to delete current preset.", exc=e)
+                logging.error("Unable to delete current preset.", exc=e)
                 raise

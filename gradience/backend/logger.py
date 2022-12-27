@@ -47,6 +47,7 @@ class Logger(logging.getLoggerClass()):
         exc_tb = traceback.extract_tb(exc.__traceback__)
         exc_info = ""
 
+        # \033[1m for bold text
         if len(exc_tb) > 1:
             exc_info += f"\nExc: {exc}\nAt: "
             for i, tb in enumerate(exc_tb):
@@ -64,7 +65,7 @@ class Logger(logging.getLoggerClass()):
             message = message.replace("\n", "\n\t")
         color_id = self.log_colors[level]
 
-        return "\033[1;%dm%s:\033[0m %s" % (color_id, level.upper(), message)
+        return f"\033[1;{color_id}m{level.upper()}:\033[0m {message}"
 
     def __init__(self, logger_name=None, formatter=None):
         """
@@ -79,7 +80,7 @@ class Logger(logging.getLoggerClass()):
         formatter = logging.Formatter(**formatter)
 
         if logger_name:
-            self.root.name = "Gradience.%s" % (logger_name)
+            self.root.name = f"Gradience.{logger_name}"
         else:
             self.root.name = "Gradience"
 

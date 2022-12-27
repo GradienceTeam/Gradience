@@ -16,20 +16,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import sys
-import json
 import os
+import sys
 import threading
 
 from pathlib import Path
-from material_color_utilities_python import *
+from material_color_utilities_python import hexFromArgb
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
 from gradience.backend.globals import presets_dir
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.preset_utils import PresetUtils
-from gradience.backend.utils.colors import rgba_from_argb
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.constants import *
 
@@ -169,8 +167,8 @@ class GradienceApplication(Adw.Application):
 
             try:
                 presets_list = PresetUtils().get_presets_list(repo)
-            except (OSError, KeyError, AttributeError) as e:
-                logging.error(f"Failed to retrieve a list of presets.")
+            except (OSError, KeyError, AttributeError):
+                logging.error("Failed to retrieve a list of presets.")
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Failed to load list of presets"))
                 )
@@ -186,7 +184,6 @@ class GradienceApplication(Adw.Application):
                 or self.custom_presets["official"]
             ):
                 for repo, content in self.custom_presets.items():
-
                     for preset, preset_name in content.items():
                         logging.debug(preset_name)
                         if preset_name in self.favourite:
@@ -354,8 +351,8 @@ class GradienceApplication(Adw.Application):
         try:
             preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
                                 props=[tone, monet_theme], obj_only=True)
-        except (OSError, AttributeError) as e:
-            logging.error(f"An error occurred while generating preset from Monet palette.", exc=e)
+        except (OSError, AttributeError):
+            logging.error("An error occurred while generating preset from Monet palette.", exc=e)
             raise
 
         variable = preset_object.variables
@@ -968,7 +965,7 @@ The main features of Gradience include the following:
                 "/bin/adwaita-1-demo > /dev/null 2>&1"
             )
         except GLib.GError as e:
-            logging.error(f"An error occurred while trying to execute external program.", exc=e)
+            logging.error("An error occurred while trying to execute external program.", exc=e)
 
     @staticmethod
     def show_gtk4_demo(*_args):
@@ -977,7 +974,7 @@ The main features of Gradience include the following:
                 "/bin/gtk4-demo > /dev/null 2>&1"
             )
         except GLib.GError as e:
-            logging.error(f"An error occurred while trying to execute external program.", exc=e)
+            logging.error("An error occurred while trying to execute external program.", exc=e)
 
     @staticmethod
     def show_gtk4_widget_factory(*_args):
@@ -986,7 +983,7 @@ The main features of Gradience include the following:
                 "/bin/gtk4-widget-factory > /dev/null 2>&1"
             )
         except GLib.GError as e:
-            logging.error(f"An error occurred while trying to execute external program.", exc=e)
+            logging.error("An error occurred while trying to execute external program.", exc=e)
 
 
 def main():

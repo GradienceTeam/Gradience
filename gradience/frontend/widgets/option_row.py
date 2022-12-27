@@ -46,7 +46,7 @@ class GradienceOptionRow(Adw.ActionRow):
         elif adw_gtk3_support == "partial":
             self.warning_button.add_css_class("warning")
             self.warning_label.set_label(
-                _("This option is only partially supported by the adw-gtk3 " "theme.")
+                _("This option is only partially supported by the adw-gtk3 theme.")
             )
         elif adw_gtk3_support == "no":
             self.warning_button.add_css_class("error")
@@ -66,7 +66,9 @@ class GradienceOptionRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_text_value_changed(self, *_args):
-        self.update_value(self.text_value.get_text(), update_from="text_value")
+        self.update_value(
+            self.text_value.get_text(), update_from="text_value"
+        )
 
     @Gtk.Template.Callback()
     def on_text_value_toggled(self, *_args):

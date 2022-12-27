@@ -49,7 +49,7 @@ def argb_to_color_code(argb, alpha=None) -> str:
     if not alpha:
         alpha_chnl = monet.alphaFromArgb(argb)
 
-    if alpha_chnl == 255 or alpha_chnl == 0.0:
+    if alpha_chnl in (255, 0.0):
         return hex_base.format(red_chnl, green_chnl, blue_chnl)
 
     return rgba_base.format(red_chnl, green_chnl, blue_chnl, alpha_chnl)

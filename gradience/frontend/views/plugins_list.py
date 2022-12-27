@@ -123,7 +123,7 @@ class GradiencePluginsList:
             try:
                 saved[pluginInfo.plugin_object.plugin_id] = pluginInfo.plugin_object.save()
             except AttributeError:
-                logging.warning(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
+                logging.error(f"{pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
         return saved
 
     def validate(self):
@@ -134,7 +134,7 @@ class GradiencePluginsList:
                 if error:
                     errors.append(detail)
             except AttributeError:
-                    logging.error(f"Plugin {pluginInfo.plugin_object.plugin_id} doesn't have 'validatee'")
+                logging.error(f"Plugin {pluginInfo.plugin_object.plugin_id} doesn't have 'validatee'")
         return errors
 
     def apply(self):
@@ -145,4 +145,3 @@ class GradiencePluginsList:
                     pluginInfo.plugin_object.apply()
                 except AttributeError:
                     logging.error(f"Plugin {pluginInfo.plugin_object.plugin_id} doesn't have 'apply'")
-

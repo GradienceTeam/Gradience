@@ -80,7 +80,7 @@ class GradiencePluginRow(Adw.ActionRow):
         plugin_yapsy_file = (
             USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"
         )
-        logging.debug("remove", plugin_yapsy_file)
+        logging.debug(f"remove {plugin_yapsy_file}")
         try:
             os.remove(plugin_yapsy_file)
         except FileNotFoundError:
@@ -90,7 +90,7 @@ class GradiencePluginRow(Adw.ActionRow):
             )
             error_dialog.add_response("close", _("Close"))
             error_dialog.present()
-        logging.debug("remove", plugin_yapsy_file)
+        logging.debug(f"remove {plugin_yapsy_file}")
         Gtk.Application.get_default().reload_plugins()
 
     @Gtk.Template.Callback()

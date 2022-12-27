@@ -20,7 +20,7 @@ import os
 
 from gi.repository import Gtk, Adw, Xdp, XdpGtk4
 
-from gradience.frontend.views.share_window import GradienceShareWindow
+#from gradience.frontend.views.share_window import GradienceShareWindow
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.models.preset import Preset
 from gradience.backend.constants import rootdir
@@ -158,7 +158,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
                 self.preset.preset_path + ".to_delete",
             )
         except OSError as e:
-            logging.error(f"Unable to rename an preset for later deletion.", exc=e)
+            logging.error("Unable to rename an preset for later deletion.", exc=e)
         else:
             self.set_name(self.name + "(" + _("Pending Deletion") + ")")
             self.props.visible = False
@@ -172,7 +172,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
             try:
                 os.remove(self.preset.preset_path + ".to_delete")
             except OSError as e:
-                logging.error(f"Unable to delete an preset.", exc=e)
+                logging.error("Unable to delete an preset.", exc=e)
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Unable to delete preset"))
                 )
@@ -185,7 +185,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
                     self.preset.preset_path
                 )
             except OSError as e:
-                logging.error(f"Unable to rename an preset.", exc=e)
+                logging.error("Unable to rename an preset.", exc=e)
             finally:
                 self.win.reload_pref_group()
 

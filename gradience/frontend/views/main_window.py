@@ -16,11 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import os
-
-from svglib.svglib import svg2rlg
-from reportlab.graphics import renderPM
-from material_color_utilities_python import *
 from gi.repository import Gtk, Adw, Gio
 
 from gradience.backend.theming.monet import Monet
@@ -220,7 +215,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                     self.theme, self.tone, self.monet_theme
                 )
             except (OSError, AttributeError, ValueError):
-                logging.error(f"Failed to generate Monet palette.")
+                logging.error("Failed to generate Monet palette.")
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Failed to generate Monet palette"))
                 )
