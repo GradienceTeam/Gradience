@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-26 12:13+0000\n"
+"POT-Creation-Date: 2022-12-27 00:38+0000\n"
 "PO-Revision-Date: 2022-12-25 18:48+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:759
+#: data/ui/window.blp:5 gradience/frontend/main.py:757
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -37,7 +37,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Adwaita'nın görünümünü kolaylıkla değiştirin"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:761
+#: gradience/frontend/main.py:759
 msgid "Gradience Team"
 msgstr "Gradience Takımı"
 
@@ -581,27 +581,27 @@ msgstr "Yerleşik Ön Ayarlar"
 msgid "Manage Presets"
 msgstr "Ön Ayarları Yönet"
 
-#: gradience/backend/flatpak_overrides.py:70
-#: gradience/backend/flatpak_overrides.py:92
+#: gradience/backend/flatpak_overrides.py:71
+#: gradience/backend/flatpak_overrides.py:93
 msgid "Failed to save override"
 msgstr "Üzerine yazma kaydedilemedi"
 
-#: gradience/backend/flatpak_overrides.py:185
-#: gradience/backend/flatpak_overrides.py:226
-#: gradience/backend/flatpak_overrides.py:304
-#: gradience/backend/flatpak_overrides.py:364
-#: gradience/backend/flatpak_overrides.py:446
-#: gradience/backend/flatpak_overrides.py:507
+#: gradience/backend/flatpak_overrides.py:186
+#: gradience/backend/flatpak_overrides.py:228
+#: gradience/backend/flatpak_overrides.py:306
+#: gradience/backend/flatpak_overrides.py:366
+#: gradience/backend/flatpak_overrides.py:448
+#: gradience/backend/flatpak_overrides.py:509
 msgid "Unexpected file error occurred"
 msgstr "Beklenmeyen dosya hatası oluştu"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:506
+#: gradience/frontend/main.py:504
 msgid "_Cancel"
 msgstr "_İptal"
 
-#: gradience/frontend/widgets/explore_preset_row.py:66
-#: gradience/frontend/widgets/explore_preset_row.py:92
+#: gradience/frontend/widgets/explore_preset_row.py:67
+#: gradience/frontend/widgets/explore_preset_row.py:93
 msgid "Preset could not be downloaded"
 msgstr "Ön ayar indirilemedi"
 
@@ -652,11 +652,11 @@ msgstr "Ön ayar kaldırıldı"
 msgid "Undo"
 msgstr "Geri Al"
 
-#: gradience/frontend/widgets/preset_row.py:161
+#: gradience/frontend/widgets/preset_row.py:163
 msgid "Pending Deletion"
 msgstr "Silinmeyi Bekliyor"
 
-#: gradience/frontend/widgets/preset_row.py:178
+#: gradience/frontend/widgets/preset_row.py:177
 msgid "Unable to delete preset"
 msgstr "Ön ayar silinemedi"
 
@@ -674,7 +674,7 @@ msgid "Add a repository to install additional presets."
 msgstr "Ek ön ayarlar yüklemek için bir depo ekleyin."
 
 #: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:579
+#: gradience/frontend/main.py:577
 msgid "Cancel"
 msgstr "İptal"
 
@@ -806,23 +806,19 @@ msgstr "Ön ayar bulunamadı"
 msgid "Favorite Presets"
 msgstr "Favori Ön Ayarlar"
 
-#: gradience/frontend/main.py:360
-msgid "Failed to generate preset from Monet palette"
-msgstr "Monet paletinden ön ayar oluşturulamadı"
-
-#: gradience/frontend/main.py:379
+#: gradience/frontend/main.py:377
 msgid "Unsaved Changes"
 msgstr "Kaydedilmemiş Değişiklikler"
 
-#: gradience/frontend/main.py:390
+#: gradience/frontend/main.py:388
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
 
-#: gradience/frontend/main.py:448
+#: gradience/frontend/main.py:446
 msgid "Apply This Color Scheme?"
 msgstr "Bu Renk Şeması Uygulansın Mı?"
 
-#: gradience/frontend/main.py:450
+#: gradience/frontend/main.py:448
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -830,37 +826,37 @@ msgstr ""
 "Uyarı: Bu uygulama türleri için bulunan herhangi bir özel CSS dosyasının "
 "üzerine geri alınamaz bir şekilde yazılacaktır!"
 
-#: gradience/frontend/main.py:454
+#: gradience/frontend/main.py:452
 msgid "_Apply"
 msgstr "_Uygula"
 
-#: gradience/frontend/main.py:464
+#: gradience/frontend/main.py:462
 msgid "Restore applied color scheme?"
 msgstr "Uygulanan renk şeması geri yüklensin mi?"
 
-#: gradience/frontend/main.py:465 gradience/frontend/main.py:478
+#: gradience/frontend/main.py:463 gradience/frontend/main.py:476
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Mevcut ayarların ön ayar olarak kaydedildiğinden emin olun."
 
-#: gradience/frontend/main.py:467
+#: gradience/frontend/main.py:465
 msgid "_Restore"
 msgstr "_Geri Yükle"
 
-#: gradience/frontend/main.py:477
+#: gradience/frontend/main.py:475
 msgid "Reset applied color scheme?"
 msgstr "Uygulanan renk şeması sıfırlansın mı?"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:478
 msgid "_Reset"
 msgstr "_Sıfırla"
 
-#: gradience/frontend/main.py:490
+#: gradience/frontend/main.py:488
 msgid "Save preset as…"
 msgstr "Ön ayarı farklı kaydet…"
 
-#: gradience/frontend/main.py:492 gradience/frontend/main.py:520
-#: gradience/frontend/main.py:537 gradience/frontend/main.py:565
-#: gradience/frontend/main.py:596 gradience/frontend/main.py:613
+#: gradience/frontend/main.py:490 gradience/frontend/main.py:518
+#: gradience/frontend/main.py:535 gradience/frontend/main.py:563
+#: gradience/frontend/main.py:594 gradience/frontend/main.py:611
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -869,54 +865,54 @@ msgstr ""
 "<tt>{0}</tt> olarak ön ayar kaydediliyor. Eğer bu ön ayar zaten mevcutsa, "
 "üzerine yazılacaktır!"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:505
 msgid "_Save"
 msgstr "_Kaydet"
 
-#: gradience/frontend/main.py:563
+#: gradience/frontend/main.py:561
 msgid "You have unsaved changes!"
 msgstr "Kaydedilmemiş değişiklikleriniz var!"
 
-#: gradience/frontend/main.py:580
+#: gradience/frontend/main.py:578
 msgid "Discard"
 msgstr "Gözden Çıkar"
 
-#: gradience/frontend/main.py:581
+#: gradience/frontend/main.py:579
 msgid "Save"
 msgstr "Kaydet"
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:639
 msgid "Preset saved"
 msgstr "Ön ayar kaydedildi"
 
-#: gradience/frontend/main.py:658
+#: gradience/frontend/main.py:656
 msgid "Preset set successfully"
 msgstr "Ön ayar ayarlandı"
 
-#: gradience/frontend/main.py:664 gradience/frontend/main.py:694
-#: gradience/frontend/main.py:732
+#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
+#: gradience/frontend/main.py:730
 msgid "Log out"
 msgstr "Oturumu kapat"
 
-#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
-#: gradience/frontend/main.py:734
+#: gradience/frontend/main.py:664 gradience/frontend/main.py:694
+#: gradience/frontend/main.py:732
 msgid "For the changes to take full effect, you need to log out."
 msgstr "Değişikliklerin etkili olması için oturumu kapatmanız gerekiriyor."
 
-#: gradience/frontend/main.py:671 gradience/frontend/main.py:701
-#: gradience/frontend/main.py:739
+#: gradience/frontend/main.py:669 gradience/frontend/main.py:699
+#: gradience/frontend/main.py:737
 msgid "OK"
 msgstr "Tamam"
 
-#: gradience/frontend/main.py:689
+#: gradience/frontend/main.py:687
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 yedeği geri yüklenemedi"
 
-#: gradience/frontend/main.py:719 gradience/frontend/main.py:727
+#: gradience/frontend/main.py:717 gradience/frontend/main.py:725
 msgid "Unable to delete current preset"
 msgstr "Geçerli ön ayar silinemedi"
 
-#: gradience/frontend/main.py:814
+#: gradience/frontend/main.py:812
 msgid ""
 "\n"
 "<ul>\n"
@@ -941,7 +937,7 @@ msgstr ""
 "<li>Çeviriler güncellendi</li>\n"
 "</ul>\n"
 
-#: gradience/frontend/main.py:825
+#: gradience/frontend/main.py:823
 msgid ""
 "\n"
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
@@ -965,23 +961,23 @@ msgstr ""
 "⚙️ CSS ile gelişmiş seçenekleri değiştirme\n"
 "🧩️ Eklentileri kullanarak işlevselliği genişletme\n"
 
-#: gradience/frontend/main.py:838
+#: gradience/frontend/main.py:836
 msgid "Plugins by"
 msgstr "Eklentiler"
 
-#: gradience/frontend/main.py:846
+#: gradience/frontend/main.py:844
 msgid "Presets by"
 msgstr "Ön Ayarlar"
 
-#: gradience/frontend/main.py:868
+#: gradience/frontend/main.py:866
 msgid "Packages by"
 msgstr "Paketler"
 
-#: gradience/frontend/main.py:875
+#: gradience/frontend/main.py:873
 msgid "Fixes by"
 msgstr "Düzeltmeler"
 
-#: gradience/frontend/main.py:885
+#: gradience/frontend/main.py:883
 msgid "Special thanks to"
 msgstr "Özel teşekkürler"
 
@@ -1284,6 +1280,9 @@ msgstr "Mor"
 #: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "Kahverengi"
+
+#~ msgid "Failed to generate preset from Monet palette"
+#~ msgstr "Monet paletinden ön ayar oluşturulamadı"
 
 #~ msgid "Unsupported background type"
 #~ msgstr "Desteklenmeyen arka plan türü"

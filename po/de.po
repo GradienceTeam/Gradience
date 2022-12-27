@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-26 12:13+0000\n"
+"POT-Creation-Date: 2022-12-27 00:38+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:759
+#: data/ui/window.blp:5 gradience/frontend/main.py:757
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -41,7 +41,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Ändere einfach das Aussehen von Adwaita"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:761
+#: gradience/frontend/main.py:759
 msgid "Gradience Team"
 msgstr "Gradience Team"
 
@@ -669,31 +669,31 @@ msgstr "Vorinstallierte Voreinstellungen"
 msgid "Manage Presets"
 msgstr "Voreinstellungen verwalten"
 
-#: gradience/backend/flatpak_overrides.py:70
-#: gradience/backend/flatpak_overrides.py:92
+#: gradience/backend/flatpak_overrides.py:71
+#: gradience/backend/flatpak_overrides.py:93
 #, fuzzy
 msgid "Failed to save override"
 msgstr "Überschreibung konnte nicht gespeichert werden"
 
-#: gradience/backend/flatpak_overrides.py:185
-#: gradience/backend/flatpak_overrides.py:226
-#: gradience/backend/flatpak_overrides.py:304
-#: gradience/backend/flatpak_overrides.py:364
-#: gradience/backend/flatpak_overrides.py:446
-#: gradience/backend/flatpak_overrides.py:507
+#: gradience/backend/flatpak_overrides.py:186
+#: gradience/backend/flatpak_overrides.py:228
+#: gradience/backend/flatpak_overrides.py:306
+#: gradience/backend/flatpak_overrides.py:366
+#: gradience/backend/flatpak_overrides.py:448
+#: gradience/backend/flatpak_overrides.py:509
 #, fuzzy
 msgid "Unexpected file error occurred"
 msgstr "Unerwarteter Dateifehler aufgetreten"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:506
+#: gradience/frontend/main.py:504
 #, fuzzy
 #| msgid "Cancel"
 msgid "_Cancel"
 msgstr "Abbrechen"
 
-#: gradience/frontend/widgets/explore_preset_row.py:66
-#: gradience/frontend/widgets/explore_preset_row.py:92
+#: gradience/frontend/widgets/explore_preset_row.py:67
+#: gradience/frontend/widgets/explore_preset_row.py:93
 #, fuzzy
 msgid "Preset could not be downloaded"
 msgstr "Voreinstellung konnte nicht heruntergeladen werden"
@@ -752,12 +752,12 @@ msgstr "Voreinstellung entfernt"
 msgid "Undo"
 msgstr "Widerrufen"
 
-#: gradience/frontend/widgets/preset_row.py:161
+#: gradience/frontend/widgets/preset_row.py:163
 #, fuzzy
 msgid "Pending Deletion"
 msgstr "Anstehende Löschung"
 
-#: gradience/frontend/widgets/preset_row.py:178
+#: gradience/frontend/widgets/preset_row.py:177
 #, fuzzy
 msgid "Unable to delete preset"
 msgstr "Voreinstellung kann nicht gelöscht werden"
@@ -781,7 +781,7 @@ msgstr ""
 "installieren."
 
 #: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:579
+#: gradience/frontend/main.py:577
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -934,26 +934,22 @@ msgstr "Keine Voreinstellungen gefunden"
 msgid "Favorite Presets"
 msgstr "Bevorzugte Voreinstellungen"
 
-#: gradience/frontend/main.py:360
-msgid "Failed to generate preset from Monet palette"
-msgstr ""
-
-#: gradience/frontend/main.py:379
+#: gradience/frontend/main.py:377
 #, fuzzy
 msgid "Unsaved Changes"
 msgstr "Nicht gespeicherte Änderungen"
 
-#: gradience/frontend/main.py:390
+#: gradience/frontend/main.py:388
 #, fuzzy
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
-#: gradience/frontend/main.py:448
+#: gradience/frontend/main.py:446
 #, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "Dieses Farbschema anwenden?"
 
-#: gradience/frontend/main.py:450
+#: gradience/frontend/main.py:448
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -961,45 +957,45 @@ msgstr ""
 "Warnung: jegliche benutzerdefinierte CSS Dateien für die ausgewählten "
 "Apptypen werden unumkehrbar überschrieben werden!"
 
-#: gradience/frontend/main.py:454
+#: gradience/frontend/main.py:452
 #, fuzzy
 #| msgid "Apply"
 msgid "_Apply"
 msgstr "Anwenden"
 
-#: gradience/frontend/main.py:464
+#: gradience/frontend/main.py:462
 #, fuzzy
 msgid "Restore applied color scheme?"
 msgstr "Angewandtes Farbschema wiederherstellen?"
 
-#: gradience/frontend/main.py:465 gradience/frontend/main.py:478
+#: gradience/frontend/main.py:463 gradience/frontend/main.py:476
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Stelle sicher, dass die derzeitigen Einstellungen als Voreinstellung "
 "gespeichert ist."
 
-#: gradience/frontend/main.py:467
+#: gradience/frontend/main.py:465
 #, fuzzy
 msgid "_Restore"
 msgstr "Wiederherstellen"
 
-#: gradience/frontend/main.py:477
+#: gradience/frontend/main.py:475
 msgid "Reset applied color scheme?"
 msgstr "Angewandtes Farbschema zurücksetzen?"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:478
 #, fuzzy
 #| msgid "Reset"
 msgid "_Reset"
 msgstr "Zurücksetzen"
 
-#: gradience/frontend/main.py:490
+#: gradience/frontend/main.py:488
 msgid "Save preset as…"
 msgstr "Speichere Voreinstellung als…"
 
-#: gradience/frontend/main.py:492 gradience/frontend/main.py:520
-#: gradience/frontend/main.py:537 gradience/frontend/main.py:565
-#: gradience/frontend/main.py:596 gradience/frontend/main.py:613
+#: gradience/frontend/main.py:490 gradience/frontend/main.py:518
+#: gradience/frontend/main.py:535 gradience/frontend/main.py:563
+#: gradience/frontend/main.py:594 gradience/frontend/main.py:611
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -1008,64 +1004,64 @@ msgstr ""
 "Speichere Voreinstellung als <tt>{0}</tt>. Falls sie eine Voreinstellung "
 "bereits unter dem Namen existiert, wird sie überschrieben!"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:505
 #, fuzzy
 #| msgid "Save"
 msgid "_Save"
 msgstr "Speichern"
 
-#: gradience/frontend/main.py:563
+#: gradience/frontend/main.py:561
 #, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Es gibt nicht gespeicherte Änderungen!"
 
-#: gradience/frontend/main.py:580
+#: gradience/frontend/main.py:578
 #, fuzzy
 msgid "Discard"
 msgstr "Verwerfen"
 
-#: gradience/frontend/main.py:581
+#: gradience/frontend/main.py:579
 msgid "Save"
 msgstr "Speichern"
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:639
 #, fuzzy
 msgid "Preset saved"
 msgstr "Voreinstellung gespeichert!"
 
-#: gradience/frontend/main.py:658
+#: gradience/frontend/main.py:656
 #, fuzzy
 msgid "Preset set successfully"
 msgstr "Voreinstellung erfolgreich eingestellt"
 
-#: gradience/frontend/main.py:664 gradience/frontend/main.py:694
-#: gradience/frontend/main.py:732
+#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
+#: gradience/frontend/main.py:730
 #, fuzzy
 msgid "Log out"
 msgstr "Abmelden?"
 
-#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
-#: gradience/frontend/main.py:734
+#: gradience/frontend/main.py:664 gradience/frontend/main.py:694
+#: gradience/frontend/main.py:732
 #, fuzzy
 msgid "For the changes to take full effect, you need to log out."
 msgstr "Damit die Änderungen wirksam werden, müssen Sie sich abmelden. "
 
-#: gradience/frontend/main.py:671 gradience/frontend/main.py:701
-#: gradience/frontend/main.py:739
+#: gradience/frontend/main.py:669 gradience/frontend/main.py:699
+#: gradience/frontend/main.py:737
 msgid "OK"
 msgstr ""
 
-#: gradience/frontend/main.py:689
+#: gradience/frontend/main.py:687
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4-Backup konnte nicht wiederhergestellt werden"
 
-#: gradience/frontend/main.py:719 gradience/frontend/main.py:727
+#: gradience/frontend/main.py:717 gradience/frontend/main.py:725
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "Voreinstellung kann nicht gelöscht werden"
 
-#: gradience/frontend/main.py:814
+#: gradience/frontend/main.py:812
 msgid ""
 "\n"
 "<ul>\n"
@@ -1079,7 +1075,7 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: gradience/frontend/main.py:825
+#: gradience/frontend/main.py:823
 #, fuzzy
 msgid ""
 "\n"
@@ -1107,28 +1103,28 @@ msgstr ""
 "Diese Anwendung ist in Python geschrieben und verwendet GTK 4 und "
 "Libadwaita.\n"
 
-#: gradience/frontend/main.py:838
+#: gradience/frontend/main.py:836
 #, fuzzy
 msgid "Plugins by"
 msgstr "Plugins von"
 
-#: gradience/frontend/main.py:846
+#: gradience/frontend/main.py:844
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Voreinstellungen von"
 
-#: gradience/frontend/main.py:868
+#: gradience/frontend/main.py:866
 #, fuzzy
 msgid "Packages by"
 msgstr "Pakete von"
 
-#: gradience/frontend/main.py:875
+#: gradience/frontend/main.py:873
 #, fuzzy
 msgid "Fixes by"
 msgstr "Korrekturen durch"
 
-#: gradience/frontend/main.py:885
+#: gradience/frontend/main.py:883
 #, fuzzy
 msgid "Special thanks to"
 msgstr "Besonderen Dank an"
