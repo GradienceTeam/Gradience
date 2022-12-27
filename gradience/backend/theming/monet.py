@@ -43,12 +43,12 @@ class Monet:
 
         if image_path.endswith(".xml"):
             # TODO: Use custom exception in future
-            raise Exception("XML files are unsupported by Gradience's Monet implementation")
+            raise ValueError("XML files are unsupported by Gradience's Monet implementation")
 
         try:
             monet_img = monet.Image.open(image_path)
         except Exception as e:
-            logging.error(f"An error occurred while generating a Monet palette. Exc: {e}")
+            logging.error(f"An error occurred while generating a Monet palette.", exc=e)
             raise
         else:
             basewidth = 64

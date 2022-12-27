@@ -170,7 +170,7 @@ class GradienceApplication(Adw.Application):
             try:
                 presets_list = PresetUtils().get_presets_list(repo)
             except (OSError, KeyError, AttributeError) as e:
-                logging.error(f"Failed to retrieve a list of presets. Exc: {e}")
+                logging.error(f"Failed to retrieve a list of presets.")
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Failed to load list of presets"))
                 )
@@ -355,10 +355,8 @@ class GradienceApplication(Adw.Application):
             preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
                                 props=[tone, monet_theme], obj_only=True)
         except (OSError, AttributeError) as e:
-            logging.error(f"Unexpected error while generating preset from Monet palette. Exc: {e}")
-            self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Failed to generate preset from Monet palette"))
-            )
+            logging.error(f"An error occurred while generating preset from Monet palette.", exc=e)
+            raise
 
         variable = preset_object.variables
 
@@ -970,7 +968,7 @@ The main features of Gradience include the following:
                 "/bin/adwaita-1-demo > /dev/null 2>&1"
             )
         except GLib.GError as e:
-            logging.error(f"An error occurred while trying to execute external program. Exc: {e}")
+            logging.error(f"An error occurred while trying to execute external program.", exc=e)
 
     @staticmethod
     def show_gtk4_demo(*_args):
@@ -979,7 +977,7 @@ The main features of Gradience include the following:
                 "/bin/gtk4-demo > /dev/null 2>&1"
             )
         except GLib.GError as e:
-            logging.error(f"An error occurred while trying to execute external program. Exc: {e}")
+            logging.error(f"An error occurred while trying to execute external program.", exc=e)
 
     @staticmethod
     def show_gtk4_widget_factory(*_args):
@@ -988,7 +986,7 @@ The main features of Gradience include the following:
                 "/bin/gtk4-widget-factory > /dev/null 2>&1"
             )
         except GLib.GError as e:
-            logging.error(f"An error occurred while trying to execute external program. Exc: {e}")
+            logging.error(f"An error occurred while trying to execute external program.", exc=e)
 
 
 def main():

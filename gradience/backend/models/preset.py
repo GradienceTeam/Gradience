@@ -137,13 +137,13 @@ class Preset:
                 preset_text = file.read()
                 file.close()
         except OSError as e:
-            logging.error(f"Failed to read contents of a preset in location: {self.preset_path}. Exc: {e}")
+            logging.error(f"Failed to read contents of a preset in location: {self.preset_path}.", exc=e)
             raise
 
         try:
             preset = json.loads(preset_text)
         except json.JSONDecodeError as e:
-            logging.error(f"Error while decoding JSON data. Exc: {e}")
+            logging.error(f"Error while decoding JSON data.", exc=e)
             raise
 
         self.__load_values(preset)
@@ -156,7 +156,7 @@ class Preset:
         try:
             preset = json.loads(preset_text)
         except json.JSONDecodeError as e:
-            logging.error(f"Error while decoding JSON data. Exc: {e}")
+            logging.error(f"Error while decoding JSON data.", exc=e)
             raise
 
         self.__load_values(preset)
@@ -185,7 +185,7 @@ class Preset:
                 for app_type in custom_css_app_types:
                     self.custom_css[app_type] = ""
         except Exception as e:
-            logging.error(f"Failed to create a new preset object. Exc: {e}")
+            logging.error(f"Failed to create a new preset object.", exc=e)
             raise
 
     # Rename an existing preset
@@ -236,7 +236,7 @@ class Preset:
                     )
                 )
             except OSError as e:
-                logging.error(f"Failed to create a new preset directory. Exc: {e}")
+                logging.error(f"Failed to create a new preset directory.", exc=e)
                 raise
 
         if plugins_list:
@@ -248,7 +248,7 @@ class Preset:
                 file.write(content)
                 file.close()
         except OSError as e:
-            logging.error(f"Failed to save preset as a file. Exc: {e}")
+            logging.error(f"Failed to save preset as a file.", exc=e)
             raise
 
     # TODO: Add validation

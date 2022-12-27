@@ -157,23 +157,22 @@ class GradiencePresetRow(Adw.ExpanderRow):
                 self.preset.preset_path,
                 self.preset.preset_path + ".to_delete",
             )
-
-            self.set_name(self.name + "(" + _("Pending Deletion") + ")")
-        except Exception as e:
-            logging.error(f"Unable to rename an preset for later deletion. Exc: {e}")
+        except OSError as e:
+            logging.error(f"Unable to rename an preset for later deletion.", exc=e)
         else:
+            self.set_name(self.name + "(" + _("Pending Deletion") + ")")
             self.props.visible = False
         finally:
             self.delete_preset = True
 
     def on_delete_toast_dismissed(self, widget):
         if self.delete_preset:
-            logging.debug(f"Deleting preset {self.preset.display_name}")
+            logging.info(f"Deleting preset {self.preset.display_name}")
+            logging.debug("Preset filename:" + self.preset.preset_path + ".to_delete")
             try:
-                logging.debug("Preset filename:" + self.preset.preset_path + ".to_delete")
                 os.remove(self.preset.preset_path + ".to_delete")
-            except Exception as e:
-                logging.error(f"Unable to delete an preset. Exc: {e}")
+            except OSError as e:
+                logging.error(f"Unable to delete an preset.", exc=e)
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Unable to delete preset"))
                 )
@@ -185,8 +184,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
                     self.preset.preset_path + ".to_delete",
                     self.preset.preset_path
                 )
-            except Exception as e:
-                logging.error(f"Unable to rename an preset. Exc: {e}")
+            except OSError as e:
+                logging.error(f"Unable to rename an preset.", exc=e)
             finally:
                 self.win.reload_pref_group()
 

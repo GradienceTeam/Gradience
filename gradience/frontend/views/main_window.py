@@ -219,8 +219,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 self.get_application().update_theme_from_monet(
                     self.theme, self.tone, self.monet_theme
                 )
-            except Exception as e:
-                logging.error(f"Failed to generate Monet palette. Exc: {e}")
+            except (OSError, AttributeError, ValueError):
+                logging.error(f"Failed to generate Monet palette.")
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Failed to generate Monet palette"))
                 )
