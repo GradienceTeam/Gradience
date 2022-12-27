@@ -99,17 +99,17 @@ class Logger(logging.getLoggerClass()):
     def info(self, message):
         self.root.info(self.__set_level_color("info", str(message)))
 
-    def warning(self, message, exc):
+    def warning(self, message, exc=None):
         if exc:
             message += self.__set_exc_info(exc)
         self.root.warning(self.__set_level_color("warning", str(message)))
 
-    def error(self, message, exc):
+    def error(self, message, exc=None):
         if exc:
             message += self.__set_exc_info(exc)
         self.root.error(self.__set_level_color("error", str(message)))
 
-    def critical(self, message, exc):
+    def critical(self, message, exc=None):
         if exc:
             message += self.__set_exc_info(exc)
         self.root.critical(self.__set_level_color("critical", str(message)))
