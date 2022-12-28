@@ -32,4 +32,4 @@ def run_command(command, *args, **kwargs):
     if os.environ.get('FLATPAK_ID'): # run in flatpak
         command = ['flatpak-spawn', '--host'] + command
 
-    return subprocess.run(command, *args, **kwargs)
+    return subprocess.run(command, *args, **kwargs, check=True)

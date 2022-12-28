@@ -66,7 +66,9 @@ class GradienceOptionRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_text_value_changed(self, *_args):
-        self.update_value(self.text_value.get_text(), update_from="text_value")
+        self.update_value(
+            self.text_value.get_text(), update_from="text_value"
+        )
 
     @Gtk.Template.Callback()
     def on_text_value_toggled(self, *_args):

@@ -30,8 +30,6 @@ logging = Logger()
 class GradienceBuiltinPresetRow(Adw.ActionRow):
     __gtype_name__ = "GradienceBuiltinPresetRow"
 
-    apply_button = Gtk.Template.Child("apply_button")
-
     def __init__(self, name, toast_overlay, author="", **kwargs):
         super().__init__(**kwargs)
 
@@ -43,8 +41,6 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
         self.app = Gtk.Application.get_default()
 
         self.toast_overlay = toast_overlay
-
-        apply_button = Gtk.Template.Child("apply_button")
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):

@@ -24,9 +24,9 @@ on:
 
 jobs:
   generate:
-    name: Generate .pot and LINGUAS 
+    name: Generate .pot and LINGUAS
     runs-on: ubuntu-latest
-  
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3

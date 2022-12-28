@@ -17,8 +17,9 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import os
+import json
 
-from gi.repository import Gtk, Adw
+from gi.repository import GLib, Gtk, Adw
 
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.preset_downloader import PresetDownloader
@@ -61,11 +62,11 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     def on_apply_button_clicked(self, *_args):
         try:
             PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
-        except (GLib.GError, json.JSONDecodeError, OSError) as e:
+        except (GLib.GError, json.JSONDecodeError, OSError):
+            logging.error("An error occurred while trying to download a preset.")
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
-            logging.error(f"An error occurred while trying to download a preset. Exc: {e}")
         else:
             self.app.load_preset_from_file(
                 os.path.join(
@@ -87,11 +88,11 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     def on_download_button_clicked(self, *_args):
         try:
             PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
-        except (GLib.GError, json.JSONDecodeError, OSError) as e:
+        except (GLib.GError, json.JSONDecodeError, OSError):
+            logging.error("An error occurred while trying to download a preset.")
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
-            logging.error(f"An error occurred while trying to download a preset. Exc: {e}")
         else:
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset downloaded")))

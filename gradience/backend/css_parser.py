@@ -54,7 +54,6 @@ def parse_css(path):
                 for color_name in adw_colors:
                     if name.startswith(color_name): # Palette colors
                         palette[name[:-1]][name[-1:]] = color[:-1]
-                        break
                     else: # Other color variables
                         variables[name] = color[:-1]
             elif not_cdefine_match != None: # If CSS rules were found

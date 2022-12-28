@@ -40,15 +40,15 @@ class PresetDownloader:
             body = self.session.send_and_read(request, None)
         except GLib.GError as e:
             if e.code == 1: # offline
-                logging.error(f"Failed to establish a new connection. Exc: {e}")
+                logging.error("Failed to establish a new connection.", exc=e)
                 raise
             else:
-                logging.error(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
+                logging.error(f"Unhandled Libsoup3 GLib.GError error code {e.code}.", exc=e)
                 raise
         try:
             raw = json.loads(body.get_data())
         except json.JSONDecodeError as e:
-            logging.error(f"Error while decoding JSON data. Exc: {e}")
+            logging.error("Error while decoding JSON data.", exc=e)
             raise
 
         preset_dict = {}
@@ -75,15 +75,15 @@ class PresetDownloader:
             body = self.session.send_and_read(request, None)
         except GLib.GError as e:
             if e.code == 1: # offline
-                logging.error(f"Failed to establish a new connection. Exc: {e}")
+                logging.error("Failed to establish a new connection.", exc=e)
                 raise
             else:
-                logging.error(f"Unhandled Libsoup3 GLib.GError error code {e.code}. Exc: {e}")
+                logging.error(f"Unhandled Libsoup3 GLib.GError error code {e.code}.", exc=e)
                 raise
         try:
             raw = json.loads(body.get_data())
         except json.JSONDecodeError as e:
-            logging.error(f"Error while decoding JSON data. Exc: {e}")
+            logging.error("Error while decoding JSON data.", exc=e)
             raise
 
         data = json.dumps(raw, indent=4)
@@ -101,5 +101,5 @@ class PresetDownloader:
                 f.write(data)
                 f.close()
         except OSError as e:
-            logging.error(f"Failed to write data to a file. Exc: {e}")
+            logging.error("Failed to write data to a file.", exc=e)
             raise

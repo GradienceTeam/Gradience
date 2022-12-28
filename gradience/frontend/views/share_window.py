@@ -16,14 +16,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-import sys
 import time
 
 from gi.repository import Gtk, Adw, Gio
 
 from gradience.frontend.utils.run_async import RunAsync
-from gradience.backend.flatpak_overrides import create_gtk_user_override
-from gradience.backend.constants import rootdir, app_id, rel_ver
+from gradience.backend.constants import rootdir, app_id
 
 from gradience.backend.logger import Logger
 
@@ -146,7 +144,7 @@ class GradienceShareWindow(Adw.Window):
         self.set_deletable(False)
 
         def install():
-            print("Installing Gradience…")
+            logging.debug("Installing Gradience…")
 
         RunAsync(self.pulse)
         RunAsync(

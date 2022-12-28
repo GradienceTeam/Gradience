@@ -15,11 +15,13 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 
+name: CI
+
 on:
   push:
     branches: [main]
   pull_request:
-name: CI
+
 jobs:
   flatpak:
     name: "Flatpak"
@@ -50,4 +52,3 @@ jobs:
         manifest-path: build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
         cache-key: flatpak-builder-${{ github.sha }}
         arch: ${{ matrix.arch }}
-        

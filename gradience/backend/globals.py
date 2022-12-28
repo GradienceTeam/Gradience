@@ -50,7 +50,7 @@ def get_gtk_theme_dir(app_type):
 def is_sandboxed():
     portal = Xdp.Portal()
 
-    is_sandboxed = self.portal.running_under_sandbox()
+    is_sandboxed = portal.running_under_sandbox()
 
     return is_sandboxed
 

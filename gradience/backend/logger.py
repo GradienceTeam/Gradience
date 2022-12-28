@@ -17,6 +17,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import logging
+import traceback
 
 from gradience.backend.constants import build_type
 
@@ -42,11 +43,29 @@ class Logger(logging.getLoggerClass()):
         'fmt': '[%(name)s] %(message)s'
     }
 
-    def __set_level_color(self, level, message: str):
+    def __set_exc_info(self, exc):
+        exc_tb = traceback.extract_tb(exc.__traceback__)
+        exc_info = ""
+
+        # \033[1m for bold text
+        if len(exc_tb) > 1:
+            exc_info += f"\nExc: {exc}\nAt: "
+            for i, tb in enumerate(exc_tb):
+                if i == len(exc_tb) - 1:
+                    exc_info += f"{tb[0]}:{tb[1]}"
+                else:
+                    exc_info += f"{tb[0]}:{tb[1]}\n    " # Yes, it must have those four spaces at the end
+        elif len(exc_tb) == 1:
+            exc_info += f"\nExc: {exc}\nAt: {exc_tb[-1][0]}:{exc_tb[-1][1]}"
+
+        return exc_info
+
+    def __set_level_color(self, level: str, message: str):
         if message is not None and "\n" in message:
-            message = message.replace("\n", "\n\t") + "\n"
+            message = message.replace("\n", "\n\t")
         color_id = self.log_colors[level]
-        return "\033[1;%dm%s:\033[0m %s" % (color_id, level.upper(), message)
+
+        return f"\033[1;{color_id}m{level.upper()}:\033[0m {message}"
 
     def __init__(self, logger_name=None, formatter=None):
         """
@@ -61,7 +80,7 @@ class Logger(logging.getLoggerClass()):
         formatter = logging.Formatter(**formatter)
 
         if logger_name:
-            self.root.name = "Gradience.%s" % (logger_name)
+            self.root.name = f"Gradience.{logger_name}"
         else:
             self.root.name = "Gradience"
 
@@ -75,20 +94,26 @@ class Logger(logging.getLoggerClass()):
         handler.setFormatter(formatter)
         self.root.addHandler(handler)
 
-    def debug(self, message, **kwargs):
-        self.root.debug(self.__set_level_color("debug", str(message)), )
+    def debug(self, message):
+        self.root.debug(self.__set_level_color("debug", str(message)))
 
-    def info(self, message, **kwargs):
-        self.root.info(self.__set_level_color("info", str(message)), )
+    def info(self, message):
+        self.root.info(self.__set_level_color("info", str(message)))
 
-    def warning(self, message, **kwargs):
-        self.root.warning(self.__set_level_color("warning", str(message)),)
+    def warning(self, message, exc=None):
+        if exc:
+            message += self.__set_exc_info(exc)
+        self.root.warning(self.__set_level_color("warning", str(message)))
 
-    def error(self, message, **kwargs):
-        self.root.error(self.__set_level_color("error", str(message)), )
+    def error(self, message, exc=None):
+        if exc:
+            message += self.__set_exc_info(exc)
+        self.root.error(self.__set_level_color("error", str(message)))
 
-    def critical(self, message, **kwargs):
-        self.root.critical(self.__set_level_color("critical", str(message)), )
+    def critical(self, message, exc=None):
+        if exc:
+            message += self.__set_exc_info(exc)
+        self.root.critical(self.__set_level_color("critical", str(message)))
 
     def set_silent(self):
         self.root.handlers = []
