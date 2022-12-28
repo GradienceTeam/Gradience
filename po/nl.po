@@ -11,10 +11,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2022-12-28 12:13+0000\n"
-"PO-Revision-Date: 2022-12-05 04:48+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"PO-Revision-Date: 2022-12-28 16:49+0000\n"
+"Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/nl/>\n"
 "Language: nl\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
@@ -45,8 +45,8 @@ msgid ""
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme."
 msgstr ""
-"Gradience is gereedschap voor het personaliseren van Libadwaita-toepassingen "
-"en het ‘adw-gtk3’-thema."
+"Gradience is gereedschap voor het personaliseren van Adwaita-apps en het "
+"‘adw-gtk3’-thema."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:13
 msgid "The main features of Gradience include the following:"
@@ -86,7 +86,7 @@ msgstr "Schermafdruk van het tabblad ‘Geavanceerd’"
 
 #: data/ui/app_type_dialog.blp:14
 msgid "Select application types you want to theme:"
-msgstr "Selecteer toepassingstypes die u wilt personaliseren:"
+msgstr "Selecteer app-types die u wilt personaliseren:"
 
 #: data/ui/app_type_dialog.blp:17
 msgid "Libadwaita and GTK 4 Applications"
@@ -114,9 +114,9 @@ msgid ""
 "Changing this may break some programs. Keep in mind that Libadwaita was made "
 "so that applications could hardcode values like paddings and margins."
 msgstr ""
-"Als u dit wijzigt, kunnen sommige toepassingen fouten vertonen. Houd er "
-"rekening mee dat Adwaita zo is gemaakt dat toepassingen waarden zoals "
-"opvulling en marges kunnen overschrijven."
+"Als u dit wijzigt, kunnen sommige apps fouten vertonen. Houd er rekening mee "
+"dat Adwaita zo is gemaakt dat apps waarden zoals opvulling en marges kunnen "
+"overschrijven."
 
 #: data/ui/custom_css_group.blp:33
 msgid "GTK 4"
@@ -208,8 +208,8 @@ msgid ""
 "Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
 "custom presets working in GTK 3 Flatpak applications."
 msgstr ""
-"Vergeet niet het adw-gtk3-thema te installeren (als een Flatpak-pakket) om "
-"aangepaste voorinstellingen werkend te krijgen in GTK-3-Flatpak-toepassingen."
+"Vergeet niet het ‘adw-gtk3’-thema te installeren (als een Flatpak-pakket) om "
+"aangepaste voorinstellingen werkend te krijgen in GTK-3-Flatpak-apps."
 
 #: data/ui/preferences_window.blp:39
 msgid "Allow GTK 3 Flatpak theming"
@@ -515,7 +515,7 @@ msgstr "Toepassen"
 
 #: data/ui/window.blp:37
 msgid "Preview Theme in…"
-msgstr ""
+msgstr "Thema voorvertonen in…"
 
 #: data/ui/window.blp:47
 msgid "Main Menu"
@@ -694,10 +694,8 @@ msgstr "Niet-ondersteund bestandsformaat, dit dient JSON te zijn"
 
 #: gradience/frontend/views/presets_manager_window.py:327
 #: gradience/frontend/main.py:173
-#, fuzzy
-#| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
-msgstr "Voorinstelling laden mislukt"
+msgstr "Lijst met voorinstellingen laden mislukt"
 
 #: gradience/frontend/views/presets_manager_window.py:336
 msgid "Built-in Presets"
@@ -775,7 +773,7 @@ msgstr "Donker"
 
 #: gradience/frontend/views/main_window.py:220
 msgid "Failed to generate Monet palette"
-msgstr ""
+msgstr "Monet-palet genereren mislukt"
 
 #: gradience/frontend/views/main_window.py:224
 msgid "Palette generated"
@@ -898,10 +896,8 @@ msgstr "Uitloggen"
 
 #: gradience/frontend/main.py:661 gradience/frontend/main.py:691
 #: gradience/frontend/main.py:729
-#, fuzzy
-#| msgid "For the changes to take effect, you need to log out. "
 msgid "For the changes to take full effect, you need to log out."
-msgstr "Om de wijzigingen door te voeren, moet u zich afmelden. "
+msgstr "Om de wijzigingen volledig door te voeren moet u zich afmelden."
 
 #: gradience/frontend/main.py:666 gradience/frontend/main.py:696
 #: gradience/frontend/main.py:734
@@ -929,6 +925,16 @@ msgid ""
 "<li>Updated translations</li>\n"
 "</ul>\n"
 msgstr ""
+"\n"
+"<ul>\n"
+"<li>Knop voor thema voorvertonen opnieuw ingeschakeld</li>\n"
+"<li>De Firefox-GNOME-thema-plugin-instellingen-knop verplaatst naar de "
+"rechterkant van de schakelaar</li>\n"
+"<li>Detailstabblad in over-dialoog is verbeterd</li>\n"
+"<li>De logica van de uitloggen-dialoog is veranderd, nu vraagt deze alleen "
+"om uit te loggen, maar geeft geen knop om uit te loggen</li>\n"
+"<li>Bijgewerkte vertalingen</li>\n"
+"</ul>\n"
 
 #: gradience/frontend/main.py:820
 msgid ""
