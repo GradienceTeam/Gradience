@@ -1,7 +1,7 @@
 # main.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,10 +29,11 @@ from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.preset_utils import PresetUtils
 from gradience.backend.utils.common import to_slug_case
-from gradience.backend.constants import *
+from gradience.backend.constants import rootdir, app_id, rel_ver
 
 from gradience.frontend.views.main_window import GradienceMainWindow
 from gradience.frontend.views.plugins_list import GradiencePluginsList
+from gradience.frontend.views.about_window import GradienceAboutWindow
 from gradience.frontend.views.welcome_window import GradienceWelcomeWindow
 from gradience.frontend.views.presets_manager_window import GradiencePresetWindow
 from gradience.frontend.views.preferences_window import GradiencePreferencesWindow
@@ -351,7 +352,7 @@ class GradienceApplication(Adw.Application):
         try:
             preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
                                 props=[tone, monet_theme], obj_only=True)
-        except (OSError, AttributeError):
+        except (OSError, AttributeError) as e:
             logging.error("An error occurred while generating preset from Monet palette.", exc=e)
             raise
 
@@ -747,144 +748,9 @@ class GradienceApplication(Adw.Application):
         prefs.set_transient_for(self.win)
         prefs.present()
 
-    # TODO: Move it to seperate frontend module
     def show_about_window(self, *_args):
-        about = Adw.AboutWindow(
-            transient_for=self.props.active_window,
-            application_name=_("Gradience"),
-            application_icon=app_id,
-            developer_name=_("Gradience Team"),
-            website=project_url,
-            support_url=help_url,
-            issue_url=bugtracker_url,
-            developers=[
-                "0xMRTT https://github.com/0xMRTT",
-                "Artyom Fomin https://github.com/ArtyIF",
-                "Verantor https://github.com/Verantor",
-                "tfuxu https://github.com/tfuxu",
-                "u1F98E https://github.com/u1f98e",
-            ],
-            artists=["David Lapshin https://github.com/daudix-UFO"],
-            designers=["David Lapshin https://github.com/daudix-UFO"],
-            documenters=[
-                "0xMRTT https://github.com/0xMRTT",
-                "David Lapshin https://github.com/daudix-UFO"
-            ],
-            # Translators: This is a place to put your credits (formats:
-            # "Name https://example.com" or "Name <email@example.com>",
-            # no quotes) and is not meant to be translated literally.
-            translator_credits="""0xMRTT https://github.com/0xMRTT
-                                    엘련 (Jisu Kim) https://github.com/vbalien
-                Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
-                BritishBenji https://github.com/BritishBenji
-                David Lapshin https://github.com/daudix-UFO
-                Davide Ferracin https://github.com/phaerrax
-                Ewout van Mansom https://github.com/emansom
-                FineFindus https://github.com/FineFindus
-                Gabriel Lemos https://github.com/gbrlgn
-                Juanjo Cillero https://www.transifex.com/user/profile/renux918
-                JungHee Lee https://github.com/MarongHappy
-                K.B.Dharun Krishna https://github.com/kbdharun
-                Karol Lademan https://www.transifex.com/user/profile/karlod
-                Luna Jernberg https://github.com/bittin
-                Maxime V https://www.transifex.com/user/profile/Adaoh
-                Michal S. <michal@getcryst.al>
-                Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
-                Philip Goto https://github.com/flipflop97
-                Renato Corrêa https://github.com/renatocrrs
-                Rene Coty https://github.com/rene-coty
-                Sabri Ünal https://github.com/libreajans
-                Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
-                bzizmza https://github.com/bzizmza
-                muzena https://github.com/muzena
-                renatocrrs https://github.com/renatocrrs
-                tfuxu https://github.com/tfuxu
-                yangyangdaji https://github.com/yangyangdaji
-                Óscar Fernández Díaz https://github.com/oscfdezdz""",
-            copyright="© 2022 Gradience Team",
-            license_type=Gtk.License.GPL_3_0,
-            version=version,
-            release_notes_version=rel_ver,
-            release_notes=_(
-"""
-<ul>
-<li>Theme Preview button enabled back</li>
-<li>The Firefox GNOME theme plugin settings button moved to the right of the switch</li>
-<li>Details tab in About dialog has been improved</li>
-<li>The "Log out" dialog logic have been changed, now it only asks for logout, but does not provide a button to logout</li>
-<li>Updated translations</li>
-</ul>
-"""
-            ),
-            comments=_(
-"""
-Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
-The main features of Gradience include the following:
-
-🎨️ Changing any color of Adwaita theme
-🖼️ Applying Material 3 color scheme from wallpaper
-🎁️ Usage of other users presets
-⚙️ Changing advanced options with CSS
-🧩️ Extending functionality using plugins
-"""
-            ),
-        )
-        about.add_credit_section(
-            _("Plugins by"),
-            [
-                "0xMRTT https://github.com/0xMRTT",
-                "Apisu https://github.com/aspizu",
-                "Jonathan Lestrelin https://github.com/jle64",
-            ],
-        )
-        about.add_credit_section(
-            _("Presets by"),
-            [
-                "0xMRTT https://github.com/0xMRTT",
-                "Ben Mitchell https://github.com/crispyricepc",
-                "David Lapshin https://github.com/daudix-UFO",
-                "JoshM-Yoru https://github.com/JoshM-Yoru",
-                "José Hunter https://github.com/halfmexican",
-                "Kainoa Kanter https://github.com/ThatOneCalculator",
-                "Link Dupont https://github.com/subpop",
-                "Luis David López https://github.com/lopeztel",
-                "Mohammad Saleh Kamyab https://github.com/mskf1383",
-                "Sal Watson https://github.com/salarua",
-                "TeryVeneno https://github.com/TeryVeneno",
-                "arslee https://github.com/arslee07",
-                "badlydrawnface https://github.com/badlydrawnface",
-                "cmagnificent https://github.com/cmagnificent",
-                "hericiumvevo https://github.com/hericiumvevo",
-                "tfuxu https://github.com/tfuxu",
-                "zehkira https://github.com/zehkira",
-            ],
-        )
-        about.add_credit_section(
-            _("Packages by"),
-            [
-                "0xMRTT https://github.com/0xMRTT",
-                "Lyes Saadi https://github.com/lyessaadi",
-            ],
-        )
-        about.add_credit_section(
-            _("Fixes by"),
-            [
-                "Erick Howard https://github.com/DivineBicycle",
-                "Hari Rana https://github.com/TheEvilSkeleton",
-                "José Hunter https://github.com/halfmexican",
-                "Sabri Ünal https://github.com/libreajans",
-                "Sal Watson https://github.com/salarua",
-            ],
-        )
-        about.add_acknowledgement_section(
-            _("Special thanks to"),
-            [
-                "Artyom Fomin https://github.com/ArtyIF",
-                "Weblate https://weblate.org",
-            ],
-        )
-
-        about.present()
+        about = GradienceAboutWindow(self.win)
+        about.show_about()
 
     def update_custom_css_text(self, app_type, new_value):
         self.custom_css[app_type] = new_value
