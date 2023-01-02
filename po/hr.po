@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 12:12+0000\n"
+"POT-Creation-Date: 2023-01-02 00:39+0000\n"
 "PO-Revision-Date: 2022-12-31 00:37+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:754
+#: data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -37,7 +37,6 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "S lakoćom promijenite izgled Adwaita aplikacija"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:756
 msgid "Gradience Team"
 msgstr "Gradience tim"
 
@@ -289,7 +288,7 @@ msgstr "Uvezi datoteku predloška"
 msgid "Delete"
 msgstr "Obriši"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:213
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
 msgid "Open in File Manager"
 msgstr "Otvori u pregledniku datoteka"
 
@@ -588,7 +587,7 @@ msgid "Unexpected file error occurred"
 msgstr "Pojavila se neočekivana greška datoteke"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:501
+#: gradience/frontend/main.py:502
 msgid "_Cancel"
 msgstr "O_dustani"
 
@@ -666,7 +665,7 @@ msgid "Add a repository to install additional presets."
 msgstr "Dodajte repozitorij kako bi instalirali dodatne predloške."
 
 #: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:574
+#: gradience/frontend/main.py:575
 msgid "Cancel"
 msgstr "Odustani"
 
@@ -687,7 +686,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Nepodržana vrsta datoteke, mora biti .json"
 
 #: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:173
+#: gradience/frontend/main.py:174
 msgid "Failed to load list of presets"
 msgstr "Neuspjelo učitavanje popisa predložaka"
 
@@ -789,27 +788,27 @@ msgstr ""
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
 "Interface Guidelines</a>."
 
-#: gradience/frontend/main.py:202
+#: gradience/frontend/main.py:203
 msgid "No presets found"
 msgstr "Nema pronađenih predloška"
 
-#: gradience/frontend/main.py:220
+#: gradience/frontend/main.py:221
 msgid "Favorite Presets"
 msgstr "Predlošci omiljenih"
 
-#: gradience/frontend/main.py:374
+#: gradience/frontend/main.py:375
 msgid "Unsaved Changes"
 msgstr "Nespremljene promjene"
 
-#: gradience/frontend/main.py:385
+#: gradience/frontend/main.py:386
 msgid "Save Changes"
 msgstr "Spremi promjene"
 
-#: gradience/frontend/main.py:443
+#: gradience/frontend/main.py:444
 msgid "Apply This Color Scheme?"
 msgstr "Primijeni ovu shemu boja?"
 
-#: gradience/frontend/main.py:445
+#: gradience/frontend/main.py:446
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -817,37 +816,37 @@ msgstr ""
 "Upozorenje: svaka prilagođena CSS datoteka za te vrste datoteka biti će "
 "nepovratno prebrisana!"
 
-#: gradience/frontend/main.py:449
+#: gradience/frontend/main.py:450
 msgid "_Apply"
 msgstr "_Primijeni"
 
-#: gradience/frontend/main.py:459
+#: gradience/frontend/main.py:460
 msgid "Restore applied color scheme?"
 msgstr "Vrati primijenjenu shemu boje?"
 
-#: gradience/frontend/main.py:460 gradience/frontend/main.py:473
+#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Osigurajte da imate trenutne postavke spremljene u predložak."
 
-#: gradience/frontend/main.py:462
+#: gradience/frontend/main.py:463
 msgid "_Restore"
 msgstr "Ob_novi"
 
-#: gradience/frontend/main.py:472
+#: gradience/frontend/main.py:473
 msgid "Reset applied color scheme?"
 msgstr "Vrati izvornu shemu boje?"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:476
 msgid "_Reset"
 msgstr "_Vrati izvorno"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:486
 msgid "Save preset as…"
 msgstr "Spremi predložak kao…"
 
-#: gradience/frontend/main.py:487 gradience/frontend/main.py:515
-#: gradience/frontend/main.py:532 gradience/frontend/main.py:560
-#: gradience/frontend/main.py:591 gradience/frontend/main.py:608
+#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
+#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
+#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -856,119 +855,52 @@ msgstr ""
 "Spremanje predloška u <tt>{0}</tt>. Ako taj predložak već postoji, biti će "
 "prebrisan!"
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:503
 msgid "_Save"
 msgstr "_Spremi"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:559
 msgid "You have unsaved changes!"
 msgstr "Imate nespremljene promjene!"
 
-#: gradience/frontend/main.py:575
+#: gradience/frontend/main.py:576
 msgid "Discard"
 msgstr "Odbaci"
 
-#: gradience/frontend/main.py:576
+#: gradience/frontend/main.py:577
 msgid "Save"
 msgstr "Spremi"
 
-#: gradience/frontend/main.py:636
+#: gradience/frontend/main.py:637
 msgid "Preset saved"
 msgstr "Predložak je spremljen"
 
-#: gradience/frontend/main.py:653
+#: gradience/frontend/main.py:654
 msgid "Preset set successfully"
 msgstr "Predložak je uspješno postavljen"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:689
-#: gradience/frontend/main.py:727
+#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
+#: gradience/frontend/main.py:728
 msgid "Log out"
 msgstr "Odjavi se"
 
-#: gradience/frontend/main.py:661 gradience/frontend/main.py:691
-#: gradience/frontend/main.py:729
+#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
+#: gradience/frontend/main.py:730
 msgid "For the changes to take full effect, you need to log out."
 msgstr "Kako bi se promjene primijenile, trebate se odjaviti."
 
-#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
-#: gradience/frontend/main.py:734
+#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
+#: gradience/frontend/main.py:735
 msgid "OK"
 msgstr "U redu"
 
-#: gradience/frontend/main.py:684
+#: gradience/frontend/main.py:685
 msgid "Unable to restore GTK 4 backup"
 msgstr "Nemoguća obnova GTK 4 sigurnosne kopije"
 
-#: gradience/frontend/main.py:714 gradience/frontend/main.py:722
+#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
 msgid "Unable to delete current preset"
 msgstr "Nemoguće brisanje aktualnog predloška"
-
-#: gradience/frontend/main.py:809
-msgid ""
-"\n"
-"<ul>\n"
-"<li>Theme Preview button enabled back</li>\n"
-"<li>The Firefox GNOME theme plugin settings button moved to the right of the "
-"switch</li>\n"
-"<li>Details tab in About dialog has been improved</li>\n"
-"<li>The \"Log out\" dialog logic have been changed, now it only asks for "
-"logout, but does not provide a button to logout</li>\n"
-"<li>Updated translations</li>\n"
-"</ul>\n"
-msgstr ""
-"\n"
-"<ul>\n"
-"<li>Gumb za pregled teme ponovno aktiviran</li>\n"
-"<li>Gumb postavki dodatka Firefox GNOME teme pomaknut je desno od prekidača</"
-"li>\n"
-"<li>Kartica detalja u dijaloškom okviru „O programu” je poboljšana</li>\n"
-"<li>Logika dijaloškog okvira „Odjavi se” je promijenjena, sada samo traži "
-"odjavu, ali ne nudi gumb za odjavu</li>\n"
-"<li>Aktualizirani prijevodi</li>\n"
-"</ul>\n"
-
-#: gradience/frontend/main.py:820
-msgid ""
-"\n"
-"Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
-"theme.\n"
-"The main features of Gradience include the following:\n"
-"\n"
-"🎨️ Changing any color of Adwaita theme\n"
-"🖼️ Applying Material 3 color scheme from wallpaper\n"
-"🎁️ Usage of other users presets\n"
-"⚙️ Changing advanced options with CSS\n"
-"🧩️ Extending functionality using plugins\n"
-msgstr ""
-"\n"
-"Gradience je alat za prilagodbu Libadwaita aplikacija i adw-gtk3 tema.\n"
-"Glvane značajke aplikacije Gradience uključuju:\n"
-"\n"
-"🎨️ Mijenjanje bilo koje boje Adwaita teme\n"
-"🖼️ Primjena Material 3 sheme boja iz pozadine\n"
-"🎁️ Korištenje drugih korisničkih predložaka\n"
-"⚙️ Mijenjanje naprednih mogućnosti sa CSS-om\n"
-"🧩️ Proširenje funkcionalnosti pomoću dodataka\n"
-
-#: gradience/frontend/main.py:833
-msgid "Plugins by"
-msgstr "Priključci od"
-
-#: gradience/frontend/main.py:841
-msgid "Presets by"
-msgstr "Predlošci od"
-
-#: gradience/frontend/main.py:863
-msgid "Packages by"
-msgstr "Paketi od"
-
-#: gradience/frontend/main.py:870
-msgid "Fixes by"
-msgstr "Ispravci od"
-
-#: gradience/frontend/main.py:880
-msgid "Special thanks to"
-msgstr "Posebno zahvaljujemo:"
 
 #: gradience/frontend/views/plugins_list.py:101
 msgid "Plugins"
@@ -1268,6 +1200,66 @@ msgstr "Ljubičasta"
 #: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "Smeđa"
+
+#~ msgid ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Theme Preview button enabled back</li>\n"
+#~ "<li>The Firefox GNOME theme plugin settings button moved to the right of "
+#~ "the switch</li>\n"
+#~ "<li>Details tab in About dialog has been improved</li>\n"
+#~ "<li>The \"Log out\" dialog logic have been changed, now it only asks for "
+#~ "logout, but does not provide a button to logout</li>\n"
+#~ "<li>Updated translations</li>\n"
+#~ "</ul>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Gumb za pregled teme ponovno aktiviran</li>\n"
+#~ "<li>Gumb postavki dodatka Firefox GNOME teme pomaknut je desno od "
+#~ "prekidača</li>\n"
+#~ "<li>Kartica detalja u dijaloškom okviru „O programu” je poboljšana</li>\n"
+#~ "<li>Logika dijaloškog okvira „Odjavi se” je promijenjena, sada samo traži "
+#~ "odjavu, ali ne nudi gumb za odjavu</li>\n"
+#~ "<li>Aktualizirani prijevodi</li>\n"
+#~ "</ul>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Gradience is a tool for customizing Libadwaita applications and the adw-"
+#~ "gtk3 theme.\n"
+#~ "The main features of Gradience include the following:\n"
+#~ "\n"
+#~ "🎨️ Changing any color of Adwaita theme\n"
+#~ "🖼️ Applying Material 3 color scheme from wallpaper\n"
+#~ "🎁️ Usage of other users presets\n"
+#~ "⚙️ Changing advanced options with CSS\n"
+#~ "🧩️ Extending functionality using plugins\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Gradience je alat za prilagodbu Libadwaita aplikacija i adw-gtk3 tema.\n"
+#~ "Glvane značajke aplikacije Gradience uključuju:\n"
+#~ "\n"
+#~ "🎨️ Mijenjanje bilo koje boje Adwaita teme\n"
+#~ "🖼️ Primjena Material 3 sheme boja iz pozadine\n"
+#~ "🎁️ Korištenje drugih korisničkih predložaka\n"
+#~ "⚙️ Mijenjanje naprednih mogućnosti sa CSS-om\n"
+#~ "🧩️ Proširenje funkcionalnosti pomoću dodataka\n"
+
+#~ msgid "Plugins by"
+#~ msgstr "Priključci od"
+
+#~ msgid "Presets by"
+#~ msgstr "Predlošci od"
+
+#~ msgid "Packages by"
+#~ msgstr "Paketi od"
+
+#~ msgid "Fixes by"
+#~ msgstr "Ispravci od"
+
+#~ msgid "Special thanks to"
+#~ msgstr "Posebno zahvaljujemo:"
 
 #~ msgid "Failed to generate preset from Monet palette"
 #~ msgstr "Neuspjelo generiranje predloška Monet palete"

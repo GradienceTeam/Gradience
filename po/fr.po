@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 12:12+0000\n"
+"POT-Creation-Date: 2023-01-02 00:39+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:754
+#: data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -40,7 +40,6 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Changez l’apparence d’Adwaita simplement"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:756
 msgid "Gradience Team"
 msgstr "L’équipe Gradience"
 
@@ -300,7 +299,7 @@ msgstr "Importer un fichier de pré-configuration"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:213
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
 msgid "Open in File Manager"
 msgstr "Ouvrir dans le gestionnaire de fichiers"
 
@@ -602,7 +601,7 @@ msgid "Unexpected file error occurred"
 msgstr "Une erreur de fichier inattendue s’est produite"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:501
+#: gradience/frontend/main.py:502
 msgid "_Cancel"
 msgstr "A_nnuler"
 
@@ -681,7 +680,7 @@ msgstr ""
 "Ajoutez un dépôt pour installer des pré-configurations supplémentaires."
 
 #: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:574
+#: gradience/frontend/main.py:575
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -702,7 +701,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Format de fichier non pris en charge, il devrait être .json"
 
 #: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:173
+#: gradience/frontend/main.py:174
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -808,27 +807,27 @@ msgstr ""
 "couleurs par défaut suivent les <a href=\"https://developer.gnome.org/hig/"
 "reference/palette.html\">directives de l'interface utilisateur GNOME.</a>."
 
-#: gradience/frontend/main.py:202
+#: gradience/frontend/main.py:203
 msgid "No presets found"
 msgstr "Aucune pré-configuration trouvée"
 
-#: gradience/frontend/main.py:220
+#: gradience/frontend/main.py:221
 msgid "Favorite Presets"
 msgstr "Pré-configurations préférées"
 
-#: gradience/frontend/main.py:374
+#: gradience/frontend/main.py:375
 msgid "Unsaved Changes"
 msgstr "Changements non sauvegardés"
 
-#: gradience/frontend/main.py:385
+#: gradience/frontend/main.py:386
 msgid "Save Changes"
 msgstr "Enregistrer les changements"
 
-#: gradience/frontend/main.py:443
+#: gradience/frontend/main.py:444
 msgid "Apply This Color Scheme?"
 msgstr "Appliquer ce schéma de couleurs ?"
 
-#: gradience/frontend/main.py:445
+#: gradience/frontend/main.py:446
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -836,39 +835,39 @@ msgstr ""
 "Attention : tous les fichiers CSS personnalisés pour ces types "
 "d’applications seront écrasés !"
 
-#: gradience/frontend/main.py:449
+#: gradience/frontend/main.py:450
 msgid "_Apply"
 msgstr "_Appliquer"
 
-#: gradience/frontend/main.py:459
+#: gradience/frontend/main.py:460
 msgid "Restore applied color scheme?"
 msgstr "Rétablir le schéma de couleurs appliqué ?"
 
-#: gradience/frontend/main.py:460 gradience/frontend/main.py:473
+#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Assurez-vous d’avoir vos réglages actuels sauvegardés en tant que "
 "configuration."
 
-#: gradience/frontend/main.py:462
+#: gradience/frontend/main.py:463
 msgid "_Restore"
 msgstr "_Restaurer"
 
-#: gradience/frontend/main.py:472
+#: gradience/frontend/main.py:473
 msgid "Reset applied color scheme?"
 msgstr "Réinitialiser le thème de couleurs ?"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:476
 msgid "_Reset"
 msgstr "_Réinitialiser"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:486
 msgid "Save preset as…"
 msgstr "Enregistrer la configuration sous…"
 
-#: gradience/frontend/main.py:487 gradience/frontend/main.py:515
-#: gradience/frontend/main.py:532 gradience/frontend/main.py:560
-#: gradience/frontend/main.py:591 gradience/frontend/main.py:608
+#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
+#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
+#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -877,122 +876,54 @@ msgstr ""
 "Enregistrement de la configuration vers <tt>{0}</tt>. Si elle existe déjà, "
 "elle sera écrasée !"
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:503
 msgid "_Save"
 msgstr "_Sauvegarder"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:559
 msgid "You have unsaved changes!"
 msgstr "Vous avez des changements non enregistrés !"
 
-#: gradience/frontend/main.py:575
+#: gradience/frontend/main.py:576
 msgid "Discard"
 msgstr "Jeter"
 
-#: gradience/frontend/main.py:576
+#: gradience/frontend/main.py:577
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: gradience/frontend/main.py:636
+#: gradience/frontend/main.py:637
 msgid "Preset saved"
 msgstr "Pré-configuration enregistrée"
 
-#: gradience/frontend/main.py:653
+#: gradience/frontend/main.py:654
 msgid "Preset set successfully"
 msgstr "Pré-configuration appliquée avec succès"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:689
-#: gradience/frontend/main.py:727
+#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
+#: gradience/frontend/main.py:728
 msgid "Log out"
 msgstr "Se déconnecter"
 
-#: gradience/frontend/main.py:661 gradience/frontend/main.py:691
-#: gradience/frontend/main.py:729
+#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
+#: gradience/frontend/main.py:730
 #, fuzzy
 #| msgid "For the changes to take effect, you need to log out. "
 msgid "For the changes to take full effect, you need to log out."
 msgstr "Pour que les changements prennent effet, vous devez vous déconnecter. "
 
-#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
-#: gradience/frontend/main.py:734
+#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
+#: gradience/frontend/main.py:735
 msgid "OK"
 msgstr "OK"
 
-#: gradience/frontend/main.py:684
+#: gradience/frontend/main.py:685
 msgid "Unable to restore GTK 4 backup"
 msgstr "Impossible de restaurer la sauvegarde de GTK 4"
 
-#: gradience/frontend/main.py:714 gradience/frontend/main.py:722
+#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
 msgid "Unable to delete current preset"
 msgstr "La suppression de la configuration actuelle a échoué"
-
-#: gradience/frontend/main.py:809
-msgid ""
-"\n"
-"<ul>\n"
-"<li>Theme Preview button enabled back</li>\n"
-"<li>The Firefox GNOME theme plugin settings button moved to the right of the "
-"switch</li>\n"
-"<li>Details tab in About dialog has been improved</li>\n"
-"<li>The \"Log out\" dialog logic have been changed, now it only asks for "
-"logout, but does not provide a button to logout</li>\n"
-"<li>Updated translations</li>\n"
-"</ul>\n"
-msgstr ""
-"\n"
-"<ul>\n"
-"<li>Bouton de prévisualisation du thème réactivé</li>\n"
-"<li>Le bouton des paramètres du greffon Thème GNOME Firefox a été déplacé à "
-"droite du commutateur</li>\n"
-"<li>Amélioration de l’onglet Détails dans la fenêtre À propos</li>\n"
-"<li>La boîte de dialogue « Se déconnecter » a été changée, désormais elle "
-"demande simplement de se déconnecter, sans bouton de déconnexion</li>\n"
-"<li>Traductions mises à jour</li>\n"
-"</ul>\n"
-
-#: gradience/frontend/main.py:820
-msgid ""
-"\n"
-"Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
-"theme.\n"
-"The main features of Gradience include the following:\n"
-"\n"
-"🎨️ Changing any color of Adwaita theme\n"
-"🖼️ Applying Material 3 color scheme from wallpaper\n"
-"🎁️ Usage of other users presets\n"
-"⚙️ Changing advanced options with CSS\n"
-"🧩️ Extending functionality using plugins\n"
-msgstr ""
-"\n"
-"Gradience est un outil pour personnaliser les applications Libadwaita et le "
-"thème adw-gtk3. \n"
-"Les fonctionnalités principales de Gradience incluent :\n"
-"\n"
-"🎨️ Changer n’importe quelle couleur du thème Adwaita\n"
-"🖼️ Appliquer un thème de couleurs Material 3 depuis un arrière-plan\n"
-"🎁️ Utilisation des préréglages des autres utilisateurs\n"
-"⚙️ Modifier les options avancées avec CSS\n"
-"🧩️ Étendre les fonctionnalités avec des greffons\n"
-
-#: gradience/frontend/main.py:833
-msgid "Plugins by"
-msgstr "Greffons par"
-
-#: gradience/frontend/main.py:841
-msgid "Presets by"
-msgstr "Pré-configurations par"
-
-#: gradience/frontend/main.py:863
-msgid "Packages by"
-msgstr "Packages par"
-
-#: gradience/frontend/main.py:870
-msgid "Fixes by"
-msgstr "Corrections par"
-
-#: gradience/frontend/main.py:880
-msgid "Special thanks to"
-msgstr "Remerciements particuliers à"
 
 #: gradience/frontend/views/plugins_list.py:101
 msgid "Plugins"
@@ -1300,6 +1231,67 @@ msgstr "Violet"
 #: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "Marron"
+
+#~ msgid ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Theme Preview button enabled back</li>\n"
+#~ "<li>The Firefox GNOME theme plugin settings button moved to the right of "
+#~ "the switch</li>\n"
+#~ "<li>Details tab in About dialog has been improved</li>\n"
+#~ "<li>The \"Log out\" dialog logic have been changed, now it only asks for "
+#~ "logout, but does not provide a button to logout</li>\n"
+#~ "<li>Updated translations</li>\n"
+#~ "</ul>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Bouton de prévisualisation du thème réactivé</li>\n"
+#~ "<li>Le bouton des paramètres du greffon Thème GNOME Firefox a été déplacé "
+#~ "à droite du commutateur</li>\n"
+#~ "<li>Amélioration de l’onglet Détails dans la fenêtre À propos</li>\n"
+#~ "<li>La boîte de dialogue « Se déconnecter » a été changée, désormais elle "
+#~ "demande simplement de se déconnecter, sans bouton de déconnexion</li>\n"
+#~ "<li>Traductions mises à jour</li>\n"
+#~ "</ul>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Gradience is a tool for customizing Libadwaita applications and the adw-"
+#~ "gtk3 theme.\n"
+#~ "The main features of Gradience include the following:\n"
+#~ "\n"
+#~ "🎨️ Changing any color of Adwaita theme\n"
+#~ "🖼️ Applying Material 3 color scheme from wallpaper\n"
+#~ "🎁️ Usage of other users presets\n"
+#~ "⚙️ Changing advanced options with CSS\n"
+#~ "🧩️ Extending functionality using plugins\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Gradience est un outil pour personnaliser les applications Libadwaita et "
+#~ "le thème adw-gtk3. \n"
+#~ "Les fonctionnalités principales de Gradience incluent :\n"
+#~ "\n"
+#~ "🎨️ Changer n’importe quelle couleur du thème Adwaita\n"
+#~ "🖼️ Appliquer un thème de couleurs Material 3 depuis un arrière-plan\n"
+#~ "🎁️ Utilisation des préréglages des autres utilisateurs\n"
+#~ "⚙️ Modifier les options avancées avec CSS\n"
+#~ "🧩️ Étendre les fonctionnalités avec des greffons\n"
+
+#~ msgid "Plugins by"
+#~ msgstr "Greffons par"
+
+#~ msgid "Presets by"
+#~ msgstr "Pré-configurations par"
+
+#~ msgid "Packages by"
+#~ msgstr "Packages par"
+
+#~ msgid "Fixes by"
+#~ msgstr "Corrections par"
+
+#~ msgid "Special thanks to"
+#~ msgstr "Remerciements particuliers à"
 
 #~ msgid "Unsupported background type"
 #~ msgstr "Type d’arrière-plan non pris en charge"

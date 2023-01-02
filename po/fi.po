@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 12:12+0000\n"
+"POT-Creation-Date: 2023-01-02 00:39+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:754
+#: data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -35,7 +35,6 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Muuta Adwaitan ulkoasua vaivatta"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:756
 msgid "Gradience Team"
 msgstr "Gradience-tiimi"
 
@@ -283,7 +282,7 @@ msgstr "Tuo esiasetustiedosto"
 msgid "Delete"
 msgstr "Poista"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:213
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
 msgid "Open in File Manager"
 msgstr "Avaa tiedostonhallinnassa"
 
@@ -579,7 +578,7 @@ msgid "Unexpected file error occurred"
 msgstr ""
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:501
+#: gradience/frontend/main.py:502
 msgid "_Cancel"
 msgstr "_Peru"
 
@@ -657,7 +656,7 @@ msgid "Add a repository to install additional presets."
 msgstr "Lisää tietovarasto, josta on mahdollista asentaa lisää esiasetuksia."
 
 #: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:574
+#: gradience/frontend/main.py:575
 msgid "Cancel"
 msgstr "Peru"
 
@@ -678,7 +677,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Tiedostomuoto ei ole tuettu, täytyy olla .json"
 
 #: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:173
+#: gradience/frontend/main.py:174
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -784,180 +783,118 @@ msgstr ""
 "seuraavat <a href=\"https://developer.gnome.org/hig/reference/palette.html"
 "\">Gnomen Human Interface Guidelines -ohjeistuksia</a>."
 
-#: gradience/frontend/main.py:202
+#: gradience/frontend/main.py:203
 msgid "No presets found"
 msgstr "Esiasetuksia ei löydy"
 
-#: gradience/frontend/main.py:220
+#: gradience/frontend/main.py:221
 msgid "Favorite Presets"
 msgstr "Suosikkiesiasetukset"
 
-#: gradience/frontend/main.py:374
+#: gradience/frontend/main.py:375
 msgid "Unsaved Changes"
 msgstr "Tallentamattomia muutoksia"
 
-#: gradience/frontend/main.py:385
+#: gradience/frontend/main.py:386
 msgid "Save Changes"
 msgstr "Tallenna muutokset"
 
-#: gradience/frontend/main.py:443
+#: gradience/frontend/main.py:444
 msgid "Apply This Color Scheme?"
 msgstr "Toteutetaanko tämä väriteema?"
 
-#: gradience/frontend/main.py:445
+#: gradience/frontend/main.py:446
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr ""
 
-#: gradience/frontend/main.py:449
+#: gradience/frontend/main.py:450
 msgid "_Apply"
 msgstr "_Toteuta"
 
-#: gradience/frontend/main.py:459
+#: gradience/frontend/main.py:460
 #, fuzzy
 msgid "Restore applied color scheme?"
 msgstr "Nollataanko toteutettu väriteema?"
 
-#: gradience/frontend/main.py:460 gradience/frontend/main.py:473
+#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Varmista, että nykyiset asetukset on tallennettu esiasetukseksi."
 
-#: gradience/frontend/main.py:462
+#: gradience/frontend/main.py:463
 msgid "_Restore"
 msgstr "_Palauta"
 
-#: gradience/frontend/main.py:472
+#: gradience/frontend/main.py:473
 msgid "Reset applied color scheme?"
 msgstr "Nollataanko toteutettu väriteema?"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:476
 msgid "_Reset"
 msgstr "_Nollaa"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:486
 msgid "Save preset as…"
 msgstr "Tallenna esiasetus nimellä…"
 
-#: gradience/frontend/main.py:487 gradience/frontend/main.py:515
-#: gradience/frontend/main.py:532 gradience/frontend/main.py:560
-#: gradience/frontend/main.py:591 gradience/frontend/main.py:608
+#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
+#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
+#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr ""
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:503
 msgid "_Save"
 msgstr "_Tallenna"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:559
 msgid "You have unsaved changes!"
 msgstr "Tallentamattomia muutoksia!"
 
-#: gradience/frontend/main.py:575
+#: gradience/frontend/main.py:576
 msgid "Discard"
 msgstr "Hylkää"
 
-#: gradience/frontend/main.py:576
+#: gradience/frontend/main.py:577
 msgid "Save"
 msgstr "Tallenna"
 
-#: gradience/frontend/main.py:636
+#: gradience/frontend/main.py:637
 msgid "Preset saved"
 msgstr "Esiasetus tallennettu"
 
-#: gradience/frontend/main.py:653
+#: gradience/frontend/main.py:654
 msgid "Preset set successfully"
 msgstr "Esiasetus asetettu onnistuneesti"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:689
-#: gradience/frontend/main.py:727
+#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
+#: gradience/frontend/main.py:728
 msgid "Log out"
 msgstr "Kirjaudu ulos"
 
-#: gradience/frontend/main.py:661 gradience/frontend/main.py:691
-#: gradience/frontend/main.py:729
+#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
+#: gradience/frontend/main.py:730
 #, fuzzy
 #| msgid "For the changes to take effect, you need to log out. "
 msgid "For the changes to take full effect, you need to log out."
 msgstr "Muutosten toteuttaminen vaatii uloskirjautumisen. "
 
-#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
-#: gradience/frontend/main.py:734
+#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
+#: gradience/frontend/main.py:735
 msgid "OK"
 msgstr "OK"
 
-#: gradience/frontend/main.py:684
+#: gradience/frontend/main.py:685
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 -varmuuskopiota ei voitu palauttaa"
 
-#: gradience/frontend/main.py:714 gradience/frontend/main.py:722
+#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
 msgid "Unable to delete current preset"
 msgstr "Nykyistä esiasetusta ei voitu poistaa"
-
-#: gradience/frontend/main.py:809
-msgid ""
-"\n"
-"<ul>\n"
-"<li>Theme Preview button enabled back</li>\n"
-"<li>The Firefox GNOME theme plugin settings button moved to the right of the "
-"switch</li>\n"
-"<li>Details tab in About dialog has been improved</li>\n"
-"<li>The \"Log out\" dialog logic have been changed, now it only asks for "
-"logout, but does not provide a button to logout</li>\n"
-"<li>Updated translations</li>\n"
-"</ul>\n"
-msgstr ""
-
-#: gradience/frontend/main.py:820
-msgid ""
-"\n"
-"Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
-"theme.\n"
-"The main features of Gradience include the following:\n"
-"\n"
-"🎨️ Changing any color of Adwaita theme\n"
-"🖼️ Applying Material 3 color scheme from wallpaper\n"
-"🎁️ Usage of other users presets\n"
-"⚙️ Changing advanced options with CSS\n"
-"🧩️ Extending functionality using plugins\n"
-msgstr ""
-"\n"
-"Gradience on työkalu, jolla on mahdollista muokata Libadwaita-sovelluksia ja "
-"adw-gtk3-teemaa..\n"
-"Gradiencen keskeisimmät ominaisuudet::\n"
-"\n"
-"🎨️ Muuta mitä tahansa Adwaita-teeman väriä\n"
-"🖼️ Toteuta Material 3 -värejä taustakuvasta\n"
-"🎁️ Käytä muiden käyttäjien tekemiä esiasetuksia\n"
-"⚙️ Muuta edistyneitä valintoja CSS:llä\n"
-"🧩️ Laajenna toiminnallisuutta käyttämällä liitännäisiä\n"
-
-#: gradience/frontend/main.py:833
-#, fuzzy
-#| msgid "Plugins"
-msgid "Plugins by"
-msgstr "Liitännäiset"
-
-#: gradience/frontend/main.py:841
-#, fuzzy
-#| msgid "Presets"
-msgid "Presets by"
-msgstr "Esiasetukset"
-
-#: gradience/frontend/main.py:863
-msgid "Packages by"
-msgstr ""
-
-#: gradience/frontend/main.py:870
-msgid "Fixes by"
-msgstr ""
-
-#: gradience/frontend/main.py:880
-msgid "Special thanks to"
-msgstr "Erikoiskiitokset"
 
 #: gradience/frontend/views/plugins_list.py:101
 msgid "Plugins"
@@ -1241,6 +1178,42 @@ msgstr "Liila"
 #: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "Ruskea"
+
+#~ msgid ""
+#~ "\n"
+#~ "Gradience is a tool for customizing Libadwaita applications and the adw-"
+#~ "gtk3 theme.\n"
+#~ "The main features of Gradience include the following:\n"
+#~ "\n"
+#~ "🎨️ Changing any color of Adwaita theme\n"
+#~ "🖼️ Applying Material 3 color scheme from wallpaper\n"
+#~ "🎁️ Usage of other users presets\n"
+#~ "⚙️ Changing advanced options with CSS\n"
+#~ "🧩️ Extending functionality using plugins\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Gradience on työkalu, jolla on mahdollista muokata Libadwaita-sovelluksia "
+#~ "ja adw-gtk3-teemaa..\n"
+#~ "Gradiencen keskeisimmät ominaisuudet::\n"
+#~ "\n"
+#~ "🎨️ Muuta mitä tahansa Adwaita-teeman väriä\n"
+#~ "🖼️ Toteuta Material 3 -värejä taustakuvasta\n"
+#~ "🎁️ Käytä muiden käyttäjien tekemiä esiasetuksia\n"
+#~ "⚙️ Muuta edistyneitä valintoja CSS:llä\n"
+#~ "🧩️ Laajenna toiminnallisuutta käyttämällä liitännäisiä\n"
+
+#, fuzzy
+#~| msgid "Plugins"
+#~ msgid "Plugins by"
+#~ msgstr "Liitännäiset"
+
+#, fuzzy
+#~| msgid "Presets"
+#~ msgid "Presets by"
+#~ msgstr "Esiasetukset"
+
+#~ msgid "Special thanks to"
+#~ msgstr "Erikoiskiitokset"
 
 #~ msgid "Unsupported background type"
 #~ msgstr "Taustakuvan tyyppi ei ole tuettu"

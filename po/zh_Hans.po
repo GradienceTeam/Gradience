@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 12:12+0000\n"
+"POT-Creation-Date: 2023-01-02 00:39+0000\n"
 "PO-Revision-Date: 2022-12-23 04:50+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:754
+#: data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,6 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "轻松改变 Adwaita 的外观"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:756
 msgid "Gradience Team"
 msgstr "Gradience 团队"
 
@@ -285,7 +284,7 @@ msgstr "导入一个预设文件"
 msgid "Delete"
 msgstr "删除"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:213
+#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
 msgid "Open in File Manager"
 msgstr "在文件管理器中打开"
 
@@ -574,7 +573,7 @@ msgid "Unexpected file error occurred"
 msgstr "发生意外的文件错误"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:501
+#: gradience/frontend/main.py:502
 msgid "_Cancel"
 msgstr "取消 (C)"
 
@@ -652,7 +651,7 @@ msgid "Add a repository to install additional presets."
 msgstr "添加存储库以安装其他预设。"
 
 #: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:574
+#: gradience/frontend/main.py:575
 msgid "Cancel"
 msgstr "取消"
 
@@ -673,7 +672,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "不支持的文件格式，必须为 .json"
 
 #: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:173
+#: gradience/frontend/main.py:174
 msgid "Failed to load list of presets"
 msgstr "加载预设列表失败"
 
@@ -772,180 +771,115 @@ msgstr ""
 "一些应用程序所使用的命名调色板颜色。默认颜色遵循<a href=\"https://developer."
 "gnome.org/hig/reference/palette.html\">GNOME 人机界面指南</a>。"
 
-#: gradience/frontend/main.py:202
+#: gradience/frontend/main.py:203
 msgid "No presets found"
 msgstr "未找到预设"
 
-#: gradience/frontend/main.py:220
+#: gradience/frontend/main.py:221
 msgid "Favorite Presets"
 msgstr "最喜欢的预设"
 
-#: gradience/frontend/main.py:374
+#: gradience/frontend/main.py:375
 msgid "Unsaved Changes"
 msgstr "未保存更改"
 
-#: gradience/frontend/main.py:385
+#: gradience/frontend/main.py:386
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: gradience/frontend/main.py:443
+#: gradience/frontend/main.py:444
 msgid "Apply This Color Scheme?"
 msgstr "应用此配色方案？"
 
-#: gradience/frontend/main.py:445
+#: gradience/frontend/main.py:446
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr "警告：这些应用类型的任何自定义 CSS 文件都将被不可逆转地覆盖!"
 
-#: gradience/frontend/main.py:449
+#: gradience/frontend/main.py:450
 msgid "_Apply"
 msgstr "应用 (A)"
 
-#: gradience/frontend/main.py:459
+#: gradience/frontend/main.py:460
 msgid "Restore applied color scheme?"
 msgstr "恢复应用的配色方案？"
 
-#: gradience/frontend/main.py:460 gradience/frontend/main.py:473
+#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "确保你将当前的设置保存为预设。"
 
-#: gradience/frontend/main.py:462
+#: gradience/frontend/main.py:463
 msgid "_Restore"
 msgstr "恢复 (R)"
 
-#: gradience/frontend/main.py:472
+#: gradience/frontend/main.py:473
 msgid "Reset applied color scheme?"
 msgstr "重置应用的配色方案？"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:476
 msgid "_Reset"
 msgstr "重置 (R)"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:486
 msgid "Save preset as…"
 msgstr "将预设另存为…"
 
-#: gradience/frontend/main.py:487 gradience/frontend/main.py:515
-#: gradience/frontend/main.py:532 gradience/frontend/main.py:560
-#: gradience/frontend/main.py:591 gradience/frontend/main.py:608
+#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
+#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
+#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr "存储预设为 <tt>{0}</tt>.如果该预设已存在，它将被覆盖！"
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:503
 msgid "_Save"
 msgstr "保存 (S)"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:559
 msgid "You have unsaved changes!"
 msgstr "您有未保存更改！"
 
-#: gradience/frontend/main.py:575
+#: gradience/frontend/main.py:576
 msgid "Discard"
 msgstr "放弃"
 
-#: gradience/frontend/main.py:576
+#: gradience/frontend/main.py:577
 msgid "Save"
 msgstr "保存"
 
-#: gradience/frontend/main.py:636
+#: gradience/frontend/main.py:637
 msgid "Preset saved"
 msgstr "预设已保存"
 
-#: gradience/frontend/main.py:653
+#: gradience/frontend/main.py:654
 msgid "Preset set successfully"
 msgstr "预设设置成功"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:689
-#: gradience/frontend/main.py:727
+#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
+#: gradience/frontend/main.py:728
 msgid "Log out"
 msgstr "注销"
 
-#: gradience/frontend/main.py:661 gradience/frontend/main.py:691
-#: gradience/frontend/main.py:729
+#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
+#: gradience/frontend/main.py:730
 msgid "For the changes to take full effect, you need to log out."
 msgstr "要使更改完全生效，您需要注销。"
 
-#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
-#: gradience/frontend/main.py:734
+#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
+#: gradience/frontend/main.py:735
 msgid "OK"
 msgstr "确定"
 
-#: gradience/frontend/main.py:684
+#: gradience/frontend/main.py:685
 msgid "Unable to restore GTK 4 backup"
 msgstr "无法恢复 GTK 4 备份"
 
-#: gradience/frontend/main.py:714 gradience/frontend/main.py:722
+#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
 msgid "Unable to delete current preset"
 msgstr "无法删除当前预设"
-
-#: gradience/frontend/main.py:809
-msgid ""
-"\n"
-"<ul>\n"
-"<li>Theme Preview button enabled back</li>\n"
-"<li>The Firefox GNOME theme plugin settings button moved to the right of the "
-"switch</li>\n"
-"<li>Details tab in About dialog has been improved</li>\n"
-"<li>The \"Log out\" dialog logic have been changed, now it only asks for "
-"logout, but does not provide a button to logout</li>\n"
-"<li>Updated translations</li>\n"
-"</ul>\n"
-msgstr ""
-"\n"
-"<ul>\n"
-"<li>启用主题预览按钮</li>\n"
-"<li>Firefox GNOME 主题插件设置按钮移至开关右侧</li>\n"
-"<li>改进了“关于”对话框中的“详细信息”选项卡</li>\n"
-"<li>“注销”对话框逻辑已更改，现在它只要求注销，但不提供注销按钮</li>\n"
-"<li>更新翻译</li>\n"
-"</ul>\n"
-
-#: gradience/frontend/main.py:820
-msgid ""
-"\n"
-"Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
-"theme.\n"
-"The main features of Gradience include the following:\n"
-"\n"
-"🎨️ Changing any color of Adwaita theme\n"
-"🖼️ Applying Material 3 color scheme from wallpaper\n"
-"🎁️ Usage of other users presets\n"
-"⚙️ Changing advanced options with CSS\n"
-"🧩️ Extending functionality using plugins\n"
-msgstr ""
-"\n"
-"Gradience 是一个用于自定义 Libadwaita 应用程序和 adw-gtk3 主题的工具。\n"
-"Gradience 的主要特点包括：\n"
-"\n"
-"🎨️ 改变 Adwaita 主题的任何颜色\n"
-"🖼️ - 从壁纸上应用材料 3 种配色方案\n"
-"🎁️使用其他用户预设\n"
-"⚙️ 使用 CSS 更改高级选项\n"
-"🧩️ 使用插件扩展功能\n"
-
-#: gradience/frontend/main.py:833
-msgid "Plugins by"
-msgstr "插件作者"
-
-#: gradience/frontend/main.py:841
-msgid "Presets by"
-msgstr "预设作者"
-
-#: gradience/frontend/main.py:863
-msgid "Packages by"
-msgstr "包作者"
-
-#: gradience/frontend/main.py:870
-msgid "Fixes by"
-msgstr "修复者"
-
-#: gradience/frontend/main.py:880
-msgid "Special thanks to"
-msgstr "特别感谢"
 
 #: gradience/frontend/views/plugins_list.py:101
 msgid "Plugins"
@@ -1223,6 +1157,64 @@ msgstr "紫色"
 #: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "棕色"
+
+#~ msgid ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>Theme Preview button enabled back</li>\n"
+#~ "<li>The Firefox GNOME theme plugin settings button moved to the right of "
+#~ "the switch</li>\n"
+#~ "<li>Details tab in About dialog has been improved</li>\n"
+#~ "<li>The \"Log out\" dialog logic have been changed, now it only asks for "
+#~ "logout, but does not provide a button to logout</li>\n"
+#~ "<li>Updated translations</li>\n"
+#~ "</ul>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ul>\n"
+#~ "<li>启用主题预览按钮</li>\n"
+#~ "<li>Firefox GNOME 主题插件设置按钮移至开关右侧</li>\n"
+#~ "<li>改进了“关于”对话框中的“详细信息”选项卡</li>\n"
+#~ "<li>“注销”对话框逻辑已更改，现在它只要求注销，但不提供注销按钮</li>\n"
+#~ "<li>更新翻译</li>\n"
+#~ "</ul>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Gradience is a tool for customizing Libadwaita applications and the adw-"
+#~ "gtk3 theme.\n"
+#~ "The main features of Gradience include the following:\n"
+#~ "\n"
+#~ "🎨️ Changing any color of Adwaita theme\n"
+#~ "🖼️ Applying Material 3 color scheme from wallpaper\n"
+#~ "🎁️ Usage of other users presets\n"
+#~ "⚙️ Changing advanced options with CSS\n"
+#~ "🧩️ Extending functionality using plugins\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Gradience 是一个用于自定义 Libadwaita 应用程序和 adw-gtk3 主题的工具。\n"
+#~ "Gradience 的主要特点包括：\n"
+#~ "\n"
+#~ "🎨️ 改变 Adwaita 主题的任何颜色\n"
+#~ "🖼️ - 从壁纸上应用材料 3 种配色方案\n"
+#~ "🎁️使用其他用户预设\n"
+#~ "⚙️ 使用 CSS 更改高级选项\n"
+#~ "🧩️ 使用插件扩展功能\n"
+
+#~ msgid "Plugins by"
+#~ msgstr "插件作者"
+
+#~ msgid "Presets by"
+#~ msgstr "预设作者"
+
+#~ msgid "Packages by"
+#~ msgstr "包作者"
+
+#~ msgid "Fixes by"
+#~ msgstr "修复者"
+
+#~ msgid "Special thanks to"
+#~ msgstr "特别感谢"
 
 #~ msgid "Failed to generate preset from Monet palette"
 #~ msgstr "无法从 Monet 调色板生成预设"
