@@ -29,8 +29,8 @@ presets_dir = os.path.join(
 )
 
 preset_repos = {
-    "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
-    "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json"
+    "Official": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@raw/next/official.json",
+    "Curated": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@raw/next/curated.json"
 }
 
 user_plugin_dir = os.path.join(
