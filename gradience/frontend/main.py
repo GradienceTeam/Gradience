@@ -54,15 +54,18 @@ class GradienceApplication(Adw.Application):
     __gtype_name__ = "GradienceApplication"
 
     settings = Gio.Settings.new(app_id)
+    portal = Xdp.Portal()
 
     def __init__(self):
-        super().__init__(application_id=app_id, flags=Gio.ApplicationFlags.FLAGS_NONE)
+        super().__init__(
+            application_id=app_id,
+            flags=Gio.ApplicationFlags.FLAGS_NONE
+        )
+
         self.set_resource_base_path(rootdir)
 
-        self.portal = Xdp.Portal()
-
+        self.preset: Preset = None
         self.preset_name = ""
-        self.is_dirty = False
 
         self.variables = {}
         self.pref_variables = {}
@@ -77,34 +80,32 @@ class GradienceApplication(Adw.Application):
         self.global_errors = []
         self.current_css_provider = None
 
+        self.is_dirty = False
         self.is_ready = False
 
         self.first_run = self.settings.get_boolean("first-run")
-        self.last_opened_version = self.settings.get_string(
-            "last-opened-version")
 
+        self.last_opened_version = self.settings.get_string(
+            "last-opened-version"
+        )
         self.favourite = set(self.settings.get_value("favourite"))
 
         self.style_manager = Adw.StyleManager.get_default()
 
-        self.preset: Preset = None
-
     def do_activate(self):
-        """Called when the application is activated.
-
-        We raise the application's main window, creating it if
-        necessary.
-        """
+        """Called when the application is activated."""
 
         self.win = self.props.active_window
+
         if not self.win:
             self.win = GradienceMainWindow(
                 application=self,
                 default_height=self.settings.get_int("window-height"),
                 default_width=self.settings.get_int("window-width"),
                 fullscreened=self.settings.get_boolean("window-fullscreen"),
-                maximized=self.settings.get_boolean("window-maximized"),
+                maximized=self.settings.get_boolean("window-maximized")
             )
+
         self.plugins_list = GradiencePluginsList(self.win)
         self.setup_plugins()
 
@@ -113,7 +114,7 @@ class GradienceApplication(Adw.Application):
             "load_preset",
             GLib.VariantType.new("s"),
             GLib.Variant("s", "adwaita"),
-            self.load_preset_action,
+            self.load_preset_action
         )
         self.create_action("apply_color_scheme",
                            self.show_apply_color_scheme_dialog)
@@ -179,24 +180,28 @@ class GradienceApplication(Adw.Application):
         custom_menu_section = Gio.Menu()
 
         try:
-            if (
+            is_custom_presets = (
                 self.custom_presets["user"]
                 or self.custom_presets["curated"]
                 or self.custom_presets["official"]
-            ):
+            )
+
+            if (is_custom_presets):
                 for repo, content in self.custom_presets.items():
                     for preset, preset_name in content.items():
                         logging.debug(preset_name)
+
                         if preset_name in self.favourite:
                             menu_item = Gio.MenuItem()
                             menu_item.set_label(preset_name)
+
                             if not preset.startswith("error"):
                                 menu_item.set_action_and_target_value(
                                     "app.load_preset",
-                                    GLib.Variant("s", "custom-" + preset),
-                                )
+                                    GLib.Variant("s", "custom-" + preset))
                             else:
                                 menu_item.set_action_and_target_value("")
+
                             custom_menu_section.append_item(menu_item)
             else:
                 menu_item = Gio.MenuItem()
@@ -206,25 +211,28 @@ class GradienceApplication(Adw.Application):
         except KeyError:
             if not os.path.exists(os.path.join(presets_dir, "user")):
                 os.makedirs(os.path.join(presets_dir, "user"))
+
             if not os.path.exists(os.path.join(presets_dir, "curated")):
                 os.makedirs(os.path.join(presets_dir, "curated"))
+
             if not os.path.exists(os.path.join(presets_dir, "official")):
                 os.makedirs(os.path.join(presets_dir, "official"))
+
         open_in_file_manager_item = Gio.MenuItem()
         open_in_file_manager_item.set_label(_("Open in File Manager"))
+
         open_in_file_manager_item.set_action_and_target_value(
             "app.open_preset_directory"
         )
 
         # custom_menu_section.append_item(open_in_file_manager_item)
+
         self.props.active_window.presets_menu.append_section(
             _("Favorite Presets"), custom_menu_section
         )
 
     def show_presets_manager(self, *_args):
-        presets = GradiencePresetWindow(self)
-        presets.set_transient_for(self.win)
-        presets.set_modal(True)
+        presets = GradiencePresetWindow(self.win)
         presets.present()
 
         add_rows_thread = threading.Thread(target=presets.add_explore_rows)
@@ -235,15 +243,17 @@ class GradienceApplication(Adw.Application):
             variables, palette, custom_css = parse_css(
                 os.path.join(
                     get_gtk_theme_dir("gtk4"),
-                    "gtk.css",
+                    "gtk.css"
                 )
             )
+
             preset = {
                 "name": "User",
                 "variables": variables,
                 "palette": palette,
-                "custom_css": {"gtk4": custom_css},
+                "custom_css": {"gtk4": custom_css}
             }
+
             self.preset = Preset().new_from_dict(preset)
             self.load_preset_variables_from_preset()
         except OSError:  # fallback to adwaita
@@ -271,20 +281,25 @@ class GradienceApplication(Adw.Application):
 
     def load_preset_from_file(self, preset_path):
         logging.debug(f"load preset from file {preset_path}")
+
         self.preset = Preset().new_from_path(preset_path)
         self.load_preset_variables_from_preset()
 
     def load_preset_from_resource(self, preset_path):
         preset_text = Gio.resources_lookup_data(
             preset_path, 0).get_data().decode()
+
         self.preset = Preset().new_from_resource(text=preset_text)
         self.load_preset_variables_from_preset()
 
     def load_preset_variables_from_preset(self, preset=None):
         if preset is not None:
             self.preset = preset
+
         self.is_ready = False
+
         logging.debug(self.preset)
+
         self.preset_name = self.preset.display_name
         self.variables = self.preset.variables
         self.palette = self.preset.palette
@@ -293,11 +308,12 @@ class GradienceApplication(Adw.Application):
         for key in self.variables.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(self.variables[key])
+
         for key in self.palette.keys():
             if key in self.pref_palette_shades:
                 self.pref_palette_shades[key].update_shades(self.palette[key])
-        self.custom_css_group.load_custom_css(self.custom_css)
 
+        self.custom_css_group.load_custom_css(self.custom_css)
         self.clear_dirty()
 
         self.reload_variables()
@@ -308,19 +324,22 @@ class GradienceApplication(Adw.Application):
         self.preset_name = preset["name"]
         self.variables = preset["variables"]
         self.palette = preset["palette"]
+
         if "custom_css" in preset:
             self.custom_css = preset["custom_css"]
         else:
             for app_type in settings_schema["custom_css_app_types"]:
                 self.custom_css[app_type] = ""
+
         for key in self.variables.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(self.variables[key])
+
         for key in self.palette.keys():
             if key in self.pref_palette_shades:
                 self.pref_palette_shades[key].update_shades(self.palette[key])
-        self.custom_css_group.load_custom_css(self.custom_css)
 
+        self.custom_css_group.load_custom_css(self.custom_css)
         self.clear_dirty()
 
         self.reload_variables()
@@ -359,17 +378,18 @@ class GradienceApplication(Adw.Application):
 
     def mark_as_dirty(self):
         self.is_dirty = True
+
         self.props.active_window.save_preset_button.get_child().set_icon_name(
             "drive-unsaved-symbolic"
         )
         self.props.active_window.save_preset_button.add_css_class("warning")
-
         self.props.active_window.save_preset_button.get_child().set_tooltip_text(
             _("Unsaved Changes")
         )
 
     def clear_dirty(self):
         self.is_dirty = False
+
         self.props.active_window.save_preset_button.get_child().set_icon_name(
             "drive-symbolic"
         )
@@ -388,29 +408,32 @@ class GradienceApplication(Adw.Application):
             start_location = section.get_start_location().chars
             end_location = section.get_end_location().chars
             line_number = section.get_end_location().lines
+
             parsing_errors.append(
                 {
                     "error": error.message,
                     "element": gtk_css[start_location:end_location].strip(),
                     "line": gtk_css.splitlines()[line_number]
                     if line_number < len(gtk_css.splitlines())
-                    else "<last line>",
+                    else "<last line>"
                 }
             )
 
         css_provider.connect("parsing-error", on_error)
         css_provider.load_from_data(gtk_css.encode())
+
         self.props.active_window.update_errors(
             self.global_errors + parsing_errors)
+
         # loading with the priority above user to override the applied config
         if self.current_css_provider is not None:
             Gtk.StyleContext.remove_provider_for_display(
-                Gdk.Display.get_default(), self.current_css_provider
-            )
+                Gdk.Display.get_default(), self.current_css_provider)
+
         Gtk.StyleContext.add_provider_for_display(
             Gdk.Display.get_default(),
             css_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_USER + 1,
+            Gtk.STYLE_PROVIDER_PRIORITY_USER + 1
         )
         self.current_css_provider = css_provider
 
@@ -428,6 +451,7 @@ class GradienceApplication(Adw.Application):
             self.load_preset_from_resource(
                 f"{rootdir}/presets/" + args[0].get_string() + ".json"
             )
+
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
     def show_apply_color_scheme_dialog(self, *_args):
@@ -758,14 +782,17 @@ class GradienceApplication(Adw.Application):
 
     def setup_plugins(self):
         logging.debug("setup plugins")
+
         self.plugins_group = self.plugins_list.to_group()
 
         self.win.content_plugins.add(self.plugins_group)
         self.plugins_group = self.plugins_group
 
         self.custom_css_group = GradienceCustomCSSGroup()
+
         for app_type in settings_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
+
         self.custom_css_group.load_custom_css(self.custom_css)
         self.win.content_plugins.add(self.custom_css_group)
         self.custom_css_group = self.custom_css_group
@@ -778,6 +805,7 @@ class GradienceApplication(Adw.Application):
     def reload_plugins(self):
         self.plugins_list.reload()
         logging.debug("reload plugins")
+
         self.win.content_plugins.remove(self.plugins_group)
         self.win.content_plugins.remove(self.custom_css_group)
 
@@ -787,8 +815,10 @@ class GradienceApplication(Adw.Application):
         self.plugins_group = self.plugins_group
 
         self.custom_css_group = GradienceCustomCSSGroup()
+
         for app_type in settings_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
+
         self.custom_css_group.load_custom_css(self.custom_css)
         self.win.content_plugins.add(self.custom_css_group)
         self.custom_css_group = self.custom_css_group

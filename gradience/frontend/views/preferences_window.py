@@ -1,7 +1,7 @@
 # preferences_window.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -47,8 +47,8 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         super().__init__(**kwargs)
 
         self.parent = parent
-        self.app = self.parent.get_application()
         self.settings = parent.settings
+        self.app = self.parent.get_application()
 
         self.set_transient_for(self.app.get_active_window())
 

@@ -1,7 +1,7 @@
 # plugin_row.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ import os
 
 from gi.repository import Gtk, Adw
 
-from gradience.frontend.dialogs.no_plugin_window import GradienceNoPluginPrefWindow
+from gradience.frontend.views.no_plugin_window import GradienceNoPluginPrefWindow
 from gradience.backend.globals import user_plugin_dir
 from gradience.backend.constants import rootdir
 
