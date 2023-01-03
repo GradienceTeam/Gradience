@@ -61,7 +61,6 @@ flatpak-builder --install --system --force-clean repo/ build-aux/flatpak/com.git
 
 The following packages are required to build Gradience:
 
-- CMake `cmake`
 - Python 3 `python`
 - PyGObject `python-gobject`
 - Blueprint [`blueprint-compiler`](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/setup.html)
