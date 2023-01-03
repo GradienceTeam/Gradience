@@ -18,24 +18,15 @@
 
 import os
 
-from pathlib import Path
 from gi.repository import Gtk, Adw
 
 from gradience.frontend.dialogs.no_plugin_window import GradienceNoPluginPrefWindow
+from gradience.backend.globals import user_plugin_dir
 from gradience.backend.constants import rootdir
 
 from gradience.backend.logger import Logger
 
 logging = Logger()
-
-
-USER_PLUGIN_DIR = Path(
-    os.path.join(
-        os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
-        "gradience",
-        "plugins",
-    )
-)
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/plugin_row.ui")
@@ -53,7 +44,10 @@ class GradiencePluginRow(Adw.ActionRow):
 
         self.plugin_object = plugin_object
         if not os.path.exists(
-            USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"
+            os.path.join(
+                user_plugin_dir,
+                f"{self.plugin_object.plugin_id}.yapsy-plugin"
+            )
         ):
             self.remove_button.set_visible(False)
 
@@ -78,7 +72,10 @@ class GradiencePluginRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_remove_plugin_clicked(self, *_args):
         plugin_yapsy_file = (
-            USER_PLUGIN_DIR / f"{self.plugin_object.plugin_id}.yapsy-plugin"
+            os.path.join(
+                user_plugin_dir,
+                f"{self.plugin_object.plugin_id}.yapsy-plugin"
+            )
         )
         logging.debug(f"remove {plugin_yapsy_file}")
         try:

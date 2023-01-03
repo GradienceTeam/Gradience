@@ -52,7 +52,6 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.setup()
 
     def setup(self):
-
         self.setup_flatpak_group()
 
     def setup_flatpak_group(self):

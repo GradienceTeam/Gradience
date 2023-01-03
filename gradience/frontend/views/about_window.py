@@ -74,9 +74,9 @@ yangyangdaji https://github.com/yangyangdaji
 
 
 class GradienceAboutWindow:
-    def __init__(self, win):
-        self.win = win
-        self.app = self.win.get_application()
+    def __init__(self, parent):
+        self.parent = parent
+        self.app = self.parent.get_application()
 
         self.setup()
 

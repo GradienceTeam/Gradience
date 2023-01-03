@@ -20,6 +20,8 @@ import os
 
 from gi.repository import Xdp
 
+from gradience.backend import constants
+
 
 presets_dir = os.path.join(
     os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
@@ -30,6 +32,17 @@ preset_repos = {
     "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
     "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json"
 }
+
+user_plugin_dir = os.path.join(
+    os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
+    "gradience",
+    "plugins"
+)
+
+system_plugin_dir = os.path.join(
+    constants.pkgdatadir,
+    "plugins"
+)
 
 def get_gtk_theme_dir(app_type):
     if app_type == "gtk4":
