@@ -39,8 +39,11 @@ from gradience.frontend.views.presets_manager_window import GradiencePresetWindo
 from gradience.frontend.views.preferences_window import GradiencePreferencesWindow
 
 from gradience.frontend.dialogs.app_type_dialog import GradienceAppTypeDialog
+from gradience.frontend.dialogs.log_out_dialog import GradienceLogOutDialog
+from gradience.frontend.dialogs.save_dialog import GradienceSaveDialog
 from gradience.frontend.widgets.custom_css_group import GradienceCustomCSSGroup
 
+from gradience.frontend.utils.actions import ActionHelpers
 from gradience.frontend.settings_schema import settings_schema
 
 from gradience.backend.logger import Logger
@@ -109,33 +112,48 @@ class GradienceApplication(Adw.Application):
         self.plugins_list = GradiencePluginsList(self.win)
         self.setup_plugins()
 
-        self.create_action("open_preset_directory", self.open_preset_directory)
-        self.create_stateful_action(
+        self.actions = ActionHelpers(self)
+
+        self.actions.create_stateful_action(
             "load_preset",
             GLib.VariantType.new("s"),
             GLib.Variant("s", "adwaita"),
             self.load_preset_action
         )
-        self.create_action("apply_color_scheme",
-                           self.show_apply_color_scheme_dialog)
 
-        self.create_action("show_adwaita_demo", self.show_adwaita_demo)
+        self.actions.create_action("open_preset_directory",
+                        self.open_preset_directory)
 
-        self.create_action("show_gtk4_widget_factory",
-                           self.show_gtk4_widget_factory)
+        self.actions.create_action("apply_color_scheme",
+                        self.show_apply_color_scheme_dialog)
 
-        self.create_action("show_gtk4_demo", self.show_gtk4_demo)
+        self.actions.create_action("show_adwaita_demo",
+                        self.show_adwaita_demo)
 
-        self.create_action(
-            "restore_color_scheme", self.show_restore_color_scheme_dialog
-        )
-        self.create_action("manage_presets", self.show_presets_manager)
+        self.actions.create_action("show_gtk4_widget_factory",
+                        self.show_gtk4_widget_factory)
 
-        self.create_action("reset_color_scheme",
-                           self.show_reset_color_scheme_dialog)
-        self.create_action("preferences", self.show_preferences)
-        self.create_action("save_preset", self.show_save_preset_dialog)
-        self.create_action("about", self.show_about_window)
+        self.actions.create_action("show_gtk4_demo",
+                        self.show_gtk4_demo)
+
+        self.actions.create_action("restore_color_scheme",
+                        self.show_restore_color_scheme_dialog)
+
+        self.actions.create_action("manage_presets",
+                        self.show_presets_manager)
+
+        self.actions.create_action("reset_color_scheme",
+                        self.show_reset_color_scheme_dialog)
+
+        self.actions.create_action("preferences",
+                        self.show_preferences)
+
+        self.actions.create_action("save_preset",
+                        self.show_save_preset_dialog)
+
+        self.actions.create_action("about",
+                        self.show_about_window)
+
         self.load_preset_from_css()
 
         self.reload_user_defined_presets()
@@ -496,41 +514,20 @@ class GradienceApplication(Adw.Application):
         dialog.present()
 
     def show_save_preset_dialog(self, *_args):
-        dialog = Adw.MessageDialog(
-            transient_for=self.props.active_window,
-            heading=_("Save preset as…"),
-            body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already "
-                "exists, it will be overwritten!"
-            ).format(
-                os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    "user",
-                    to_slug_case(self.preset_name) + ".json",
-                )
-            ),
-            body_use_markup=True,
+        dialog = GradienceSaveDialog(self.win, path=os.path.join(
+                presets_dir,
+                "user",
+                to_slug_case(self.preset_name) + ".json"
+            )
         )
 
-        dialog.add_response("cancel", _("_Cancel"))
-        dialog.add_response("save", _("_Save"))
-        dialog.set_response_appearance(
-            "save", Adw.ResponseAppearance.SUGGESTED)
-        dialog.set_default_response("save")
-        dialog.set_close_response("cancel")
-
-        preset_entry = Gtk.Entry(placeholder_text="Preset Name")
+        preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
         def on_preset_entry_change(*_args):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
-                    _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "
-                        "already exists, it will be overwritten!"
-                    ).format(
+                    dialog.body.format(
                         os.path.join(
                             presets_dir,
                             "user"
@@ -540,10 +537,7 @@ class GradienceApplication(Adw.Application):
                 dialog.set_response_enabled("save", False)
             else:
                 dialog.set_body(
-                    _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "
-                        "already exists, it will be overwritten!"
-                    ).format(
+                    dialog.body.format(
                         os.path.join(
                             presets_dir,
                             "user",
@@ -554,51 +548,32 @@ class GradienceApplication(Adw.Application):
                 dialog.set_response_enabled("save", True)
 
         preset_entry.connect("changed", on_preset_entry_change)
-        dialog.set_extra_child(preset_entry)
-
         dialog.connect("response", self.save_preset, preset_entry)
 
         dialog.present()
 
     def show_exit_dialog(self, *_args):
-        dialog = Adw.MessageDialog(
-            transient_for=self.props.active_window,
+        dialog = GradienceSaveDialog(
+            self.win,
             heading=_("You have unsaved changes!"),
-            body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already "
-                "exists, it will be overwritten!"
-            ).format(
-                os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    "user",
-                    to_slug_case(self.preset_name) + ".json",
-                )
-            ),
-            body_use_markup=True,
+            path=os.path.join(
+                presets_dir,
+                "user",
+                to_slug_case(self.preset_name) + ".json"
+            )
         )
 
-        dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("discard", _("Discard"))
-        dialog.add_response("save", _("Save"))
-        dialog.set_response_appearance(
-            "save", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_response_appearance(
             "discard", Adw.ResponseAppearance.DESTRUCTIVE)
-        dialog.set_default_response("cancel")
-        dialog.set_close_response("cancel")
 
-        preset_entry = Gtk.Entry(placeholder_text="Preset Name")
+        preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
         def on_preset_entry_change(*_args):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
-                    _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "
-                        "already exists, it will be overwritten!"
-                    ).format(
+                    dialog.body.format(
                         os.path.join(
                             presets_dir,
                             "user"
@@ -608,10 +583,7 @@ class GradienceApplication(Adw.Application):
                 dialog.set_response_enabled("save", False)
             else:
                 dialog.set_body(
-                    _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "
-                        "already exists, it will be overwritten!"
-                    ).format(
+                    dialog.body.format(
                         os.path.join(
                             presets_dir,
                             "user",
@@ -622,8 +594,6 @@ class GradienceApplication(Adw.Application):
                 dialog.set_response_enabled("save", True)
 
         preset_entry.connect("changed", on_preset_entry_change)
-        dialog.set_extra_child(preset_entry)
-
         dialog.connect("response", self.save_preset, preset_entry)
 
         dialog.present()
@@ -653,24 +623,11 @@ class GradienceApplication(Adw.Application):
                 Adw.Toast(title=_("Preset set successfully"))
             )
 
-            # TODO: Make it as a seperate widget
-            dialog = Adw.MessageDialog(
-                transient_for=self.props.active_window,
-                heading=_("Log out"),
-                body=_(
-                    "For the changes to take full effect, you need to log out."
-                ),
-                body_use_markup=True,
-            )
-
-            dialog.add_response("ok", _("OK"))
-            dialog.set_default_response("ok")
-            dialog.set_close_response("ok")
-
+            dialog = GradienceLogOutDialog(self.win)
             dialog.connect('response', self.on_theme_set_dialog_response)
             dialog.present()
 
-    def on_theme_set_dialog_response (self, dialog, response):
+    def on_theme_set_dialog_response(self, _dialog, response):
         if response == "ok":
             logging.debug("theme_set_dialog_ok")
 
@@ -684,19 +641,7 @@ class GradienceApplication(Adw.Application):
                         Adw.Toast(title=_("Unable to restore GTK 4 backup"))
                     )
 
-            dialog = Adw.MessageDialog(
-                transient_for=self.props.active_window,
-                heading=_("Log out"),
-                body=_(
-                    "For the changes to take full effect, you need to log out."
-                ),
-                body_use_markup=True,
-            )
-
-            dialog.add_response("ok", _("OK"))
-            dialog.set_default_response("ok")
-            dialog.set_close_response("ok")
-
+            dialog = GradienceLogOutDialog(self.win)
             dialog.connect('response', self.on_theme_restore_dialog_response)
             dialog.present()
 
@@ -722,19 +667,7 @@ class GradienceApplication(Adw.Application):
                         Adw.Toast(title=_("Unable to delete current preset"))
                     )
 
-            dialog = Adw.MessageDialog(
-                transient_for=self.props.active_window,
-                heading=_("Log out"),
-                body=_(
-                    "For the changes to take full effect, you need to log out."
-                ),
-                body_use_markup=True,
-            )
-
-            dialog.add_response("ok", _("OK"))
-            dialog.set_default_response("ok")
-            dialog.set_close_response("ok")
-
+            dialog = GradienceLogOutDialog(self.win)
             dialog.connect('response', self.on_theme_reset_dialog_response)
             dialog.present()
 
@@ -753,32 +686,6 @@ class GradienceApplication(Adw.Application):
     def update_custom_css_text(self, app_type, new_value):
         self.custom_css[app_type] = new_value
         self.reload_variables()
-
-    def create_action(self, name, callback, shortcuts=None):
-        """Add an application action.
-
-        Args:
-            name: the name of the action
-            callback: the function to be called when the action is
-              activated
-            shortcuts: an optional list of accelerators
-        """
-        action = Gio.SimpleAction.new(name, None)
-        action.connect("activate", callback)
-        self.add_action(action)
-        if shortcuts:
-            self.set_accels_for_action(f"app.{name}", shortcuts)
-
-    def create_stateful_action(
-        self, name, parameter_type, initial_state, callback, shortcuts=None
-    ):
-        """Add a stateful application action."""
-        action = Gio.SimpleAction.new_stateful(
-            name, parameter_type, initial_state)
-        action.connect("activate", callback)
-        self.add_action(action)
-        if shortcuts:
-            self.set_accels_for_action(f"app.{name}", shortcuts)
 
     def setup_plugins(self):
         logging.debug("setup plugins")
