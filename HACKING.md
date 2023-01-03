@@ -69,6 +69,7 @@ The following packages are required to build Gradience:
 - Libsoup 3 (>= 3.2.0) `libsoup`
 - Meson `meson`
 - Ninja `ninja-build`
+- CMake `cmake`
 
 Required Python libraries:
 
