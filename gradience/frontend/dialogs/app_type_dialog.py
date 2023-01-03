@@ -30,25 +30,32 @@ class GradienceAppTypeDialog(Adw.MessageDialog):
 
     def __init__(
         self,
+        parent,
         heading,
         body,
-        ok_response_name,
-        ok_response_label,
-        ok_response_appearance,
-        **kwargs,
+        ok_res_name,
+        ok_res_label,
+        ok_res_appearance,
+        **kwargs
     ):
         super().__init__(**kwargs)
+
+        self.parent = parent
+        self.app = self.parent.get_application()
+
+        self.set_transient_for(self.app.get_active_window())
+
         self.set_heading(heading)
         self.set_body(body)
 
         self.add_response("cancel", _("_Cancel"))
-        self.add_response(ok_response_name, ok_response_label)
-        self.set_response_appearance(ok_response_name, ok_response_appearance)
+        self.add_response(ok_res_name, ok_res_label)
+        self.set_response_appearance(ok_res_name, ok_res_appearance)
         self.set_default_response("cancel")
         self.set_close_response("cancel")
 
     def get_app_types(self):
         return {
             "gtk4": self.gtk4_app_type.get_active(),
-            "gtk3": self.gtk3_app_type.get_active(),
+            "gtk3": self.gtk3_app_type.get_active()
         }

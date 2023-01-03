@@ -47,7 +47,10 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         super().__init__(**kwargs)
 
         self.parent = parent
+        self.app = self.parent.get_application()
         self.settings = parent.settings
+
+        self.set_transient_for(self.app.get_active_window())
 
         self.setup()
 

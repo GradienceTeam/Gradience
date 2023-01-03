@@ -24,7 +24,7 @@ from pathlib import Path
 from material_color_utilities_python import hexFromArgb
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
-from gradience.backend.globals import presets_dir
+from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.preset_utils import PresetUtils
@@ -234,9 +234,7 @@ class GradienceApplication(Adw.Application):
         try:
             variables, palette, custom_css = parse_css(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "gtk-4.0",
+                    get_gtk_theme_dir("gtk4"),
                     "gtk.css",
                 )
             )
@@ -265,12 +263,7 @@ class GradienceApplication(Adw.Application):
 
         self.portal.open_uri(
             parent,
-            "file://"
-            + os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-            ),
+            f"file://{presets_dir}",
             Xdp.OpenUriFlags.NONE,
             None,
             open_dir_callback,
@@ -427,9 +420,7 @@ class GradienceApplication(Adw.Application):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
+                    presets_dir,
                     args[0].get_string().replace("custom-", "", 1),
                 )
             )
@@ -441,6 +432,7 @@ class GradienceApplication(Adw.Application):
 
     def show_apply_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
+            self.win,
             _("Apply This Color Scheme?"),
             _(
                 "Warning: any custom CSS files for those app types will be "
@@ -448,8 +440,7 @@ class GradienceApplication(Adw.Application):
             ),
             "apply",
             _("_Apply"),
-            Adw.ResponseAppearance.SUGGESTED,
-            transient_for=self.props.active_window,
+            Adw.ResponseAppearance.SUGGESTED
         )
 
         dialog.connect("response", self.apply_color_scheme)
@@ -457,12 +448,12 @@ class GradienceApplication(Adw.Application):
 
     def show_restore_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
+            self.win,
             _("Restore applied color scheme?"),
             _("Make sure you have the current settings saved as a preset."),
             "restore",
             _("_Restore"),
-            Adw.ResponseAppearance.DESTRUCTIVE,
-            transient_for=self.props.active_window,
+            Adw.ResponseAppearance.DESTRUCTIVE
         )
         dialog.gtk3_app_type.set_sensitive(False)
         dialog.connect("response", self.restore_color_scheme)
@@ -470,12 +461,12 @@ class GradienceApplication(Adw.Application):
 
     def show_reset_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
+            self.win,
             _("Reset applied color scheme?"),
             _("Make sure you have the current settings saved as a preset."),
             "reset",
             _("_Reset"),
-            Adw.ResponseAppearance.DESTRUCTIVE,
-            transient_for=self.props.active_window,
+            Adw.ResponseAppearance.DESTRUCTIVE
         )
         dialog.connect("response", self.reset_color_scheme)
         dialog.present()
@@ -517,12 +508,8 @@ class GradienceApplication(Adw.Application):
                         "already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "presets",
-                            "user",
+                            presets_dir,
+                            "user"
                         )
                     )
                 )
@@ -534,13 +521,9 @@ class GradienceApplication(Adw.Application):
                         "already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "presets",
+                            presets_dir,
                             "user",
-                            to_slug_case(preset_entry.get_text()) + ".json",
+                            to_slug_case(preset_entry.get_text()) + ".json"
                         )
                     )
                 )
@@ -593,12 +576,8 @@ class GradienceApplication(Adw.Application):
                         "already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "presets",
-                            "user",
+                            presets_dir,
+                            "user"
                         )
                     )
                 )
@@ -610,13 +589,9 @@ class GradienceApplication(Adw.Application):
                         "already exists, it will be overwritten!"
                     ).format(
                         os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "presets",
+                            presets_dir,
                             "user",
-                            to_slug_case(preset_entry.get_text()) + ".json",
+                            to_slug_case(preset_entry.get_text()) + ".json"
                         )
                     )
                 )
@@ -745,7 +720,6 @@ class GradienceApplication(Adw.Application):
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)
-        prefs.set_transient_for(self.win)
         prefs.present()
 
     def show_about_window(self, *_args):
