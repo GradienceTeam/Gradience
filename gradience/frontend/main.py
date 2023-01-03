@@ -221,7 +221,7 @@ class GradienceApplication(Adw.Application):
             _("Favorite Presets"), custom_menu_section
         )
 
-    def show_presets_manager(self, *args):
+    def show_presets_manager(self, *_args):
         presets = GradiencePresetWindow(self)
         presets.set_transient_for(self.win)
         presets.set_modal(True)
@@ -435,7 +435,7 @@ class GradienceApplication(Adw.Application):
             )
         else:
             self.load_preset_from_resource(
-                f"{rootdir}/presets/" + args[0].get_string()
+                f"{rootdir}/presets/" + args[0].get_string() + ".json"
             )
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
