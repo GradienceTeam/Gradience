@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 12:14+0000\n"
+"POT-Creation-Date: 2023-01-04 00:38+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -38,6 +38,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Zmieniaj z łatwością wygląd Adwaity"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
+#: gradience/frontend/views/about_window.py:88
 msgid "Gradience Team"
 msgstr "Zespół Gradience"
 
@@ -281,35 +282,35 @@ msgstr "Usuń Profil"
 msgid "Presets"
 msgstr "Profile"
 
-#: data/ui/presets_manager_window.blp:29
+#: data/ui/presets_manager_window.blp:30
 msgid "Import"
 msgstr "Importuj"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:31
 msgid "Import a Preset File"
 msgstr "Importuj plik profilu"
 
-#: data/ui/presets_manager_window.blp:36
+#: data/ui/presets_manager_window.blp:37
 msgid "Delete"
 msgstr "Usuń"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
 msgid "Open in File Manager"
 msgstr "Otwórz w menedżerze plików"
 
-#: data/ui/presets_manager_window.blp:65
+#: data/ui/presets_manager_window.blp:66
 msgid "Installed"
 msgstr "Zainstalowane"
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 msgid "Explore"
 msgstr "Odkryj"
 
-#: data/ui/presets_manager_window.blp:79
+#: data/ui/presets_manager_window.blp:80
 msgid "Search for presets"
 msgstr "Odkrywaj profile innych"
 
-#: data/ui/presets_manager_window.blp:80
+#: data/ui/presets_manager_window.blp:81
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>."
@@ -317,37 +318,37 @@ msgstr ""
 "Wpisz słowo kluczowe, aby szukać profili w <a href=\"https://github.com/"
 "GradienceTeam/Community\">GradienceTeam/Community</a>."
 
-#: data/ui/presets_manager_window.blp:93
+#: data/ui/presets_manager_window.blp:94
 msgid "e.g. \"Pretty Purple\""
 msgstr "np. \"Pretty Purple\""
 
-#: data/ui/presets_manager_window.blp:98
+#: data/ui/presets_manager_window.blp:99
 msgid "All"
 msgstr "Wszystkie"
 
-#: data/ui/presets_manager_window.blp:126
+#: data/ui/presets_manager_window.blp:127
 msgid "No Results Found"
 msgstr "Nie znaleziono wyników"
 
-#: data/ui/presets_manager_window.blp:134
+#: data/ui/presets_manager_window.blp:135
 msgid "Offline"
 msgstr "Offline"
 
-#: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:382
+#: data/ui/presets_manager_window.blp:147
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:384
 msgid "Repositories"
 msgstr "Repozytoria"
 
-#: data/ui/presets_manager_window.blp:165
+#: data/ui/presets_manager_window.blp:166
 msgid "Import a Preset File (*.json)"
 msgstr "Importuj plik profilu (*.json)"
 
-#: data/ui/presets_manager_window.blp:170
+#: data/ui/presets_manager_window.blp:171
 msgid "All files"
 msgstr "Wszystkie pliki"
 
-#: data/ui/presets_manager_window.blp:175
+#: data/ui/presets_manager_window.blp:176
 msgid "JSON file (*.json)"
 msgstr "Plik JSON (*.json)"
 
@@ -571,7 +572,7 @@ msgid "GTK 4 Widget Factory"
 msgstr "GTK 4 Widget Factory"
 
 #: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:109
+#: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "Wbudowane Profile"
 
@@ -579,24 +580,27 @@ msgstr "Wbudowane Profile"
 msgid "Manage Presets"
 msgstr "Zarządzaj profilami"
 
-#: gradience/backend/flatpak_overrides.py:71
-#: gradience/backend/flatpak_overrides.py:93
-msgid "Failed to save override"
-msgstr "Nie udało się zapisać nadpisu ustawień"
-
-#: gradience/backend/flatpak_overrides.py:186
-#: gradience/backend/flatpak_overrides.py:228
-#: gradience/backend/flatpak_overrides.py:306
-#: gradience/backend/flatpak_overrides.py:366
-#: gradience/backend/flatpak_overrides.py:448
-#: gradience/backend/flatpak_overrides.py:509
-msgid "Unexpected file error occurred"
-msgstr "Wystąpił nieoczekiwany błąd pliku"
-
-#: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:502
+#: gradience/frontend/dialogs/app_type_dialog.py:51
+#: gradience/frontend/dialogs/save_dialog.py:55
 msgid "_Cancel"
 msgstr "_Anuluj"
+
+#: gradience/frontend/dialogs/log_out_dialog.py:36
+msgid "OK"
+msgstr "OK"
+
+#: gradience/frontend/dialogs/save_dialog.py:37
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+"Profil kolorów zostanie zapisany do ścieżki <tt>{0}</tt>. Jeżeli ten profil "
+"już istnieje, zostanie on nadpisany!"
+
+#: gradience/frontend/dialogs/save_dialog.py:56
+msgid "_Save"
+msgstr "_Zapisz"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -620,15 +624,15 @@ msgstr "Ta opcja nie jest wspierana przez motyw adw-gtk3."
 msgid "Not a color, see text value"
 msgstr "To nie jest kolor, spójrz na wartość tekstową"
 
-#: gradience/frontend/widgets/plugin_row.py:88
+#: gradience/frontend/widgets/plugin_row.py:85
 msgid "Unable to remove"
 msgstr "Nie można usunąć"
 
-#: gradience/frontend/widgets/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed."
 msgstr "Jest to wtyczka systemowa i nie można jej usunąć."
 
-#: gradience/frontend/widgets/plugin_row.py:91
+#: gradience/frontend/widgets/plugin_row.py:88
 msgid "Close"
 msgstr "Zamknij"
 
@@ -658,74 +662,33 @@ msgstr "Oczekujące na usunięcie"
 msgid "Unable to delete preset"
 msgstr "Nie udało się usunąć profilu"
 
-#: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:343
-msgid "User Presets"
-msgstr "Profile użytkowników"
-
-#: gradience/frontend/views/presets_manager_window.py:188
-msgid "Add new repository"
-msgstr "Dodaj nowe repozytorium"
-
-#: gradience/frontend/views/presets_manager_window.py:189
-msgid "Add a repository to install additional presets."
-msgstr "Dodaj repozytorium, aby zainstalować dodatkowe profile."
-
-#: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:575
-msgid "Cancel"
-msgstr "Anuluj"
-
-#: gradience/frontend/views/presets_manager_window.py:196
-msgid "Add"
-msgstr "Dodaj"
-
-#: gradience/frontend/views/presets_manager_window.py:286
-msgid "Preset already exists"
-msgstr "Profil już istnieje"
-
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset imported"
-msgstr "Profil zaimportowany"
-
-#: gradience/frontend/views/presets_manager_window.py:301
-msgid "Unsupported file format, must be .json"
-msgstr "Niewspierany format pliku, musi być .json"
-
-#: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:174
-#, fuzzy
-#| msgid "Failed to load preset"
-msgid "Failed to load list of presets"
-msgstr "Nie udało się załadować profilu"
-
-#: gradience/frontend/views/presets_manager_window.py:336
-msgid "Built-in Presets"
-msgstr "Wbudowane Profile"
-
-#: gradience/frontend/views/presets_manager_window.py:346
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Zobacz <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> na Githubie po więcej profili."
-
-#: gradience/frontend/views/presets_manager_window.py:372
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Nie znaleziono profili! Użyj przycisku \"Importuj\" aby zaimportować jakiś, "
-"lub wyszukaj profili w karcie \"Eksploruj\"."
-
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "Usunięto repozytorium"
 
-#: gradience/frontend/views/welcome_window.py:97
-msgid "Thanks for updating Gradience!"
-msgstr "Dziękujemy za zaktualizowanie Gradience!"
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:119
+msgid "Plugins by"
+msgstr "Wtyczki wg."
+
+#: gradience/frontend/views/about_window.py:127
+msgid "Presets by"
+msgstr "Presety wg."
+
+#: gradience/frontend/views/about_window.py:149
+msgid "Packages by"
+msgstr "Pakiety wg."
+
+#: gradience/frontend/views/about_window.py:156
+msgid "Fixes by"
+msgstr "Poprawki wg."
+
+#: gradience/frontend/views/about_window.py:166
+msgid "Special thanks to"
+msgstr "Specjalne podziękowania dla"
 
 #: gradience/frontend/views/main_window.py:131
 msgid "Monet Engine"
@@ -798,128 +761,11 @@ msgstr ""
 "są zgodne z <a href=\"https://developer.gnome.org/hig/reference/palette.html"
 "\">wytycznymi dotyczącymi interfejsów użytkownika GNOME</a>."
 
-#: gradience/frontend/main.py:203
-msgid "No presets found"
-msgstr "Nie znaleziono profili"
-
-#: gradience/frontend/main.py:221
-msgid "Favorite Presets"
-msgstr "Ulubione profile"
-
-#: gradience/frontend/main.py:375
-msgid "Unsaved Changes"
-msgstr "Niezapisane zmiany"
-
-#: gradience/frontend/main.py:386
-msgid "Save Changes"
-msgstr "Zapisz zmiany"
-
-#: gradience/frontend/main.py:444
-msgid "Apply This Color Scheme?"
-msgstr "Zastosować ten schemat kolorów?"
-
-#: gradience/frontend/main.py:446
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"Uwaga: wszelkie niestandardowe pliki CSS dla tych typów aplikacji zostaną "
-"nieodwracalnie nadpisane!"
-
-#: gradience/frontend/main.py:450
-msgid "_Apply"
-msgstr "_Zastosuj"
-
-#: gradience/frontend/main.py:460
-msgid "Restore applied color scheme?"
-msgstr "Przywrócić zastosowany schemat kolorów?"
-
-#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
-msgid "Make sure you have the current settings saved as a preset."
-msgstr ""
-"Upewnij się, że bieżące ustawienia zostały zapisane jako profil kolorów."
-
-#: gradience/frontend/main.py:463
-msgid "_Restore"
-msgstr "_Przywróć"
-
-#: gradience/frontend/main.py:473
-msgid "Reset applied color scheme?"
-msgstr "Zresetować zastosowany schemat kolorów?"
-
-#: gradience/frontend/main.py:476
-msgid "_Reset"
-msgstr "_Resetuj"
-
-#: gradience/frontend/main.py:486
-msgid "Save preset as…"
-msgstr "Zapisz profil kolorów jako…"
-
-#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
-#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
-#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten!"
-msgstr ""
-"Profil kolorów zostanie zapisany do ścieżki <tt>{0}</tt>. Jeżeli ten profil "
-"już istnieje, zostanie on nadpisany!"
-
-#: gradience/frontend/main.py:503
-msgid "_Save"
-msgstr "_Zapisz"
-
-#: gradience/frontend/main.py:559
-msgid "You have unsaved changes!"
-msgstr "Masz niezapisane zmiany!"
-
-#: gradience/frontend/main.py:576
-msgid "Discard"
-msgstr "Odrzuć"
-
-#: gradience/frontend/main.py:577
-msgid "Save"
-msgstr "Zapisz"
-
-#: gradience/frontend/main.py:637
-msgid "Preset saved"
-msgstr "Profil zapisany"
-
-#: gradience/frontend/main.py:654
-msgid "Preset set successfully"
-msgstr "Profil ustawiony pomyślnie"
-
-#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
-#: gradience/frontend/main.py:728
-msgid "Log out"
-msgstr "Wyloguj się"
-
-#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
-#: gradience/frontend/main.py:730
-#, fuzzy
-#| msgid "For the changes to take effect, you need to log out. "
-msgid "For the changes to take full effect, you need to log out."
-msgstr "Aby zmiany weszły w życie, należy się wylogować. "
-
-#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
-#: gradience/frontend/main.py:735
-msgid "OK"
-msgstr "OK"
-
-#: gradience/frontend/main.py:685
-msgid "Unable to restore GTK 4 backup"
-msgstr "Nie można przywrócić kopii zapasowej motywu GTK 4"
-
-#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
-msgid "Unable to delete current preset"
-msgstr "Nie udało się usunąć profilu"
-
-#: gradience/frontend/views/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:89
 msgid "Plugins"
 msgstr "Wtyczki"
 
-#: gradience/frontend/views/plugins_list.py:104
+#: gradience/frontend/views/plugins_list.py:92
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -927,9 +773,73 @@ msgstr ""
 "Wtyczki dodają nowe funkcje do Gradience, wtyczki są tworzone przez "
 "społeczność Gradience i mogą czasem powodować problemy."
 
-#: gradience/frontend/views/plugins_list.py:116
+#: gradience/frontend/views/plugins_list.py:104
 msgid "No Plugins Found."
 msgstr "Nie znaleziono żadnych wtyczek."
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "User Presets"
+msgstr "Profile użytkowników"
+
+#: gradience/frontend/views/presets_manager_window.py:190
+msgid "Add new repository"
+msgstr "Dodaj nowe repozytorium"
+
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add a repository to install additional presets."
+msgstr "Dodaj repozytorium, aby zainstalować dodatkowe profile."
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Add"
+msgstr "Dodaj"
+
+#: gradience/frontend/views/presets_manager_window.py:288
+msgid "Preset already exists"
+msgstr "Profil już istnieje"
+
+#: gradience/frontend/views/presets_manager_window.py:300
+msgid "Preset imported"
+msgstr "Profil zaimportowany"
+
+#: gradience/frontend/views/presets_manager_window.py:303
+msgid "Unsupported file format, must be .json"
+msgstr "Niewspierany format pliku, musi być .json"
+
+#: gradience/frontend/views/presets_manager_window.py:329
+#: gradience/frontend/main.py:193
+#, fuzzy
+#| msgid "Failed to load preset"
+msgid "Failed to load list of presets"
+msgstr "Nie udało się załadować profilu"
+
+#: gradience/frontend/views/presets_manager_window.py:338
+msgid "Built-in Presets"
+msgstr "Wbudowane Profile"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Zobacz <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> na Githubie po więcej profili."
+
+#: gradience/frontend/views/presets_manager_window.py:374
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Nie znaleziono profili! Użyj przycisku \"Importuj\" aby zaimportować jakiś, "
+"lub wyszukaj profili w karcie \"Eksploruj\"."
+
+#: gradience/frontend/views/welcome_window.py:97
+msgid "Thanks for updating Gradience!"
+msgstr "Dziękujemy za zaktualizowanie Gradience!"
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1217,6 +1127,103 @@ msgstr "Fioletowy"
 msgid "Brown"
 msgstr "Brązowy"
 
+#: gradience/frontend/main.py:226
+msgid "No presets found"
+msgstr "Nie znaleziono profili"
+
+#: gradience/frontend/main.py:249
+msgid "Favorite Presets"
+msgstr "Ulubione profile"
+
+#: gradience/frontend/main.py:405
+msgid "Unsaved Changes"
+msgstr "Niezapisane zmiany"
+
+#: gradience/frontend/main.py:417
+msgid "Save Changes"
+msgstr "Zapisz zmiany"
+
+#: gradience/frontend/main.py:478
+msgid "Apply This Color Scheme?"
+msgstr "Zastosować ten schemat kolorów?"
+
+#: gradience/frontend/main.py:480
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Uwaga: wszelkie niestandardowe pliki CSS dla tych typów aplikacji zostaną "
+"nieodwracalnie nadpisane!"
+
+#: gradience/frontend/main.py:484
+msgid "_Apply"
+msgstr "_Zastosuj"
+
+#: gradience/frontend/main.py:494
+msgid "Restore applied color scheme?"
+msgstr "Przywrócić zastosowany schemat kolorów?"
+
+#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+msgid "Make sure you have the current settings saved as a preset."
+msgstr ""
+"Upewnij się, że bieżące ustawienia zostały zapisane jako profil kolorów."
+
+#: gradience/frontend/main.py:497
+msgid "_Restore"
+msgstr "_Przywróć"
+
+#: gradience/frontend/main.py:507
+msgid "Reset applied color scheme?"
+msgstr "Zresetować zastosowany schemat kolorów?"
+
+#: gradience/frontend/main.py:510
+msgid "_Reset"
+msgstr "_Resetuj"
+
+#: gradience/frontend/main.py:558
+msgid "You have unsaved changes!"
+msgstr "Masz niezapisane zmiany!"
+
+#: gradience/frontend/main.py:566
+msgid "Discard"
+msgstr "Odrzuć"
+
+#: gradience/frontend/main.py:606
+msgid "Preset saved"
+msgstr "Profil zapisany"
+
+#: gradience/frontend/main.py:623
+msgid "Preset set successfully"
+msgstr "Profil ustawiony pomyślnie"
+
+#: gradience/frontend/main.py:641
+msgid "Unable to restore GTK 4 backup"
+msgstr "Nie można przywrócić kopii zapasowej motywu GTK 4"
+
+#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+msgid "Unable to delete current preset"
+msgstr "Nie udało się usunąć profilu"
+
+#~ msgid "Failed to save override"
+#~ msgstr "Nie udało się zapisać nadpisu ustawień"
+
+#~ msgid "Unexpected file error occurred"
+#~ msgstr "Wystąpił nieoczekiwany błąd pliku"
+
+#~ msgid "Save preset as…"
+#~ msgstr "Zapisz profil kolorów jako…"
+
+#~ msgid "Save"
+#~ msgstr "Zapisz"
+
+#~ msgid "Log out"
+#~ msgstr "Wyloguj się"
+
+#, fuzzy
+#~| msgid "For the changes to take effect, you need to log out. "
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "Aby zmiany weszły w życie, należy się wylogować. "
+
 #, fuzzy
 #~ msgid ""
 #~ "\n"
@@ -1263,21 +1270,6 @@ msgstr "Brązowy"
 #~ "🎁️ Korzystanie z profili kolorów innych użytkowników\n"
 #~ "⚙️ Zmienianie zaawansowanych opcji z użyciem CSS\n"
 #~ "🧩️ Rozszerzanie możliwości przy użyciu wtyczek\n"
-
-#~ msgid "Plugins by"
-#~ msgstr "Wtyczki wg."
-
-#~ msgid "Presets by"
-#~ msgstr "Presety wg."
-
-#~ msgid "Packages by"
-#~ msgstr "Pakiety wg."
-
-#~ msgid "Fixes by"
-#~ msgstr "Poprawki wg."
-
-#~ msgid "Special thanks to"
-#~ msgstr "Specjalne podziękowania dla"
 
 #~ msgid "Unsupported background type"
 #~ msgstr "Niewspierany rodzaj tła"

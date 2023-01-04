@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 12:14+0000\n"
+"POT-Creation-Date: 2023-01-04 00:38+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -35,6 +35,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Modificați cu ușurință aspectul aplicațiilor Adwaita"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
+#: gradience/frontend/views/about_window.py:88
 msgid "Gradience Team"
 msgstr "Echipa Gradience"
 
@@ -291,35 +292,35 @@ msgstr "Înlăturați presetarea"
 msgid "Presets"
 msgstr "Presetări"
 
-#: data/ui/presets_manager_window.blp:29
+#: data/ui/presets_manager_window.blp:30
 msgid "Import"
 msgstr "Importați"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:31
 msgid "Import a Preset File"
 msgstr "Importați un fișier cu o presetare"
 
-#: data/ui/presets_manager_window.blp:36
+#: data/ui/presets_manager_window.blp:37
 msgid "Delete"
 msgstr "Ștergeți"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
 msgid "Open in File Manager"
 msgstr "Deschideți în Fișiere"
 
-#: data/ui/presets_manager_window.blp:65
+#: data/ui/presets_manager_window.blp:66
 msgid "Installed"
 msgstr "Instalate"
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 msgid "Explore"
 msgstr "Explorați"
 
-#: data/ui/presets_manager_window.blp:79
+#: data/ui/presets_manager_window.blp:80
 msgid "Search for presets"
 msgstr "Căutați presetări"
 
-#: data/ui/presets_manager_window.blp:80
+#: data/ui/presets_manager_window.blp:81
 #, fuzzy
 #| msgid ""
 #| "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
@@ -331,37 +332,37 @@ msgstr ""
 "Introduceți un termen de căutare pentru a căuta pe <a href=\"https://"
 "gradienceteam.github.io/presets\">GradienceTeam/Community</a>."
 
-#: data/ui/presets_manager_window.blp:93
+#: data/ui/presets_manager_window.blp:94
 msgid "e.g. \"Pretty Purple\""
 msgstr "de exemplu „Violet încântător”"
 
-#: data/ui/presets_manager_window.blp:98
+#: data/ui/presets_manager_window.blp:99
 msgid "All"
 msgstr "Toate"
 
-#: data/ui/presets_manager_window.blp:126
+#: data/ui/presets_manager_window.blp:127
 msgid "No Results Found"
 msgstr "Niciun rezultat nu a fost găsit"
 
-#: data/ui/presets_manager_window.blp:134
+#: data/ui/presets_manager_window.blp:135
 msgid "Offline"
 msgstr "Offline"
 
-#: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:382
+#: data/ui/presets_manager_window.blp:147
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:384
 msgid "Repositories"
 msgstr "Depozite"
 
-#: data/ui/presets_manager_window.blp:165
+#: data/ui/presets_manager_window.blp:166
 msgid "Import a Preset File (*.json)"
 msgstr "Importați un fișier cu o presetare (*.json)"
 
-#: data/ui/presets_manager_window.blp:170
+#: data/ui/presets_manager_window.blp:171
 msgid "All files"
 msgstr "Toate fișierele"
 
-#: data/ui/presets_manager_window.blp:175
+#: data/ui/presets_manager_window.blp:176
 msgid "JSON file (*.json)"
 msgstr "Fișier JSON (*.json)"
 
@@ -586,7 +587,7 @@ msgid "GTK 4 Widget Factory"
 msgstr "Fabrică de widgeturi GTK 4"
 
 #: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:109
+#: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "Presetări incluse"
 
@@ -594,26 +595,31 @@ msgstr "Presetări incluse"
 msgid "Manage Presets"
 msgstr "Administrați presetările"
 
-#: gradience/backend/flatpak_overrides.py:71
-#: gradience/backend/flatpak_overrides.py:93
-msgid "Failed to save override"
-msgstr "Nu s-a reușit salvarea suprascrierii"
-
-#: gradience/backend/flatpak_overrides.py:186
-#: gradience/backend/flatpak_overrides.py:228
-#: gradience/backend/flatpak_overrides.py:306
-#: gradience/backend/flatpak_overrides.py:366
-#: gradience/backend/flatpak_overrides.py:448
-#: gradience/backend/flatpak_overrides.py:509
-msgid "Unexpected file error occurred"
-msgstr "O eroare de fișier neașteptată s-a produs"
-
-#: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:502
+#: gradience/frontend/dialogs/app_type_dialog.py:51
+#: gradience/frontend/dialogs/save_dialog.py:55
 #, fuzzy
 #| msgid "Cancel"
 msgid "_Cancel"
 msgstr "Anulare"
+
+#: gradience/frontend/dialogs/log_out_dialog.py:36
+msgid "OK"
+msgstr ""
+
+#: gradience/frontend/dialogs/save_dialog.py:37
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+"Se salvează presetarea în <tt>{0}</tt>. Dacă acea presetare există deja, va "
+"fi suprascrisă!"
+
+#: gradience/frontend/dialogs/save_dialog.py:56
+#, fuzzy
+#| msgid "Save"
+msgid "_Save"
+msgstr "Salvați"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -637,15 +643,15 @@ msgstr "Această opțiune nu este acceptată de tema adw-gtk3."
 msgid "Not a color, see text value"
 msgstr "Culoare nevalidă, vedeți valoarea textului"
 
-#: gradience/frontend/widgets/plugin_row.py:88
+#: gradience/frontend/widgets/plugin_row.py:85
 msgid "Unable to remove"
 msgstr "Nu se poate înlătura"
 
-#: gradience/frontend/widgets/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed."
 msgstr "Acesta este un modul de sistem și nu poate fi înlăturat."
 
-#: gradience/frontend/widgets/plugin_row.py:91
+#: gradience/frontend/widgets/plugin_row.py:88
 msgid "Close"
 msgstr "Închideți"
 
@@ -679,74 +685,33 @@ msgstr "Se procesează înlăturarea"
 msgid "Unable to delete preset"
 msgstr "Nu se poate înlătura presetarea"
 
-#: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:343
-msgid "User Presets"
-msgstr "Presetările utilizatorului"
-
-#: gradience/frontend/views/presets_manager_window.py:188
-msgid "Add new repository"
-msgstr "Adăugați un depozit nou"
-
-#: gradience/frontend/views/presets_manager_window.py:189
-msgid "Add a repository to install additional presets."
-msgstr "Adăugați un depozit pentru a instala presetări suplimentare."
-
-#: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:575
-msgid "Cancel"
-msgstr "Anulare"
-
-#: gradience/frontend/views/presets_manager_window.py:196
-msgid "Add"
-msgstr "Adăugați"
-
-#: gradience/frontend/views/presets_manager_window.py:286
-msgid "Preset already exists"
-msgstr "Presetarea există deja"
-
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset imported"
-msgstr "Presetare importată"
-
-#: gradience/frontend/views/presets_manager_window.py:301
-msgid "Unsupported file format, must be .json"
-msgstr "Formatul fișierului nu este acceptat, trebuie să fie de tip .json"
-
-#: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:174
-#, fuzzy
-#| msgid "Failed to load preset"
-msgid "Failed to load list of presets"
-msgstr "Nu se poate încărca presetarea"
-
-#: gradience/frontend/views/presets_manager_window.py:336
-msgid "Built-in Presets"
-msgstr "Presetări incluse"
-
-#: gradience/frontend/views/presets_manager_window.py:346
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Vedeți și <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a> pe Github pentru mai multe presetări."
-
-#: gradience/frontend/views/presets_manager_window.py:372
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Nicio presetare nu a fost găsită! Folosiți butonul „Importați” pentru a "
-"importa una sau căutați una în fila „Explorați”."
-
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "Depozit înlăturat"
 
-#: gradience/frontend/views/welcome_window.py:97
-msgid "Thanks for updating Gradience!"
-msgstr "Vă mulțumim pentru că ați actualizat Gradience!"
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:119
+msgid "Plugins by"
+msgstr "Module de"
+
+#: gradience/frontend/views/about_window.py:127
+msgid "Presets by"
+msgstr "Presetări de"
+
+#: gradience/frontend/views/about_window.py:149
+msgid "Packages by"
+msgstr "Pachete de"
+
+#: gradience/frontend/views/about_window.py:156
+msgid "Fixes by"
+msgstr "Corecții de"
+
+#: gradience/frontend/views/about_window.py:166
+msgid "Special thanks to"
+msgstr "Mulțumiri speciale către"
 
 #: gradience/frontend/views/main_window.py:131
 msgid "Monet Engine"
@@ -820,146 +785,11 @@ msgstr ""
 "Culorile implicite urmează <a href=\"https://developer.gnome.org/hig/"
 "reference/palette.html\">recomandările GNOME pentru interfața umană</a>."
 
-#: gradience/frontend/main.py:203
-msgid "No presets found"
-msgstr "Nicio presetare nu a fost găsită"
-
-#: gradience/frontend/main.py:221
-#, fuzzy
-#| msgid "Favourite Presets"
-msgid "Favorite Presets"
-msgstr "Presetări favorite"
-
-#: gradience/frontend/main.py:375
-msgid "Unsaved Changes"
-msgstr "Modificări nesalvate"
-
-#: gradience/frontend/main.py:386
-msgid "Save Changes"
-msgstr "Salvați modificările"
-
-#: gradience/frontend/main.py:444
-msgid "Apply This Color Scheme?"
-msgstr "Aplicați această schemă cromatică?"
-
-#: gradience/frontend/main.py:446
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"Atenționare: toate fișierele de CSS personalizat ale acelor tipuri de "
-"aplicații vor fi suprascrise permanent!"
-
-#: gradience/frontend/main.py:450
-#, fuzzy
-#| msgid "Apply"
-msgid "_Apply"
-msgstr "Aplicați"
-
-#: gradience/frontend/main.py:460
-msgid "Restore applied color scheme?"
-msgstr "Restabiliți schema cromatică aplicată?"
-
-#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
-msgid "Make sure you have the current settings saved as a preset."
-msgstr "Asigurați-vă că aveți setările actuale salvate ca o presetare."
-
-#: gradience/frontend/main.py:463
-#, fuzzy
-#| msgid "Restore"
-msgid "_Restore"
-msgstr "Restabiliți"
-
-#: gradience/frontend/main.py:473
-msgid "Reset applied color scheme?"
-msgstr "Reveniți la schema cromatică implicită?"
-
-#: gradience/frontend/main.py:476
-#, fuzzy
-#| msgid "Reset"
-msgid "_Reset"
-msgstr "Reveniți"
-
-#: gradience/frontend/main.py:486
-msgid "Save preset as…"
-msgstr "Salvați presetarea ca…"
-
-#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
-#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
-#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten!"
-msgstr ""
-"Se salvează presetarea în <tt>{0}</tt>. Dacă acea presetare există deja, va "
-"fi suprascrisă!"
-
-#: gradience/frontend/main.py:503
-#, fuzzy
-#| msgid "Save"
-msgid "_Save"
-msgstr "Salvați"
-
-#: gradience/frontend/main.py:559
-msgid "You have unsaved changes!"
-msgstr "Aveți modificări nesalvate!"
-
-#: gradience/frontend/main.py:576
-msgid "Discard"
-msgstr "Înlăturați"
-
-#: gradience/frontend/main.py:577
-msgid "Save"
-msgstr "Salvați"
-
-#: gradience/frontend/main.py:637
-msgid "Preset saved"
-msgstr "Presetare salvată"
-
-#: gradience/frontend/main.py:654
-#, fuzzy
-#| msgid "Preset set sucessfully"
-msgid "Preset set successfully"
-msgstr "Presetare aplicată cu succes"
-
-#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
-#: gradience/frontend/main.py:728
-#, fuzzy
-#| msgid "Log out ?"
-msgid "Log out"
-msgstr "Ieșiți din sesiune?"
-
-#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
-#: gradience/frontend/main.py:730
-#, fuzzy
-#| msgid "For the changes to take effect, you need to log out. "
-msgid "For the changes to take full effect, you need to log out."
-msgstr ""
-"Pentru ca modificările să se poată aplica, trebuie să ieșiți din sesiune. "
-
-#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
-#: gradience/frontend/main.py:735
-msgid "OK"
-msgstr ""
-
-#: gradience/frontend/main.py:685
-#, fuzzy
-#| msgid "Could not restore GTK 4 backup"
-msgid "Unable to restore GTK 4 backup"
-msgstr "Nu s-a putut restaura copia de rezervă GTK 4"
-
-#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
-#, fuzzy
-#| msgid "Unable to delete preset"
-msgid "Unable to delete current preset"
-msgstr "Nu se poate înlătura presetarea"
-
-#: gradience/frontend/views/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:89
 msgid "Plugins"
 msgstr "Module"
 
-#: gradience/frontend/views/plugins_list.py:104
+#: gradience/frontend/views/plugins_list.py:92
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -967,9 +797,73 @@ msgstr ""
 "Modulele adaugă caracteristici suplimentare aplicației Gradience, modulele "
 "sunt realizate de comunitatea Gradience și pot cauza probleme."
 
-#: gradience/frontend/views/plugins_list.py:116
+#: gradience/frontend/views/plugins_list.py:104
 msgid "No Plugins Found."
 msgstr "Niciun modul nu a fost găsit."
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "User Presets"
+msgstr "Presetările utilizatorului"
+
+#: gradience/frontend/views/presets_manager_window.py:190
+msgid "Add new repository"
+msgstr "Adăugați un depozit nou"
+
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add a repository to install additional presets."
+msgstr "Adăugați un depozit pentru a instala presetări suplimentare."
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "Anulare"
+
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Add"
+msgstr "Adăugați"
+
+#: gradience/frontend/views/presets_manager_window.py:288
+msgid "Preset already exists"
+msgstr "Presetarea există deja"
+
+#: gradience/frontend/views/presets_manager_window.py:300
+msgid "Preset imported"
+msgstr "Presetare importată"
+
+#: gradience/frontend/views/presets_manager_window.py:303
+msgid "Unsupported file format, must be .json"
+msgstr "Formatul fișierului nu este acceptat, trebuie să fie de tip .json"
+
+#: gradience/frontend/views/presets_manager_window.py:329
+#: gradience/frontend/main.py:193
+#, fuzzy
+#| msgid "Failed to load preset"
+msgid "Failed to load list of presets"
+msgstr "Nu se poate încărca presetarea"
+
+#: gradience/frontend/views/presets_manager_window.py:338
+msgid "Built-in Presets"
+msgstr "Presetări incluse"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Vedeți și <a href=\"https://github.com/GradienceTeam/Community"
+"\">GradienceTeam/Community</a> pe Github pentru mai multe presetări."
+
+#: gradience/frontend/views/presets_manager_window.py:374
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Nicio presetare nu a fost găsită! Folosiți butonul „Importați” pentru a "
+"importa una sau căutați una în fila „Explorați”."
+
+#: gradience/frontend/views/welcome_window.py:97
+msgid "Thanks for updating Gradience!"
+msgstr "Vă mulțumim pentru că ați actualizat Gradience!"
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1260,20 +1154,118 @@ msgstr "Violet"
 msgid "Brown"
 msgstr "Maro"
 
-#~ msgid "Plugins by"
-#~ msgstr "Module de"
+#: gradience/frontend/main.py:226
+msgid "No presets found"
+msgstr "Nicio presetare nu a fost găsită"
 
-#~ msgid "Presets by"
-#~ msgstr "Presetări de"
+#: gradience/frontend/main.py:249
+#, fuzzy
+#| msgid "Favourite Presets"
+msgid "Favorite Presets"
+msgstr "Presetări favorite"
 
-#~ msgid "Packages by"
-#~ msgstr "Pachete de"
+#: gradience/frontend/main.py:405
+msgid "Unsaved Changes"
+msgstr "Modificări nesalvate"
 
-#~ msgid "Fixes by"
-#~ msgstr "Corecții de"
+#: gradience/frontend/main.py:417
+msgid "Save Changes"
+msgstr "Salvați modificările"
 
-#~ msgid "Special thanks to"
-#~ msgstr "Mulțumiri speciale către"
+#: gradience/frontend/main.py:478
+msgid "Apply This Color Scheme?"
+msgstr "Aplicați această schemă cromatică?"
+
+#: gradience/frontend/main.py:480
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Atenționare: toate fișierele de CSS personalizat ale acelor tipuri de "
+"aplicații vor fi suprascrise permanent!"
+
+#: gradience/frontend/main.py:484
+#, fuzzy
+#| msgid "Apply"
+msgid "_Apply"
+msgstr "Aplicați"
+
+#: gradience/frontend/main.py:494
+msgid "Restore applied color scheme?"
+msgstr "Restabiliți schema cromatică aplicată?"
+
+#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "Asigurați-vă că aveți setările actuale salvate ca o presetare."
+
+#: gradience/frontend/main.py:497
+#, fuzzy
+#| msgid "Restore"
+msgid "_Restore"
+msgstr "Restabiliți"
+
+#: gradience/frontend/main.py:507
+msgid "Reset applied color scheme?"
+msgstr "Reveniți la schema cromatică implicită?"
+
+#: gradience/frontend/main.py:510
+#, fuzzy
+#| msgid "Reset"
+msgid "_Reset"
+msgstr "Reveniți"
+
+#: gradience/frontend/main.py:558
+msgid "You have unsaved changes!"
+msgstr "Aveți modificări nesalvate!"
+
+#: gradience/frontend/main.py:566
+msgid "Discard"
+msgstr "Înlăturați"
+
+#: gradience/frontend/main.py:606
+msgid "Preset saved"
+msgstr "Presetare salvată"
+
+#: gradience/frontend/main.py:623
+#, fuzzy
+#| msgid "Preset set sucessfully"
+msgid "Preset set successfully"
+msgstr "Presetare aplicată cu succes"
+
+#: gradience/frontend/main.py:641
+#, fuzzy
+#| msgid "Could not restore GTK 4 backup"
+msgid "Unable to restore GTK 4 backup"
+msgstr "Nu s-a putut restaura copia de rezervă GTK 4"
+
+#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#, fuzzy
+#| msgid "Unable to delete preset"
+msgid "Unable to delete current preset"
+msgstr "Nu se poate înlătura presetarea"
+
+#~ msgid "Failed to save override"
+#~ msgstr "Nu s-a reușit salvarea suprascrierii"
+
+#~ msgid "Unexpected file error occurred"
+#~ msgstr "O eroare de fișier neașteptată s-a produs"
+
+#~ msgid "Save preset as…"
+#~ msgstr "Salvați presetarea ca…"
+
+#~ msgid "Save"
+#~ msgstr "Salvați"
+
+#, fuzzy
+#~| msgid "Log out ?"
+#~ msgid "Log out"
+#~ msgstr "Ieșiți din sesiune?"
+
+#, fuzzy
+#~| msgid "For the changes to take effect, you need to log out. "
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr ""
+#~ "Pentru ca modificările să se poată aplica, trebuie să ieșiți din sesiune. "
 
 #~ msgid "Unsupported background type"
 #~ msgstr "Tip de fundal neacceptat"
