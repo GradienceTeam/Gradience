@@ -22,7 +22,7 @@
     <img alt="Translation status" src="https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg"/>
   </a>
   <a href="https://github.com/GradienceTeam/Gradience/actions/workflows/build.yml">
-    <img alt="Build status" src="https://github.com/GradienceTeam/Gradience/actions/workflows/build.yml/badge.svg"/>
+    <img alt="build status" src="https://github.com/GradienceTeam/Gradience/actions/workflows/build.yml/badge.svg"/>
   </a>
   <a href="https://flathub.org/apps/details/com.github.GradienceTeam.Gradience">
     <img alt="Flathub downloads" src="https://img.shields.io/badge/dynamic/json?color=informational&label=downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Fcom.github.GradienceTeam.Gradience"/>
