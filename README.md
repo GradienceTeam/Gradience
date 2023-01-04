@@ -60,16 +60,16 @@ The main features of Gradience include the following:
 
 <details>
   <summary>📷️ More screenshots</summary>
-  
+
   ![Monet Tab](https://github.com/GradienceTeam/Design/raw/main/Screenshots/monet_purple.png)
-  
+
   ![Proof of Work](https://github.com/GradienceTeam/Design/raw/main/Screenshots/proof_purple.png)
 </details>
 
 
 ## 🎨️ Theming setup
 
-> **Note** 
+> **Note**
 > You can go to `Preferences` and apply overrides for Flatpak
 
 <details>
@@ -97,9 +97,10 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 </details>
 
+
 ## 🔄 Revert Theming
 
-> **Note** 
+> **Note**
 > You can press on the menu button in the headerbar and press `Reset Applied Color Scheme`
 > ![Main Gradience menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
 
@@ -130,9 +131,9 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 > **Warning**
 > The main installation method is Flatpak from Flathub
 
-### COPR 
+### Fedora (COPR)
 
-Gradience is available on COPR. You can install it using the following command:
+Gradience is available for Fedora via COPR:
 
 ```shell
 dnf copr enable lyessaadi/gradience
@@ -144,12 +145,12 @@ dnf install gradience
 > **Warning**
 > Not available yet.
 
-### AUR 
+### Arch Linux (AUR)
 
-Gradience is available on AUR:
+Gradience is available for Arch Linux via AUR:
 
 Using [Paru](https://github.com/morganamilo/paru):
-    
+
 ```shell
 paru -S gradience
 ```
@@ -219,7 +220,7 @@ gsettings reset com.github.GradienceTeam.Gradience first-run
 _To be done_
 
 
-## 🙌 Contribute to Gradience 
+## 🙌 Contribute to Gradience
 
 See [HACKING.md](HACKING.md)
 
