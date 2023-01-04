@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 12:14+0000\n"
+"POT-Creation-Date: 2023-01-04 00:38+0000\n"
 "PO-Revision-Date: 2022-12-24 16:50+0000\n"
 "Last-Translator: K.B.Dharun Krishna <kbdharunkrishna@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -34,6 +34,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "அத்வைதாவின் தோற்றத்தை எளிதில் மாற்றுங்கள்"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
+#: gradience/frontend/views/about_window.py:88
 msgid "Gradience Team"
 msgstr "கிரேடியன்ஸ் குழு"
 
@@ -276,35 +277,35 @@ msgstr "முன்னமைவை அகற்று"
 msgid "Presets"
 msgstr "முன்னமைவுகள்"
 
-#: data/ui/presets_manager_window.blp:29
+#: data/ui/presets_manager_window.blp:30
 msgid "Import"
 msgstr "இறக்குமதி"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:31
 msgid "Import a Preset File"
 msgstr "முன்னமைக்கப்பட்ட கோப்பை இறக்குமதி செய்"
 
-#: data/ui/presets_manager_window.blp:36
+#: data/ui/presets_manager_window.blp:37
 msgid "Delete"
 msgstr "அழி"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
 msgid "Open in File Manager"
 msgstr "கோப்பு மேலாளரில் திறக்கவும்"
 
-#: data/ui/presets_manager_window.blp:65
+#: data/ui/presets_manager_window.blp:66
 msgid "Installed"
 msgstr "நிறுவப்பட்டுள்ளது"
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 msgid "Explore"
 msgstr "ஆராயுங்கள்"
 
-#: data/ui/presets_manager_window.blp:79
+#: data/ui/presets_manager_window.blp:80
 msgid "Search for presets"
 msgstr "முன்னமைவுகளைத் தேடுங்கள்"
 
-#: data/ui/presets_manager_window.blp:80
+#: data/ui/presets_manager_window.blp:81
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>."
@@ -312,37 +313,37 @@ msgstr ""
 "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> இல் தேட ஒரு முக்கிய சொல்லை உள்ளிடவும்."
 
-#: data/ui/presets_manager_window.blp:93
+#: data/ui/presets_manager_window.blp:94
 msgid "e.g. \"Pretty Purple\""
 msgstr "எ.கா. \"அழகான ஊதா\""
 
-#: data/ui/presets_manager_window.blp:98
+#: data/ui/presets_manager_window.blp:99
 msgid "All"
 msgstr "அனைத்து"
 
-#: data/ui/presets_manager_window.blp:126
+#: data/ui/presets_manager_window.blp:127
 msgid "No Results Found"
 msgstr "முடிவுகள் எதுவும் கிடைக்கவில்லை"
 
-#: data/ui/presets_manager_window.blp:134
+#: data/ui/presets_manager_window.blp:135
 msgid "Offline"
 msgstr "ஆஃப்லைன்"
 
-#: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:382
+#: data/ui/presets_manager_window.blp:147
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:384
 msgid "Repositories"
 msgstr "களஞ்சியங்கள்"
 
-#: data/ui/presets_manager_window.blp:165
+#: data/ui/presets_manager_window.blp:166
 msgid "Import a Preset File (*.json)"
 msgstr "முன்னமைக்கப்பட்ட கோப்பை இறக்குமதி செய் (*.json)"
 
-#: data/ui/presets_manager_window.blp:170
+#: data/ui/presets_manager_window.blp:171
 msgid "All files"
 msgstr "அனைத்து கோப்புகள்"
 
-#: data/ui/presets_manager_window.blp:175
+#: data/ui/presets_manager_window.blp:176
 msgid "JSON file (*.json)"
 msgstr "JSON கோப்பு (*.json)"
 
@@ -563,7 +564,7 @@ msgid "GTK 4 Widget Factory"
 msgstr "GTK 4 விட்ஜெட் தொழிற்சாலை"
 
 #: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:109
+#: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "உள்ளமைக்கப்பட்ட முன்னமைவுகள்"
 
@@ -571,24 +572,27 @@ msgstr "உள்ளமைக்கப்பட்ட முன்னமைவ�
 msgid "Manage Presets"
 msgstr "முன்னமைவுகளை நிர்வகிக்கவும்"
 
-#: gradience/backend/flatpak_overrides.py:71
-#: gradience/backend/flatpak_overrides.py:93
-msgid "Failed to save override"
-msgstr "மேலெழுதலைச் சேமிக்க முடியவில்லை"
-
-#: gradience/backend/flatpak_overrides.py:186
-#: gradience/backend/flatpak_overrides.py:228
-#: gradience/backend/flatpak_overrides.py:306
-#: gradience/backend/flatpak_overrides.py:366
-#: gradience/backend/flatpak_overrides.py:448
-#: gradience/backend/flatpak_overrides.py:509
-msgid "Unexpected file error occurred"
-msgstr "எதிர்பாராத கோப்பு பிழை ஏற்பட்டது"
-
-#: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:502
+#: gradience/frontend/dialogs/app_type_dialog.py:51
+#: gradience/frontend/dialogs/save_dialog.py:55
 msgid "_Cancel"
 msgstr "_ரத்துசெய்"
+
+#: gradience/frontend/dialogs/log_out_dialog.py:36
+msgid "OK"
+msgstr "சரி"
+
+#: gradience/frontend/dialogs/save_dialog.py:37
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+"முன்னமைவை <tt>{0}</tt> இல் சேமிக்கிறது. அந்த முன்னமைவு ஏற்கனவே இருந்தால், அது "
+"மேலெழுதப்படும்!"
+
+#: gradience/frontend/dialogs/save_dialog.py:56
+msgid "_Save"
+msgstr "_சேமிக்கவும்"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -612,15 +616,15 @@ msgstr "இந்த விருப்பத்தை adw-gtk3 தீம் ஆ
 msgid "Not a color, see text value"
 msgstr "நிறம் அல்ல, உரை மதிப்பைப் பார்க்கவும்"
 
-#: gradience/frontend/widgets/plugin_row.py:88
+#: gradience/frontend/widgets/plugin_row.py:85
 msgid "Unable to remove"
 msgstr "அகற்ற முடியவில்லை"
 
-#: gradience/frontend/widgets/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed."
 msgstr "இது ஒரு சிஸ்டம் செருகுநிரல், அதனால் அதை அகற்ற முடியாது."
 
-#: gradience/frontend/widgets/plugin_row.py:91
+#: gradience/frontend/widgets/plugin_row.py:88
 msgid "Close"
 msgstr "மூடுங்கள்"
 
@@ -650,72 +654,33 @@ msgstr "நிலுவையில் உள்ள நீக்கம்"
 msgid "Unable to delete preset"
 msgstr "முன்னமைவை நீக்க முடியவில்லை"
 
-#: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:343
-msgid "User Presets"
-msgstr "பயனர் முன்னமைவுகள்"
-
-#: gradience/frontend/views/presets_manager_window.py:188
-msgid "Add new repository"
-msgstr "புதிய களஞ்சியத்தைச் சேர்க்கவும்"
-
-#: gradience/frontend/views/presets_manager_window.py:189
-msgid "Add a repository to install additional presets."
-msgstr "கூடுதல் முன்னமைவுகளை நிறுவ ஒரு களஞ்சியத்தைச் சேர்க்கவும்."
-
-#: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:575
-msgid "Cancel"
-msgstr "ரத்துசெய்"
-
-#: gradience/frontend/views/presets_manager_window.py:196
-msgid "Add"
-msgstr "சேர்"
-
-#: gradience/frontend/views/presets_manager_window.py:286
-msgid "Preset already exists"
-msgstr "முன்னமைவு ஏற்கனவே உள்ளது"
-
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset imported"
-msgstr "முன்னமைவு இறக்குமதி செய்யப்பட்டது"
-
-#: gradience/frontend/views/presets_manager_window.py:301
-msgid "Unsupported file format, must be .json"
-msgstr "ஆதரிக்கப்படாத கோப்பு வடிவம், .json ஆக இருக்க வேண்டும்"
-
-#: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:174
-msgid "Failed to load list of presets"
-msgstr "முன்னமைவுகளின் பட்டியலை ஏற்றுவதில் தோல்வி"
-
-#: gradience/frontend/views/presets_manager_window.py:336
-msgid "Built-in Presets"
-msgstr "உள்ளமைக்கப்பட்ட முன்னமைவுகள்"
-
-#: gradience/frontend/views/presets_manager_window.py:346
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"மேலும் முன்னமைவுகளுக்கு Github இல் <a href=\"https://github.com/GradienceTeam/"
-"Community\">GradienceTeam/Community</a> பார்க்கவும்."
-
-#: gradience/frontend/views/presets_manager_window.py:372
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"முன்னமைவு எதுவும் இல்லை! ஒன்றை இறக்குமதி செய்ய இறக்குமதி பொத்தானைப் பயன்படுத்தவும் அல்லது "
-"ஆய்வு தாவலில் ஒன்றைத் தேடவும்."
-
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "களஞ்சியம் அகற்றப்பட்டது"
 
-#: gradience/frontend/views/welcome_window.py:97
-msgid "Thanks for updating Gradience!"
-msgstr "கிரேடியன்ஸைப் புதுப்பித்ததற்கு நன்றி!"
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:119
+msgid "Plugins by"
+msgstr "செருகுநிரல்கள் பைய்"
+
+#: gradience/frontend/views/about_window.py:127
+msgid "Presets by"
+msgstr "முன்னமைவுகள் பைய்"
+
+#: gradience/frontend/views/about_window.py:149
+msgid "Packages by"
+msgstr "தொகுப்புகள் பைய்"
+
+#: gradience/frontend/views/about_window.py:156
+msgid "Fixes by"
+msgstr "திருத்தங்கள் பைய்"
+
+#: gradience/frontend/views/about_window.py:166
+msgid "Special thanks to"
+msgstr "சிறப்பு நன்றிகள்"
 
 #: gradience/frontend/views/main_window.py:131
 msgid "Monet Engine"
@@ -789,124 +754,11 @@ msgstr ""
 "<a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME "
 "மனித இடைமுக வழிகாட்டுதல்களைப்</a> பின்பற்றுகின்றன."
 
-#: gradience/frontend/main.py:203
-msgid "No presets found"
-msgstr "முன்னமைவுகள் எதுவும் கிடைக்கவில்லை"
-
-#: gradience/frontend/main.py:221
-msgid "Favorite Presets"
-msgstr "பிடித்த முன்னமைவுகள்"
-
-#: gradience/frontend/main.py:375
-msgid "Unsaved Changes"
-msgstr "சேமிக்கப்படாத மாற்றங்கள்"
-
-#: gradience/frontend/main.py:386
-msgid "Save Changes"
-msgstr "மாற்றங்களை சேமியுங்கள்"
-
-#: gradience/frontend/main.py:444
-msgid "Apply This Color Scheme?"
-msgstr "இந்த வண்ணத் திட்டத்தைப் பயன்படுத்தவா?"
-
-#: gradience/frontend/main.py:446
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"எச்சரிக்கை: அந்த ஆப்ஸ் வகைகளுக்கான தனிப்பயன் CSS கோப்புகள் மாற்றமுடியாமல் மேலெழுதப்படும்!"
-
-#: gradience/frontend/main.py:450
-msgid "_Apply"
-msgstr "_விண்ணப்பிக்கவும்"
-
-#: gradience/frontend/main.py:460
-msgid "Restore applied color scheme?"
-msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டெடுக்கவா?"
-
-#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
-msgid "Make sure you have the current settings saved as a preset."
-msgstr "தற்போதைய அமைப்புகளை முன்னமைவாகச் சேமித்து வைத்திருப்பதை உறுதிசெய்யவும்."
-
-#: gradience/frontend/main.py:463
-msgid "_Restore"
-msgstr "_மீட்டமை"
-
-#: gradience/frontend/main.py:473
-msgid "Reset applied color scheme?"
-msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டமைக்கவா?"
-
-#: gradience/frontend/main.py:476
-msgid "_Reset"
-msgstr "_மீட்டமைக்கவும்"
-
-#: gradience/frontend/main.py:486
-msgid "Save preset as…"
-msgstr "முன்னமைவை இவ்வாறு சேமிக்கவும்…"
-
-#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
-#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
-#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten!"
-msgstr ""
-"முன்னமைவை <tt>{0}</tt> இல் சேமிக்கிறது. அந்த முன்னமைவு ஏற்கனவே இருந்தால், அது "
-"மேலெழுதப்படும்!"
-
-#: gradience/frontend/main.py:503
-msgid "_Save"
-msgstr "_சேமிக்கவும்"
-
-#: gradience/frontend/main.py:559
-msgid "You have unsaved changes!"
-msgstr "உங்களிடம் சேமிக்கப்படாத மாற்றங்கள் உள்ளன!"
-
-#: gradience/frontend/main.py:576
-msgid "Discard"
-msgstr "அப்புறப்படுத்து"
-
-#: gradience/frontend/main.py:577
-msgid "Save"
-msgstr "சேமிக்கவும்"
-
-#: gradience/frontend/main.py:637
-msgid "Preset saved"
-msgstr "முன்னமைவு சேமிக்கப்பட்டது"
-
-#: gradience/frontend/main.py:654
-msgid "Preset set successfully"
-msgstr "முன்னமைவு வெற்றிகரமாக அமைக்கப்பட்டது"
-
-#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
-#: gradience/frontend/main.py:728
-msgid "Log out"
-msgstr "வெளியேறு"
-
-#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
-#: gradience/frontend/main.py:730
-msgid "For the changes to take full effect, you need to log out."
-msgstr "மாற்றங்கள் முழுமையாக செயல்பட, நீங்கள் வெளியேற வேண்டும்."
-
-#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
-#: gradience/frontend/main.py:735
-msgid "OK"
-msgstr "சரி"
-
-#: gradience/frontend/main.py:685
-msgid "Unable to restore GTK 4 backup"
-msgstr "GTK 4 காப்புப்பிரதியை மீட்டெடுக்க முடியவில்லை"
-
-#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
-msgid "Unable to delete current preset"
-msgstr "தற்போதைய முன்னமைவை நீக்க முடியவில்லை"
-
-#: gradience/frontend/views/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:89
 msgid "Plugins"
 msgstr "செருகுநிரல்கள்"
 
-#: gradience/frontend/views/plugins_list.py:104
+#: gradience/frontend/views/plugins_list.py:92
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -914,9 +766,71 @@ msgstr ""
 "செருகுநிரல்கள் கிரேடியன்ஸில் கூடுதல் அம்சங்களைச் சேர்க்கின்றன, செருகுநிரல்கள் கிரேடியன்ஸ் "
 "சமூகத்தால் உருவாக்கப்பட்டவை மற்றும் சிக்கல்களை ஏற்படுத்தலாம்."
 
-#: gradience/frontend/views/plugins_list.py:116
+#: gradience/frontend/views/plugins_list.py:104
 msgid "No Plugins Found."
 msgstr "செருகுநிரல்கள் எதுவும் கிடைக்கவில்லை."
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "User Presets"
+msgstr "பயனர் முன்னமைவுகள்"
+
+#: gradience/frontend/views/presets_manager_window.py:190
+msgid "Add new repository"
+msgstr "புதிய களஞ்சியத்தைச் சேர்க்கவும்"
+
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add a repository to install additional presets."
+msgstr "கூடுதல் முன்னமைவுகளை நிறுவ ஒரு களஞ்சியத்தைச் சேர்க்கவும்."
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "ரத்துசெய்"
+
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Add"
+msgstr "சேர்"
+
+#: gradience/frontend/views/presets_manager_window.py:288
+msgid "Preset already exists"
+msgstr "முன்னமைவு ஏற்கனவே உள்ளது"
+
+#: gradience/frontend/views/presets_manager_window.py:300
+msgid "Preset imported"
+msgstr "முன்னமைவு இறக்குமதி செய்யப்பட்டது"
+
+#: gradience/frontend/views/presets_manager_window.py:303
+msgid "Unsupported file format, must be .json"
+msgstr "ஆதரிக்கப்படாத கோப்பு வடிவம், .json ஆக இருக்க வேண்டும்"
+
+#: gradience/frontend/views/presets_manager_window.py:329
+#: gradience/frontend/main.py:193
+msgid "Failed to load list of presets"
+msgstr "முன்னமைவுகளின் பட்டியலை ஏற்றுவதில் தோல்வி"
+
+#: gradience/frontend/views/presets_manager_window.py:338
+msgid "Built-in Presets"
+msgstr "உள்ளமைக்கப்பட்ட முன்னமைவுகள்"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"மேலும் முன்னமைவுகளுக்கு Github இல் <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a> பார்க்கவும்."
+
+#: gradience/frontend/views/presets_manager_window.py:374
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"முன்னமைவு எதுவும் இல்லை! ஒன்றை இறக்குமதி செய்ய இறக்குமதி பொத்தானைப் பயன்படுத்தவும் அல்லது "
+"ஆய்வு தாவலில் ஒன்றைத் தேடவும்."
+
+#: gradience/frontend/views/welcome_window.py:97
+msgid "Thanks for updating Gradience!"
+msgstr "கிரேடியன்ஸைப் புதுப்பித்ததற்கு நன்றி!"
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1199,6 +1113,99 @@ msgstr "ஊதா"
 msgid "Brown"
 msgstr "பழுப்பு"
 
+#: gradience/frontend/main.py:226
+msgid "No presets found"
+msgstr "முன்னமைவுகள் எதுவும் கிடைக்கவில்லை"
+
+#: gradience/frontend/main.py:249
+msgid "Favorite Presets"
+msgstr "பிடித்த முன்னமைவுகள்"
+
+#: gradience/frontend/main.py:405
+msgid "Unsaved Changes"
+msgstr "சேமிக்கப்படாத மாற்றங்கள்"
+
+#: gradience/frontend/main.py:417
+msgid "Save Changes"
+msgstr "மாற்றங்களை சேமியுங்கள்"
+
+#: gradience/frontend/main.py:478
+msgid "Apply This Color Scheme?"
+msgstr "இந்த வண்ணத் திட்டத்தைப் பயன்படுத்தவா?"
+
+#: gradience/frontend/main.py:480
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"எச்சரிக்கை: அந்த ஆப்ஸ் வகைகளுக்கான தனிப்பயன் CSS கோப்புகள் மாற்றமுடியாமல் மேலெழுதப்படும்!"
+
+#: gradience/frontend/main.py:484
+msgid "_Apply"
+msgstr "_விண்ணப்பிக்கவும்"
+
+#: gradience/frontend/main.py:494
+msgid "Restore applied color scheme?"
+msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டெடுக்கவா?"
+
+#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "தற்போதைய அமைப்புகளை முன்னமைவாகச் சேமித்து வைத்திருப்பதை உறுதிசெய்யவும்."
+
+#: gradience/frontend/main.py:497
+msgid "_Restore"
+msgstr "_மீட்டமை"
+
+#: gradience/frontend/main.py:507
+msgid "Reset applied color scheme?"
+msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டமைக்கவா?"
+
+#: gradience/frontend/main.py:510
+msgid "_Reset"
+msgstr "_மீட்டமைக்கவும்"
+
+#: gradience/frontend/main.py:558
+msgid "You have unsaved changes!"
+msgstr "உங்களிடம் சேமிக்கப்படாத மாற்றங்கள் உள்ளன!"
+
+#: gradience/frontend/main.py:566
+msgid "Discard"
+msgstr "அப்புறப்படுத்து"
+
+#: gradience/frontend/main.py:606
+msgid "Preset saved"
+msgstr "முன்னமைவு சேமிக்கப்பட்டது"
+
+#: gradience/frontend/main.py:623
+msgid "Preset set successfully"
+msgstr "முன்னமைவு வெற்றிகரமாக அமைக்கப்பட்டது"
+
+#: gradience/frontend/main.py:641
+msgid "Unable to restore GTK 4 backup"
+msgstr "GTK 4 காப்புப்பிரதியை மீட்டெடுக்க முடியவில்லை"
+
+#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+msgid "Unable to delete current preset"
+msgstr "தற்போதைய முன்னமைவை நீக்க முடியவில்லை"
+
+#~ msgid "Failed to save override"
+#~ msgstr "மேலெழுதலைச் சேமிக்க முடியவில்லை"
+
+#~ msgid "Unexpected file error occurred"
+#~ msgstr "எதிர்பாராத கோப்பு பிழை ஏற்பட்டது"
+
+#~ msgid "Save preset as…"
+#~ msgstr "முன்னமைவை இவ்வாறு சேமிக்கவும்…"
+
+#~ msgid "Save"
+#~ msgstr "சேமிக்கவும்"
+
+#~ msgid "Log out"
+#~ msgstr "வெளியேறு"
+
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "மாற்றங்கள் முழுமையாக செயல்பட, நீங்கள் வெளியேற வேண்டும்."
+
 #~ msgid ""
 #~ "\n"
 #~ "<ul>\n"
@@ -1244,21 +1251,6 @@ msgstr "பழுப்பு"
 #~ "🎁️ பிற பயனர்களின் முன்னமைவுகளின் பயன்பாடு \n"
 #~ "⚙️ CSS உடன் மேம்பட்ட விருப்பங்களை மாற்றுதல் \n"
 #~ "🧩️ செருகுநிரல்களைப் பயன்படுத்தி செயல்பாட்டை நீட்டித்தல்\n"
-
-#~ msgid "Plugins by"
-#~ msgstr "செருகுநிரல்கள் பைய்"
-
-#~ msgid "Presets by"
-#~ msgstr "முன்னமைவுகள் பைய்"
-
-#~ msgid "Packages by"
-#~ msgstr "தொகுப்புகள் பைய்"
-
-#~ msgid "Fixes by"
-#~ msgstr "திருத்தங்கள் பைய்"
-
-#~ msgid "Special thanks to"
-#~ msgstr "சிறப்பு நன்றிகள்"
 
 #~ msgid "Failed to generate preset from Monet palette"
 #~ msgstr "மோனெட் தட்டிலிருந்து முன்னமைவை உருவாக்க முடியவில்லை"
