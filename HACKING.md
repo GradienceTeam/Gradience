@@ -11,6 +11,7 @@ or think you can improve a translation, you can use the [Weblate](https://hosted
 
 [![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/gradience/287x66-white.png)](https://hosted.weblate.org/engage/GradienceTeam)
 
+
 ## 🏗️ Building from source
 
 ### GNOME Builder

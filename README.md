@@ -97,6 +97,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 </details>
 
+
 ## 🔄 Revert Theming
 
 > **Note** 
