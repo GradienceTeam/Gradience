@@ -8,6 +8,7 @@ template GradienceOptionRow : Adw.ActionRow {
     icon-name: "adw-gtk3-warning-symbolic";
     popover: warning-popover;
     tooltip-text: _("GTK 3 Support Warning");
+    styles ["flat"]
   }
 
   [suffix]
@@ -16,6 +17,7 @@ template GradienceOptionRow : Adw.ActionRow {
     icon-name: "dialog-information-symbolic";
     popover: explanation-popover;
     tooltip-text: _("Explanation");
+    styles ["flat"]
   }
 
   [suffix]
@@ -41,6 +43,7 @@ template GradienceOptionRow : Adw.ActionRow {
     valign: center;
     icon-name: "document-edit-symbolic";
     tooltip-text: _("Toggle Text Value");
+    styles ["flat"]
 
     toggled => on_text_value_toggled();
   }
@@ -53,7 +56,7 @@ Popover warning-popover {
     margin-start: 10;
     margin-end: 10;
     margin-bottom: 10;
-    max-width-chars: 60;
+    max-width-chars: 50;
     wrap: true;
     justify: center;
   }
@@ -66,7 +69,7 @@ Popover explanation-popover {
     margin-start: 10;
     margin-end: 10;
     margin-bottom: 10;
-    max-width-chars: 60;
+    max-width-chars: 50;
     wrap: true;
     justify: center;
   }
