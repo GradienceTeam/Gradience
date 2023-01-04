@@ -14,4 +14,4 @@ Only two latest versions are officially supported, but older versions get some h
 
 Normally Gradience can't have security issues, but if you have found a vulnerability, please don't submit a public issue.
 
-Instead, report this vulnerability to AdwCustomizerTeam@proton.me and include as much details as possible.
+Instead, report this vulnerability to [AdwCustomizerTeam@proton.me](mailto:AdwCustomizerTeam@proton.me) and include as much details as possible.
