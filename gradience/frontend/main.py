@@ -127,15 +127,6 @@ class GradienceApplication(Adw.Application):
         self.actions.create_action("apply_color_scheme",
                         self.show_apply_color_scheme_dialog)
 
-        self.actions.create_action("show_adwaita_demo",
-                        self.show_adwaita_demo)
-
-        self.actions.create_action("show_gtk4_widget_factory",
-                        self.show_gtk4_widget_factory)
-
-        self.actions.create_action("show_gtk4_demo",
-                        self.show_gtk4_demo)
-
         self.actions.create_action("restore_color_scheme",
                         self.show_restore_color_scheme_dialog)
 
@@ -718,33 +709,6 @@ class GradienceApplication(Adw.Application):
 
         self.props.active_window.update_errors(
             self.global_errors + plugins_errors)
-
-    @staticmethod
-    def show_adwaita_demo(*_args):
-        try:
-            GLib.spawn_command_line_async(
-                "/bin/adwaita-1-demo > /dev/null 2>&1"
-            )
-        except GLib.GError as e:
-            logging.error("An error occurred while trying to execute external program.", exc=e)
-
-    @staticmethod
-    def show_gtk4_demo(*_args):
-        try:
-            GLib.spawn_command_line_async(
-                "/bin/gtk4-demo > /dev/null 2>&1"
-            )
-        except GLib.GError as e:
-            logging.error("An error occurred while trying to execute external program.", exc=e)
-
-    @staticmethod
-    def show_gtk4_widget_factory(*_args):
-        try:
-            GLib.spawn_command_line_async(
-                "/bin/gtk4-widget-factory > /dev/null 2>&1"
-            )
-        except GLib.GError as e:
-            logging.error("An error occurred while trying to execute external program.", exc=e)
 
 
 def main():
