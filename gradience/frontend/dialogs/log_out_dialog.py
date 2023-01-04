@@ -1,7 +1,7 @@
-# requirements.txt
+# log_out_dialog.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,18 +16,23 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-# After changing this file, download the flatpak pip generator script:
-# curl -O https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/pip/flatpak-pip-generator
-# chmod +x flatpak-pip-generator
-# Then run:
-# ./flatpak-pip-generator --requirements-file=requirements.txt --output pypi-dependencies
-# And move output file to build-aux directory:
-# mv pypi-dependencies.json build-aux/flatpak/
-#
-# or more simply, just push and the bot will do this for you.
+from gi.repository import Gtk, Adw
 
-anyascii
-material-color-utilities-python
-svglib
-yapsy
-Jinja2
+from gradience.backend.constants import rootdir
+
+
+@Gtk.Template(resource_path=f"{rootdir}/ui/log_out_dialog.ui")
+class GradienceLogOutDialog(Adw.MessageDialog):
+    __gtype_name__ = "GradienceLogOutDialog"
+
+    def __init__(self, parent, **kwargs):
+        super().__init__(**kwargs)
+
+        self.parent = parent
+        self.app = self.parent.get_application()
+
+        self.set_transient_for(self.app.get_active_window())
+
+        self.add_response("ok", _("OK"))
+        self.set_default_response("ok")
+        self.set_close_response("ok")

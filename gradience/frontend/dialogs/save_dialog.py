@@ -1,7 +1,7 @@
-# app_type_dialog.py
+# save_dialog.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022-2023, Gradience Team
+# Copyright (C) 2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,43 +21,42 @@ from gi.repository import Gtk, Adw
 from gradience.backend.constants import rootdir
 
 
-@Gtk.Template(resource_path=f"{rootdir}/ui/app_type_dialog.ui")
-class GradienceAppTypeDialog(Adw.MessageDialog):
-    __gtype_name__ = "GradienceAppTypeDialog"
+@Gtk.Template(resource_path=f"{rootdir}/ui/save_dialog.ui")
+class GradienceSaveDialog(Adw.MessageDialog):
+    __gtype_name__ = "GradienceSaveDialog"
 
-    gtk4_app_type = Gtk.Template.Child("gtk4-app-type")
-    gtk3_app_type = Gtk.Template.Child("gtk3-app-type")
-    gnome_app_type = Gtk.Template.Child("gnome-app-type")
+    preset_entry = Gtk.Template.Child("preset-entry")
 
-    def __init__(
-        self,
-        parent,
-        heading,
-        body,
-        ok_res_name,
-        ok_res_label,
-        ok_res_appearance,
-        **kwargs
-    ):
+    def __init__(self, parent, heading=None, body=None, path=None, **kwargs):
         super().__init__(**kwargs)
 
         self.parent = parent
         self.app = self.parent.get_application()
 
+        self.body = _(
+            "Saving preset to <tt>{0}</tt>. If that preset already "
+            "exists, it will be overwritten!"
+        )
+
         self.set_transient_for(self.app.get_active_window())
 
-        self.set_heading(heading)
-        self.set_body(body)
+        if heading:
+            self.heading = heading
+            self.set_heading(self.heading)
+
+        if not body and path:
+            self.set_body(self.body.format(path))
+        elif body:
+            self.body = body
+            self.set_body(self.body)
+        elif not body and not path:
+            raise AttributeError("DEV FAULT: You need to either specify 'body' or 'path' parameter")
 
         self.add_response("cancel", _("_Cancel"))
-        self.add_response(ok_res_name, ok_res_label)
-        self.set_response_appearance(ok_res_name, ok_res_appearance)
+        self.add_response("save", _("_Save"))
         self.set_default_response("cancel")
         self.set_close_response("cancel")
 
-    def get_app_types(self):
-        return {
-            "gtk4": self.gtk4_app_type.get_active(),
-            "gtk3": self.gtk3_app_type.get_active(),
-            "shell": self.gnome_app_type.get_active()
-        }
+        self.set_response_appearance(
+            "save", Adw.ResponseAppearance.SUGGESTED
+        )

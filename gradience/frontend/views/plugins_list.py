@@ -1,7 +1,7 @@
 # plugins_list.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,23 +22,11 @@ from gi.repository import Adw, GLib
 from yapsy.PluginManager import PluginManager
 
 from gradience.frontend.widgets.plugin_row import GradiencePluginRow
-from gradience.backend.constants import pkgdatadir
+from gradience.backend.globals import user_plugin_dir, system_plugin_dir
 
 from gradience.backend.logger import Logger
 
 logging = Logger()
-
-
-USER_PLUGIN_DIR = os.path.join(
-    os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
-    "gradience",
-    "plugins",
-)
-
-SYSTEM_PLUGIN_DIR = os.path.join(
-    pkgdatadir,
-    "plugins",
-)
 
 
 class GradiencePluginsList:
@@ -60,7 +48,7 @@ class GradiencePluginsList:
 
     def reload(self):
         self.pm = PluginManager()
-        self.pm.setPluginPlaces([USER_PLUGIN_DIR, SYSTEM_PLUGIN_DIR])
+        self.pm.setPluginPlaces([user_plugin_dir, system_plugin_dir])
         self.pm.collectPlugins()
         for pluginInfo in self.pm.getAllPlugins():
             pluginInfo.plugin_object.activate()
@@ -86,8 +74,8 @@ class GradiencePluginsList:
     @staticmethod
     def check_if_plugin_dir_exists():
         """Check if the plugin directory exists, if not, create it"""
-        if not os.path.exists(USER_PLUGIN_DIR):
-            os.makedirs(USER_PLUGIN_DIR)
+        if not os.path.exists(user_plugin_dir):
+            os.makedirs(user_plugin_dir)
             return False
         return True
 

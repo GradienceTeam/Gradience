@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-28 00:38+0000\n"
+"POT-Creation-Date: 2023-01-04 12:14+0000\n"
 "PO-Revision-Date: 2022-12-02 18:01+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:754
+#: data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -35,7 +35,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Aldatu Adwaitaren itxura, erraz."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:756
+#: gradience/frontend/views/about_window.py:88
 msgid "Gradience Team"
 msgstr "Gradience taldea"
 
@@ -294,36 +294,36 @@ msgstr "Kendu diseinua"
 msgid "Presets"
 msgstr "Diseinuak"
 
-#: data/ui/presets_manager_window.blp:29
+#: data/ui/presets_manager_window.blp:30
 msgid "Import"
 msgstr "Inportatu"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:31
 msgid "Import a Preset File"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:36
+#: data/ui/presets_manager_window.blp:37
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:213
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Artxiboen kudeatzailean ireki"
 
-#: data/ui/presets_manager_window.blp:65
+#: data/ui/presets_manager_window.blp:66
 msgid "Installed"
 msgstr "Instalatuak"
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 msgid "Explore"
 msgstr "Esploratu"
 
-#: data/ui/presets_manager_window.blp:79
+#: data/ui/presets_manager_window.blp:80
 msgid "Search for presets"
 msgstr "Bilatu diseinuak"
 
-#: data/ui/presets_manager_window.blp:80
+#: data/ui/presets_manager_window.blp:81
 #, fuzzy
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
@@ -332,38 +332,38 @@ msgstr ""
 "Sartu gako-hitz bat <a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> bilatzeko."
 
-#: data/ui/presets_manager_window.blp:93
+#: data/ui/presets_manager_window.blp:94
 msgid "e.g. \"Pretty Purple\""
 msgstr "adib. \"Urdin polita\""
 
-#: data/ui/presets_manager_window.blp:98
+#: data/ui/presets_manager_window.blp:99
 msgid "All"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:126
+#: data/ui/presets_manager_window.blp:127
 msgid "No Results Found"
 msgstr "Ez da emaitzarik aurkitu"
 
-#: data/ui/presets_manager_window.blp:134
+#: data/ui/presets_manager_window.blp:135
 msgid "Offline"
 msgstr "Deskonektatuta"
 
-#: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:382
+#: data/ui/presets_manager_window.blp:147
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:384
 #, fuzzy
 msgid "Repositories"
 msgstr "Diseinua kenduta"
 
-#: data/ui/presets_manager_window.blp:165
+#: data/ui/presets_manager_window.blp:166
 msgid "Import a Preset File (*.json)"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:170
+#: data/ui/presets_manager_window.blp:171
 msgid "All files"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:175
+#: data/ui/presets_manager_window.blp:176
 msgid "JSON file (*.json)"
 msgstr ""
 
@@ -589,7 +589,7 @@ msgid "GTK 4 Widget Factory"
 msgstr "GTK 4 Widget Factory"
 
 #: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:109
+#: gradience/frontend/views/presets_manager_window.py:111
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "Diseinu integratuak"
@@ -599,27 +599,30 @@ msgstr "Diseinu integratuak"
 msgid "Manage Presets"
 msgstr "Kendu diseinua"
 
-#: gradience/backend/flatpak_overrides.py:71
-#: gradience/backend/flatpak_overrides.py:93
-#, fuzzy
-msgid "Failed to save override"
-msgstr "Ezin izan da diseinua kargatu"
-
-#: gradience/backend/flatpak_overrides.py:186
-#: gradience/backend/flatpak_overrides.py:228
-#: gradience/backend/flatpak_overrides.py:306
-#: gradience/backend/flatpak_overrides.py:366
-#: gradience/backend/flatpak_overrides.py:448
-#: gradience/backend/flatpak_overrides.py:509
-msgid "Unexpected file error occurred"
-msgstr ""
-
-#: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:501
+#: gradience/frontend/dialogs/app_type_dialog.py:51
+#: gradience/frontend/dialogs/save_dialog.py:55
 #, fuzzy
 #| msgid "Cancel"
 msgid "_Cancel"
 msgstr "Ezeztatu"
+
+#: gradience/frontend/dialogs/log_out_dialog.py:36
+msgid "OK"
+msgstr ""
+
+#: gradience/frontend/dialogs/save_dialog.py:37
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+"Gorde diseinua <tt>{0}</tt> formatuan. Diseinu hori badago, gainidatziko da!"
+
+#: gradience/frontend/dialogs/save_dialog.py:56
+#, fuzzy
+#| msgid "Save"
+msgid "_Save"
+msgstr "Gorde"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -643,16 +646,16 @@ msgstr "Aukera hau ez da bateragarria adw-gtk3 gaiarekin."
 msgid "Not a color, see text value"
 msgstr "Ez da kolore bat, ikusi testuaren balioa"
 
-#: gradience/frontend/widgets/plugin_row.py:88
+#: gradience/frontend/widgets/plugin_row.py:85
 #, fuzzy
 msgid "Unable to remove"
 msgstr "Ezin izan da diseinua ezabatu"
 
-#: gradience/frontend/widgets/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed."
 msgstr ""
 
-#: gradience/frontend/widgets/plugin_row.py:91
+#: gradience/frontend/widgets/plugin_row.py:88
 msgid "Close"
 msgstr ""
 
@@ -682,79 +685,38 @@ msgstr ""
 msgid "Unable to delete preset"
 msgstr "Ezin izan da diseinua ezabatu"
 
-#: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:343
-msgid "User Presets"
-msgstr "Erabiltzailearen diseinuak"
-
-#: gradience/frontend/views/presets_manager_window.py:188
-msgid "Add new repository"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:189
-msgid "Add a repository to install additional presets."
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:574
-msgid "Cancel"
-msgstr "Ezeztatu"
-
-#: gradience/frontend/views/presets_manager_window.py:196
-msgid "Add"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:286
-msgid "Preset already exists"
-msgstr "Diseinua badago jada"
-
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset imported"
-msgstr "Diseinu inportatua"
-
-#: gradience/frontend/views/presets_manager_window.py:301
-msgid "Unsupported file format, must be .json"
-msgstr "Onartu gabeko fitxategi-formatua, .json izan behar du"
-
-#: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:173
-#, fuzzy
-#| msgid "Failed to load preset"
-msgid "Failed to load list of presets"
-msgstr "Ezin izan da diseinua kargatu"
-
-#: gradience/frontend/views/presets_manager_window.py:336
-#, fuzzy
-msgid "Built-in Presets"
-msgstr "Diseinu integratuak"
-
-#: gradience/frontend/views/presets_manager_window.py:346
-#, fuzzy
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Kontsultatu <a href=\"https://github.com/GradienceTeam/Community\">Gradience/"
-"Komunitate Taldea</a> Github-en diseinu gehiago ikusteko"
-
-#: gradience/frontend/views/presets_manager_window.py:372
-#, fuzzy
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Ez da diseinurik aurkitu! Erabili inportazio-botoia bat inportatzeko edo "
-"bilatu bat «Esploratu» fitxan"
-
 #: gradience/frontend/widgets/repo_row.py:60
 #, fuzzy
 msgid "Repository removed"
 msgstr "Diseinua kenduta"
 
-#: gradience/frontend/views/welcome_window.py:97
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:119
 #, fuzzy
-msgid "Thanks for updating Gradience!"
-msgstr "Gradience erabiltzen hasi"
+#| msgid "Plugins"
+msgid "Plugins by"
+msgstr "Pluginak"
+
+#: gradience/frontend/views/about_window.py:127
+#, fuzzy
+#| msgid "Presets"
+msgid "Presets by"
+msgstr "Diseinuak"
+
+#: gradience/frontend/views/about_window.py:149
+msgid "Packages by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:156
+msgid "Fixes by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:166
+msgid "Special thanks to"
+msgstr ""
 
 #: gradience/frontend/views/main_window.py:131
 msgid "Monet Engine"
@@ -829,224 +791,11 @@ msgstr ""
 "lehenetsiek <a href=\"https://developer.gnome.org/hig/reference/palette.html"
 "\">GNOMEren Giza Interfazearen Gidalerroak</a> jarraitzen dituzte."
 
-#: gradience/frontend/main.py:202
-#, fuzzy
-#| msgid "No Results Found"
-msgid "No presets found"
-msgstr "Ez da emaitzarik aurkitu"
-
-#: gradience/frontend/main.py:220
-#, fuzzy
-msgid "Favorite Presets"
-msgstr "Gorde diseinua"
-
-#: gradience/frontend/main.py:374
-#, fuzzy
-msgid "Unsaved Changes"
-msgstr "Gorde gabeko aldaketak"
-
-#: gradience/frontend/main.py:385
-#, fuzzy
-msgid "Save Changes"
-msgstr "Gorde aldaketak"
-
-#: gradience/frontend/main.py:443
-#, fuzzy
-msgid "Apply This Color Scheme?"
-msgstr "Koloreen eskema hau aplikatu?"
-
-#: gradience/frontend/main.py:445
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"Oharra: aplikazio mota horietarako CSS fitxategi pertsonalizatuak modu "
-"itzulezinean gainidatziko dira!"
-
-#: gradience/frontend/main.py:449
-#, fuzzy
-#| msgid "Apply"
-msgid "_Apply"
-msgstr "Aplikatu"
-
-#: gradience/frontend/main.py:459
-#, fuzzy
-msgid "Restore applied color scheme?"
-msgstr "Aplikatutako kolore-eskema berrezarri?"
-
-#: gradience/frontend/main.py:460 gradience/frontend/main.py:473
-msgid "Make sure you have the current settings saved as a preset."
-msgstr "Ziurtatu orain daukazun konfigurazioa diseinu bezala gordeta duzula."
-
-#: gradience/frontend/main.py:462
-msgid "_Restore"
-msgstr ""
-
-#: gradience/frontend/main.py:472
-msgid "Reset applied color scheme?"
-msgstr "Aplikatutako kolore-eskema berrezarri?"
-
-#: gradience/frontend/main.py:475
-#, fuzzy
-#| msgid "Reset"
-msgid "_Reset"
-msgstr "Berrezarri"
-
-#: gradience/frontend/main.py:485
-msgid "Save preset as…"
-msgstr "Gorde diseinua honela…"
-
-#: gradience/frontend/main.py:487 gradience/frontend/main.py:515
-#: gradience/frontend/main.py:532 gradience/frontend/main.py:560
-#: gradience/frontend/main.py:591 gradience/frontend/main.py:608
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten!"
-msgstr ""
-"Gorde diseinua <tt>{0}</tt> formatuan. Diseinu hori badago, gainidatziko da!"
-
-#: gradience/frontend/main.py:502
-#, fuzzy
-#| msgid "Save"
-msgid "_Save"
-msgstr "Gorde"
-
-#: gradience/frontend/main.py:558
-#, fuzzy
-msgid "You have unsaved changes!"
-msgstr "Gorde gabeko aldaketak"
-
-#: gradience/frontend/main.py:575
-msgid "Discard"
-msgstr ""
-
-#: gradience/frontend/main.py:576
-msgid "Save"
-msgstr "Gorde"
-
-#: gradience/frontend/main.py:636
-msgid "Preset saved"
-msgstr "Diseinua gorde da"
-
-#: gradience/frontend/main.py:653
-#, fuzzy
-#| msgid "Preset set sucessfully"
-msgid "Preset set successfully"
-msgstr "Diseinua ondo ezarri da"
-
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:689
-#: gradience/frontend/main.py:727
-msgid "Log out"
-msgstr ""
-
-#: gradience/frontend/main.py:661 gradience/frontend/main.py:691
-#: gradience/frontend/main.py:729
-msgid "For the changes to take full effect, you need to log out."
-msgstr ""
-
-#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
-#: gradience/frontend/main.py:734
-msgid "OK"
-msgstr ""
-
-#: gradience/frontend/main.py:684
-#, fuzzy
-msgid "Unable to restore GTK 4 backup"
-msgstr "Ezin izan da diseinua ezabatu"
-
-#: gradience/frontend/main.py:714 gradience/frontend/main.py:722
-#, fuzzy
-#| msgid "Unable to delete preset"
-msgid "Unable to delete current preset"
-msgstr "Ezin izan da diseinua ezabatu"
-
-#: gradience/frontend/main.py:809
-msgid ""
-"\n"
-"<ul>\n"
-"<li>Theme Preview button enabled back</li>\n"
-"<li>The Firefox GNOME theme plugin settings button moved to the right of the "
-"switch</li>\n"
-"<li>Details tab in About dialog has been improved</li>\n"
-"<li>The \"Log out\" dialog logic have been changed, now it only asks for "
-"logout, but does not provide a button to logout</li>\n"
-"<li>Updated translations</li>\n"
-"</ul>\n"
-msgstr ""
-
-#: gradience/frontend/main.py:820
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Gradience is a tool for customizing Libadwaita applications and the adw-"
-#| "gtk3 theme.\n"
-#| "With Gradience you can:\n"
-#| "\n"
-#| "- Change any color of Adwaita theme\n"
-#| "- Apply Material 3 colors from wallpaper\n"
-#| "- Use other users presets\n"
-#| "- Change advanced options with CSS\n"
-#| "- Extend functionality using plugins\n"
-#| "\n"
-#| "This app is written in Python and uses GTK 4 and Libadwaita.\n"
-#| "            "
-msgid ""
-"\n"
-"Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
-"theme.\n"
-"The main features of Gradience include the following:\n"
-"\n"
-"🎨️ Changing any color of Adwaita theme\n"
-"🖼️ Applying Material 3 color scheme from wallpaper\n"
-"🎁️ Usage of other users presets\n"
-"⚙️ Changing advanced options with CSS\n"
-"🧩️ Extending functionality using plugins\n"
-msgstr ""
-"\n"
-"Gradience Libadwaita aplikazioak eta adw-gtk3 gaia pertsonalizatzeko tresna "
-"bat da.\n"
-"Gradience erabiliz:\n"
-"\n"
-"- Adwaita gaiaren edozein kolore aldatu\n"
-"- Hondoko 3. materialaren koloreak aplikatu\n"
-"- Beste erabiltzaile batzuen diseinuak erabili\n"
-"- CSSrekin aukera aurreratuak aldatu\n"
-"- Funtzionaltasuna zabaldu pluginak erabiliz\n"
-"\n"
-"Aplikazio hau Python-en idatzita dago eta GTK 4 eta Libadwaita erabiltzen "
-"ditu.\n"
-"            "
-
-#: gradience/frontend/main.py:833
-#, fuzzy
-#| msgid "Plugins"
-msgid "Plugins by"
-msgstr "Pluginak"
-
-#: gradience/frontend/main.py:841
-#, fuzzy
-#| msgid "Presets"
-msgid "Presets by"
-msgstr "Diseinuak"
-
-#: gradience/frontend/main.py:863
-msgid "Packages by"
-msgstr ""
-
-#: gradience/frontend/main.py:870
-msgid "Fixes by"
-msgstr ""
-
-#: gradience/frontend/main.py:880
-msgid "Special thanks to"
-msgstr ""
-
-#: gradience/frontend/views/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:89
 msgid "Plugins"
 msgstr "Pluginak"
 
-#: gradience/frontend/views/plugins_list.py:104
+#: gradience/frontend/views/plugins_list.py:92
 #, fuzzy
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
@@ -1055,10 +804,78 @@ msgstr ""
 "Pluginek ezaugarri gehigarriak gehitzen dizkiote Gradienceri, pluginak "
 "Gradience komunitateak egiten ditu eta arazoak eragin ditzakete."
 
-#: gradience/frontend/views/plugins_list.py:116
+#: gradience/frontend/views/plugins_list.py:104
 #, fuzzy
 msgid "No Plugins Found."
 msgstr "Ez da pluginik aurkitu"
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "User Presets"
+msgstr "Erabiltzailearen diseinuak"
+
+#: gradience/frontend/views/presets_manager_window.py:190
+msgid "Add new repository"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add a repository to install additional presets."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "Ezeztatu"
+
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Add"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:288
+msgid "Preset already exists"
+msgstr "Diseinua badago jada"
+
+#: gradience/frontend/views/presets_manager_window.py:300
+msgid "Preset imported"
+msgstr "Diseinu inportatua"
+
+#: gradience/frontend/views/presets_manager_window.py:303
+msgid "Unsupported file format, must be .json"
+msgstr "Onartu gabeko fitxategi-formatua, .json izan behar du"
+
+#: gradience/frontend/views/presets_manager_window.py:329
+#: gradience/frontend/main.py:193
+#, fuzzy
+#| msgid "Failed to load preset"
+msgid "Failed to load list of presets"
+msgstr "Ezin izan da diseinua kargatu"
+
+#: gradience/frontend/views/presets_manager_window.py:338
+#, fuzzy
+msgid "Built-in Presets"
+msgstr "Diseinu integratuak"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+#, fuzzy
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Kontsultatu <a href=\"https://github.com/GradienceTeam/Community\">Gradience/"
+"Komunitate Taldea</a> Github-en diseinu gehiago ikusteko"
+
+#: gradience/frontend/views/presets_manager_window.py:374
+#, fuzzy
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Ez da diseinurik aurkitu! Erabili inportazio-botoia bat inportatzeko edo "
+"bilatu bat «Esploratu» fitxan"
+
+#: gradience/frontend/views/welcome_window.py:97
+#, fuzzy
+msgid "Thanks for updating Gradience!"
+msgstr "Gradience erabiltzen hasi"
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1349,6 +1166,151 @@ msgstr "Morea"
 #: gradience/frontend/settings_schema.py:371
 msgid "Brown"
 msgstr "Marroia"
+
+#: gradience/frontend/main.py:226
+#, fuzzy
+#| msgid "No Results Found"
+msgid "No presets found"
+msgstr "Ez da emaitzarik aurkitu"
+
+#: gradience/frontend/main.py:249
+#, fuzzy
+msgid "Favorite Presets"
+msgstr "Gorde diseinua"
+
+#: gradience/frontend/main.py:405
+#, fuzzy
+msgid "Unsaved Changes"
+msgstr "Gorde gabeko aldaketak"
+
+#: gradience/frontend/main.py:417
+#, fuzzy
+msgid "Save Changes"
+msgstr "Gorde aldaketak"
+
+#: gradience/frontend/main.py:478
+#, fuzzy
+msgid "Apply This Color Scheme?"
+msgstr "Koloreen eskema hau aplikatu?"
+
+#: gradience/frontend/main.py:480
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Oharra: aplikazio mota horietarako CSS fitxategi pertsonalizatuak modu "
+"itzulezinean gainidatziko dira!"
+
+#: gradience/frontend/main.py:484
+#, fuzzy
+#| msgid "Apply"
+msgid "_Apply"
+msgstr "Aplikatu"
+
+#: gradience/frontend/main.py:494
+#, fuzzy
+msgid "Restore applied color scheme?"
+msgstr "Aplikatutako kolore-eskema berrezarri?"
+
+#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "Ziurtatu orain daukazun konfigurazioa diseinu bezala gordeta duzula."
+
+#: gradience/frontend/main.py:497
+msgid "_Restore"
+msgstr ""
+
+#: gradience/frontend/main.py:507
+msgid "Reset applied color scheme?"
+msgstr "Aplikatutako kolore-eskema berrezarri?"
+
+#: gradience/frontend/main.py:510
+#, fuzzy
+#| msgid "Reset"
+msgid "_Reset"
+msgstr "Berrezarri"
+
+#: gradience/frontend/main.py:558
+#, fuzzy
+msgid "You have unsaved changes!"
+msgstr "Gorde gabeko aldaketak"
+
+#: gradience/frontend/main.py:566
+msgid "Discard"
+msgstr ""
+
+#: gradience/frontend/main.py:606
+msgid "Preset saved"
+msgstr "Diseinua gorde da"
+
+#: gradience/frontend/main.py:623
+#, fuzzy
+#| msgid "Preset set sucessfully"
+msgid "Preset set successfully"
+msgstr "Diseinua ondo ezarri da"
+
+#: gradience/frontend/main.py:641
+#, fuzzy
+msgid "Unable to restore GTK 4 backup"
+msgstr "Ezin izan da diseinua ezabatu"
+
+#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#, fuzzy
+#| msgid "Unable to delete preset"
+msgid "Unable to delete current preset"
+msgstr "Ezin izan da diseinua ezabatu"
+
+#, fuzzy
+#~ msgid "Failed to save override"
+#~ msgstr "Ezin izan da diseinua kargatu"
+
+#~ msgid "Save preset as…"
+#~ msgstr "Gorde diseinua honela…"
+
+#~ msgid "Save"
+#~ msgstr "Gorde"
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "Gradience is a tool for customizing Libadwaita applications and the adw-"
+#~| "gtk3 theme.\n"
+#~| "With Gradience you can:\n"
+#~| "\n"
+#~| "- Change any color of Adwaita theme\n"
+#~| "- Apply Material 3 colors from wallpaper\n"
+#~| "- Use other users presets\n"
+#~| "- Change advanced options with CSS\n"
+#~| "- Extend functionality using plugins\n"
+#~| "\n"
+#~| "This app is written in Python and uses GTK 4 and Libadwaita.\n"
+#~| "            "
+#~ msgid ""
+#~ "\n"
+#~ "Gradience is a tool for customizing Libadwaita applications and the adw-"
+#~ "gtk3 theme.\n"
+#~ "The main features of Gradience include the following:\n"
+#~ "\n"
+#~ "🎨️ Changing any color of Adwaita theme\n"
+#~ "🖼️ Applying Material 3 color scheme from wallpaper\n"
+#~ "🎁️ Usage of other users presets\n"
+#~ "⚙️ Changing advanced options with CSS\n"
+#~ "🧩️ Extending functionality using plugins\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Gradience Libadwaita aplikazioak eta adw-gtk3 gaia pertsonalizatzeko "
+#~ "tresna bat da.\n"
+#~ "Gradience erabiliz:\n"
+#~ "\n"
+#~ "- Adwaita gaiaren edozein kolore aldatu\n"
+#~ "- Hondoko 3. materialaren koloreak aplikatu\n"
+#~ "- Beste erabiltzaile batzuen diseinuak erabili\n"
+#~ "- CSSrekin aukera aurreratuak aldatu\n"
+#~ "- Funtzionaltasuna zabaldu pluginak erabiliz\n"
+#~ "\n"
+#~ "Aplikazio hau Python-en idatzita dago eta GTK 4 eta Libadwaita erabiltzen "
+#~ "ditu.\n"
+#~ "            "
 
 #~ msgid "Unsupported background type"
 #~ msgstr "Onartu gabeko fondo mota"

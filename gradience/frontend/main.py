@@ -1,7 +1,7 @@
 # main.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,22 +24,26 @@ from pathlib import Path
 from material_color_utilities_python import hexFromArgb
 from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
-from gradience.backend.globals import presets_dir
+from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.preset_utils import PresetUtils
 from gradience.backend.utils.common import to_slug_case
-from gradience.backend.constants import *
+from gradience.backend.constants import rootdir, app_id, rel_ver
 
 from gradience.frontend.views.main_window import GradienceMainWindow
 from gradience.frontend.views.plugins_list import GradiencePluginsList
+from gradience.frontend.views.about_window import GradienceAboutWindow
 from gradience.frontend.views.welcome_window import GradienceWelcomeWindow
 from gradience.frontend.views.presets_manager_window import GradiencePresetWindow
 from gradience.frontend.views.preferences_window import GradiencePreferencesWindow
 
 from gradience.frontend.dialogs.app_type_dialog import GradienceAppTypeDialog
+from gradience.frontend.dialogs.log_out_dialog import GradienceLogOutDialog
+from gradience.frontend.dialogs.save_dialog import GradienceSaveDialog
 from gradience.frontend.widgets.custom_css_group import GradienceCustomCSSGroup
 
+from gradience.frontend.utils.actions import ActionHelpers
 from gradience.frontend.schemas.preset_schema import preset_schema
 
 from gradience.backend.logger import Logger
@@ -53,15 +57,18 @@ class GradienceApplication(Adw.Application):
     __gtype_name__ = "GradienceApplication"
 
     settings = Gio.Settings.new(app_id)
+    portal = Xdp.Portal()
 
     def __init__(self):
-        super().__init__(application_id=app_id, flags=Gio.ApplicationFlags.FLAGS_NONE)
+        super().__init__(
+            application_id=app_id,
+            flags=Gio.ApplicationFlags.FLAGS_NONE
+        )
+
         self.set_resource_base_path(rootdir)
 
-        self.portal = Xdp.Portal()
-
+        self.preset: Preset = None
         self.preset_name = ""
-        self.is_dirty = False
 
         self.variables = {}
         self.pref_variables = {}
@@ -76,64 +83,77 @@ class GradienceApplication(Adw.Application):
         self.global_errors = []
         self.current_css_provider = None
 
+        self.is_dirty = False
         self.is_ready = False
 
         self.first_run = self.settings.get_boolean("first-run")
-        self.last_opened_version = self.settings.get_string(
-            "last-opened-version")
 
+        self.last_opened_version = self.settings.get_string(
+            "last-opened-version"
+        )
         self.favourite = set(self.settings.get_value("favourite"))
 
         self.style_manager = Adw.StyleManager.get_default()
 
-        self.preset: Preset = None
-
     def do_activate(self):
-        """Called when the application is activated.
-
-        We raise the application's main window, creating it if
-        necessary.
-        """
+        """Called when the application is activated."""
 
         self.win = self.props.active_window
+
         if not self.win:
             self.win = GradienceMainWindow(
                 application=self,
                 default_height=self.settings.get_int("window-height"),
                 default_width=self.settings.get_int("window-width"),
                 fullscreened=self.settings.get_boolean("window-fullscreen"),
-                maximized=self.settings.get_boolean("window-maximized"),
+                maximized=self.settings.get_boolean("window-maximized")
             )
+
         self.plugins_list = GradiencePluginsList(self.win)
         self.setup_plugins()
 
-        self.create_action("open_preset_directory", self.open_preset_directory)
-        self.create_stateful_action(
+        self.actions = ActionHelpers(self)
+
+        self.actions.create_stateful_action(
             "load_preset",
             GLib.VariantType.new("s"),
             GLib.Variant("s", "adwaita"),
-            self.load_preset_action,
+            self.load_preset_action
         )
-        self.create_action("apply_color_scheme",
-                           self.show_apply_color_scheme_dialog)
 
-        self.create_action("show_adwaita_demo", self.show_adwaita_demo)
+        self.actions.create_action("open_preset_directory",
+                        self.open_preset_directory)
 
-        self.create_action("show_gtk4_widget_factory",
-                           self.show_gtk4_widget_factory)
+        self.actions.create_action("apply_color_scheme",
+                        self.show_apply_color_scheme_dialog)
 
-        self.create_action("show_gtk4_demo", self.show_gtk4_demo)
+        self.actions.create_action("show_adwaita_demo",
+                        self.show_adwaita_demo)
 
-        self.create_action(
-            "restore_color_scheme", self.show_restore_color_scheme_dialog
-        )
-        self.create_action("manage_presets", self.show_presets_manager)
+        self.actions.create_action("show_gtk4_widget_factory",
+                        self.show_gtk4_widget_factory)
 
-        self.create_action("reset_color_scheme",
-                           self.show_reset_color_scheme_dialog)
-        self.create_action("preferences", self.show_preferences)
-        self.create_action("save_preset", self.show_save_preset_dialog)
-        self.create_action("about", self.show_about_window)
+        self.actions.create_action("show_gtk4_demo",
+                        self.show_gtk4_demo)
+
+        self.actions.create_action("restore_color_scheme",
+                        self.show_restore_color_scheme_dialog)
+
+        self.actions.create_action("manage_presets",
+                        self.show_presets_manager)
+
+        self.actions.create_action("reset_color_scheme",
+                        self.show_reset_color_scheme_dialog)
+
+        self.actions.create_action("preferences",
+                        self.show_preferences)
+
+        self.actions.create_action("save_preset",
+                        self.show_save_preset_dialog)
+
+        self.actions.create_action("about",
+                        self.show_about_window)
+
         self.load_preset_from_css()
 
         self.reload_user_defined_presets()
@@ -178,24 +198,28 @@ class GradienceApplication(Adw.Application):
         custom_menu_section = Gio.Menu()
 
         try:
-            if (
+            is_custom_presets = (
                 self.custom_presets["user"]
                 or self.custom_presets["curated"]
                 or self.custom_presets["official"]
-            ):
+            )
+
+            if (is_custom_presets):
                 for repo, content in self.custom_presets.items():
                     for preset, preset_name in content.items():
                         logging.debug(preset_name)
+
                         if preset_name in self.favourite:
                             menu_item = Gio.MenuItem()
                             menu_item.set_label(preset_name)
+
                             if not preset.startswith("error"):
                                 menu_item.set_action_and_target_value(
                                     "app.load_preset",
-                                    GLib.Variant("s", "custom-" + preset),
-                                )
+                                    GLib.Variant("s", "custom-" + preset))
                             else:
                                 menu_item.set_action_and_target_value("")
+
                             custom_menu_section.append_item(menu_item)
             else:
                 menu_item = Gio.MenuItem()
@@ -205,25 +229,28 @@ class GradienceApplication(Adw.Application):
         except KeyError:
             if not os.path.exists(os.path.join(presets_dir, "user")):
                 os.makedirs(os.path.join(presets_dir, "user"))
+
             if not os.path.exists(os.path.join(presets_dir, "curated")):
                 os.makedirs(os.path.join(presets_dir, "curated"))
+
             if not os.path.exists(os.path.join(presets_dir, "official")):
                 os.makedirs(os.path.join(presets_dir, "official"))
+
         open_in_file_manager_item = Gio.MenuItem()
         open_in_file_manager_item.set_label(_("Open in File Manager"))
+
         open_in_file_manager_item.set_action_and_target_value(
             "app.open_preset_directory"
         )
 
         # custom_menu_section.append_item(open_in_file_manager_item)
+
         self.props.active_window.presets_menu.append_section(
             _("Favorite Presets"), custom_menu_section
         )
 
-    def show_presets_manager(self, *args):
-        presets = GradiencePresetWindow(self)
-        presets.set_transient_for(self.win)
-        presets.set_modal(True)
+    def show_presets_manager(self, *_args):
+        presets = GradiencePresetWindow(self.win)
         presets.present()
 
         add_rows_thread = threading.Thread(target=presets.add_explore_rows)
@@ -233,18 +260,18 @@ class GradienceApplication(Adw.Application):
         try:
             variables, palette, custom_css = parse_css(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "gtk-4.0",
-                    "gtk.css",
+                    get_gtk_theme_dir("gtk4"),
+                    "gtk.css"
                 )
             )
+
             preset = {
                 "name": "User",
                 "variables": variables,
                 "palette": palette,
-                "custom_css": {"gtk4": custom_css},
+                "custom_css": {"gtk4": custom_css}
             }
+
             self.preset = Preset().new_from_dict(preset)
             self.load_preset_variables_from_preset()
         except OSError:  # fallback to adwaita
@@ -264,12 +291,7 @@ class GradienceApplication(Adw.Application):
 
         self.portal.open_uri(
             parent,
-            "file://"
-            + os.path.join(
-                os.environ.get("XDG_CONFIG_HOME",
-                               os.environ["HOME"] + "/.config"),
-                "presets",
-            ),
+            f"file://{presets_dir}",
             Xdp.OpenUriFlags.NONE,
             None,
             open_dir_callback,
@@ -277,20 +299,25 @@ class GradienceApplication(Adw.Application):
 
     def load_preset_from_file(self, preset_path):
         logging.debug(f"load preset from file {preset_path}")
+
         self.preset = Preset().new_from_path(preset_path)
         self.load_preset_variables_from_preset()
 
     def load_preset_from_resource(self, preset_path):
         preset_text = Gio.resources_lookup_data(
             preset_path, 0).get_data().decode()
+
         self.preset = Preset().new_from_resource(text=preset_text)
         self.load_preset_variables_from_preset()
 
     def load_preset_variables_from_preset(self, preset=None):
         if preset is not None:
             self.preset = preset
+
         self.is_ready = False
+
         logging.debug(self.preset)
+
         self.preset_name = self.preset.display_name
         self.variables = self.preset.variables
         self.palette = self.preset.palette
@@ -299,11 +326,12 @@ class GradienceApplication(Adw.Application):
         for key in self.variables.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(self.variables[key])
+
         for key in self.palette.keys():
             if key in self.pref_palette_shades:
                 self.pref_palette_shades[key].update_shades(self.palette[key])
-        self.custom_css_group.load_custom_css(self.custom_css)
 
+        self.custom_css_group.load_custom_css(self.custom_css)
         self.clear_dirty()
 
         self.reload_variables()
@@ -314,19 +342,22 @@ class GradienceApplication(Adw.Application):
         self.preset_name = preset["name"]
         self.variables = preset["variables"]
         self.palette = preset["palette"]
+
         if "custom_css" in preset:
             self.custom_css = preset["custom_css"]
         else:
             for app_type in preset_schema["custom_css_app_types"]:
                 self.custom_css[app_type] = ""
+
         for key in self.variables.keys():
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(self.variables[key])
+
         for key in self.palette.keys():
             if key in self.pref_palette_shades:
                 self.pref_palette_shades[key].update_shades(self.palette[key])
-        self.custom_css_group.load_custom_css(self.custom_css)
 
+        self.custom_css_group.load_custom_css(self.custom_css)
         self.clear_dirty()
 
         self.reload_variables()
@@ -351,7 +382,7 @@ class GradienceApplication(Adw.Application):
         try:
             preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
                                 props=[tone, monet_theme], obj_only=True)
-        except (OSError, AttributeError):
+        except (OSError, AttributeError) as e:
             logging.error("An error occurred while generating preset from Monet palette.", exc=e)
             raise
 
@@ -365,17 +396,18 @@ class GradienceApplication(Adw.Application):
 
     def mark_as_dirty(self):
         self.is_dirty = True
+
         self.props.active_window.save_preset_button.get_child().set_icon_name(
             "drive-unsaved-symbolic"
         )
         self.props.active_window.save_preset_button.add_css_class("warning")
-
         self.props.active_window.save_preset_button.get_child().set_tooltip_text(
             _("Unsaved Changes")
         )
 
     def clear_dirty(self):
         self.is_dirty = False
+
         self.props.active_window.save_preset_button.get_child().set_icon_name(
             "drive-symbolic"
         )
@@ -394,29 +426,32 @@ class GradienceApplication(Adw.Application):
             start_location = section.get_start_location().chars
             end_location = section.get_end_location().chars
             line_number = section.get_end_location().lines
+
             parsing_errors.append(
                 {
                     "error": error.message,
                     "element": gtk_css[start_location:end_location].strip(),
                     "line": gtk_css.splitlines()[line_number]
                     if line_number < len(gtk_css.splitlines())
-                    else "<last line>",
+                    else "<last line>"
                 }
             )
 
         css_provider.connect("parsing-error", on_error)
         css_provider.load_from_data(gtk_css.encode())
+
         self.props.active_window.update_errors(
             self.global_errors + parsing_errors)
+
         # loading with the priority above user to override the applied config
         if self.current_css_provider is not None:
             Gtk.StyleContext.remove_provider_for_display(
-                Gdk.Display.get_default(), self.current_css_provider
-            )
+                Gdk.Display.get_default(), self.current_css_provider)
+
         Gtk.StyleContext.add_provider_for_display(
             Gdk.Display.get_default(),
             css_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_USER + 1,
+            Gtk.STYLE_PROVIDER_PRIORITY_USER + 1
         )
         self.current_css_provider = css_provider
 
@@ -426,20 +461,20 @@ class GradienceApplication(Adw.Application):
         if args[0].get_string().startswith("custom-"):
             self.load_preset_from_file(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
+                    presets_dir,
                     args[0].get_string().replace("custom-", "", 1),
                 )
             )
         else:
             self.load_preset_from_resource(
-                f"{rootdir}/presets/" + args[0].get_string()
+                f"{rootdir}/presets/" + args[0].get_string() + ".json"
             )
+
         Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
     def show_apply_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
+            self.win,
             _("Apply This Color Scheme?"),
             _(
                 "Warning: any custom CSS files for those app types will be "
@@ -447,8 +482,7 @@ class GradienceApplication(Adw.Application):
             ),
             "apply",
             _("_Apply"),
-            Adw.ResponseAppearance.SUGGESTED,
-            transient_for=self.props.active_window,
+            Adw.ResponseAppearance.SUGGESTED
         )
 
         dialog.connect("response", self.apply_color_scheme)
@@ -456,12 +490,12 @@ class GradienceApplication(Adw.Application):
 
     def show_restore_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
+            self.win,
             _("Restore applied color scheme?"),
             _("Make sure you have the current settings saved as a preset."),
             "restore",
             _("_Restore"),
-            Adw.ResponseAppearance.DESTRUCTIVE,
-            transient_for=self.props.active_window,
+            Adw.ResponseAppearance.DESTRUCTIVE
         )
         dialog.gtk3_app_type.set_sensitive(False)
         dialog.connect("response", self.restore_color_scheme)
@@ -469,161 +503,97 @@ class GradienceApplication(Adw.Application):
 
     def show_reset_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
+            self.win,
             _("Reset applied color scheme?"),
             _("Make sure you have the current settings saved as a preset."),
             "reset",
             _("_Reset"),
-            Adw.ResponseAppearance.DESTRUCTIVE,
-            transient_for=self.props.active_window,
+            Adw.ResponseAppearance.DESTRUCTIVE
         )
         dialog.connect("response", self.reset_color_scheme)
         dialog.present()
 
     def show_save_preset_dialog(self, *_args):
-        dialog = Adw.MessageDialog(
-            transient_for=self.props.active_window,
-            heading=_("Save preset as…"),
-            body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already "
-                "exists, it will be overwritten!"
-            ).format(
-                os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    "user",
-                    to_slug_case(self.preset_name) + ".json",
-                )
-            ),
-            body_use_markup=True,
+        dialog = GradienceSaveDialog(self.win, path=os.path.join(
+                presets_dir,
+                "user",
+                to_slug_case(self.preset_name) + ".json"
+            )
         )
 
-        dialog.add_response("cancel", _("_Cancel"))
-        dialog.add_response("save", _("_Save"))
-        dialog.set_response_appearance(
-            "save", Adw.ResponseAppearance.SUGGESTED)
-        dialog.set_default_response("save")
-        dialog.set_close_response("cancel")
-
-        preset_entry = Gtk.Entry(placeholder_text="Preset Name")
+        preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
         def on_preset_entry_change(*_args):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
-                    _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "
-                        "already exists, it will be overwritten!"
-                    ).format(
+                    dialog.body.format(
                         os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "presets",
-                            "user",
+                            presets_dir,
+                            "user"
                         )
                     )
                 )
                 dialog.set_response_enabled("save", False)
             else:
                 dialog.set_body(
-                    _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "
-                        "already exists, it will be overwritten!"
-                    ).format(
+                    dialog.body.format(
                         os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "presets",
+                            presets_dir,
                             "user",
-                            to_slug_case(preset_entry.get_text()) + ".json",
+                            to_slug_case(preset_entry.get_text()) + ".json"
                         )
                     )
                 )
                 dialog.set_response_enabled("save", True)
 
         preset_entry.connect("changed", on_preset_entry_change)
-        dialog.set_extra_child(preset_entry)
-
         dialog.connect("response", self.save_preset, preset_entry)
 
         dialog.present()
 
     def show_exit_dialog(self, *_args):
-        dialog = Adw.MessageDialog(
-            transient_for=self.props.active_window,
+        dialog = GradienceSaveDialog(
+            self.win,
             heading=_("You have unsaved changes!"),
-            body=_(
-                "Saving preset to <tt>{0}</tt>. If that preset already "
-                "exists, it will be overwritten!"
-            ).format(
-                os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
-                    "presets",
-                    "user",
-                    to_slug_case(self.preset_name) + ".json",
-                )
-            ),
-            body_use_markup=True,
+            path=os.path.join(
+                presets_dir,
+                "user",
+                to_slug_case(self.preset_name) + ".json"
+            )
         )
 
-        dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("discard", _("Discard"))
-        dialog.add_response("save", _("Save"))
-        dialog.set_response_appearance(
-            "save", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_response_appearance(
             "discard", Adw.ResponseAppearance.DESTRUCTIVE)
-        dialog.set_default_response("cancel")
-        dialog.set_close_response("cancel")
 
-        preset_entry = Gtk.Entry(placeholder_text="Preset Name")
+        preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
         def on_preset_entry_change(*_args):
             if len(preset_entry.get_text()) == 0:
                 dialog.set_body(
-                    _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "
-                        "already exists, it will be overwritten!"
-                    ).format(
+                    dialog.body.format(
                         os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "presets",
-                            "user",
+                            presets_dir,
+                            "user"
                         )
                     )
                 )
                 dialog.set_response_enabled("save", False)
             else:
                 dialog.set_body(
-                    _(
-                        "Saving preset to <tt>{0}</tt>. If that preset "
-                        "already exists, it will be overwritten!"
-                    ).format(
+                    dialog.body.format(
                         os.path.join(
-                            os.environ.get(
-                                "XDG_CONFIG_HOME", os.environ["HOME"] +
-                                "/.config"
-                            ),
-                            "presets",
+                            presets_dir,
                             "user",
-                            to_slug_case(preset_entry.get_text()) + ".json",
+                            to_slug_case(preset_entry.get_text()) + ".json"
                         )
                     )
                 )
                 dialog.set_response_enabled("save", True)
 
         preset_entry.connect("changed", on_preset_entry_change)
-        dialog.set_extra_child(preset_entry)
-
         dialog.connect("response", self.save_preset, preset_entry)
 
         dialog.present()
@@ -656,24 +626,11 @@ class GradienceApplication(Adw.Application):
                 Adw.Toast(title=_("Preset set successfully"))
             )
 
-            # TODO: Make it as a seperate widget
-            dialog = Adw.MessageDialog(
-                transient_for=self.props.active_window,
-                heading=_("Log out"),
-                body=_(
-                    "For the changes to take full effect, you need to log out."
-                ),
-                body_use_markup=True,
-            )
-
-            dialog.add_response("ok", _("OK"))
-            dialog.set_default_response("ok")
-            dialog.set_close_response("ok")
-
+            dialog = GradienceLogOutDialog(self.win)
             dialog.connect('response', self.on_theme_set_dialog_response)
             dialog.present()
 
-    def on_theme_set_dialog_response (self, dialog, response):
+    def on_theme_set_dialog_response(self, _dialog, response):
         if response == "ok":
             logging.debug("theme_set_dialog_ok")
 
@@ -687,19 +644,7 @@ class GradienceApplication(Adw.Application):
                         Adw.Toast(title=_("Unable to restore GTK 4 backup"))
                     )
 
-            dialog = Adw.MessageDialog(
-                transient_for=self.props.active_window,
-                heading=_("Log out"),
-                body=_(
-                    "For the changes to take full effect, you need to log out."
-                ),
-                body_use_markup=True,
-            )
-
-            dialog.add_response("ok", _("OK"))
-            dialog.set_default_response("ok")
-            dialog.set_close_response("ok")
-
+            dialog = GradienceLogOutDialog(self.win)
             dialog.connect('response', self.on_theme_restore_dialog_response)
             dialog.present()
 
@@ -725,19 +670,7 @@ class GradienceApplication(Adw.Application):
                         Adw.Toast(title=_("Unable to delete current preset"))
                     )
 
-            dialog = Adw.MessageDialog(
-                transient_for=self.props.active_window,
-                heading=_("Log out"),
-                body=_(
-                    "For the changes to take full effect, you need to log out."
-                ),
-                body_use_markup=True,
-            )
-
-            dialog.add_response("ok", _("OK"))
-            dialog.set_default_response("ok")
-            dialog.set_close_response("ok")
-
+            dialog = GradienceLogOutDialog(self.win)
             dialog.connect('response', self.on_theme_reset_dialog_response)
             dialog.present()
 
@@ -747,188 +680,29 @@ class GradienceApplication(Adw.Application):
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)
-        prefs.set_transient_for(self.win)
         prefs.present()
 
-    # TODO: Move it to seperate frontend module
     def show_about_window(self, *_args):
-        about = Adw.AboutWindow(
-            transient_for=self.props.active_window,
-            application_name=_("Gradience"),
-            application_icon=app_id,
-            developer_name=_("Gradience Team"),
-            website=project_url,
-            support_url=help_url,
-            issue_url=bugtracker_url,
-            developers=[
-                "0xMRTT https://github.com/0xMRTT",
-                "Artyom Fomin https://github.com/ArtyIF",
-                "Verantor https://github.com/Verantor",
-                "tfuxu https://github.com/tfuxu",
-                "u1F98E https://github.com/u1f98e",
-            ],
-            artists=["David Lapshin https://github.com/daudix-UFO"],
-            designers=["David Lapshin https://github.com/daudix-UFO"],
-            documenters=[
-                "0xMRTT https://github.com/0xMRTT",
-                "David Lapshin https://github.com/daudix-UFO"
-            ],
-            # Translators: This is a place to put your credits (formats:
-            # "Name https://example.com" or "Name <email@example.com>",
-            # no quotes) and is not meant to be translated literally.
-            translator_credits="""0xMRTT https://github.com/0xMRTT
-                                    엘련 (Jisu Kim) https://github.com/vbalien
-                Aggelos Tselios https://www.transifex.com/user/profile/AndroGR
-                BritishBenji https://github.com/BritishBenji
-                David Lapshin https://github.com/daudix-UFO
-                Davide Ferracin https://github.com/phaerrax
-                Ewout van Mansom https://github.com/emansom
-                FineFindus https://github.com/FineFindus
-                Gabriel Lemos https://github.com/gbrlgn
-                Juanjo Cillero https://www.transifex.com/user/profile/renux918
-                JungHee Lee https://github.com/MarongHappy
-                K.B.Dharun Krishna https://github.com/kbdharun
-                Karol Lademan https://www.transifex.com/user/profile/karlod
-                Luna Jernberg https://github.com/bittin
-                Maxime V https://www.transifex.com/user/profile/Adaoh
-                Michal S. <michal@getcryst.al>
-                Monty Monteusz https://www.transifex.com/user/profile/MontyQIQI
-                Philip Goto https://github.com/flipflop97
-                Renato Corrêa https://github.com/renatocrrs
-                Rene Coty https://github.com/rene-coty
-                Sabri Ünal https://github.com/libreajans
-                Taylan Tatlı https://www.transifex.com/user/profile/TaylanTatli34
-                bzizmza https://github.com/bzizmza
-                muzena https://github.com/muzena
-                renatocrrs https://github.com/renatocrrs
-                tfuxu https://github.com/tfuxu
-                yangyangdaji https://github.com/yangyangdaji
-                Óscar Fernández Díaz https://github.com/oscfdezdz""",
-            copyright="© 2022 Gradience Team",
-            license_type=Gtk.License.GPL_3_0,
-            version=version,
-            release_notes_version=rel_ver,
-            release_notes=_(
-"""
-<ul>
-<li>Theme Preview button enabled back</li>
-<li>The Firefox GNOME theme plugin settings button moved to the right of the switch</li>
-<li>Details tab in About dialog has been improved</li>
-<li>The "Log out" dialog logic have been changed, now it only asks for logout, but does not provide a button to logout</li>
-<li>Updated translations</li>
-</ul>
-"""
-            ),
-            comments=_(
-"""
-Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
-The main features of Gradience include the following:
-
-🎨️ Changing any color of Adwaita theme
-🖼️ Applying Material 3 color scheme from wallpaper
-🎁️ Usage of other users presets
-⚙️ Changing advanced options with CSS
-🧩️ Extending functionality using plugins
-"""
-            ),
-        )
-        about.add_credit_section(
-            _("Plugins by"),
-            [
-                "0xMRTT https://github.com/0xMRTT",
-                "Apisu https://github.com/aspizu",
-                "Jonathan Lestrelin https://github.com/jle64",
-            ],
-        )
-        about.add_credit_section(
-            _("Presets by"),
-            [
-                "0xMRTT https://github.com/0xMRTT",
-                "Ben Mitchell https://github.com/crispyricepc",
-                "David Lapshin https://github.com/daudix-UFO",
-                "JoshM-Yoru https://github.com/JoshM-Yoru",
-                "José Hunter https://github.com/halfmexican",
-                "Kainoa Kanter https://github.com/ThatOneCalculator",
-                "Link Dupont https://github.com/subpop",
-                "Luis David López https://github.com/lopeztel",
-                "Mohammad Saleh Kamyab https://github.com/mskf1383",
-                "Sal Watson https://github.com/salarua",
-                "TeryVeneno https://github.com/TeryVeneno",
-                "arslee https://github.com/arslee07",
-                "badlydrawnface https://github.com/badlydrawnface",
-                "cmagnificent https://github.com/cmagnificent",
-                "hericiumvevo https://github.com/hericiumvevo",
-                "tfuxu https://github.com/tfuxu",
-                "zehkira https://github.com/zehkira",
-            ],
-        )
-        about.add_credit_section(
-            _("Packages by"),
-            [
-                "0xMRTT https://github.com/0xMRTT",
-                "Lyes Saadi https://github.com/lyessaadi",
-            ],
-        )
-        about.add_credit_section(
-            _("Fixes by"),
-            [
-                "Erick Howard https://github.com/DivineBicycle",
-                "Hari Rana https://github.com/TheEvilSkeleton",
-                "José Hunter https://github.com/halfmexican",
-                "Sabri Ünal https://github.com/libreajans",
-                "Sal Watson https://github.com/salarua",
-            ],
-        )
-        about.add_acknowledgement_section(
-            _("Special thanks to"),
-            [
-                "Artyom Fomin https://github.com/ArtyIF",
-                "Weblate https://weblate.org",
-            ],
-        )
-
-        about.present()
+        about = GradienceAboutWindow(self.win)
+        about.show_about()
 
     def update_custom_css_text(self, app_type, new_value):
         self.custom_css[app_type] = new_value
         self.reload_variables()
 
-    def create_action(self, name, callback, shortcuts=None):
-        """Add an application action.
-
-        Args:
-            name: the name of the action
-            callback: the function to be called when the action is
-              activated
-            shortcuts: an optional list of accelerators
-        """
-        action = Gio.SimpleAction.new(name, None)
-        action.connect("activate", callback)
-        self.add_action(action)
-        if shortcuts:
-            self.set_accels_for_action(f"app.{name}", shortcuts)
-
-    def create_stateful_action(
-        self, name, parameter_type, initial_state, callback, shortcuts=None
-    ):
-        """Add a stateful application action."""
-        action = Gio.SimpleAction.new_stateful(
-            name, parameter_type, initial_state)
-        action.connect("activate", callback)
-        self.add_action(action)
-        if shortcuts:
-            self.set_accels_for_action(f"app.{name}", shortcuts)
-
     def setup_plugins(self):
         logging.debug("setup plugins")
+
         self.plugins_group = self.plugins_list.to_group()
 
         self.win.content_plugins.add(self.plugins_group)
         self.plugins_group = self.plugins_group
 
         self.custom_css_group = GradienceCustomCSSGroup()
+
         for app_type in preset_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
+
         self.custom_css_group.load_custom_css(self.custom_css)
         self.win.content_plugins.add(self.custom_css_group)
         self.custom_css_group = self.custom_css_group
@@ -941,6 +715,7 @@ The main features of Gradience include the following:
     def reload_plugins(self):
         self.plugins_list.reload()
         logging.debug("reload plugins")
+
         self.win.content_plugins.remove(self.plugins_group)
         self.win.content_plugins.remove(self.custom_css_group)
 
@@ -950,8 +725,10 @@ The main features of Gradience include the following:
         self.plugins_group = self.plugins_group
 
         self.custom_css_group = GradienceCustomCSSGroup()
+
         for app_type in preset_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
+
         self.custom_css_group.load_custom_css(self.custom_css)
         self.win.content_plugins.add(self.custom_css_group)
         self.custom_css_group = self.custom_css_group

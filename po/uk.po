@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-28 00:38+0000\n"
+"POT-Creation-Date: 2023-01-04 12:14+0000\n"
 "PO-Revision-Date: 2022-12-02 18:01+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5 gradience/frontend/main.py:754
+#: data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/main.py:756
+#: gradience/frontend/views/about_window.py:88
 msgid "Gradience Team"
 msgstr ""
 
@@ -262,71 +262,71 @@ msgstr ""
 msgid "Presets"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:29
+#: data/ui/presets_manager_window.blp:30
 msgid "Import"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:31
 msgid "Import a Preset File"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:36
+#: data/ui/presets_manager_window.blp:37
 msgid "Delete"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:213
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
 msgid "Open in File Manager"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:65
+#: data/ui/presets_manager_window.blp:66
 msgid "Installed"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 msgid "Explore"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:79
+#: data/ui/presets_manager_window.blp:80
 msgid "Search for presets"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:80
+#: data/ui/presets_manager_window.blp:81
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>."
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:93
+#: data/ui/presets_manager_window.blp:94
 msgid "e.g. \"Pretty Purple\""
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:98
+#: data/ui/presets_manager_window.blp:99
 msgid "All"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:126
+#: data/ui/presets_manager_window.blp:127
 msgid "No Results Found"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:134
+#: data/ui/presets_manager_window.blp:135
 msgid "Offline"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:382
+#: data/ui/presets_manager_window.blp:147
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:384
 msgid "Repositories"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:165
+#: data/ui/presets_manager_window.blp:166
 msgid "Import a Preset File (*.json)"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:170
+#: data/ui/presets_manager_window.blp:171
 msgid "All files"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:175
+#: data/ui/presets_manager_window.blp:176
 msgid "JSON file (*.json)"
 msgstr ""
 
@@ -531,7 +531,7 @@ msgid "GTK 4 Widget Factory"
 msgstr ""
 
 #: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:109
+#: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr ""
 
@@ -539,23 +539,24 @@ msgstr ""
 msgid "Manage Presets"
 msgstr ""
 
-#: gradience/backend/flatpak_overrides.py:71
-#: gradience/backend/flatpak_overrides.py:93
-msgid "Failed to save override"
-msgstr ""
-
-#: gradience/backend/flatpak_overrides.py:186
-#: gradience/backend/flatpak_overrides.py:228
-#: gradience/backend/flatpak_overrides.py:306
-#: gradience/backend/flatpak_overrides.py:366
-#: gradience/backend/flatpak_overrides.py:448
-#: gradience/backend/flatpak_overrides.py:509
-msgid "Unexpected file error occurred"
-msgstr ""
-
-#: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:501
+#: gradience/frontend/dialogs/app_type_dialog.py:51
+#: gradience/frontend/dialogs/save_dialog.py:55
 msgid "_Cancel"
+msgstr ""
+
+#: gradience/frontend/dialogs/log_out_dialog.py:36
+msgid "OK"
+msgstr ""
+
+#: gradience/frontend/dialogs/save_dialog.py:37
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+
+#: gradience/frontend/dialogs/save_dialog.py:56
+msgid "_Save"
 msgstr ""
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
@@ -580,15 +581,15 @@ msgstr ""
 msgid "Not a color, see text value"
 msgstr ""
 
-#: gradience/frontend/widgets/plugin_row.py:88
+#: gradience/frontend/widgets/plugin_row.py:85
 msgid "Unable to remove"
 msgstr ""
 
-#: gradience/frontend/widgets/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed."
 msgstr ""
 
-#: gradience/frontend/widgets/plugin_row.py:91
+#: gradience/frontend/widgets/plugin_row.py:88
 msgid "Close"
 msgstr ""
 
@@ -618,67 +619,32 @@ msgstr ""
 msgid "Unable to delete preset"
 msgstr ""
 
-#: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:343
-msgid "User Presets"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:188
-msgid "Add new repository"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:189
-msgid "Add a repository to install additional presets."
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:574
-msgid "Cancel"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:196
-msgid "Add"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:286
-msgid "Preset already exists"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset imported"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:301
-msgid "Unsupported file format, must be .json"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:173
-msgid "Failed to load list of presets"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:336
-msgid "Built-in Presets"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:346
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:372
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr ""
 
-#: gradience/frontend/views/welcome_window.py:97
-msgid "Thanks for updating Gradience!"
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:119
+msgid "Plugins by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:127
+msgid "Presets by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:149
+msgid "Packages by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:156
+msgid "Fixes by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:166
+msgid "Special thanks to"
 msgstr ""
 
 #: gradience/frontend/views/main_window.py:131
@@ -748,176 +714,76 @@ msgid ""
 "Interface Guidelines</a>."
 msgstr ""
 
-#: gradience/frontend/main.py:202
-msgid "No presets found"
-msgstr ""
-
-#: gradience/frontend/main.py:220
-msgid "Favorite Presets"
-msgstr ""
-
-#: gradience/frontend/main.py:374
-msgid "Unsaved Changes"
-msgstr ""
-
-#: gradience/frontend/main.py:385
-msgid "Save Changes"
-msgstr ""
-
-#: gradience/frontend/main.py:443
-msgid "Apply This Color Scheme?"
-msgstr ""
-
-#: gradience/frontend/main.py:445
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-
-#: gradience/frontend/main.py:449
-msgid "_Apply"
-msgstr ""
-
-#: gradience/frontend/main.py:459
-msgid "Restore applied color scheme?"
-msgstr ""
-
-#: gradience/frontend/main.py:460 gradience/frontend/main.py:473
-msgid "Make sure you have the current settings saved as a preset."
-msgstr ""
-
-#: gradience/frontend/main.py:462
-msgid "_Restore"
-msgstr ""
-
-#: gradience/frontend/main.py:472
-msgid "Reset applied color scheme?"
-msgstr ""
-
-#: gradience/frontend/main.py:475
-msgid "_Reset"
-msgstr ""
-
-#: gradience/frontend/main.py:485
-msgid "Save preset as…"
-msgstr ""
-
-#: gradience/frontend/main.py:487 gradience/frontend/main.py:515
-#: gradience/frontend/main.py:532 gradience/frontend/main.py:560
-#: gradience/frontend/main.py:591 gradience/frontend/main.py:608
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten!"
-msgstr ""
-
-#: gradience/frontend/main.py:502
-msgid "_Save"
-msgstr ""
-
-#: gradience/frontend/main.py:558
-msgid "You have unsaved changes!"
-msgstr ""
-
-#: gradience/frontend/main.py:575
-msgid "Discard"
-msgstr ""
-
-#: gradience/frontend/main.py:576
-msgid "Save"
-msgstr ""
-
-#: gradience/frontend/main.py:636
-msgid "Preset saved"
-msgstr ""
-
-#: gradience/frontend/main.py:653
-msgid "Preset set successfully"
-msgstr ""
-
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:689
-#: gradience/frontend/main.py:727
-msgid "Log out"
-msgstr ""
-
-#: gradience/frontend/main.py:661 gradience/frontend/main.py:691
-#: gradience/frontend/main.py:729
-msgid "For the changes to take full effect, you need to log out."
-msgstr ""
-
-#: gradience/frontend/main.py:666 gradience/frontend/main.py:696
-#: gradience/frontend/main.py:734
-msgid "OK"
-msgstr ""
-
-#: gradience/frontend/main.py:684
-msgid "Unable to restore GTK 4 backup"
-msgstr ""
-
-#: gradience/frontend/main.py:714 gradience/frontend/main.py:722
-msgid "Unable to delete current preset"
-msgstr ""
-
-#: gradience/frontend/main.py:809
-msgid ""
-"\n"
-"<ul>\n"
-"<li>Theme Preview button enabled back</li>\n"
-"<li>The Firefox GNOME theme plugin settings button moved to the right of the "
-"switch</li>\n"
-"<li>Details tab in About dialog has been improved</li>\n"
-"<li>The \"Log out\" dialog logic have been changed, now it only asks for "
-"logout, but does not provide a button to logout</li>\n"
-"<li>Updated translations</li>\n"
-"</ul>\n"
-msgstr ""
-
-#: gradience/frontend/main.py:820
-msgid ""
-"\n"
-"Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
-"theme.\n"
-"The main features of Gradience include the following:\n"
-"\n"
-"🎨️ Changing any color of Adwaita theme\n"
-"🖼️ Applying Material 3 color scheme from wallpaper\n"
-"🎁️ Usage of other users presets\n"
-"⚙️ Changing advanced options with CSS\n"
-"🧩️ Extending functionality using plugins\n"
-msgstr ""
-
-#: gradience/frontend/main.py:833
-msgid "Plugins by"
-msgstr ""
-
-#: gradience/frontend/main.py:841
-msgid "Presets by"
-msgstr ""
-
-#: gradience/frontend/main.py:863
-msgid "Packages by"
-msgstr ""
-
-#: gradience/frontend/main.py:870
-msgid "Fixes by"
-msgstr ""
-
-#: gradience/frontend/main.py:880
-msgid "Special thanks to"
-msgstr ""
-
-#: gradience/frontend/views/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:89
 msgid "Plugins"
 msgstr ""
 
-#: gradience/frontend/views/plugins_list.py:104
+#: gradience/frontend/views/plugins_list.py:92
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
 msgstr ""
 
-#: gradience/frontend/views/plugins_list.py:116
+#: gradience/frontend/views/plugins_list.py:104
 msgid "No Plugins Found."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "User Presets"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:190
+msgid "Add new repository"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add a repository to install additional presets."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Add"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:288
+msgid "Preset already exists"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:300
+msgid "Preset imported"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:303
+msgid "Unsupported file format, must be .json"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:329
+#: gradience/frontend/main.py:193
+msgid "Failed to load list of presets"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:338
+msgid "Built-in Presets"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:374
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+
+#: gradience/frontend/views/welcome_window.py:97
+msgid "Thanks for updating Gradience!"
 msgstr ""
 
 #: gradience/frontend/settings_schema.py:23
@@ -1164,4 +1030,78 @@ msgstr ""
 
 #: gradience/frontend/settings_schema.py:371
 msgid "Brown"
+msgstr ""
+
+#: gradience/frontend/main.py:226
+msgid "No presets found"
+msgstr ""
+
+#: gradience/frontend/main.py:249
+msgid "Favorite Presets"
+msgstr ""
+
+#: gradience/frontend/main.py:405
+msgid "Unsaved Changes"
+msgstr ""
+
+#: gradience/frontend/main.py:417
+msgid "Save Changes"
+msgstr ""
+
+#: gradience/frontend/main.py:478
+msgid "Apply This Color Scheme?"
+msgstr ""
+
+#: gradience/frontend/main.py:480
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+
+#: gradience/frontend/main.py:484
+msgid "_Apply"
+msgstr ""
+
+#: gradience/frontend/main.py:494
+msgid "Restore applied color scheme?"
+msgstr ""
+
+#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+msgid "Make sure you have the current settings saved as a preset."
+msgstr ""
+
+#: gradience/frontend/main.py:497
+msgid "_Restore"
+msgstr ""
+
+#: gradience/frontend/main.py:507
+msgid "Reset applied color scheme?"
+msgstr ""
+
+#: gradience/frontend/main.py:510
+msgid "_Reset"
+msgstr ""
+
+#: gradience/frontend/main.py:558
+msgid "You have unsaved changes!"
+msgstr ""
+
+#: gradience/frontend/main.py:566
+msgid "Discard"
+msgstr ""
+
+#: gradience/frontend/main.py:606
+msgid "Preset saved"
+msgstr ""
+
+#: gradience/frontend/main.py:623
+msgid "Preset set successfully"
+msgstr ""
+
+#: gradience/frontend/main.py:641
+msgid "Unable to restore GTK 4 backup"
+msgstr ""
+
+#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+msgid "Unable to delete current preset"
 msgstr ""
