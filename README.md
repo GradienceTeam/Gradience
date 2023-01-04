@@ -131,7 +131,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 > **Warning**
 > The main installation method is Flatpak from Flathub
 
-### COPR 
+### Fedora (COPR)
 
 Gradience is available on COPR. You can install it using the following command:
 
@@ -145,7 +145,7 @@ dnf install gradience
 > **Warning**
 > Not available yet.
 
-### AUR 
+### Arch (AUR)
 
 Gradience is available on AUR:
 
