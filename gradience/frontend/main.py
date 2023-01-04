@@ -497,6 +497,7 @@ class GradienceApplication(Adw.Application):
             _("_Restore"),
             Adw.ResponseAppearance.DESTRUCTIVE
         )
+
         dialog.gtk3_app_type.set_sensitive(False)
         dialog.connect("response", self.restore_color_scheme)
         dialog.present()
@@ -510,6 +511,7 @@ class GradienceApplication(Adw.Application):
             _("_Reset"),
             Adw.ResponseAppearance.DESTRUCTIVE
         )
+
         dialog.connect("response", self.reset_color_scheme)
         dialog.present()
 
@@ -552,7 +554,7 @@ class GradienceApplication(Adw.Application):
 
         dialog.present()
 
-    def show_exit_dialog(self, *_args):
+    def show_unsaved_dialog(self, *_args):
         dialog = GradienceSaveDialog(
             self.win,
             heading=_("You have unsaved changes!"),
@@ -560,12 +562,9 @@ class GradienceApplication(Adw.Application):
                 presets_dir,
                 "user",
                 to_slug_case(self.preset_name) + ".json"
-            )
+            ),
+            discard=True
         )
-
-        dialog.add_response("discard", _("Discard"))
-        dialog.set_response_appearance(
-            "discard", Adw.ResponseAppearance.DESTRUCTIVE)
 
         preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
@@ -624,12 +623,7 @@ class GradienceApplication(Adw.Application):
             )
 
             dialog = GradienceLogOutDialog(self.win)
-            dialog.connect('response', self.on_theme_set_dialog_response)
             dialog.present()
-
-    def on_theme_set_dialog_response(self, _dialog, response):
-        if response == "ok":
-            logging.debug("theme_set_dialog_ok")
 
     def restore_color_scheme(self, widget, response):
         if response == "restore":
@@ -642,12 +636,7 @@ class GradienceApplication(Adw.Application):
                     )
 
             dialog = GradienceLogOutDialog(self.win)
-            dialog.connect('response', self.on_theme_restore_dialog_response)
             dialog.present()
-
-    def on_theme_restore_dialog_response (self, dialog, response):
-        if response == "ok":
-            logging.debug("theme_restore_dialog_ok")
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
@@ -668,12 +657,7 @@ class GradienceApplication(Adw.Application):
                     )
 
             dialog = GradienceLogOutDialog(self.win)
-            dialog.connect('response', self.on_theme_reset_dialog_response)
             dialog.present()
-
-    def on_theme_reset_dialog_response (self, dialog, response):
-        if response == "ok":
-            logging.debug("theme_reset_dialog_ok")
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)

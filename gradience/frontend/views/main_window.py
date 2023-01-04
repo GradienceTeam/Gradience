@@ -98,7 +98,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def on_close_request(self, *args):
         if self.get_application().is_dirty:
             logging.debug("Window close request")
-            self.get_application().show_exit_dialog()
+            self.get_application().show_unsaved_dialog()
             return True
         self.close()
 
