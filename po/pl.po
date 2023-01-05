@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 12:14+0000\n"
+"POT-Creation-Date: 2023-01-05 00:40+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -165,7 +165,7 @@ msgid "Toggle Plugin"
 msgstr "Aktywuj wtyczkę"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 msgid "Preferences"
 msgstr "Preferencje"
 
@@ -278,7 +278,7 @@ msgstr "Usuń profil"
 msgid "Remove Preset"
 msgstr "Usuń Profil"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "Profile"
 
@@ -294,7 +294,7 @@ msgstr "Importuj plik profilu"
 msgid "Delete"
 msgstr "Usuń"
 
-#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "Otwórz w menedżerze plików"
 
@@ -516,67 +516,55 @@ msgid "Apply"
 msgstr "Zastosuj"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
+msgid "Show Preview Window"
 msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr "Główne menu"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 msgid "Presets Menu"
 msgstr "Menu profili"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "Zapisz profil kolorów"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 msgid "CSS Errors"
 msgstr "Błędy CSS"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 msgid "Colors"
 msgstr "Kolory"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 msgid "Advanced"
 msgstr "Zaawansowany"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 msgid "Restore Applied Color Scheme"
 msgstr "Przywróć zastosowany schemat kolorów"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "Zresetuj zastosowany schemat kolorów"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 msgid "About Gradience"
 msgstr "O Gradience"
 
 #: data/ui/window.blp:149
-msgid "Adwaita Demo"
-msgstr "Adwaita Demo"
-
-#: data/ui/window.blp:154
-msgid "GTK 4 Demo"
-msgstr "GTK 4 Demo"
-
-#: data/ui/window.blp:159
-msgid "GTK 4 Widget Factory"
-msgstr "GTK 4 Widget Factory"
-
-#: data/ui/window.blp:167
 #: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "Wbudowane Profile"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 msgid "Manage Presets"
 msgstr "Zarządzaj profilami"
 
@@ -598,7 +586,11 @@ msgstr ""
 "Profil kolorów zostanie zapisany do ścieżki <tt>{0}</tt>. Jeżeli ten profil "
 "już istnieje, zostanie on nadpisany!"
 
-#: gradience/frontend/dialogs/save_dialog.py:56
+#: gradience/frontend/dialogs/save_dialog.py:58
+msgid "Discard"
+msgstr "Odrzuć"
+
+#: gradience/frontend/dialogs/save_dialog.py:63
 msgid "_Save"
 msgstr "_Zapisz"
 
@@ -811,7 +803,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Niewspierany format pliku, musi być .json"
 
 #: gradience/frontend/views/presets_manager_window.py:329
-#: gradience/frontend/main.py:193
+#: gradience/frontend/main.py:184
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -1127,27 +1119,27 @@ msgstr "Fioletowy"
 msgid "Brown"
 msgstr "Brązowy"
 
-#: gradience/frontend/main.py:226
+#: gradience/frontend/main.py:217
 msgid "No presets found"
 msgstr "Nie znaleziono profili"
 
-#: gradience/frontend/main.py:249
+#: gradience/frontend/main.py:240
 msgid "Favorite Presets"
 msgstr "Ulubione profile"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:396
 msgid "Unsaved Changes"
 msgstr "Niezapisane zmiany"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:408
 msgid "Save Changes"
 msgstr "Zapisz zmiany"
 
-#: gradience/frontend/main.py:478
+#: gradience/frontend/main.py:469
 msgid "Apply This Color Scheme?"
 msgstr "Zastosować ten schemat kolorów?"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:471
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1155,54 +1147,59 @@ msgstr ""
 "Uwaga: wszelkie niestandardowe pliki CSS dla tych typów aplikacji zostaną "
 "nieodwracalnie nadpisane!"
 
-#: gradience/frontend/main.py:484
+#: gradience/frontend/main.py:475
 msgid "_Apply"
 msgstr "_Zastosuj"
 
-#: gradience/frontend/main.py:494
+#: gradience/frontend/main.py:485
 msgid "Restore applied color scheme?"
 msgstr "Przywrócić zastosowany schemat kolorów?"
 
-#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Upewnij się, że bieżące ustawienia zostały zapisane jako profil kolorów."
 
-#: gradience/frontend/main.py:497
+#: gradience/frontend/main.py:488
 msgid "_Restore"
 msgstr "_Przywróć"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:499
 msgid "Reset applied color scheme?"
 msgstr "Zresetować zastosowany schemat kolorów?"
 
-#: gradience/frontend/main.py:510
+#: gradience/frontend/main.py:502
 msgid "_Reset"
 msgstr "_Resetuj"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:551
 msgid "You have unsaved changes!"
 msgstr "Masz niezapisane zmiany!"
 
-#: gradience/frontend/main.py:566
-msgid "Discard"
-msgstr "Odrzuć"
-
-#: gradience/frontend/main.py:606
+#: gradience/frontend/main.py:596
 msgid "Preset saved"
 msgstr "Profil zapisany"
 
-#: gradience/frontend/main.py:623
+#: gradience/frontend/main.py:613
 msgid "Preset set successfully"
 msgstr "Profil ustawiony pomyślnie"
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:626
 msgid "Unable to restore GTK 4 backup"
 msgstr "Nie można przywrócić kopii zapasowej motywu GTK 4"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
 msgid "Unable to delete current preset"
 msgstr "Nie udało się usunąć profilu"
+
+#~ msgid "Adwaita Demo"
+#~ msgstr "Adwaita Demo"
+
+#~ msgid "GTK 4 Demo"
+#~ msgstr "GTK 4 Demo"
+
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "GTK 4 Widget Factory"
 
 #~ msgid "Failed to save override"
 #~ msgstr "Nie udało się zapisać nadpisu ustawień"

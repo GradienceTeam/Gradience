@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 12:14+0000\n"
+"POT-Creation-Date: 2023-01-05 00:40+0000\n"
 "PO-Revision-Date: 2023-01-04 09:49+0000\n"
 "Last-Translator: Ali Aljishi <ahj696@hotmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -163,7 +163,7 @@ msgid "Toggle Plugin"
 msgstr "بدّل الملحق"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 msgid "Preferences"
 msgstr "تفضيلات"
 
@@ -275,7 +275,7 @@ msgstr "أزل الإعداد المسبق"
 msgid "Remove Preset"
 msgstr "أزل الإعداد المسبق"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "الإعدادات المسبقة"
 
@@ -291,7 +291,7 @@ msgstr "استورد ملف إعداد مسبق"
 msgid "Delete"
 msgstr "احذف"
 
-#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "افتح في مدير الملفات"
 
@@ -506,67 +506,55 @@ msgid "Apply"
 msgstr "طبق"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
-msgstr "عاين السِمات في…"
+msgid "Show Preview Window"
+msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr "القائمة الرئيسة"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 msgid "Presets Menu"
 msgstr "قائمة الإعدادات المسبقة"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "احفظ الإعداد المسبق"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 msgid "CSS Errors"
 msgstr "أخطاء سي‌إس‌إس"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 msgid "Colors"
 msgstr "الألوان"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 msgid "Monet"
 msgstr "مونيه"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 msgid "Advanced"
 msgstr "اﻹعدادات المتقدمة"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 msgid "Restore Applied Color Scheme"
 msgstr "استعد نظام الألوان المطبق"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "أعد تعيين نمط الألوان المطبق"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 msgid "About Gradience"
 msgstr "حول جرَاديَنس"
 
 #: data/ui/window.blp:149
-msgid "Adwaita Demo"
-msgstr "العرض التجريبي لأدوايتا"
-
-#: data/ui/window.blp:154
-msgid "GTK 4 Demo"
-msgstr "العرض التجريبي لـ جي‌تي‌كي 4"
-
-#: data/ui/window.blp:159
-msgid "GTK 4 Widget Factory"
-msgstr "مصنع عناصر جي‌تي‌كي 4 لواجهة المستخدم"
-
-#: data/ui/window.blp:167
 #: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "الإعدادات المسبقة المدمجة"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 msgid "Manage Presets"
 msgstr "أدِر الإعدادات المسبقة"
 
@@ -588,7 +576,11 @@ msgstr ""
 "يُحفظ الإعداد المسبق في <tt>{0}</tt>. سيُستبدل هذا الإعداد المسبق إذا كان "
 "موجودًا مسبقًا!"
 
-#: gradience/frontend/dialogs/save_dialog.py:56
+#: gradience/frontend/dialogs/save_dialog.py:58
+msgid "Discard"
+msgstr "أهمِل"
+
+#: gradience/frontend/dialogs/save_dialog.py:63
 msgid "_Save"
 msgstr "احفظ"
 
@@ -802,7 +794,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "تنسيق الملف غير مدعوم، يجب أن تنسيقه .json"
 
 #: gradience/frontend/views/presets_manager_window.py:329
-#: gradience/frontend/main.py:193
+#: gradience/frontend/main.py:184
 msgid "Failed to load list of presets"
 msgstr "فشل تحميل قائمة الإعدادات المسبقة"
 
@@ -1107,27 +1099,27 @@ msgstr "أرجواني"
 msgid "Brown"
 msgstr "بني"
 
-#: gradience/frontend/main.py:226
+#: gradience/frontend/main.py:217
 msgid "No presets found"
 msgstr "لم يُعثر على إعدادات مسبقة"
 
-#: gradience/frontend/main.py:249
+#: gradience/frontend/main.py:240
 msgid "Favorite Presets"
 msgstr "الإعدادات المسبقة المفضلة"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:396
 msgid "Unsaved Changes"
 msgstr "التغييرات غير المحفوظة"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:408
 msgid "Save Changes"
 msgstr "احفظ التغييرات"
 
-#: gradience/frontend/main.py:478
+#: gradience/frontend/main.py:469
 msgid "Apply This Color Scheme?"
 msgstr "طبق نظام الألوان هذا؟"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:471
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1135,53 +1127,61 @@ msgstr ""
 "تحذير: ستتم الكتابة فوق أي ملفات سي‌إس‌إس مخصصة لأنواع التطبيقات هذه بشكل "
 "نهائي!"
 
-#: gradience/frontend/main.py:484
+#: gradience/frontend/main.py:475
 msgid "_Apply"
 msgstr "طبق"
 
-#: gradience/frontend/main.py:494
+#: gradience/frontend/main.py:485
 msgid "Restore applied color scheme?"
 msgstr "استعد نظام الألوان المطبق؟"
 
-#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "تحقق من حفظ الإعدادات الحالية على صورة إعداد مسبق."
 
-#: gradience/frontend/main.py:497
+#: gradience/frontend/main.py:488
 msgid "_Restore"
 msgstr "استعد"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:499
 msgid "Reset applied color scheme?"
 msgstr "أعد ضبط نمط الألوان المطبق؟"
 
-#: gradience/frontend/main.py:510
+#: gradience/frontend/main.py:502
 msgid "_Reset"
 msgstr "أعد الضبط"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:551
 msgid "You have unsaved changes!"
 msgstr "لديك تعديلات لم تُحفظ!"
 
-#: gradience/frontend/main.py:566
-msgid "Discard"
-msgstr "أهمِل"
-
-#: gradience/frontend/main.py:606
+#: gradience/frontend/main.py:596
 msgid "Preset saved"
 msgstr "حُفظ الإعداد المسبق"
 
-#: gradience/frontend/main.py:623
+#: gradience/frontend/main.py:613
 msgid "Preset set successfully"
 msgstr "طُبق الإعداد المسبق بنجاح"
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:626
 msgid "Unable to restore GTK 4 backup"
 msgstr "تعذّرت استعادة النسخة الاحتياطية لـ جي‌تي‌كي 4"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
 msgid "Unable to delete current preset"
 msgstr "تعذر حذف الإعداد المسبق الحالي"
+
+#~ msgid "Preview Theme in…"
+#~ msgstr "عاين السِمات في…"
+
+#~ msgid "Adwaita Demo"
+#~ msgstr "العرض التجريبي لأدوايتا"
+
+#~ msgid "GTK 4 Demo"
+#~ msgstr "العرض التجريبي لـ جي‌تي‌كي 4"
+
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "مصنع عناصر جي‌تي‌كي 4 لواجهة المستخدم"
 
 #~ msgid "Failed to save override"
 #~ msgstr "فشل حفظ التجاوز"

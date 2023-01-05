@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 12:14+0000\n"
+"POT-Creation-Date: 2023-01-05 00:40+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -184,7 +184,7 @@ msgid "Toggle Plugin"
 msgstr "Växla plugin"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 #, fuzzy
 msgid "Preferences"
 msgstr "Inställningar"
@@ -318,7 +318,7 @@ msgstr "Ta bort förinställning"
 msgid "Remove Preset"
 msgstr "Ta bort förinställning"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "Förinställningar"
 
@@ -337,7 +337,7 @@ msgstr "Importera en förinställd fil (*.json)"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Öppna i filhanteraren"
@@ -590,72 +590,59 @@ msgid "Apply"
 msgstr "Verkställ"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
+msgid "Show Preview Window"
 msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr ""
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets Menu"
 msgstr "Förinställningar"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "Spara förinställningar"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 msgid "CSS Errors"
 msgstr ""
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 msgid "Colors"
 msgstr "Färger"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 msgid "Advanced"
 msgstr "Avancerat"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 #, fuzzy
 msgid "Restore Applied Color Scheme"
 msgstr "Återställa tillämpat färgschema"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "Återställ tillämpat färgschema"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 msgid "About Gradience"
 msgstr "Om Gradience"
 
 #: data/ui/window.blp:149
-#, fuzzy
-msgid "Adwaita Demo"
-msgstr "Adwaita Demo"
-
-#: data/ui/window.blp:154
-msgid "GTK 4 Demo"
-msgstr "GTK 4 Demo"
-
-#: data/ui/window.blp:159
-msgid "GTK 4 Widget Factory"
-msgstr "GTK 4 Widget Factory"
-
-#: data/ui/window.blp:167
 #: gradience/frontend/views/presets_manager_window.py:111
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "Inbyggda förinställningar"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 #, fuzzy
 msgid "Manage Presets"
 msgstr "Byt namn på förinställning"
@@ -680,7 +667,12 @@ msgstr ""
 "Sparar förinställning till <tt>{0}</tt>. Om den förinställningen redan finns "
 "kommer den att skrivas över!"
 
-#: gradience/frontend/dialogs/save_dialog.py:56
+#: gradience/frontend/dialogs/save_dialog.py:58
+#, fuzzy
+msgid "Discard"
+msgstr "Kasta"
+
+#: gradience/frontend/dialogs/save_dialog.py:63
 #, fuzzy
 #| msgid "Save"
 msgid "_Save"
@@ -922,7 +914,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Filformat som inte stöds, måste vara .json"
 
 #: gradience/frontend/views/presets_manager_window.py:329
-#: gradience/frontend/main.py:193
+#: gradience/frontend/main.py:184
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -1238,32 +1230,32 @@ msgstr "Lila"
 msgid "Brown"
 msgstr "Brun"
 
-#: gradience/frontend/main.py:226
+#: gradience/frontend/main.py:217
 #, fuzzy
 msgid "No presets found"
 msgstr "Inga resultat hittades"
 
-#: gradience/frontend/main.py:249
+#: gradience/frontend/main.py:240
 #, fuzzy
 msgid "Favorite Presets"
 msgstr "Favoritförinställningar"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:396
 #, fuzzy
 msgid "Unsaved Changes"
 msgstr "Osparade ändringar"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:408
 #, fuzzy
 msgid "Save Changes"
 msgstr "Spara ändringar"
 
-#: gradience/frontend/main.py:478
+#: gradience/frontend/main.py:469
 #, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "Använda detta färgschema?"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:471
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1271,66 +1263,71 @@ msgstr ""
 "Varning: alla anpassade CSS-filer för dessa programtyper kommer att skrivas "
 "över oåterkalleligt!"
 
-#: gradience/frontend/main.py:484
+#: gradience/frontend/main.py:475
 #, fuzzy
 #| msgid "Apply"
 msgid "_Apply"
 msgstr "Verkställ"
 
-#: gradience/frontend/main.py:494
+#: gradience/frontend/main.py:485
 #, fuzzy
 msgid "Restore applied color scheme?"
 msgstr "Återskapa det färgschema som tillämpats?"
 
-#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Se till att du har de aktuella inställningarna sparade som en förinställning."
 
-#: gradience/frontend/main.py:497
+#: gradience/frontend/main.py:488
 #, fuzzy
 msgid "_Restore"
 msgstr "Återställ"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:499
 msgid "Reset applied color scheme?"
 msgstr "Återställ tillämpat färgschema?"
 
-#: gradience/frontend/main.py:510
+#: gradience/frontend/main.py:502
 #, fuzzy
 #| msgid "Reset"
 msgid "_Reset"
 msgstr "Återställ"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:551
 #, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Du har osparade ändringar."
 
-#: gradience/frontend/main.py:566
-#, fuzzy
-msgid "Discard"
-msgstr "Kasta"
-
-#: gradience/frontend/main.py:606
+#: gradience/frontend/main.py:596
 #, fuzzy
 msgid "Preset saved"
 msgstr "Kombination sparad!"
 
-#: gradience/frontend/main.py:623
+#: gradience/frontend/main.py:613
 #, fuzzy
 msgid "Preset set successfully"
 msgstr "Förinställningen har lyckats."
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:626
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "Kunde inte återställa GTK 4-backup"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "Det går inte att radera förinställningar"
+
+#, fuzzy
+#~ msgid "Adwaita Demo"
+#~ msgstr "Adwaita Demo"
+
+#~ msgid "GTK 4 Demo"
+#~ msgstr "GTK 4 Demo"
+
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "GTK 4 Widget Factory"
 
 #, fuzzy
 #~ msgid "Failed to save override"
