@@ -21,6 +21,8 @@ from gi.repository import Gtk, Adw
 from gradience.backend.constants import rootdir
 
 
+# TODO: Make this dialog async when Libadwaita 1.3 becomes available \
+# https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/method.MessageDialog.choose.html
 @Gtk.Template(resource_path=f"{rootdir}/ui/save_dialog.ui")
 class GradienceSaveDialog(Adw.MessageDialog):
     __gtype_name__ = "GradienceSaveDialog"

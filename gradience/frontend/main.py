@@ -449,19 +449,38 @@ class GradienceApplication(Adw.Application):
         self.is_ready = True
 
     def load_preset_action(self, _unused, *args):
-        if args[0].get_string().startswith("custom-"):
-            self.load_preset_from_file(
-                os.path.join(
-                    presets_dir,
-                    args[0].get_string().replace("custom-", "", 1),
+        def load_quick_preset():
+            if args[0].get_string().startswith("custom-"):
+                self.load_preset_from_file(
+                    os.path.join(
+                        presets_dir,
+                        args[0].get_string().replace("custom-", "", 1)
+                    )
                 )
-            )
-        else:
-            self.load_preset_from_resource(
-                f"{rootdir}/presets/" + args[0].get_string() + ".json"
-            )
+            else:
+                self.load_preset_from_resource(
+                    f"{rootdir}/presets/" + args[0].get_string() + ".json"
+                )
 
-        Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
+        if self.is_dirty:
+            dialog, preset_entry = self.construct_unsaved_dialog()
+
+            def on_unsaved_dialog_response(_widget, response, preset_entry):
+                if response == "save":
+                    self.preset.save_to_file(preset_entry.get_text(), self.plugins_list)
+                    self.clear_dirty()
+                    load_quick_preset()
+                elif response == "discard":
+                    self.clear_dirty()
+                    load_quick_preset()
+
+            dialog.connect("response", on_unsaved_dialog_response, preset_entry)
+
+            dialog.present()
+        else:
+            load_quick_preset()
+
+            Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
     def show_apply_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
@@ -517,35 +536,12 @@ class GradienceApplication(Adw.Application):
         preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
-        def on_preset_entry_change(*_args):
-            if len(preset_entry.get_text()) == 0:
-                dialog.set_body(
-                    dialog.body.format(
-                        os.path.join(
-                            presets_dir,
-                            "user"
-                        )
-                    )
-                )
-                dialog.set_response_enabled("save", False)
-            else:
-                dialog.set_body(
-                    dialog.body.format(
-                        os.path.join(
-                            presets_dir,
-                            "user",
-                            to_slug_case(preset_entry.get_text()) + ".json"
-                        )
-                    )
-                )
-                dialog.set_response_enabled("save", True)
-
-        preset_entry.connect("changed", on_preset_entry_change)
-        dialog.connect("response", self.save_preset, preset_entry)
+        preset_entry.connect("changed", self.on_save_preset_entry_change, dialog, preset_entry)
+        dialog.connect("response", self.on_save_dialog_response, preset_entry)
 
         dialog.present()
 
-    def show_unsaved_dialog(self, *_args):
+    def construct_unsaved_dialog(self, *_args):
         dialog = GradienceSaveDialog(
             self.win,
             heading=_("You have unsaved changes!"),
@@ -560,35 +556,41 @@ class GradienceApplication(Adw.Application):
         preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
-        def on_preset_entry_change(*_args):
-            if len(preset_entry.get_text()) == 0:
-                dialog.set_body(
-                    dialog.body.format(
-                        os.path.join(
-                            presets_dir,
-                            "user"
-                        )
-                    )
-                )
-                dialog.set_response_enabled("save", False)
-            else:
-                dialog.set_body(
-                    dialog.body.format(
-                        os.path.join(
-                            presets_dir,
-                            "user",
-                            to_slug_case(preset_entry.get_text()) + ".json"
-                        )
-                    )
-                )
-                dialog.set_response_enabled("save", True)
+        preset_entry.connect("changed", self.on_save_preset_entry_change, dialog, preset_entry)
 
-        preset_entry.connect("changed", on_preset_entry_change)
-        dialog.connect("response", self.save_preset, preset_entry)
+        return dialog, preset_entry
+
+    def show_unsaved_dialog(self, *_args):
+        dialog, preset_entry = self.construct_unsaved_dialog()
+
+        dialog.connect("response", self.on_save_dialog_response, preset_entry)
 
         dialog.present()
 
-    def save_preset(self, _unused, response, preset_entry):
+    def on_save_preset_entry_change(self, _widget, dialog, preset_entry):
+        if len(preset_entry.get_text()) == 0:
+            dialog.set_body(
+                dialog.body.format(
+                    os.path.join(
+                        presets_dir,
+                        "user"
+                    )
+                )
+            )
+            dialog.set_response_enabled("save", False)
+        else:
+            dialog.set_body(
+                dialog.body.format(
+                    os.path.join(
+                        presets_dir,
+                        "user",
+                        to_slug_case(preset_entry.get_text()) + ".json"
+                    )
+                )
+            )
+            dialog.set_response_enabled("save", True)
+
+    def on_save_dialog_response(self, _widget, response, preset_entry):
         if response == "save":
             self.preset.save_to_file(preset_entry.get_text(), self.plugins_list)
             self.clear_dirty()
