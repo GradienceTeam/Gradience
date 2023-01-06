@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 12:14+0000\n"
+"POT-Creation-Date: 2023-01-06 12:13+0000\n"
 "PO-Revision-Date: 2022-12-31 00:37+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -161,7 +161,7 @@ msgid "Toggle Plugin"
 msgstr "Uklj/Isklj priključk"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 msgid "Preferences"
 msgstr "Osobitosti"
 
@@ -273,7 +273,7 @@ msgstr "Ukloni predložak"
 msgid "Remove Preset"
 msgstr "Ukloni predložak"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "Predlošci"
 
@@ -289,7 +289,7 @@ msgstr "Uvezi datoteku predloška"
 msgid "Delete"
 msgstr "Obriši"
 
-#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "Otvori u pregledniku datoteka"
 
@@ -509,67 +509,55 @@ msgid "Apply"
 msgstr "Primijeni"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
-msgstr "Pregled teme u …"
+msgid "Show Preview Window"
+msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr "Glavni izbornik"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 msgid "Presets Menu"
 msgstr "Izbornik predloška"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "Spremi predložak"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 msgid "CSS Errors"
 msgstr "CSS greške"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 msgid "Colors"
 msgstr "Boje"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 msgid "Advanced"
 msgstr "Napredno"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 msgid "Restore Applied Color Scheme"
 msgstr "Vrati izvornu shemu boje"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "Vrati izvornu shemu boje"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 msgid "About Gradience"
 msgstr "O aplikaciji Gradience"
 
 #: data/ui/window.blp:149
-msgid "Adwaita Demo"
-msgstr "Adwaita Demo"
-
-#: data/ui/window.blp:154
-msgid "GTK 4 Demo"
-msgstr "GTK 4 Demo"
-
-#: data/ui/window.blp:159
-msgid "GTK 4 Widget Factory"
-msgstr "GTK 4 Widget Factory"
-
-#: data/ui/window.blp:167
 #: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "Ugrađeni predlošci"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 msgid "Manage Presets"
 msgstr "Upravljanje predlošcima"
 
@@ -591,7 +579,11 @@ msgstr ""
 "Spremanje predloška u <tt>{0}</tt>. Ako taj predložak već postoji, biti će "
 "prebrisan!"
 
-#: gradience/frontend/dialogs/save_dialog.py:56
+#: gradience/frontend/dialogs/save_dialog.py:58
+msgid "Discard"
+msgstr "Odbaci"
+
+#: gradience/frontend/dialogs/save_dialog.py:63
 msgid "_Save"
 msgstr "_Spremi"
 
@@ -803,7 +795,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Nepodržana vrsta datoteke, mora biti .json"
 
 #: gradience/frontend/views/presets_manager_window.py:329
-#: gradience/frontend/main.py:193
+#: gradience/frontend/main.py:184
 msgid "Failed to load list of presets"
 msgstr "Neuspjelo učitavanje popisa predložaka"
 
@@ -1114,27 +1106,27 @@ msgstr "Ljubičasta"
 msgid "Brown"
 msgstr "Smeđa"
 
-#: gradience/frontend/main.py:226
+#: gradience/frontend/main.py:217
 msgid "No presets found"
 msgstr "Nema pronađenih predloška"
 
-#: gradience/frontend/main.py:249
+#: gradience/frontend/main.py:240
 msgid "Favorite Presets"
 msgstr "Predlošci omiljenih"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:396
 msgid "Unsaved Changes"
 msgstr "Nespremljene promjene"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:408
 msgid "Save Changes"
 msgstr "Spremi promjene"
 
-#: gradience/frontend/main.py:478
+#: gradience/frontend/main.py:469
 msgid "Apply This Color Scheme?"
 msgstr "Primijeni ovu shemu boja?"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:471
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1142,53 +1134,61 @@ msgstr ""
 "Upozorenje: svaka prilagođena CSS datoteka za te vrste datoteka biti će "
 "nepovratno prebrisana!"
 
-#: gradience/frontend/main.py:484
+#: gradience/frontend/main.py:475
 msgid "_Apply"
 msgstr "_Primijeni"
 
-#: gradience/frontend/main.py:494
+#: gradience/frontend/main.py:485
 msgid "Restore applied color scheme?"
 msgstr "Vrati primijenjenu shemu boje?"
 
-#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Osigurajte da imate trenutne postavke spremljene u predložak."
 
-#: gradience/frontend/main.py:497
+#: gradience/frontend/main.py:488
 msgid "_Restore"
 msgstr "Ob_novi"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:499
 msgid "Reset applied color scheme?"
 msgstr "Vrati izvornu shemu boje?"
 
-#: gradience/frontend/main.py:510
+#: gradience/frontend/main.py:502
 msgid "_Reset"
 msgstr "_Vrati izvorno"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:551
 msgid "You have unsaved changes!"
 msgstr "Imate nespremljene promjene!"
 
-#: gradience/frontend/main.py:566
-msgid "Discard"
-msgstr "Odbaci"
-
-#: gradience/frontend/main.py:606
+#: gradience/frontend/main.py:596
 msgid "Preset saved"
 msgstr "Predložak je spremljen"
 
-#: gradience/frontend/main.py:623
+#: gradience/frontend/main.py:613
 msgid "Preset set successfully"
 msgstr "Predložak je uspješno postavljen"
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:626
 msgid "Unable to restore GTK 4 backup"
 msgstr "Nemoguća obnova GTK 4 sigurnosne kopije"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
 msgid "Unable to delete current preset"
 msgstr "Nemoguće brisanje aktualnog predloška"
+
+#~ msgid "Preview Theme in…"
+#~ msgstr "Pregled teme u …"
+
+#~ msgid "Adwaita Demo"
+#~ msgstr "Adwaita Demo"
+
+#~ msgid "GTK 4 Demo"
+#~ msgstr "GTK 4 Demo"
+
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "GTK 4 Widget Factory"
 
 #~ msgid "Failed to save override"
 #~ msgstr "Neuspjelo spremanje zaobilaženja"

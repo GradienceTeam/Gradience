@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 12:14+0000\n"
+"POT-Creation-Date: 2023-01-06 12:13+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -168,7 +168,7 @@ msgid "Toggle Plugin"
 msgstr "플러그인 전환하기"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 msgid "Preferences"
 msgstr "환경설정"
 
@@ -280,7 +280,7 @@ msgstr "사전 설정 삭제"
 msgid "Remove Preset"
 msgstr "프리셋 제거하기"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "사전 설정"
 
@@ -296,7 +296,7 @@ msgstr "프리셋 파일 가져오기"
 msgid "Delete"
 msgstr "삭제"
 
-#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "파일 관리자에서 열기"
 
@@ -514,67 +514,55 @@ msgid "Apply"
 msgstr "적용"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
+msgid "Show Preview Window"
 msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr "기본 메뉴"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 msgid "Presets Menu"
 msgstr "프리셋 메뉴"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "사전 설정 저장"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 msgid "CSS Errors"
 msgstr "CSS 오류"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 msgid "Colors"
 msgstr "색상"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 msgid "Advanced"
 msgstr "고급"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 msgid "Restore Applied Color Scheme"
 msgstr "적용된 색 구성표 복원하기"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "적용된 색 구성표 재설정"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 msgid "About Gradience"
 msgstr "Gradience에 대하여"
 
 #: data/ui/window.blp:149
-msgid "Adwaita Demo"
-msgstr "Adwaita 데모"
-
-#: data/ui/window.blp:154
-msgid "GTK 4 Demo"
-msgstr "GTK 4 데모"
-
-#: data/ui/window.blp:159
-msgid "GTK 4 Widget Factory"
-msgstr "GTK 4 위젝 팩토리"
-
-#: data/ui/window.blp:167
 #: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "내장 프리셋"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 msgid "Manage Presets"
 msgstr "프리셋 관리하기"
 
@@ -597,7 +585,11 @@ msgstr ""
 "사전 설정을 <tt>{0}</tt>에 저장하는 중입니다. 해당 사전 설정이 이미 있는 경"
 "우 덮어씁니다!"
 
-#: gradience/frontend/dialogs/save_dialog.py:56
+#: gradience/frontend/dialogs/save_dialog.py:58
+msgid "Discard"
+msgstr "버리기"
+
+#: gradience/frontend/dialogs/save_dialog.py:63
 #, fuzzy
 msgid "_Save"
 msgstr "저장"
@@ -813,7 +805,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "지원되지 않는 파일 형식, 파일형식은 .json이어야 합니다"
 
 #: gradience/frontend/views/presets_manager_window.py:329
-#: gradience/frontend/main.py:193
+#: gradience/frontend/main.py:184
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -1117,28 +1109,28 @@ msgstr "보라색"
 msgid "Brown"
 msgstr "갈색"
 
-#: gradience/frontend/main.py:226
+#: gradience/frontend/main.py:217
 msgid "No presets found"
 msgstr "프리셋을 찾을 수 없습니다"
 
-#: gradience/frontend/main.py:249
+#: gradience/frontend/main.py:240
 #, fuzzy
 msgid "Favorite Presets"
 msgstr "좋아하는 프리셋"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:396
 msgid "Unsaved Changes"
 msgstr "저장되지 않은 변경사항"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:408
 msgid "Save Changes"
 msgstr "변경사항 저장하기"
 
-#: gradience/frontend/main.py:478
+#: gradience/frontend/main.py:469
 msgid "Apply This Color Scheme?"
 msgstr "이 색 구성표를 적용하시겠습니까?"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:471
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1146,59 +1138,64 @@ msgstr ""
 "경고: 해당 앱 유형에 대한 모든 사용자 정의 CSS 파일은 되돌릴 수 없도록 덮어씁"
 "니다!"
 
-#: gradience/frontend/main.py:484
+#: gradience/frontend/main.py:475
 #, fuzzy
 msgid "_Apply"
 msgstr "적용"
 
-#: gradience/frontend/main.py:494
+#: gradience/frontend/main.py:485
 msgid "Restore applied color scheme?"
 msgstr "적용된 색 구성표를 복원하시겠습니까?"
 
-#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "현재 설정이 사전 설정으로 저장되어 있는지 확인해주세요."
 
-#: gradience/frontend/main.py:497
+#: gradience/frontend/main.py:488
 #, fuzzy
 msgid "_Restore"
 msgstr "복원하기"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:499
 msgid "Reset applied color scheme?"
 msgstr "적용된 색 구성표를 재설정하시겠습니까?"
 
-#: gradience/frontend/main.py:510
+#: gradience/frontend/main.py:502
 #, fuzzy
 msgid "_Reset"
 msgstr "초기화"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:551
 msgid "You have unsaved changes!"
 msgstr "저장하지 않은 변경사항이 있습니다!"
 
-#: gradience/frontend/main.py:566
-msgid "Discard"
-msgstr "버리기"
-
-#: gradience/frontend/main.py:606
+#: gradience/frontend/main.py:596
 msgid "Preset saved"
 msgstr "사전 설정 저장됨"
 
-#: gradience/frontend/main.py:623
+#: gradience/frontend/main.py:613
 #, fuzzy
 msgid "Preset set successfully"
 msgstr "사전 설정이 성공적으로 적용되었습니다!"
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:626
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 백업을 복원할 수 없습니다"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "사전 설정을 삭제할 수 없습니다"
+
+#~ msgid "Adwaita Demo"
+#~ msgstr "Adwaita 데모"
+
+#~ msgid "GTK 4 Demo"
+#~ msgstr "GTK 4 데모"
+
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "GTK 4 위젝 팩토리"
 
 #~ msgid "Failed to save override"
 #~ msgstr "재정의를 저장하지 못했습니다"

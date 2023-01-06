@@ -51,11 +51,10 @@ def parse_css(path):
             if cdefine_match != None: # If @define-color variable declarations were found
                 palette_part = cdefine_match.__getitem__(1) # Get the second item of the re.Match object
                 name, color = palette_part.split(" ", 1)[1].split(" ", 1)
-                for color_name in adw_colors:
-                    if name.startswith(color_name): # Palette colors
-                        palette[name[:-1]][name[-1:]] = color[:-1]
-                    else: # Other color variables
-                        variables[name] = color[:-1]
+                if name.startswith(tuple(adw_colors)): # Palette colors
+                    palette[name[:-1]][name[-1:]] = color[:-1]
+                else: # Other color variables
+                    variables[name] = color[:-1]
             elif not_cdefine_match != None: # If CSS rules were found
                 css_part = not_cdefine_match.__getitem__(1)
                 css += f"{css_part}\n"

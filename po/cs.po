@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 12:14+0000\n"
+"POT-Creation-Date: 2023-01-06 12:13+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -185,7 +185,7 @@ msgid "Toggle Plugin"
 msgstr "Přepínání zásuvného modulu"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 #, fuzzy
 msgid "Preferences"
 msgstr "Předvolby"
@@ -320,7 +320,7 @@ msgstr "Odstranit přednastavení"
 msgid "Remove Preset"
 msgstr "Odstranit přednastavení"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "Předvolby"
 
@@ -339,7 +339,7 @@ msgstr "Import souboru s předvolbou"
 msgid "Delete"
 msgstr "Smazat"
 
-#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Otevřít v průzkumníku souborů"
@@ -599,80 +599,65 @@ msgid "Apply"
 msgstr "Použít"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
+msgid "Show Preview Window"
 msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 #, fuzzy
 msgid "Main Menu"
 msgstr "Hlavní Menu"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets Menu"
 msgstr "Nabídka profilů"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "Uložit předvolbu"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 #, fuzzy
 msgid "CSS Errors"
 msgstr "Chyby CSS"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 #, fuzzy
 msgid "Colors"
 msgstr "Barvy"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 #, fuzzy
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 #, fuzzy
 msgid "Advanced"
 msgstr "Pokročilé"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 #, fuzzy
 msgid "Restore Applied Color Scheme"
 msgstr "Obnovení použitého barevného schématu"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "Obnovit použité barevné schéma"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 #, fuzzy
 msgid "About Gradience"
 msgstr "O společnosti Gradience"
 
 #: data/ui/window.blp:149
-#, fuzzy
-msgid "Adwaita Demo"
-msgstr "Ukázka Adwaity"
-
-#: data/ui/window.blp:154
-#, fuzzy
-msgid "GTK 4 Demo"
-msgstr "Ukázka GTK 4"
-
-#: data/ui/window.blp:159
-#, fuzzy
-msgid "GTK 4 Widget Factory"
-msgstr "Továrna na widgety GTK 4"
-
-#: data/ui/window.blp:167
 #: gradience/frontend/views/presets_manager_window.py:111
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "Vestavěné předvolby"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 #, fuzzy
 msgid "Manage Presets"
 msgstr "Správa předvoleb"
@@ -697,7 +682,12 @@ msgstr ""
 "Uložení předvolby do <tt>{0}</tt>. Pokud předvolba již existuje, bude "
 "přepsána!"
 
-#: gradience/frontend/dialogs/save_dialog.py:56
+#: gradience/frontend/dialogs/save_dialog.py:58
+#, fuzzy
+msgid "Discard"
+msgstr "Zahodit"
+
+#: gradience/frontend/dialogs/save_dialog.py:63
 #, fuzzy
 #| msgid "Save"
 msgid "_Save"
@@ -949,7 +939,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Nepodporovaný formát souboru, musí být .json"
 
 #: gradience/frontend/views/presets_manager_window.py:329
-#: gradience/frontend/main.py:193
+#: gradience/frontend/main.py:184
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -1266,32 +1256,32 @@ msgstr "Fialová"
 msgid "Brown"
 msgstr "Hnědá"
 
-#: gradience/frontend/main.py:226
+#: gradience/frontend/main.py:217
 #, fuzzy
 msgid "No presets found"
 msgstr "Nebyly nalezeny žádné předvolby"
 
-#: gradience/frontend/main.py:249
+#: gradience/frontend/main.py:240
 #, fuzzy
 msgid "Favorite Presets"
 msgstr "Oblíbené předvolby"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:396
 #, fuzzy
 msgid "Unsaved Changes"
 msgstr "Neuložené změny"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:408
 #, fuzzy
 msgid "Save Changes"
 msgstr "Uložit změny"
 
-#: gradience/frontend/main.py:478
+#: gradience/frontend/main.py:469
 #, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "Použít toto barevné schéma?"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:471
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1299,65 +1289,72 @@ msgstr ""
 "Varování: Všechny vlastní CSS soubory pro tyto typy aplikací budou nevratně "
 "přepsány!"
 
-#: gradience/frontend/main.py:484
+#: gradience/frontend/main.py:475
 #, fuzzy
 #| msgid "Apply"
 msgid "_Apply"
 msgstr "Použít"
 
-#: gradience/frontend/main.py:494
+#: gradience/frontend/main.py:485
 #, fuzzy
 msgid "Restore applied color scheme?"
 msgstr "Obnovit použité barevné schéma?"
 
-#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Ujistěte se, že máte aktuální nastavení uložené jako předvolbu."
 
-#: gradience/frontend/main.py:497
+#: gradience/frontend/main.py:488
 #, fuzzy
 msgid "_Restore"
 msgstr "Obnovit"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:499
 msgid "Reset applied color scheme?"
 msgstr "Obnovit aplikované barevné schéma?"
 
-#: gradience/frontend/main.py:510
+#: gradience/frontend/main.py:502
 #, fuzzy
 #| msgid "Reset"
 msgid "_Reset"
 msgstr "Obnovit"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:551
 #, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Máte neuložené změny."
 
-#: gradience/frontend/main.py:566
-#, fuzzy
-msgid "Discard"
-msgstr "Zahodit"
-
-#: gradience/frontend/main.py:606
+#: gradience/frontend/main.py:596
 #, fuzzy
 msgid "Preset saved"
 msgstr "Mix byl uložen!"
 
-#: gradience/frontend/main.py:623
+#: gradience/frontend/main.py:613
 #, fuzzy
 msgid "Preset set successfully"
 msgstr "Úspěšně nastavená předvolba"
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:626
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "Nelze obnovit zálohu GTK 4"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "Nelze odstranit předvolbu"
+
+#, fuzzy
+#~ msgid "Adwaita Demo"
+#~ msgstr "Ukázka Adwaity"
+
+#, fuzzy
+#~ msgid "GTK 4 Demo"
+#~ msgstr "Ukázka GTK 4"
+
+#, fuzzy
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "Továrna na widgety GTK 4"
 
 #, fuzzy
 #~ msgid "Failed to save override"

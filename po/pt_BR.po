@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 12:14+0000\n"
+"POT-Creation-Date: 2023-01-06 12:13+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -194,7 +194,7 @@ msgid "Toggle Plugin"
 msgstr "Plugin de alternância"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 #, fuzzy
 msgid "Preferences"
 msgstr "Preferências"
@@ -330,7 +330,7 @@ msgstr "Remover predefinição"
 msgid "Remove Preset"
 msgstr "Remover predefinição"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "Configurações salvas"
 
@@ -347,7 +347,7 @@ msgstr "Importar um ficheiro pré-definido"
 msgid "Delete"
 msgstr "Deletar"
 
-#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Abrir no Gerenciador de Arquivos"
@@ -595,73 +595,61 @@ msgid "Apply"
 msgstr "Aplicar"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
+msgid "Show Preview Window"
 msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 #, fuzzy
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets Menu"
 msgstr "Menu de Predefinições"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "Salvar configurações"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 #, fuzzy
 msgid "CSS Errors"
 msgstr "Erros de CSS"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 msgid "Colors"
 msgstr "Cores"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 msgid "Advanced"
 msgstr "Avançado"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 #, fuzzy
 msgid "Restore Applied Color Scheme"
 msgstr "Restaurar o esquema de cores aplicadas"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "Redefinir o esquema de cores aplicado"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 msgid "About Gradience"
 msgstr "Sobre o Gradiente"
 
 #: data/ui/window.blp:149
-msgid "Adwaita Demo"
-msgstr "Demonstração do Adwaita"
-
-#: data/ui/window.blp:154
-msgid "GTK 4 Demo"
-msgstr "Demonstração GTK 4"
-
-#: data/ui/window.blp:159
-msgid "GTK 4 Widget Factory"
-msgstr "GTK 4 Widget Factory"
-
-#: data/ui/window.blp:167
 #: gradience/frontend/views/presets_manager_window.py:111
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "Configurações pré-definidas"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 #, fuzzy
 msgid "Manage Presets"
 msgstr "Gerenciar Predefinições"
@@ -686,7 +674,12 @@ msgstr ""
 "Salvando configurações como <tt>{0}</tt>. Se esta predefinição já existe, "
 "será substituída!"
 
-#: gradience/frontend/dialogs/save_dialog.py:56
+#: gradience/frontend/dialogs/save_dialog.py:58
+#, fuzzy
+msgid "Discard"
+msgstr "Descartar"
+
+#: gradience/frontend/dialogs/save_dialog.py:63
 #, fuzzy
 #| msgid "Save"
 msgid "_Save"
@@ -921,7 +914,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Formato de arquivo não suportado, precisa ser .json"
 
 #: gradience/frontend/views/presets_manager_window.py:329
-#: gradience/frontend/main.py:193
+#: gradience/frontend/main.py:184
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -1239,33 +1232,33 @@ msgstr "Roxo"
 msgid "Brown"
 msgstr "Marrom"
 
-#: gradience/frontend/main.py:226
+#: gradience/frontend/main.py:217
 #, fuzzy
 #| msgid "No Results Found"
 msgid "No presets found"
 msgstr "Não foram encontradas predefinições"
 
-#: gradience/frontend/main.py:249
+#: gradience/frontend/main.py:240
 #, fuzzy
 msgid "Favorite Presets"
 msgstr "Predefinições Favoritas"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:396
 #, fuzzy
 msgid "Unsaved Changes"
 msgstr "Alterações não salvas"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:408
 #, fuzzy
 msgid "Save Changes"
 msgstr "Salvar mudanças"
 
-#: gradience/frontend/main.py:478
+#: gradience/frontend/main.py:469
 #, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "Aplicar este esquema de cores?"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:471
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1273,68 +1266,72 @@ msgstr ""
 "Aviso: qualquer arquivo CSS customizado para estes tipos de aplicações serão "
 "irreversivelmente sobrescritos!"
 
-#: gradience/frontend/main.py:484
+#: gradience/frontend/main.py:475
 #, fuzzy
 #| msgid "Apply"
 msgid "_Apply"
 msgstr "Aplicar"
 
-#: gradience/frontend/main.py:494
+#: gradience/frontend/main.py:485
 #, fuzzy
 msgid "Restore applied color scheme?"
 msgstr "Restaurar o esquema de cores aplicado?"
 
-#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Certifique-se que você salvou as configurações atuais como uma configuração "
 "predefinida."
 
-#: gradience/frontend/main.py:497
+#: gradience/frontend/main.py:488
 #, fuzzy
 msgid "_Restore"
 msgstr "Restaurar"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:499
 msgid "Reset applied color scheme?"
 msgstr "Redefinir o esquema de cores aplicado?"
 
-#: gradience/frontend/main.py:510
+#: gradience/frontend/main.py:502
 #, fuzzy
 #| msgid "Reset"
 msgid "_Reset"
 msgstr "Redefinir"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:551
 #, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Você tem alterações não salvas!"
 
-#: gradience/frontend/main.py:566
-#, fuzzy
-msgid "Discard"
-msgstr "Descartar"
-
-#: gradience/frontend/main.py:606
+#: gradience/frontend/main.py:596
 msgid "Preset saved"
 msgstr "Predefinição salva"
 
-#: gradience/frontend/main.py:623
+#: gradience/frontend/main.py:613
 #, fuzzy
 #| msgid "Preset set sucessfully"
 msgid "Preset set successfully"
 msgstr "Predefinição definida com sucesso"
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:626
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "Não foi possível restaurar a cópia de segurança do GTK 4"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
 #, fuzzy
 #| msgid "Unable to delete preset"
 msgid "Unable to delete current preset"
 msgstr "Falha ao apagar a predefinição"
+
+#~ msgid "Adwaita Demo"
+#~ msgstr "Demonstração do Adwaita"
+
+#~ msgid "GTK 4 Demo"
+#~ msgstr "Demonstração GTK 4"
+
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "GTK 4 Widget Factory"
 
 #, fuzzy
 #~ msgid "Failed to save override"

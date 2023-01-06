@@ -127,15 +127,6 @@ class GradienceApplication(Adw.Application):
         self.actions.create_action("apply_color_scheme",
                         self.show_apply_color_scheme_dialog)
 
-        self.actions.create_action("show_adwaita_demo",
-                        self.show_adwaita_demo)
-
-        self.actions.create_action("show_gtk4_widget_factory",
-                        self.show_gtk4_widget_factory)
-
-        self.actions.create_action("show_gtk4_demo",
-                        self.show_gtk4_demo)
-
         self.actions.create_action("restore_color_scheme",
                         self.show_restore_color_scheme_dialog)
 
@@ -265,11 +256,16 @@ class GradienceApplication(Adw.Application):
                 )
             )
 
+            logging.debug(f"Loaded custom CSS variables: {variables}")
+
             preset = {
-                "name": "User",
+                "name": "Preset Name",
                 "variables": variables,
                 "palette": palette,
-                "custom_css": {"gtk4": custom_css}
+                "custom_css": {
+                    "gtk4": custom_css,
+                    "gtk3": ""
+                }
             }
 
             self.preset = Preset().new_from_dict(preset)
@@ -458,19 +454,38 @@ class GradienceApplication(Adw.Application):
         self.is_ready = True
 
     def load_preset_action(self, _unused, *args):
-        if args[0].get_string().startswith("custom-"):
-            self.load_preset_from_file(
-                os.path.join(
-                    presets_dir,
-                    args[0].get_string().replace("custom-", "", 1),
+        def load_quick_preset():
+            if args[0].get_string().startswith("custom-"):
+                self.load_preset_from_file(
+                    os.path.join(
+                        presets_dir,
+                        args[0].get_string().replace("custom-", "", 1)
+                    )
                 )
-            )
-        else:
-            self.load_preset_from_resource(
-                f"{rootdir}/presets/" + args[0].get_string() + ".json"
-            )
+            else:
+                self.load_preset_from_resource(
+                    f"{rootdir}/presets/" + args[0].get_string() + ".json"
+                )
 
-        Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
+        if self.is_dirty:
+            dialog, preset_entry = self.construct_unsaved_dialog()
+
+            def on_unsaved_dialog_response(_widget, response, preset_entry):
+                if response == "save":
+                    self.preset.save_to_file(preset_entry.get_text(), self.plugins_list)
+                    self.clear_dirty()
+                    load_quick_preset()
+                elif response == "discard":
+                    self.clear_dirty()
+                    load_quick_preset()
+
+            dialog.connect("response", on_unsaved_dialog_response, preset_entry)
+
+            dialog.present()
+        else:
+            load_quick_preset()
+
+            Gio.SimpleAction.set_state(self.lookup_action("load_preset"), args[0])
 
     def show_apply_color_scheme_dialog(self, *_args):
         dialog = GradienceAppTypeDialog(
@@ -497,6 +512,7 @@ class GradienceApplication(Adw.Application):
             _("_Restore"),
             Adw.ResponseAppearance.DESTRUCTIVE
         )
+
         dialog.gtk3_app_type.set_sensitive(False)
         dialog.connect("response", self.restore_color_scheme)
         dialog.present()
@@ -510,6 +526,7 @@ class GradienceApplication(Adw.Application):
             _("_Reset"),
             Adw.ResponseAppearance.DESTRUCTIVE
         )
+
         dialog.connect("response", self.reset_color_scheme)
         dialog.present()
 
@@ -524,35 +541,12 @@ class GradienceApplication(Adw.Application):
         preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
-        def on_preset_entry_change(*_args):
-            if len(preset_entry.get_text()) == 0:
-                dialog.set_body(
-                    dialog.body.format(
-                        os.path.join(
-                            presets_dir,
-                            "user"
-                        )
-                    )
-                )
-                dialog.set_response_enabled("save", False)
-            else:
-                dialog.set_body(
-                    dialog.body.format(
-                        os.path.join(
-                            presets_dir,
-                            "user",
-                            to_slug_case(preset_entry.get_text()) + ".json"
-                        )
-                    )
-                )
-                dialog.set_response_enabled("save", True)
-
-        preset_entry.connect("changed", on_preset_entry_change)
-        dialog.connect("response", self.save_preset, preset_entry)
+        preset_entry.connect("changed", self.on_save_preset_entry_change, dialog, preset_entry)
+        dialog.connect("response", self.on_save_dialog_response, preset_entry)
 
         dialog.present()
 
-    def show_exit_dialog(self, *_args):
+    def construct_unsaved_dialog(self, *_args):
         dialog = GradienceSaveDialog(
             self.win,
             heading=_("You have unsaved changes!"),
@@ -560,45 +554,48 @@ class GradienceApplication(Adw.Application):
                 presets_dir,
                 "user",
                 to_slug_case(self.preset_name) + ".json"
-            )
+            ),
+            discard=True
         )
-
-        dialog.add_response("discard", _("Discard"))
-        dialog.set_response_appearance(
-            "discard", Adw.ResponseAppearance.DESTRUCTIVE)
 
         preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
-        def on_preset_entry_change(*_args):
-            if len(preset_entry.get_text()) == 0:
-                dialog.set_body(
-                    dialog.body.format(
-                        os.path.join(
-                            presets_dir,
-                            "user"
-                        )
-                    )
-                )
-                dialog.set_response_enabled("save", False)
-            else:
-                dialog.set_body(
-                    dialog.body.format(
-                        os.path.join(
-                            presets_dir,
-                            "user",
-                            to_slug_case(preset_entry.get_text()) + ".json"
-                        )
-                    )
-                )
-                dialog.set_response_enabled("save", True)
+        preset_entry.connect("changed", self.on_save_preset_entry_change, dialog, preset_entry)
 
-        preset_entry.connect("changed", on_preset_entry_change)
-        dialog.connect("response", self.save_preset, preset_entry)
+        return dialog, preset_entry
+
+    def show_unsaved_dialog(self, *_args):
+        dialog, preset_entry = self.construct_unsaved_dialog()
+
+        dialog.connect("response", self.on_save_dialog_response, preset_entry)
 
         dialog.present()
 
-    def save_preset(self, _unused, response, preset_entry):
+    def on_save_preset_entry_change(self, _widget, dialog, preset_entry):
+        if len(preset_entry.get_text()) == 0:
+            dialog.set_body(
+                dialog.body.format(
+                    os.path.join(
+                        presets_dir,
+                        "user"
+                    )
+                )
+            )
+            dialog.set_response_enabled("save", False)
+        else:
+            dialog.set_body(
+                dialog.body.format(
+                    os.path.join(
+                        presets_dir,
+                        "user",
+                        to_slug_case(preset_entry.get_text()) + ".json"
+                    )
+                )
+            )
+            dialog.set_response_enabled("save", True)
+
+    def on_save_dialog_response(self, _widget, response, preset_entry):
         if response == "save":
             self.preset.save_to_file(preset_entry.get_text(), self.plugins_list)
             self.clear_dirty()
@@ -627,12 +624,7 @@ class GradienceApplication(Adw.Application):
             )
 
             dialog = GradienceLogOutDialog(self.win)
-            dialog.connect('response', self.on_theme_set_dialog_response)
             dialog.present()
-
-    def on_theme_set_dialog_response(self, _dialog, response):
-        if response == "ok":
-            logging.debug("theme_set_dialog_ok")
 
     def restore_color_scheme(self, widget, response):
         if response == "restore":
@@ -645,12 +637,7 @@ class GradienceApplication(Adw.Application):
                     )
 
             dialog = GradienceLogOutDialog(self.win)
-            dialog.connect('response', self.on_theme_restore_dialog_response)
             dialog.present()
-
-    def on_theme_restore_dialog_response (self, dialog, response):
-        if response == "ok":
-            logging.debug("theme_restore_dialog_ok")
 
     def reset_color_scheme(self, widget, response):
         if response == "reset":
@@ -671,12 +658,7 @@ class GradienceApplication(Adw.Application):
                     )
 
             dialog = GradienceLogOutDialog(self.win)
-            dialog.connect('response', self.on_theme_reset_dialog_response)
             dialog.present()
-
-    def on_theme_reset_dialog_response (self, dialog, response):
-        if response == "ok":
-            logging.debug("theme_reset_dialog_ok")
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)
@@ -737,33 +719,6 @@ class GradienceApplication(Adw.Application):
 
         self.props.active_window.update_errors(
             self.global_errors + plugins_errors)
-
-    @staticmethod
-    def show_adwaita_demo(*_args):
-        try:
-            GLib.spawn_command_line_async(
-                "/bin/adwaita-1-demo > /dev/null 2>&1"
-            )
-        except GLib.GError as e:
-            logging.error("An error occurred while trying to execute external program.", exc=e)
-
-    @staticmethod
-    def show_gtk4_demo(*_args):
-        try:
-            GLib.spawn_command_line_async(
-                "/bin/gtk4-demo > /dev/null 2>&1"
-            )
-        except GLib.GError as e:
-            logging.error("An error occurred while trying to execute external program.", exc=e)
-
-    @staticmethod
-    def show_gtk4_widget_factory(*_args):
-        try:
-            GLib.spawn_command_line_async(
-                "/bin/gtk4-widget-factory > /dev/null 2>&1"
-            )
-        except GLib.GError as e:
-            logging.error("An error occurred while trying to execute external program.", exc=e)
 
 
 def main():

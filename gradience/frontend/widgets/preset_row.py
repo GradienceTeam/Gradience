@@ -1,7 +1,7 @@
 # preset_row.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -105,9 +105,28 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.win.app.save_favourite()
         self.win.reload_pref_group()
 
+    def show_unsaved_dialog(self, *_args):
+        dialog, preset_entry = self.app.construct_unsaved_dialog()
+
+        def on_unsaved_dialog_response(_widget, response, preset_entry):
+            if response == "save":
+                self.app.preset.save_to_file(preset_entry.get_text(), self.app.plugins_list)
+                self.app.clear_dirty()
+                self.app.load_preset_from_file(self.preset.preset_path)
+            elif response == "discard":
+                self.app.clear_dirty()
+                self.app.load_preset_from_file(self.preset.preset_path)
+
+        dialog.connect("response", on_unsaved_dialog_response, preset_entry)
+
+        dialog.present()
+
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
-        self.app.load_preset_from_file(self.preset.preset_path)
+        if self.app.is_dirty:
+            self.show_unsaved_dialog()
+        else:
+            self.app.load_preset_from_file(self.preset.preset_path)
 
     def on_undo_button_clicked(self, *_args):
         self.delete_preset = False

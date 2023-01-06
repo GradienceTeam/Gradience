@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 12:14+0000\n"
-"PO-Revision-Date: 2023-01-04 07:47+0000\n"
+"POT-Creation-Date: 2023-01-06 12:13+0000\n"
+"PO-Revision-Date: 2023-01-05 13:49+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "GradienceTeam/gradience/zh_Hans/>\n"
@@ -158,7 +158,7 @@ msgid "Toggle Plugin"
 msgstr "切换插件"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 msgid "Preferences"
 msgstr "首选项"
 
@@ -269,7 +269,7 @@ msgstr "删除预设"
 msgid "Remove Preset"
 msgstr "删除预设"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "预设"
 
@@ -285,7 +285,7 @@ msgstr "导入一个预设文件"
 msgid "Delete"
 msgstr "删除"
 
-#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:240
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "在文件管理器中打开"
 
@@ -495,67 +495,55 @@ msgid "Apply"
 msgstr "应用"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
-msgstr "预览主题在…"
+msgid "Show Preview Window"
+msgstr "显示预览窗口"
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 msgid "Presets Menu"
 msgstr "预设菜单"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "保存预设"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 msgid "CSS Errors"
 msgstr "CSS 错误"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 msgid "Colors"
 msgstr "颜色"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 msgid "Advanced"
 msgstr "高级"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 msgid "Restore Applied Color Scheme"
 msgstr "恢复应用的配色方案"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "重置应用的配色方案"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 msgid "About Gradience"
 msgstr "关于 Gradience"
 
 #: data/ui/window.blp:149
-msgid "Adwaita Demo"
-msgstr "Adwaita 演示"
-
-#: data/ui/window.blp:154
-msgid "GTK 4 Demo"
-msgstr "GTK 4 演示"
-
-#: data/ui/window.blp:159
-msgid "GTK 4 Widget Factory"
-msgstr "GTK 4 小工具工厂"
-
-#: data/ui/window.blp:167
 #: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "内置预设"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 msgid "Manage Presets"
 msgstr "管理预设"
 
@@ -575,7 +563,11 @@ msgid ""
 "overwritten!"
 msgstr "存储预设为 <tt>{0}</tt>.如果该预设已存在，它将被覆盖！"
 
-#: gradience/frontend/dialogs/save_dialog.py:56
+#: gradience/frontend/dialogs/save_dialog.py:58
+msgid "Discard"
+msgstr "放弃"
+
+#: gradience/frontend/dialogs/save_dialog.py:63
 msgid "_Save"
 msgstr "保存 (S)"
 
@@ -786,7 +778,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "不支持的文件格式，必须为 .json"
 
 #: gradience/frontend/views/presets_manager_window.py:329
-#: gradience/frontend/main.py:193
+#: gradience/frontend/main.py:184
 msgid "Failed to load list of presets"
 msgstr "加载预设列表失败"
 
@@ -1073,79 +1065,87 @@ msgstr "紫色"
 msgid "Brown"
 msgstr "棕色"
 
-#: gradience/frontend/main.py:226
+#: gradience/frontend/main.py:217
 msgid "No presets found"
 msgstr "未找到预设"
 
-#: gradience/frontend/main.py:249
+#: gradience/frontend/main.py:240
 msgid "Favorite Presets"
 msgstr "最喜欢的预设"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:396
 msgid "Unsaved Changes"
 msgstr "未保存更改"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:408
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: gradience/frontend/main.py:478
+#: gradience/frontend/main.py:469
 msgid "Apply This Color Scheme?"
 msgstr "应用此配色方案？"
 
-#: gradience/frontend/main.py:480
+#: gradience/frontend/main.py:471
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr "警告：这些应用类型的任何自定义 CSS 文件都将被不可逆转地覆盖!"
 
-#: gradience/frontend/main.py:484
+#: gradience/frontend/main.py:475
 msgid "_Apply"
 msgstr "应用 (A)"
 
-#: gradience/frontend/main.py:494
+#: gradience/frontend/main.py:485
 msgid "Restore applied color scheme?"
 msgstr "恢复应用的配色方案？"
 
-#: gradience/frontend/main.py:495 gradience/frontend/main.py:508
+#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "确保你将当前的设置保存为预设。"
 
-#: gradience/frontend/main.py:497
+#: gradience/frontend/main.py:488
 msgid "_Restore"
 msgstr "恢复 (R)"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:499
 msgid "Reset applied color scheme?"
 msgstr "重置应用的配色方案？"
 
-#: gradience/frontend/main.py:510
+#: gradience/frontend/main.py:502
 msgid "_Reset"
 msgstr "重置 (R)"
 
-#: gradience/frontend/main.py:558
+#: gradience/frontend/main.py:551
 msgid "You have unsaved changes!"
 msgstr "您有未保存更改！"
 
-#: gradience/frontend/main.py:566
-msgid "Discard"
-msgstr "放弃"
-
-#: gradience/frontend/main.py:606
+#: gradience/frontend/main.py:596
 msgid "Preset saved"
 msgstr "预设已保存"
 
-#: gradience/frontend/main.py:623
+#: gradience/frontend/main.py:613
 msgid "Preset set successfully"
 msgstr "预设设置成功"
 
-#: gradience/frontend/main.py:641
+#: gradience/frontend/main.py:626
 msgid "Unable to restore GTK 4 backup"
 msgstr "无法恢复 GTK 4 备份"
 
-#: gradience/frontend/main.py:659 gradience/frontend/main.py:667
+#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
 msgid "Unable to delete current preset"
 msgstr "无法删除当前预设"
+
+#~ msgid "Preview Theme in…"
+#~ msgstr "预览主题在…"
+
+#~ msgid "Adwaita Demo"
+#~ msgstr "Adwaita 演示"
+
+#~ msgid "GTK 4 Demo"
+#~ msgstr "GTK 4 演示"
+
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "GTK 4 小工具工厂"
 
 #~ msgid "Failed to save override"
 #~ msgstr "无法保存覆盖"
