@@ -256,11 +256,16 @@ class GradienceApplication(Adw.Application):
                 )
             )
 
+            logging.debug(f"Loaded custom CSS variables: {variables}")
+
             preset = {
-                "name": "User",
+                "name": "Preset Name",
                 "variables": variables,
                 "palette": palette,
-                "custom_css": {"gtk4": custom_css}
+                "custom_css": {
+                    "gtk4": custom_css,
+                    "gtk3": ""
+                }
             }
 
             self.preset = Preset().new_from_dict(preset)
