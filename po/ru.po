@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-06 12:13+0000\n"
+"POT-Creation-Date: 2023-01-07 00:39+0000\n"
 "PO-Revision-Date: 2022-12-21 19:47+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -571,7 +571,7 @@ msgid "Manage Presets"
 msgstr "Управление предустановками"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:51
-#: gradience/frontend/dialogs/save_dialog.py:55
+#: gradience/frontend/dialogs/save_dialog.py:57
 msgid "_Cancel"
 msgstr "_Отменить"
 
@@ -579,7 +579,7 @@ msgstr "_Отменить"
 msgid "OK"
 msgstr "ОК"
 
-#: gradience/frontend/dialogs/save_dialog.py:37
+#: gradience/frontend/dialogs/save_dialog.py:39
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -588,11 +588,11 @@ msgstr ""
 "Сохранение предустановки в <tt>{0}</tt>. Если эта предустановка уже "
 "существует то она будут перезаписана!"
 
-#: gradience/frontend/dialogs/save_dialog.py:58
+#: gradience/frontend/dialogs/save_dialog.py:60
 msgid "Discard"
 msgstr "Не сохранять"
 
-#: gradience/frontend/dialogs/save_dialog.py:63
+#: gradience/frontend/dialogs/save_dialog.py:65
 msgid "_Save"
 msgstr "_Сохранить"
 
@@ -606,15 +606,15 @@ msgstr "Предустановка не может быть загружена"
 msgid "Preset downloaded"
 msgstr "Предустановка загружена"
 
-#: gradience/frontend/widgets/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:52
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr "Этот параметр поддерживается темой adw-gtk3 только частично."
 
-#: gradience/frontend/widgets/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:57
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Этот параметр не поддерживается темой adw-gtk3."
 
-#: gradience/frontend/widgets/option_row.py:99
+#: gradience/frontend/widgets/option_row.py:110
 msgid "Not a color, see text value"
 msgstr "Не является цветом, см. текстовое значение"
 
@@ -640,19 +640,19 @@ msgstr "Удалить из избранного"
 msgid "Add to Favorites"
 msgstr "Добавить в избранное"
 
-#: gradience/frontend/widgets/preset_row.py:147
+#: gradience/frontend/widgets/preset_row.py:166
 msgid "Preset removed"
 msgstr "Предустановка удалена"
 
-#: gradience/frontend/widgets/preset_row.py:148
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Undo"
 msgstr "Отменить"
 
-#: gradience/frontend/widgets/preset_row.py:163
+#: gradience/frontend/widgets/preset_row.py:182
 msgid "Pending Deletion"
 msgstr "Ожидает удаления"
 
-#: gradience/frontend/widgets/preset_row.py:177
+#: gradience/frontend/widgets/preset_row.py:196
 msgid "Unable to delete preset"
 msgstr "Не удалось удалить предустановку"
 
@@ -1127,19 +1127,19 @@ msgstr "Предустановки не найдены"
 msgid "Favorite Presets"
 msgstr "Избранные предустановки"
 
-#: gradience/frontend/main.py:396
+#: gradience/frontend/main.py:401
 msgid "Unsaved Changes"
 msgstr "Несохранённые изменения"
 
-#: gradience/frontend/main.py:408
+#: gradience/frontend/main.py:413
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: gradience/frontend/main.py:469
+#: gradience/frontend/main.py:493
 msgid "Apply This Color Scheme?"
 msgstr "Применить эту цветовую схему?"
 
-#: gradience/frontend/main.py:471
+#: gradience/frontend/main.py:495
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1147,47 +1147,47 @@ msgstr ""
 "Внимание: любые пользовательские файлы CSS для этих типов приложений будут "
 "безвозвратно перезаписаны!"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:499
 msgid "_Apply"
 msgstr "_Применить"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:509
 msgid "Restore applied color scheme?"
 msgstr "Восстановить применённую цветовую схему?"
 
-#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
+#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Убедитесь, что Вы сохранили текущие настройки как предустановку."
 
-#: gradience/frontend/main.py:488
+#: gradience/frontend/main.py:512
 msgid "_Restore"
 msgstr "_Восстановить"
 
-#: gradience/frontend/main.py:499
+#: gradience/frontend/main.py:523
 msgid "Reset applied color scheme?"
 msgstr "Сбросить применённую цветовую схему?"
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:526
 msgid "_Reset"
 msgstr "_Сбросить"
 
-#: gradience/frontend/main.py:551
+#: gradience/frontend/main.py:552
 msgid "You have unsaved changes!"
 msgstr "У вас есть не сохранённые изменения!"
 
-#: gradience/frontend/main.py:596
+#: gradience/frontend/main.py:603
 msgid "Preset saved"
 msgstr "Предустановка сохранена"
 
-#: gradience/frontend/main.py:613
+#: gradience/frontend/main.py:620
 msgid "Preset set successfully"
 msgstr "Предустановка успешно установлена"
 
-#: gradience/frontend/main.py:626
+#: gradience/frontend/main.py:633
 msgid "Unable to restore GTK 4 backup"
 msgstr "Не удалось восстановить резервную копию GTK 4"
 
-#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
+#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
 msgid "Unable to delete current preset"
 msgstr "Не удалось удалить текущую предустановку"
 

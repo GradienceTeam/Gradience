@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-06 12:13+0000\n"
+"POT-Creation-Date: 2023-01-07 00:39+0000\n"
 "PO-Revision-Date: 2022-12-31 00:37+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -562,7 +562,7 @@ msgid "Manage Presets"
 msgstr "Upravljanje predlošcima"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:51
-#: gradience/frontend/dialogs/save_dialog.py:55
+#: gradience/frontend/dialogs/save_dialog.py:57
 msgid "_Cancel"
 msgstr "O_dustani"
 
@@ -570,7 +570,7 @@ msgstr "O_dustani"
 msgid "OK"
 msgstr "U redu"
 
-#: gradience/frontend/dialogs/save_dialog.py:37
+#: gradience/frontend/dialogs/save_dialog.py:39
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -579,11 +579,11 @@ msgstr ""
 "Spremanje predloška u <tt>{0}</tt>. Ako taj predložak već postoji, biti će "
 "prebrisan!"
 
-#: gradience/frontend/dialogs/save_dialog.py:58
+#: gradience/frontend/dialogs/save_dialog.py:60
 msgid "Discard"
 msgstr "Odbaci"
 
-#: gradience/frontend/dialogs/save_dialog.py:63
+#: gradience/frontend/dialogs/save_dialog.py:65
 msgid "_Save"
 msgstr "_Spremi"
 
@@ -597,15 +597,15 @@ msgstr "Predložak se ne može preuzeti"
 msgid "Preset downloaded"
 msgstr "Predložak je preuzet"
 
-#: gradience/frontend/widgets/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:52
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr "Ova mogućnost djelomično je podržana od strane adw-gtk3 tema."
 
-#: gradience/frontend/widgets/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:57
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Ova mogućnost njije podržana od strane adw-gtk3 tema."
 
-#: gradience/frontend/widgets/option_row.py:99
+#: gradience/frontend/widgets/option_row.py:110
 msgid "Not a color, see text value"
 msgstr "Nije boja, pogledajte tekstnu vrijednost"
 
@@ -631,19 +631,19 @@ msgstr "Ukloni iz omiljenih"
 msgid "Add to Favorites"
 msgstr "Dodaj u omiljene"
 
-#: gradience/frontend/widgets/preset_row.py:147
+#: gradience/frontend/widgets/preset_row.py:166
 msgid "Preset removed"
 msgstr "Predložak je uklonjen"
 
-#: gradience/frontend/widgets/preset_row.py:148
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Undo"
 msgstr "Vrati"
 
-#: gradience/frontend/widgets/preset_row.py:163
+#: gradience/frontend/widgets/preset_row.py:182
 msgid "Pending Deletion"
 msgstr "Čekanje brisanja"
 
-#: gradience/frontend/widgets/preset_row.py:177
+#: gradience/frontend/widgets/preset_row.py:196
 msgid "Unable to delete preset"
 msgstr "Nemoguće brisanje predloška"
 
@@ -1114,19 +1114,19 @@ msgstr "Nema pronađenih predloška"
 msgid "Favorite Presets"
 msgstr "Predlošci omiljenih"
 
-#: gradience/frontend/main.py:396
+#: gradience/frontend/main.py:401
 msgid "Unsaved Changes"
 msgstr "Nespremljene promjene"
 
-#: gradience/frontend/main.py:408
+#: gradience/frontend/main.py:413
 msgid "Save Changes"
 msgstr "Spremi promjene"
 
-#: gradience/frontend/main.py:469
+#: gradience/frontend/main.py:493
 msgid "Apply This Color Scheme?"
 msgstr "Primijeni ovu shemu boja?"
 
-#: gradience/frontend/main.py:471
+#: gradience/frontend/main.py:495
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1134,47 +1134,47 @@ msgstr ""
 "Upozorenje: svaka prilagođena CSS datoteka za te vrste datoteka biti će "
 "nepovratno prebrisana!"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:499
 msgid "_Apply"
 msgstr "_Primijeni"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:509
 msgid "Restore applied color scheme?"
 msgstr "Vrati primijenjenu shemu boje?"
 
-#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
+#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "Osigurajte da imate trenutne postavke spremljene u predložak."
 
-#: gradience/frontend/main.py:488
+#: gradience/frontend/main.py:512
 msgid "_Restore"
 msgstr "Ob_novi"
 
-#: gradience/frontend/main.py:499
+#: gradience/frontend/main.py:523
 msgid "Reset applied color scheme?"
 msgstr "Vrati izvornu shemu boje?"
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:526
 msgid "_Reset"
 msgstr "_Vrati izvorno"
 
-#: gradience/frontend/main.py:551
+#: gradience/frontend/main.py:552
 msgid "You have unsaved changes!"
 msgstr "Imate nespremljene promjene!"
 
-#: gradience/frontend/main.py:596
+#: gradience/frontend/main.py:603
 msgid "Preset saved"
 msgstr "Predložak je spremljen"
 
-#: gradience/frontend/main.py:613
+#: gradience/frontend/main.py:620
 msgid "Preset set successfully"
 msgstr "Predložak je uspješno postavljen"
 
-#: gradience/frontend/main.py:626
+#: gradience/frontend/main.py:633
 msgid "Unable to restore GTK 4 backup"
 msgstr "Nemoguća obnova GTK 4 sigurnosne kopije"
 
-#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
+#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
 msgid "Unable to delete current preset"
 msgstr "Nemoguće brisanje aktualnog predloška"
 

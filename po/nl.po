@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-06 12:13+0000\n"
+"POT-Creation-Date: 2023-01-07 00:39+0000\n"
 "PO-Revision-Date: 2022-12-28 16:49+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -567,7 +567,7 @@ msgid "Manage Presets"
 msgstr "Voorinstellingen beheren"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:51
-#: gradience/frontend/dialogs/save_dialog.py:55
+#: gradience/frontend/dialogs/save_dialog.py:57
 msgid "_Cancel"
 msgstr "_Annuleren"
 
@@ -575,7 +575,7 @@ msgstr "_Annuleren"
 msgid "OK"
 msgstr "Ok"
 
-#: gradience/frontend/dialogs/save_dialog.py:37
+#: gradience/frontend/dialogs/save_dialog.py:39
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -584,11 +584,11 @@ msgstr ""
 "Voorinstelling opslaan in <tt>{0}</tt>. Als die voorinstelling al bestaat, "
 "wordt deze overschreven!"
 
-#: gradience/frontend/dialogs/save_dialog.py:58
+#: gradience/frontend/dialogs/save_dialog.py:60
 msgid "Discard"
 msgstr "Verwerpen"
 
-#: gradience/frontend/dialogs/save_dialog.py:63
+#: gradience/frontend/dialogs/save_dialog.py:65
 msgid "_Save"
 msgstr "_Opslaan"
 
@@ -602,16 +602,16 @@ msgstr "Voorinstelling kon niet worden gedownload"
 msgid "Preset downloaded"
 msgstr "Voorinstelling gedownload"
 
-#: gradience/frontend/widgets/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:52
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr ""
 "Deze optie wordt slechts gedeeltelijk ondersteund door het adw-gtk3-thema."
 
-#: gradience/frontend/widgets/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:57
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Deze optie wordt niet ondersteund door het adw-gtk3-thema."
 
-#: gradience/frontend/widgets/option_row.py:99
+#: gradience/frontend/widgets/option_row.py:110
 msgid "Not a color, see text value"
 msgstr "Geen kleur, zie tekstwaarde"
 
@@ -637,19 +637,19 @@ msgstr "Verwijderen uit favorieten"
 msgid "Add to Favorites"
 msgstr "Toevoegen aan favorieten"
 
-#: gradience/frontend/widgets/preset_row.py:147
+#: gradience/frontend/widgets/preset_row.py:166
 msgid "Preset removed"
 msgstr "Voorinstelling verwijderd"
 
-#: gradience/frontend/widgets/preset_row.py:148
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: gradience/frontend/widgets/preset_row.py:163
+#: gradience/frontend/widgets/preset_row.py:182
 msgid "Pending Deletion"
 msgstr "In afwachting van verwijdering"
 
-#: gradience/frontend/widgets/preset_row.py:177
+#: gradience/frontend/widgets/preset_row.py:196
 msgid "Unable to delete preset"
 msgstr "Kan voorinstelling niet verwijderen"
 
@@ -1124,19 +1124,19 @@ msgstr "Geen voorinstellingen gevonden"
 msgid "Favorite Presets"
 msgstr "Favoriete voorinstellingen"
 
-#: gradience/frontend/main.py:396
+#: gradience/frontend/main.py:401
 msgid "Unsaved Changes"
 msgstr "Niet-opgeslagen wijzigingen"
 
-#: gradience/frontend/main.py:408
+#: gradience/frontend/main.py:413
 msgid "Save Changes"
 msgstr "Wijzigingen opslaan"
 
-#: gradience/frontend/main.py:469
+#: gradience/frontend/main.py:493
 msgid "Apply This Color Scheme?"
 msgstr "Dit kleurenschema toepassen?"
 
-#: gradience/frontend/main.py:471
+#: gradience/frontend/main.py:495
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1144,48 +1144,48 @@ msgstr ""
 "Waarschuwing: aangepaste CSS-bestanden voor die app-typen worden "
 "onomkeerbaar overschreven!"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:499
 msgid "_Apply"
 msgstr "_Toepassen"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:509
 msgid "Restore applied color scheme?"
 msgstr "Toegepast kleurenschema herstellen?"
 
-#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
+#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Zorg ervoor dat u de huidige instellingen als voorinstelling hebt opgeslagen."
 
-#: gradience/frontend/main.py:488
+#: gradience/frontend/main.py:512
 msgid "_Restore"
 msgstr "_Herstellen"
 
-#: gradience/frontend/main.py:499
+#: gradience/frontend/main.py:523
 msgid "Reset applied color scheme?"
 msgstr "Toegepast kleurenschema opnieuw instellen?"
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:526
 msgid "_Reset"
 msgstr "_Opnieuw instellen"
 
-#: gradience/frontend/main.py:551
+#: gradience/frontend/main.py:552
 msgid "You have unsaved changes!"
 msgstr "Er zijn niet-opgeslagen wijzigingen!"
 
-#: gradience/frontend/main.py:596
+#: gradience/frontend/main.py:603
 msgid "Preset saved"
 msgstr "Voorinstelling opgeslagen"
 
-#: gradience/frontend/main.py:613
+#: gradience/frontend/main.py:620
 msgid "Preset set successfully"
 msgstr "Voorinstelling succesvol ingesteld"
 
-#: gradience/frontend/main.py:626
+#: gradience/frontend/main.py:633
 msgid "Unable to restore GTK 4 backup"
 msgstr "Kan GTK-4-back-up niet herstellen"
 
-#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
+#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
 msgid "Unable to delete current preset"
 msgstr "Kan huidige voorinstelling niet verwijderen"
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-06 12:13+0000\n"
+"POT-Creation-Date: 2023-01-07 00:39+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -649,7 +649,7 @@ msgid "Manage Presets"
 msgstr "Kelola Preset"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:51
-#: gradience/frontend/dialogs/save_dialog.py:55
+#: gradience/frontend/dialogs/save_dialog.py:57
 #, fuzzy
 #| msgid "Cancel"
 msgid "_Cancel"
@@ -659,7 +659,7 @@ msgstr "Membatalkan"
 msgid "OK"
 msgstr ""
 
-#: gradience/frontend/dialogs/save_dialog.py:37
+#: gradience/frontend/dialogs/save_dialog.py:39
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -668,12 +668,12 @@ msgstr ""
 "Menyimpan preset ke <tt>{0}</tt>. Jika preset itu sudah ada, itu akan "
 "ditimpa!"
 
-#: gradience/frontend/dialogs/save_dialog.py:58
+#: gradience/frontend/dialogs/save_dialog.py:60
 #, fuzzy
 msgid "Discard"
 msgstr "Abaikan"
 
-#: gradience/frontend/dialogs/save_dialog.py:63
+#: gradience/frontend/dialogs/save_dialog.py:65
 #, fuzzy
 #| msgid "Save"
 msgid "_Save"
@@ -689,15 +689,15 @@ msgstr "Preset tidak dapat diunduh"
 msgid "Preset downloaded"
 msgstr "Preset diunduh"
 
-#: gradience/frontend/widgets/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:52
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr "Opsi ini hanya didukung sebagian oleh tema adw-gtk3."
 
-#: gradience/frontend/widgets/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:57
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Opsi ini tidak didukung oleh tema adw-gtk3."
 
-#: gradience/frontend/widgets/option_row.py:99
+#: gradience/frontend/widgets/option_row.py:110
 msgid "Not a color, see text value"
 msgstr "Bukan warna, lihat nilai teks"
 
@@ -727,22 +727,22 @@ msgstr "Hapus dari favorit"
 msgid "Add to Favorites"
 msgstr "Tambah ke favorit"
 
-#: gradience/frontend/widgets/preset_row.py:147
+#: gradience/frontend/widgets/preset_row.py:166
 #, fuzzy
 msgid "Preset removed"
 msgstr "Preset dihapus"
 
-#: gradience/frontend/widgets/preset_row.py:148
+#: gradience/frontend/widgets/preset_row.py:167
 #, fuzzy
 msgid "Undo"
 msgstr "Urung"
 
-#: gradience/frontend/widgets/preset_row.py:163
+#: gradience/frontend/widgets/preset_row.py:182
 #, fuzzy
 msgid "Pending Deletion"
 msgstr "Penghapusan Tertunda"
 
-#: gradience/frontend/widgets/preset_row.py:177
+#: gradience/frontend/widgets/preset_row.py:196
 #, fuzzy
 msgid "Unable to delete preset"
 msgstr "Tidak dapat menghapus preset"
@@ -1304,22 +1304,22 @@ msgstr "Tidak ada preset yang ditemukan"
 msgid "Favorite Presets"
 msgstr "Preset Favorit"
 
-#: gradience/frontend/main.py:396
+#: gradience/frontend/main.py:401
 #, fuzzy
 msgid "Unsaved Changes"
 msgstr "Perubahan yang belum disimpan"
 
-#: gradience/frontend/main.py:408
+#: gradience/frontend/main.py:413
 #, fuzzy
 msgid "Save Changes"
 msgstr "Simpan Perubahan"
 
-#: gradience/frontend/main.py:469
+#: gradience/frontend/main.py:493
 #, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "Menerapkan Skema Warna Ini?"
 
-#: gradience/frontend/main.py:471
+#: gradience/frontend/main.py:495
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1327,58 +1327,58 @@ msgstr ""
 "Peringatan: file CSS khusus apa pun untuk jenis aplikasi tersebut akan "
 "ditimpa secara permanen!"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:499
 #, fuzzy
 #| msgid "Apply"
 msgid "_Apply"
 msgstr "Terapkan"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:509
 #, fuzzy
 msgid "Restore applied color scheme?"
 msgstr "Mengembalikan skema warna yang diterapkan?"
 
-#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
+#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Pastikan Anda memiliki pengaturan saat ini yang disimpan sebagai preset."
 
-#: gradience/frontend/main.py:488
+#: gradience/frontend/main.py:512
 #, fuzzy
 msgid "_Restore"
 msgstr "Mengembalikan"
 
-#: gradience/frontend/main.py:499
+#: gradience/frontend/main.py:523
 msgid "Reset applied color scheme?"
 msgstr "Setel ulang skema warna yang diterapkan?"
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:526
 #, fuzzy
 #| msgid "Reset"
 msgid "_Reset"
 msgstr "Mengatur ulang"
 
-#: gradience/frontend/main.py:551
+#: gradience/frontend/main.py:552
 #, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Anda memiliki perubahan yang belum disimpan!"
 
-#: gradience/frontend/main.py:596
+#: gradience/frontend/main.py:603
 msgid "Preset saved"
 msgstr "Preset disimpan"
 
-#: gradience/frontend/main.py:613
+#: gradience/frontend/main.py:620
 #, fuzzy
 #| msgid "Preset set sucessfully"
 msgid "Preset set successfully"
 msgstr "Preset berhasil disetel"
 
-#: gradience/frontend/main.py:626
+#: gradience/frontend/main.py:633
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "Tidak dapat memulihkan cadangan GTK 4"
 
-#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
+#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "Tidak dapat menghapus preset"

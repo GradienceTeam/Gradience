@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-06 12:13+0000\n"
+"POT-Creation-Date: 2023-01-07 00:39+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -576,7 +576,7 @@ msgid "Manage Presets"
 msgstr "Gérer les pré-configurations"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:51
-#: gradience/frontend/dialogs/save_dialog.py:55
+#: gradience/frontend/dialogs/save_dialog.py:57
 msgid "_Cancel"
 msgstr "A_nnuler"
 
@@ -584,7 +584,7 @@ msgstr "A_nnuler"
 msgid "OK"
 msgstr "OK"
 
-#: gradience/frontend/dialogs/save_dialog.py:37
+#: gradience/frontend/dialogs/save_dialog.py:39
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -593,11 +593,11 @@ msgstr ""
 "Enregistrement de la configuration vers <tt>{0}</tt>. Si elle existe déjà, "
 "elle sera écrasée !"
 
-#: gradience/frontend/dialogs/save_dialog.py:58
+#: gradience/frontend/dialogs/save_dialog.py:60
 msgid "Discard"
 msgstr "Jeter"
 
-#: gradience/frontend/dialogs/save_dialog.py:63
+#: gradience/frontend/dialogs/save_dialog.py:65
 msgid "_Save"
 msgstr "_Sauvegarder"
 
@@ -611,15 +611,15 @@ msgstr "La pré-configuration n’a pas pu être téléchargée"
 msgid "Preset downloaded"
 msgstr "Pré-configuration téléchargée"
 
-#: gradience/frontend/widgets/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:52
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr "Cette option n'est que partiellement supportée par le thème adw-gtk3."
 
-#: gradience/frontend/widgets/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:57
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Cette option n'est pas supportée par le thème adw-gtk3."
 
-#: gradience/frontend/widgets/option_row.py:99
+#: gradience/frontend/widgets/option_row.py:110
 msgid "Not a color, see text value"
 msgstr "Couleur invalide, voir la valeur du texte"
 
@@ -645,19 +645,19 @@ msgstr "Supprimer des favoris"
 msgid "Add to Favorites"
 msgstr "Ajouter aux favoris"
 
-#: gradience/frontend/widgets/preset_row.py:147
+#: gradience/frontend/widgets/preset_row.py:166
 msgid "Preset removed"
 msgstr "Pré-configuration supprimée"
 
-#: gradience/frontend/widgets/preset_row.py:148
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Undo"
 msgstr "Annuler"
 
-#: gradience/frontend/widgets/preset_row.py:163
+#: gradience/frontend/widgets/preset_row.py:182
 msgid "Pending Deletion"
 msgstr "Suppression en cours"
 
-#: gradience/frontend/widgets/preset_row.py:177
+#: gradience/frontend/widgets/preset_row.py:196
 msgid "Unable to delete preset"
 msgstr "La suppression de la configuration a échoué"
 
@@ -1141,19 +1141,19 @@ msgstr "Aucune pré-configuration trouvée"
 msgid "Favorite Presets"
 msgstr "Pré-configurations préférées"
 
-#: gradience/frontend/main.py:396
+#: gradience/frontend/main.py:401
 msgid "Unsaved Changes"
 msgstr "Changements non sauvegardés"
 
-#: gradience/frontend/main.py:408
+#: gradience/frontend/main.py:413
 msgid "Save Changes"
 msgstr "Enregistrer les changements"
 
-#: gradience/frontend/main.py:469
+#: gradience/frontend/main.py:493
 msgid "Apply This Color Scheme?"
 msgstr "Appliquer ce schéma de couleurs ?"
 
-#: gradience/frontend/main.py:471
+#: gradience/frontend/main.py:495
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1161,49 +1161,49 @@ msgstr ""
 "Attention : tous les fichiers CSS personnalisés pour ces types "
 "d’applications seront écrasés !"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:499
 msgid "_Apply"
 msgstr "_Appliquer"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:509
 msgid "Restore applied color scheme?"
 msgstr "Rétablir le schéma de couleurs appliqué ?"
 
-#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
+#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
 msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
 "Assurez-vous d’avoir vos réglages actuels sauvegardés en tant que "
 "configuration."
 
-#: gradience/frontend/main.py:488
+#: gradience/frontend/main.py:512
 msgid "_Restore"
 msgstr "_Restaurer"
 
-#: gradience/frontend/main.py:499
+#: gradience/frontend/main.py:523
 msgid "Reset applied color scheme?"
 msgstr "Réinitialiser le thème de couleurs ?"
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:526
 msgid "_Reset"
 msgstr "_Réinitialiser"
 
-#: gradience/frontend/main.py:551
+#: gradience/frontend/main.py:552
 msgid "You have unsaved changes!"
 msgstr "Vous avez des changements non enregistrés !"
 
-#: gradience/frontend/main.py:596
+#: gradience/frontend/main.py:603
 msgid "Preset saved"
 msgstr "Pré-configuration enregistrée"
 
-#: gradience/frontend/main.py:613
+#: gradience/frontend/main.py:620
 msgid "Preset set successfully"
 msgstr "Pré-configuration appliquée avec succès"
 
-#: gradience/frontend/main.py:626
+#: gradience/frontend/main.py:633
 msgid "Unable to restore GTK 4 backup"
 msgstr "Impossible de restaurer la sauvegarde de GTK 4"
 
-#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
+#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
 msgid "Unable to delete current preset"
 msgstr "La suppression de la configuration actuelle a échoué"
 
