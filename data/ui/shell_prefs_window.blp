@@ -1,0 +1,17 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradienceShellPrefsWindow : Adw.PreferencesWindow {
+  title: _("Custom Shell Theme Colors");
+  search-enabled: false;
+  default-height: 600;
+  default-width: 500;
+  modal: true;
+
+  Adw.PreferencesPage {
+    Adw.PreferencesGroup custom-colors-group {
+      title: _("Custom Shell Colors");
+      description: _("This section allows you to customize colors that will be used in Shell theme.");
+    }
+  }
+}

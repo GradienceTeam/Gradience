@@ -27,18 +27,8 @@ class GradienceAppTypeDialog(Adw.MessageDialog):
 
     gtk4_app_type = Gtk.Template.Child("gtk4-app-type")
     gtk3_app_type = Gtk.Template.Child("gtk3-app-type")
-    gnome_app_type = Gtk.Template.Child("gnome-app-type")
 
-    def __init__(
-        self,
-        parent,
-        heading,
-        body,
-        ok_res_name,
-        ok_res_label,
-        ok_res_appearance,
-        **kwargs
-    ):
+    def __init__(self, parent, heading, body, ok_res_name, ok_res_label, ok_res_appearance, **kwargs):
         super().__init__(**kwargs)
 
         self.parent = parent
@@ -58,6 +48,5 @@ class GradienceAppTypeDialog(Adw.MessageDialog):
     def get_app_types(self):
         return {
             "gtk4": self.gtk4_app_type.get_active(),
-            "gtk3": self.gtk3_app_type.get_active(),
-            "shell": self.gnome_app_type.get_active()
+            "gtk3": self.gtk3_app_type.get_active()
         }

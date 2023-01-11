@@ -1,7 +1,7 @@
 # main_window.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,13 +18,14 @@
 
 from gi.repository import Gtk, Adw, Gio
 
-from gradience.backend.theming.monet import Monet
 from gradience.backend.constants import rootdir, app_id, build_type
 
-from gradience.frontend.widgets.error_list_row import GradienceErrorListRow
+from gradience.frontend.widgets.shell_theming_group import GradienceShellThemingGroup
+from gradience.frontend.widgets.monet_theming_group import GradienceMonetThemingGroup
 from gradience.frontend.widgets.palette_shades import GradiencePaletteShades
+from gradience.frontend.widgets.error_list_row import GradienceErrorListRow
 from gradience.frontend.widgets.option_row import GradienceOptionRow
-from gradience.frontend.schemas.shell_schema import shell_schema
+
 from gradience.frontend.schemas.preset_schema import preset_schema
 
 from gradience.backend.logger import Logger
@@ -36,43 +37,54 @@ logging = Logger()
 class GradienceMainWindow(Adw.ApplicationWindow):
     __gtype_name__ = "GradienceMainWindow"
 
-    content = Gtk.Template.Child()
+    content_colors = Gtk.Template.Child("content-colors")
+    content_theming = Gtk.Template.Child("content-theming")
+    content_plugins = Gtk.Template.Child("content-plugins")
+
     toast_overlay = Gtk.Template.Child()
-    content_monet = Gtk.Template.Child("content_monet")
-    content_plugins = Gtk.Template.Child("content_plugins")
+
     save_preset_button = Gtk.Template.Child("save-preset-button")
-    main_menu = Gtk.Template.Child("main-menu")
     errors_button = Gtk.Template.Child("errors-button")
+
     errors_list = Gtk.Template.Child("errors-list")
     presets_dropdown = Gtk.Template.Child("presets-dropdown")
     presets_menu = Gtk.Template.Child("presets-menu")
-    monet_image_file = None
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.presets_dropdown.get_popover().connect(
-            "show", self.on_presets_dropdown_activate
-        )
 
+        self.style_manager = self.app.style_manager
+
+        self.app = Gtk.Application.get_default()
+        self.settings = Gio.Settings(app_id)
+
+        self.monet_image_file = None
+
+        self.setup_signals()
+        self.setup()
+
+    def setup_signals(self):
+        self.presets_dropdown.get_popover().connect("show",
+            self.on_presets_dropdown_activate)
+
+        self.connect("close-request",
+            self.on_close_request)
+
+        self.connect("unrealize",
+            self.save_window_props)
+
+    def setup(self):
         # Set devel style
         if build_type == "debug":
             self.get_style_context().add_class("devel")
 
+        self.setup_shell_group()
         self.setup_monet_page()
         self.setup_colors_page()
 
-        self.settings = Gio.Settings(app_id)
-
-        self.connect("close-request", self.on_close_request)
-        self.connect("unrealize", self.save_window_props)
-
-        self.style_manager = self.get_application().style_manager
-        #self.first_apply = True
-
-        self.get_default_wallpaper()
-
     # TODO: Check if org.freedesktop.portal.Settings portal will allow us to \
     # read org.gnome.desktop.background DConf key
+    # TODO: Find purpose for this function
     def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
         if self.style_manager.get_dark():
@@ -87,19 +99,16 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         image_basename = self.monet_image_file.get_basename()
         logging.debug(image_basename)
         self.monet_image_file = self.monet_image_file.get_path()
-        self.monet_file_chooser_button.set_label(image_basename)
-        self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
+        #self.monet_file_chooser_button.set_label(image_basename)
+        #self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
         logging.debug(self.monet_image_file)
-        # self.on_apply_button() # Comment out for now, because it always shows
+        # self.on_apply_button_clicked() # Comment out for now, because it always shows
         # that annoying toast on startup
 
-    def on_file_picker_button_clicked(self, *args):
-        self.monet_file_chooser_dialog.show()
-
     def on_close_request(self, *args):
-        if self.get_application().is_dirty:
+        if self.app.is_dirty:
             logging.debug("Window close request")
-            self.get_application().show_unsaved_dialog()
+            self.app.show_unsaved_dialog()
             return True
         self.close()
 
@@ -112,154 +121,15 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.settings.set_boolean("window-maximized", self.is_maximized())
         self.settings.set_boolean("window-fullscreen", self.is_fullscreen())
 
-    def on_monet_file_chooser_response(self, widget, response):
-        if response == Gtk.ResponseType.ACCEPT:
-            self.monet_image_file = self.monet_file_chooser_dialog.get_file()
-            image_basename = self.monet_image_file.get_basename()
-            self.monet_file_chooser_button.set_label(image_basename)
-            self.monet_file_chooser_button.set_tooltip_text(image_basename)
-
-        self.monet_file_chooser_dialog.hide()
-
-        if response == Gtk.ResponseType.ACCEPT:
-            self.monet_image_file = self.monet_image_file.get_path()
-            self.on_apply_button()
-
     def setup_shell_group(self):
-        shell_pref_group = Adw.PreferencesGroup()
-        shell_pref_group.set_name("shell-group")
-        shell_pref_group.set_title("GNOME Shell Theming")
-        shell_pref_group.set_description(
-            _(
-                "This section allows you to customize colors that will be "
-                "used in GNOME Shell theme.\n"
-                "WARNING: Extensions modifying Shell stylesheet can cause "
-                "issues with Shell themes."
-            )
-        )
+        self.shell_group = GradienceShellThemingGroup(self)
 
-        for variable in shell_schema["variables"]:
-            pref_variable = GradienceOptionRow(
-                variable["name"],
-                variable["title"]
-                #"The One Piece is real!!11!!",
-                #variable.get("explanation"),
-            )
-            shell_pref_group.add(pref_variable)
-            self.get_application(
-            ).pref_variables[variable["name"]] = pref_variable
-
-        #self.shell_test_row = Adw.ActionRow()
-        #self.shell_test_row.set_title(_("Background Color"))
-        #shell_pref_group.add(self.shell_test_row)
-
-        self.content_monet.add(shell_pref_group)
+        self.content_theming.add(self.shell_group)
 
     def setup_monet_page(self):
-        self.setup_shell_group()
+        self.monet_pref_group = GradienceMonetThemingGroup(self)
 
-        self.monet_pref_group = Adw.PreferencesGroup()
-        self.monet_pref_group.set_name("monet")
-        self.monet_pref_group.set_title(_("Monet Engine"))
-        self.monet_pref_group.set_description(
-            _(
-                "Monet is an engine that generates a Material Design 3 "
-                "palette from an image's color."
-            )
-        )
-
-        self.apply_button = Gtk.Button()
-        self.apply_button.set_label(_("Apply"))
-        self.apply_button.set_valign(Gtk.Align.CENTER)
-        self.apply_button.set_css_classes("suggested-action")
-        self.apply_button.connect("clicked", self.on_apply_button)
-
-        self.monet_pref_group.set_header_suffix(self.apply_button)
-        self.monet_file_chooser_row = Adw.ActionRow()
-        self.monet_file_chooser_row.set_title(_("Background Image"))
-
-        self.monet_file_chooser_dialog = Gtk.FileChooserNative()
-        self.monet_file_chooser_dialog.set_transient_for(self)
-        self.monet_file_chooser_dialog.set_modal(True)
-
-        self.monet_file_chooser_button = Gtk.Button()
-        self.monet_file_chooser_button.set_valign(Gtk.Align.CENTER)
-
-        child_button = Gtk.Box()
-        label = Gtk.Label()
-        label.set_label(_("Choose a File"))
-        child_button.append(label)
-
-        icon = Gtk.Image()
-        icon.set_from_icon_name("folder-pictures-symbolic")
-        child_button.append(icon)
-        child_button.set_spacing(5)
-
-        self.monet_file_chooser_button.set_child(child_button)
-
-        self.monet_file_chooser_button.connect(
-            "clicked", self.on_file_picker_button_clicked
-        )
-        self.monet_file_chooser_dialog.connect(
-            "response", self.on_monet_file_chooser_response
-        )
-        self.monet_file_chooser_row.add_suffix(self.monet_file_chooser_button)
-        self.monet_pref_group.add(self.monet_file_chooser_row)
-
-        self.monet_palette_shades = GradiencePaletteShades(
-            "monet", _("Monet Palette"), 6
-        )
-        self.get_application(
-        ).pref_palette_shades["monet"] = self.monet_palette_shades
-        self.monet_pref_group.add(self.monet_palette_shades)
-
-        self.tone_row = Adw.ComboRow()
-        self.tone_row.set_title(_("Tone"))
-
-        store = Gtk.StringList()
-        store_values = []
-        for i in range(20, 80, 5):
-            store_values.append(str(i))
-        for v in store_values:
-            store.append(v)
-        self.tone_row.set_model(store)
-        self.monet_pref_group.add(self.tone_row)
-
-        self.monet_theme_row = Adw.ComboRow()
-        self.monet_theme_row.set_title(_("Theme"))
-
-        store = Gtk.StringList()
-        store.append(_("Auto"))
-        store.append(_("Light"))
-        store.append(_("Dark"))
-        self.monet_theme_row.set_model(store)
-        self.monet_pref_group.add(self.monet_theme_row)
-
-        self.content_monet.add(self.monet_pref_group)
-
-    def on_apply_button(self, *_args):
-        if self.monet_image_file:
-            try:
-                self.theme = Monet().generate_from_image(self.monet_image_file)
-
-                self.tone = self.tone_row.get_selected_item()
-                self.monet_theme = self.monet_theme_row.get_selected_item()
-                self.get_application().update_theme_from_monet(
-                    self.theme, self.tone, self.monet_theme
-                )
-            except (OSError, AttributeError, ValueError):
-                logging.error("Failed to generate Monet palette.")
-                self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Failed to generate Monet palette"))
-                )
-            else:
-                self.toast_overlay.add_toast(
-                    Adw.Toast(title=_("Palette generated"))
-                )
-        else:
-            self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Select a background first"))
-            )
+        self.content_theming.add(self.monet_pref_group)
 
     def setup_colors_page(self):
         for group in preset_schema["groups"]:
@@ -279,7 +149,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 self.get_application(
                 ).pref_variables[variable["name"]] = pref_variable
 
-            self.content.add(pref_group)
+            self.content_colors.add(pref_group)
 
         palette_pref_group = Adw.PreferencesGroup()
         palette_pref_group.set_name("palette_colors")
@@ -299,7 +169,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             palette_pref_group.add(palette_shades)
             self.get_application(
             ).pref_palette_shades[color["prefix"]] = palette_shades
-        self.content.add(palette_pref_group)
+        self.content_colors.add(palette_pref_group)
 
     def update_errors(self, errors):
         child = self.errors_list.get_row_at_index(0)
@@ -313,4 +183,4 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             )
 
     def on_presets_dropdown_activate(self, *args):
-        self.get_application().reload_user_defined_presets()
+        self.app.reload_user_defined_presets()

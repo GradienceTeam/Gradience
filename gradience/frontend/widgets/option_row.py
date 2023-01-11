@@ -88,7 +88,6 @@ class GradienceOptionRow(Adw.ActionRow):
         else:
             self.value_stack.set_visible_child(self.color_value)
 
-    # TODO: See issue: #642, #666
     def update_value(self, new_value, **kwargs):
         rgba = Gdk.RGBA()
         is_app_ready = self.app.is_ready

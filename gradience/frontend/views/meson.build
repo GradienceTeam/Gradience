@@ -9,6 +9,7 @@ gradience_sources = [
     'preferences_window.py',
     'presets_manager_window.py',
     'share_window.py',
+    'shell_prefs_window.py',
     'welcome_window.py'
 ]
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: viewsdir)

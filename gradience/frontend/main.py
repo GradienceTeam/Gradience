@@ -613,7 +613,7 @@ class GradienceApplication(Adw.Application):
             if widget.get_app_types()["gtk3"]:
                 PresetUtils().apply_preset("gtk3", self.preset)
 
-            if widget.get_app_types()["shell"]:
+            if self.settings.get_boolean("shell-theming-enabled"):
                 PresetUtils().apply_preset("shell", self.preset)
 
             self.reload_plugins()

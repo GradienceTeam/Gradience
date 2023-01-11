@@ -1,0 +1,42 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradienceMonetThemingGroup : Adw.PreferencesGroup {
+  title: _("Monet Engine");
+  description: _("Monet is an engine that generates a Material Design 3 palette from extracting image's colors.");
+
+  [header-suffix]
+  Button apply-button {
+    valign: center;
+    label: _("Apply");
+    clicked => on_apply_button_clicked();
+  }
+
+  Adw.ActionRow file-chooser-row {
+    title: _("Background Image");
+
+    [suffix]
+    Button file-chooser-button {
+      valign: center;
+      clicked => on_file_chooser_button_clicked();
+
+      Box button-content {
+        spacing: 10;
+
+        Label {
+          label: _("Choose a File");
+        }
+
+        Image {
+          icon-name: "folder-pictures-symbolic";
+        }
+      }
+    }
+  }
+}
+
+Gtk.FileChooserNative monet-file-chooser {
+  title: _("Choose a Image File");
+  modal: true;
+  //response => on_monet_file_chooser_response();
+}

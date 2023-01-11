@@ -88,7 +88,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
               title: _("Colors");
               icon-name: "larger-brush-symbolic";
 
-              child: Adw.PreferencesPage content { };
+              child: Adw.PreferencesPage content-colors { };
             }
 
             Adw.ViewStackPage {
@@ -96,7 +96,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
               title: _("Theming");
               icon-name: "color-picker-symbolic";
 
-              child: Adw.PreferencesPage content_monet { };
+              child: Adw.PreferencesPage content-theming { };
             }
 
             Adw.ViewStackPage {
@@ -104,7 +104,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
               title: _("Advanced");
               icon-name: "settings-symbolic";
 
-              child: Adw.PreferencesPage content_plugins { };
+              child: Adw.PreferencesPage content-plugins { };
             }
           }
 

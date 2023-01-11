@@ -310,12 +310,12 @@ class PresetUtils:
                 ) as file:
                     file.write(gtk3_css)
         elif app_type == "shell":
-            shell_theme = ShellTheme(shell_version=43)
+            shell_theme = ShellTheme(shell_version=43) # TODO: Check which version of GNOME Shell user has installed
 
             try:
                 shell_theme.create_theme(preset=preset)
             except GLib.GError as e:
-                logging.error(f"Failed to apply a theme for GNOME Shell. Exc: {e}")
+                logging.error(f"Failed to apply a theme for GNOME Shell.", exc=e)
                 raise
 
     def restore_gtk4_preset(self) -> None:
