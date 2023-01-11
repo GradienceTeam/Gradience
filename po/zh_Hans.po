@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-06 12:13+0000\n"
+"POT-Creation-Date: 2023-01-11 12:14+0000\n"
 "PO-Revision-Date: 2023-01-05 13:49+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -548,7 +548,7 @@ msgid "Manage Presets"
 msgstr "管理预设"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:51
-#: gradience/frontend/dialogs/save_dialog.py:55
+#: gradience/frontend/dialogs/save_dialog.py:57
 msgid "_Cancel"
 msgstr "取消 (C)"
 
@@ -556,18 +556,18 @@ msgstr "取消 (C)"
 msgid "OK"
 msgstr "确定"
 
-#: gradience/frontend/dialogs/save_dialog.py:37
+#: gradience/frontend/dialogs/save_dialog.py:39
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten!"
 msgstr "存储预设为 <tt>{0}</tt>.如果该预设已存在，它将被覆盖！"
 
-#: gradience/frontend/dialogs/save_dialog.py:58
+#: gradience/frontend/dialogs/save_dialog.py:60
 msgid "Discard"
 msgstr "放弃"
 
-#: gradience/frontend/dialogs/save_dialog.py:63
+#: gradience/frontend/dialogs/save_dialog.py:65
 msgid "_Save"
 msgstr "保存 (S)"
 
@@ -581,15 +581,15 @@ msgstr "无法下载预设"
 msgid "Preset downloaded"
 msgstr "预设已下载"
 
-#: gradience/frontend/widgets/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:52
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr "这个选项只被adw-gtk3主题部分地支持。"
 
-#: gradience/frontend/widgets/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:57
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "adw-gtk3 主题不支持这个选项。"
 
-#: gradience/frontend/widgets/option_row.py:99
+#: gradience/frontend/widgets/option_row.py:110
 msgid "Not a color, see text value"
 msgstr "不是颜色，见文本值"
 
@@ -615,19 +615,19 @@ msgstr "从收藏夹中删除"
 msgid "Add to Favorites"
 msgstr "添加到收藏夹"
 
-#: gradience/frontend/widgets/preset_row.py:147
+#: gradience/frontend/widgets/preset_row.py:166
 msgid "Preset removed"
 msgstr "预设已删除"
 
-#: gradience/frontend/widgets/preset_row.py:148
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Undo"
 msgstr "撤消"
 
-#: gradience/frontend/widgets/preset_row.py:163
+#: gradience/frontend/widgets/preset_row.py:182
 msgid "Pending Deletion"
 msgstr "待删除"
 
-#: gradience/frontend/widgets/preset_row.py:177
+#: gradience/frontend/widgets/preset_row.py:196
 msgid "Unable to delete preset"
 msgstr "无法删除预设"
 
@@ -1073,65 +1073,65 @@ msgstr "未找到预设"
 msgid "Favorite Presets"
 msgstr "最喜欢的预设"
 
-#: gradience/frontend/main.py:396
+#: gradience/frontend/main.py:401
 msgid "Unsaved Changes"
 msgstr "未保存更改"
 
-#: gradience/frontend/main.py:408
+#: gradience/frontend/main.py:413
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: gradience/frontend/main.py:469
+#: gradience/frontend/main.py:493
 msgid "Apply This Color Scheme?"
 msgstr "应用此配色方案？"
 
-#: gradience/frontend/main.py:471
+#: gradience/frontend/main.py:495
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
 msgstr "警告：这些应用类型的任何自定义 CSS 文件都将被不可逆转地覆盖!"
 
-#: gradience/frontend/main.py:475
+#: gradience/frontend/main.py:499
 msgid "_Apply"
 msgstr "应用 (A)"
 
-#: gradience/frontend/main.py:485
+#: gradience/frontend/main.py:509
 msgid "Restore applied color scheme?"
 msgstr "恢复应用的配色方案？"
 
-#: gradience/frontend/main.py:486 gradience/frontend/main.py:500
+#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
 msgid "Make sure you have the current settings saved as a preset."
 msgstr "确保你将当前的设置保存为预设。"
 
-#: gradience/frontend/main.py:488
+#: gradience/frontend/main.py:512
 msgid "_Restore"
 msgstr "恢复 (R)"
 
-#: gradience/frontend/main.py:499
+#: gradience/frontend/main.py:523
 msgid "Reset applied color scheme?"
 msgstr "重置应用的配色方案？"
 
-#: gradience/frontend/main.py:502
+#: gradience/frontend/main.py:526
 msgid "_Reset"
 msgstr "重置 (R)"
 
-#: gradience/frontend/main.py:551
+#: gradience/frontend/main.py:552
 msgid "You have unsaved changes!"
 msgstr "您有未保存更改！"
 
-#: gradience/frontend/main.py:596
+#: gradience/frontend/main.py:603
 msgid "Preset saved"
 msgstr "预设已保存"
 
-#: gradience/frontend/main.py:613
+#: gradience/frontend/main.py:620
 msgid "Preset set successfully"
 msgstr "预设设置成功"
 
-#: gradience/frontend/main.py:626
+#: gradience/frontend/main.py:633
 msgid "Unable to restore GTK 4 backup"
 msgstr "无法恢复 GTK 4 备份"
 
-#: gradience/frontend/main.py:639 gradience/frontend/main.py:647
+#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
 msgid "Unable to delete current preset"
 msgstr "无法删除当前预设"
 
