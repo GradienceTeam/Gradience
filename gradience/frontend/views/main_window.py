@@ -53,10 +53,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        self.style_manager = self.app.style_manager
-
         self.app = Gtk.Application.get_default()
         self.settings = Gio.Settings(app_id)
+
+        self.style_manager = self.app.style_manager
 
         self.monet_image_file = None
 

@@ -72,8 +72,6 @@ class GradiencePresetWindow(Adw.Window):
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
 
-        self.app = Gtk.Application.get_default()
-
         self.parent = parent
         self.settings = parent.settings
         self.app = self.parent.get_application()
