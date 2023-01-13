@@ -29,7 +29,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Check for typos
-      uses: crate-ci/typos@master
+    - uses: crate-ci/typos@master
+      with:
+        config: ./typos.toml
 
   analyze:
     name: Analyze
