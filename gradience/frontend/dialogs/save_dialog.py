@@ -21,13 +21,15 @@ from gi.repository import Gtk, Adw
 from gradience.backend.constants import rootdir
 
 
+# TODO: Make this dialog async when Libadwaita 1.3 becomes available \
+# https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/method.MessageDialog.choose.html
 @Gtk.Template(resource_path=f"{rootdir}/ui/save_dialog.ui")
 class GradienceSaveDialog(Adw.MessageDialog):
     __gtype_name__ = "GradienceSaveDialog"
 
     preset_entry = Gtk.Template.Child("preset-entry")
 
-    def __init__(self, parent, heading=None, body=None, path=None, **kwargs):
+    def __init__(self, parent, heading=None, body=None, path=None, discard=False, **kwargs):
         super().__init__(**kwargs)
 
         self.parent = parent
@@ -53,6 +55,13 @@ class GradienceSaveDialog(Adw.MessageDialog):
             raise AttributeError("DEV FAULT: You need to either specify 'body' or 'path' parameter")
 
         self.add_response("cancel", _("_Cancel"))
+
+        if discard:
+            self.add_response("discard", _("Discard"))
+            self.set_response_appearance(
+                "discard", Adw.ResponseAppearance.DESTRUCTIVE
+            )
+
         self.add_response("save", _("_Save"))
         self.set_default_response("cancel")
         self.set_close_response("cancel")

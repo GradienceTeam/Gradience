@@ -30,6 +30,38 @@ def rgba_from_argb(argb, alpha=None) -> str:
 
     return base.format(red, green, blue, alpha)
 
+def rgb_to_hash(rgb) -> [str, float]:
+    """
+    This function converts rgb or rgba-formatted color code to an hexadecimal code.
+
+    Alpha channel from RGBA color codes is passed without any convertion
+    as a second return variable and is completely ignored in hexadecimal codes
+    to remain compliant with web stantards.
+    """
+    if rgb.startswith("rgb"):
+        rgb_values = rgb.strip("rgb()")
+
+    if rgb.startswith("rgba"):
+        rgb_values = rgb.strip("rgba()")
+
+    rgb_list = rgb_values.split(",")
+
+    red = int(rgb_list[0])
+    green = int(rgb_list[1])
+    blue = int(rgb_list[2])
+    alpha = None
+
+    if len(rgb_list) == 4:
+        alpha = float(rgb_list[3])
+
+    hex_out = [f"{red:x}", f"{green:x}", f"{blue:x}"]
+
+    for i, hex_part in enumerate(hex_out):
+        if len(hex_part) == 1:
+            hex_out[i] = "0" + hex_part
+
+    return "#" + "".join(hex_out), alpha
+
 def argb_to_color_code(argb, alpha=None) -> str:
     """
     This function can return either an hexadecimal or rgba-formatted color code.
@@ -38,18 +70,15 @@ def argb_to_color_code(argb, alpha=None) -> str:
     If alpha parameter is specified, then the function will return
     an rgba-formatted color code.
     """
-    hex_base = "#{0:x}{1:x}{2:x}"
     rgba_base = "rgba({0}, {1}, {2}, {3})"
 
-    red_chnl = monet.redFromArgb(argb)
-    green_chnl = monet.greenFromArgb(argb)
-    blue_chnl = monet.blueFromArgb(argb)
-    alpha_chnl = alpha
-
+    red = monet.redFromArgb(argb)
+    green = monet.greenFromArgb(argb)
+    blue = monet.blueFromArgb(argb)
     if not alpha:
-        alpha_chnl = monet.alphaFromArgb(argb)
+        alpha = monet.alphaFromArgb(argb)
 
-    if alpha_chnl in (255, 0.0):
-        return hex_base.format(red_chnl, green_chnl, blue_chnl)
+    if alpha in (255, 0.0):
+        return monet.hexFromArgb(argb)
 
-    return rgba_base.format(red_chnl, green_chnl, blue_chnl, alpha_chnl)
+    return rgba_base.format(red, green, blue, alpha)

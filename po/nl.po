@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 12:14+0000\n"
+"POT-Creation-Date: 2023-01-13 12:14+0000\n"
 "PO-Revision-Date: 2022-12-28 16:49+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -36,6 +36,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Pas gemakkelijk het uiterlijk van Adwaita aan"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
+#: gradience/frontend/views/about_window.py:88
 msgid "Gradience Team"
 msgstr "Gradience-team"
 
@@ -162,7 +163,7 @@ msgid "Toggle Plugin"
 msgstr "Plug-in omschakelen"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 msgid "Preferences"
 msgstr "Voorkeuren"
 
@@ -274,39 +275,39 @@ msgstr "Voorinstelling verwijderen"
 msgid "Remove Preset"
 msgstr "Voorinstelling verwijderen"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "Voorinstellingen"
 
-#: data/ui/presets_manager_window.blp:29
+#: data/ui/presets_manager_window.blp:30
 msgid "Import"
 msgstr "Importeren"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:31
 msgid "Import a Preset File"
 msgstr "Voorinstellingsbestand importeren"
 
-#: data/ui/presets_manager_window.blp:36
+#: data/ui/presets_manager_window.blp:37
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "Openen in bestandsbeheerder"
 
-#: data/ui/presets_manager_window.blp:65
+#: data/ui/presets_manager_window.blp:66
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 msgid "Explore"
 msgstr "Verkennen"
 
-#: data/ui/presets_manager_window.blp:79
+#: data/ui/presets_manager_window.blp:80
 msgid "Search for presets"
 msgstr "Zoeken naar voorinstellingen"
 
-#: data/ui/presets_manager_window.blp:80
+#: data/ui/presets_manager_window.blp:81
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>."
@@ -314,37 +315,37 @@ msgstr ""
 "Voer een zoekterm in om te zoeken in <a href=\"https://github.com/"
 "GradienceTeam/Community\">GradienceTeam/Community</a>."
 
-#: data/ui/presets_manager_window.blp:93
+#: data/ui/presets_manager_window.blp:94
 msgid "e.g. \"Pretty Purple\""
 msgstr "Bijv. ‘Prachtig paars’"
 
-#: data/ui/presets_manager_window.blp:98
+#: data/ui/presets_manager_window.blp:99
 msgid "All"
 msgstr "Alle"
 
-#: data/ui/presets_manager_window.blp:126
+#: data/ui/presets_manager_window.blp:127
 msgid "No Results Found"
 msgstr "Geen resultaten gevonden"
 
-#: data/ui/presets_manager_window.blp:134
+#: data/ui/presets_manager_window.blp:135
 msgid "Offline"
 msgstr "Offline"
 
-#: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:382
+#: data/ui/presets_manager_window.blp:147
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:384
 msgid "Repositories"
 msgstr "Repositories"
 
-#: data/ui/presets_manager_window.blp:165
+#: data/ui/presets_manager_window.blp:166
 msgid "Import a Preset File (*.json)"
 msgstr "Voorinstellingsbestand importeren (*.json)"
 
-#: data/ui/presets_manager_window.blp:170
+#: data/ui/presets_manager_window.blp:171
 msgid "All files"
 msgstr "Alle bestanden"
 
-#: data/ui/presets_manager_window.blp:175
+#: data/ui/presets_manager_window.blp:176
 msgid "JSON file (*.json)"
 msgstr "JSON-bestanden (*.json)"
 
@@ -513,88 +514,83 @@ msgid "Apply"
 msgstr "Toepassen"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
-msgstr "Thema voorvertonen in…"
+msgid "Show Preview Window"
+msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr "Hoofdmenu"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 msgid "Presets Menu"
 msgstr "Voorinstellingenmenu"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "Voorinstelling opslaan"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 msgid "CSS Errors"
 msgstr "CSS-fouten"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 msgid "Colors"
 msgstr "Kleuren"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 msgid "Advanced"
 msgstr "Geavanceerd"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 msgid "Restore Applied Color Scheme"
 msgstr "Toegepast kleurenschema herstellen"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "Toegepast kleurenschema opnieuw instellen"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 msgid "About Gradience"
 msgstr "Over Gradience"
 
 #: data/ui/window.blp:149
-msgid "Adwaita Demo"
-msgstr "Adwaita-demo"
-
-#: data/ui/window.blp:154
-msgid "GTK 4 Demo"
-msgstr "GTK 4-demo"
-
-#: data/ui/window.blp:159
-msgid "GTK 4 Widget Factory"
-msgstr "GTK 4-widgetfabriek"
-
-#: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:109
+#: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "Ingebouwde voorinstellingen"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 msgid "Manage Presets"
 msgstr "Voorinstellingen beheren"
 
-#: gradience/backend/flatpak_overrides.py:71
-#: gradience/backend/flatpak_overrides.py:93
-msgid "Failed to save override"
-msgstr "Overschrijven mislukt"
-
-#: gradience/backend/flatpak_overrides.py:186
-#: gradience/backend/flatpak_overrides.py:228
-#: gradience/backend/flatpak_overrides.py:306
-#: gradience/backend/flatpak_overrides.py:366
-#: gradience/backend/flatpak_overrides.py:448
-#: gradience/backend/flatpak_overrides.py:509
-msgid "Unexpected file error occurred"
-msgstr "Er is een onverwachte bestandsfout opgetreden"
-
-#: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:502
+#: gradience/frontend/dialogs/app_type_dialog.py:51
+#: gradience/frontend/dialogs/save_dialog.py:57
 msgid "_Cancel"
 msgstr "_Annuleren"
+
+#: gradience/frontend/dialogs/log_out_dialog.py:36
+msgid "OK"
+msgstr "Ok"
+
+#: gradience/frontend/dialogs/save_dialog.py:39
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+"Voorinstelling opslaan in <tt>{0}</tt>. Als die voorinstelling al bestaat, "
+"wordt deze overschreven!"
+
+#: gradience/frontend/dialogs/save_dialog.py:60
+msgid "Discard"
+msgstr "Verwerpen"
+
+#: gradience/frontend/dialogs/save_dialog.py:65
+msgid "_Save"
+msgstr "_Opslaan"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -606,28 +602,28 @@ msgstr "Voorinstelling kon niet worden gedownload"
 msgid "Preset downloaded"
 msgstr "Voorinstelling gedownload"
 
-#: gradience/frontend/widgets/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:52
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr ""
 "Deze optie wordt slechts gedeeltelijk ondersteund door het adw-gtk3-thema."
 
-#: gradience/frontend/widgets/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:57
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Deze optie wordt niet ondersteund door het adw-gtk3-thema."
 
-#: gradience/frontend/widgets/option_row.py:99
+#: gradience/frontend/widgets/option_row.py:110
 msgid "Not a color, see text value"
 msgstr "Geen kleur, zie tekstwaarde"
 
-#: gradience/frontend/widgets/plugin_row.py:88
+#: gradience/frontend/widgets/plugin_row.py:85
 msgid "Unable to remove"
 msgstr "Verwijderen mislukt"
 
-#: gradience/frontend/widgets/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed."
 msgstr "Dit is een systeem-plug-in, en kan niet worden verwijderd."
 
-#: gradience/frontend/widgets/plugin_row.py:91
+#: gradience/frontend/widgets/plugin_row.py:88
 msgid "Close"
 msgstr "Sluiten"
 
@@ -641,88 +637,49 @@ msgstr "Verwijderen uit favorieten"
 msgid "Add to Favorites"
 msgstr "Toevoegen aan favorieten"
 
-#: gradience/frontend/widgets/preset_row.py:147
+#: gradience/frontend/widgets/preset_row.py:166
 msgid "Preset removed"
 msgstr "Voorinstelling verwijderd"
 
-#: gradience/frontend/widgets/preset_row.py:148
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: gradience/frontend/widgets/preset_row.py:163
+#: gradience/frontend/widgets/preset_row.py:182
 msgid "Pending Deletion"
 msgstr "In afwachting van verwijdering"
 
-#: gradience/frontend/widgets/preset_row.py:177
+#: gradience/frontend/widgets/preset_row.py:196
 msgid "Unable to delete preset"
 msgstr "Kan voorinstelling niet verwijderen"
-
-#: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:343
-msgid "User Presets"
-msgstr "Voorinstellingen van gebruiker"
-
-#: gradience/frontend/views/presets_manager_window.py:188
-msgid "Add new repository"
-msgstr "Nieuwe repository toevoegen"
-
-#: gradience/frontend/views/presets_manager_window.py:189
-msgid "Add a repository to install additional presets."
-msgstr "Voeg een repository toe om extra voorinstellingen te installeren."
-
-#: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:575
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: gradience/frontend/views/presets_manager_window.py:196
-msgid "Add"
-msgstr "Toevoegen"
-
-#: gradience/frontend/views/presets_manager_window.py:286
-msgid "Preset already exists"
-msgstr "Voorinstelling bestaat al"
-
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset imported"
-msgstr "Voorinstelling geïmporteerd"
-
-#: gradience/frontend/views/presets_manager_window.py:301
-msgid "Unsupported file format, must be .json"
-msgstr "Niet-ondersteund bestandsformaat, dit dient JSON te zijn"
-
-#: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:174
-msgid "Failed to load list of presets"
-msgstr "Lijst met voorinstellingen laden mislukt"
-
-#: gradience/frontend/views/presets_manager_window.py:336
-msgid "Built-in Presets"
-msgstr "Ingebouwde voorinstellingen"
-
-#: gradience/frontend/views/presets_manager_window.py:346
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Zie <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> op Github voor meer voorinstellingen."
-
-#: gradience/frontend/views/presets_manager_window.py:372
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Geen voorinstellingen gevonden. Gebruik de knop ‘importeren’ of zoek onder "
-"‘verkennen’."
 
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "Repository verwijderd"
 
-#: gradience/frontend/views/welcome_window.py:97
-msgid "Thanks for updating Gradience!"
-msgstr "Bedankt voor het bijwerken van Gradience!"
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:119
+msgid "Plugins by"
+msgstr "Plug-ins door"
+
+#: gradience/frontend/views/about_window.py:127
+msgid "Presets by"
+msgstr "Voorinstellingen door"
+
+#: gradience/frontend/views/about_window.py:149
+msgid "Packages by"
+msgstr "Pakketten door"
+
+#: gradience/frontend/views/about_window.py:156
+msgid "Fixes by"
+msgstr "Foutoplossingen door"
+
+#: gradience/frontend/views/about_window.py:166
+msgid "Special thanks to"
+msgstr "Speciale dank aan"
 
 #: gradience/frontend/views/main_window.py:131
 msgid "Monet Engine"
@@ -796,126 +753,11 @@ msgstr ""
 "Standaardkleuren volgen de <a href=\"https://developer.gnome.org/hig/"
 "reference/palette.html\">GNOME Human Interface Guidelines</a>."
 
-#: gradience/frontend/main.py:203
-msgid "No presets found"
-msgstr "Geen voorinstellingen gevonden"
-
-#: gradience/frontend/main.py:221
-msgid "Favorite Presets"
-msgstr "Favoriete voorinstellingen"
-
-#: gradience/frontend/main.py:375
-msgid "Unsaved Changes"
-msgstr "Niet-opgeslagen wijzigingen"
-
-#: gradience/frontend/main.py:386
-msgid "Save Changes"
-msgstr "Wijzigingen opslaan"
-
-#: gradience/frontend/main.py:444
-msgid "Apply This Color Scheme?"
-msgstr "Dit kleurenschema toepassen?"
-
-#: gradience/frontend/main.py:446
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"Waarschuwing: aangepaste CSS-bestanden voor die app-typen worden "
-"onomkeerbaar overschreven!"
-
-#: gradience/frontend/main.py:450
-msgid "_Apply"
-msgstr "_Toepassen"
-
-#: gradience/frontend/main.py:460
-msgid "Restore applied color scheme?"
-msgstr "Toegepast kleurenschema herstellen?"
-
-#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
-msgid "Make sure you have the current settings saved as a preset."
-msgstr ""
-"Zorg ervoor dat u de huidige instellingen als voorinstelling hebt opgeslagen."
-
-#: gradience/frontend/main.py:463
-msgid "_Restore"
-msgstr "_Herstellen"
-
-#: gradience/frontend/main.py:473
-msgid "Reset applied color scheme?"
-msgstr "Toegepast kleurenschema opnieuw instellen?"
-
-#: gradience/frontend/main.py:476
-msgid "_Reset"
-msgstr "_Opnieuw instellen"
-
-#: gradience/frontend/main.py:486
-msgid "Save preset as…"
-msgstr "Voorinstelling opslaan als…"
-
-#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
-#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
-#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten!"
-msgstr ""
-"Voorinstelling opslaan in <tt>{0}</tt>. Als die voorinstelling al bestaat, "
-"wordt deze overschreven!"
-
-#: gradience/frontend/main.py:503
-msgid "_Save"
-msgstr "_Opslaan"
-
-#: gradience/frontend/main.py:559
-msgid "You have unsaved changes!"
-msgstr "Er zijn niet-opgeslagen wijzigingen!"
-
-#: gradience/frontend/main.py:576
-msgid "Discard"
-msgstr "Verwerpen"
-
-#: gradience/frontend/main.py:577
-msgid "Save"
-msgstr "Opslaan"
-
-#: gradience/frontend/main.py:637
-msgid "Preset saved"
-msgstr "Voorinstelling opgeslagen"
-
-#: gradience/frontend/main.py:654
-msgid "Preset set successfully"
-msgstr "Voorinstelling succesvol ingesteld"
-
-#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
-#: gradience/frontend/main.py:728
-msgid "Log out"
-msgstr "Uitloggen"
-
-#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
-#: gradience/frontend/main.py:730
-msgid "For the changes to take full effect, you need to log out."
-msgstr "Om de wijzigingen volledig door te voeren moet u zich afmelden."
-
-#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
-#: gradience/frontend/main.py:735
-msgid "OK"
-msgstr "Ok"
-
-#: gradience/frontend/main.py:685
-msgid "Unable to restore GTK 4 backup"
-msgstr "Kan GTK-4-back-up niet herstellen"
-
-#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
-msgid "Unable to delete current preset"
-msgstr "Kan huidige voorinstelling niet verwijderen"
-
-#: gradience/frontend/views/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:89
 msgid "Plugins"
 msgstr "Plugins"
 
-#: gradience/frontend/views/plugins_list.py:104
+#: gradience/frontend/views/plugins_list.py:92
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
 "community and can cause issues."
@@ -923,9 +765,71 @@ msgstr ""
 "Plug-ins voegen extra functies toe aan Gradience, plug-ins zijn gemaakt door "
 "de Gradience-community en kunnen problemen veroorzaken."
 
-#: gradience/frontend/views/plugins_list.py:116
+#: gradience/frontend/views/plugins_list.py:104
 msgid "No Plugins Found."
 msgstr "Geen plug-ins gevonden."
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "User Presets"
+msgstr "Voorinstellingen van gebruiker"
+
+#: gradience/frontend/views/presets_manager_window.py:190
+msgid "Add new repository"
+msgstr "Nieuwe repository toevoegen"
+
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add a repository to install additional presets."
+msgstr "Voeg een repository toe om extra voorinstellingen te installeren."
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Add"
+msgstr "Toevoegen"
+
+#: gradience/frontend/views/presets_manager_window.py:288
+msgid "Preset already exists"
+msgstr "Voorinstelling bestaat al"
+
+#: gradience/frontend/views/presets_manager_window.py:300
+msgid "Preset imported"
+msgstr "Voorinstelling geïmporteerd"
+
+#: gradience/frontend/views/presets_manager_window.py:303
+msgid "Unsupported file format, must be .json"
+msgstr "Niet-ondersteund bestandsformaat, dit dient JSON te zijn"
+
+#: gradience/frontend/views/presets_manager_window.py:329
+#: gradience/frontend/main.py:184
+msgid "Failed to load list of presets"
+msgstr "Lijst met voorinstellingen laden mislukt"
+
+#: gradience/frontend/views/presets_manager_window.py:338
+msgid "Built-in Presets"
+msgstr "Ingebouwde voorinstellingen"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Zie <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> op Github voor meer voorinstellingen."
+
+#: gradience/frontend/views/presets_manager_window.py:374
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Geen voorinstellingen gevonden. Gebruik de knop ‘importeren’ of zoek onder "
+"‘verkennen’."
+
+#: gradience/frontend/views/welcome_window.py:97
+msgid "Thanks for updating Gradience!"
+msgstr "Bedankt voor het bijwerken van Gradience!"
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1212,6 +1116,109 @@ msgstr "Paars"
 msgid "Brown"
 msgstr "Bruin"
 
+#: gradience/frontend/main.py:217
+msgid "No presets found"
+msgstr "Geen voorinstellingen gevonden"
+
+#: gradience/frontend/main.py:240
+msgid "Favorite Presets"
+msgstr "Favoriete voorinstellingen"
+
+#: gradience/frontend/main.py:401
+msgid "Unsaved Changes"
+msgstr "Niet-opgeslagen wijzigingen"
+
+#: gradience/frontend/main.py:413
+msgid "Save Changes"
+msgstr "Wijzigingen opslaan"
+
+#: gradience/frontend/main.py:493
+msgid "Apply This Color Scheme?"
+msgstr "Dit kleurenschema toepassen?"
+
+#: gradience/frontend/main.py:495
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Waarschuwing: aangepaste CSS-bestanden voor die app-typen worden "
+"onomkeerbaar overschreven!"
+
+#: gradience/frontend/main.py:499
+msgid "_Apply"
+msgstr "_Toepassen"
+
+#: gradience/frontend/main.py:509
+msgid "Restore applied color scheme?"
+msgstr "Toegepast kleurenschema herstellen?"
+
+#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
+msgid "Make sure you have the current settings saved as a preset."
+msgstr ""
+"Zorg ervoor dat u de huidige instellingen als voorinstelling hebt opgeslagen."
+
+#: gradience/frontend/main.py:512
+msgid "_Restore"
+msgstr "_Herstellen"
+
+#: gradience/frontend/main.py:523
+msgid "Reset applied color scheme?"
+msgstr "Toegepast kleurenschema opnieuw instellen?"
+
+#: gradience/frontend/main.py:526
+msgid "_Reset"
+msgstr "_Opnieuw instellen"
+
+#: gradience/frontend/main.py:552
+msgid "You have unsaved changes!"
+msgstr "Er zijn niet-opgeslagen wijzigingen!"
+
+#: gradience/frontend/main.py:603
+msgid "Preset saved"
+msgstr "Voorinstelling opgeslagen"
+
+#: gradience/frontend/main.py:620
+msgid "Preset set successfully"
+msgstr "Voorinstelling succesvol ingesteld"
+
+#: gradience/frontend/main.py:633
+msgid "Unable to restore GTK 4 backup"
+msgstr "Kan GTK-4-back-up niet herstellen"
+
+#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
+msgid "Unable to delete current preset"
+msgstr "Kan huidige voorinstelling niet verwijderen"
+
+#~ msgid "Preview Theme in…"
+#~ msgstr "Thema voorvertonen in…"
+
+#~ msgid "Adwaita Demo"
+#~ msgstr "Adwaita-demo"
+
+#~ msgid "GTK 4 Demo"
+#~ msgstr "GTK 4-demo"
+
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "GTK 4-widgetfabriek"
+
+#~ msgid "Failed to save override"
+#~ msgstr "Overschrijven mislukt"
+
+#~ msgid "Unexpected file error occurred"
+#~ msgstr "Er is een onverwachte bestandsfout opgetreden"
+
+#~ msgid "Save preset as…"
+#~ msgstr "Voorinstelling opslaan als…"
+
+#~ msgid "Save"
+#~ msgstr "Opslaan"
+
+#~ msgid "Log out"
+#~ msgstr "Uitloggen"
+
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "Om de wijzigingen volledig door te voeren moet u zich afmelden."
+
 #~ msgid ""
 #~ "\n"
 #~ "<ul>\n"
@@ -1257,21 +1264,6 @@ msgstr "Bruin"
 #~ "🎁️ Voorinstellingen van andere gebruikers gebruiken\n"
 #~ "⚙️ Geavanceerde opties wijzigen met CSS\n"
 #~ "🧩️ Functionaliteit uitbreiden met plugins\n"
-
-#~ msgid "Plugins by"
-#~ msgstr "Plug-ins door"
-
-#~ msgid "Presets by"
-#~ msgstr "Voorinstellingen door"
-
-#~ msgid "Packages by"
-#~ msgstr "Pakketten door"
-
-#~ msgid "Fixes by"
-#~ msgstr "Foutoplossingen door"
-
-#~ msgid "Special thanks to"
-#~ msgstr "Speciale dank aan"
 
 #~ msgid "Unsupported background type"
 #~ msgstr "Niet-ondersteund achtergrondtype"

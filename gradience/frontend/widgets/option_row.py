@@ -18,6 +18,7 @@
 
 from gi.repository import Gtk, Gdk, Adw
 
+from gradience.backend.utils.colors import rgb_to_hash
 from gradience.backend.constants import rootdir
 
 
@@ -36,6 +37,8 @@ class GradienceOptionRow(Adw.ActionRow):
 
     def __init__(self, name, title, explanation, adw_gtk3_support="yes", **kwargs):
         super().__init__(**kwargs)
+
+        self.app = Gtk.Application.get_default()
 
         self.set_name(name)
         self.set_title(title)
@@ -60,14 +63,22 @@ class GradienceOptionRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_color_value_changed(self, *_args):
+        color_value = self.color_value.get_rgba().to_string()
+
+        if color_value.startswith("rgb") or color_value.startswith("rgba"):
+            color_hex, alpha = rgb_to_hash(color_value)
+            if not alpha:
+                color_value = color_hex
+
         self.update_value(
-            self.color_value.get_rgba().to_string(), update_from="color_value"
+            color_value, update_from="color_value"
         )
 
     @Gtk.Template.Callback()
     def on_text_value_changed(self, *_args):
+        color_value = self.text_value.get_text()
         self.update_value(
-            self.text_value.get_text(), update_from="text_value"
+            color_value, update_from="text_value"
         )
 
     @Gtk.Template.Callback()
@@ -79,31 +90,26 @@ class GradienceOptionRow(Adw.ActionRow):
 
     def update_value(self, new_value, **kwargs):
         rgba = Gdk.RGBA()
+        is_app_ready = self.app.is_ready
+
         if kwargs.get("update_from") != "text_value":
             if rgba.parse(new_value):
-                self.text_value.set_text(rgba.to_string())
+                self.text_value.set_text(new_value)
+                self.text_value_toggle.set_active(False)
             else:
                 self.text_value.set_text(new_value)
+                self.text_value_toggle.set_active(True)
+
         if kwargs.get("update_from") != "color_value":
             if rgba.parse(new_value):
                 self.color_value.set_rgba(rgba)
                 self.color_value.set_tooltip_text(new_value)
-                if kwargs.get("update_from") != "text_value":
-                    self.text_value_toggle.set_active(False)
-            elif kwargs.get("update_from") != "text_value":
-                self.text_value_toggle.set_active(True)
             else:
                 rgba.parse("rgba(0,0,0,0)")
                 self.color_value.set_rgba(rgba)
-                self.color_value.set_tooltip_text(
-                    _("Not a color, see text value"))
+                self.color_value.set_tooltip_text(_("Not a color, see text value"))
 
-        if (
-            Gtk.Application.get_default().is_ready
-            and kwargs.get("update_from") == "text_value"
-            and new_value != ""
-        ):
-            Gtk.Application.get_default(
-            ).variables[self.get_name()] = new_value
-            Gtk.Application.get_default().mark_as_dirty()
-            Gtk.Application.get_default().reload_variables()
+        if is_app_ready and kwargs.get("update_from") == "text_value" and new_value != "":
+            self.app.variables[self.get_name()] = new_value
+            self.app.mark_as_dirty()
+            self.app.reload_variables()

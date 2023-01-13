@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 12:14+0000\n"
+"POT-Creation-Date: 2023-01-13 12:14+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -40,6 +40,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Změňte vzhled Adwaita snadno"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
+#: gradience/frontend/views/about_window.py:88
 #, fuzzy
 msgid "Gradience Team"
 msgstr "Tým Gradience"
@@ -184,7 +185,7 @@ msgid "Toggle Plugin"
 msgstr "Přepínání zásuvného modulu"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 #, fuzzy
 msgid "Preferences"
 msgstr "Předvolby"
@@ -319,46 +320,46 @@ msgstr "Odstranit přednastavení"
 msgid "Remove Preset"
 msgstr "Odstranit přednastavení"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "Předvolby"
 
-#: data/ui/presets_manager_window.blp:29
+#: data/ui/presets_manager_window.blp:30
 #, fuzzy
 msgid "Import"
 msgstr "Import"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:31
 #, fuzzy
 msgid "Import a Preset File"
 msgstr "Import souboru s předvolbou"
 
-#: data/ui/presets_manager_window.blp:36
+#: data/ui/presets_manager_window.blp:37
 #, fuzzy
 msgid "Delete"
 msgstr "Smazat"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Otevřít v průzkumníku souborů"
 
-#: data/ui/presets_manager_window.blp:65
+#: data/ui/presets_manager_window.blp:66
 #, fuzzy
 msgid "Installed"
 msgstr "Nainstalováno"
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 #, fuzzy
 msgid "Explore"
 msgstr "Prozkoumat"
 
-#: data/ui/presets_manager_window.blp:79
+#: data/ui/presets_manager_window.blp:80
 #, fuzzy
 msgid "Search for presets"
 msgstr "Vyhledávání předvoleb"
 
-#: data/ui/presets_manager_window.blp:80
+#: data/ui/presets_manager_window.blp:81
 #, fuzzy
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
@@ -367,44 +368,44 @@ msgstr ""
 "Zadejte klíčové slovo pro vyhledávání na <a href=\"https://github.com/"
 "GradienceTeam/Community\">GradienceTeam/Community</a>."
 
-#: data/ui/presets_manager_window.blp:93
+#: data/ui/presets_manager_window.blp:94
 #, fuzzy
 msgid "e.g. \"Pretty Purple\""
 msgstr "např. \"Pretty Purple\""
 
-#: data/ui/presets_manager_window.blp:98
+#: data/ui/presets_manager_window.blp:99
 #, fuzzy
 msgid "All"
 msgstr "Všechny"
 
-#: data/ui/presets_manager_window.blp:126
+#: data/ui/presets_manager_window.blp:127
 #, fuzzy
 msgid "No Results Found"
 msgstr "Nebyly nalezeny žádné výsledky"
 
-#: data/ui/presets_manager_window.blp:134
+#: data/ui/presets_manager_window.blp:135
 #, fuzzy
 msgid "Offline"
 msgstr "Offline"
 
-#: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:382
+#: data/ui/presets_manager_window.blp:147
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:384
 #, fuzzy
 msgid "Repositories"
 msgstr "Repozitáře"
 
-#: data/ui/presets_manager_window.blp:165
+#: data/ui/presets_manager_window.blp:166
 #, fuzzy
 msgid "Import a Preset File (*.json)"
 msgstr "Import souboru předvoleb (*.json)"
 
-#: data/ui/presets_manager_window.blp:170
+#: data/ui/presets_manager_window.blp:171
 #, fuzzy
 msgid "All files"
 msgstr "Všechny soubory"
 
-#: data/ui/presets_manager_window.blp:175
+#: data/ui/presets_manager_window.blp:176
 #, fuzzy
 msgid "JSON file (*.json)"
 msgstr "Soubor JSON (*.json)"
@@ -598,106 +599,99 @@ msgid "Apply"
 msgstr "Použít"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
+msgid "Show Preview Window"
 msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 #, fuzzy
 msgid "Main Menu"
 msgstr "Hlavní Menu"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets Menu"
 msgstr "Nabídka profilů"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "Uložit předvolbu"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 #, fuzzy
 msgid "CSS Errors"
 msgstr "Chyby CSS"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 #, fuzzy
 msgid "Colors"
 msgstr "Barvy"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 #, fuzzy
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 #, fuzzy
 msgid "Advanced"
 msgstr "Pokročilé"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 #, fuzzy
 msgid "Restore Applied Color Scheme"
 msgstr "Obnovení použitého barevného schématu"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "Obnovit použité barevné schéma"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 #, fuzzy
 msgid "About Gradience"
 msgstr "O společnosti Gradience"
 
 #: data/ui/window.blp:149
-#, fuzzy
-msgid "Adwaita Demo"
-msgstr "Ukázka Adwaity"
-
-#: data/ui/window.blp:154
-#, fuzzy
-msgid "GTK 4 Demo"
-msgstr "Ukázka GTK 4"
-
-#: data/ui/window.blp:159
-#, fuzzy
-msgid "GTK 4 Widget Factory"
-msgstr "Továrna na widgety GTK 4"
-
-#: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:109
+#: gradience/frontend/views/presets_manager_window.py:111
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "Vestavěné předvolby"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 #, fuzzy
 msgid "Manage Presets"
 msgstr "Správa předvoleb"
 
-#: gradience/backend/flatpak_overrides.py:71
-#: gradience/backend/flatpak_overrides.py:93
-#, fuzzy
-msgid "Failed to save override"
-msgstr "Nepodařilo se uložit přepis"
-
-#: gradience/backend/flatpak_overrides.py:186
-#: gradience/backend/flatpak_overrides.py:228
-#: gradience/backend/flatpak_overrides.py:306
-#: gradience/backend/flatpak_overrides.py:366
-#: gradience/backend/flatpak_overrides.py:448
-#: gradience/backend/flatpak_overrides.py:509
-#, fuzzy
-msgid "Unexpected file error occurred"
-msgstr "Došlo k neočekávané chybě souboru"
-
-#: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:502
+#: gradience/frontend/dialogs/app_type_dialog.py:51
+#: gradience/frontend/dialogs/save_dialog.py:57
 #, fuzzy
 #| msgid "Cancel"
 msgid "_Cancel"
 msgstr "Zrušit"
+
+#: gradience/frontend/dialogs/log_out_dialog.py:36
+msgid "OK"
+msgstr ""
+
+#: gradience/frontend/dialogs/save_dialog.py:39
+#, python-brace-format
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten!"
+msgstr ""
+"Uložení předvolby do <tt>{0}</tt>. Pokud předvolba již existuje, bude "
+"přepsána!"
+
+#: gradience/frontend/dialogs/save_dialog.py:60
+#, fuzzy
+msgid "Discard"
+msgstr "Zahodit"
+
+#: gradience/frontend/dialogs/save_dialog.py:65
+#, fuzzy
+#| msgid "Save"
+msgid "_Save"
+msgstr "Uložit"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -711,28 +705,28 @@ msgstr "Předvolbu nelze stáhnout"
 msgid "Preset downloaded"
 msgstr "Stažená předvolba"
 
-#: gradience/frontend/widgets/option_row.py:49
+#: gradience/frontend/widgets/option_row.py:52
 msgid "This option is only partially supported by the adw-gtk3 theme."
 msgstr "Tato možnost je jen částečně podporována adw-gtk3 motivem."
 
-#: gradience/frontend/widgets/option_row.py:54
+#: gradience/frontend/widgets/option_row.py:57
 msgid "This option is not supported by the adw-gtk3 theme."
 msgstr "Tato možnost není podporována adw-gtk3 motivem."
 
-#: gradience/frontend/widgets/option_row.py:99
+#: gradience/frontend/widgets/option_row.py:110
 msgid "Not a color, see text value"
 msgstr "Není barva, podívejte se na hodnotu textu"
 
-#: gradience/frontend/widgets/plugin_row.py:88
+#: gradience/frontend/widgets/plugin_row.py:85
 #, fuzzy
 msgid "Unable to remove"
 msgstr "Nelze odstranit"
 
-#: gradience/frontend/widgets/plugin_row.py:89
+#: gradience/frontend/widgets/plugin_row.py:86
 msgid "This is a system plugin, and cannot be removed."
 msgstr "Jedná se o systémový doplněk, který nelze odstranit."
 
-#: gradience/frontend/widgets/plugin_row.py:91
+#: gradience/frontend/widgets/plugin_row.py:88
 #, fuzzy
 msgid "Close"
 msgstr "Zavřít"
@@ -749,106 +743,60 @@ msgstr "Odstranit z Oblíbených"
 msgid "Add to Favorites"
 msgstr "Přidat do oblíbených"
 
-#: gradience/frontend/widgets/preset_row.py:147
+#: gradience/frontend/widgets/preset_row.py:166
 #, fuzzy
 msgid "Preset removed"
 msgstr "Odstranění předvolby"
 
-#: gradience/frontend/widgets/preset_row.py:148
+#: gradience/frontend/widgets/preset_row.py:167
 #, fuzzy
 msgid "Undo"
 msgstr "Zpět"
 
-#: gradience/frontend/widgets/preset_row.py:163
+#: gradience/frontend/widgets/preset_row.py:182
 #, fuzzy
 msgid "Pending Deletion"
 msgstr "Čeká se na vymazání"
 
-#: gradience/frontend/widgets/preset_row.py:177
+#: gradience/frontend/widgets/preset_row.py:196
 #, fuzzy
 msgid "Unable to delete preset"
 msgstr "Nelze odstranit předvolbu"
-
-#: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:343
-#, fuzzy
-msgid "User Presets"
-msgstr "Uživatelská přednastavení"
-
-#: gradience/frontend/views/presets_manager_window.py:188
-#, fuzzy
-msgid "Add new repository"
-msgstr "Přidat nový repozitář"
-
-#: gradience/frontend/views/presets_manager_window.py:189
-#, fuzzy
-msgid "Add a repository to install additional presets."
-msgstr "Přidání úložiště pro instalaci dalších předvoleb."
-
-#: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:575
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: gradience/frontend/views/presets_manager_window.py:196
-#, fuzzy
-msgid "Add"
-msgstr "Přidat"
-
-#: gradience/frontend/views/presets_manager_window.py:286
-#, fuzzy
-msgid "Preset already exists"
-msgstr "Předvolba již existuje"
-
-#: gradience/frontend/views/presets_manager_window.py:298
-#, fuzzy
-msgid "Preset imported"
-msgstr "Přednastavené importované"
-
-#: gradience/frontend/views/presets_manager_window.py:301
-#, fuzzy
-msgid "Unsupported file format, must be .json"
-msgstr "Nepodporovaný formát souboru, musí být .json"
-
-#: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:174
-#, fuzzy
-#| msgid "Failed to load preset"
-msgid "Failed to load list of presets"
-msgstr "Nepodařilo se načíst předvolbu"
-
-#: gradience/frontend/views/presets_manager_window.py:336
-#, fuzzy
-msgid "Built-in Presets"
-msgstr "Vestavěné předvolby"
-
-#: gradience/frontend/views/presets_manager_window.py:346
-#, fuzzy
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Další předvolby najdete <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a> na Githubu."
-
-#: gradience/frontend/views/presets_manager_window.py:372
-#, fuzzy
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Nebyla nalezena žádná předvolba! Použijte tlačítko importovat pro import "
-"nebo vyhledejte předvolbu na kartě Prozkoumat."
 
 #: gradience/frontend/widgets/repo_row.py:60
 #, fuzzy
 msgid "Repository removed"
 msgstr "Repozitář odstraněn."
 
-#: gradience/frontend/views/welcome_window.py:97
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:119
 #, fuzzy
-msgid "Thanks for updating Gradience!"
-msgstr "Díky za aktualizaci Gradience!"
+msgid "Plugins by"
+msgstr "Zásuvné moduly od"
+
+#: gradience/frontend/views/about_window.py:127
+#, fuzzy
+#| msgid "Presets"
+msgid "Presets by"
+msgstr "Předvolby od"
+
+#: gradience/frontend/views/about_window.py:149
+#, fuzzy
+msgid "Packages by"
+msgstr "Balíčky od"
+
+#: gradience/frontend/views/about_window.py:156
+#, fuzzy
+msgid "Fixes by"
+msgstr "Opravy podle"
+
+#: gradience/frontend/views/about_window.py:166
+#, fuzzy
+msgid "Special thanks to"
+msgstr "Zvláštní poděkování patří"
 
 #: gradience/frontend/views/main_window.py:131
 #, fuzzy
@@ -931,147 +879,12 @@ msgstr ""
 "nastaveny podle <a href=\"https://developer.gnome.org/hig/reference/palette."
 "html\">GNOME Human Interface Guidelines</a>."
 
-#: gradience/frontend/main.py:203
-#, fuzzy
-msgid "No presets found"
-msgstr "Nebyly nalezeny žádné předvolby"
-
-#: gradience/frontend/main.py:221
-#, fuzzy
-msgid "Favorite Presets"
-msgstr "Oblíbené předvolby"
-
-#: gradience/frontend/main.py:375
-#, fuzzy
-msgid "Unsaved Changes"
-msgstr "Neuložené změny"
-
-#: gradience/frontend/main.py:386
-#, fuzzy
-msgid "Save Changes"
-msgstr "Uložit změny"
-
-#: gradience/frontend/main.py:444
-#, fuzzy
-msgid "Apply This Color Scheme?"
-msgstr "Použít toto barevné schéma?"
-
-#: gradience/frontend/main.py:446
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"Varování: Všechny vlastní CSS soubory pro tyto typy aplikací budou nevratně "
-"přepsány!"
-
-#: gradience/frontend/main.py:450
-#, fuzzy
-#| msgid "Apply"
-msgid "_Apply"
-msgstr "Použít"
-
-#: gradience/frontend/main.py:460
-#, fuzzy
-msgid "Restore applied color scheme?"
-msgstr "Obnovit použité barevné schéma?"
-
-#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
-msgid "Make sure you have the current settings saved as a preset."
-msgstr "Ujistěte se, že máte aktuální nastavení uložené jako předvolbu."
-
-#: gradience/frontend/main.py:463
-#, fuzzy
-msgid "_Restore"
-msgstr "Obnovit"
-
-#: gradience/frontend/main.py:473
-msgid "Reset applied color scheme?"
-msgstr "Obnovit aplikované barevné schéma?"
-
-#: gradience/frontend/main.py:476
-#, fuzzy
-#| msgid "Reset"
-msgid "_Reset"
-msgstr "Obnovit"
-
-#: gradience/frontend/main.py:486
-msgid "Save preset as…"
-msgstr "Uložit předvolbu jako…"
-
-#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
-#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
-#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten!"
-msgstr ""
-"Uložení předvolby do <tt>{0}</tt>. Pokud předvolba již existuje, bude "
-"přepsána!"
-
-#: gradience/frontend/main.py:503
-#, fuzzy
-#| msgid "Save"
-msgid "_Save"
-msgstr "Uložit"
-
-#: gradience/frontend/main.py:559
-#, fuzzy
-msgid "You have unsaved changes!"
-msgstr "Máte neuložené změny."
-
-#: gradience/frontend/main.py:576
-#, fuzzy
-msgid "Discard"
-msgstr "Zahodit"
-
-#: gradience/frontend/main.py:577
-msgid "Save"
-msgstr "Uložit"
-
-#: gradience/frontend/main.py:637
-#, fuzzy
-msgid "Preset saved"
-msgstr "Mix byl uložen!"
-
-#: gradience/frontend/main.py:654
-#, fuzzy
-msgid "Preset set successfully"
-msgstr "Úspěšně nastavená předvolba"
-
-#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
-#: gradience/frontend/main.py:728
-#, fuzzy
-msgid "Log out"
-msgstr "Odhlásit se ?"
-
-#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
-#: gradience/frontend/main.py:730
-#, fuzzy
-msgid "For the changes to take full effect, you need to log out."
-msgstr "Aby se změny projevily, je třeba se odhlásit. "
-
-#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
-#: gradience/frontend/main.py:735
-msgid "OK"
-msgstr ""
-
-#: gradience/frontend/main.py:685
-#, fuzzy
-msgid "Unable to restore GTK 4 backup"
-msgstr "Nelze obnovit zálohu GTK 4"
-
-#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
-#, fuzzy
-msgid "Unable to delete current preset"
-msgstr "Nelze odstranit předvolbu"
-
-#: gradience/frontend/views/plugins_list.py:101
+#: gradience/frontend/views/plugins_list.py:89
 #, fuzzy
 msgid "Plugins"
 msgstr "Zásuvné moduly"
 
-#: gradience/frontend/views/plugins_list.py:104
+#: gradience/frontend/views/plugins_list.py:92
 #, fuzzy
 msgid ""
 "Plugins add additional features to Gradience, plugins are made by Gradience "
@@ -1080,10 +893,85 @@ msgstr ""
 "Zásuvné moduly přidávají do Gradience další funkce, jsou vytvářeny komunitou "
 "Gradience a mohou způsobovat problémy."
 
-#: gradience/frontend/views/plugins_list.py:116
+#: gradience/frontend/views/plugins_list.py:104
 #, fuzzy
 msgid "No Plugins Found."
 msgstr "Nebyly nalezeny žádné zásuvné moduly."
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+#, fuzzy
+msgid "User Presets"
+msgstr "Uživatelská přednastavení"
+
+#: gradience/frontend/views/presets_manager_window.py:190
+#, fuzzy
+msgid "Add new repository"
+msgstr "Přidat nový repozitář"
+
+#: gradience/frontend/views/presets_manager_window.py:191
+#, fuzzy
+msgid "Add a repository to install additional presets."
+msgstr "Přidání úložiště pro instalaci dalších předvoleb."
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: gradience/frontend/views/presets_manager_window.py:198
+#, fuzzy
+msgid "Add"
+msgstr "Přidat"
+
+#: gradience/frontend/views/presets_manager_window.py:288
+#, fuzzy
+msgid "Preset already exists"
+msgstr "Předvolba již existuje"
+
+#: gradience/frontend/views/presets_manager_window.py:300
+#, fuzzy
+msgid "Preset imported"
+msgstr "Přednastavené importované"
+
+#: gradience/frontend/views/presets_manager_window.py:303
+#, fuzzy
+msgid "Unsupported file format, must be .json"
+msgstr "Nepodporovaný formát souboru, musí být .json"
+
+#: gradience/frontend/views/presets_manager_window.py:329
+#: gradience/frontend/main.py:184
+#, fuzzy
+#| msgid "Failed to load preset"
+msgid "Failed to load list of presets"
+msgstr "Nepodařilo se načíst předvolbu"
+
+#: gradience/frontend/views/presets_manager_window.py:338
+#, fuzzy
+msgid "Built-in Presets"
+msgstr "Vestavěné předvolby"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+#, fuzzy
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Další předvolby najdete <a href=\"https://github.com/GradienceTeam/Community"
+"\">GradienceTeam/Community</a> na Githubu."
+
+#: gradience/frontend/views/presets_manager_window.py:374
+#, fuzzy
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Nebyla nalezena žádná předvolba! Použijte tlačítko importovat pro import "
+"nebo vyhledejte předvolbu na kartě Prozkoumat."
+
+#: gradience/frontend/views/welcome_window.py:97
+#, fuzzy
+msgid "Thanks for updating Gradience!"
+msgstr "Díky za aktualizaci Gradience!"
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1368,6 +1256,128 @@ msgstr "Fialová"
 msgid "Brown"
 msgstr "Hnědá"
 
+#: gradience/frontend/main.py:217
+#, fuzzy
+msgid "No presets found"
+msgstr "Nebyly nalezeny žádné předvolby"
+
+#: gradience/frontend/main.py:240
+#, fuzzy
+msgid "Favorite Presets"
+msgstr "Oblíbené předvolby"
+
+#: gradience/frontend/main.py:401
+#, fuzzy
+msgid "Unsaved Changes"
+msgstr "Neuložené změny"
+
+#: gradience/frontend/main.py:413
+#, fuzzy
+msgid "Save Changes"
+msgstr "Uložit změny"
+
+#: gradience/frontend/main.py:493
+#, fuzzy
+msgid "Apply This Color Scheme?"
+msgstr "Použít toto barevné schéma?"
+
+#: gradience/frontend/main.py:495
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Varování: Všechny vlastní CSS soubory pro tyto typy aplikací budou nevratně "
+"přepsány!"
+
+#: gradience/frontend/main.py:499
+#, fuzzy
+#| msgid "Apply"
+msgid "_Apply"
+msgstr "Použít"
+
+#: gradience/frontend/main.py:509
+#, fuzzy
+msgid "Restore applied color scheme?"
+msgstr "Obnovit použité barevné schéma?"
+
+#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "Ujistěte se, že máte aktuální nastavení uložené jako předvolbu."
+
+#: gradience/frontend/main.py:512
+#, fuzzy
+msgid "_Restore"
+msgstr "Obnovit"
+
+#: gradience/frontend/main.py:523
+msgid "Reset applied color scheme?"
+msgstr "Obnovit aplikované barevné schéma?"
+
+#: gradience/frontend/main.py:526
+#, fuzzy
+#| msgid "Reset"
+msgid "_Reset"
+msgstr "Obnovit"
+
+#: gradience/frontend/main.py:552
+#, fuzzy
+msgid "You have unsaved changes!"
+msgstr "Máte neuložené změny."
+
+#: gradience/frontend/main.py:603
+#, fuzzy
+msgid "Preset saved"
+msgstr "Mix byl uložen!"
+
+#: gradience/frontend/main.py:620
+#, fuzzy
+msgid "Preset set successfully"
+msgstr "Úspěšně nastavená předvolba"
+
+#: gradience/frontend/main.py:633
+#, fuzzy
+msgid "Unable to restore GTK 4 backup"
+msgstr "Nelze obnovit zálohu GTK 4"
+
+#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
+#, fuzzy
+msgid "Unable to delete current preset"
+msgstr "Nelze odstranit předvolbu"
+
+#, fuzzy
+#~ msgid "Adwaita Demo"
+#~ msgstr "Ukázka Adwaity"
+
+#, fuzzy
+#~ msgid "GTK 4 Demo"
+#~ msgstr "Ukázka GTK 4"
+
+#, fuzzy
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "Továrna na widgety GTK 4"
+
+#, fuzzy
+#~ msgid "Failed to save override"
+#~ msgstr "Nepodařilo se uložit přepis"
+
+#, fuzzy
+#~ msgid "Unexpected file error occurred"
+#~ msgstr "Došlo k neočekávané chybě souboru"
+
+#~ msgid "Save preset as…"
+#~ msgstr "Uložit předvolbu jako…"
+
+#~ msgid "Save"
+#~ msgstr "Uložit"
+
+#, fuzzy
+#~ msgid "Log out"
+#~ msgstr "Odhlásit se ?"
+
+#, fuzzy
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "Aby se změny projevily, je třeba se odhlásit. "
+
 #, fuzzy
 #~ msgid ""
 #~ "\n"
@@ -1393,27 +1403,6 @@ msgstr "Hnědá"
 #~ "- Rozšiřte funkčnost pomocí zásuvných modulů\n"
 #~ "\n"
 #~ "Tato aplikace je napsána v jazyce Python a používá GTK 4 a Libadwaita.\n"
-
-#, fuzzy
-#~ msgid "Plugins by"
-#~ msgstr "Zásuvné moduly od"
-
-#, fuzzy
-#~| msgid "Presets"
-#~ msgid "Presets by"
-#~ msgstr "Předvolby od"
-
-#, fuzzy
-#~ msgid "Packages by"
-#~ msgstr "Balíčky od"
-
-#, fuzzy
-#~ msgid "Fixes by"
-#~ msgstr "Opravy podle"
-
-#, fuzzy
-#~ msgid "Special thanks to"
-#~ msgstr "Zvláštní poděkování patří"
 
 #, fuzzy
 #~ msgid "Unsupported background type"
