@@ -15,60 +15,16 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 
+name: CI
+
 on:
   push:
     branches: [main]
   pull_request:
 
-name: CI
-
 jobs:
-  typos:
-    name: Typos
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Check for typos
-      - uses: crate-ci/typos@master
-        with:
-          config: ./typos.toml
-
-  analyze:
-    name: Analyze
-    runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'python' ]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
-          languages: ${{ matrix.language }}
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v2
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
-
-  dependency-review:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Dependency Review
-        uses: actions/dependency-review-action@v3
-
   flatpak:
-    name: Flatpak
+    name: Build
     runs-on: ubuntu-latest
     container:
       image: bilelmoussaoui/flatpak-github-actions:gnome-nightly
@@ -96,3 +52,61 @@ jobs:
           manifest-path: build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
           cache-key: flatpak-builder-${{ github.sha }}
           arch: ${{ matrix.arch }}
+
+on:
+  pull_request:
+  schedule:
+    - cron:  '0 0,12 * * *'
+  workflow_dispatch:
+
+jobs:
+  typos:
+    name: Typos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check for typos
+      - uses: crate-ci/typos@master
+        with:
+          config: ./typos.toml
+
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+        uses: actions/checkout@v3
+      - name: Dependency review
+        uses: actions/dependency-review-action@v3
+
+  translation:
+    name: Generate .pot
+    runs-on: ubuntu-latest
+    steps:
+        uses: actions/checkout@v3
+
+      - name: Update .pot
+        uses: GradienceTeam/action-update-pot@main
+        with:
+          title: "Gradience POT file"
+          copyright: "Gradience Team"
+          license: "GNU GPLv3"
+          author: "Gradience Team"
+          commiter: "Gradience Bot"
+          commiter_email: "AdwCustomizerTeam@proton.me"
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    name: Greetings
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Welcome on Gradience. 🥳 We really appreciate your contribution. The core team will review your issue as soon as possible. You can also join the matrix room https://matrix.to/#/#Gradience-space:envs.net or the discord server https://discord.com/invite/4njFDtfGEZ"
+        pr-message: "Welcome on Gradience. 🥳 We really appreciate your pull request. The core team will review your issue as soon as possible. You can also join the matrix room https://matrix.to/#/#Gradience-space:envs.net or the discord server https://discord.com/invite/4njFDtfGEZ."
