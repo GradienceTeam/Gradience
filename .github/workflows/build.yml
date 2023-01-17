@@ -19,12 +19,12 @@ name: Build
 
 on:
   push:
-    branches: [main]
+    branches: [ "main" ]
   pull_request:
 
 jobs:
   flatpak:
-    name: Build
+    name: Flatpak
     runs-on: ubuntu-latest
     container:
       image: bilelmoussaoui/flatpak-github-actions:gnome-nightly
@@ -37,14 +37,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install deps
+
+      - name: Install dependencies
         run: |
           dnf -y install docker
+
       - name: Set up QEMU
         id: qemu
         uses: docker/setup-qemu-action@v2.1.0
         with:
           platforms: arm64
+
       - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
         with:
           repository-name: gnome-nightly

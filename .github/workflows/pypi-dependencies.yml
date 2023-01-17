@@ -15,7 +15,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 
-name: PYPI Dependencies
+name: Generate PyPI Dependencies
 
 on:
   push:
@@ -28,9 +28,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+
       - name: Run a multi-line script
         run: |
           curl -O https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/pip/flatpak-pip-generator
@@ -38,13 +40,14 @@ jobs:
           python -m pip install requirements-parser
           ./flatpak-pip-generator --requirements-file=requirements.txt --output pypi-dependencies
           mv pypi-dependencies.json build-aux/flatpak/pypi-dependencies.json
-      - name: Create Pull Request
+
+      - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: "ci: update Flatpak pypi dependencies"
-          title: "chore: Update `pypi-dependencies.json`"
-          body: "This is an auto-generated PR with the generation of `pypi-dependencies.json`."
-          labels: flatpak, automated pr
-          committer: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
           author: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
-          branch: pypi-deps
+          title: "meta: update PyPI dependencies for Flatpak"
+          body: "This automated PR contains an auto-generated `pypi-dependencies.json` file used in Flatpak manifests."
+          labels: flatpak, ci/automated-pr
+          commit-message: "meta: update Flatpak PyPI dependencies"
+          committer: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
+          branch: update-pypi-deps
