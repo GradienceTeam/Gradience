@@ -1,0 +1,44 @@
+# Change the look of Adwaita, with ease
+# Copyright (C) 2022 Gradience Team
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+name: "Translation"
+
+on:
+  schedule:
+    - cron:  '0 0,12 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    name: Generate .pot and LINGUAS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update .pot
+        uses: GradienceTeam/action-update-pot@main
+        with:
+          title: "Gradience POT file"
+          copyright: "Gradience Team"
+          license: "GNU GPLv3"
+          author: "Gradience Team"
+          commiter: "Gradience Bot"
+          commiter_email: "AdwCustomizerTeam@proton.me"
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
