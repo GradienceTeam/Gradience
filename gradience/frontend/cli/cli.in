@@ -103,7 +103,7 @@ class CLI:
 
         monet_parser = subparsers.add_parser("monet", help="generate Material You preset from an image")
         monet_parser.add_argument("-n", "--preset-name", help="name for a generated preset", required=True)
-        monet_parser.add_argument("-p", "--image-path", help="abosulte path to image", required=True)
+        monet_parser.add_argument("-p", "--image-path", help="absolute path to image", required=True)
         monet_parser.add_argument("--tone", default=20, help="a tone for colors (default: 20)")
         monet_parser.add_argument("--theme", choices=["light", "dark"], default="light", help="choose whatever it should be a light or dark theme (default: light)")
         monet_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
