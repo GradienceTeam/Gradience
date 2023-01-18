@@ -19,28 +19,28 @@
 shell_schema = {
     "variables": [
         {
-            "name": "dark_base_color",
-            "title": _("Base Color")
+            "name": "window_bg_color",
+            "title": _("Base Background Color")
         },
         {
-            "name": "fg_color",
+            "name": "window_fg_color",
             "title": _("Base Foreground Color")
         },
         {
-            "name": "selected_fg_color",
-            "title": _("Accent Foreground Color")
-        },
-        {
-            "name": "selected_bg_color",
+            "name": "accent_bg_color",
             "title": _("Accent Background Color")
         },
         {
-            "name": "osd_fg_color",
-            "title": _("OSD Foreground Color")
+            "name": "accent_fg_color",
+            "title": _("Accent Foreground Color")
         },
         {
-            "name": "osd_bg_color",
+            "name": "window_bg_color",
             "title": _("OSD Background Color")
+        },
+        {
+            "name": "accent_fg_color",
+            "title": _("OSD Foreground Color")
         }
     ]
 }

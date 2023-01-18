@@ -53,4 +53,6 @@ class GradienceShellPrefsWindow(Adw.PreferencesWindow):
                 #variable.get("explanation")
             )
             self.custom_colors_group.add(pref_variable)
-            #self.app.pref_variables[variable["name"]] = pref_variable
+
+            pref_variable.connect_signals(update_vars=False)
+            pref_variable.update_value(self.app.variables[variable["name"]], update_vars=False)

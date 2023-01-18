@@ -1,7 +1,7 @@
 # shell.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ SHELL_SCHEMA = "org.gnome.shell.extensions.user-theme"
 #try:
 settings = Gio.Settings.new(SHELL_SCHEMA)
 '''except GLib.GError as e:
-    logging.critical(f"Settings schema for User Themes shell extension couldn't be loaded. Make sure you downloaded an extension before applying shell theme. Exc: {e}")
+    logging.critical(f"Settings schema for User Themes shell extension couldn't be loaded. Make sure you downloaded an extension before applying shell theme.", exc=e)
 '''
 
 
@@ -76,7 +76,7 @@ class ShellTheme:
                 dirs = Gio.File.new_for_path(self.theme_output)
                 dirs.make_directory_with_parents(None)
             except GLib.GError as e:
-                logging.error(f"Unable to create directories. Exc: {e}")
+                logging.error(f"Unable to create directories.", exc=e)
                 raise
 
         self.compile_sass(os.path.join(self.theme_source, "gnome-shell.scss"),
@@ -134,4 +134,4 @@ class ShellTheme:
         try:
             Gio.Subprocess.new(["/usr/bin/sassc", sass_path, output_path], Gio.SubprocessFlags.NONE)
         except GLib.GError as e:
-            logging.error(f"Failed to compile SCSS files using external sassc program. Exc: {e}")
+            logging.error(f"Failed to compile SCSS files using external sassc program.", exc=e)

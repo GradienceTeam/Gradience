@@ -146,8 +146,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                     variable["adw_gtk3_support"],
                 )
                 pref_group.add(pref_variable)
-                self.get_application(
-                ).pref_variables[variable["name"]] = pref_variable
+
+                pref_variable.connect_signals(update_vars=True)
+                self.app.pref_variables[variable["name"]] = pref_variable
 
             self.content_colors.add(pref_group)
 
@@ -167,8 +168,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 color["prefix"], color["title"], color["n_shades"]
             )
             palette_pref_group.add(palette_shades)
-            self.get_application(
-            ).pref_palette_shades[color["prefix"]] = palette_shades
+            self.app.pref_palette_shades[color["prefix"]] = palette_shades
         self.content_colors.add(palette_pref_group)
 
     def update_errors(self, errors):

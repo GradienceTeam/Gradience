@@ -28,11 +28,9 @@ template GradienceOptionRow : Adw.ActionRow {
     ColorButton color-value {
       rgba: "#00000000";
       use-alpha: true;
-      color-set => on_color_value_changed();
     }
     Entry text-value {
       text: "#00000000";
-      changed => on_text_value_changed();
     }
   }
 
