@@ -18,33 +18,24 @@
 
 import os
 import re
+import shutil
 
 import material_color_utilities_python as monet
 
 from gi.repository import Gio, GLib
 
-from gradience.backend.constants import datadir
-from gradience.backend.models.preset import Preset
 from gradience.backend.utils.common import to_slug_case
+from gradience.backend.constants import datadir
 
 from gradience.backend.logger import Logger
 
 logging = Logger(logger_name="ShellTheme")
 
 
-SHELL_SCHEMA = "org.gnome.shell.extensions.user-theme"
-
-#try:
-settings = Gio.Settings.new(SHELL_SCHEMA)
-'''except GLib.GError as e:
-    logging.critical(f"Settings schema for User Themes shell extension couldn't be loaded. Make sure you downloaded an extension before applying shell theme.", exc=e)
-'''
-
-
 class ShellTheme:
     # Supported GNOME Shell versions: 42, 43
     shell_versions = [42, 43]
-    version = None
+    version_target = None
 
     variables = {}
     custom_colors = {}
@@ -52,23 +43,33 @@ class ShellTheme:
 
     def __init__(self, shell_version: int):
         if shell_version in self.shell_versions:
-            self.version = shell_version
+            self.version_target = shell_version
         else:
             # TODO: Create custom exception for theming related errors
             raise Exception(f"GNOME Shell version {shell_version} not in range [42, 43]")
 
-        self.templates_dir = os.path.join(datadir, "gradience", "shell", "templates", str(self.version))
+        self.user_theme_schema = "org.gnome.shell.extensions.user-theme"
+        self.settings = Gio.Settings.new(self.user_theme_schema)
+
+        # Theme source/output paths
+        self.templates_dir = os.path.join(datadir, "gradience", "shell", "templates", str(self.version_target))
         self.colors_template = os.path.join(self.templates_dir, "colors.template")
+        self.switches_template = os.path.join(self.templates_dir, "switches.template")
         self.main_template = os.path.join(self.templates_dir, "gnome-shell.template")
 
-        self.theme_source = os.path.join(datadir, "gradience", "shell", str(self.version))
+        self.theme_source = os.path.join(datadir, "gradience", "shell", str(self.version_target))
         self.colors_source = os.path.join(self.theme_source, "gnome-shell-sass", "_colors.scss")
+        self.switches_source = os.path.join(self.theme_source, "gnome-shell-sass", "widgets", "_switches.scss")
         self.main_source = os.path.join(self.theme_source, "gnome-shell.scss")
 
-        self.theme_output = os.path.join(GLib.get_home_dir(), ".local/share/themes", "gradience-shell", "gnome-shell")
+        self.switch_on_source = os.path.join(self.theme_source, "toggle-on.svg")
+        self.switch_off_source = os.path.join(self.theme_source, "toggle-off.svg")
 
-    def create_theme(self, preset: Preset):
-        self.variables = preset.variables
+        self.theme_output = os.path.join(GLib.get_home_dir(), ".local/share/themes", "gradience-shell", "gnome-shell")
+        self.assets_output = os.path.join(self.theme_output, "assets")
+
+    def create_theme(self, preset_obj):
+        self.variables = preset_obj.variables
 
         self.insert_variables()
 
@@ -84,12 +85,13 @@ class ShellTheme:
             os.path.join(self.theme_output, "gnome-shell.css")
         )
 
-        self.set_theme()
+        self.color_assets()
+        self.set_shell_theme()
 
     def insert_variables(self):
         logging.debug(self.colors_source)
 
-        #hexcode_regex = r"\$_dark_base_color: .*#[0-9a-f]+"
+        #hexcode_regex = re.compile(r".*#[0-9a-f]+")
         template_regex = re.compile(r"{{(.*?)}}")
 
         colors_content = ""
@@ -105,41 +107,50 @@ class ShellTheme:
                     colors_content += line
             template.close()
 
-        print(colors_content)
+        logging.debug(f"colors_content: {colors_content}")
 
         with open(self.colors_source, "w", encoding="utf-8") as sheet:
             sheet.write(colors_content)
             sheet.close()
 
-        # TODO: Repurpose this snippet later
-        '''main_content = ""
-
-        with open(self.main_template, "r", encoding="utf-8") as template:
-            for line in template:
-                template_match = re.search(template_regex, line)
-                if template_match != None:
-                    key = template_match.__getitem__(1)
-                    inserted = line.replace("{{" + key + "}}", self.theme_type)
-                    main_content += inserted
-                else:
-                    main_content += line
-            template.close()
-
-        print(main_content)
-
-        with open(self.main_source, "w", encoding="utf-8") as sheet:
-            sheet.write(main_content)
-            sheet.close()'''
-
     def compile_sass(self, sass_path, output_path):
         try:
+            # TODO: Check where sassc is installed
             Gio.Subprocess.new(["/usr/bin/sassc", sass_path, output_path], Gio.SubprocessFlags.NONE)
         except GLib.GError as e:
-            logging.error(f"Failed to compile SCSS files using external sassc program.", exc=e)
+            logging.error(f"Failed to compile SCSS source files using external sassc program.", exc=e)
 
-    def set_theme(self):
+    # TODO: Add coloring for other assets
+    def color_assets(self):
+        accent_bg = self.variables["accent_bg_color"]
+
+        switch_on_svg = ""
+
+        shutil.copy(self.switches_template, self.switches_source)
+
+        with open(self.switch_on_source, "r", encoding="utf-8") as svg_data:
+            switch_on_svg = svg_data.read()
+            switch_on_svg = switch_on_svg.replace("fill:#3584e4", f"fill:{accent_bg}")
+            svg_data.close()
+
+        with open(self.switch_on_source, "w", encoding="utf-8") as svg_data:
+            svg_data.write(switch_on_svg)
+            svg_data.close()
+
+        if not os.path.exists(self.assets_output):
+            try:
+                dirs = Gio.File.new_for_path(self.assets_output)
+                dirs.make_directory_with_parents(None)
+            except GLib.GError as e:
+                logging.error(f"Unable to create directories.", exc=e)
+                raise
+
+        shutil.copy(self.switch_on_source, os.path.join(self.assets_output, "toggle-on.svg"))
+        shutil.copy(self.switch_off_source, os.path.join(self.assets_output, "toggle-off.svg"))
+
+    def set_shell_theme(self):
         # Set default theme
-        settings.set_string("name", "")
+        self.settings.set_string("name", "")
 
         # Set theme generated by Gradience
-        settings.set_string("name", "gradience-shell")
+        self.settings.set_string("name", "gradience-shell")

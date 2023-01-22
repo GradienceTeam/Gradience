@@ -1,4 +1,4 @@
-# preset_utils.py
+# preset_utils.py # TODO: Rename it to preset.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022-2023, Gradience Team
@@ -24,10 +24,9 @@ from pathlib import Path
 from gi.repository import GLib, Gio
 
 from gradience.backend.models.preset import Preset
-
 from gradience.backend.models.shell import ShellTheme
-from gradience.backend.utils.colors import rgba_from_argb, argb_to_color_code
 
+from gradience.backend.utils.colors import rgba_from_argb, argb_to_color_code
 from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 
 from gradience.backend.logger import Logger
@@ -39,6 +38,7 @@ class PresetUtils:
     def __init__(self):
         self.preset = Preset()
 
+    # TODO: Move to external module
     def generate_gtk_css(self, app_type: str, preset: Preset) -> str:
         variables = preset.variables
         palette = preset.palette
@@ -57,6 +57,7 @@ class PresetUtils:
 
         return final_css
 
+    # TODO: Move to monet module
     def new_preset_from_monet(self, name=None, monet_palette=None, props=None, obj_only=False) -> Preset or None:
         if props:
             tone = props[0]
@@ -188,7 +189,7 @@ class PresetUtils:
     def get_presets_list(self, repo=None, full_list=False) -> dict:
         presets_list = {}
 
-        def get_repo_presets(repo):
+        def __get_repo_presets(repo):
             if repo.is_dir():
                 for file_name in repo.iterdir():
                     file_name = str(file_name)
@@ -248,10 +249,10 @@ class PresetUtils:
         if full_list:
             for repo in Path(presets_dir).iterdir():
                 logging.debug(f"presets_dir.iterdir: {repo}")
-                get_repo_presets(repo)
+                __get_repo_presets(repo)
             return presets_list
         elif repo:
-            get_repo_presets(repo)
+            __get_repo_presets(repo)
             return presets_list
         else:
             raise AttributeError("You either need to set 'repo' property, or change 'full_list' property to True")
@@ -309,11 +310,11 @@ class PresetUtils:
                     os.path.join(theme_dir, "gtk.css"), "w", encoding="utf-8"
                 ) as file:
                     file.write(gtk3_css)
-        elif app_type == "shell":
+        elif app_type == "shell": # TODO: Move to a external module
             shell_theme = ShellTheme(shell_version=43) # TODO: Check which version of GNOME Shell user has installed
 
             try:
-                shell_theme.create_theme(preset=preset)
+                shell_theme.create_theme(preset)
             except GLib.GError as e:
                 logging.error(f"Failed to apply a theme for GNOME Shell.", exc=e)
                 raise
