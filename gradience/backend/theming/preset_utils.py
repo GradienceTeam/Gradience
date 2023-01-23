@@ -24,7 +24,7 @@ from pathlib import Path
 from gi.repository import GLib, Gio
 
 from gradience.backend.models.preset import Preset
-from gradience.backend.models.shell import ShellTheme
+from gradience.backend.theming.shell import ShellTheme
 
 from gradience.backend.utils.colors import rgba_from_argb, argb_to_color_code
 from gradience.backend.globals import presets_dir, get_gtk_theme_dir
