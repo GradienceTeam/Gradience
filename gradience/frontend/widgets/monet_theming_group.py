@@ -99,7 +99,7 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
     def on_apply_button_clicked(self, *_args):
         if self.monet_image_file:
             try:
-                monet_theme = Monet().generate_from_image(self.monet_image_file)
+                monet_theme = Monet().generate_palette_from_image(self.monet_image_file)
                 tone = self.tone_row.get_selected_item()
                 theme_color = self.theme_row.get_selected_item()
 

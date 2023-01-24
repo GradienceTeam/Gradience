@@ -28,8 +28,10 @@ from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.shell import ShellTheme
-from gradience.backend.theming.preset_utils import PresetUtils
+from gradience.backend.theming.preset import PresetUtils
+from gradience.backend.theming.monet import Monet
 from gradience.backend.utils.common import to_slug_case
+from gradience.backend.utils.theming import generate_gtk_css
 from gradience.backend.constants import rootdir, app_id, rel_ver
 
 from gradience.frontend.views.main_window import GradienceMainWindow
@@ -377,7 +379,7 @@ class GradienceApplication(Adw.Application):
                 monet_theme = "light"
 
         try:
-            preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
+            preset_object = Monet().new_preset_from_monet(monet_palette=monet,
                                 props=[tone, monet_theme], obj_only=True)
         except (OSError, AttributeError) as e:
             logging.error("An error occurred while generating preset from Monet palette.", exc=e)
@@ -416,7 +418,7 @@ class GradienceApplication(Adw.Application):
 
     def reload_variables(self):
         parsing_errors = []
-        gtk_css = PresetUtils().generate_gtk_css("gtk4", self.preset)
+        gtk_css = generate_gtk_css("gtk4", self.preset)
         css_provider = Gtk.CssProvider()
 
         def on_error(_, section, error):

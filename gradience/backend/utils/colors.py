@@ -1,7 +1,7 @@
 # colors.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,17 +18,6 @@
 
 import material_color_utilities_python as monet
 
-
-def rgba_from_argb(argb, alpha=None) -> str:
-    base = "rgba({}, {}, {}, {})"
-
-    red = monet.redFromArgb(argb)
-    green = monet.greenFromArgb(argb)
-    blue = monet.blueFromArgb(argb)
-    if not alpha:
-        alpha = monet.alphaFromArgb(argb)
-
-    return base.format(red, green, blue, alpha)
 
 def rgb_to_hash(rgb) -> [str, float]:
     """

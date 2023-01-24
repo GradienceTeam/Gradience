@@ -1,4 +1,4 @@
-# shell.py
+# theming.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2023, Gradience Team
@@ -16,19 +16,23 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gio
-
-from gradience.backend.utils.common import extract_version
+from gradience.backend.models.preset import Preset
 
 
-# TODO: Make it Flatpak-friendly (maybe move most of the code to run_command function?)
-def get_shell_version():
-    result = Gio.Subprocess.new(["gnome-shell", "--version"], Gio.SubprocessFlags.STDOUT_PIPE)
+def generate_gtk_css(app_type: str, preset: Preset) -> str:
+        variables = preset.variables
+        palette = preset.palette
+        custom_css = preset.custom_css
 
-    stdout_stream = result.get_stdout_pipe()
-    stdout_bytes = stdout_stream.read_bytes(count=20, cancellable=None).get_data() #count = number of bytes to read, "test" = 4 bytes
-    stdout = stdout_bytes.decode().replace("\n", "")
+        final_css = ""
 
-    shell_version = extract_version(stdout, "GNOME Shell")
+        for key in variables.keys():
+            final_css += f"@define-color {key} {variables[key]};\n"
 
-    return shell_version
+        for prefix_key in palette.keys():
+            for key in palette[prefix_key].keys():
+                final_css += f"@define-color {prefix_key + key} {palette[prefix_key][key]};\n"
+
+        final_css += custom_css.get(app_type, "")
+
+        return final_css

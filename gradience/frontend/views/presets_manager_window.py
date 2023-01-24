@@ -24,7 +24,7 @@ from pathlib import Path
 from gi.repository import Gtk, Adw, GLib
 
 from gradience.backend.preset_downloader import PresetDownloader
-from gradience.backend.theming.preset_utils import PresetUtils
+from gradience.backend.theming.preset import PresetUtils
 from gradience.backend.globals import presets_dir, preset_repos
 from gradience.backend.constants import rootdir
 

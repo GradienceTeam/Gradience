@@ -18,9 +18,13 @@
 
 import os
 
+import material_color_utilities_python as monet
+
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
-import material_color_utilities_python as monet
+
+from gradience.backend.models.preset import Preset
+from gradience.backend.utils.colors import argb_to_color_code
 
 from gradience.backend.logger import Logger
 
@@ -31,7 +35,7 @@ class Monet:
     def __init__(self):
         self.palette = None
 
-    def generate_from_image(self, image_path: str) -> dict:
+    def generate_palette_from_image(self, image_path: str) -> dict:
         if image_path.endswith(".svg"):
             drawing = svg2rlg(image_path)
             image_path = os.path.join(
@@ -59,3 +63,133 @@ class Monet:
             self.palette = monet.themeFromImage(monet_img)
 
         return self.palette
+
+    def new_preset_from_monet(self, name=None, monet_palette=None, props=None, obj_only=False) -> Preset or None:
+        preset = Preset()
+
+        if props:
+            tone = props[0]
+            theme = props[1]
+        else:
+            raise AttributeError("Properties 'tone' and/or 'theme' missing")
+
+        if not monet_palette:
+            raise AttributeError("Property 'monet_palette' missing")
+
+        if theme == "dark":
+            dark_theme = monet_palette["schemes"]["dark"]
+            variable = {
+                "accent_color": argb_to_color_code(dark_theme.primary),
+                "accent_bg_color": argb_to_color_code(dark_theme.primaryContainer),
+                "accent_fg_color": argb_to_color_code(dark_theme.onPrimaryContainer),
+                "destructive_color": argb_to_color_code(dark_theme.error),
+                "destructive_bg_color": argb_to_color_code(dark_theme.errorContainer),
+                "destructive_fg_color": argb_to_color_code(
+                    dark_theme.onErrorContainer
+                ),
+                "success_color": argb_to_color_code(dark_theme.tertiary),
+                "success_bg_color": argb_to_color_code(dark_theme.onTertiary),
+                "success_fg_color": argb_to_color_code(dark_theme.onTertiaryContainer),
+                "warning_color": argb_to_color_code(dark_theme.secondary),
+                "warning_bg_color": argb_to_color_code(dark_theme.onSecondary),
+                "warning_fg_color": argb_to_color_code(dark_theme.primary, "0.8"),
+                "error_color": argb_to_color_code(dark_theme.error),
+                "error_bg_color": argb_to_color_code(dark_theme.errorContainer),
+                "error_fg_color": argb_to_color_code(dark_theme.onError),
+                "window_bg_color": argb_to_color_code(dark_theme.surface),
+                "window_fg_color": argb_to_color_code(dark_theme.onSurface),
+                "view_bg_color": argb_to_color_code(dark_theme.surface),
+                "view_fg_color": argb_to_color_code(dark_theme.onSurface),
+                "headerbar_bg_color": argb_to_color_code(dark_theme.surface),
+                "headerbar_fg_color": argb_to_color_code(dark_theme.onSurface),
+                "headerbar_border_color": argb_to_color_code(
+                    dark_theme.primary, "0.8"
+                ),
+                "headerbar_backdrop_color": "@headerbar_bg_color",
+                "headerbar_shade_color": argb_to_color_code(dark_theme.shadow),
+                "card_bg_color": argb_to_color_code(dark_theme.primary, "0.05"),
+                "card_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
+                "card_shade_color": argb_to_color_code(dark_theme.shadow),
+                "dialog_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
+                "dialog_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
+                "popover_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
+                "popover_fg_color": argb_to_color_code(
+                    dark_theme.onSecondaryContainer
+                ),
+                "shade_color": argb_to_color_code(dark_theme.shadow),
+                "scrollbar_outline_color": argb_to_color_code(dark_theme.outline),
+            }
+        elif theme == "light":
+            light_theme = monet_palette["schemes"]["light"]
+            variable = {
+                "accent_color": argb_to_color_code(light_theme.primary),
+                "accent_bg_color": argb_to_color_code(light_theme.primary),
+                "accent_fg_color": argb_to_color_code(light_theme.onPrimary),
+                "destructive_color": argb_to_color_code(light_theme.error),
+                "destructive_bg_color": argb_to_color_code(light_theme.errorContainer),
+                "destructive_fg_color": argb_to_color_code(
+                    light_theme.onErrorContainer
+                ),
+                "success_color": argb_to_color_code(light_theme.tertiary),
+                "success_bg_color": argb_to_color_code(light_theme.tertiaryContainer),
+                "success_fg_color": argb_to_color_code(
+                    light_theme.onTertiaryContainer
+                ),
+                "warning_color": argb_to_color_code(light_theme.secondary),
+                "warning_bg_color": argb_to_color_code(light_theme.secondaryContainer),
+                "warning_fg_color": argb_to_color_code(
+                    light_theme.onSecondaryContainer
+                ),
+                "error_color": argb_to_color_code(light_theme.error),
+                "error_bg_color": argb_to_color_code(light_theme.errorContainer),
+                "error_fg_color": argb_to_color_code(light_theme.onError),
+                "window_bg_color": argb_to_color_code(light_theme.secondaryContainer),
+                "window_fg_color": argb_to_color_code(light_theme.onSurface),
+                "view_bg_color": argb_to_color_code(light_theme.secondaryContainer),
+                "view_fg_color": argb_to_color_code(light_theme.onSurface),
+                "headerbar_bg_color": argb_to_color_code(
+                    light_theme.secondaryContainer
+                ),
+                "headerbar_fg_color": argb_to_color_code(light_theme.onSurface),
+                "headerbar_border_color": argb_to_color_code(
+                    light_theme.primary, "0.8"
+                ),
+                "headerbar_backdrop_color": "@headerbar_bg_color",
+                "headerbar_shade_color": argb_to_color_code(
+                    light_theme.secondaryContainer
+                ),
+                "card_bg_color": argb_to_color_code(light_theme.primary, "0.05"),
+                "card_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
+                "card_shade_color": argb_to_color_code(light_theme.shadow),
+                "dialog_bg_color": argb_to_color_code(light_theme.secondaryContainer),
+                "dialog_fg_color": argb_to_color_code(
+                    light_theme.onSecondaryContainer
+                ),
+                "popover_bg_color": argb_to_color_code(light_theme.secondaryContainer),
+                "popover_fg_color": argb_to_color_code(
+                    light_theme.onSecondaryContainer
+                ),
+                "shade_color": argb_to_color_code(light_theme.shadow),
+                "scrollbar_outline_color": argb_to_color_code(light_theme.outline),
+            }
+
+        if obj_only == False and not name:
+            raise AttributeError("You either need to set 'obj_only' property to True, or add value to 'name' property")
+
+        if obj_only:
+            if name:
+                logging.debug("with name, obj_only")
+                preset.new(variables=variable, display_name=name)
+            else:
+                logging.debug("no name, obj_only")
+                preset.new(variables=variable)
+            return preset
+
+        if obj_only == False:
+            logging.debug("no obj_only, name")
+            preset.new(variables=variable, display_name=name)
+
+            try:
+                preset.save_to_file()
+            except OSError:
+                raise
