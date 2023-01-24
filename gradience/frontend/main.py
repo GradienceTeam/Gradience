@@ -27,6 +27,7 @@ from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
+from gradience.backend.theming.shell import ShellTheme
 from gradience.backend.theming.preset_utils import PresetUtils
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.constants import rootdir, app_id, rel_ver
@@ -613,8 +614,9 @@ class GradienceApplication(Adw.Application):
             if widget.get_app_types()["gtk3"]:
                 PresetUtils().apply_preset("gtk3", self.preset)
 
+            # TODO: Maybe place it somewhere else
             if self.settings.get_boolean("shell-theming-enabled"):
-                PresetUtils().apply_preset("shell", self.preset)
+                ShellTheme().apply_theme(self.preset)
 
             self.reload_plugins()
             self.plugins_list.apply()

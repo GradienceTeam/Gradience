@@ -24,9 +24,8 @@ from pathlib import Path
 from gi.repository import GLib, Gio
 
 from gradience.backend.models.preset import Preset
-from gradience.backend.theming.shell import ShellTheme
 
-from gradience.backend.utils.colors import rgba_from_argb, argb_to_color_code
+from gradience.backend.utils.colors import argb_to_color_code
 from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 
 from gradience.backend.logger import Logger
@@ -310,14 +309,6 @@ class PresetUtils:
                     os.path.join(theme_dir, "gtk.css"), "w", encoding="utf-8"
                 ) as file:
                     file.write(gtk3_css)
-        elif app_type == "shell": # TODO: Move to a external module
-            shell_theme = ShellTheme(shell_version=43) # TODO: Check which version of GNOME Shell user has installed
-
-            try:
-                shell_theme.create_theme(preset)
-            except GLib.GError as e:
-                logging.error(f"Failed to apply a theme for GNOME Shell.", exc=e)
-                raise
 
     def restore_gtk4_preset(self) -> None:
         try:
