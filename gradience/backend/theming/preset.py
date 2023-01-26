@@ -25,9 +25,8 @@ from gi.repository import GLib, Gio
 
 from gradience.backend.models.preset import Preset
 
-from gradience.backend.utils.colors import argb_to_color_code
 from gradience.backend.utils.theming import generate_gtk_css
-from gradience.backend.globals import presets_dir, get_gtk_theme_dir
+from gradience.backend.globals import user_config_dir, presets_dir, get_gtk_theme_dir
 
 from gradience.backend.logger import Logger
 
@@ -47,11 +46,7 @@ class PresetUtils:
                     file_name = str(file_name)
                     if file_name.endswith(".json"):
                         try:
-                            with open(
-                                os.path.join(presets_dir, file_name),
-                                "r",
-                                encoding="utf-8",
-                            ) as file:
+                            with open(os.path.join(presets_dir, file_name), "r", encoding="utf-8") as file:
                                 preset_text = file.read()
                                 file.close()
                         except (OSError, KeyError) as e:
@@ -59,17 +54,18 @@ class PresetUtils:
                             raise
                         else:
                             preset = json.loads(preset_text)
+
                             if preset.get("variables") is None:
                                 raise KeyError("'variables' section missing in loaded preset file")
+
                             if preset.get("palette") is None:
                                 raise KeyError("'palette' section missing in loaded preset file")
-                            presets_list[file_name] = preset[
-                                "name"
-                            ]
+
+                            presets_list[file_name] = preset["name"]
             elif repo.is_file():
-                # this exists to keep compatibility with old presets
+                # this exists to keep compatibility with old preset structure
                 if repo.name.endswith(".json"):
-                    logging.warning("Legacy preset found. Moving to new structure.")
+                    logging.warning("Legacy preset structure found. Moving to a new structure.")
 
                     try:
                         if not os.path.isdir(os.path.join(presets_dir, "user")):
@@ -78,11 +74,7 @@ class PresetUtils:
                         os.rename(repo, os.path.join(
                             presets_dir, "user", repo.name))
 
-                        with open(
-                            os.path.join(presets_dir, "user", repo),
-                            "r",
-                            encoding="utf-8",
-                        ) as file:
+                        with open(os.path.join(presets_dir, "user", repo), "r", encoding="utf-8") as file:
                             preset_text = file.read()
                             file.close()
                     except (OSError, KeyError) as e:
@@ -90,140 +82,71 @@ class PresetUtils:
                         raise
                     else:
                         preset = json.loads(preset_text)
+
                         if preset.get("variables") is None:
                             raise KeyError("'variables' section missing in loaded preset file")
+
                         if preset.get("palette") is None:
                             raise KeyError("'palette' section missing in loaded preset file")
-                        presets_list["user"][file_name] = preset[
-                            "name"
-                        ]
+
+                        presets_list["user"][file_name] = preset["name"]
 
         if full_list:
             for repo in Path(presets_dir).iterdir():
                 logging.debug(f"presets_dir.iterdir: {repo}")
                 __get_repo_presets(repo)
+
             return presets_list
         elif repo:
             __get_repo_presets(repo)
+
             return presets_list
         else:
             raise AttributeError("You either need to set 'repo' property, or change 'full_list' property to True")
 
     def apply_preset(self, app_type: str, preset: Preset) -> None:
-        if app_type == "gtk4":
-            theme_dir = get_gtk_theme_dir(app_type)
+        theme_dir = get_gtk_theme_dir(app_type)
+        gtk_css_path = os.path.join(theme_dir, "gtk.css")
 
-            if not os.path.exists(theme_dir):
-                os.makedirs(theme_dir)
+        if not os.path.exists(theme_dir):
+            os.makedirs(theme_dir)
 
-            gtk4_css = generate_gtk_css("gtk4", preset)
-            contents = ""
-
-            try:
-                with open(
-                    os.path.join(theme_dir, "gtk.css"), "r", encoding="utf-8"
-                ) as file:
-                    contents = file.read()
-            except FileNotFoundError: # first run
-                pass
-            else:
-                with open(
-                    os.path.join(theme_dir, "gtk.css.bak"), "w", encoding="utf-8"
-                ) as file:
-                    file.write(contents)
-            finally:
-                with open(
-                    os.path.join(theme_dir, "gtk.css"), "w", encoding="utf-8"
-                ) as file:
-                    file.write(gtk4_css)
-        elif app_type == "gtk3":
-            theme_dir = get_gtk_theme_dir(app_type)
-
-            if not os.path.exists(theme_dir):
-                os.makedirs(theme_dir)
-
-            gtk3_css = generate_gtk_css("gtk3", preset)
-            contents = ""
-
-            try:
-                with open(
-                    os.path.join(theme_dir, "gtk.css"), "r", encoding="utf-8"
-                ) as file:
-                    contents = file.read()
-            except FileNotFoundError: # first run
-                pass
-            else:
-                with open(
-                    os.path.join(theme_dir, "gtk.css.bak"), "w", encoding="utf-8"
-                ) as file:
-                    file.write(contents)
-            finally:
-                with open(
-                    os.path.join(theme_dir, "gtk.css"), "w", encoding="utf-8"
-                ) as file:
-                    file.write(gtk3_css)
+        try:
+            with open(gtk_css_path, "r", encoding="utf-8") as css_file:
+                contents = css_file.read()
+        except FileNotFoundError:
+            logging.warning(f"gtk.css file not found in {gtk_css_path}. Generating new stylesheet.")
+        else:
+            with open(gtk_css_path + ".bak", "w", encoding="utf-8") as backup:
+                backup.write(contents)
+        finally:
+            with open(gtk_css_path, "w", encoding="utf-8") as css_file:
+                css_file.write(generate_gtk_css(app_type, preset))
 
     def restore_gtk4_preset(self) -> None:
+        theme_dir = get_gtk_theme_dir("gtk4")
+        gtk_css_path = os.path.join(theme_dir, "gtk.css")
+
         try:
-            with open(
-                os.path.join(
-                    os.environ.get(
-                        "XDG_CONFIG_HOME", os.environ["HOME"] +
-                        "/.config"
-                    ),
-                    "gtk-4.0/gtk.css.bak",
-                ),
-                "r",
-                encoding="utf-8",
-            ) as backup:
+            with open(user_config_dir + ".bak", "r", encoding="utf-8") as backup:
                 contents = backup.read()
                 backup.close()
 
-            with open(
-                os.path.join(
-                    os.environ.get(
-                        "XDG_CONFIG_HOME", os.environ["HOME"] +
-                        "/.config"
-                    ),
-                    "gtk-4.0/gtk.css",
-                ),
-                "w",
-                encoding="utf-8",
-            ) as gtk4css:
+            with open(gtk_css_path, "w", encoding="utf-8") as gtk4css:
                 gtk4css.write(contents)
                 gtk4css.close()
         except OSError as e:
-            logging.error("Unable to restore Gtk4 backup.", exc=e)
+            logging.error("Unable to restore Gtk4 preset backup.", exc=e)
             raise
 
     def reset_preset(self, app_type: str) -> None:
-        if app_type == "gtk4":
-            file = Gio.File.new_for_path(
-                os.path.join(
-                    os.environ.get(
-                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                    ),
-                    "gtk-4.0/gtk.css",
-                )
-            )
+        theme_dir = get_gtk_theme_dir(app_type)
+        gtk_css_path = os.path.join(theme_dir, "gtk.css")
 
-            try:
-                file.delete()
-            except GLib.GError as e:
-                logging.error("Unable to delete current preset.", exc=e)
-                raise
-        elif app_type == "gtk3":
-            file = Gio.File.new_for_path(
-                os.path.join(
-                    os.environ.get(
-                        "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-                    ),
-                    "gtk-3.0/gtk.css",
-                )
-            )
+        file = Gio.File.new_for_path(gtk_css_path)
 
-            try:
-                file.delete()
-            except GLib.GError as e:
-                logging.error("Unable to delete current preset.", exc=e)
-                raise
+        try:
+            file.delete()
+        except GLib.GError as e:
+            logging.error("Unable to delete current preset.", exc=e)
+            raise

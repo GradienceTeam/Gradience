@@ -56,6 +56,7 @@ class Monet:
             basewidth = 64
             wpercent = basewidth / float(monet_img.size[0])
             hsize = int((float(monet_img.size[1]) * float(wpercent)))
+
             monet_img = monet_img.resize(
                 (basewidth, hsize), monet.Image.Resampling.LANCZOS
             )
@@ -178,15 +179,12 @@ class Monet:
 
         if obj_only:
             if name:
-                logging.debug("with name, obj_only")
                 preset.new(variables=variable, display_name=name)
             else:
-                logging.debug("no name, obj_only")
                 preset.new(variables=variable)
             return preset
 
         if obj_only == False:
-            logging.debug("no obj_only, name")
             preset.new(variables=variable, display_name=name)
 
             try:

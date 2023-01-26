@@ -1,7 +1,7 @@
 # preset.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -94,23 +94,25 @@ adw_palette = {
     }
 }
 
-# Supported app types that can utilize custom CSS
-custom_css_app_types = [
+# Supported GTK versions that can utilize custom CSS
+custom_css_gtk_versions = [
     "gtk4",
     "gtk3"
 ]
 
 
 class Preset:
+    display_name = "New Preset"
+    preset_path = "new_preset"
+
     variables = {}
     palette = adw_palette
     custom_css = {
         "gtk4": "",
-        "gtk3": "",
+        "gtk3": ""
     }
+
     plugins = {}
-    display_name = "New Preset"
-    preset_path = "new_preset"
     plugins_list = {}
     badges = {}
 
@@ -122,10 +124,13 @@ class Preset:
 
         if display_name:
             self.display_name = display_name
+
         if palette:
             self.palette = palette
+
         if custom_css:
             self.custom_css = custom_css
+
         if badges:
             self.badges = badges
 
@@ -182,7 +187,7 @@ class Preset:
             if "custom_css" in preset:
                 self.custom_css = preset["custom_css"]
             else:
-                for app_type in custom_css_app_types:
+                for app_type in custom_css_gtk_versions:
                     self.custom_css[app_type] = ""
         except Exception as e:
             logging.error("Failed to create a new preset object.", exc=e)
@@ -193,8 +198,8 @@ class Preset:
         self.display_name = name
         old_path = self.preset_path
         self.preset_path = os.path.join(
-                os.path.dirname(self.preset_path),
-                to_slug_case(name) + ".json")
+            os.path.dirname(self.preset_path), to_slug_case(name) + ".json"
+        )
 
         self.save_to_file(to=self.preset_path)
         os.remove(old_path)
@@ -207,6 +212,7 @@ class Preset:
             "custom_css": self.custom_css,
             "plugins": self.plugins_list
         }
+
         json_output = json.dumps(preset_dict, indent=indent)
 
         return json_output
@@ -218,23 +224,14 @@ class Preset:
         if to is None:
             filename = to_slug_case(name) if name else to_slug_case(self.display_name)
             self.preset_path = os.path.join(
-                presets_dir, "user", filename + ".json")
+                presets_dir, "user", filename + ".json"
+            )
         else:
             self.preset_path = to
 
-        if not os.path.exists(
-            os.path.join(
-                presets_dir,
-                "user",
-            )
-        ):
+        if not os.path.exists(os.path.join(presets_dir, "user")):
             try:
-                os.makedirs(
-                    os.path.join(
-                        presets_dir,
-                        "user",
-                    )
-                )
+                os.makedirs(os.path.join(presets_dir, "user"))
             except OSError as e:
                 logging.error("Failed to create a new preset directory.", exc=e)
                 raise

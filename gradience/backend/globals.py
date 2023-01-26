@@ -22,16 +22,14 @@ from gi.repository import Xdp
 
 from gradience.backend import constants
 
-
-presets_dir = os.path.join(
-    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
-    "presets"
+user_config_dir = os.environ.get(
+    "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
 )
 
-preset_repos = {
-    "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
-    "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json"
-}
+presets_dir = os.path.join(
+    user_config_dir,
+    "presets"
+)
 
 user_plugin_dir = os.path.join(
     os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
@@ -44,19 +42,17 @@ system_plugin_dir = os.path.join(
     "plugins"
 )
 
-def get_gtk_theme_dir(app_type):
+preset_repos = {
+    "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
+    "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json"
+}
+
+def get_gtk_theme_dir(app_type: str):
     if app_type == "gtk4":
-        theme_dir = os.path.join(
-            os.environ.get("XDG_CONFIG_HOME",
-                            os.environ["HOME"] + "/.config"),
-            "gtk-4.0"
-        )
-    elif app_type == "gtk3":
-        theme_dir = os.path.join(
-            os.environ.get("XDG_CONFIG_HOME",
-                            os.environ["HOME"] + "/.config"),
-            "gtk-3.0"
-        )
+        theme_dir = os.path.join(user_config_dir, "gtk-4.0")
+
+    if app_type == "gtk3":
+        theme_dir = os.path.join(user_config_dir, "gtk-3.0")
 
     return theme_dir
 
