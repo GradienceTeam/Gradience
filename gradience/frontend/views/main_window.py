@@ -127,9 +127,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.content_theming.add(self.shell_group)
 
     def setup_monet_page(self):
-        self.monet_pref_group = GradienceMonetThemingGroup(self)
+        self.monet_group = GradienceMonetThemingGroup(self)
 
-        self.content_theming.add(self.monet_pref_group)
+        self.content_theming.add(self.monet_group)
 
     def setup_colors_page(self):
         for group in preset_schema["groups"]:

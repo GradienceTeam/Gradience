@@ -1,7 +1,7 @@
 # common.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,7 +33,6 @@ def extract_version(text, prefix_text=None):
     You can also set the prefix_text parameter to reduce searching to
     lines with only this text prefixed to the version number.
     '''
-
     if not prefix_text:
         version = re.search(r"\s*([0-9.]+)", text)
     else:

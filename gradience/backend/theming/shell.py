@@ -20,11 +20,9 @@ import os
 import re
 import shutil
 
-import material_color_utilities_python as monet
-
 from gi.repository import Gio, GLib
 
-from gradience.backend.utils.common import to_slug_case
+from gradience.backend.models.preset import Preset
 from gradience.backend.utils.shell import get_shell_version
 from gradience.backend.constants import datadir
 
@@ -56,46 +54,48 @@ class ShellTheme:
 
         # Theme source/output paths
         self.templates_dir = os.path.join(datadir, "gradience", "shell", "templates", str(self.version_target))
-        self.colors_template = os.path.join(self.templates_dir, "colors.template")
-        self.switches_template = os.path.join(self.templates_dir, "switches.template")
+        self.source_dir = os.path.join(datadir, "gradience", "shell", str(self.version_target))
+        self.output_dir = os.path.join(GLib.get_home_dir(), ".local/share/themes", "gradience-shell", "gnome-shell")
+
         self.main_template = os.path.join(self.templates_dir, "gnome-shell.template")
+        self.colors_template = os.path.join(self.templates_dir, "colors.template")
+        # NOTE: From what I saw in some Shell themes, we can write our own Gresource schema, which will allow us to remove switches.template
+        self.switches_template = os.path.join(self.templates_dir, "switches.template")
 
-        self.theme_source = os.path.join(datadir, "gradience", "shell", str(self.version_target))
-        self.colors_source = os.path.join(self.theme_source, "gnome-shell-sass", "_colors.scss")
-        self.switches_source = os.path.join(self.theme_source, "gnome-shell-sass", "widgets", "_switches.scss")
-        self.main_source = os.path.join(self.theme_source, "gnome-shell.scss")
+        self.main_source = os.path.join(self.source_dir, "gnome-shell.scss")
+        self.colors_source = os.path.join(self.source_dir, "gnome-shell-sass", "_colors.scss")
+        self.switches_source = os.path.join(self.source_dir, "gnome-shell-sass", "widgets", "_switches.scss")
 
-        self.switch_on_source = os.path.join(self.theme_source, "toggle-on.svg")
-        self.switch_off_source = os.path.join(self.theme_source, "toggle-off.svg")
+        self.switch_on_source = os.path.join(self.source_dir, "toggle-on.svg")
+        self.switch_off_source = os.path.join(self.source_dir, "toggle-off.svg")
 
-        self.theme_output = os.path.join(GLib.get_home_dir(), ".local/share/themes", "gradience-shell", "gnome-shell")
-        self.assets_output = os.path.join(self.theme_output, "assets")
+        self.assets_output = os.path.join(self.output_dir, "assets")
 
-    def apply_theme(self, preset):
+    def apply_theme(self, preset: Preset):
         try:
             self.create_theme(preset)
         except GLib.GError as e:
             logging.error(f"Failed to apply a theme for GNOME Shell.", exc=e)
             raise
 
-    def create_theme(self, preset_obj):
-        self.variables = preset_obj.variables
+    def create_theme(self, preset: Preset):
+        self.variables = preset.variables
 
         self.insert_variables()
 
-        if not os.path.exists(self.theme_output):
+        if not os.path.exists(self.output_dir):
             try:
-                dirs = Gio.File.new_for_path(self.theme_output)
+                dirs = Gio.File.new_for_path(self.output_dir)
                 dirs.make_directory_with_parents(None)
             except GLib.GError as e:
                 logging.error(f"Unable to create directories.", exc=e)
                 raise
 
-        self.compile_sass(os.path.join(self.theme_source, "gnome-shell.scss"),
-            os.path.join(self.theme_output, "gnome-shell.css")
+        self.compile_sass(os.path.join(self.source_dir, "gnome-shell.scss"),
+            os.path.join(self.output_dir, "gnome-shell.css")
         )
 
-        self.color_assets()
+        self.recolor_assets()
         self.set_shell_theme()
 
     def insert_variables(self):
@@ -128,13 +128,14 @@ class ShellTheme:
         except GLib.GError as e:
             logging.error(f"Failed to compile SCSS source files using external sassc program.", exc=e)
 
-    # TODO: Add coloring for other assets
-    def color_assets(self):
+    # TODO: Add recoloring for other assets
+    def recolor_assets(self):
         accent_bg = self.variables["accent_bg_color"]
 
-        switch_on_svg = ""
-
-        shutil.copy(self.switches_template, self.switches_source)
+        shutil.copy(
+            self.switches_template,
+            self.switches_source
+        )
 
         # TODO: Make asset templates, so that assets can be recolored more than once per install
         with open(self.switch_on_source, "r", encoding="utf-8") as svg_data:
@@ -154,8 +155,15 @@ class ShellTheme:
                 logging.error(f"Unable to create directories.", exc=e)
                 raise
 
-        shutil.copy(self.switch_on_source, os.path.join(self.assets_output, "toggle-on.svg"))
-        shutil.copy(self.switch_off_source, os.path.join(self.assets_output, "toggle-off.svg"))
+        shutil.copy(
+            self.switch_on_source,
+            os.path.join(self.assets_output, "toggle-on.svg")
+        )
+
+        shutil.copy(
+            self.switch_off_source,
+            os.path.join(self.assets_output, "toggle-off.svg")
+        )
 
     def set_shell_theme(self):
         # Set default theme
