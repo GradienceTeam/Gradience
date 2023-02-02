@@ -49,6 +49,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+        self.app = Gtk.Application.get_default()
+        self.settings = Gio.Settings(app_id)
+
         self.presets_dropdown.get_popover().connect(
             "show", self.on_presets_dropdown_activate
         )
@@ -60,12 +64,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.setup_monet_page()
         self.setup_colors_page()
 
-        self.settings = Gio.Settings(app_id)
-
         self.connect("close-request", self.on_close_request)
         self.connect("unrealize", self.save_window_props)
 
-        self.style_manager = self.get_application().style_manager
+        self.style_manager = self.app.style_manager
         #self.first_apply = True
 
         self.get_default_wallpaper()
@@ -96,9 +98,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_dialog.show()
 
     def on_close_request(self, *args):
-        if self.get_application().is_dirty:
+        if self.app.is_dirty:
             logging.debug("Window close request")
-            self.get_application().show_unsaved_dialog()
+            self.app.show_unsaved_dialog()
             return True
         self.close()
 
@@ -176,8 +178,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_palette_shades = GradiencePaletteShades(
             "monet", _("Monet Palette"), 6
         )
-        self.get_application(
-        ).pref_palette_shades["monet"] = self.monet_palette_shades
+        self.app.pref_palette_shades["monet"] = self.monet_palette_shades
         self.monet_pref_group.add(self.monet_palette_shades)
 
         self.tone_row = Adw.ComboRow()
@@ -211,7 +212,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
                 self.tone = self.tone_row.get_selected_item()
                 self.monet_theme = self.monet_theme_row.get_selected_item()
-                self.get_application().update_theme_from_monet(
+
+                self.app.custom_css_group.reset_buffer()
+
+                self.app.update_theme_from_monet(
                     self.theme, self.tone, self.monet_theme
                 )
             except (OSError, AttributeError, ValueError):
@@ -243,8 +247,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                     variable["adw_gtk3_support"],
                 )
                 pref_group.add(pref_variable)
-                self.get_application(
-                ).pref_variables[variable["name"]] = pref_variable
+                self.app.pref_variables[variable["name"]] = pref_variable
 
             self.content.add(pref_group)
 
@@ -264,8 +267,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 color["prefix"], color["title"], color["n_shades"]
             )
             palette_pref_group.add(palette_shades)
-            self.get_application(
-            ).pref_palette_shades[color["prefix"]] = palette_shades
+            self.app.pref_palette_shades[color["prefix"]] = palette_shades
         self.content.add(palette_pref_group)
 
     def update_errors(self, errors):
@@ -280,4 +282,4 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             )
 
     def on_presets_dropdown_activate(self, *args):
-        self.get_application().reload_user_defined_presets()
+        self.app.reload_user_defined_presets()
