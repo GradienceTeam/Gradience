@@ -1,3 +1,8 @@
+> **Warning**
+> This software is currently in a **beta** state. It can break things, and it doesn't yet have a polished, _foolproof_ UX.
+> 
+> Please, if you got into some trouble with it, just create a [new issue](https://github.com/GradienceTeam/Gradience/issues/new?assignees=&labels=type%2Fbug&template=bug_report.yml&title=bug%3A+), or contact us on [Matrix](https://matrix.to/#/#Gradience:matrix.org) and [Discord](https://discord.com/invite/4njFDtfGEZ).
+
 <h1 align="center">
   <img src="data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg" alt="Gradience" width="192" height="192"/>
   <br>

@@ -391,6 +391,9 @@ class GradienceApplication(Adw.Application):
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(variable[key])
 
+        # TODO: Create a whole function deticated to clearing preset and custom CSS
+        self.preset_name = "Preset Name"
+
         self.reload_variables()
 
     def mark_as_dirty(self):
@@ -684,7 +687,7 @@ class GradienceApplication(Adw.Application):
         self.win.content_plugins.add(self.plugins_group)
         self.plugins_group = self.plugins_group
 
-        self.custom_css_group = GradienceCustomCSSGroup()
+        self.custom_css_group = GradienceCustomCSSGroup(self.win)
 
         for app_type in preset_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
@@ -710,7 +713,7 @@ class GradienceApplication(Adw.Application):
         self.win.content_plugins.add(self.plugins_group)
         self.plugins_group = self.plugins_group
 
-        self.custom_css_group = GradienceCustomCSSGroup()
+        self.custom_css_group = GradienceCustomCSSGroup(self.win)
 
         for app_type in preset_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""

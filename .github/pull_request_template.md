@@ -1,8 +1,8 @@
-# Description
+## Description
 
 <!-- Describe your changes in detail here. -->
 
-Fixes #(issue)
+Fixes #(issue) <!-- Remove this, if your PR doesn't fix any tracked issue. -->
 
 ## Type of change
 
@@ -19,7 +19,7 @@ Fixes #(issue)
 
 ## Testing
 
-- [ ] I have tested my changes and verified that they work as expected <!-- Required, your PR won't be accepted if you don't do this step. -->
+- [ ] I have tested my changes and verified that they work as expected <!-- Make sure you did this step before marking your PR as ready for merge. -->
 
 ### How to test the changes
 

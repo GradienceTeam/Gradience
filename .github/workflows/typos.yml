@@ -15,18 +15,22 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 
-import os
+name: Typos
 
+on:
+  pull_request:
+  schedule:
+    - cron:  '0 0,12 * * *'
+  workflow_dispatch:
 
-def list_po():
-    files = []
-    for _, _, filenames in os.walk("po"):
-        for file in filenames:
-            if file.endswith(".po"):
-                files.append(file.strip(".po"))
-    return files
+jobs:
+  typos:
+    name: Typos
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
 
-
-with open("LINGUAS", "w") as file:
-    po = "\n".join(list_po())
-    file.write(po)
+    - name: Check for typos
+      uses: crate-ci/typos@master
+      with:
+        config: typos.toml
