@@ -68,13 +68,11 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.connect("unrealize", self.save_window_props)
 
         self.style_manager = self.app.style_manager
-        #self.first_apply = True
-
-        self.get_default_wallpaper()
 
     # TODO: Check if org.freedesktop.portal.Settings portal will allow us to \
     # read org.gnome.desktop.background DConf key
-    def get_default_wallpaper(self):
+    # FIXME: Find purpose for this snippet
+    '''def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
         if self.style_manager.get_dark():
             picture_uri = background_settings.get_string("picture-uri-dark")
@@ -92,7 +90,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
         logging.debug(self.monet_image_file)
         # self.on_apply_button() # Comment out for now, because it always shows
-        # that annoying toast on startup
+        # that annoying toast on startup'''
 
     def on_file_picker_button_clicked(self, *args):
         self.monet_file_chooser_dialog.show()
@@ -146,9 +144,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_pref_group.set_header_suffix(self.apply_button)
 
         self.monet_file_chooser_row = Adw.ActionRow()
-        self.monet_file_chooser_row.set_title(_("Background Image"))
+        self.monet_file_chooser_row.set_title(_("Select an Image"))
 
         self.monet_file_chooser_dialog = Gtk.FileChooserNative()
+        self.monet_file_chooser_dialog.set_title(_("Choose a Image File"))
         self.monet_file_chooser_dialog.set_transient_for(self)
         self.monet_file_chooser_dialog.set_modal(True)
 
@@ -163,7 +162,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         icon = Gtk.Image()
         icon.set_from_icon_name("folder-pictures-symbolic")
         child_button.append(icon)
-        child_button.set_spacing(5)
+        child_button.set_spacing(10)
 
         self.monet_file_chooser_button.set_child(child_button)
 
