@@ -3,7 +3,7 @@
 # cli.in
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -350,8 +350,9 @@ class CLI:
 
         try:
             palette = Monet().generate_palette_from_image(_image_path)
-        except ValueError as e:
-            logging.error("Failed to generate Monet palette.", exc=e)
+        except (OSError, ValueError) as e:
+            logging.info("If you are getting an `no such file or directory` error on Gradience installed as Flatpak, "
+                "try adding the file to the access list by using `gradience-cli access-file --allow 'path/to/file'` command.")
             exit(1)
 
         props = [_tone, _theme]

@@ -84,8 +84,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     # TODO: Check if org.freedesktop.portal.Settings portal will allow us to \
     # read org.gnome.desktop.background DConf key
-    # TODO: Find purpose for this function
-    def get_default_wallpaper(self):
+    # FIXME: Find purpose for this snippet
+    '''def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
         if self.style_manager.get_dark():
             picture_uri = background_settings.get_string("picture-uri-dark")
@@ -103,7 +103,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         #self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
         logging.debug(self.monet_image_file)
         # self.on_apply_button_clicked() # Comment out for now, because it always shows
-        # that annoying toast on startup
+        # that annoying toast on startup'''
 
     def on_close_request(self, *args):
         if self.app.is_dirty:
