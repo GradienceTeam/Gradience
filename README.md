@@ -145,7 +145,7 @@ dnf copr enable lyessaadi/gradience
 dnf install gradience
 ```
 
-### Debian (And derivates)
+### Debian (And derivatives)
 
 > **Warning**
 > Not available yet.
