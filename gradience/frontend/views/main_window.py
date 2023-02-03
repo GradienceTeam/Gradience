@@ -127,7 +127,6 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             self.on_apply_button()
 
     def setup_monet_page(self):
-
         self.monet_pref_group = Adw.PreferencesGroup()
         self.monet_pref_group.set_name("monet")
         self.monet_pref_group.set_title(_("Monet Engine"))
@@ -143,7 +142,9 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.apply_button.set_valign(Gtk.Align.CENTER)
         self.apply_button.connect("clicked", self.on_apply_button)
         self.apply_button.set_css_classes("suggested-action")
+
         self.monet_pref_group.set_header_suffix(self.apply_button)
+
         self.monet_file_chooser_row = Adw.ActionRow()
         self.monet_file_chooser_row.set_title(_("Background Image"))
 
@@ -169,9 +170,11 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.monet_file_chooser_button.connect(
             "clicked", self.on_file_picker_button_clicked
         )
+
         self.monet_file_chooser_dialog.connect(
             "response", self.on_monet_file_chooser_response
         )
+
         self.monet_file_chooser_row.add_suffix(self.monet_file_chooser_button)
         self.monet_pref_group.add(self.monet_file_chooser_row)
 
@@ -181,7 +184,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.app.pref_palette_shades["monet"] = self.monet_palette_shades
         self.monet_pref_group.add(self.monet_palette_shades)
 
-        self.tone_row = Adw.ComboRow()
+        # FIXME: Comment out for now
+        '''self.tone_row = Adw.ComboRow()
         self.tone_row.set_title(_("Tone"))
 
         store = Gtk.StringList()
@@ -191,7 +195,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         for v in store_values:
             store.append(v)
         self.tone_row.set_model(store)
-        self.monet_pref_group.add(self.tone_row)
+        self.monet_pref_group.add(self.tone_row)'''
 
         self.monet_theme_row = Adw.ComboRow()
         self.monet_theme_row.set_title(_("Theme"))
@@ -210,16 +214,14 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             try:
                 self.theme = Monet().generate_from_image(self.monet_image_file)
 
-                self.tone = self.tone_row.get_selected_item()
+                #self.tone = self.tone_row.get_selected_item()
                 self.monet_theme = self.monet_theme_row.get_selected_item()
 
                 self.app.custom_css_group.reset_buffer()
 
-                self.app.update_theme_from_monet(
-                    self.theme, self.tone, self.monet_theme
-                )
-            except (OSError, AttributeError, ValueError):
-                logging.error("Failed to generate Monet palette.")
+                self.app.update_theme_from_monet(self.theme, self.monet_theme)
+            except (OSError, AttributeError, ValueError) as e:
+                logging.error("Failed to generate Monet palette.", exc=e)
                 self.toast_overlay.add_toast(
                     Adw.Toast(title=_("Failed to generate Monet palette"))
                 )
