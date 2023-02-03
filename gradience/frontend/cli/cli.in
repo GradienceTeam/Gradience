@@ -372,10 +372,8 @@ class CLI:
         try:
             PresetUtils().new_preset_from_monet(_preset_name, palette, props)
             #raise OSError()
-        except (OSError, AttributeError, FileNotFoundError) as e:
+        except (OSError, AttributeError) as e:
             logging.error("Unexpected error while generating preset from Monet palette.", exc=e)
-            logging.info("If you are getting an `no such file or directory` error on Gradience installed as Flatpak, "
-                "try adding the file to the access list by using `gradience-cli access-file --allow 'path/to/file'` command.")
             exit(1)
         else:
             logging.info("Preset generated successfully. "
