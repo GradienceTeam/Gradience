@@ -165,8 +165,8 @@ class CLI:
 
         try:
             presets_list = PresetUtils().get_presets_list(full_list=True)
-        except (OSError, KeyError, AttributeError):
-            logging.error("Failed to retrieve a list of presets.")
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error("Failed to retrieve a list of presets.", exc=e)
             exit(1)
 
         if _json:
@@ -188,8 +188,8 @@ class CLI:
 
         try:
             presets_list = PresetUtils().get_presets_list(full_list=True)
-        except (OSError, KeyError, AttributeError):
-            logging.error("Failed to retrieve a list of presets.")
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error("Failed to retrieve a list of presets.", exc=e)
             exit(1)
 
         presets_name = list(presets_list.values())
@@ -261,8 +261,8 @@ class CLI:
 
         try:
             presets_list = PresetUtils().get_presets_list(full_list=True)
-        except (OSError, KeyError, AttributeError):
-            logging.error("Failed to retrieve a list of presets.")
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error("Failed to retrieve a list of presets.", exc=e)
             exit(1)
 
         presets_name = list(presets_list.values())
@@ -312,8 +312,8 @@ class CLI:
         for repo_name, repo in preset_repos.items():
             try:
                 explore_presets, urls = PresetDownloader().fetch_presets(repo)
-            except (GLib.GError, json.JSONDecodeError):
-                logging.error("An error occurred while fetching presets from remote repository.")
+            except (GLib.GError, json.JSONDecodeError) as e:
+                logging.error("An error occurred while fetching presets from remote repository.", exc=e)
                 exit(1)
             else:
                 preset_no = 1
@@ -324,8 +324,8 @@ class CLI:
                         logging.info(f"Downloading preset: {preset_name}")
                         try:
                             PresetDownloader().download_preset(preset_name, to_slug_case(repo_name), preset_url)
-                        except (GLib.GError, json.JSONDecodeError, OSError):
-                            logging.error("An error occurred while downloading a preset.")
+                        except (GLib.GError, json.JSONDecodeError, OSError) as e:
+                            logging.error("An error occurred while downloading a preset.", exc=e)
                             exit(1)
                         else:
                             logging.info("Preset downloaded successfully.")
@@ -350,8 +350,8 @@ class CLI:
 
         try:
             palette = Monet().generate_from_image(_image_path)
-        except ValueError:
-            logging.error("Failed to generate Monet palette.")
+        except ValueError as e:
+            logging.error("Failed to generate Monet palette.", exc=e)
             exit(1)
 
         props = [_tone, _theme]
@@ -359,9 +359,9 @@ class CLI:
         if _json:
             try:
                 preset = PresetUtils().new_preset_from_monet(_preset_name,
-                                    palette, props, True)
-            except (OSError, AttributeError):
-                logging.error("Unexpected error while generating preset from Monet palette.")
+                            palette, props, True)
+            except (OSError, AttributeError) as e:
+                logging.error("Unexpected error while generating preset from Monet palette.", exc=e)
                 exit(1)
             else:
                 preset_json = preset.get_preset_json()
@@ -370,8 +370,8 @@ class CLI:
 
         try:
             PresetUtils().new_preset_from_monet(_preset_name, palette, props)
-        except (OSError, AttributeError):
-            logging.error("Unexpected error while generating preset from Monet palette.")
+        except (OSError, AttributeError) as e:
+            logging.error("Unexpected error while generating preset from Monet palette.", exc=e)
             exit(1)
         else:
             logging.info("Preset generated successfully. "
@@ -395,8 +395,8 @@ class CLI:
         if _list:
             try:
                 access_list = list_file_access()
-            except GLib.GError:
-                logging.error("An error occurred while accessing allowed files list.")
+            except GLib.GError as e:
+                logging.error("An error occurred while accessing allowed files list.", exc=e)
                 exit(1)
             else:
                 logging.info("Allowed files:")
@@ -411,8 +411,8 @@ class CLI:
         if _allow:
             try:
                 allow_file_access(_allow)
-            except GLib.GError:
-                logging.error("An error occurred while setting file access.")
+            except GLib.GError as e:
+                logging.error("An error occurred while setting file access.", exc=e)
                 exit(1)
             else:
                 logging.info(f"Path {_allow} added to access list.")
@@ -421,8 +421,8 @@ class CLI:
         if _disallow:
             try:
                 disallow_file_access(_disallow)
-            except GLib.GError:
-                logging.error("An error occurred while setting file access.")
+            except GLib.GError as e:
+                logging.error("An error occurred while setting file access.", exc=e)
                 exit(1)
             else:
                 logging.info(f"Path {_disallow} removed from access list.")
