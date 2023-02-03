@@ -222,7 +222,8 @@ gsettings reset com.github.GradienceTeam.Gradience first-run
 
 ## ℹ️ FAQ
 
-_To be done_
+### How can I launch a CLI?
+Refer to [temporary CLI documentation](https://github.com/GradienceTeam/Gradience/wiki/Using-CLI) in repo's wiki for instructions on how to launch a CLI.
 
 
 ## 🙌 Contribute to Gradience
