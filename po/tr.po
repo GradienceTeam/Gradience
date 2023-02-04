@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-03 12:14+0000\n"
+"POT-Creation-Date: 2023-02-04 00:39+0000\n"
 "PO-Revision-Date: 2022-12-25 18:48+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -512,7 +512,7 @@ msgstr "Eski Uygulamalar Temalandırması"
 msgid "System Configuration"
 msgstr "Sistem Yapılandırması"
 
-#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:141
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:139
 msgid "Apply"
 msgstr "Uygula"
 
@@ -683,64 +683,70 @@ msgstr "Düzeltmeler"
 msgid "Special thanks to"
 msgstr "Özel teşekkürler"
 
-#: gradience/frontend/views/main_window.py:132
+#: gradience/frontend/views/main_window.py:130
 msgid "Monet Engine"
 msgstr "Monet Motoru"
 
-#: gradience/frontend/views/main_window.py:135
+#: gradience/frontend/views/main_window.py:133
 msgid ""
 "Monet is an engine that generates a Material Design 3 palette from an "
 "image's color."
 msgstr ""
 "Monet, görüntü renklerinden Material Design 3 paleti oluşturan bir motordur."
 
-#: gradience/frontend/views/main_window.py:149
-msgid "Background Image"
-msgstr "Arkaplan Resmi"
+#: gradience/frontend/views/main_window.py:147
+msgid "Select an Image"
+msgstr ""
 
-#: gradience/frontend/views/main_window.py:160
+#: gradience/frontend/views/main_window.py:150
+#, fuzzy
+#| msgid "Choose a File"
+msgid "Choose a Image File"
+msgstr "Dosya Seç"
+
+#: gradience/frontend/views/main_window.py:159
 msgid "Choose a File"
 msgstr "Dosya Seç"
 
-#: gradience/frontend/views/main_window.py:182
+#: gradience/frontend/views/main_window.py:181
 msgid "Monet Palette"
 msgstr "Monet Paleti"
 
-#: gradience/frontend/views/main_window.py:201
+#: gradience/frontend/views/main_window.py:200
 msgid "Theme"
 msgstr "Tema"
 
-#: gradience/frontend/views/main_window.py:204
+#: gradience/frontend/views/main_window.py:203
 msgid "Auto"
 msgstr "Otomatik"
 
-#: gradience/frontend/views/main_window.py:205
+#: gradience/frontend/views/main_window.py:204
 #: gradience/frontend/settings_schema.py:372
 msgid "Light"
 msgstr "Aydınlık"
 
-#: gradience/frontend/views/main_window.py:206
+#: gradience/frontend/views/main_window.py:205
 #: gradience/frontend/settings_schema.py:373
 msgid "Dark"
 msgstr "Karanlık"
 
-#: gradience/frontend/views/main_window.py:226
+#: gradience/frontend/views/main_window.py:225
 msgid "Failed to generate Monet palette"
 msgstr "Monet paleti oluşturulamadı"
 
-#: gradience/frontend/views/main_window.py:230
+#: gradience/frontend/views/main_window.py:229
 msgid "Palette generated"
 msgstr "Palet oluşturuldu"
 
-#: gradience/frontend/views/main_window.py:234
+#: gradience/frontend/views/main_window.py:233
 msgid "Select a background first"
 msgstr "Önce arka plan seçin"
 
-#: gradience/frontend/views/main_window.py:258
+#: gradience/frontend/views/main_window.py:257
 msgid "Palette Colors"
 msgstr "Palet Renkleri"
 
-#: gradience/frontend/views/main_window.py:261
+#: gradience/frontend/views/main_window.py:260
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -1183,6 +1189,9 @@ msgstr "GTK 4 yedeği geri yüklenemedi"
 #: gradience/frontend/main.py:649 gradience/frontend/main.py:657
 msgid "Unable to delete current preset"
 msgstr "Geçerli ön ayar silinemedi"
+
+#~ msgid "Background Image"
+#~ msgstr "Arkaplan Resmi"
 
 #~ msgid "Tone"
 #~ msgstr "Ton"
