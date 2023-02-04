@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-04 19:28+0000\n"
+"POT-Creation-Date: 2023-02-04 23:04+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -23,9 +23,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.15-dev\n"
 
-#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5
+#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -154,6 +153,16 @@ msgstr "Unduh dan terapkan"
 #, fuzzy
 msgid "Download Only"
 msgstr "Unduh saja"
+
+#: data/ui/log_out_dialog.blp:5
+#, fuzzy
+msgid "Log out"
+msgstr "Keluar?"
+
+#: data/ui/log_out_dialog.blp:6
+#, fuzzy
+msgid "For the changes to take full effect, you need to log out."
+msgstr "Agar perubahan berlaku, Anda harus log keluar. "
 
 #: data/ui/no_plugin_window.blp:5
 #, fuzzy
@@ -688,286 +697,101 @@ msgstr "Abaikan"
 msgid "_Save"
 msgstr "Simpan"
 
-#: gradience/frontend/widgets/explore_preset_row.py:68
-#: gradience/frontend/widgets/explore_preset_row.py:94
-msgid "Preset could not be downloaded"
-msgstr "Preset tidak dapat diunduh"
-
-#: gradience/frontend/widgets/explore_preset_row.py:82
-#: gradience/frontend/widgets/explore_preset_row.py:98
-msgid "Preset downloaded"
-msgstr "Preset diunduh"
-
-#: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "Opsi ini hanya didukung sebagian oleh tema adw-gtk3."
-
-#: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "Opsi ini tidak didukung oleh tema adw-gtk3."
-
-#: gradience/frontend/widgets/option_row.py:110
-msgid "Not a color, see text value"
-msgstr "Bukan warna, lihat nilai teks"
-
-#: gradience/frontend/widgets/plugin_row.py:85
-#, fuzzy
-msgid "Unable to remove"
-msgstr "Tidak dapat menghapus"
-
-#: gradience/frontend/widgets/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed."
-msgstr "Ini adalah plugin sistem, dan tidak dapat dihapus."
-
-#: gradience/frontend/widgets/plugin_row.py:88
-#, fuzzy
-msgid "Close"
-msgstr "Tutup"
-
-#: gradience/frontend/widgets/preset_row.py:87
-#: gradience/frontend/widgets/preset_row.py:104
-#, fuzzy
-msgid "Remove from Favorites"
-msgstr "Hapus dari favorit"
-
-#: gradience/frontend/widgets/preset_row.py:90
-#: gradience/frontend/widgets/preset_row.py:100
-#, fuzzy
-msgid "Add to Favorites"
-msgstr "Tambah ke favorit"
-
-#: gradience/frontend/widgets/preset_row.py:166
-#, fuzzy
-msgid "Preset removed"
-msgstr "Preset dihapus"
-
-#: gradience/frontend/widgets/preset_row.py:167
-#, fuzzy
-msgid "Undo"
-msgstr "Urung"
-
-#: gradience/frontend/widgets/preset_row.py:182
-#, fuzzy
-msgid "Pending Deletion"
-msgstr "Penghapusan Tertunda"
-
-#: gradience/frontend/widgets/preset_row.py:196
-#, fuzzy
-msgid "Unable to delete preset"
-msgstr "Tidak dapat menghapus preset"
-
-#: gradience/frontend/widgets/repo_row.py:60
-#, fuzzy
-msgid "Repository removed"
-msgstr "Repositori dihapus."
-
-#: gradience/frontend/views/about_window.py:110
-msgid "Copyright © 2022-2023 Gradience Team"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:119
-#, fuzzy
-msgid "Plugins by"
-msgstr "Plugin oleh"
-
-#: gradience/frontend/views/about_window.py:127
-#, fuzzy
-#| msgid "Presets"
-msgid "Presets by"
-msgstr "Preset oleh"
-
-#: gradience/frontend/views/about_window.py:149
-#, fuzzy
-msgid "Packages by"
-msgstr "Paket oleh"
-
-#: gradience/frontend/views/about_window.py:156
-#, fuzzy
-msgid "Fixes by"
-msgstr "Perbaikan oleh"
-
-#: gradience/frontend/views/about_window.py:166
-#, fuzzy
-msgid "Special thanks to"
-msgstr "Terima kasih khusus kepada"
-
-#: gradience/frontend/views/main_window.py:130
-#, fuzzy
-msgid "Monet Engine"
-msgstr "Mesin Monet"
-
-#: gradience/frontend/views/main_window.py:133
-#, fuzzy
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr ""
-"Monet adalah mesin yang menghasilkan palet Material Design 3 dari warna "
-"gambar."
-
-#: gradience/frontend/views/main_window.py:147
-msgid "Select an Image"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:150
-#, fuzzy
-msgid "Choose a Image File"
-msgstr "Pilih Berkas"
-
-#: gradience/frontend/views/main_window.py:159
-#, fuzzy
-msgid "Choose a File"
-msgstr "Pilih Berkas"
-
-#: gradience/frontend/views/main_window.py:181
-#, fuzzy
-msgid "Monet Palette"
-msgstr "Palet Monet"
-
-#: gradience/frontend/views/main_window.py:200
-#, fuzzy
-msgid "Theme"
-msgstr "Tema"
-
-#: gradience/frontend/views/main_window.py:203
-#, fuzzy
-msgid "Auto"
-msgstr "Otomatis"
-
-#: gradience/frontend/views/main_window.py:204
-#: gradience/frontend/settings_schema.py:372
-#, fuzzy
-msgid "Light"
-msgstr "Terang"
-
-#: gradience/frontend/views/main_window.py:205
-#: gradience/frontend/settings_schema.py:373
-#, fuzzy
-msgid "Dark"
-msgstr "Gelap"
-
-#: gradience/frontend/views/main_window.py:225
-msgid "Failed to generate Monet palette"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:229
-#, fuzzy
-msgid "Palette generated"
-msgstr "Palet yang dihasilkan"
-
-#: gradience/frontend/views/main_window.py:233
-#, fuzzy
-msgid "Select a background first"
-msgstr "Pilih latar belakang terlebih dulu"
-
-#: gradience/frontend/views/main_window.py:257
-#, fuzzy
-msgid "Palette Colors"
-msgstr "Warna Palet"
-
-#: gradience/frontend/views/main_window.py:260
-#, fuzzy
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"Warna palet bernama yang digunakan oleh beberapa aplikasi. Warna default "
-"mengikuti <a href=\"https://developer.gnome.org/hig/reference/palette.html"
-"\">Pedoman Antarmuka Manusia GNOME</a>."
-
-#: gradience/frontend/views/plugins_list.py:89
-#, fuzzy
-msgid "Plugins"
-msgstr "Plugin"
-
-#: gradience/frontend/views/plugins_list.py:92
-#, fuzzy
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
-"Plugin menambahkan fitur tambahan ke Gradience, plugin dibuat oleh komunitas "
-"Gradience dan dapat menyebabkan masalah."
-
-#: gradience/frontend/views/plugins_list.py:104
-#, fuzzy
-msgid "No Plugins Found."
-msgstr "Tidak Ada Plugin yang Ditemukan."
-
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:345
-#, fuzzy
-msgid "User Presets"
-msgstr "Aturan Lanjut"
-
-#: gradience/frontend/views/presets_manager_window.py:190
-#, fuzzy
-msgid "Add new repository"
-msgstr "Tambahkan repositori baru"
-
-#: gradience/frontend/views/presets_manager_window.py:191
-#, fuzzy
-msgid "Add a repository to install additional presets."
-msgstr "Tambahkan repositori untuk menginstal preset tambahan."
-
-#: gradience/frontend/views/presets_manager_window.py:197
-msgid "Cancel"
-msgstr "Membatalkan"
-
-#: gradience/frontend/views/presets_manager_window.py:198
-#, fuzzy
-msgid "Add"
-msgstr "Tambahkan"
-
-#: gradience/frontend/views/presets_manager_window.py:288
-#, fuzzy
-msgid "Preset already exists"
-msgstr "Preset sudah ada"
-
-#: gradience/frontend/views/presets_manager_window.py:300
-#, fuzzy
-msgid "Preset imported"
-msgstr "Preset yang diimpor"
-
-#: gradience/frontend/views/presets_manager_window.py:303
-#, fuzzy
-msgid "Unsupported file format, must be .json"
-msgstr "Format file yang tidak didukung, harus .json"
-
-#: gradience/frontend/views/presets_manager_window.py:329
 #: gradience/frontend/main.py:184
+#: gradience/frontend/views/presets_manager_window.py:329
 #, fuzzy
 msgid "Failed to load list of presets"
 msgstr "Gagal memuat preset"
 
-#: gradience/frontend/views/presets_manager_window.py:338
+#: gradience/frontend/main.py:217
 #, fuzzy
-msgid "Built-in Presets"
-msgstr "Preset Built-in"
+#| msgid "No Results Found"
+msgid "No presets found"
+msgstr "Tidak ada preset yang ditemukan"
 
-#: gradience/frontend/views/presets_manager_window.py:348
+#: gradience/frontend/main.py:240
 #, fuzzy
+msgid "Favorite Presets"
+msgstr "Preset Favorit"
+
+#: gradience/frontend/main.py:404
+#, fuzzy
+msgid "Unsaved Changes"
+msgstr "Perubahan yang belum disimpan"
+
+#: gradience/frontend/main.py:416
+#, fuzzy
+msgid "Save Changes"
+msgstr "Simpan Perubahan"
+
+#: gradience/frontend/main.py:496
+#, fuzzy
+msgid "Apply This Color Scheme?"
+msgstr "Menerapkan Skema Warna Ini?"
+
+#: gradience/frontend/main.py:498
 msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
 msgstr ""
-"Lihat <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> di Github untuk lebih banyak preset."
+"Peringatan: file CSS khusus apa pun untuk jenis aplikasi tersebut akan "
+"ditimpa secara permanen!"
 
-#: gradience/frontend/views/presets_manager_window.py:374
+#: gradience/frontend/main.py:502
 #, fuzzy
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
+#| msgid "Apply"
+msgid "_Apply"
+msgstr "Terapkan"
+
+#: gradience/frontend/main.py:512
+#, fuzzy
+msgid "Restore applied color scheme?"
+msgstr "Mengembalikan skema warna yang diterapkan?"
+
+#: gradience/frontend/main.py:513 gradience/frontend/main.py:527
+msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
-"Tidak ada preset yang ditemukan! Gunakan tombol impor untuk mengimpor satu "
-"atau cari satu pada tab Explore."
+"Pastikan Anda memiliki pengaturan saat ini yang disimpan sebagai preset."
 
-#: gradience/frontend/views/welcome_window.py:97
+#: gradience/frontend/main.py:515
 #, fuzzy
-msgid "Thanks for updating Gradience!"
-msgstr "Terima kasih untuk memperbarui Gradience!"
+msgid "_Restore"
+msgstr "Mengembalikan"
+
+#: gradience/frontend/main.py:526
+msgid "Reset applied color scheme?"
+msgstr "Setel ulang skema warna yang diterapkan?"
+
+#: gradience/frontend/main.py:529
+#, fuzzy
+#| msgid "Reset"
+msgid "_Reset"
+msgstr "Mengatur ulang"
+
+#: gradience/frontend/main.py:555
+#, fuzzy
+msgid "You have unsaved changes!"
+msgstr "Anda memiliki perubahan yang belum disimpan!"
+
+#: gradience/frontend/main.py:606
+msgid "Preset saved"
+msgstr "Preset disimpan"
+
+#: gradience/frontend/main.py:623
+#, fuzzy
+#| msgid "Preset set sucessfully"
+msgid "Preset set successfully"
+msgstr "Preset berhasil disetel"
+
+#: gradience/frontend/main.py:636
+#, fuzzy
+msgid "Unable to restore GTK 4 backup"
+msgstr "Tidak dapat memulihkan cadangan GTK 4"
+
+#: gradience/frontend/main.py:649 gradience/frontend/main.py:657
+#, fuzzy
+msgid "Unable to delete current preset"
+msgstr "Tidak dapat menghapus preset"
 
 #: gradience/frontend/settings_schema.py:23
 #, fuzzy
@@ -1301,95 +1125,280 @@ msgstr "Ungu"
 msgid "Brown"
 msgstr "Cokelat"
 
-#: gradience/frontend/main.py:217
+#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/views/main_window.py:204
 #, fuzzy
-#| msgid "No Results Found"
-msgid "No presets found"
-msgstr "Tidak ada preset yang ditemukan"
+msgid "Light"
+msgstr "Terang"
 
-#: gradience/frontend/main.py:240
+#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/views/main_window.py:205
 #, fuzzy
-msgid "Favorite Presets"
-msgstr "Preset Favorit"
+msgid "Dark"
+msgstr "Gelap"
 
-#: gradience/frontend/main.py:404
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:119
 #, fuzzy
-msgid "Unsaved Changes"
-msgstr "Perubahan yang belum disimpan"
+msgid "Plugins by"
+msgstr "Plugin oleh"
 
-#: gradience/frontend/main.py:416
+#: gradience/frontend/views/about_window.py:127
 #, fuzzy
-msgid "Save Changes"
-msgstr "Simpan Perubahan"
+#| msgid "Presets"
+msgid "Presets by"
+msgstr "Preset oleh"
 
-#: gradience/frontend/main.py:496
+#: gradience/frontend/views/about_window.py:149
 #, fuzzy
-msgid "Apply This Color Scheme?"
-msgstr "Menerapkan Skema Warna Ini?"
+msgid "Packages by"
+msgstr "Paket oleh"
 
-#: gradience/frontend/main.py:498
+#: gradience/frontend/views/about_window.py:156
+#, fuzzy
+msgid "Fixes by"
+msgstr "Perbaikan oleh"
+
+#: gradience/frontend/views/about_window.py:166
+#, fuzzy
+msgid "Special thanks to"
+msgstr "Terima kasih khusus kepada"
+
+#: gradience/frontend/views/main_window.py:130
+#, fuzzy
+msgid "Monet Engine"
+msgstr "Mesin Monet"
+
+#: gradience/frontend/views/main_window.py:133
+#, fuzzy
 msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
 msgstr ""
-"Peringatan: file CSS khusus apa pun untuk jenis aplikasi tersebut akan "
-"ditimpa secara permanen!"
+"Monet adalah mesin yang menghasilkan palet Material Design 3 dari warna "
+"gambar."
 
-#: gradience/frontend/main.py:502
-#, fuzzy
-#| msgid "Apply"
-msgid "_Apply"
-msgstr "Terapkan"
-
-#: gradience/frontend/main.py:512
-#, fuzzy
-msgid "Restore applied color scheme?"
-msgstr "Mengembalikan skema warna yang diterapkan?"
-
-#: gradience/frontend/main.py:513 gradience/frontend/main.py:527
-msgid "Make sure you have the current settings saved as a preset."
+#: gradience/frontend/views/main_window.py:147
+msgid "Select an Image"
 msgstr ""
-"Pastikan Anda memiliki pengaturan saat ini yang disimpan sebagai preset."
 
-#: gradience/frontend/main.py:515
+#: gradience/frontend/views/main_window.py:150
 #, fuzzy
-msgid "_Restore"
-msgstr "Mengembalikan"
+msgid "Choose a Image File"
+msgstr "Pilih Berkas"
 
-#: gradience/frontend/main.py:526
-msgid "Reset applied color scheme?"
-msgstr "Setel ulang skema warna yang diterapkan?"
-
-#: gradience/frontend/main.py:529
+#: gradience/frontend/views/main_window.py:159
 #, fuzzy
-#| msgid "Reset"
-msgid "_Reset"
-msgstr "Mengatur ulang"
+msgid "Choose a File"
+msgstr "Pilih Berkas"
 
-#: gradience/frontend/main.py:555
+#: gradience/frontend/views/main_window.py:181
 #, fuzzy
-msgid "You have unsaved changes!"
-msgstr "Anda memiliki perubahan yang belum disimpan!"
+msgid "Monet Palette"
+msgstr "Palet Monet"
 
-#: gradience/frontend/main.py:606
-msgid "Preset saved"
-msgstr "Preset disimpan"
-
-#: gradience/frontend/main.py:623
+#: gradience/frontend/views/main_window.py:200
 #, fuzzy
-#| msgid "Preset set sucessfully"
-msgid "Preset set successfully"
-msgstr "Preset berhasil disetel"
+msgid "Theme"
+msgstr "Tema"
 
-#: gradience/frontend/main.py:636
+#: gradience/frontend/views/main_window.py:203
 #, fuzzy
-msgid "Unable to restore GTK 4 backup"
-msgstr "Tidak dapat memulihkan cadangan GTK 4"
+msgid "Auto"
+msgstr "Otomatis"
 
-#: gradience/frontend/main.py:649 gradience/frontend/main.py:657
+#: gradience/frontend/views/main_window.py:225
+msgid "Failed to generate Monet palette"
+msgstr ""
+
+#: gradience/frontend/views/main_window.py:229
 #, fuzzy
-msgid "Unable to delete current preset"
+msgid "Palette generated"
+msgstr "Palet yang dihasilkan"
+
+#: gradience/frontend/views/main_window.py:233
+#, fuzzy
+msgid "Select a background first"
+msgstr "Pilih latar belakang terlebih dulu"
+
+#: gradience/frontend/views/main_window.py:257
+#, fuzzy
+msgid "Palette Colors"
+msgstr "Warna Palet"
+
+#: gradience/frontend/views/main_window.py:260
+#, fuzzy
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"Warna palet bernama yang digunakan oleh beberapa aplikasi. Warna default "
+"mengikuti <a href=\"https://developer.gnome.org/hig/reference/palette.html"
+"\">Pedoman Antarmuka Manusia GNOME</a>."
+
+#: gradience/frontend/views/plugins_list.py:89
+#, fuzzy
+msgid "Plugins"
+msgstr "Plugin"
+
+#: gradience/frontend/views/plugins_list.py:92
+#, fuzzy
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+"Plugin menambahkan fitur tambahan ke Gradience, plugin dibuat oleh komunitas "
+"Gradience dan dapat menyebabkan masalah."
+
+#: gradience/frontend/views/plugins_list.py:104
+#, fuzzy
+msgid "No Plugins Found."
+msgstr "Tidak Ada Plugin yang Ditemukan."
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+#, fuzzy
+msgid "User Presets"
+msgstr "Aturan Lanjut"
+
+#: gradience/frontend/views/presets_manager_window.py:190
+#, fuzzy
+msgid "Add new repository"
+msgstr "Tambahkan repositori baru"
+
+#: gradience/frontend/views/presets_manager_window.py:191
+#, fuzzy
+msgid "Add a repository to install additional presets."
+msgstr "Tambahkan repositori untuk menginstal preset tambahan."
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "Membatalkan"
+
+#: gradience/frontend/views/presets_manager_window.py:198
+#, fuzzy
+msgid "Add"
+msgstr "Tambahkan"
+
+#: gradience/frontend/views/presets_manager_window.py:288
+#, fuzzy
+msgid "Preset already exists"
+msgstr "Preset sudah ada"
+
+#: gradience/frontend/views/presets_manager_window.py:300
+#, fuzzy
+msgid "Preset imported"
+msgstr "Preset yang diimpor"
+
+#: gradience/frontend/views/presets_manager_window.py:303
+#, fuzzy
+msgid "Unsupported file format, must be .json"
+msgstr "Format file yang tidak didukung, harus .json"
+
+#: gradience/frontend/views/presets_manager_window.py:338
+#, fuzzy
+msgid "Built-in Presets"
+msgstr "Preset Built-in"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+#, fuzzy
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Lihat <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> di Github untuk lebih banyak preset."
+
+#: gradience/frontend/views/presets_manager_window.py:374
+#, fuzzy
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Tidak ada preset yang ditemukan! Gunakan tombol impor untuk mengimpor satu "
+"atau cari satu pada tab Explore."
+
+#: gradience/frontend/views/welcome_window.py:97
+#, fuzzy
+msgid "Thanks for updating Gradience!"
+msgstr "Terima kasih untuk memperbarui Gradience!"
+
+#: gradience/frontend/widgets/explore_preset_row.py:68
+#: gradience/frontend/widgets/explore_preset_row.py:94
+msgid "Preset could not be downloaded"
+msgstr "Preset tidak dapat diunduh"
+
+#: gradience/frontend/widgets/explore_preset_row.py:82
+#: gradience/frontend/widgets/explore_preset_row.py:98
+msgid "Preset downloaded"
+msgstr "Preset diunduh"
+
+#: gradience/frontend/widgets/option_row.py:52
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "Opsi ini hanya didukung sebagian oleh tema adw-gtk3."
+
+#: gradience/frontend/widgets/option_row.py:57
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "Opsi ini tidak didukung oleh tema adw-gtk3."
+
+#: gradience/frontend/widgets/option_row.py:110
+msgid "Not a color, see text value"
+msgstr "Bukan warna, lihat nilai teks"
+
+#: gradience/frontend/widgets/plugin_row.py:85
+#, fuzzy
+msgid "Unable to remove"
+msgstr "Tidak dapat menghapus"
+
+#: gradience/frontend/widgets/plugin_row.py:86
+msgid "This is a system plugin, and cannot be removed."
+msgstr "Ini adalah plugin sistem, dan tidak dapat dihapus."
+
+#: gradience/frontend/widgets/plugin_row.py:88
+#, fuzzy
+msgid "Close"
+msgstr "Tutup"
+
+#: gradience/frontend/widgets/preset_row.py:87
+#: gradience/frontend/widgets/preset_row.py:104
+#, fuzzy
+msgid "Remove from Favorites"
+msgstr "Hapus dari favorit"
+
+#: gradience/frontend/widgets/preset_row.py:90
+#: gradience/frontend/widgets/preset_row.py:100
+#, fuzzy
+msgid "Add to Favorites"
+msgstr "Tambah ke favorit"
+
+#: gradience/frontend/widgets/preset_row.py:166
+#, fuzzy
+msgid "Preset removed"
+msgstr "Preset dihapus"
+
+#: gradience/frontend/widgets/preset_row.py:167
+#, fuzzy
+msgid "Undo"
+msgstr "Urung"
+
+#: gradience/frontend/widgets/preset_row.py:182
+#, fuzzy
+msgid "Pending Deletion"
+msgstr "Penghapusan Tertunda"
+
+#: gradience/frontend/widgets/preset_row.py:196
+#, fuzzy
+msgid "Unable to delete preset"
 msgstr "Tidak dapat menghapus preset"
+
+#: gradience/frontend/widgets/repo_row.py:60
+#, fuzzy
+msgid "Repository removed"
+msgstr "Repositori dihapus."
 
 #, fuzzy
 #~ msgid "Background Image"
@@ -1418,14 +1427,6 @@ msgstr "Tidak dapat menghapus preset"
 
 #~ msgid "Save"
 #~ msgstr "Simpan"
-
-#, fuzzy
-#~ msgid "Log out"
-#~ msgstr "Keluar?"
-
-#, fuzzy
-#~ msgid "For the changes to take full effect, you need to log out."
-#~ msgstr "Agar perubahan berlaku, Anda harus log keluar. "
 
 #, fuzzy
 #~| msgid ""

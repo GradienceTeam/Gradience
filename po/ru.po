@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-02-04 19:28+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-04 23:04+0000\n"
 "PO-Revision-Date: 2023-02-04 20:38+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,14 +24,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || ("
-"n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: Weblate 4.16-dev\n"
 
-#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5
+#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -138,6 +137,15 @@ msgstr "Загрузить и применить"
 #: data/ui/explore_preset_row.blp:32
 msgid "Download Only"
 msgstr "Только загрузить"
+
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr "Выйти"
+
+#: data/ui/log_out_dialog.blp:6
+msgid "For the changes to take full effect, you need to log out."
+msgstr ""
+"Чтобы изменения вступили в полную силу, вам необходимо выйти из системы."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -605,243 +613,82 @@ msgstr "Не сохранять"
 msgid "_Save"
 msgstr "_Сохранить"
 
-#: gradience/frontend/widgets/explore_preset_row.py:68
-#: gradience/frontend/widgets/explore_preset_row.py:94
-msgid "Preset could not be downloaded"
-msgstr "Предустановка не может быть загружена"
-
-#: gradience/frontend/widgets/explore_preset_row.py:82
-#: gradience/frontend/widgets/explore_preset_row.py:98
-msgid "Preset downloaded"
-msgstr "Предустановка загружена"
-
-#: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "Этот параметр поддерживается темой adw-gtk3 только частично."
-
-#: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "Этот параметр не поддерживается темой adw-gtk3."
-
-#: gradience/frontend/widgets/option_row.py:110
-msgid "Not a color, see text value"
-msgstr "Не является цветом, см. текстовое значение"
-
-#: gradience/frontend/widgets/plugin_row.py:85
-msgid "Unable to remove"
-msgstr "Не удалось удалить"
-
-#: gradience/frontend/widgets/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed."
-msgstr "Это системный плагин и он не может быть удален."
-
-#: gradience/frontend/widgets/plugin_row.py:88
-msgid "Close"
-msgstr "Закрыть"
-
-#: gradience/frontend/widgets/preset_row.py:87
-#: gradience/frontend/widgets/preset_row.py:104
-msgid "Remove from Favorites"
-msgstr "Удалить из избранного"
-
-#: gradience/frontend/widgets/preset_row.py:90
-#: gradience/frontend/widgets/preset_row.py:100
-msgid "Add to Favorites"
-msgstr "Добавить в избранное"
-
-#: gradience/frontend/widgets/preset_row.py:166
-msgid "Preset removed"
-msgstr "Предустановка удалена"
-
-#: gradience/frontend/widgets/preset_row.py:167
-msgid "Undo"
-msgstr "Отменить"
-
-#: gradience/frontend/widgets/preset_row.py:182
-msgid "Pending Deletion"
-msgstr "Ожидает удаления"
-
-#: gradience/frontend/widgets/preset_row.py:196
-msgid "Unable to delete preset"
-msgstr "Не удалось удалить предустановку"
-
-#: gradience/frontend/widgets/repo_row.py:60
-msgid "Repository removed"
-msgstr "Репозиторий удалён"
-
-#: gradience/frontend/views/about_window.py:110
-msgid "Copyright © 2022-2023 Gradience Team"
-msgstr "Авторские права © 2022-2023 Команда Gradience"
-
-#: gradience/frontend/views/about_window.py:119
-msgid "Plugins by"
-msgstr "Плагины"
-
-#: gradience/frontend/views/about_window.py:127
-msgid "Presets by"
-msgstr "Предустановки"
-
-#: gradience/frontend/views/about_window.py:149
-msgid "Packages by"
-msgstr "Пакеты"
-
-#: gradience/frontend/views/about_window.py:156
-msgid "Fixes by"
-msgstr "Исправления"
-
-#: gradience/frontend/views/about_window.py:166
-msgid "Special thanks to"
-msgstr "Особое спасибо"
-
-#: gradience/frontend/views/main_window.py:130
-msgid "Monet Engine"
-msgstr "Движок Monet"
-
-#: gradience/frontend/views/main_window.py:133
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr ""
-"Monet это движок, генерирующий палитру Material Design 3 из цветов "
-"изображения."
-
-#: gradience/frontend/views/main_window.py:147
-msgid "Select an Image"
-msgstr "Выберите изображение"
-
-#: gradience/frontend/views/main_window.py:150
-msgid "Choose a Image File"
-msgstr "Выберите файл изображения"
-
-#: gradience/frontend/views/main_window.py:159
-msgid "Choose a File"
-msgstr "Выберете файл"
-
-#: gradience/frontend/views/main_window.py:181
-msgid "Monet Palette"
-msgstr "Палитра Monet"
-
-#: gradience/frontend/views/main_window.py:200
-msgid "Theme"
-msgstr "Тема"
-
-#: gradience/frontend/views/main_window.py:203
-msgid "Auto"
-msgstr "Авто"
-
-#: gradience/frontend/views/main_window.py:204
-#: gradience/frontend/settings_schema.py:372
-msgid "Light"
-msgstr "Светлая"
-
-#: gradience/frontend/views/main_window.py:205
-#: gradience/frontend/settings_schema.py:373
-msgid "Dark"
-msgstr "Тёмная"
-
-#: gradience/frontend/views/main_window.py:225
-msgid "Failed to generate Monet palette"
-msgstr "Не удалось сгенерировать палитру Monet"
-
-#: gradience/frontend/views/main_window.py:229
-msgid "Palette generated"
-msgstr "Палитра сгенерирована"
-
-#: gradience/frontend/views/main_window.py:233
-msgid "Select a background first"
-msgstr "Сначала выберите фон"
-
-#: gradience/frontend/views/main_window.py:257
-msgid "Palette Colors"
-msgstr "Цвета палитры"
-
-#: gradience/frontend/views/main_window.py:260
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"Цвета палитры с названными цветами, которые используются некоторыми "
-"приложениями. Цвета по умолчанию следуют <a href=\"https://developer.gnome."
-"org/hig/reference/palette.html\">Human Interface Guidelines GNOME</a>."
-
-#: gradience/frontend/views/plugins_list.py:89
-msgid "Plugins"
-msgstr "Плагины"
-
-#: gradience/frontend/views/plugins_list.py:92
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
-"Плагины добавляют дополнительные функции в Gradience, плагины создаются "
-"сообществом Gradience и могут приводить к проблемам."
-
-#: gradience/frontend/views/plugins_list.py:104
-msgid "No Plugins Found."
-msgstr "Плагины не найдены."
-
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:345
-msgid "User Presets"
-msgstr "Пользовательские предустановки"
-
-#: gradience/frontend/views/presets_manager_window.py:190
-msgid "Add new repository"
-msgstr "Добавить новый репозиторий"
-
-#: gradience/frontend/views/presets_manager_window.py:191
-msgid "Add a repository to install additional presets."
-msgstr "Добавить репозиторий для установки дополнительных предустановок."
-
-#: gradience/frontend/views/presets_manager_window.py:197
-msgid "Cancel"
-msgstr "Отменить"
-
-#: gradience/frontend/views/presets_manager_window.py:198
-msgid "Add"
-msgstr "Добавить"
-
-#: gradience/frontend/views/presets_manager_window.py:288
-msgid "Preset already exists"
-msgstr "Предустановка уже существует"
-
-#: gradience/frontend/views/presets_manager_window.py:300
-msgid "Preset imported"
-msgstr "Предустановка импортирована"
-
-#: gradience/frontend/views/presets_manager_window.py:303
-msgid "Unsupported file format, must be .json"
-msgstr "Не поддерживаемый файловый формат, должен быть .json"
-
-#: gradience/frontend/views/presets_manager_window.py:329
 #: gradience/frontend/main.py:184
+#: gradience/frontend/views/presets_manager_window.py:329
 msgid "Failed to load list of presets"
 msgstr "Не удалось загрузить список предустановок"
 
-#: gradience/frontend/views/presets_manager_window.py:338
-msgid "Built-in Presets"
-msgstr "Встроенные предустановки"
+#: gradience/frontend/main.py:217
+msgid "No presets found"
+msgstr "Предустановки не найдены"
 
-#: gradience/frontend/views/presets_manager_window.py:348
+#: gradience/frontend/main.py:240
+msgid "Favorite Presets"
+msgstr "Избранные предустановки"
+
+#: gradience/frontend/main.py:404
+msgid "Unsaved Changes"
+msgstr "Несохранённые изменения"
+
+#: gradience/frontend/main.py:416
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: gradience/frontend/main.py:496
+msgid "Apply This Color Scheme?"
+msgstr "Применить эту цветовую схему?"
+
+#: gradience/frontend/main.py:498
 msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
 msgstr ""
-"Смотрите<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> на GitHub для большего количества предустановок."
+"Внимание: любые пользовательские файлы CSS для этих типов приложений будут "
+"безвозвратно перезаписаны!"
 
-#: gradience/frontend/views/presets_manager_window.py:374
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Предустановка не найдена! Используйте кнопку импорта, чтобы импортировать её "
-"или найти её во вкладке Обзор."
+#: gradience/frontend/main.py:502
+msgid "_Apply"
+msgstr "_Применить"
 
-#: gradience/frontend/views/welcome_window.py:97
-msgid "Thanks for updating Gradience!"
-msgstr "Спасибо за обновление Gradience!"
+#: gradience/frontend/main.py:512
+msgid "Restore applied color scheme?"
+msgstr "Восстановить применённую цветовую схему?"
+
+#: gradience/frontend/main.py:513 gradience/frontend/main.py:527
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "Убедитесь, что Вы сохранили текущие настройки как предустановку."
+
+#: gradience/frontend/main.py:515
+msgid "_Restore"
+msgstr "_Восстановить"
+
+#: gradience/frontend/main.py:526
+msgid "Reset applied color scheme?"
+msgstr "Сбросить применённую цветовую схему?"
+
+#: gradience/frontend/main.py:529
+msgid "_Reset"
+msgstr "_Сбросить"
+
+#: gradience/frontend/main.py:555
+msgid "You have unsaved changes!"
+msgstr "У вас есть не сохранённые изменения!"
+
+#: gradience/frontend/main.py:606
+msgid "Preset saved"
+msgstr "Предустановка сохранена"
+
+#: gradience/frontend/main.py:623
+msgid "Preset set successfully"
+msgstr "Предустановка успешно установлена"
+
+#: gradience/frontend/main.py:636
+msgid "Unable to restore GTK 4 backup"
+msgstr "Не удалось восстановить резервную копию GTK 4"
+
+#: gradience/frontend/main.py:649 gradience/frontend/main.py:657
+msgid "Unable to delete current preset"
+msgstr "Не удалось удалить текущую предустановку"
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1126,77 +973,238 @@ msgstr "Фиолетовый"
 msgid "Brown"
 msgstr "Коричневый"
 
-#: gradience/frontend/main.py:217
-msgid "No presets found"
-msgstr "Предустановки не найдены"
+#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/views/main_window.py:204
+msgid "Light"
+msgstr "Светлая"
 
-#: gradience/frontend/main.py:240
-msgid "Favorite Presets"
-msgstr "Избранные предустановки"
+#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/views/main_window.py:205
+msgid "Dark"
+msgstr "Тёмная"
 
-#: gradience/frontend/main.py:404
-msgid "Unsaved Changes"
-msgstr "Несохранённые изменения"
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr "Авторские права © 2022-2023 Команда Gradience"
 
-#: gradience/frontend/main.py:416
-msgid "Save Changes"
-msgstr "Сохранить изменения"
+#: gradience/frontend/views/about_window.py:119
+msgid "Plugins by"
+msgstr "Плагины"
 
-#: gradience/frontend/main.py:496
-msgid "Apply This Color Scheme?"
-msgstr "Применить эту цветовую схему?"
+#: gradience/frontend/views/about_window.py:127
+msgid "Presets by"
+msgstr "Предустановки"
 
-#: gradience/frontend/main.py:498
+#: gradience/frontend/views/about_window.py:149
+msgid "Packages by"
+msgstr "Пакеты"
+
+#: gradience/frontend/views/about_window.py:156
+msgid "Fixes by"
+msgstr "Исправления"
+
+#: gradience/frontend/views/about_window.py:166
+msgid "Special thanks to"
+msgstr "Особое спасибо"
+
+#: gradience/frontend/views/main_window.py:130
+msgid "Monet Engine"
+msgstr "Движок Monet"
+
+#: gradience/frontend/views/main_window.py:133
 msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
 msgstr ""
-"Внимание: любые пользовательские файлы CSS для этих типов приложений будут "
-"безвозвратно перезаписаны!"
+"Monet это движок, генерирующий палитру Material Design 3 из цветов "
+"изображения."
 
-#: gradience/frontend/main.py:502
-msgid "_Apply"
-msgstr "_Применить"
+#: gradience/frontend/views/main_window.py:147
+msgid "Select an Image"
+msgstr "Выберите изображение"
 
-#: gradience/frontend/main.py:512
-msgid "Restore applied color scheme?"
-msgstr "Восстановить применённую цветовую схему?"
+#: gradience/frontend/views/main_window.py:150
+msgid "Choose a Image File"
+msgstr "Выберите файл изображения"
 
-#: gradience/frontend/main.py:513 gradience/frontend/main.py:527
-msgid "Make sure you have the current settings saved as a preset."
-msgstr "Убедитесь, что Вы сохранили текущие настройки как предустановку."
+#: gradience/frontend/views/main_window.py:159
+msgid "Choose a File"
+msgstr "Выберете файл"
 
-#: gradience/frontend/main.py:515
-msgid "_Restore"
-msgstr "_Восстановить"
+#: gradience/frontend/views/main_window.py:181
+msgid "Monet Palette"
+msgstr "Палитра Monet"
 
-#: gradience/frontend/main.py:526
-msgid "Reset applied color scheme?"
-msgstr "Сбросить применённую цветовую схему?"
+#: gradience/frontend/views/main_window.py:200
+msgid "Theme"
+msgstr "Тема"
 
-#: gradience/frontend/main.py:529
-msgid "_Reset"
-msgstr "_Сбросить"
+#: gradience/frontend/views/main_window.py:203
+msgid "Auto"
+msgstr "Авто"
 
-#: gradience/frontend/main.py:555
-msgid "You have unsaved changes!"
-msgstr "У вас есть не сохранённые изменения!"
+#: gradience/frontend/views/main_window.py:225
+msgid "Failed to generate Monet palette"
+msgstr "Не удалось сгенерировать палитру Monet"
 
-#: gradience/frontend/main.py:606
-msgid "Preset saved"
-msgstr "Предустановка сохранена"
+#: gradience/frontend/views/main_window.py:229
+msgid "Palette generated"
+msgstr "Палитра сгенерирована"
 
-#: gradience/frontend/main.py:623
-msgid "Preset set successfully"
-msgstr "Предустановка успешно установлена"
+#: gradience/frontend/views/main_window.py:233
+msgid "Select a background first"
+msgstr "Сначала выберите фон"
 
-#: gradience/frontend/main.py:636
-msgid "Unable to restore GTK 4 backup"
-msgstr "Не удалось восстановить резервную копию GTK 4"
+#: gradience/frontend/views/main_window.py:257
+msgid "Palette Colors"
+msgstr "Цвета палитры"
 
-#: gradience/frontend/main.py:649 gradience/frontend/main.py:657
-msgid "Unable to delete current preset"
-msgstr "Не удалось удалить текущую предустановку"
+#: gradience/frontend/views/main_window.py:260
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"Цвета палитры с названными цветами, которые используются некоторыми "
+"приложениями. Цвета по умолчанию следуют <a href=\"https://developer.gnome."
+"org/hig/reference/palette.html\">Human Interface Guidelines GNOME</a>."
+
+#: gradience/frontend/views/plugins_list.py:89
+msgid "Plugins"
+msgstr "Плагины"
+
+#: gradience/frontend/views/plugins_list.py:92
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+"Плагины добавляют дополнительные функции в Gradience, плагины создаются "
+"сообществом Gradience и могут приводить к проблемам."
+
+#: gradience/frontend/views/plugins_list.py:104
+msgid "No Plugins Found."
+msgstr "Плагины не найдены."
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "User Presets"
+msgstr "Пользовательские предустановки"
+
+#: gradience/frontend/views/presets_manager_window.py:190
+msgid "Add new repository"
+msgstr "Добавить новый репозиторий"
+
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add a repository to install additional presets."
+msgstr "Добавить репозиторий для установки дополнительных предустановок."
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "Отменить"
+
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Add"
+msgstr "Добавить"
+
+#: gradience/frontend/views/presets_manager_window.py:288
+msgid "Preset already exists"
+msgstr "Предустановка уже существует"
+
+#: gradience/frontend/views/presets_manager_window.py:300
+msgid "Preset imported"
+msgstr "Предустановка импортирована"
+
+#: gradience/frontend/views/presets_manager_window.py:303
+msgid "Unsupported file format, must be .json"
+msgstr "Не поддерживаемый файловый формат, должен быть .json"
+
+#: gradience/frontend/views/presets_manager_window.py:338
+msgid "Built-in Presets"
+msgstr "Встроенные предустановки"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Смотрите<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> на GitHub для большего количества предустановок."
+
+#: gradience/frontend/views/presets_manager_window.py:374
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Предустановка не найдена! Используйте кнопку импорта, чтобы импортировать её "
+"или найти её во вкладке Обзор."
+
+#: gradience/frontend/views/welcome_window.py:97
+msgid "Thanks for updating Gradience!"
+msgstr "Спасибо за обновление Gradience!"
+
+#: gradience/frontend/widgets/explore_preset_row.py:68
+#: gradience/frontend/widgets/explore_preset_row.py:94
+msgid "Preset could not be downloaded"
+msgstr "Предустановка не может быть загружена"
+
+#: gradience/frontend/widgets/explore_preset_row.py:82
+#: gradience/frontend/widgets/explore_preset_row.py:98
+msgid "Preset downloaded"
+msgstr "Предустановка загружена"
+
+#: gradience/frontend/widgets/option_row.py:52
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "Этот параметр поддерживается темой adw-gtk3 только частично."
+
+#: gradience/frontend/widgets/option_row.py:57
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "Этот параметр не поддерживается темой adw-gtk3."
+
+#: gradience/frontend/widgets/option_row.py:110
+msgid "Not a color, see text value"
+msgstr "Не является цветом, см. текстовое значение"
+
+#: gradience/frontend/widgets/plugin_row.py:85
+msgid "Unable to remove"
+msgstr "Не удалось удалить"
+
+#: gradience/frontend/widgets/plugin_row.py:86
+msgid "This is a system plugin, and cannot be removed."
+msgstr "Это системный плагин и он не может быть удален."
+
+#: gradience/frontend/widgets/plugin_row.py:88
+msgid "Close"
+msgstr "Закрыть"
+
+#: gradience/frontend/widgets/preset_row.py:87
+#: gradience/frontend/widgets/preset_row.py:104
+msgid "Remove from Favorites"
+msgstr "Удалить из избранного"
+
+#: gradience/frontend/widgets/preset_row.py:90
+#: gradience/frontend/widgets/preset_row.py:100
+msgid "Add to Favorites"
+msgstr "Добавить в избранное"
+
+#: gradience/frontend/widgets/preset_row.py:166
+msgid "Preset removed"
+msgstr "Предустановка удалена"
+
+#: gradience/frontend/widgets/preset_row.py:167
+msgid "Undo"
+msgstr "Отменить"
+
+#: gradience/frontend/widgets/preset_row.py:182
+msgid "Pending Deletion"
+msgstr "Ожидает удаления"
+
+#: gradience/frontend/widgets/preset_row.py:196
+msgid "Unable to delete preset"
+msgstr "Не удалось удалить предустановку"
+
+#: gradience/frontend/widgets/repo_row.py:60
+msgid "Repository removed"
+msgstr "Репозиторий удалён"
 
 #~ msgid "Background Image"
 #~ msgstr "Фоновое изображение"
@@ -1224,13 +1232,6 @@ msgstr "Не удалось удалить текущую предустанов
 
 #~ msgid "Save"
 #~ msgstr "Сохранить"
-
-#~ msgid "Log out"
-#~ msgstr "Выйти"
-
-#~ msgid "For the changes to take full effect, you need to log out."
-#~ msgstr ""
-#~ "Чтобы изменения вступили в полную силу, вам необходимо выйти из системы."
 
 #~ msgid ""
 #~ "\n"
