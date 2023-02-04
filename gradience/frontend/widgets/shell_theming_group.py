@@ -18,6 +18,7 @@
 
 from gi.repository import Gio, Gtk, Adw
 
+from gradience.backend.theming.shell import ShellTheme
 from gradience.backend.constants import rootdir
 
 from gradience.frontend.views.shell_prefs_window import GradienceShellPrefsWindow
@@ -32,7 +33,7 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
     __gtype_name__ = "GradienceShellThemingGroup"
 
     shell_theming_expander = Gtk.Template.Child("shell-theming-expander")
-    shell_pref_button = Gtk.Template.Child("shell-pref-button")
+    other_options_row = Gtk.Template.Child("other-options-row")
 
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
@@ -41,7 +42,7 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         self.settings = parent.settings
         self.app = self.parent.get_application()
 
-        self.setup_signals()
+        #self.setup_signals()
         self.setup()
 
     def setup_signals(self):
@@ -57,14 +58,36 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         )
 
     def setup(self):
-        pass
+        self.shell_theming_expander.add_row(self.other_options_row)
+
+    # TODO: Maybe allow it when using export option?
+    '''def setup_version_row(self):
+        version_store = Gtk.StringList()
+        version_store.append(_("Auto"))
+        version_store.append(_("43"))
+        version_store.append(_("42"))
+
+        self.shell_version_row.set_model(version_store)'''
 
     def on_toggle_state_change(self, *_args):
         shell_theming_enabled = self.settings.get_boolean("shell-theming-enabled")
-        logging.debug("It works! \o/")
         logging.debug(f"shell-theming-enabled key state: {shell_theming_enabled}")
 
     @Gtk.Template.Callback()
-    def on_shell_pref_button_clicked(self, *_args):
+    def on_custom_colors_button_clicked(self, *_args):
         self.shell_pref_window = GradienceShellPrefsWindow(self.parent)
         self.shell_pref_window.present()
+
+    @Gtk.Template.Callback()
+    def on_apply_button_clicked(self, *_args):
+        logging.debug("It works! \o/")
+        ShellTheme().apply_theme(self.app.preset)
+
+    @Gtk.Template.Callback()
+    def on_remove_button_clicked(self, *_args):
+        # TODO: Make this function actually remove Shell theme
+        ShellTheme().unset_shell_theme()
+
+    @Gtk.Template.Callback()
+    def on_restore_button_clicked(self, *_args):
+        logging.debug("Nothing here yet /o\ ")

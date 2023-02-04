@@ -8,6 +8,9 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
   modal: true;
 
   Adw.PreferencesPage {
+    title: _("General");
+    icon-name: "applications-system-symbolic";
+
     Adw.PreferencesGroup flatpak_group {
       title: _("GTK 4 Flatpak Applications");
 
@@ -75,6 +78,80 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
             valign: center;
             icon-name: "checkmark-large-symbolic";
           }
+        }
+      }
+    }
+  }
+
+  Adw.PreferencesPage {
+    title: _("Theming");
+    icon-name: "larger-brush-symbolic";
+
+    Adw.PreferencesGroup preset_group {
+      title: _("Theme Engines");
+      description: _("Theme Engines are the built-in theme generators for various customizable programs/frameworks.");
+
+      Adw.ActionRow {
+        title: _("Enable Monet Engine");
+        subtitle: _("Monet Engine generates a Material Design 3 palette from extracting image's colors.");
+        activatable-widget: enable_monet_engine;
+
+        Switch enable_monet_engine {
+          valign: center;
+        }
+      }
+
+      Adw.ActionRow {
+        title: _("Enable Shell Engine");
+        subtitle: _("Shell Engine generates a custom GNOME Shell theme based of a currently choosen preset.");
+        activatable-widget: enable_gnome_shell_engine;
+
+        Switch enable_gnome_shell_engine {
+          valign: center;
+        }
+      }
+    }
+
+    Adw.PreferencesGroup reset_and_restore_group {
+      title: _("Reset &amp; Restore");
+
+      Adw.ActionRow {
+        title: _("Libadwaita Preset");
+
+        Button restore_libadw_button {
+          valign: center;
+          icon-name: "edit-undo-symbolic";
+          tooltip-text: _("Restore Previous Preset");
+          //clicked => on_restore_button_clicked();
+          styles ["flat"]
+        }
+
+        Button reset_libadw_button {
+          valign: center;
+          label: _("Reset");
+          tooltip-text: _("Reset Applied Preset");
+          //clicked => on_reset_button_clicked();
+          styles ["destructive-action"]
+        }
+      }
+
+      Adw.ActionRow {
+        title: _("GTK 3 (adw-gtk3) Preset");
+
+        Button restore_gtk3_button {
+          valign: center;
+          icon-name: "edit-undo-symbolic";
+          tooltip-text: _("Restore Previous Preset");
+          //clicked => on_restore_button_clicked();
+          styles ["flat"]
+        }
+
+        Button reset_gtk3_button {
+          valign: center;
+          label: _("Reset");
+          tooltip-text: _("Reset Applied Preset");
+          //clicked => on_reset_button_clicked();
+          styles ["destructive-action"]
         }
       }
     }

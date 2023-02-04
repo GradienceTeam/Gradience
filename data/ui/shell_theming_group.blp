@@ -2,23 +2,52 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradienceShellThemingGroup : Adw.PreferencesGroup {
-  title: _("GNOME Shell Theming");
-  description: _("This section allows you to enable and customize Shell theme look.\nWARNING: Extensions that modify Shell stylesheet can cause issues with themes.");
+  title: _("Shell Engine");
+  description: _("Shell Engine generates a custom GNOME Shell theme based on the colors of a currently selected preset.\nWARNING: Extensions that modify Shell stylesheet can cause issues with themes.");
 
   Adw.ExpanderRow shell-theming-expander {
-    title: _("Enable Shell Theming");
-    subtitle: _("Enable GNOME Shell theme generator and get access to theme customization options");
-    show-enable-switch: true;
+    title: _("Shell Engine Options");
+    subtitle: _("Change the parameters of a generated GNOME Shell theme");
+    expanded: true;
 
-    Adw.ActionRow {
+    [action]
+    Button shell-apply-button {
+      valign: center;
+      label: _("Apply");
+      tooltip-text: _("Apply a Shell theme");
+      clicked => on_apply_button_clicked();
+      styles ["suggested-action"]
+    }
+
+    Adw.ActionRow custom-colors-row {
       title: _("Customize Shell Colors");
 
       [suffix]
-      Button shell-pref-button {
+      Button custom-colors-button {
         valign: center;
         label: _("Open Custom Shell Colors");
-        clicked => on_shell_pref_button_clicked();
+        clicked => on_custom_colors_button_clicked();
       }
     }
+  }
+}
+
+Adw.ActionRow other-options-row {
+  [prefix]
+  Button restore_libadw_button {
+    valign: center;
+    icon-name: "edit-undo-symbolic";
+    tooltip-text: _("Restore Previous Theme");
+    clicked => on_restore_button_clicked();
+    styles ["flat"]
+  }
+
+  [suffix]
+  Button remove_button {
+    valign: center;
+    label: _("Reset Theme");
+    tooltip-text: _("Reset an applied theme");
+    clicked => on_remove_button_clicked();
+    styles ["destructive-action"]
   }
 }

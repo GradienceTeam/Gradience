@@ -364,7 +364,7 @@ class GradienceApplication(Adw.Application):
     def update_theme_from_monet(self, monet, preset_variant: str, tone=20):
         palettes = monet["palettes"]
 
-        preset_variant = preset_variant.get_string().lower()  # dark / light
+        preset_variant = preset_variant.lower()  # dark / light
 
         palette = {}
 
@@ -618,10 +618,6 @@ class GradienceApplication(Adw.Application):
 
             if widget.get_app_types()["gtk3"]:
                 PresetUtils().apply_preset("gtk3", self.preset)
-
-            # TODO: Maybe place it somewhere else
-            if self.settings.get_boolean("shell-theming-enabled"):
-                ShellTheme().apply_theme(self.preset)
 
             self.reload_plugins()
             self.plugins_list.apply()

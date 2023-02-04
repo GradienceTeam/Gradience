@@ -5,30 +5,38 @@ template GradienceMonetThemingGroup : Adw.PreferencesGroup {
   title: _("Monet Engine");
   description: _("Monet is an engine that generates a Material Design 3 palette from extracting image's colors.");
 
-  [header-suffix]
-  Button apply-button {
-    valign: center;
-    label: _("Apply");
-    clicked => on_apply_button_clicked();
-  }
+  Adw.ExpanderRow monet-theming-expander {
+    title: _("Monet Engine Options");
+    subtitle: _("Choose an image, and change the parameters of a generated Monet palette");
+    expanded: true;
 
-  Adw.ActionRow file-chooser-row {
-    title: _("Background Image");
-
-    [suffix]
-    Button file-chooser-button {
+    [action]
+    Button monet-apply-button {
       valign: center;
-      clicked => on_file_chooser_button_clicked();
+      label: _("Apply");
+      tooltip-text: _("Apply a palette");
+      clicked => on_apply_button_clicked();
+      styles ["suggested-action"]
+    }
 
-      Box button-content {
-        spacing: 10;
+    Adw.ActionRow file-chooser-row {
+      title: _("Select an Image");
 
-        Label {
-          label: _("Choose a File");
-        }
+      [suffix]
+      Button file-chooser-button {
+        valign: center;
+        clicked => on_file_chooser_button_clicked();
 
-        Image {
-          icon-name: "folder-pictures-symbolic";
+        Box button-content {
+          spacing: 10;
+
+          Label {
+            label: _("Choose a File");
+          }
+
+          Image {
+            icon-name: "folder-pictures-symbolic";
+          }
         }
       }
     }

@@ -32,6 +32,7 @@ logging = Logger()
 class GradienceMonetThemingGroup(Adw.PreferencesGroup):
     __gtype_name__ = "GradienceMonetThemingGroup"
 
+    monet_theming_expander = Gtk.Template.Child("monet-theming-expander")
     monet_file_chooser = Gtk.Template.Child("monet-file-chooser")
     monet_file_chooser_button = Gtk.Template.Child("file-chooser-button")
 
@@ -54,7 +55,7 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
         self.monet_file_chooser.set_transient_for(self.parent)
 
         self.setup_palette_shades()
-        self.setup_tone_row()
+        #self.setup_tone_row()
         self.setup_theme_row()
 
     def setup_palette_shades(self):
@@ -63,9 +64,10 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
         )
         self.app.pref_palette_shades["monet"] = self.monet_palette_shades
 
-        self.add(self.monet_palette_shades)
+        self.monet_theming_expander.add_row(self.monet_palette_shades)
 
-    def setup_tone_row(self):
+    # TODO: Rethink how it should be implemented
+    '''def setup_tone_row(self):
         self.tone_row = Adw.ComboRow()
         self.tone_row.set_title(_("Tone"))
 
@@ -80,7 +82,7 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
 
         self.tone_row.set_model(tone_store)
 
-        self.add(self.tone_row)
+        self.monet_theming_expander.add_row(self.tone_row)'''
 
     def setup_theme_row(self):
         self.theme_row = Adw.ComboRow()
@@ -93,21 +95,21 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
 
         self.theme_row.set_model(theme_store)
 
-        self.add(self.theme_row)
+        self.monet_theming_expander.add_row(self.theme_row)
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         if self.monet_image_file:
             try:
                 monet_theme = Monet().generate_palette_from_image(self.monet_image_file)
-                tone = self.tone_row.get_selected_item()
-                theme_color = self.theme_row.get_selected_item()
+                #tone = self.tone_row.get_selected_item().get_string() # TODO: Remove tone requirement from Monet Engine
+                theme_color = self.theme_row.get_selected_item().get_string()
 
-                self.app.update_theme_from_monet(
-                    monet_theme, tone, theme_color
-                )
-            except (OSError, AttributeError, ValueError):
-                logging.error("Failed to generate Monet palette")
+                self.app.custom_css_group.reset_buffer()
+
+                self.app.update_theme_from_monet(monet_theme, theme_color)
+            except (OSError, AttributeError, ValueError) as e:
+                logging.error("Failed to generate Monet palette", exc=e)
                 self.parent.toast_overlay.add_toast(
                     Adw.Toast(title=_("Failed to generate Monet palette"))
                 )
