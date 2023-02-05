@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-03 12:14+0000\n"
+"POT-Creation-Date: 2023-02-05 12:12+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -22,9 +22,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.15-dev\n"
 
-#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5
+#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -151,6 +150,14 @@ msgstr "Ladda ner och ansök"
 #, fuzzy
 msgid "Download Only"
 msgstr "Endast nedladdning"
+
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr ""
+
+#: data/ui/log_out_dialog.blp:6
+msgid "For the changes to take full effect, you need to log out."
+msgstr ""
 
 #: data/ui/no_plugin_window.blp:5
 #, fuzzy
@@ -408,6 +415,15 @@ msgstr "Alla filer"
 msgid "JSON file (*.json)"
 msgstr "JSON-filer (* .json)"
 
+#: data/ui/save_dialog.blp:5
+msgid "Save preset as…"
+msgstr "Spara förinställning som…"
+
+#: data/ui/save_dialog.blp:10
+#, fuzzy
+msgid "Preset Name"
+msgstr "Förinställningar"
+
 #: data/ui/share_window.blp:5
 #, fuzzy
 msgid "Share Preset"
@@ -585,7 +601,7 @@ msgstr "Teckning av äldre appar"
 msgid "System Configuration"
 msgstr "Systemkonfiguration"
 
-#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:141
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:139
 msgid "Apply"
 msgstr "Verkställ"
 
@@ -678,271 +694,101 @@ msgstr "Kasta"
 msgid "_Save"
 msgstr "Spara"
 
-#: gradience/frontend/widgets/explore_preset_row.py:68
-#: gradience/frontend/widgets/explore_preset_row.py:94
-#, fuzzy
-msgid "Preset could not be downloaded"
-msgstr "Förinställningen kunde inte laddas ner"
-
-#: gradience/frontend/widgets/explore_preset_row.py:82
-#: gradience/frontend/widgets/explore_preset_row.py:98
-#, fuzzy
-msgid "Preset downloaded"
-msgstr "Förinställd nedladdad"
-
-#: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "Det här alternativet stöds endast delvis av adw-gtk3-temat."
-
-#: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "Det här alternativet stöds inte av adw-gtk3-temat."
-
-#: gradience/frontend/widgets/option_row.py:110
-msgid "Not a color, see text value"
-msgstr "Inte en färg, se textvärde"
-
-#: gradience/frontend/widgets/plugin_row.py:85
-#, fuzzy
-msgid "Unable to remove"
-msgstr "Kan inte tas bort"
-
-#: gradience/frontend/widgets/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed."
-msgstr "Detta är ett systeminsticksprogram och kan inte tas bort."
-
-#: gradience/frontend/widgets/plugin_row.py:88
-#, fuzzy
-msgid "Close"
-msgstr "Stäng"
-
-#: gradience/frontend/widgets/preset_row.py:87
-#: gradience/frontend/widgets/preset_row.py:104
-msgid "Remove from Favorites"
-msgstr ""
-
-#: gradience/frontend/widgets/preset_row.py:90
-#: gradience/frontend/widgets/preset_row.py:100
-msgid "Add to Favorites"
-msgstr ""
-
-#: gradience/frontend/widgets/preset_row.py:166
-#, fuzzy
-msgid "Preset removed"
-msgstr "Förinställning borttagen"
-
-#: gradience/frontend/widgets/preset_row.py:167
-#, fuzzy
-msgid "Undo"
-msgstr "Ångra"
-
-#: gradience/frontend/widgets/preset_row.py:182
-#, fuzzy
-msgid "Pending Deletion"
-msgstr "Under pågående radering"
-
-#: gradience/frontend/widgets/preset_row.py:196
-#, fuzzy
-msgid "Unable to delete preset"
-msgstr "Det går inte att radera förinställningar"
-
-#: gradience/frontend/widgets/repo_row.py:60
-#, fuzzy
-msgid "Repository removed"
-msgstr "Repository raderad."
-
-#: gradience/frontend/views/about_window.py:110
-msgid "Copyright © 2022-2023 Gradience Team"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:119
-#, fuzzy
-msgid "Plugins by"
-msgstr "Pluginer"
-
-#: gradience/frontend/views/about_window.py:127
-#, fuzzy
-#| msgid "Presets"
-msgid "Presets by"
-msgstr "Förinställningar"
-
-#: gradience/frontend/views/about_window.py:149
-msgid "Packages by"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:156
-msgid "Fixes by"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:166
-msgid "Special thanks to"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:132
-msgid "Monet Engine"
-msgstr "Monet motor"
-
-#: gradience/frontend/views/main_window.py:135
-#, fuzzy
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr ""
-"Monet är en motor som genererar en Material Design 3-palett från en bilds "
-"färger."
-
-#: gradience/frontend/views/main_window.py:149
-msgid "Background Image"
-msgstr "Bakgrundsbild"
-
-#: gradience/frontend/views/main_window.py:160
-#, fuzzy
-msgid "Choose a File"
-msgstr "Välj en fil"
-
-#: gradience/frontend/views/main_window.py:182
-msgid "Monet Palette"
-msgstr "Monet Palett"
-
-#: gradience/frontend/views/main_window.py:201
-msgid "Theme"
-msgstr "Tema"
-
-#: gradience/frontend/views/main_window.py:204
-#, fuzzy
-msgid "Auto"
-msgstr "Automatiskt"
-
-#: gradience/frontend/views/main_window.py:205
-#: gradience/frontend/settings_schema.py:372
-msgid "Light"
-msgstr "Ljus"
-
-#: gradience/frontend/views/main_window.py:206
-#: gradience/frontend/settings_schema.py:373
-msgid "Dark"
-msgstr "Mörk"
-
-#: gradience/frontend/views/main_window.py:226
-msgid "Failed to generate Monet palette"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:230
-#, fuzzy
-msgid "Palette generated"
-msgstr "Palett genererad"
-
-#: gradience/frontend/views/main_window.py:234
-msgid "Select a background first"
-msgstr "Välj en bakgrund först"
-
-#: gradience/frontend/views/main_window.py:258
-msgid "Palette Colors"
-msgstr "Palett färger"
-
-#: gradience/frontend/views/main_window.py:261
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"Namngivna palettfärger som används av vissa program. Standardfärgerna följer "
-"<a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOMEs "
-"riktlinjer för mänskligt gränssnitt</a>."
-
-#: gradience/frontend/views/plugins_list.py:89
-#, fuzzy
-msgid "Plugins"
-msgstr "Pluginer"
-
-#: gradience/frontend/views/plugins_list.py:92
-#, fuzzy
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
-"Plugins lägger till ytterligare funktioner till Gradience, plugins görs av "
-"Gradience community och kan orsaka problem."
-
-#: gradience/frontend/views/plugins_list.py:104
-#, fuzzy
-msgid "No Plugins Found."
-msgstr "Inga insticksprogram hittades."
-
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:345
-#, fuzzy
-msgid "User Presets"
-msgstr "Användarförinställningar"
-
-#: gradience/frontend/views/presets_manager_window.py:190
-#, fuzzy
-msgid "Add new repository"
-msgstr "Lägg till nytt förråd"
-
-#: gradience/frontend/views/presets_manager_window.py:191
-#, fuzzy
-msgid "Add a repository to install additional presets."
-msgstr "Lägg till ett arkiv för att installera ytterligare förinställningar."
-
-#: gradience/frontend/views/presets_manager_window.py:197
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: gradience/frontend/views/presets_manager_window.py:198
-#, fuzzy
-msgid "Add"
-msgstr "Lägg till"
-
-#: gradience/frontend/views/presets_manager_window.py:288
-#, fuzzy
-msgid "Preset already exists"
-msgstr "Förinställning finns redan"
-
-#: gradience/frontend/views/presets_manager_window.py:300
-#, fuzzy
-msgid "Preset imported"
-msgstr "Förinställd importerad"
-
-#: gradience/frontend/views/presets_manager_window.py:303
-#, fuzzy
-msgid "Unsupported file format, must be .json"
-msgstr "Filformat som inte stöds, måste vara .json"
-
-#: gradience/frontend/views/presets_manager_window.py:329
 #: gradience/frontend/main.py:184
+#: gradience/frontend/views/presets_manager_window.py:329
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
 msgstr "Misslyckades att ladda förinställningen"
 
-#: gradience/frontend/views/presets_manager_window.py:338
+#: gradience/frontend/main.py:217
 #, fuzzy
-msgid "Built-in Presets"
-msgstr "Inbyggda förinställningar"
+msgid "No presets found"
+msgstr "Inga resultat hittades"
 
-#: gradience/frontend/views/presets_manager_window.py:348
+#: gradience/frontend/main.py:240
 #, fuzzy
+msgid "Favorite Presets"
+msgstr "Favoritförinställningar"
+
+#: gradience/frontend/main.py:404
+#, fuzzy
+msgid "Unsaved Changes"
+msgstr "Osparade ändringar"
+
+#: gradience/frontend/main.py:416
+#, fuzzy
+msgid "Save Changes"
+msgstr "Spara ändringar"
+
+#: gradience/frontend/main.py:496
+#, fuzzy
+msgid "Apply This Color Scheme?"
+msgstr "Använda detta färgschema?"
+
+#: gradience/frontend/main.py:498
 msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
 msgstr ""
-"Se <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> på Github för fler förinställningar."
+"Varning: alla anpassade CSS-filer för dessa programtyper kommer att skrivas "
+"över oåterkalleligt!"
 
-#: gradience/frontend/views/presets_manager_window.py:374
+#: gradience/frontend/main.py:502
 #, fuzzy
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
+#| msgid "Apply"
+msgid "_Apply"
+msgstr "Verkställ"
+
+#: gradience/frontend/main.py:512
+#, fuzzy
+msgid "Restore applied color scheme?"
+msgstr "Återskapa det färgschema som tillämpats?"
+
+#: gradience/frontend/main.py:513 gradience/frontend/main.py:527
+msgid "Make sure you have the current settings saved as a preset."
 msgstr ""
-"Ingen förinställning hittades! Använd importknappen för att importera en "
-"eller sök efter en på fliken Utforska."
+"Se till att du har de aktuella inställningarna sparade som en förinställning."
 
-#: gradience/frontend/views/welcome_window.py:97
+#: gradience/frontend/main.py:515
 #, fuzzy
-msgid "Thanks for updating Gradience!"
-msgstr "Tack för uppdateringen Gradience!"
+msgid "_Restore"
+msgstr "Återställ"
+
+#: gradience/frontend/main.py:526
+msgid "Reset applied color scheme?"
+msgstr "Återställ tillämpat färgschema?"
+
+#: gradience/frontend/main.py:529
+#, fuzzy
+#| msgid "Reset"
+msgid "_Reset"
+msgstr "Återställ"
+
+#: gradience/frontend/main.py:555
+#, fuzzy
+msgid "You have unsaved changes!"
+msgstr "Du har osparade ändringar."
+
+#: gradience/frontend/main.py:606
+#, fuzzy
+msgid "Preset saved"
+msgstr "Kombination sparad!"
+
+#: gradience/frontend/main.py:623
+#, fuzzy
+msgid "Preset set successfully"
+msgstr "Förinställningen har lyckats."
+
+#: gradience/frontend/main.py:636
+#, fuzzy
+msgid "Unable to restore GTK 4 backup"
+msgstr "Kunde inte återställa GTK 4-backup"
+
+#: gradience/frontend/main.py:649 gradience/frontend/main.py:657
+#, fuzzy
+msgid "Unable to delete current preset"
+msgstr "Det går inte att radera förinställningar"
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1226,94 +1072,272 @@ msgstr "Lila"
 msgid "Brown"
 msgstr "Brun"
 
-#: gradience/frontend/main.py:217
-#, fuzzy
-msgid "No presets found"
-msgstr "Inga resultat hittades"
+#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/views/main_window.py:204
+msgid "Light"
+msgstr "Ljus"
 
-#: gradience/frontend/main.py:240
-#, fuzzy
-msgid "Favorite Presets"
-msgstr "Favoritförinställningar"
+#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/views/main_window.py:205
+msgid "Dark"
+msgstr "Mörk"
 
-#: gradience/frontend/main.py:404
-#, fuzzy
-msgid "Unsaved Changes"
-msgstr "Osparade ändringar"
+#: gradience/frontend/views/about_window.py:110
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
 
-#: gradience/frontend/main.py:416
+#: gradience/frontend/views/about_window.py:119
 #, fuzzy
-msgid "Save Changes"
-msgstr "Spara ändringar"
+msgid "Plugins by"
+msgstr "Pluginer"
 
-#: gradience/frontend/main.py:496
+#: gradience/frontend/views/about_window.py:127
 #, fuzzy
-msgid "Apply This Color Scheme?"
-msgstr "Använda detta färgschema?"
+#| msgid "Presets"
+msgid "Presets by"
+msgstr "Förinställningar"
 
-#: gradience/frontend/main.py:498
+#: gradience/frontend/views/about_window.py:149
+msgid "Packages by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:156
+msgid "Fixes by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:166
+msgid "Special thanks to"
+msgstr ""
+
+#: gradience/frontend/views/main_window.py:130
+msgid "Monet Engine"
+msgstr "Monet motor"
+
+#: gradience/frontend/views/main_window.py:133
+#, fuzzy
 msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
 msgstr ""
-"Varning: alla anpassade CSS-filer för dessa programtyper kommer att skrivas "
-"över oåterkalleligt!"
+"Monet är en motor som genererar en Material Design 3-palett från en bilds "
+"färger."
 
-#: gradience/frontend/main.py:502
-#, fuzzy
-#| msgid "Apply"
-msgid "_Apply"
-msgstr "Verkställ"
-
-#: gradience/frontend/main.py:512
-#, fuzzy
-msgid "Restore applied color scheme?"
-msgstr "Återskapa det färgschema som tillämpats?"
-
-#: gradience/frontend/main.py:513 gradience/frontend/main.py:527
-msgid "Make sure you have the current settings saved as a preset."
+#: gradience/frontend/views/main_window.py:147
+msgid "Select an Image"
 msgstr ""
-"Se till att du har de aktuella inställningarna sparade som en förinställning."
 
-#: gradience/frontend/main.py:515
+#: gradience/frontend/views/main_window.py:150
 #, fuzzy
-msgid "_Restore"
-msgstr "Återställ"
+msgid "Choose a Image File"
+msgstr "Välj en fil"
 
-#: gradience/frontend/main.py:526
-msgid "Reset applied color scheme?"
-msgstr "Återställ tillämpat färgschema?"
-
-#: gradience/frontend/main.py:529
+#: gradience/frontend/views/main_window.py:159
 #, fuzzy
-#| msgid "Reset"
-msgid "_Reset"
-msgstr "Återställ"
+msgid "Choose a File"
+msgstr "Välj en fil"
 
-#: gradience/frontend/main.py:555
-#, fuzzy
-msgid "You have unsaved changes!"
-msgstr "Du har osparade ändringar."
+#: gradience/frontend/views/main_window.py:181
+msgid "Monet Palette"
+msgstr "Monet Palett"
 
-#: gradience/frontend/main.py:606
-#, fuzzy
-msgid "Preset saved"
-msgstr "Kombination sparad!"
+#: gradience/frontend/views/main_window.py:200
+msgid "Theme"
+msgstr "Tema"
 
-#: gradience/frontend/main.py:623
+#: gradience/frontend/views/main_window.py:203
 #, fuzzy
-msgid "Preset set successfully"
-msgstr "Förinställningen har lyckats."
+msgid "Auto"
+msgstr "Automatiskt"
 
-#: gradience/frontend/main.py:636
-#, fuzzy
-msgid "Unable to restore GTK 4 backup"
-msgstr "Kunde inte återställa GTK 4-backup"
+#: gradience/frontend/views/main_window.py:225
+msgid "Failed to generate Monet palette"
+msgstr ""
 
-#: gradience/frontend/main.py:649 gradience/frontend/main.py:657
+#: gradience/frontend/views/main_window.py:229
 #, fuzzy
-msgid "Unable to delete current preset"
+msgid "Palette generated"
+msgstr "Palett genererad"
+
+#: gradience/frontend/views/main_window.py:233
+msgid "Select a background first"
+msgstr "Välj en bakgrund först"
+
+#: gradience/frontend/views/main_window.py:257
+msgid "Palette Colors"
+msgstr "Palett färger"
+
+#: gradience/frontend/views/main_window.py:260
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"Namngivna palettfärger som används av vissa program. Standardfärgerna följer "
+"<a href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOMEs "
+"riktlinjer för mänskligt gränssnitt</a>."
+
+#: gradience/frontend/views/plugins_list.py:89
+#, fuzzy
+msgid "Plugins"
+msgstr "Pluginer"
+
+#: gradience/frontend/views/plugins_list.py:92
+#, fuzzy
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+"Plugins lägger till ytterligare funktioner till Gradience, plugins görs av "
+"Gradience community och kan orsaka problem."
+
+#: gradience/frontend/views/plugins_list.py:104
+#, fuzzy
+msgid "No Plugins Found."
+msgstr "Inga insticksprogram hittades."
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:345
+#, fuzzy
+msgid "User Presets"
+msgstr "Användarförinställningar"
+
+#: gradience/frontend/views/presets_manager_window.py:190
+#, fuzzy
+msgid "Add new repository"
+msgstr "Lägg till nytt förråd"
+
+#: gradience/frontend/views/presets_manager_window.py:191
+#, fuzzy
+msgid "Add a repository to install additional presets."
+msgstr "Lägg till ett arkiv för att installera ytterligare förinställningar."
+
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: gradience/frontend/views/presets_manager_window.py:198
+#, fuzzy
+msgid "Add"
+msgstr "Lägg till"
+
+#: gradience/frontend/views/presets_manager_window.py:288
+#, fuzzy
+msgid "Preset already exists"
+msgstr "Förinställning finns redan"
+
+#: gradience/frontend/views/presets_manager_window.py:300
+#, fuzzy
+msgid "Preset imported"
+msgstr "Förinställd importerad"
+
+#: gradience/frontend/views/presets_manager_window.py:303
+#, fuzzy
+msgid "Unsupported file format, must be .json"
+msgstr "Filformat som inte stöds, måste vara .json"
+
+#: gradience/frontend/views/presets_manager_window.py:338
+#, fuzzy
+msgid "Built-in Presets"
+msgstr "Inbyggda förinställningar"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+#, fuzzy
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Se <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> på Github för fler förinställningar."
+
+#: gradience/frontend/views/presets_manager_window.py:374
+#, fuzzy
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Ingen förinställning hittades! Använd importknappen för att importera en "
+"eller sök efter en på fliken Utforska."
+
+#: gradience/frontend/views/welcome_window.py:97
+#, fuzzy
+msgid "Thanks for updating Gradience!"
+msgstr "Tack för uppdateringen Gradience!"
+
+#: gradience/frontend/widgets/explore_preset_row.py:68
+#: gradience/frontend/widgets/explore_preset_row.py:94
+#, fuzzy
+msgid "Preset could not be downloaded"
+msgstr "Förinställningen kunde inte laddas ner"
+
+#: gradience/frontend/widgets/explore_preset_row.py:82
+#: gradience/frontend/widgets/explore_preset_row.py:98
+#, fuzzy
+msgid "Preset downloaded"
+msgstr "Förinställd nedladdad"
+
+#: gradience/frontend/widgets/option_row.py:52
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "Det här alternativet stöds endast delvis av adw-gtk3-temat."
+
+#: gradience/frontend/widgets/option_row.py:57
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "Det här alternativet stöds inte av adw-gtk3-temat."
+
+#: gradience/frontend/widgets/option_row.py:110
+msgid "Not a color, see text value"
+msgstr "Inte en färg, se textvärde"
+
+#: gradience/frontend/widgets/plugin_row.py:85
+#, fuzzy
+msgid "Unable to remove"
+msgstr "Kan inte tas bort"
+
+#: gradience/frontend/widgets/plugin_row.py:86
+msgid "This is a system plugin, and cannot be removed."
+msgstr "Detta är ett systeminsticksprogram och kan inte tas bort."
+
+#: gradience/frontend/widgets/plugin_row.py:88
+#, fuzzy
+msgid "Close"
+msgstr "Stäng"
+
+#: gradience/frontend/widgets/preset_row.py:87
+#: gradience/frontend/widgets/preset_row.py:104
+msgid "Remove from Favorites"
+msgstr ""
+
+#: gradience/frontend/widgets/preset_row.py:90
+#: gradience/frontend/widgets/preset_row.py:100
+msgid "Add to Favorites"
+msgstr ""
+
+#: gradience/frontend/widgets/preset_row.py:166
+#, fuzzy
+msgid "Preset removed"
+msgstr "Förinställning borttagen"
+
+#: gradience/frontend/widgets/preset_row.py:167
+#, fuzzy
+msgid "Undo"
+msgstr "Ångra"
+
+#: gradience/frontend/widgets/preset_row.py:182
+#, fuzzy
+msgid "Pending Deletion"
+msgstr "Under pågående radering"
+
+#: gradience/frontend/widgets/preset_row.py:196
+#, fuzzy
+msgid "Unable to delete preset"
 msgstr "Det går inte att radera förinställningar"
+
+#: gradience/frontend/widgets/repo_row.py:60
+#, fuzzy
+msgid "Repository removed"
+msgstr "Repository raderad."
+
+#~ msgid "Background Image"
+#~ msgstr "Bakgrundsbild"
 
 #~ msgid "Tone"
 #~ msgstr "Ton"
@@ -1335,9 +1359,6 @@ msgstr "Det går inte att radera förinställningar"
 #, fuzzy
 #~ msgid "Unexpected file error occurred"
 #~ msgstr "Ett oväntat filfel inträffade"
-
-#~ msgid "Save preset as…"
-#~ msgstr "Spara förinställning som…"
 
 #~ msgid "Save"
 #~ msgstr "Spara"
@@ -1567,10 +1588,6 @@ msgstr "Det går inte att radera förinställningar"
 
 #~ msgid "Apply this color scheme?"
 #~ msgstr "Använd detta färgschema?"
-
-#, fuzzy
-#~ msgid "Preset renamed"
-#~ msgstr "Förinställningar"
 
 #, fuzzy
 #~ msgid "Builtin Presets"

@@ -271,10 +271,11 @@ class CLI:
             for path, name in presets_list.items():
                     if name == _preset_name:
                         preset = Preset().new_from_path(path)
+            return preset
 
         if _preset_name:
             if _preset_name in presets_name:
-                __get_preset_from_name()
+                preset = __get_preset_from_name()
         elif _preset_path:
             preset = Preset().new_from_path(_preset_path)
 
