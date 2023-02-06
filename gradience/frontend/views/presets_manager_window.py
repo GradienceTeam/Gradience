@@ -234,18 +234,23 @@ class GradiencePresetWindow(Adw.Window):
         dialog.present()
 
     def on_search_changed(self, *args):
+        items_count = 0
         search_text = self.search_entry.props.text
+
         logging.debug("[New search query]")
-        logging.debug(f"Presets amount: {len(self.search_results_list)}")
+        logging.debug(f"Preset amount: {len(self.search_results_list)}")
         logging.debug(f"Search string: {search_text}")
         logging.debug("Items found:")
-        items_count = 0
+
         if not self.offline:
             self.search_stack.set_visible_child_name("page_results")
             for widget in self.search_results_list:
                 widget.props.visible = False
+
+                selected_item_pos = self.search_dropdown.get_selected()
                 selected_item_name = self.search_dropdown.props.selected_item.get_string().lower()
-                if not selected_item_name in "all":
+
+                if not selected_item_pos == 0:
                     if selected_item_name in widget.prefix.lower():
                         if search_text.lower() in widget.props.title.lower():
                             widget.props.visible = True
@@ -259,6 +264,7 @@ class GradiencePresetWindow(Adw.Window):
                     elif search_text == "":
                         widget.props.visible = True
                         items_count += 1
+
             if items_count == 0:
                 self.search_stack.set_visible_child_name("page_empty")
 
