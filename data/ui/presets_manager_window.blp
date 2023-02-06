@@ -142,10 +142,12 @@ template GradiencePresetWindow : Adw.Window {
               };
             }
 
+            // TODO: Reconsider custom preset repos idea, or remove this page completely in 1.0 release
             Adw.ViewStackPage {
               name: "repos";
               title: _("Repositories");
               icon-name: "folder-symbolic";
+              visible: false;
 
               child: Adw.PreferencesPage repos { };
 
