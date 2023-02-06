@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+from enum import Enum
+
 from gi.repository import Gio, Gtk, Adw
 
 from gradience.backend.theming.shell import ShellTheme
@@ -32,6 +34,7 @@ logging = Logger()
 class GradienceShellThemingGroup(Adw.PreferencesGroup):
     __gtype_name__ = "GradienceShellThemingGroup"
 
+    variant_row = Gtk.Template.Child("variant-row")
     shell_theming_expander = Gtk.Template.Child("shell-theming-expander")
     other_options_row = Gtk.Template.Child("other-options-row")
 
@@ -58,7 +61,16 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         )
 
     def setup(self):
+        self.setup_variant_row()
+
         self.shell_theming_expander.add_row(self.other_options_row)
+
+    def setup_variant_row(self):
+        variant_store = Gtk.StringList()
+        variant_store.append(_("Dark"))
+        variant_store.append(_("Light"))
+
+        self.variant_row.set_model(variant_store)
 
     # TODO: Maybe allow it when using export option?
     '''def setup_version_row(self):
@@ -80,8 +92,26 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
-        logging.debug("It works! \o/")
-        ShellTheme().apply_theme(self.app.preset, "dark")
+        variant_pos = self.variant_row.props.selected
+
+        class variantEnum(Enum):
+            DARK = 0
+            LIGHT = 1
+
+        def __get_variant_string():
+            if variant_pos == variantEnum.DARK.value:
+                return "dark"
+            elif variant_pos == variantEnum.LIGHT.value:
+                return "light"
+
+        variant_str = __get_variant_string()
+
+        try:
+            ShellTheme().apply_theme(self.app.preset, variant_str)
+        except (ValueError, OSError, GLib.GError) as e:
+            logging.error("An error occurred while generating a Shell theme.", exc=e)
+        else:
+            logging.debug("It works! \o/")
 
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):

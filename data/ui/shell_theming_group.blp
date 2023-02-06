@@ -29,6 +29,11 @@ template GradienceShellThemingGroup : Adw.PreferencesGroup {
         clicked => on_custom_colors_button_clicked();
       }
     }
+
+    Adw.ComboRow variant-row {
+      title: _("Preset Variant");
+      subtitle: _("Select which preset variant you have currently applied");
+    }
   }
 }
 
