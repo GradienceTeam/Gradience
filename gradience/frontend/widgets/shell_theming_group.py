@@ -81,7 +81,7 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         logging.debug("It works! \o/")
-        ShellTheme().apply_theme(self.app.preset)
+        ShellTheme().apply_theme(self.app.preset, "dark")
 
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):

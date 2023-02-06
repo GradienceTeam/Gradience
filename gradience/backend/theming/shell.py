@@ -31,12 +31,23 @@ from gradience.backend.logger import Logger
 logging = Logger(logger_name="ShellTheme")
 
 
+shell_to_adw = {
+    "_dark_base_color": "window_bg_color",
+    "fg_color": "window_fg_color",
+    "selected_fg_color": "accent_fg_color",
+    "selected_bg_color": "accent_bg_color",
+    "osd_fg_color": "accent_fg_color"
+}
+
+
 class ShellTheme:
     # Supported GNOME Shell versions: 42, 43
     shell_versions = [42, 43]
     version_target = None
 
+    variant = None
     variables = {}
+    palette = {}
     custom_colors = {}
     custom_css = None
 
@@ -47,7 +58,7 @@ class ShellTheme:
             self.version_target = shell_version
         else:
             # TODO: Create custom exception for theming related errors
-            raise Exception(f"GNOME Shell version {shell_version} not in range [42, 43]")
+            raise ValueError(f"GNOME Shell version {shell_version} not in list: [42, 43]")
 
         self.user_theme_schema = "org.gnome.shell.extensions.user-theme"
         self.settings = Gio.Settings.new(self.user_theme_schema)
@@ -59,11 +70,13 @@ class ShellTheme:
 
         self.main_template = os.path.join(self.templates_dir, "gnome-shell.template")
         self.colors_template = os.path.join(self.templates_dir, "colors.template")
+        self.palette_template = os.path.join(self.templates_dir, "palette.template")
         # NOTE: From what I saw in some Shell themes, we can write our own Gresource schema, which will allow us to remove switches.template
         self.switches_template = os.path.join(self.templates_dir, "switches.template")
 
         self.main_source = os.path.join(self.source_dir, "gnome-shell.scss")
         self.colors_source = os.path.join(self.source_dir, "gnome-shell-sass", "_colors.scss")
+        self.palette_source = os.path.join(self.source_dir, "gnome-shell-sass", "_palette.scss")
         self.switches_source = os.path.join(self.source_dir, "gnome-shell-sass", "widgets", "_switches.scss")
 
         self.switch_on_source = os.path.join(self.source_dir, "toggle-on.svg")
@@ -71,15 +84,20 @@ class ShellTheme:
 
         self.assets_output = os.path.join(self.output_dir, "assets")
 
-    def apply_theme(self, preset: Preset):
+    def apply_theme(self, preset: Preset, variant: str):
+        if variant in ("light", "dark"):
+            self.variant = variant
+        else:
+            raise ValueError(f"Theme variant {variant} not in list: [light, dark]")
+
         try:
             self.create_theme(preset)
-        except GLib.GError as e:
-            logging.error(f"Failed to apply a theme for GNOME Shell.", exc=e)
+        except (OSError, GLib.GError) as e:
             raise
 
     def create_theme(self, preset: Preset):
         self.variables = preset.variables
+        self.palette = preset.palette
 
         self.insert_variables()
 
@@ -99,10 +117,25 @@ class ShellTheme:
         self.set_shell_theme()
 
     def insert_variables(self):
-        logging.debug(self.colors_source)
-
-        #hexcode_regex = re.compile(r".*#[0-9a-f]+")
+        #hexcode_regex = re.compile(r".*#[0-9a-f]{3,6}")
         template_regex = re.compile(r"{{(.*?)}}")
+
+        '''palette_content = ""
+
+        with open(self.palette_template, "r", encoding="utf-8") as template:
+            for line in template:
+                template_match = re.search(template_regex, line)
+                if template_match != None:
+                    key = template_match.__getitem__(1)
+                    inserted = line.replace("{{" + key + "}}", self.variables[key])
+                    palette_content += inserted
+                else:
+                    palette_content += line
+            template.close()
+
+        with open(self.palette_source, "w", encoding="utf-8") as sheet:
+            sheet.write(palette_content)
+            sheet.close()'''
 
         colors_content = ""
 
@@ -119,6 +152,38 @@ class ShellTheme:
 
         with open(self.colors_source, "w", encoding="utf-8") as sheet:
             sheet.write(colors_content)
+            sheet.close()
+
+        '''with open(self.colors_template, "r", encoding="utf-8") as template:
+            for line in template:
+                template_match = re.findall(template_regex, line)
+                if template_match != None:
+                    #key = template_match.__getitem__(1)
+                    for key in template_match:
+                        #inserted = re.sub(template_regex, self.variables[key], line)
+                        #print(inserted)
+                        inserted = line.replace("{{" + key + "}}", self.variables[key])
+                        print(inserted)
+                        colors_content += inserted
+                else:
+                    colors_content += line
+            template.close()'''
+
+        main_content = ""
+
+        with open(self.main_template, "r", encoding="utf-8") as template:
+            key = "theme_variant"
+
+            for line in template:
+                if key in line:
+                    inserted = line.replace("{{" + key + "}}", self.variant)
+                    main_content += inserted
+                else:
+                    main_content += line
+            template.close()
+
+        with open(self.main_source, "w", encoding="utf-8") as sheet:
+            sheet.write(main_content)
             sheet.close()
 
     def compile_sass(self, sass_path, output_path):
@@ -172,14 +237,19 @@ class ShellTheme:
         # Set theme generated by Gradience
         self.settings.set_string("name", "gradience-shell")
 
+    def unset_shell_theme(self):
+        # Set default theme
+        self.settings.set_string("name", "")
+
     def detect_shell_version(self):
         shell_ver = get_shell_version()
+
+        if shell_ver.startswith("3"):
+            # TODO: Create custom exception for theming related errors
+            raise ValueError(f"GNOME Shell version {shell_version} not in list: [42, 43]")
 
         if shell_ver.startswith("4"):
             shell_ver = int(shell_ver[:2])
 
             if shell_ver in self.shell_versions:
                 self.version_target = shell_ver
-        elif shell_ver.startswith("3"):
-            # TODO: Create custom exception for theming related errors
-            raise Exception(f"GNOME Shell version {shell_version} not in range [42, 43]")

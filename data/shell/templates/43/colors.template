@@ -7,13 +7,14 @@ $is_highcontrast: "false";
 
 $_dark_base_color: darken(desaturate({{window_bg_color}}, 2%), 2%); // UPDT: Modified from original
 
-$base_color: if($variant == 'light', #fff, $_dark_base_color);
-$bg_color: if($variant == 'light', #f6f5f4, lighten($base_color, 5%));
+$base_color: $_dark_base_color; // UPDT: Modified from original
+$bg_color: if($variant == 'light', darken($base_color, 5%), lighten($base_color, 5%)); // UPDT: Modified from original
 $fg_color: if($variant == 'light', transparentize(black, .2), {{window_fg_color}}); // UPDT: Modified from original
 
-$selected_fg_color: {{accent_fg_color}}; // UPDT: Modified from original
+$accent_fg_color = {{accent_fg_color}};
+$selected_fg_color: if($variant == 'light', $accent_fg_color, {{window_fg_color}}); // UPDT: Modified from original
 $selected_bg_color: {{accent_bg_color}}; // UPDT: Modified from original
-$selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%)); // NOTE: Unused in GNOME Shell
+$selected_borders_color: if($variant == 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%)); // NOTE: Unused in GNOME Shell
 
 $borders_color: if($variant == 'light', transparentize($fg_color, .5), transparentize($fg_color, .9));
 $borders_edge: if($variant == 'light', rgba(255,255,255,0.8), lighten($bg_color, 5%));
@@ -27,7 +28,7 @@ $success_color: if($variant == 'light', $green_4, {{success_color}}); // NOTE: U
 $destructive_color: {{destructive_color}}; // UPDT: Modified from original
 
 // NOTE: Used also in overview for folder colors, in search results, partially in text and for indicators below app icons
-$osd_fg_color: {{accent_fg_color}}; // UPDT: Modified from original
+$osd_fg_color: {{window_fg_color}}; // UPDT: Modified from original
 $osd_bg_color: $_dark_base_color; //hardcoded for both light & dark
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5); // NOTE: Unused in GNOME Shell
 $osd_insensitive_fg_color: if($variant == 'light', mix($osd_fg_color, $osd_bg_color, 80%), mix($osd_fg_color, $osd_bg_color, 70%));
