@@ -117,7 +117,7 @@ class GradiencePresetWindow(Adw.Window):
         self.installed.add(self.preset_list)
         self.reload_pref_group()
 
-    # TODO: Seperate repositories list initialization from this function and remove Repositories tab in 1.0 release
+    # TODO: Separate repositories list initialization from this function and remove Repositories tab in 1.0 release
     def setup_repos(self):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
