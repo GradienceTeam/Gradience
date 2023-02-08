@@ -23,11 +23,17 @@ from gradience.backend import constants
 
 release_notes = """
 <ul>
-<li>Theme Preview button enabled back</li>
-<li>The Firefox GNOME theme plugin settings button moved to the right of the switch</li>
-<li>Details tab in About dialog has been improved</li>
-<li>The "Log out" dialog logic have been changed, now it only asks for logout, but does not provide a button to logout</li>
-<li>Updated translations</li>
+<li>Added CLI interface, it's useful for various scripts or for those who use terminal often</li>
+<li>Now colors will always use hexadecimal color values, and use RGBA if alpha is being used</li>
+<li>Now Gradience warns user when switching to other preset while current one is not saved</li>
+<li>Preset preview button and repositories tab in Preset Manager have been disabled due to lack of proper implementation</li>
+<li>Fixed color palette leaking into variables in some rare occasions</li>
+<li>Fixed 'list index out of range' error in "Custom CSS Editor"</li>
+<li>Fixed sorting in "Explore" tab of Preset Manager not working with non-English locales</li>
+<li>Codebase is now linted by 'pylint'</li>
+<li>Start moving out remaining 'backend' functions from 'frontend' modules</li>
+<li>When running Gradience from terminal, you will see more easy to understand error messages</li>
+<li>Translation updates</li>
 </ul>
 """
 
