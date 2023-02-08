@@ -23,16 +23,16 @@ from gradience.backend import constants
 
 release_notes = """
 <ul>
-<li>Added CLI interface, it's useful for various scripts or for those who use terminal often</li>
-<li>Now colors will always use hexadecimal color values, and use RGBA if alpha is being used</li>
-<li>Now Gradience warns user when switching to other preset while current one is not saved</li>
-<li>Preset preview button and repositories tab in Preset Manager have been disabled due to lack of proper implementation</li>
-<li>Fixed color palette leaking into variables in some rare occasions</li>
+<li>Added CLI interface, useful for creating scripts or for those who prefer terminal tools</li>
+<li>Now Gradience warns user when switching to other presets, if current one has unsaved changes</li>
+<li>When running Gradience from terminal, you will see easier to understand error messages, thanks to new logging facility</li>
+<li>Preset preview button and "Repositories" tab in Preset Manager have been disabled due to lack of proper implementation</li>
+<li>Fixed color palette leaking into preset variables in some rare occasions</li>
 <li>Fixed 'list index out of range' error in "Custom CSS Editor"</li>
 <li>Fixed sorting in "Explore" tab of Preset Manager not working with non-English locales</li>
 <li>Codebase is now linted by 'pylint'</li>
-<li>Start moving out remaining 'backend' functions from 'frontend' modules</li>
-<li>When running Gradience from terminal, you will see more easy to understand error messages</li>
+<li>Start moving out remaining backend functions from 'frontend' modules</li>
+<li>Now Gradience will internally use hexadecimal color values or RGBA formatted colors if transparency is provided</li>
 <li>Translation updates</li>
 </ul>
 """
