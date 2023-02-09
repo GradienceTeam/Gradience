@@ -142,10 +142,12 @@ template GradiencePresetWindow : Adw.Window {
               };
             }
 
+            // NOTE: This group is disabled as there isn't yet any implementation of custom repositories in Gradience
             Adw.ViewStackPage {
               name: "repos";
               title: _("Repositories");
               icon-name: "folder-symbolic";
+              visible: false;
 
               child: Adw.PreferencesPage repos { };
 

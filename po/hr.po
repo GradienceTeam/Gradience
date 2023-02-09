@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-05 12:12+0000\n"
-"PO-Revision-Date: 2023-01-09 17:49+0000\n"
+"POT-Creation-Date: 2023-02-09 12:15+0000\n"
+"PO-Revision-Date: 2023-02-05 21:37+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/hr/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -36,7 +36,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "S lakoćom promijenite izgled Adwaita aplikacija"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/views/about_window.py:88
+#: gradience/frontend/views/about_window.py:94
 msgid "Gradience Team"
 msgstr "Gradience tim"
 
@@ -336,21 +336,21 @@ msgstr "Nema pronađenih rezultata"
 msgid "Offline"
 msgstr "Nije povezano"
 
-#: data/ui/presets_manager_window.blp:147
-#: gradience/frontend/views/presets_manager_window.py:122
-#: gradience/frontend/views/presets_manager_window.py:384
+#: data/ui/presets_manager_window.blp:148
+#: gradience/frontend/views/presets_manager_window.py:123
+#: gradience/frontend/views/presets_manager_window.py:391
 msgid "Repositories"
 msgstr "Repozitoriji"
 
-#: data/ui/presets_manager_window.blp:166
+#: data/ui/presets_manager_window.blp:168
 msgid "Import a Preset File (*.json)"
 msgstr "Uvezi datoteku predloška (*.json)"
 
-#: data/ui/presets_manager_window.blp:171
+#: data/ui/presets_manager_window.blp:173
 msgid "All files"
 msgstr "Sve datoteke"
 
-#: data/ui/presets_manager_window.blp:176
+#: data/ui/presets_manager_window.blp:178
 msgid "JSON file (*.json)"
 msgstr "JSON datoteka (*.json)"
 
@@ -359,10 +359,8 @@ msgid "Save preset as…"
 msgstr "Spremi predložak kao…"
 
 #: data/ui/save_dialog.blp:10
-#, fuzzy
-#| msgid "Preset renamed"
 msgid "Preset Name"
-msgstr "Predložak je preimenovan"
+msgstr "Ime predloška"
 
 #: data/ui/share_window.blp:5
 msgid "Share Preset"
@@ -605,7 +603,7 @@ msgid "_Save"
 msgstr "_Spremi"
 
 #: gradience/frontend/main.py:184
-#: gradience/frontend/views/presets_manager_window.py:329
+#: gradience/frontend/views/presets_manager_window.py:336
 msgid "Failed to load list of presets"
 msgstr "Neuspjelo učitavanje popisa predložaka"
 
@@ -974,27 +972,27 @@ msgstr "Svjetla"
 msgid "Dark"
 msgstr "Tamna"
 
-#: gradience/frontend/views/about_window.py:110
+#: gradience/frontend/views/about_window.py:116
 msgid "Copyright © 2022-2023 Gradience Team"
 msgstr "Autorska prava © 2022. – 2023. Gradience Team"
 
-#: gradience/frontend/views/about_window.py:119
+#: gradience/frontend/views/about_window.py:125
 msgid "Plugins by"
 msgstr "Priključci od"
 
-#: gradience/frontend/views/about_window.py:127
+#: gradience/frontend/views/about_window.py:133
 msgid "Presets by"
 msgstr "Predlošci od"
 
-#: gradience/frontend/views/about_window.py:149
+#: gradience/frontend/views/about_window.py:155
 msgid "Packages by"
 msgstr "Paketi od"
 
-#: gradience/frontend/views/about_window.py:156
+#: gradience/frontend/views/about_window.py:162
 msgid "Fixes by"
 msgstr "Ispravci od"
 
-#: gradience/frontend/views/about_window.py:166
+#: gradience/frontend/views/about_window.py:172
 msgid "Special thanks to"
 msgstr "Posebno zahvaljujemo:"
 
@@ -1010,13 +1008,11 @@ msgstr "Monet je pogon koji stvara Material Design 3 paletu iz boje slika."
 
 #: gradience/frontend/views/main_window.py:147
 msgid "Select an Image"
-msgstr ""
+msgstr "Odaberi sliku"
 
 #: gradience/frontend/views/main_window.py:150
-#, fuzzy
-#| msgid "Choose a File"
 msgid "Choose a Image File"
-msgstr "Odaberi datoteku"
+msgstr "Odaberi datoteku slike"
 
 #: gradience/frontend/views/main_window.py:159
 msgid "Choose a File"
@@ -1077,43 +1073,43 @@ msgid "No Plugins Found."
 msgstr "Nema pronađenih priključaka."
 
 #: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:352
 msgid "User Presets"
 msgstr "Korisnikovi predlošci"
 
-#: gradience/frontend/views/presets_manager_window.py:190
+#: gradience/frontend/views/presets_manager_window.py:191
 msgid "Add new repository"
 msgstr "Dodaj novi repozitorij"
 
-#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 msgid "Add a repository to install additional presets."
 msgstr "Dodajte repozitorij kako bi instalirali dodatne predloške."
 
-#: gradience/frontend/views/presets_manager_window.py:197
+#: gradience/frontend/views/presets_manager_window.py:198
 msgid "Cancel"
 msgstr "Odustani"
 
-#: gradience/frontend/views/presets_manager_window.py:198
+#: gradience/frontend/views/presets_manager_window.py:199
 msgid "Add"
 msgstr "Dodaj"
 
-#: gradience/frontend/views/presets_manager_window.py:288
+#: gradience/frontend/views/presets_manager_window.py:295
 msgid "Preset already exists"
 msgstr "Predložak već postoji"
 
-#: gradience/frontend/views/presets_manager_window.py:300
+#: gradience/frontend/views/presets_manager_window.py:307
 msgid "Preset imported"
 msgstr "Predložak je uvezen"
 
-#: gradience/frontend/views/presets_manager_window.py:303
+#: gradience/frontend/views/presets_manager_window.py:310
 msgid "Unsupported file format, must be .json"
 msgstr "Nepodržana vrsta datoteke, mora biti .json"
 
-#: gradience/frontend/views/presets_manager_window.py:338
+#: gradience/frontend/views/presets_manager_window.py:345
 msgid "Built-in Presets"
 msgstr "Ugrađeni predlošci"
 
-#: gradience/frontend/views/presets_manager_window.py:348
+#: gradience/frontend/views/presets_manager_window.py:355
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -1121,7 +1117,7 @@ msgstr ""
 "Pogledajte <a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> na Githubu za više predložaka."
 
-#: gradience/frontend/views/presets_manager_window.py:374
+#: gradience/frontend/views/presets_manager_window.py:381
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."

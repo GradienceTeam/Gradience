@@ -84,7 +84,8 @@ pip install -r requirements.txt
 ```shell
 git clone https://github.com/GradienceTeam/Gradience.git
 cd Gradience
-meson builddir --prefix=/usr/local
+meson setup builddir
+meson configure builddir -Dprefix=/usr/local
 sudo ninja -C builddir install
 ```
 
@@ -93,7 +94,7 @@ sudo ninja -C builddir install
 ```shell
 git clone https://github.com/GradienceTeam/Gradience.git
 cd Gradience
-meson builddir
+meson setup builddir
 meson configure builddir -Dprefix="$(pwd)/builddir"
 ninja -C builddir install
 ninja -C builddir run
@@ -101,3 +102,4 @@ ninja -C builddir run
 
 > **Note** 
 > During testing and development, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
+> If you want to use CLI in local builds, you should type: `./local_cli.sh <command>` instead of `gradience-cli`.

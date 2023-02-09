@@ -8,17 +8,18 @@
 #
 # Gabriel Gian <gabrielgian@live.com>, 2022.
 # 0xMRTT <0xMRTT@tuta.io>, 2022.
-# Renato Corrêa <renatocrrs@gmail.com>, 2022.
+# Renato Corrêa <renatocrrs@gmail.com>, 2022, 2023.
 # Daudix UFO <ddaudix@gmail.com>, 2022.
 # yangyangdaji <1504305527@qq.com>, 2022.
 # Isaac Dias <mr-isaac@ig.com.br>, 2023.
+# Deleted User <noreply+49229@weblate.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-05 12:12+0000\n"
-"PO-Revision-Date: 2023-01-24 16:47+0000\n"
-"Last-Translator: Isaac Dias <mr-isaac@ig.com.br>\n"
+"POT-Creation-Date: 2023-02-09 12:15+0000\n"
+"PO-Revision-Date: 2023-02-05 15:37+0000\n"
+"Last-Translator: Renato Corrêa <renatocrrs@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "GradienceTeam/gradience/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -41,7 +42,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Modifique a aparência do Adwaita, com facilidade"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/views/about_window.py:88
+#: gradience/frontend/views/about_window.py:94
 msgid "Gradience Team"
 msgstr "Desenvolvedores do Gradience"
 
@@ -164,10 +165,9 @@ msgid "Log out"
 msgstr "Sair ?"
 
 #: data/ui/log_out_dialog.blp:6
-#, fuzzy
 msgid "For the changes to take full effect, you need to log out."
 msgstr ""
-"Para que as alterações entrem em vigor, é necessário terminar a sessão. "
+"Para que as alterações entrem em vigor, é necessário terminar a sessão."
 
 #: data/ui/no_plugin_window.blp:5
 #, fuzzy
@@ -339,7 +339,7 @@ msgstr "Remover predefinição"
 
 #: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
-msgstr "Configurações salvas"
+msgstr "Predefinições"
 
 #: data/ui/presets_manager_window.blp:30
 msgid "Import"
@@ -396,23 +396,23 @@ msgstr "Sem resultados encontrados"
 msgid "Offline"
 msgstr "Offline"
 
-#: data/ui/presets_manager_window.blp:147
-#: gradience/frontend/views/presets_manager_window.py:122
-#: gradience/frontend/views/presets_manager_window.py:384
+#: data/ui/presets_manager_window.blp:148
+#: gradience/frontend/views/presets_manager_window.py:123
+#: gradience/frontend/views/presets_manager_window.py:391
 #, fuzzy
 msgid "Repositories"
 msgstr "Repositórios"
 
-#: data/ui/presets_manager_window.blp:166
+#: data/ui/presets_manager_window.blp:168
 msgid "Import a Preset File (*.json)"
 msgstr "Importar um arquivo pré-definido (*.json)"
 
-#: data/ui/presets_manager_window.blp:171
+#: data/ui/presets_manager_window.blp:173
 #, fuzzy
 msgid "All files"
 msgstr "Todos os arquivos"
 
-#: data/ui/presets_manager_window.blp:176
+#: data/ui/presets_manager_window.blp:178
 #, fuzzy
 msgid "JSON file (*.json)"
 msgstr "Arquivos JSON (*.json)"
@@ -700,7 +700,7 @@ msgid "_Save"
 msgstr "Salvar"
 
 #: gradience/frontend/main.py:184
-#: gradience/frontend/views/presets_manager_window.py:329
+#: gradience/frontend/views/presets_manager_window.py:336
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -931,15 +931,15 @@ msgstr ""
 
 #: gradience/frontend/settings_schema.py:218
 msgid "Header Bar Colors"
-msgstr "Cores da barra de título"
+msgstr "Cores da header bar (barra do cabeçalho)"
 
 #: gradience/frontend/settings_schema.py:220
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
 msgstr ""
-"Estas cores são utilizadas pelas barras de títulos assim como os widgets que "
-"estão nela, como o campo de busca ou abas."
+"Estas cores são utilizadas pelas header bars (barras de cabeçalhos) assim "
+"como os widgets que estão nela, como o campo de busca ou abas."
 
 #: gradience/frontend/settings_schema.py:237
 msgid "Border Color"
@@ -1092,33 +1092,33 @@ msgstr "Claro"
 msgid "Dark"
 msgstr "Escuro"
 
-#: gradience/frontend/views/about_window.py:110
+#: gradience/frontend/views/about_window.py:116
 msgid "Copyright © 2022-2023 Gradience Team"
 msgstr "Direitos Reservados © 2022-2023 Desenvolvedores do Gradience"
 
-#: gradience/frontend/views/about_window.py:119
+#: gradience/frontend/views/about_window.py:125
 #, fuzzy
 #| msgid "Plugins"
 msgid "Plugins by"
 msgstr "Plugins por"
 
-#: gradience/frontend/views/about_window.py:127
+#: gradience/frontend/views/about_window.py:133
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Predefinições por"
 
-#: gradience/frontend/views/about_window.py:149
+#: gradience/frontend/views/about_window.py:155
 #, fuzzy
 msgid "Packages by"
 msgstr "Pacotes por"
 
-#: gradience/frontend/views/about_window.py:156
+#: gradience/frontend/views/about_window.py:162
 #, fuzzy
 msgid "Fixes by"
 msgstr "Fixa por"
 
-#: gradience/frontend/views/about_window.py:166
+#: gradience/frontend/views/about_window.py:172
 msgid "Special thanks to"
 msgstr "Agradecimentos especiais para"
 
@@ -1136,7 +1136,7 @@ msgstr ""
 
 #: gradience/frontend/views/main_window.py:147
 msgid "Select an Image"
-msgstr ""
+msgstr "Selecione uma imagem"
 
 #: gradience/frontend/views/main_window.py:150
 #, fuzzy
@@ -1206,47 +1206,47 @@ msgid "No Plugins Found."
 msgstr "Não foram encontrados Plugins."
 
 #: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:352
 msgid "User Presets"
 msgstr "Predefinições do usuário"
 
-#: gradience/frontend/views/presets_manager_window.py:190
+#: gradience/frontend/views/presets_manager_window.py:191
 #, fuzzy
 msgid "Add new repository"
 msgstr "Adicionar novo repositório"
 
-#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 #, fuzzy
 msgid "Add a repository to install additional presets."
 msgstr "Acrescentar um repositório para instalar predefinições adicionais."
 
-#: gradience/frontend/views/presets_manager_window.py:197
+#: gradience/frontend/views/presets_manager_window.py:198
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: gradience/frontend/views/presets_manager_window.py:198
+#: gradience/frontend/views/presets_manager_window.py:199
 #, fuzzy
 msgid "Add"
 msgstr "Adicione"
 
-#: gradience/frontend/views/presets_manager_window.py:288
+#: gradience/frontend/views/presets_manager_window.py:295
 msgid "Preset already exists"
 msgstr "Predefinição já existe"
 
-#: gradience/frontend/views/presets_manager_window.py:300
+#: gradience/frontend/views/presets_manager_window.py:307
 msgid "Preset imported"
 msgstr "Predefinição importada"
 
-#: gradience/frontend/views/presets_manager_window.py:303
+#: gradience/frontend/views/presets_manager_window.py:310
 msgid "Unsupported file format, must be .json"
 msgstr "Formato de arquivo não suportado, precisa ser .json"
 
-#: gradience/frontend/views/presets_manager_window.py:338
+#: gradience/frontend/views/presets_manager_window.py:345
 #, fuzzy
 msgid "Built-in Presets"
 msgstr "Configurações pré-definidas"
 
-#: gradience/frontend/views/presets_manager_window.py:348
+#: gradience/frontend/views/presets_manager_window.py:355
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -1254,7 +1254,7 @@ msgstr ""
 "Veja <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> no Github para mais predefinições."
 
-#: gradience/frontend/views/presets_manager_window.py:374
+#: gradience/frontend/views/presets_manager_window.py:381
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
