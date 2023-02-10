@@ -83,7 +83,7 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
     }
   }
 
-  Adw.PreferencesPage {
+  Adw.PreferencesPage theming_page {
     title: _("Theming");
     icon-name: "larger-brush-symbolic";
 
@@ -108,50 +108,6 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
 
         Switch enable_gnome_shell_engine {
           valign: center;
-        }
-      }
-    }
-
-    Adw.PreferencesGroup reset_and_restore_group {
-      title: _("Reset &amp; Restore");
-
-      Adw.ActionRow {
-        title: _("Libadwaita Preset");
-
-        Button restore_libadw_button {
-          valign: center;
-          icon-name: "edit-undo-symbolic";
-          tooltip-text: _("Restore Previous Preset");
-          //clicked => on_restore_button_clicked();
-          styles ["flat"]
-        }
-
-        Button reset_libadw_button {
-          valign: center;
-          label: _("Reset");
-          tooltip-text: _("Reset Applied Preset");
-          //clicked => on_reset_button_clicked();
-          styles ["destructive-action"]
-        }
-      }
-
-      Adw.ActionRow {
-        title: _("GTK 3 (adw-gtk3) Preset");
-
-        Button restore_gtk3_button {
-          valign: center;
-          icon-name: "edit-undo-symbolic";
-          tooltip-text: _("Restore Previous Preset");
-          //clicked => on_restore_button_clicked();
-          styles ["flat"]
-        }
-
-        Button reset_gtk3_button {
-          valign: center;
-          label: _("Reset");
-          tooltip-text: _("Reset Applied Preset");
-          //clicked => on_reset_button_clicked();
-          styles ["destructive-action"]
         }
       }
     }

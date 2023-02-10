@@ -21,6 +21,8 @@ from gi.repository import Gtk, Adw
 from gradience.backend.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
 from gradience.backend.flatpak_overrides import create_gtk_global_override, remove_gtk_global_override
 
+from gradience.frontend.widgets.reset_preset_group import GradienceResetPresetGroup
+
 from gradience.backend.constants import rootdir
 
 from gradience.backend.logger import Logger
@@ -31,6 +33,9 @@ logging = Logger()
 @Gtk.Template(resource_path=f"{rootdir}/ui/preferences_window.ui")
 class GradiencePreferencesWindow(Adw.PreferencesWindow):
     __gtype_name__ = "GradiencePreferencesWindow"
+
+    general_page = Gtk.Template.Child()
+    theming_page = Gtk.Template.Child()
 
     gtk4_user_theming_switch = Gtk.Template.Child()
     gtk4_global_theming_switch = Gtk.Template.Child()
@@ -53,6 +58,12 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
 
     def setup(self):
         self.setup_flatpak_group()
+        self.setup_reset_preset_group()
+
+    def setup_reset_preset_group(self):
+        self.reset_preset_group = GradienceResetPresetGroup(self)
+
+        self.theming_page.add(self.reset_preset_group)
 
     def setup_flatpak_group(self):
         user_flatpak_theming_gtk4 = self.settings.get_boolean(
@@ -72,7 +83,7 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.gtk3_user_theming_switch.set_state(
             user_flatpak_theming_gtk3
         )
-        
+
         # self.gtk3_global_theming_switch.set_state(global_flatpak_theming_gtk3)
 
         self.gtk4_user_theming_switch.connect(
