@@ -60,6 +60,10 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.monet_image_file = None
 
+        self.enabled_theme_engines = set(
+            self.settings.get_value("enabled-theme-engines").unpack()
+        )
+
         self.setup_signals()
         self.setup()
 
@@ -79,8 +83,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             self.get_style_context().add_class("devel")
 
         self.setup_shell_group()
-        self.setup_monet_page()
-        self.setup_colors_page()
+        self.setup_monet_group()
+        self.setup_colors_group()
 
     # TODO: Check if org.freedesktop.portal.Settings portal will allow us to \
     # read org.gnome.desktop.background DConf key
@@ -124,14 +128,16 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     def setup_shell_group(self):
         self.shell_group = GradienceShellThemingGroup(self)
 
-        self.content_theming.add(self.shell_group)
+        if "shell" in self.enabled_theme_engines:
+            self.content_theming.add(self.shell_group)
 
-    def setup_monet_page(self):
+    def setup_monet_group(self):
         self.monet_group = GradienceMonetThemingGroup(self)
 
-        self.content_theming.add(self.monet_group)
+        if "monet" in self.enabled_theme_engines:
+            self.content_theming.add(self.monet_group)
 
-    def setup_colors_page(self):
+    def setup_colors_group(self):
         for group in preset_schema["groups"]:
             pref_group = Adw.PreferencesGroup()
             pref_group.set_name(group["name"])
