@@ -46,7 +46,7 @@ GTK 3 applications
 .. note::
     You can press on the menu button in the headerbar and press `Reset Applied Color Scheme`
 
-    .. image:: https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
+    .. image:: https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png
         :alt: Image of the hamburger menu
 
 🪛️ Manual revert
