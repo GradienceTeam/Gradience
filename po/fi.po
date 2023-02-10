@@ -3,7 +3,7 @@
 # This file is distributed under the GNU GPLv3 license.
 # Gradience Team, 2022.
 #
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2022.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2022, 2023.
 # 0xMRTT <0xMRTT@tuta.io>, 2022.
 # Daudix UFO <ddaudix@gmail.com>, 2022.
 # yangyangdaji <1504305527@qq.com>, 2022.
@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 12:15+0000\n"
-"PO-Revision-Date: 2022-12-05 04:48+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"POT-Creation-Date: 2023-02-10 12:14+0000\n"
+"PO-Revision-Date: 2023-02-10 08:36+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/fi/>\n"
 "Language: fi\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -137,10 +137,8 @@ msgid "Log out"
 msgstr "Kirjaudu ulos"
 
 #: data/ui/log_out_dialog.blp:6
-#, fuzzy
-#| msgid "For the changes to take effect, you need to log out. "
 msgid "For the changes to take full effect, you need to log out."
-msgstr "Muutosten toteuttaminen vaatii uloskirjautumisen. "
+msgstr "Muutosten toteuttaminen vaatii uloskirjautumisen."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -236,11 +234,11 @@ msgid ""
 "applications to access adw-gtk3 theme. (Requires root access)"
 msgstr ""
 
-#: data/ui/preferences_window.blp:60
+#: data/ui/preferences_window.blp:61
 msgid "Custom Preset Repositories"
 msgstr "Mukautetut esiasetusten tietovarastot"
 
-#: data/ui/preferences_window.blp:63
+#: data/ui/preferences_window.blp:64
 msgid "Custom repository URL address"
 msgstr "Mukautetun tietovaraston URL-osoite"
 
@@ -355,10 +353,8 @@ msgid "Save preset as…"
 msgstr "Tallenna esiasetus nimellä…"
 
 #: data/ui/save_dialog.blp:10
-#, fuzzy
-#| msgid "Preset renamed"
 msgid "Preset Name"
-msgstr "Esiasetus nimetty uudelleen"
+msgstr "Esiasetuksen nimi"
 
 #: data/ui/share_window.blp:5
 msgid "Share Preset"
@@ -448,6 +444,7 @@ msgstr "Järjestelmän määritys"
 #: data/ui/share_window.blp:126 data/ui/welcome_window.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
+"Määritä järjestelmä teemoitusta varten, mahdollistaa Flatpak-teeman ylityksen"
 
 #: data/ui/share_window.blp:136 data/ui/welcome_window.blp:136
 msgid "Installing Themes"
@@ -509,7 +506,6 @@ msgid "Legacy Apps Theming"
 msgstr "Vanhojen sovellusten teemoitus"
 
 #: data/ui/welcome_window.blp:120
-#, fuzzy
 msgid "System Configuration"
 msgstr "Järjestelmän määritys"
 
@@ -519,7 +515,7 @@ msgstr "Toteuta"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
-msgstr ""
+msgstr "Näytä esikatseluikkuna"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -596,10 +592,8 @@ msgstr "_Tallenna"
 
 #: gradience/frontend/main.py:184
 #: gradience/frontend/views/presets_manager_window.py:336
-#, fuzzy
-#| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
-msgstr "Esiasetuksen lataaminen epäonnistui"
+msgstr "Esiasetusluettelon lataaminen epäonnistui"
 
 #: gradience/frontend/main.py:217
 msgid "No presets found"
@@ -951,27 +945,23 @@ msgstr "Tumma"
 
 #: gradience/frontend/views/about_window.py:116
 msgid "Copyright © 2022-2023 Gradience Team"
-msgstr ""
+msgstr "Tekijänoikeus © 2022-2023 Gradience-tiimi"
 
 #: gradience/frontend/views/about_window.py:125
-#, fuzzy
-#| msgid "Plugins"
 msgid "Plugins by"
 msgstr "Liitännäiset"
 
 #: gradience/frontend/views/about_window.py:133
-#, fuzzy
-#| msgid "Presets"
 msgid "Presets by"
 msgstr "Esiasetukset"
 
 #: gradience/frontend/views/about_window.py:155
 msgid "Packages by"
-msgstr ""
+msgstr "Paketoinnit"
 
 #: gradience/frontend/views/about_window.py:162
 msgid "Fixes by"
-msgstr ""
+msgstr "Korjaukset"
 
 #: gradience/frontend/views/about_window.py:172
 msgid "Special thanks to"
@@ -991,13 +981,11 @@ msgstr ""
 
 #: gradience/frontend/views/main_window.py:147
 msgid "Select an Image"
-msgstr ""
+msgstr "Valitse kuva"
 
 #: gradience/frontend/views/main_window.py:150
-#, fuzzy
-#| msgid "Choose a File"
 msgid "Choose a Image File"
-msgstr "Valitse tiedosto"
+msgstr "Valitse kuvatiedosto"
 
 #: gradience/frontend/views/main_window.py:159
 msgid "Choose a File"
@@ -1017,7 +1005,7 @@ msgstr ""
 
 #: gradience/frontend/views/main_window.py:225
 msgid "Failed to generate Monet palette"
-msgstr ""
+msgstr "Monet-paletin luominen epäonnistui"
 
 #: gradience/frontend/views/main_window.py:229
 msgid "Palette generated"
