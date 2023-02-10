@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+from enum import Enum
+
 from gi.repository import Gtk, Adw
 
 from gradience.backend.theming.monet import Monet
@@ -103,11 +105,26 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
             try:
                 monet_theme = Monet().generate_palette_from_image(self.monet_image_file)
                 #tone = self.tone_row.get_selected_item().get_string() # TODO: Remove tone requirement from Monet Engine
-                theme_color = self.theme_row.get_selected_item().get_string()
+                variant_pos = self.theme_row.props.selected
+
+                class variantEnum(Enum):
+                    AUTO = 0
+                    DARK = 1
+                    LIGHT = 2
+
+                def __get_variant_string():
+                    if variant_pos == variantEnum.AUTO.value:
+                        return "auto"
+                    elif variant_pos == variantEnum.DARK.value:
+                        return "dark"
+                    elif variant_pos == variantEnum.LIGHT.value:
+                        return "light"
+
+                variant_str = __get_variant_string()
 
                 self.app.custom_css_group.reset_buffer()
 
-                self.app.update_theme_from_monet(monet_theme, theme_color)
+                self.app.update_theme_from_monet(monet_theme, variant_str)
             except (OSError, AttributeError, ValueError) as e:
                 logging.error("Failed to generate Monet palette", exc=e)
                 self.parent.toast_overlay.add_toast(
