@@ -27,7 +27,7 @@ from gradience.backend.logger import Logger
 logging = Logger()
 
 
-# Adwaita default colors palette
+# Adwaita default colors palette dict
 adw_palette = {
     "blue_": {
         "1": "#99c1f1",

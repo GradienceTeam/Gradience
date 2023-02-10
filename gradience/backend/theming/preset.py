@@ -114,29 +114,32 @@ class PresetUtils:
         try:
             with open(gtk_css_path, "r", encoding="utf-8") as css_file:
                 contents = css_file.read()
+                css_file.close()
         except FileNotFoundError:
             logging.warning(f"gtk.css file not found in {gtk_css_path}. Generating new stylesheet.")
         else:
             with open(gtk_css_path + ".bak", "w", encoding="utf-8") as backup:
                 backup.write(contents)
+                backup.close()
         finally:
             with open(gtk_css_path, "w", encoding="utf-8") as css_file:
                 css_file.write(generate_gtk_css(app_type, preset))
+                css_file.close()
 
-    def restore_gtk4_preset(self) -> None:
-        theme_dir = get_gtk_theme_dir("gtk4")
+    def restore_preset(self, app_type: str) -> None:
+        theme_dir = get_gtk_theme_dir(app_type)
         gtk_css_path = os.path.join(theme_dir, "gtk.css")
 
         try:
-            with open(user_config_dir + ".bak", "r", encoding="utf-8") as backup:
+            with open(gtk_css_path + ".bak", "r", encoding="utf-8") as backup:
                 contents = backup.read()
                 backup.close()
 
-            with open(gtk_css_path, "w", encoding="utf-8") as gtk4css:
-                gtk4css.write(contents)
-                gtk4css.close()
+            with open(gtk_css_path, "w", encoding="utf-8") as css_file:
+                css_file.write(contents)
+                css_file.close()
         except OSError as e:
-            logging.error("Unable to restore Gtk4 preset backup.", exc=e)
+            logging.error(f"Unable to restore {app_type.capitalize()} preset backup.", exc=e)
             raise
 
     def reset_preset(self, app_type: str) -> None:
