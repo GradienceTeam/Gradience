@@ -53,6 +53,7 @@ html_theme_options = {
     "source_directory": "docs/",
     "light_css_variables": {
         "font-stack": "Cantarell var, sans-serif",
+        "font-stack--monospace": "Source Code Pro, monospace",
     },
     "footer_icons": [
         {
