@@ -52,7 +52,7 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
     "light_css_variables": {
-        "font-stack": "Cantarell, sans-serif",
+        "font-stack": "Cantarell var, sans-serif",
     },
     "footer_icons": [
         {
