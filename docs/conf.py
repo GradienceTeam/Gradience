@@ -7,15 +7,6 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 
-# These folders are copied to the documentation's HTML output
-html_static_path = ['_static']
-
-# These paths are either relative to html_static_path
-# or fully qualified paths (eg. https://...)
-html_css_files = [
-    'css/custom.css',
-]
-
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
@@ -48,6 +39,7 @@ intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 # See https://pradyunsg.me/furo/ for the theme's documentation
 html_theme = 'furo'
 html_static_path = ['_static']
+html_css_files = ['css/style.css']
 html_logo = 'https://github.com/GradienceTeam/Design/raw/main/Pixels/Gradience Mini 4x (No Shadow).gif'
 
 #html_additional_pages = {
@@ -56,7 +48,7 @@ html_logo = 'https://github.com/GradienceTeam/Design/raw/main/Pixels/Gradience M
 #html_title = "Gradience"
 html_theme_options = {
     "announcement": "This is documentation is currently work in progress. Send your feedback or contribute!",
-    "source_repository": "https://github.com/GradienceTeam/Gradience/",
+    "source_repository": "https://github.com/GradienceTeam/Gradience",
     "source_branch": "main",
     "source_directory": "docs/",
     "light_css_variables": {
@@ -117,5 +109,3 @@ html_theme_options = {
 }
 
 # See https://github.com/wpilibsuite/sphinxext-opengraph for opengraph config
-
-
