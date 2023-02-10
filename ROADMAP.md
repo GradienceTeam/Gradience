@@ -20,6 +20,7 @@ Gradience is completely usable, if you like to see a new feature, open an issue 
 - [x] Add preset manager with option to download other users presets
 - [x] Release on Flathub
 - [x] Add autoload theme from CSS
+- [ ] Make UX more foolproof (bruh)
 - [ ] Add ability to create light/dark presets **(High priority)**
 - [ ] Add a full theme preview instead of GTK 4 Demo
 - [ ] Add ability to generate preset from one color

@@ -34,7 +34,7 @@ def rgb_to_hash(rgb) -> [str, float]:
     """
     This function converts rgb or rgba-formatted color code to an hexadecimal code.
 
-    Alpha channel from RGBA color codes is passed without any convertion
+    Alpha channel from RGBA color codes is passed without any conversion
     as a second return variable and is completely ignored in hexadecimal codes
     to remain compliant with web stantards.
     """

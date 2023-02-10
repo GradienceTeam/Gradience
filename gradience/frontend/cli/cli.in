@@ -3,7 +3,7 @@
 # cli.in
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022 Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -70,7 +70,6 @@ class CLI:
         #info_parser = subparsers.add_parser("info", help="show information about Gradience")
 
         presets_parser = subparsers.add_parser("presets", help="list installed presets")
-        #presets_parser.add_argument("-r", "--remove-preset", metavar="PRESET_NAME", help="remove a preset from the list")
         presets_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
 
         favorites_parser = subparsers.add_parser("favorites", help="list favorite presets")
@@ -86,7 +85,6 @@ class CLI:
         apply_group.add_argument("-n", "--preset-name", help="display name for a preset")
         apply_group.add_argument("-p", "--preset-path", help="absolute path to a preset file")
         apply_parser.add_argument("--gtk", choices=["gtk4", "gtk3", "both"], default="gtk4", help="types of applications you want to theme (default: gtk4)")
-        #apply_parser.add_argument("--flatpak", choices=["gtk4", "gtk3", "both"], help="types of Flatpak applications you want to theme (for GTK3 option, make sure you have adw-gtk3 installed as Flatpak)")
 
         #new_parser = subparsers.add_parser("new", help="create a new preset")
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
@@ -102,8 +100,9 @@ class CLI:
         #download_parser.add_argument("--custom-url", help="use custom repository's presets.json to download other presets")
 
         monet_parser = subparsers.add_parser("monet", help="generate Material You preset from an image")
+        #monet_parser.add_argument("-a", "--apply", help="apply Monet's generated preset after it has been created", action='store_true')
         monet_parser.add_argument("-n", "--preset-name", help="name for a generated preset", required=True)
-        monet_parser.add_argument("-p", "--image-path", help="abosulte path to image", required=True)
+        monet_parser.add_argument("-p", "--image-path", help="absolute path to image", required=True)
         monet_parser.add_argument("--tone", default=20, help="a tone for colors (default: 20)")
         monet_parser.add_argument("--theme", choices=["light", "dark"], default="light", help="choose whatever it should be a light or dark theme (default: light)")
         monet_parser.add_argument("-j", "--json", action="store_true", help="print out a result of this command directly in JSON format")
@@ -166,8 +165,8 @@ class CLI:
 
         try:
             presets_list = PresetUtils().get_presets_list(full_list=True)
-        except (OSError, KeyError, AttributeError):
-            logging.error("Failed to retrieve a list of presets.")
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error("Failed to retrieve a list of presets.", exc=e)
             exit(1)
 
         if _json:
@@ -189,8 +188,8 @@ class CLI:
 
         try:
             presets_list = PresetUtils().get_presets_list(full_list=True)
-        except (OSError, KeyError, AttributeError):
-            logging.error("Failed to retrieve a list of presets.")
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error("Failed to retrieve a list of presets.", exc=e)
             exit(1)
 
         presets_name = list(presets_list.values())
@@ -237,57 +236,59 @@ class CLI:
         _preset_path = args.preset_path
 
         preset_file = GLib.path_get_basename(_preset_path)
+        output_filename = os.path.join(presets_dir, "user", preset_file.strip())
         logging.info(f"Importing preset: {preset_file.strip()}")
 
         # TODO: Check if preset is already imported
         if _preset_path.endswith(".json"):
             try:
-                shutil.copy(
-                    _preset_path,
-                    os.path.join(
-                        presets_dir,
-                        "user",
-                        preset_file.strip()
-                    )
-                )
+                shutil.copy(_preset_path, output_filename)
             except FileNotFoundError as e:
                 logging.error("Preset could not be imported.", exc=e)
                 exit(1)
             else:
                 logging.info("Preset imported successfully.")
+                exit(0)
         else:
             logging.error("Unsupported preset file format, must be .json")
             exit(1)
 
     def apply_preset(self, args):
+        #_interactive = args.interactive
         _preset_name = args.preset_name
         _preset_path = args.preset_path
         _gtk = args.gtk
-        #_flatpak = args.flatpak
 
         try:
             presets_list = PresetUtils().get_presets_list(full_list=True)
-        except (OSError, KeyError, AttributeError):
-            logging.error("Failed to retrieve a list of presets.")
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error("Failed to retrieve a list of presets.", exc=e)
             exit(1)
 
         presets_name = list(presets_list.values())
 
-        if _preset_name:
-            if _preset_name in presets_name:
-                for path, name in presets_list.items():
+        def __get_preset_from_name():
+            for path, name in presets_list.items():
                     if name == _preset_name:
                         preset = Preset().new_from_path(path)
+            return preset
+
+        if _preset_name:
+            if _preset_name in presets_name:
+                preset = __get_preset_from_name()
         elif _preset_path:
             preset = Preset().new_from_path(_preset_path)
 
-        if _gtk == "gtk4":
+        if _gtk in ("gtk4", "gtk3"):
+            PresetUtils().apply_preset(_gtk, preset)
+            logging.info(f"Preset {preset.display_name} applied successfully for {_gtk.capitalize()} applications.")
+        elif _gtk == "both":
             PresetUtils().apply_preset("gtk4", preset)
-            logging.info(f"Preset {preset.display_name} applied successfully for Gtk 4 applications.")
-        elif _gtk == "gtk3":
             PresetUtils().apply_preset("gtk3", preset)
-            logging.info(f"Preset {preset.display_name} applied successfully for Gtk 3 applications.")
+            logging.info(f"Preset {preset.display_name} applied successfully for Gtk 3 and Gtk 4 applications.")
+
         logging.info("In order for changes to take full effect, you need to log out.")
+        exit(0)
 
     def new_preset(self, args):
         #_interactive = args.interactive
@@ -312,8 +313,8 @@ class CLI:
         for repo_name, repo in preset_repos.items():
             try:
                 explore_presets, urls = PresetDownloader().fetch_presets(repo)
-            except (GLib.GError, json.JSONDecodeError):
-                logging.error("An error occurred while fetching presets from remote repository.")
+            except (GLib.GError, json.JSONDecodeError) as e:
+                logging.error("An error occurred while fetching presets from remote repository.", exc=e)
                 exit(1)
             else:
                 preset_no = 1
@@ -324,8 +325,8 @@ class CLI:
                         logging.info(f"Downloading preset: {preset_name}")
                         try:
                             PresetDownloader().download_preset(preset_name, to_slug_case(repo_name), preset_url)
-                        except (GLib.GError, json.JSONDecodeError, OSError):
-                            logging.error("An error occurred while downloading a preset.")
+                        except (GLib.GError, json.JSONDecodeError, OSError) as e:
+                            logging.error("An error occurred while downloading a preset.", exc=e)
                             exit(1)
                         else:
                             logging.info("Preset downloaded successfully.")
@@ -338,8 +339,10 @@ class CLI:
                         continue
                 repo_no += 1
 
-    # NOTE: Possible useful portals to use in future: org.freedesktop.portal.Documents (support missing in libportal, only D-Bus calls), org.freedesktop.portal.FileChooser
+    # NOTE: Possible useful portals to use in future: org.freedesktop.portal.Documents \
+    # (support missing in libportal, only D-Bus calls), org.freedesktop.portal.FileChooser
     def generate_monet(self, args):
+        #_apply = args.apply
         _preset_name = args.preset_name
         _image_path = args.image_path
         _tone = args.tone
@@ -348,8 +351,9 @@ class CLI:
 
         try:
             palette = Monet().generate_from_image(_image_path)
-        except ValueError:
-            logging.error("Failed to generate Monet palette.")
+        except (OSError, ValueError) as e:
+            logging.info("If you are getting an `no such file or directory` error on Gradience installed as Flatpak, "
+                "try adding the file to the access list by using `gradience-cli access-file --allow 'path/to/file'` command.")
             exit(1)
 
         props = [_tone, _theme]
@@ -357,9 +361,9 @@ class CLI:
         if _json:
             try:
                 preset = PresetUtils().new_preset_from_monet(_preset_name,
-                                    palette, props, True)
-            except (OSError, AttributeError):
-                logging.error("Unexpected error while generating preset from Monet palette.")
+                            palette, props, True)
+            except (OSError, AttributeError) as e:
+                logging.error("Unexpected error while generating preset from Monet palette.", exc=e)
                 exit(1)
             else:
                 preset_json = preset.get_preset_json()
@@ -368,12 +372,17 @@ class CLI:
 
         try:
             PresetUtils().new_preset_from_monet(_preset_name, palette, props)
-        except (OSError, AttributeError):
-            logging.error("Unexpected error while generating preset from Monet palette.")
+            #raise OSError()
+        except (OSError, AttributeError) as e:
+            logging.error("Unexpected error while generating preset from Monet palette.", exc=e)
             exit(1)
         else:
-            logging.info("In order for changes to take full effect, you need to log out.")
+            logging.info("Preset generated successfully. "
+                "In order to apply it, use `gradience-cli apply <args>` command.")
             exit(0)
+
+        if _apply:
+            pass
 
     # TODO: Add path and xdg-* value parsing
     def access_file(self, args):
@@ -381,11 +390,16 @@ class CLI:
         _allow = args.allow
         _disallow = args.disallow
 
+        if not _list and not _allow and not _disallow:
+            logging.error("You need to specify an argument for this command. "
+                "Type `gradience-cli access-file --help` to check available arguments.")
+            exit(1)
+
         if _list:
             try:
                 access_list = list_file_access()
-            except GLib.GError:
-                logging.error("An error occurred while accessing allowed files list.")
+            except GLib.GError as e:
+                logging.error("An error occurred while accessing allowed files list.", exc=e)
                 exit(1)
             else:
                 logging.info("Allowed files:")
@@ -394,50 +408,44 @@ class CLI:
                         print(value)
                     exit(0)
                 else:
-                    print("0 paths found")
+                    print("No paths found.")
                     exit(0)
 
         if _allow:
             try:
                 allow_file_access(_allow)
-            except GLib.GError:
-                logging.error("An error occurred while setting file access.")
+            except GLib.GError as e:
+                logging.error("An error occurred while setting file access.", exc=e)
                 exit(1)
             else:
-                logging.info(f"Path {_allow} added to access list")
+                logging.info(f"Path {_allow} added to access list.")
                 exit(0)
 
         if _disallow:
             try:
                 disallow_file_access(_disallow)
-            except GLib.GError:
-                logging.error("An error occurred while setting file access.")
+            except GLib.GError as e:
+                logging.error("An error occurred while setting file access.", exc=e)
                 exit(1)
             else:
-                logging.info(f"Path {_disallow} removed from access list")
+                logging.info(f"Path {_disallow} removed from access list.")
                 exit(0)
 
     def flatpak_theming(self, args):
         _enable_theming = args.enable_theming
         _disable_theming = args.disable_theming
 
-        if _enable_theming == "gtk4":
-            create_gtk_user_override(self.settings, "gtk4")
-            logging.info("Flatpak theming for Gtk 4 applications has been enabled.")
-        elif _enable_theming == "gtk3":
-            create_gtk_user_override(self.settings, "gtk3")
-            logging.info("Flatpak theming for Gtk 3 applications has been enabled.")
+        if _enable_theming in ("gtk4", "gtk3"):
+            create_gtk_user_override(self.settings, _enable_theming)
+            logging.info(f"Flatpak theming for {_enable_theming.capitalize()} applications has been enabled.")
         elif _enable_theming == "both":
             create_gtk_user_override(self.settings, "gtk4")
             create_gtk_user_override(self.settings, "gtk3")
             logging.info("Flatpak theming for Gtk 4 and Gtk 3 applications has been enabled.")
 
-        if _disable_theming == "gtk4":
-            remove_gtk_user_override(self.settings, "gtk4")
-            logging.info("Flatpak theming for Gtk 4 applications has been disabled.")
-        elif _disable_theming == "gtk3":
-            remove_gtk_user_override(self.settings, "gtk3")
-            logging.info("Flatpak theming for Gtk 3 applications has been disabled.")
+        if _disable_theming in ("gtk4", "gtk3"):
+            remove_gtk_user_override(self.settings, _disable_theming)
+            logging.info(f"Flatpak theming for {_disable_theming.capitalize()} applications has been disabled.")
         elif _disable_theming == "both":
             remove_gtk_user_override(self.settings, "gtk4")
             remove_gtk_user_override(self.settings, "gtk3")

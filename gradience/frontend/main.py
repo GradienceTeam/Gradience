@@ -358,26 +358,26 @@ class GradienceApplication(Adw.Application):
 
         self.reload_variables()
 
-    def update_theme_from_monet(self, monet, tone, monet_theme):
+    def update_theme_from_monet(self, monet, preset_variant: str, tone=20):
         palettes = monet["palettes"]
 
-        monet_theme = monet_theme.get_string().lower()  # dark / light
+        preset_variant = preset_variant.get_string().lower()  # dark / light
 
         palette = {}
 
         for i, color in zip(range(1, 7), palettes.values()):
-            palette[str(i)] = hexFromArgb(color.tone(int(tone.get_string())))
+            palette[str(i)] = hexFromArgb(color.tone(int(tone)))
         self.pref_palette_shades["monet"].update_shades(palette)
 
-        if monet_theme == "auto":
+        if preset_variant == "auto":
             if self.style_manager.get_dark():
-                monet_theme = "dark"
+                preset_variant = "dark"
             else:
-                monet_theme = "light"
+                preset_variant = "light"
 
         try:
             preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
-                                props=[tone, monet_theme], obj_only=True)
+                                props=[tone, preset_variant], obj_only=True)
         except (OSError, AttributeError) as e:
             logging.error("An error occurred while generating preset from Monet palette.", exc=e)
             raise
@@ -387,6 +387,9 @@ class GradienceApplication(Adw.Application):
         for key in variable:
             if key in self.pref_variables:
                 self.pref_variables[key].update_value(variable[key])
+
+        # TODO: Create a whole function deticated to clearing preset and custom CSS
+        self.preset_name = "Preset Name"
 
         self.reload_variables()
 
@@ -677,7 +680,7 @@ class GradienceApplication(Adw.Application):
         self.win.content_plugins.add(self.plugins_group)
         self.plugins_group = self.plugins_group
 
-        self.custom_css_group = GradienceCustomCSSGroup()
+        self.custom_css_group = GradienceCustomCSSGroup(self.win)
 
         for app_type in settings_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
@@ -703,7 +706,7 @@ class GradienceApplication(Adw.Application):
         self.win.content_plugins.add(self.plugins_group)
         self.plugins_group = self.plugins_group
 
-        self.custom_css_group = GradienceCustomCSSGroup()
+        self.custom_css_group = GradienceCustomCSSGroup(self.win)
 
         for app_type in settings_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""

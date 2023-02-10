@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-14 12:12+0000\n"
+"POT-Creation-Date: 2023-02-10 00:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5
+#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
 msgid "Gradience"
 msgstr ""
 
@@ -29,7 +28,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/views/about_window.py:88
+#: gradience/frontend/views/about_window.py:94
 msgid "Gradience Team"
 msgstr ""
 
@@ -120,6 +119,14 @@ msgstr ""
 
 #: data/ui/explore_preset_row.blp:32
 msgid "Download Only"
+msgstr ""
+
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr ""
+
+#: data/ui/log_out_dialog.blp:6
+msgid "For the changes to take full effect, you need to log out."
 msgstr ""
 
 #: data/ui/no_plugin_window.blp:5
@@ -213,11 +220,11 @@ msgid ""
 "applications to access adw-gtk3 theme. (Requires root access)"
 msgstr ""
 
-#: data/ui/preferences_window.blp:60
+#: data/ui/preferences_window.blp:61
 msgid "Custom Preset Repositories"
 msgstr ""
 
-#: data/ui/preferences_window.blp:63
+#: data/ui/preferences_window.blp:64
 msgid "Custom repository URL address"
 msgstr ""
 
@@ -307,22 +314,30 @@ msgstr ""
 msgid "Offline"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:147
-#: gradience/frontend/views/presets_manager_window.py:122
-#: gradience/frontend/views/presets_manager_window.py:384
+#: data/ui/presets_manager_window.blp:148
+#: gradience/frontend/views/presets_manager_window.py:123
+#: gradience/frontend/views/presets_manager_window.py:391
 msgid "Repositories"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:166
+#: data/ui/presets_manager_window.blp:168
 msgid "Import a Preset File (*.json)"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:171
+#: data/ui/presets_manager_window.blp:173
 msgid "All files"
 msgstr ""
 
-#: data/ui/presets_manager_window.blp:176
+#: data/ui/presets_manager_window.blp:178
 msgid "JSON file (*.json)"
+msgstr ""
+
+#: data/ui/save_dialog.blp:5
+msgid "Save preset as…"
+msgstr ""
+
+#: data/ui/save_dialog.blp:10
+msgid "Preset Name"
 msgstr ""
 
 #: data/ui/share_window.blp:5
@@ -465,7 +480,7 @@ msgstr ""
 msgid "System Configuration"
 msgstr ""
 
-#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:140
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:139
 msgid "Apply"
 msgstr ""
 
@@ -546,231 +561,79 @@ msgstr ""
 msgid "_Save"
 msgstr ""
 
-#: gradience/frontend/widgets/explore_preset_row.py:68
-#: gradience/frontend/widgets/explore_preset_row.py:94
-msgid "Preset could not be downloaded"
-msgstr ""
-
-#: gradience/frontend/widgets/explore_preset_row.py:82
-#: gradience/frontend/widgets/explore_preset_row.py:98
-msgid "Preset downloaded"
-msgstr ""
-
-#: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr ""
-
-#: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr ""
-
-#: gradience/frontend/widgets/option_row.py:110
-msgid "Not a color, see text value"
-msgstr ""
-
-#: gradience/frontend/widgets/plugin_row.py:85
-msgid "Unable to remove"
-msgstr ""
-
-#: gradience/frontend/widgets/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed."
-msgstr ""
-
-#: gradience/frontend/widgets/plugin_row.py:88
-msgid "Close"
-msgstr ""
-
-#: gradience/frontend/widgets/preset_row.py:87
-#: gradience/frontend/widgets/preset_row.py:104
-msgid "Remove from Favorites"
-msgstr ""
-
-#: gradience/frontend/widgets/preset_row.py:90
-#: gradience/frontend/widgets/preset_row.py:100
-msgid "Add to Favorites"
-msgstr ""
-
-#: gradience/frontend/widgets/preset_row.py:166
-msgid "Preset removed"
-msgstr ""
-
-#: gradience/frontend/widgets/preset_row.py:167
-msgid "Undo"
-msgstr ""
-
-#: gradience/frontend/widgets/preset_row.py:182
-msgid "Pending Deletion"
-msgstr ""
-
-#: gradience/frontend/widgets/preset_row.py:196
-msgid "Unable to delete preset"
-msgstr ""
-
-#: gradience/frontend/widgets/repo_row.py:60
-msgid "Repository removed"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:110
-msgid "Copyright © 2022-2023 Gradience Team"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:119
-msgid "Plugins by"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:127
-msgid "Presets by"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:149
-msgid "Packages by"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:156
-msgid "Fixes by"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:166
-msgid "Special thanks to"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:131
-msgid "Monet Engine"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:134
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:146
-msgid "Background Image"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:157
-msgid "Choose a File"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:177
-msgid "Monet Palette"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:184
-msgid "Tone"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:196
-msgid "Theme"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:199
-msgid "Auto"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:200
-#: gradience/frontend/settings_schema.py:372
-msgid "Light"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:201
-#: gradience/frontend/settings_schema.py:373
-msgid "Dark"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:220
-msgid "Failed to generate Monet palette"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:224
-msgid "Palette generated"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:228
-msgid "Select a background first"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:253
-msgid "Palette Colors"
-msgstr ""
-
-#: gradience/frontend/views/main_window.py:256
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-
-#: gradience/frontend/views/plugins_list.py:89
-msgid "Plugins"
-msgstr ""
-
-#: gradience/frontend/views/plugins_list.py:92
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
-
-#: gradience/frontend/views/plugins_list.py:104
-msgid "No Plugins Found."
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:345
-msgid "User Presets"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:190
-msgid "Add new repository"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:191
-msgid "Add a repository to install additional presets."
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:197
-msgid "Cancel"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:198
-msgid "Add"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:288
-msgid "Preset already exists"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:300
-msgid "Preset imported"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:303
-msgid "Unsupported file format, must be .json"
-msgstr ""
-
-#: gradience/frontend/views/presets_manager_window.py:329
 #: gradience/frontend/main.py:184
+#: gradience/frontend/views/presets_manager_window.py:336
 msgid "Failed to load list of presets"
 msgstr ""
 
-#: gradience/frontend/views/presets_manager_window.py:338
-msgid "Built-in Presets"
+#: gradience/frontend/main.py:217
+msgid "No presets found"
 msgstr ""
 
-#: gradience/frontend/views/presets_manager_window.py:348
+#: gradience/frontend/main.py:240
+msgid "Favorite Presets"
+msgstr ""
+
+#: gradience/frontend/main.py:404
+msgid "Unsaved Changes"
+msgstr ""
+
+#: gradience/frontend/main.py:416
+msgid "Save Changes"
+msgstr ""
+
+#: gradience/frontend/main.py:496
+msgid "Apply This Color Scheme?"
+msgstr ""
+
+#: gradience/frontend/main.py:498
 msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
 msgstr ""
 
-#: gradience/frontend/views/presets_manager_window.py:374
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
+#: gradience/frontend/main.py:502
+msgid "_Apply"
 msgstr ""
 
-#: gradience/frontend/views/welcome_window.py:97
-msgid "Thanks for updating Gradience!"
+#: gradience/frontend/main.py:512
+msgid "Restore applied color scheme?"
+msgstr ""
+
+#: gradience/frontend/main.py:513 gradience/frontend/main.py:527
+msgid "Make sure you have the current settings saved as a preset."
+msgstr ""
+
+#: gradience/frontend/main.py:515
+msgid "_Restore"
+msgstr ""
+
+#: gradience/frontend/main.py:526
+msgid "Reset applied color scheme?"
+msgstr ""
+
+#: gradience/frontend/main.py:529
+msgid "_Reset"
+msgstr ""
+
+#: gradience/frontend/main.py:555
+msgid "You have unsaved changes!"
+msgstr ""
+
+#: gradience/frontend/main.py:606
+msgid "Preset saved"
+msgstr ""
+
+#: gradience/frontend/main.py:623
+msgid "Preset set successfully"
+msgstr ""
+
+#: gradience/frontend/main.py:636
+msgid "Unable to restore GTK 4 backup"
+msgstr ""
+
+#: gradience/frontend/main.py:649 gradience/frontend/main.py:657
+msgid "Unable to delete current preset"
 msgstr ""
 
 #: gradience/frontend/settings_schema.py:23
@@ -1019,72 +882,224 @@ msgstr ""
 msgid "Brown"
 msgstr ""
 
-#: gradience/frontend/main.py:217
-msgid "No presets found"
+#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/views/main_window.py:204
+msgid "Light"
 msgstr ""
 
-#: gradience/frontend/main.py:240
-msgid "Favorite Presets"
+#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/views/main_window.py:205
+msgid "Dark"
 msgstr ""
 
-#: gradience/frontend/main.py:401
-msgid "Unsaved Changes"
+#: gradience/frontend/views/about_window.py:116
+msgid "Copyright © 2022-2023 Gradience Team"
 msgstr ""
 
-#: gradience/frontend/main.py:413
-msgid "Save Changes"
+#: gradience/frontend/views/about_window.py:125
+msgid "Plugins by"
 msgstr ""
 
-#: gradience/frontend/main.py:493
-msgid "Apply This Color Scheme?"
+#: gradience/frontend/views/about_window.py:133
+msgid "Presets by"
 msgstr ""
 
-#: gradience/frontend/main.py:495
+#: gradience/frontend/views/about_window.py:155
+msgid "Packages by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:162
+msgid "Fixes by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:172
+msgid "Special thanks to"
+msgstr ""
+
+#: gradience/frontend/views/main_window.py:130
+msgid "Monet Engine"
+msgstr ""
+
+#: gradience/frontend/views/main_window.py:133
 msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
 msgstr ""
 
-#: gradience/frontend/main.py:499
-msgid "_Apply"
+#: gradience/frontend/views/main_window.py:147
+msgid "Select an Image"
 msgstr ""
 
-#: gradience/frontend/main.py:509
-msgid "Restore applied color scheme?"
+#: gradience/frontend/views/main_window.py:150
+msgid "Choose a Image File"
 msgstr ""
 
-#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
-msgid "Make sure you have the current settings saved as a preset."
+#: gradience/frontend/views/main_window.py:159
+msgid "Choose a File"
 msgstr ""
 
-#: gradience/frontend/main.py:512
-msgid "_Restore"
+#: gradience/frontend/views/main_window.py:181
+msgid "Monet Palette"
 msgstr ""
 
-#: gradience/frontend/main.py:523
-msgid "Reset applied color scheme?"
+#: gradience/frontend/views/main_window.py:200
+msgid "Theme"
 msgstr ""
 
-#: gradience/frontend/main.py:526
-msgid "_Reset"
+#: gradience/frontend/views/main_window.py:203
+msgid "Auto"
 msgstr ""
 
-#: gradience/frontend/main.py:552
-msgid "You have unsaved changes!"
+#: gradience/frontend/views/main_window.py:225
+msgid "Failed to generate Monet palette"
 msgstr ""
 
-#: gradience/frontend/main.py:603
-msgid "Preset saved"
+#: gradience/frontend/views/main_window.py:229
+msgid "Palette generated"
 msgstr ""
 
-#: gradience/frontend/main.py:620
-msgid "Preset set successfully"
+#: gradience/frontend/views/main_window.py:233
+msgid "Select a background first"
 msgstr ""
 
-#: gradience/frontend/main.py:633
-msgid "Unable to restore GTK 4 backup"
+#: gradience/frontend/views/main_window.py:257
+msgid "Palette Colors"
 msgstr ""
 
-#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
-msgid "Unable to delete current preset"
+#: gradience/frontend/views/main_window.py:260
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+
+#: gradience/frontend/views/plugins_list.py:89
+msgid "Plugins"
+msgstr ""
+
+#: gradience/frontend/views/plugins_list.py:92
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+
+#: gradience/frontend/views/plugins_list.py:104
+msgid "No Plugins Found."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:352
+msgid "User Presets"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add new repository"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:192
+msgid "Add a repository to install additional presets."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Cancel"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:199
+msgid "Add"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:295
+msgid "Preset already exists"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:307
+msgid "Preset imported"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:310
+msgid "Unsupported file format, must be .json"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "Built-in Presets"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:355
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:381
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+
+#: gradience/frontend/views/welcome_window.py:97
+msgid "Thanks for updating Gradience!"
+msgstr ""
+
+#: gradience/frontend/widgets/explore_preset_row.py:68
+#: gradience/frontend/widgets/explore_preset_row.py:94
+msgid "Preset could not be downloaded"
+msgstr ""
+
+#: gradience/frontend/widgets/explore_preset_row.py:82
+#: gradience/frontend/widgets/explore_preset_row.py:98
+msgid "Preset downloaded"
+msgstr ""
+
+#: gradience/frontend/widgets/option_row.py:52
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr ""
+
+#: gradience/frontend/widgets/option_row.py:57
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr ""
+
+#: gradience/frontend/widgets/option_row.py:110
+msgid "Not a color, see text value"
+msgstr ""
+
+#: gradience/frontend/widgets/plugin_row.py:85
+msgid "Unable to remove"
+msgstr ""
+
+#: gradience/frontend/widgets/plugin_row.py:86
+msgid "This is a system plugin, and cannot be removed."
+msgstr ""
+
+#: gradience/frontend/widgets/plugin_row.py:88
+msgid "Close"
+msgstr ""
+
+#: gradience/frontend/widgets/preset_row.py:87
+#: gradience/frontend/widgets/preset_row.py:104
+msgid "Remove from Favorites"
+msgstr ""
+
+#: gradience/frontend/widgets/preset_row.py:90
+#: gradience/frontend/widgets/preset_row.py:100
+msgid "Add to Favorites"
+msgstr ""
+
+#: gradience/frontend/widgets/preset_row.py:166
+msgid "Preset removed"
+msgstr ""
+
+#: gradience/frontend/widgets/preset_row.py:167
+msgid "Undo"
+msgstr ""
+
+#: gradience/frontend/widgets/preset_row.py:182
+msgid "Pending Deletion"
+msgstr ""
+
+#: gradience/frontend/widgets/preset_row.py:196
+msgid "Unable to delete preset"
+msgstr ""
+
+#: gradience/frontend/widgets/repo_row.py:60
+msgid "Repository removed"
 msgstr ""

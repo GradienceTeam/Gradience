@@ -1,0 +1,53 @@
+# Change the look of Adwaita, with ease
+# Copyright (C) 2022 Gradience Team
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+name: Generate PyPI Dependencies
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: requirements.txt
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run a multi-line script
+        run: |
+          curl -O https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/pip/flatpak-pip-generator
+          chmod +x flatpak-pip-generator
+          python -m pip install requirements-parser
+          ./flatpak-pip-generator --requirements-file=requirements.txt --output pypi-dependencies
+          mv pypi-dependencies.json build-aux/flatpak/pypi-dependencies.json
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          author: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
+          title: "meta: update PyPI dependencies for Flatpak"
+          body: "This automated PR contains an auto-generated `pypi-dependencies.json` file used in Flatpak manifests."
+          labels: flatpak, ci/automated-pr
+          commit-message: "meta: update Flatpak PyPI dependencies"
+          committer: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
+          branch: update-pypi-deps

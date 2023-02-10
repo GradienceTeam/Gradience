@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-14 12:12+0000\n"
-"PO-Revision-Date: 2023-01-09 17:49+0000\n"
+"POT-Creation-Date: 2023-02-10 00:43+0000\n"
+"PO-Revision-Date: 2023-02-05 21:37+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/hr/>\n"
@@ -23,11 +23,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 
-#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5
+#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
@@ -37,7 +36,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "S lakoćom promijenite izgled Adwaita aplikacija"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/views/about_window.py:88
+#: gradience/frontend/views/about_window.py:94
 msgid "Gradience Team"
 msgstr "Gradience tim"
 
@@ -131,6 +130,14 @@ msgstr "Preuzmi i primijeni"
 #: data/ui/explore_preset_row.blp:32
 msgid "Download Only"
 msgstr "Samo preuzmi"
+
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr "Odjavi se"
+
+#: data/ui/log_out_dialog.blp:6
+msgid "For the changes to take full effect, you need to log out."
+msgstr "Kako bi se promjene primijenile, trebate se odjaviti."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -233,11 +240,11 @@ msgstr ""
 "Zaobiđi Flatpak dozvole za sve korisnike kako bi omogućili GTK 3 Flatpak "
 "aplikacijama pristup adw-gtk3 temama. (Zahtijeva korijenski pristup)"
 
-#: data/ui/preferences_window.blp:60
+#: data/ui/preferences_window.blp:61
 msgid "Custom Preset Repositories"
 msgstr "Repozitoriji prilagođenih predložaka"
 
-#: data/ui/preferences_window.blp:63
+#: data/ui/preferences_window.blp:64
 msgid "Custom repository URL address"
 msgstr "URL adresa prilagođenog repozitorija"
 
@@ -329,23 +336,31 @@ msgstr "Nema pronađenih rezultata"
 msgid "Offline"
 msgstr "Nije povezano"
 
-#: data/ui/presets_manager_window.blp:147
-#: gradience/frontend/views/presets_manager_window.py:122
-#: gradience/frontend/views/presets_manager_window.py:384
+#: data/ui/presets_manager_window.blp:148
+#: gradience/frontend/views/presets_manager_window.py:123
+#: gradience/frontend/views/presets_manager_window.py:391
 msgid "Repositories"
 msgstr "Repozitoriji"
 
-#: data/ui/presets_manager_window.blp:166
+#: data/ui/presets_manager_window.blp:168
 msgid "Import a Preset File (*.json)"
 msgstr "Uvezi datoteku predloška (*.json)"
 
-#: data/ui/presets_manager_window.blp:171
+#: data/ui/presets_manager_window.blp:173
 msgid "All files"
 msgstr "Sve datoteke"
 
-#: data/ui/presets_manager_window.blp:176
+#: data/ui/presets_manager_window.blp:178
 msgid "JSON file (*.json)"
 msgstr "JSON datoteka (*.json)"
+
+#: data/ui/save_dialog.blp:5
+msgid "Save preset as…"
+msgstr "Spremi predložak kao…"
+
+#: data/ui/save_dialog.blp:10
+msgid "Preset Name"
+msgstr "Ime predloška"
 
 #: data/ui/share_window.blp:5
 msgid "Share Preset"
@@ -504,7 +519,7 @@ msgstr "Promjena tema zastarjelih aplikacija"
 msgid "System Configuration"
 msgstr "Podešavanje sustava"
 
-#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:140
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:139
 msgid "Apply"
 msgstr "Primijeni"
 
@@ -587,241 +602,82 @@ msgstr "Odbaci"
 msgid "_Save"
 msgstr "_Spremi"
 
-#: gradience/frontend/widgets/explore_preset_row.py:68
-#: gradience/frontend/widgets/explore_preset_row.py:94
-msgid "Preset could not be downloaded"
-msgstr "Predložak se ne može preuzeti"
-
-#: gradience/frontend/widgets/explore_preset_row.py:82
-#: gradience/frontend/widgets/explore_preset_row.py:98
-msgid "Preset downloaded"
-msgstr "Predložak je preuzet"
-
-#: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "Ova mogućnost djelomično je podržana od strane adw-gtk3 tema."
-
-#: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "Ova mogućnost njije podržana od strane adw-gtk3 tema."
-
-#: gradience/frontend/widgets/option_row.py:110
-msgid "Not a color, see text value"
-msgstr "Nije boja, pogledajte tekstnu vrijednost"
-
-#: gradience/frontend/widgets/plugin_row.py:85
-msgid "Unable to remove"
-msgstr "Nemoguće je ukloniti"
-
-#: gradience/frontend/widgets/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed."
-msgstr "Ovo je priključak sustava, ne može se ukloniti."
-
-#: gradience/frontend/widgets/plugin_row.py:88
-msgid "Close"
-msgstr "Zatvori"
-
-#: gradience/frontend/widgets/preset_row.py:87
-#: gradience/frontend/widgets/preset_row.py:104
-msgid "Remove from Favorites"
-msgstr "Ukloni iz omiljenih"
-
-#: gradience/frontend/widgets/preset_row.py:90
-#: gradience/frontend/widgets/preset_row.py:100
-msgid "Add to Favorites"
-msgstr "Dodaj u omiljene"
-
-#: gradience/frontend/widgets/preset_row.py:166
-msgid "Preset removed"
-msgstr "Predložak je uklonjen"
-
-#: gradience/frontend/widgets/preset_row.py:167
-msgid "Undo"
-msgstr "Vrati"
-
-#: gradience/frontend/widgets/preset_row.py:182
-msgid "Pending Deletion"
-msgstr "Čekanje brisanja"
-
-#: gradience/frontend/widgets/preset_row.py:196
-msgid "Unable to delete preset"
-msgstr "Nemoguće brisanje predloška"
-
-#: gradience/frontend/widgets/repo_row.py:60
-msgid "Repository removed"
-msgstr "Repozitorij je uklonjen"
-
-#: gradience/frontend/views/about_window.py:110
-msgid "Copyright © 2022-2023 Gradience Team"
-msgstr "Autorska prava © 2022. – 2023. Gradience Team"
-
-#: gradience/frontend/views/about_window.py:119
-msgid "Plugins by"
-msgstr "Priključci od"
-
-#: gradience/frontend/views/about_window.py:127
-msgid "Presets by"
-msgstr "Predlošci od"
-
-#: gradience/frontend/views/about_window.py:149
-msgid "Packages by"
-msgstr "Paketi od"
-
-#: gradience/frontend/views/about_window.py:156
-msgid "Fixes by"
-msgstr "Ispravci od"
-
-#: gradience/frontend/views/about_window.py:166
-msgid "Special thanks to"
-msgstr "Posebno zahvaljujemo:"
-
-#: gradience/frontend/views/main_window.py:131
-msgid "Monet Engine"
-msgstr "Monet pogon"
-
-#: gradience/frontend/views/main_window.py:134
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr "Monet je pogon koji stvara Material Design 3 paletu iz boje slika."
-
-#: gradience/frontend/views/main_window.py:146
-msgid "Background Image"
-msgstr "Slika pozadine"
-
-#: gradience/frontend/views/main_window.py:157
-msgid "Choose a File"
-msgstr "Odaberi datoteku"
-
-#: gradience/frontend/views/main_window.py:177
-msgid "Monet Palette"
-msgstr "Monet paleta"
-
-#: gradience/frontend/views/main_window.py:184
-msgid "Tone"
-msgstr "Ton"
-
-#: gradience/frontend/views/main_window.py:196
-msgid "Theme"
-msgstr "Tema"
-
-#: gradience/frontend/views/main_window.py:199
-msgid "Auto"
-msgstr "Automatski"
-
-#: gradience/frontend/views/main_window.py:200
-#: gradience/frontend/settings_schema.py:372
-msgid "Light"
-msgstr "Svjetla"
-
-#: gradience/frontend/views/main_window.py:201
-#: gradience/frontend/settings_schema.py:373
-msgid "Dark"
-msgstr "Tamna"
-
-#: gradience/frontend/views/main_window.py:220
-msgid "Failed to generate Monet palette"
-msgstr "Neuspjelo generiranje Monet palete"
-
-#: gradience/frontend/views/main_window.py:224
-msgid "Palette generated"
-msgstr "Paleta je stvorena"
-
-#: gradience/frontend/views/main_window.py:228
-msgid "Select a background first"
-msgstr "Prvo odaberite pozadinu"
-
-#: gradience/frontend/views/main_window.py:253
-msgid "Palette Colors"
-msgstr "Boje palete"
-
-#: gradience/frontend/views/main_window.py:256
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"Navedite boje palete koje koristi neka aplikacija. Zadane boje slijede <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-
-#: gradience/frontend/views/plugins_list.py:89
-msgid "Plugins"
-msgstr "Priključci"
-
-#: gradience/frontend/views/plugins_list.py:92
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
-"Priključci dodaju dodatne značajke aplikaciji Gradience. Priključke stvara "
-"Gradience zajednica i mogu prouzročiti probleme."
-
-#: gradience/frontend/views/plugins_list.py:104
-msgid "No Plugins Found."
-msgstr "Nema pronađenih priključaka."
-
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:345
-msgid "User Presets"
-msgstr "Korisnikovi predlošci"
-
-#: gradience/frontend/views/presets_manager_window.py:190
-msgid "Add new repository"
-msgstr "Dodaj novi repozitorij"
-
-#: gradience/frontend/views/presets_manager_window.py:191
-msgid "Add a repository to install additional presets."
-msgstr "Dodajte repozitorij kako bi instalirali dodatne predloške."
-
-#: gradience/frontend/views/presets_manager_window.py:197
-msgid "Cancel"
-msgstr "Odustani"
-
-#: gradience/frontend/views/presets_manager_window.py:198
-msgid "Add"
-msgstr "Dodaj"
-
-#: gradience/frontend/views/presets_manager_window.py:288
-msgid "Preset already exists"
-msgstr "Predložak već postoji"
-
-#: gradience/frontend/views/presets_manager_window.py:300
-msgid "Preset imported"
-msgstr "Predložak je uvezen"
-
-#: gradience/frontend/views/presets_manager_window.py:303
-msgid "Unsupported file format, must be .json"
-msgstr "Nepodržana vrsta datoteke, mora biti .json"
-
-#: gradience/frontend/views/presets_manager_window.py:329
 #: gradience/frontend/main.py:184
+#: gradience/frontend/views/presets_manager_window.py:336
 msgid "Failed to load list of presets"
 msgstr "Neuspjelo učitavanje popisa predložaka"
 
-#: gradience/frontend/views/presets_manager_window.py:338
-msgid "Built-in Presets"
-msgstr "Ugrađeni predlošci"
+#: gradience/frontend/main.py:217
+msgid "No presets found"
+msgstr "Nema pronađenih predloška"
 
-#: gradience/frontend/views/presets_manager_window.py:348
+#: gradience/frontend/main.py:240
+msgid "Favorite Presets"
+msgstr "Predlošci omiljenih"
+
+#: gradience/frontend/main.py:404
+msgid "Unsaved Changes"
+msgstr "Nespremljene promjene"
+
+#: gradience/frontend/main.py:416
+msgid "Save Changes"
+msgstr "Spremi promjene"
+
+#: gradience/frontend/main.py:496
+msgid "Apply This Color Scheme?"
+msgstr "Primijeni ovu shemu boja?"
+
+#: gradience/frontend/main.py:498
 msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
 msgstr ""
-"Pogledajte <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a> na Githubu za više predložaka."
+"Upozorenje: svaka prilagođena CSS datoteka za te vrste datoteka biti će "
+"nepovratno prebrisana!"
 
-#: gradience/frontend/views/presets_manager_window.py:374
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Nema pronađenih predložaka! Koristite tipku uvoza za uvoz jednog predloška "
-"ili pretragu jednog u Istraži kartici."
+#: gradience/frontend/main.py:502
+msgid "_Apply"
+msgstr "_Primijeni"
 
-#: gradience/frontend/views/welcome_window.py:97
-msgid "Thanks for updating Gradience!"
-msgstr "Hvala na aktualiziranju aplikacije Gradience!"
+#: gradience/frontend/main.py:512
+msgid "Restore applied color scheme?"
+msgstr "Vrati primijenjenu shemu boje?"
+
+#: gradience/frontend/main.py:513 gradience/frontend/main.py:527
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "Osigurajte da imate trenutne postavke spremljene u predložak."
+
+#: gradience/frontend/main.py:515
+msgid "_Restore"
+msgstr "Ob_novi"
+
+#: gradience/frontend/main.py:526
+msgid "Reset applied color scheme?"
+msgstr "Vrati izvornu shemu boje?"
+
+#: gradience/frontend/main.py:529
+msgid "_Reset"
+msgstr "_Vrati izvorno"
+
+#: gradience/frontend/main.py:555
+msgid "You have unsaved changes!"
+msgstr "Imate nespremljene promjene!"
+
+#: gradience/frontend/main.py:606
+msgid "Preset saved"
+msgstr "Predložak je spremljen"
+
+#: gradience/frontend/main.py:623
+msgid "Preset set successfully"
+msgstr "Predložak je uspješno postavljen"
+
+#: gradience/frontend/main.py:636
+msgid "Unable to restore GTK 4 backup"
+msgstr "Nemoguća obnova GTK 4 sigurnosne kopije"
+
+#: gradience/frontend/main.py:649 gradience/frontend/main.py:657
+msgid "Unable to delete current preset"
+msgstr "Nemoguće brisanje aktualnog predloška"
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1106,77 +962,242 @@ msgstr "Ljubičasta"
 msgid "Brown"
 msgstr "Smeđa"
 
-#: gradience/frontend/main.py:217
-msgid "No presets found"
-msgstr "Nema pronađenih predloška"
+#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/views/main_window.py:204
+msgid "Light"
+msgstr "Svjetla"
 
-#: gradience/frontend/main.py:240
-msgid "Favorite Presets"
-msgstr "Predlošci omiljenih"
+#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/views/main_window.py:205
+msgid "Dark"
+msgstr "Tamna"
 
-#: gradience/frontend/main.py:401
-msgid "Unsaved Changes"
-msgstr "Nespremljene promjene"
+#: gradience/frontend/views/about_window.py:116
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr "Autorska prava © 2022. – 2023. Gradience Team"
 
-#: gradience/frontend/main.py:413
-msgid "Save Changes"
-msgstr "Spremi promjene"
+#: gradience/frontend/views/about_window.py:125
+msgid "Plugins by"
+msgstr "Priključci od"
 
-#: gradience/frontend/main.py:493
-msgid "Apply This Color Scheme?"
-msgstr "Primijeni ovu shemu boja?"
+#: gradience/frontend/views/about_window.py:133
+msgid "Presets by"
+msgstr "Predlošci od"
 
-#: gradience/frontend/main.py:495
+#: gradience/frontend/views/about_window.py:155
+msgid "Packages by"
+msgstr "Paketi od"
+
+#: gradience/frontend/views/about_window.py:162
+msgid "Fixes by"
+msgstr "Ispravci od"
+
+#: gradience/frontend/views/about_window.py:172
+msgid "Special thanks to"
+msgstr "Posebno zahvaljujemo:"
+
+#: gradience/frontend/views/main_window.py:130
+msgid "Monet Engine"
+msgstr "Monet pogon"
+
+#: gradience/frontend/views/main_window.py:133
 msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
+msgstr "Monet je pogon koji stvara Material Design 3 paletu iz boje slika."
+
+#: gradience/frontend/views/main_window.py:147
+msgid "Select an Image"
+msgstr "Odaberi sliku"
+
+#: gradience/frontend/views/main_window.py:150
+msgid "Choose a Image File"
+msgstr "Odaberi datoteku slike"
+
+#: gradience/frontend/views/main_window.py:159
+msgid "Choose a File"
+msgstr "Odaberi datoteku"
+
+#: gradience/frontend/views/main_window.py:181
+msgid "Monet Palette"
+msgstr "Monet paleta"
+
+#: gradience/frontend/views/main_window.py:200
+msgid "Theme"
+msgstr "Tema"
+
+#: gradience/frontend/views/main_window.py:203
+msgid "Auto"
+msgstr "Automatski"
+
+#: gradience/frontend/views/main_window.py:225
+msgid "Failed to generate Monet palette"
+msgstr "Neuspjelo generiranje Monet palete"
+
+#: gradience/frontend/views/main_window.py:229
+msgid "Palette generated"
+msgstr "Paleta je stvorena"
+
+#: gradience/frontend/views/main_window.py:233
+msgid "Select a background first"
+msgstr "Prvo odaberite pozadinu"
+
+#: gradience/frontend/views/main_window.py:257
+msgid "Palette Colors"
+msgstr "Boje palete"
+
+#: gradience/frontend/views/main_window.py:260
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
 msgstr ""
-"Upozorenje: svaka prilagođena CSS datoteka za te vrste datoteka biti će "
-"nepovratno prebrisana!"
+"Navedite boje palete koje koristi neka aplikacija. Zadane boje slijede <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
 
-#: gradience/frontend/main.py:499
-msgid "_Apply"
-msgstr "_Primijeni"
+#: gradience/frontend/views/plugins_list.py:89
+msgid "Plugins"
+msgstr "Priključci"
 
-#: gradience/frontend/main.py:509
-msgid "Restore applied color scheme?"
-msgstr "Vrati primijenjenu shemu boje?"
+#: gradience/frontend/views/plugins_list.py:92
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+"Priključci dodaju dodatne značajke aplikaciji Gradience. Priključke stvara "
+"Gradience zajednica i mogu prouzročiti probleme."
 
-#: gradience/frontend/main.py:510 gradience/frontend/main.py:524
-msgid "Make sure you have the current settings saved as a preset."
-msgstr "Osigurajte da imate trenutne postavke spremljene u predložak."
+#: gradience/frontend/views/plugins_list.py:104
+msgid "No Plugins Found."
+msgstr "Nema pronađenih priključaka."
 
-#: gradience/frontend/main.py:512
-msgid "_Restore"
-msgstr "Ob_novi"
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:352
+msgid "User Presets"
+msgstr "Korisnikovi predlošci"
 
-#: gradience/frontend/main.py:523
-msgid "Reset applied color scheme?"
-msgstr "Vrati izvornu shemu boje?"
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add new repository"
+msgstr "Dodaj novi repozitorij"
 
-#: gradience/frontend/main.py:526
-msgid "_Reset"
-msgstr "_Vrati izvorno"
+#: gradience/frontend/views/presets_manager_window.py:192
+msgid "Add a repository to install additional presets."
+msgstr "Dodajte repozitorij kako bi instalirali dodatne predloške."
 
-#: gradience/frontend/main.py:552
-msgid "You have unsaved changes!"
-msgstr "Imate nespremljene promjene!"
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Cancel"
+msgstr "Odustani"
 
-#: gradience/frontend/main.py:603
-msgid "Preset saved"
-msgstr "Predložak je spremljen"
+#: gradience/frontend/views/presets_manager_window.py:199
+msgid "Add"
+msgstr "Dodaj"
 
-#: gradience/frontend/main.py:620
-msgid "Preset set successfully"
-msgstr "Predložak je uspješno postavljen"
+#: gradience/frontend/views/presets_manager_window.py:295
+msgid "Preset already exists"
+msgstr "Predložak već postoji"
 
-#: gradience/frontend/main.py:633
-msgid "Unable to restore GTK 4 backup"
-msgstr "Nemoguća obnova GTK 4 sigurnosne kopije"
+#: gradience/frontend/views/presets_manager_window.py:307
+msgid "Preset imported"
+msgstr "Predložak je uvezen"
 
-#: gradience/frontend/main.py:646 gradience/frontend/main.py:654
-msgid "Unable to delete current preset"
-msgstr "Nemoguće brisanje aktualnog predloška"
+#: gradience/frontend/views/presets_manager_window.py:310
+msgid "Unsupported file format, must be .json"
+msgstr "Nepodržana vrsta datoteke, mora biti .json"
+
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "Built-in Presets"
+msgstr "Ugrađeni predlošci"
+
+#: gradience/frontend/views/presets_manager_window.py:355
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Pogledajte <a href=\"https://github.com/GradienceTeam/Community"
+"\">GradienceTeam/Community</a> na Githubu za više predložaka."
+
+#: gradience/frontend/views/presets_manager_window.py:381
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Nema pronađenih predložaka! Koristite tipku uvoza za uvoz jednog predloška "
+"ili pretragu jednog u Istraži kartici."
+
+#: gradience/frontend/views/welcome_window.py:97
+msgid "Thanks for updating Gradience!"
+msgstr "Hvala na aktualiziranju aplikacije Gradience!"
+
+#: gradience/frontend/widgets/explore_preset_row.py:68
+#: gradience/frontend/widgets/explore_preset_row.py:94
+msgid "Preset could not be downloaded"
+msgstr "Predložak se ne može preuzeti"
+
+#: gradience/frontend/widgets/explore_preset_row.py:82
+#: gradience/frontend/widgets/explore_preset_row.py:98
+msgid "Preset downloaded"
+msgstr "Predložak je preuzet"
+
+#: gradience/frontend/widgets/option_row.py:52
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "Ova mogućnost djelomično je podržana od strane adw-gtk3 tema."
+
+#: gradience/frontend/widgets/option_row.py:57
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "Ova mogućnost njije podržana od strane adw-gtk3 tema."
+
+#: gradience/frontend/widgets/option_row.py:110
+msgid "Not a color, see text value"
+msgstr "Nije boja, pogledajte tekstnu vrijednost"
+
+#: gradience/frontend/widgets/plugin_row.py:85
+msgid "Unable to remove"
+msgstr "Nemoguće je ukloniti"
+
+#: gradience/frontend/widgets/plugin_row.py:86
+msgid "This is a system plugin, and cannot be removed."
+msgstr "Ovo je priključak sustava, ne može se ukloniti."
+
+#: gradience/frontend/widgets/plugin_row.py:88
+msgid "Close"
+msgstr "Zatvori"
+
+#: gradience/frontend/widgets/preset_row.py:87
+#: gradience/frontend/widgets/preset_row.py:104
+msgid "Remove from Favorites"
+msgstr "Ukloni iz omiljenih"
+
+#: gradience/frontend/widgets/preset_row.py:90
+#: gradience/frontend/widgets/preset_row.py:100
+msgid "Add to Favorites"
+msgstr "Dodaj u omiljene"
+
+#: gradience/frontend/widgets/preset_row.py:166
+msgid "Preset removed"
+msgstr "Predložak je uklonjen"
+
+#: gradience/frontend/widgets/preset_row.py:167
+msgid "Undo"
+msgstr "Vrati"
+
+#: gradience/frontend/widgets/preset_row.py:182
+msgid "Pending Deletion"
+msgstr "Čekanje brisanja"
+
+#: gradience/frontend/widgets/preset_row.py:196
+msgid "Unable to delete preset"
+msgstr "Nemoguće brisanje predloška"
+
+#: gradience/frontend/widgets/repo_row.py:60
+msgid "Repository removed"
+msgstr "Repozitorij je uklonjen"
+
+#~ msgid "Background Image"
+#~ msgstr "Slika pozadine"
+
+#~ msgid "Tone"
+#~ msgstr "Ton"
 
 #~ msgid "Preview Theme in…"
 #~ msgstr "Pregled teme u …"
@@ -1196,17 +1217,8 @@ msgstr "Nemoguće brisanje aktualnog predloška"
 #~ msgid "Unexpected file error occurred"
 #~ msgstr "Pojavila se neočekivana greška datoteke"
 
-#~ msgid "Save preset as…"
-#~ msgstr "Spremi predložak kao…"
-
 #~ msgid "Save"
 #~ msgstr "Spremi"
-
-#~ msgid "Log out"
-#~ msgstr "Odjavi se"
-
-#~ msgid "For the changes to take full effect, you need to log out."
-#~ msgstr "Kako bi se promjene primijenile, trebate se odjaviti."
 
 #~ msgid ""
 #~ "\n"
@@ -1598,9 +1610,6 @@ msgstr "Nemoguće brisanje aktualnog predloška"
 #, fuzzy
 #~ msgid "No plugins found"
 #~ msgstr "Nema pronađenih priključaka."
-
-#~ msgid "Preset renamed"
-#~ msgstr "Predložak je preimenovan"
 
 #~ msgid "Builtin Presets"
 #~ msgstr "Ugrađeni predlošci"
