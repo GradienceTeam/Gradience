@@ -17,7 +17,6 @@ Welcome to Gradience's documentation!
    installation
    setup
    cli
-   api
 
 
 Indices and tables
