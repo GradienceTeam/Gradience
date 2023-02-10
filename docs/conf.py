@@ -47,7 +47,7 @@ html_logo = 'https://github.com/GradienceTeam/Design/raw/main/Pixels/Gradience M
 #}
 #html_title = "Gradience"
 html_theme_options = {
-    "announcement": "This is documentation is currently work in progress. Send your feedback or contribute!",
+    "announcement": "This documentation is currently work in progress. Send your feedback or contribute!",
     "source_repository": "https://github.com/GradienceTeam/Gradience",
     "source_branch": "main",
     "source_directory": "docs/",

@@ -16,6 +16,8 @@ Welcome to Gradience's documentation!
 
    installation
    setup
+   usage
+   troubleshooting
    cli
 
 
