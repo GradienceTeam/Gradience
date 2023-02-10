@@ -7,7 +7,7 @@
 .. image:: https://github.com/GradienceTeam/Design/raw/main/Screenshots/welcome.png
     :alt: Welcome to gradience !
 
-Gradience is splitted in 3 tabs plus some top level windows.
+Gradience is split in 3 tabs, plus some top level windows.
 
 Colors
 ------
@@ -74,7 +74,7 @@ and customize their settings.
 .. image:: https://github.com/GradienceTeam/Design/raw/main/Screenshots/plugin_row.png
     :alt: Plugin row
 
-Apply ...
+Apply
 ---------
 
 When your work is done, you can press the Apply button which will ask you which apps you want
@@ -87,7 +87,7 @@ to theme and finally confirm and enjoy your customizations.
 
     If the theme is not applied, try to close apps or to log out/log in
 
-... Save ...
+Save
 ------------
 
 Usually, you want to save your work. This can be done by pressing the disk icon in the topbar.
@@ -96,7 +96,7 @@ After, you will be able to name your preset and to save it!
 .. image:: https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/save.png
         :alt: Save dialog
 
-... and Share
+Share
 -------------
 
 Gradience provide a community repo for sharing presets. Go to the Github_ repo and follow
