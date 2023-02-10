@@ -4,7 +4,7 @@
 🎨 Usage
 ========
 
-Gradience is splitted in 3 tabs plus some top level windows.
+Gradience is split in 3 tabs plus some top level windows.
 
 Colors
 ------
@@ -53,7 +53,7 @@ you can use a custom CSS
 
 CUSTOM CSS HERE
 
-Or you can use plugins! Plugins are developped by the community for customizing more apps
+Or you can use plugins! Plugins are developed by the community for customizing more apps
 like Firefox. They usually require a special setup. You can enable or disable each plugin
 and customize their settings.
 
