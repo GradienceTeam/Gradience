@@ -519,7 +519,6 @@ class GradienceApplication(Adw.Application):
             Adw.ResponseAppearance.DESTRUCTIVE
         )
 
-        dialog.gtk3_app_type.set_sensitive(False)
         dialog.connect("response", self.restore_color_scheme)
         dialog.present()
 
@@ -633,10 +632,18 @@ class GradienceApplication(Adw.Application):
         if response == "restore":
             if widget.get_app_types()["gtk4"]:
                 try:
-                    PresetUtils().restore_gtk4_preset()
+                    PresetUtils().restore_preset("gtk4")
                 except OSError:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to restore GTK 4 backup"))
+                    )
+
+            if widget.get_app_types()["gtk3"]:
+                try:
+                    PresetUtils().restore_preset("gtk3")
+                except OSError:
+                    self.win.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Unable to restore GTK 3 backup"))
                     )
 
             dialog = GradienceLogOutDialog(self.win)
