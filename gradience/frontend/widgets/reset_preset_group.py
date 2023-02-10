@@ -16,7 +16,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, Adw
+from gi.repository import GLib, Gtk, Adw
+
+from gradience.backend.theming.preset import PresetUtils
 
 from gradience.backend.constants import rootdir
 
@@ -43,3 +45,29 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
 
     def setup(self):
         pass
+
+    @Gtk.Template.Callback()
+    def on_libadw_restore_button_clicked(self, *_args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_libadw_reset_button_clicked(self, *_args):
+        try:
+            PresetUtils().reset_preset("gtk4")
+        except GLib.GError:
+            self.parent.add_toast(
+                Adw.Toast(title=_("Unable to delete current preset"))
+            )
+
+    @Gtk.Template.Callback()
+    def on_gtk3_restore_button_clicked(self, *_args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_gtk3_reset_button_clicked(self, *_args):
+        try:
+            PresetUtils().reset_preset("gtk3")
+        except GLib.GError:
+            self.parent.add_toast(
+                Adw.Toast(title=_("Unable to delete current preset"))
+            )

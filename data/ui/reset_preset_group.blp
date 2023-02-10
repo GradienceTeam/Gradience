@@ -12,7 +12,7 @@ template GradienceResetPresetGroup : Adw.PreferencesGroup {
       valign: center;
       icon-name: "edit-undo-symbolic";
       tooltip-text: _("Restore Previous Preset");
-      //clicked => on_restore_button_clicked();
+      clicked => on_libadw_restore_button_clicked();
       styles ["flat"]
     }
 
@@ -20,19 +20,19 @@ template GradienceResetPresetGroup : Adw.PreferencesGroup {
       valign: center;
       label: _("Reset");
       tooltip-text: _("Reset Applied Preset");
-      //clicked => on_reset_button_clicked();
+      clicked => on_libadw_reset_button_clicked();
       styles ["destructive-action"]
     }
   }
 
   Adw.ActionRow {
-    title: _("GTK 3 Applications (adw-gtk3 required)");
+    title: _("GTK 3 Applications");
 
     Button restore_gtk3_button {
       valign: center;
       icon-name: "edit-undo-symbolic";
       tooltip-text: _("Restore Previous Preset");
-      //clicked => on_restore_button_clicked();
+      clicked => on_gtk3_restore_button_clicked();
       styles ["flat"]
     }
 
@@ -40,7 +40,7 @@ template GradienceResetPresetGroup : Adw.PreferencesGroup {
       valign: center;
       label: _("Reset");
       tooltip-text: _("Reset Applied Preset");
-      //clicked => on_reset_button_clicked();
+      clicked => on_gtk3_reset_button_clicked();
       styles ["destructive-action"]
     }
   }
