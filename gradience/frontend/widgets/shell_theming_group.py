@@ -45,20 +45,11 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         self.settings = parent.settings
         self.app = self.parent.get_application()
 
-        #self.setup_signals()
+        self.setup_signals()
         self.setup()
 
     def setup_signals(self):
-        self.settings.bind(
-            "shell-theming-enabled",
-            self.shell_theming_expander,
-            "enable-expansion",
-            Gio.SettingsBindFlags.DEFAULT
-        )
-
-        self.settings.connect("changed::shell-theming-enabled",
-            self.on_toggle_state_change
-        )
+        pass
 
     def setup(self):
         self.setup_variant_row()
@@ -80,10 +71,6 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         version_store.append(_("42"))
 
         self.shell_version_row.set_model(version_store)'''
-
-    def on_toggle_state_change(self, *_args):
-        shell_theming_enabled = self.settings.get_boolean("shell-theming-enabled")
-        logging.debug(f"shell-theming-enabled key state: {shell_theming_enabled}")
 
     @Gtk.Template.Callback()
     def on_custom_colors_button_clicked(self, *_args):
