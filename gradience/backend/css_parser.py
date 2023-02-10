@@ -18,19 +18,8 @@
 
 import re
 
+from gradience.backend.globals import adw_palette_prefixes
 
-# Adwaita named palette colors dict
-adw_colors = [
-    "blue_",
-    "green_",
-    "yellow_",
-    "orange_",
-    "red_",
-    "purple_",
-    "brown_",
-    "light_",
-    "dark_",
-]
 
 # Regular expressions
 define_color = re.compile(r"(@define-color .*[^\s])")
@@ -41,7 +30,7 @@ def parse_css(path):
     variables = {}
     palette = {}
 
-    for color in adw_colors:
+    for color in adw_palette_prefixes:
         palette[color] = {}
 
     with open(path, "r", encoding="utf-8") as sheet:
@@ -51,7 +40,7 @@ def parse_css(path):
             if cdefine_match != None: # If @define-color variable declarations were found
                 palette_part = cdefine_match.__getitem__(1) # Get the second item of the re.Match object
                 name, color = palette_part.split(" ", 1)[1].split(" ", 1)
-                if name.startswith(tuple(adw_colors)): # Palette colors
+                if name.startswith(tuple(adw_palette_prefixes)): # Palette colors
                     palette[name[:-1]][name[-1:]] = color[:-1]
                 else: # Other color variables
                     variables[name] = color[:-1]

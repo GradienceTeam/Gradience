@@ -47,6 +47,39 @@ preset_repos = {
     "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json"
 }
 
+# Adwaita named UI colors prefixes list
+# NOTE: Remember to update this list if new libadwaita version brings up new variables
+adw_variables_prefixes = [
+    "accent_",
+    "destructive_",
+    "success_",
+    "warning_",
+    "error_",
+    "window_",
+    "view_",
+    "headerbar_",
+    "card_",
+    "dialog_",
+    "popover_",
+    "shade_",
+    "scrollbar_",
+    "borders"
+]
+
+# Adwaita named palette colors prefixes list
+# NOTE: Remember to update this list if new libadwaita version brings up new variables
+adw_palette_prefixes = [
+    "blue_",
+    "green_",
+    "yellow_",
+    "orange_",
+    "red_",
+    "purple_",
+    "brown_",
+    "light_",
+    "dark_"
+]
+
 def get_gtk_theme_dir(app_type: str):
     if app_type == "gtk4":
         theme_dir = os.path.join(user_config_dir, "gtk-4.0")
