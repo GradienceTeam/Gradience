@@ -7,13 +7,22 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 
+# These folders are copied to the documentation's HTML output
+html_static_path = ['_static']
+
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = [
+    'css/custom.css',
+]
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Gradience'
 copyright = '2023, Gradience Team'
 author = 'Gradience Team'
-release = '0.3.3'
+release = '0.4.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -39,7 +48,7 @@ intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 # See https://pradyunsg.me/furo/ for the theme's documentation
 html_theme = 'furo'
 html_static_path = ['_static']
-html_logo = 'https://github.com/GradienceTeam/Design/raw/main/Icons/apps/logo.png'
+html_logo = 'https://github.com/GradienceTeam/Design/raw/main/Pixels/Gradience Mini 4x (No Shadow).gif'
 
 #html_additional_pages = {
 #    "index": "index.html"
