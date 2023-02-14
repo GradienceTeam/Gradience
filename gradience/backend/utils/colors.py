@@ -18,6 +18,12 @@
 
 import material_color_utilities_python as monet
 
+from gradience.backend.globals import adw_variables_prefixes, adw_palette_prefixes
+
+from gradience.backend.logger import Logger
+
+logging = Logger(logger_name="ColorUtils")
+
 
 def rgb_to_hash(rgb) -> [str, float]:
     """
@@ -71,3 +77,42 @@ def argb_to_color_code(argb, alpha=None) -> str:
         return monet.hexFromArgb(argb)
 
     return rgba_base.format(red, green, blue, alpha)
+
+def color_vars_to_color_code(variables: dict, palette: dict):
+    """
+    This function converts GTK color variables to color code
+    (hexadecimal code if no transparency channel, RGBA format if otherwise).
+
+    You can bypass passing a `palette` parameter if you put an None value to it.
+    This isn't recommended however, because in most cases you'll be unable to determine
+    if variables you pass don't contain any palette color variables.
+    """
+    if palette == None:
+        logging.warning("Palette parameter in `color_vars_to_color_code()` function not set. Incoming bugs ahead!")
+
+    def __has_palette_prefix(color):
+        return any(prefix in color for prefix in adw_palette_prefixes)
+
+    def __has_variable_prefix(color):
+        return any(prefix in color for prefix in adw_variables_prefixes)
+
+    def __update_vars(var_type, variable, color_value):
+        if var_type == "palette":
+            variables[variable] = palette[color_value[:-1]][color_value[-1:]]
+        elif var_type == "variable":
+            variables[variable] = variables[color_value]
+
+        if __has_variable_prefix(variables[variable]):
+            __update_variable_vars(variable, variables[variable])
+
+        if __has_palette_prefix(variables[variable]):
+            __update_palette_vars(variable, variables[variable])
+
+    for variable, color in variables.items():
+        color_value = color[1:] # Remove '@' from the beginning of the color variable
+
+        if __has_palette_prefix(color_value) and palette != None:
+            __update_vars("palette", variable, color_value)
+
+        if __has_variable_prefix(color_value):
+            __update_vars("variable", variable, color_value)
