@@ -17,14 +17,16 @@ release = '0.4.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
+sys.path.append(os.path.abspath("./_ext"))
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx_tabs.tabs',
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
     "sphinxext.opengraph",
     "sphinx_copybutton",
     "myst_parser",
+    'gobject_docs'
 ]
 
 templates_path = ['_templates']
@@ -36,24 +38,49 @@ intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+gobject_docs_base_url = {
+    "glib": "https://docs.gtk.org/glib/",
+    "gobject": "https://docs.gtk.org/gobject/",
+    "gio": "https://docs.gtk.org/gio/",
+    "pango": "https://docs.gtk.org/Pango/",
+    "pixbuff": "https://docs.gtk.org/gdk-pixbuf/",
+    # GTK
+    "gtk3": "https://docs.gtk.org/gtk3/",
+    "gtk4": "https://docs.gtk.org/gtk4/",
+    # GSK
+    "gsk4": "https://docs.gtk.org/gsk4/",
+    # GDK
+    "gdk3": "https://docs.gtk.org/gdk3/",
+    "gdk3-x11": "https://docs.gtk.org/gdk3-x11/",
+    "gdk4": "https://docs.gtk.org/gdk4/",
+    "gdk4-wayland": "https://docs.gtk.org/gdk4-wayland/",
+    "gdk4-x11": "https://docs.gtk.org/gdk4-x11/",
+    # libadwaita
+    "adw": "https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/"
+}
+
+
 # See https://pradyunsg.me/furo/ for the theme's documentation
 html_theme = 'furo'
 html_static_path = ['_static']
 html_css_files = ['css/style.css']
 html_logo = 'https://github.com/GradienceTeam/Design/raw/main/Pixels/Gradience Mini 4x (No Shadow).gif'
+html_show_sphinx = 0
 
-#html_additional_pages = {
-#    "index": "index.html"
-#}
-#html_title = "Gradience"
+html_additional_pages = {
+
+}
+html_title = "Gradience"
+
 html_theme_options = {
-    "announcement": "This documentation is currently work in progress. Send your feedback or contribute!",
+    #"announcement": "This documentation is currently work in progress. Send your feedback or contribute!",
     "source_repository": "https://github.com/GradienceTeam/Gradience",
     "source_branch": "main",
     "source_directory": "docs/",
     "light_css_variables": {
         "font-stack": "Cantarell var, sans-serif",
-        "font-stack--monospace": "Source Code Pro, monospace",
+        "color-brand-primary": "#4a86cf",
+        "color-brand-content": "#4a86cf",
     },
     "footer_icons": [
         {

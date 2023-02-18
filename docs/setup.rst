@@ -8,7 +8,7 @@
 
     You can go to `Preferences` and apply overrides for Flatpak
 
-🪛️ Manual setup
+Manual setup
 ----------------
 
 Libadwaita applications
@@ -40,7 +40,7 @@ GTK 3 applications
 .. _this guide: https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md
 
 
-🔄 Revert Theming
+Revert Theming
 ------------------
 
 .. note::
@@ -49,7 +49,7 @@ GTK 3 applications
     .. image:: https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png
         :alt: Image of the hamburger menu
 
-🪛️ Manual revert
+Manual revert
 ~~~~~~~~~~~~~~~~~
 
 Remove GTK 3 and GTK 4 configs
