@@ -35,5 +35,5 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         branch: gh-pages
-        directory: {{ matrix.lang }}
+        directory: ${{  matrix.lang }}
         github_token: ${{ secrets.ACCESS_TOKEN }}
