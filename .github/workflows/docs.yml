@@ -11,7 +11,7 @@ jobs:
       fail-fast: false
     steps:
     - uses: actions/checkout@v3
-    - uses: totaldebug/action-sphinx@v2
+    - uses: totaldebug/sphinx-publish-action@master
       with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_branch: 'gh-pages'
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: totaldebug/action-sphinx@v2
+    - uses: totaldebug/sphinx-publish-action@master
       with:
           token: ${{ secrets.ACCESS_TOKEN }}
           target_branch: 'gh-pages'
