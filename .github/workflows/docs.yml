@@ -20,7 +20,7 @@ jobs:
       with:
         name: html-docs
         path: docs/build/html/
-        - name: Commit documentation changes
+    - name: Commit documentation changes
       run: |
         git clone https://github.com/your_git/repository.git --branch gh-pages --single-branch gh-pages
         cp -r docs/build/html/* {{ matrix.lang }}/
