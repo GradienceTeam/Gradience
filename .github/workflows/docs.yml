@@ -11,57 +11,16 @@ jobs:
       fail-fast: false
     steps:
     - uses: actions/checkout@v3
-    - name: Build HTML
-      uses: ammaraskar/sphinx-action@master
-      with:
-        build-command: "sphinx-build -b html -D language='{{ matrix.lang }}'"
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: html-docs
-        path: docs/build/html/
-    - name: Commit documentation changes
-      run: |
-        git clone https://github.com/your_git/repository.git --branch gh-pages --single-branch gh-pages
-        cp -r docs/build/html/* {{ matrix.lang }}/
-        cd gh-pages
-        git config --local user.email "AdwCustomizerTeam@proton.me"
-        git config --local user.name "Gradience Bot"
-        git add .
-        git commit -m "Update documentation" -a || true
-        # The above command will fail if no changes were present, so we ignore
-        # the return code.
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: gh-pages
-        directory: ${{  matrix.lang }}
-        github_token: ${{ secrets.ACCESS_TOKEN }}
+    - uses: totaldebug/action-sphinx@v2
+        with:
+            token: ${{ secrets.ACCESS_TOKEN }}
+            target_branch: 'gh-pages'
+            target_path: '{{ matrix.lang }}'
   build-en:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build HTML
-      uses: ammaraskar/sphinx-action@master
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: html-docs
-        path: docs/build/html/
-    - name: Commit documentation changes
-      run: |
-        git clone https://github.com/your_git/repository.git --branch gh-pages --single-branch gh-pages
-        cp -r docs/build/html/* en/
-        cd gh-pages
-        git config --local user.email "AdwCustomizerTeam@proton.me"
-        git config --local user.name "Gradience Bot"
-        git add .
-        git commit -m "Update documentation" -a || true
-        # The above command will fail if no changes were present, so we ignore
-        # the return code.
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: gh-pages
-        directory: en
-        github_token: ${{ secrets.ACCESS_TOKEN }}
+    - uses: totaldebug/action-sphinx@v2
+        with:
+            token: ${{ secrets.ACCESS_TOKEN }}
+            target_branch: 'gh-pages'
