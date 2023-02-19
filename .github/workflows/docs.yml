@@ -12,15 +12,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: totaldebug/action-sphinx@v2
-        with:
-            token: ${{ secrets.ACCESS_TOKEN }}
-            target_branch: 'gh-pages'
-            target_path: '{{ matrix.lang }}'
+      with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_branch: 'gh-pages'
+          target_path: '{{ matrix.lang }}'
   build-en:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: totaldebug/action-sphinx@v2
-        with:
-            token: ${{ secrets.ACCESS_TOKEN }}
-            target_branch: 'gh-pages'
+      with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          target_branch: 'gh-pages'
