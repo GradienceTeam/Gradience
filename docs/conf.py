@@ -137,3 +137,6 @@ html_theme_options = {
 }
 
 # See https://github.com/wpilibsuite/sphinxext-opengraph for opengraph config
+
+locale_dirs = ['locale/']   # path is example but recommended.
+gettext_compact = False     # optional.
