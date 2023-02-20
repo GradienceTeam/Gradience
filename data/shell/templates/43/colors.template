@@ -11,7 +11,7 @@ $base_color: $_dark_base_color; // UPDT: Modified from original
 $bg_color: if($variant == 'light', darken($base_color, 5%), lighten($base_color, 5%)); // UPDT: Modified from original
 $fg_color: if($variant == 'light', transparentize(black, .2), {{window_fg_color}}); // UPDT: Modified from original
 
-$accent_fg_color = {{accent_fg_color}};
+$accent_fg_color: {{accent_fg_color}};
 $selected_fg_color: if($variant == 'light', $accent_fg_color, {{window_fg_color}}); // UPDT: Modified from original
 $selected_bg_color: {{accent_bg_color}}; // UPDT: Modified from original
 $selected_borders_color: if($variant == 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%)); // NOTE: Unused in GNOME Shell
@@ -22,10 +22,10 @@ $borders_edge: if($variant == 'light', rgba(255,255,255,0.8), lighten($bg_color,
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%)); // NOTE: Unused in GNOME Shell
 
-$warning_color: if($variant == 'light', $yellow_5, {{warning_color}}); // UPDT: Modified from original
-$error_color: if($variant == 'light', $red_3, {{error_color}}); // UPDT: Modified from original
-$success_color: if($variant == 'light', $green_4, {{success_color}}); // NOTE: Unused in GNOME Shell // UPDT: Modified from original
-$destructive_color: {{destructive_color}}; // UPDT: Modified from original
+$warning_color: {{warning_bg_color}}; // UPDT: Modified from original
+$error_color: {{error_bg_color}}; // UPDT: Modified from original
+$success_color: {{success_bg_color}}; // NOTE: Unused in GNOME Shell // UPDT: Modified from original
+$destructive_color: {{destructive_bg_color}}; // UPDT: Modified from original
 
 // NOTE: Used also in overview for folder colors, in search results, partially in text and for indicators below app icons
 $osd_fg_color: {{window_fg_color}}; // UPDT: Modified from original
