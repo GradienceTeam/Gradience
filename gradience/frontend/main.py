@@ -440,7 +440,16 @@ class GradienceApplication(Adw.Application):
             )
 
         css_provider.connect("parsing-error", on_error)
-        css_provider.load_from_data(gtk_css.encode())
+
+        # In GTK 4.8, bytes are expected, in GTK 4.10, you can provider a string, with a length.
+        # This patch still allows bytes for backwards compatibility, and add support for
+        # strings in GTK 4.8 and before.
+        # https://gitlab.gnome.org/GNOME/pygobject/-/merge_requests/231
+        # Credits to https://gitlab.gnome.org/amolenaar for the patch
+        if (Gtk.get_major_version(), Gtk.get_minor_version()) >= (4, 9):
+            css_provider.load_from_data(gtk_css, -1)
+        else:
+            css_provider.load_from_data(gtk_css.encode())
 
         self.props.active_window.update_errors(
             self.global_errors + parsing_errors)
