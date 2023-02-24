@@ -46,6 +46,11 @@ shell_schema = {
             "name": "system_bg_color",
             "title": _("System Background Color"),
             "var": "window_bg_color"
+        },
+        {
+            "name": "panel_bg_color",
+            "title": _("Panel Background Color"),
+            "value": "#000"
         }
     ]
 }

@@ -68,3 +68,7 @@ $hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color,
 // derived active colors
 $active_bg_color: if($variant=='light', darken($bg_color, 5%), lighten($bg_color, 12%));
 $active_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 12%));
+
+// panel
+$panel_bg_color: #000;
+$panel_fg_color: if($variant == 'light', lighten($bg_color, 10%), darken($fg_color, 5%));
