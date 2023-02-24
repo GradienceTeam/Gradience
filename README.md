@@ -244,16 +244,6 @@ You can see the meaning of Gradience on [Wiktionary](https://en.wiktionary.org/w
 
 The icon represents: _A Paint Roller repainting an Adwaita window, keeping it's functionality._
 
-##  🖌️ About the "Pretty Purple"
-
-The Pretty Purple theme comes from the very beginning, directly from the original author of Gradience, [Artyom Fomin](https://github.com/ArtyIF).
-
-It were called "Purple Guy", presumably as a reference to the FNaF. later it were renamed to Pretty Purple.
-
-Pretty Purple preset were originally shared in the https://github.com/GradienceTeam/Gradience/discussions/23.
-
-Pretty Purple is built-in in the Gradience and used in all Gradience artworks.
-
 
 ## 🌱️ Gradience, [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers
 

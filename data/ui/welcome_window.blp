@@ -34,7 +34,7 @@ template GradienceWelcomeWindow: Adw.Window {
                     [overlay]
                     Gtk.Button btn_back {
                         styles ["circular"]
-                        margin-start: 12;
+                        margin-start: 10;
                         icon-name: "go-previous-symbolic";
                         halign: start;
                         valign: center;
@@ -48,6 +48,8 @@ template GradienceWelcomeWindow: Adw.Window {
                         allow-scroll-wheel: true;
                         allow-mouse-drag: true;
                         allow-long-swipes: false;
+                        margin-start: 10;
+                        margin-end: 10;
 
                         Gtk.Box {
                             orientation: vertical;
@@ -183,7 +185,7 @@ template GradienceWelcomeWindow: Adw.Window {
                     [overlay]
                     Gtk.Button btn_next {
                         styles ["circular", "suggested-action"]
-                        margin-end: 12;
+                        margin-end: 10;
                         icon-name: "go-next-symbolic";
                         halign: end;
                         valign: center;

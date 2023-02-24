@@ -18,4 +18,4 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-python builddir/gradience/frontend/local-gradience-cli "$@"
+python builddir/gradience/frontend/gradience-cli "$@"
