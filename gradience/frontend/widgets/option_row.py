@@ -35,7 +35,7 @@ class GradienceOptionRow(Adw.ActionRow):
     explanation_button = Gtk.Template.Child("explanation-button")
     explanation_label = Gtk.Template.Child("explanation-label")
 
-    def __init__(self, name, title, explanation=None, adw_gtk3_support=None, **kwargs):
+    def __init__(self, name, title, explanation=None, adw_gtk3_support=None, update_var=None, **kwargs):
         super().__init__(**kwargs)
 
         self.app = Gtk.Application.get_default()
@@ -60,6 +60,8 @@ class GradienceOptionRow(Adw.ActionRow):
         self.explanation_label.set_label(explanation or "")
         if not explanation:
             self.explanation_button.set_visible(False)
+
+        self.update_var = update_var
 
     def connect_signals(self, update_vars):
         self.color_value.connect("color-set", self.on_color_value_changed, update_vars)
@@ -114,6 +116,9 @@ class GradienceOptionRow(Adw.ActionRow):
 
         if update_vars == True:
             if is_app_ready and kwargs.get("update_from") == "text_value" and new_value != "":
-                self.app.variables[self.get_name()] = new_value
+                if self.update_var:
+                    self.update_var[self.get_name()] = new_value
+                else:
+                    self.app.variables[self.get_name()] = new_value
                 self.app.mark_as_dirty()
                 self.app.reload_variables()

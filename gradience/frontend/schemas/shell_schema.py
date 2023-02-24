@@ -41,6 +41,11 @@ shell_schema = {
         {
             "name": "accent_fg_color",
             "title": _("OSD Foreground Color")
+        },
+        {
+            "name": "system_bg_color",
+            "title": _("System Background Color"),
+            "var": "window_bg_color"
         }
     ]
 }

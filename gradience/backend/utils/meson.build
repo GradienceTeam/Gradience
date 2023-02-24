@@ -5,6 +5,7 @@ gradience_sources = [
     'colors.py',
     'common.py',
     'shell.py',
-    'theming.py'
+    'theming.py',
+    'gsettings.py'
 ]
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: utilsdir)

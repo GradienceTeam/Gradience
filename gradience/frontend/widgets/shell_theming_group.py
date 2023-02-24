@@ -18,15 +18,15 @@
 
 from enum import Enum
 
-from gi.repository import Gio, Gtk, Adw
+from gi.repository import Gio, Gtk, Adw, GLib
 
 from gradience.backend.theming.shell import ShellTheme
 from gradience.backend.constants import rootdir
 
 from gradience.frontend.views.shell_prefs_window import GradienceShellPrefsWindow
-
+from gradience.frontend.dialogs.unsupported_shell_version_dialog import GradienceUnsupportedShellVersionDialog
 from gradience.backend.logger import Logger
-
+from gradience.backend.exceptions import UnsupportedShellVersion
 logging = Logger()
 
 
@@ -94,11 +94,22 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         variant_str = __get_variant_string()
 
         try:
-            ShellTheme().apply_theme(self.app.preset, variant_str)
+            ShellTheme().apply_theme(self.app, variant_str)
+        except UnsupportedShellVersion:
+            logging.error("Unsupported shell version.")
+            GradienceUnsupportedShellVersionDialog(self.parent).present()
         except (ValueError, OSError, GLib.GError) as e:
-            logging.error("An error occurred while generating a Shell theme.", exc=e)
+            logging.error(
+                "An error occurred while generating a Shell theme.", exc=e)
+            self.parent.toast_overlay.add_toast(
+                Adw.Toast(
+                    title=_("An error occurred while generating a Shell theme."))
+            )
         else:
             logging.debug("It works! \o/")
+            self.parent.toast_overlay.add_toast(
+                Adw.Toast(title=_("Shell theme applied successfully."))
+            )
 
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):
