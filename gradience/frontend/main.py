@@ -48,6 +48,7 @@ from gradience.frontend.widgets.custom_css_group import GradienceCustomCSSGroup
 
 from gradience.frontend.utils.actions import ActionHelpers
 from gradience.frontend.schemas.preset_schema import preset_schema
+from gradience.frontend.schemas.shell_schema import shell_schema
 
 from gradience.backend.logger import Logger
 
@@ -75,6 +76,7 @@ class GradienceApplication(Adw.Application):
 
         self.variables = {}
         self.pref_variables = {}
+        self.custom_colors = {}
 
         self.palette = {}
         self.pref_palette_shades = {}
@@ -267,7 +269,8 @@ class GradienceApplication(Adw.Application):
                 "palette": palette,
                 "custom_css": {
                     "gtk4": custom_css,
-                    "gtk3": ""
+                    "gtk3": "",
+                    "shell": ""
                 }
             }
 
@@ -465,6 +468,15 @@ class GradienceApplication(Adw.Application):
             Gtk.STYLE_PROVIDER_PRIORITY_USER + 1
         )
         self.current_css_provider = css_provider
+
+        for variable in shell_schema["variables"]:
+            try:
+                self.custom_colors[variable["name"]] = self.variables[variable["var"]]
+            except KeyError:
+                try:
+                    self.custom_colors[variable["name"]] = self.variables[variable["name"]]
+                except KeyError:
+                    pass
 
         self.is_ready = True
 

@@ -109,7 +109,8 @@ class Preset:
     palette = adw_palette
     custom_css = {
         "gtk4": "",
-        "gtk3": ""
+        "gtk3": "",
+        "shell": "",
     }
 
     plugins = {}

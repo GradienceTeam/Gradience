@@ -42,6 +42,10 @@ class GradienceCustomCSSGroup(Adw.PreferencesGroup):
 
     def load_custom_css(self, custom_css):
         self.custom_css = custom_css
+        try:
+            self.custom_css["shell"]
+        except KeyError:
+            self.custom_css["shell"] = ""
         self.custom_css_text_view.get_buffer().set_text(
             list(self.custom_css.values())[
                 self.app_type_dropdown.get_selected()]
@@ -50,6 +54,7 @@ class GradienceCustomCSSGroup(Adw.PreferencesGroup):
     def reset_buffer(self):
         self.app.update_custom_css_text("gtk3", "")
         self.app.update_custom_css_text("gtk4", "")
+        self.app.update_custom_css_text("shell", "")
 
         self.custom_css_text_view.get_buffer().set_text("")
 
