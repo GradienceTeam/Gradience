@@ -3,7 +3,7 @@
 # This file is distributed under the GNU GPLv3 license.
 # Gradience Team, 2022.
 #
-# Davide <davide.ferracin@protonmail.com>, 2022.
+# Davide <davide.ferracin@protonmail.com>, 2022, 2023.
 # 0xMRTT <0xMRTT@tuta.io>, 2022.
 # Daudix UFO <ddaudix@gmail.com>, 2022.
 # yangyangdaji <1504305527@qq.com>, 2022.
@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-10 12:14+0000\n"
-"PO-Revision-Date: 2022-12-05 04:48+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"POT-Creation-Date: 2023-02-24 00:41+0000\n"
+"PO-Revision-Date: 2023-02-17 00:48+0000\n"
+"Last-Translator: Davide <davide.ferracin@protonmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/it/>\n"
 "Language: it\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -29,7 +29,7 @@ msgid "Gradience"
 msgstr "Gradience"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/welcome_window.blp:66
+#: data/ui/welcome_window.blp:64
 msgid "Change the look of Adwaita, with ease"
 msgstr "Cambia l'aspetto di Adwaita, in modo semplice"
 
@@ -138,12 +138,10 @@ msgid "Log out"
 msgstr "Termina sessione"
 
 #: data/ui/log_out_dialog.blp:6
-#, fuzzy
-#| msgid "For the changes to take effect, you need to log out. "
 msgid "For the changes to take full effect, you need to log out."
 msgstr ""
 "È necessario terminare la propria sessione affinché le modifiche abbiano "
-"effetto. "
+"pieno effetto."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -368,10 +366,8 @@ msgid "Save preset as…"
 msgstr "Salvare configurazione come…"
 
 #: data/ui/save_dialog.blp:10
-#, fuzzy
-#| msgid "Preset renamed"
 msgid "Preset Name"
-msgstr "Configurazione rinominata"
+msgstr "Nome della configurazione"
 
 #: data/ui/share_window.blp:5
 msgid "Share Preset"
@@ -406,11 +402,11 @@ msgstr ""
 "A quel punto è possibile caricare la propria configurazione, effettuare una "
 "pull request e condividerla con gli altri utenti!"
 
-#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:81
+#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:79
 msgid "Warning"
 msgstr "Avvisi"
 
-#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:82
+#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:80
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -421,11 +417,11 @@ msgstr ""
 "segnalare agli sviluppatori delle applicazioni i problemi legati ai temi "
 "applicati."
 
-#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:86
+#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:84
 msgid "I Understand The Consequences"
 msgstr "Ho capito le conseguenze"
 
-#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:97
+#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:95
 msgid "Customize Adwaita Theme"
 msgstr "Personalizza il tema Adwaita"
 
@@ -437,11 +433,11 @@ msgstr ""
 "Cambia i colori delle finestre, dei pulsanti, delle liste e altro tramite "
 "funzionalità avanzate come l'aggiunta di CSS personalizzato"
 
-#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:104
+#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:102
 msgid "Configure Gradience"
 msgstr "Configurazione di Gradience"
 
-#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:105
+#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:103
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
@@ -453,7 +449,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "Temi delle applicazioni datate"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:115
+#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Installa adw-gtk3 per applicare i temi alle applicazioni datate"
 
@@ -461,55 +457,55 @@ msgstr "Installa adw-gtk3 per applicare i temi alle applicazioni datate"
 msgid "System configuration"
 msgstr "Configurazione di sistema"
 
-#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:126
+#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:124
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 "Configurare il sistema per applicare i temi, permette di sovrascrivere i "
 "temi Flatpak"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:136
+#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
 msgid "Installing Themes"
 msgstr "Installazione dei temi in corso"
 
-#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:137
+#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:135
 msgid "Please wait until theme will be installed."
 msgstr "Attendere mentre il tema viene installato."
 
-#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:143
+#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:141
 msgid "Continue"
 msgstr "Continua"
 
-#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:162
+#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:160
 msgid "Done"
 msgstr "Fatto"
 
-#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:163
+#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:161
 msgid "Now you can make your own presets or download some online."
 msgstr ""
 "Ora è possibile creare le proprie configurazioni oppure scaricarne alcune "
 "dalla rete."
 
-#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:168
+#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:166
 msgid "Please finish the setup first"
 msgstr "Si prega di terminare l'installazione prima di continuare"
 
-#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:176
+#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:174
 msgid "Start Using Gradience"
 msgstr "Inizia a usare Gradience"
 
-#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:193
+#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:191
 msgid "Next"
 msgstr "Successivo"
 
-#: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:65
+#: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:63
 msgid "Welcome to Gradience"
 msgstr "Benvenuti in Gradience"
 
-#: data/ui/welcome_window.blp:73
+#: data/ui/welcome_window.blp:71
 msgid "What's new in 0.3.2"
 msgstr "Novità nella versione 0.3.2"
 
-#: data/ui/welcome_window.blp:74
+#: data/ui/welcome_window.blp:72
 msgid ""
 "In this release, we fixed the Firefox GNOME theme plugin, issues with "
 "presets always being saved with the same name, as well as some UX polish, "
@@ -519,7 +515,7 @@ msgstr ""
 "risolto alcuni problemi con le configurazioni che venivano salvate sempre "
 "con lo stesso nome, rifinito l'interfaccia, e altro ancora."
 
-#: data/ui/welcome_window.blp:98
+#: data/ui/welcome_window.blp:96
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom CSS."
@@ -527,11 +523,11 @@ msgstr ""
 "Cambia i colori delle finestre, dei pulsanti, delle liste e altro tramite "
 "funzionalità avanzate come l'aggiunta di CSS personalizzato."
 
-#: data/ui/welcome_window.blp:110
+#: data/ui/welcome_window.blp:108
 msgid "Legacy Apps Theming"
 msgstr "Temi di applicazioni datate"
 
-#: data/ui/welcome_window.blp:120
+#: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "Configurazione di sistema"
 
@@ -541,7 +537,7 @@ msgstr "Applica"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
-msgstr ""
+msgstr "Mostra la finestra di configurazione"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -620,10 +616,8 @@ msgstr "_Salva"
 
 #: gradience/frontend/main.py:184
 #: gradience/frontend/views/presets_manager_window.py:336
-#, fuzzy
-#| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
-msgstr "Caricamento della configurazione non riuscito"
+msgstr "Caricamento della lista delle configurazioni non riuscito"
 
 #: gradience/frontend/main.py:217
 msgid "No presets found"
@@ -1000,7 +994,7 @@ msgstr "Scuro"
 
 #: gradience/frontend/views/about_window.py:116
 msgid "Copyright © 2022-2023 Gradience Team"
-msgstr ""
+msgstr "Copyright © 2022-2023 Gradience Team"
 
 #: gradience/frontend/views/about_window.py:125
 msgid "Plugins by"
@@ -1036,13 +1030,11 @@ msgstr ""
 
 #: gradience/frontend/views/main_window.py:147
 msgid "Select an Image"
-msgstr ""
+msgstr "Selezionare un'immagine"
 
 #: gradience/frontend/views/main_window.py:150
-#, fuzzy
-#| msgid "Choose a File"
 msgid "Choose a Image File"
-msgstr "Scegliere un file"
+msgstr "Scegliere un file immagine"
 
 #: gradience/frontend/views/main_window.py:159
 msgid "Choose a File"
@@ -1062,7 +1054,7 @@ msgstr "Automatico"
 
 #: gradience/frontend/views/main_window.py:225
 msgid "Failed to generate Monet palette"
-msgstr ""
+msgstr "Generazione della tavolozza Monet non riuscita"
 
 #: gradience/frontend/views/main_window.py:229
 msgid "Palette generated"
