@@ -20,8 +20,8 @@ import os
 
 def list_po():
     files = []
-    for _, _, filesname in os.walk("po"):
-        for file in filesname:
+    for _, _, filenames in os.walk("po"):
+        for file in filenames:
             if file.endswith(".po"):
                 files.append(file.strip(".po"))
     return files

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 12:14+0000\n"
+"POT-Creation-Date: 2023-02-25 12:13+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,18 +24,18 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.15-dev\n"
 
-#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
-#: data/ui/window.blp:5
+#: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
 msgid "Gradience"
 msgstr "Gradience"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:5
-#: data/ui/welcome_window.blp:66
+#: data/ui/welcome_window.blp:64
 msgid "Change the look of Adwaita, with ease"
 msgstr "Adwaita의 외관을 쉽게 변경합니다"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
+#: gradience/frontend/views/about_window.py:94
 msgid "Gradience Team"
 msgstr "Gradience팀"
 
@@ -77,15 +77,23 @@ msgid "🧩️ Extending functionality using plugins"
 msgstr "플러그인을 사용하여 기능 확장"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:24
-msgid "Screenshot of \"Colors\" Tab"
+msgid "Screenshot of \"Colors\" Tab of Main UI"
 msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:28
-msgid "Screenshot of \"Monet\" Tab"
+msgid "Screenshot of \"Monet\" Tab of Main UI"
 msgstr ""
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:32
-msgid "Screenshot of \"Advanced\" Tab"
+msgid "Screenshot of \"Advanced\" Tab of Main UI"
+msgstr ""
+
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:36
+msgid "Screenshot of \"Installed\" Tab of Preset Manager"
+msgstr ""
+
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:40
+msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr ""
 
 #: data/ui/app_type_dialog.blp:14
@@ -138,6 +146,18 @@ msgstr "다운로드하고 적용하기"
 msgid "Download Only"
 msgstr "다운로드만"
 
+#: data/ui/log_out_dialog.blp:5
+#, fuzzy
+#| msgid "Log out ?"
+msgid "Log out"
+msgstr "로그아웃하시겠습니까?"
+
+#: data/ui/log_out_dialog.blp:6
+#, fuzzy
+#| msgid "For the changes to take effect, you need to log out. "
+msgid "For the changes to take full effect, you need to log out."
+msgstr "변경 사항을 적용하려면 로그아웃해야 합니다. "
+
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
 msgstr "플러그인 환경설정"
@@ -167,7 +187,7 @@ msgid "Toggle Plugin"
 msgstr "플러그인 전환하기"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:135
+#: data/ui/window.blp:136
 msgid "Preferences"
 msgstr "환경설정"
 
@@ -239,11 +259,11 @@ msgstr ""
 "GTK 3 Flatpak 응용프로그램이 adw-gtk3 테마에 액세스할 수 있도록 모든 사용자"
 "에 대한 Flatpak 권한을 재정의합니다. (루트 액세스 필요)"
 
-#: data/ui/preferences_window.blp:60
+#: data/ui/preferences_window.blp:61
 msgid "Custom Preset Repositories"
 msgstr "사용자 지정 프리셋 저장소"
 
-#: data/ui/preferences_window.blp:63
+#: data/ui/preferences_window.blp:64
 msgid "Custom repository URL address"
 msgstr "사용자 지정 저장소 URL 주소"
 
@@ -279,39 +299,39 @@ msgstr "사전 설정 삭제"
 msgid "Remove Preset"
 msgstr "프리셋 제거하기"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:55
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
 msgstr "사전 설정"
 
-#: data/ui/presets_manager_window.blp:29
+#: data/ui/presets_manager_window.blp:30
 msgid "Import"
 msgstr "가져오기"
 
-#: data/ui/presets_manager_window.blp:30
+#: data/ui/presets_manager_window.blp:31
 msgid "Import a Preset File"
 msgstr "프리셋 파일 가져오기"
 
-#: data/ui/presets_manager_window.blp:36
+#: data/ui/presets_manager_window.blp:37
 msgid "Delete"
 msgstr "삭제"
 
-#: data/ui/presets_manager_window.blp:47 gradience/frontend/main.py:214
+#: data/ui/presets_manager_window.blp:48 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "파일 관리자에서 열기"
 
-#: data/ui/presets_manager_window.blp:65
+#: data/ui/presets_manager_window.blp:66
 msgid "Installed"
 msgstr "설치됨"
 
-#: data/ui/presets_manager_window.blp:74
+#: data/ui/presets_manager_window.blp:75
 msgid "Explore"
 msgstr "탐색"
 
-#: data/ui/presets_manager_window.blp:79
+#: data/ui/presets_manager_window.blp:80
 msgid "Search for presets"
 msgstr "사전 설정 검색"
 
-#: data/ui/presets_manager_window.blp:80
+#: data/ui/presets_manager_window.blp:81
 #, fuzzy
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
@@ -320,39 +340,49 @@ msgstr ""
 "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a>에서 검색할 키워드를 입력하세요."
 
-#: data/ui/presets_manager_window.blp:93
+#: data/ui/presets_manager_window.blp:94
 msgid "e.g. \"Pretty Purple\""
 msgstr "예시: \"Pretty Purple\""
 
-#: data/ui/presets_manager_window.blp:98
+#: data/ui/presets_manager_window.blp:99
 msgid "All"
 msgstr "모두"
 
-#: data/ui/presets_manager_window.blp:126
+#: data/ui/presets_manager_window.blp:127
 msgid "No Results Found"
 msgstr "검색 결과가 없음"
 
-#: data/ui/presets_manager_window.blp:134
+#: data/ui/presets_manager_window.blp:135
 msgid "Offline"
 msgstr "오프라인"
 
-#: data/ui/presets_manager_window.blp:146
-#: gradience/frontend/views/presets_manager_window.py:120
-#: gradience/frontend/views/presets_manager_window.py:382
+#: data/ui/presets_manager_window.blp:148
+#: gradience/frontend/views/presets_manager_window.py:123
+#: gradience/frontend/views/presets_manager_window.py:391
 msgid "Repositories"
 msgstr "저장소"
 
-#: data/ui/presets_manager_window.blp:165
+#: data/ui/presets_manager_window.blp:168
 msgid "Import a Preset File (*.json)"
 msgstr "프리셋 파일 가져오기 (*.json)"
 
-#: data/ui/presets_manager_window.blp:170
+#: data/ui/presets_manager_window.blp:173
 msgid "All files"
 msgstr "모든 파일"
 
-#: data/ui/presets_manager_window.blp:175
+#: data/ui/presets_manager_window.blp:178
 msgid "JSON file (*.json)"
 msgstr "JSON 파일(*.json)"
+
+#: data/ui/save_dialog.blp:5
+msgid "Save preset as…"
+msgstr "프리셋을 다른 이름으로 저장…"
+
+#: data/ui/save_dialog.blp:10
+#, fuzzy
+#| msgid "Preset renamed"
+msgid "Preset Name"
+msgstr "사전 설정 이름이 변경됨"
 
 #: data/ui/share_window.blp:5
 msgid "Share Preset"
@@ -386,11 +416,11 @@ msgstr ""
 "a>를 분기해야 합니다. 그런 다음 프리셋을 업로드하고 풀 리퀘스트(끌어오기 요"
 "청)를 하여 전 세계와 공유할 수 있습니다!"
 
-#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:81
+#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:79
 msgid "Warning"
 msgstr "경고"
 
-#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:82
+#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:80
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -399,11 +429,11 @@ msgstr ""
 "색 구성표를 변경하면 대비와 가독성에 부정적인 영향을 줄 수 있습니다. 주의해"
 "서 진행하십시오. 테마 관련 문제를 앱 개발자에게 보고하지 마십시오."
 
-#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:86
+#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:84
 msgid "I Understand The Consequences"
 msgstr "결과를 이해합니다"
 
-#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:97
+#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:95
 msgid "Customize Adwaita Theme"
 msgstr "Adwaita 테마를 커스터마이징"
 
@@ -414,11 +444,11 @@ msgid ""
 msgstr ""
 "사용자 지정 CSS 추가와 같은 고급 기능으로 창, 단추, 목록 등의 색상 변경하기"
 
-#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:104
+#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:102
 msgid "Configure Gradience"
 msgstr "Gradience 구성하기"
 
-#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:105
+#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:103
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
@@ -430,7 +460,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "기존 앱 테마적용"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:115
+#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "기존 앱 테마적용을 위한 adw-gtk3 테마 설치하기"
 
@@ -438,61 +468,61 @@ msgstr "기존 앱 테마적용을 위한 adw-gtk3 테마 설치하기"
 msgid "System configuration"
 msgstr "시스템 설정"
 
-#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:126
+#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:124
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr "테마적용을 위한 시스템을 구성하고, Flatpak 테마 재정의 활성화하기"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:136
+#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
 msgid "Installing Themes"
 msgstr "테마 설치"
 
-#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:137
+#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:135
 msgid "Please wait until theme will be installed."
 msgstr "테마가 설치 될 때까지 기다리십시오."
 
-#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:143
+#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:141
 msgid "Continue"
 msgstr "계속"
 
-#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:162
+#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:160
 msgid "Done"
 msgstr "완료"
 
-#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:163
+#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:161
 msgid "Now you can make your own presets or download some online."
 msgstr ""
 "이제 사용자 자신만의 프리셋을 만들거나 온라인에서 다른 프리셋을 다운로드할 "
 "수 있습니다."
 
-#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:168
+#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:166
 msgid "Please finish the setup first"
 msgstr "먼저 설정을 완료하십시오"
 
-#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:176
+#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:174
 msgid "Start Using Gradience"
 msgstr "Gradience 사용 시작하기"
 
-#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:193
+#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:191
 msgid "Next"
 msgstr "다음"
 
-#: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:65
+#: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:63
 msgid "Welcome to Gradience"
 msgstr "Gradience에 오신 것을 환영합니다."
 
-#: data/ui/welcome_window.blp:73
+#: data/ui/welcome_window.blp:71
 #, fuzzy
 msgid "What's new in 0.3.2"
 msgstr "0.3.0의 새로운 기능"
 
-#: data/ui/welcome_window.blp:74
+#: data/ui/welcome_window.blp:72
 msgid ""
 "In this release, we fixed the Firefox GNOME theme plugin, issues with "
 "presets always being saved with the same name, as well as some UX polish, "
 "and more."
 msgstr ""
 
-#: data/ui/welcome_window.blp:98
+#: data/ui/welcome_window.blp:96
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom CSS."
@@ -500,368 +530,82 @@ msgstr ""
 "사용자 지정 CSS 추가와 같은 고급 기능을 사용하여 창, 단추, 목록 등의 색상을 "
 "변경합니다."
 
-#: data/ui/welcome_window.blp:110
+#: data/ui/welcome_window.blp:108
 msgid "Legacy Apps Theming"
 msgstr "기존 앱 테마적용"
 
-#: data/ui/welcome_window.blp:120
+#: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "시스템 구성"
 
-#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:140
+#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:139
 msgid "Apply"
 msgstr "적용"
 
 #: data/ui/window.blp:37
-msgid "Preview Theme in…"
+msgid "Show Preview Window"
 msgstr ""
 
-#: data/ui/window.blp:47
+#: data/ui/window.blp:48
 msgid "Main Menu"
 msgstr "기본 메뉴"
 
-#: data/ui/window.blp:56
+#: data/ui/window.blp:57
 msgid "Presets Menu"
 msgstr "프리셋 메뉴"
 
-#: data/ui/window.blp:63
+#: data/ui/window.blp:64
 msgid "Save Preset"
 msgstr "사전 설정 저장"
 
-#: data/ui/window.blp:72
+#: data/ui/window.blp:73
 msgid "CSS Errors"
 msgstr "CSS 오류"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:88
 msgid "Colors"
 msgstr "색상"
 
-#: data/ui/window.blp:95
+#: data/ui/window.blp:96
 msgid "Monet"
 msgstr "Monet"
 
-#: data/ui/window.blp:103
+#: data/ui/window.blp:104
 msgid "Advanced"
 msgstr "고급"
 
-#: data/ui/window.blp:124
+#: data/ui/window.blp:125
 msgid "Restore Applied Color Scheme"
 msgstr "적용된 색 구성표 복원하기"
 
-#: data/ui/window.blp:129
+#: data/ui/window.blp:130
 msgid "Reset Applied Color Scheme"
 msgstr "적용된 색 구성표 재설정"
 
-#: data/ui/window.blp:140
+#: data/ui/window.blp:141
 msgid "About Gradience"
 msgstr "Gradience에 대하여"
 
 #: data/ui/window.blp:149
-msgid "Adwaita Demo"
-msgstr "Adwaita 데모"
-
-#: data/ui/window.blp:154
-msgid "GTK 4 Demo"
-msgstr "GTK 4 데모"
-
-#: data/ui/window.blp:159
-msgid "GTK 4 Widget Factory"
-msgstr "GTK 4 위젝 팩토리"
-
-#: data/ui/window.blp:167
-#: gradience/frontend/views/presets_manager_window.py:109
+#: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "내장 프리셋"
 
-#: data/ui/window.blp:188
+#: data/ui/window.blp:170
 msgid "Manage Presets"
 msgstr "프리셋 관리하기"
 
-#: gradience/backend/flatpak_overrides.py:71
-#: gradience/backend/flatpak_overrides.py:93
-msgid "Failed to save override"
-msgstr "재정의를 저장하지 못했습니다"
-
-#: gradience/backend/flatpak_overrides.py:186
-#: gradience/backend/flatpak_overrides.py:228
-#: gradience/backend/flatpak_overrides.py:306
-#: gradience/backend/flatpak_overrides.py:366
-#: gradience/backend/flatpak_overrides.py:448
-#: gradience/backend/flatpak_overrides.py:509
-msgid "Unexpected file error occurred"
-msgstr "예기치 않은 파일 오류가 발생했습니다"
-
-#: gradience/frontend/dialogs/app_type_dialog.py:44
-#: gradience/frontend/main.py:502
+#: gradience/frontend/dialogs/app_type_dialog.py:51
+#: gradience/frontend/dialogs/save_dialog.py:57
 #, fuzzy
 msgid "_Cancel"
 msgstr "취소"
 
-#: gradience/frontend/widgets/explore_preset_row.py:68
-#: gradience/frontend/widgets/explore_preset_row.py:94
-msgid "Preset could not be downloaded"
-msgstr "사전 설정을 다운로드할 수 없습니다"
-
-#: gradience/frontend/widgets/explore_preset_row.py:82
-#: gradience/frontend/widgets/explore_preset_row.py:98
-msgid "Preset downloaded"
-msgstr "사전 설정 다운로드됨"
-
-#: gradience/frontend/widgets/option_row.py:49
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "이 옵션은 adw-gtk3 테마에서 부분적으로만 지원됩니다."
-
-#: gradience/frontend/widgets/option_row.py:54
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "이 옵션은 adw-gtk3 테마에서 지원되지 않습니다."
-
-#: gradience/frontend/widgets/option_row.py:99
-msgid "Not a color, see text value"
-msgstr "색상이 아님, 텍스트 값 참조"
-
-#: gradience/frontend/widgets/plugin_row.py:88
-msgid "Unable to remove"
-msgstr "제거할 수 없습니다"
-
-#: gradience/frontend/widgets/plugin_row.py:89
-msgid "This is a system plugin, and cannot be removed."
-msgstr "이것은 시스템 플러그인이며 제거할 수 없습니다."
-
-#: gradience/frontend/widgets/plugin_row.py:91
-msgid "Close"
-msgstr "닫기"
-
-#: gradience/frontend/widgets/preset_row.py:87
-#: gradience/frontend/widgets/preset_row.py:104
-#, fuzzy
-msgid "Remove from Favorites"
-msgstr "즐겨찾기에서 제거하기"
-
-#: gradience/frontend/widgets/preset_row.py:90
-#: gradience/frontend/widgets/preset_row.py:100
-#, fuzzy
-msgid "Add to Favorites"
-msgstr "즐겨찾기에 추가하기"
-
-#: gradience/frontend/widgets/preset_row.py:147
-msgid "Preset removed"
-msgstr "사전 설정 제거됨"
-
-#: gradience/frontend/widgets/preset_row.py:148
-msgid "Undo"
-msgstr "실행 취소"
-
-#: gradience/frontend/widgets/preset_row.py:163
-msgid "Pending Deletion"
-msgstr "삭제 보류 중"
-
-#: gradience/frontend/widgets/preset_row.py:177
-msgid "Unable to delete preset"
-msgstr "사전 설정을 삭제할 수 없습니다"
-
-#: gradience/frontend/views/presets_manager_window.py:114
-#: gradience/frontend/views/presets_manager_window.py:343
-msgid "User Presets"
-msgstr "사용자 사전 설정"
-
-#: gradience/frontend/views/presets_manager_window.py:188
-msgid "Add new repository"
-msgstr "새 저장소 추가하기"
-
-#: gradience/frontend/views/presets_manager_window.py:189
-msgid "Add a repository to install additional presets."
-msgstr "추가 프리셋을 설치하려면 저장소를 추가하십시오."
-
-#: gradience/frontend/views/presets_manager_window.py:195
-#: gradience/frontend/main.py:575
-msgid "Cancel"
-msgstr "취소"
-
-#: gradience/frontend/views/presets_manager_window.py:196
-msgid "Add"
-msgstr "추가하기"
-
-#: gradience/frontend/views/presets_manager_window.py:286
-msgid "Preset already exists"
-msgstr "사전 설정이 이미 있습니다"
-
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset imported"
-msgstr "가져온 사전 설정"
-
-#: gradience/frontend/views/presets_manager_window.py:301
-msgid "Unsupported file format, must be .json"
-msgstr "지원되지 않는 파일 형식, 파일형식은 .json이어야 합니다"
-
-#: gradience/frontend/views/presets_manager_window.py:327
-#: gradience/frontend/main.py:174
-#, fuzzy
-#| msgid "Failed to load preset"
-msgid "Failed to load list of presets"
-msgstr "사전 설정을 로드하지 못했습니다."
-
-#: gradience/frontend/views/presets_manager_window.py:336
-msgid "Built-in Presets"
-msgstr "내장 프리셋"
-
-#: gradience/frontend/views/presets_manager_window.py:346
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"더 많은 프리셋은 Github에서 <a href=\"https://github.com/GradienceTeam/"
-"Community\">GradienceTeam/Community</a>를 참조하십시오."
-
-#: gradience/frontend/views/presets_manager_window.py:372
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"프리셋을 찾을 수 없습니다! 가져오기 버튼을 사용하여 가져오거나 탐색 탭에서 검"
-"색하십시오."
-
-#: gradience/frontend/widgets/repo_row.py:60
-msgid "Repository removed"
-msgstr "저장소 제거됨"
-
-#: gradience/frontend/views/welcome_window.py:97
-msgid "Thanks for updating Gradience!"
-msgstr "Gradience를 업데이트해주셔서 감사합니다!"
-
-#: gradience/frontend/views/main_window.py:131
-msgid "Monet Engine"
-msgstr "Monet 엔진"
-
-#: gradience/frontend/views/main_window.py:134
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr ""
-"Monet은 이미지 색상에서 Material Design 3 팔레트를 생성하는 엔진입니다."
-
-#: gradience/frontend/views/main_window.py:146
-msgid "Background Image"
-msgstr "배경 이미지"
-
-#: gradience/frontend/views/main_window.py:157
-msgid "Choose a File"
-msgstr "파일 고르기"
-
-#: gradience/frontend/views/main_window.py:177
-msgid "Monet Palette"
-msgstr "Monet 팔레트"
-
-#: gradience/frontend/views/main_window.py:184
-msgid "Tone"
-msgstr "톤"
-
-#: gradience/frontend/views/main_window.py:196
-msgid "Theme"
-msgstr "테마"
-
-#: gradience/frontend/views/main_window.py:199
-msgid "Auto"
-msgstr "자동"
-
-#: gradience/frontend/views/main_window.py:200
-#: gradience/frontend/settings_schema.py:372
-msgid "Light"
-msgstr "밝은 색"
-
-#: gradience/frontend/views/main_window.py:201
-#: gradience/frontend/settings_schema.py:373
-msgid "Dark"
-msgstr "어두운 색"
-
-#: gradience/frontend/views/main_window.py:220
-msgid "Failed to generate Monet palette"
+#: gradience/frontend/dialogs/log_out_dialog.py:36
+msgid "OK"
 msgstr ""
 
-#: gradience/frontend/views/main_window.py:224
-msgid "Palette generated"
-msgstr "팔레트 생성됨"
-
-#: gradience/frontend/views/main_window.py:228
-msgid "Select a background first"
-msgstr "먼저 배경을 선택하십시오"
-
-#: gradience/frontend/views/main_window.py:253
-msgid "Palette Colors"
-msgstr "팔레트 색상"
-
-#: gradience/frontend/views/main_window.py:256
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"일부 응용 프로그램에서 사용하는 명명된 팔레트 색상입니다. 기본 색상은 <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>을 따릅니다."
-
-#: gradience/frontend/main.py:203
-msgid "No presets found"
-msgstr "프리셋을 찾을 수 없습니다"
-
-#: gradience/frontend/main.py:221
-#, fuzzy
-msgid "Favorite Presets"
-msgstr "좋아하는 프리셋"
-
-#: gradience/frontend/main.py:375
-msgid "Unsaved Changes"
-msgstr "저장되지 않은 변경사항"
-
-#: gradience/frontend/main.py:386
-msgid "Save Changes"
-msgstr "변경사항 저장하기"
-
-#: gradience/frontend/main.py:444
-msgid "Apply This Color Scheme?"
-msgstr "이 색 구성표를 적용하시겠습니까?"
-
-#: gradience/frontend/main.py:446
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"경고: 해당 앱 유형에 대한 모든 사용자 정의 CSS 파일은 되돌릴 수 없도록 덮어씁"
-"니다!"
-
-#: gradience/frontend/main.py:450
-#, fuzzy
-msgid "_Apply"
-msgstr "적용"
-
-#: gradience/frontend/main.py:460
-msgid "Restore applied color scheme?"
-msgstr "적용된 색 구성표를 복원하시겠습니까?"
-
-#: gradience/frontend/main.py:461 gradience/frontend/main.py:474
-msgid "Make sure you have the current settings saved as a preset."
-msgstr "현재 설정이 사전 설정으로 저장되어 있는지 확인해주세요."
-
-#: gradience/frontend/main.py:463
-#, fuzzy
-msgid "_Restore"
-msgstr "복원하기"
-
-#: gradience/frontend/main.py:473
-msgid "Reset applied color scheme?"
-msgstr "적용된 색 구성표를 재설정하시겠습니까?"
-
-#: gradience/frontend/main.py:476
-#, fuzzy
-msgid "_Reset"
-msgstr "초기화"
-
-#: gradience/frontend/main.py:486
-msgid "Save preset as…"
-msgstr "프리셋을 다른 이름으로 저장…"
-
-#: gradience/frontend/main.py:488 gradience/frontend/main.py:516
-#: gradience/frontend/main.py:533 gradience/frontend/main.py:561
-#: gradience/frontend/main.py:592 gradience/frontend/main.py:609
+#: gradience/frontend/dialogs/save_dialog.py:39
 #, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
@@ -870,76 +614,100 @@ msgstr ""
 "사전 설정을 <tt>{0}</tt>에 저장하는 중입니다. 해당 사전 설정이 이미 있는 경"
 "우 덮어씁니다!"
 
-#: gradience/frontend/main.py:503
+#: gradience/frontend/dialogs/save_dialog.py:60
+msgid "Discard"
+msgstr "버리기"
+
+#: gradience/frontend/dialogs/save_dialog.py:65
 #, fuzzy
 msgid "_Save"
 msgstr "저장"
 
-#: gradience/frontend/main.py:559
+#: gradience/frontend/main.py:184
+#: gradience/frontend/views/presets_manager_window.py:336
+#, fuzzy
+#| msgid "Failed to load preset"
+msgid "Failed to load list of presets"
+msgstr "사전 설정을 로드하지 못했습니다."
+
+#: gradience/frontend/main.py:217
+msgid "No presets found"
+msgstr "프리셋을 찾을 수 없습니다"
+
+#: gradience/frontend/main.py:240
+#, fuzzy
+msgid "Favorite Presets"
+msgstr "좋아하는 프리셋"
+
+#: gradience/frontend/main.py:404
+msgid "Unsaved Changes"
+msgstr "저장되지 않은 변경사항"
+
+#: gradience/frontend/main.py:416
+msgid "Save Changes"
+msgstr "변경사항 저장하기"
+
+#: gradience/frontend/main.py:505
+msgid "Apply This Color Scheme?"
+msgstr "이 색 구성표를 적용하시겠습니까?"
+
+#: gradience/frontend/main.py:507
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"경고: 해당 앱 유형에 대한 모든 사용자 정의 CSS 파일은 되돌릴 수 없도록 덮어씁"
+"니다!"
+
+#: gradience/frontend/main.py:511
+#, fuzzy
+msgid "_Apply"
+msgstr "적용"
+
+#: gradience/frontend/main.py:521
+msgid "Restore applied color scheme?"
+msgstr "적용된 색 구성표를 복원하시겠습니까?"
+
+#: gradience/frontend/main.py:522 gradience/frontend/main.py:536
+msgid "Make sure you have the current settings saved as a preset."
+msgstr "현재 설정이 사전 설정으로 저장되어 있는지 확인해주세요."
+
+#: gradience/frontend/main.py:524
+#, fuzzy
+msgid "_Restore"
+msgstr "복원하기"
+
+#: gradience/frontend/main.py:535
+msgid "Reset applied color scheme?"
+msgstr "적용된 색 구성표를 재설정하시겠습니까?"
+
+#: gradience/frontend/main.py:538
+#, fuzzy
+msgid "_Reset"
+msgstr "초기화"
+
+#: gradience/frontend/main.py:564
 msgid "You have unsaved changes!"
 msgstr "저장하지 않은 변경사항이 있습니다!"
 
-#: gradience/frontend/main.py:576
-msgid "Discard"
-msgstr "버리기"
-
-#: gradience/frontend/main.py:577
-msgid "Save"
-msgstr "저장"
-
-#: gradience/frontend/main.py:637
+#: gradience/frontend/main.py:615
 msgid "Preset saved"
 msgstr "사전 설정 저장됨"
 
-#: gradience/frontend/main.py:654
+#: gradience/frontend/main.py:632
 #, fuzzy
 msgid "Preset set successfully"
 msgstr "사전 설정이 성공적으로 적용되었습니다!"
 
-#: gradience/frontend/main.py:660 gradience/frontend/main.py:690
-#: gradience/frontend/main.py:728
-#, fuzzy
-#| msgid "Log out ?"
-msgid "Log out"
-msgstr "로그아웃하시겠습니까?"
-
-#: gradience/frontend/main.py:662 gradience/frontend/main.py:692
-#: gradience/frontend/main.py:730
-#, fuzzy
-#| msgid "For the changes to take effect, you need to log out. "
-msgid "For the changes to take full effect, you need to log out."
-msgstr "변경 사항을 적용하려면 로그아웃해야 합니다. "
-
-#: gradience/frontend/main.py:667 gradience/frontend/main.py:697
-#: gradience/frontend/main.py:735
-msgid "OK"
-msgstr ""
-
-#: gradience/frontend/main.py:685
+#: gradience/frontend/main.py:645
 #, fuzzy
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 백업을 복원할 수 없습니다"
 
-#: gradience/frontend/main.py:715 gradience/frontend/main.py:723
+#: gradience/frontend/main.py:658 gradience/frontend/main.py:666
 #, fuzzy
 msgid "Unable to delete current preset"
 msgstr "사전 설정을 삭제할 수 없습니다"
-
-#: gradience/frontend/views/plugins_list.py:101
-msgid "Plugins"
-msgstr "플러그인"
-
-#: gradience/frontend/views/plugins_list.py:104
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
-"플러그인은 Gradience에 추가 기능을 추가하며, 플러그인은 Gradience 커뮤니티에"
-"서 만들어지며 문제를 야기할 수 있습니다."
-
-#: gradience/frontend/views/plugins_list.py:116
-msgid "No Plugins Found."
-msgstr "플러그인을 찾을 수 없습니다."
 
 #: gradience/frontend/settings_schema.py:23
 msgid "Accent Colors"
@@ -1215,6 +983,266 @@ msgstr "보라색"
 msgid "Brown"
 msgstr "갈색"
 
+#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/views/main_window.py:204
+msgid "Light"
+msgstr "밝은 색"
+
+#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/views/main_window.py:205
+msgid "Dark"
+msgstr "어두운 색"
+
+#: gradience/frontend/views/about_window.py:116
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:125
+msgid "Plugins by"
+msgstr "플러그인"
+
+#: gradience/frontend/views/about_window.py:133
+msgid "Presets by"
+msgstr "프리셋"
+
+#: gradience/frontend/views/about_window.py:155
+msgid "Packages by"
+msgstr "패키지"
+
+#: gradience/frontend/views/about_window.py:162
+msgid "Fixes by"
+msgstr "버그수정"
+
+#: gradience/frontend/views/about_window.py:172
+msgid "Special thanks to"
+msgstr "특별히 고마운 분들"
+
+#: gradience/frontend/views/main_window.py:130
+msgid "Monet Engine"
+msgstr "Monet 엔진"
+
+#: gradience/frontend/views/main_window.py:133
+msgid ""
+"Monet is an engine that generates a Material Design 3 palette from an "
+"image's color."
+msgstr ""
+"Monet은 이미지 색상에서 Material Design 3 팔레트를 생성하는 엔진입니다."
+
+#: gradience/frontend/views/main_window.py:147
+msgid "Select an Image"
+msgstr ""
+
+#: gradience/frontend/views/main_window.py:150
+#, fuzzy
+#| msgid "Choose a File"
+msgid "Choose a Image File"
+msgstr "파일 고르기"
+
+#: gradience/frontend/views/main_window.py:159
+msgid "Choose a File"
+msgstr "파일 고르기"
+
+#: gradience/frontend/views/main_window.py:181
+msgid "Monet Palette"
+msgstr "Monet 팔레트"
+
+#: gradience/frontend/views/main_window.py:200
+msgid "Theme"
+msgstr "테마"
+
+#: gradience/frontend/views/main_window.py:203
+msgid "Auto"
+msgstr "자동"
+
+#: gradience/frontend/views/main_window.py:225
+msgid "Failed to generate Monet palette"
+msgstr ""
+
+#: gradience/frontend/views/main_window.py:229
+msgid "Palette generated"
+msgstr "팔레트 생성됨"
+
+#: gradience/frontend/views/main_window.py:233
+msgid "Select a background first"
+msgstr "먼저 배경을 선택하십시오"
+
+#: gradience/frontend/views/main_window.py:257
+msgid "Palette Colors"
+msgstr "팔레트 색상"
+
+#: gradience/frontend/views/main_window.py:260
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"일부 응용 프로그램에서 사용하는 명명된 팔레트 색상입니다. 기본 색상은 <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>을 따릅니다."
+
+#: gradience/frontend/views/plugins_list.py:89
+msgid "Plugins"
+msgstr "플러그인"
+
+#: gradience/frontend/views/plugins_list.py:92
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+"플러그인은 Gradience에 추가 기능을 추가하며, 플러그인은 Gradience 커뮤니티에"
+"서 만들어지며 문제를 야기할 수 있습니다."
+
+#: gradience/frontend/views/plugins_list.py:104
+msgid "No Plugins Found."
+msgstr "플러그인을 찾을 수 없습니다."
+
+#: gradience/frontend/views/presets_manager_window.py:116
+#: gradience/frontend/views/presets_manager_window.py:352
+msgid "User Presets"
+msgstr "사용자 사전 설정"
+
+#: gradience/frontend/views/presets_manager_window.py:191
+msgid "Add new repository"
+msgstr "새 저장소 추가하기"
+
+#: gradience/frontend/views/presets_manager_window.py:192
+msgid "Add a repository to install additional presets."
+msgstr "추가 프리셋을 설치하려면 저장소를 추가하십시오."
+
+#: gradience/frontend/views/presets_manager_window.py:198
+msgid "Cancel"
+msgstr "취소"
+
+#: gradience/frontend/views/presets_manager_window.py:199
+msgid "Add"
+msgstr "추가하기"
+
+#: gradience/frontend/views/presets_manager_window.py:295
+msgid "Preset already exists"
+msgstr "사전 설정이 이미 있습니다"
+
+#: gradience/frontend/views/presets_manager_window.py:307
+msgid "Preset imported"
+msgstr "가져온 사전 설정"
+
+#: gradience/frontend/views/presets_manager_window.py:310
+msgid "Unsupported file format, must be .json"
+msgstr "지원되지 않는 파일 형식, 파일형식은 .json이어야 합니다"
+
+#: gradience/frontend/views/presets_manager_window.py:345
+msgid "Built-in Presets"
+msgstr "내장 프리셋"
+
+#: gradience/frontend/views/presets_manager_window.py:355
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"더 많은 프리셋은 Github에서 <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>를 참조하십시오."
+
+#: gradience/frontend/views/presets_manager_window.py:381
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"프리셋을 찾을 수 없습니다! 가져오기 버튼을 사용하여 가져오거나 탐색 탭에서 검"
+"색하십시오."
+
+#: gradience/frontend/views/welcome_window.py:97
+msgid "Thanks for updating Gradience!"
+msgstr "Gradience를 업데이트해주셔서 감사합니다!"
+
+#: gradience/frontend/widgets/explore_preset_row.py:68
+#: gradience/frontend/widgets/explore_preset_row.py:94
+msgid "Preset could not be downloaded"
+msgstr "사전 설정을 다운로드할 수 없습니다"
+
+#: gradience/frontend/widgets/explore_preset_row.py:82
+#: gradience/frontend/widgets/explore_preset_row.py:98
+msgid "Preset downloaded"
+msgstr "사전 설정 다운로드됨"
+
+#: gradience/frontend/widgets/option_row.py:52
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "이 옵션은 adw-gtk3 테마에서 부분적으로만 지원됩니다."
+
+#: gradience/frontend/widgets/option_row.py:57
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "이 옵션은 adw-gtk3 테마에서 지원되지 않습니다."
+
+#: gradience/frontend/widgets/option_row.py:110
+msgid "Not a color, see text value"
+msgstr "색상이 아님, 텍스트 값 참조"
+
+#: gradience/frontend/widgets/plugin_row.py:85
+msgid "Unable to remove"
+msgstr "제거할 수 없습니다"
+
+#: gradience/frontend/widgets/plugin_row.py:86
+msgid "This is a system plugin, and cannot be removed."
+msgstr "이것은 시스템 플러그인이며 제거할 수 없습니다."
+
+#: gradience/frontend/widgets/plugin_row.py:88
+msgid "Close"
+msgstr "닫기"
+
+#: gradience/frontend/widgets/preset_row.py:87
+#: gradience/frontend/widgets/preset_row.py:104
+#, fuzzy
+msgid "Remove from Favorites"
+msgstr "즐겨찾기에서 제거하기"
+
+#: gradience/frontend/widgets/preset_row.py:90
+#: gradience/frontend/widgets/preset_row.py:100
+#, fuzzy
+msgid "Add to Favorites"
+msgstr "즐겨찾기에 추가하기"
+
+#: gradience/frontend/widgets/preset_row.py:166
+msgid "Preset removed"
+msgstr "사전 설정 제거됨"
+
+#: gradience/frontend/widgets/preset_row.py:167
+msgid "Undo"
+msgstr "실행 취소"
+
+#: gradience/frontend/widgets/preset_row.py:182
+msgid "Pending Deletion"
+msgstr "삭제 보류 중"
+
+#: gradience/frontend/widgets/preset_row.py:196
+msgid "Unable to delete preset"
+msgstr "사전 설정을 삭제할 수 없습니다"
+
+#: gradience/frontend/widgets/repo_row.py:60
+msgid "Repository removed"
+msgstr "저장소 제거됨"
+
+#~ msgid "Background Image"
+#~ msgstr "배경 이미지"
+
+#~ msgid "Tone"
+#~ msgstr "톤"
+
+#~ msgid "Adwaita Demo"
+#~ msgstr "Adwaita 데모"
+
+#~ msgid "GTK 4 Demo"
+#~ msgstr "GTK 4 데모"
+
+#~ msgid "GTK 4 Widget Factory"
+#~ msgstr "GTK 4 위젝 팩토리"
+
+#~ msgid "Failed to save override"
+#~ msgstr "재정의를 저장하지 못했습니다"
+
+#~ msgid "Unexpected file error occurred"
+#~ msgstr "예기치 않은 파일 오류가 발생했습니다"
+
+#~ msgid "Save"
+#~ msgstr "저장"
+
 #, fuzzy
 #~ msgid ""
 #~ "\n"
@@ -1240,21 +1268,6 @@ msgstr "갈색"
 #~ "- 플러그인을 사용하여 기능 확장하기\n"
 #~ "\n"
 #~ "이 앱은 Python으로 작성되었으며 GTK 4 및 Libadwaita를 사용합니다.\n"
-
-#~ msgid "Plugins by"
-#~ msgstr "플러그인"
-
-#~ msgid "Presets by"
-#~ msgstr "프리셋"
-
-#~ msgid "Packages by"
-#~ msgstr "패키지"
-
-#~ msgid "Fixes by"
-#~ msgstr "버그수정"
-
-#~ msgid "Special thanks to"
-#~ msgstr "특별히 고마운 분들"
 
 #~ msgid "Unsupported background type"
 #~ msgstr "지원되지 않는 배경 유형"
@@ -1638,9 +1651,6 @@ msgstr "갈색"
 #, fuzzy
 #~ msgid "No plugins found"
 #~ msgstr "플러그인을 찾을 수 없습니다"
-
-#~ msgid "Preset renamed"
-#~ msgstr "사전 설정 이름이 변경됨"
 
 #~ msgid "Builtin Presets"
 #~ msgstr "내장 사전 설정"

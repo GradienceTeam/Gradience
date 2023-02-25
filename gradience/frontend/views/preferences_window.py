@@ -18,15 +18,10 @@
 
 from gi.repository import Gtk, Adw
 
+from gradience.backend.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
+from gradience.backend.flatpak_overrides import create_gtk_global_override, remove_gtk_global_override
+
 from gradience.backend.constants import rootdir
-from gradience.backend.flatpak_overrides import (
-    create_gtk_user_override,
-    remove_gtk_user_override,
-)
-from gradience.backend.flatpak_overrides import (
-    create_gtk_global_override,
-    remove_gtk_global_override,
-)
 
 from gradience.backend.logger import Logger
 
@@ -37,20 +32,22 @@ logging = Logger()
 class GradiencePreferencesWindow(Adw.PreferencesWindow):
     __gtype_name__ = "GradiencePreferencesWindow"
 
-    allow_gtk4_flatpak_theming_user = Gtk.Template.Child()
-    allow_gtk4_flatpak_theming_global = Gtk.Template.Child()
+    gtk4_user_theming_switch = Gtk.Template.Child()
+    gtk4_global_theming_switch = Gtk.Template.Child()
 
-    allow_gtk3_flatpak_theming_user = Gtk.Template.Child()
-    allow_gtk3_flatpak_theming_global = Gtk.Template.Child()
+    gtk3_user_theming_switch = Gtk.Template.Child()
+    gtk3_global_theming_switch = Gtk.Template.Child()
 
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
 
         self.parent = parent
         self.settings = parent.settings
-        self.app = self.parent.get_application()
 
-        self.set_transient_for(self.app.get_active_window())
+        self.app = self.parent.get_application()
+        self.win = self.app.get_active_window()
+
+        self.set_transient_for(self.win)
 
         self.setup()
 
@@ -66,24 +63,28 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
             "user-flatpak-theming-gtk3"
         )
 
-        self.allow_gtk4_flatpak_theming_user.set_state(
-            user_flatpak_theming_gtk4)
-        # self.allow_gtk4_flatpak_theming_global.set_state(global_flatpak_theming_gtk4)
-
-        self.allow_gtk3_flatpak_theming_user.set_state(
-            user_flatpak_theming_gtk3)
-        # self.allow_gtk3_flatpak_theming_global.set_state(global_flatpak_theming_gtk3)
-
-        self.allow_gtk4_flatpak_theming_user.connect(
-            "state-set", self.on_allow_gtk4_flatpak_theming_user_toggled
+        self.gtk4_user_theming_switch.set_state(
+            user_flatpak_theming_gtk4
         )
 
-        self.allow_gtk3_flatpak_theming_user.connect(
-            "state-set", self.on_allow_gtk3_flatpak_theming_user_toggled
+        # self.gtk4_global_theming_switch.set_state(global_flatpak_theming_gtk4)
+
+        self.gtk3_user_theming_switch.set_state(
+            user_flatpak_theming_gtk3
+        )
+        
+        # self.gtk3_global_theming_switch.set_state(global_flatpak_theming_gtk3)
+
+        self.gtk4_user_theming_switch.connect(
+            "state-set", self.on_gtk4_user_theming_switch_toggled
         )
 
-    def on_allow_gtk4_flatpak_theming_user_toggled(self, *args):
-        state = self.allow_gtk4_flatpak_theming_user.props.state
+        self.gtk3_user_theming_switch.connect(
+            "state-set", self.on_gtk3_user_theming_switch_toggled
+        )
+
+    def on_gtk4_user_theming_switch_toggled(self, *args):
+        state = self.gtk4_user_theming_switch.props.state
 
         if not state:
             create_gtk_user_override(self.settings, "gtk4", self)
@@ -94,8 +95,8 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
                 f"user-flatpak-theming-gtk4: {self.settings.get_boolean('user-flatpak-theming-gtk4')}"
             )
 
-    def on_allow_gtk3_flatpak_theming_user_toggled(self, *args):
-        state = self.allow_gtk3_flatpak_theming_user.props.state
+    def on_gtk3_user_theming_switch_toggled(self, *args):
+        state = self.gtk3_user_theming_switch.props.state
 
         if not state:
             create_gtk_user_override(self.settings, "gtk3", self)
@@ -106,8 +107,8 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
                 f"user-flatpak-theming-gtk3: {self.settings.get_boolean('user-flatpak-theming-gtk3')}"
             )
 
-    def on_allow_gtk4_flatpak_theming_global_toggled(self, *args):
-        state = self.allow_gtk4_flatpak_theming_global.props.state
+    def on_gtk4_global_theming_switch_toggled(self, *args):
+        state = self.gtk4_global_theming_switch.props.state
 
         if not state:
             create_gtk_global_override(self.settings, "gtk4", self)
@@ -118,8 +119,8 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
                 f"global-flatpak-theming-gtk4: {self.settings.get_boolean('global-flatpak-theming-gtk4')}"
             )
 
-    def on_allow_gtk3_flatpak_theming_global_toggled(self, *args):
-        state = self.allow_gtk3_flatpak_theming_global.props.state
+    def on_gtk3_global_theming_switch_toggled(self, *args):
+        state = self.gtk3_global_theming_switch.props.state
 
         if not state:
             create_gtk_global_override(self.settings, "gtk3", self)

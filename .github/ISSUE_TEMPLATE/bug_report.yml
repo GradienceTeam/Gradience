@@ -20,7 +20,7 @@ body:
     attributes:
       label: What happened?
       description: A clear and concise description of what the bug is.
-      placeholder: Tell us what you see!
+      placeholder: "Tell us what you see!"
       value: "A bug happened!"
     validations:
       required: true
@@ -34,6 +34,8 @@ body:
         2. Click on '…'
         3. Scroll down to '…'
         4. See error
+    validations:
+      required: true
 
   - type: textarea
     attributes:
@@ -53,13 +55,25 @@ body:
     attributes:
       label: OS
       description: On which system do you run the app?
-      placeholder: Fedora Linux 36 (Workstation Edition)
+      placeholder: "Fedora Linux 36 (Workstation Edition)"
+    validations:
+      required: true
+      
+  - type: input
+    attributes:
+      label: DE/WM version
+      description: Which version of desktop environment / window manager do you use?
+      placeholder: "GNOME 42.3, i3wm 4.21"
+    validations:
+      required: true
 
   - type: input
     attributes:
       label: Version
-      description: Which version of the app do you use?
-      placeholder: "0.3.0, 0.3.0-7e0386b"
+      description: Which version of the Gradience do you use?
+      placeholder: "0.3.0, 0.3.0-7e0386b, `main` branch"
+    validations:
+      required: true
 
   - type: dropdown
     attributes:
@@ -75,6 +89,12 @@ body:
         - Other
     validations:
       required: true
+
+  - type: textarea
+    attributes:
+      label: Enabled system extensions (GNOME specific)
+      description: "Paste here a list of enabled extensions (required if you're using GNOME)."
+      placeholder: "Use `gnome-extensions list --enabled` command to get a list."
 
   - type: textarea
     attributes:

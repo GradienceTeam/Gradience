@@ -7,11 +7,19 @@ configure_file(
   install_dir: get_option('bindir')
 )
 
-configure_file(
-  input: 'gradience.in',
-  output: 'local-gradience',
-  configuration: local_conf
-)
+if get_option('buildtype') == 'debug'
+  configure_file(
+    input: 'gradience.in',
+    output: 'local-gradience',
+    configuration: local_conf
+  )
+
+  launcher = join_paths(meson.project_build_root(), moduledir, 'frontend', 'local-' + meson.project_name())
+
+  run_target('run',
+    command: [launcher]
+  )
+endif
 
 subdir('cli')
 subdir('dialogs')

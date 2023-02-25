@@ -1,3 +1,8 @@
+> **Warning**
+> This software is currently in a **beta** state. It can break things, and it doesn't yet have a polished, _foolproof_ UX.
+> 
+> Please, if you got into some trouble with it, just create a [new issue](https://github.com/GradienceTeam/Gradience/issues/new?assignees=&labels=type%2Fbug&template=bug_report.yml&title=bug%3A+), or contact us on [Matrix](https://matrix.to/#/#Gradience:matrix.org) and [Discord](https://discord.com/invite/4njFDtfGEZ).
+
 <h1 align="center">
   <img src="data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg" alt="Gradience" width="192" height="192"/>
   <br>
@@ -21,8 +26,8 @@
   <a href="https://hosted.weblate.org/engage/GradienceTeam">
     <img alt="Translation status" src="https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg"/>
   </a>
-  <a href="https://github.com/GradienceTeam/Gradience/actions/workflows/ci.yml">
-    <img alt="CI status" src="https://github.com/GradienceTeam/Gradience/actions/workflows/ci.yml/badge.svg"/>
+  <a href="https://github.com/GradienceTeam/Gradience/actions/workflows/build.yml">
+    <img alt="Build status" src="https://github.com/GradienceTeam/Gradience/actions/workflows/build.yml/badge.svg"/>
   </a>
   <a href="https://flathub.org/apps/details/com.github.GradienceTeam.Gradience">
     <img alt="Flathub downloads" src="https://img.shields.io/badge/dynamic/json?color=informational&label=downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Fcom.github.GradienceTeam.Gradience"/>
@@ -60,16 +65,16 @@ The main features of Gradience include the following:
 
 <details>
   <summary>📷️ More screenshots</summary>
-  
+
   ![Monet Tab](https://github.com/GradienceTeam/Design/raw/main/Screenshots/monet_purple.png)
-  
+
   ![Proof of Work](https://github.com/GradienceTeam/Design/raw/main/Screenshots/proof_purple.png)
 </details>
 
 
 ## 🎨️ Theming setup
 
-> **Note** 
+> **Note**
 > You can go to `Preferences` and apply overrides for Flatpak
 
 <details>
@@ -97,9 +102,10 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 </details>
 
+
 ## 🔄 Revert Theming
 
-> **Note** 
+> **Note**
 > You can press on the menu button in the headerbar and press `Reset Applied Color Scheme`
 > ![Main Gradience menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
 
@@ -130,26 +136,26 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 > **Warning**
 > The main installation method is Flatpak from Flathub
 
-### COPR 
+### Fedora (COPR)
 
-Gradience is available on COPR. You can install it using the following command:
+Gradience is available for Fedora via COPR:
 
 ```shell
 dnf copr enable lyessaadi/gradience
 dnf install gradience
 ```
 
-### Debian (And derivates)
+### Debian (And derivatives)
 
 > **Warning**
 > Not available yet.
 
-### AUR 
+### Arch Linux (AUR)
 
-Gradience is available on AUR:
+Gradience is available for Arch Linux via AUR:
 
 Using [Paru](https://github.com/morganamilo/paru):
-    
+
 ```shell
 paru -S gradience
 ```
@@ -216,10 +222,11 @@ gsettings reset com.github.GradienceTeam.Gradience first-run
 
 ## ℹ️ FAQ
 
-_To be done_
+### How can I launch a CLI?
+Refer to [temporary CLI documentation](https://github.com/GradienceTeam/Gradience/wiki/Using-CLI) in repo's wiki for instructions on how to launch a CLI.
 
 
-## 🙌 Contribute to Gradience 
+## 🙌 Contribute to Gradience
 
 See [HACKING.md](HACKING.md)
 
@@ -236,6 +243,16 @@ Gradience was originally named Adwaita Manager.
 You can see the meaning of Gradience on [Wiktionary](https://en.wiktionary.org/wiki/gradience).
 
 The icon represents: _A Paint Roller repainting an Adwaita window, keeping it's functionality._
+
+##  🖌️ About the "Pretty Purple"
+
+The Pretty Purple theme comes from the very beginning, directly from the original author of Gradience, [Artyom Fomin](https://github.com/ArtyIF).
+
+It were called "Purple Guy", presumably as a reference to the FNaF. later it were renamed to Pretty Purple.
+
+Pretty Purple preset were originally shared in the https://github.com/GradienceTeam/Gradience/discussions/23.
+
+Pretty Purple is built-in in the Gradience and used in all Gradience artworks.
 
 
 ## 🌱️ Gradience, [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers

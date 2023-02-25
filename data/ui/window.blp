@@ -3,8 +3,8 @@ using Adw 1;
 
 template GradienceMainWindow : Adw.ApplicationWindow {
   title: _("Gradience");
-  default-width: 1000;
-  default-height: 700;
+  default-width: 950;
+  default-height: 650;
 
   ShortcutController {
     Shortcut {
@@ -30,11 +30,12 @@ template GradienceMainWindow : Adw.ApplicationWindow {
             tooltip-text: _("Apply Preset");
             action-name: "app.apply_color_scheme";
           }
+
           [start]
-          Gtk.MenuButton {
+          Button {
             icon-name: "applications-science-symbolic";
-            menu-model: preview-menu;
-            tooltip-text: _("Preview Theme in…");
+            tooltip-text: _("Show Preview Window");
+            visible: false;
           }
 
           [title]
@@ -143,25 +144,6 @@ menu main-menu {
   }
 }
 
-menu preview-menu {
-  section {
-    item {
-      label: _("Adwaita Demo");
-      action: "app.show_adwaita_demo";
-    }
-
-    item {
-      label: _("GTK 4 Demo");
-      action: "app.show_gtk4_demo";
-    }
-
-    item {
-      label: _("GTK 4 Widget Factory");
-      action: "app.show_gtk4_widget_factory";
-    }
-  }
-}
-
 menu presets-menu {
   section {
     label: _("Built-In Presets");
@@ -200,14 +182,13 @@ Popover errors-popover {
     Label {
       margin-top: 6;
       margin-bottom: 6;
-      margin-start: 12;
-      margin-end: 12;
+      margin-start: 6;
+      margin-end: 6;
       halign: start;
       styles ["dim-label"]
-      max-width-chars: 50;
+      max-width-chars: 30;
       wrap: true;
       justify: left;
     }
   }
 }
-

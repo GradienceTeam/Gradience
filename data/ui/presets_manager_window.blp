@@ -3,8 +3,8 @@ using Adw 1;
 
 template GradiencePresetWindow : Adw.Window {
   title: _("Presets");
-  default-width: 700;
-  default-height: 550;
+  default-width: 650;
+  default-height: 500;
   modal: true;
 
   ShortcutController {
@@ -142,10 +142,12 @@ template GradiencePresetWindow : Adw.Window {
               };
             }
 
+            // NOTE: This group is disabled as there isn't yet any implementation of custom repositories in Gradience
             Adw.ViewStackPage {
               name: "repos";
               title: _("Repositories");
               icon-name: "folder-symbolic";
+              visible: false;
 
               child: Adw.PreferencesPage repos { };
 

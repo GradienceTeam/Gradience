@@ -21,19 +21,45 @@
   </description>
   <screenshots>
     <screenshot>
-      <caption>Screenshot of "Colors" Tab</caption>
-      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/colors_purple.png</image>
+      <caption>Screenshot of "Colors" Tab of Main UI</caption>
+      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/main-ui-colors.png</image>
     </screenshot>
     <screenshot>
-      <caption>Screenshot of "Monet" Tab</caption>
-      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/monet_purple.png</image>
+      <caption>Screenshot of "Monet" Tab of Main UI</caption>
+      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/main-ui-monet.png</image>
     </screenshot>
     <screenshot>
-      <caption>Screenshot of "Advanced" Tab</caption>
-      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/advanced_purple.png</image>
+      <caption>Screenshot of "Advanced" Tab of Main UI</caption>
+      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/main-ui-advanced.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Screenshot of "Installed" Tab of Preset Manager</caption>
+      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/preset-manager-installed.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Screenshot of "Explore" Tab of Preset Manager</caption>
+      <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/preset-manager-explore.png</image>
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.4.0" date="2023-2-8" type="stable">
+      <description>
+        <p>Gradience version 0.4.0 introduces some bug fixes and general quality of life improvement changes:</p>
+        <ul>
+          <li>Added CLI interface, useful for creating scripts or for those who prefer terminal tools</li>
+          <li>Now Gradience warns user when switching to other presets, if current one has unsaved changes</li>
+          <li>When running Gradience from terminal, you will see easier to understand error messages, thanks to new logging facility</li>
+          <li>Preset preview button and "Repositories" tab in Preset Manager have been disabled due to lack of proper implementation</li>
+          <li>Fixed color palette leaking into preset variables in some rare occasions</li>
+          <li>Fixed 'list index out of range' error in "Custom CSS Editor"</li>
+          <li>Fixed sorting in "Explore" tab of Preset Manager not working with non-English locales</li>
+          <li>Codebase is now linted by 'pylint'</li>
+          <li>Start moving out remaining backend functions from 'frontend' modules</li>
+          <li>Now Gradience will internally use hexadecimal color values or RGBA formatted colors if transparency is provided</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.3.3" date="2022-12-3" type="stable">
       <description>
         <p>Gradience 0.3.3 release is a minor translations update and UI improvement release:</p>

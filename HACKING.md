@@ -4,12 +4,13 @@
 
 Fork this repository, then create a push request when you're done adding features or fixing bugs.
 
-### Localization 
+### Localization
 
 You can help Gradience translate into your native language. If you found any typos
 or think you can improve a translation, you can use the [Weblate](https://hosted.weblate.org/engage/GradienceTeam) platform.
 
 [![Translations](https://hosted.weblate.org/widgets/GradienceTeam/-/gradience/287x66-white.png)](https://hosted.weblate.org/engage/GradienceTeam)
+
 
 ## 🏗️ Building from source
 
@@ -83,7 +84,8 @@ pip install -r requirements.txt
 ```shell
 git clone https://github.com/GradienceTeam/Gradience.git
 cd Gradience
-meson builddir --prefix=/usr/local
+meson setup builddir
+meson configure builddir -Dprefix=/usr/local
 sudo ninja -C builddir install
 ```
 
@@ -92,7 +94,7 @@ sudo ninja -C builddir install
 ```shell
 git clone https://github.com/GradienceTeam/Gradience.git
 cd Gradience
-meson builddir
+meson setup builddir
 meson configure builddir -Dprefix="$(pwd)/builddir"
 ninja -C builddir install
 ninja -C builddir run
@@ -100,3 +102,4 @@ ninja -C builddir run
 
 > **Note** 
 > During testing and development, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
+> If you want to use CLI in local builds, you should type: `./local_cli.sh <command>` instead of `gradience-cli`.

@@ -1,5 +1,3 @@
-# requirements.txt
-#
 # Change the look of Adwaita, with ease
 # Copyright (C) 2022 Gradience Team
 #
@@ -16,18 +14,23 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-# After changing this file, download the flatpak pip generator script:
-# curl -O https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/pip/flatpak-pip-generator
-# chmod +x flatpak-pip-generator
-# Then run:
-# ./flatpak-pip-generator --requirements-file=requirements.txt --output pypi-dependencies
-# And move output file to build-aux directory:
-# mv pypi-dependencies.json build-aux/flatpak/
-#
-# or more simply, just push and the bot will do this for you.
 
-anyascii
-material-color-utilities-python
-svglib
-yapsy
-Jinja2
+name: Typos
+
+on:
+  pull_request:
+  schedule:
+    - cron:  '0 0,12 * * *'
+  workflow_dispatch:
+
+jobs:
+  typos:
+    name: Typos
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Check for typos
+      uses: crate-ci/typos@master
+      with:
+        config: typos.toml

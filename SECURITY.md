@@ -1,8 +1,8 @@
-# Security Policy
+## 🔒️ Security Policy
 
-## Supported Versions
+### Supported Versions
 
-We only officially support two latest versions but we provide some help for older versions.
+Only two latest versions are officially supported, but older versions get some help too.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -10,9 +10,8 @@ We only officially support two latest versions but we provide some help for olde
 | 0.2.x   | :white_check_mark: |
 | < 0.1   | :x:                |
 
-## Reporting a Vulnerability
+### Reporting a Vulnerability
 
-Normally Gradience can't have security issues because it's only generating CSS and JSON.
+Normally Gradience can't have security issues, but if you have found a vulnerability, please don't submit a public issue.
 
-BUT If you found a vulnerability please don't submit a public issue.
-Report this vulnerability to AdwCustomizerTeam@proton.me and include as much details as possible.
+Instead, report this vulnerability to [AdwCustomizerTeam@proton.me](mailto:AdwCustomizerTeam@proton.me) and include as much details as possible.

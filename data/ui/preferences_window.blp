@@ -7,15 +7,15 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
   default-width: 600;
   modal: true;
 
-  Adw.PreferencesPage {
+  Adw.PreferencesPage general_page {
     Adw.PreferencesGroup flatpak_group {
       title: _("GTK 4 Flatpak Applications");
 
       Adw.ActionRow {
         title: _("Allow GTK 4 Flatpak Applications Theming");
         subtitle: _("Override Flatpak permissions for current user to allow GTK 4 Flatpak applications to access custom themes.");
-        activatable-widget: allow_gtk4_flatpak_theming_user;
-        Gtk.Switch allow_gtk4_flatpak_theming_user {
+        activatable-widget: gtk4_user_theming_switch;
+        Gtk.Switch gtk4_user_theming_switch {
           valign: center;
         }
       }
@@ -24,8 +24,8 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
         visible: false;
         title: _("Allow GTK 4 Flatpak Applications Theming (System)");
         subtitle: _("Override Flatpak permissions for all users to allow GTK 4 Flatpak applications to access custom themes. (Requires root access)");
-        activatable-widget: allow_gtk4_flatpak_theming_global;
-        Gtk.Switch allow_gtk4_flatpak_theming_global {
+        activatable-widget: gtk4_global_theming_switch;
+        Gtk.Switch gtk4_global_theming_switch {
           valign: center;
         }
       }
@@ -38,8 +38,8 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
       Adw.ActionRow {
         title: _("Allow GTK 3 Flatpak theming");
         subtitle: _("Override Flatpak permissions for current user to allow GTK 3 Flatpak applications to access adw-gtk3 theme.");
-        activatable-widget: allow_gtk3_flatpak_theming_user;
-        Gtk.Switch allow_gtk3_flatpak_theming_user {
+        activatable-widget: gtk3_user_theming_switch;
+        Gtk.Switch gtk3_user_theming_switch {
           valign: center;
         }
       }
@@ -48,13 +48,14 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
         visible: false;
         title: _("GTK 3 Flatpak Applications (System)");
         subtitle: _("Override Flatpak permissions for all users to allow GTK 3 Flatpak applications to access adw-gtk3 theme. (Requires root access)");
-        activatable-widget: allow_gtk3_flatpak_theming_global;
-        Gtk.Switch allow_gtk3_flatpak_theming_global {
+        activatable-widget: gtk3_global_theming_switch;
+        Gtk.Switch gtk3_global_theming_switch {
           valign: center;
         }
       }
     }
 
+    // NOTE: This group is disabled as there isn't yet any implementation of custom repositories in Gradience
     Adw.PreferencesGroup custom_repository_group {
       visible: false;
       title: _("Custom Preset Repositories");
