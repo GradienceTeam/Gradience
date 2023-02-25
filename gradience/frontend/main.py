@@ -361,7 +361,7 @@ class GradienceApplication(Adw.Application):
     def update_theme_from_monet(self, monet, preset_variant: str, tone=20):
         palettes = monet["palettes"]
 
-        preset_variant = preset_variant.get_string().lower()  # dark / light
+        preset_variant = preset_variant.lower()  # dark / light
 
         palette = {}
 
