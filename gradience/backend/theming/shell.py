@@ -171,8 +171,6 @@ class ShellTheme:
                     palette_content += line
             template.close()
 
-        print(palette_content)
-
         with open(self.palette_source, "w", encoding="utf-8") as sheet:
             sheet.write(palette_content)
             sheet.close()
@@ -188,7 +186,6 @@ class ShellTheme:
                         inserted = line.replace(
                             "{{" + key + "}}", self.variables[key])
                     except KeyError:
-                        print(self.custom_colors)
                         inserted = line.replace(
                             "{{" + key + "}}", self.custom_colors[key])
 
