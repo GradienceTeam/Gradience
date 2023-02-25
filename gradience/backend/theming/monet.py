@@ -77,50 +77,7 @@ class Monet:
         if not monet_palette:
             raise AttributeError("Property 'monet_palette' missing")
 
-        if theme == "dark":
-            dark_theme = monet_palette["schemes"]["dark"]
-            variable = {
-                "accent_color": argb_to_color_code(dark_theme.primary),
-                "accent_bg_color": argb_to_color_code(dark_theme.primaryContainer),
-                "accent_fg_color": argb_to_color_code(dark_theme.onPrimaryContainer),
-                "destructive_color": argb_to_color_code(dark_theme.error),
-                "destructive_bg_color": argb_to_color_code(dark_theme.errorContainer),
-                "destructive_fg_color": argb_to_color_code(
-                    dark_theme.onErrorContainer
-                ),
-                "success_color": argb_to_color_code(dark_theme.tertiary),
-                "success_bg_color": argb_to_color_code(dark_theme.onTertiary),
-                "success_fg_color": argb_to_color_code(dark_theme.onTertiaryContainer),
-                "warning_color": argb_to_color_code(dark_theme.secondary),
-                "warning_bg_color": argb_to_color_code(dark_theme.onSecondary),
-                "warning_fg_color": argb_to_color_code(dark_theme.primary, "0.8"),
-                "error_color": argb_to_color_code(dark_theme.error),
-                "error_bg_color": argb_to_color_code(dark_theme.errorContainer),
-                "error_fg_color": argb_to_color_code(dark_theme.onError),
-                "window_bg_color": argb_to_color_code(dark_theme.surface),
-                "window_fg_color": argb_to_color_code(dark_theme.onSurface),
-                "view_bg_color": argb_to_color_code(dark_theme.surface),
-                "view_fg_color": argb_to_color_code(dark_theme.onSurface),
-                "headerbar_bg_color": argb_to_color_code(dark_theme.surface),
-                "headerbar_fg_color": argb_to_color_code(dark_theme.onSurface),
-                "headerbar_border_color": argb_to_color_code(
-                    dark_theme.primary, "0.8"
-                ),
-                "headerbar_backdrop_color": "@headerbar_bg_color",
-                "headerbar_shade_color": argb_to_color_code(dark_theme.shadow),
-                "card_bg_color": argb_to_color_code(dark_theme.primary, "0.05"),
-                "card_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
-                "card_shade_color": argb_to_color_code(dark_theme.shadow),
-                "dialog_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
-                "dialog_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
-                "popover_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
-                "popover_fg_color": argb_to_color_code(
-                    dark_theme.onSecondaryContainer
-                ),
-                "shade_color": argb_to_color_code(dark_theme.shadow),
-                "scrollbar_outline_color": argb_to_color_code(dark_theme.outline),
-            }
-        elif theme == "light":
+        if theme == "light":
             light_theme = monet_palette["schemes"]["light"]
             variable = {
                 "accent_color": argb_to_color_code(light_theme.primary),
@@ -128,50 +85,71 @@ class Monet:
                 "accent_fg_color": argb_to_color_code(light_theme.onPrimary),
                 "destructive_color": argb_to_color_code(light_theme.error),
                 "destructive_bg_color": argb_to_color_code(light_theme.errorContainer),
-                "destructive_fg_color": argb_to_color_code(
-                    light_theme.onErrorContainer
-                ),
+                "destructive_fg_color": argb_to_color_code(light_theme.onError),
                 "success_color": argb_to_color_code(light_theme.tertiary),
                 "success_bg_color": argb_to_color_code(light_theme.tertiaryContainer),
-                "success_fg_color": argb_to_color_code(
-                    light_theme.onTertiaryContainer
-                ),
+                "success_fg_color": argb_to_color_code(light_theme.onTertiaryContainer),
                 "warning_color": argb_to_color_code(light_theme.secondary),
                 "warning_bg_color": argb_to_color_code(light_theme.secondaryContainer),
-                "warning_fg_color": argb_to_color_code(
-                    light_theme.onSecondaryContainer
-                ),
+                "warning_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
                 "error_color": argb_to_color_code(light_theme.error),
                 "error_bg_color": argb_to_color_code(light_theme.errorContainer),
                 "error_fg_color": argb_to_color_code(light_theme.onError),
-                "window_bg_color": argb_to_color_code(light_theme.secondaryContainer),
+                "window_bg_color": argb_to_color_code(light_theme.surface),
                 "window_fg_color": argb_to_color_code(light_theme.onSurface),
                 "view_bg_color": argb_to_color_code(light_theme.secondaryContainer),
                 "view_fg_color": argb_to_color_code(light_theme.onSurface),
-                "headerbar_bg_color": argb_to_color_code(
-                    light_theme.secondaryContainer
-                ),
-                "headerbar_fg_color": argb_to_color_code(light_theme.onSurface),
-                "headerbar_border_color": argb_to_color_code(
-                    light_theme.primary, "0.8"
-                ),
-                "headerbar_backdrop_color": "@headerbar_bg_color",
-                "headerbar_shade_color": argb_to_color_code(
-                    light_theme.secondaryContainer
-                ),
+                "headerbar_bg_color": argb_to_color_code(light_theme.primary, "0.08"),
+                "headerbar_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
+                "headerbar_border_color": argb_to_color_code(light_theme.onSurface, "0.8"),
+                "headerbar_backdrop_color": "@window_bg_color",
+                "headerbar_shade_color": argb_to_color_code(light_theme.onSurface, "0.07"),
                 "card_bg_color": argb_to_color_code(light_theme.primary, "0.05"),
                 "card_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
-                "card_shade_color": argb_to_color_code(light_theme.shadow),
+                "card_shade_color": argb_to_color_code(light_theme.shadow, "0.07"),
                 "dialog_bg_color": argb_to_color_code(light_theme.secondaryContainer),
-                "dialog_fg_color": argb_to_color_code(
-                    light_theme.onSecondaryContainer
-                ),
+                "dialog_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
                 "popover_bg_color": argb_to_color_code(light_theme.secondaryContainer),
-                "popover_fg_color": argb_to_color_code(
-                    light_theme.onSecondaryContainer
-                ),
-                "shade_color": argb_to_color_code(light_theme.shadow),
+                "popover_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
+                "shade_color": argb_to_color_code(light_theme.shadow, "0.07"),
                 "scrollbar_outline_color": argb_to_color_code(light_theme.outline),
+            }
+        elif theme == "dark":
+            dark_theme = monet_palette["schemes"]["dark"]
+            variable = {
+                "accent_color": argb_to_color_code(dark_theme.primary),
+                "accent_bg_color": argb_to_color_code(dark_theme.primary),
+                "accent_fg_color": argb_to_color_code(dark_theme.onPrimary),
+                "destructive_color": argb_to_color_code(dark_theme.error),
+                "destructive_bg_color": argb_to_color_code(dark_theme.errorContainer),
+                "destructive_fg_color": argb_to_color_code(dark_theme.onError),
+                "success_color": argb_to_color_code(dark_theme.tertiary),
+                "success_bg_color": argb_to_color_code(dark_theme.tertiaryContainer),
+                "success_fg_color": argb_to_color_code(dark_theme.onTertiaryContainer),
+                "warning_color": argb_to_color_code(dark_theme.secondary),
+                "warning_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
+                "warning_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
+                "error_color": argb_to_color_code(dark_theme.error),
+                "error_bg_color": argb_to_color_code(dark_theme.errorContainer),
+                "error_fg_color": argb_to_color_code(dark_theme.onError),
+                "window_bg_color": argb_to_color_code(dark_theme.surface),
+                "window_fg_color": argb_to_color_code(dark_theme.onSurface),
+                "view_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
+                "view_fg_color": argb_to_color_code(dark_theme.onSurface),
+                "headerbar_bg_color": argb_to_color_code(dark_theme.primary, "0.08"),
+                "headerbar_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
+                "headerbar_border_color": argb_to_color_code(dark_theme.onSurface, "0.8"),
+                "headerbar_backdrop_color": "@window_bg_color",
+                "headerbar_shade_color": argb_to_color_code(dark_theme.onSurface, "0.07"),
+                "card_bg_color": argb_to_color_code(dark_theme.primary, "0.05"),
+                "card_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
+                "card_shade_color": argb_to_color_code(dark_theme.shadow, "0.07"),
+                "dialog_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
+                "dialog_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
+                "popover_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
+                "popover_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
+                "shade_color": argb_to_color_code(dark_theme.shadow, "0.36"),
+                "scrollbar_outline_color": argb_to_color_code(dark_theme.outline, "0.5"),
             }
         else:
             raise AttributeError("Unknown theme variant selected")
