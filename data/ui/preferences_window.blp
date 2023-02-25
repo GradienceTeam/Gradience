@@ -94,9 +94,8 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
       Adw.ActionRow {
         title: _("Enable Monet Engine");
         subtitle: _("Monet Engine generates a Material Design 3 palette from extracting image's colors.");
-        activatable-widget: enable_monet_engine;
-
-        Switch enable_monet_engine {
+        activatable-widget: monet_engine_switch;
+        Switch monet_engine_switch {
           valign: center;
         }
       }
@@ -104,9 +103,8 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
       Adw.ActionRow {
         title: _("Enable Shell Engine");
         subtitle: _("Shell Engine generates a custom GNOME Shell theme based of a currently chosen preset.");
-        activatable-widget: enable_gnome_shell_engine;
-
-        Switch enable_gnome_shell_engine {
+        activatable-widget: gnome_shell_engine_switch;
+        Switch gnome_shell_engine_switch {
           valign: center;
         }
       }

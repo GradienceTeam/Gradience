@@ -82,8 +82,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         if build_type == "debug":
             self.get_style_context().add_class("devel")
 
-        self.setup_shell_group()
-        self.setup_monet_group()
+        self.setup_theming_page()
         self.setup_colors_group()
 
     # TODO: Check if org.freedesktop.portal.Settings portal will allow us to \
@@ -125,6 +124,15 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.settings.set_boolean("window-maximized", self.is_maximized())
         self.settings.set_boolean("window-fullscreen", self.is_fullscreen())
 
+    def setup_theming_page(self):
+        # TODO: Show fallback page if no theme engines are enabled
+        '''no_engines_label = Gtk.Label.new("No Theme Engines enabled")
+        if not self.enabled_theme_engines:
+            self.content_theming.add()'''
+
+        self.setup_shell_group()
+        self.setup_monet_group()
+
     def setup_shell_group(self):
         self.shell_group = GradienceShellThemingGroup(self)
 
@@ -136,6 +144,16 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         if "monet" in self.enabled_theme_engines:
             self.content_theming.add(self.monet_group)
+
+    def reload_theming_page(self):
+        if self.shell_group.is_ancestor(self.content_theming):
+            self.content_theming.remove(self.shell_group)
+
+        if self.monet_group.is_ancestor(self.content_theming):
+            self.content_theming.remove(self.monet_group)
+
+        self.setup_shell_group()
+        self.setup_monet_group()
 
     def setup_colors_group(self):
         for group in preset_schema["groups"]:

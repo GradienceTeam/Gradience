@@ -16,12 +16,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, Adw
+from gi.repository import GLib, Gtk, Adw
 
 from gradience.backend.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
 from gradience.backend.flatpak_overrides import create_gtk_global_override, remove_gtk_global_override
 
 from gradience.frontend.widgets.reset_preset_group import GradienceResetPresetGroup
+from gradience.frontend.views.main_window import GradienceMainWindow
 
 from gradience.backend.constants import rootdir
 
@@ -43,6 +44,9 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
     gtk3_user_theming_switch = Gtk.Template.Child()
     gtk3_global_theming_switch = Gtk.Template.Child()
 
+    monet_engine_switch = Gtk.Template.Child()
+    gnome_shell_engine_switch = Gtk.Template.Child()
+
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
 
@@ -58,12 +62,32 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
 
     def setup(self):
         self.setup_flatpak_group()
+        self.setup_theme_engines_group()
         self.setup_reset_preset_group()
 
     def setup_reset_preset_group(self):
         self.reset_preset_group = GradienceResetPresetGroup(self)
 
         self.theming_page.add(self.reset_preset_group)
+
+    def setup_theme_engines_group(self):
+        if "shell" in self.win.enabled_theme_engines:
+            self.gnome_shell_engine_switch.set_state(True)
+        else:
+            self.gnome_shell_engine_switch.set_state(False)
+
+        if "monet" in self.win.enabled_theme_engines:
+            self.monet_engine_switch.set_state(True)
+        else:
+            self.monet_engine_switch.set_state(False)
+
+        self.gnome_shell_engine_switch.connect(
+            "state-set", self.on_gnome_shell_engine_switch_toggled
+        )
+
+        self.monet_engine_switch.connect(
+            "state-set", self.on_monet_engine_switch_toggled
+        )
 
     def setup_flatpak_group(self):
         user_flatpak_theming_gtk4 = self.settings.get_boolean(
@@ -141,3 +165,37 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
             logging.debug(
                 f"global-flatpak-theming-gtk3: {self.settings.get_boolean('global-flatpak-theming-gtk3')}"
             )
+
+    def on_gnome_shell_engine_switch_toggled(self, *args):
+        state = self.gnome_shell_engine_switch.props.state
+
+        if not state:
+            self.win.enabled_theme_engines.add("shell")
+        else:
+            self.win.enabled_theme_engines.remove("shell")
+
+        enabled_engines = GLib.Variant.new_strv(list(self.win.enabled_theme_engines))
+        self.settings.set_value("enabled-theme-engines", enabled_engines)
+
+        self.win.reload_theming_page()
+
+        logging.debug(
+                f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
+        )
+
+    def on_monet_engine_switch_toggled(self, *args):
+        state = self.monet_engine_switch.props.state
+
+        if not state:
+            self.win.enabled_theme_engines.add("monet")
+        else:
+            self.win.enabled_theme_engines.remove("monet")
+
+        enabled_engines = GLib.Variant.new_strv(list(self.win.enabled_theme_engines))
+        self.settings.set_value("enabled-theme-engines", enabled_engines)
+
+        self.win.reload_theming_page()
+
+        logging.debug(
+                f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
+        )
