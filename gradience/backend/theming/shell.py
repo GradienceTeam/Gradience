@@ -156,22 +156,26 @@ class ShellTheme:
         # hexcode_regex = re.compile(r".*#[0-9a-f]{3,6}")
         template_regex = re.compile(r"{{(.*?)}}")
 
-        '''palette_content = ""
+        palette_content = ""
 
         with open(self.palette_template, "r", encoding="utf-8") as template:
             for line in template:
                 template_match = re.search(template_regex, line)
                 if template_match != None:
-                    key = template_match.__getitem__(1)
-                    inserted = line.replace("{{" + key + "}}", self.variables[key])
+                    _key = template_match.__getitem__(1)
+                    prefix = _key.split("_")[0] + "_"
+                    key = _key.split("_")[1]
+                    inserted = line.replace("{{" + _key + "}}", self.palette[prefix][key])
                     palette_content += inserted
                 else:
                     palette_content += line
             template.close()
 
+        print(palette_content)
+
         with open(self.palette_source, "w", encoding="utf-8") as sheet:
             sheet.write(palette_content)
-            sheet.close()'''
+            sheet.close()
 
         colors_content = ""
 
@@ -184,6 +188,7 @@ class ShellTheme:
                         inserted = line.replace(
                             "{{" + key + "}}", self.variables[key])
                     except KeyError:
+                        print(self.custom_colors)
                         inserted = line.replace(
                             "{{" + key + "}}", self.custom_colors[key])
 
