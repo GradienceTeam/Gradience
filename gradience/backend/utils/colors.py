@@ -78,7 +78,7 @@ def argb_to_color_code(argb, alpha=None) -> str:
 
     return rgba_base.format(red, green, blue, alpha)
 
-def color_vars_to_color_code(variables: dict, palette: dict):
+def color_vars_to_color_code(variables: dict, palette: dict) -> dict:
     """
     This function converts GTK color variables to color code
     (hexadecimal code if no transparency channel, RGBA format if otherwise).
@@ -87,6 +87,9 @@ def color_vars_to_color_code(variables: dict, palette: dict):
     This isn't recommended however, because in most cases you'll be unable to determine
     if variables you pass don't contain any palette color variables.
     """
+
+    output = variables
+
     if palette == None:
         logging.warning("Palette parameter in `color_vars_to_color_code()` function not set. Incoming bugs ahead!")
 
@@ -98,17 +101,17 @@ def color_vars_to_color_code(variables: dict, palette: dict):
 
     def __update_vars(var_type, variable, color_value):
         if var_type == "palette":
-            variables[variable] = palette[color_value[:-1]][color_value[-1:]]
+            output[variable] = palette[color_value[:-1]][color_value[-1:]]
         elif var_type == "variable":
-            variables[variable] = variables[color_value]
+            output[variable] = output[color_value]
 
-        if __has_variable_prefix(variables[variable]):
-            __update_variable_vars(variable, variables[variable])
+        if __has_variable_prefix(output[variable]):
+            __update_variable_vars(variable, output[variable])
 
-        if __has_palette_prefix(variables[variable]):
-            __update_palette_vars(variable, variables[variable])
+        if __has_palette_prefix(output[variable]):
+            __update_palette_vars(variable, output[variable])
 
-    for variable, color in variables.items():
+    for variable, color in output.items():
         color_value = color[1:] # Remove '@' from the beginning of the color variable
 
         if __has_palette_prefix(color_value) and palette != None:
@@ -116,3 +119,5 @@ def color_vars_to_color_code(variables: dict, palette: dict):
 
         if __has_variable_prefix(color_value):
             __update_vars("variable", variable, color_value)
+
+    return output

@@ -173,6 +173,8 @@ class Monet:
                 "shade_color": argb_to_color_code(light_theme.shadow),
                 "scrollbar_outline_color": argb_to_color_code(light_theme.outline),
             }
+        else:
+            raise AttributeError("Unknown theme variant selected")
 
         if obj_only == False and not name:
             raise AttributeError("You either need to set 'obj_only' property to True, or add value to 'name' property")
