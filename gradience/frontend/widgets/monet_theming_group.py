@@ -109,8 +109,8 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
 
                 class variantEnum(Enum):
                     AUTO = 0
-                    DARK = 1
-                    LIGHT = 2
+                    LIGHT = 1
+                    DARK = 2
 
                 def __get_variant_string():
                     if variant_pos == variantEnum.AUTO.value:
