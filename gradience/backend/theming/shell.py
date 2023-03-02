@@ -65,54 +65,49 @@ class ShellTheme:
         else:
             raise UnsupportedShellVersion(
                 f"GNOME Shell version {shell_version} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})")
+
         self.user_theme_schema = "org.gnome.shell.extensions.user-theme"
         self.THEME_EXT_NAME = "user-theme@gnome-shell-extensions.gcampax.github.com"
         self.THEME_GSETTINGS_SCHEMA = "org.gnome.shell.extensions.user-theme"
         self.THEME_GSETTINGS_NAME = "name"
-        self.THEME_GSETTINGS_DIR = os.path.join(GLib.get_user_data_dir(), "gnome-shell", "extensions",
-                                                self.THEME_EXT_NAME, "schemas")
+        self.THEME_GSETTINGS_DIR = os.path.join(GLib.get_user_data_dir(),
+            "gnome-shell", "extensions", self.THEME_EXT_NAME, "schemas")
 
         # try:
         if os.path.exists(self.THEME_GSETTINGS_DIR):
             self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA,
-                                             schema_dir=self.THEME_GSETTINGS_DIR)
+                schema_dir=self.THEME_GSETTINGS_DIR)
         else:
             self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA)
+
         name = self.settings.get_string(self.THEME_GSETTINGS_NAME)
 
         # Theme source/output paths
-        self.templates_dir = os.path.join(
-            datadir, "gradience", "shell", "templates", str(self.version_target))
-        self.source_dir = os.path.join(
-            GLib.get_home_dir(), ".cache", "gradience-shell", str(self.version_target))
+        self.templates_dir = os.path.join(datadir, "gradience", "shell", "templates", str(self.version_target))
+        self.source_dir = os.path.join(GLib.get_home_dir(), ".cache", "gradience", "gradience-shell", str(self.version_target))
+
         if os.path.exists(self.source_dir):
             shutil.rmtree(self.source_dir)
-        shutil.copytree(os.path.join(datadir, "gradience", "shell", str(
-            self.version_target)), self.source_dir, dirs_exist_ok=True)
-        self.output_dir = os.path.join(
-            GLib.get_home_dir(), ".local/share/themes", "gradience-shell", "gnome-shell")
 
-        self.main_template = os.path.join(
-            self.templates_dir, "gnome-shell.template")
-        self.colors_template = os.path.join(
-            self.templates_dir, "colors.template")
-        self.palette_template = os.path.join(
-            self.templates_dir, "palette.template")
+        shutil.copytree(os.path.join(datadir, "gradience", "shell",
+            str(self.version_target)), self.source_dir, dirs_exist_ok=True
+        )
+
+        self.output_dir = os.path.join(GLib.get_home_dir(), ".local/share/themes", "gradience-shell", "gnome-shell")
+
+        self.main_template = os.path.join(self.templates_dir, "gnome-shell.template")
+        self.colors_template = os.path.join(self.templates_dir, "colors.template")
+        self.palette_template = os.path.join(self.templates_dir, "palette.template")
         # NOTE: From what I saw in some Shell themes, we can write our own Gresource schema, which will allow us to remove switches.template
-        self.switches_template = os.path.join(
-            self.templates_dir, "switches.template")
+        self.switches_template = os.path.join(self.templates_dir, "switches.template")
 
         self.main_source = os.path.join(self.source_dir, "gnome-shell.scss")
-        self.colors_source = os.path.join(
-            self.source_dir, "gnome-shell-sass", "_colors.scss")
-        self.palette_source = os.path.join(
-            self.source_dir, "gnome-shell-sass", "_palette.scss")
-        self.switches_source = os.path.join(
-            self.source_dir, "gnome-shell-sass", "widgets", "_switches.scss")
+        self.colors_source = os.path.join(self.source_dir, "gnome-shell-sass", "_colors.scss")
+        self.palette_source = os.path.join(self.source_dir, "gnome-shell-sass", "_palette.scss")
+        self.switches_source = os.path.join(self.source_dir, "gnome-shell-sass", "widgets", "_switches.scss")
 
         self.switch_on_source = os.path.join(self.source_dir, "toggle-on.svg")
-        self.switch_off_source = os.path.join(
-            self.source_dir, "toggle-off.svg")
+        self.switch_off_source = os.path.join(self.source_dir, "toggle-off.svg")
 
         self.assets_output = os.path.join(self.output_dir, "assets")
 
@@ -146,8 +141,7 @@ class ShellTheme:
                 raise
 
         self.compile_sass(os.path.join(self.source_dir, "gnome-shell.scss"),
-                          os.path.join(self.output_dir, "gnome-shell.css")
-                          )
+            os.path.join(self.output_dir, "gnome-shell.css"))
 
         self.recolor_assets()
         self.set_shell_theme()
