@@ -26,9 +26,10 @@ import gettext
 from gi.repository import Gio, GLib
 
 from gradience.backend.models.preset import Preset
+from gradience.backend.utils.colors import color_vars_to_color_code
 from gradience.backend.utils.shell import get_shell_version
-from gradience.backend.constants import datadir
 from gradience.backend.utils.gsettings import GSettingsSetting
+from gradience.backend.constants import datadir
 
 from gradience.backend.logger import Logger
 from gradience.backend.exceptions import UnsupportedShellVersion
@@ -89,6 +90,7 @@ class ShellTheme:
         if os.path.exists(self.source_dir):
             shutil.rmtree(self.source_dir)
 
+        # Copy shell theme source directories to ~/.cache/gradience/gradience-shell
         shutil.copytree(os.path.join(datadir, "gradience", "shell",
             str(self.version_target)), self.source_dir, dirs_exist_ok=True
         )
@@ -125,7 +127,9 @@ class ShellTheme:
 
     def create_theme(self, app):
         preset = app.preset
-        self.variables = preset.variables
+
+        # Convert GTK color variables to normal color values
+        self.variables = color_vars_to_color_code(preset.variables, preset.palette)
         self.palette = preset.palette
         self.custom_css = preset.custom_css
         self.custom_colors = app.custom_colors
