@@ -19,38 +19,45 @@
 shell_schema = {
     "variables": [
         {
-            "name": "window_bg_color",
+            "name": "bg_color",
+            "var_name": "window_bg_color",
             "title": _("Base Background Color")
         },
         {
-            "name": "window_fg_color",
+            "name": "fg_color",
+            "var_name": "window_fg_color",
             "title": _("Base Foreground Color")
         },
         {
-            "name": "accent_bg_color",
+            "name": "selected_bg_color",
+            "var_name": "accent_bg_color",
             "title": _("Accent Background Color")
         },
         {
-            "name": "accent_fg_color",
+            "name": "selected_fg_color",
+            "var_name": "window_fg_color",
             "title": _("Accent Foreground Color")
         },
         {
-            "name": "window_bg_color",
-            "title": _("OSD Background Color")
-        },
-        {
-            "name": "accent_fg_color",
-            "title": _("OSD Foreground Color")
-        },
-        {
             "name": "system_bg_color",
-            "title": _("System Background Color"),
-            "var": "window_bg_color"
+            "var_name": "window_bg_color",
+            "title": _("System Background Color")
         },
         {
             "name": "panel_bg_color",
+            "var_name": "panel_bg_color",
             "title": _("Panel Background Color"),
-            "value": "#000"
+            "default_value": "#000"
+        },
+        {
+            "name": "osd_bg_color",
+            "var_name": "window_bg_color",
+            "title": _("OSD Background Color")
+        },
+        {
+            "name": "osd_fg_color",
+            "var_name": "accent_fg_color",
+            "title": _("OSD Foreground Color")
         }
     ]
 }

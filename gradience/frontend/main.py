@@ -471,15 +471,12 @@ class GradienceApplication(Adw.Application):
 
         for variable in shell_schema["variables"]:
             try:
-                self.custom_colors[variable["name"]] = variable["value"]
+                self.custom_colors[variable["name"]] = variable["default_value"]
             except KeyError:
                 try:
-                    self.custom_colors[variable["name"]] = self.variables[variable["var"]]
+                    self.custom_colors[variable["var_name"]] = self.variables[variable["var_name"]]
                 except KeyError:
-                    try:
-                        self.custom_colors[variable["name"]] = self.variables[variable["name"]]
-                    except KeyError:
-                        raise
+                    raise
 
         self.is_ready = True
 
