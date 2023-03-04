@@ -20,8 +20,7 @@ import os
 import re
 import shutil
 import os.path
-import xml.dom.minidom
-import gettext
+import sass
 
 from gi.repository import Gio, GLib
 
@@ -239,13 +238,16 @@ class ShellTheme:
 
     def compile_sass(self, sass_path, output_path):
         try:
-            # TODO: Check where sassc is installed
-            Gio.Subprocess.new(
-                ["/usr/bin/sassc", sass_path, output_path], Gio.SubprocessFlags.NONE)
-        except GLib.GError as e:
+            compiled = sass.compile(filename=sass_path, output_style="compressed")
+            #Gio.Subprocess.new(
+            #    ["/usr/bin/sassc", sass_path, output_path], Gio.SubprocessFlags.NONE)
+        except (GLib.GError, sass.CompileError) as e:
             logging.error(
-                f"Failed to compile SCSS source files using external sassc program.", exc=e)
-
+                f"Failed to compile SCSS source files.", exc=e)
+        else:
+            with open(output_path, "w", encoding="utf-8") as css:
+                css.write(compiled)
+                css.close()
     # TODO: Add recoloring for other assets
     def recolor_assets(self):
         accent_bg = self.variables["accent_bg_color"]
