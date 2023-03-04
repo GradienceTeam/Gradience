@@ -18,16 +18,15 @@
 
 from gi.repository import Gio
 
-from gradience.backend.utils.common import extract_version
+from gradience.backend.utils.common import extract_version, run_command
 
 
 # TODO: Make it Flatpak-friendly (maybe move most of the code to run_command function?)
 def get_shell_version():
-    result = Gio.Subprocess.new(["gnome-shell", "--version"], Gio.SubprocessFlags.STDOUT_PIPE)
-
-    stdout_stream = result.get_stdout_pipe()
-    stdout_bytes = stdout_stream.read_bytes(count=20, cancellable=None).get_data() #count = number of bytes to read, "test" = 4 bytes
-    stdout = stdout_bytes.decode().replace("\n", "")
+    stdout = run_command(["gnome-shell", "--version"],
+        get_stdout_text=True,
+        bytes_amount=20,
+        allow_escaping=True).replace("\n", "")
 
     shell_version = extract_version(stdout, "GNOME Shell")
 
@@ -35,11 +34,10 @@ def get_shell_version():
 
 # TODO: Make it Flatpak-friendly (maybe move most of the code to run_command function?)
 def get_full_shell_version():
-    result = Gio.Subprocess.new(["gnome-shell", "--version"], Gio.SubprocessFlags.STDOUT_PIPE)
-
-    stdout_stream = result.get_stdout_pipe()
-    stdout_bytes = stdout_stream.read_bytes(count=20, cancellable=None).get_data() #count = number of bytes to read, "test" = 4 bytes
-    stdout = stdout_bytes.decode().replace("\n", "")
+    stdout = run_command(["gnome-shell", "--version"],
+        get_stdout_text=True,
+        bytes_amount=20,
+        allow_escaping=True).replace("\n", "")
 
     shell_version = stdout[12:]
 

@@ -22,6 +22,8 @@ import subprocess
 
 from anyascii import anyascii
 
+from gi.repository import Gio
+
 
 def to_slug_case(non_slug) -> str:
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
@@ -40,10 +42,44 @@ def extract_version(text, prefix_text=None):
 
     return version.__getitem__(1)
 
-def run_command(command, *args, **kwargs):
-    if isinstance(command, str): # run on the host
-        command = [command]
-    if os.environ.get('FLATPAK_ID'): # run in flatpak
+def run_command(
+    command: list,
+    stdout_pipe=False,
+    get_stdout_text=False,
+    bytes_amount=None,
+    allow_escaping=False) -> (Gio.Subprocess, Gio.UnixInputStream, str):
+    '''
+    Spawns a new child process (subprocess) using Gio's Subprocess class.
+
+    To retrieve process stdout pipe, enable `stdout_pipe` parameter.
+
+    To retrieve stdout in a text form, enable `get_stdout_text` parameter and set
+    amount of bytes to read in `bytes_amount` parameter.
+
+    You can enable executing commands outside Flatpak sandbox by enabling
+    `allow_escaping` parameter.
+    '''
+    if allow_escaping and os.environ.get('FLATPAK_ID'):
         command = ['flatpak-spawn', '--host'] + command
 
-    return subprocess.run(command, *args, **kwargs, check=True)
+    if stdout_pipe or get_stdout_text:
+        gsubprocess = Gio.Subprocess.new(command, Gio.SubprocessFlags.STDOUT_PIPE)
+
+        if stdout_pipe:
+            return gsubprocess.get_stdout_pipe()
+
+        if get_stdout_text:
+            if bytes_amount == None:
+                raise ValueError("get_stdout_text parameter is set but bytes_amount parameter is not")
+
+            stdout_stream = gsubprocess.get_stdout_pipe()
+
+            if isinstance(bytes_amount, str):
+                bytes_amount = int(bytes_amount)
+
+            stdout_bytes = stdout_stream.read_bytes(count=bytes_amount, cancellable=None).get_data() #count = number of bytes to read, "test" = 4 bytes
+            stdout = stdout_bytes.decode()
+
+            return stdout
+
+    return Gio.Subprocess.new(command, Gio.SubprocessFlags.NONE)
