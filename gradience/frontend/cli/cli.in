@@ -47,7 +47,7 @@ from gradience.backend.globals import preset_repos, presets_dir
 
 from gradience.backend.theming.monet import Monet
 from gradience.backend.models.preset import Preset
-from gradience.backend.theming.preset_utils import PresetUtils
+from gradience.backend.theming.preset import PresetUtils
 from gradience.backend.preset_downloader import PresetDownloader
 from gradience.backend.flatpak_overrides import list_file_access, allow_file_access, disallow_file_access, create_gtk_user_override, remove_gtk_user_override
 
@@ -350,7 +350,7 @@ class CLI:
         _json = args.json
 
         try:
-            palette = Monet().generate_from_image(_image_path)
+            palette = Monet().generate_palette_from_image(_image_path)
         except (OSError, ValueError) as e:
             logging.info("If you are getting an `no such file or directory` error on Gradience installed as Flatpak, "
                 "try adding the file to the access list by using `gradience-cli access-file --allow 'path/to/file'` command.")
@@ -360,8 +360,8 @@ class CLI:
 
         if _json:
             try:
-                preset = PresetUtils().new_preset_from_monet(_preset_name,
-                            palette, props, True)
+                preset = Monet().new_preset_from_monet(_preset_name,
+                                    palette, props, True)
             except (OSError, AttributeError) as e:
                 logging.error("Unexpected error while generating preset from Monet palette.", exc=e)
                 exit(1)
@@ -371,8 +371,7 @@ class CLI:
                 exit(0)
 
         try:
-            PresetUtils().new_preset_from_monet(_preset_name, palette, props)
-            #raise OSError()
+            Monet().new_preset_from_monet(_preset_name, palette, props)
         except (OSError, AttributeError) as e:
             logging.error("Unexpected error while generating preset from Monet palette.", exc=e)
             exit(1)

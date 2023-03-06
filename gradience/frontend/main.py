@@ -27,8 +27,10 @@ from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
-from gradience.backend.theming.preset_utils import PresetUtils
+from gradience.backend.theming.preset import PresetUtils
+from gradience.backend.theming.monet import Monet
 from gradience.backend.utils.common import to_slug_case
+from gradience.backend.utils.theming import generate_gtk_css
 from gradience.backend.constants import rootdir, app_id, rel_ver
 
 from gradience.frontend.views.main_window import GradienceMainWindow
@@ -376,7 +378,7 @@ class GradienceApplication(Adw.Application):
                 preset_variant = "light"
 
         try:
-            preset_object = PresetUtils().new_preset_from_monet(monet_palette=monet,
+            preset_object = Monet().new_preset_from_monet(monet_palette=monet,
                                 props=[tone, preset_variant], obj_only=True)
         except (OSError, AttributeError) as e:
             logging.error("An error occurred while generating preset from Monet palette.", exc=e)
@@ -418,7 +420,7 @@ class GradienceApplication(Adw.Application):
 
     def reload_variables(self):
         parsing_errors = []
-        gtk_css = PresetUtils().generate_gtk_css("gtk4", self.preset)
+        gtk_css = generate_gtk_css("gtk4", self.preset)
         css_provider = Gtk.CssProvider()
 
         def on_error(_, section, error):
@@ -525,7 +527,6 @@ class GradienceApplication(Adw.Application):
             Adw.ResponseAppearance.DESTRUCTIVE
         )
 
-        dialog.gtk3_app_type.set_sensitive(False)
         dialog.connect("response", self.restore_color_scheme)
         dialog.present()
 
@@ -639,10 +640,18 @@ class GradienceApplication(Adw.Application):
         if response == "restore":
             if widget.get_app_types()["gtk4"]:
                 try:
-                    PresetUtils().restore_gtk4_preset()
+                    PresetUtils().reset_preset("gtk4")
                 except OSError:
                     self.win.toast_overlay.add_toast(
                         Adw.Toast(title=_("Unable to restore GTK 4 backup"))
+                    )
+
+            if widget.get_app_types()["gtk3"]:
+                try:
+                    PresetUtils().restore_preset("gtk3")
+                except OSError:
+                    self.win.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Unable to restore GTK 3 backup"))
                     )
 
             dialog = GradienceLogOutDialog(self.win)
