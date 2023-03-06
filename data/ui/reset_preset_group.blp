@@ -1,0 +1,47 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradienceResetPresetGroup : Adw.PreferencesGroup {
+  title: _("Reset &amp; Restore Presets");
+  description: _("This section allows you to reset an currently applied preset or restore the previous one.");
+
+  Adw.ActionRow {
+    title: _("Libadwaita and GTK 4 Applications");
+
+    Button restore_libadw_button {
+      valign: center;
+      icon-name: "edit-undo-symbolic";
+      tooltip-text: _("Restore Previous Preset");
+      clicked => on_libadw_restore_button_clicked();
+      styles ["flat"]
+    }
+
+    Button reset_libadw_button {
+      valign: center;
+      label: _("Reset");
+      tooltip-text: _("Reset Applied Preset");
+      clicked => on_libadw_reset_button_clicked();
+      styles ["destructive-action"]
+    }
+  }
+
+  Adw.ActionRow {
+    title: _("GTK 3 Applications");
+
+    Button restore_gtk3_button {
+      valign: center;
+      icon-name: "edit-undo-symbolic";
+      tooltip-text: _("Restore Previous Preset");
+      clicked => on_gtk3_restore_button_clicked();
+      styles ["flat"]
+    }
+
+    Button reset_gtk3_button {
+      valign: center;
+      label: _("Reset");
+      tooltip-text: _("Reset Applied Preset");
+      clicked => on_gtk3_reset_button_clicked();
+      styles ["destructive-action"]
+    }
+  }
+}
