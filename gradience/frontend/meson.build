@@ -23,13 +23,13 @@ endif
 
 subdir('cli')
 subdir('dialogs')
+subdir('schemas')
 subdir('utils')
 subdir('views')
 subdir('widgets')
 
 gradience_sources = [
     '__init__.py',
-    'main.py',
-    'settings_schema.py'
+    'main.py'
 ]
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: frontenddir)

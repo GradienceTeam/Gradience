@@ -26,7 +26,7 @@ from gradience.backend.constants import rootdir, app_id, build_type
 from gradience.frontend.widgets.error_list_row import GradienceErrorListRow
 from gradience.frontend.widgets.palette_shades import GradiencePaletteShades
 from gradience.frontend.widgets.option_row import GradienceOptionRow
-from gradience.frontend.settings_schema import settings_schema
+from gradience.frontend.schemas.preset_schema import preset_schema
 
 from gradience.backend.logger import Logger
 
@@ -250,7 +250,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
             )
 
     def setup_colors_page(self):
-        for group in settings_schema["groups"]:
+        for group in preset_schema["groups"]:
             pref_group = Adw.PreferencesGroup()
             pref_group.set_name(group["name"])
             pref_group.set_title(group["title"])
@@ -279,7 +279,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
                 "GNOME Human Interface Guidelines</a>."
             )
         )
-        for color in settings_schema["palette"]:
+        for color in preset_schema["palette"]:
             palette_shades = GradiencePaletteShades(
                 color["prefix"], color["title"], color["n_shades"]
             )

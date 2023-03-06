@@ -44,7 +44,7 @@ from gradience.frontend.dialogs.save_dialog import GradienceSaveDialog
 from gradience.frontend.widgets.custom_css_group import GradienceCustomCSSGroup
 
 from gradience.frontend.utils.actions import ActionHelpers
-from gradience.frontend.settings_schema import settings_schema
+from gradience.frontend.schemas.preset_schema import preset_schema
 
 from gradience.backend.logger import Logger
 
@@ -342,7 +342,7 @@ class GradienceApplication(Adw.Application):
         if "custom_css" in preset:
             self.custom_css = preset["custom_css"]
         else:
-            for app_type in settings_schema["custom_css_app_types"]:
+            for app_type in preset_schema["custom_css_app_types"]:
                 self.custom_css[app_type] = ""
 
         for key in self.variables.keys():
@@ -691,7 +691,7 @@ class GradienceApplication(Adw.Application):
 
         self.custom_css_group = GradienceCustomCSSGroup(self.win)
 
-        for app_type in settings_schema["custom_css_app_types"]:
+        for app_type in preset_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
 
         self.custom_css_group.load_custom_css(self.custom_css)
@@ -717,7 +717,7 @@ class GradienceApplication(Adw.Application):
 
         self.custom_css_group = GradienceCustomCSSGroup(self.win)
 
-        for app_type in settings_schema["custom_css_app_types"]:
+        for app_type in preset_schema["custom_css_app_types"]:
             self.custom_css[app_type] = ""
 
         self.custom_css_group.load_custom_css(self.custom_css)
