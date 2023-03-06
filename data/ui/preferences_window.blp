@@ -5,9 +5,13 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
   title: _("Preferences");
   default-height: 400;
   default-width: 600;
+  search-enabled: false; // Currently needs to be disabled due to markup parser bug
   modal: true;
 
   Adw.PreferencesPage general_page {
+    title: _("General");
+    icon-name: "applications-system-symbolic";
+
     Adw.PreferencesGroup flatpak_group {
       title: _("GTK 4 Flatpak Applications");
 
@@ -75,6 +79,27 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
             valign: center;
             icon-name: "checkmark-large-symbolic";
           }
+        }
+      }
+    }
+  }
+
+  Adw.PreferencesPage theming_page {
+    title: _("Theming");
+    icon-name: "larger-brush-symbolic";
+
+    Adw.PreferencesGroup preset_group {
+      title: _("Theme Engines");
+      description: _("Theme Engines are the built-in theme generators for various customizable programs/frameworks.");
+
+      Adw.ActionRow {
+        title: _("Enable Monet Engine");
+        subtitle: _("Monet Engine generates a Material Design 3 palette from extracting image's colors.");
+        activatable-widget: monet_engine_switch;
+        Switch monet_engine_switch {
+          valign: center;
+          sensitive: false;
+          tooltip-text: "Monet Engine can't be currently disabled";
         }
       }
     }
