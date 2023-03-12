@@ -42,6 +42,20 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.4.1" date="2023-3-5" type="stable">
+      <description>
+        <p>This is a small bug fix release mainly intended for package maintainers.</p>
+        <ul>
+          <li>Only configure local CLI if buildtype is set to debug</li>
+          <li>Changed margins in popup explanations and some other widgets</li>
+          <li>Changed object names in preferences window</li>
+          <li>Fixed local CLI executable making issues with Fedora CI</li>
+          <li>Fixed theme variant menu in Monet Engine not working with non-english locales</li>
+          <li>Applied temporary patch for CssProvider.load_from_data() new behavior in GTK 4.10</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.4.0" date="2023-2-8" type="stable">
       <description>
         <p>Gradience version 0.4.0 introduces some bug fixes and general quality of life improvement changes:</p>

@@ -23,16 +23,12 @@ from gradience.backend import constants
 
 release_notes = """
 <ul>
-<li>Added CLI interface, useful for creating scripts or for those who prefer terminal tools</li>
-<li>Now Gradience warns user when switching to other presets, if current one has unsaved changes</li>
-<li>When running Gradience from terminal, you will see easier to understand error messages, thanks to new logging facility</li>
-<li>Preset preview button and "Repositories" tab in Preset Manager have been disabled due to lack of proper implementation</li>
-<li>Fixed color palette leaking into preset variables in some rare occasions</li>
-<li>Fixed 'list index out of range' error in "Custom CSS Editor"</li>
-<li>Fixed sorting in "Explore" tab of Preset Manager not working with non-English locales</li>
-<li>Codebase is now linted by 'pylint'</li>
-<li>Start moving out remaining backend functions from 'frontend' modules</li>
-<li>Now Gradience will internally use hexadecimal color values or RGBA formatted colors if transparency is provided</li>
+<li>Only configure local CLI if buildtype is set to debug</li>
+<li>Changed margins in popup explanations and some other widgets</li>
+<li>Changed object names in preferences window</li>
+<li>Fixed local CLI executable making issues with Fedora CI</li>
+<li>Fixed theme variant menu in Monet Engine not working with non-english locales</li>
+<li>Applied temporary patch for CssProvider.load_from_data() new behavior in GTK 4.10</li>
 <li>Translation updates</li>
 </ul>
 """

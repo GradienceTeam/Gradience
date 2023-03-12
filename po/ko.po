@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-06 12:15+0000\n"
+"POT-Creation-Date: 2023-03-12 12:13+0000\n"
 "PO-Revision-Date: 2022-12-05 04:48+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -35,7 +35,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Adwaita의 외관을 쉽게 변경합니다"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/views/about_window.py:94
+#: gradience/frontend/views/about_window.py:90
 msgid "Gradience Team"
 msgstr "Gradience팀"
 
@@ -709,11 +709,11 @@ msgstr "GTK 4 백업을 복원할 수 없습니다"
 msgid "Unable to delete current preset"
 msgstr "사전 설정을 삭제할 수 없습니다"
 
-#: gradience/frontend/settings_schema.py:23
+#: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
 msgstr "강조 색상"
 
-#: gradience/frontend/settings_schema.py:25
+#: gradience/frontend/schemas/preset_schema.py:25
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate that a widget is important, interactive, or "
@@ -722,19 +722,19 @@ msgstr ""
 "이러한 색상은 버튼, 레이블 및 항목과 같은 다양한 위젯에서 사용되어 위젯이 중"
 "요하거나 대화형이거나 현재 활성화되어 있음을 나타냅니다."
 
-#: gradience/frontend/settings_schema.py:32
-#: gradience/frontend/settings_schema.py:63
-#: gradience/frontend/settings_schema.py:95
-#: gradience/frontend/settings_schema.py:127
-#: gradience/frontend/settings_schema.py:158
+#: gradience/frontend/schemas/preset_schema.py:32
+#: gradience/frontend/schemas/preset_schema.py:63
+#: gradience/frontend/schemas/preset_schema.py:95
+#: gradience/frontend/schemas/preset_schema.py:127
+#: gradience/frontend/schemas/preset_schema.py:158
 msgid "Standalone Color"
 msgstr "독립 색상"
 
-#: gradience/frontend/settings_schema.py:34
-#: gradience/frontend/settings_schema.py:65
-#: gradience/frontend/settings_schema.py:97
-#: gradience/frontend/settings_schema.py:129
-#: gradience/frontend/settings_schema.py:160
+#: gradience/frontend/schemas/preset_schema.py:34
+#: gradience/frontend/schemas/preset_schema.py:65
+#: gradience/frontend/schemas/preset_schema.py:97
+#: gradience/frontend/schemas/preset_schema.py:129
+#: gradience/frontend/schemas/preset_schema.py:160
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
@@ -743,49 +743,49 @@ msgstr ""
 "독립 색상은 배경 색상과 유사하지만 무채색 배경(예: 창의 다채로운 텍스트) 위"
 "에 전경색으로 사용할 때 더 나은 대비를 제공합니다."
 
-#: gradience/frontend/settings_schema.py:43
-#: gradience/frontend/settings_schema.py:74
-#: gradience/frontend/settings_schema.py:106
-#: gradience/frontend/settings_schema.py:138
-#: gradience/frontend/settings_schema.py:169
-#: gradience/frontend/settings_schema.py:186
-#: gradience/frontend/settings_schema.py:206
-#: gradience/frontend/settings_schema.py:227
-#: gradience/frontend/settings_schema.py:282
-#: gradience/frontend/settings_schema.py:309
-#: gradience/frontend/settings_schema.py:326
+#: gradience/frontend/schemas/preset_schema.py:43
+#: gradience/frontend/schemas/preset_schema.py:74
+#: gradience/frontend/schemas/preset_schema.py:106
+#: gradience/frontend/schemas/preset_schema.py:138
+#: gradience/frontend/schemas/preset_schema.py:169
+#: gradience/frontend/schemas/preset_schema.py:186
+#: gradience/frontend/schemas/preset_schema.py:206
+#: gradience/frontend/schemas/preset_schema.py:227
+#: gradience/frontend/schemas/preset_schema.py:282
+#: gradience/frontend/schemas/preset_schema.py:309
+#: gradience/frontend/schemas/preset_schema.py:326
 msgid "Background Color"
 msgstr "배경색상"
 
-#: gradience/frontend/settings_schema.py:48
-#: gradience/frontend/settings_schema.py:79
-#: gradience/frontend/settings_schema.py:111
-#: gradience/frontend/settings_schema.py:143
-#: gradience/frontend/settings_schema.py:174
-#: gradience/frontend/settings_schema.py:191
-#: gradience/frontend/settings_schema.py:211
-#: gradience/frontend/settings_schema.py:232
-#: gradience/frontend/settings_schema.py:287
-#: gradience/frontend/settings_schema.py:314
-#: gradience/frontend/settings_schema.py:331
+#: gradience/frontend/schemas/preset_schema.py:48
+#: gradience/frontend/schemas/preset_schema.py:79
+#: gradience/frontend/schemas/preset_schema.py:111
+#: gradience/frontend/schemas/preset_schema.py:143
+#: gradience/frontend/schemas/preset_schema.py:174
+#: gradience/frontend/schemas/preset_schema.py:191
+#: gradience/frontend/schemas/preset_schema.py:211
+#: gradience/frontend/schemas/preset_schema.py:232
+#: gradience/frontend/schemas/preset_schema.py:287
+#: gradience/frontend/schemas/preset_schema.py:314
+#: gradience/frontend/schemas/preset_schema.py:331
 msgid "Foreground Color"
 msgstr "전경색상"
 
-#: gradience/frontend/settings_schema.py:55
+#: gradience/frontend/schemas/preset_schema.py:55
 msgid "Destructive Colors"
 msgstr "파괴적인 색상"
 
-#: gradience/frontend/settings_schema.py:57
+#: gradience/frontend/schemas/preset_schema.py:57
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
 msgstr "이 색상은 파일 삭제와 같은 위험한 작업을 나타내는 버튼에 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:86
+#: gradience/frontend/schemas/preset_schema.py:86
 msgid "Success Colors"
 msgstr "성공 색상"
 
-#: gradience/frontend/settings_schema.py:88
+#: gradience/frontend/schemas/preset_schema.py:88
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
@@ -793,11 +793,11 @@ msgstr ""
 "이러한 색상은 버튼, 레이블, 항목 및 수준 표시줄과 같은 다양한 위젯에서 성공 "
 "또는 높은 수준을 나타내는 데 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:118
+#: gradience/frontend/schemas/preset_schema.py:118
 msgid "Warning Colors"
 msgstr "경고 색상"
 
-#: gradience/frontend/settings_schema.py:120
+#: gradience/frontend/schemas/preset_schema.py:120
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
@@ -805,11 +805,11 @@ msgstr ""
 "이러한 색상은 버튼, 레이블, 항목 및 수준 표시줄과 같은 다양한 위젯에서 경고 "
 "또는 낮은 수준을 나타내는 데 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:150
+#: gradience/frontend/schemas/preset_schema.py:150
 msgid "Error Colors"
 msgstr "오류 색상"
 
-#: gradience/frontend/settings_schema.py:152
+#: gradience/frontend/schemas/preset_schema.py:152
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
@@ -817,29 +817,29 @@ msgstr ""
 "이러한 색상은 버튼, 레이블 및 항목과 같은 다양한 위젯에서 실패를 나타내는 데 "
 "사용됩니다."
 
-#: gradience/frontend/settings_schema.py:181
+#: gradience/frontend/schemas/preset_schema.py:181
 msgid "Window Colors"
 msgstr "창 색상"
 
-#: gradience/frontend/settings_schema.py:182
+#: gradience/frontend/schemas/preset_schema.py:182
 msgid "These colors are used primarily for windows."
 msgstr "이 색상은 주로 창에 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:198
+#: gradience/frontend/schemas/preset_schema.py:198
 msgid "View Colors"
 msgstr "뷰 색상"
 
-#: gradience/frontend/settings_schema.py:200
+#: gradience/frontend/schemas/preset_schema.py:200
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
 msgstr "이러한 색상은 텍스트뷰 및 항목과 같은 다양한 위젯에서 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:218
+#: gradience/frontend/schemas/preset_schema.py:218
 msgid "Header Bar Colors"
 msgstr "제목 표시줄 색상"
 
-#: gradience/frontend/settings_schema.py:220
+#: gradience/frontend/schemas/preset_schema.py:220
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
@@ -847,11 +847,11 @@ msgstr ""
 "이러한 색상은 제목 표시줄과 검색 표시줄 또는 탭 표시줄과 같이 시각적으로 연결"
 "되는 위젯에 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:237
+#: gradience/frontend/schemas/preset_schema.py:237
 msgid "Border Color"
 msgstr "테두리 색상"
 
-#: gradience/frontend/settings_schema.py:239
+#: gradience/frontend/schemas/preset_schema.py:239
 msgid ""
 "The border color has the same default value as a foreground color, but "
 "doesn't change along with it. This can be useful if a light window has a "
@@ -865,11 +865,11 @@ msgstr ""
 "세로 테두리에만 사용됩니다(예: 분할 제목 표시줄 레이아웃에서 두 제목 표시줄 "
 "사이의 구분 기호)."
 
-#: gradience/frontend/settings_schema.py:252
+#: gradience/frontend/schemas/preset_schema.py:252
 msgid "Backdrop Color"
 msgstr "백드롭 색상"
 
-#: gradience/frontend/settings_schema.py:254
+#: gradience/frontend/schemas/preset_schema.py:254
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -880,13 +880,13 @@ msgstr ""
 "경색의 별칭이며 함께 변경됩니다. 이 변수를 변경할 때 제목 표시줄 배경색과 매"
 "칭되는 값으로 설정해야 합니다."
 
-#: gradience/frontend/settings_schema.py:265
-#: gradience/frontend/settings_schema.py:292
-#: gradience/frontend/settings_schema.py:343
+#: gradience/frontend/schemas/preset_schema.py:265
+#: gradience/frontend/schemas/preset_schema.py:292
+#: gradience/frontend/schemas/preset_schema.py:343
 msgid "Shade Color"
 msgstr "그림자 색상"
 
-#: gradience/frontend/settings_schema.py:267
+#: gradience/frontend/schemas/preset_schema.py:267
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
@@ -894,15 +894,15 @@ msgstr ""
 "그림자 색은 제목 표시줄 및 기본 창에서 이들을 구분하는 유사한 위젯에 어두운 "
 "테두리를 제공하는 데 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:277
+#: gradience/frontend/schemas/preset_schema.py:277
 msgid "Card Colors"
 msgstr "카드 색"
 
-#: gradience/frontend/settings_schema.py:278
+#: gradience/frontend/schemas/preset_schema.py:278
 msgid "These colors are used for cards and boxed lists."
 msgstr "이 색상은 카드 및 상자 목록에 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:294
+#: gradience/frontend/schemas/preset_schema.py:294
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
@@ -911,31 +911,31 @@ msgstr ""
 "그림자 색상은 카드가 창 배경과 자신을 분리하는 데 사용하는 그림자와 카드의 "
 "행 구분선에 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:304
+#: gradience/frontend/schemas/preset_schema.py:304
 msgid "Dialog Colors"
 msgstr "대화 상자 색상"
 
-#: gradience/frontend/settings_schema.py:305
+#: gradience/frontend/schemas/preset_schema.py:305
 msgid "These colors are used for message dialogs."
 msgstr "이 색상은 메시지 대화 상자에 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:321
+#: gradience/frontend/schemas/preset_schema.py:321
 msgid "Popover Colors"
 msgstr "팝오버 색상"
 
-#: gradience/frontend/settings_schema.py:322
+#: gradience/frontend/schemas/preset_schema.py:322
 msgid "These colors are used for popovers."
 msgstr "이 색상은 팝오버에 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:338
+#: gradience/frontend/schemas/preset_schema.py:338
 msgid "Miscellaneous Colors"
 msgstr "여러 가지 종류의 색상"
 
-#: gradience/frontend/settings_schema.py:339
+#: gradience/frontend/schemas/preset_schema.py:339
 msgid "Colors that don't fit in any particular group."
 msgstr "특정 그룹에 맞지 않는 색상."
 
-#: gradience/frontend/settings_schema.py:345
+#: gradience/frontend/schemas/preset_schema.py:345
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -943,11 +943,11 @@ msgstr ""
 "그림자 색상은 인라인 탭 표시줄과 전단지 및 플랩의 전환, 정보 표시줄 테두리에"
 "서 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:353
+#: gradience/frontend/schemas/preset_schema.py:353
 msgid "Scrollbar Outline Color"
 msgstr "스크롤바 외곽선 색상"
 
-#: gradience/frontend/settings_schema.py:355
+#: gradience/frontend/schemas/preset_schema.py:355
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -955,65 +955,65 @@ msgstr ""
 "스크롤바 외곽선 색상은 콘텐츠 색상에 관계없이 오버레이 스크롤바가 보이도록 하"
 "기 위해 스크롤바에서 사용됩니다."
 
-#: gradience/frontend/settings_schema.py:365
+#: gradience/frontend/schemas/preset_schema.py:365
 msgid "Blue"
 msgstr "파란색"
 
-#: gradience/frontend/settings_schema.py:366
+#: gradience/frontend/schemas/preset_schema.py:366
 msgid "Green"
 msgstr "녹색"
 
-#: gradience/frontend/settings_schema.py:367
+#: gradience/frontend/schemas/preset_schema.py:367
 msgid "Yellow"
 msgstr "노란색"
 
-#: gradience/frontend/settings_schema.py:368
+#: gradience/frontend/schemas/preset_schema.py:368
 msgid "Orange"
 msgstr "주황색"
 
-#: gradience/frontend/settings_schema.py:369
+#: gradience/frontend/schemas/preset_schema.py:369
 msgid "Red"
 msgstr "빨간색"
 
-#: gradience/frontend/settings_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:370
 msgid "Purple"
 msgstr "보라색"
 
-#: gradience/frontend/settings_schema.py:371
+#: gradience/frontend/schemas/preset_schema.py:371
 msgid "Brown"
 msgstr "갈색"
 
-#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/schemas/preset_schema.py:372
 #: gradience/frontend/views/main_window.py:206
 msgid "Light"
 msgstr "밝은 색"
 
-#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/schemas/preset_schema.py:373
 #: gradience/frontend/views/main_window.py:207
 msgid "Dark"
 msgstr "어두운 색"
 
-#: gradience/frontend/views/about_window.py:116
+#: gradience/frontend/views/about_window.py:112
 msgid "Copyright © 2022-2023 Gradience Team"
 msgstr ""
 
-#: gradience/frontend/views/about_window.py:125
+#: gradience/frontend/views/about_window.py:121
 msgid "Plugins by"
 msgstr "플러그인"
 
-#: gradience/frontend/views/about_window.py:133
+#: gradience/frontend/views/about_window.py:129
 msgid "Presets by"
 msgstr "프리셋"
 
-#: gradience/frontend/views/about_window.py:155
+#: gradience/frontend/views/about_window.py:151
 msgid "Packages by"
 msgstr "패키지"
 
-#: gradience/frontend/views/about_window.py:162
+#: gradience/frontend/views/about_window.py:158
 msgid "Fixes by"
 msgstr "버그수정"
 
-#: gradience/frontend/views/about_window.py:172
+#: gradience/frontend/views/about_window.py:168
 msgid "Special thanks to"
 msgstr "특별히 고마운 분들"
 

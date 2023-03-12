@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-06 12:15+0000\n"
+"POT-Creation-Date: 2023-03-12 12:13+0000\n"
 "PO-Revision-Date: 2023-03-03 00:53+0000\n"
 "Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -35,7 +35,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Ubah tampilan Adwaita, dengan mudah"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/views/about_window.py:94
+#: gradience/frontend/views/about_window.py:90
 msgid "Gradience Team"
 msgstr "Tim Gradience"
 
@@ -769,12 +769,12 @@ msgstr "Tidak dapat memulihkan cadangan GTK 4"
 msgid "Unable to delete current preset"
 msgstr "Tidak dapat menghapus preset"
 
-#: gradience/frontend/settings_schema.py:23
+#: gradience/frontend/schemas/preset_schema.py:23
 #, fuzzy
 msgid "Accent Colors"
 msgstr "Warna Aksen"
 
-#: gradience/frontend/settings_schema.py:25
+#: gradience/frontend/schemas/preset_schema.py:25
 #, fuzzy
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
@@ -785,20 +785,20 @@ msgstr ""
 "label, dan entri, untuk mengindikasikan bahwa widget itu penting, "
 "interaktif, atau sedang aktif."
 
-#: gradience/frontend/settings_schema.py:32
-#: gradience/frontend/settings_schema.py:63
-#: gradience/frontend/settings_schema.py:95
-#: gradience/frontend/settings_schema.py:127
-#: gradience/frontend/settings_schema.py:158
+#: gradience/frontend/schemas/preset_schema.py:32
+#: gradience/frontend/schemas/preset_schema.py:63
+#: gradience/frontend/schemas/preset_schema.py:95
+#: gradience/frontend/schemas/preset_schema.py:127
+#: gradience/frontend/schemas/preset_schema.py:158
 #, fuzzy
 msgid "Standalone Color"
 msgstr "Warna Mandiri"
 
-#: gradience/frontend/settings_schema.py:34
-#: gradience/frontend/settings_schema.py:65
-#: gradience/frontend/settings_schema.py:97
-#: gradience/frontend/settings_schema.py:129
-#: gradience/frontend/settings_schema.py:160
+#: gradience/frontend/schemas/preset_schema.py:34
+#: gradience/frontend/schemas/preset_schema.py:65
+#: gradience/frontend/schemas/preset_schema.py:97
+#: gradience/frontend/schemas/preset_schema.py:129
+#: gradience/frontend/schemas/preset_schema.py:160
 #, fuzzy
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
@@ -809,42 +809,42 @@ msgstr ""
 "yang lebih baik apabila digunakan sebagai warna latar depan di atas latar "
 "belakang netral - misalnya, teks berwarna-warni di jendela."
 
-#: gradience/frontend/settings_schema.py:43
-#: gradience/frontend/settings_schema.py:74
-#: gradience/frontend/settings_schema.py:106
-#: gradience/frontend/settings_schema.py:138
-#: gradience/frontend/settings_schema.py:169
-#: gradience/frontend/settings_schema.py:186
-#: gradience/frontend/settings_schema.py:206
-#: gradience/frontend/settings_schema.py:227
-#: gradience/frontend/settings_schema.py:282
-#: gradience/frontend/settings_schema.py:309
-#: gradience/frontend/settings_schema.py:326
+#: gradience/frontend/schemas/preset_schema.py:43
+#: gradience/frontend/schemas/preset_schema.py:74
+#: gradience/frontend/schemas/preset_schema.py:106
+#: gradience/frontend/schemas/preset_schema.py:138
+#: gradience/frontend/schemas/preset_schema.py:169
+#: gradience/frontend/schemas/preset_schema.py:186
+#: gradience/frontend/schemas/preset_schema.py:206
+#: gradience/frontend/schemas/preset_schema.py:227
+#: gradience/frontend/schemas/preset_schema.py:282
+#: gradience/frontend/schemas/preset_schema.py:309
+#: gradience/frontend/schemas/preset_schema.py:326
 #, fuzzy
 msgid "Background Color"
 msgstr "Warna Latar"
 
-#: gradience/frontend/settings_schema.py:48
-#: gradience/frontend/settings_schema.py:79
-#: gradience/frontend/settings_schema.py:111
-#: gradience/frontend/settings_schema.py:143
-#: gradience/frontend/settings_schema.py:174
-#: gradience/frontend/settings_schema.py:191
-#: gradience/frontend/settings_schema.py:211
-#: gradience/frontend/settings_schema.py:232
-#: gradience/frontend/settings_schema.py:287
-#: gradience/frontend/settings_schema.py:314
-#: gradience/frontend/settings_schema.py:331
+#: gradience/frontend/schemas/preset_schema.py:48
+#: gradience/frontend/schemas/preset_schema.py:79
+#: gradience/frontend/schemas/preset_schema.py:111
+#: gradience/frontend/schemas/preset_schema.py:143
+#: gradience/frontend/schemas/preset_schema.py:174
+#: gradience/frontend/schemas/preset_schema.py:191
+#: gradience/frontend/schemas/preset_schema.py:211
+#: gradience/frontend/schemas/preset_schema.py:232
+#: gradience/frontend/schemas/preset_schema.py:287
+#: gradience/frontend/schemas/preset_schema.py:314
+#: gradience/frontend/schemas/preset_schema.py:331
 #, fuzzy
 msgid "Foreground Color"
 msgstr "Warna Latar Depan:"
 
-#: gradience/frontend/settings_schema.py:55
+#: gradience/frontend/schemas/preset_schema.py:55
 #, fuzzy
 msgid "Destructive Colors"
 msgstr "Warna yang Merusak"
 
-#: gradience/frontend/settings_schema.py:57
+#: gradience/frontend/schemas/preset_schema.py:57
 #, fuzzy
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
@@ -853,12 +853,12 @@ msgstr ""
 "Warna-warna ini digunakan untuk tombol-tombol untuk mengindikasikan tindakan "
 "berbahaya, seperti menghapus file."
 
-#: gradience/frontend/settings_schema.py:86
+#: gradience/frontend/schemas/preset_schema.py:86
 #, fuzzy
 msgid "Success Colors"
 msgstr "Warna Sukses"
 
-#: gradience/frontend/settings_schema.py:88
+#: gradience/frontend/schemas/preset_schema.py:88
 #, fuzzy
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
@@ -868,12 +868,12 @@ msgstr ""
 "label, entri, dan bar level, untuk mengindikasikan keberhasilan atau level "
 "tinggi."
 
-#: gradience/frontend/settings_schema.py:118
+#: gradience/frontend/schemas/preset_schema.py:118
 #, fuzzy
 msgid "Warning Colors"
 msgstr "Warna Peringatan"
 
-#: gradience/frontend/settings_schema.py:120
+#: gradience/frontend/schemas/preset_schema.py:120
 #, fuzzy
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
@@ -883,12 +883,12 @@ msgstr ""
 "label, entri, dan bar level, untuk mengindikasikan peringatan atau level "
 "rendah."
 
-#: gradience/frontend/settings_schema.py:150
+#: gradience/frontend/schemas/preset_schema.py:150
 #, fuzzy
 msgid "Error Colors"
 msgstr "Warna Kesalahan"
 
-#: gradience/frontend/settings_schema.py:152
+#: gradience/frontend/schemas/preset_schema.py:152
 #, fuzzy
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
@@ -897,22 +897,22 @@ msgstr ""
 "Warna-warna ini digunakan di banyak widget yang berbeda, seperti tombol, "
 "label, dan entri, untuk mengindikasikan kegagalan."
 
-#: gradience/frontend/settings_schema.py:181
+#: gradience/frontend/schemas/preset_schema.py:181
 #, fuzzy
 msgid "Window Colors"
 msgstr "Warna Jendela"
 
-#: gradience/frontend/settings_schema.py:182
+#: gradience/frontend/schemas/preset_schema.py:182
 #, fuzzy
 msgid "These colors are used primarily for windows."
 msgstr "Warna-warna ini digunakan terutama untuk jendela."
 
-#: gradience/frontend/settings_schema.py:198
+#: gradience/frontend/schemas/preset_schema.py:198
 #, fuzzy
 msgid "View Colors"
 msgstr "Lihat Warna"
 
-#: gradience/frontend/settings_schema.py:200
+#: gradience/frontend/schemas/preset_schema.py:200
 #, fuzzy
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
@@ -921,12 +921,12 @@ msgstr ""
 "Warna-warna ini digunakan dalam berbagai widget, seperti tampilan teks dan "
 "entri."
 
-#: gradience/frontend/settings_schema.py:218
+#: gradience/frontend/schemas/preset_schema.py:218
 #, fuzzy
 msgid "Header Bar Colors"
 msgstr "Warna Batang Header"
 
-#: gradience/frontend/settings_schema.py:220
+#: gradience/frontend/schemas/preset_schema.py:220
 #, fuzzy
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
@@ -936,12 +936,12 @@ msgstr ""
 "untuk dilekatkan secara visual padanya, seperti bilah pencarian atau bilah "
 "tab."
 
-#: gradience/frontend/settings_schema.py:237
+#: gradience/frontend/schemas/preset_schema.py:237
 #, fuzzy
 msgid "Border Color"
 msgstr "Warna Border"
 
-#: gradience/frontend/settings_schema.py:239
+#: gradience/frontend/schemas/preset_schema.py:239
 #, fuzzy
 msgid ""
 "The border color has the same default value as a foreground color, but "
@@ -957,12 +957,12 @@ msgstr ""
 "untuk border vertikal - misalnya, pemisah antara dua header bar dalam tata "
 "letak header bar terpisah."
 
-#: gradience/frontend/settings_schema.py:252
+#: gradience/frontend/schemas/preset_schema.py:252
 #, fuzzy
 msgid "Backdrop Color"
 msgstr "Warna Latar Belakang"
 
-#: gradience/frontend/settings_schema.py:254
+#: gradience/frontend/schemas/preset_schema.py:254
 #, fuzzy
 msgid ""
 "The backdrop color is used instead of the background color when the window "
@@ -976,14 +976,14 @@ msgstr ""
 "mengubah variabel ini, pastikan untuk mengaturnya ke nilai yang sesuai "
 "dengan warna latar belakang header bar Anda."
 
-#: gradience/frontend/settings_schema.py:265
-#: gradience/frontend/settings_schema.py:292
-#: gradience/frontend/settings_schema.py:343
+#: gradience/frontend/schemas/preset_schema.py:265
+#: gradience/frontend/schemas/preset_schema.py:292
+#: gradience/frontend/schemas/preset_schema.py:343
 #, fuzzy
 msgid "Shade Color"
 msgstr "Warna Naungan"
 
-#: gradience/frontend/settings_schema.py:267
+#: gradience/frontend/schemas/preset_schema.py:267
 #, fuzzy
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
@@ -992,17 +992,17 @@ msgstr ""
 "Warna bayangan digunakan untuk memberikan batas gelap untuk header bar dan "
 "widget serupa yang memisahkannya dari jendela utama."
 
-#: gradience/frontend/settings_schema.py:277
+#: gradience/frontend/schemas/preset_schema.py:277
 #, fuzzy
 msgid "Card Colors"
 msgstr "Warna Kartu"
 
-#: gradience/frontend/settings_schema.py:278
+#: gradience/frontend/schemas/preset_schema.py:278
 #, fuzzy
 msgid "These colors are used for cards and boxed lists."
 msgstr "Warna-warna ini digunakan untuk kartu dan daftar kotak."
 
-#: gradience/frontend/settings_schema.py:294
+#: gradience/frontend/schemas/preset_schema.py:294
 #, fuzzy
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
@@ -1013,37 +1013,37 @@ msgstr ""
 "memisahkan diri dari latar belakang jendela, serta untuk pembagi baris dalam "
 "kartu."
 
-#: gradience/frontend/settings_schema.py:304
+#: gradience/frontend/schemas/preset_schema.py:304
 #, fuzzy
 msgid "Dialog Colors"
 msgstr "Warna Dialog"
 
-#: gradience/frontend/settings_schema.py:305
+#: gradience/frontend/schemas/preset_schema.py:305
 #, fuzzy
 msgid "These colors are used for message dialogs."
 msgstr "Warna-warna ini digunakan untuk dialog pesan."
 
-#: gradience/frontend/settings_schema.py:321
+#: gradience/frontend/schemas/preset_schema.py:321
 #, fuzzy
 msgid "Popover Colors"
 msgstr "Warna Popover"
 
-#: gradience/frontend/settings_schema.py:322
+#: gradience/frontend/schemas/preset_schema.py:322
 #, fuzzy
 msgid "These colors are used for popovers."
 msgstr "Warna-warna ini digunakan untuk popover."
 
-#: gradience/frontend/settings_schema.py:338
+#: gradience/frontend/schemas/preset_schema.py:338
 #, fuzzy
 msgid "Miscellaneous Colors"
 msgstr "Warna Lain-lain"
 
-#: gradience/frontend/settings_schema.py:339
+#: gradience/frontend/schemas/preset_schema.py:339
 #, fuzzy
 msgid "Colors that don't fit in any particular group."
 msgstr "Warna-warna yang tidak sesuai dengan kelompok tertentu."
 
-#: gradience/frontend/settings_schema.py:345
+#: gradience/frontend/schemas/preset_schema.py:345
 #, fuzzy
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
@@ -1052,12 +1052,12 @@ msgstr ""
 "Warna bayangan digunakan oleh bar tab sebaris, serta transisi dalam leaflet "
 "dan flap, dan batas bar info."
 
-#: gradience/frontend/settings_schema.py:353
+#: gradience/frontend/schemas/preset_schema.py:353
 #, fuzzy
 msgid "Scrollbar Outline Color"
 msgstr "Warna Garis Besar Bilah Gulir"
 
-#: gradience/frontend/settings_schema.py:355
+#: gradience/frontend/schemas/preset_schema.py:355
 #, fuzzy
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
@@ -1066,79 +1066,79 @@ msgstr ""
 "Warna garis besar scrollbar digunakan oleh scrollbar untuk memastikan bahwa "
 "scrollbar overlay terlihat terlepas dari warna konten."
 
-#: gradience/frontend/settings_schema.py:365
+#: gradience/frontend/schemas/preset_schema.py:365
 #, fuzzy
 msgid "Blue"
 msgstr "Biru"
 
-#: gradience/frontend/settings_schema.py:366
+#: gradience/frontend/schemas/preset_schema.py:366
 #, fuzzy
 msgid "Green"
 msgstr "Hijau"
 
-#: gradience/frontend/settings_schema.py:367
+#: gradience/frontend/schemas/preset_schema.py:367
 #, fuzzy
 msgid "Yellow"
 msgstr "Kuning"
 
-#: gradience/frontend/settings_schema.py:368
+#: gradience/frontend/schemas/preset_schema.py:368
 #, fuzzy
 msgid "Orange"
 msgstr "Oranye"
 
-#: gradience/frontend/settings_schema.py:369
+#: gradience/frontend/schemas/preset_schema.py:369
 #, fuzzy
 msgid "Red"
 msgstr "Merah"
 
-#: gradience/frontend/settings_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:370
 #, fuzzy
 msgid "Purple"
 msgstr "Ungu"
 
-#: gradience/frontend/settings_schema.py:371
+#: gradience/frontend/schemas/preset_schema.py:371
 #, fuzzy
 msgid "Brown"
 msgstr "Cokelat"
 
-#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/schemas/preset_schema.py:372
 #: gradience/frontend/views/main_window.py:206
 #, fuzzy
 msgid "Light"
 msgstr "Terang"
 
-#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/schemas/preset_schema.py:373
 #: gradience/frontend/views/main_window.py:207
 #, fuzzy
 msgid "Dark"
 msgstr "Gelap"
 
-#: gradience/frontend/views/about_window.py:116
+#: gradience/frontend/views/about_window.py:112
 msgid "Copyright © 2022-2023 Gradience Team"
 msgstr ""
 
-#: gradience/frontend/views/about_window.py:125
+#: gradience/frontend/views/about_window.py:121
 #, fuzzy
 msgid "Plugins by"
 msgstr "Plugin oleh"
 
-#: gradience/frontend/views/about_window.py:133
+#: gradience/frontend/views/about_window.py:129
 #, fuzzy
 #| msgid "Presets"
 msgid "Presets by"
 msgstr "Preset oleh"
 
-#: gradience/frontend/views/about_window.py:155
+#: gradience/frontend/views/about_window.py:151
 #, fuzzy
 msgid "Packages by"
 msgstr "Paket oleh"
 
-#: gradience/frontend/views/about_window.py:162
+#: gradience/frontend/views/about_window.py:158
 #, fuzzy
 msgid "Fixes by"
 msgstr "Perbaikan oleh"
 
-#: gradience/frontend/views/about_window.py:172
+#: gradience/frontend/views/about_window.py:168
 #, fuzzy
 msgid "Special thanks to"
 msgstr "Terima kasih khusus kepada"

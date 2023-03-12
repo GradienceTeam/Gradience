@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-06 12:15+0000\n"
+"POT-Creation-Date: 2023-03-12 12:13+0000\n"
 "PO-Revision-Date: 2023-02-10 10:37+0000\n"
 "Last-Translator: rene-coty <irenee.thirion@e.email>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -39,7 +39,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Changez l’apparence d’Adwaita simplement"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/views/about_window.py:94
+#: gradience/frontend/views/about_window.py:90
 msgid "Gradience Team"
 msgstr "L’équipe Gradience"
 
@@ -713,11 +713,11 @@ msgstr "Impossible de restaurer la sauvegarde de GTK 4"
 msgid "Unable to delete current preset"
 msgstr "La suppression de la configuration actuelle a échoué"
 
-#: gradience/frontend/settings_schema.py:23
+#: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
 msgstr "Couleurs d'accent"
 
-#: gradience/frontend/settings_schema.py:25
+#: gradience/frontend/schemas/preset_schema.py:25
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate that a widget is important, interactive, or "
@@ -727,19 +727,19 @@ msgstr ""
 "étiquettes et les entrées texte, pour indiquer qu'un widget est important, "
 "interactif ou actif."
 
-#: gradience/frontend/settings_schema.py:32
-#: gradience/frontend/settings_schema.py:63
-#: gradience/frontend/settings_schema.py:95
-#: gradience/frontend/settings_schema.py:127
-#: gradience/frontend/settings_schema.py:158
+#: gradience/frontend/schemas/preset_schema.py:32
+#: gradience/frontend/schemas/preset_schema.py:63
+#: gradience/frontend/schemas/preset_schema.py:95
+#: gradience/frontend/schemas/preset_schema.py:127
+#: gradience/frontend/schemas/preset_schema.py:158
 msgid "Standalone Color"
 msgstr "Couleur indépendante"
 
-#: gradience/frontend/settings_schema.py:34
-#: gradience/frontend/settings_schema.py:65
-#: gradience/frontend/settings_schema.py:97
-#: gradience/frontend/settings_schema.py:129
-#: gradience/frontend/settings_schema.py:160
+#: gradience/frontend/schemas/preset_schema.py:34
+#: gradience/frontend/schemas/preset_schema.py:65
+#: gradience/frontend/schemas/preset_schema.py:97
+#: gradience/frontend/schemas/preset_schema.py:129
+#: gradience/frontend/schemas/preset_schema.py:160
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
@@ -750,39 +750,39 @@ msgstr ""
 "couleur d'avant-plan sur un fond de couleur neutre - par exemple, un texte "
 "coloré dans une fenêtre."
 
-#: gradience/frontend/settings_schema.py:43
-#: gradience/frontend/settings_schema.py:74
-#: gradience/frontend/settings_schema.py:106
-#: gradience/frontend/settings_schema.py:138
-#: gradience/frontend/settings_schema.py:169
-#: gradience/frontend/settings_schema.py:186
-#: gradience/frontend/settings_schema.py:206
-#: gradience/frontend/settings_schema.py:227
-#: gradience/frontend/settings_schema.py:282
-#: gradience/frontend/settings_schema.py:309
-#: gradience/frontend/settings_schema.py:326
+#: gradience/frontend/schemas/preset_schema.py:43
+#: gradience/frontend/schemas/preset_schema.py:74
+#: gradience/frontend/schemas/preset_schema.py:106
+#: gradience/frontend/schemas/preset_schema.py:138
+#: gradience/frontend/schemas/preset_schema.py:169
+#: gradience/frontend/schemas/preset_schema.py:186
+#: gradience/frontend/schemas/preset_schema.py:206
+#: gradience/frontend/schemas/preset_schema.py:227
+#: gradience/frontend/schemas/preset_schema.py:282
+#: gradience/frontend/schemas/preset_schema.py:309
+#: gradience/frontend/schemas/preset_schema.py:326
 msgid "Background Color"
 msgstr "Couleur d'arrière-plan"
 
-#: gradience/frontend/settings_schema.py:48
-#: gradience/frontend/settings_schema.py:79
-#: gradience/frontend/settings_schema.py:111
-#: gradience/frontend/settings_schema.py:143
-#: gradience/frontend/settings_schema.py:174
-#: gradience/frontend/settings_schema.py:191
-#: gradience/frontend/settings_schema.py:211
-#: gradience/frontend/settings_schema.py:232
-#: gradience/frontend/settings_schema.py:287
-#: gradience/frontend/settings_schema.py:314
-#: gradience/frontend/settings_schema.py:331
+#: gradience/frontend/schemas/preset_schema.py:48
+#: gradience/frontend/schemas/preset_schema.py:79
+#: gradience/frontend/schemas/preset_schema.py:111
+#: gradience/frontend/schemas/preset_schema.py:143
+#: gradience/frontend/schemas/preset_schema.py:174
+#: gradience/frontend/schemas/preset_schema.py:191
+#: gradience/frontend/schemas/preset_schema.py:211
+#: gradience/frontend/schemas/preset_schema.py:232
+#: gradience/frontend/schemas/preset_schema.py:287
+#: gradience/frontend/schemas/preset_schema.py:314
+#: gradience/frontend/schemas/preset_schema.py:331
 msgid "Foreground Color"
 msgstr "Couleur d'avant-plan"
 
-#: gradience/frontend/settings_schema.py:55
+#: gradience/frontend/schemas/preset_schema.py:55
 msgid "Destructive Colors"
 msgstr "Couleurs destructives"
 
-#: gradience/frontend/settings_schema.py:57
+#: gradience/frontend/schemas/preset_schema.py:57
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
@@ -790,11 +790,11 @@ msgstr ""
 "Ces couleurs sont utilisées pour les boutons qui pointent vers une action "
 "dangereuse, comme la suppression d'un fichier."
 
-#: gradience/frontend/settings_schema.py:86
+#: gradience/frontend/schemas/preset_schema.py:86
 msgid "Success Colors"
 msgstr "Couleurs du succès"
 
-#: gradience/frontend/settings_schema.py:88
+#: gradience/frontend/schemas/preset_schema.py:88
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
@@ -803,11 +803,11 @@ msgstr ""
 "boutons, les étiquettes, les entrées et les barres de niveau, pour indiquer "
 "un succès ou un haut niveau."
 
-#: gradience/frontend/settings_schema.py:118
+#: gradience/frontend/schemas/preset_schema.py:118
 msgid "Warning Colors"
 msgstr "Couleurs d'avertissement"
 
-#: gradience/frontend/settings_schema.py:120
+#: gradience/frontend/schemas/preset_schema.py:120
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
@@ -816,11 +816,11 @@ msgstr ""
 "boutons, les étiquettes, les entrées et les barres de niveau, pour indiquer "
 "un avertissement ou un bas niveau."
 
-#: gradience/frontend/settings_schema.py:150
+#: gradience/frontend/schemas/preset_schema.py:150
 msgid "Error Colors"
 msgstr "Couleurs d'erreur"
 
-#: gradience/frontend/settings_schema.py:152
+#: gradience/frontend/schemas/preset_schema.py:152
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
@@ -829,19 +829,19 @@ msgstr ""
 "boutons, les étiquettes et les entrées pour indiquer qu'une erreur s'est "
 "produite."
 
-#: gradience/frontend/settings_schema.py:181
+#: gradience/frontend/schemas/preset_schema.py:181
 msgid "Window Colors"
 msgstr "Couleurs de fenêtre"
 
-#: gradience/frontend/settings_schema.py:182
+#: gradience/frontend/schemas/preset_schema.py:182
 msgid "These colors are used primarily for windows."
 msgstr "Ces couleurs sont principalement utilisées pour les fenêtres."
 
-#: gradience/frontend/settings_schema.py:198
+#: gradience/frontend/schemas/preset_schema.py:198
 msgid "View Colors"
 msgstr "Couleurs de vues"
 
-#: gradience/frontend/settings_schema.py:200
+#: gradience/frontend/schemas/preset_schema.py:200
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
@@ -849,11 +849,11 @@ msgstr ""
 "Ces couleurs sont utilisées dans plusieurs types de widgets, tels que les "
 "boites de dialogue et les entrées."
 
-#: gradience/frontend/settings_schema.py:218
+#: gradience/frontend/schemas/preset_schema.py:218
 msgid "Header Bar Colors"
 msgstr "Couleurs de barre d'en-tête"
 
-#: gradience/frontend/settings_schema.py:220
+#: gradience/frontend/schemas/preset_schema.py:220
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
@@ -861,11 +861,11 @@ msgstr ""
 "Ces couleurs sont utilisées pour les barres d'en-tête, ainsi que les widgets "
 "qui y sont attachés, tels que les barres de recherche ou des onglets."
 
-#: gradience/frontend/settings_schema.py:237
+#: gradience/frontend/schemas/preset_schema.py:237
 msgid "Border Color"
 msgstr "Couleurs de bordure"
 
-#: gradience/frontend/settings_schema.py:239
+#: gradience/frontend/schemas/preset_schema.py:239
 msgid ""
 "The border color has the same default value as a foreground color, but "
 "doesn't change along with it. This can be useful if a light window has a "
@@ -881,11 +881,11 @@ msgstr ""
 "entre les deux barres d'en-tête dans une disposition de barres d'en-tête "
 "divisées."
 
-#: gradience/frontend/settings_schema.py:252
+#: gradience/frontend/schemas/preset_schema.py:252
 msgid "Backdrop Color"
 msgstr "Couleur du fond"
 
-#: gradience/frontend/settings_schema.py:254
+#: gradience/frontend/schemas/preset_schema.py:254
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -897,13 +897,13 @@ msgstr ""
 "d'arrière plan et il change avec. Assurez vous d'insérer une valeur qui "
 "fonctionne avec votre barre d'en-tête ainsi que la couleur de fond."
 
-#: gradience/frontend/settings_schema.py:265
-#: gradience/frontend/settings_schema.py:292
-#: gradience/frontend/settings_schema.py:343
+#: gradience/frontend/schemas/preset_schema.py:265
+#: gradience/frontend/schemas/preset_schema.py:292
+#: gradience/frontend/schemas/preset_schema.py:343
 msgid "Shade Color"
 msgstr "Couleur d'ombre"
 
-#: gradience/frontend/settings_schema.py:267
+#: gradience/frontend/schemas/preset_schema.py:267
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
@@ -912,15 +912,15 @@ msgstr ""
 "barres d'en-tête et les widgets similaires qui les séparent de la fenêtre "
 "principale."
 
-#: gradience/frontend/settings_schema.py:277
+#: gradience/frontend/schemas/preset_schema.py:277
 msgid "Card Colors"
 msgstr "Couleur des cartes"
 
-#: gradience/frontend/settings_schema.py:278
+#: gradience/frontend/schemas/preset_schema.py:278
 msgid "These colors are used for cards and boxed lists."
 msgstr "Ces couleurs sont utilisées pour les cartes et les listes de boites."
 
-#: gradience/frontend/settings_schema.py:294
+#: gradience/frontend/schemas/preset_schema.py:294
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
@@ -930,31 +930,31 @@ msgstr ""
 "pour se séparer de l'arrière-plan de la fenêtre, ainsi que pour les "
 "séparateurs de lignes dans les cartes."
 
-#: gradience/frontend/settings_schema.py:304
+#: gradience/frontend/schemas/preset_schema.py:304
 msgid "Dialog Colors"
 msgstr "Couleurs de dialogue"
 
-#: gradience/frontend/settings_schema.py:305
+#: gradience/frontend/schemas/preset_schema.py:305
 msgid "These colors are used for message dialogs."
 msgstr "Ces couleurs sont utilisées pour les boîtes de dialogue de message."
 
-#: gradience/frontend/settings_schema.py:321
+#: gradience/frontend/schemas/preset_schema.py:321
 msgid "Popover Colors"
 msgstr "Couleurs des popovers"
 
-#: gradience/frontend/settings_schema.py:322
+#: gradience/frontend/schemas/preset_schema.py:322
 msgid "These colors are used for popovers."
 msgstr "Ces couleurs sont utilisées pour les popovers."
 
-#: gradience/frontend/settings_schema.py:338
+#: gradience/frontend/schemas/preset_schema.py:338
 msgid "Miscellaneous Colors"
 msgstr "Couleurs diverses"
 
-#: gradience/frontend/settings_schema.py:339
+#: gradience/frontend/schemas/preset_schema.py:339
 msgid "Colors that don't fit in any particular group."
 msgstr "Couleurs qui ne rentrent dans aucun groupe particulier."
 
-#: gradience/frontend/settings_schema.py:345
+#: gradience/frontend/schemas/preset_schema.py:345
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -963,11 +963,11 @@ msgstr ""
 "transitions dans les dépliants et les rabats, et les bordures de la barre "
 "d'informations."
 
-#: gradience/frontend/settings_schema.py:353
+#: gradience/frontend/schemas/preset_schema.py:353
 msgid "Scrollbar Outline Color"
 msgstr "Couleur du contour de la barre de défilement"
 
-#: gradience/frontend/settings_schema.py:355
+#: gradience/frontend/schemas/preset_schema.py:355
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -976,65 +976,65 @@ msgstr ""
 "de défilement pour garantir que les barres de défilement superposées sont "
 "visibles quelle que soit la couleur du contenu."
 
-#: gradience/frontend/settings_schema.py:365
+#: gradience/frontend/schemas/preset_schema.py:365
 msgid "Blue"
 msgstr "Bleu"
 
-#: gradience/frontend/settings_schema.py:366
+#: gradience/frontend/schemas/preset_schema.py:366
 msgid "Green"
 msgstr "Vert"
 
-#: gradience/frontend/settings_schema.py:367
+#: gradience/frontend/schemas/preset_schema.py:367
 msgid "Yellow"
 msgstr "Jaune"
 
-#: gradience/frontend/settings_schema.py:368
+#: gradience/frontend/schemas/preset_schema.py:368
 msgid "Orange"
 msgstr "Orange"
 
-#: gradience/frontend/settings_schema.py:369
+#: gradience/frontend/schemas/preset_schema.py:369
 msgid "Red"
 msgstr "Rouge"
 
-#: gradience/frontend/settings_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:370
 msgid "Purple"
 msgstr "Violet"
 
-#: gradience/frontend/settings_schema.py:371
+#: gradience/frontend/schemas/preset_schema.py:371
 msgid "Brown"
 msgstr "Marron"
 
-#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/schemas/preset_schema.py:372
 #: gradience/frontend/views/main_window.py:206
 msgid "Light"
 msgstr "Clair"
 
-#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/schemas/preset_schema.py:373
 #: gradience/frontend/views/main_window.py:207
 msgid "Dark"
 msgstr "Sombre"
 
-#: gradience/frontend/views/about_window.py:116
+#: gradience/frontend/views/about_window.py:112
 msgid "Copyright © 2022-2023 Gradience Team"
 msgstr "Copyright © 2022-2023 Gradience Team"
 
-#: gradience/frontend/views/about_window.py:125
+#: gradience/frontend/views/about_window.py:121
 msgid "Plugins by"
 msgstr "Greffons par"
 
-#: gradience/frontend/views/about_window.py:133
+#: gradience/frontend/views/about_window.py:129
 msgid "Presets by"
 msgstr "Pré-configurations par"
 
-#: gradience/frontend/views/about_window.py:155
+#: gradience/frontend/views/about_window.py:151
 msgid "Packages by"
 msgstr "Packages par"
 
-#: gradience/frontend/views/about_window.py:162
+#: gradience/frontend/views/about_window.py:158
 msgid "Fixes by"
 msgstr "Corrections par"
 
-#: gradience/frontend/views/about_window.py:172
+#: gradience/frontend/views/about_window.py:168
 msgid "Special thanks to"
 msgstr "Remerciements particuliers à"
 
