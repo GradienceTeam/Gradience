@@ -48,21 +48,21 @@ class GradienceShellPrefsWindow(Adw.PreferencesWindow):
     def setup(self):
         for variable in shell_schema["variables"]:
             pref_variable = GradienceOptionRow(
-                variable["var_name"],
+                variable["name"],
                 variable["title"]
                 #variable.get("explanation")
             )
             self.custom_colors_group.add(pref_variable)
 
-            pref_variable.connect_signals(update_vars=False)
+            #pref_variable.connect_signals(update_vars=False)
 
             try:
                 self.app.custom_colors[variable["name"]] = variable["default_value"]
             except KeyError:
                 try:
-                    self.app.custom_colors[variable["var_name"]] = self.app.variables[variable["var_name"]]
+                    self.app.custom_colors[variable["name"]] = self.app.variables[variable["var_name"]]
                 except KeyError:
                     raise
             finally:
-                pref_variable.update_value(self.app.custom_colors[variable["var_name"]], update_var=self.app.custom_colors)
+                pref_variable.update_value(self.app.custom_colors[variable["name"]], update_var=self.app.custom_colors)
 

@@ -470,11 +470,12 @@ class GradienceApplication(Adw.Application):
         self.current_css_provider = css_provider
 
         for variable in shell_schema["variables"]:
+            print(variable)
             try:
                 self.custom_colors[variable["name"]] = variable["default_value"]
             except KeyError:
                 try:
-                    self.custom_colors[variable["var_name"]] = self.variables[variable["var_name"]]
+                    self.custom_colors[variable["name"]] = self.variables[variable["var_name"]]
                 except KeyError:
                     raise
 

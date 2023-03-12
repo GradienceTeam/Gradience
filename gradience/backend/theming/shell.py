@@ -174,6 +174,8 @@ class ShellTheme:
 
         colors_content = ""
 
+        print(self.custom_colors)
+
         with open(self.colors_template, "r", encoding="utf-8") as template:
             for line in template:
                 template_match = re.search(template_regex, line)
