@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-06 12:15+0000\n"
+"POT-Creation-Date: 2023-03-12 12:13+0000\n"
 "PO-Revision-Date: 2023-02-10 08:36+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -34,7 +34,7 @@ msgid "Change the look of Adwaita, with ease"
 msgstr "Muuta Adwaitan ulkoasua vaivatta"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:6
-#: gradience/frontend/views/about_window.py:94
+#: gradience/frontend/views/about_window.py:90
 msgid "Gradience Team"
 msgstr "Gradience-tiimi"
 
@@ -684,11 +684,11 @@ msgstr "GTK 4 -varmuuskopiota ei voitu palauttaa"
 msgid "Unable to delete current preset"
 msgstr "Nykyistä esiasetusta ei voitu poistaa"
 
-#: gradience/frontend/settings_schema.py:23
+#: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
 msgstr "Korostusvärit"
 
-#: gradience/frontend/settings_schema.py:25
+#: gradience/frontend/schemas/preset_schema.py:25
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate that a widget is important, interactive, or "
@@ -698,19 +698,19 @@ msgstr ""
 "painikkeissa, nimikkeissä ja elementin tärkeyttä, vuorovaikutteisuutta tai "
 "aktiivisuutta korostavissa kohdissa."
 
-#: gradience/frontend/settings_schema.py:32
-#: gradience/frontend/settings_schema.py:63
-#: gradience/frontend/settings_schema.py:95
-#: gradience/frontend/settings_schema.py:127
-#: gradience/frontend/settings_schema.py:158
+#: gradience/frontend/schemas/preset_schema.py:32
+#: gradience/frontend/schemas/preset_schema.py:63
+#: gradience/frontend/schemas/preset_schema.py:95
+#: gradience/frontend/schemas/preset_schema.py:127
+#: gradience/frontend/schemas/preset_schema.py:158
 msgid "Standalone Color"
 msgstr "Itsenäinen väri"
 
-#: gradience/frontend/settings_schema.py:34
-#: gradience/frontend/settings_schema.py:65
-#: gradience/frontend/settings_schema.py:97
-#: gradience/frontend/settings_schema.py:129
-#: gradience/frontend/settings_schema.py:160
+#: gradience/frontend/schemas/preset_schema.py:34
+#: gradience/frontend/schemas/preset_schema.py:65
+#: gradience/frontend/schemas/preset_schema.py:97
+#: gradience/frontend/schemas/preset_schema.py:129
+#: gradience/frontend/schemas/preset_schema.py:160
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
@@ -720,39 +720,39 @@ msgstr ""
 "paremman kontrastin neutraalin taustan edustavärinä käytettäessä - "
 "esimerkkinä värikäs teksti ikkunassa."
 
-#: gradience/frontend/settings_schema.py:43
-#: gradience/frontend/settings_schema.py:74
-#: gradience/frontend/settings_schema.py:106
-#: gradience/frontend/settings_schema.py:138
-#: gradience/frontend/settings_schema.py:169
-#: gradience/frontend/settings_schema.py:186
-#: gradience/frontend/settings_schema.py:206
-#: gradience/frontend/settings_schema.py:227
-#: gradience/frontend/settings_schema.py:282
-#: gradience/frontend/settings_schema.py:309
-#: gradience/frontend/settings_schema.py:326
+#: gradience/frontend/schemas/preset_schema.py:43
+#: gradience/frontend/schemas/preset_schema.py:74
+#: gradience/frontend/schemas/preset_schema.py:106
+#: gradience/frontend/schemas/preset_schema.py:138
+#: gradience/frontend/schemas/preset_schema.py:169
+#: gradience/frontend/schemas/preset_schema.py:186
+#: gradience/frontend/schemas/preset_schema.py:206
+#: gradience/frontend/schemas/preset_schema.py:227
+#: gradience/frontend/schemas/preset_schema.py:282
+#: gradience/frontend/schemas/preset_schema.py:309
+#: gradience/frontend/schemas/preset_schema.py:326
 msgid "Background Color"
 msgstr "Taustaväri"
 
-#: gradience/frontend/settings_schema.py:48
-#: gradience/frontend/settings_schema.py:79
-#: gradience/frontend/settings_schema.py:111
-#: gradience/frontend/settings_schema.py:143
-#: gradience/frontend/settings_schema.py:174
-#: gradience/frontend/settings_schema.py:191
-#: gradience/frontend/settings_schema.py:211
-#: gradience/frontend/settings_schema.py:232
-#: gradience/frontend/settings_schema.py:287
-#: gradience/frontend/settings_schema.py:314
-#: gradience/frontend/settings_schema.py:331
+#: gradience/frontend/schemas/preset_schema.py:48
+#: gradience/frontend/schemas/preset_schema.py:79
+#: gradience/frontend/schemas/preset_schema.py:111
+#: gradience/frontend/schemas/preset_schema.py:143
+#: gradience/frontend/schemas/preset_schema.py:174
+#: gradience/frontend/schemas/preset_schema.py:191
+#: gradience/frontend/schemas/preset_schema.py:211
+#: gradience/frontend/schemas/preset_schema.py:232
+#: gradience/frontend/schemas/preset_schema.py:287
+#: gradience/frontend/schemas/preset_schema.py:314
+#: gradience/frontend/schemas/preset_schema.py:331
 msgid "Foreground Color"
 msgstr "Edustaväri"
 
-#: gradience/frontend/settings_schema.py:55
+#: gradience/frontend/schemas/preset_schema.py:55
 msgid "Destructive Colors"
 msgstr "Tuhoisat värit"
 
-#: gradience/frontend/settings_schema.py:57
+#: gradience/frontend/schemas/preset_schema.py:57
 msgid ""
 "These colors are used for buttons to indicate a dangerous action, such as "
 "deleting a file."
@@ -760,11 +760,11 @@ msgstr ""
 "Näitä värejä käytetään vaarallisten toimintojen, kuten tiedoston "
 "poistamisen, korostamiseen."
 
-#: gradience/frontend/settings_schema.py:86
+#: gradience/frontend/schemas/preset_schema.py:86
 msgid "Success Colors"
 msgstr "Onnistumisen värit"
 
-#: gradience/frontend/settings_schema.py:88
+#: gradience/frontend/schemas/preset_schema.py:88
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a success or a high level."
@@ -773,11 +773,11 @@ msgstr ""
 "painikkeissa, nimikkeissä, tietueissa ja tasopalkeissa onnistumisen tai "
 "korkean tason osoittamista varten."
 
-#: gradience/frontend/settings_schema.py:118
+#: gradience/frontend/schemas/preset_schema.py:118
 msgid "Warning Colors"
 msgstr "Varoitusvärit"
 
-#: gradience/frontend/settings_schema.py:120
+#: gradience/frontend/schemas/preset_schema.py:120
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, entries, and level bars, to indicate a warning or a low level."
@@ -786,11 +786,11 @@ msgstr ""
 "painikkeissa, nimikkeissä, tietueissa ja tasopalkeissa varoituksen tai "
 "matalan tason osoittamista varten."
 
-#: gradience/frontend/settings_schema.py:150
+#: gradience/frontend/schemas/preset_schema.py:150
 msgid "Error Colors"
 msgstr "Virhevärit"
 
-#: gradience/frontend/settings_schema.py:152
+#: gradience/frontend/schemas/preset_schema.py:152
 msgid ""
 "These colors are used across many different widgets, such as buttons, "
 "labels, and entries, to indicate a failure."
@@ -799,19 +799,19 @@ msgstr ""
 "painikkeissa, nimikkeissä, tietueissa ja tasopalkeissa epäonnistumisen "
 "osoittamista varten."
 
-#: gradience/frontend/settings_schema.py:181
+#: gradience/frontend/schemas/preset_schema.py:181
 msgid "Window Colors"
 msgstr "Ikkunavärit"
 
-#: gradience/frontend/settings_schema.py:182
+#: gradience/frontend/schemas/preset_schema.py:182
 msgid "These colors are used primarily for windows."
 msgstr "Näitä värejä käytetään ensisijaisesti ikkunoissa."
 
-#: gradience/frontend/settings_schema.py:198
+#: gradience/frontend/schemas/preset_schema.py:198
 msgid "View Colors"
 msgstr "Näkymävärit"
 
-#: gradience/frontend/settings_schema.py:200
+#: gradience/frontend/schemas/preset_schema.py:200
 msgid ""
 "These colors are used in a variety of widgets, such as text views and "
 "entries."
@@ -819,11 +819,11 @@ msgstr ""
 "Näitä värejä käytetään monissa eri käyttöliittymän elementeissä kuten "
 "tekstinäkymissä ja tietueissa."
 
-#: gradience/frontend/settings_schema.py:218
+#: gradience/frontend/schemas/preset_schema.py:218
 msgid "Header Bar Colors"
 msgstr "Otsakepalkin värit"
 
-#: gradience/frontend/settings_schema.py:220
+#: gradience/frontend/schemas/preset_schema.py:220
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
@@ -831,11 +831,11 @@ msgstr ""
 "Näitä värejä käytetään otsakepalkissa ja siihen liitetyissä "
 "käyttöliittymäelementeissä kuten haku- ja välilähtipalkeissa."
 
-#: gradience/frontend/settings_schema.py:237
+#: gradience/frontend/schemas/preset_schema.py:237
 msgid "Border Color"
 msgstr "Reunaväri"
 
-#: gradience/frontend/settings_schema.py:239
+#: gradience/frontend/schemas/preset_schema.py:239
 msgid ""
 "The border color has the same default value as a foreground color, but "
 "doesn't change along with it. This can be useful if a light window has a "
@@ -844,11 +844,11 @@ msgid ""
 "example, separators between the two header bars in a split header bar layout."
 msgstr ""
 
-#: gradience/frontend/settings_schema.py:252
+#: gradience/frontend/schemas/preset_schema.py:252
 msgid "Backdrop Color"
 msgstr "Taustapudotusväri"
 
-#: gradience/frontend/settings_schema.py:254
+#: gradience/frontend/schemas/preset_schema.py:254
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -856,132 +856,132 @@ msgid ""
 "it to a value matching your header bar background color."
 msgstr ""
 
-#: gradience/frontend/settings_schema.py:265
-#: gradience/frontend/settings_schema.py:292
-#: gradience/frontend/settings_schema.py:343
+#: gradience/frontend/schemas/preset_schema.py:265
+#: gradience/frontend/schemas/preset_schema.py:292
+#: gradience/frontend/schemas/preset_schema.py:343
 msgid "Shade Color"
 msgstr "Varjostusväri"
 
-#: gradience/frontend/settings_schema.py:267
+#: gradience/frontend/schemas/preset_schema.py:267
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
 msgstr ""
 
-#: gradience/frontend/settings_schema.py:277
+#: gradience/frontend/schemas/preset_schema.py:277
 msgid "Card Colors"
 msgstr "Korttivärit"
 
-#: gradience/frontend/settings_schema.py:278
+#: gradience/frontend/schemas/preset_schema.py:278
 msgid "These colors are used for cards and boxed lists."
 msgstr ""
 
-#: gradience/frontend/settings_schema.py:294
+#: gradience/frontend/schemas/preset_schema.py:294
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
 "cards."
 msgstr ""
 
-#: gradience/frontend/settings_schema.py:304
+#: gradience/frontend/schemas/preset_schema.py:304
 msgid "Dialog Colors"
 msgstr "Dialogivärit"
 
-#: gradience/frontend/settings_schema.py:305
+#: gradience/frontend/schemas/preset_schema.py:305
 msgid "These colors are used for message dialogs."
 msgstr "Näitä värejä käytetään viesti-ikkunoissa."
 
-#: gradience/frontend/settings_schema.py:321
+#: gradience/frontend/schemas/preset_schema.py:321
 msgid "Popover Colors"
 msgstr "Ponnahdusvärit"
 
-#: gradience/frontend/settings_schema.py:322
+#: gradience/frontend/schemas/preset_schema.py:322
 msgid "These colors are used for popovers."
 msgstr "Näitä värejä käytetään ponnahduksissa."
 
-#: gradience/frontend/settings_schema.py:338
+#: gradience/frontend/schemas/preset_schema.py:338
 msgid "Miscellaneous Colors"
 msgstr "Sekalaiset värit"
 
-#: gradience/frontend/settings_schema.py:339
+#: gradience/frontend/schemas/preset_schema.py:339
 msgid "Colors that don't fit in any particular group."
 msgstr "Värit, jotka eivät sovi mihinkään tiettyyn ryhmään."
 
-#: gradience/frontend/settings_schema.py:345
+#: gradience/frontend/schemas/preset_schema.py:345
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
 msgstr ""
 
-#: gradience/frontend/settings_schema.py:353
+#: gradience/frontend/schemas/preset_schema.py:353
 msgid "Scrollbar Outline Color"
 msgstr "Vierityspalkin uloin väri"
 
-#: gradience/frontend/settings_schema.py:355
+#: gradience/frontend/schemas/preset_schema.py:355
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
 msgstr ""
 
-#: gradience/frontend/settings_schema.py:365
+#: gradience/frontend/schemas/preset_schema.py:365
 msgid "Blue"
 msgstr "Sininen"
 
-#: gradience/frontend/settings_schema.py:366
+#: gradience/frontend/schemas/preset_schema.py:366
 msgid "Green"
 msgstr "Vihreä"
 
-#: gradience/frontend/settings_schema.py:367
+#: gradience/frontend/schemas/preset_schema.py:367
 msgid "Yellow"
 msgstr "Keltainen"
 
-#: gradience/frontend/settings_schema.py:368
+#: gradience/frontend/schemas/preset_schema.py:368
 msgid "Orange"
 msgstr "Oranssi"
 
-#: gradience/frontend/settings_schema.py:369
+#: gradience/frontend/schemas/preset_schema.py:369
 msgid "Red"
 msgstr "Punainen"
 
-#: gradience/frontend/settings_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:370
 msgid "Purple"
 msgstr "Liila"
 
-#: gradience/frontend/settings_schema.py:371
+#: gradience/frontend/schemas/preset_schema.py:371
 msgid "Brown"
 msgstr "Ruskea"
 
-#: gradience/frontend/settings_schema.py:372
+#: gradience/frontend/schemas/preset_schema.py:372
 #: gradience/frontend/views/main_window.py:206
 msgid "Light"
 msgstr "Vaalea"
 
-#: gradience/frontend/settings_schema.py:373
+#: gradience/frontend/schemas/preset_schema.py:373
 #: gradience/frontend/views/main_window.py:207
 msgid "Dark"
 msgstr "Tumma"
 
-#: gradience/frontend/views/about_window.py:116
+#: gradience/frontend/views/about_window.py:112
 msgid "Copyright © 2022-2023 Gradience Team"
 msgstr "Tekijänoikeus © 2022-2023 Gradience-tiimi"
 
-#: gradience/frontend/views/about_window.py:125
+#: gradience/frontend/views/about_window.py:121
 msgid "Plugins by"
 msgstr "Liitännäiset"
 
-#: gradience/frontend/views/about_window.py:133
+#: gradience/frontend/views/about_window.py:129
 msgid "Presets by"
 msgstr "Esiasetukset"
 
-#: gradience/frontend/views/about_window.py:155
+#: gradience/frontend/views/about_window.py:151
 msgid "Packages by"
 msgstr "Paketoinnit"
 
-#: gradience/frontend/views/about_window.py:162
+#: gradience/frontend/views/about_window.py:158
 msgid "Fixes by"
 msgstr "Korjaukset"
 
-#: gradience/frontend/views/about_window.py:172
+#: gradience/frontend/views/about_window.py:168
 msgid "Special thanks to"
 msgstr "Erikoiskiitokset"
 
