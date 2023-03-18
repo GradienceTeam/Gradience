@@ -8,7 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+
 - Translation updates
+
+### Fixed
+
+- Don't fail at compilation if host doesn't have `git` installed
 
 ## [0.4.1] - 2023-03-05
 
