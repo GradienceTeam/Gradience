@@ -94,6 +94,7 @@ class ShellTheme:
             str(self.version_target)), self.source_dir, dirs_exist_ok=True
         )
 
+        # TODO: Allow user to use different name than "gradience-shell" (also, with default name, we should append "-light" suffix when generated from light preset)
         self.output_dir = os.path.join(GLib.get_home_dir(), ".local/share/themes", "gradience-shell", "gnome-shell")
 
         self.main_template = os.path.join(self.templates_dir, "gnome-shell.template")
@@ -134,6 +135,7 @@ class ShellTheme:
         self.custom_colors = app.custom_colors
 
         self.insert_variables()
+        self.recolor_assets()
 
         if not os.path.exists(self.output_dir):
             try:
@@ -146,7 +148,6 @@ class ShellTheme:
         self.compile_sass(os.path.join(self.source_dir, "gnome-shell.scss"),
             os.path.join(self.output_dir, "gnome-shell.css"))
 
-        self.recolor_assets()
         self.set_shell_theme()
 
     def insert_variables(self):
@@ -238,16 +239,15 @@ class ShellTheme:
 
     def compile_sass(self, sass_path, output_path):
         try:
-            compiled = sass.compile(filename=sass_path, output_style="compressed")
-            #Gio.Subprocess.new(
-            #    ["/usr/bin/sassc", sass_path, output_path], Gio.SubprocessFlags.NONE)
+            compiled = sass.compile(filename=sass_path, output_style="nested")
         except (GLib.GError, sass.CompileError) as e:
             logging.error(
                 f"Failed to compile SCSS source files.", exc=e)
         else:
-            with open(output_path, "w", encoding="utf-8") as css:
-                css.write(compiled)
-                css.close()
+            with open(output_path, "w", encoding="utf-8") as css_file:
+                css_file.write(compiled)
+                css_file.close()
+
     # TODO: Add recoloring for other assets
     def recolor_assets(self):
         accent_bg = self.variables["accent_bg_color"]
@@ -257,7 +257,6 @@ class ShellTheme:
             self.switches_source
         )
 
-        # TODO: Make asset templates, so that assets can be recolored more than once per install
         with open(self.switch_on_source, "r", encoding="utf-8") as svg_data:
             switch_on_svg = svg_data.read()
             switch_on_svg = switch_on_svg.replace(
