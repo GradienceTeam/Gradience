@@ -109,7 +109,6 @@ class ShellTheme:
         self.switches_source = os.path.join(self.source_dir, "gnome-shell-sass", "widgets", "_switches.scss")
 
         self.switch_on_source = os.path.join(self.source_dir, "toggle-on.svg")
-        self.switch_off_source = os.path.join(self.source_dir, "toggle-off.svg")
 
         self.assets_output = os.path.join(self.output_dir, "assets")
 
@@ -278,11 +277,6 @@ class ShellTheme:
         shutil.copy(
             self.switch_on_source,
             os.path.join(self.assets_output, "toggle-on.svg")
-        )
-
-        shutil.copy(
-            self.switch_off_source,
-            os.path.join(self.assets_output, "toggle-off.svg")
         )
 
     def set_shell_theme(self):

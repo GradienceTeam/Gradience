@@ -9,9 +9,8 @@ $switch_width: 48px;
   height: $switch_height;
   width: $switch_width;
   background-size: contain;
-  // TODO: Recolor light theme toggles
-  background-image: if($variant == 'light', url("resource:///org/gnome/shell/theme/toggle-off-light.svg"),url("assets/toggle-off.svg"));
+  background-image: if($variant == 'light', url("resource:///org/gnome/shell/theme/toggle-off-light.svg"), url("resource:///org/gnome/shell/theme/toggle-off.svg"));
   &:checked {
-    background-image: if($variant == 'light', url("resource:///org/gnome/shell/theme/toggle-on-light.svg"),url("assets/toggle-on.svg"));
+    background-image: if($variant == 'light', url("resource:///org/gnome/shell/theme/toggle-on-light.svg"), url("assets/toggle-on.svg"));
   }
 }
