@@ -21,22 +21,18 @@ from gi.repository import Gio
 from gradience.backend.utils.common import extract_version, run_command
 
 
-# TODO: Make it Flatpak-friendly (maybe move most of the code to run_command function?)
 def get_shell_version():
     stdout = run_command(["gnome-shell", "--version"],
         get_stdout_text=True,
-        bytes_amount=20,
         allow_escaping=True).replace("\n", "")
 
     shell_version = extract_version(stdout, "GNOME Shell")
 
     return shell_version
 
-# TODO: Make it Flatpak-friendly (maybe move most of the code to run_command function?)
 def get_full_shell_version():
     stdout = run_command(["gnome-shell", "--version"],
         get_stdout_text=True,
-        bytes_amount=20,
         allow_escaping=True).replace("\n", "")
 
     shell_version = stdout[12:]

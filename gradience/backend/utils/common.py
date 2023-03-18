@@ -18,7 +18,6 @@
 
 import re
 import os
-import subprocess
 
 from anyascii import anyascii
 
@@ -46,15 +45,13 @@ def run_command(
     command: list,
     stdout_pipe=False,
     get_stdout_text=False,
-    bytes_amount=None,
-    allow_escaping=False) -> (Gio.Subprocess, Gio.UnixInputStream, str):
+    allow_escaping:bool = False) -> (Gio.Subprocess, Gio.UnixInputStream, str):
     '''
     Spawns a new child process (subprocess) using Gio's Subprocess class.
 
     To retrieve process stdout pipe, enable `stdout_pipe` parameter.
 
-    To retrieve stdout in a text form, enable `get_stdout_text` parameter and set
-    amount of bytes to read in `bytes_amount` parameter.
+    To retrieve stdout in a text form, enable `get_stdout_text` parameter.
 
     You can enable executing commands outside Flatpak sandbox by enabling
     `allow_escaping` parameter.
@@ -63,23 +60,22 @@ def run_command(
         command = ['flatpak-spawn', '--host'] + command
 
     if stdout_pipe or get_stdout_text:
-        gsubprocess = Gio.Subprocess.new(command, Gio.SubprocessFlags.STDOUT_PIPE)
+        flags = Gio.SubprocessFlags.STDOUT_PIPE
+    else:
+        flags = Gio.SubprocessFlags.NONE
 
-        if stdout_pipe:
-            return gsubprocess.get_stdout_pipe()
+    gsubprocess = Gio.Subprocess.new(command, flags)
+    stdout_stream = gsubprocess.get_stdout_pipe()
 
-        if get_stdout_text:
-            if bytes_amount == None:
-                raise ValueError("get_stdout_text parameter is set but bytes_amount parameter is not")
+    if stdout_pipe:
+        return stdout_stream
 
-            stdout_stream = gsubprocess.get_stdout_pipe()
+    if get_stdout_text:
+        data_stream = Gio.DataInputStream.new(stdout_stream)
 
-            if isinstance(bytes_amount, str):
-                bytes_amount = int(bytes_amount)
+        stdout_bytes = data_stream.read_line(cancellable=None)
+        stdout = stdout_bytes[0].decode()
 
-            stdout_bytes = stdout_stream.read_bytes(count=bytes_amount, cancellable=None).get_data() #count = number of bytes to read, "test" = 4 bytes
-            stdout = stdout_bytes.decode()
+        return stdout
 
-            return stdout
-
-    return Gio.Subprocess.new(command, Gio.SubprocessFlags.NONE)
+    return gsubprocess
