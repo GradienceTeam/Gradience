@@ -39,10 +39,10 @@
 
 <p align="center">
   <a href="https://matrix.to/#/#Gradience:matrix.org">
-    <img alt="Chat on Matrix" src="https://img.shields.io/matrix/Gradience:matrix.org?label=matrix&logo=matrix"/>
+    <img alt="Chat on Matrix" src="https://img.shields.io/matrix/Gradience:matrix.org?color=%230dbd8b&label=Gradience&logo=matrix&logoColor=white"/>
   </a>
   <a href="https://discord.com/invite/4njFDtfGEZ">
-    <img alt="Chat on Discord" src="https://img.shields.io/discord/1013779899821064202?label=discord&logo=discord&logoColor=white"/>
+    <img alt="Chat on Discord" src="https://dcbadge.vercel.app/api/server/4njFDtfGEZ?style=flat&theme=default-inverted"/>
   </a>
 </p>
 
