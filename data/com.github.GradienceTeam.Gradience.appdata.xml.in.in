@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<component type="desktop">
+<component type="desktop-application">
   <id>@APP_ID@</id>
   <name>Gradience</name>
   <summary>Change the look of Adwaita, with ease</summary>
@@ -8,6 +8,8 @@
   <metadata_license>CC-BY-SA-4.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <update_contact>GradienceTeam@protonmail.com</update_contact>
+  <content_rating type="oars-1.1"/>
+
   <description>
     <p>Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.</p>
     <p>The main features of Gradience include the following:</p>
@@ -19,28 +21,63 @@
       <li>🧩️ Extending functionality using plugins</li>
     </ul>
   </description>
+
   <screenshots>
-    <screenshot>
+    <screenshot type="default" width="1122" height="822">
       <caption>Screenshot of "Colors" Tab of Main UI</caption>
       <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/main-ui-colors.png</image>
     </screenshot>
-    <screenshot>
+
+    <screenshot width="1122" height="822">
       <caption>Screenshot of "Monet" Tab of Main UI</caption>
       <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/main-ui-monet.png</image>
     </screenshot>
-    <screenshot>
+
+    <screenshot width="1122" height="822">
       <caption>Screenshot of "Advanced" Tab of Main UI</caption>
       <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/main-ui-advanced.png</image>
     </screenshot>
-    <screenshot>
+
+    <screenshot width="772" height="622">
       <caption>Screenshot of "Installed" Tab of Preset Manager</caption>
       <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/preset-manager-installed.png</image>
     </screenshot>
-    <screenshot>
+
+    <screenshot width="772" height="622">
       <caption>Screenshot of "Explore" Tab of Preset Manager</caption>
       <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/preset-manager-explore.png</image>
     </screenshot>
   </screenshots>
+
+  <url type="homepage">@PROJECT_URL@</url>
+  <url type="bugtracker">@BUGTRACKER_URL@</url>
+  <url type="help">@HELP_URL@</url>
+  <url type="translate">@TRANSLATE_URL@</url>
+
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </recommends>
+
+  <keywords>
+    <keyword>AdwCustomizer</keyword>
+    <keyword>Adwaita Manager</keyword>
+  </keywords>"
+
   <releases>
     <release version="0.4.1" date="2023-3-5" type="stable">
       <description>
@@ -196,31 +233,4 @@
       </description>
     </release>
   </releases>
-  <url type="homepage">@PROJECT_URL@</url>
-  <url type="bugtracker">@BUGTRACKER_URL@</url>
-  <url type="help">@HELP_URL@</url>
-  <url type="translate">@TRANSLATE_URL@</url>
-  <categories>
-    <category>Utility</category>
-  </categories>
-  <requires>
-    <display_length compare="ge">small</display_length>
-    <display_length compare="le">small</display_length>
-  </requires>
-  <recommends>
-    <display_length compare="ge">small</display_length>
-    <display_length compare="le">small</display_length>
-  </recommends>
-  <supports>
-    <control>pointing</control>
-    <control>keyboard</control>
-    <control>tablet</control>
-    <control>touch</control>
-    <internet>offline-only</internet>
-  </supports>
-  <content_rating type="oars-1.1" />
-  <keywords>
-    <keyword>AdwCustomizer</keyword>
-    <keyword>Adwaita Manager</keyword>
-  </keywords>
 </component>
