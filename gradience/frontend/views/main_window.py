@@ -27,7 +27,7 @@ from gradience.frontend.widgets.monet_theming_group import GradienceMonetTheming
 from gradience.frontend.widgets.palette_shades import GradiencePaletteShades
 from gradience.frontend.widgets.error_list_row import GradienceErrorListRow
 from gradience.frontend.widgets.option_row import GradienceOptionRow
-
+from gradience.frontend.widgets.theming_empty import GradienceEmptyTheming 
 from gradience.frontend.schemas.preset_schema import preset_schema
 
 from gradience.backend.logger import Logger
@@ -128,12 +128,17 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
     def setup_theming_page(self):
         # TODO: Show fallback page if no theme engines are enabled
-        '''no_engines_label = Gtk.Label.new("No Theme Engines enabled")
-        if not self.enabled_theme_engines:
-            self.content_theming.add()'''
-
+        no_engines_label = Gtk.Label.new("No Theme Engines enabled")
+        
+        self.setup_empty_page()
         self.setup_shell_group()
         self.setup_monet_group()
+
+    def setup_empty_page(self):
+        self.empty_page = GradienceEmptyTheming(self)
+        
+        if not self.enabled_theme_engines:
+            self.content_theming.add(self.empty_page)
 
     def setup_shell_group(self):
         self.shell_group = GradienceShellThemingGroup(self)
@@ -153,9 +158,13 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         if self.monet_group.is_ancestor(self.content_theming):
             self.content_theming.remove(self.monet_group)
+        
+        if self.empty_page.is_ancestor(self.content_theming):
+            self.content_theming.remove(self.empty_page)
 
         self.setup_shell_group()
         self.setup_monet_group()
+        self.setup_empty_page()
 
     def setup_colors_group(self):
         for group in preset_schema["groups"]:

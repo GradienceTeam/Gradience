@@ -13,6 +13,7 @@ gradience_sources = [
     'preset_row.py',
     'repo_row.py',
     'reset_preset_group.py',
-    'shell_theming_group.py'
+    'shell_theming_group.py',
+    'theming_empty.py',
 ]
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: widgetsdir)
