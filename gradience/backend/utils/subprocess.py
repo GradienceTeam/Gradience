@@ -30,11 +30,17 @@ logging = Logger(logger_name="GradienceSubprocess")
 # Example: https://github.com/aleiepure/devtoolbox/blob/main/src/services/gzip_compressor.py
 class GradienceSubprocess:
     '''
-    Text.
+    Wrapper for Gio's Subprocess class to provide easy to use
+    asynchronous process spawning and stdout data retrievement.
+
+    Documentation: https://docs.gtk.org/gio/class.Subprocess.html
     '''
     def __init__(self):
         self.cancellable = Gio.Cancellable()
+
         self.priority = GLib.PRIORITY_DEFAULT
+        self.flags = Gio.SubprocessFlags.STDOUT_PIPE
+
         self.data_array = None
 
     def get_cancellable(self) -> Gio.Cancellable:
@@ -45,7 +51,7 @@ class GradienceSubprocess:
         Spawns asynchronously a new child process (subprocess) using Gio's Subprocess class.
 
         Put custom function as a `callback` parameter to receive a signal
-        after a subprocess is finished, or set None as a value to ignore callback signal.
+        after a subprocess is finished.
 
         You can enable executing commands outside Flatpak sandbox by enabling
         `allow_escaping` parameter.
@@ -55,12 +61,10 @@ class GradienceSubprocess:
         if allow_escaping and os.environ.get('FLATPAK_ID'):
             command = ['flatpak-spawn', '--host'] + command
 
-        logging.debug(f"Executing: {command}")
-
-        flags = Gio.SubprocessFlags.STDOUT_PIPE
+        logging.debug(f"Spawning: {command}")
 
         try:
-            self.process = Gio.Subprocess.new(command, flags)
+            self.process = Gio.Subprocess.new(command, self.flags)
 
             self.process.wait_check_async(
                 cancellable=self.cancellable,
@@ -68,7 +72,6 @@ class GradienceSubprocess:
             )
 
             self.stream = self.process.get_stdout_pipe()
-
             self.data_stream = Gio.DataInputStream.new(self.stream)
 
             self.queue_read()
@@ -76,9 +79,20 @@ class GradienceSubprocess:
             logging.error("Failed to execute an external process.", exc=e)
 
     def get_stdout_pipe(self) -> Gio.InputStream:
+        '''
+        Returns stdout stream as a Gio.InputStream object.
+
+        Documentation: https://docs.gtk.org/gio/class.InputStream.html
+        '''
         return self.stream
 
     def get_stdout_data(self, decode=False) -> str or bytes:
+        '''
+        Returns a data retrieved from stdout stream.
+
+        Default behavior returns a full data collection in bytes array.
+        Setting `decode` parameter to True will automatically decode data to string object.
+        '''
         if decode:
             stdout_string = self.data_array[0].decode()
             return stdout_string
@@ -112,7 +126,7 @@ class GradienceSubprocess:
         try:
             self.data_array = stream.read_line_finish(result)
         except GLib.GError as e:
-            logging.error("Failed to asynchronously read STDOUT stream data.", exc=e)
+            logging.error("Failed to asynchronously read stdout stream data.", exc=e)
             raise
 
     def stop(self) -> None:
