@@ -4,6 +4,7 @@ gradience_sources = [
     '__init__.py',
     'colors.py',
     'common.py',
+    'flatpak_gsettings.py',
     'gsettings.py',
     'shell.py',
     'theming.py',
