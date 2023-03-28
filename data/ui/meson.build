@@ -22,7 +22,7 @@ blueprints = custom_target('blueprints',
     'repo_row.blp',
     'no_plugin_window.blp',
     'share_window.blp',
-    'theming_empty.blp',
+    'theming_empty_group.blp',
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@']

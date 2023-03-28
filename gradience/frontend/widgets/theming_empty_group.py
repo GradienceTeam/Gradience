@@ -1,4 +1,4 @@
-# theming_empty.py
+# theming_empty_group.py
 #
 # Change the look of Adwaita, with ease
 # Copyright (C) 2023, Gradience Team
@@ -18,21 +18,22 @@
 
 from enum import Enum
 
-from gi.repository import Gio, Gtk, Adw, GLib
+from gi.repository import Adw, Gio, GLib, Gtk
 
-from gradience.backend.theming.shell import ShellTheme
 from gradience.backend.constants import rootdir
-
-from gradience.frontend.views.shell_prefs_window import GradienceShellPrefsWindow
-from gradience.frontend.dialogs.unsupported_shell_version_dialog import GradienceUnsupportedShellVersionDialog
-from gradience.backend.logger import Logger
 from gradience.backend.exceptions import UnsupportedShellVersion
+from gradience.backend.logger import Logger
+from gradience.backend.theming.shell import ShellTheme
+
+from gradience.frontend.dialogs.unsupported_shell_version_dialog import GradienceUnsupportedShellVersionDialog
+from gradience.frontend.views.shell_prefs_window import GradienceShellPrefsWindow
+
 logging = Logger()
 
 
-@Gtk.Template(resource_path=f"{rootdir}/ui/theming_empty.ui")
-class GradienceEmptyTheming(Adw.PreferencesGroup):
-    __gtype_name__ = "GradienceEmptyTheming"
+@Gtk.Template(resource_path=f"{rootdir}/ui/theming_empty_group.ui")
+class GradienceEmptyThemingGroup(Adw.PreferencesGroup):
+    __gtype_name__ = "GradienceEmptyThemingGroup"
 
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
@@ -49,5 +50,3 @@ class GradienceEmptyTheming(Adw.PreferencesGroup):
 
     def setup(self):
         pass
-
-   
