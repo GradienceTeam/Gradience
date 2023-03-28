@@ -27,7 +27,7 @@ from gi.repository import Gio, GLib
 from gradience.backend.models.preset import Preset
 from gradience.backend.utils.colors import color_vars_to_color_code
 from gradience.backend.utils.shell import get_shell_version
-from gradience.backend.utils.gsettings import GSettingsSetting
+from gradience.backend.utils.gsettings import GSettingsSetting, GSettingsMissingError
 from gradience.backend.constants import datadir
 
 from gradience.backend.logger import Logger
@@ -67,21 +67,27 @@ class ShellTheme:
             raise UnsupportedShellVersion(
                 f"GNOME Shell version {shell_version} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})")
 
-        self.user_theme_schema = "org.gnome.shell.extensions.user-theme"
+        self.THEME_GSETTINGS_SCHEMA_ID = "org.gnome.shell.extensions.user-theme"
+        self.THEME_GSETTINGS_SCHEMA_PATH = "org/gnome/shell/extensions/user-theme/"
+        self.THEME_GSETTINGS_SCHEMA_KEY = "name"
+
         self.THEME_EXT_NAME = "user-theme@gnome-shell-extensions.gcampax.github.com"
-        self.THEME_GSETTINGS_SCHEMA = "org.gnome.shell.extensions.user-theme"
-        self.THEME_GSETTINGS_NAME = "name"
         self.THEME_GSETTINGS_DIR = os.path.join(GLib.get_user_data_dir(),
             "gnome-shell", "extensions", self.THEME_EXT_NAME, "schemas")
 
-        # try:
-        if os.path.exists(self.THEME_GSETTINGS_DIR):
-            self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA,
-                schema_dir=self.THEME_GSETTINGS_DIR)
-        else:
-            self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA)
+        try:
+            if os.path.exists(self.THEME_GSETTINGS_DIR):
+                self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID,
+                    schema_dir=self.THEME_GSETTINGS_DIR)
+            else:
+                self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID)
+        except (GSettingsMissingError, GLib.GError):
+            raise
 
-        name = self.settings.get_string(self.THEME_GSETTINGS_NAME)
+        try:
+            name = self.settings.get_string(self.THEME_GSETTINGS_SCHEMA_KEY)
+        except GLib.GError:
+            raise
 
         # Theme source/output paths
         self.templates_dir = os.path.join(datadir, "gradience", "shell", "templates", str(self.version_target))
