@@ -22,7 +22,7 @@ import shutil
 import os.path
 import sass
 
-from gi.repository import Gio, GLib
+from gi.repository import GObject, Gio, GLib
 
 from gradience.backend.models.preset import Preset
 from gradience.backend.utils.colors import color_vars_to_color_code
@@ -59,6 +59,8 @@ class ShellTheme:
     custom_css = None
 
     def __init__(self, shell_version=None):
+        self._cancellable = Gio.Cancellable()
+
         if not shell_version:
             self._detect_shell_version()
         elif shell_version and shell_version in self.shell_versions:
@@ -116,6 +118,24 @@ class ShellTheme:
         self.switches_source = os.path.join(self.source_dir, "gnome-shell-sass", "widgets", "_switches.scss")
 
         self.assets_output = os.path.join(self.output_dir, "assets")
+
+    def get_cancellable(self) -> Gio.Cancellable:
+        return self._cancellable
+
+    def apply_theme_async(self, caller:GObject.Object, callback:callable, variant:str):
+        task = Gio.Task.new(caller, None, callback, self._cancellable)
+        #task.set_task_data(variant, None)
+        self.async_variant = variant
+
+        task.set_return_on_cancel(True)
+        task.run_in_thread(self._apply_theme_thread)
+
+    def _apply_theme_thread(self, task:Gio.Task, source_object:GObject.Object, task_data:object, cancellable:Gio.Cancellable):
+        if task.return_error_if_cancelled():
+            return
+
+        output = self.apply_theme(source_object, self.async_variant)
+        task.return_value(output)
 
     def apply_theme(self, parent, variant: str):
         if variant in ("light", "dark"):
