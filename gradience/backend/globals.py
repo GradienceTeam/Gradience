@@ -95,7 +95,3 @@ def is_sandboxed():
     is_sandboxed = portal.running_under_sandbox()
 
     return is_sandboxed
-
-# TODO: Create a function to detect an available sassc installation, or error out if not found
-def get_available_sassc():
-    pass

@@ -43,9 +43,9 @@ def extract_version(text, prefix_text=None):
 
 def run_command(
     command: list,
-    stdout_pipe=False,
-    get_stdout_text=False,
-    allow_escaping:bool = False) -> (Gio.Subprocess, Gio.UnixInputStream, str):
+    stdout_pipe: bool = False,
+    get_stdout_text: bool = False,
+    allow_escaping: bool = False) -> (Gio.Subprocess, Gio.UnixInputStream, str):
     '''
     Spawns a new child process (subprocess) using Gio's Subprocess class.
 

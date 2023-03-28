@@ -52,6 +52,7 @@ class ShellTheme:
     version_target = None
 
     variant = None
+
     variables = {}
     palette = {}
     custom_colors = {}
@@ -59,7 +60,7 @@ class ShellTheme:
 
     def __init__(self, shell_version=None):
         if not shell_version:
-            self.detect_shell_version()
+            self._detect_shell_version()
         elif shell_version and shell_version in self.shell_versions:
             self.version_target = shell_version
         else:
@@ -108,11 +109,9 @@ class ShellTheme:
         self.palette_source = os.path.join(self.source_dir, "gnome-shell-sass", "_palette.scss")
         self.switches_source = os.path.join(self.source_dir, "gnome-shell-sass", "widgets", "_switches.scss")
 
-        self.switch_on_source = os.path.join(self.source_dir, "toggle-on.svg")
-
         self.assets_output = os.path.join(self.output_dir, "assets")
 
-    def apply_theme(self, app, variant: str):
+    def apply_theme(self, parent, variant: str):
         if variant in ("light", "dark"):
             self.variant = variant
         else:
@@ -120,21 +119,23 @@ class ShellTheme:
                 f"Theme variant {variant} not in list: [light, dark]")
 
         try:
-            self.create_theme(app)
+            self._create_theme(parent)
         except (OSError, GLib.GError) as e:
             raise
 
-    def create_theme(self, app):
-        preset = app.preset
+    def _create_theme(self, parent):
+        preset = parent.preset
 
         # Convert GTK color variables to normal color values
         self.variables = color_vars_to_color_code(preset.variables, preset.palette)
         self.palette = preset.palette
         self.custom_css = preset.custom_css
-        self.custom_colors = app.custom_colors
 
-        self.insert_variables()
-        self.recolor_assets()
+        # TODO: Move custom Shell colors list to Shell modules
+        self.custom_colors = parent.custom_colors
+
+        self._insert_variables()
+        self._recolor_assets()
 
         if not os.path.exists(self.output_dir):
             try:
@@ -144,12 +145,12 @@ class ShellTheme:
                 logging.error(f"Unable to create directories.", exc=e)
                 raise
 
-        self.compile_sass(os.path.join(self.source_dir, "gnome-shell.scss"),
+        self._compile_sass(os.path.join(self.source_dir, "gnome-shell.scss"),
             os.path.join(self.output_dir, "gnome-shell.css"))
 
         self.set_shell_theme()
 
-    def insert_variables(self):
+    def _insert_variables(self):
         # hexcode_regex = re.compile(r".*#[0-9a-f]{3,6}")
         template_regex = re.compile(r"{{(.*?)}}")
 
@@ -173,8 +174,6 @@ class ShellTheme:
             sheet.close()
 
         colors_content = ""
-
-        print(self.custom_colors)
 
         with open(self.colors_template, "r", encoding="utf-8") as template:
             for line in template:
@@ -238,7 +237,7 @@ class ShellTheme:
             sheet.write(main_content)
             sheet.close()
 
-    def compile_sass(self, sass_path, output_path):
+    def _compile_sass(self, sass_path, output_path):
         try:
             compiled = sass.compile(filename=sass_path, output_style="nested")
         except (GLib.GError, sass.CompileError) as e:
@@ -250,21 +249,23 @@ class ShellTheme:
                 css_file.close()
 
     # TODO: Add recoloring for other assets
-    def recolor_assets(self):
+    def _recolor_assets(self):
         accent_bg = self.variables["accent_bg_color"]
+
+        switch_on_source = os.path.join(self.source_dir, "toggle-on.svg")
 
         shutil.copy(
             self.switches_template,
             self.switches_source
         )
 
-        with open(self.switch_on_source, "r", encoding="utf-8") as svg_data:
+        with open(switch_on_source, "r", encoding="utf-8") as svg_data:
             switch_on_svg = svg_data.read()
             switch_on_svg = switch_on_svg.replace(
                 "fill:#3584e4", f"fill:{accent_bg}")
             svg_data.close()
 
-        with open(self.switch_on_source, "w", encoding="utf-8") as svg_data:
+        with open(switch_on_source, "w", encoding="utf-8") as svg_data:
             svg_data.write(switch_on_svg)
             svg_data.close()
 
@@ -277,7 +278,7 @@ class ShellTheme:
                 raise
 
         shutil.copy(
-            self.switch_on_source,
+            switch_on_source,
             os.path.join(self.assets_output, "toggle-on.svg")
         )
 
@@ -292,7 +293,7 @@ class ShellTheme:
         # Set default theme
         self.settings.set_string("name", "")
 
-    def detect_shell_version(self):
+    def _detect_shell_version(self):
         shell_ver = get_shell_version()
 
         if shell_ver.startswith("3"):
