@@ -23,44 +23,36 @@ from gradience.backend.utils.subprocess import GradienceSubprocess
 
 class FlatpakGSettings():
     def __init__(self):
-        self.subprocess = GradienceSubprocess()
+        pass
 
-    def list_contents_async(self, callback:callable, dir_path:str):
-        dconf_cmd = ["dconf", "list", dir_path]
+    def list_keys_async(self, callback:callable, schema_id:str):
+        dconf_cmd = ["gsettings", "list-keys", schema_id]
 
         try:
-            self.subprocess.run(callback, dconf_cmd, allow_escaping=True)
+            GradienceSubprocess().run(callback, dconf_cmd, allow_escaping=True)
         except GLib.GError:
             raise
 
-    def read_value_async(self, callback:callable, key_path:str):
-        dconf_cmd = ["dconf", "read", key_path]
+    def read_value_async(self, callback:callable, schema_id:str, key:str):
+        dconf_cmd = ["gsettings", "get", schema_id, key]
 
         try:
-            self.subprocess.run(callback, dconf_cmd, allow_escaping=True)
+            GradienceSubprocess().run(callback, dconf_cmd, allow_escaping=True)
         except GLib.GError:
             raise
 
-    def write_value_async(self, callback:callable, key_path:str, value:GLib.Variant):
-        dconf_cmd = ["dconf", "write", key_path, value]
+    def write_value_async(self, callback:callable, schema_id:str, key:str, value:str):
+        dconf_cmd = ["gsettings", "set", schema_id, key, value]
 
         try:
-            self.subprocess.run(callback, dconf_cmd, allow_escaping=True)
+            GradienceSubprocess().run(callback, dconf_cmd, allow_escaping=True)
         except GLib.GError:
             raise
 
-    def reset_value_async(self, callback:callable, dir_path:str = None, key_path:str = None):
-        dconf_cmd = ["dconf", "reset"]
-
-        if not dir_path and not key_path:
-            raise ValueError("You need to either specify `dir_path` or `key_path` parameter")
-
-        if dir_path:
-            dconf_cmd.append(dir_path)
-        elif key_path:
-            dconf_cmd.append(key_path)
+    def reset_value_async(self, callback:callable, schema_id:str, key:str = None):
+        dconf_cmd = ["gsettings", "reset", schema_id, key]
 
         try:
-            self.subprocess.run(callback, dconf_cmd, allow_escaping=True)
+            GradienceSubprocess().run(callback, dconf_cmd, allow_escaping=True)
         except GLib.GError:
             raise
