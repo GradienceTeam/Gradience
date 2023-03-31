@@ -30,8 +30,11 @@ from gradience.backend.utils.shell import get_shell_version
 from gradience.backend.utils.gsettings import GSettingsSetting, GSettingsMissingError
 from gradience.backend.constants import datadir
 
+from gradience.backend.utils.flatpak_gsettings import FlatpakGSettings
+
 from gradience.backend.logger import Logger
 from gradience.backend.exceptions import UnsupportedShellVersion
+from gradience.backend.globals import is_sandboxed
 
 logging = Logger(logger_name="ShellTheme")
 
@@ -70,30 +73,33 @@ class ShellTheme:
                 f"GNOME Shell version {shell_version} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})")
 
         self.THEME_GSETTINGS_SCHEMA_ID = "org.gnome.shell.extensions.user-theme"
-        self.THEME_GSETTINGS_SCHEMA_PATH = "org/gnome/shell/extensions/user-theme/"
+        self.THEME_GSETTINGS_SCHEMA_PATH = "/org/gnome/shell/extensions/user-theme/"
         self.THEME_GSETTINGS_SCHEMA_KEY = "name"
 
         self.THEME_EXT_NAME = "user-theme@gnome-shell-extensions.gcampax.github.com"
         self.THEME_GSETTINGS_DIR = os.path.join(GLib.get_user_data_dir(),
             "gnome-shell", "extensions", self.THEME_EXT_NAME, "schemas")
 
-        try:
-            if os.path.exists(self.THEME_GSETTINGS_DIR):
-                self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID,
-                    schema_dir=self.THEME_GSETTINGS_DIR)
-            else:
-                self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID)
-        except (GSettingsMissingError, GLib.GError):
-            raise
+        if not is_sandboxed():
+            try:
+                if os.path.exists(self.THEME_GSETTINGS_DIR):
+                    self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID,
+                        schema_dir=self.THEME_GSETTINGS_DIR)
+                else:
+                    self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID)
+            except (GSettingsMissingError, GLib.GError):
+                raise
 
-        try:
-            name = self.settings.get_string(self.THEME_GSETTINGS_SCHEMA_KEY)
-        except GLib.GError:
-            raise
+            try:
+                name = self.settings.get_string(self.THEME_GSETTINGS_SCHEMA_KEY)
+            except GLib.GError:
+                raise
 
         # Theme source/output paths
         self.templates_dir = os.path.join(datadir, "gradience", "shell", "templates", str(self.version_target))
+        logging.debug(self.templates_dir)
         self.source_dir = os.path.join(GLib.get_home_dir(), ".cache", "gradience", "gradience-shell", str(self.version_target))
+        logging.debug(self.source_dir)
 
         if os.path.exists(self.source_dir):
             shutil.rmtree(self.source_dir)
@@ -109,7 +115,6 @@ class ShellTheme:
         self.main_template = os.path.join(self.templates_dir, "gnome-shell.template")
         self.colors_template = os.path.join(self.templates_dir, "colors.template")
         self.palette_template = os.path.join(self.templates_dir, "palette.template")
-        # NOTE: From what I saw in some Shell themes, we can write our own Gresource schema, which will allow us to remove switches.template
         self.switches_template = os.path.join(self.templates_dir, "switches.template")
 
         self.main_source = os.path.join(self.source_dir, "gnome-shell.scss")
@@ -124,7 +129,6 @@ class ShellTheme:
 
     def apply_theme_async(self, caller:GObject.Object, callback:callable, variant:str):
         task = Gio.Task.new(caller, None, callback, self._cancellable)
-        #task.set_task_data(variant, None)
         self.async_variant = variant
 
         task.set_return_on_cancel(True)
