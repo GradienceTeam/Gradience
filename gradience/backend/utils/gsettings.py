@@ -163,7 +163,7 @@ class GSettingsSetting(Gio.Settings):
         self._schema = _SCHEMA_CACHE[schema_name]
 
     def _on_changed(self, settings, key_name):
-        print("Change: %s %s -> %s" %
+        logging.debug("Change: %s %s -> %s" %
               (self.props.schema, key_name, self[key_name]))
 
     def _setting_check_is_list(self, key):

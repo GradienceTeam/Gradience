@@ -117,10 +117,10 @@ class GradienceSubprocess:
 
         self.cancel_read()
 
+        logging.debug('Process finished successfully')
+
         if self.finish_callback:
             self.finish_callback(self)
-
-        logging.debug('Process finished successfully')
 
     def _on_data(self, stream, result) -> None:
         try:
