@@ -1,7 +1,7 @@
 {
     "app-id" : "com.github.GradienceTeam.Gradience.Devel",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "master",
+    "runtime-version" : "43",
     "sdk" : "org.gnome.Sdk",
     "command" : "gradience",
     "finish-args" : [
@@ -12,6 +12,8 @@
         "--socket=wayland",
         "--talk-name=org.freedesktop.Flatpak",
         "--filesystem=xdg-data/flatpak/overrides:create",
+        "--filesystem=xdg-cache/gradience:create",
+        "--filesystem=xdg-data/themes:create",
         "--filesystem=xdg-config/gtk-3.0",
         "--filesystem=xdg-config/gtk-4.0",
         "--filesystem=xdg-run/gvfsd",
