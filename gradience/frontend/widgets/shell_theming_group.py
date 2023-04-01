@@ -18,15 +18,17 @@
 
 from enum import Enum
 
-from gi.repository import Gio, Gtk, Adw, GLib
+from gi.repository import GObject, GLib, Gio, Gtk, Adw
+
+from gradience.backend.constants import rootdir
+from gradience.backend.exceptions import UnsupportedShellVersion
+from gradience.backend.logger import Logger
 
 from gradience.backend.theming.shell import ShellTheme
-from gradience.backend.constants import rootdir
 
-from gradience.frontend.views.shell_prefs_window import GradienceShellPrefsWindow
 from gradience.frontend.dialogs.unsupported_shell_version_dialog import GradienceUnsupportedShellVersionDialog
-from gradience.backend.logger import Logger
-from gradience.backend.exceptions import UnsupportedShellVersion
+from gradience.frontend.views.shell_prefs_window import GradienceShellPrefsWindow
+
 logging = Logger()
 
 
@@ -94,9 +96,9 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         variant_str = __get_variant_string()
 
         try:
-            ShellTheme().apply_theme(self.app, variant_str)
+            ShellTheme().apply_theme_async(self.app, self._on_shell_theme_done, variant_str)
         except UnsupportedShellVersion:
-            logging.error("Unsupported shell version.")
+            logging.error("Unsupported shell version detected ")
             GradienceUnsupportedShellVersionDialog(self.parent).present()
         except (ValueError, OSError, GLib.GError) as e:
             logging.error(
@@ -105,16 +107,17 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
                 Adw.Toast(
                     title=_("An error occurred while generating a Shell theme."))
             )
-        else:
-            logging.debug("It works! \o/")
-            self.parent.toast_overlay.add_toast(
-                Adw.Toast(title=_("Shell theme applied successfully."))
-            )
+
+    def _on_shell_theme_done(self, source_widget:GObject.Object, result:Gio.AsyncResult, user_data:GObject.GPointer):
+        logging.debug("It works! \o/")
+        self.parent.toast_overlay.add_toast(
+            Adw.Toast(title=_("Shell theme applied successfully."))
+        )
 
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):
         # TODO: Make this function actually remove Shell theme
-        ShellTheme().unset_shell_theme()
+        ShellTheme().reset_shell_theme()
 
     @Gtk.Template.Callback()
     def on_restore_button_clicked(self, *_args):
