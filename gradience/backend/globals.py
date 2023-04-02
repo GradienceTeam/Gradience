@@ -22,25 +22,23 @@ from gi.repository import Xdp
 
 from gradience.backend import constants
 
+
 user_config_dir = os.environ.get(
     "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
 )
 
-presets_dir = os.path.join(
-    user_config_dir,
-    "presets"
+user_data_dir = os.environ.get(
+    "XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"
 )
 
-user_plugin_dir = os.path.join(
-    os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"),
-    "gradience",
-    "plugins"
+user_cache_dir = os.environ.get(
+    "XDG_CACHE_HOME", os.environ["HOME"] + "/.cache"
 )
 
-system_plugin_dir = os.path.join(
-    constants.pkgdatadir,
-    "plugins"
-)
+presets_dir = os.path.join(user_config_dir, "presets")
+
+user_plugin_dir = os.path.join(user_data_dir, "gradience", "plugins")
+system_plugin_dir = os.path.join(constants.pkgdatadir, "plugins")
 
 preset_repos = {
     "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
