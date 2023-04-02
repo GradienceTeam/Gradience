@@ -85,26 +85,29 @@ template GradienceMainWindow : Adw.ApplicationWindow {
 
             Adw.ViewStackPage {
               name: "colors";
-              title: _("Colors");
+              title: _("_Colors");
               icon-name: "larger-brush-symbolic";
 
               child: Adw.PreferencesPage content-colors { };
+              use-underline: true;
             }
 
             Adw.ViewStackPage {
               name: "theming";
-              title: _("Theming");
+              title: _("_Theming");
               icon-name: "color-picker-symbolic";
 
               child: Adw.PreferencesPage content-theming { };
+              use-underline: true;
             }
 
             Adw.ViewStackPage {
               name: "plugins";
-              title: _("Advanced");
+              title: _("_Advanced");
               icon-name: "settings-symbolic";
 
               child: Adw.PreferencesPage content-plugins { };
+              use-underline: true;
             }
           }
 
