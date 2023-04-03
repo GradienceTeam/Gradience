@@ -73,7 +73,8 @@ class PresetUtils:
                 "accent_fg_color": argb_to_color_code(light_theme.onPrimary),
                 "destructive_color": argb_to_color_code(light_theme.error),
                 "destructive_bg_color": argb_to_color_code(light_theme.errorContainer),
-                "destructive_fg_color": argb_to_color_code(light_theme.onError),
+                # Do not touch! .onError causes contrast issues!
+                "destructive_fg_color": argb_to_color_code(light_theme.onErrorContainer),
                 "success_color": argb_to_color_code(light_theme.tertiary),
                 "success_bg_color": argb_to_color_code(light_theme.tertiaryContainer),
                 "success_fg_color": argb_to_color_code(light_theme.onTertiaryContainer),
@@ -82,7 +83,8 @@ class PresetUtils:
                 "warning_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
                 "error_color": argb_to_color_code(light_theme.error),
                 "error_bg_color": argb_to_color_code(light_theme.errorContainer),
-                "error_fg_color": argb_to_color_code(light_theme.onError),
+                # Do not touch
+                "error_fg_color": argb_to_color_code(light_theme.onErrorContainer),
                 "window_bg_color": argb_to_color_code(light_theme.surface),
                 "window_fg_color": argb_to_color_code(light_theme.onSurface),
                 "view_bg_color": argb_to_color_code(light_theme.secondaryContainer),
@@ -110,7 +112,8 @@ class PresetUtils:
                 "accent_fg_color": argb_to_color_code(dark_theme.onPrimary),
                 "destructive_color": argb_to_color_code(dark_theme.error),
                 "destructive_bg_color": argb_to_color_code(dark_theme.errorContainer),
-                "destructive_fg_color": argb_to_color_code(dark_theme.onError),
+                # No touchy
+                "destructive_fg_color": argb_to_color_code(dark_theme.onErrorContainer),
                 "success_color": argb_to_color_code(dark_theme.tertiary),
                 "success_bg_color": argb_to_color_code(dark_theme.tertiaryContainer),
                 "success_fg_color": argb_to_color_code(dark_theme.onTertiaryContainer),
@@ -119,7 +122,8 @@ class PresetUtils:
                 "warning_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
                 "error_color": argb_to_color_code(dark_theme.error),
                 "error_bg_color": argb_to_color_code(dark_theme.errorContainer),
-                "error_fg_color": argb_to_color_code(dark_theme.onError),
+                # Do not use .onError plz
+                "error_fg_color": argb_to_color_code(dark_theme.onErrorContainer),
                 "window_bg_color": argb_to_color_code(dark_theme.surface),
                 "window_fg_color": argb_to_color_code(dark_theme.onSurface),
                 "view_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
