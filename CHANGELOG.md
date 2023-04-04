@@ -9,10 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Translation updates
+- Update runtime to GNOME 44
 
 ### Fixed
 
+- Improve contrasts in Monet generated error/destructive colors
 - Don't fail at compilation if host doesn't have `git` installed
 
 ## [0.4.1] - 2023-03-05
