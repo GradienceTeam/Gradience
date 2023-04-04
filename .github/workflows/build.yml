@@ -38,6 +38,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+        with:
+          submodules: recursive
+
       - name: Install dependencies
         run: |
           dnf -y install docker
