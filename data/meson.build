@@ -73,4 +73,6 @@ endif
 
 subdir('icons')
 subdir('plugins')
+
 subdir('shell')
+subdir('submodules/gnome-shell')
