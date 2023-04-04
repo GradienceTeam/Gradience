@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-02 12:12+0000\n"
-"PO-Revision-Date: 2023-02-10 08:36+0000\n"
+"POT-Creation-Date: 2023-04-04 12:13+0000\n"
+"PO-Revision-Date: 2023-04-03 08:40+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/fi/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.17-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -188,7 +188,7 @@ msgid "Toggle Plugin"
 msgstr "Käytä liitännäistä"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:136
+#: data/ui/window.blp:139
 msgid "Preferences"
 msgstr "Asetukset"
 
@@ -209,6 +209,8 @@ msgid ""
 "Override Flatpak permissions for current user to allow GTK 4 Flatpak "
 "applications to access custom themes."
 msgstr ""
+"Ohita Flatpak-oikeudet nykyisen käyttäjän osalta salliaksesi Flatpak-"
+"muotoisten GTK 4 -sovellusten käyttää mukautettuja teemoja."
 
 #: data/ui/preferences_window.blp:25
 msgid "Allow GTK 4 Flatpak Applications Theming (System)"
@@ -219,6 +221,9 @@ msgid ""
 "Override Flatpak permissions for all users to allow GTK 4 Flatpak "
 "applications to access custom themes. (Requires root access)"
 msgstr ""
+"Ohita Flatpak-oikeudet kaikkien käyttäjien osalta salliaksesi Flatpak-"
+"muotoisten GTK 4 -sovellusten käyttää mukautettuja teemoja. (Vaatii root-"
+"oikeuden)"
 
 #: data/ui/preferences_window.blp:35
 msgid "GTK 3 Flatpak Applications"
@@ -241,6 +246,8 @@ msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme."
 msgstr ""
+"Ohita Flatpak-oikeudet nykyisen käyttäjän osalta salliaksesi Flatpak-"
+"muotoisten GTK 3 -sovellusten käyttää adw-gtk3-teemaa."
 
 #: data/ui/preferences_window.blp:49
 msgid "GTK 3 Flatpak Applications (System)"
@@ -251,6 +258,8 @@ msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme. (Requires root access)"
 msgstr ""
+"Ohita Flatpak-oikeudet kaikkien käyttäjien osalta salliaksesi Flatpak-"
+"muotoisten GTK 3 -sovellusten käyttää adw-gtk3-teemaa. (Vaatii root-oikeuden)"
 
 #: data/ui/preferences_window.blp:61
 msgid "Custom Preset Repositories"
@@ -441,11 +450,12 @@ msgid "Configure Gradience"
 msgstr "Muokkaa Gradiencea"
 
 #: data/ui/share_window.blp:105 data/ui/welcome_window.blp:103
-#, fuzzy
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
-msgstr "Asenna adw-gtk3-teema vanhoja sovelluksia varten."
+msgstr ""
+"Asenna adw-gtk3-teema vanhoja sovelluksia varten ja määritä järjestelmä "
+"teemoitusta varten."
 
 #: data/ui/share_window.blp:110
 msgid "Legacy apps theming"
@@ -552,35 +562,35 @@ msgid "CSS Errors"
 msgstr "CSS-virheet"
 
 #: data/ui/window.blp:88
-msgid "Colors"
-msgstr "Värit"
+msgid "_Colors"
+msgstr "_Värit"
 
-#: data/ui/window.blp:96
-msgid "Monet"
-msgstr "Monet"
+#: data/ui/window.blp:97
+msgid "_Monet"
+msgstr "_Monet"
 
-#: data/ui/window.blp:104
-msgid "Advanced"
-msgstr "Lisäasetukset"
+#: data/ui/window.blp:106
+msgid "_Advanced"
+msgstr "_Lisäasetukset"
 
-#: data/ui/window.blp:125
+#: data/ui/window.blp:128
 msgid "Restore Applied Color Scheme"
 msgstr "Palauta toteutettu väriteema"
 
-#: data/ui/window.blp:130
+#: data/ui/window.blp:133
 msgid "Reset Applied Color Scheme"
 msgstr "Nollaa toteutettu väriteema"
 
-#: data/ui/window.blp:141
+#: data/ui/window.blp:144
 msgid "About Gradience"
 msgstr "Tietoja - Gradience"
 
-#: data/ui/window.blp:149
+#: data/ui/window.blp:152
 #: gradience/frontend/views/presets_manager_window.py:111
 msgid "Built-In Presets"
 msgstr "Sisäänrakennetut esiasetukset"
 
-#: data/ui/window.blp:170
+#: data/ui/window.blp:173
 msgid "Manage Presets"
 msgstr "Hallitse esiasetuksia"
 
@@ -874,7 +884,7 @@ msgstr "Korttivärit"
 
 #: gradience/frontend/schemas/preset_schema.py:278
 msgid "These colors are used for cards and boxed lists."
-msgstr ""
+msgstr "Näitä värejä käytetään korteille ja laatikkoluetteloille."
 
 #: gradience/frontend/schemas/preset_schema.py:294
 msgid ""
@@ -1019,7 +1029,7 @@ msgstr "Teema"
 
 #: gradience/frontend/views/main_window.py:205
 msgid "Auto"
-msgstr ""
+msgstr "Automaattinen"
 
 #: gradience/frontend/views/main_window.py:241
 msgid "Failed to generate Monet palette"
