@@ -42,7 +42,7 @@ jobs:
           mv pypi-dependencies.json build-aux/flatpak/pypi-dependencies.json
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           author: "AdwCustomizer <AdwCustomizerTeam@proton.me>"
           title: "meta: update PyPI dependencies for Flatpak"
