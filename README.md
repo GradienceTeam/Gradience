@@ -47,6 +47,12 @@
 </p>
 
 <p align="center">
+  <a href="https://stopthemingmy.app">
+    <img alt="Please do not theme this app" src="https://stopthemingmy.app/badge.svg"/>
+  </a>
+</p>
+
+<p align="center">
   <img src="https://github.com/GradienceTeam/Design/raw/main/Covers/preview.png" alt="Preview"/>
 </p>
 
