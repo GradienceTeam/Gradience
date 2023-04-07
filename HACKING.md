@@ -44,15 +44,17 @@ flatpak install org.gnome.Sdk//44 org.gnome.Platform//44
 
 ##### User installation
 ```shell
-git clone --recursive https://github.com/GradienceTeam/Gradience.git
+git clone https://github.com/GradienceTeam/Gradience.git
 cd Gradience
+git submodule update --init --recursive
 flatpak-builder --install --user --force-clean repo/ build-aux/flatpak/com.github.GradienceTeam.Gradience.json
 ```
 
 ##### System installation
 ```shell
-git clone --recursive https://github.com/GradienceTeam/Gradience.git
+git clone https://github.com/GradienceTeam/Gradience.git
 cd Gradience
+git submodule update --init --recursive
 flatpak-builder --install --system --force-clean repo/ build-aux/flatpak/com.github.GradienceTeam.Gradience.json
 ```
 
@@ -82,8 +84,9 @@ pip install -r requirements.txt
 ##### Global installation
 
 ```shell
-git clone --recursive https://github.com/GradienceTeam/Gradience.git
+git clone https://github.com/GradienceTeam/Gradience.git
 cd Gradience
+git submodule update --init --recursive
 meson setup builddir
 meson configure builddir -Dprefix=/usr/local
 sudo ninja -C builddir install
@@ -92,8 +95,9 @@ sudo ninja -C builddir install
 ##### Local build (for testing and development purposes)
 
 ```shell
-git clone --recursive https://github.com/GradienceTeam/Gradience.git
+git clone https://github.com/GradienceTeam/Gradience.git
 cd Gradience
+git submodule update --init --recursive
 meson setup builddir
 meson configure builddir -Dprefix="$(pwd)/builddir"
 ninja -C builddir install
