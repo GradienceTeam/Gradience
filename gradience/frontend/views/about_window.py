@@ -24,7 +24,7 @@ from gradience.backend import constants
 # TRANSLATORS: This is a place to put your credits (formats:
 # "Name https://example.com" or "Name <email@example.com>",
 # no quotes) and is not meant to be translated literally.
-translator_credits = "translator-credits"
+translator_credits = _("translator-credits <email@example.com>")
 
 class GradienceAboutWindow:
     def __init__(self, parent):
