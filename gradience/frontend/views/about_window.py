@@ -62,13 +62,13 @@ class GradienceAboutWindow:
         self.about_window.add_credit_section(
             _("Plugins by"),
             [
-                "Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/contributors"
+                _("Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/contributors")
             ]
         )
         self.about_window.add_credit_section(
             _("Presets by"),
             [
-                "Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/contributors"
+                _("Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/contributors")
             ]
         )
 
