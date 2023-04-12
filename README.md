@@ -276,6 +276,8 @@ Pretty Purple is built-in in the Gradience and used in all Gradience artworks.
 
 ## 🌱️ Gradience, [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers
 
+> See [gradienceisahack.github.io](https://gradienceisahack.github.io/)
+
 Gradience Team is not against [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers idea, Gradience is a tool for tinkers that want to theme their desktops at their liking, and not a tool for distributions to change theme in them by default, Gradience Team agrees with importance of unified look of Adwaita to make sure that all apps work right and Developers have unified and stable tool for creating their apps.
 
 
