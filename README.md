@@ -198,6 +198,9 @@ makepkg -sic
 
 ### NixOS
 
+> **Warning**
+> It's currently only available in `unstable`
+
 Gradience is available for NixOS:
 
 ```shell
