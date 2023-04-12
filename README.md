@@ -144,6 +144,9 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 > **Warning**
 > The main installation method is Flatpak from Flathub
 
+> **Note**
+> There are number of Gradience packages that are not tested by Gradience Team and not listed here, available at [Repology](https://repology.org/project/gradience/versions)
+
 ### Fedora (COPR)
 
 Gradience is available for Fedora via COPR:
