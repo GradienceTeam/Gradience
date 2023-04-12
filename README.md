@@ -193,6 +193,14 @@ makepkg -sic
 
 </details>
 
+### NixOS
+
+Gradience is available for NixOS:
+
+```shell
+nix-shell -p gradience
+```
+
 
 ## 🏗️ Building from source
 
