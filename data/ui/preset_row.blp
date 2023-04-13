@@ -33,9 +33,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
   [action]
   Button star_button {
     valign: center;
-    styles [
-      "flat",
-    ]
+    styles ["flat"]
   }
 
   [action]
@@ -50,9 +48,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
       icon-name: "checkmark-large-symbolic";
       tooltip-text: _("Apply Preset");
       clicked => on_apply_button_clicked();
-      styles [
-        "flat",
-      ]
+      styles ["flat"]
     }
 
     Entry name_entry {
@@ -67,9 +63,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
     icon-name: "document-edit-symbolic";
     tooltip-text: _("Rename Preset");
     toggled => on_name_entry_toggled();
-    styles [
-      "flat",
-    ]
+    styles ["flat"]
   }
 
   [action]
@@ -78,9 +72,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
     popover: pop_actions;
     icon-name: "view-more-symbolic";
     tooltip-text: _("More Options");
-    styles [
-      "flat",
-    ]
+    styles ["flat"]
   }
 
   Adw.ActionRow description {
@@ -98,10 +90,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
       Label no_badges {
         valign: center;
         label: _("No Badges");
-        styles [
-          "tag",
-          "caption",
-        ]
+        styles ["tag", "caption"]
       }
     }
 
