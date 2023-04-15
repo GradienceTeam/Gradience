@@ -26,7 +26,7 @@ from gi.repository import GObject, Gio, GLib
 
 from gradience.backend.models.preset import Preset
 from gradience.backend.utils.colors import color_vars_to_color_code
-from gradience.backend.utils.shell import get_shell_version
+from gradience.backend.utils.gnome import get_shell_version, get_shell_colors
 from gradience.backend.utils.gsettings import GSettingsSetting, GSettingsMissingError
 from gradience.backend.constants import datadir
 

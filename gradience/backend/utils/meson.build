@@ -5,9 +5,9 @@ gradience_sources = [
     'colors.py',
     'common.py',
     'flatpak_gsettings.py',
+    'gnome.py',
     'gsettings.py',
-    'shell.py',
-    'theming.py',
-    'subprocess.py'
+    'subprocess.py',
+    'theming.py'
 ]
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: utilsdir)
