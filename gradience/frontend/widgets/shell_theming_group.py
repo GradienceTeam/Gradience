@@ -20,6 +20,7 @@ from enum import Enum
 
 from gi.repository import GObject, GLib, Gio, Gtk, Adw
 
+from gradience.backend.utils.gnome import is_gnome_available
 from gradience.backend.constants import rootdir
 from gradience.backend.exceptions import UnsupportedShellVersion
 from gradience.backend.logger import Logger
@@ -50,6 +51,7 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         self.settings = parent.settings
 
         self.app = parent.get_application()
+        self.win = self.app.get_active_window()
         self.toast_overlay = parent.toast_overlay
 
         self.setup_signals()
@@ -106,6 +108,21 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
+        if not is_gnome_available():
+            dialog = Adw.MessageDialog(transient_for=self.win, heading=_("GNOME Shell Missing"),
+                body=_("This Theme Engine is designed to work only on systems running GNOME. You can still generate themes on other desktop environments, but it won't have any affect on them."))
+
+            dialog.add_response("disable-engine", _("Disable Engine"))
+            dialog.add_response("ok", _("Okay"))
+            dialog.set_response_appearance("disable-engine", Adw.ResponseAppearance.DESTRUCTIVE)
+            dialog.set_default_response("ok")
+
+            dialog.connect("response", self.on_shell_missing_response)
+            dialog.present()
+        else:
+            self.apply_shell_theme()
+
+    def apply_shell_theme(self):
         variant_pos = self.variant_row.props.selected
 
         class variantEnum(Enum):
@@ -140,6 +157,17 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         self.toast_overlay.add_toast(
             Adw.Toast(title=_("Shell theme applied successfully."))
         )
+
+    def on_shell_missing_response(self, widget, response, *args):
+        if response == "disable-engine":
+            self.win.enabled_theme_engines.remove("shell")
+
+            enabled_engines = GLib.Variant.new_strv(list(self.win.enabled_theme_engines))
+            self.settings.set_value("enabled-theme-engines", enabled_engines)
+
+            self.win.reload_theming_page()
+        elif response == "ok":
+            self.apply_shell_theme()
 
     @Gtk.Template.Callback()
     def on_remove_button_clicked(self, *_args):

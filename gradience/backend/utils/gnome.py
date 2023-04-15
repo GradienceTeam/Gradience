@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gio
+import os
 
 from gradience.backend.models.preset import Preset
 from gradience.backend.utils.common import extract_version, run_command
@@ -25,7 +25,7 @@ from gradience.backend.utils.common import extract_version, run_command
 from gradience.frontend.schemas.shell_schema import shell_schema
 
 
-def get_shell_version():
+def get_shell_version() -> str:
     stdout = run_command(["gnome-shell", "--version"],
         get_stdout_text=True,
         allow_escaping=True).replace("\n", "")
@@ -34,7 +34,7 @@ def get_shell_version():
 
     return shell_version
 
-def get_full_shell_version():
+def get_full_shell_version() -> str:
     stdout = run_command(["gnome-shell", "--version"],
         get_stdout_text=True,
         allow_escaping=True).replace("\n", "")
@@ -43,7 +43,15 @@ def get_full_shell_version():
 
     return shell_version
 
-def get_shell_colors(preset_variables: Preset.variables):
+def is_gnome_available():
+    xdg_current_desktop = os.environ.get("XDG_CURRENT_DESKTOP").lower()
+
+    if "gnome" in xdg_current_desktop:
+        return True
+
+    return False
+
+def get_shell_colors(preset_variables: Preset.variables) -> dict:
     shell_colors = {}
 
     for variable in shell_schema["variables"]:
