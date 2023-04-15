@@ -1,37 +1,19 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradienceNoPluginPrefWindow: Adw.Window {
+template GradienceNoPluginPrefWindow : Adw.PreferencesWindow {
   title: _("Plugin Preferences");
-  modal: true;
-  default-width: 400;
+  search-enabled: false;
   default-height: 400;
-  resizable: true;
-  deletable: true;
+  default-width: 400;
+  modal: true;
 
-  ShortcutController {
-    Shortcut {
-      trigger: "Escape";
-      action: "action(window.close)";
-    }
-  }
-
-  Adw.Leaflet leaflet {
-    can-unfold: false;
-
-    Gtk.Box main_view {
-      orientation: vertical;
-
-      Adw.HeaderBar titlebar {
-        styles ["flat"]
-      }
-
-      Adw.StatusPage {
-        name: "empty";
-        icon-name: "action-unavailable-symbolic";
-        title: _("No Preferences");
-        description: _("This plugin doesn't have any preferences.");
-      }
+  Adw.PreferencesPage {
+    Adw.StatusPage {
+      name: "empty";
+      icon-name: "action-unavailable-symbolic";
+      title: _("No Preferences");
+      description: _("This plugin doesn't have any preferences.");
     }
   }
 }

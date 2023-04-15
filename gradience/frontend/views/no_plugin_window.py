@@ -22,7 +22,7 @@ from gradience.backend.constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/no_plugin_window.ui")
-class GradienceNoPluginPrefWindow(Adw.Window):
+class GradienceNoPluginPrefWindow(Adw.PreferencesWindow):
     __gtype_name__ = "GradienceNoPluginPrefWindow"
 
     def __init__(self, **kwargs):
