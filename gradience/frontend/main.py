@@ -22,12 +22,11 @@ import threading
 
 from pathlib import Path
 from material_color_utilities_python import hexFromArgb
-from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
+from gi.repository import GObject, Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
 
 from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
-from gradience.backend.theming.shell import ShellTheme
 from gradience.backend.theming.preset import PresetUtils
 from gradience.backend.theming.monet import Monet
 from gradience.backend.utils.common import to_slug_case
@@ -48,7 +47,6 @@ from gradience.frontend.widgets.custom_css_group import GradienceCustomCSSGroup
 
 from gradience.frontend.utils.actions import ActionHelpers
 from gradience.frontend.schemas.preset_schema import preset_schema
-from gradience.frontend.schemas.shell_schema import shell_schema
 
 from gradience.backend.logger import Logger
 
@@ -76,7 +74,6 @@ class GradienceApplication(Adw.Application):
 
         self.variables = {}
         self.pref_variables = {}
-        self.custom_colors = {}
 
         self.palette = {}
         self.pref_palette_shades = {}
@@ -104,6 +101,8 @@ class GradienceApplication(Adw.Application):
         """Called when the application is activated."""
 
         self.win = self.props.active_window
+
+        self.setup_signals()
 
         if not self.win:
             self.win = GradienceMainWindow(
@@ -151,7 +150,6 @@ class GradienceApplication(Adw.Application):
                         self.show_about_window)
 
         self.load_preset_from_css()
-
         self.reload_user_defined_presets()
 
         if self.first_run:
@@ -164,6 +162,16 @@ class GradienceApplication(Adw.Application):
             else:
                 logging.debug("normal run")
                 self.win.present()
+
+    def setup_signals(self):
+        # Custom signals
+        GObject.signal_new(
+            "preset-reload",
+            self,
+            GObject.SignalFlags.RUN_LAST,
+            bool,
+            (object,)
+        )
 
     def save_favourite(self):
         self.settings.set_value(
@@ -469,16 +477,7 @@ class GradienceApplication(Adw.Application):
         )
         self.current_css_provider = css_provider
 
-        for variable in shell_schema["variables"]:
-            print(variable)
-            try:
-                self.custom_colors[variable["name"]] = variable["default_value"]
-            except KeyError:
-                try:
-                    self.custom_colors[variable["name"]] = self.variables[variable["var_name"]]
-                except KeyError:
-                    raise
-
+        self.emit("preset-reload", object())
         self.is_ready = True
 
     def load_preset_action(self, _unused, *args):

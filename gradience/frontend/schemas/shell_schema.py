@@ -29,6 +29,11 @@ shell_schema = {
             "title": _("Base Foreground Color")
         },
         {
+            "name": "system_bg_color",
+            "var_name": "window_bg_color",
+            "title": _("Overview Background Color")
+        },
+        {
             "name": "selected_bg_color",
             "var_name": "accent_bg_color",
             "title": _("Accent Background Color")
@@ -38,25 +43,21 @@ shell_schema = {
             "var_name": "window_fg_color",
             "title": _("Accent Foreground Color")
         },
-        {
-            "name": "system_bg_color",
-            "var_name": "window_bg_color",
-            "title": _("System Background Color")
-        },
-        {
-            "name": "panel_bg_color",
-            "var_name": "panel_bg_color",
-            "title": _("Panel Background Color"),
-            "default_value": "#000"
-        },
-        {
-            "name": "osd_bg_color",
-            "var_name": "window_bg_color",
-            "title": _("OSD Background Color")
-        },
+        # TODO: Fix panel background color injection
+        #{
+        #    "name": "panel_bg_color",
+        #    "var_name": "panel_bg_color",
+        #    "title": _("Panel Background Color"),
+        #    "default_value": "#000"
+        #},
+        #{
+        #    "name": "osd_bg_color",
+        #    "var_name": "window_bg_color",
+        #    "title": _("OSD Background Color")
+        #},
         {
             "name": "osd_fg_color",
-            "var_name": "accent_fg_color",
+            "var_name": "window_fg_color",
             "title": _("OSD Foreground Color")
         }
     ]

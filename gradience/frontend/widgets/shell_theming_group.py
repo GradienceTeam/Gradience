@@ -26,6 +26,7 @@ from gradience.backend.logger import Logger
 
 from gradience.backend.theming.shell import ShellTheme
 
+from gradience.frontend.schemas.shell_schema import shell_schema
 from gradience.frontend.dialogs.unsupported_shell_version_dialog import GradienceUnsupportedShellVersionDialog
 from gradience.frontend.views.shell_prefs_window import GradienceShellPrefsWindow
 
@@ -43,15 +44,19 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
 
+        self.shell_colors = {}
+
         self.parent = parent
         self.settings = parent.settings
-        self.app = self.parent.get_application()
+
+        self.app = parent.get_application()
+        self.toast_overlay = parent.toast_overlay
 
         self.setup_signals()
         self.setup()
 
     def setup_signals(self):
-        pass
+        self.app.connect("preset-reload", self.reload_colors)
 
     def setup(self):
         self.setup_variant_row()
@@ -74,9 +79,29 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
 
         self.shell_version_row.set_model(version_store)'''
 
+    def reload_colors(self, *args):
+        try:
+            for variable in shell_schema["variables"]:
+                self.set_colors(variable)
+        except Exception as e:
+            logging.error("An unexpected error occurred while loading variable colors.", exc=e)
+            self.toast_overlay.add_toast(
+                Adw.Toast(
+                    title=_("An unexpected error occurred while loading variable colors."))
+            )
+
+    def set_colors(self, variable):
+        try:
+            self.shell_colors[variable["name"]] = variable["default_value"]
+        except KeyError:
+            try:
+                self.shell_colors[variable["name"]] = self.app.variables[variable["var_name"]]
+            except KeyError:
+                raise
+
     @Gtk.Template.Callback()
     def on_custom_colors_button_clicked(self, *_args):
-        self.shell_pref_window = GradienceShellPrefsWindow(self.parent)
+        self.shell_pref_window = GradienceShellPrefsWindow(self.parent, self.shell_colors)
         self.shell_pref_window.present()
 
     @Gtk.Template.Callback()
@@ -96,21 +121,23 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         variant_str = __get_variant_string()
 
         try:
-            ShellTheme().apply_theme_async(self.app, self._on_shell_theme_done, variant_str)
+            ShellTheme().apply_theme_async(self, self._on_shell_theme_done,
+                                            variant_str, self.app.preset)
         except UnsupportedShellVersion:
-            logging.error("Unsupported shell version detected ")
+            logging.error("Unsupported GNOME Shell version detected.")
             GradienceUnsupportedShellVersionDialog(self.parent).present()
         except (ValueError, OSError, GLib.GError) as e:
             logging.error(
                 "An error occurred while generating a Shell theme.", exc=e)
-            self.parent.toast_overlay.add_toast(
+            self.toast_overlay.add_toast(
                 Adw.Toast(
                     title=_("An error occurred while generating a Shell theme."))
             )
 
-    def _on_shell_theme_done(self, source_widget:GObject.Object, result:Gio.AsyncResult, user_data:GObject.GPointer):
+    def _on_shell_theme_done(self, source_widget:GObject.Object, result:Gio.AsyncResult,
+                                user_data:GObject.GPointer):
         logging.debug("It works! \o/")
-        self.parent.toast_overlay.add_toast(
+        self.toast_overlay.add_toast(
             Adw.Toast(title=_("Shell theme applied successfully."))
         )
 

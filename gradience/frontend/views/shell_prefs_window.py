@@ -18,6 +18,7 @@
 
 from gi.repository import Gtk, Adw
 
+from gradience.backend.utils.colors import rgb_to_hash
 from gradience.backend.constants import rootdir
 
 from gradience.frontend.widgets.option_row import GradienceOptionRow
@@ -34,8 +35,10 @@ class GradienceShellPrefsWindow(Adw.PreferencesWindow):
 
     custom_colors_group = Gtk.Template.Child("custom-colors-group")
 
-    def __init__(self, parent, **kwargs):
+    def __init__(self, parent, shell_colors: dict, **kwargs):
         super().__init__(**kwargs)
+
+        self.shell_colors = shell_colors
 
         self.parent = parent
         self.settings = parent.settings
@@ -54,15 +57,38 @@ class GradienceShellPrefsWindow(Adw.PreferencesWindow):
             )
             self.custom_colors_group.add(pref_variable)
 
-            #pref_variable.connect_signals(update_vars=False)
+            pref_variable.color_value.connect("color-set", self.on_color_value_changed, pref_variable)
+            pref_variable.text_value.connect("changed", self.on_text_value_changed, pref_variable)
 
+            self.set_colors(pref_variable, variable)
+
+    def set_colors(self, widget, variable):
+        if len(self.shell_colors) != len(shell_schema["variables"]):
             try:
-                self.app.custom_colors[variable["name"]] = variable["default_value"]
+                self.shell_colors[variable["name"]] = variable["default_value"]
             except KeyError:
                 try:
-                    self.app.custom_colors[variable["name"]] = self.app.variables[variable["var_name"]]
+                    self.shell_colors[variable["name"]] = self.app.variables[variable["var_name"]]
                 except KeyError:
                     raise
             finally:
-                pref_variable.update_value(self.app.custom_colors[variable["name"]], update_var=self.app.custom_colors)
+                widget.update_value(self.shell_colors[variable["name"]])
+        else:
+            widget.update_value(self.shell_colors[variable["name"]])
 
+    def on_color_value_changed(self, widget, parent, *_args):
+        color_name = parent.props.name
+        color_value = widget.get_rgba().to_string()
+
+        if color_value.startswith("rgb") or color_value.startswith("rgba"):
+            color_hex, alpha = rgb_to_hash(color_value)
+            if not alpha:
+                color_value = color_hex
+
+        self.shell_colors[color_name] = color_value
+
+    def on_text_value_changed(self, widget, parent, *_args):
+        color_name = parent.props.name
+        color_value = widget.get_text()
+
+        self.shell_colors[color_name] = color_value

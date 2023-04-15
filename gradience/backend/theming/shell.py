@@ -186,8 +186,6 @@ class ShellTheme:
 
         palette_content = ""
 
-        print(f"self.preset_palette: {self.preset_palette}")
-
         with open(self.palette_template, "r", encoding="utf-8") as template:
             for line in template:
                 template_match = re.search(template_regex, line)
@@ -212,13 +210,17 @@ class ShellTheme:
                 template_match = re.search(template_regex, line)
                 if template_match != None:
                     key = template_match.__getitem__(1)
+                    shell_colors = get_shell_colors(self.preset_variables)
                     try:
-                        inserted = line.replace(
-                            "{{" + key + "}}", self.variables[key])
+                        if self.shell_colors:
+                            inserted = line.replace(
+                            "{{" + key + "}}", self.shell_colors[key])
+                        else:
+                            inserted = line.replace(
+                                "{{" + key + "}}", shell_colors[key])
                     except KeyError:
                         inserted = line.replace(
-                            "{{" + key + "}}", self.custom_colors[key])
-
+                            "{{" + key + "}}", self.preset_variables[key])
                     colors_content += inserted
                 else:
                     colors_content += line

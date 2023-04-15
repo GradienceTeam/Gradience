@@ -58,6 +58,7 @@ class GradienceOptionRow(Adw.ActionRow):
             )
 
         self.explanation_label.set_label(explanation or "")
+
         if not explanation:
             self.explanation_button.set_visible(False)
 
