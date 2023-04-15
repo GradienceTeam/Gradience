@@ -18,7 +18,11 @@
 
 from gi.repository import Gio
 
+from gradience.backend.models.preset import Preset
 from gradience.backend.utils.common import extract_version, run_command
+
+# TODO: Remove this import later (imports from gradience.frontend are not allowed in backend)
+from gradience.frontend.schemas.shell_schema import shell_schema
 
 
 def get_shell_version():
@@ -38,3 +42,17 @@ def get_full_shell_version():
     shell_version = stdout[12:]
 
     return shell_version
+
+def get_shell_colors(preset_variables: Preset.variables):
+    shell_colors = {}
+
+    for variable in shell_schema["variables"]:
+        shell_colors[variable["name"]] = variable["var_name"]
+
+    for shell_key, var_name in shell_colors.items():
+        if shell_key == "panel_bg_color":
+            shell_colors[shell_key] = shell_schema["variables"][5]["default_value"]
+            continue
+        shell_colors[shell_key] = preset_variables[var_name]
+
+    return shell_colors
