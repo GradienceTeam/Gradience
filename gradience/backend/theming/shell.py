@@ -39,26 +39,19 @@ from gradience.backend.globals import is_sandboxed
 logging = Logger(logger_name="ShellTheme")
 
 
-shell_to_adw = {
-    "_dark_base_color": "window_bg_color",
-    "fg_color": "window_fg_color",
-    "selected_fg_color": "accent_fg_color",
-    "selected_bg_color": "accent_bg_color",
-    "osd_fg_color": "accent_fg_color"
-}
-
-
 class ShellTheme:
     # Supported GNOME Shell versions: 42, 43, 44
     shell_versions = [42, 43, 44]
     shell_versions_str = [str(version) for version in shell_versions]
     version_target = None
 
-    variant = None
+    theme_variant = None
 
-    variables = {}
-    palette = {}
-    custom_colors = {}
+    shell_colors = {}
+
+    preset_variables = {}
+    preset_palette = {}
+
     custom_css = None
 
     def __init__(self, shell_version=None):
@@ -92,7 +85,7 @@ class ShellTheme:
                 if not is_sandboxed():
                     self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID)
                 else:
-                    logging.debug("Sandboxed, Gsettings path not exists")
+                    logging.debug("Sandboxed, Gsettings path doesn't exists")
                     self.settings = FlatpakGSettings()
         except (GSettingsMissingError, GLib.GError):
             raise
@@ -129,42 +122,47 @@ class ShellTheme:
     def get_cancellable(self) -> Gio.Cancellable:
         return self._cancellable
 
-    def apply_theme_async(self, caller:GObject.Object, callback:callable, variant:str):
+    def apply_theme_async(self, caller:GObject.Object, callback:callable,
+                            theme_variant:str,
+                            preset: Preset):
         task = Gio.Task.new(caller, None, callback, self._cancellable)
-        self.async_variant = variant
+        self.async_data = [theme_variant, preset]
 
         task.set_return_on_cancel(True)
         task.run_in_thread(self._apply_theme_thread)
 
-    def _apply_theme_thread(self, task:Gio.Task, source_object:GObject.Object, task_data:object, cancellable:Gio.Cancellable):
+    def _apply_theme_thread(self, task:Gio.Task, source_object:GObject.Object,
+                                task_data:object,
+                                cancellable:Gio.Cancellable):
         if task.return_error_if_cancelled():
             return
 
-        output = self.apply_theme(source_object, self.async_variant)
+        theme_variant = self.async_data[0]
+        preset = self.async_data[1]
+
+        output = self.apply_theme(source_object, theme_variant, preset)
         task.return_value(output)
 
-    def apply_theme(self, parent, variant: str):
-        if variant in ("light", "dark"):
-            self.variant = variant
+    def apply_theme(self, parent: callable, theme_variant: str, preset: Preset):
+        if theme_variant in ("light", "dark"):
+            self.theme_variant = theme_variant
         else:
             raise ValueError(
-                f"Theme variant {variant} not in list: [light, dark]")
+                f"Theme variant {theme_variant} not in list: [light, dark]")
 
         try:
-            self._create_theme(parent)
+            self._create_theme(parent, preset)
         except (OSError, GLib.GError) as e:
             raise
 
-    def _create_theme(self, parent):
-        preset = parent.preset
-
+    def _create_theme(self, parent: callable, preset: Preset):
         # Convert GTK color variables to normal color values
-        self.variables = color_vars_to_color_code(preset.variables, preset.palette)
-        self.palette = preset.palette
+        self.preset_variables = color_vars_to_color_code(preset.variables, preset.palette)
+        self.preset_palette = preset.palette
         self.custom_css = preset.custom_css
 
         # TODO: Move custom Shell colors list to Shell modules
-        self.custom_colors = parent.custom_colors
+        self.shell_colors = parent.shell_colors
 
         self._insert_variables()
         self._recolor_assets()
@@ -188,6 +186,8 @@ class ShellTheme:
 
         palette_content = ""
 
+        print(f"self.preset_palette: {self.preset_palette}")
+
         with open(self.palette_template, "r", encoding="utf-8") as template:
             for line in template:
                 template_match = re.search(template_regex, line)
@@ -195,7 +195,7 @@ class ShellTheme:
                     _key = template_match.__getitem__(1)
                     prefix = _key.split("_")[0] + "_"
                     key = _key.split("_")[1]
-                    inserted = line.replace("{{" + _key + "}}", self.palette[prefix][key])
+                    inserted = line.replace("{{" + _key + "}}", self.preset_palette[prefix][key])
                     palette_content += inserted
                 else:
                     palette_content += line
@@ -228,21 +228,6 @@ class ShellTheme:
             sheet.write(colors_content)
             sheet.close()
 
-        '''with open(self.colors_template, "r", encoding="utf-8") as template:
-            for line in template:
-                template_match = re.findall(template_regex, line)
-                if template_match != None:
-                    #key = template_match.__getitem__(1)
-                    for key in template_match:
-                        #inserted = re.sub(template_regex, self.variables[key], line)
-                        #print(inserted)
-                        inserted = line.replace("{{" + key + "}}", self.variables[key])
-                        print(inserted)
-                        colors_content += inserted
-                else:
-                    colors_content += line
-            template.close()'''
-
         main_content = ""
 
         with open(self.main_template, "r", encoding="utf-8") as template:
@@ -251,7 +236,7 @@ class ShellTheme:
             for line in template:
                 if key in line:
                     inserted = line.replace(
-                        "{{" + key + "}}", f"'{self.variant}'")
+                        "{{" + key + "}}", f"'{self.theme_variant}'")
                     main_content += inserted
                 elif "custom_css" in line:
                     key = "custom_css"
@@ -282,7 +267,7 @@ class ShellTheme:
 
     # TODO: Add recoloring for other assets
     def _recolor_assets(self):
-        accent_bg = self.variables["accent_bg_color"]
+        accent_bg = self.preset_variables["accent_bg_color"]
 
         switch_on_source = os.path.join(self.source_dir, "toggle-on.svg")
 
