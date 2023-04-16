@@ -210,4 +210,3 @@ class GradiencePresetRow(Adw.ExpanderRow):
                 self.win.reload_pref_group()
 
         self.delete_preset = True
-
