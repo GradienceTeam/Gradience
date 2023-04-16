@@ -54,6 +54,7 @@ class GradiencePresetWindow(Adw.Window):
     json_filter = Gtk.Template.Child()
 
     remove_button = Gtk.Template.Child("remove_button")
+    report_button = Gtk.Template.Child("report_button")
     file_manager_button = Gtk.Template.Child("file_manager_button")
 
     search_entry = Gtk.Template.Child("search_entry")
