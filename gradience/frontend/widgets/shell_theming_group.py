@@ -109,13 +109,13 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         if not is_gnome_available():
-            dialog = Adw.MessageDialog(transient_for=self.win, heading=_("GNOME Shell Missing"),
+            dialog = Adw.MessageDialog(transient_for=self.win, heading=_("GNOME Shell Are Missing"),
                 body=_("This Theme Engine is designed to work only on systems running GNOME. You can still generate themes on other desktop environments, but it won't have any affect on them."))
 
             dialog.add_response("disable-engine", _("Disable Engine"))
-            dialog.add_response("ok", _("Okay"))
+            dialog.add_response("continue-anyway", _("Continue Anyway"))
             dialog.set_response_appearance("disable-engine", Adw.ResponseAppearance.DESTRUCTIVE)
-            dialog.set_default_response("ok")
+            dialog.set_default_response("continue-anyway")
 
             dialog.connect("response", self.on_shell_missing_response)
             dialog.present()
@@ -166,7 +166,7 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
             self.settings.set_value("enabled-theme-engines", enabled_engines)
 
             self.win.reload_theming_page()
-        elif response == "ok":
+        elif response == "continue-anyway":
             self.apply_shell_theme()
 
     @Gtk.Template.Callback()
