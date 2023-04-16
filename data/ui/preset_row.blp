@@ -1,33 +1,33 @@
 using Gtk 4.0;
 using Adw 1;
 
-Popover pop_actions {
-  styles [
-    "menu",
-  ]
+// Popover pop_actions {
+//   styles [
+//     "menu",
+//   ]
 
-  Box {
-    orientation: vertical;
-    margin-top: 6;
-    margin-bottom: 6;
-    margin-start: 6;
-    margin-end: 6;
+//   Box {
+//     orientation: vertical;
+//     margin-top: 6;
+//     margin-bottom: 6;
+//     margin-start: 6;
+//     margin-end: 6;
 
-    // Button btn_share {
-    // valign: center;
-    // label: _("Share preset");
-    // tooltip-text: _("Share Preset");
-    // styles ["flat"]
-    // }
+//     Button share_button {
+//     valign: center;
+//     label: _("Share preset");
+//     tooltip-text: _("Share Preset");
+//     styles ["flat"]
+//     }
 
-    // Separator {
-    // }
+//     Separator {
+//     }
 
-    .GtkModelButton btn_report {
-      text: _("Report an Issue…");
-    }
-  }
-}
+//     .GtkModelButton btn_report {
+//       text: _("Report an Issue…");
+//     }
+//   }
+// }
 
 template GradiencePresetRow : Adw.ExpanderRow {
   [action]
@@ -66,14 +66,14 @@ template GradiencePresetRow : Adw.ExpanderRow {
     styles ["flat"]
   }
 
-  [action]
-  MenuButton {
-    valign: center;
-    popover: pop_actions;
-    icon-name: "view-more-symbolic";
-    tooltip-text: _("More Options");
-    styles ["flat"]
-  }
+  // [action]
+  // MenuButton {
+  //   valign: center;
+  //   popover: pop_actions;
+  //   icon-name: "view-more-symbolic";
+  //   tooltip-text: _("More Options");
+  //   styles ["flat"]
+  // }
 
   Adw.ActionRow description {
     title: _("Description");
@@ -92,6 +92,14 @@ template GradiencePresetRow : Adw.ExpanderRow {
         label: _("No Badges");
         styles ["tag", "caption"]
       }
+    }
+
+    [suffix]
+    Button report_button {
+      valign: center;
+      icon-name: "bug-symbolic";
+      tooltip-text: _("Report Preset");
+      clicked => on_report_button_clicked();
     }
 
     [suffix]

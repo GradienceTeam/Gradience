@@ -39,8 +39,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
     name_entry_toggle = Gtk.Template.Child("name_entry_toggle")
     apply_button = Gtk.Template.Child("apply_button")
     remove_button = Gtk.Template.Child("remove_button")
-    btn_report = Gtk.Template.Child("btn_report")
-    # btn_share = Gtk.Template.Child("btn_share")
+    report_button = Gtk.Template.Child("report_button")
+    # share_button = Gtk.Template.Child("share_button")
     star_button = Gtk.Template.Child("star_button")
     badge_list = Gtk.Template.Child("badge_list")
     no_badges = Gtk.Template.Child("no_badges")
@@ -78,8 +78,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.has_badges = False
             self.no_badges.set_visible(True)
 
-        self.btn_report.connect("clicked", self.on_report_btn_clicked)
-        # self.btn_share.connect("clicked", self.on_share_btn_clicked)
+        self.report_button.connect("clicked", self.on_report_button_clicked)
+        # self.share_button.connect("clicked", self.on_share_btn_clicked)
         self.star_button.connect("clicked", self.on_star_button_clicked)
 
         if name in self.win.app.favourite:
@@ -146,7 +146,8 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.preset.rename(self.name_entry.get_text())
             self.value_stack.set_visible_child(self.apply_button)
 
-    def on_report_btn_clicked(self, *_args):
+    @Gtk.Template.Callback()
+    def on_report_button_clicked(self, *_args):
         parent = XdpGtk4.parent_new_gtk(self.win)
 
         def open_dir_callback(_, result):
@@ -209,3 +210,4 @@ class GradiencePresetRow(Adw.ExpanderRow):
                 self.win.reload_pref_group()
 
         self.delete_preset = True
+
