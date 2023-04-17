@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-16 12:12+0000\n"
+"POT-Creation-Date: 2023-04-17 00:38+0000\n"
 "PO-Revision-Date: 2023-04-03 12:13+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -278,20 +278,10 @@ msgstr "Benutzerdefinierte voreingestellte Repositories"
 msgid "Custom repository URL address"
 msgstr "Benutzerdefinierte Repository-URL-Adresse"
 
-#: data/ui/preset_row.blp:27
-#, fuzzy
-msgid "Report an Issue…"
-msgstr "Ein Problem melden"
-
 #: data/ui/preset_row.blp:64
 #, fuzzy
 msgid "Rename Preset"
 msgstr "Voreinstellung umbenennen"
-
-#: data/ui/preset_row.blp:74
-#, fuzzy
-msgid "More Options"
-msgstr "Weitere Optionen"
 
 #: data/ui/preset_row.blp:79
 #, fuzzy
@@ -308,12 +298,17 @@ msgstr "Für diese Voreinstellung gibt es leider keine Beschreibung."
 msgid "No Badges"
 msgstr "Keine Abzeichen"
 
-#: data/ui/preset_row.blp:100
+#: data/ui/preset_row.blp:101 data/ui/presets_manager_window.blp:44
+#, fuzzy
+msgid "Report Preset"
+msgstr "Preset löschen"
+
+#: data/ui/preset_row.blp:108
 #, fuzzy
 msgid "Remove preset"
 msgstr "Vorgabe löschen"
 
-#: data/ui/preset_row.blp:101
+#: data/ui/preset_row.blp:109
 #, fuzzy
 msgid "Remove Preset"
 msgstr "Preset löschen"
@@ -337,27 +332,27 @@ msgstr "Importieren einer Voreinstellungsdatei"
 msgid "Delete"
 msgstr "Löschen"
 
-#: data/ui/presets_manager_window.blp:49 gradience/frontend/main.py:231
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:231
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Im Dateimanager öffnen"
 
-#: data/ui/presets_manager_window.blp:67
+#: data/ui/presets_manager_window.blp:73
 #, fuzzy
 msgid "Installed"
 msgstr "Installiert"
 
-#: data/ui/presets_manager_window.blp:76
+#: data/ui/presets_manager_window.blp:82
 #, fuzzy
 msgid "Explore"
 msgstr "Erkunden"
 
-#: data/ui/presets_manager_window.blp:81
+#: data/ui/presets_manager_window.blp:87
 #, fuzzy
 msgid "Search for presets"
 msgstr "Suche nach Voreinstellungen"
 
-#: data/ui/presets_manager_window.blp:82
+#: data/ui/presets_manager_window.blp:88
 #, fuzzy
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
@@ -366,44 +361,44 @@ msgstr ""
 "Geben Sie ein Stichwort ein, um auf <a href=\"https://github.com/"
 "GradienceTeam/Community\">GradienceTeam/Community</a> zu suchen."
 
-#: data/ui/presets_manager_window.blp:95
+#: data/ui/presets_manager_window.blp:101
 #, fuzzy
 msgid "e.g. \"Pretty Purple\""
 msgstr "z.B. \"Pretty Purple\""
 
-#: data/ui/presets_manager_window.blp:100
+#: data/ui/presets_manager_window.blp:106
 #, fuzzy
 msgid "All"
 msgstr "Alle"
 
-#: data/ui/presets_manager_window.blp:128
+#: data/ui/presets_manager_window.blp:134
 #, fuzzy
 msgid "No Results Found"
 msgstr "Keine Treffer gefunden"
 
-#: data/ui/presets_manager_window.blp:136
+#: data/ui/presets_manager_window.blp:142
 #, fuzzy
 msgid "Offline"
 msgstr "Offline"
 
-#: data/ui/presets_manager_window.blp:149
-#: gradience/frontend/views/presets_manager_window.py:123
-#: gradience/frontend/views/presets_manager_window.py:391
+#: data/ui/presets_manager_window.blp:155
+#: gradience/frontend/views/presets_manager_window.py:124
+#: gradience/frontend/views/presets_manager_window.py:392
 #, fuzzy
 msgid "Repositories"
 msgstr "Repositorys"
 
-#: data/ui/presets_manager_window.blp:169
+#: data/ui/presets_manager_window.blp:175
 #, fuzzy
 msgid "Import a Preset File (*.json)"
 msgstr "Importieren einer Voreinstellungsdatei (*.json)"
 
-#: data/ui/presets_manager_window.blp:174
+#: data/ui/presets_manager_window.blp:180
 #, fuzzy
 msgid "All files"
 msgstr "Alle Dateien"
 
-#: data/ui/presets_manager_window.blp:179
+#: data/ui/presets_manager_window.blp:185
 #, fuzzy
 msgid "JSON file (*.json)"
 msgstr "JSON-Dateien (*.json)"
@@ -660,7 +655,7 @@ msgid "About Gradience"
 msgstr "Über Gradience"
 
 #: data/ui/window.blp:152
-#: gradience/frontend/views/presets_manager_window.py:111
+#: gradience/frontend/views/presets_manager_window.py:112
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "Vorinstallierte Voreinstellungen"
@@ -702,7 +697,7 @@ msgid "_Save"
 msgstr "Speichern"
 
 #: gradience/frontend/main.py:184
-#: gradience/frontend/views/presets_manager_window.py:336
+#: gradience/frontend/views/presets_manager_window.py:337
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -1220,54 +1215,54 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "Keine Plugins gefunden."
 
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:352
+#: gradience/frontend/views/presets_manager_window.py:117
+#: gradience/frontend/views/presets_manager_window.py:353
 #, fuzzy
 msgid "User Presets"
 msgstr "Benutzervoreinstellungen"
 
-#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 #, fuzzy
 msgid "Add new repository"
 msgstr "Paketquelle hinzufügen"
 
-#: gradience/frontend/views/presets_manager_window.py:192
+#: gradience/frontend/views/presets_manager_window.py:193
 #, fuzzy
 msgid "Add a repository to install additional presets."
 msgstr ""
 "Fügen Sie ein Repository hinzu, um zusätzliche Voreinstellungen zu "
 "installieren."
 
-#: gradience/frontend/views/presets_manager_window.py:198
+#: gradience/frontend/views/presets_manager_window.py:199
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: gradience/frontend/views/presets_manager_window.py:199
+#: gradience/frontend/views/presets_manager_window.py:200
 #, fuzzy
 msgid "Add"
 msgstr "Addieren"
 
-#: gradience/frontend/views/presets_manager_window.py:295
+#: gradience/frontend/views/presets_manager_window.py:296
 #, fuzzy
 msgid "Preset already exists"
 msgstr "Voreinstellung existiert bereits"
 
-#: gradience/frontend/views/presets_manager_window.py:307
+#: gradience/frontend/views/presets_manager_window.py:308
 #, fuzzy
 msgid "Preset imported"
 msgstr "Voreinstellung importiert"
 
-#: gradience/frontend/views/presets_manager_window.py:310
+#: gradience/frontend/views/presets_manager_window.py:311
 #, fuzzy
 msgid "Unsupported file format, must be .json"
 msgstr "Nicht unterstütztes Dateiformat, muss .json sein"
 
-#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:346
 #, fuzzy
 msgid "Built-in Presets"
 msgstr "Vorinstallierte Voreinstellungen"
 
-#: gradience/frontend/views/presets_manager_window.py:355
+#: gradience/frontend/views/presets_manager_window.py:356
 #, fuzzy
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
@@ -1276,7 +1271,7 @@ msgstr ""
 "Siehe <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> auf Github für weitere Voreinstellungen."
 
-#: gradience/frontend/views/presets_manager_window.py:381
+#: gradience/frontend/views/presets_manager_window.py:382
 #, fuzzy
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
@@ -1341,22 +1336,22 @@ msgstr "Aus Favoriten entfernen"
 msgid "Add to Favorites"
 msgstr "Zu den Favoriten hinzufügen"
 
-#: gradience/frontend/widgets/preset_row.py:166
+#: gradience/frontend/widgets/preset_row.py:167
 #, fuzzy
 msgid "Preset removed"
 msgstr "Voreinstellung entfernt"
 
-#: gradience/frontend/widgets/preset_row.py:167
+#: gradience/frontend/widgets/preset_row.py:168
 #, fuzzy
 msgid "Undo"
 msgstr "Widerrufen"
 
-#: gradience/frontend/widgets/preset_row.py:182
+#: gradience/frontend/widgets/preset_row.py:183
 #, fuzzy
 msgid "Pending Deletion"
 msgstr "Anstehende Löschung"
 
-#: gradience/frontend/widgets/preset_row.py:196
+#: gradience/frontend/widgets/preset_row.py:197
 #, fuzzy
 msgid "Unable to delete preset"
 msgstr "Voreinstellung kann nicht gelöscht werden"
@@ -1365,6 +1360,14 @@ msgstr "Voreinstellung kann nicht gelöscht werden"
 #, fuzzy
 msgid "Repository removed"
 msgstr "Archiv gelöscht."
+
+#, fuzzy
+#~ msgid "Report an Issue…"
+#~ msgstr "Ein Problem melden"
+
+#, fuzzy
+#~ msgid "More Options"
+#~ msgstr "Weitere Optionen"
 
 #, fuzzy
 #~ msgid "Packages by"
