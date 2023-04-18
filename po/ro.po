@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-16 12:12+0000\n"
+"POT-Creation-Date: 2023-04-18 12:13+0000\n"
 "PO-Revision-Date: 2023-04-03 12:13+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -276,17 +276,9 @@ msgstr "Depozite pentru presetări personalizate"
 msgid "Custom repository URL address"
 msgstr "Adresă URL pentru depozit personalizat"
 
-#: data/ui/preset_row.blp:27
-msgid "Report an Issue…"
-msgstr "Raportați o problemă…"
-
 #: data/ui/preset_row.blp:64
 msgid "Rename Preset"
 msgstr "Redenumiți presetarea"
-
-#: data/ui/preset_row.blp:74
-msgid "More Options"
-msgstr "Mai multe opțiuni"
 
 #: data/ui/preset_row.blp:79
 msgid "Description"
@@ -300,11 +292,17 @@ msgstr "Din păcate această presetare nu conține o descriere."
 msgid "No Badges"
 msgstr "Fără ecusoane"
 
-#: data/ui/preset_row.blp:100
+#: data/ui/preset_row.blp:101 data/ui/presets_manager_window.blp:44
+#, fuzzy
+#| msgid "Remove Preset"
+msgid "Report Preset Issue"
+msgstr "Înlăturați presetarea"
+
+#: data/ui/preset_row.blp:108
 msgid "Remove preset"
 msgstr "Înlăturați presetarea"
 
-#: data/ui/preset_row.blp:101
+#: data/ui/preset_row.blp:109
 msgid "Remove Preset"
 msgstr "Înlăturați presetarea"
 
@@ -324,23 +322,23 @@ msgstr "Importați un fișier cu o presetare"
 msgid "Delete"
 msgstr "Ștergeți"
 
-#: data/ui/presets_manager_window.blp:49 gradience/frontend/main.py:231
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "Deschideți în Fișiere"
 
-#: data/ui/presets_manager_window.blp:67
+#: data/ui/presets_manager_window.blp:73
 msgid "Installed"
 msgstr "Instalate"
 
-#: data/ui/presets_manager_window.blp:76
+#: data/ui/presets_manager_window.blp:82
 msgid "Explore"
 msgstr "Explorați"
 
-#: data/ui/presets_manager_window.blp:81
+#: data/ui/presets_manager_window.blp:87
 msgid "Search for presets"
 msgstr "Căutați presetări"
 
-#: data/ui/presets_manager_window.blp:82
+#: data/ui/presets_manager_window.blp:88
 #, fuzzy
 #| msgid ""
 #| "Enter a keyword to search on <a href=\"https://gradienceteam.github.io/"
@@ -352,37 +350,37 @@ msgstr ""
 "Introduceți un termen de căutare pentru a căuta pe <a href=\"https://"
 "gradienceteam.github.io/presets\">GradienceTeam/Community</a>."
 
-#: data/ui/presets_manager_window.blp:95
+#: data/ui/presets_manager_window.blp:101
 msgid "e.g. \"Pretty Purple\""
 msgstr "de exemplu „Violet încântător”"
 
-#: data/ui/presets_manager_window.blp:100
+#: data/ui/presets_manager_window.blp:106
 msgid "All"
 msgstr "Toate"
 
-#: data/ui/presets_manager_window.blp:128
+#: data/ui/presets_manager_window.blp:134
 msgid "No Results Found"
 msgstr "Niciun rezultat nu a fost găsit"
 
-#: data/ui/presets_manager_window.blp:136
+#: data/ui/presets_manager_window.blp:142
 msgid "Offline"
 msgstr "Offline"
 
-#: data/ui/presets_manager_window.blp:149
-#: gradience/frontend/views/presets_manager_window.py:123
-#: gradience/frontend/views/presets_manager_window.py:391
+#: data/ui/presets_manager_window.blp:155
+#: gradience/frontend/views/presets_manager_window.py:124
+#: gradience/frontend/views/presets_manager_window.py:392
 msgid "Repositories"
 msgstr "Depozite"
 
-#: data/ui/presets_manager_window.blp:169
+#: data/ui/presets_manager_window.blp:175
 msgid "Import a Preset File (*.json)"
 msgstr "Importați un fișier cu o presetare (*.json)"
 
-#: data/ui/presets_manager_window.blp:174
+#: data/ui/presets_manager_window.blp:180
 msgid "All files"
 msgstr "Toate fișierele"
 
-#: data/ui/presets_manager_window.blp:179
+#: data/ui/presets_manager_window.blp:185
 msgid "JSON file (*.json)"
 msgstr "Fișier JSON (*.json)"
 
@@ -605,7 +603,7 @@ msgid "About Gradience"
 msgstr "Despre Gradience"
 
 #: data/ui/window.blp:152
-#: gradience/frontend/views/presets_manager_window.py:111
+#: gradience/frontend/views/presets_manager_window.py:112
 msgid "Built-In Presets"
 msgstr "Presetări incluse"
 
@@ -644,7 +642,7 @@ msgid "_Save"
 msgstr "Salvați"
 
 #: gradience/frontend/main.py:184
-#: gradience/frontend/views/presets_manager_window.py:336
+#: gradience/frontend/views/presets_manager_window.py:337
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -1149,44 +1147,44 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "Niciun modul nu a fost găsit."
 
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:352
+#: gradience/frontend/views/presets_manager_window.py:117
+#: gradience/frontend/views/presets_manager_window.py:353
 msgid "User Presets"
 msgstr "Presetările utilizatorului"
 
-#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 msgid "Add new repository"
 msgstr "Adăugați un depozit nou"
 
-#: gradience/frontend/views/presets_manager_window.py:192
+#: gradience/frontend/views/presets_manager_window.py:193
 msgid "Add a repository to install additional presets."
 msgstr "Adăugați un depozit pentru a instala presetări suplimentare."
 
-#: gradience/frontend/views/presets_manager_window.py:198
+#: gradience/frontend/views/presets_manager_window.py:199
 msgid "Cancel"
 msgstr "Anulare"
 
-#: gradience/frontend/views/presets_manager_window.py:199
+#: gradience/frontend/views/presets_manager_window.py:200
 msgid "Add"
 msgstr "Adăugați"
 
-#: gradience/frontend/views/presets_manager_window.py:295
+#: gradience/frontend/views/presets_manager_window.py:296
 msgid "Preset already exists"
 msgstr "Presetarea există deja"
 
-#: gradience/frontend/views/presets_manager_window.py:307
+#: gradience/frontend/views/presets_manager_window.py:308
 msgid "Preset imported"
 msgstr "Presetare importată"
 
-#: gradience/frontend/views/presets_manager_window.py:310
+#: gradience/frontend/views/presets_manager_window.py:311
 msgid "Unsupported file format, must be .json"
 msgstr "Formatul fișierului nu este acceptat, trebuie să fie de tip .json"
 
-#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:346
 msgid "Built-in Presets"
 msgstr "Presetări incluse"
 
-#: gradience/frontend/views/presets_manager_window.py:355
+#: gradience/frontend/views/presets_manager_window.py:356
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -1194,7 +1192,7 @@ msgstr ""
 "Vedeți și <a href=\"https://github.com/GradienceTeam/Community"
 "\">GradienceTeam/Community</a> pe Github pentru mai multe presetări."
 
-#: gradience/frontend/views/presets_manager_window.py:381
+#: gradience/frontend/views/presets_manager_window.py:382
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -1254,25 +1252,31 @@ msgstr "Eliminați din favorite"
 msgid "Add to Favorites"
 msgstr "Adăugați la favorite"
 
-#: gradience/frontend/widgets/preset_row.py:166
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Preset removed"
 msgstr "Presetare înlăturată"
 
-#: gradience/frontend/widgets/preset_row.py:167
+#: gradience/frontend/widgets/preset_row.py:168
 msgid "Undo"
 msgstr "Anulați"
 
-#: gradience/frontend/widgets/preset_row.py:182
+#: gradience/frontend/widgets/preset_row.py:183
 msgid "Pending Deletion"
 msgstr "Se procesează înlăturarea"
 
-#: gradience/frontend/widgets/preset_row.py:196
+#: gradience/frontend/widgets/preset_row.py:197
 msgid "Unable to delete preset"
 msgstr "Nu se poate înlătura presetarea"
 
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "Depozit înlăturat"
+
+#~ msgid "Report an Issue…"
+#~ msgstr "Raportați o problemă…"
+
+#~ msgid "More Options"
+#~ msgstr "Mai multe opțiuni"
 
 #~ msgid "Packages by"
 #~ msgstr "Pachete de"

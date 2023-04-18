@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-16 12:12+0000\n"
+"POT-Creation-Date: 2023-04-18 12:13+0000\n"
 "PO-Revision-Date: 2023-04-03 12:13+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -267,17 +267,9 @@ msgstr "사용자 지정 프리셋 저장소"
 msgid "Custom repository URL address"
 msgstr "사용자 지정 저장소 URL 주소"
 
-#: data/ui/preset_row.blp:27
-msgid "Report an Issue…"
-msgstr "문제 보고…"
-
 #: data/ui/preset_row.blp:64
 msgid "Rename Preset"
 msgstr "프리셋 이름 바꾸기"
-
-#: data/ui/preset_row.blp:74
-msgid "More Options"
-msgstr "옵션 더 보기"
 
 #: data/ui/preset_row.blp:79
 msgid "Description"
@@ -291,11 +283,17 @@ msgstr "죄송합니다. 이 프리셋에는 설명이 없습니다."
 msgid "No Badges"
 msgstr "배지 없음"
 
-#: data/ui/preset_row.blp:100
+#: data/ui/preset_row.blp:101 data/ui/presets_manager_window.blp:44
+#, fuzzy
+#| msgid "Remove Preset"
+msgid "Report Preset Issue"
+msgstr "프리셋 제거하기"
+
+#: data/ui/preset_row.blp:108
 msgid "Remove preset"
 msgstr "사전 설정 삭제"
 
-#: data/ui/preset_row.blp:101
+#: data/ui/preset_row.blp:109
 msgid "Remove Preset"
 msgstr "프리셋 제거하기"
 
@@ -315,23 +313,23 @@ msgstr "프리셋 파일 가져오기"
 msgid "Delete"
 msgstr "삭제"
 
-#: data/ui/presets_manager_window.blp:49 gradience/frontend/main.py:231
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "파일 관리자에서 열기"
 
-#: data/ui/presets_manager_window.blp:67
+#: data/ui/presets_manager_window.blp:73
 msgid "Installed"
 msgstr "설치됨"
 
-#: data/ui/presets_manager_window.blp:76
+#: data/ui/presets_manager_window.blp:82
 msgid "Explore"
 msgstr "탐색"
 
-#: data/ui/presets_manager_window.blp:81
+#: data/ui/presets_manager_window.blp:87
 msgid "Search for presets"
 msgstr "사전 설정 검색"
 
-#: data/ui/presets_manager_window.blp:82
+#: data/ui/presets_manager_window.blp:88
 #, fuzzy
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
@@ -340,37 +338,37 @@ msgstr ""
 "<a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a>에서 검색할 키워드를 입력하세요."
 
-#: data/ui/presets_manager_window.blp:95
+#: data/ui/presets_manager_window.blp:101
 msgid "e.g. \"Pretty Purple\""
 msgstr "예시: \"Pretty Purple\""
 
-#: data/ui/presets_manager_window.blp:100
+#: data/ui/presets_manager_window.blp:106
 msgid "All"
 msgstr "모두"
 
-#: data/ui/presets_manager_window.blp:128
+#: data/ui/presets_manager_window.blp:134
 msgid "No Results Found"
 msgstr "검색 결과가 없음"
 
-#: data/ui/presets_manager_window.blp:136
+#: data/ui/presets_manager_window.blp:142
 msgid "Offline"
 msgstr "오프라인"
 
-#: data/ui/presets_manager_window.blp:149
-#: gradience/frontend/views/presets_manager_window.py:123
-#: gradience/frontend/views/presets_manager_window.py:391
+#: data/ui/presets_manager_window.blp:155
+#: gradience/frontend/views/presets_manager_window.py:124
+#: gradience/frontend/views/presets_manager_window.py:392
 msgid "Repositories"
 msgstr "저장소"
 
-#: data/ui/presets_manager_window.blp:169
+#: data/ui/presets_manager_window.blp:175
 msgid "Import a Preset File (*.json)"
 msgstr "프리셋 파일 가져오기 (*.json)"
 
-#: data/ui/presets_manager_window.blp:174
+#: data/ui/presets_manager_window.blp:180
 msgid "All files"
 msgstr "모든 파일"
 
-#: data/ui/presets_manager_window.blp:179
+#: data/ui/presets_manager_window.blp:185
 msgid "JSON file (*.json)"
 msgstr "JSON 파일(*.json)"
 
@@ -591,7 +589,7 @@ msgid "About Gradience"
 msgstr "Gradience에 대하여"
 
 #: data/ui/window.blp:152
-#: gradience/frontend/views/presets_manager_window.py:111
+#: gradience/frontend/views/presets_manager_window.py:112
 msgid "Built-In Presets"
 msgstr "내장 프리셋"
 
@@ -628,7 +626,7 @@ msgid "_Save"
 msgstr "저장"
 
 #: gradience/frontend/main.py:184
-#: gradience/frontend/views/presets_manager_window.py:336
+#: gradience/frontend/views/presets_manager_window.py:337
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -1107,44 +1105,44 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "플러그인을 찾을 수 없습니다."
 
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:352
+#: gradience/frontend/views/presets_manager_window.py:117
+#: gradience/frontend/views/presets_manager_window.py:353
 msgid "User Presets"
 msgstr "사용자 사전 설정"
 
-#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 msgid "Add new repository"
 msgstr "새 저장소 추가하기"
 
-#: gradience/frontend/views/presets_manager_window.py:192
+#: gradience/frontend/views/presets_manager_window.py:193
 msgid "Add a repository to install additional presets."
 msgstr "추가 프리셋을 설치하려면 저장소를 추가하십시오."
 
-#: gradience/frontend/views/presets_manager_window.py:198
+#: gradience/frontend/views/presets_manager_window.py:199
 msgid "Cancel"
 msgstr "취소"
 
-#: gradience/frontend/views/presets_manager_window.py:199
+#: gradience/frontend/views/presets_manager_window.py:200
 msgid "Add"
 msgstr "추가하기"
 
-#: gradience/frontend/views/presets_manager_window.py:295
+#: gradience/frontend/views/presets_manager_window.py:296
 msgid "Preset already exists"
 msgstr "사전 설정이 이미 있습니다"
 
-#: gradience/frontend/views/presets_manager_window.py:307
+#: gradience/frontend/views/presets_manager_window.py:308
 msgid "Preset imported"
 msgstr "가져온 사전 설정"
 
-#: gradience/frontend/views/presets_manager_window.py:310
+#: gradience/frontend/views/presets_manager_window.py:311
 msgid "Unsupported file format, must be .json"
 msgstr "지원되지 않는 파일 형식, 파일형식은 .json이어야 합니다"
 
-#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:346
 msgid "Built-in Presets"
 msgstr "내장 프리셋"
 
-#: gradience/frontend/views/presets_manager_window.py:355
+#: gradience/frontend/views/presets_manager_window.py:356
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -1152,7 +1150,7 @@ msgstr ""
 "더 많은 프리셋은 Github에서 <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>를 참조하십시오."
 
-#: gradience/frontend/views/presets_manager_window.py:381
+#: gradience/frontend/views/presets_manager_window.py:382
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -1210,25 +1208,31 @@ msgstr "즐겨찾기에서 제거하기"
 msgid "Add to Favorites"
 msgstr "즐겨찾기에 추가하기"
 
-#: gradience/frontend/widgets/preset_row.py:166
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Preset removed"
 msgstr "사전 설정 제거됨"
 
-#: gradience/frontend/widgets/preset_row.py:167
+#: gradience/frontend/widgets/preset_row.py:168
 msgid "Undo"
 msgstr "실행 취소"
 
-#: gradience/frontend/widgets/preset_row.py:182
+#: gradience/frontend/widgets/preset_row.py:183
 msgid "Pending Deletion"
 msgstr "삭제 보류 중"
 
-#: gradience/frontend/widgets/preset_row.py:196
+#: gradience/frontend/widgets/preset_row.py:197
 msgid "Unable to delete preset"
 msgstr "사전 설정을 삭제할 수 없습니다"
 
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "저장소 제거됨"
+
+#~ msgid "Report an Issue…"
+#~ msgstr "문제 보고…"
+
+#~ msgid "More Options"
+#~ msgstr "옵션 더 보기"
 
 #~ msgid "Packages by"
 #~ msgstr "패키지"

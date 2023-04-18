@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-16 12:12+0000\n"
-"PO-Revision-Date: 2023-04-12 07:48+0000\n"
+"POT-Creation-Date: 2023-04-18 12:13+0000\n"
+"PO-Revision-Date: 2023-04-17 11:50+0000\n"
 "Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/sv/>\n"
@@ -257,17 +257,9 @@ msgstr "Anpassade förinställda arkiv"
 msgid "Custom repository URL address"
 msgstr "URL-adress för anpassat arkiv"
 
-#: data/ui/preset_row.blp:27
-msgid "Report an Issue…"
-msgstr "Rapportera ett problem…"
-
 #: data/ui/preset_row.blp:64
 msgid "Rename Preset"
 msgstr "Byt namn på förinställning"
-
-#: data/ui/preset_row.blp:74
-msgid "More Options"
-msgstr "Mer alternativ"
 
 #: data/ui/preset_row.blp:79
 msgid "Description"
@@ -281,11 +273,17 @@ msgstr "Tyvärr har denna förinställning ingen beskrivning."
 msgid "No Badges"
 msgstr "Inga märken"
 
-#: data/ui/preset_row.blp:100
+#: data/ui/preset_row.blp:101 data/ui/presets_manager_window.blp:44
+#, fuzzy
+#| msgid "Report Preset"
+msgid "Report Preset Issue"
+msgstr "Rapportera förinställning"
+
+#: data/ui/preset_row.blp:108
 msgid "Remove preset"
 msgstr "Ta bort förinställning"
 
-#: data/ui/preset_row.blp:101
+#: data/ui/preset_row.blp:109
 msgid "Remove Preset"
 msgstr "Ta bort förinställning"
 
@@ -305,23 +303,23 @@ msgstr "Importera en förinställd fil"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: data/ui/presets_manager_window.blp:49 gradience/frontend/main.py:231
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "Öppna i filhanteraren"
 
-#: data/ui/presets_manager_window.blp:67
+#: data/ui/presets_manager_window.blp:73
 msgid "Installed"
 msgstr "Installerad"
 
-#: data/ui/presets_manager_window.blp:76
+#: data/ui/presets_manager_window.blp:82
 msgid "Explore"
 msgstr "Utforska"
 
-#: data/ui/presets_manager_window.blp:81
+#: data/ui/presets_manager_window.blp:87
 msgid "Search for presets"
 msgstr "Sök efter förinställningar"
 
-#: data/ui/presets_manager_window.blp:82
+#: data/ui/presets_manager_window.blp:88
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>."
@@ -329,37 +327,37 @@ msgstr ""
 "Ange ett nyckelord för att söka på <a href=\"https://gradienceteam.github.io/"
 "presets\">GradienceTeam/Community</a>."
 
-#: data/ui/presets_manager_window.blp:95
+#: data/ui/presets_manager_window.blp:101
 msgid "e.g. \"Pretty Purple\""
 msgstr "t.ex. \"Pretty Purple\""
 
-#: data/ui/presets_manager_window.blp:100
+#: data/ui/presets_manager_window.blp:106
 msgid "All"
 msgstr "Alla"
 
-#: data/ui/presets_manager_window.blp:128
+#: data/ui/presets_manager_window.blp:134
 msgid "No Results Found"
 msgstr "Inga resultat hittades"
 
-#: data/ui/presets_manager_window.blp:136
+#: data/ui/presets_manager_window.blp:142
 msgid "Offline"
 msgstr "Offline"
 
-#: data/ui/presets_manager_window.blp:149
-#: gradience/frontend/views/presets_manager_window.py:123
-#: gradience/frontend/views/presets_manager_window.py:391
+#: data/ui/presets_manager_window.blp:155
+#: gradience/frontend/views/presets_manager_window.py:124
+#: gradience/frontend/views/presets_manager_window.py:392
 msgid "Repositories"
 msgstr "Arkiv"
 
-#: data/ui/presets_manager_window.blp:169
+#: data/ui/presets_manager_window.blp:175
 msgid "Import a Preset File (*.json)"
 msgstr "Importera en förinställd fil (*.json)"
 
-#: data/ui/presets_manager_window.blp:174
+#: data/ui/presets_manager_window.blp:180
 msgid "All files"
 msgstr "Alla filer"
 
-#: data/ui/presets_manager_window.blp:179
+#: data/ui/presets_manager_window.blp:185
 msgid "JSON file (*.json)"
 msgstr "JSON-fil (* .json)"
 
@@ -576,7 +574,7 @@ msgid "About Gradience"
 msgstr "Om Gradience"
 
 #: data/ui/window.blp:152
-#: gradience/frontend/views/presets_manager_window.py:111
+#: gradience/frontend/views/presets_manager_window.py:112
 msgid "Built-In Presets"
 msgstr "Inbyggda förinställningar"
 
@@ -611,7 +609,7 @@ msgid "_Save"
 msgstr "_Spara"
 
 #: gradience/frontend/main.py:184
-#: gradience/frontend/views/presets_manager_window.py:336
+#: gradience/frontend/views/presets_manager_window.py:337
 msgid "Failed to load list of presets"
 msgstr "Misslyckades att ladda listan med förinställningar"
 
@@ -1088,44 +1086,44 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "Inga plugins hittades."
 
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:352
+#: gradience/frontend/views/presets_manager_window.py:117
+#: gradience/frontend/views/presets_manager_window.py:353
 msgid "User Presets"
 msgstr "Användarförinställningar"
 
-#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 msgid "Add new repository"
 msgstr "Lägg till nytt arkiv"
 
-#: gradience/frontend/views/presets_manager_window.py:192
+#: gradience/frontend/views/presets_manager_window.py:193
 msgid "Add a repository to install additional presets."
 msgstr "Lägg till ett arkiv för att installera ytterligare förinställningar."
 
-#: gradience/frontend/views/presets_manager_window.py:198
+#: gradience/frontend/views/presets_manager_window.py:199
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: gradience/frontend/views/presets_manager_window.py:199
+#: gradience/frontend/views/presets_manager_window.py:200
 msgid "Add"
 msgstr "Lägg till"
 
-#: gradience/frontend/views/presets_manager_window.py:295
+#: gradience/frontend/views/presets_manager_window.py:296
 msgid "Preset already exists"
 msgstr "Förinställning finns redan"
 
-#: gradience/frontend/views/presets_manager_window.py:307
+#: gradience/frontend/views/presets_manager_window.py:308
 msgid "Preset imported"
 msgstr "Förinställning importerad"
 
-#: gradience/frontend/views/presets_manager_window.py:310
+#: gradience/frontend/views/presets_manager_window.py:311
 msgid "Unsupported file format, must be .json"
 msgstr "Filformat som inte stöds, måste vara .json"
 
-#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:346
 msgid "Built-in Presets"
 msgstr "Inbyggda förinställningar"
 
-#: gradience/frontend/views/presets_manager_window.py:355
+#: gradience/frontend/views/presets_manager_window.py:356
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -1133,7 +1131,7 @@ msgstr ""
 "Se <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> på Github för fler förinställningar."
 
-#: gradience/frontend/views/presets_manager_window.py:381
+#: gradience/frontend/views/presets_manager_window.py:382
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -1189,25 +1187,31 @@ msgstr "Ta bort från favoriter"
 msgid "Add to Favorites"
 msgstr "Lägg till i favoriter"
 
-#: gradience/frontend/widgets/preset_row.py:166
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Preset removed"
 msgstr "Förinställning borttagen"
 
-#: gradience/frontend/widgets/preset_row.py:167
+#: gradience/frontend/widgets/preset_row.py:168
 msgid "Undo"
 msgstr "Ångra"
 
-#: gradience/frontend/widgets/preset_row.py:182
+#: gradience/frontend/widgets/preset_row.py:183
 msgid "Pending Deletion"
 msgstr "Under pågående radering"
 
-#: gradience/frontend/widgets/preset_row.py:196
+#: gradience/frontend/widgets/preset_row.py:197
 msgid "Unable to delete preset"
 msgstr "Det går inte att radera förinställningen"
 
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "Arkiv raderat"
+
+#~ msgid "Report an Issue…"
+#~ msgstr "Rapportera ett problem…"
+
+#~ msgid "More Options"
+#~ msgstr "Mer alternativ"
 
 #~ msgid "Packages by"
 #~ msgstr "Paket av"

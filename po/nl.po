@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-16 12:12+0000\n"
-"PO-Revision-Date: 2023-04-08 08:48+0000\n"
+"POT-Creation-Date: 2023-04-18 12:13+0000\n"
+"PO-Revision-Date: 2023-04-17 08:47+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/nl/>\n"
@@ -258,17 +258,9 @@ msgstr "Aangepaste repositories voor voorinstellingen"
 msgid "Custom repository URL address"
 msgstr "URL-adres van aangepaste repository"
 
-#: data/ui/preset_row.blp:27
-msgid "Report an Issue…"
-msgstr "Een probleem melden…"
-
 #: data/ui/preset_row.blp:64
 msgid "Rename Preset"
 msgstr "Voorinstelling hernoemen"
-
-#: data/ui/preset_row.blp:74
-msgid "More Options"
-msgstr "Meer opties"
 
 #: data/ui/preset_row.blp:79
 msgid "Description"
@@ -282,11 +274,17 @@ msgstr "Deze voorinstelling heeft geen beschrijving."
 msgid "No Badges"
 msgstr "Geen badges"
 
-#: data/ui/preset_row.blp:100
+#: data/ui/preset_row.blp:101 data/ui/presets_manager_window.blp:44
+#, fuzzy
+#| msgid "Report Preset"
+msgid "Report Preset Issue"
+msgstr "Voorinstelling rapporteren"
+
+#: data/ui/preset_row.blp:108
 msgid "Remove preset"
 msgstr "Voorinstelling verwijderen"
 
-#: data/ui/preset_row.blp:101
+#: data/ui/preset_row.blp:109
 msgid "Remove Preset"
 msgstr "Voorinstelling verwijderen"
 
@@ -306,23 +304,23 @@ msgstr "Voorinstellingsbestand importeren"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: data/ui/presets_manager_window.blp:49 gradience/frontend/main.py:231
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "Openen in bestandsbeheerder"
 
-#: data/ui/presets_manager_window.blp:67
+#: data/ui/presets_manager_window.blp:73
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
-#: data/ui/presets_manager_window.blp:76
+#: data/ui/presets_manager_window.blp:82
 msgid "Explore"
 msgstr "Verkennen"
 
-#: data/ui/presets_manager_window.blp:81
+#: data/ui/presets_manager_window.blp:87
 msgid "Search for presets"
 msgstr "Zoeken naar voorinstellingen"
 
-#: data/ui/presets_manager_window.blp:82
+#: data/ui/presets_manager_window.blp:88
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>."
@@ -330,37 +328,37 @@ msgstr ""
 "Voer een zoekterm in om te zoeken in <a href=\"https://github.com/"
 "GradienceTeam/Community\">GradienceTeam/Community</a>."
 
-#: data/ui/presets_manager_window.blp:95
+#: data/ui/presets_manager_window.blp:101
 msgid "e.g. \"Pretty Purple\""
 msgstr "Bijv. ‘Prachtig paars’"
 
-#: data/ui/presets_manager_window.blp:100
+#: data/ui/presets_manager_window.blp:106
 msgid "All"
 msgstr "Alle"
 
-#: data/ui/presets_manager_window.blp:128
+#: data/ui/presets_manager_window.blp:134
 msgid "No Results Found"
 msgstr "Geen resultaten gevonden"
 
-#: data/ui/presets_manager_window.blp:136
+#: data/ui/presets_manager_window.blp:142
 msgid "Offline"
 msgstr "Offline"
 
-#: data/ui/presets_manager_window.blp:149
-#: gradience/frontend/views/presets_manager_window.py:123
-#: gradience/frontend/views/presets_manager_window.py:391
+#: data/ui/presets_manager_window.blp:155
+#: gradience/frontend/views/presets_manager_window.py:124
+#: gradience/frontend/views/presets_manager_window.py:392
 msgid "Repositories"
 msgstr "Repositories"
 
-#: data/ui/presets_manager_window.blp:169
+#: data/ui/presets_manager_window.blp:175
 msgid "Import a Preset File (*.json)"
 msgstr "Voorinstellingsbestand importeren (*.json)"
 
-#: data/ui/presets_manager_window.blp:174
+#: data/ui/presets_manager_window.blp:180
 msgid "All files"
 msgstr "Alle bestanden"
 
-#: data/ui/presets_manager_window.blp:179
+#: data/ui/presets_manager_window.blp:185
 msgid "JSON file (*.json)"
 msgstr "JSON-bestanden (*.json)"
 
@@ -581,7 +579,7 @@ msgid "About Gradience"
 msgstr "Over Gradience"
 
 #: data/ui/window.blp:152
-#: gradience/frontend/views/presets_manager_window.py:111
+#: gradience/frontend/views/presets_manager_window.py:112
 msgid "Built-In Presets"
 msgstr "Ingebouwde voorinstellingen"
 
@@ -616,7 +614,7 @@ msgid "_Save"
 msgstr "_Opslaan"
 
 #: gradience/frontend/main.py:184
-#: gradience/frontend/views/presets_manager_window.py:336
+#: gradience/frontend/views/presets_manager_window.py:337
 msgid "Failed to load list of presets"
 msgstr "Lijst met voorinstellingen laden mislukt"
 
@@ -1098,44 +1096,44 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "Geen plug-ins gevonden."
 
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:352
+#: gradience/frontend/views/presets_manager_window.py:117
+#: gradience/frontend/views/presets_manager_window.py:353
 msgid "User Presets"
 msgstr "Voorinstellingen van gebruiker"
 
-#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 msgid "Add new repository"
 msgstr "Nieuwe repository toevoegen"
 
-#: gradience/frontend/views/presets_manager_window.py:192
+#: gradience/frontend/views/presets_manager_window.py:193
 msgid "Add a repository to install additional presets."
 msgstr "Voeg een repository toe om extra voorinstellingen te installeren."
 
-#: gradience/frontend/views/presets_manager_window.py:198
+#: gradience/frontend/views/presets_manager_window.py:199
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: gradience/frontend/views/presets_manager_window.py:199
+#: gradience/frontend/views/presets_manager_window.py:200
 msgid "Add"
 msgstr "Toevoegen"
 
-#: gradience/frontend/views/presets_manager_window.py:295
+#: gradience/frontend/views/presets_manager_window.py:296
 msgid "Preset already exists"
 msgstr "Voorinstelling bestaat al"
 
-#: gradience/frontend/views/presets_manager_window.py:307
+#: gradience/frontend/views/presets_manager_window.py:308
 msgid "Preset imported"
 msgstr "Voorinstelling geïmporteerd"
 
-#: gradience/frontend/views/presets_manager_window.py:310
+#: gradience/frontend/views/presets_manager_window.py:311
 msgid "Unsupported file format, must be .json"
 msgstr "Niet-ondersteund bestandsformaat, dit dient JSON te zijn"
 
-#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:346
 msgid "Built-in Presets"
 msgstr "Ingebouwde voorinstellingen"
 
-#: gradience/frontend/views/presets_manager_window.py:355
+#: gradience/frontend/views/presets_manager_window.py:356
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -1143,7 +1141,7 @@ msgstr ""
 "Zie <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> op Github voor meer voorinstellingen."
 
-#: gradience/frontend/views/presets_manager_window.py:381
+#: gradience/frontend/views/presets_manager_window.py:382
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -1200,25 +1198,31 @@ msgstr "Verwijderen uit favorieten"
 msgid "Add to Favorites"
 msgstr "Toevoegen aan favorieten"
 
-#: gradience/frontend/widgets/preset_row.py:166
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Preset removed"
 msgstr "Voorinstelling verwijderd"
 
-#: gradience/frontend/widgets/preset_row.py:167
+#: gradience/frontend/widgets/preset_row.py:168
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: gradience/frontend/widgets/preset_row.py:182
+#: gradience/frontend/widgets/preset_row.py:183
 msgid "Pending Deletion"
 msgstr "In afwachting van verwijdering"
 
-#: gradience/frontend/widgets/preset_row.py:196
+#: gradience/frontend/widgets/preset_row.py:197
 msgid "Unable to delete preset"
 msgstr "Kan voorinstelling niet verwijderen"
 
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "Repository verwijderd"
+
+#~ msgid "Report an Issue…"
+#~ msgstr "Een probleem melden…"
+
+#~ msgid "More Options"
+#~ msgstr "Meer opties"
 
 #~ msgid "Packages by"
 #~ msgstr "Pakketten door"

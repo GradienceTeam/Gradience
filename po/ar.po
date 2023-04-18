@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-16 12:12+0000\n"
-"PO-Revision-Date: 2023-04-08 10:49+0000\n"
+"POT-Creation-Date: 2023-04-18 12:13+0000\n"
+"PO-Revision-Date: 2023-04-18 11:51+0000\n"
 "Last-Translator: Ali Aljishi <ahj696@hotmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ar/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 4.17\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -258,17 +258,9 @@ msgstr "مستودعات الإعدادات المسبقة المخصصة"
 msgid "Custom repository URL address"
 msgstr "عنوان URL مخصص للمستودع"
 
-#: data/ui/preset_row.blp:27
-msgid "Report an Issue…"
-msgstr "بلغ عن مشكلة…"
-
 #: data/ui/preset_row.blp:64
 msgid "Rename Preset"
 msgstr "أعد تسمية الإعداد المسبق"
-
-#: data/ui/preset_row.blp:74
-msgid "More Options"
-msgstr "المزيد من الخيارات"
 
 #: data/ui/preset_row.blp:79
 msgid "Description"
@@ -282,11 +274,15 @@ msgstr "للأسف، ليس هناك وصف لهذا الإعداد المسبق
 msgid "No Badges"
 msgstr "بلا شارات"
 
-#: data/ui/preset_row.blp:100
+#: data/ui/preset_row.blp:101 data/ui/presets_manager_window.blp:44
+msgid "Report Preset Issue"
+msgstr "بلِّغ عن مشكلة في الإعداد المسبق"
+
+#: data/ui/preset_row.blp:108
 msgid "Remove preset"
 msgstr "أزل الإعداد المسبق"
 
-#: data/ui/preset_row.blp:101
+#: data/ui/preset_row.blp:109
 msgid "Remove Preset"
 msgstr "أزل الإعداد المسبق"
 
@@ -306,23 +302,23 @@ msgstr "استورد ملف إعداد مسبق"
 msgid "Delete"
 msgstr "احذف"
 
-#: data/ui/presets_manager_window.blp:49 gradience/frontend/main.py:231
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:231
 msgid "Open in File Manager"
 msgstr "افتح في مدير الملفات"
 
-#: data/ui/presets_manager_window.blp:67
+#: data/ui/presets_manager_window.blp:73
 msgid "Installed"
 msgstr "مُثبت"
 
-#: data/ui/presets_manager_window.blp:76
+#: data/ui/presets_manager_window.blp:82
 msgid "Explore"
 msgstr "استكشف"
 
-#: data/ui/presets_manager_window.blp:81
+#: data/ui/presets_manager_window.blp:87
 msgid "Search for presets"
 msgstr "ابحث عن إعدادات مسبقة"
 
-#: data/ui/presets_manager_window.blp:82
+#: data/ui/presets_manager_window.blp:88
 msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>."
@@ -330,37 +326,37 @@ msgstr ""
 "أدخل كلمة رئيسة للبحث في <a href=\"https://gradienceteam.github.io/presets"
 "\"> GradienceTeam / Community </a>."
 
-#: data/ui/presets_manager_window.blp:95
+#: data/ui/presets_manager_window.blp:101
 msgid "e.g. \"Pretty Purple\""
 msgstr "على سبيل المثال: \"Pretty Purple\""
 
-#: data/ui/presets_manager_window.blp:100
+#: data/ui/presets_manager_window.blp:106
 msgid "All"
 msgstr "الكل"
 
-#: data/ui/presets_manager_window.blp:128
+#: data/ui/presets_manager_window.blp:134
 msgid "No Results Found"
 msgstr "لم يُعثر على نتائج"
 
-#: data/ui/presets_manager_window.blp:136
+#: data/ui/presets_manager_window.blp:142
 msgid "Offline"
 msgstr "غير متصل"
 
-#: data/ui/presets_manager_window.blp:149
-#: gradience/frontend/views/presets_manager_window.py:123
-#: gradience/frontend/views/presets_manager_window.py:391
+#: data/ui/presets_manager_window.blp:155
+#: gradience/frontend/views/presets_manager_window.py:124
+#: gradience/frontend/views/presets_manager_window.py:392
 msgid "Repositories"
 msgstr "المستودعات"
 
-#: data/ui/presets_manager_window.blp:169
+#: data/ui/presets_manager_window.blp:175
 msgid "Import a Preset File (*.json)"
 msgstr "استورد ملف إعداد مسبق (json.*)"
 
-#: data/ui/presets_manager_window.blp:174
+#: data/ui/presets_manager_window.blp:180
 msgid "All files"
 msgstr "كل الملفات"
 
-#: data/ui/presets_manager_window.blp:179
+#: data/ui/presets_manager_window.blp:185
 msgid "JSON file (*.json)"
 msgstr "ملف (json*.)"
 
@@ -573,7 +569,7 @@ msgid "About Gradience"
 msgstr "حول جرَاديَنس"
 
 #: data/ui/window.blp:152
-#: gradience/frontend/views/presets_manager_window.py:111
+#: gradience/frontend/views/presets_manager_window.py:112
 msgid "Built-In Presets"
 msgstr "الإعدادات المسبقة المدمجة"
 
@@ -608,7 +604,7 @@ msgid "_Save"
 msgstr "احفظ"
 
 #: gradience/frontend/main.py:184
-#: gradience/frontend/views/presets_manager_window.py:336
+#: gradience/frontend/views/presets_manager_window.py:337
 msgid "Failed to load list of presets"
 msgstr "فشل تحميل قائمة الإعدادات المسبقة"
 
@@ -1081,44 +1077,44 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "لم يُعثر على ملحقات."
 
-#: gradience/frontend/views/presets_manager_window.py:116
-#: gradience/frontend/views/presets_manager_window.py:352
+#: gradience/frontend/views/presets_manager_window.py:117
+#: gradience/frontend/views/presets_manager_window.py:353
 msgid "User Presets"
 msgstr "الإعدادات المسبقة للمستخدم"
 
-#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:192
 msgid "Add new repository"
 msgstr "أضف مستودعًا جديدًا"
 
-#: gradience/frontend/views/presets_manager_window.py:192
+#: gradience/frontend/views/presets_manager_window.py:193
 msgid "Add a repository to install additional presets."
 msgstr "أضف مستودعًا لتثبيت إعدادات مسبقة إضافية."
 
-#: gradience/frontend/views/presets_manager_window.py:198
+#: gradience/frontend/views/presets_manager_window.py:199
 msgid "Cancel"
 msgstr "ألغِ"
 
-#: gradience/frontend/views/presets_manager_window.py:199
+#: gradience/frontend/views/presets_manager_window.py:200
 msgid "Add"
 msgstr "أضف"
 
-#: gradience/frontend/views/presets_manager_window.py:295
+#: gradience/frontend/views/presets_manager_window.py:296
 msgid "Preset already exists"
 msgstr "الإعداد المسبق موجود بالفعل"
 
-#: gradience/frontend/views/presets_manager_window.py:307
+#: gradience/frontend/views/presets_manager_window.py:308
 msgid "Preset imported"
 msgstr "اُستورد الإعداد المسبق"
 
-#: gradience/frontend/views/presets_manager_window.py:310
+#: gradience/frontend/views/presets_manager_window.py:311
 msgid "Unsupported file format, must be .json"
 msgstr "تنسيق الملف غير مدعوم، يجب أن تنسيقه .json"
 
-#: gradience/frontend/views/presets_manager_window.py:345
+#: gradience/frontend/views/presets_manager_window.py:346
 msgid "Built-in Presets"
 msgstr "الإعدادات المسبقة المدمجة"
 
-#: gradience/frontend/views/presets_manager_window.py:355
+#: gradience/frontend/views/presets_manager_window.py:356
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -1126,7 +1122,7 @@ msgstr ""
 "راجع <a href=\"https://github.com/GradienceTeam/Community\"> GradienceTeam / "
 "Community </a> على جِت.هَب للحصول على مزيد من الإعدادات المسبقة."
 
-#: gradience/frontend/views/presets_manager_window.py:381
+#: gradience/frontend/views/presets_manager_window.py:382
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -1182,25 +1178,31 @@ msgstr "أزِل من المفضلة"
 msgid "Add to Favorites"
 msgstr "أضف إلى المفضلة"
 
-#: gradience/frontend/widgets/preset_row.py:166
+#: gradience/frontend/widgets/preset_row.py:167
 msgid "Preset removed"
 msgstr "أُزيل الإعداد المسبق"
 
-#: gradience/frontend/widgets/preset_row.py:167
+#: gradience/frontend/widgets/preset_row.py:168
 msgid "Undo"
 msgstr "تراجع"
 
-#: gradience/frontend/widgets/preset_row.py:182
+#: gradience/frontend/widgets/preset_row.py:183
 msgid "Pending Deletion"
 msgstr "في انتظار الحذف"
 
-#: gradience/frontend/widgets/preset_row.py:196
+#: gradience/frontend/widgets/preset_row.py:197
 msgid "Unable to delete preset"
 msgstr "تعذر حذف الإعداد المسبق"
 
 #: gradience/frontend/widgets/repo_row.py:60
 msgid "Repository removed"
 msgstr "أُزيل المستودع"
+
+#~ msgid "Report an Issue…"
+#~ msgstr "بلغ عن مشكلة…"
+
+#~ msgid "More Options"
+#~ msgstr "المزيد من الخيارات"
 
 #~ msgid "Packages by"
 #~ msgstr "الحزم بواسطة"
