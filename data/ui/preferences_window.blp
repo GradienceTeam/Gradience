@@ -92,7 +92,7 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
       description: _("Theme Engines are the built-in theme generators for various customizable programs/frameworks.");
 
       Adw.ActionRow {
-        title: _("Enable Monet Engine");
+        title: _("Monet Engine");
         subtitle: _("Monet Engine generates a Material Design 3 palette from extracting image's colors.");
         activatable-widget: monet_engine_switch;
         Switch monet_engine_switch {
@@ -101,7 +101,7 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
       }
 
       Adw.ActionRow {
-        title: _("Enable Shell Engine");
+        title: _("Shell Engine");
         subtitle: _("Shell Engine generates a custom GNOME Shell theme based of a currently chosen preset.");
         activatable-widget: gnome_shell_engine_switch;
         Switch gnome_shell_engine_switch {
