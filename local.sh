@@ -20,9 +20,9 @@
 
 read -p "Do you want to install Python requirements? [N/y] " answer
 
-if [[ "$answer" == "yes" ]]; then
+if [[ "$answer" == "y" ]]; then
     pip3 install -r requirements.txt
-elif [[ "$answer" == "no" ]]; then
+elif [[ "$answer" == "n" || "$answer" == "" ]]; then
     echo "Skipping requirements installation"
 fi
 

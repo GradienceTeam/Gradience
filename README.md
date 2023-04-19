@@ -1,6 +1,8 @@
 > **Warning**
 > This software is currently in a **beta** state. It can break things, and it doesn't yet have a polished, _foolproof_ UX.
-> 
+>
+> Contributions are welcome!
+>
 > Please, if you got into some trouble with it, just create a [new issue](https://github.com/GradienceTeam/Gradience/issues/new?assignees=&labels=type%2Fbug&template=bug_report.yml&title=bug%3A+), or contact us on [Matrix](https://matrix.to/#/#Gradience:matrix.org) and [Discord](https://discord.com/invite/4njFDtfGEZ).
 
 <h1 align="center">
@@ -39,10 +41,16 @@
 
 <p align="center">
   <a href="https://matrix.to/#/#Gradience:matrix.org">
-    <img alt="Chat on Matrix" src="https://img.shields.io/matrix/Gradience:matrix.org?label=matrix&logo=matrix"/>
+    <img alt="Chat on Matrix" src="https://img.shields.io/matrix/Gradience:matrix.org?color=%230dbd8b&label=Gradience&logo=matrix&logoColor=white"/>
   </a>
   <a href="https://discord.com/invite/4njFDtfGEZ">
-    <img alt="Chat on Discord" src="https://img.shields.io/discord/1013779899821064202?label=discord&logo=discord&logoColor=white"/>
+    <img alt="Chat on Discord" src="https://dcbadge.vercel.app/api/server/4njFDtfGEZ?style=flat&theme=default-inverted"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://stopthemingmy.app">
+    <img alt="Please do not theme this app" src="https://stopthemingmy.app/badge.svg"/>
   </a>
 </p>
 
@@ -136,6 +144,9 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 > **Warning**
 > The main installation method is Flatpak from Flathub
 
+> **Note**
+> There are number of Gradience packages that are not tested by Gradience Team and not listed here, available at [Repology](https://repology.org/project/gradience/versions)
+
 ### Fedora (COPR)
 
 Gradience is available for Fedora via COPR:
@@ -184,6 +195,17 @@ makepkg -sic
 ```
 
 </details>
+
+### NixOS
+
+> **Warning**
+> It's currently only available in `unstable`
+
+Gradience is available for NixOS:
+
+```shell
+nix-shell -p gradience
+```
 
 
 ## 🏗️ Building from source
@@ -242,7 +264,7 @@ Gradience was originally named Adwaita Manager.
 
 You can see the meaning of Gradience on [Wiktionary](https://en.wiktionary.org/wiki/gradience).
 
-The icon represents: _A Paint Roller repainting an Adwaita window, keeping it's functionality._
+The icon represents: _A Paint Roller repainting an Adwaita window, keeping its functionality._
 
 ##  🖌️ About the "Pretty Purple"
 
@@ -256,6 +278,8 @@ Pretty Purple is built-in in the Gradience and used in all Gradience artworks.
 
 
 ## 🌱️ Gradience, [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers
+
+> See [gradienceteam.github.io/hack.html](https://gradienceteam.github.io/hack.html)
 
 Gradience Team is not against [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers idea, Gradience is a tool for tinkers that want to theme their desktops at their liking, and not a tool for distributions to change theme in them by default, Gradience Team agrees with importance of unified look of Adwaita to make sure that all apps work right and Developers have unified and stable tool for creating their apps.
 

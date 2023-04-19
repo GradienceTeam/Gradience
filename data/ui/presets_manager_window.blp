@@ -24,6 +24,7 @@ template GradiencePresetWindow : Adw.Window {
 
         Adw.HeaderBar titlebar {
           centering-policy: strict;
+          styles ["flat"]
 
           Button import_button {
             styles ["suggested-action"]
@@ -35,6 +36,12 @@ template GradiencePresetWindow : Adw.Window {
           Button remove_button {
             styles ["danger"]
             label: _("Delete");
+            visible: false;
+          }
+
+          Button report_button {
+            // styles ["danger"]
+            label: _("Report Preset Issue");
             visible: false;
           }
 

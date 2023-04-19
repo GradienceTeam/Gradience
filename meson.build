@@ -1,5 +1,5 @@
 project('gradience',
-          version: '0.4.0',
+          version: '0.4.1',
     meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2',
                      'werror=false',
@@ -20,9 +20,15 @@ TRANSLATE_URL = 'https://hosted.weblate.org/projects/GradienceTeam/gradience'
 # Constants
 PROJECT_RDNN_NAME = 'com.github.GradienceTeam.Gradience'
 
+git_bin = find_program('git', required: false)
+
 # Set APPLICATION_ID and VERSION_SUFFIX
 if get_option('buildtype') == 'debug'
-  VCS_TAG = run_command('git', 'rev-parse', '--short', 'HEAD', check: true).stdout().strip()
+  if git_bin.found()
+    VCS_TAG = run_command('git', 'rev-parse', '--short', 'HEAD', check: true).stdout().strip()
+  else
+    VCS_TAG = ''
+  endif
   if VCS_TAG == ''
     VERSION_SUFFIX = '-devel'
   else
