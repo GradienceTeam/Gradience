@@ -277,8 +277,7 @@ class GradienceApplication(Adw.Application):
                 "palette": palette,
                 "custom_css": {
                     "gtk4": custom_css,
-                    "gtk3": "",
-                    "shell": ""
+                    "gtk3": ""
                 }
             }
 
