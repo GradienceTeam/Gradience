@@ -25,9 +25,12 @@ import shutil
 import signal
 import argparse
 import warnings
+import locale
+import gettext
 
 version = "@VERSION@"
 is_local = @local_build@
+localedir = '@LOCALE_DIR@'
 
 if is_local:
     # In the local use case, use gradience module from the sourcetree
@@ -37,6 +40,10 @@ if is_local:
     os.environ["XDG_DATA_DIRS"] = '@SCHEMAS_DIR@:' + os.environ.get("XDG_DATA_DIRS", "")
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
+gettext.install('gradience', localedir)
+
+locale.bindtextdomain('gradience', localedir)
+locale.textdomain('gradience')
 
 warnings.filterwarnings("ignore") # suppress GTK warnings
 
@@ -47,6 +54,7 @@ from gradience.backend.globals import preset_repos, presets_dir
 
 from gradience.backend.theming.monet import Monet
 from gradience.backend.models.preset import Preset
+from gradience.backend.theming.shell import ShellTheme
 from gradience.backend.theming.preset import PresetUtils
 from gradience.backend.preset_downloader import PresetDownloader
 from gradience.backend.flatpak_overrides import list_file_access, allow_file_access, disallow_file_access, create_gtk_user_override, remove_gtk_user_override
@@ -82,13 +90,13 @@ class CLI:
 
         apply_parser = subparsers.add_parser("apply", help="apply a preset")
         apply_group = apply_parser.add_mutually_exclusive_group(required=True)
-        apply_group.add_argument("-n", "--preset-name", help="display name for a preset")
-        apply_group.add_argument("-p", "--preset-path", help="absolute path to a preset file")
+        apply_group.add_argument("-n", "--preset-name", help="display name of the preset")
+        apply_group.add_argument("-p", "--preset-path", help="absolute path to the preset file")
         apply_parser.add_argument("--gtk", choices=["gtk4", "gtk3", "both"], default="gtk4", help="types of applications you want to theme (default: gtk4)")
 
         #new_parser = subparsers.add_parser("new", help="create a new preset")
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
-        #new_parser.add_argument("-n", "--name", help="display name for a preset", required=True)
+        #new_parser.add_argument("-n", "--name", help="display name of the preset", required=True)
         #new_parser.add_argument("--colors", help="", required=True)
         #new_parser.add_argument("--palette", help="")
         #new_parser.add_argument("--custom-css", help="")
@@ -98,6 +106,12 @@ class CLI:
         #new_parser.add_argument("-i", "--interactive", action="store_true", help="")
         download_parser.add_argument("-n", "--preset-name", help="name of a preset you want to get", required=True)
         #download_parser.add_argument("--custom-url", help="use custom repository's presets.json to download other presets")
+
+        shell_parser = subparsers.add_parser("gnome-shell", help="generate a GNOME Shell theme from any preset")
+        choose_preset_group = shell_parser.add_mutually_exclusive_group(required=True)
+        choose_preset_group.add_argument("-n", "--preset-name", help="display name of the preset")
+        choose_preset_group.add_argument("-p", "--preset-path", help="absolute path to the preset file")
+        shell_parser.add_argument("-v", "--preset-variant", choices=["light", "dark"], help="select which preset variant you use to generate a theme")
 
         monet_parser = subparsers.add_parser("monet", help="generate Material You preset from an image")
         #monet_parser.add_argument("-a", "--apply", help="apply Monet's generated preset after it has been created", action='store_true')
@@ -149,6 +163,9 @@ class CLI:
 
         elif args.command == "download":
             self.download_preset(args)
+
+        elif args.command == "gnome-shell":
+            self.gnome_shell(args)
 
         elif args.command == "monet":
             self.generate_monet(args)
@@ -338,6 +355,36 @@ class CLI:
                         preset_no += 1
                         continue
                 repo_no += 1
+
+    # TODO: Add support for custom colors
+    def gnome_shell(self, args):
+        _preset_name = args.preset_name
+        _preset_path = args.preset_path
+        _preset_variant = args.preset_variant
+
+        try:
+            presets_list = PresetUtils().get_presets_list(full_list=True)
+        except (OSError, KeyError, AttributeError) as e:
+            logging.error("Failed to retrieve a list of presets.", exc=e)
+            exit(1)
+
+        presets_name = list(presets_list.values())
+
+        def __get_preset_from_name():
+            for path, name in presets_list.items():
+                    if name == _preset_name:
+                        preset = Preset().new_from_path(path)
+            return preset
+
+        if _preset_name:
+            if _preset_name in presets_name:
+                preset = __get_preset_from_name()
+        elif _preset_path:
+            preset = Preset().new_from_path(_preset_path)
+
+        ShellTheme().apply_theme(None, _preset_variant, preset)
+        logging.info("GNOME Shell theme generated successfully.")
+        exit(0)
 
     # NOTE: Possible useful portals to use in future: org.freedesktop.portal.Documents \
     # (support missing in libportal, only D-Bus calls), org.freedesktop.portal.FileChooser

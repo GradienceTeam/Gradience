@@ -79,22 +79,18 @@ class ShellTheme:
                     self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID,
                         schema_dir=self.THEME_GSETTINGS_DIR)
                 else:
-                    logging.debug("Sandboxed, Gsettings path exists")
                     self.settings = FlatpakGSettings(schema_dir=self.THEME_GSETTINGS_DIR)
             else:
                 if not is_sandboxed():
                     self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID)
                 else:
-                    logging.debug("Sandboxed, Gsettings path doesn't exists")
                     self.settings = FlatpakGSettings()
         except (GSettingsMissingError, GLib.GError):
             raise
 
         # Theme source/output paths
         self.templates_dir = os.path.join(datadir, "gradience", "shell", "templates", str(self.version_target))
-        logging.debug(self.templates_dir)
         self.source_dir = os.path.join(GLib.get_home_dir(), ".cache", "gradience", "gradience-shell", str(self.version_target))
-        logging.debug(self.source_dir)
 
         if os.path.exists(self.source_dir):
             shutil.rmtree(self.source_dir)
@@ -143,6 +139,7 @@ class ShellTheme:
         output = self.apply_theme(source_object, theme_variant, preset)
         task.return_value(output)
 
+    # TODO: Make it accept either dict or callable in `parent` parameter
     def apply_theme(self, parent: callable, theme_variant: str, preset: Preset):
         if theme_variant in ("light", "dark"):
             self.theme_variant = theme_variant
@@ -162,7 +159,7 @@ class ShellTheme:
         self.custom_css = preset.custom_css
 
         # TODO: Move custom Shell colors list to Shell modules
-        self.shell_colors = parent.shell_colors
+        self.shell_colors = parent.shell_colors if parent != None else None
 
         self._insert_variables()
         self._recolor_assets()
