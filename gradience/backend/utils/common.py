@@ -27,13 +27,14 @@ from gi.repository import Gio
 def to_slug_case(non_slug) -> str:
     return re.sub(r"[^0-9a-z]+", "-", anyascii(non_slug).lower()).strip("-")
 
+
 def extract_version(text, prefix_text=None):
-    '''
+    """
     Extracts version number from a provided text.
 
     You can also set the prefix_text parameter to reduce searching to
     lines with only this text prefixed to the version number.
-    '''
+    """
     if not prefix_text:
         version = re.search(r"\s*([0-9.]+)", text)
     else:
@@ -41,12 +42,14 @@ def extract_version(text, prefix_text=None):
 
     return version.__getitem__(1)
 
+
 def run_command(
     command: list,
     stdout_pipe: bool = False,
     get_stdout_text: bool = False,
-    allow_escaping: bool = False) -> (Gio.Subprocess, Gio.UnixInputStream, str):
-    '''
+    allow_escaping: bool = False,
+) -> (Gio.Subprocess, Gio.UnixInputStream, str):
+    """
     Spawns a new child process (subprocess) using Gio's Subprocess class.
 
     To retrieve process stdout pipe, enable `stdout_pipe` parameter.
@@ -55,9 +58,9 @@ def run_command(
 
     You can enable executing commands outside Flatpak sandbox by enabling
     `allow_escaping` parameter.
-    '''
-    if allow_escaping and os.environ.get('FLATPAK_ID'):
-        command = ['flatpak-spawn', '--host'] + command
+    """
+    if allow_escaping and os.environ.get("FLATPAK_ID"):
+        command = ["flatpak-spawn", "--host"] + command
 
     if stdout_pipe or get_stdout_text:
         flags = Gio.SubprocessFlags.STDOUT_PIPE

@@ -372,5 +372,5 @@ preset_schema = {
         {"prefix": "light_", "title": _("Light"), "n_shades": 5},
         {"prefix": "dark_", "title": _("Dark"), "n_shades": 5},
     ],
-    "custom_css_app_types": ["gtk4", "gtk3"]
+    "custom_css_app_types": ["gtk4", "gtk3"],
 }

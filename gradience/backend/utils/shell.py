@@ -16,7 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gio
 
 from gradience.backend.models.preset import Preset
 from gradience.backend.utils.common import extract_version, run_command
@@ -26,22 +25,24 @@ from gradience.frontend.schemas.shell_schema import shell_schema
 
 
 def get_shell_version():
-    stdout = run_command(["gnome-shell", "--version"],
-        get_stdout_text=True,
-        allow_escaping=True).replace("\n", "")
+    stdout = run_command(
+        ["gnome-shell", "--version"], get_stdout_text=True, allow_escaping=True
+    ).replace("\n", "")
 
     shell_version = extract_version(stdout, "GNOME Shell")
 
     return shell_version
 
+
 def get_full_shell_version():
-    stdout = run_command(["gnome-shell", "--version"],
-        get_stdout_text=True,
-        allow_escaping=True).replace("\n", "")
+    stdout = run_command(
+        ["gnome-shell", "--version"], get_stdout_text=True, allow_escaping=True
+    ).replace("\n", "")
 
     shell_version = stdout[12:]
 
     return shell_version
+
 
 def get_shell_colors(preset_variables: Preset.variables):
     shell_colors = {}

@@ -26,6 +26,7 @@ from gradience.backend import constants
 # no quotes) and is not meant to be translated literally.
 translator_credits = _("translator-credits")
 
+
 class GradienceAboutWindow:
     def __init__(self, parent):
         self.parent = parent
@@ -47,11 +48,9 @@ class GradienceAboutWindow:
                 "Artyom Fomin https://github.com/ArtyIF",
                 "Verantor https://github.com/Verantor",
                 "tfuxu https://github.com/tfuxu",
-                "u1F98E https://github.com/u1f98e"
+                "u1F98E https://github.com/u1f98e",
             ],
-            designers=[
-                "David Lapshin https://github.com/daudix-UFO"
-            ],
+            designers=["David Lapshin https://github.com/daudix-UFO"],
             translator_credits=_(translator_credits),
             copyright=_("Copyright © 2022-2023 Gradience Team"),
             license_type=Gtk.License.GPL_3_0,
@@ -62,14 +61,18 @@ class GradienceAboutWindow:
         self.about_window.add_credit_section(
             _("Plugins by"),
             [
-                _("Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/contributors")
-            ]
+                _(
+                    "Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/contributors"
+                )
+            ],
         )
         self.about_window.add_credit_section(
             _("Presets by"),
             [
-                _("Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/contributors")
-            ]
+                _(
+                    "Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/contributors"
+                )
+            ],
         )
 
     def show_about(self):

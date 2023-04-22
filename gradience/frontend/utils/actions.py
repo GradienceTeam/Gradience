@@ -41,11 +41,12 @@ class ActionHelpers:
         if shortcuts:
             self.parent.set_accels_for_action(f"app.{name}", shortcuts)
 
-    def create_stateful_action(self, name, parameter_type, initial_state, callback, shortcuts=None):
+    def create_stateful_action(
+        self, name, parameter_type, initial_state, callback, shortcuts=None
+    ):
         """Add a stateful application action."""
 
-        action = Gio.SimpleAction.new_stateful(
-            name, parameter_type, initial_state)
+        action = Gio.SimpleAction.new_stateful(name, parameter_type, initial_state)
         action.connect("activate", callback)
 
         self.parent.add_action(action)

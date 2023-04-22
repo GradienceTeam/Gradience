@@ -50,14 +50,13 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
         self.setup()
 
     def setup_signals(self):
-        self.monet_file_chooser.connect(
-            "response", self.on_monet_file_chooser_response)
+        self.monet_file_chooser.connect("response", self.on_monet_file_chooser_response)
 
     def setup(self):
         self.monet_file_chooser.set_transient_for(self.parent)
 
         self.setup_palette_shades()
-        #self.setup_tone_row()
+        # self.setup_tone_row()
         self.setup_theme_row()
 
     def setup_palette_shades(self):
@@ -69,7 +68,7 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
         self.monet_theming_expander.add_row(self.monet_palette_shades)
 
     # TODO: Rethink how it should be implemented
-    '''def setup_tone_row(self):
+    """def setup_tone_row(self):
         self.tone_row = Adw.ComboRow()
         self.tone_row.set_title(_("Tone"))
 
@@ -84,7 +83,7 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
 
         self.tone_row.set_model(tone_store)
 
-        self.monet_theming_expander.add_row(self.tone_row)'''
+        self.monet_theming_expander.add_row(self.tone_row)"""
 
     def setup_theme_row(self):
         self.theme_row = Adw.ComboRow()
@@ -104,7 +103,7 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
         if self.monet_image_file:
             try:
                 monet_theme = Monet().generate_palette_from_image(self.monet_image_file)
-                #tone = self.tone_row.get_selected_item().get_string() # TODO: Remove tone requirement from Monet Engine
+                # tone = self.tone_row.get_selected_item().get_string() # TODO: Remove tone requirement from Monet Engine
                 variant_pos = self.theme_row.props.selected
 
                 class variantEnum(Enum):

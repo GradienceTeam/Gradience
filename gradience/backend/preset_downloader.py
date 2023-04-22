@@ -39,11 +39,13 @@ class PresetDownloader:
             request = Soup.Message.new("GET", repo)
             body = self.session.send_and_read(request, None)
         except GLib.GError as e:
-            if e.code == 1: # offline
+            if e.code == 1:  # offline
                 logging.error("Failed to establish a new connection.", exc=e)
                 raise
             else:
-                logging.error(f"Unhandled Libsoup3 GLib.GError error code {e.code}.", exc=e)
+                logging.error(
+                    f"Unhandled Libsoup3 GLib.GError error code {e.code}.", exc=e
+                )
                 raise
         try:
             raw = json.loads(body.get_data())
@@ -74,11 +76,13 @@ class PresetDownloader:
             request = Soup.Message.new("GET", repo)
             body = self.session.send_and_read(request, None)
         except GLib.GError as e:
-            if e.code == 1: # offline
+            if e.code == 1:  # offline
                 logging.error("Failed to establish a new connection.", exc=e)
                 raise
             else:
-                logging.error(f"Unhandled Libsoup3 GLib.GError error code {e.code}.", exc=e)
+                logging.error(
+                    f"Unhandled Libsoup3 GLib.GError error code {e.code}.", exc=e
+                )
                 raise
         try:
             raw = json.loads(body.get_data())

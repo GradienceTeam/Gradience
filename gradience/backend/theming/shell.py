@@ -63,23 +63,34 @@ class ShellTheme:
             self.version_target = shell_version
         else:
             raise UnsupportedShellVersion(
-                f"GNOME Shell version {shell_version} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})")
+                f"GNOME Shell version {shell_version} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})"
+            )
 
         self.THEME_GSETTINGS_SCHEMA_ID = "org.gnome.shell.extensions.user-theme"
         self.THEME_GSETTINGS_SCHEMA_PATH = "/org/gnome/shell/extensions/user-theme/"
         self.THEME_GSETTINGS_SCHEMA_KEY = "name"
 
         self.THEME_EXT_NAME = "user-theme@gnome-shell-extensions.gcampax.github.com"
-        self.THEME_GSETTINGS_DIR = os.path.join(GLib.get_home_dir(), ".local/share/",
-            "gnome-shell", "extensions", self.THEME_EXT_NAME, "schemas")
+        self.THEME_GSETTINGS_DIR = os.path.join(
+            GLib.get_home_dir(),
+            ".local/share/",
+            "gnome-shell",
+            "extensions",
+            self.THEME_EXT_NAME,
+            "schemas",
+        )
 
         try:
             if os.path.exists(self.THEME_GSETTINGS_DIR):
                 if not is_sandboxed():
-                    self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID,
-                        schema_dir=self.THEME_GSETTINGS_DIR)
+                    self.settings = GSettingsSetting(
+                        self.THEME_GSETTINGS_SCHEMA_ID,
+                        schema_dir=self.THEME_GSETTINGS_DIR,
+                    )
                 else:
-                    self.settings = FlatpakGSettings(schema_dir=self.THEME_GSETTINGS_DIR)
+                    self.settings = FlatpakGSettings(
+                        schema_dir=self.THEME_GSETTINGS_DIR
+                    )
             else:
                 if not is_sandboxed():
                     self.settings = GSettingsSetting(self.THEME_GSETTINGS_SCHEMA_ID)
@@ -89,19 +100,31 @@ class ShellTheme:
             raise
 
         # Theme source/output paths
-        self.templates_dir = os.path.join(datadir, "gradience", "shell", "templates", str(self.version_target))
-        self.source_dir = os.path.join(GLib.get_home_dir(), ".cache", "gradience", "gradience-shell", str(self.version_target))
+        self.templates_dir = os.path.join(
+            datadir, "gradience", "shell", "templates", str(self.version_target)
+        )
+        self.source_dir = os.path.join(
+            GLib.get_home_dir(),
+            ".cache",
+            "gradience",
+            "gradience-shell",
+            str(self.version_target),
+        )
 
         if os.path.exists(self.source_dir):
             shutil.rmtree(self.source_dir)
 
         # Copy shell theme source directories to ~/.cache/gradience/gradience-shell
-        shutil.copytree(os.path.join(datadir, "gradience", "shell",
-            str(self.version_target)), self.source_dir, dirs_exist_ok=True
+        shutil.copytree(
+            os.path.join(datadir, "gradience", "shell", str(self.version_target)),
+            self.source_dir,
+            dirs_exist_ok=True,
         )
 
         # TODO: Allow user to use different name than "gradience-shell" (also, with default name, we should append "-light" suffix when generated from light preset)
-        self.output_dir = os.path.join(GLib.get_home_dir(), ".local/share/themes", "gradience-shell", "gnome-shell")
+        self.output_dir = os.path.join(
+            GLib.get_home_dir(), ".local/share/themes", "gradience-shell", "gnome-shell"
+        )
 
         self.main_template = os.path.join(self.templates_dir, "gnome-shell.template")
         self.colors_template = os.path.join(self.templates_dir, "colors.template")
@@ -109,27 +132,41 @@ class ShellTheme:
         self.switches_template = os.path.join(self.templates_dir, "switches.template")
 
         self.main_source = os.path.join(self.source_dir, "gnome-shell.scss")
-        self.colors_source = os.path.join(self.source_dir, "gnome-shell-sass", "_colors.scss")
-        self.palette_source = os.path.join(self.source_dir, "gnome-shell-sass", "_palette.scss")
-        self.switches_source = os.path.join(self.source_dir, "gnome-shell-sass", "widgets", "_switches.scss")
+        self.colors_source = os.path.join(
+            self.source_dir, "gnome-shell-sass", "_colors.scss"
+        )
+        self.palette_source = os.path.join(
+            self.source_dir, "gnome-shell-sass", "_palette.scss"
+        )
+        self.switches_source = os.path.join(
+            self.source_dir, "gnome-shell-sass", "widgets", "_switches.scss"
+        )
 
         self.assets_output = os.path.join(self.output_dir, "assets")
 
     def get_cancellable(self) -> Gio.Cancellable:
         return self._cancellable
 
-    def apply_theme_async(self, caller:GObject.Object, callback:callable,
-                            theme_variant:str,
-                            preset: Preset):
+    def apply_theme_async(
+        self,
+        caller: GObject.Object,
+        callback: callable,
+        theme_variant: str,
+        preset: Preset,
+    ):
         task = Gio.Task.new(caller, None, callback, self._cancellable)
         self.async_data = [theme_variant, preset]
 
         task.set_return_on_cancel(True)
         task.run_in_thread(self._apply_theme_thread)
 
-    def _apply_theme_thread(self, task:Gio.Task, source_object:GObject.Object,
-                                task_data:object,
-                                cancellable:Gio.Cancellable):
+    def _apply_theme_thread(
+        self,
+        task: Gio.Task,
+        source_object: GObject.Object,
+        task_data: object,
+        cancellable: Gio.Cancellable,
+    ):
         if task.return_error_if_cancelled():
             return
 
@@ -145,7 +182,8 @@ class ShellTheme:
             self.theme_variant = theme_variant
         else:
             raise ValueError(
-                f"Theme variant {theme_variant} not in list: [light, dark]")
+                f"Theme variant {theme_variant} not in list: [light, dark]"
+            )
 
         try:
             self._create_theme(parent, preset)
@@ -154,12 +192,14 @@ class ShellTheme:
 
     def _create_theme(self, parent: callable, preset: Preset):
         # Convert GTK color variables to normal color values
-        self.preset_variables = color_vars_to_color_code(preset.variables, preset.palette)
+        self.preset_variables = color_vars_to_color_code(
+            preset.variables, preset.palette
+        )
         self.preset_palette = preset.palette
         self.custom_css = preset.custom_css
 
         # TODO: Move custom Shell colors list to Shell modules
-        self.shell_colors = parent.shell_colors if parent != None else None
+        self.shell_colors = parent.shell_colors if parent is not None else None
 
         self._insert_variables()
         self._recolor_assets()
@@ -172,8 +212,10 @@ class ShellTheme:
                 logging.error(f"Unable to create directories.", exc=e)
                 raise
 
-        self._compile_sass(os.path.join(self.source_dir, "gnome-shell.scss"),
-            os.path.join(self.output_dir, "gnome-shell.css"))
+        self._compile_sass(
+            os.path.join(self.source_dir, "gnome-shell.scss"),
+            os.path.join(self.output_dir, "gnome-shell.css"),
+        )
 
         self.set_shell_theme()
 
@@ -186,11 +228,13 @@ class ShellTheme:
         with open(self.palette_template, "r", encoding="utf-8") as template:
             for line in template:
                 template_match = re.search(template_regex, line)
-                if template_match != None:
+                if template_match is not None:
                     _key = template_match.__getitem__(1)
                     prefix = _key.split("_")[0] + "_"
                     key = _key.split("_")[1]
-                    inserted = line.replace("{{" + _key + "}}", self.preset_palette[prefix][key])
+                    inserted = line.replace(
+                        "{{" + _key + "}}", self.preset_palette[prefix][key]
+                    )
                     palette_content += inserted
                 else:
                     palette_content += line
@@ -205,19 +249,22 @@ class ShellTheme:
         with open(self.colors_template, "r", encoding="utf-8") as template:
             for line in template:
                 template_match = re.search(template_regex, line)
-                if template_match != None:
+                if template_match is not None:
                     key = template_match.__getitem__(1)
                     shell_colors = get_shell_colors(self.preset_variables)
                     try:
                         if self.shell_colors:
                             inserted = line.replace(
-                            "{{" + key + "}}", self.shell_colors[key])
+                                "{{" + key + "}}", self.shell_colors[key]
+                            )
                         else:
                             inserted = line.replace(
-                                "{{" + key + "}}", shell_colors[key])
+                                "{{" + key + "}}", shell_colors[key]
+                            )
                     except KeyError:
                         inserted = line.replace(
-                            "{{" + key + "}}", self.preset_variables[key])
+                            "{{" + key + "}}", self.preset_variables[key]
+                        )
                     colors_content += inserted
                 else:
                     colors_content += line
@@ -235,13 +282,15 @@ class ShellTheme:
             for line in template:
                 if key in line:
                     inserted = line.replace(
-                        "{{" + key + "}}", f"'{self.theme_variant}'")
+                        "{{" + key + "}}", f"'{self.theme_variant}'"
+                    )
                     main_content += inserted
                 elif "custom_css" in line:
                     key = "custom_css"
                     try:
                         inserted = line.replace(
-                            "{{" + key + "}}", self.custom_css['shell'])
+                            "{{" + key + "}}", self.custom_css["shell"]
+                        )
                     except KeyError:  # No custom CSS
                         inserted = line.replace("{{" + key + "}}", "")
                     main_content += inserted
@@ -257,8 +306,7 @@ class ShellTheme:
         try:
             compiled = sass.compile(filename=sass_path, output_style="nested")
         except (GLib.GError, sass.CompileError) as e:
-            logging.error(
-                f"Failed to compile SCSS source files.", exc=e)
+            logging.error(f"Failed to compile SCSS source files.", exc=e)
         else:
             with open(output_path, "w", encoding="utf-8") as css_file:
                 css_file.write(compiled)
@@ -270,15 +318,11 @@ class ShellTheme:
 
         switch_on_source = os.path.join(self.source_dir, "toggle-on.svg")
 
-        shutil.copy(
-            self.switches_template,
-            self.switches_source
-        )
+        shutil.copy(self.switches_template, self.switches_source)
 
         with open(switch_on_source, "r", encoding="utf-8") as svg_data:
             switch_on_svg = svg_data.read()
-            switch_on_svg = switch_on_svg.replace(
-                "fill:#3584e4", f"fill:{accent_bg}")
+            switch_on_svg = switch_on_svg.replace("fill:#3584e4", f"fill:{accent_bg}")
             svg_data.close()
 
         with open(switch_on_source, "w", encoding="utf-8") as svg_data:
@@ -293,10 +337,7 @@ class ShellTheme:
                 logging.error(f"Unable to create directories.", exc=e)
                 raise
 
-        shutil.copy(
-            switch_on_source,
-            os.path.join(self.assets_output, "toggle-on.svg")
-        )
+        shutil.copy(switch_on_source, os.path.join(self.assets_output, "toggle-on.svg"))
 
     def set_shell_theme(self):
         if is_sandboxed():
@@ -332,7 +373,8 @@ class ShellTheme:
 
         if shell_ver.startswith("3"):
             raise UnsupportedShellVersion(
-                f"GNOME Shell version {shell_ver} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})")
+                f"GNOME Shell version {shell_ver} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})"
+            )
 
         if shell_ver.startswith("4"):
             shell_ver = int(shell_ver[:2])
@@ -341,4 +383,5 @@ class ShellTheme:
                 self.version_target = shell_ver
             else:
                 raise UnsupportedShellVersion(
-                    f"GNOME Shell version {shell_ver} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})")
+                    f"GNOME Shell version {shell_ver} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})"
+                )

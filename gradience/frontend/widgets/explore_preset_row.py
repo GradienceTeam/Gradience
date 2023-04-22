@@ -61,7 +61,9 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
         try:
-            PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
+            PresetDownloader().download_preset(
+                to_slug_case(self.name), self.prefix, self.url
+            )
         except (GLib.GError, json.JSONDecodeError, OSError):
             logging.error("An error occurred while trying to download a preset.")
             self.toast_overlay.add_toast(
@@ -70,16 +72,14 @@ class GradienceExplorePresetRow(Adw.ActionRow):
         else:
             self.app.load_preset_from_file(
                 os.path.join(
-                    os.environ.get("XDG_CONFIG_HOME",
-                                   os.environ["HOME"] + "/.config"),
+                    os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"),
                     "presets",
                     self.prefix,
                     to_slug_case(self.name) + ".json",
                 )
             )
 
-            self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset downloaded")))
+            self.toast_overlay.add_toast(Adw.Toast(title=_("Preset downloaded")))
             self.win.reload_pref_group()
 
             logging.debug("Apply and download compeleted")
@@ -87,14 +87,15 @@ class GradienceExplorePresetRow(Adw.ActionRow):
     @Gtk.Template.Callback()
     def on_download_button_clicked(self, *_args):
         try:
-            PresetDownloader().download_preset(to_slug_case(self.name), self.prefix, self.url)
+            PresetDownloader().download_preset(
+                to_slug_case(self.name), self.prefix, self.url
+            )
         except (GLib.GError, json.JSONDecodeError, OSError):
             logging.error("An error occurred while trying to download a preset.")
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset could not be downloaded"))
             )
         else:
-            self.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset downloaded")))
+            self.toast_overlay.add_toast(Adw.Toast(title=_("Preset downloaded")))
             self.win.reload_pref_group()
             logging.debug("Download compeleted")

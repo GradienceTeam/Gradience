@@ -16,7 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from enum import Enum
 
 from gi.repository import Gtk, Adw, Gio
 
@@ -70,14 +69,13 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         self.setup()
 
     def setup_signals(self):
-        self.presets_dropdown.get_popover().connect("show",
-            self.on_presets_dropdown_activate)
+        self.presets_dropdown.get_popover().connect(
+            "show", self.on_presets_dropdown_activate
+        )
 
-        self.connect("close-request",
-            self.on_close_request)
+        self.connect("close-request", self.on_close_request)
 
-        self.connect("unrealize",
-            self.save_window_props)
+        self.connect("unrealize", self.save_window_props)
 
     def setup(self):
         # Set devel style
@@ -90,7 +88,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     # TODO: Check if org.freedesktop.portal.Settings portal will allow us to \
     # read org.gnome.desktop.background DConf key
     # FIXME: Find purpose for this snippet
-    '''def get_default_wallpaper(self):
+    """def get_default_wallpaper(self):
         background_settings = Gio.Settings("org.gnome.desktop.background")
         if self.style_manager.get_dark():
             picture_uri = background_settings.get_string("picture-uri-dark")
@@ -108,7 +106,7 @@ class GradienceMainWindow(Adw.ApplicationWindow):
         #self.monet_file_chooser_button.set_tooltip_text(self.monet_image_file)
         logging.debug(self.monet_image_file)
         # self.on_apply_button_clicked() # Comment out for now, because it always shows
-        # that annoying toast on startup'''
+        # that annoying toast on startup"""
 
     def on_close_request(self, *args):
         if self.app.is_dirty:

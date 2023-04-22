@@ -20,7 +20,7 @@ import os
 
 from gi.repository import Gtk, Adw, Xdp, XdpGtk4
 
-#from gradience.frontend.views.share_window import GradienceShareWindow
+# from gradience.frontend.views.share_window import GradienceShareWindow
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.models.preset import Preset
 from gradience.backend.constants import rootdir
@@ -110,7 +110,9 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
         def on_unsaved_dialog_response(_widget, response, preset_entry):
             if response == "save":
-                self.app.preset.save_to_file(preset_entry.get_text(), self.app.plugins_list)
+                self.app.preset.save_to_file(
+                    preset_entry.get_text(), self.app.plugins_list
+                )
                 self.app.clear_dirty()
                 self.app.load_preset_from_file(self.preset.preset_path)
             elif response == "discard":
@@ -167,8 +169,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         self.delete_toast = Adw.Toast(title=_("Preset removed"))
         self.delete_toast.set_button_label(_("Undo"))
         self.delete_toast.connect("dismissed", self.on_delete_toast_dismissed)
-        self.delete_toast.connect(
-            "button-clicked", self.on_undo_button_clicked)
+        self.delete_toast.connect("button-clicked", self.on_undo_button_clicked)
 
         self.toast_overlay.add_toast(self.delete_toast)
 
@@ -201,8 +202,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
         else:
             try:
                 os.rename(
-                    self.preset.preset_path + ".to_delete",
-                    self.preset.preset_path
+                    self.preset.preset_path + ".to_delete", self.preset.preset_path
                 )
             except OSError as e:
                 logging.error("Unable to rename an preset.", exc=e)

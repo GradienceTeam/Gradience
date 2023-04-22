@@ -26,7 +26,7 @@ from gi.repository import GLib, Gio
 from gradience.backend.models.preset import Preset
 
 from gradience.backend.utils.theming import generate_gtk_css
-from gradience.backend.globals import user_config_dir, presets_dir, get_gtk_theme_dir
+from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 
 from gradience.backend.logger import Logger
 
@@ -46,7 +46,11 @@ class PresetUtils:
                     file_name = str(file_name)
                     if file_name.endswith(".json"):
                         try:
-                            with open(os.path.join(presets_dir, file_name), "r", encoding="utf-8") as file:
+                            with open(
+                                os.path.join(presets_dir, file_name),
+                                "r",
+                                encoding="utf-8",
+                            ) as file:
                                 preset_text = file.read()
                                 file.close()
                         except (OSError, KeyError) as e:
@@ -56,25 +60,34 @@ class PresetUtils:
                             preset = json.loads(preset_text)
 
                             if preset.get("variables") is None:
-                                raise KeyError("'variables' section missing in loaded preset file")
+                                raise KeyError(
+                                    "'variables' section missing in loaded preset file"
+                                )
 
                             if preset.get("palette") is None:
-                                raise KeyError("'palette' section missing in loaded preset file")
+                                raise KeyError(
+                                    "'palette' section missing in loaded preset file"
+                                )
 
                             presets_list[file_name] = preset["name"]
             elif repo.is_file():
                 # this exists to keep compatibility with old preset structure
                 if repo.name.endswith(".json"):
-                    logging.warning("Legacy preset structure found. Moving to a new structure.")
+                    logging.warning(
+                        "Legacy preset structure found. Moving to a new structure."
+                    )
 
                     try:
                         if not os.path.isdir(os.path.join(presets_dir, "user")):
                             os.mkdir(os.path.join(presets_dir, "user"))
 
-                        os.rename(repo, os.path.join(
-                            presets_dir, "user", repo.name))
+                        os.rename(repo, os.path.join(presets_dir, "user", repo.name))
 
-                        with open(os.path.join(presets_dir, "user", repo), "r", encoding="utf-8") as file:
+                        with open(
+                            os.path.join(presets_dir, "user", repo),
+                            "r",
+                            encoding="utf-8",
+                        ) as file:
                             preset_text = file.read()
                             file.close()
                     except (OSError, KeyError) as e:
@@ -84,10 +97,14 @@ class PresetUtils:
                         preset = json.loads(preset_text)
 
                         if preset.get("variables") is None:
-                            raise KeyError("'variables' section missing in loaded preset file")
+                            raise KeyError(
+                                "'variables' section missing in loaded preset file"
+                            )
 
                         if preset.get("palette") is None:
-                            raise KeyError("'palette' section missing in loaded preset file")
+                            raise KeyError(
+                                "'palette' section missing in loaded preset file"
+                            )
 
                         presets_list["user"][file_name] = preset["name"]
 
@@ -102,7 +119,9 @@ class PresetUtils:
 
             return presets_list
         else:
-            raise AttributeError("You either need to set 'repo' property, or change 'full_list' property to True")
+            raise AttributeError(
+                "You either need to set 'repo' property, or change 'full_list' property to True"
+            )
 
     def apply_preset(self, app_type: str, preset: Preset) -> None:
         theme_dir = get_gtk_theme_dir(app_type)
@@ -116,7 +135,9 @@ class PresetUtils:
                 contents = css_file.read()
                 css_file.close()
         except FileNotFoundError:
-            logging.warning(f"gtk.css file not found in {gtk_css_path}. Generating new stylesheet.")
+            logging.warning(
+                f"gtk.css file not found in {gtk_css_path}. Generating new stylesheet."
+            )
         else:
             with open(gtk_css_path + ".bak", "w", encoding="utf-8") as backup:
                 backup.write(contents)
@@ -139,7 +160,9 @@ class PresetUtils:
                 css_file.write(contents)
                 css_file.close()
         except OSError as e:
-            logging.error(f"Unable to restore {app_type.capitalize()} preset backup.", exc=e)
+            logging.error(
+                f"Unable to restore {app_type.capitalize()} preset backup.", exc=e
+            )
             raise
 
     def reset_preset(self, app_type: str) -> None:

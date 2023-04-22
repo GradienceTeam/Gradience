@@ -20,19 +20,21 @@ from gradience.backend.models.preset import Preset
 
 
 def generate_gtk_css(app_type: str, preset: Preset) -> str:
-        variables = preset.variables
-        palette = preset.palette
-        custom_css = preset.custom_css
+    variables = preset.variables
+    palette = preset.palette
+    custom_css = preset.custom_css
 
-        final_css = ""
+    final_css = ""
 
-        for key in variables.keys():
-            final_css += f"@define-color {key} {variables[key]};\n"
+    for key in variables.keys():
+        final_css += f"@define-color {key} {variables[key]};\n"
 
-        for prefix_key in palette.keys():
-            for key in palette[prefix_key].keys():
-                final_css += f"@define-color {prefix_key + key} {palette[prefix_key][key]};\n"
+    for prefix_key in palette.keys():
+        for key in palette[prefix_key].keys():
+            final_css += (
+                f"@define-color {prefix_key + key} {palette[prefix_key][key]};\n"
+            )
 
-        final_css += custom_css.get(app_type, "")
+    final_css += custom_css.get(app_type, "")
 
-        return final_css
+    return final_css

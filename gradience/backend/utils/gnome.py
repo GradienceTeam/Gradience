@@ -26,22 +26,24 @@ from gradience.frontend.schemas.shell_schema import shell_schema
 
 
 def get_shell_version() -> str:
-    stdout = run_command(["gnome-shell", "--version"],
-        get_stdout_text=True,
-        allow_escaping=True).replace("\n", "")
+    stdout = run_command(
+        ["gnome-shell", "--version"], get_stdout_text=True, allow_escaping=True
+    ).replace("\n", "")
 
     shell_version = extract_version(stdout, "GNOME Shell")
 
     return shell_version
 
+
 def get_full_shell_version() -> str:
-    stdout = run_command(["gnome-shell", "--version"],
-        get_stdout_text=True,
-        allow_escaping=True).replace("\n", "")
+    stdout = run_command(
+        ["gnome-shell", "--version"], get_stdout_text=True, allow_escaping=True
+    ).replace("\n", "")
 
     shell_version = stdout[12:]
 
     return shell_version
+
 
 def is_gnome_available():
     xdg_current_desktop = os.environ.get("XDG_CURRENT_DESKTOP").lower()
@@ -50,6 +52,7 @@ def is_gnome_available():
         return True
 
     return False
+
 
 def get_shell_colors(preset_variables: Preset.variables) -> dict:
     shell_colors = {}

@@ -24,12 +24,12 @@ from gradience.backend.utils.subprocess import GradienceSubprocess
 logging = Logger(logger_name="FlatpakGSettings")
 
 
-class FlatpakGSettings():
+class FlatpakGSettings:
     def __init__(self, schema_dir=None):
         self.schema_dir = schema_dir
         logging.debug(f"schema_dir: {self.schema_dir}")
 
-    def list_keys_async(self, callback:callable, schema_id:str):
+    def list_keys_async(self, callback: callable, schema_id: str):
         dconf_cmd = ["gsettings", "list-keys", schema_id]
 
         if self.schema_dir:
@@ -40,7 +40,7 @@ class FlatpakGSettings():
         except GLib.GError:
             raise
 
-    def read_value_async(self, callback:callable, schema_id:str, key:str):
+    def read_value_async(self, callback: callable, schema_id: str, key: str):
         dconf_cmd = ["gsettings", "get", schema_id, key]
 
         if self.schema_dir:
@@ -51,7 +51,9 @@ class FlatpakGSettings():
         except GLib.GError:
             raise
 
-    def write_value_async(self, callback:callable, schema_id:str, key:str, value:str):
+    def write_value_async(
+        self, callback: callable, schema_id: str, key: str, value: str
+    ):
         dconf_cmd = ["gsettings", "set", schema_id, key, value]
 
         if self.schema_dir:
@@ -62,7 +64,7 @@ class FlatpakGSettings():
         except GLib.GError:
             raise
 
-    def reset_value_async(self, callback:callable, schema_id:str, key:str = None):
+    def reset_value_async(self, callback: callable, schema_id: str, key: str = None):
         dconf_cmd = ["gsettings", "reset", schema_id, key]
 
         if self.schema_dir:
