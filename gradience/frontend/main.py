@@ -131,14 +131,8 @@ class GradienceApplication(Adw.Application):
         self.actions.create_action("apply_color_scheme",
                         self.show_apply_color_scheme_dialog)
 
-        self.actions.create_action("restore_color_scheme",
-                        self.show_restore_color_scheme_dialog)
-
         self.actions.create_action("manage_presets",
                         self.show_presets_manager)
-
-        self.actions.create_action("reset_color_scheme",
-                        self.show_reset_color_scheme_dialog)
 
         self.actions.create_action("preferences",
                         self.show_preferences)
@@ -529,32 +523,6 @@ class GradienceApplication(Adw.Application):
         dialog.connect("response", self.apply_color_scheme)
         dialog.present()
 
-    def show_restore_color_scheme_dialog(self, *_args):
-        dialog = GradienceAppTypeDialog(
-            self.win,
-            _("Restore applied color scheme?"),
-            _("Make sure you have the current settings saved as a preset."),
-            "restore",
-            _("_Restore"),
-            Adw.ResponseAppearance.DESTRUCTIVE
-        )
-
-        dialog.connect("response", self.restore_color_scheme)
-        dialog.present()
-
-    def show_reset_color_scheme_dialog(self, *_args):
-        dialog = GradienceAppTypeDialog(
-            self.win,
-            _("Reset applied color scheme?"),
-            _("Make sure you have the current settings saved as a preset."),
-            "reset",
-            _("_Reset"),
-            Adw.ResponseAppearance.DESTRUCTIVE
-        )
-
-        dialog.connect("response", self.reset_color_scheme)
-        dialog.present()
-
     def show_save_preset_dialog(self, *_args):
         dialog = GradienceSaveDialog(self.win, path=os.path.join(
                 presets_dir,
@@ -644,48 +612,6 @@ class GradienceApplication(Adw.Application):
             self.win.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset set successfully"))
             )
-
-            dialog = GradienceLogOutDialog(self.win)
-            dialog.present()
-
-    def restore_color_scheme(self, widget, response):
-        if response == "restore":
-            if widget.get_app_types()["gtk4"]:
-                try:
-                    PresetUtils().restore_preset("gtk4")
-                except OSError:
-                    self.win.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Unable to restore GTK 4 backup"))
-                    )
-
-            if widget.get_app_types()["gtk3"]:
-                try:
-                    PresetUtils().restore_preset("gtk3")
-                except OSError:
-                    self.win.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Unable to restore GTK 3 backup"))
-                    )
-
-            dialog = GradienceLogOutDialog(self.win)
-            dialog.present()
-
-    def reset_color_scheme(self, widget, response):
-        if response == "reset":
-            if widget.get_app_types()["gtk4"]:
-                try:
-                    PresetUtils().reset_preset("gtk4")
-                except GLib.GError:
-                    self.win.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Unable to delete current preset"))
-                    )
-
-            if widget.get_app_types()["gtk3"]:
-                try:
-                    PresetUtils().reset_preset("gtk3")
-                except GLib.GError:
-                    self.win.toast_overlay.add_toast(
-                        Adw.Toast(title=_("Unable to delete current preset"))
-                    )
 
             dialog = GradienceLogOutDialog(self.win)
             dialog.present()
