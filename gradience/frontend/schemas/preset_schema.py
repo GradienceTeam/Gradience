@@ -334,6 +334,23 @@ preset_schema = {
             ],
         },
         {
+            "name": "thumbnail_colors",
+            "title": _("Thumbnail Colors"),
+            "description": _("These colors are used for Tab Overview thumbnails."),
+            "variables": [
+                {
+                    "name": "thumbnail_bg_color",
+                    "title": _("Background Color"),
+                    "adw_gtk3_support": "yes",
+                },
+                {
+                    "name": "thumbnail_fg_color",
+                    "title": _("Foreground Color"),
+                    "adw_gtk3_support": "yes",
+                },
+            ],
+        },
+        {
             "name": "misc_colors",
             "title": _("Miscellaneous Colors"),
             "description": _("Colors that don't fit in any particular group."),
