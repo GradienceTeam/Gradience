@@ -18,11 +18,11 @@
 
 from gi.repository import GLib, Gtk, Adw
 
+from gradience.backend.constants import rootdir
+from gradience.backend.logger import Logger
 from gradience.backend.theming.preset import PresetUtils
 
-from gradience.backend.constants import rootdir
-
-from gradience.backend.logger import Logger
+from gradience.frontend.dialogs.log_out_dialog import GradienceLogOutDialog
 
 logging = Logger()
 
@@ -35,7 +35,9 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
         super().__init__(**kwargs)
 
         self.parent = parent
+
         self.app = self.parent.get_application()
+        self.win = self.parent
 
         self.setup_signals()
         self.setup()
@@ -48,7 +50,15 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
 
     @Gtk.Template.Callback()
     def on_libadw_restore_button_clicked(self, *_args):
-        pass
+        try:
+            PresetUtils().restore_preset("gtk4")
+        except GLib.GError:
+            self.parent.add_toast(
+                Adw.Toast(title=_("Unable to restore GTK 4 backup"))
+            )
+        else:
+            dialog = GradienceLogOutDialog(self.win)
+            dialog.present()
 
     @Gtk.Template.Callback()
     def on_libadw_reset_button_clicked(self, *_args):
@@ -58,10 +68,22 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
             self.parent.add_toast(
                 Adw.Toast(title=_("Unable to delete current preset"))
             )
+        else:
+            dialog = GradienceLogOutDialog(self.win)
+            dialog.present()
+
 
     @Gtk.Template.Callback()
     def on_gtk3_restore_button_clicked(self, *_args):
-        pass
+        try:
+            PresetUtils().restore_preset("gtk3")
+        except GLib.GError:
+            self.parent.add_toast(
+                Adw.Toast(title=_("Unable to restore GTK 3 backup"))
+            )
+        else:
+            dialog = GradienceLogOutDialog(self.win)
+            dialog.present()
 
     @Gtk.Template.Callback()
     def on_gtk3_reset_button_clicked(self, *_args):
@@ -71,3 +93,6 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
             self.parent.add_toast(
                 Adw.Toast(title=_("Unable to delete current preset"))
             )
+        else:
+            dialog = GradienceLogOutDialog(self.win)
+            dialog.present()
