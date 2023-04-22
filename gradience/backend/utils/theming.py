@@ -24,11 +24,13 @@ def generate_gtk_css(app_type: str, preset: Preset) -> str:
     palette = preset.palette
     custom_css = preset.custom_css
 
-    final_css = """// Generated with Gradience
-//
-// Issues caused by theming should be reported to Gradience repository, and not upstream
-//
-// https://github.com/GradienceTeam/Gradience
+    final_css = """/*
+Generated with Gradience
+
+Issues caused by theming should be reported to Gradience repository, and not upstream
+
+https://github.com/GradienceTeam/Gradience
+*/
 
 """
 
