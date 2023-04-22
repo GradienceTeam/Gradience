@@ -31,7 +31,12 @@ class GradienceLogOutDialog(Adw.MessageDialog):
         self.parent = parent
         self.app = self.parent.get_application()
 
-        self.set_transient_for(self.app.get_active_window())
+        if isinstance(self.parent, Gtk.Window):
+            self.win = self.parent
+        else:
+            self.win = self.app.get_active_window()
+
+        self.set_transient_for(self.win)
 
         self.add_response("ok", _("OK"))
         self.set_default_response("ok")

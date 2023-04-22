@@ -34,7 +34,12 @@ class GradienceAppTypeDialog(Adw.MessageDialog):
         self.parent = parent
         self.app = self.parent.get_application()
 
-        self.set_transient_for(self.app.get_active_window())
+        if isinstance(self.parent, Gtk.Window):
+            self.win = self.parent
+        else:
+            self.win = self.app.get_active_window()
+
+        self.set_transient_for(self.win)
 
         self.set_heading(heading)
         self.set_body(body)
