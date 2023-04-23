@@ -53,16 +53,12 @@ class GradienceShellPrefsWindow(Adw.PreferencesWindow):
             pref_variable = GradienceOptionRow(
                 variable["name"],
                 variable["title"]
-                # variable.get("explanation")
+                #variable.get("explanation")
             )
             self.custom_colors_group.add(pref_variable)
 
-            pref_variable.color_value.connect(
-                "color-set", self.on_color_value_changed, pref_variable
-            )
-            pref_variable.text_value.connect(
-                "changed", self.on_text_value_changed, pref_variable
-            )
+            pref_variable.color_value.connect("color-set", self.on_color_value_changed, pref_variable)
+            pref_variable.text_value.connect("changed", self.on_text_value_changed, pref_variable)
 
             self.set_colors(pref_variable, variable)
 
@@ -72,9 +68,7 @@ class GradienceShellPrefsWindow(Adw.PreferencesWindow):
                 self.shell_colors[variable["name"]] = variable["default_value"]
             except KeyError:
                 try:
-                    self.shell_colors[variable["name"]] = self.app.variables[
-                        variable["var_name"]
-                    ]
+                    self.shell_colors[variable["name"]] = self.app.variables[variable["var_name"]]
                 except KeyError:
                     raise
             finally:

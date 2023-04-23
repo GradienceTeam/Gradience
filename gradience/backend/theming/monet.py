@@ -45,9 +45,7 @@ class Monet:
 
         if image_path.endswith(".xml"):
             # TODO: Use custom exception in future
-            raise ValueError(
-                "XML files are unsupported by Gradience's Monet implementation"
-            )
+            raise ValueError("XML files are unsupported by Gradience's Monet implementation")
 
         try:
             monet_img = monet.Image.open(image_path)
@@ -67,9 +65,7 @@ class Monet:
 
         return self.palette
 
-    def new_preset_from_monet(
-        self, name=None, monet_palette=None, props=None, obj_only=False
-    ) -> Preset or None:
+    def new_preset_from_monet(self, name=None, monet_palette=None, props=None, obj_only=False) -> Preset or None:
         preset = Preset()
 
         if props:
@@ -90,17 +86,13 @@ class Monet:
                 "destructive_color": argb_to_color_code(light_theme.error),
                 "destructive_bg_color": argb_to_color_code(light_theme.errorContainer),
                 # Avoid using .onError as it causes contrast issues
-                "destructive_fg_color": argb_to_color_code(
-                    light_theme.onErrorContainer
-                ),
+                "destructive_fg_color": argb_to_color_code(light_theme.onErrorContainer),
                 "success_color": argb_to_color_code(light_theme.tertiary),
                 "success_bg_color": argb_to_color_code(light_theme.tertiaryContainer),
                 "success_fg_color": argb_to_color_code(light_theme.onTertiaryContainer),
                 "warning_color": argb_to_color_code(light_theme.secondary),
                 "warning_bg_color": argb_to_color_code(light_theme.secondaryContainer),
-                "warning_fg_color": argb_to_color_code(
-                    light_theme.onSecondaryContainer
-                ),
+                "warning_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
                 "error_color": argb_to_color_code(light_theme.error),
                 "error_bg_color": argb_to_color_code(light_theme.errorContainer),
                 # Avoid using .onError as it causes contrast issues
@@ -110,25 +102,17 @@ class Monet:
                 "view_bg_color": argb_to_color_code(light_theme.secondaryContainer),
                 "view_fg_color": argb_to_color_code(light_theme.onSurface),
                 "headerbar_bg_color": argb_to_color_code(light_theme.primary, "0.08"),
-                "headerbar_fg_color": argb_to_color_code(
-                    light_theme.onSecondaryContainer
-                ),
-                "headerbar_border_color": argb_to_color_code(
-                    light_theme.onSurface, "0.8"
-                ),
+                "headerbar_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
+                "headerbar_border_color": argb_to_color_code(light_theme.onSurface, "0.8"),
                 "headerbar_backdrop_color": "@window_bg_color",
-                "headerbar_shade_color": argb_to_color_code(
-                    light_theme.onSurface, "0.07"
-                ),
+                "headerbar_shade_color": argb_to_color_code(light_theme.onSurface, "0.07"),
                 "card_bg_color": argb_to_color_code(light_theme.primary, "0.05"),
                 "card_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
                 "card_shade_color": argb_to_color_code(light_theme.shadow, "0.07"),
                 "dialog_bg_color": argb_to_color_code(light_theme.secondaryContainer),
                 "dialog_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
                 "popover_bg_color": argb_to_color_code(light_theme.secondaryContainer),
-                "popover_fg_color": argb_to_color_code(
-                    light_theme.onSecondaryContainer
-                ),
+                "popover_fg_color": argb_to_color_code(light_theme.onSecondaryContainer),
                 "shade_color": argb_to_color_code(light_theme.shadow, "0.07"),
                 "scrollbar_outline_color": argb_to_color_code(light_theme.outline),
             }
@@ -157,16 +141,10 @@ class Monet:
                 "view_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
                 "view_fg_color": argb_to_color_code(dark_theme.onSurface),
                 "headerbar_bg_color": argb_to_color_code(dark_theme.primary, "0.08"),
-                "headerbar_fg_color": argb_to_color_code(
-                    dark_theme.onSecondaryContainer
-                ),
-                "headerbar_border_color": argb_to_color_code(
-                    dark_theme.onSurface, "0.8"
-                ),
+                "headerbar_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
+                "headerbar_border_color": argb_to_color_code(dark_theme.onSurface, "0.8"),
                 "headerbar_backdrop_color": "@window_bg_color",
-                "headerbar_shade_color": argb_to_color_code(
-                    dark_theme.onSurface, "0.07"
-                ),
+                "headerbar_shade_color": argb_to_color_code(dark_theme.onSurface, "0.07"),
                 "card_bg_color": argb_to_color_code(dark_theme.primary, "0.05"),
                 "card_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
                 "card_shade_color": argb_to_color_code(dark_theme.shadow, "0.07"),
@@ -175,17 +153,13 @@ class Monet:
                 "popover_bg_color": argb_to_color_code(dark_theme.secondaryContainer),
                 "popover_fg_color": argb_to_color_code(dark_theme.onSecondaryContainer),
                 "shade_color": argb_to_color_code(dark_theme.shadow, "0.36"),
-                "scrollbar_outline_color": argb_to_color_code(
-                    dark_theme.outline, "0.5"
-                ),
+                "scrollbar_outline_color": argb_to_color_code(dark_theme.outline, "0.5"),
             }
         else:
             raise AttributeError("Unknown theme variant selected")
 
-        if obj_only is False and not name:
-            raise AttributeError(
-                "You either need to set 'obj_only' property to True, or add value to 'name' property"
-            )
+        if obj_only == False and not name:
+            raise AttributeError("You either need to set 'obj_only' property to True, or add value to 'name' property")
 
         if obj_only:
             if name:
@@ -194,7 +168,7 @@ class Monet:
                 preset.new(variables=variable)
             return preset
 
-        if obj_only is False:
+        if obj_only == False:
             preset.new(variables=variable, display_name=name)
 
             try:

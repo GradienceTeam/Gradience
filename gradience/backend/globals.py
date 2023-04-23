@@ -23,11 +23,17 @@ from gi.repository import Xdp
 from gradience.backend import constants
 
 
-user_config_dir = os.environ.get("XDG_CONFIG_HOME", os.environ["HOME"] + "/.config")
+user_config_dir = os.environ.get(
+    "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
+)
 
-user_data_dir = os.environ.get("XDG_DATA_HOME", os.environ["HOME"] + "/.local/share")
+user_data_dir = os.environ.get(
+    "XDG_DATA_HOME", os.environ["HOME"] + "/.local/share"
+)
 
-user_cache_dir = os.environ.get("XDG_CACHE_HOME", os.environ["HOME"] + "/.cache")
+user_cache_dir = os.environ.get(
+    "XDG_CACHE_HOME", os.environ["HOME"] + "/.cache"
+)
 
 presets_dir = os.path.join(user_config_dir, "presets")
 
@@ -36,7 +42,7 @@ system_plugin_dir = os.path.join(constants.pkgdatadir, "plugins")
 
 preset_repos = {
     "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
-    "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json",
+    "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json"
 }
 
 # Adwaita named UI colors prefixes list
@@ -55,7 +61,7 @@ adw_variables_prefixes = [
     "popover_",
     "shade_",
     "scrollbar_",
-    "borders",
+    "borders"
 ]
 
 # Adwaita named palette colors prefixes list
@@ -69,9 +75,8 @@ adw_palette_prefixes = [
     "purple_",
     "brown_",
     "light_",
-    "dark_",
+    "dark_"
 ]
-
 
 def get_gtk_theme_dir(app_type: str):
     if app_type == "gtk4":
@@ -81,7 +86,6 @@ def get_gtk_theme_dir(app_type: str):
         theme_dir = os.path.join(user_config_dir, "gtk-3.0")
 
     return theme_dir
-
 
 def is_sandboxed():
     portal = Xdp.Portal()

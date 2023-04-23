@@ -35,15 +35,7 @@ class GradienceOptionRow(Adw.ActionRow):
     explanation_button = Gtk.Template.Child("explanation-button")
     explanation_label = Gtk.Template.Child("explanation-label")
 
-    def __init__(
-        self,
-        name,
-        title,
-        explanation=None,
-        adw_gtk3_support=None,
-        update_var=None,
-        **kwargs,
-    ):
+    def __init__(self, name, title, explanation=None, adw_gtk3_support=None, update_var=None, **kwargs):
         super().__init__(**kwargs)
 
         self.app = Gtk.Application.get_default()
@@ -123,12 +115,8 @@ class GradienceOptionRow(Adw.ActionRow):
                 self.color_value.set_rgba(rgba)
                 self.color_value.set_tooltip_text(_("Not a color, see text value"))
 
-        if update_vars is True:
-            if (
-                is_app_ready
-                and kwargs.get("update_from") == "text_value"
-                and new_value != ""
-            ):
+        if update_vars == True:
+            if is_app_ready and kwargs.get("update_from") == "text_value" and new_value != "":
                 if self.update_var:
                     self.update_var[self.get_name()] = new_value
                 else:

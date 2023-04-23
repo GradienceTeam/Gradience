@@ -44,7 +44,8 @@ class GradienceCustomCSSGroup(Adw.PreferencesGroup):
         self.custom_css = custom_css
 
         self.custom_css_text_view.get_buffer().set_text(
-            list(self.custom_css.values())[self.app_type_dropdown.get_selected()]
+            list(self.custom_css.values())[
+                self.app_type_dropdown.get_selected()]
         )
 
     def reset_buffer(self):
@@ -57,17 +58,17 @@ class GradienceCustomCSSGroup(Adw.PreferencesGroup):
     def on_custom_css_changed(self, buffer):
         self.app.mark_as_dirty()
         self.app.update_custom_css_text(
-            list(self.custom_css.keys())[self.app_type_dropdown.get_selected()],
-            buffer.props.text,
+            list(self.custom_css.keys())[
+                self.app_type_dropdown.get_selected()],
+            buffer.props.text
         )
 
     @Gtk.Template.Callback()
     def on_dropdown_notify(self, _unused, pspec):
         if pspec.name == "selected":
             logging.debug(f"Custom CSS values: {self.custom_css.values()}")
-            logging.debug(
-                f"Selected app type in dropdown: {self.app_type_dropdown.get_selected()}"
-            )
+            logging.debug(f"Selected app type in dropdown: {self.app_type_dropdown.get_selected()}")
             self.custom_css_text_view.get_buffer().set_text(
-                list(self.custom_css.values())[self.app_type_dropdown.get_selected()]
+                list(self.custom_css.values())[
+                    self.app_type_dropdown.get_selected()]
             )

@@ -45,7 +45,8 @@ class GradiencePluginRow(Adw.ActionRow):
         self.plugin_object = plugin_object
         if not os.path.exists(
             os.path.join(
-                user_plugin_dir, f"{self.plugin_object.plugin_id}.yapsy-plugin"
+                user_plugin_dir,
+                f"{self.plugin_object.plugin_id}.yapsy-plugin"
             )
         ):
             self.remove_button.set_visible(False)
@@ -70,8 +71,11 @@ class GradiencePluginRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_remove_plugin_clicked(self, *_args):
-        plugin_yapsy_file = os.path.join(
-            user_plugin_dir, f"{self.plugin_object.plugin_id}.yapsy-plugin"
+        plugin_yapsy_file = (
+            os.path.join(
+                user_plugin_dir,
+                f"{self.plugin_object.plugin_id}.yapsy-plugin"
+            )
         )
         logging.debug(f"remove {plugin_yapsy_file}")
         try:

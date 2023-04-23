@@ -62,7 +62,10 @@ class GradienceApplication(Adw.Application):
     portal = Xdp.Portal()
 
     def __init__(self):
-        super().__init__(application_id=app_id, flags=Gio.ApplicationFlags.FLAGS_NONE)
+        super().__init__(
+            application_id=app_id,
+            flags=Gio.ApplicationFlags.FLAGS_NONE
+        )
 
         self.set_resource_base_path(rootdir)
 
@@ -87,7 +90,9 @@ class GradienceApplication(Adw.Application):
 
         self.first_run = self.settings.get_boolean("first-run")
 
-        self.last_opened_version = self.settings.get_string("last-opened-version")
+        self.last_opened_version = self.settings.get_string(
+            "last-opened-version"
+        )
         self.favourite = set(self.settings.get_value("favourite"))
 
         self.style_manager = Adw.StyleManager.get_default()
@@ -105,7 +110,7 @@ class GradienceApplication(Adw.Application):
                 default_height=self.settings.get_int("window-height"),
                 default_width=self.settings.get_int("window-width"),
                 fullscreened=self.settings.get_boolean("window-fullscreen"),
-                maximized=self.settings.get_boolean("window-maximized"),
+                maximized=self.settings.get_boolean("window-maximized")
             )
 
         self.plugins_list = GradiencePluginsList(self.win)
@@ -117,22 +122,26 @@ class GradienceApplication(Adw.Application):
             "load_preset",
             GLib.VariantType.new("s"),
             GLib.Variant("s", "adwaita"),
-            self.load_preset_action,
+            self.load_preset_action
         )
 
-        self.actions.create_action("open_preset_directory", self.open_preset_directory)
+        self.actions.create_action("open_preset_directory",
+                        self.open_preset_directory)
 
-        self.actions.create_action(
-            "apply_color_scheme", self.show_apply_color_scheme_dialog
-        )
+        self.actions.create_action("apply_color_scheme",
+                        self.show_apply_color_scheme_dialog)
 
-        self.actions.create_action("manage_presets", self.show_presets_manager)
+        self.actions.create_action("manage_presets",
+                        self.show_presets_manager)
 
-        self.actions.create_action("preferences", self.show_preferences)
+        self.actions.create_action("preferences",
+                        self.show_preferences)
 
-        self.actions.create_action("save_preset", self.show_save_preset_dialog)
+        self.actions.create_action("save_preset",
+                        self.show_save_preset_dialog)
 
-        self.actions.create_action("about", self.show_about_window)
+        self.actions.create_action("about",
+                        self.show_about_window)
 
         self.load_preset_from_css()
         self.reload_user_defined_presets()
@@ -151,11 +160,16 @@ class GradienceApplication(Adw.Application):
     def setup_signals(self):
         # Custom signals
         GObject.signal_new(
-            "preset-reload", self, GObject.SignalFlags.RUN_LAST, bool, (object,)
+            "preset-reload",
+            self,
+            GObject.SignalFlags.RUN_LAST,
+            bool,
+            (object,)
         )
 
     def save_favourite(self):
-        self.settings.set_value("favourite", GLib.Variant("as", self.favourite))
+        self.settings.set_value(
+            "favourite", GLib.Variant("as", self.favourite))
 
     def reload_user_defined_presets(self):
         if self.props.active_window.presets_menu.get_n_items() > 1:
@@ -188,7 +202,7 @@ class GradienceApplication(Adw.Application):
                 or self.custom_presets["official"]
             )
 
-            if is_custom_presets:
+            if (is_custom_presets):
                 for repo, content in self.custom_presets.items():
                     for preset, preset_name in content.items():
                         logging.debug(preset_name)
@@ -200,8 +214,7 @@ class GradienceApplication(Adw.Application):
                             if not preset.startswith("error"):
                                 menu_item.set_action_and_target_value(
                                     "app.load_preset",
-                                    GLib.Variant("s", "custom-" + preset),
-                                )
+                                    GLib.Variant("s", "custom-" + preset))
                             else:
                                 menu_item.set_action_and_target_value("")
 
@@ -244,7 +257,10 @@ class GradienceApplication(Adw.Application):
     def load_preset_from_css(self):
         try:
             variables, palette, custom_css = parse_css(
-                os.path.join(get_gtk_theme_dir("gtk4"), "gtk.css")
+                os.path.join(
+                    get_gtk_theme_dir("gtk4"),
+                    "gtk.css"
+                )
             )
 
             logging.debug(f"Loaded custom CSS variables: {variables}")
@@ -253,7 +269,10 @@ class GradienceApplication(Adw.Application):
                 "name": "Preset Name",
                 "variables": variables,
                 "palette": palette,
-                "custom_css": {"gtk4": custom_css, "gtk3": ""},
+                "custom_css": {
+                    "gtk4": custom_css,
+                    "gtk3": ""
+                }
             }
 
             self.preset = Preset().new_from_dict(preset)
@@ -261,9 +280,11 @@ class GradienceApplication(Adw.Application):
         except OSError:  # fallback to adwaita
             logging.warning("Custom preset not found. Fallback to Adwaita")
             if self.style_manager.get_dark():
-                self.load_preset_from_resource(f"{rootdir}/presets/adwaita-dark.json")
+                self.load_preset_from_resource(
+                    f"{rootdir}/presets/adwaita-dark.json")
             else:
-                self.load_preset_from_resource(f"{rootdir}/presets/adwaita.json")
+                self.load_preset_from_resource(
+                    f"{rootdir}/presets/adwaita.json")
 
     def open_preset_directory(self, *_args):
         parent = XdpGtk4.parent_new_gtk(self.props.active_window)
@@ -286,7 +307,8 @@ class GradienceApplication(Adw.Application):
         self.load_preset_variables_from_preset()
 
     def load_preset_from_resource(self, preset_path):
-        preset_text = Gio.resources_lookup_data(preset_path, 0).get_data().decode()
+        preset_text = Gio.resources_lookup_data(
+            preset_path, 0).get_data().decode()
 
         self.preset = Preset().new_from_resource(text=preset_text)
         self.load_preset_variables_from_preset()
@@ -361,13 +383,10 @@ class GradienceApplication(Adw.Application):
                 preset_variant = "light"
 
         try:
-            preset_object = Monet().new_preset_from_monet(
-                monet_palette=monet, props=[tone, preset_variant], obj_only=True
-            )
+            preset_object = Monet().new_preset_from_monet(monet_palette=monet,
+                                props=[tone, preset_variant], obj_only=True)
         except (OSError, AttributeError) as e:
-            logging.error(
-                "An error occurred while generating preset from Monet palette.", exc=e
-            )
+            logging.error("An error occurred while generating preset from Monet palette.", exc=e)
             raise
 
         variable = preset_object.variables
@@ -420,7 +439,7 @@ class GradienceApplication(Adw.Application):
                     "element": gtk_css[start_location:end_location].strip(),
                     "line": gtk_css.splitlines()[line_number]
                     if line_number < len(gtk_css.splitlines())
-                    else "<last line>",
+                    else "<last line>"
                 }
             )
 
@@ -436,18 +455,18 @@ class GradienceApplication(Adw.Application):
         else:
             css_provider.load_from_data(gtk_css.encode())
 
-        self.props.active_window.update_errors(self.global_errors + parsing_errors)
+        self.props.active_window.update_errors(
+            self.global_errors + parsing_errors)
 
         # loading with the priority above user to override the applied config
         if self.current_css_provider is not None:
             Gtk.StyleContext.remove_provider_for_display(
-                Gdk.Display.get_default(), self.current_css_provider
-            )
+                Gdk.Display.get_default(), self.current_css_provider)
 
         Gtk.StyleContext.add_provider_for_display(
             Gdk.Display.get_default(),
             css_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_USER + 1,
+            Gtk.STYLE_PROVIDER_PRIORITY_USER + 1
         )
         self.current_css_provider = css_provider
 
@@ -459,7 +478,8 @@ class GradienceApplication(Adw.Application):
             if args[0].get_string().startswith("custom-"):
                 self.load_preset_from_file(
                     os.path.join(
-                        presets_dir, args[0].get_string().replace("custom-", "", 1)
+                        presets_dir,
+                        args[0].get_string().replace("custom-", "", 1)
                     )
                 )
             else:
@@ -497,26 +517,24 @@ class GradienceApplication(Adw.Application):
             ),
             "apply",
             _("_Apply"),
-            Adw.ResponseAppearance.SUGGESTED,
+            Adw.ResponseAppearance.SUGGESTED
         )
 
         dialog.connect("response", self.apply_color_scheme)
         dialog.present()
 
     def show_save_preset_dialog(self, *_args):
-        dialog = GradienceSaveDialog(
-            self.win,
-            path=os.path.join(
-                presets_dir, "user", to_slug_case(self.preset_name) + ".json"
-            ),
+        dialog = GradienceSaveDialog(self.win, path=os.path.join(
+                presets_dir,
+                "user",
+                to_slug_case(self.preset_name) + ".json"
+            )
         )
 
         preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
-        preset_entry.connect(
-            "changed", self.on_save_preset_entry_change, dialog, preset_entry
-        )
+        preset_entry.connect("changed", self.on_save_preset_entry_change, dialog, preset_entry)
         dialog.connect("response", self.on_save_dialog_response, preset_entry)
 
         dialog.present()
@@ -526,17 +544,17 @@ class GradienceApplication(Adw.Application):
             self.win,
             heading=_("You have unsaved changes!"),
             path=os.path.join(
-                presets_dir, "user", to_slug_case(self.preset_name) + ".json"
+                presets_dir,
+                "user",
+                to_slug_case(self.preset_name) + ".json"
             ),
-            discard=True,
+            discard=True
         )
 
         preset_entry = dialog.preset_entry
         preset_entry.set_text(self.preset_name)
 
-        preset_entry.connect(
-            "changed", self.on_save_preset_entry_change, dialog, preset_entry
-        )
+        preset_entry.connect("changed", self.on_save_preset_entry_change, dialog, preset_entry)
 
         return dialog, preset_entry
 
@@ -549,7 +567,14 @@ class GradienceApplication(Adw.Application):
 
     def on_save_preset_entry_change(self, _widget, dialog, preset_entry):
         if len(preset_entry.get_text()) == 0:
-            dialog.set_body(dialog.body.format(os.path.join(presets_dir, "user")))
+            dialog.set_body(
+                dialog.body.format(
+                    os.path.join(
+                        presets_dir,
+                        "user"
+                    )
+                )
+            )
             dialog.set_response_enabled("save", False)
         else:
             dialog.set_body(
@@ -557,7 +582,7 @@ class GradienceApplication(Adw.Application):
                     os.path.join(
                         presets_dir,
                         "user",
-                        to_slug_case(preset_entry.get_text()) + ".json",
+                        to_slug_case(preset_entry.get_text()) + ".json"
                     )
                 )
             )
@@ -567,7 +592,8 @@ class GradienceApplication(Adw.Application):
         if response == "save":
             self.preset.save_to_file(preset_entry.get_text(), self.plugins_list)
             self.clear_dirty()
-            self.win.toast_overlay.add_toast(Adw.Toast(title=_("Preset saved")))
+            self.win.toast_overlay.add_toast(
+                Adw.Toast(title=_("Preset saved")))
         elif response == "discard":
             self.clear_dirty()
             self.win.close()
@@ -621,7 +647,8 @@ class GradienceApplication(Adw.Application):
 
         plugins_errors = self.plugins_list.validate()
 
-        self.props.active_window.update_errors(self.global_errors + plugins_errors)
+        self.props.active_window.update_errors(
+            self.global_errors + plugins_errors)
 
     def reload_plugins(self):
         self.plugins_list.reload()
@@ -646,7 +673,8 @@ class GradienceApplication(Adw.Application):
 
         plugins_errors = self.plugins_list.validate()
 
-        self.props.active_window.update_errors(self.global_errors + plugins_errors)
+        self.props.active_window.update_errors(
+            self.global_errors + plugins_errors)
 
 
 def main():

@@ -47,9 +47,7 @@ class GradienceBuiltinPresetRow(Adw.ActionRow):
 
         def on_unsaved_dialog_response(_widget, response, preset_entry):
             if response == "save":
-                self.app.preset.save_to_file(
-                    preset_entry.get_text(), self.app.plugins_list
-                )
+                self.app.preset.save_to_file(preset_entry.get_text(), self.app.plugins_list)
                 self.app.clear_dirty()
                 self.app.load_preset_from_resource(
                     f"{rootdir}/presets/" + to_slug_case(self.name) + ".json"

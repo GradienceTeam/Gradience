@@ -25,7 +25,6 @@ from gradience.backend.globals import adw_palette_prefixes
 define_color = re.compile(r"(@define-color .*[^\s])")
 not_define_color = re.compile(r"(^(?:(?!@define-color).)*$)")
 
-
 def parse_css(path):
     css = ""
     variables = {}
@@ -38,18 +37,14 @@ def parse_css(path):
         for line in sheet:
             cdefine_match = re.search(define_color, line)
             not_cdefine_match = re.search(not_define_color, line)
-            if (
-                cdefine_match is not None
-            ):  # If @define-color variable declarations were found
-                palette_part = cdefine_match.__getitem__(
-                    1
-                )  # Get the second item of the re.Match object
+            if cdefine_match != None: # If @define-color variable declarations were found
+                palette_part = cdefine_match.__getitem__(1) # Get the second item of the re.Match object
                 name, color = palette_part.split(" ", 1)[1].split(" ", 1)
-                if name.startswith(tuple(adw_palette_prefixes)):  # Palette colors
+                if name.startswith(tuple(adw_palette_prefixes)): # Palette colors
                     palette[name[:-1]][name[-1:]] = color[:-1]
-                else:  # Other color variables
+                else: # Other color variables
                     variables[name] = color[:-1]
-            elif not_cdefine_match is not None:  # If CSS rules were found
+            elif not_cdefine_match != None: # If CSS rules were found
                 css_part = not_cdefine_match.__getitem__(1)
                 css += f"{css_part}\n"
 

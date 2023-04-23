@@ -31,10 +31,17 @@ class Logger(logging.getLoggerClass()):
         logger_name (str): Custom name of the logger.
         formatter (dict): Custom formatter for the logger.
     """
+    log_colors = {
+        "debug": 32,
+        "info": 36,
+        "warning": 33,
+        "error": 31,
+        "critical": 41
+    }
 
-    log_colors = {"debug": 32, "info": 36, "warning": 33, "error": 31, "critical": 41}
-
-    log_format = {"fmt": "[%(name)s] %(message)s"}
+    log_format = {
+        'fmt': '[%(name)s] %(message)s'
+    }
 
     def __set_exc_info(self, exc):
         exc_tb = traceback.extract_tb(exc.__traceback__)
@@ -47,7 +54,7 @@ class Logger(logging.getLoggerClass()):
                 if i == len(exc_tb) - 1:
                     exc_info += f"{tb[0]}:{tb[1]}"
                 else:
-                    exc_info += f"{tb[0]}:{tb[1]}\n    "  # Yes, it must have those four spaces at the end
+                    exc_info += f"{tb[0]}:{tb[1]}\n    " # Yes, it must have those four spaces at the end
         elif len(exc_tb) == 1:
             exc_info += f"\nExc: {exc}\nAt: {exc_tb[-1][0]}:{exc_tb[-1][1]}"
 

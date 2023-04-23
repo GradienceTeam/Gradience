@@ -18,16 +18,11 @@
 
 from gi.repository import GLib, Gtk, Adw
 
-from gradience.backend.flatpak_overrides import (
-    create_gtk_user_override,
-    remove_gtk_user_override,
-)
-from gradience.backend.flatpak_overrides import (
-    create_gtk_global_override,
-    remove_gtk_global_override,
-)
+from gradience.backend.flatpak_overrides import create_gtk_user_override, remove_gtk_user_override
+from gradience.backend.flatpak_overrides import create_gtk_global_override, remove_gtk_global_override
 
 from gradience.frontend.widgets.reset_preset_group import GradienceResetPresetGroup
+from gradience.frontend.views.main_window import GradienceMainWindow
 
 from gradience.backend.constants import rootdir
 
@@ -103,11 +98,15 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
             "user-flatpak-theming-gtk3"
         )
 
-        self.gtk4_user_theming_switch.set_state(user_flatpak_theming_gtk4)
+        self.gtk4_user_theming_switch.set_state(
+            user_flatpak_theming_gtk4
+        )
 
         # self.gtk4_global_theming_switch.set_state(global_flatpak_theming_gtk4)
 
-        self.gtk3_user_theming_switch.set_state(user_flatpak_theming_gtk3)
+        self.gtk3_user_theming_switch.set_state(
+            user_flatpak_theming_gtk3
+        )
 
         # self.gtk3_global_theming_switch.set_state(global_flatpak_theming_gtk3)
 
@@ -181,7 +180,7 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.win.reload_theming_page()
 
         logging.debug(
-            f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
+                f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
         )
 
     def on_monet_engine_switch_toggled(self, *args):
@@ -198,5 +197,5 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.win.reload_theming_page()
 
         logging.debug(
-            f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
+                f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
         )

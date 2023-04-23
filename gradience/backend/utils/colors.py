@@ -57,7 +57,6 @@ def rgb_to_hash(rgb) -> [str, float]:
 
     return "#" + "".join(hex_out), alpha
 
-
 def argb_to_color_code(argb, alpha=None) -> str:
     """
     This function can return either an hexadecimal or rgba-formatted color code.
@@ -79,7 +78,6 @@ def argb_to_color_code(argb, alpha=None) -> str:
 
     return rgba_base.format(red, green, blue, alpha)
 
-
 def color_vars_to_color_code(variables: dict, palette: dict) -> dict:
     """
     This function converts GTK color variables to color code
@@ -92,10 +90,8 @@ def color_vars_to_color_code(variables: dict, palette: dict) -> dict:
 
     output = variables
 
-    if palette is None:
-        logging.warning(
-            "Palette parameter in `color_vars_to_color_code()` function not set. Incoming bugs ahead!"
-        )
+    if palette == None:
+        logging.warning("Palette parameter in `color_vars_to_color_code()` function not set. Incoming bugs ahead!")
 
     def __has_palette_prefix(color):
         return any(prefix in color for prefix in adw_palette_prefixes)
@@ -116,9 +112,9 @@ def color_vars_to_color_code(variables: dict, palette: dict) -> dict:
             __update_palette_vars(variable, output[variable])
 
     for variable, color in output.items():
-        color_value = color[1:]  # Remove '@' from the beginning of the color variable
+        color_value = color[1:] # Remove '@' from the beginning of the color variable
 
-        if __has_palette_prefix(color_value) and palette is not None:
+        if __has_palette_prefix(color_value) and palette != None:
             __update_vars("palette", variable, color_value)
 
         if __has_variable_prefix(color_value):

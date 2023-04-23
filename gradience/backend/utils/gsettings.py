@@ -23,6 +23,8 @@
 
 
 import os
+import re
+import shutil
 import os.path
 import xml.dom.minidom
 import gettext
@@ -60,83 +62,68 @@ class _GSettingsSchema:
         schema_path = os.path.join(schema_dir, schema_filename)
         if not os.path.exists(schema_path):
             logging.critical("Could not find schema %s" % schema_path)
-            assert False
+            assert (False)
 
         self._schema_name = schema_name
         self._schema = {}
 
         try:
             dom = xml.dom.minidom.parse(schema_path)
-            global_gettext_domain = dom.documentElement.getAttribute("gettext-domain")
+            global_gettext_domain = dom.documentElement.getAttribute(
+                'gettext-domain')
             try:
                 if global_gettext_domain:
                     # We can't know where the schema owner was installed, let's assume it's
                     # the same prefix as ours
                     global_translation = gettext.translation(
-                        global_gettext_domain, localedir
-                    )
+                        global_gettext_domain, localedir)
                 else:
                     global_translation = gettext.NullTranslations()
             except IOError:
                 global_translation = None
-                logging.debug(
-                    "No translated schema for %s (domain: %s)"
-                    % (schema_name, global_gettext_domain)
-                )
+                logging.debug("No translated schema for %s (domain: %s)" % (
+                    schema_name, global_gettext_domain))
             for schema in dom.getElementsByTagName("schema"):
-                gettext_domain = schema.getAttribute("gettext-domain")
+                gettext_domain = schema.getAttribute('gettext-domain')
                 try:
                     if gettext_domain:
-                        translation = gettext.translation(gettext_domain, localedir)
+                        translation = gettext.translation(
+                            gettext_domain, localedir)
                     else:
                         translation = global_translation
                 except IOError:
                     translation = None
-                    logging.debug(
-                        "Schema not translated %s (domain: %s)"
-                        % (schema_name, gettext_domain)
-                    )
+                    logging.debug("Schema not translated %s (domain: %s)" % (
+                        schema_name, gettext_domain))
                 if schema_name == schema.getAttribute("id"):
                     for key in schema.getElementsByTagName("key"):
                         name = key.getAttribute("name")
                         # summary is 'compulsory', description is optional
                         # …in theory, but we should not barf on bad schemas ever
                         try:
-                            summary = (
-                                key.getElementsByTagName("summary")[0]
-                                .childNodes[0]
-                                .data
-                            )
+                            summary = key.getElementsByTagName(
+                                "summary")[0].childNodes[0].data
                         except:
                             summary = ""
-                            logging.info(
-                                "Schema missing summary %s (key %s)"
-                                % (os.path.basename(schema_path), name)
-                            )
+                            logging.info("Schema missing summary %s (key %s)" %
+                                         (os.path.basename(schema_path), name))
                         try:
-                            description = (
-                                key.getElementsByTagName("description")[0]
-                                .childNodes[0]
-                                .data
-                            )
+                            description = key.getElementsByTagName(
+                                "description")[0].childNodes[0].data
                         except:
                             description = ""
 
                         # if missing translations, use the untranslated values
                         self._schema[name] = dict(
-                            summary=translation.gettext(summary)
-                            if translation
-                            else summary,
-                            description=translation.gettext(description)
-                            if translation
-                            else description,
+                            summary=translation.gettext(
+                                summary) if translation else summary,
+                            description=translation.gettext(
+                                description) if translation else description
                         )
 
         except:
-            logging.critical(
-                "Error parsing schema %s (%s)" % (schema_name, schema_path),
-                exc_info=True,
-            )
+            logging.critical("Error parsing schema %s (%s)" %
+                             (schema_name, schema_path), exc_info=True)
 
     def __repr__(self):
         return "<gradience._GSettingsSchema: %s>" % self._schema_name
@@ -149,21 +136,19 @@ class GSettingsSetting(Gio.Settings):
             if schema_path is None and schema_name not in _GSETTINGS_SCHEMAS:
                 raise GSettingsMissingError(schema_name)
 
-            if (
-                schema_path is not None
-                and schema_name not in _GSETTINGS_RELOCATABLE_SCHEMAS
-            ):
+            if schema_path is not None and schema_name not in _GSETTINGS_RELOCATABLE_SCHEMAS:
                 raise GSettingsMissingError(schema_name)
 
             if schema_path is None:
                 Gio.Settings.__init__(self, schema=schema_name)
             else:
-                Gio.Settings.__init__(self, schema=schema_name, path=schema_path)
+                Gio.Settings.__init__(
+                    self, schema=schema_name, path=schema_path)
         else:
             GioSSS = Gio.SettingsSchemaSource
-            schema_source = GioSSS.new_from_directory(
-                schema_dir, GioSSS.get_default(), False
-            )
+            schema_source = GioSSS.new_from_directory(schema_dir,
+                                                      GioSSS.get_default(),
+                                                      False)
             schema_obj = schema_source.lookup(schema_name, True)
             if not schema_obj:
                 raise GSettingsMissingError(schema_name)
@@ -172,16 +157,14 @@ class GSettingsSetting(Gio.Settings):
 
         if schema_name not in _SCHEMA_CACHE:
             _SCHEMA_CACHE[schema_name] = _GSettingsSchema(
-                schema_name, schema_dir=schema_dir, **options
-            )
+                schema_name, schema_dir=schema_dir, **options)
             logging.debug("Caching gsettings: %s" % _SCHEMA_CACHE[schema_name])
 
         self._schema = _SCHEMA_CACHE[schema_name]
 
     def _on_changed(self, settings, key_name):
-        logging.debug(
-            "Change: %s %s -> %s" % (self.props.schema, key_name, self[key_name])
-        )
+        logging.debug("Change: %s %s -> %s" %
+              (self.props.schema, key_name, self[key_name]))
 
     def _setting_check_is_list(self, key):
         variant = Gio.Settings.get_value(self, key)
@@ -197,7 +180,7 @@ class GSettingsSetting(Gio.Settings):
         return self._schema._schema[key]
 
     def setting_add_to_list(self, key, value):
-        """helper function, ensures value is present in the GSettingsList at key"""
+        """ helper function, ensures value is present in the GSettingsList at key """
         assert self._setting_check_is_list(key)
 
         vals = self[key]
@@ -207,7 +190,7 @@ class GSettingsSetting(Gio.Settings):
             return True
 
     def setting_remove_from_list(self, key, value):
-        """helper function, removes value in the GSettingsList at key (if present)"""
+        """ helper function, removes value in the GSettingsList at key (if present)"""
         assert self._setting_check_is_list(key)
 
         vals = self[key]

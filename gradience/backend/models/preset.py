@@ -91,11 +91,14 @@ adw_palette = {
         "3": "#3d3846",
         "4": "#241f31",
         "5": "#000000",
-    },
+    }
 }
 
 # Supported GTK versions that can utilize custom CSS
-custom_css_gtk_versions = ["gtk4", "gtk3"]
+custom_css_gtk_versions = [
+    "gtk4",
+    "gtk3"
+]
 
 
 class Preset:
@@ -104,7 +107,10 @@ class Preset:
 
     variables = {}
     palette = adw_palette
-    custom_css = {"gtk4": "", "gtk3": ""}
+    custom_css = {
+        "gtk4": "",
+        "gtk3": ""
+    }
 
     plugins = {}
     plugins_list = {}
@@ -113,14 +119,7 @@ class Preset:
     def __init__(self):
         pass
 
-    def new(
-        self,
-        variables: dict,
-        display_name=None,
-        palette=None,
-        custom_css=None,
-        badges=None,
-    ):
+    def new(self, variables: dict, display_name=None, palette=None, custom_css=None, badges=None):
         self.variables = variables
 
         if display_name:
@@ -143,10 +142,7 @@ class Preset:
                 preset_text = file.read()
                 file.close()
         except OSError as e:
-            logging.error(
-                f"Failed to read contents of a preset in location: {self.preset_path}.",
-                exc=e,
-            )
+            logging.error(f"Failed to read contents of a preset in location: {self.preset_path}.", exc=e)
             raise
 
         try:
@@ -214,7 +210,7 @@ class Preset:
             "variables": self.variables,
             "palette": self.palette,
             "custom_css": self.custom_css,
-            "plugins": self.plugins_list,
+            "plugins": self.plugins_list
         }
 
         json_output = json.dumps(preset_dict, indent=indent)
@@ -227,7 +223,9 @@ class Preset:
 
         if to is None:
             filename = to_slug_case(name) if name else to_slug_case(self.display_name)
-            self.preset_path = os.path.join(presets_dir, "user", filename + ".json")
+            self.preset_path = os.path.join(
+                presets_dir, "user", filename + ".json"
+            )
         else:
             self.preset_path = to
 

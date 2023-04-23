@@ -107,7 +107,8 @@ class GradienceWelcomeWindow(Adw.Window):
 
     def theme_changed(self, settings, key):
         self.img_welcome.set_from_resource(
-            self.images[settings.get_property("gtk-application-prefer-dark-theme")]
+            self.images[settings.get_property(
+                "gtk-application-prefer-dark-theme")]
         )
 
     def get_page(self, index):

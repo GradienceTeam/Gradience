@@ -33,7 +33,8 @@ class RunAsync(threading.Thread):
         if threading.current_thread() is not threading.main_thread():
             raise AssertionError
 
-        super(RunAsync, self).__init__(target=self.target, args=args, kwargs=kwargs)
+        super(RunAsync, self).__init__(
+            target=self.target, args=args, kwargs=kwargs)
 
         self.task_func = task_func
 

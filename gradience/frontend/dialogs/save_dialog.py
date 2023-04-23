@@ -29,9 +29,7 @@ class GradienceSaveDialog(Adw.MessageDialog):
 
     preset_entry = Gtk.Template.Child("preset-entry")
 
-    def __init__(
-        self, parent, heading=None, body=None, path=None, discard=False, **kwargs
-    ):
+    def __init__(self, parent, heading=None, body=None, path=None, discard=False, **kwargs):
         super().__init__(**kwargs)
 
         self.parent = parent
@@ -59,18 +57,20 @@ class GradienceSaveDialog(Adw.MessageDialog):
             self.body = body
             self.set_body(self.body)
         elif not body and not path:
-            raise AttributeError(
-                "DEV FAULT: You need to either specify 'body' or 'path' parameter"
-            )
+            raise AttributeError("DEV FAULT: You need to either specify 'body' or 'path' parameter")
 
         self.add_response("cancel", _("_Cancel"))
 
         if discard:
             self.add_response("discard", _("Discard"))
-            self.set_response_appearance("discard", Adw.ResponseAppearance.DESTRUCTIVE)
+            self.set_response_appearance(
+                "discard", Adw.ResponseAppearance.DESTRUCTIVE
+            )
 
         self.add_response("save", _("_Save"))
         self.set_default_response("cancel")
         self.set_close_response("cancel")
 
-        self.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
+        self.set_response_appearance(
+            "save", Adw.ResponseAppearance.SUGGESTED
+        )

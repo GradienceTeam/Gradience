@@ -53,7 +53,9 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
         try:
             PresetUtils().restore_preset("gtk4")
         except GLib.GError:
-            self.parent.add_toast(Adw.Toast(title=_("Unable to restore GTK 4 backup")))
+            self.parent.add_toast(
+                Adw.Toast(title=_("Unable to restore GTK 4 backup"))
+            )
         else:
             dialog = GradienceLogOutDialog(self.win)
             dialog.present()
@@ -63,17 +65,22 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
         try:
             PresetUtils().reset_preset("gtk4")
         except GLib.GError:
-            self.parent.add_toast(Adw.Toast(title=_("Unable to delete current preset")))
+            self.parent.add_toast(
+                Adw.Toast(title=_("Unable to delete current preset"))
+            )
         else:
             dialog = GradienceLogOutDialog(self.win)
             dialog.present()
+
 
     @Gtk.Template.Callback()
     def on_gtk3_restore_button_clicked(self, *_args):
         try:
             PresetUtils().restore_preset("gtk3")
         except GLib.GError:
-            self.parent.add_toast(Adw.Toast(title=_("Unable to restore GTK 3 backup")))
+            self.parent.add_toast(
+                Adw.Toast(title=_("Unable to restore GTK 3 backup"))
+            )
         else:
             dialog = GradienceLogOutDialog(self.win)
             dialog.present()
@@ -83,7 +90,9 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
         try:
             PresetUtils().reset_preset("gtk3")
         except GLib.GError:
-            self.parent.add_toast(Adw.Toast(title=_("Unable to delete current preset")))
+            self.parent.add_toast(
+                Adw.Toast(title=_("Unable to delete current preset"))
+            )
         else:
             dialog = GradienceLogOutDialog(self.win)
             dialog.present()

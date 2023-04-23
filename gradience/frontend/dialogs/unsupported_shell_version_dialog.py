@@ -18,8 +18,8 @@
 
 from gi.repository import Gtk, Adw
 
+from gradience.backend.constants import rootdir
 from gradience.backend.utils.gnome import get_full_shell_version
-
 
 class GradienceUnsupportedShellVersionDialog(Adw.MessageDialog):
     __gtype_name__ = "GradienceUnsupportedShellVersionDialog"
@@ -38,11 +38,7 @@ class GradienceUnsupportedShellVersionDialog(Adw.MessageDialog):
         self.set_transient_for(self.win)
 
         self.set_heading(_(f"Unsupported Shell Version ({get_full_shell_version()})"))
-        self.set_body(
-            _(
-                "The Shell version you are using is not supported. Please upgrade to a newer version of GNOME."
-            )
-        )
+        self.set_body(_("The Shell version you are using is not supported. Please upgrade to a newer version of GNOME."))
 
         self.add_response("ok", _("OK"))
         self.set_default_response("ok")

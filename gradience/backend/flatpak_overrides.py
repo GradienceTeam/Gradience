@@ -56,14 +56,13 @@ def __get_user_flatpak_path():
     if userPath:
         return userPath
 
-    userDataDir = GLib.build_filenamev([GLib.get_home_dir(), ".local", "share"])
+    userDataDir = GLib.build_filenamev(
+        [GLib.get_home_dir(), ".local", "share"])
 
     return GLib.build_filenamev([userDataDir, "flatpak"])
 
 
-def __user_save_keyfile(
-    user_keyfile, filename, settings=None, gtk_ver=None, toast_overlay=None
-):
+def __user_save_keyfile(user_keyfile, filename, settings=None, gtk_ver=None, toast_overlay=None):
     try:
         user_keyfile.save_to_file(filename)
     except GLib.GError as e:
@@ -82,14 +81,10 @@ def __user_save_keyfile(
                 f"user-flatpak-theming-gtk3: {settings.get_boolean('user-flatpak-theming-gtk3')}"
             )
         elif not gtk_ver and not settings:
-            logging.debug(
-                "DEV WARNING: 'gtk_ver' and 'settings' parameters aren't set for '__user_save_keyfile' function. Unless you aren't using '{create,remove}_*_override' functions, this is a bug."
-            )
+            logging.debug("DEV WARNING: 'gtk_ver' and 'settings' parameters aren't set for '__user_save_keyfile' function. Unless you aren't using '{create,remove}_*_override' functions, this is a bug.")
 
 
-def __global_save_keyfile(
-    global_keyfile, filename, settings=None, gtk_ver=None, toast_overlay=None
-):
+def __global_save_keyfile(global_keyfile, filename, settings=None, gtk_ver=None, toast_overlay=None):
     try:
         global_keyfile.save_to_file(filename)
     except GLib.GError as e:
@@ -108,9 +103,7 @@ def __global_save_keyfile(
                 f"global-flatpak-theming-gtk3: {settings.get_boolean('global-flatpak-theming-gtk3')}"
             )
         elif not gtk_ver and not settings:
-            logging.debug(
-                "DEV WARNING: 'gtk_ver' and 'settings' parameters aren't set for '__global_save_keyfile' function. Unless you aren't using '{create,remove}_*_override' functions, this is a bug."
-            )
+            logging.debug("DEV WARNING: 'gtk_ver' and 'settings' parameters aren't set for '__global_save_keyfile' function. Unless you aren't using '{create,remove}_*_override' functions, this is a bug.")
 
 
 """ Main functions """
@@ -135,7 +128,8 @@ def list_file_access():
             raise
     else:
         try:
-            filesys_list = user_keyfile.get_string_list("Context", "filesystems")
+            filesys_list = user_keyfile.get_string_list(
+                "Context", "filesystems")
         except GLib.GError:
             logging.debug("No values in 'filesystems' override")
             return False
@@ -150,7 +144,9 @@ def allow_file_access(directory, toast_overlay=None):
     logging.debug(f"override_dir: {override_dir}")
 
     without_access_spec = (
-        ':ro' not in directory and ':rw' not in directory and ':create' not in directory
+        not ":ro" in directory
+        and not ":rw" in directory
+        and not ":create" in directory
     )
 
     if without_access_spec:
@@ -181,7 +177,8 @@ def allow_file_access(directory, toast_overlay=None):
             user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
             user_keyfile.set_string("Context", "filesystems", directory)
 
-            __user_save_keyfile(user_keyfile, filename, toast_overlay=toast_overlay)
+            __user_save_keyfile(user_keyfile, filename,
+                                toast_overlay=toast_overlay)
         else:
             logging.error("Unhandled GLib.FileError error code.", exc=e)
             if toast_overlay:
@@ -191,16 +188,19 @@ def allow_file_access(directory, toast_overlay=None):
             raise
     else:
         try:
-            filesys_list = user_keyfile.get_string_list("Context", "filesystems")
+            filesys_list = user_keyfile.get_string_list(
+                "Context", "filesystems")
         except GLib.GError:
             user_keyfile.set_string("Context", "filesystems", directory)
-            __user_save_keyfile(user_keyfile, filename, toast_overlay=toast_overlay)
+            __user_save_keyfile(user_keyfile, filename,
+                                toast_overlay=toast_overlay)
         else:
             if directory not in filesys_list:
                 user_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list + [directory]
                 )
-                __user_save_keyfile(user_keyfile, filename, toast_overlay=toast_overlay)
+                __user_save_keyfile(user_keyfile, filename,
+                                    toast_overlay=toast_overlay)
             else:
                 logging.info("Path is already allowed")
 
@@ -230,7 +230,8 @@ def disallow_file_access(directory, toast_overlay=None):
             raise
     else:
         try:
-            filesys_list = user_keyfile.get_string_list("Context", "filesystems")
+            filesys_list = user_keyfile.get_string_list(
+                "Context", "filesystems")
         except GLib.GError:
             logging.debug("Group/key not found")
             return
@@ -240,8 +241,10 @@ def disallow_file_access(directory, toast_overlay=None):
                 filesys_list.remove(directory)
                 logging.debug(f"after: {filesys_list}")
 
-                user_keyfile.set_string_list("Context", "filesystems", filesys_list)
-                __user_save_keyfile(user_keyfile, filename, toast_overlay=toast_overlay)
+                user_keyfile.set_string_list(
+                    "Context", "filesystems", filesys_list)
+                __user_save_keyfile(user_keyfile, filename,
+                                    toast_overlay=toast_overlay)
                 logging.debug("Path removed")
             else:
                 logging.debug("Path doesn't exist in overrides")
@@ -279,9 +282,11 @@ def create_gtk_user_override(settings, gtk_ver, toast_overlay=None):
                 except GLib.GError as e:
                     logging.error("Unable to create directories.", exc=e)
                     if is_gtk4:
-                        settings.set_boolean("user-flatpak-theming-gtk4", False)
+                        settings.set_boolean(
+                            "user-flatpak-theming-gtk4", False)
                     elif is_gtk3:
-                        settings.set_boolean("user-flatpak-theming-gtk3", False)
+                        settings.set_boolean(
+                            "user-flatpak-theming-gtk3", False)
                     return
                 else:
                     logging.debug("Directories created.")
@@ -292,9 +297,8 @@ def create_gtk_user_override(settings, gtk_ver, toast_overlay=None):
             user_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
             user_keyfile.set_string("Context", "filesystems", gtk_path)
 
-            __user_save_keyfile(
-                user_keyfile, filename, settings, gtk_ver, toast_overlay
-            )
+            __user_save_keyfile(user_keyfile, filename,
+                                settings, gtk_ver, toast_overlay)
         else:
             logging.error("Unhandled GLib.FileError error code.", exc=e)
             if toast_overlay:
@@ -303,20 +307,19 @@ def create_gtk_user_override(settings, gtk_ver, toast_overlay=None):
                 )
     else:
         try:
-            filesys_list = user_keyfile.get_string_list("Context", "filesystems")
+            filesys_list = user_keyfile.get_string_list(
+                "Context", "filesystems")
         except GLib.GError:
             user_keyfile.set_string("Context", "filesystems", gtk_path)
-            __user_save_keyfile(
-                user_keyfile, filename, settings, gtk_ver, toast_overlay
-            )
+            __user_save_keyfile(user_keyfile, filename,
+                                settings, gtk_ver, toast_overlay)
         else:
             if gtk_path not in filesys_list:
                 user_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list + [gtk_path]
                 )
-                __user_save_keyfile(
-                    user_keyfile, filename, settings, gtk_ver, toast_overlay
-                )
+                __user_save_keyfile(user_keyfile, filename,
+                                    settings, gtk_ver, toast_overlay)
             else:
                 if is_gtk4:
                     settings.set_boolean("user-flatpak-theming-gtk4", True)
@@ -364,7 +367,8 @@ def remove_gtk_user_override(settings, gtk_ver, toast_overlay=None):
                 )
     else:
         try:
-            filesys_list = user_keyfile.get_string_list("Context", "filesystems")
+            filesys_list = user_keyfile.get_string_list(
+                "Context", "filesystems")
         except GLib.GError:
             set_theming()
             logging.warning("remove override: Group/key not found.")
@@ -374,10 +378,10 @@ def remove_gtk_user_override(settings, gtk_ver, toast_overlay=None):
                 filesys_list.remove(gtk_path)
                 logging.debug(f"after: {filesys_list}")
 
-                user_keyfile.set_string_list("Context", "filesystems", filesys_list)
-                __user_save_keyfile(
-                    user_keyfile, filename, settings, gtk_ver, toast_overlay
-                )
+                user_keyfile.set_string_list(
+                    "Context", "filesystems", filesys_list)
+                __user_save_keyfile(user_keyfile, filename,
+                                    settings, gtk_ver, toast_overlay)
                 logging.debug("remove override: Value removed.")
             else:
                 set_theming()
@@ -389,7 +393,8 @@ def remove_gtk_user_override(settings, gtk_ver, toast_overlay=None):
 
 
 def create_gtk_global_override(settings, gtk_ver, toast_overlay=None):
-    override_dir = GLib.build_filenamev([__get_system_flatpak_path(), "overrides"])
+    override_dir = GLib.build_filenamev(
+        [__get_system_flatpak_path(), "overrides"])
     logging.debug(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
@@ -419,9 +424,11 @@ def create_gtk_global_override(settings, gtk_ver, toast_overlay=None):
                 except GLib.GError as e:
                     logging.error("Unable to create directories.", exc=e)
                     if is_gtk4:
-                        settings.set_boolean("global-flatpak-theming-gtk4", False)
+                        settings.set_boolean(
+                            "global-flatpak-theming-gtk4", False)
                     elif is_gtk3:
-                        settings.set_boolean("global-flatpak-theming-gtk3", False)
+                        settings.set_boolean(
+                            "global-flatpak-theming-gtk3", False)
                     return
                 else:
                     logging.debug("Directories created.")
@@ -432,9 +439,8 @@ def create_gtk_global_override(settings, gtk_ver, toast_overlay=None):
             global_keyfile.load_from_file(filename, GLib.KeyFileFlags.NONE)
             global_keyfile.set_string("Context", "filesystems", gtk_path)
 
-            __global_save_keyfile(
-                global_keyfile, filename, settings, gtk_ver, toast_overlay
-            )
+            __global_save_keyfile(global_keyfile, filename,
+                                    settings, gtk_ver, toast_overlay)
         else:
             logging.error("Unhandled GLib.FileError error code.", exc=e)
             if toast_overlay:
@@ -443,20 +449,19 @@ def create_gtk_global_override(settings, gtk_ver, toast_overlay=None):
                 )
     else:
         try:
-            filesys_list = global_keyfile.get_string_list("Context", "filesystems")
+            filesys_list = global_keyfile.get_string_list(
+                "Context", "filesystems")
         except GLib.GError:
             global_keyfile.set_string("Context", "filesystems", gtk_path)
-            __global_save_keyfile(
-                global_keyfile, filename, settings, gtk_ver, toast_overlay
-            )
+            __global_save_keyfile(global_keyfile, filename,
+                                    settings, gtk_ver, toast_overlay)
         else:
             if gtk_path not in filesys_list:
                 global_keyfile.set_string_list(
                     "Context", "filesystems", filesys_list + [gtk_path]
                 )
-                __global_save_keyfile(
-                    global_keyfile, filename, settings, gtk_ver, toast_overlay
-                )
+                __global_save_keyfile(global_keyfile, filename,
+                                        settings, gtk_ver, toast_overlay)
             else:
                 if is_gtk4:
                     settings.set_boolean("global-flatpak-theming-gtk4", True)
@@ -466,7 +471,8 @@ def create_gtk_global_override(settings, gtk_ver, toast_overlay=None):
 
 
 def remove_gtk_global_override(settings, gtk_ver, toast_overlay=None):
-    override_dir = GLib.build_filenamev([__get_system_flatpak_path(), "overrides"])
+    override_dir = GLib.build_filenamev(
+        [__get_system_flatpak_path(), "overrides"])
     logging.debug(f"override_dir: {override_dir}")
 
     filename = GLib.build_filenamev([override_dir, "global"])
@@ -504,7 +510,8 @@ def remove_gtk_global_override(settings, gtk_ver, toast_overlay=None):
                 )
     else:
         try:
-            filesys_list = global_keyfile.get_string_list("Context", "filesystems")
+            filesys_list = global_keyfile.get_string_list(
+                "Context", "filesystems")
         except GLib.GError:
             set_theming()
             logging.warning("remove override: Group/key not found.")
@@ -514,10 +521,10 @@ def remove_gtk_global_override(settings, gtk_ver, toast_overlay=None):
                 filesys_list.remove(gtk_path)
                 logging.debug(f"after: {filesys_list}")
 
-                global_keyfile.set_string_list("Context", "filesystems", filesys_list)
-                __global_save_keyfile(
-                    global_keyfile, filename, settings, gtk_ver, toast_overlay
-                )
+                global_keyfile.set_string_list(
+                    "Context", "filesystems", filesys_list)
+                __global_save_keyfile(global_keyfile, filename,
+                                        settings, gtk_ver, toast_overlay)
                 logging.debug("remove override: Value removed.")
             else:
                 set_theming()
