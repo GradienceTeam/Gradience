@@ -91,18 +91,6 @@ class GradiencePresetRow(Adw.ExpanderRow):
     #     win = GradienceShareWindow(self.win)
     #     win.present()
 
-    def on_star_button_clicked(self, *_args):
-        if self.name in self.win.app.favourite:
-            self.win.app.favourite.remove(self.name)
-            self.star_button.set_icon_name("non-starred-symbolic")
-            self.star_button.set_tooltip_text(_("Add to Favorites"))
-        else:
-            self.win.app.favourite.add(self.name)
-            self.star_button.set_icon_name("starred-symbolic")
-            self.star_button.set_tooltip_text(_("Remove from Favorites"))
-        self.win.app.save_favourite()
-        self.win.reload_pref_group()
-
     def show_unsaved_dialog(self, *_args):
         dialog, preset_entry = self.app.construct_unsaved_dialog()
 
@@ -143,6 +131,20 @@ class GradiencePresetRow(Adw.ExpanderRow):
         else:
             self.preset.rename(self.name_entry.get_text())
             self.value_stack.set_visible_child(self.apply_button)
+
+    @Gtk.Template.Callback()
+    def on_star_button_clicked(self, *_args):
+        if self.name in self.win.app.favourite:
+            self.win.app.favourite.remove(self.name)
+            self.star_button.set_icon_name("non-starred-symbolic")
+            self.star_button.set_tooltip_text(_("Add to Favorites"))
+        else:
+            self.win.app.favourite.add(self.name)
+            self.star_button.set_icon_name("starred-symbolic")
+            self.star_button.set_tooltip_text(_("Remove from Favorites"))
+
+        self.win.app.save_favourite()
+        self.win.reload_pref_group()
 
     @Gtk.Template.Callback()
     def on_report_button_clicked(self, *_args):
