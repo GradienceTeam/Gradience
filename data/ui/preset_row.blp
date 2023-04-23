@@ -33,6 +33,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
   [action]
   Button star_button {
     valign: center;
+    clicked => on_star_button_clicked();
     styles ["flat"]
   }
 

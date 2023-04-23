@@ -18,7 +18,7 @@
 
 import os
 
-from gi.repository import Gtk, Adw, Xdp, XdpGtk4
+from gi.repository import Gdk, Gtk, Adw
 
 #from gradience.frontend.views.share_window import GradienceShareWindow
 from gradience.backend.utils.common import to_slug_case
@@ -78,9 +78,7 @@ class GradiencePresetRow(Adw.ExpanderRow):
             self.has_badges = False
             self.no_badges.set_visible(True)
 
-        self.report_button.connect("clicked", self.on_report_button_clicked)
         # self.share_button.connect("clicked", self.on_share_btn_clicked)
-        self.star_button.connect("clicked", self.on_star_button_clicked)
 
         if name in self.win.app.favourite:
             self.star_button.set_icon_name("starred-symbolic")
@@ -148,17 +146,10 @@ class GradiencePresetRow(Adw.ExpanderRow):
 
     @Gtk.Template.Callback()
     def on_report_button_clicked(self, *_args):
-        parent = XdpGtk4.parent_new_gtk(self.win)
-
-        def open_dir_callback(_, result):
-            self.app.portal.open_uri_finish(result)
-
-        self.app.portal.open_uri(
-            parent,
+        Gtk.show_uri(
+            self.win,
             "https://github.com/GradienceTeam/Community/issues/new?assignees=daudix-UFO&labels=bug&template=preset_issue.yml&title=preset%3A+",
-            Xdp.OpenUriFlags.NONE,
-            None,
-            open_dir_callback,
+            Gdk.CURRENT_TIME
         )
 
     @Gtk.Template.Callback()

@@ -22,7 +22,7 @@ import threading
 
 from pathlib import Path
 from material_color_utilities_python import hexFromArgb
-from gi.repository import Gtk, Gdk, Gio, Adw, GLib, Xdp, XdpGtk4
+from gi.repository import Gtk, Gdk, Gio, Adw, GLib
 
 from gradience.backend.globals import presets_dir, get_gtk_theme_dir
 from gradience.backend.css_parser import parse_css
@@ -57,7 +57,6 @@ class GradienceApplication(Adw.Application):
     __gtype_name__ = "GradienceApplication"
 
     settings = Gio.Settings.new(app_id)
-    portal = Xdp.Portal()
 
     def __init__(self):
         super().__init__(
@@ -280,17 +279,10 @@ class GradienceApplication(Adw.Application):
                     f"{rootdir}/presets/adwaita.json")
 
     def open_preset_directory(self, *_args):
-        parent = XdpGtk4.parent_new_gtk(self.props.active_window)
-
-        def open_dir_callback(_, result):
-            self.portal.open_uri_finish(result)
-
-        self.portal.open_uri(
-            parent,
+        Gtk.show_uri(
+            self.win,
             f"file://{presets_dir}",
-            Xdp.OpenUriFlags.NONE,
-            None,
-            open_dir_callback,
+            Gdk.CURRENT_TIME
         )
 
     def load_preset_from_file(self, preset_path):
