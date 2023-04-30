@@ -25,7 +25,6 @@ from gradience.backend.exceptions import UnsupportedShellVersion
 from gradience.backend.logger import Logger
 from gradience.backend.theming.shell import ShellTheme
 
-from gradience.frontend.dialogs.unsupported_shell_version_dialog import GradienceUnsupportedShellVersionDialog
 from gradience.frontend.views.shell_prefs_window import GradienceShellPrefsWindow
 
 logging = Logger()

@@ -42,7 +42,9 @@ Adw.ActionRow other-options-row {
   Button restore_libadw_button {
     valign: center;
     icon-name: "edit-undo-symbolic";
-    tooltip-text: _("Restore Previous Theme");
+    sensitive: false;
+    //tooltip-text: _("Restore Previous Theme");
+    tooltip-text: _("Currently unavailable");
     clicked => on_restore_button_clicked();
     styles ["flat"]
   }

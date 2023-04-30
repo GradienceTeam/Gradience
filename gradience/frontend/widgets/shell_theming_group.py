@@ -28,7 +28,7 @@ from gradience.backend.logger import Logger
 from gradience.backend.theming.shell import ShellTheme
 
 from gradience.frontend.schemas.shell_schema import shell_schema
-from gradience.frontend.dialogs.unsupported_shell_version_dialog import GradienceUnsupportedShellVersionDialog
+from gradience.frontend.dialogs.unsupported_shell_dialog import GradienceUnsupportedShellDialog
 from gradience.frontend.views.shell_prefs_window import GradienceShellPrefsWindow
 
 logging = Logger()
@@ -140,9 +140,9 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
         try:
             ShellTheme().apply_theme_async(self, self._on_shell_theme_done,
                                             variant_str, self.app.preset)
-        except UnsupportedShellVersion:
-            logging.error("Unsupported GNOME Shell version detected.")
-            GradienceUnsupportedShellVersionDialog(self.parent).present()
+        except UnsupportedShellVersion as exception_message:
+            logging.error(exception_message)
+            GradienceUnsupportedShellDialog(self.parent).present()
         except (ValueError, OSError, GLib.GError) as e:
             logging.error(
                 "An error occurred while generating a Shell theme.", exc=e)
