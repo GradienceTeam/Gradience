@@ -19,34 +19,67 @@
 import os
 
 from gradience.backend.models.preset import Preset
-from gradience.backend.utils.common import extract_version, run_command
+from gradience.backend.utils.subprocess import GradienceSubprocess
+from gradience.backend.utils.common import extract_version
 
 # TODO: Remove this import later (imports from gradience.frontend are not allowed in backend)
 from gradience.frontend.schemas.shell_schema import shell_schema
 
 
+# TODO: Return failure if command was not found
 def get_shell_version() -> str:
-    stdout = run_command(["gnome-shell", "--version"],
-        get_stdout_text=True,
-        allow_escaping=True).replace("\n", "")
+    cmd_list = ["gnome-shell", "--version"]
+    process = GradienceSubprocess()
+
+    completed = process.run(cmd_list, allow_escaping=True)
+    stdout = process.get_stdout_data(completed, decode=True)
 
     shell_version = extract_version(stdout, "GNOME Shell")
 
     return shell_version
 
 def get_full_shell_version() -> str:
-    stdout = run_command(["gnome-shell", "--version"],
-        get_stdout_text=True,
-        allow_escaping=True).replace("\n", "")
+    cmd_list = ["gnome-shell", "--version"]
+    process = GradienceSubprocess()
+
+    completed = process.run(cmd_list, allow_escaping=True)
+    stdout = process.get_stdout_data(completed, decode=True)
 
     shell_version = stdout[12:]
 
     return shell_version
 
-def is_gnome_available():
+def is_gnome_available() -> bool:
     xdg_current_desktop = os.environ.get("XDG_CURRENT_DESKTOP").lower()
 
     if "gnome" in xdg_current_desktop:
+        return True
+
+    return False
+
+def is_shell_ext_installed(uuid: str, check_enabled: bool = False) -> bool:
+    """
+    Checks if Shell extension with provided UUID from `uuid` parameter
+    is installed in system.
+
+    `check_enabled` parameter allows for checking if extension is enabled.
+    """
+
+    if check_enabled:
+        cmd_list = ["gnome-extensions", "list", "--enabled"]
+    else:
+        cmd_list = ["gnome-extensions", "list"]
+
+    process = GradienceSubprocess()
+
+    completed = process.run(cmd_list, allow_escaping=True)
+    stdout = process.get_stdout_data(completed, decode=True)
+
+    ext_list = stdout.split("\n")
+    if ext_list[-1] == "":
+        ext_list.pop(-1)
+
+    if uuid in ext_list:
         return True
 
     return False
