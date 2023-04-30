@@ -20,11 +20,11 @@ from gradience.backend.models.preset import Preset
 
 
 def generate_gtk_css(app_type: str, preset: Preset) -> str:
-        variables = preset.variables
-        palette = preset.palette
-        custom_css = preset.custom_css
+    variables = preset.variables
+    palette = preset.palette
+    custom_css = preset.custom_css
 
-        final_css = """/*
+    theming_warning = """/*
 Generated with Gradience
 
 Issues caused by theming should be reported to Gradience repository, and not upstream
@@ -32,15 +32,19 @@ Issues caused by theming should be reported to Gradience repository, and not ups
 https://github.com/GradienceTeam/Gradience
 */
 
-    """
+"""
 
-        for key in variables.keys():
-            final_css += f"@define-color {key} {variables[key]};\n"
+    gtk_css = ""
 
-        for prefix_key in palette.keys():
-            for key in palette[prefix_key].keys():
-                final_css += f"@define-color {prefix_key + key} {palette[prefix_key][key]};\n"
+    for key in variables.keys():
+        gtk_css += f"@define-color {key} {variables[key]};\n"
 
-        final_css += custom_css.get(app_type, "")
+    for prefix_key in palette.keys():
+        for key in palette[prefix_key].keys():
+            gtk_css += f"@define-color {prefix_key + key} {palette[prefix_key][key]};\n"
 
-        return final_css
+    gtk_css += custom_css.get(app_type, "")
+
+    final_css = theming_warning + gtk_css
+
+    return final_css
