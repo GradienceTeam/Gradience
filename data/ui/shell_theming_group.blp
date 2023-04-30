@@ -20,12 +20,12 @@ template GradienceShellThemingGroup : Adw.PreferencesGroup {
     }
 
     Adw.ActionRow custom-colors-row {
-      title: _("Customize Shell Colors");
+      title: _("Customize Shell Theme");
 
       [suffix]
       Button custom-colors-button {
         valign: center;
-        label: _("Open Custom Shell Colors");
+        label: _("Open Shell Preferences");
         clicked => on_custom_colors_button_clicked();
       }
     }
