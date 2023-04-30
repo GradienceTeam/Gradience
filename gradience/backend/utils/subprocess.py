@@ -17,9 +17,12 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import os
-import signal
+#import signal
 
-from gi.repository import GLib, Gio
+from typing import Union
+
+import subprocess
+from subprocess import SubprocessError, CompletedProcess
 
 from gradience.backend.logger import Logger
 
@@ -28,35 +31,29 @@ logging = Logger(logger_name="GradienceSubprocess")
 
 # TODO: Check how Dev Toolbox has its backend done fully in async using Gio.Task.
 # Example: https://github.com/aleiepure/devtoolbox/blob/main/src/services/gzip_compressor.py
+# TODO: Replace subprocess.run() with subprocess.Popen() for more control over subprocesses
 class GradienceSubprocess:
-    '''
-    Wrapper for Gio's Subprocess class to provide easy to use
-    asynchronous process spawning and stdout data retrievement.
+    """
+    Wrapper for Python's `subprocess` module to provide an easy to use
+    synchronous process spawning and stdout data retrievement with support
+    for Flatpak sandbox escape.
 
-    Documentation: https://docs.gtk.org/gio/class.Subprocess.html
-    '''
+    Documentation: https://docs.python.org/3/library/subprocess.html
+    """
+
     def __init__(self):
-        self.cancellable = Gio.Cancellable()
+        pass
 
-        self.priority = GLib.PRIORITY_DEFAULT
-        self.flags = Gio.SubprocessFlags.STDOUT_PIPE
+    def run(self, command: list, timeout: int = None, allow_escaping: bool = False) -> CompletedProcess:
+        """
+        Spawns synchronously a new child process (subprocess) using Python's `subprocess` module.
 
-        self.data_array = None
+        You can set the `timeout` parameter to kill the process after a
+        specified amount of seconds.
 
-    def get_cancellable(self) -> Gio.Cancellable:
-        return self._cancellable
-
-    def run(self, callback: callable, command: list, allow_escaping: bool = False) -> None:
-        '''
-        Spawns asynchronously a new child process (subprocess) using Gio's Subprocess class.
-
-        Put custom function as a `callback` parameter to receive a signal
-        after a subprocess is finished.
-
-        You can enable executing commands outside Flatpak sandbox by enabling
-        `allow_escaping` parameter.
-        '''
-        self.finish_callback = callback
+        You can enable executing commands outside Flatpak sandbox by
+        enabling `allow_escaping` parameter.
+        """
 
         if allow_escaping and os.environ.get('FLATPAK_ID'):
             command = ['flatpak-spawn', '--host'] + command
@@ -64,88 +61,34 @@ class GradienceSubprocess:
         logging.debug(f"Spawning: {command}")
 
         try:
-            self.process = Gio.Subprocess.new(command, self.flags)
+            process = subprocess.run(command, check=True,
+                            capture_output=True, timeout=timeout)
+        except SubprocessError:
+            raise
+        except FileNotFoundError:
+            raise
 
-            self.process.wait_check_async(
-                cancellable=self.cancellable,
-                callback=self._on_finished
-            )
+        return process
 
-            self.stream = self.process.get_stdout_pipe()
-            self.data_stream = Gio.DataInputStream.new(self.stream)
-
-            self.queue_read()
-        except GLib.GError as e:
-            logging.error("Failed to execute an external process.", exc=e)
-
-    def get_stdout_pipe(self) -> Gio.InputStream:
-        '''
-        Returns stdout stream as a Gio.InputStream object.
-
-        Documentation: https://docs.gtk.org/gio/class.InputStream.html
-        '''
-        return self.stream
-
-    def get_stdout_data(self, decode=False) -> str or bytes:
-        '''
+    def get_stdout_data(self, process: CompletedProcess, decode: bool = False) -> Union[str, bytes]:
+        """
         Returns a data retrieved from stdout stream.
 
         Default behavior returns a full data collection in bytes array.
-        Setting `decode` parameter to True will automatically decode data to string object.
-        '''
+        Setting ``decode`` parameter to True will automatically decode data to string object.
+        """
+
         if decode:
-            stdout_string = self.data_array[0].decode()
+            stdout_string = process.stdout.decode()
             return stdout_string
 
-        return self.data_array[0]
+        return process.stdout
 
-    def queue_read(self) -> None:
-        self.data_stream.read_line_async(
-            io_priority=self.priority,
-            cancellable=self.cancellable,
-            callback=self._on_data
-        )
+    '''def stop(self, process: CompletedProcess) -> None:
+        logging.debug(f"Terminating process, ID {process.get_identifier()}")
+        process.send_signal(signal.SIGTERM)
 
-    def cancel_read(self) -> None:
-        self.cancellable.cancel()
-
-    def _on_finished(self, process, result) -> None:
-        try:
-            process.wait_check_finish(result)
-        except GLib.GError:
-            raise
-
+    def kill(self, process: CompletedProcess) -> None:
+        logging.debug(f"Killing process, ID {process.get_identifier()}")
         self.cancel_read()
-
-        logging.debug('Process finished successfully')
-
-        if self.finish_callback:
-            self.finish_callback(self)
-
-    def _on_data(self, stream, result) -> None:
-        try:
-            self.data_array = stream.read_line_finish(result)
-        except GLib.GError as e:
-            logging.error("Failed to asynchronously read stdout stream data.", exc=e)
-            raise
-
-    def stop(self) -> None:
-        logging.debug(f"Terminating process, ID {self.process.get_identifier()}")
-        self.process.send_signal(signal.SIGTERM)
-
-    def kill(self) -> None:
-        logging.debug(f"Killing process, ID {self.process.get_identifier()}")
-        self.cancel_read()
-        self.process.send_signal(signal.SIGKILL)
-
-# NOTE: For testing purposes only.
-# TODO: Remove later
-if __name__ == "__main__":
-    priority = GLib.PRIORITY_DEFAULT
-    subprocess = GradienceSubprocess()
-    mainloop = GLib.MainLoop()
-
-    GLib.idle_add(subprocess.run, ["gnome-shell", "--version"])
-    GLib.timeout_add_seconds(priority=priority, interval=5, function=mainloop.quit)
-    #GLib.timeout_add_seconds(priority=priority, interval=5, function=print(subprocess.get_stdout_data(True)))
-    mainloop.run()
+        process.send_signal(signal.SIGKILL)'''
