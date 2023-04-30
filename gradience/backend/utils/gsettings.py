@@ -17,10 +17,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 #
-# NOTICE
+# NOTICE:
 # This code is from the GNOME Tweaks application, which is licensed under the GPL-3.0 license.
 # https://gitlab.gnome.org/GNOME/gnome-tweaks/-/blob/master/gtweak/gsettings.py
-
 
 import os
 import re
@@ -29,8 +28,11 @@ import os.path
 import xml.dom.minidom
 import gettext
 
+from subprocess import SubprocessError, CompletedProcess
+
 from gi.repository import Gio, GLib
 
+from gradience.backend.utils.subprocess import GradienceSubprocess
 from gradience.backend.constants import localedir, app_id
 
 from gradience.backend.logger import Logger
@@ -205,3 +207,67 @@ class GSettingsSetting(Gio.Settings):
     def setting_is_in_list(self, key, value):
         assert self._setting_check_is_list(key)
         return value in self[key]
+
+
+class FlatpakGSettings:
+    def __init__(self, schema_name, schema_dir=None, **options):
+        self.schema_name = schema_name
+        self.schema_dir = schema_dir
+
+    def list_keys(self) -> str:
+        dconf_cmd = ["gsettings", "list-keys", self.schema_name]
+        process = GradienceSubprocess()
+
+        if self.schema_dir:
+            self._insert_schemadir(dconf_cmd)
+
+        try:
+            completed = process.run(dconf_cmd, allow_escaping=True)
+            stdout = process.get_stdout_data(completed, decode=True)
+        except SubprocessError:
+            raise
+        else:
+            return stdout
+
+    def get(self, key:str) -> CompletedProcess:
+        dconf_cmd = ["gsettings", "get", self.schema_name, key]
+        process = GradienceSubprocess()
+
+        if self.schema_dir:
+            self._insert_schemadir(dconf_cmd)
+
+        try:
+            completed = process.run(dconf_cmd, allow_escaping=True)
+            stdout = process.get_stdout_data(completed, decode=True)
+        except SubprocessError:
+            raise
+        else:
+            return stdout
+
+    def set(self, key:str, value:str) -> None:
+        dconf_cmd = ["gsettings", "set", self.schema_name, key, value]
+        process = GradienceSubprocess()
+
+        if self.schema_dir:
+            self._insert_schemadir(dconf_cmd)
+
+        try:
+            process.run(dconf_cmd, allow_escaping=True)
+        except SubprocessError:
+            raise
+
+    def reset(self, key:str = None) -> None:
+        dconf_cmd = ["gsettings", "reset", self.schema_name, key]
+        process = GradienceSubprocess()
+
+        if self.schema_dir:
+            self._insert_schemadir(dconf_cmd)
+
+        try:
+            process.run(dconf_cmd, allow_escaping=True)
+        except SubprocessError:
+            raise
+
+    def _insert_schemadir(self, dconf_cmd):
+        dconf_cmd.insert(1, "--schemadir")
+        dconf_cmd.insert(2, self.schema_dir)
