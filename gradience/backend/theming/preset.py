@@ -151,5 +151,8 @@ class PresetUtils:
         try:
             file.delete()
         except GLib.GError as e:
+            if e.code == 1:
+                return
+
             logging.error("Unable to delete current preset.", exc=e)
             raise
