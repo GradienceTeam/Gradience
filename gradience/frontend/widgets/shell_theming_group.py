@@ -17,10 +17,12 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 from enum import Enum
+from subprocess import SubprocessError
 
 from gi.repository import GObject, GLib, Gio, Gtk, Adw
 
-from gradience.backend.utils.gnome import is_gnome_available
+from gradience.backend.utils.gnome import is_gnome_available, is_shell_ext_installed
+from gradience.backend.utils.subprocess import GradienceSubprocess
 from gradience.backend.constants import rootdir
 from gradience.backend.exceptions import UnsupportedShellVersion
 from gradience.backend.logger import Logger
@@ -108,9 +110,13 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
 
     @Gtk.Template.Callback()
     def on_apply_button_clicked(self, *_args):
+        user_themes_available = is_shell_ext_installed(ShellTheme().THEME_EXT_NAME)
+        user_themes_enabled = is_shell_ext_installed(
+                ShellTheme().THEME_EXT_NAME, check_enabled=True)
+
         if not is_gnome_available():
-            dialog = Adw.MessageDialog(transient_for=self.win, heading=_("GNOME Shell Are Missing"),
-                body=_("This Theme Engine is designed to work only on systems running GNOME. You can still generate themes on other desktop environments, but it won't have any affect on them."))
+            dialog = Adw.MessageDialog(transient_for=self.win, heading=_("GNOME Shell Missing"),
+                body=_("Shell Engine is designed to work only on systems running GNOME. You can still generate themes on other desktop environments, but it won't have any affect on them."))
 
             dialog.add_response("disable-engine", _("Disable Engine"))
             dialog.add_response("continue-anyway", _("Continue Anyway"))
@@ -118,6 +124,30 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
             dialog.set_default_response("continue-anyway")
 
             dialog.connect("response", self.on_shell_missing_response)
+            dialog.present()
+        elif is_gnome_available() and not user_themes_available:
+            dialog = Adw.MessageDialog(transient_for=self.win, heading=_("User Themes Extension Missing"),
+                body=_("Gradience requires User Themes extension installed in order to apply Shell theme. You can still generate a theme, but you won't be able to apply it without this extension."))
+
+            dialog.add_response("install-extension", _("Install Extension"))
+            dialog.add_response("continue-anyway", _("Continue Anyway"))
+            dialog.set_response_appearance("install-extension", Adw.ResponseAppearance.SUGGESTED)
+            dialog.set_default_response("continue-anyway")
+
+            dialog.connect("response", self.on_user_themes_missing_response)
+            dialog.present()
+        elif is_gnome_available() and user_themes_available and not user_themes_enabled:
+            dialog = Adw.MessageDialog(transient_for=self.win, heading=_("User Themes Extension Disabled"),
+                body=_("User Themes extension is currently disabled on your system. Please enable it in order to apply theme."))
+
+            dialog.add_response("cancel", _("Cancel"))
+            #dialog.add_response("enable-extension", _("Enable Extension"))
+            dialog.add_response("continue-anyway", _("Continue Anyway"))
+            dialog.set_response_appearance("cancel", Adw.ResponseAppearance.SUGGESTED)
+            #dialog.set_response_appearance("enable-extension", Adw.ResponseAppearance.SUGGESTED)
+            dialog.set_default_response("continue-anyway")
+
+            dialog.connect("response", self.on_user_themes_disabled_response)
             dialog.present()
         else:
             self.apply_shell_theme()
@@ -167,6 +197,37 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
 
             self.win.reload_theming_page()
         elif response == "continue-anyway":
+            self.apply_shell_theme()
+
+    # FIXME: Hangs until Extension Manager is closed. We might something like `run_app` function \
+    # with subrocess.Popen instead of subrocess.run to make it not hang Gradience
+    def on_user_themes_missing_response(self, widget, response, *args):
+        if response == "install-extension":
+            try:
+                cmd_list = ["xdg-open", "gnome-extensions://user-theme%40gnome-shell-extensions.gcampax.github.com?action=install"]
+                GradienceSubprocess().run(cmd_list, allow_escaping=True)
+            except SubprocessError:
+                logging.warning("Can't open 'gnome-extensions://' URI scheme, trying to open EGO webpage")
+                try:
+                    cmd_list = ["xdg-open", "https://extensions.gnome.org/extension/19/user-themes/"]
+                    GradienceSubprocess().run(cmd_list, allow_escaping=True)
+                except SubprocessError as e:
+                    logging.error("Failed to load extension's website", exc=e)
+                    self.toast_overlay.add_toast(
+                        Adw.Toast(title=_("Failed to load extension's install link."))
+                    )
+            except FileNotFoundError:
+                logging.error("xdg-open command missing, are you even on GNOME? \nOpen this link: https://extensions.gnome.org/extension/19/user-themes/")
+                self.toast_overlay.add_toast(
+                    Adw.Toast(title=_("Failed to load extension's install link."))
+                )
+        elif response == "continue-anyway":
+            self.apply_shell_theme()
+
+    def on_user_themes_disabled_response(self, widget, response, *args):
+        '''if response == "enable-extension":
+            pass'''
+        if response == "continue-anyway":
             self.apply_shell_theme()
 
     @Gtk.Template.Callback()
