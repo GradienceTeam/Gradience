@@ -50,11 +50,11 @@ Adw.ActionRow other-options-row {
   }
 
   [suffix]
-  Button remove_button {
+  Button reset_theme_button {
     valign: center;
     label: _("Reset Theme");
     tooltip-text: _("Reset an applied theme");
-    clicked => on_remove_button_clicked();
+    clicked => on_reset_theme_clicked();
     styles ["destructive-action"]
   }
 }

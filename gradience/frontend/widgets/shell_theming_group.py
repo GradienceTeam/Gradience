@@ -151,8 +151,8 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
                     title=_("An error occurred while generating a Shell theme."))
             )
 
-    def _on_shell_theme_done(self, source_widget:GObject.Object, result:Gio.AsyncResult,
-                                user_data:GObject.GPointer):
+    def _on_shell_theme_done(self, source_widget:GObject.Object,
+                    result:Gio.AsyncResult, user_data:GObject.GPointer):
         logging.debug("It works! \o/")
         self.toast_overlay.add_toast(
             Adw.Toast(title=_("Shell theme applied successfully."))
@@ -170,9 +170,15 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
             self.apply_shell_theme()
 
     @Gtk.Template.Callback()
-    def on_remove_button_clicked(self, *_args):
+    def on_reset_theme_clicked(self, *_args):
         # TODO: Make this function actually remove Shell theme
-        ShellTheme().reset_shell_theme()
+        ShellTheme().reset_theme_async(self, self._on_reset_theme_done)
+
+    def _on_reset_theme_done(self, source_widget:GObject.Object,
+                    result:Gio.AsyncResult, user_data:GObject.GPointer):
+        self.toast_overlay.add_toast(
+            Adw.Toast(title=_("Shell theme successfully reset."))
+        )
 
     @Gtk.Template.Callback()
     def on_restore_button_clicked(self, *_args):

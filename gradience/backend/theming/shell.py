@@ -326,8 +326,22 @@ class ShellTheme:
                 raise UnsupportedShellVersion(
                     f"GNOME Shell version {shell_ver} is not supported. (Supported versions: {', '.join(self.shell_versions_str)})")
 
-    def reset_shell_theme(self):
+    def reset_theme_async(self, caller:GObject.Object, callback:callable):
+        task = Gio.Task.new(caller, None, callback, self._cancellable)
+
+        task.set_return_on_cancel(True)
+        task.run_in_thread(self._reset_theme_thread)
+
+    def reset_theme(self):
         key = self.THEME_GSETTINGS_SCHEMA_KEY
 
         # Set default theme
         self.settings.reset(key)
+
+    def _reset_theme_thread(self, task:Gio.Task, source_object:GObject.Object,
+                task_data:object, cancellable:Gio.Cancellable):
+        if task.return_error_if_cancelled():
+            return
+
+        output = self.reset_theme()
+        task.return_value(output)
