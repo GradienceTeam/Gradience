@@ -27,16 +27,10 @@ template GradienceMonetThemingGroup : Adw.PreferencesGroup {
         valign: center;
         clicked => on_file_chooser_button_clicked();
 
-        Box button-content {
-          spacing: 10;
-
-          Label {
-            label: _("Choose a File");
-          }
-
-          Image {
-            icon-name: "folder-pictures-symbolic";
-          }
+        Adw.ButtonContent {
+          icon-name: "folder-pictures-symbolic";
+          label: _("Choose a File");
+          use-underline: true;
         }
       }
     }
