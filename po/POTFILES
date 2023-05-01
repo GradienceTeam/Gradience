@@ -18,6 +18,7 @@ data/ui/save_dialog.blp
 data/ui/share_window.blp
 data/ui/shell_prefs_window.blp
 data/ui/shell_theming_group.blp
+data/ui/theming_empty_group.blp
 data/ui/welcome_window.blp
 data/ui/window.blp
 gradience/frontend/schemas/preset_schema.py
@@ -25,6 +26,7 @@ gradience/frontend/schemas/shell_schema.py
 gradience/frontend/dialogs/app_type_dialog.py
 gradience/frontend/dialogs/log_out_dialog.py
 gradience/frontend/dialogs/save_dialog.py
+gradience/frontend/dialogs/unsupported_shell_dialog.py
 gradience/frontend/widgets/builtin_preset_row.py
 gradience/frontend/widgets/custom_css_group.py
 gradience/frontend/widgets/error_list_row.py
@@ -35,11 +37,14 @@ gradience/frontend/widgets/palette_shades.py
 gradience/frontend/widgets/plugin_row.py
 gradience/frontend/widgets/preset_row.py
 gradience/frontend/widgets/repo_row.py
+gradience/frontend/widgets/reset_preset_group.py
+gradience/frontend/widgets/shell_theming_group.py
 gradience/frontend/views/about_window.py
 gradience/frontend/views/main_window.py
 gradience/frontend/views/no_plugin_window.py
 gradience/frontend/views/plugins_list.py
 gradience/frontend/views/preferences_window.py
 gradience/frontend/views/presets_manager_window.py
+gradience/frontend/views/shell_prefs_window.py
 gradience/frontend/views/welcome_window.py
 gradience/frontend/main.py
