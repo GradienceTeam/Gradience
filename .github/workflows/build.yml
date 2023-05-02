@@ -50,7 +50,7 @@ jobs:
 
       - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
         with:
-          repository-name: flathub
+          repository-name: gnome-nightly
           bundle: gradience-devel.flatpak
           manifest-path: build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
           cache-key: flatpak-builder-${{ github.sha }}
