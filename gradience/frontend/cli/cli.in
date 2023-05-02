@@ -49,6 +49,7 @@ warnings.filterwarnings("ignore") # suppress GTK warnings
 
 from gi.repository import GLib, Gio
 
+from gradience.backend.utils.gnome import is_gnome_available, is_shell_ext_installed
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.globals import preset_repos, presets_dir
 
@@ -57,7 +58,8 @@ from gradience.backend.models.preset import Preset
 from gradience.backend.theming.shell import ShellTheme
 from gradience.backend.theming.preset import PresetUtils
 from gradience.backend.preset_downloader import PresetDownloader
-from gradience.backend.flatpak_overrides import list_file_access, allow_file_access, disallow_file_access, create_gtk_user_override, remove_gtk_user_override
+from gradience.backend.flatpak_overrides import (list_file_access, allow_file_access,
+                disallow_file_access, create_gtk_user_override, remove_gtk_user_override)
 
 from gradience.backend.logger import Logger
 
@@ -379,10 +381,59 @@ class CLI:
         if _preset_name:
             if _preset_name in presets_name:
                 preset = __get_preset_from_name()
+            else:
+                logging.error(f"Failed to find preset named {_preset_name}. Verify if you wrote the name right with `presets` command.")
+                exit(1)
         elif _preset_path:
-            preset = Preset().new_from_path(_preset_path)
+            try:
+                preset = Preset().new_from_path(_preset_path)
+            except OSError as e:
+                exit(1)
 
-        ShellTheme().apply_theme(None, _preset_variant, preset)
+        if not is_gnome_available():
+            logging.warning("Shell Engine is designed to work only on systems running GNOME. You can still generate themes on other desktop environments, but it won't have any affect on them.")
+            prompt = input("Do you want to continue? [N/y] ")
+
+            if prompt.lower() == "y":
+                pass
+            elif prompt.lower() == "n" or prompt == "":
+                logging.info("Aborting all operations...")
+                exit(0)
+            else:
+                logging.info("Aborting all operations...")
+                exit(0)
+
+        shell_engine = ShellTheme()
+
+        is_user_themes_available = is_shell_ext_installed(shell_engine.THEME_EXT_NAME)
+        is_user_themes_enabled = is_shell_ext_installed(shell_engine.THEME_EXT_NAME, check_enabled=True)
+
+        if not is_user_themes_available:
+            logging.warning("Gradience requires User Themes extension installed in order to apply Shell theme. You can still generate a theme, but you won't be able to apply it without this extension.")
+            prompt = input("Do you want to continue? [N/y] ")
+
+            if prompt.lower() == "y":
+                pass
+            elif prompt.lower() == "n" or prompt == "":
+                logging.info("Aborting all operations...")
+                exit(0)
+            else:
+                logging.info("Aborting all operations...")
+                exit(0)
+        elif not is_user_themes_enabled:
+            logging.warning("User Themes extension is currently disabled on your system. Please enable it in order to apply theme.")
+            prompt = input("Do you want to continue? [N/y] ")
+
+            if prompt.lower() == "y":
+                pass
+            elif prompt.lower() == "n" or prompt == "":
+                logging.info("Aborting all operations...")
+                exit(0)
+            else:
+                logging.info("Aborting all operations...")
+                exit(0)
+
+        shell_engine.apply_theme(None, _preset_variant, preset)
         logging.info("GNOME Shell theme generated successfully.")
         exit(0)
 
