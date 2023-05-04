@@ -7,14 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Support for GNOME Shell theming
+- New, refreshed design for `Theming` tab
+- Preferences options for enabling built-in Theme Engines
+
 ### Changed
 
 - Update runtime to GNOME 44
+- Move reset and restore preset options to preferences
 
 ### Fixed
 
 - Improve contrasts in Monet generated error/destructive colors
 - Don't fail at compilation if host doesn't have `git` installed
+- Don't fail at at resetting presets if `gtk.css` isn't found
 
 ## [0.4.1] - 2023-03-05
 
