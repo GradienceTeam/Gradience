@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Improve contrasts in Monet generated error/destructive colors
 - Don't fail at compilation if host doesn't have `git` installed
-- Don't fail at at resetting presets if `gtk.css` isn't found
+- Don't fail at resetting presets if `gtk.css` isn't found
 
 ## [0.4.1] - 2023-03-05
 
