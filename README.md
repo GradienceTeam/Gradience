@@ -215,6 +215,9 @@ nix-shell -p gradience
 
 ## 🏗️ Building from source
 
+> **Note**
+> You can download [latest nightly build](https://nightly.link/GradienceTeam/Gradience/workflows/build/main) from GitHub actions
+
 ### GNOME Builder
 
 GNOME Builder is the environment used for developing this application.
