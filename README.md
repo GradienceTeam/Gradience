@@ -28,7 +28,7 @@
   <a href="https://hosted.weblate.org/engage/GradienceTeam">
     <img alt="Translation status" src="https://hosted.weblate.org/widgets/GradienceTeam/-/svg-badge.svg"/>
   </a>
-  <a href="https://github.com/GradienceTeam/Gradience/actions/workflows/build.yml">
+  <a href="https://nightly.link/GradienceTeam/Gradience/workflows/build/main">
     <img alt="Build status" src="https://github.com/GradienceTeam/Gradience/actions/workflows/build.yml/badge.svg"/>
   </a>
   <a href="https://flathub.org/apps/details/com.github.GradienceTeam.Gradience">
