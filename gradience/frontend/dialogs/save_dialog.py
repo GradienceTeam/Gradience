@@ -37,10 +37,15 @@ class GradienceSaveDialog(Adw.MessageDialog):
 
         self.body = _(
             "Saving preset to <tt>{0}</tt>. If that preset already "
-            "exists, it will be overwritten!"
+            "exists, it will be overwritten."
         )
 
-        self.set_transient_for(self.app.get_active_window())
+        if isinstance(self.parent, Gtk.Window):
+            self.win = self.parent
+        else:
+            self.win = self.app.get_active_window()
+
+        self.set_transient_for(self.win)
 
         if heading:
             self.heading = heading

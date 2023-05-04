@@ -112,10 +112,15 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 
 ## 🔄 Revert Theming
+1. Open Preferences window
 
-> **Note**
-> You can press on the menu button in the headerbar and press `Reset Applied Color Scheme`
-> ![Main Gradience menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
+![Main Gradience Menu](https://i.imgur.com/bJMNX6d.png)
+
+2. Go to Theming tab
+
+3. In _Reset & Restore Presets_ group, click Reset button for either GTK 3 or Libadwaita applications
+
+![Reset & Restore Presets Group](https://i.imgur.com/SynxTJT.png)
 
 <details>
   <summary>🪛️ Manual revert</summary>

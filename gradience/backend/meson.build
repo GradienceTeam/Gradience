@@ -30,6 +30,7 @@ gradience_sources = [
     'flatpak_overrides.py',
     'globals.py',
     'logger.py',
-    'preset_downloader.py'
+    'preset_downloader.py',
+    'exceptions.py'
 ]
 PY_INSTALLDIR.install_sources(gradience_sources, subdir: backenddir)

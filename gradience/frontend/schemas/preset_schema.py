@@ -300,6 +300,23 @@ preset_schema = {
             ],
         },
         {
+            "name": "thumbnail_colors",
+            "title": _("Thumbnail Colors"),
+            "description": _("These colors are used for Tab Overview thumbnails."),
+            "variables": [
+                {
+                    "name": "thumbnail_bg_color",
+                    "title": _("Background Color"),
+                    "adw_gtk3_support": "yes",
+                },
+                {
+                    "name": "thumbnail_fg_color",
+                    "title": _("Foreground Color"),
+                    "adw_gtk3_support": "yes",
+                },
+            ],
+        },
+        {
             "name": "dialog_colors",
             "title": _("Dialog Colors"),
             "description": _("These colors are used for message dialogs."),
@@ -372,5 +389,5 @@ preset_schema = {
         {"prefix": "light_", "title": _("Light"), "n_shades": 5},
         {"prefix": "dark_", "title": _("Dark"), "n_shades": 5},
     ],
-    "custom_css_app_types": ["gtk4", "gtk3"],
+    "custom_css_app_types": ["gtk4", "gtk3"]
 }

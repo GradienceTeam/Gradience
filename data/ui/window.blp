@@ -88,16 +88,16 @@ template GradienceMainWindow : Adw.ApplicationWindow {
               title: _("_Colors");
               icon-name: "larger-brush-symbolic";
 
-              child: Adw.PreferencesPage content { };
+              child: Adw.PreferencesPage content-colors { };
               use-underline: true;
             }
 
             Adw.ViewStackPage {
-              name: "monet";
-              title: _("_Monet");
+              name: "theming";
+              title: _("_Theming");
               icon-name: "color-picker-symbolic";
 
-              child: Adw.PreferencesPage content_monet { };
+              child: Adw.PreferencesPage content-theming { };
               use-underline: true;
             }
 
@@ -106,7 +106,7 @@ template GradienceMainWindow : Adw.ApplicationWindow {
               title: _("_Advanced");
               icon-name: "settings-symbolic";
 
-              child: Adw.PreferencesPage content_plugins { };
+              child: Adw.PreferencesPage content-plugins { };
               use-underline: true;
             }
           }
@@ -123,17 +123,6 @@ template GradienceMainWindow : Adw.ApplicationWindow {
 
 
 menu main-menu {
-  section {
-    item {
-      label: _("Restore Applied Color Scheme");
-      action: "app.restore_color_scheme";
-    }
-
-    item {
-      label: _("Reset Applied Color Scheme");
-      action: "app.reset_color_scheme";
-    }
-  }
   section {
     item {
       label: _("Preferences");

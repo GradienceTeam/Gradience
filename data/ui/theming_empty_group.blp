@@ -1,0 +1,19 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradienceEmptyThemingGroup : Adw.PreferencesGroup {
+  title: _("No Theme Engines");
+  description: _("Theme Engines extends the functionality of Gradience. They can be enabled in the Preferences.");
+
+  Adw.ActionRow open-preferences {
+    title: _("Open Preferences to manage Theme Engines");
+
+    [suffix]
+    Button open {
+      valign: center;
+      label: _("Open Preferences");
+      tooltip-text: _("Open Preferences");
+      action-name: "app.preferences";
+    }
+  }
+}
