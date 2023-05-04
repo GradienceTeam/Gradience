@@ -268,7 +268,7 @@ preset_schema = {
                         "for header bars and similar widgets that separates "
                         "them from the main window."
                     ),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
                 },
             ],
         },
@@ -295,7 +295,7 @@ preset_schema = {
                         "by cards to separate themselves from the window "
                         "background, as well as for row dividers in the cards."
                     ),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
                 },
             ],
         },
@@ -307,12 +307,12 @@ preset_schema = {
                 {
                     "name": "dialog_bg_color",
                     "title": _("Background Color"),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
                 },
                 {
                     "name": "dialog_fg_color",
                     "title": _("Foreground Color"),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
                 },
             ],
         },
