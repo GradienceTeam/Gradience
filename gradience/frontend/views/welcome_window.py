@@ -51,11 +51,6 @@ class GradienceWelcomeWindow(Adw.Window):
     img_welcome = Gtk.Template.Child()
     label_skip = Gtk.Template.Child()
 
-    images = [
-        f"{rootdir}/images/welcome.svg",
-        f"{rootdir}/images/welcome-dark.svg",
-    ]
-
     carousel_pages = [
         "welcome",  # 0
         "release",  # 1
@@ -88,9 +83,6 @@ class GradienceWelcomeWindow(Adw.Window):
         self.btn_next.connect("clicked", self.next_page)
         self.btn_install.connect("clicked", self.install_runner)
         self.btn_agree.connect("clicked", self.agree)
-        self.settings.connect(
-            "notify::gtk-application-prefer-dark-theme", self.theme_changed
-        )
         self.connect("close-request", self.quit)
 
         if self.update:
@@ -100,16 +92,7 @@ class GradienceWelcomeWindow(Adw.Window):
 
         self.btn_close.set_sensitive(False)
 
-        if self.settings.get_property("gtk-application-prefer-dark-theme"):
-            self.img_welcome.set_from_resource(self.images[1])
-
         self.page_changed()
-
-    def theme_changed(self, settings, key):
-        self.img_welcome.set_from_resource(
-            self.images[settings.get_property(
-                "gtk-application-prefer-dark-theme")]
-        )
 
     def get_page(self, index):
         return self.carousel_pages[index]
