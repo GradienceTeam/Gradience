@@ -301,7 +301,7 @@ Special thanks to:
 
 This README is based on README from [Kooha](https://github.com/SeaDve/Kooha) by [Dave Patrick Caberto](https://github.com/SeaDve)
 
-## Mirrors
+## 🪞 Mirrors
 
 - [Gitlab](https://gitlab.com/GradienceTeam/Gradience)
 - [Github](https://github.com/GradienceTeam/Gradience)
