@@ -300,3 +300,9 @@ Special thanks to:
 - [Weblate](https://weblate.org) for providing translation platform
 
 This README is based on README from [Kooha](https://github.com/SeaDve/Kooha) by [Dave Patrick Caberto](https://github.com/SeaDve)
+
+## Mirrors
+
+- [Gitlab](https://gitlab.com/GradienceTeam/Gradience)
+- [Github](https://github.com/GradienceTeam/Gradience)
+- [Codeberg](https://codeberg.org/GradienceTeam/Gradience)
