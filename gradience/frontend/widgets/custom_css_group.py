@@ -42,6 +42,7 @@ class GradienceCustomCSSGroup(Adw.PreferencesGroup):
 
     def load_custom_css(self, custom_css):
         self.custom_css = custom_css
+
         self.custom_css_text_view.get_buffer().set_text(
             list(self.custom_css.values())[
                 self.app_type_dropdown.get_selected()]

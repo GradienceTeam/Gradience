@@ -268,7 +268,7 @@ preset_schema = {
                         "for header bars and similar widgets that separates "
                         "them from the main window."
                     ),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
                 },
             ],
         },
@@ -295,7 +295,24 @@ preset_schema = {
                         "by cards to separate themselves from the window "
                         "background, as well as for row dividers in the cards."
                     ),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
+                },
+            ],
+        },
+        {
+            "name": "thumbnail_colors",
+            "title": _("Thumbnail Colors"),
+            "description": _("These colors are used for Tab Overview thumbnails."),
+            "variables": [
+                {
+                    "name": "thumbnail_bg_color",
+                    "title": _("Background Color"),
+                    "adw_gtk3_support": "yes",
+                },
+                {
+                    "name": "thumbnail_fg_color",
+                    "title": _("Foreground Color"),
+                    "adw_gtk3_support": "yes",
                 },
             ],
         },
@@ -307,12 +324,12 @@ preset_schema = {
                 {
                     "name": "dialog_bg_color",
                     "title": _("Background Color"),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
                 },
                 {
                     "name": "dialog_fg_color",
                     "title": _("Foreground Color"),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
                 },
             ],
         },
@@ -372,5 +389,5 @@ preset_schema = {
         {"prefix": "light_", "title": _("Light"), "n_shades": 5},
         {"prefix": "dark_", "title": _("Dark"), "n_shades": 5},
     ],
-    "custom_css_app_types": ["gtk4", "gtk3"],
+    "custom_css_app_types": ["gtk4", "gtk3"]
 }

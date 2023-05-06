@@ -9,13 +9,14 @@
 # Michal S. <michal@getcryst.al>, 2022.
 # Daudix UFO <ddaudix@gmail.com>, 2022.
 # yangyangdaji <1504305527@qq.com>, 2022, 2023.
+# Eryk Michalak <gnu.ewm@protonmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2023-04-18 12:13+0000\n"
-"PO-Revision-Date: 2023-04-03 12:13+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"PO-Revision-Date: 2023-04-30 13:48+0000\n"
+"Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/pl/>\n"
 "Language: pl\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -74,34 +75,24 @@ msgid "🧩️ Extending functionality using plugins"
 msgstr "🧩️ Rozszerzanie możliwości przy użyciu wtyczek"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:27
-#, fuzzy
-#| msgid "Screenshot of \"Colors\" Tab"
 msgid "Screenshot of \"Colors\" Tab of Main UI"
-msgstr "Zrzut ekranu karty \"Kolory\""
+msgstr "Zrzut ekranu karty \"Kolory\" głównego interfejsu użytkownika"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:32
-#, fuzzy
-#| msgid "Screenshot of \"Monet\" Tab"
 msgid "Screenshot of \"Monet\" Tab of Main UI"
-msgstr "Zrzut ekranu karty \"Monet\""
+msgstr "Zrzut ekranu karty \"Monet\" głównego interfejsu użytkownika"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:37
-#, fuzzy
-#| msgid "Screenshot of \"Advanced\" Tab"
 msgid "Screenshot of \"Advanced\" Tab of Main UI"
-msgstr "Zrzut ekranu karty \"Zaawansowane\""
+msgstr "Zrzut ekranu karty \"Zaawansowane\" głównego interfejsu użytkownika"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:42
-#, fuzzy
-#| msgid "Screenshot of \"Advanced\" Tab"
 msgid "Screenshot of \"Installed\" Tab of Preset Manager"
-msgstr "Zrzut ekranu karty \"Zaawansowane\""
+msgstr "Zrzut ekranu karty \"Zainstalowane\" głównego interfejsu użytkownika"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:47
-#, fuzzy
-#| msgid "Screenshot of \"Colors\" Tab"
 msgid "Screenshot of \"Explore\" Tab of Preset Manager"
-msgstr "Zrzut ekranu karty \"Kolory\""
+msgstr "Zrzut ekranu karty \"Przeglądaj\" głównego interfejsu użytkownika"
 
 #: data/ui/app_type_dialog.blp:14
 msgid "Select application types you want to theme:"
@@ -158,10 +149,8 @@ msgid "Log out"
 msgstr "Wyloguj się"
 
 #: data/ui/log_out_dialog.blp:6
-#, fuzzy
-#| msgid "For the changes to take effect, you need to log out. "
 msgid "For the changes to take full effect, you need to log out."
-msgstr "Aby zmiany weszły w życie, należy się wylogować. "
+msgstr "Aby zmiany w pełni zostały zastosowane, należy się wylogować."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -290,10 +279,8 @@ msgid "No Badges"
 msgstr "Brak odznak"
 
 #: data/ui/preset_row.blp:101 data/ui/presets_manager_window.blp:44
-#, fuzzy
-#| msgid "Remove Preset"
 msgid "Report Preset Issue"
-msgstr "Usuń Profil"
+msgstr "Zgłoś problem z szablonem"
 
 #: data/ui/preset_row.blp:108
 msgid "Remove preset"
@@ -305,7 +292,7 @@ msgstr "Usuń Profil"
 
 #: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
 msgid "Presets"
-msgstr "Profile"
+msgstr "Szablony"
 
 #: data/ui/presets_manager_window.blp:31
 msgid "Import"
@@ -382,10 +369,8 @@ msgid "Save preset as…"
 msgstr "Zapisz profil kolorów jako…"
 
 #: data/ui/save_dialog.blp:10
-#, fuzzy
-#| msgid "Preset renamed"
 msgid "Preset Name"
-msgstr "Nazwa profilu zmieniona"
+msgstr "Nazwa szablonu"
 
 #: data/ui/share_window.blp:5
 msgid "Share Preset"
@@ -552,7 +537,7 @@ msgstr "Zastosuj"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
-msgstr ""
+msgstr "Pokaż okno podglądu"
 
 #: data/ui/window.blp:48
 msgid "Main Menu"
@@ -631,10 +616,8 @@ msgstr "_Zapisz"
 
 #: gradience/frontend/main.py:184
 #: gradience/frontend/views/presets_manager_window.py:337
-#, fuzzy
-#| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
-msgstr "Nie udało się załadować profilu"
+msgstr "Nie udało się załadować listy szablonów"
 
 #: gradience/frontend/main.py:217
 msgid "No presets found"
@@ -1007,37 +990,35 @@ msgstr "Ciemny"
 
 #: gradience/frontend/views/about_window.py:27
 msgid "translator-credits"
-msgstr ""
+msgstr "ewm"
 
 #: gradience/frontend/views/about_window.py:56
 msgid "Copyright © 2022-2023 Gradience Team"
-msgstr ""
+msgstr "Copyright © 2022-2023 Gradience Team"
 
 #: gradience/frontend/views/about_window.py:63
 msgid "Plugins by"
-msgstr "Wtyczki wg."
+msgstr "Wtyczki według"
 
 #: gradience/frontend/views/about_window.py:65
 msgid ""
 "Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
 "contributors"
 msgstr ""
+"Współtwórcy na GitHubie https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 
 #: gradience/frontend/views/about_window.py:69
 msgid "Presets by"
-msgstr "Presety wg."
+msgstr "Szablony według"
 
 #: gradience/frontend/views/about_window.py:71
-#, fuzzy
-#| msgid ""
-#| "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#| "Community\">GradienceTeam/Community</a>."
 msgid ""
 "Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
 "contributors"
 msgstr ""
-"Wpisz słowo kluczowe, aby szukać profili w <a href=\"https://github.com/"
-"GradienceTeam/Community\">GradienceTeam/Community</a>."
+"Współtwórcy na GitHubie https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
 
 #: gradience/frontend/views/main_window.py:132
 msgid "Monet Engine"
@@ -1052,13 +1033,11 @@ msgstr ""
 
 #: gradience/frontend/views/main_window.py:149
 msgid "Select an Image"
-msgstr ""
+msgstr "Wybierz obraz"
 
 #: gradience/frontend/views/main_window.py:152
-#, fuzzy
-#| msgid "Choose a File"
 msgid "Choose a Image File"
-msgstr "Wybierz plik"
+msgstr "Wybierz plik obrazu"
 
 #: gradience/frontend/views/main_window.py:161
 msgid "Choose a File"
@@ -1078,7 +1057,7 @@ msgstr "Automatyczny"
 
 #: gradience/frontend/views/main_window.py:241
 msgid "Failed to generate Monet palette"
-msgstr ""
+msgstr "Nie udało się wygenerować palety Monet"
 
 #: gradience/frontend/views/main_window.py:245
 msgid "Palette generated"

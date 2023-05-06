@@ -112,10 +112,15 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 
 ## 🔄 Revert Theming
+1. Open Preferences window
 
-> **Note**
-> You can press on the menu button in the headerbar and press `Reset Applied Color Scheme`
-> ![Main Gradience menu](https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/hamburger_menu.png)
+![Main Gradience Menu](https://i.imgur.com/bJMNX6d.png)
+
+2. Go to Theming tab
+
+3. In _Reset & Restore Presets_ group, click Reset button for either GTK 3 or Libadwaita applications
+
+![Reset & Restore Presets Group](https://i.imgur.com/SynxTJT.png)
 
 <details>
   <summary>🪛️ Manual revert</summary>
@@ -210,6 +215,9 @@ nix-shell -p gradience
 
 ## 🏗️ Building from source
 
+> **Note**
+> You can download [latest nightly build](https://nightly.link/GradienceTeam/Gradience/workflows/build/main) from GitHub actions
+
 ### GNOME Builder
 
 GNOME Builder is the environment used for developing this application.
@@ -292,3 +300,9 @@ Special thanks to:
 - [Weblate](https://weblate.org) for providing translation platform
 
 This README is based on README from [Kooha](https://github.com/SeaDve/Kooha) by [Dave Patrick Caberto](https://github.com/SeaDve)
+
+## Mirrors
+
+- [Gitlab](https://gitlab.com/GradienceTeam/Gradience)
+- [Github](https://github.com/GradienceTeam/Gradience)
+- [Codeberg](https://codeberg.org/GradienceTeam/Gradience)

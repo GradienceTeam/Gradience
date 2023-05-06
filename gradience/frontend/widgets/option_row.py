@@ -1,7 +1,7 @@
 # option_row.py
 #
 # Change the look of Adwaita, with ease
-# Copyright (C) 2022  Gradience Team
+# Copyright (C) 2022-2023, Gradience Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ class GradienceOptionRow(Adw.ActionRow):
     explanation_button = Gtk.Template.Child("explanation-button")
     explanation_label = Gtk.Template.Child("explanation-label")
 
-    def __init__(self, name, title, explanation, adw_gtk3_support="yes", **kwargs):
+    def __init__(self, name, title, explanation=None, adw_gtk3_support=None, update_var=None, **kwargs):
         super().__init__(**kwargs)
 
         self.app = Gtk.Application.get_default()
@@ -44,7 +44,7 @@ class GradienceOptionRow(Adw.ActionRow):
         self.set_title(title)
         self.set_subtitle("@" + name)
 
-        if adw_gtk3_support == "yes":
+        if adw_gtk3_support == "yes" or not adw_gtk3_support:
             self.warning_button.set_visible(False)
         elif adw_gtk3_support == "partial":
             self.warning_button.add_css_class("warning")
@@ -58,11 +58,17 @@ class GradienceOptionRow(Adw.ActionRow):
             )
 
         self.explanation_label.set_label(explanation or "")
-        if explanation is None:
+
+        if not explanation:
             self.explanation_button.set_visible(False)
 
-    @Gtk.Template.Callback()
-    def on_color_value_changed(self, *_args):
+        self.update_var = update_var
+
+    def connect_signals(self, update_vars):
+        self.color_value.connect("color-set", self.on_color_value_changed, update_vars)
+        self.text_value.connect("changed", self.on_text_value_changed, update_vars)
+
+    def on_color_value_changed(self, _unused, update_vars, *_args):
         color_value = self.color_value.get_rgba().to_string()
 
         if color_value.startswith("rgb") or color_value.startswith("rgba"):
@@ -71,14 +77,14 @@ class GradienceOptionRow(Adw.ActionRow):
                 color_value = color_hex
 
         self.update_value(
-            color_value, update_from="color_value"
+            color_value, update_from="color_value", update_vars=update_vars
         )
 
-    @Gtk.Template.Callback()
-    def on_text_value_changed(self, *_args):
+    def on_text_value_changed(self, _unused, update_vars, *_args):
         color_value = self.text_value.get_text()
+
         self.update_value(
-            color_value, update_from="text_value"
+            color_value, update_from="text_value", update_vars=update_vars
         )
 
     @Gtk.Template.Callback()
@@ -88,7 +94,7 @@ class GradienceOptionRow(Adw.ActionRow):
         else:
             self.value_stack.set_visible_child(self.color_value)
 
-    def update_value(self, new_value, **kwargs):
+    def update_value(self, new_value, update_vars=False, **kwargs):
         rgba = Gdk.RGBA()
         is_app_ready = self.app.is_ready
 
@@ -109,7 +115,11 @@ class GradienceOptionRow(Adw.ActionRow):
                 self.color_value.set_rgba(rgba)
                 self.color_value.set_tooltip_text(_("Not a color, see text value"))
 
-        if is_app_ready and kwargs.get("update_from") == "text_value" and new_value != "":
-            self.app.variables[self.get_name()] = new_value
-            self.app.mark_as_dirty()
-            self.app.reload_variables()
+        if update_vars == True:
+            if is_app_ready and kwargs.get("update_from") == "text_value" and new_value != "":
+                if self.update_var:
+                    self.update_var[self.get_name()] = new_value
+                else:
+                    self.app.variables[self.get_name()] = new_value
+                self.app.mark_as_dirty()
+                self.app.reload_variables()

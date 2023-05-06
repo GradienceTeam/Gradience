@@ -1,0 +1,44 @@
+using Gtk 4.0;
+using Adw 1;
+
+template GradienceMonetThemingGroup : Adw.PreferencesGroup {
+  title: _("Monet Engine");
+  description: _("Monet is an engine that generates a Material Design 3 palette from extracting image's colors.");
+
+  Adw.ExpanderRow monet-theming-expander {
+    title: _("Monet Engine Options");
+    subtitle: _("Choose an image, and change the parameters of a generated Monet palette");
+    expanded: true;
+
+    [action]
+    Button monet-apply-button {
+      valign: center;
+      label: _("Apply");
+      tooltip-text: _("Apply a palette");
+      clicked => on_apply_button_clicked();
+      styles ["suggested-action"]
+    }
+
+    Adw.ActionRow file-chooser-row {
+      title: _("Select an Image");
+
+      [suffix]
+      Button file-chooser-button {
+        valign: center;
+        clicked => on_file_chooser_button_clicked();
+
+        Adw.ButtonContent {
+          icon-name: "folder-pictures-symbolic";
+          label: _("Choose a File");
+          use-underline: true;
+        }
+      }
+    }
+  }
+}
+
+Gtk.FileChooserNative monet-file-chooser {
+  title: _("Choose a Image File");
+  modal: true;
+  //response => on_monet_file_chooser_response();
+}

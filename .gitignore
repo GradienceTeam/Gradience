@@ -21,7 +21,9 @@
 ### Flatpak ###
 .flatpak-builder
 build
+builddir
 build-dir
+export
 repo
 
 ### Meson ###
@@ -428,8 +430,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# The flatpak pip generator (needed for GH-Actions)
+# The flatpak pip generator (needed for CI)
 flatpak-pip-generator
 
-# Don't include constants.py in VCS since that's a generated file
+# Don't include constants.py in VCS since it's a generated file
 gradience/backend/constants.py
