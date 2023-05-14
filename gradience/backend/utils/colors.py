@@ -105,14 +105,16 @@ def color_vars_to_color_code(variables: dict, palette: dict) -> dict:
         elif var_type == "variable":
             output[variable] = output[color_value]
 
-        if __has_variable_prefix(output[variable]):
-            __update_variable_vars(variable, output[variable])
+        color_variable_name = output[variable].strip()[1:]
 
         if __has_palette_prefix(output[variable]):
-            __update_palette_vars(variable, output[variable])
+            __update_vars("palette", variable, color_variable_name)
+
+        if __has_variable_prefix(output[variable]):
+            __update_vars("variable", variable, color_variable_name)
 
     for variable, color in output.items():
-        color_value = color[1:] # Remove '@' from the beginning of the color variable
+        color_value = color.strip()[1:] # Strip spaces and remove '@' from the beginning of the color variable
 
         if __has_palette_prefix(color_value) and palette != None:
             __update_vars("palette", variable, color_value)
