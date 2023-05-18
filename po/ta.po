@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-04-18 12:13+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-18 20:23+0000\n"
 "PO-Revision-Date: 2023-04-19 10:49+0000\n"
 "Last-Translator: \"K.B.Dharun Krishna\" <kbdharunkrishna@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -94,7 +94,7 @@ msgstr "முன்னமைக்கப்பட்ட மேலாளரி�
 msgid "Select application types you want to theme:"
 msgstr "நீங்கள் தீம் செய்ய விரும்பும் பயன்பாட்டு வகைகளை தேர்ந்தெடுக்கவும்:"
 
-#: data/ui/app_type_dialog.blp:17
+#: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "லிபட்வைதா மற்றும் GTK 4 பயன்பாடுகள்"
 
@@ -106,7 +106,7 @@ msgstr "GTK 3 பயன்பாடுகள் (adw-gtk3 தீம் தேவ
 msgid "Made by @GradienceTeam"
 msgstr "@GradienceTeam ஆல் உருவாக்கப்பட்டது"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:49
+#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 msgid "Apply Preset"
 msgstr "முன்னமைவைப் பயன்படுத்தவும்"
@@ -140,6 +140,55 @@ msgstr "பதிவிறக்கம் செய்து விண்ணப�
 msgid "Download Only"
 msgstr "பதிவிறக்க மட்டுமே"
 
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:95
+msgid "Monet Engine"
+msgstr "மோனெட் எஞ்சின்"
+
+#: data/ui/monet_theming_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Monet is an engine that generates a Material Design 3 palette from an "
+#| "image's color."
+msgid ""
+"Monet is an engine that generates a Material Design 3 palette from "
+"extracting image's colors."
+msgstr ""
+"மோனெட் என்பது ஒரு படத்தின் நிறத்தில் இருந்து மெட்டீரியல் டிசைன் 3 பேலட்டை உருவாக்கும் ஒரு "
+"மோனெட் எஞ்சின்."
+
+#: data/ui/monet_theming_group.blp:9
+#, fuzzy
+#| msgid "Monet Engine"
+msgid "Monet Engine Options"
+msgstr "மோனெட் எஞ்சின்"
+
+#: data/ui/monet_theming_group.blp:10
+msgid "Choose an image, and change the parameters of a generated Monet palette"
+msgstr ""
+
+#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
+#: data/ui/window.blp:29
+msgid "Apply"
+msgstr "விண்ணப்பிக்கவும்"
+
+#: data/ui/monet_theming_group.blp:17
+#, fuzzy
+#| msgid "Apply preset"
+msgid "Apply a palette"
+msgstr "முன்னமைவைப் பயன்படுத்தவும்"
+
+#: data/ui/monet_theming_group.blp:23
+msgid "Select an Image"
+msgstr "ஒரு படத்தைத் தேர்ந்தெடுக்கவும்"
+
+#: data/ui/monet_theming_group.blp:32
+msgid "Choose a File"
+msgstr "ஒரு கோப்பைத் தேர்ந்தெடுக்கவும்"
+
+#: data/ui/monet_theming_group.blp:41
+msgid "Choose a Image File"
+msgstr "ஒரு படக் கோப்பைத் தேர்வு செய்யவும்"
+
 #: data/ui/log_out_dialog.blp:5
 msgid "Log out"
 msgstr "வெளியேறு"
@@ -168,7 +217,7 @@ msgstr "GTK 3 ஆதரவு எச்சரிக்கை"
 msgid "Explanation"
 msgstr "விளக்கம்"
 
-#: data/ui/option_row.blp:45
+#: data/ui/option_row.blp:43
 msgid "Toggle Text Value"
 msgstr "உரை மதிப்பை நிலைமாற்று"
 
@@ -177,7 +226,7 @@ msgid "Toggle Plugin"
 msgstr "செருகுநிரலை நிலைமாற்றவும்"
 
 #: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:139
+#: data/ui/window.blp:128
 msgid "Preferences"
 msgstr "விருப்பத்தேர்வுகள்"
 
@@ -185,15 +234,19 @@ msgstr "விருப்பத்தேர்வுகள்"
 msgid "Remove Plugin"
 msgstr "செருகுநிரலை அகற்று"
 
-#: data/ui/preferences_window.blp:12
+#: data/ui/preferences_window.blp:11
+msgid "General"
+msgstr ""
+
+#: data/ui/preferences_window.blp:15
 msgid "GTK 4 Flatpak Applications"
 msgstr "GTK 4 பிளாட்பேக் பயன்பாடுகள்"
 
-#: data/ui/preferences_window.blp:15
+#: data/ui/preferences_window.blp:18
 msgid "Allow GTK 4 Flatpak Applications Theming"
 msgstr "GTK 4 பிளாட்பேக் பயன்பாடுகள் தீமிங்கை அனுமதிக்கவும்"
 
-#: data/ui/preferences_window.blp:16
+#: data/ui/preferences_window.blp:19
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 4 Flatpak "
 "applications to access custom themes."
@@ -201,11 +254,11 @@ msgstr ""
 "தனிப்பயன் தீம்களை அணுக GTK 4 பிளாட்பேக் பயன்பாடுகளை அனுமதிக்க தற்போதைய பயனருக்கான "
 "பிளாட்பேக் அனுமதிகளை மேலெழுதவும்."
 
-#: data/ui/preferences_window.blp:25
+#: data/ui/preferences_window.blp:28
 msgid "Allow GTK 4 Flatpak Applications Theming (System)"
 msgstr "GTK 4 பிளாட்பேக் பயன்பாடுகள தீமிங்கை அனுமதிக்கவும்(அமைப்பு)"
 
-#: data/ui/preferences_window.blp:26
+#: data/ui/preferences_window.blp:29
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 4 Flatpak "
 "applications to access custom themes. (Requires root access)"
@@ -213,11 +266,11 @@ msgstr ""
 "தனிப்பயன் தீம்களை அணுக GTK 4 பிளாட்பேக் பயன்பாடுகளை அனுமதிக்க அனைத்து பயனர்களுக்கும் "
 "பிளாட்பேக் அனுமதிகளை மேலெழுதவும். (ரூட் அணுகல் தேவை)"
 
-#: data/ui/preferences_window.blp:35
+#: data/ui/preferences_window.blp:38
 msgid "GTK 3 Flatpak Applications"
 msgstr "GTK 3 பிளாட்பேக் பயன்பாடுகள்"
 
-#: data/ui/preferences_window.blp:36
+#: data/ui/preferences_window.blp:39
 msgid ""
 "Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
 "custom presets working in GTK 3 Flatpak applications."
@@ -225,11 +278,11 @@ msgstr ""
 "GTK 3 பிளாட்பேக் பயன்பாடுகளில் தனிப்பயன் முன்னமைவுகள் வேலை செய்ய, adw-gtk3 தீம் "
 "(பிளாட்பேக் தொகுப்பாக) நிறுவ நினைவில் கொள்ளுங்கள்."
 
-#: data/ui/preferences_window.blp:39
+#: data/ui/preferences_window.blp:42
 msgid "Allow GTK 3 Flatpak theming"
 msgstr "GTK 3 பிளாட்பாக் தீமிங்கை அனுமதிக்கவும்"
 
-#: data/ui/preferences_window.blp:40
+#: data/ui/preferences_window.blp:43
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme."
@@ -237,11 +290,11 @@ msgstr ""
 "adw-gtk3 தீம் அணுக GTK 3 பிளாட்பாக் பயன்பாடுகளை அனுமதிக்க தற்போதைய பயனருக்கான "
 "பிளாட்பாக் அனுமதிகளை மேலெழுதவும்."
 
-#: data/ui/preferences_window.blp:49
+#: data/ui/preferences_window.blp:52
 msgid "GTK 3 Flatpak Applications (System)"
 msgstr "GTK 3 பிளாட்பேக் பயன்பாடுகள்(அமைப்பு)"
 
-#: data/ui/preferences_window.blp:50
+#: data/ui/preferences_window.blp:53
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak "
 "applications to access adw-gtk3 theme. (Requires root access)"
@@ -249,39 +302,81 @@ msgstr ""
 "GTK 3 பிளாட்பாக் பயன்பாடுகளை adw-gtk3 தீம் அணுக அனுமதிக்க அனைத்து பயனர்களுக்கும் "
 "பிளாட்பாக் அனுமதிகளை மேலெழுதவும். (ரூட் அணுகல் தேவை)"
 
-#: data/ui/preferences_window.blp:61
+#: data/ui/preferences_window.blp:64
 msgid "Custom Preset Repositories"
 msgstr "தனிப்பயன் முன்னமைக்கப்பட்ட களஞ்சியங்கள்"
 
-#: data/ui/preferences_window.blp:64
+#: data/ui/preferences_window.blp:67
 msgid "Custom repository URL address"
 msgstr "தனிப்பயன் களஞ்சிய URL முகவரி"
 
-#: data/ui/preset_row.blp:64
+#: data/ui/preferences_window.blp:87
+#, fuzzy
+#| msgid "Theme"
+msgid "Theming"
+msgstr "தீம்"
+
+#: data/ui/preferences_window.blp:91
+#, fuzzy
+#| msgid "Monet Engine"
+msgid "Theme Engines"
+msgstr "மோனெட் எஞ்சின்"
+
+#: data/ui/preferences_window.blp:92
+msgid ""
+"Theme Engines are the built-in theme generators for various customizable "
+"programs/frameworks."
+msgstr ""
+
+#: data/ui/preferences_window.blp:96
+#, fuzzy
+#| msgid ""
+#| "Monet is an engine that generates a Material Design 3 palette from an "
+#| "image's color."
+msgid ""
+"Monet Engine generates a Material Design 3 palette from extracting image's "
+"colors."
+msgstr ""
+"மோனெட் என்பது ஒரு படத்தின் நிறத்தில் இருந்து மெட்டீரியல் டிசைன் 3 பேலட்டை உருவாக்கும் ஒரு "
+"மோனெட் எஞ்சின்."
+
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
+#, fuzzy
+#| msgid "Monet Engine"
+msgid "Shell Engine"
+msgstr "மோனெட் எஞ்சின்"
+
+#: data/ui/preferences_window.blp:105
+msgid ""
+"Shell Engine generates a custom GNOME Shell theme based of a currently "
+"chosen preset."
+msgstr ""
+
+#: data/ui/preset_row.blp:65
 msgid "Rename Preset"
 msgstr "முன்னமைவை மறுபெயரிடவும்"
 
-#: data/ui/preset_row.blp:79
+#: data/ui/preset_row.blp:80
 msgid "Description"
 msgstr "விளக்கம்"
 
-#: data/ui/preset_row.blp:80
+#: data/ui/preset_row.blp:81
 msgid "Sorry, but this preset don't have a description."
 msgstr "மன்னிக்கவும், ஆனால் இந்த முன்னமைவில் விளக்கம் இல்லை."
 
-#: data/ui/preset_row.blp:92
+#: data/ui/preset_row.blp:93
 msgid "No Badges"
 msgstr "பேட்ஜ்கள் இல்லை"
 
-#: data/ui/preset_row.blp:101 data/ui/presets_manager_window.blp:44
+#: data/ui/preset_row.blp:102 data/ui/presets_manager_window.blp:44
 msgid "Report Preset Issue"
 msgstr "முன்னமைக்கப்பட்ட சிக்கலைப் புகாரளிக்கவும்"
 
-#: data/ui/preset_row.blp:108
+#: data/ui/preset_row.blp:109
 msgid "Remove preset"
 msgstr "முன்னமைவை அகற்று"
 
-#: data/ui/preset_row.blp:109
+#: data/ui/preset_row.blp:110
 msgid "Remove Preset"
 msgstr "முன்னமைவை அகற்று"
 
@@ -301,7 +396,7 @@ msgstr "முன்னமைக்கப்பட்ட கோப்பை இ�
 msgid "Delete"
 msgstr "அழி"
 
-#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:231
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:237
 msgid "Open in File Manager"
 msgstr "கோப்பு மேலாளரில் திறக்கவும்"
 
@@ -342,8 +437,8 @@ msgid "Offline"
 msgstr "ஆஃப்லைன்"
 
 #: data/ui/presets_manager_window.blp:155
-#: gradience/frontend/views/presets_manager_window.py:124
-#: gradience/frontend/views/presets_manager_window.py:392
+#: gradience/frontend/views/presets_manager_window.py:122
+#: gradience/frontend/views/presets_manager_window.py:390
 msgid "Repositories"
 msgstr "களஞ்சியங்கள்"
 
@@ -358,6 +453,42 @@ msgstr "அனைத்து கோப்புகள்"
 #: data/ui/presets_manager_window.blp:185
 msgid "JSON file (*.json)"
 msgstr "JSON கோப்பு (*.json)"
+
+#: data/ui/reset_preset_group.blp:5
+#, fuzzy
+#| msgid "Rename Preset"
+msgid "Reset &amp; Restore Presets"
+msgstr "முன்னமைவை மறுபெயரிடவும்"
+
+#: data/ui/reset_preset_group.blp:6
+msgid ""
+"This section allows you to reset an currently applied preset or restore the "
+"previous one."
+msgstr ""
+
+#: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
+#, fuzzy
+#| msgid "Remove Preset"
+msgid "Restore Previous Preset"
+msgstr "முன்னமைவை அகற்று"
+
+#: data/ui/reset_preset_group.blp:21 data/ui/reset_preset_group.blp:41
+#, fuzzy
+#| msgid "_Reset"
+msgid "Reset"
+msgstr "_மீட்டமைக்கவும்"
+
+#: data/ui/reset_preset_group.blp:22 data/ui/reset_preset_group.blp:42
+#, fuzzy
+#| msgid "Reset Applied Color Scheme"
+msgid "Reset Applied Preset"
+msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டமைக்கவும்"
+
+#: data/ui/reset_preset_group.blp:29
+#, fuzzy
+#| msgid "GTK 3 Flatpak Applications"
+msgid "GTK 3 Applications"
+msgstr "GTK 3 பிளாட்பேக் பயன்பாடுகள்"
 
 #: data/ui/save_dialog.blp:5
 msgid "Save preset as…"
@@ -490,22 +621,120 @@ msgstr "கிரேடியன்ஸைப் பயன்படுத்த�
 msgid "Next"
 msgstr "அடுத்தது"
 
+#: data/ui/shell_prefs_window.blp:5
+#, fuzzy
+#| msgid "Plugin Preferences"
+msgid "Shell Engine Preferences"
+msgstr "செருகுநிரல் விருப்பத்தேர்வுகள்"
+
+#: data/ui/shell_prefs_window.blp:13
+#, fuzzy
+#| msgid "Shade Color"
+msgid "Custom Shell Colors"
+msgstr "நிழல் நிறம்"
+
+#: data/ui/shell_prefs_window.blp:14
+msgid ""
+"This section allows you to customize colors that will be used in Shell theme."
+msgstr ""
+
+#: data/ui/shell_theming_group.blp:6
+msgid ""
+"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
+"currently selected preset.\n"
+"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"themes."
+msgstr ""
+
+#: data/ui/shell_theming_group.blp:9
+msgid "Shell Engine Options"
+msgstr ""
+
+#: data/ui/shell_theming_group.blp:10
+msgid "Change the parameters of a generated GNOME Shell theme"
+msgstr ""
+
+#: data/ui/shell_theming_group.blp:17
+#, fuzzy
+#| msgid "Apply This Color Scheme?"
+msgid "Apply a Shell theme"
+msgstr "இந்த வண்ணத் திட்டத்தைப் பயன்படுத்தவா?"
+
+#: data/ui/shell_theming_group.blp:23
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Shell Theme"
+msgstr "அத்வைதா தீம் தனிப்பயனாக்கு"
+
+#: data/ui/shell_theming_group.blp:28
+#, fuzzy
+#| msgid "No Preferences"
+msgid "Open Shell Preferences"
+msgstr "விருப்பத்தேர்வுகள் இல்லை"
+
+#: data/ui/shell_theming_group.blp:34
+#, fuzzy
+#| msgid "Preset reseted"
+msgid "Preset Variant"
+msgstr "முன்னமைவு மீட்டமைக்கப்பட்டது"
+
+#: data/ui/shell_theming_group.blp:35
+msgid "Select which preset variant you have currently applied"
+msgstr ""
+
+#: data/ui/shell_theming_group.blp:47
+msgid "Currently unavailable"
+msgstr ""
+
+#: data/ui/shell_theming_group.blp:55
+#, fuzzy
+#| msgid "Preset removed"
+msgid "Reset Theme"
+msgstr "முன்னமைவு அகற்றப்பட்டது"
+
+#: data/ui/shell_theming_group.blp:56
+#, fuzzy
+#| msgid "Reset applied color scheme?"
+msgid "Reset an applied theme"
+msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டமைக்கவா?"
+
+#: data/ui/theming_empty_group.blp:5
+#, fuzzy
+#| msgid "Monet Engine"
+msgid "No Theme Engines"
+msgstr "மோனெட் எஞ்சின்"
+
+#: data/ui/theming_empty_group.blp:6
+msgid ""
+"Theme Engines extends the functionality of Gradience. They can be enabled in "
+"the Preferences."
+msgstr ""
+
+#: data/ui/theming_empty_group.blp:9
+msgid "Open Preferences to manage Theme Engines"
+msgstr ""
+
+#: data/ui/theming_empty_group.blp:14 data/ui/theming_empty_group.blp:15
+#, fuzzy
+#| msgid "Preferences"
+msgid "Open Preferences"
+msgstr "விருப்பத்தேர்வுகள்"
+
 #: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:63
 msgid "Welcome to Gradience"
 msgstr "கிரேடியன்ஸுக்கு வரவேற்கிறோம்"
 
 #: data/ui/welcome_window.blp:71
-msgid "What's new in 0.3.2"
+#, fuzzy
+#| msgid "What's new in 0.3.2"
+msgid "What's new in 0.8.0"
 msgstr "0.3.2 இல் புதிதாக என்ன இருக்கிறது"
 
 #: data/ui/welcome_window.blp:72
 msgid ""
-"In this release, we fixed the Firefox GNOME theme plugin, issues with "
-"presets always being saved with the same name, as well as some UX polish, "
-"and more."
+"In this release, we added GNOME Shell theming support and reworked how "
+"Gradience work internally."
 msgstr ""
-"இந்த வெளியீட்டில், பயர்பாக்ஸ் GNOME தீம் செருகுநிரல், ப்ரீசெட்கள் எப்போதும் ஒரே பெயரில் "
-"சேமிக்கப்படும் சிக்கல்கள், சில UX பாலிஷ் மற்றும் பலவற்றை சரி செய்துள்ளோம்."
 
 #: data/ui/welcome_window.blp:96
 msgid ""
@@ -522,10 +751,6 @@ msgstr "லெகஸி ஆப்ஸ் தீமிங்"
 #: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "கணினி கட்டமைப்பு"
-
-#: data/ui/window.blp:29 gradience/frontend/views/main_window.py:141
-msgid "Apply"
-msgstr "விண்ணப்பிக்கவும்"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -552,135 +777,27 @@ msgid "_Colors"
 msgstr "_வண்ணங்கள்"
 
 #: data/ui/window.blp:97
-msgid "_Monet"
-msgstr "_மோனெட்"
+#, fuzzy
+#| msgid "Theme"
+msgid "_Theming"
+msgstr "தீம்"
 
 #: data/ui/window.blp:106
 msgid "_Advanced"
 msgstr "_மேம்படுத்தபட்டது"
 
-#: data/ui/window.blp:128
-msgid "Restore Applied Color Scheme"
-msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டமைக்கவும்"
-
 #: data/ui/window.blp:133
-msgid "Reset Applied Color Scheme"
-msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டமைக்கவும்"
-
-#: data/ui/window.blp:144
 msgid "About Gradience"
 msgstr "கிரேடியன்ஸ் பற்றி"
 
-#: data/ui/window.blp:152
-#: gradience/frontend/views/presets_manager_window.py:112
+#: data/ui/window.blp:141
+#: gradience/frontend/views/presets_manager_window.py:110
 msgid "Built-In Presets"
 msgstr "உள்ளமைக்கப்பட்ட முன்னமைவுகள்"
 
-#: data/ui/window.blp:173
+#: data/ui/window.blp:162
 msgid "Manage Presets"
 msgstr "முன்னமைவுகளை நிர்வகிக்கவும்"
-
-#: gradience/frontend/dialogs/app_type_dialog.py:51
-#: gradience/frontend/dialogs/save_dialog.py:57
-msgid "_Cancel"
-msgstr "_ரத்துசெய்"
-
-#: gradience/frontend/dialogs/log_out_dialog.py:36
-msgid "OK"
-msgstr "சரி"
-
-#: gradience/frontend/dialogs/save_dialog.py:39
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten!"
-msgstr ""
-"முன்னமைவை <tt>{0}</tt> இல் சேமிக்கிறது. அந்த முன்னமைவு ஏற்கனவே இருந்தால், அது "
-"மேலெழுதப்படும்!"
-
-#: gradience/frontend/dialogs/save_dialog.py:60
-msgid "Discard"
-msgstr "அப்புறப்படுத்து"
-
-#: gradience/frontend/dialogs/save_dialog.py:65
-msgid "_Save"
-msgstr "_சேமிக்கவும்"
-
-#: gradience/frontend/main.py:184
-#: gradience/frontend/views/presets_manager_window.py:337
-msgid "Failed to load list of presets"
-msgstr "முன்னமைவுகளின் பட்டியலை ஏற்றுவதில் தோல்வி"
-
-#: gradience/frontend/main.py:217
-msgid "No presets found"
-msgstr "முன்னமைவுகள் எதுவும் கிடைக்கவில்லை"
-
-#: gradience/frontend/main.py:240
-msgid "Favorite Presets"
-msgstr "பிடித்த முன்னமைவுகள்"
-
-#: gradience/frontend/main.py:404
-msgid "Unsaved Changes"
-msgstr "சேமிக்கப்படாத மாற்றங்கள்"
-
-#: gradience/frontend/main.py:416
-msgid "Save Changes"
-msgstr "மாற்றங்களை சேமியுங்கள்"
-
-#: gradience/frontend/main.py:505
-msgid "Apply This Color Scheme?"
-msgstr "இந்த வண்ணத் திட்டத்தைப் பயன்படுத்தவா?"
-
-#: gradience/frontend/main.py:507
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"எச்சரிக்கை: அந்த ஆப்ஸ் வகைகளுக்கான தனிப்பயன் CSS கோப்புகள் மாற்றமுடியாமல் மேலெழுதப்படும்!"
-
-#: gradience/frontend/main.py:511
-msgid "_Apply"
-msgstr "_விண்ணப்பிக்கவும்"
-
-#: gradience/frontend/main.py:521
-msgid "Restore applied color scheme?"
-msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டெடுக்கவா?"
-
-#: gradience/frontend/main.py:522 gradience/frontend/main.py:536
-msgid "Make sure you have the current settings saved as a preset."
-msgstr "தற்போதைய அமைப்புகளை முன்னமைவாகச் சேமித்து வைத்திருப்பதை உறுதிசெய்யவும்."
-
-#: gradience/frontend/main.py:524
-msgid "_Restore"
-msgstr "_மீட்டமை"
-
-#: gradience/frontend/main.py:535
-msgid "Reset applied color scheme?"
-msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டமைக்கவா?"
-
-#: gradience/frontend/main.py:538
-msgid "_Reset"
-msgstr "_மீட்டமைக்கவும்"
-
-#: gradience/frontend/main.py:564
-msgid "You have unsaved changes!"
-msgstr "உங்களிடம் சேமிக்கப்படாத மாற்றங்கள் உள்ளன!"
-
-#: gradience/frontend/main.py:615
-msgid "Preset saved"
-msgstr "முன்னமைவு சேமிக்கப்பட்டது"
-
-#: gradience/frontend/main.py:632
-msgid "Preset set successfully"
-msgstr "முன்னமைவு வெற்றிகரமாக அமைக்கப்பட்டது"
-
-#: gradience/frontend/main.py:645
-msgid "Unable to restore GTK 4 backup"
-msgstr "GTK 4 காப்புப்பிரதியை மீட்டெடுக்க முடியவில்லை"
-
-#: gradience/frontend/main.py:658 gradience/frontend/main.py:666
-msgid "Unable to delete current preset"
-msgstr "தற்போதைய முன்னமைவை நீக்க முடியவில்லை"
 
 #: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
@@ -729,6 +846,7 @@ msgstr ""
 #: gradience/frontend/schemas/preset_schema.py:282
 #: gradience/frontend/schemas/preset_schema.py:309
 #: gradience/frontend/schemas/preset_schema.py:326
+#: gradience/frontend/schemas/preset_schema.py:343
 msgid "Background Color"
 msgstr "பின்னணி நிறம்"
 
@@ -743,6 +861,7 @@ msgstr "பின்னணி நிறம்"
 #: gradience/frontend/schemas/preset_schema.py:287
 #: gradience/frontend/schemas/preset_schema.py:314
 #: gradience/frontend/schemas/preset_schema.py:331
+#: gradience/frontend/schemas/preset_schema.py:348
 msgid "Foreground Color"
 msgstr "முன்புற நிறம்"
 
@@ -862,7 +981,7 @@ msgstr ""
 
 #: gradience/frontend/schemas/preset_schema.py:265
 #: gradience/frontend/schemas/preset_schema.py:292
-#: gradience/frontend/schemas/preset_schema.py:343
+#: gradience/frontend/schemas/preset_schema.py:360
 msgid "Shade Color"
 msgstr "நிழல் நிறம்"
 
@@ -892,30 +1011,42 @@ msgstr ""
 "நிழல்களுக்கும், கார்டுகளில் உள்ள வரிசை பிரிப்பான்களுக்கும் நிழல் வண்ணம் பயன்படுத்தப்படுகிறது."
 
 #: gradience/frontend/schemas/preset_schema.py:304
-msgid "Dialog Colors"
+#, fuzzy
+#| msgid "Dialog Colors"
+msgid "Thumbnail Colors"
 msgstr "உரையாடல் நிறங்கள்"
 
 #: gradience/frontend/schemas/preset_schema.py:305
+#, fuzzy
+#| msgid "These colors are used for popovers."
+msgid "These colors are used for Tab Overview thumbnails."
+msgstr "இந்த நிறங்கள் பாப்ஓவர்களுக்காக பயன்படுத்தப்படுகின்றன."
+
+#: gradience/frontend/schemas/preset_schema.py:321
+msgid "Dialog Colors"
+msgstr "உரையாடல் நிறங்கள்"
+
+#: gradience/frontend/schemas/preset_schema.py:322
 msgid "These colors are used for message dialogs."
 msgstr "இந்த வண்ணங்கள் செய்தி உரையாடல்களுக்குப் பயன்படுத்தப்படுகின்றன."
 
-#: gradience/frontend/schemas/preset_schema.py:321
+#: gradience/frontend/schemas/preset_schema.py:338
 msgid "Popover Colors"
 msgstr "பாப்ஓவர் நிறங்கள்"
 
-#: gradience/frontend/schemas/preset_schema.py:322
+#: gradience/frontend/schemas/preset_schema.py:339
 msgid "These colors are used for popovers."
 msgstr "இந்த நிறங்கள் பாப்ஓவர்களுக்காக பயன்படுத்தப்படுகின்றன."
 
-#: gradience/frontend/schemas/preset_schema.py:338
+#: gradience/frontend/schemas/preset_schema.py:355
 msgid "Miscellaneous Colors"
 msgstr "இதர நிறங்கள்"
 
-#: gradience/frontend/schemas/preset_schema.py:339
+#: gradience/frontend/schemas/preset_schema.py:356
 msgid "Colors that don't fit in any particular group."
 msgstr "எந்த குறிப்பிட்ட குழுவிற்கும் பொருந்தாத வண்ணங்கள்."
 
-#: gradience/frontend/schemas/preset_schema.py:345
+#: gradience/frontend/schemas/preset_schema.py:362
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -923,11 +1054,11 @@ msgstr ""
 "நிழல் வண்ணம் இன்லைன் டேப் பார்கள், துண்டுப் பிரசுரங்கள் மற்றும் மடிப்புகளின் மாற்றங்கள் மற்றும் "
 "தகவல் பட்டி பார்டர்களால் பயன்படுத்தப்படுகிறது."
 
-#: gradience/frontend/schemas/preset_schema.py:353
+#: gradience/frontend/schemas/preset_schema.py:370
 msgid "Scrollbar Outline Color"
 msgstr "ஸ்க்ரோல்பார் அவுட்லைன் நிறம்"
 
-#: gradience/frontend/schemas/preset_schema.py:355
+#: gradience/frontend/schemas/preset_schema.py:372
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -935,43 +1066,305 @@ msgstr ""
 "உள்ளடக்கத்தின் நிறத்தைப் பொருட்படுத்தாமல் மேலடுக்கு ஸ்க்ரோல்பார்கள் தெரியும் என்பதை "
 "உறுதிப்படுத்த, ஸ்க்ரோல்பார் அவுட்லைன் வண்ணம் ஸ்க்ரோல்பார்களால் பயன்படுத்தப்படுகிறது."
 
-#: gradience/frontend/schemas/preset_schema.py:365
+#: gradience/frontend/schemas/preset_schema.py:382
 msgid "Blue"
 msgstr "நீலம்"
 
-#: gradience/frontend/schemas/preset_schema.py:366
+#: gradience/frontend/schemas/preset_schema.py:383
 msgid "Green"
 msgstr "பச்சை"
 
-#: gradience/frontend/schemas/preset_schema.py:367
+#: gradience/frontend/schemas/preset_schema.py:384
 msgid "Yellow"
 msgstr "மஞ்சள்"
 
-#: gradience/frontend/schemas/preset_schema.py:368
+#: gradience/frontend/schemas/preset_schema.py:385
 msgid "Orange"
 msgstr "ஆரஞ்சு"
 
-#: gradience/frontend/schemas/preset_schema.py:369
+#: gradience/frontend/schemas/preset_schema.py:386
 msgid "Red"
 msgstr "சிவப்பு"
 
-#: gradience/frontend/schemas/preset_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:387
 msgid "Purple"
 msgstr "ஊதா"
 
-#: gradience/frontend/schemas/preset_schema.py:371
+#: gradience/frontend/schemas/preset_schema.py:388
 msgid "Brown"
 msgstr "பழுப்பு"
 
-#: gradience/frontend/schemas/preset_schema.py:372
-#: gradience/frontend/views/main_window.py:206
+#: gradience/frontend/schemas/preset_schema.py:389
+#: gradience/frontend/widgets/monet_theming_group.py:95
+#: gradience/frontend/widgets/shell_theming_group.py:73
 msgid "Light"
 msgstr "ஒளி"
 
-#: gradience/frontend/schemas/preset_schema.py:373
-#: gradience/frontend/views/main_window.py:207
+#: gradience/frontend/schemas/preset_schema.py:390
+#: gradience/frontend/widgets/monet_theming_group.py:96
+#: gradience/frontend/widgets/shell_theming_group.py:72
 msgid "Dark"
 msgstr "இருட்டு"
+
+#: gradience/frontend/schemas/shell_schema.py:24
+#, fuzzy
+#| msgid "Background Color"
+msgid "Base Background Color"
+msgstr "பின்னணி நிறம்"
+
+#: gradience/frontend/schemas/shell_schema.py:29
+#, fuzzy
+#| msgid "Foreground Color"
+msgid "Base Foreground Color"
+msgstr "முன்புற நிறம்"
+
+#: gradience/frontend/schemas/shell_schema.py:34
+#, fuzzy
+#| msgid "Background Color"
+msgid "Overview Background Color"
+msgstr "பின்னணி நிறம்"
+
+#: gradience/frontend/schemas/shell_schema.py:39
+#, fuzzy
+#| msgid "Background Color"
+msgid "Accent Background Color"
+msgstr "பின்னணி நிறம்"
+
+#: gradience/frontend/schemas/shell_schema.py:44
+#, fuzzy
+#| msgid "Foreground Color"
+msgid "Accent Foreground Color"
+msgstr "முன்புற நிறம்"
+
+#: gradience/frontend/schemas/shell_schema.py:61
+#, fuzzy
+#| msgid "Foreground Color"
+msgid "OSD Foreground Color"
+msgstr "முன்புற நிறம்"
+
+#: gradience/frontend/dialogs/app_type_dialog.py:47
+#: gradience/frontend/dialogs/save_dialog.py:62
+msgid "_Cancel"
+msgstr "_ரத்துசெய்"
+
+#: gradience/frontend/dialogs/log_out_dialog.py:41
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
+msgid "OK"
+msgstr "சரி"
+
+#: gradience/frontend/dialogs/save_dialog.py:39
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+#| "overwritten!"
+msgid ""
+"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+"overwritten."
+msgstr ""
+"முன்னமைவை <tt>{0}</tt> இல் சேமிக்கிறது. அந்த முன்னமைவு ஏற்கனவே இருந்தால், அது "
+"மேலெழுதப்படும்!"
+
+#: gradience/frontend/dialogs/save_dialog.py:65
+msgid "Discard"
+msgstr "அப்புறப்படுத்து"
+
+#: gradience/frontend/dialogs/save_dialog.py:70
+msgid "_Save"
+msgstr "_சேமிக்கவும்"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
+msgid "Unsupported Shell Version ({get_full_shell_version()})"
+msgstr ""
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+msgid ""
+"The Shell version you are using is not supported by Gradience. Please "
+"upgrade to a newer version of GNOME."
+msgstr ""
+
+#: gradience/frontend/widgets/explore_preset_row.py:68
+#: gradience/frontend/widgets/explore_preset_row.py:94
+msgid "Preset could not be downloaded"
+msgstr "முன்னமைவைப் பதிவிறக்க முடியவில்லை"
+
+#: gradience/frontend/widgets/explore_preset_row.py:82
+#: gradience/frontend/widgets/explore_preset_row.py:98
+msgid "Preset downloaded"
+msgstr "முன்னமைவு பதிவிறக்கப்பட்டது"
+
+#: gradience/frontend/widgets/monet_theming_group.py:65
+msgid "Monet Palette"
+msgstr "மோனெட் தட்டு"
+
+#: gradience/frontend/widgets/monet_theming_group.py:91
+msgid "Theme"
+msgstr "தீம்"
+
+#: gradience/frontend/widgets/monet_theming_group.py:94
+msgid "Auto"
+msgstr "ஆட்டோ"
+
+#: gradience/frontend/widgets/monet_theming_group.py:131
+msgid "Failed to generate Monet palette"
+msgstr "மோனெட் தட்டு உருவாக்க முடியவில்லை"
+
+#: gradience/frontend/widgets/monet_theming_group.py:136
+msgid "Palette generated"
+msgstr "தட்டு உருவாக்கப்பட்டது"
+
+#: gradience/frontend/widgets/monet_theming_group.py:141
+#, fuzzy
+#| msgid "Select an Image"
+msgid "Select an image first"
+msgstr "ஒரு படத்தைத் தேர்ந்தெடுக்கவும்"
+
+#: gradience/frontend/widgets/option_row.py:52
+msgid "This option is only partially supported by the adw-gtk3 theme."
+msgstr "இந்த விருப்பம் adw-gtk3 தீம் மூலம் ஓரளவு மட்டுமே ஆதரிக்கப்படுகிறது."
+
+#: gradience/frontend/widgets/option_row.py:57
+msgid "This option is not supported by the adw-gtk3 theme."
+msgstr "இந்த விருப்பத்தை adw-gtk3 தீம் ஆதரிக்கவில்லை."
+
+#: gradience/frontend/widgets/option_row.py:116
+msgid "Not a color, see text value"
+msgstr "நிறம் அல்ல, உரை மதிப்பைப் பார்க்கவும்"
+
+#: gradience/frontend/widgets/plugin_row.py:85
+msgid "Unable to remove"
+msgstr "அகற்ற முடியவில்லை"
+
+#: gradience/frontend/widgets/plugin_row.py:86
+msgid "This is a system plugin, and cannot be removed."
+msgstr "இது ஒரு சிஸ்டம் செருகுநிரல், அதனால் அதை அகற்ற முடியாது."
+
+#: gradience/frontend/widgets/plugin_row.py:88
+msgid "Close"
+msgstr "மூடுங்கள்"
+
+#: gradience/frontend/widgets/preset_row.py:85
+#: gradience/frontend/widgets/preset_row.py:144
+msgid "Remove from Favorites"
+msgstr "பிடித்தவையிலிருந்து அகற்று"
+
+#: gradience/frontend/widgets/preset_row.py:88
+#: gradience/frontend/widgets/preset_row.py:140
+msgid "Add to Favorites"
+msgstr "பிடித்தவையில் சேர்க்கவும்"
+
+#: gradience/frontend/widgets/preset_row.py:160
+msgid "Preset removed"
+msgstr "முன்னமைவு அகற்றப்பட்டது"
+
+#: gradience/frontend/widgets/preset_row.py:161
+msgid "Undo"
+msgstr "செயல்தவிர்"
+
+#: gradience/frontend/widgets/preset_row.py:176
+msgid "Pending Deletion"
+msgstr "நிலுவையில் உள்ள நீக்கம்"
+
+#: gradience/frontend/widgets/preset_row.py:190
+msgid "Unable to delete preset"
+msgstr "முன்னமைவை நீக்க முடியவில்லை"
+
+#: gradience/frontend/widgets/repo_row.py:60
+msgid "Repository removed"
+msgstr "களஞ்சியம் அகற்றப்பட்டது"
+
+#: gradience/frontend/widgets/reset_preset_group.py:57
+msgid "Unable to restore GTK 4 backup"
+msgstr "GTK 4 காப்புப்பிரதியை மீட்டெடுக்க முடியவில்லை"
+
+#: gradience/frontend/widgets/reset_preset_group.py:69
+#: gradience/frontend/widgets/reset_preset_group.py:94
+msgid "Unable to delete current preset"
+msgstr "தற்போதைய முன்னமைவை நீக்க முடியவில்லை"
+
+#: gradience/frontend/widgets/reset_preset_group.py:82
+#, fuzzy
+#| msgid "Unable to restore GTK 4 backup"
+msgid "Unable to restore GTK 3 backup"
+msgstr "GTK 4 காப்புப்பிரதியை மீட்டெடுக்க முடியவில்லை"
+
+#: gradience/frontend/widgets/shell_theming_group.py:94
+msgid "An unexpected error occurred while loading variable colors."
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:118
+msgid "GNOME Shell Missing"
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:119
+msgid ""
+"Shell Engine is designed to work only on systems running GNOME. You can "
+"still generate themes on other desktop environments, but it won't have any "
+"affect on them."
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:121
+#, fuzzy
+#| msgid "Monet Engine"
+msgid "Disable Engine"
+msgstr "மோனெட் எஞ்சின்"
+
+#: gradience/frontend/widgets/shell_theming_group.py:122
+#: gradience/frontend/widgets/shell_theming_group.py:133
+#: gradience/frontend/widgets/shell_theming_group.py:145
+#, fuzzy
+#| msgid "Continue"
+msgid "Continue Anyway"
+msgstr "தொடரவும்"
+
+#: gradience/frontend/widgets/shell_theming_group.py:129
+msgid "User Themes Extension Missing"
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:130
+msgid ""
+"Gradience requires User Themes extension installed in order to apply Shell "
+"theme. You can still generate a theme, but you won't be able to apply it "
+"without this extension."
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:132
+#, fuzzy
+msgid "Install Extension"
+msgstr "தீம்கள் நிறுவுகிறது"
+
+#: gradience/frontend/widgets/shell_theming_group.py:140
+msgid "User Themes Extension Disabled"
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:141
+msgid ""
+"User Themes extension is currently disabled on your system. Please enable it "
+"in order to apply theme."
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:143
+#: gradience/frontend/views/presets_manager_window.py:197
+msgid "Cancel"
+msgstr "ரத்துசெய்"
+
+#: gradience/frontend/widgets/shell_theming_group.py:181
+msgid "An error occurred while generating a Shell theme."
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:188
+#, fuzzy
+#| msgid "Preset set successfully"
+msgid "Shell theme applied successfully."
+msgstr "முன்னமைவு வெற்றிகரமாக அமைக்கப்பட்டது"
+
+#: gradience/frontend/widgets/shell_theming_group.py:217
+#: gradience/frontend/widgets/shell_theming_group.py:222
+msgid "Failed to load extension's install link."
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:241
+msgid "Shell theme successfully reset."
+msgstr ""
 
 #: gradience/frontend/views/about_window.py:27
 msgid "translator-credits"
@@ -1005,59 +1398,11 @@ msgstr ""
 "GitHub இல் பங்களிப்பாளர்கள் https://github.com/GradienceTeam/Community/graphs/"
 "contributors"
 
-#: gradience/frontend/views/main_window.py:132
-msgid "Monet Engine"
-msgstr "மோனெட் எஞ்சின்"
-
-#: gradience/frontend/views/main_window.py:135
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from an "
-"image's color."
-msgstr ""
-"மோனெட் என்பது ஒரு படத்தின் நிறத்தில் இருந்து மெட்டீரியல் டிசைன் 3 பேலட்டை உருவாக்கும் ஒரு "
-"மோனெட் எஞ்சின்."
-
-#: gradience/frontend/views/main_window.py:149
-msgid "Select an Image"
-msgstr "ஒரு படத்தைத் தேர்ந்தெடுக்கவும்"
-
-#: gradience/frontend/views/main_window.py:152
-msgid "Choose a Image File"
-msgstr "ஒரு படக் கோப்பைத் தேர்வு செய்யவும்"
-
-#: gradience/frontend/views/main_window.py:161
-msgid "Choose a File"
-msgstr "ஒரு கோப்பைத் தேர்ந்தெடுக்கவும்"
-
-#: gradience/frontend/views/main_window.py:183
-msgid "Monet Palette"
-msgstr "மோனெட் தட்டு"
-
-#: gradience/frontend/views/main_window.py:202
-msgid "Theme"
-msgstr "தீம்"
-
-#: gradience/frontend/views/main_window.py:205
-msgid "Auto"
-msgstr "ஆட்டோ"
-
-#: gradience/frontend/views/main_window.py:241
-msgid "Failed to generate Monet palette"
-msgstr "மோனெட் தட்டு உருவாக்க முடியவில்லை"
-
-#: gradience/frontend/views/main_window.py:245
-msgid "Palette generated"
-msgstr "தட்டு உருவாக்கப்பட்டது"
-
-#: gradience/frontend/views/main_window.py:249
-msgid "Select a background first"
-msgstr "முதலில் பின்னணியைத் தேர்ந்தெடுக்கவும்"
-
-#: gradience/frontend/views/main_window.py:273
+#: gradience/frontend/views/main_window.py:192
 msgid "Palette Colors"
 msgstr "தட்டு நிறங்கள்"
 
-#: gradience/frontend/views/main_window.py:276
+#: gradience/frontend/views/main_window.py:195
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -1083,44 +1428,45 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "செருகுநிரல்கள் எதுவும் கிடைக்கவில்லை."
 
-#: gradience/frontend/views/presets_manager_window.py:117
-#: gradience/frontend/views/presets_manager_window.py:353
+#: gradience/frontend/views/presets_manager_window.py:115
+#: gradience/frontend/views/presets_manager_window.py:351
 msgid "User Presets"
 msgstr "பயனர் முன்னமைவுகள்"
 
-#: gradience/frontend/views/presets_manager_window.py:192
+#: gradience/frontend/views/presets_manager_window.py:190
 msgid "Add new repository"
 msgstr "புதிய களஞ்சியத்தைச் சேர்க்கவும்"
 
-#: gradience/frontend/views/presets_manager_window.py:193
+#: gradience/frontend/views/presets_manager_window.py:191
 msgid "Add a repository to install additional presets."
 msgstr "கூடுதல் முன்னமைவுகளை நிறுவ ஒரு களஞ்சியத்தைச் சேர்க்கவும்."
 
-#: gradience/frontend/views/presets_manager_window.py:199
-msgid "Cancel"
-msgstr "ரத்துசெய்"
-
-#: gradience/frontend/views/presets_manager_window.py:200
+#: gradience/frontend/views/presets_manager_window.py:198
 msgid "Add"
 msgstr "சேர்"
 
-#: gradience/frontend/views/presets_manager_window.py:296
+#: gradience/frontend/views/presets_manager_window.py:294
 msgid "Preset already exists"
 msgstr "முன்னமைவு ஏற்கனவே உள்ளது"
 
-#: gradience/frontend/views/presets_manager_window.py:308
+#: gradience/frontend/views/presets_manager_window.py:306
 msgid "Preset imported"
 msgstr "முன்னமைவு இறக்குமதி செய்யப்பட்டது"
 
-#: gradience/frontend/views/presets_manager_window.py:311
+#: gradience/frontend/views/presets_manager_window.py:309
 msgid "Unsupported file format, must be .json"
 msgstr "ஆதரிக்கப்படாத கோப்பு வடிவம், .json ஆக இருக்க வேண்டும்"
 
-#: gradience/frontend/views/presets_manager_window.py:346
+#: gradience/frontend/views/presets_manager_window.py:335
+#: gradience/frontend/main.py:190
+msgid "Failed to load list of presets"
+msgstr "முன்னமைவுகளின் பட்டியலை ஏற்றுவதில் தோல்வி"
+
+#: gradience/frontend/views/presets_manager_window.py:344
 msgid "Built-in Presets"
 msgstr "உள்ளமைக்கப்பட்ட முன்னமைவுகள்"
 
-#: gradience/frontend/views/presets_manager_window.py:356
+#: gradience/frontend/views/presets_manager_window.py:354
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
@@ -1128,7 +1474,7 @@ msgstr ""
 "மேலும் முன்னமைவுகளுக்கு Github இல் <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a> பார்க்கவும்."
 
-#: gradience/frontend/views/presets_manager_window.py:382
+#: gradience/frontend/views/presets_manager_window.py:380
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
 "Explore tab."
@@ -1136,73 +1482,78 @@ msgstr ""
 "முன்னமைவு எதுவும் இல்லை! ஒன்றை இறக்குமதி செய்ய இறக்குமதி பொத்தானைப் பயன்படுத்தவும் அல்லது "
 "ஆய்வு தாவலில் ஒன்றைத் தேடவும்."
 
-#: gradience/frontend/views/welcome_window.py:97
+#: gradience/frontend/views/welcome_window.py:89
 msgid "Thanks for updating Gradience!"
 msgstr "கிரேடியன்ஸைப் புதுப்பித்ததற்கு நன்றி!"
 
-#: gradience/frontend/widgets/explore_preset_row.py:68
-#: gradience/frontend/widgets/explore_preset_row.py:94
-msgid "Preset could not be downloaded"
-msgstr "முன்னமைவைப் பதிவிறக்க முடியவில்லை"
+#: gradience/frontend/main.py:223
+msgid "No presets found"
+msgstr "முன்னமைவுகள் எதுவும் கிடைக்கவில்லை"
 
-#: gradience/frontend/widgets/explore_preset_row.py:82
-#: gradience/frontend/widgets/explore_preset_row.py:98
-msgid "Preset downloaded"
-msgstr "முன்னமைவு பதிவிறக்கப்பட்டது"
+#: gradience/frontend/main.py:246
+msgid "Favorite Presets"
+msgstr "பிடித்த முன்னமைவுகள்"
 
-#: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "இந்த விருப்பம் adw-gtk3 தீம் மூலம் ஓரளவு மட்டுமே ஆதரிக்கப்படுகிறது."
+#: gradience/frontend/main.py:403
+msgid "Unsaved Changes"
+msgstr "சேமிக்கப்படாத மாற்றங்கள்"
 
-#: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "இந்த விருப்பத்தை adw-gtk3 தீம் ஆதரிக்கவில்லை."
+#: gradience/frontend/main.py:415
+msgid "Save Changes"
+msgstr "மாற்றங்களை சேமியுங்கள்"
 
-#: gradience/frontend/widgets/option_row.py:110
-msgid "Not a color, see text value"
-msgstr "நிறம் அல்ல, உரை மதிப்பைப் பார்க்கவும்"
+#: gradience/frontend/main.py:505
+msgid "Apply This Color Scheme?"
+msgstr "இந்த வண்ணத் திட்டத்தைப் பயன்படுத்தவா?"
 
-#: gradience/frontend/widgets/plugin_row.py:85
-msgid "Unable to remove"
-msgstr "அகற்ற முடியவில்லை"
+#: gradience/frontend/main.py:507
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"எச்சரிக்கை: அந்த ஆப்ஸ் வகைகளுக்கான தனிப்பயன் CSS கோப்புகள் மாற்றமுடியாமல் மேலெழுதப்படும்!"
 
-#: gradience/frontend/widgets/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed."
-msgstr "இது ஒரு சிஸ்டம் செருகுநிரல், அதனால் அதை அகற்ற முடியாது."
+#: gradience/frontend/main.py:511
+msgid "_Apply"
+msgstr "_விண்ணப்பிக்கவும்"
 
-#: gradience/frontend/widgets/plugin_row.py:88
-msgid "Close"
-msgstr "மூடுங்கள்"
+#: gradience/frontend/main.py:537
+msgid "You have unsaved changes!"
+msgstr "உங்களிடம் சேமிக்கப்படாத மாற்றங்கள் உள்ளன!"
 
-#: gradience/frontend/widgets/preset_row.py:87
-#: gradience/frontend/widgets/preset_row.py:104
-msgid "Remove from Favorites"
-msgstr "பிடித்தவையிலிருந்து அகற்று"
+#: gradience/frontend/main.py:588
+msgid "Preset saved"
+msgstr "முன்னமைவு சேமிக்கப்பட்டது"
 
-#: gradience/frontend/widgets/preset_row.py:90
-#: gradience/frontend/widgets/preset_row.py:100
-msgid "Add to Favorites"
-msgstr "பிடித்தவையில் சேர்க்கவும்"
+#: gradience/frontend/main.py:605
+msgid "Preset set successfully"
+msgstr "முன்னமைவு வெற்றிகரமாக அமைக்கப்பட்டது"
 
-#: gradience/frontend/widgets/preset_row.py:167
-msgid "Preset removed"
-msgstr "முன்னமைவு அகற்றப்பட்டது"
+#~ msgid ""
+#~ "In this release, we fixed the Firefox GNOME theme plugin, issues with "
+#~ "presets always being saved with the same name, as well as some UX polish, "
+#~ "and more."
+#~ msgstr ""
+#~ "இந்த வெளியீட்டில், பயர்பாக்ஸ் GNOME தீம் செருகுநிரல், ப்ரீசெட்கள் எப்போதும் ஒரே பெயரில் "
+#~ "சேமிக்கப்படும் சிக்கல்கள், சில UX பாலிஷ் மற்றும் பலவற்றை சரி செய்துள்ளோம்."
 
-#: gradience/frontend/widgets/preset_row.py:168
-msgid "Undo"
-msgstr "செயல்தவிர்"
+#~ msgid "_Monet"
+#~ msgstr "_மோனெட்"
 
-#: gradience/frontend/widgets/preset_row.py:183
-msgid "Pending Deletion"
-msgstr "நிலுவையில் உள்ள நீக்கம்"
+#~ msgid "Restore Applied Color Scheme"
+#~ msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டமைக்கவும்"
 
-#: gradience/frontend/widgets/preset_row.py:197
-msgid "Unable to delete preset"
-msgstr "முன்னமைவை நீக்க முடியவில்லை"
+#~ msgid "Restore applied color scheme?"
+#~ msgstr "பயன்படுத்தப்பட்ட வண்ணத் திட்டத்தை மீட்டெடுக்கவா?"
 
-#: gradience/frontend/widgets/repo_row.py:60
-msgid "Repository removed"
-msgstr "களஞ்சியம் அகற்றப்பட்டது"
+#~ msgid "Make sure you have the current settings saved as a preset."
+#~ msgstr "தற்போதைய அமைப்புகளை முன்னமைவாகச் சேமித்து வைத்திருப்பதை உறுதிசெய்யவும்."
+
+#~ msgid "_Restore"
+#~ msgstr "_மீட்டமை"
+
+#~ msgid "Select a background first"
+#~ msgstr "முதலில் பின்னணியைத் தேர்ந்தெடுக்கவும்"
 
 #~ msgid "Report an Issue…"
 #~ msgstr "சிக்கலைப் புகாரளி…"
@@ -1471,9 +1822,6 @@ msgstr "களஞ்சியம் அகற்றப்பட்டது"
 #~ msgid "advanced purple"
 #~ msgstr "மேம்பட்ட ஊதா"
 
-#~ msgid "Preset reseted"
-#~ msgstr "முன்னமைவு மீட்டமைக்கப்பட்டது"
-
 #~ msgid ""
 #~ "\n"
 #~ "<ul>\n"
@@ -1611,9 +1959,6 @@ msgstr "களஞ்சியம் அகற்றப்பட்டது"
 #~ msgid "GTK 3 apps (adw-gtk3 theme required)"
 #~ msgstr "GTK 3 பயன்பாடுகள் (adw-gtk3 தீம் தேவை)"
 
-#~ msgid "Apply preset"
-#~ msgstr "முன்னமைவைப் பயன்படுத்தவும்"
-
 #~ msgid "Download and apply"
 #~ msgstr "பதிவிறக்கம் செய்து விண்ணப்பிக்கவும்"
 
@@ -1649,10 +1994,6 @@ msgstr "களஞ்சியம் அகற்றப்பட்டது"
 #, fuzzy
 #~ msgid "Install adw-gtk3 theme for legacy applications."
 #~ msgstr "லெகஸி ஆப்ஸ் தீமிங்கிற்கு adw-gtk3 தீம் நிறுவவும்"
-
-#, fuzzy
-#~ msgid "Installing themes"
-#~ msgstr "தீம்கள் நிறுவுகிறது"
 
 #, fuzzy
 #~ msgid "Please wait until themes will be installed. "
