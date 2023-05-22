@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2023-05-18 21:19+0000\n"
-"PO-Revision-Date: 2023-05-19 11:52+0000\n"
+"PO-Revision-Date: 2023-05-22 13:50+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/nl/>\n"
@@ -625,14 +625,18 @@ msgid ""
 "WARNING: Extensions that modify Shell stylesheet can cause issues with "
 "themes."
 msgstr ""
+"De shell-engine genereert een aangepast GNOME-shell-thema gebaseerd op de "
+"kleuren van een huidig geselecteerde voorinstelling.\n"
+"WAARSCHUWING: Uitbreidingen die het shell-stijlblad wijzigen kunnen "
+"problemen veroorzaken met thema's."
 
 #: data/ui/shell_theming_group.blp:9
 msgid "Shell Engine Options"
-msgstr ""
+msgstr "Opties voor shell-engine"
 
 #: data/ui/shell_theming_group.blp:10
 msgid "Change the parameters of a generated GNOME Shell theme"
-msgstr ""
+msgstr "Pas de parameters van een gegenereerd GNOME-shell-thema aan"
 
 #: data/ui/shell_theming_group.blp:17
 msgid "Apply a Shell theme"
@@ -652,7 +656,7 @@ msgstr "Voorinstellings­variant"
 
 #: data/ui/shell_theming_group.blp:35
 msgid "Select which preset variant you have currently applied"
-msgstr ""
+msgstr "Selecteer welke voorinstellings­variant u momenteel heeft toegepast"
 
 #: data/ui/shell_theming_group.blp:47
 msgid "Currently unavailable"
@@ -667,20 +671,20 @@ msgid "Reset an applied theme"
 msgstr "Toegepast thema resetten"
 
 #: data/ui/theming_empty_group.blp:5
-#, fuzzy
-#| msgid "Monet Engine"
 msgid "No Theme Engines"
-msgstr "Monet"
+msgstr "Geen thema-engines"
 
 #: data/ui/theming_empty_group.blp:6
 msgid ""
 "Theme Engines extends the functionality of Gradience. They can be enabled in "
 "the Preferences."
 msgstr ""
+"Thema-engines breiden de functionaliteit van Gradience uit. Ze kunnen worden "
+"ingeschakeld vanuit de voorkeuren."
 
 #: data/ui/theming_empty_group.blp:9
 msgid "Open Preferences to manage Theme Engines"
-msgstr ""
+msgstr "Open voorkeuren om thema-engines te beheren"
 
 #: data/ui/theming_empty_group.blp:14 data/ui/theming_empty_group.blp:15
 msgid "Open Preferences"
@@ -699,6 +703,8 @@ msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience work internally."
 msgstr ""
+"In deze uitgave hebben we ondersteuning voor GNOME-shell-thema's toegevoegd "
+"en de interne werking van Gradience aangepast."
 
 #: data/ui/welcome_window.blp:96
 msgid ""
@@ -981,10 +987,8 @@ msgid "Thumbnail Colors"
 msgstr "Miniatuur­kleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:305
-#, fuzzy
-#| msgid "These colors are used for popovers."
 msgid "These colors are used for Tab Overview thumbnails."
-msgstr "Deze kleuren worden gebruikt voor popovers."
+msgstr "Deze kleuren worden gebruikt voor miniaturen van een tabblad­overzicht."
 
 #: gradience/frontend/schemas/preset_schema.py:321
 msgid "Dialog Colors"
@@ -1105,16 +1109,13 @@ msgid "OK"
 msgstr "Ok"
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten!"
+#, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten."
 msgstr ""
-"Voorinstelling opslaan in <tt>{0}</tt>. Als die voorinstelling al bestaat, "
-"wordt deze overschreven!"
+"Voorinstelling wordt opgeslagen in <tt>{0}</tt>. Indien de voorinstelling al "
+"bestaat, zal deze worden overschreven."
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 msgid "Discard"
@@ -1133,6 +1134,8 @@ msgid ""
 "The Shell version you are using is not supported by Gradience. Please "
 "upgrade to a newer version of GNOME."
 msgstr ""
+"De shell-versie die u gebruikt wordt niet ondersteund door Gradience. "
+"Upgrade naar een nieuwere versie van GNOME."
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -1233,14 +1236,13 @@ msgid "Unable to delete current preset"
 msgstr "Kan huidige voorinstelling niet verwijderen"
 
 #: gradience/frontend/widgets/reset_preset_group.py:82
-#, fuzzy
-#| msgid "Unable to restore GTK 4 backup"
 msgid "Unable to restore GTK 3 backup"
-msgstr "Kan GTK-4-back-up niet herstellen"
+msgstr "Kan GTK-3-back-up niet herstellen"
 
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."
 msgstr ""
+"Er is een onverwachte fout opgetreden bij het laden van variabelekleuren."
 
 #: gradience/frontend/widgets/shell_theming_group.py:118
 msgid "GNOME Shell Missing"
@@ -1252,12 +1254,13 @@ msgid ""
 "still generate themes on other desktop environments, but it won't have any "
 "affect on them."
 msgstr ""
+"Shell-engine is ontworpen om alleen te werken op systemen met GNOME. U kunt "
+"nog steeds thema's genereren op andere bureaubladomgevingen, maar het zal er "
+"geen invloed op hebben."
 
 #: gradience/frontend/widgets/shell_theming_group.py:121
-#, fuzzy
-#| msgid "Monet Engine"
 msgid "Disable Engine"
-msgstr "Monet"
+msgstr "Engine uitschakelen"
 
 #: gradience/frontend/widgets/shell_theming_group.py:122
 #: gradience/frontend/widgets/shell_theming_group.py:133
@@ -1267,7 +1270,7 @@ msgstr "Toch doorgaan"
 
 #: gradience/frontend/widgets/shell_theming_group.py:129
 msgid "User Themes Extension Missing"
-msgstr ""
+msgstr "Uitbreiding ‘User Themes’ ontbreekt"
 
 #: gradience/frontend/widgets/shell_theming_group.py:130
 msgid ""
@@ -1275,6 +1278,9 @@ msgid ""
 "theme. You can still generate a theme, but you won't be able to apply it "
 "without this extension."
 msgstr ""
+"Gradience vereist dat de uitbreiding ‘User Themes’ is geïnstalleerd om shell-"
+"thema's toe te kunnen passen. U kunt nog steeds een thema genereren, maar u "
+"kunt het niet toepassen zonder deze uitbreiding."
 
 #: gradience/frontend/widgets/shell_theming_group.py:132
 msgid "Install Extension"
@@ -1282,13 +1288,15 @@ msgstr "Uitbreiding installeren"
 
 #: gradience/frontend/widgets/shell_theming_group.py:140
 msgid "User Themes Extension Disabled"
-msgstr ""
+msgstr "Uitbreiding ‘User Themes’ uitgeschakeld"
 
 #: gradience/frontend/widgets/shell_theming_group.py:141
 msgid ""
 "User Themes extension is currently disabled on your system. Please enable it "
 "in order to apply theme."
 msgstr ""
+"De uitbreiding ‘User Themes’ is momenteel uitgeschakeld op uw systeem. "
+"Schakel deze in om een thema toe te kunnen passen."
 
 #: gradience/frontend/widgets/shell_theming_group.py:143
 #: gradience/frontend/views/presets_manager_window.py:197
@@ -1297,28 +1305,24 @@ msgstr "Annuleren"
 
 #: gradience/frontend/widgets/shell_theming_group.py:181
 msgid "An error occurred while generating a Shell theme."
-msgstr ""
+msgstr "Er is een fout opgetreden tijdens het genereren van een shell-thema."
 
 #: gradience/frontend/widgets/shell_theming_group.py:188
-#, fuzzy
-#| msgid "Scheme successfully saved!"
 msgid "Shell theme applied successfully."
-msgstr "Schema succesvol opgeslagen!"
+msgstr "Shell-thema succesvol toegepast"
 
 #: gradience/frontend/widgets/shell_theming_group.py:217
 #: gradience/frontend/widgets/shell_theming_group.py:222
 msgid "Failed to load extension's install link."
-msgstr ""
+msgstr "Installatielink van uitbreiding laden mislukt"
 
 #: gradience/frontend/widgets/shell_theming_group.py:241
-#, fuzzy
-#| msgid "Scheme successfully saved!"
 msgid "Shell theme successfully reset."
-msgstr "Schema succesvol opgeslagen!"
+msgstr "Shell-thema succesvol opgeslagen"
 
 #: gradience/frontend/views/about_window.py:27
 msgid "translator-credits"
-msgstr "Philip Goto https://flipflop97.github.io/"
+msgstr "Philip Goto https://philipgoto.nl/"
 
 #: gradience/frontend/views/about_window.py:56
 msgid "Copyright © 2022-2023 Gradience Team"
@@ -1364,7 +1368,7 @@ msgstr ""
 
 #: gradience/frontend/views/plugins_list.py:89
 msgid "Plugins"
-msgstr "Plugins"
+msgstr "Plug-ins"
 
 #: gradience/frontend/views/plugins_list.py:92
 msgid ""
@@ -1376,7 +1380,7 @@ msgstr ""
 
 #: gradience/frontend/views/plugins_list.py:104
 msgid "No Plugins Found."
-msgstr "Geen plug-ins gevonden."
+msgstr "Geen plug-ins gevonden"
 
 #: gradience/frontend/views/presets_manager_window.py:115
 #: gradience/frontend/views/presets_manager_window.py:351
