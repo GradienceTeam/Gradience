@@ -50,7 +50,7 @@ preset_repos_jsdeliver = {
     "Curated": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/curated.json"
 }
 
-# preset_repos should be dynamicly imported depending of user settings
+# preset_repos should be dynamically imported depending of user settings
 
 # Adwaita named UI colors prefixes list
 # NOTE: Remember to update this list if new libadwaita version brings up new variables
