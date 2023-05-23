@@ -45,6 +45,13 @@ preset_repos = {
     "Curated": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@raw/next/curated.json"
 }
 
+preset_repos_jsdeliver = {
+    "Official": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/official.json",
+    "Curated": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/curated.json"
+}
+
+preset_repos = preset_repos_github
+
 # Adwaita named UI colors prefixes list
 # NOTE: Remember to update this list if new libadwaita version brings up new variables
 adw_variables_prefixes = [

@@ -44,6 +44,8 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
     gtk3_user_theming_switch = Gtk.Template.Child()
     gtk3_global_theming_switch = Gtk.Template.Child()
 
+    jsdeliver_switch = Gtk.Template.Child()
+
     monet_engine_switch = Gtk.Template.Child()
     gnome_shell_engine_switch = Gtk.Template.Child()
 
@@ -64,11 +66,22 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.setup_flatpak_group()
         self.setup_theme_engines_group()
         self.setup_reset_preset_group()
+        self.setup_jsdeliver()
 
     def setup_reset_preset_group(self):
         self.reset_preset_group = GradienceResetPresetGroup(self)
 
         self.theming_page.add(self.reset_preset_group)
+
+    def setup_jsdeliver(self):
+        if self.app.use_jsdeliver:
+            self.jsdeliver_switch.set_state(True)
+        else:
+            self.jsdeliver_switch.set_state(False)
+
+        self.jsdeliver_switch.connect(
+            "state-set", self.on_jsdeliver_switch_toggled
+        )
 
     def setup_theme_engines_group(self):
         if "shell" in self.win.enabled_theme_engines:
@@ -198,4 +211,18 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
 
         logging.debug(
                 f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
+        )
+
+    def on_jsdeliver_switch_toggled(self, *args):
+        state = self.jsdeliver_switch.props.state
+
+        if not state:
+            self.app.use_jsdeliver = True
+        else:
+            self.app.use_jsdeliver = False
+
+        self.settings.set_boolean("use-jsdeliver", self.app.use_jsdeliver)
+
+        logging.debug(
+                f"use-jsdeliver: {self.settings.get_value('use-jsdeliver')}"
         )

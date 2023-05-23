@@ -30,7 +30,8 @@ logging = Logger()
 
 
 class PresetDownloader:
-    def __init__(self):
+    def __init__(self, use_jsdeliver=False):
+        self.use_jsdeliver = use_jsdeliver
         # Open Soup3 session
         self.session = Soup.Session()
 
@@ -64,6 +65,17 @@ class PresetDownloader:
             to_dict = iter(data)
             # Convert list back to dict
             preset_dict.update(dict(zip(to_dict, to_dict)))
+
+            if self.use_jsdeliver:
+                if "https://github.com" in url:
+                    # https://github.com/GradienceTeam/Community/raw/next/official/builder.json =>
+                    # https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/official/builder.json
+                    JSDELIVER_FORMAT = "https://cdn.jsdelivr.net/gh/{user}/{repo}@{branch}/{path}"
+                    url = url[18:] # remove https://github.com (len 18)
+                    user, repo, _, branch, *path = url.split("/")
+                    path = "/".join(path)
+                    url = JSDELIVER_FORMAT.format(user, repo, branch, path)
+                    print(url)
 
             url_list.append(url)
 

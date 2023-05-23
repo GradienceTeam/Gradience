@@ -58,6 +58,21 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
       }
     }
 
+    Adw.PreferencesGroup jsdeliver_group {
+
+      title: _("Use JSDeliver instead of Github");
+      description: _("TODO: WRITE A DESCRIPTION");
+      Adw.ActionRow jsdeliver_row {
+        title: _("Use Jsdeliver instead of Github");
+        subtitle: _("TODO: ADD SUBTITLE");
+        activatable-widget: jsdeliver_switch;
+        Gtk.Switch jsdeliver_switch {
+          valign: center;
+        }
+      }
+    }
+
+      
     // NOTE: This group is disabled as there isn't yet any implementation of custom repositories in Gradience
     Adw.PreferencesGroup custom_repository_group {
       visible: false;

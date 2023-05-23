@@ -25,7 +25,7 @@ from gi.repository import Gtk, Adw, GLib
 
 from gradience.backend.preset_downloader import PresetDownloader
 from gradience.backend.theming.preset import PresetUtils
-from gradience.backend.globals import presets_dir, preset_repos
+from gradience.backend.globals import presets_dir
 from gradience.backend.constants import rootdir
 
 from gradience.frontend.widgets.preset_row import GradiencePresetRow
@@ -83,12 +83,21 @@ class GradiencePresetWindow(Adw.Window):
         self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
 
         self.setup_signals()
+        self.import_preset_repos()
         self.setup()
 
         self.setup_builtin_presets()
         self.setup_repos()
         self.setup_user_presets()
         self.setup_explore()
+
+    def import_preset_repos(self):
+        if self.settings.get_boolean("use-jsdeliver"):
+            from gradience.backend.globals import preset_repos_jsdeliver
+            self.preset_repos = preset_repos_jsdeliver
+        else:
+            from gradience.backend.globals import preset_repos_github
+            self.preset_repos = preset_repos_github
 
     def setup(self):
         self.import_file_chooser.set_transient_for(self)
@@ -389,7 +398,7 @@ class GradiencePresetWindow(Adw.Window):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
 
-        for repo_name, repo in preset_repos.items():
+        for repo_name, repo in self.preset_repos.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
             self.repos_list.add(row)
 
@@ -399,4 +408,4 @@ class GradiencePresetWindow(Adw.Window):
 
         self.repos.add(self.repos_list)
 
-        self._repos = {**self.user_repositories, **preset_repos}
+        self._repos = {**self.user_repositories, **self.preset_repos}
