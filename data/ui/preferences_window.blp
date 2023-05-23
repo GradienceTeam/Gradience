@@ -60,11 +60,11 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
 
     Adw.PreferencesGroup jsdeliver_group {
 
-      title: _("Use JSDeliver instead of Github");
-      description: _("TODO: WRITE A DESCRIPTION");
+      title: _("Preset Fetching");
+      description: _("Configure options related to preset fetching");
       Adw.ActionRow jsdeliver_row {
-        title: _("Use Jsdeliver instead of Github");
-        subtitle: _("TODO: ADD SUBTITLE");
+        title: _("Use alternative server for downloading presets");
+        subtitle: _("JSDeliver will be used instead of directly fetching presets from GitHub");
         activatable-widget: jsdeliver_switch;
         Gtk.Switch jsdeliver_switch {
           valign: center;
