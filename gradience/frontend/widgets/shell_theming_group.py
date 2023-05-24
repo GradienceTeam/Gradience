@@ -116,7 +116,7 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
 
         if not is_gnome_available():
             dialog = Adw.MessageDialog(transient_for=self.win, heading=_("GNOME Shell Missing"),
-                body=_("Shell Engine is designed to work only on systems running GNOME. You can still generate themes on other desktop environments, but it won't have any effect on them."))
+                body=_("Shell Engine is designed to work only on systems running GNOME. You can still generate themes on other desktop environments, but it won't have any affect on them."))
 
             dialog.add_response("disable-engine", _("Disable Engine"))
             dialog.add_response("continue-anyway", _("Continue Anyway"))
