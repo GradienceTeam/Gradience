@@ -14,9 +14,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2023-05-24 03:10+0000\n"
-"PO-Revision-Date: 2023-05-18 22:00+0000\n"
+"PO-Revision-Date: 2023-05-24 03:20+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ru/>\n"
@@ -24,9 +24,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || ("
+"n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: Weblate 4.18-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
@@ -328,25 +328,18 @@ msgstr ""
 "настраиваемых программ/фреймворков."
 
 #: data/ui/preferences_window.blp:96
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette from extracting "
-#| "image's colors."
 msgid ""
 "Monet Engine generates a Material Design 3 palette by extracting the image's "
 "colors."
 msgstr ""
-"Движок Monet генерирует палитру Material Design 3 из цветов изображения."
+"Движок Monet генерирует палитру Material Design 3, извлекая цвета "
+"изображения."
 
 #: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 msgid "Shell Engine"
 msgstr "Движок Shell"
 
 #: data/ui/preferences_window.blp:105
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based of a currently "
-#| "chosen preset."
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
@@ -461,10 +454,6 @@ msgid "Reset and Restore Presets"
 msgstr "Сброс и восстановление предустановок"
 
 #: data/ui/reset_preset_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "This section allows you to reset an currently applied preset or restore "
-#| "the previous one."
 msgid ""
 "This section allows you to reset a currently applied preset or restore the "
 "previous one."
@@ -630,10 +619,6 @@ msgid "Custom Shell Colors"
 msgstr "Пользовательские цвета Shell"
 
 #: data/ui/shell_prefs_window.blp:14
-#, fuzzy
-#| msgid ""
-#| "This section allows you to customize colors that will be used in Shell "
-#| "theme."
 msgid ""
 "This section allows you to customize colors that will be used in the Shell "
 "theme."
@@ -698,10 +683,6 @@ msgid "No Theme Engines"
 msgstr "Нет движков оформления"
 
 #: data/ui/theming_empty_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Theme Engines extends the functionality of Gradience. They can be enabled "
-#| "in the Preferences."
 msgid ""
 "Theme Engines extend the functionality of Gradience. They can be enabled in "
 "the Preferences."
@@ -726,10 +707,6 @@ msgid "What's new in 0.8.0"
 msgstr "Что нового в 0.8.0"
 
 #: data/ui/welcome_window.blp:72
-#, fuzzy
-#| msgid ""
-#| "In this release, we added GNOME Shell theming support and reworked how "
-#| "Gradience work internally."
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally."
@@ -1276,19 +1253,14 @@ msgid "GNOME Shell Missing"
 msgstr "Отсутствует GNOME Shell"
 
 #: gradience/frontend/widgets/shell_theming_group.py:119
-#, fuzzy
-#| msgid ""
-#| "Shell Engine is designed to work only on systems running GNOME. You can "
-#| "still generate themes on other desktop environments, but it won't have "
-#| "any affect on them."
 msgid ""
 "Shell Engine is designed to work only on systems running GNOME. You can "
 "still generate themes on other desktop environments, but it won't have any "
 "effect on them."
 msgstr ""
 "Движок Shell предназначен для работы только на системах под управлением "
-"GNOME. Вы можете генерировать темы и в других средах рабочего стола, но это "
-"не окажет на них никакого влияния."
+"GNOME. Вы можете генерировать темы в других средах рабочего стола, но это не "
+"будет иметь никакого эффекта на них."
 
 #: gradience/frontend/widgets/shell_theming_group.py:121
 msgid "Disable Engine"
@@ -1305,19 +1277,14 @@ msgid "User Themes Extension Missing"
 msgstr "Расширение \"User Themes\" отсутствует"
 
 #: gradience/frontend/widgets/shell_theming_group.py:130
-#, fuzzy
-#| msgid ""
-#| "Gradience requires User Themes extension installed in order to apply "
-#| "Shell theme. You can still generate a theme, but you won't be able to "
-#| "apply it without this extension."
 msgid ""
 "Gradience requires the User Themes extension installed to apply the Shell "
 "theme. You can still generate a theme, but you won't be able to apply it "
 "without this extension."
 msgstr ""
 "Gradience требует установленного расширения \"User Themes\" для применения "
-"темы Shell. Вы все еще можете создать тему, но не сможете применить ее без "
-"этого расширения."
+"темы Shell. Вы все еще можете создать тему, но вы не сможете применить ее "
+"без этого расширения."
 
 #: gradience/frontend/widgets/shell_theming_group.py:132
 msgid "Install Extension"
@@ -1328,15 +1295,11 @@ msgid "User Themes Extension Disabled"
 msgstr "Расширение \"User Themes\" отключено"
 
 #: gradience/frontend/widgets/shell_theming_group.py:141
-#, fuzzy
-#| msgid ""
-#| "User Themes extension is currently disabled on your system. Please enable "
-#| "it in order to apply theme."
 msgid ""
 "The User Themes extension is currently disabled on your system. Please "
 "enable it to apply the theme."
 msgstr ""
-"Расширение \"User Themes\" в настоящее время отключено на вашей системе. "
+"Расширение \"User Themes\" в настоящее время отключено в вашей системе. "
 "Пожалуйста, включите его, чтобы применить тему."
 
 #: gradience/frontend/widgets/shell_theming_group.py:143
