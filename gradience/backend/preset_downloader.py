@@ -22,6 +22,7 @@ import json
 from gi.repository import GLib, Soup
 
 from gradience.backend.globals import presets_dir
+from gradience.backend.utils.networking import github_to_jsdeliver_url
 from gradience.backend.utils.common import to_slug_case
 
 from gradience.backend.logger import Logger
@@ -36,6 +37,8 @@ class PresetDownloader:
         self.session = Soup.Session()
 
     def fetch_presets(self, repo) -> [dict, list]:
+        logging.debug(f"Acessing URL address: {repo}")
+
         try:
             request = Soup.Message.new("GET", repo)
             body = self.session.send_and_read(request, None)
@@ -67,21 +70,15 @@ class PresetDownloader:
             preset_dict.update(dict(zip(to_dict, to_dict)))
 
             if self.use_jsdeliver:
-                if "https://github.com" in url:
-                    # https://github.com/GradienceTeam/Community/raw/next/official/builder.json =>
-                    # https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/official/builder.json
-                    JSDELIVER_FORMAT = "https://cdn.jsdelivr.net/gh/{user}/{repo}@{branch}/{path}"
-                    url = url[18:] # remove https://github.com (len 18)
-                    user, repo, _, branch, *path = url.split("/")
-                    path = "/".join(path)
-                    url = JSDELIVER_FORMAT.format(user, repo, branch, path)
-                    print(url)
+                url = github_to_jsdeliver_url(url)
 
             url_list.append(url)
 
         return preset_dict, url_list
 
     def download_preset(self, name, repo_name, repo) -> None:
+        logging.debug(f"Acessing URL address: {repo}")
+
         try:
             request = Soup.Message.new("GET", repo)
             body = self.session.send_and_read(request, None)

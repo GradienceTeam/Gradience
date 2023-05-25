@@ -23,6 +23,8 @@ import json
 from pathlib import Path
 from gi.repository import Gtk, Adw, GLib
 
+from gradience.backend.utils.networking import get_preset_repos
+
 from gradience.backend.preset_downloader import PresetDownloader
 from gradience.backend.theming.preset import PresetUtils
 from gradience.backend.globals import presets_dir
@@ -82,22 +84,15 @@ class GradiencePresetWindow(Adw.Window):
         self.user_repositories = self.settings.get_value("repos").unpack()
         self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
 
+        self.preset_repos = get_preset_repos(self.settings.get_boolean("use-jsdeliver"))
+
         self.setup_signals()
-        self.import_preset_repos()
         self.setup()
 
         self.setup_builtin_presets()
         self.setup_repos()
         self.setup_user_presets()
         self.setup_explore()
-
-    def import_preset_repos(self):
-        if self.settings.get_boolean("use-jsdeliver"):
-            from gradience.backend.globals import preset_repos_jsdeliver
-            self.preset_repos = preset_repos_jsdeliver
-        else:
-            from gradience.backend.globals import preset_repos_github
-            self.preset_repos = preset_repos_github
 
     def setup(self):
         self.import_file_chooser.set_transient_for(self)
@@ -153,7 +148,7 @@ class GradiencePresetWindow(Adw.Window):
                 badge = "white"
 
             try:
-                explore_presets, urls = PresetDownloader().fetch_presets(repo)
+                explore_presets, urls = PresetDownloader(self.settings.get_boolean("use-jsdeliver")).fetch_presets(repo)
             except GLib.GError as e:
                 if e.code == 1:
                     self.offline = True
