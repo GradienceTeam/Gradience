@@ -37,7 +37,7 @@ class PresetDownloader:
         self.session = Soup.Session()
 
     def fetch_presets(self, repo) -> [dict, list]:
-        logging.debug(f"Acessing URL address: {repo}")
+        logging.debug(f"Accessing URL address: {repo}")
 
         try:
             request = Soup.Message.new("GET", repo)
@@ -77,7 +77,7 @@ class PresetDownloader:
         return preset_dict, url_list
 
     def download_preset(self, name, repo_name, repo) -> None:
-        logging.debug(f"Acessing URL address: {repo}")
+        logging.debug(f"Accessing URL address: {repo}")
 
         try:
             request = Soup.Message.new("GET", repo)
