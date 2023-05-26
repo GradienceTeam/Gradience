@@ -142,7 +142,16 @@ class GradienceApplication(Adw.Application):
                         self.show_save_preset_dialog, ["<primary>s"])
 
         self.actions.create_action("quit",
-            self.win.on_close_request, ["<primary>q"])
+                        self.win.on_close_request, ["<primary>q"])
+
+        self.actions.create_action("switch_to_colors_page", 
+                        self.win.switch_to_colors_page, ["<alt>1"])
+
+        self.actions.create_action("switch_to_theming_page", 
+                        self.win.switch_to_theming_page, ["<alt>2"])
+
+        self.actions.create_action("switch_to_advanced_page", 
+                        self.win.switch_to_advanced_page, ["<alt>3"])
 
         self.actions.create_action("about",
                         self.show_about_window)

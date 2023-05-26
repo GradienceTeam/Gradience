@@ -43,6 +43,8 @@ class GradienceMainWindow(Adw.ApplicationWindow):
     content_theming = Gtk.Template.Child("content-theming")
     content_plugins = Gtk.Template.Child("content-plugins")
 
+    view_stack = Gtk.Template.Child()
+
     toast_overlay = Gtk.Template.Child()
 
     save_preset_button = Gtk.Template.Child("save-preset-button")
@@ -78,6 +80,16 @@ class GradienceMainWindow(Adw.ApplicationWindow):
 
         self.connect("unrealize",
             self.save_window_props)
+
+    def switch_to_colors_page(self, *args):
+        self.view_stack.set_visible_child_name("colors")
+
+    def switch_to_theming_page(self, *args):
+        self.view_stack.set_visible_child_name("theming")
+
+    def switch_to_advanced_page(self, *args):
+        self.view_stack.set_visible_child_name("plugins")
+
 
     def setup(self):
         # Set devel style
