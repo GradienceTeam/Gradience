@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-26 02:59+0000\n"
+"POT-Creation-Date: 2023-05-26 11:26+0000\n"
 "PO-Revision-Date: 2023-05-24 11:43+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -163,7 +163,7 @@ msgstr "Deskargatu eta aplikatu"
 msgid "Download Only"
 msgstr "Deskargatu soilik"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:95
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:103
 msgid "Monet Engine"
 msgstr "Monet motorra"
 
@@ -266,86 +266,91 @@ msgid "General"
 msgstr ""
 
 #: data/ui/preferences_window.blp:15
-msgid "GTK 4 Flatpak Applications"
-msgstr ""
+#, fuzzy
+msgid "Flatpak Applications"
+msgstr "Libadwaita eta GTK 4 aplikazioak"
 
 #: data/ui/preferences_window.blp:18
-msgid "Allow GTK 4 Flatpak Applications Theming"
+msgid "Allow GTK 4 Theming"
 msgstr ""
 
 #: data/ui/preferences_window.blp:19
 msgid ""
-"Override Flatpak permissions for current user to allow GTK 4 Flatpak "
-"applications to access custom themes."
+"Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to "
+"access custom themes."
 msgstr ""
 
 #: data/ui/preferences_window.blp:28
-msgid "Allow GTK 4 Flatpak Applications Theming (System)"
+msgid "Allow GTK 4 Theming (System)"
 msgstr ""
 
 #: data/ui/preferences_window.blp:29
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 4 Flatpak "
-"applications to access custom themes. (Requires root access)"
+"Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
+"access custom themes. (Requires root access)"
+msgstr ""
+
+#: data/ui/preferences_window.blp:37
+msgid "Allow GTK 3 Theming"
 msgstr ""
 
 #: data/ui/preferences_window.blp:38
-msgid "GTK 3 Flatpak Applications"
-msgstr ""
-
-#: data/ui/preferences_window.blp:39
 msgid ""
-"Remember to install adw-gtk3 theme (as a Flatpak package) in order to get "
-"custom presets working in GTK 3 Flatpak applications."
+"Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
+"access adw-gtk3 theme."
 msgstr ""
 
-#: data/ui/preferences_window.blp:42
-msgid "Allow GTK 3 Flatpak theming"
+#: data/ui/preferences_window.blp:47
+msgid "Allow GTK 3 Theming (System)"
 msgstr ""
 
-#: data/ui/preferences_window.blp:43
+#: data/ui/preferences_window.blp:48
 msgid ""
-"Override Flatpak permissions for current user to allow GTK 3 Flatpak "
-"applications to access adw-gtk3 theme."
+"Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
+"access adw-gtk3 theme. (Requires root access)"
 msgstr ""
 
-#: data/ui/preferences_window.blp:52
-msgid "GTK 3 Flatpak Applications (System)"
+#: data/ui/preferences_window.blp:58
+#, fuzzy
+#| msgid "Presets"
+msgid "Preset Fetching"
+msgstr "Diseinuak"
+
+#: data/ui/preferences_window.blp:60
+msgid "Use alternative server for downloading presets"
 msgstr ""
 
-#: data/ui/preferences_window.blp:53
-msgid ""
-"Override Flatpak permissions for all users to allow GTK 3 Flatpak "
-"applications to access adw-gtk3 theme. (Requires root access)"
+#: data/ui/preferences_window.blp:61
+msgid "JSDeliver will be used instead of direct preset fetching from GitHub"
 msgstr ""
 
-#: data/ui/preferences_window.blp:64
+#: data/ui/preferences_window.blp:72
 msgid "Custom Preset Repositories"
 msgstr ""
 
-#: data/ui/preferences_window.blp:67
+#: data/ui/preferences_window.blp:75
 msgid "Custom repository URL address"
 msgstr ""
 
-#: data/ui/preferences_window.blp:87
+#: data/ui/preferences_window.blp:95
 #, fuzzy
 #| msgid "Theme"
 msgid "Theming"
 msgstr "Itxura"
 
-#: data/ui/preferences_window.blp:91
+#: data/ui/preferences_window.blp:99
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Theme Engines"
 msgstr "Monet motorra"
 
-#: data/ui/preferences_window.blp:92
+#: data/ui/preferences_window.blp:100
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
 msgstr ""
 
-#: data/ui/preferences_window.blp:96
+#: data/ui/preferences_window.blp:104
 #, fuzzy
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
@@ -357,13 +362,13 @@ msgstr ""
 "Irudi baten koloretik abiatuta, Design 3 material-paleta bat sortzen duen "
 "motorra da Monet."
 
-#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:112 data/ui/shell_theming_group.blp:5
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Shell Engine"
 msgstr "Monet motorra"
 
-#: data/ui/preferences_window.blp:105
+#: data/ui/preferences_window.blp:113
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
@@ -416,7 +421,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:237
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:239
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Artxiboen kudeatzailean ireki"
@@ -459,8 +464,8 @@ msgid "Offline"
 msgstr "Deskonektatuta"
 
 #: data/ui/presets_manager_window.blp:155
-#: gradience/frontend/views/presets_manager_window.py:122
-#: gradience/frontend/views/presets_manager_window.py:390
+#: gradience/frontend/views/presets_manager_window.py:126
+#: gradience/frontend/views/presets_manager_window.py:394
 #, fuzzy
 msgid "Repositories"
 msgstr "Diseinua kenduta"
@@ -817,7 +822,7 @@ msgid "About Gradience"
 msgstr "Gradience-ri buruz"
 
 #: data/ui/window.blp:141
-#: gradience/frontend/views/presets_manager_window.py:110
+#: gradience/frontend/views/presets_manager_window.py:114
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "Diseinu integratuak"
@@ -832,10 +837,14 @@ msgid "Accent Colors"
 msgstr "Azentu koloreak"
 
 #: gradience/frontend/schemas/preset_schema.py:25
+#, fuzzy
+#| msgid ""
+#| "These colors are used across many different widgets, such as buttons, "
+#| "labels, and entries, to indicate that a widget is important, interactive, "
+#| "or currently active."
 msgid ""
-"These colors are used across many different widgets, such as buttons, "
-"labels, and entries, to indicate that a widget is important, interactive, or "
-"currently active."
+"These colors are used across many different widgets, often to indicate that "
+"a widget is important, interactive, or currently active."
 msgstr ""
 "Kolore horiek widget desberdin askotan erabiltzen dira, hala nola botoietan, "
 "etiketetan eta sarreretan, adierazteko widget bat garrantzitsua dela, "
@@ -843,17 +852,17 @@ msgstr ""
 
 #: gradience/frontend/schemas/preset_schema.py:32
 #: gradience/frontend/schemas/preset_schema.py:63
-#: gradience/frontend/schemas/preset_schema.py:95
-#: gradience/frontend/schemas/preset_schema.py:127
-#: gradience/frontend/schemas/preset_schema.py:158
+#: gradience/frontend/schemas/preset_schema.py:94
+#: gradience/frontend/schemas/preset_schema.py:125
+#: gradience/frontend/schemas/preset_schema.py:156
 msgid "Standalone Color"
 msgstr "Kolore independentea"
 
 #: gradience/frontend/schemas/preset_schema.py:34
 #: gradience/frontend/schemas/preset_schema.py:65
-#: gradience/frontend/schemas/preset_schema.py:97
-#: gradience/frontend/schemas/preset_schema.py:129
-#: gradience/frontend/schemas/preset_schema.py:160
+#: gradience/frontend/schemas/preset_schema.py:96
+#: gradience/frontend/schemas/preset_schema.py:127
+#: gradience/frontend/schemas/preset_schema.py:158
 msgid ""
 "The standalone colors are similar to the background ones, but provide better "
 "contrast when used as foreground color on top of a neutral background - for "
@@ -865,31 +874,31 @@ msgstr ""
 
 #: gradience/frontend/schemas/preset_schema.py:43
 #: gradience/frontend/schemas/preset_schema.py:74
-#: gradience/frontend/schemas/preset_schema.py:106
-#: gradience/frontend/schemas/preset_schema.py:138
-#: gradience/frontend/schemas/preset_schema.py:169
-#: gradience/frontend/schemas/preset_schema.py:186
-#: gradience/frontend/schemas/preset_schema.py:206
-#: gradience/frontend/schemas/preset_schema.py:227
-#: gradience/frontend/schemas/preset_schema.py:282
-#: gradience/frontend/schemas/preset_schema.py:309
-#: gradience/frontend/schemas/preset_schema.py:326
-#: gradience/frontend/schemas/preset_schema.py:343
+#: gradience/frontend/schemas/preset_schema.py:105
+#: gradience/frontend/schemas/preset_schema.py:136
+#: gradience/frontend/schemas/preset_schema.py:167
+#: gradience/frontend/schemas/preset_schema.py:184
+#: gradience/frontend/schemas/preset_schema.py:204
+#: gradience/frontend/schemas/preset_schema.py:225
+#: gradience/frontend/schemas/preset_schema.py:280
+#: gradience/frontend/schemas/preset_schema.py:307
+#: gradience/frontend/schemas/preset_schema.py:324
+#: gradience/frontend/schemas/preset_schema.py:341
 msgid "Background Color"
 msgstr "Hondoko kolorea"
 
 #: gradience/frontend/schemas/preset_schema.py:48
 #: gradience/frontend/schemas/preset_schema.py:79
-#: gradience/frontend/schemas/preset_schema.py:111
-#: gradience/frontend/schemas/preset_schema.py:143
-#: gradience/frontend/schemas/preset_schema.py:174
-#: gradience/frontend/schemas/preset_schema.py:191
-#: gradience/frontend/schemas/preset_schema.py:211
-#: gradience/frontend/schemas/preset_schema.py:232
-#: gradience/frontend/schemas/preset_schema.py:287
-#: gradience/frontend/schemas/preset_schema.py:314
-#: gradience/frontend/schemas/preset_schema.py:331
-#: gradience/frontend/schemas/preset_schema.py:348
+#: gradience/frontend/schemas/preset_schema.py:110
+#: gradience/frontend/schemas/preset_schema.py:141
+#: gradience/frontend/schemas/preset_schema.py:172
+#: gradience/frontend/schemas/preset_schema.py:189
+#: gradience/frontend/schemas/preset_schema.py:209
+#: gradience/frontend/schemas/preset_schema.py:230
+#: gradience/frontend/schemas/preset_schema.py:285
+#: gradience/frontend/schemas/preset_schema.py:312
+#: gradience/frontend/schemas/preset_schema.py:329
+#: gradience/frontend/schemas/preset_schema.py:346
 msgid "Foreground Color"
 msgstr "Aurreko kolorea"
 
@@ -898,9 +907,13 @@ msgid "Destructive Colors"
 msgstr "Kolore suntsitzaileak"
 
 #: gradience/frontend/schemas/preset_schema.py:57
+#, fuzzy
+#| msgid ""
+#| "These colors are used for buttons to indicate a dangerous action, such as "
+#| "deleting a file."
 msgid ""
-"These colors are used for buttons to indicate a dangerous action, such as "
-"deleting a file."
+"These colors are used to indicate a dangerous action, such as deleting a "
+"file."
 msgstr ""
 "Kolore horiek botoiek ekintza arriskutsu bat adierazteko erabiltzen dira, "
 "adibidez, fitxategi bat ezabatzeko."
@@ -910,64 +923,79 @@ msgid "Success Colors"
 msgstr "Kolore arrakastatsuak"
 
 #: gradience/frontend/schemas/preset_schema.py:88
+#, fuzzy
+#| msgid ""
+#| "These colors are used across many different widgets, such as buttons, "
+#| "labels, entries, and level bars, to indicate a success or a high level."
 msgid ""
-"These colors are used across many different widgets, such as buttons, "
-"labels, entries, and level bars, to indicate a success or a high level."
+"These colors are used across many different widgets, to indicate success or "
+"a high level."
 msgstr ""
 "Kolore horiek widget askotan erabiltzen dira, hala nola, botoietan, "
 "etiketetan, sarreretan eta sestra-barretan, arrakasta edo maila altua "
 "adierazteko."
 
-#: gradience/frontend/schemas/preset_schema.py:118
+#: gradience/frontend/schemas/preset_schema.py:117
 msgid "Warning Colors"
 msgstr "Ohartarazpen-koloreak"
 
-#: gradience/frontend/schemas/preset_schema.py:120
+#: gradience/frontend/schemas/preset_schema.py:119
+#, fuzzy
+#| msgid ""
+#| "These colors are used across many different widgets, such as buttons, "
+#| "labels, entries, and level bars, to indicate a warning or a low level."
 msgid ""
-"These colors are used across many different widgets, such as buttons, "
-"labels, entries, and level bars, to indicate a warning or a low level."
+"These colors are used across many different widgets, to indicate warning or "
+"a low level."
 msgstr ""
 "Kolore horiek widget askotan erabiltzen dira, hala nola, botoietan, "
 "etiketetan, sarreretan eta sestra-barretan, ohar bat edo maila baxu bat "
 "adierazteko."
 
-#: gradience/frontend/schemas/preset_schema.py:150
+#: gradience/frontend/schemas/preset_schema.py:148
 msgid "Error Colors"
 msgstr "Errore-koloreak"
 
-#: gradience/frontend/schemas/preset_schema.py:152
+#: gradience/frontend/schemas/preset_schema.py:150
+#, fuzzy
+#| msgid ""
+#| "These colors are used across many different widgets, such as buttons, "
+#| "labels, and entries, to indicate a failure."
 msgid ""
-"These colors are used across many different widgets, such as buttons, "
-"labels, and entries, to indicate a failure."
+"These colors are used across many different widgets, to indicate a failure."
 msgstr ""
 "Kolore horiek widget desberdin askotan erabiltzen dira, hala nola botoietan, "
 "etiketetan eta sarreretan, akats bat adierazteko."
 
-#: gradience/frontend/schemas/preset_schema.py:181
+#: gradience/frontend/schemas/preset_schema.py:179
 msgid "Window Colors"
 msgstr "Leihoaren koloreak"
 
-#: gradience/frontend/schemas/preset_schema.py:182
+#: gradience/frontend/schemas/preset_schema.py:180
 msgid "These colors are used primarily for windows."
 msgstr "Kolore hauek leihoetarako erabiltzen dira batez ere."
 
-#: gradience/frontend/schemas/preset_schema.py:198
+#: gradience/frontend/schemas/preset_schema.py:196
 msgid "View Colors"
 msgstr "Ikusmenaren koloreak"
 
-#: gradience/frontend/schemas/preset_schema.py:200
+#: gradience/frontend/schemas/preset_schema.py:198
+#, fuzzy
+#| msgid ""
+#| "These colors are used in a variety of widgets, such as text views and "
+#| "entries."
 msgid ""
-"These colors are used in a variety of widgets, such as text views and "
+"These colors are used across many different widgets, such as text views and "
 "entries."
 msgstr ""
 "Kolore hauek widget barietate batean erabiltzen dira, testu bistak eta "
 "sarrerak bezala."
 
-#: gradience/frontend/schemas/preset_schema.py:218
+#: gradience/frontend/schemas/preset_schema.py:216
 msgid "Header Bar Colors"
 msgstr "Goiburuko barraren koloreak"
 
-#: gradience/frontend/schemas/preset_schema.py:220
+#: gradience/frontend/schemas/preset_schema.py:218
 msgid ""
 "These colors are used for header bars, as well as widgets that are meant to "
 "be visually attached to it, such as search bars or tab bars."
@@ -976,11 +1004,11 @@ msgstr ""
 "lotuta dauden widgetetarako ere, hala nola bilaketa-barretarako edo erlaitza-"
 "barretarako."
 
-#: gradience/frontend/schemas/preset_schema.py:237
+#: gradience/frontend/schemas/preset_schema.py:235
 msgid "Border Color"
 msgstr "Ertzaren kolorea"
 
-#: gradience/frontend/schemas/preset_schema.py:239
+#: gradience/frontend/schemas/preset_schema.py:237
 msgid ""
 "The border color has the same default value as a foreground color, but "
 "doesn't change along with it. This can be useful if a light window has a "
@@ -995,11 +1023,11 @@ msgstr ""
 "erabiltzen da. Adibidez, goiburuko bi barren arteko bereizgailuak zatitutako "
 "goiburuko barra-diseinu batean."
 
-#: gradience/frontend/schemas/preset_schema.py:252
+#: gradience/frontend/schemas/preset_schema.py:250
 msgid "Backdrop Color"
 msgstr "Hondo ez-aktiboaren kolorea"
 
-#: gradience/frontend/schemas/preset_schema.py:254
+#: gradience/frontend/schemas/preset_schema.py:252
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -1012,13 +1040,13 @@ msgstr ""
 "ziurtatu zure goiburuko barraren hondoko kolorearekin bat datorren balio bat "
 "ezartzen duzula."
 
-#: gradience/frontend/schemas/preset_schema.py:265
-#: gradience/frontend/schemas/preset_schema.py:292
-#: gradience/frontend/schemas/preset_schema.py:360
+#: gradience/frontend/schemas/preset_schema.py:263
+#: gradience/frontend/schemas/preset_schema.py:290
+#: gradience/frontend/schemas/preset_schema.py:358
 msgid "Shade Color"
 msgstr "Itzalaren kolorea"
 
-#: gradience/frontend/schemas/preset_schema.py:267
+#: gradience/frontend/schemas/preset_schema.py:265
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
@@ -1026,15 +1054,15 @@ msgstr ""
 "Itzalaren kolorea ertz ilun bat emateko erabiltzen da, leiho nagusitik "
 "bereizten dituen goiburuko barrak eta antzeko widgetak egiteko."
 
-#: gradience/frontend/schemas/preset_schema.py:277
+#: gradience/frontend/schemas/preset_schema.py:275
 msgid "Card Colors"
 msgstr "Txartelaren koloreak"
 
-#: gradience/frontend/schemas/preset_schema.py:278
+#: gradience/frontend/schemas/preset_schema.py:276
 msgid "These colors are used for cards and boxed lists."
 msgstr "Kolore horiek txarteletarako eta kutxa-zerrendetarako erabiltzen dira."
 
-#: gradience/frontend/schemas/preset_schema.py:294
+#: gradience/frontend/schemas/preset_schema.py:292
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
@@ -1044,45 +1072,45 @@ msgstr ""
 "dituzten itzaletarako erabiltzen da, baita txarteletako errenkaden "
 "zatitzaileetarako ere."
 
-#: gradience/frontend/schemas/preset_schema.py:304
+#: gradience/frontend/schemas/preset_schema.py:302
 #, fuzzy
 #| msgid "Dialog Colors"
 msgid "Thumbnail Colors"
 msgstr "Elkarrizketaren koloreak"
 
-#: gradience/frontend/schemas/preset_schema.py:305
+#: gradience/frontend/schemas/preset_schema.py:303
 #, fuzzy
 #| msgid "These colors are used for popovers."
 msgid "These colors are used for Tab Overview thumbnails."
 msgstr "Kolore hauek azaleratzen diren menuetarako erabiltzen dira."
 
-#: gradience/frontend/schemas/preset_schema.py:321
+#: gradience/frontend/schemas/preset_schema.py:319
 msgid "Dialog Colors"
 msgstr "Elkarrizketaren koloreak"
 
-#: gradience/frontend/schemas/preset_schema.py:322
+#: gradience/frontend/schemas/preset_schema.py:320
 msgid "These colors are used for message dialogs."
 msgstr "Kolore horiek mezuen elkarrizketetan erabiltzen dira."
 
-#: gradience/frontend/schemas/preset_schema.py:338
+#: gradience/frontend/schemas/preset_schema.py:336
 msgid "Popover Colors"
 msgstr "Sortzen ari den menuaren koloreak"
 
-#: gradience/frontend/schemas/preset_schema.py:339
+#: gradience/frontend/schemas/preset_schema.py:337
 msgid "These colors are used for popovers."
 msgstr "Kolore hauek azaleratzen diren menuetarako erabiltzen dira."
 
-#: gradience/frontend/schemas/preset_schema.py:355
+#: gradience/frontend/schemas/preset_schema.py:353
 #, fuzzy
 #| msgid "Miscalleneous Colors"
 msgid "Miscellaneous Colors"
 msgstr "Kolore miszelaneoak"
 
-#: gradience/frontend/schemas/preset_schema.py:356
+#: gradience/frontend/schemas/preset_schema.py:354
 msgid "Colors that don't fit in any particular group."
 msgstr "Talde jakin batean sartzen ez diren koloreak."
 
-#: gradience/frontend/schemas/preset_schema.py:362
+#: gradience/frontend/schemas/preset_schema.py:360
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -1090,11 +1118,11 @@ msgstr ""
 "Itzalaren kolorea lerroko tabulazio-barrek erabiltzen dute, baita liburuxken "
 "eta hegalen trantsizioek eta informazio-barren ertzek ere."
 
-#: gradience/frontend/schemas/preset_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:368
 msgid "Scrollbar Outline Color"
 msgstr "Desplazamendu-barraren inguruaren kolorea"
 
-#: gradience/frontend/schemas/preset_schema.py:372
+#: gradience/frontend/schemas/preset_schema.py:370
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -1103,41 +1131,41 @@ msgstr ""
 "dute, desplazamendu-barra gainjarriak agerian egon daitezen, edukiaren "
 "kolorea edozein dela ere."
 
-#: gradience/frontend/schemas/preset_schema.py:382
+#: gradience/frontend/schemas/preset_schema.py:380
 msgid "Blue"
 msgstr "Urdina"
 
-#: gradience/frontend/schemas/preset_schema.py:383
+#: gradience/frontend/schemas/preset_schema.py:381
 msgid "Green"
 msgstr "Berdea"
 
-#: gradience/frontend/schemas/preset_schema.py:384
+#: gradience/frontend/schemas/preset_schema.py:382
 msgid "Yellow"
 msgstr "Horia"
 
-#: gradience/frontend/schemas/preset_schema.py:385
+#: gradience/frontend/schemas/preset_schema.py:383
 msgid "Orange"
 msgstr "Laranja"
 
-#: gradience/frontend/schemas/preset_schema.py:386
+#: gradience/frontend/schemas/preset_schema.py:384
 msgid "Red"
 msgstr "Gorria"
 
-#: gradience/frontend/schemas/preset_schema.py:387
+#: gradience/frontend/schemas/preset_schema.py:385
 msgid "Purple"
 msgstr "Morea"
 
-#: gradience/frontend/schemas/preset_schema.py:388
+#: gradience/frontend/schemas/preset_schema.py:386
 msgid "Brown"
 msgstr "Marroia"
 
-#: gradience/frontend/schemas/preset_schema.py:389
+#: gradience/frontend/schemas/preset_schema.py:387
 #: gradience/frontend/widgets/monet_theming_group.py:95
 #: gradience/frontend/widgets/shell_theming_group.py:73
 msgid "Light"
 msgstr "Argia"
 
-#: gradience/frontend/schemas/preset_schema.py:390
+#: gradience/frontend/schemas/preset_schema.py:388
 #: gradience/frontend/widgets/monet_theming_group.py:96
 #: gradience/frontend/widgets/shell_theming_group.py:72
 msgid "Dark"
@@ -1384,7 +1412,7 @@ msgid ""
 msgstr ""
 
 #: gradience/frontend/widgets/shell_theming_group.py:143
-#: gradience/frontend/views/presets_manager_window.py:197
+#: gradience/frontend/views/presets_manager_window.py:201
 msgid "Cancel"
 msgstr "Ezeztatu"
 
@@ -1474,48 +1502,48 @@ msgstr ""
 msgid "No Plugins Found."
 msgstr "Ez da pluginik aurkitu"
 
-#: gradience/frontend/views/presets_manager_window.py:115
-#: gradience/frontend/views/presets_manager_window.py:351
+#: gradience/frontend/views/presets_manager_window.py:119
+#: gradience/frontend/views/presets_manager_window.py:355
 msgid "User Presets"
 msgstr "Erabiltzailearen diseinuak"
 
-#: gradience/frontend/views/presets_manager_window.py:190
+#: gradience/frontend/views/presets_manager_window.py:194
 msgid "Add new repository"
 msgstr ""
 
-#: gradience/frontend/views/presets_manager_window.py:191
+#: gradience/frontend/views/presets_manager_window.py:195
 msgid "Add a repository to install additional presets."
 msgstr ""
 
-#: gradience/frontend/views/presets_manager_window.py:198
+#: gradience/frontend/views/presets_manager_window.py:202
 msgid "Add"
 msgstr ""
 
-#: gradience/frontend/views/presets_manager_window.py:294
+#: gradience/frontend/views/presets_manager_window.py:298
 msgid "Preset already exists"
 msgstr "Diseinua badago jada"
 
-#: gradience/frontend/views/presets_manager_window.py:306
+#: gradience/frontend/views/presets_manager_window.py:310
 msgid "Preset imported"
 msgstr "Diseinu inportatua"
 
-#: gradience/frontend/views/presets_manager_window.py:309
+#: gradience/frontend/views/presets_manager_window.py:313
 msgid "Unsupported file format, must be .json"
 msgstr "Onartu gabeko fitxategi-formatua, .json izan behar du"
 
-#: gradience/frontend/views/presets_manager_window.py:335
-#: gradience/frontend/main.py:190
+#: gradience/frontend/views/presets_manager_window.py:339
+#: gradience/frontend/main.py:192
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
 msgstr "Ezin izan da diseinua kargatu"
 
-#: gradience/frontend/views/presets_manager_window.py:344
+#: gradience/frontend/views/presets_manager_window.py:348
 #, fuzzy
 msgid "Built-in Presets"
 msgstr "Diseinu integratuak"
 
-#: gradience/frontend/views/presets_manager_window.py:354
+#: gradience/frontend/views/presets_manager_window.py:358
 #, fuzzy
 msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
@@ -1524,7 +1552,7 @@ msgstr ""
 "Kontsultatu <a href=\"https://github.com/GradienceTeam/Community\">Gradience/"
 "Komunitate Taldea</a> Github-en diseinu gehiago ikusteko"
 
-#: gradience/frontend/views/presets_manager_window.py:380
+#: gradience/frontend/views/presets_manager_window.py:384
 #, fuzzy
 msgid ""
 "No preset found! Use the import button to import one or search one on the "
@@ -1538,33 +1566,33 @@ msgstr ""
 msgid "Thanks for updating Gradience!"
 msgstr "Gradience erabiltzen hasi"
 
-#: gradience/frontend/main.py:223
+#: gradience/frontend/main.py:225
 #, fuzzy
 #| msgid "No Results Found"
 msgid "No presets found"
 msgstr "Ez da emaitzarik aurkitu"
 
-#: gradience/frontend/main.py:246
+#: gradience/frontend/main.py:248
 #, fuzzy
 msgid "Favorite Presets"
 msgstr "Gorde diseinua"
 
-#: gradience/frontend/main.py:403
+#: gradience/frontend/main.py:405
 #, fuzzy
 msgid "Unsaved Changes"
 msgstr "Gorde gabeko aldaketak"
 
-#: gradience/frontend/main.py:415
+#: gradience/frontend/main.py:417
 #, fuzzy
 msgid "Save Changes"
 msgstr "Gorde aldaketak"
 
-#: gradience/frontend/main.py:505
+#: gradience/frontend/main.py:507
 #, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "Koloreen eskema hau aplikatu?"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:509
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1572,22 +1600,22 @@ msgstr ""
 "Oharra: aplikazio mota horietarako CSS fitxategi pertsonalizatuak modu "
 "itzulezinean gainidatziko dira!"
 
-#: gradience/frontend/main.py:511
+#: gradience/frontend/main.py:513
 #, fuzzy
 #| msgid "Apply"
 msgid "_Apply"
 msgstr "Aplikatu"
 
-#: gradience/frontend/main.py:537
+#: gradience/frontend/main.py:539
 #, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Gorde gabeko aldaketak"
 
-#: gradience/frontend/main.py:588
+#: gradience/frontend/main.py:590
 msgid "Preset saved"
 msgstr "Diseinua gorde da"
 
-#: gradience/frontend/main.py:605
+#: gradience/frontend/main.py:607
 #, fuzzy
 #| msgid "Preset set sucessfully"
 msgid "Preset set successfully"
