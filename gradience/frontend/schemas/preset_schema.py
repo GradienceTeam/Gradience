@@ -22,9 +22,9 @@ preset_schema = {
             "name": "accent_colors",
             "title": _("Accent Colors"),
             "description": _(
-                "These colors are used across many different widgets, such "
-                "as buttons, labels, and entries, to indicate that a widget "
-                "is important, interactive, or currently active."
+                "These colors are used across many different widgets, "
+                "often to indicate that a widget is important, interactive, "
+                "or currently active."
             ),
             "variables": [
                 {
@@ -54,8 +54,8 @@ preset_schema = {
             "name": "destructive_colors",
             "title": _("Destructive Colors"),
             "description": _(
-                "These colors are used for buttons to indicate a dangerous "
-                "action, such as deleting a file."
+                "These colors are used to indicate a dangerous action, such "
+                "as deleting a file."
             ),
             "variables": [
                 {
@@ -85,9 +85,8 @@ preset_schema = {
             "name": "success_colors",
             "title": _("Success Colors"),
             "description": _(
-                "These colors are used across many different widgets, such "
-                "as buttons, labels, entries, and level bars, to indicate a "
-                "success or a high level."
+                "These colors are used across many different widgets, "
+                "to indicate success or a high level."
             ),
             "variables": [
                 {
@@ -117,9 +116,8 @@ preset_schema = {
             "name": "warning_colors",
             "title": _("Warning Colors"),
             "description": _(
-                "These colors are used across many different widgets, such "
-                "as buttons, labels, entries, and level bars, to indicate a "
-                "warning or a low level."
+                "These colors are used across many different widgets, "
+                "to indicate warning or a low level."
             ),
             "variables": [
                 {
@@ -149,8 +147,8 @@ preset_schema = {
             "name": "error_colors",
             "title": _("Error Colors"),
             "description": _(
-                "These colors are used across many different widgets, such "
-                "as buttons, labels, and entries, to indicate a failure."
+                "These colors are used across many different widgets, "
+                "to indicate a failure."
             ),
             "variables": [
                 {
@@ -197,8 +195,8 @@ preset_schema = {
             "name": "view_colors",
             "title": _("View Colors"),
             "description": _(
-                "These colors are used in a variety of widgets, such as text "
-                "views and entries."
+                "These colors are used across many different widgets, "
+                "such as text views and entries."
             ),
             "variables": [
                 {
