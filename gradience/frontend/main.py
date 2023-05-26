@@ -130,16 +130,19 @@ class GradienceApplication(Adw.Application):
                         self.open_preset_directory)
 
         self.actions.create_action("apply_color_scheme",
-                        self.show_apply_color_scheme_dialog)
+                        self.show_apply_color_scheme_dialog, ["<primary>Return"])
 
         self.actions.create_action("manage_presets",
-                        self.show_presets_manager)
+                        self.show_presets_manager, ["<primary>m"])
 
         self.actions.create_action("preferences",
-                        self.show_preferences)
+                        self.show_preferences, ["<primary>comma"])
 
         self.actions.create_action("save_preset",
-                        self.show_save_preset_dialog)
+                        self.show_save_preset_dialog, ["<primary>s"])
+
+        self.actions.create_action("quit",
+            self.win.on_close_request, ["<primary>q"])
 
         self.actions.create_action("about",
                         self.show_about_window)
