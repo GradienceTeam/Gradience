@@ -14,13 +14,14 @@
 # Daudix UFO <ddaudix@gmail.com>, 2022.
 # yangyangdaji <1504305527@qq.com>, 2022, 2023.
 # Leo <leomerh96@outlook.com>, 2023.
+# Simon <simonrohrs@tuta.io>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-24 03:19+0000\n"
-"PO-Revision-Date: 2023-05-14 09:47+0000\n"
-"Last-Translator: 0xMRTT <0xMRTT@tuta.io>\n"
+"POT-Creation-Date: 2023-05-26 02:59+0000\n"
+"PO-Revision-Date: 2023-05-25 19:51+0000\n"
+"Last-Translator: Simon <simonrohrs@tuta.io>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/de/>\n"
 "Language: de\n"
@@ -173,7 +174,7 @@ msgstr "Monet Engine"
 
 #: data/ui/monet_theming_group.blp:10
 msgid "Choose an image, and change the parameters of a generated Monet palette"
-msgstr ""
+msgstr "Wähle ein Bild und ändere die Parameter einer erzeugten Monet Palette"
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
 #: data/ui/window.blp:29
@@ -187,17 +188,15 @@ msgstr "Voreinstellung anwenden"
 
 #: data/ui/monet_theming_group.blp:23
 msgid "Select an Image"
-msgstr ""
+msgstr "Bild wählen"
 
 #: data/ui/monet_theming_group.blp:32
-#, fuzzy
 msgid "Choose a File"
 msgstr "Datei wählen"
 
 #: data/ui/monet_theming_group.blp:41
-#, fuzzy
 msgid "Choose a Image File"
-msgstr "Datei wählen"
+msgstr "Bilddatei wählen"
 
 #: data/ui/log_out_dialog.blp:5
 msgid "Log out"
@@ -246,7 +245,7 @@ msgstr "Plugin entfernen"
 
 #: data/ui/preferences_window.blp:11
 msgid "General"
-msgstr ""
+msgstr "Allgemeines"
 
 #: data/ui/preferences_window.blp:15
 msgid "GTK 4 Flatpak Applications"
@@ -351,10 +350,8 @@ msgstr ""
 "3-Palette erzeugt."
 
 #: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
-#, fuzzy
-#| msgid "Monet Engine"
 msgid "Shell Engine"
-msgstr "Monet Engine"
+msgstr "Shell Engine"
 
 #: data/ui/preferences_window.blp:105
 msgid ""
@@ -513,10 +510,8 @@ msgid "Reset Applied Preset"
 msgstr "Angewandtes Farbschema zurücksetzen"
 
 #: data/ui/reset_preset_group.blp:29
-#, fuzzy
-#| msgid "GTK 3 Flatpak Applications"
 msgid "GTK 3 Applications"
-msgstr "GTK 3 Flatpak-Anwendungen"
+msgstr "GTK 3-Anwendungen"
 
 #: data/ui/save_dialog.blp:5
 msgid "Save preset as…"
@@ -582,7 +577,7 @@ msgstr ""
 "beeinträchtigen. Gehen Sie mit Bedacht vor. Bitte melden Sie themenbezogene "
 "Probleme nicht an App-Entwickler."
 
-#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:84
+#: data/ui/share_window.blp:86
 #, fuzzy
 msgid "I Understand The Consequences"
 msgstr "Ich verstehe die Konsequenzen"
@@ -790,6 +785,11 @@ msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally."
 msgstr ""
+
+#: data/ui/welcome_window.blp:84
+#, fuzzy
+msgid "Agree and Continue"
+msgstr "Fortfahren"
 
 #: data/ui/welcome_window.blp:96
 #, fuzzy
@@ -1228,16 +1228,13 @@ msgid "OK"
 msgstr ""
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten!"
+#, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten."
 msgstr ""
 "Speichere Voreinstellung als <tt>{0}</tt>. Falls sie eine Voreinstellung "
-"bereits unter dem Namen existiert, wird sie überschrieben!"
+"bereits unter dem Namen existiert, wird sie überschrieben."
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 #, fuzzy
@@ -1375,9 +1372,8 @@ msgid "Unable to delete current preset"
 msgstr "Voreinstellung kann nicht gelöscht werden"
 
 #: gradience/frontend/widgets/reset_preset_group.py:82
-#, fuzzy
 msgid "Unable to restore GTK 3 backup"
-msgstr "GTK 4-Backup konnte nicht wiederhergestellt werden"
+msgstr "GTK 3-Backup konnte nicht wiederhergestellt werden"
 
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."

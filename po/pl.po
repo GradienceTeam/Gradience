@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-24 03:19+0000\n"
-"PO-Revision-Date: 2023-04-30 13:48+0000\n"
-"Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
+"POT-Creation-Date: 2023-05-26 02:59+0000\n"
+"PO-Revision-Date: 2023-05-24 11:43+0000\n"
+"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/pl/>\n"
 "Language: pl\n"
@@ -548,7 +548,7 @@ msgstr ""
 "Postępuj ostrożnie. Nie zgłaszaj problemów związanych z motywami twórcom "
 "aplikacji."
 
-#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:84
+#: data/ui/share_window.blp:86
 msgid "I Understand The Consequences"
 msgstr "Rozumiem konsekwencje"
 
@@ -741,6 +741,12 @@ msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally."
 msgstr ""
+
+#: data/ui/welcome_window.blp:84
+#, fuzzy
+#| msgid "Continue"
+msgid "Agree and Continue"
+msgstr "Kontynuuj"
 
 #: data/ui/welcome_window.blp:96
 msgid ""
@@ -1164,16 +1170,13 @@ msgid "OK"
 msgstr "OK"
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten!"
+#, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten."
 msgstr ""
 "Profil kolorów zostanie zapisany do ścieżki <tt>{0}</tt>. Jeżeli ten profil "
-"już istnieje, zostanie on nadpisany!"
+"już istnieje, zostanie on nadpisany."
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 msgid "Discard"
@@ -1293,10 +1296,8 @@ msgid "Unable to delete current preset"
 msgstr "Nie udało się usunąć profilu"
 
 #: gradience/frontend/widgets/reset_preset_group.py:82
-#, fuzzy
-#| msgid "Unable to restore GTK 4 backup"
 msgid "Unable to restore GTK 3 backup"
-msgstr "Nie można przywrócić kopii zapasowej motywu GTK 4"
+msgstr "Nie można przywrócić kopii zapasowej motywu GTK 3"
 
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."

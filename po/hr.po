@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-24 03:19+0000\n"
-"PO-Revision-Date: 2023-04-17 21:50+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2023-05-26 02:59+0000\n"
+"PO-Revision-Date: 2023-05-24 11:43+0000\n"
+"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/hr/>\n"
 "Language: hr\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -480,10 +480,8 @@ msgid "Reset Applied Preset"
 msgstr "Vrati izvornu shemu boja"
 
 #: data/ui/reset_preset_group.blp:29
-#, fuzzy
-#| msgid "GTK 3 Flatpak Applications"
 msgid "GTK 3 Applications"
-msgstr "GTK 3 Flatpak aplikacije"
+msgstr "GTK 3 aplikacije"
 
 #: data/ui/save_dialog.blp:5
 msgid "Save preset as…"
@@ -539,7 +537,7 @@ msgstr ""
 "Nastavite s oprezom. Ne prijavljujte probleme povezane s temom "
 "razvijateljima aplikacije."
 
-#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:84
+#: data/ui/share_window.blp:86
 msgid "I Understand The Consequences"
 msgstr "Razumijem posljedice"
 
@@ -731,6 +729,12 @@ msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally."
 msgstr ""
+
+#: data/ui/welcome_window.blp:84
+#, fuzzy
+#| msgid "Continue"
+msgid "Agree and Continue"
+msgstr "Nastavi"
 
 #: data/ui/welcome_window.blp:96
 msgid ""
@@ -1151,16 +1155,13 @@ msgid "OK"
 msgstr "U redu"
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten!"
+#, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten."
 msgstr ""
 "Spremanje predloška u <tt>{0}</tt>. Ako taj predložak već postoji, biti će "
-"prebrisan!"
+"prebrisan."
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 msgid "Discard"
@@ -1280,10 +1281,8 @@ msgid "Unable to delete current preset"
 msgstr "Nemoguće brisanje aktualnog predloška"
 
 #: gradience/frontend/widgets/reset_preset_group.py:82
-#, fuzzy
-#| msgid "Unable to restore GTK 4 backup"
 msgid "Unable to restore GTK 3 backup"
-msgstr "Nemoguća obnova GTK 4 sigurnosne kopije"
+msgstr "Nemoguća obnova GTK 3 sigurnosne kopije"
 
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."

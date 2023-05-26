@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-24 03:19+0000\n"
-"PO-Revision-Date: 2023-04-03 12:13+0000\n"
+"POT-Creation-Date: 2023-05-26 02:59+0000\n"
+"PO-Revision-Date: 2023-05-24 11:43+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ro/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -510,10 +510,8 @@ msgid "Reset Applied Preset"
 msgstr "Reveniți la schema cromatică implicită"
 
 #: data/ui/reset_preset_group.blp:29
-#, fuzzy
-#| msgid "GTK 3 Flatpak Applications"
 msgid "GTK 3 Applications"
-msgstr "Aplicații Flatpak GTK 3"
+msgstr "Aplicații GTK 3"
 
 #: data/ui/save_dialog.blp:5
 msgid "Save preset as…"
@@ -572,7 +570,7 @@ msgstr ""
 "lizibilitatea. Continuați cu precauție. Vă rugăm să nu raportați probleme "
 "legate de tematică dezvoltatorilor aplicației."
 
-#: data/ui/share_window.blp:86 data/ui/welcome_window.blp:84
+#: data/ui/share_window.blp:86
 msgid "I Understand The Consequences"
 msgstr "Înțeleg consecințele"
 
@@ -767,6 +765,12 @@ msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally."
 msgstr ""
+
+#: data/ui/welcome_window.blp:84
+#, fuzzy
+#| msgid "Continue"
+msgid "Agree and Continue"
+msgstr "Continuați"
 
 #: data/ui/welcome_window.blp:96
 msgid ""
@@ -1195,16 +1199,13 @@ msgid "OK"
 msgstr ""
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten!"
+#, python-brace-format
 msgid ""
 "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
 "overwritten."
 msgstr ""
 "Se salvează presetarea în <tt>{0}</tt>. Dacă acea presetare există deja, va "
-"fi suprascrisă!"
+"fi suprascrisă."
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 msgid "Discard"
@@ -1337,7 +1338,7 @@ msgstr "Nu se poate înlătura presetarea"
 #, fuzzy
 #| msgid "Could not restore GTK 4 backup"
 msgid "Unable to restore GTK 3 backup"
-msgstr "Nu s-a putut restaura copia de rezervă GTK 4"
+msgstr "Nu s-a putut restaura copia de rezervă GTK 3"
 
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."
