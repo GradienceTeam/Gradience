@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-26 11:37+0000\n"
+"POT-Creation-Date: 2023-05-30 19:22+0000\n"
 "PO-Revision-Date: 2023-05-25 19:51+0000\n"
 "Last-Translator: Simon <simonrohrs@tuta.io>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -436,7 +436,7 @@ msgstr "Importieren einer Voreinstellungsdatei"
 msgid "Delete"
 msgstr "Löschen"
 
-#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:239
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:251
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Im Dateimanager öffnen"
@@ -876,16 +876,20 @@ msgid "_Advanced"
 msgstr "_Fortschrittlich"
 
 #: data/ui/window.blp:133
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: data/ui/window.blp:138
 msgid "About Gradience"
 msgstr "Über Gradience"
 
-#: data/ui/window.blp:141
+#: data/ui/window.blp:146
 #: gradience/frontend/views/presets_manager_window.py:114
 #, fuzzy
 msgid "Built-In Presets"
 msgstr "Vorinstallierte Voreinstellungen"
 
-#: data/ui/window.blp:162
+#: data/ui/window.blp:167
 #, fuzzy
 msgid "Manage Presets"
 msgstr "Voreinstellungen verwalten"
@@ -1539,11 +1543,11 @@ msgstr ""
 "Geben Sie ein Stichwort ein, um auf <a href=\"https://github.com/"
 "GradienceTeam/Community\">GradienceTeam/Community</a> zu suchen."
 
-#: gradience/frontend/views/main_window.py:192
+#: gradience/frontend/views/main_window.py:204
 msgid "Palette Colors"
 msgstr "Farbpalette"
 
-#: gradience/frontend/views/main_window.py:195
+#: gradience/frontend/views/main_window.py:207
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -1611,7 +1615,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Nicht unterstütztes Dateiformat, muss .json sein"
 
 #: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:192
+#: gradience/frontend/main.py:204
 #, fuzzy
 #| msgid "Failed to load preset"
 msgid "Failed to load list of presets"
@@ -1646,32 +1650,32 @@ msgstr ""
 msgid "Thanks for updating Gradience!"
 msgstr "Danke für die Aktualisierung von Gradience!"
 
-#: gradience/frontend/main.py:225
+#: gradience/frontend/main.py:237
 #, fuzzy
 msgid "No presets found"
 msgstr "Keine Voreinstellungen gefunden"
 
-#: gradience/frontend/main.py:248
+#: gradience/frontend/main.py:260
 #, fuzzy
 msgid "Favorite Presets"
 msgstr "Bevorzugte Voreinstellungen"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:417
 #, fuzzy
 msgid "Unsaved Changes"
 msgstr "Nicht gespeicherte Änderungen"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:429
 #, fuzzy
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:519
 #, fuzzy
 msgid "Apply This Color Scheme?"
 msgstr "Dieses Farbschema anwenden?"
 
-#: gradience/frontend/main.py:509
+#: gradience/frontend/main.py:521
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1679,23 +1683,23 @@ msgstr ""
 "Warnung: jegliche benutzerdefinierte CSS Dateien für die ausgewählten "
 "Apptypen werden unumkehrbar überschrieben werden!"
 
-#: gradience/frontend/main.py:513
+#: gradience/frontend/main.py:525
 #, fuzzy
 #| msgid "Apply"
 msgid "_Apply"
 msgstr "Anwenden"
 
-#: gradience/frontend/main.py:539
+#: gradience/frontend/main.py:551
 #, fuzzy
 msgid "You have unsaved changes!"
 msgstr "Es gibt nicht gespeicherte Änderungen!"
 
-#: gradience/frontend/main.py:590
+#: gradience/frontend/main.py:602
 #, fuzzy
 msgid "Preset saved"
 msgstr "Voreinstellung gespeichert!"
 
-#: gradience/frontend/main.py:607
+#: gradience/frontend/main.py:619
 #, fuzzy
 msgid "Preset set successfully"
 msgstr "Voreinstellung erfolgreich eingestellt"

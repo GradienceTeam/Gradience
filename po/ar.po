@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-05-26 11:37+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-30 19:22+0000\n"
 "PO-Revision-Date: 2023-05-26 16:49+0000\n"
 "Last-Translator: Ali Aljishi <ahj696@hotmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -243,8 +243,8 @@ msgid ""
 "Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to "
 "access custom themes."
 msgstr ""
-"تجاوز أذونات فلاتباك المستخدم واسمح لتطبيقات فلاتباك جي‌تي‌كي ٤ بالوصول "
-"للسمات المخصَّصة."
+"تجاوز أذونات فلاتباك المستخدم واسمح لتطبيقات فلاتباك جي‌تي‌كي ٤ بالوصول للسمات "
+"المخصَّصة."
 
 #: data/ui/preferences_window.blp:28
 msgid "Allow GTK 4 Theming (System)"
@@ -255,8 +255,8 @@ msgid ""
 "Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
 "access custom themes. (Requires root access)"
 msgstr ""
-"تجاوز أذونات فلاتباك جميع المستخدمين لتسمح لتطبيقات فلاتباك جي‌تي‌كي ٤ "
-"بالوصول إلى السمات المخصَّصة. (يتطلب صلاحيات الجذر)"
+"تجاوز أذونات فلاتباك جميع المستخدمين لتسمح لتطبيقات فلاتباك جي‌تي‌كي ٤ بالوصول "
+"إلى السمات المخصَّصة. (يتطلب صلاحيات الجذر)"
 
 #: data/ui/preferences_window.blp:37
 msgid "Allow GTK 3 Theming"
@@ -267,8 +267,8 @@ msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme."
 msgstr ""
-"تجاوز أذونات فلاتباك المستخدم الحالي لتسمح لتطبيقات فلاتباك جي‌تي‌كي ٣ "
-"بالوصول إلى سمة adw-gtk3."
+"تجاوز أذونات فلاتباك المستخدم الحالي لتسمح لتطبيقات فلاتباك جي‌تي‌كي ٣ بالوصول "
+"إلى سمة adw-gtk3."
 
 #: data/ui/preferences_window.blp:47
 msgid "Allow GTK 3 Theming (System)"
@@ -279,8 +279,8 @@ msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme. (Requires root access)"
 msgstr ""
-"تجاوز أذونات فلاتباك جميع المستخدمين لتسمح لتطبيقات فلاتباك جي‌تي‌كي ٣ "
-"بالوصول إلى سمة adw-gtk3. (يتطلب صلاحيات الجذر)"
+"تجاوز أذونات فلاتباك جميع المستخدمين لتسمح لتطبيقات فلاتباك جي‌تي‌كي ٣ بالوصول "
+"إلى سمة adw-gtk3. (يتطلب صلاحيات الجذر)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
@@ -293,8 +293,7 @@ msgstr "استخدم خادومًا بديلًا لتنزِّل الإعدادا
 #: data/ui/preferences_window.blp:61
 msgid "JSDeliver will be used instead of direct preset fetching from GitHub"
 msgstr ""
-"سوف يُستخدم جَي‌إس‌دلفر لجلب الإعدادات المسبقة بدلًا عن جلبها مباشرةً من "
-"جت‌هب"
+"سوف يُستخدم جَي‌إس‌دلفر لجلب الإعدادات المسبقة بدلًا عن جلبها مباشرةً من جت‌هب"
 
 #: data/ui/preferences_window.blp:72
 msgid "Custom Preset Repositories"
@@ -380,7 +379,7 @@ msgstr "استورد ملف إعداد مسبق"
 msgid "Delete"
 msgstr "احذف"
 
-#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:239
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:251
 msgid "Open in File Manager"
 msgstr "افتح في مدير الملفات"
 
@@ -740,15 +739,19 @@ msgid "_Advanced"
 msgstr "اﻹ_عدادات المتقدمة"
 
 #: data/ui/window.blp:133
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: data/ui/window.blp:138
 msgid "About Gradience"
 msgstr "عن تدرج"
 
-#: data/ui/window.blp:141
+#: data/ui/window.blp:146
 #: gradience/frontend/views/presets_manager_window.py:114
 msgid "Built-In Presets"
 msgstr "الإعدادات المسبقة المدمجة"
 
-#: data/ui/window.blp:162
+#: data/ui/window.blp:167
 msgid "Manage Presets"
 msgstr "أدِر الإعدادات المسبقة"
 
@@ -1318,11 +1321,11 @@ msgstr ""
 "المساهمون من جت‌هب https://github.com/GradienceTeam/Community/graphs/"
 "contributors"
 
-#: gradience/frontend/views/main_window.py:192
+#: gradience/frontend/views/main_window.py:204
 msgid "Palette Colors"
 msgstr "تشكيلة الألوان"
 
-#: gradience/frontend/views/main_window.py:195
+#: gradience/frontend/views/main_window.py:207
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -1378,7 +1381,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "تنسيق الملف غير مدعوم، يجب أن تنسيقه .json"
 
 #: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:192
+#: gradience/frontend/main.py:204
 msgid "Failed to load list of presets"
 msgstr "فشل تحميل قائمة الإعدادات المسبقة"
 
@@ -1406,27 +1409,27 @@ msgstr ""
 msgid "Thanks for updating Gradience!"
 msgstr "هنيئًا لك بتحديث «تدرج»!"
 
-#: gradience/frontend/main.py:225
+#: gradience/frontend/main.py:237
 msgid "No presets found"
 msgstr "لم يُعثر على إعدادات مسبقة"
 
-#: gradience/frontend/main.py:248
+#: gradience/frontend/main.py:260
 msgid "Favorite Presets"
 msgstr "الإعدادات المسبقة المفضلة"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:417
 msgid "Unsaved Changes"
 msgstr "التغييرات غير المحفوظة"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:429
 msgid "Save Changes"
 msgstr "احفظ التغييرات"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:519
 msgid "Apply This Color Scheme?"
 msgstr "طبق نظام الألوان هذا؟"
 
-#: gradience/frontend/main.py:509
+#: gradience/frontend/main.py:521
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1434,19 +1437,19 @@ msgstr ""
 "تحذير: ستتم الكتابة فوق أي ملفات سي‌إس‌إس مخصصة لأنواع التطبيقات هذه بشكل "
 "نهائي!"
 
-#: gradience/frontend/main.py:513
+#: gradience/frontend/main.py:525
 msgid "_Apply"
 msgstr "طبق"
 
-#: gradience/frontend/main.py:539
+#: gradience/frontend/main.py:551
 msgid "You have unsaved changes!"
 msgstr "لديك تعديلات لم تُحفظ!"
 
-#: gradience/frontend/main.py:590
+#: gradience/frontend/main.py:602
 msgid "Preset saved"
 msgstr "حُفظ الإعداد المسبق"
 
-#: gradience/frontend/main.py:607
+#: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "طُبق الإعداد المسبق بنجاح"
 

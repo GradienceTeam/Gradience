@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-05-26 11:37+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-30 19:22+0000\n"
 "PO-Revision-Date: 2023-05-26 11:47+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -24,9 +24,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || ("
-"n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: Weblate 4.18-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
@@ -393,7 +393,7 @@ msgstr "Импортировать файл предустановки"
 msgid "Delete"
 msgstr "Удалить"
 
-#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:239
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:251
 msgid "Open in File Manager"
 msgstr "Открыть в файловом менеджере"
 
@@ -769,15 +769,19 @@ msgid "_Advanced"
 msgstr "_Продвинутое"
 
 #: data/ui/window.blp:133
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: data/ui/window.blp:138
 msgid "About Gradience"
 msgstr "О Gradience"
 
-#: data/ui/window.blp:141
+#: data/ui/window.blp:146
 #: gradience/frontend/views/presets_manager_window.py:114
 msgid "Built-In Presets"
 msgstr "Встроенные предустановки"
 
-#: data/ui/window.blp:162
+#: data/ui/window.blp:167
 msgid "Manage Presets"
 msgstr "Управление предустановками"
 
@@ -1358,11 +1362,11 @@ msgstr ""
 "Участники на GitHub https://github.com/GradienceTeam/Community/graphs/"
 "contributors"
 
-#: gradience/frontend/views/main_window.py:192
+#: gradience/frontend/views/main_window.py:204
 msgid "Palette Colors"
 msgstr "Цвета палитры"
 
-#: gradience/frontend/views/main_window.py:195
+#: gradience/frontend/views/main_window.py:207
 msgid ""
 "Named palette colors used by some applications. Default colors follow the <a "
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
@@ -1418,7 +1422,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "Не поддерживаемый файловый формат, должен быть .json"
 
 #: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:192
+#: gradience/frontend/main.py:204
 msgid "Failed to load list of presets"
 msgstr "Не удалось загрузить список предустановок"
 
@@ -1446,27 +1450,27 @@ msgstr ""
 msgid "Thanks for updating Gradience!"
 msgstr "Спасибо за обновление Gradience!"
 
-#: gradience/frontend/main.py:225
+#: gradience/frontend/main.py:237
 msgid "No presets found"
 msgstr "Предустановки не найдены"
 
-#: gradience/frontend/main.py:248
+#: gradience/frontend/main.py:260
 msgid "Favorite Presets"
 msgstr "Избранные предустановки"
 
-#: gradience/frontend/main.py:405
+#: gradience/frontend/main.py:417
 msgid "Unsaved Changes"
 msgstr "Несохранённые изменения"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:429
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: gradience/frontend/main.py:507
+#: gradience/frontend/main.py:519
 msgid "Apply This Color Scheme?"
 msgstr "Применить эту цветовую схему?"
 
-#: gradience/frontend/main.py:509
+#: gradience/frontend/main.py:521
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1474,19 +1478,19 @@ msgstr ""
 "Внимание: любые пользовательские файлы CSS для этих типов приложений будут "
 "безвозвратно перезаписаны!"
 
-#: gradience/frontend/main.py:513
+#: gradience/frontend/main.py:525
 msgid "_Apply"
 msgstr "_Применить"
 
-#: gradience/frontend/main.py:539
+#: gradience/frontend/main.py:551
 msgid "You have unsaved changes!"
 msgstr "У вас есть не сохранённые изменения!"
 
-#: gradience/frontend/main.py:590
+#: gradience/frontend/main.py:602
 msgid "Preset saved"
 msgstr "Предустановка сохранена"
 
-#: gradience/frontend/main.py:607
+#: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "Предустановка успешно установлена"
 
