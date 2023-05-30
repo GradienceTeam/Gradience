@@ -96,6 +96,8 @@ class GradienceApplication(Adw.Application):
 
         self.style_manager = Adw.StyleManager.get_default()
 
+        self.use_jsdeliver = self.settings.get_boolean("use-jsdeliver")
+
     def do_activate(self):
         """Called when the application is activated."""
 
@@ -128,16 +130,28 @@ class GradienceApplication(Adw.Application):
                         self.open_preset_directory)
 
         self.actions.create_action("apply_color_scheme",
-                        self.show_apply_color_scheme_dialog)
+                        self.show_apply_color_scheme_dialog, ["<primary>Return"])
 
         self.actions.create_action("manage_presets",
-                        self.show_presets_manager)
+                        self.show_presets_manager, ["<primary>m"])
 
         self.actions.create_action("preferences",
-                        self.show_preferences)
+                        self.show_preferences, ["<primary>comma"])
 
         self.actions.create_action("save_preset",
-                        self.show_save_preset_dialog)
+                        self.show_save_preset_dialog, ["<primary>s"])
+
+        self.actions.create_action("quit",
+                        self.win.on_close_request, ["<primary>q"])
+
+        self.actions.create_action("switch_to_colors_page", 
+                        self.win.switch_to_colors_page, ["<alt>1"])
+
+        self.actions.create_action("switch_to_theming_page", 
+                        self.win.switch_to_theming_page, ["<alt>2"])
+
+        self.actions.create_action("switch_to_advanced_page", 
+                        self.win.switch_to_advanced_page, ["<alt>3"])
 
         self.actions.create_action("about",
                         self.show_about_window)

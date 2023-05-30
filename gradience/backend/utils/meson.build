@@ -6,6 +6,7 @@ gradience_sources = [
     'common.py',
     'gnome.py',
     'gsettings.py',
+    'networking.py',
     'subprocess.py',
     'theming.py'
 ]

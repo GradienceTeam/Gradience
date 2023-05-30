@@ -40,10 +40,17 @@ presets_dir = os.path.join(user_config_dir, "presets")
 user_plugin_dir = os.path.join(user_data_dir, "gradience", "plugins")
 system_plugin_dir = os.path.join(constants.pkgdatadir, "plugins")
 
-preset_repos = {
+preset_repos_github = {
     "Official": "https://github.com/GradienceTeam/Community/raw/next/official.json",
     "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json"
 }
+
+preset_repos_jsdeliver = {
+    "Official": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/official.json",
+    "Curated": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/curated.json"
+}
+
+# preset_repos should be dynamically imported depending of user settings
 
 # Adwaita named UI colors prefixes list
 # NOTE: Remember to update this list if new libadwaita version brings up new variables
