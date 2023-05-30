@@ -23,9 +23,11 @@ import json
 from pathlib import Path
 from gi.repository import Gtk, Adw, GLib
 
+from gradience.backend.utils.networking import get_preset_repos
+
 from gradience.backend.preset_downloader import PresetDownloader
 from gradience.backend.theming.preset import PresetUtils
-from gradience.backend.globals import presets_dir, preset_repos
+from gradience.backend.globals import presets_dir
 from gradience.backend.constants import rootdir
 
 from gradience.frontend.widgets.preset_row import GradiencePresetRow
@@ -81,6 +83,8 @@ class GradiencePresetWindow(Adw.Window):
 
         self.user_repositories = self.settings.get_value("repos").unpack()
         self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
+
+        self.preset_repos = get_preset_repos(self.settings.get_boolean("use-jsdeliver"))
 
         self.setup_signals()
         self.setup()
@@ -144,7 +148,7 @@ class GradiencePresetWindow(Adw.Window):
                 badge = "white"
 
             try:
-                explore_presets, urls = PresetDownloader().fetch_presets(repo)
+                explore_presets, urls = PresetDownloader(self.settings.get_boolean("use-jsdeliver")).fetch_presets(repo)
             except GLib.GError as e:
                 if e.code == 1:
                     self.offline = True
@@ -389,7 +393,7 @@ class GradiencePresetWindow(Adw.Window):
         self.repos_list = Adw.PreferencesGroup()
         self.repos_list.set_title(_("Repositories"))
 
-        for repo_name, repo in preset_repos.items():
+        for repo_name, repo in self.preset_repos.items():
             row = GradienceRepoRow(repo, repo_name, self, deletable=False)
             self.repos_list.add(row)
 
@@ -399,4 +403,4 @@ class GradiencePresetWindow(Adw.Window):
 
         self.repos.add(self.repos_list)
 
-        self._repos = {**self.user_repositories, **preset_repos}
+        self._repos = {**self.user_repositories, **self.preset_repos}

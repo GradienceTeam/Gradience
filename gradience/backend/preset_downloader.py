@@ -22,6 +22,7 @@ import json
 from gi.repository import GLib, Soup
 
 from gradience.backend.globals import presets_dir
+from gradience.backend.utils.networking import github_to_jsdeliver_url
 from gradience.backend.utils.common import to_slug_case
 
 from gradience.backend.logger import Logger
@@ -30,11 +31,14 @@ logging = Logger()
 
 
 class PresetDownloader:
-    def __init__(self):
+    def __init__(self, use_jsdeliver=False):
+        self.use_jsdeliver = use_jsdeliver
         # Open Soup3 session
         self.session = Soup.Session()
 
     def fetch_presets(self, repo) -> [dict, list]:
+        logging.debug(f"Accessing URL address: {repo}")
+
         try:
             request = Soup.Message.new("GET", repo)
             body = self.session.send_and_read(request, None)
@@ -65,11 +69,16 @@ class PresetDownloader:
             # Convert list back to dict
             preset_dict.update(dict(zip(to_dict, to_dict)))
 
+            if self.use_jsdeliver:
+                url = github_to_jsdeliver_url(url)
+
             url_list.append(url)
 
         return preset_dict, url_list
 
     def download_preset(self, name, repo_name, repo) -> None:
+        logging.debug(f"Accessing URL address: {repo}")
+
         try:
             request = Soup.Message.new("GET", repo)
             body = self.session.send_and_read(request, None)

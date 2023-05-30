@@ -127,7 +127,7 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
             dialog.present()
         elif is_gnome_available() and not user_themes_available:
             dialog = Adw.MessageDialog(transient_for=self.win, heading=_("User Themes Extension Missing"),
-                body=_("Gradience requires User Themes extension installed in order to apply Shell theme. You can still generate a theme, but you won't be able to apply it without this extension."))
+                body=_("Gradience requires the User Themes extension installed to apply the Shell theme. You can still generate a theme, but you won't be able to apply it without this extension."))
 
             dialog.add_response("install-extension", _("Install Extension"))
             dialog.add_response("continue-anyway", _("Continue Anyway"))
@@ -138,7 +138,7 @@ class GradienceShellThemingGroup(Adw.PreferencesGroup):
             dialog.present()
         elif is_gnome_available() and user_themes_available and not user_themes_enabled:
             dialog = Adw.MessageDialog(transient_for=self.win, heading=_("User Themes Extension Disabled"),
-                body=_("User Themes extension is currently disabled on your system. Please enable it in order to apply theme."))
+                body=_("The User Themes extension is currently disabled on your system. Please enable it to apply the theme."))
 
             dialog.add_response("cancel", _("Cancel"))
             #dialog.add_response("enable-extension", _("Enable Extension"))
