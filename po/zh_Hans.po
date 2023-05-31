@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 23:35+0000\n"
+"POT-Creation-Date: 2023-05-31 17:45+0000\n"
 "PO-Revision-Date: 2023-05-26 16:49+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -136,7 +136,7 @@ msgstr "下载并应用"
 msgid "Download Only"
 msgstr "仅下载"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:103
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
 msgid "Monet Engine"
 msgstr "Monet 引擎"
 
@@ -280,7 +280,9 @@ msgid "Preset Fetching"
 msgstr "预设抓取"
 
 #: data/ui/preferences_window.blp:60
-msgid "Use alternative server for downloading presets"
+#, fuzzy
+#| msgid "Use alternative server for downloading presets"
+msgid "Use an alternative server for downloading presets"
 msgstr "使用备用服务器下载预设"
 
 #: data/ui/preferences_window.blp:61
@@ -309,21 +311,21 @@ msgid ""
 "programs/frameworks."
 msgstr "主题引擎是用于各种可定制程序/框架的内置主题生成器。"
 
-#: data/ui/preferences_window.blp:104
-msgid ""
-"Monet Engine generates a Material Design 3 palette by extracting the image's "
-"colors."
-msgstr "Monet 引擎通过提取图像的颜色生成 Material Design 3 调色板。"
-
-#: data/ui/preferences_window.blp:112 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
 msgid "Shell Engine"
 msgstr "Shell 引擎"
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:104
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
 msgstr "Shell 引擎会根据当前选择的预设生成自定义 GNOME Shell 主题。"
+
+#: data/ui/preferences_window.blp:113
+msgid ""
+"Monet Engine generates a Material Design 3 palette by extracting the image's "
+"colors."
+msgstr "Monet 引擎通过提取图像的颜色生成 Material Design 3 调色板。"
 
 #: data/ui/preset_row.blp:65
 msgid "Rename Preset"
@@ -810,9 +812,12 @@ msgid "Destructive Colors"
 msgstr "破坏性颜色"
 
 #: gradience/frontend/schemas/preset_schema.py:57
+#, fuzzy
+#| msgid ""
+#| "These colors are used to indicate a dangerous actions, such as deleting a "
+#| "file."
 msgid ""
-"These colors are used to indicate a dangerous actions, such as deleting a "
-"file."
+"These colors are used to indicate dangerous actions, such as deleting a file."
 msgstr "这些颜色用于指示危险操作，例如删除文件。"
 
 #: gradience/frontend/schemas/preset_schema.py:86

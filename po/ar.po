@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-05-30 23:35+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-31 17:45+0000\n"
 "PO-Revision-Date: 2023-05-31 10:48+0000\n"
 "Last-Translator: Ali Aljishi <ahj696@hotmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -141,7 +141,7 @@ msgstr "تنزيل وتطبيق"
 msgid "Download Only"
 msgstr "تنزيل فقط"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:103
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
 msgid "Monet Engine"
 msgstr "محرك مونيه"
 
@@ -287,7 +287,9 @@ msgid "Preset Fetching"
 msgstr "جلب الإعدادات المسبقة"
 
 #: data/ui/preferences_window.blp:60
-msgid "Use alternative server for downloading presets"
+#, fuzzy
+#| msgid "Use alternative server for downloading presets"
+msgid "Use an alternative server for downloading presets"
 msgstr "استخدم خادومًا بديلًا لتنزِّل الإعدادات المسبقة"
 
 #: data/ui/preferences_window.blp:61
@@ -319,21 +321,21 @@ msgstr ""
 "محركات السمات هي مولِّدات السمات المدمجة المستخدمة في الكثير من البرامج وأُطُر "
 "العمل المخصَّصة."
 
-#: data/ui/preferences_window.blp:104
-msgid ""
-"Monet Engine generates a Material Design 3 palette by extracting the image's "
-"colors."
-msgstr "يولِّد محرك مونيه تشكيلة ألوان مبنيةً على متيريل دزاين ٣ من ألوان صورة."
-
-#: data/ui/preferences_window.blp:112 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
 msgid "Shell Engine"
 msgstr "محرك الصدفة"
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:104
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
 msgstr "يولِّد محرك الصدفة سمةً مخصَّصةً لصدفة جنوم حسب الإعداد المسبق المختار."
+
+#: data/ui/preferences_window.blp:113
+msgid ""
+"Monet Engine generates a Material Design 3 palette by extracting the image's "
+"colors."
+msgstr "يولِّد محرك مونيه تشكيلة ألوان مبنيةً على متيريل دزاين ٣ من ألوان صورة."
 
 #: data/ui/preset_row.blp:65
 msgid "Rename Preset"
@@ -823,9 +825,12 @@ msgid "Destructive Colors"
 msgstr "الألوان المدمِّرة"
 
 #: gradience/frontend/schemas/preset_schema.py:57
+#, fuzzy
+#| msgid ""
+#| "These colors are used to indicate a dangerous actions, such as deleting a "
+#| "file."
 msgid ""
-"These colors are used to indicate a dangerous actions, such as deleting a "
-"file."
+"These colors are used to indicate dangerous actions, such as deleting a file."
 msgstr "تُستخدم هذه الألوان للإشارة إلى إجراءات خطيرة، مثل حذف ملف."
 
 #: gradience/frontend/schemas/preset_schema.py:86
