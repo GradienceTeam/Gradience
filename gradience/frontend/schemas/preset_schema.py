@@ -54,7 +54,7 @@ preset_schema = {
             "name": "destructive_colors",
             "title": _("Destructive Colors"),
             "description": _(
-                "These colors are used to indicate a dangerous actions, such "
+                "These colors are used to indicate dangerous actions, such "
                 "as deleting a file."
             ),
             "variables": [
