@@ -14,9 +14,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 23:35+0000\n"
-"PO-Revision-Date: 2023-05-30 20:48+0000\n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
+"POT-Creation-Date: 2023-05-31 17:45+0000\n"
+"PO-Revision-Date: 2023-05-31 19:53+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ru/>\n"
@@ -24,9 +24,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || ("
+"n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: Weblate 4.18-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
@@ -146,7 +146,7 @@ msgstr "Загрузить и применить"
 msgid "Download Only"
 msgstr "Только загрузить"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:103
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
 msgid "Monet Engine"
 msgstr "Движок Monet"
 
@@ -296,7 +296,7 @@ msgid "Preset Fetching"
 msgstr "Получение предустановок"
 
 #: data/ui/preferences_window.blp:60
-msgid "Use alternative server for downloading presets"
+msgid "Use an alternative server for downloading presets"
 msgstr "Использовать альтернативный сервер для загрузки предустановок"
 
 #: data/ui/preferences_window.blp:61
@@ -329,25 +329,25 @@ msgstr ""
 "Движки оформления - это встроенные генераторы тем для различных "
 "настраиваемых программ/фреймворков."
 
-#: data/ui/preferences_window.blp:104
-msgid ""
-"Monet Engine generates a Material Design 3 palette by extracting the image's "
-"colors."
-msgstr ""
-"Движок Monet генерирует палитру Material Design 3, извлекая цвета "
-"изображения."
-
-#: data/ui/preferences_window.blp:112 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
 msgid "Shell Engine"
 msgstr "Движок Shell"
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:104
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
 msgstr ""
 "Движок Shell генерирует пользовательскую тему GNOME Shell на основе "
 "выбранной в данный момент предустановки."
+
+#: data/ui/preferences_window.blp:113
+msgid ""
+"Monet Engine generates a Material Design 3 palette by extracting the image's "
+"colors."
+msgstr ""
+"Движок Monet генерирует палитру Material Design 3, извлекая цвета "
+"изображения."
 
 #: data/ui/preset_row.blp:65
 msgid "Rename Preset"
@@ -855,8 +855,7 @@ msgstr "Цвета разрушительности"
 
 #: gradience/frontend/schemas/preset_schema.py:57
 msgid ""
-"These colors are used to indicate a dangerous actions, such as deleting a "
-"file."
+"These colors are used to indicate dangerous actions, such as deleting a file."
 msgstr ""
 "Эти цвета используются для обозначения опасных действий, например, удаления "
 "файла."
