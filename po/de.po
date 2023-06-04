@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2023-05-31 17:45+0000\n"
-"PO-Revision-Date: 2023-06-03 20:47+0000\n"
+"PO-Revision-Date: 2023-06-04 21:49+0000\n"
 "Last-Translator: FineFindus <FineFindus@users.noreply.hosted.weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/de/>\n"
@@ -670,14 +670,18 @@ msgid ""
 "WARNING: Extensions that modify Shell stylesheet can cause issues with "
 "themes."
 msgstr ""
+"Shell Engine generiert ein benutzerdefiniertes GNOME Shell Theme basierend "
+"auf den derzeitig angegeben Farben.\n"
+"Achtung: Erweiterungen, die das Shell Stylesheet modifizieren, können zu "
+"Fehlern mit Themes führen."
 
 #: data/ui/shell_theming_group.blp:9
 msgid "Shell Engine Options"
-msgstr ""
+msgstr "Shell Engine Einstellungen"
 
 #: data/ui/shell_theming_group.blp:10
 msgid "Change the parameters of a generated GNOME Shell theme"
-msgstr ""
+msgstr "Ändern der Parameter des genierten GNOME Shell Themes"
 
 #: data/ui/shell_theming_group.blp:17
 msgid "Apply a Shell theme"
@@ -697,11 +701,11 @@ msgstr "Voreinstellungsvariante"
 
 #: data/ui/shell_theming_group.blp:35
 msgid "Select which preset variant you have currently applied"
-msgstr ""
+msgstr "Wähle, welche Voreinstellungsvariante derzeit angewendet ist"
 
 #: data/ui/shell_theming_group.blp:47
 msgid "Currently unavailable"
-msgstr ""
+msgstr "Derzeit nicht verfügbar"
 
 #: data/ui/shell_theming_group.blp:55
 #, fuzzy
@@ -725,10 +729,12 @@ msgid ""
 "Theme Engines extend the functionality of Gradience. They can be enabled in "
 "the Preferences."
 msgstr ""
+"Theme Engines erweitern Gradience um weitere Funktionen. Sie können in den "
+"Einstellungen eingeschaltet werden."
 
 #: data/ui/theming_empty_group.blp:9
 msgid "Open Preferences to manage Theme Engines"
-msgstr ""
+msgstr "Öffne die Einstellungen, um die Theme Engines zu verwalten"
 
 #: data/ui/theming_empty_group.blp:14 data/ui/theming_empty_group.blp:15
 #, fuzzy
@@ -751,6 +757,8 @@ msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally."
 msgstr ""
+"In dieser Version haben wir die Unterstützung für GNOME-Shell-Themen "
+"hinzugefügt und die interne Arbeitsweise von Gradience überarbeitet."
 
 #: data/ui/welcome_window.blp:84
 #, fuzzy
@@ -778,7 +786,7 @@ msgstr "Systemeinstellungen"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
-msgstr ""
+msgstr "Zeige Vorschau-Fenster"
 
 #: data/ui/window.blp:48
 #, fuzzy
@@ -816,7 +824,7 @@ msgstr "_Fortschrittlich"
 
 #: data/ui/window.blp:133
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Tastenkürzel"
 
 #: data/ui/window.blp:138
 msgid "About Gradience"
@@ -1217,7 +1225,7 @@ msgstr "Abbrechen"
 #: gradience/frontend/dialogs/log_out_dialog.py:41
 #: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: gradience/frontend/dialogs/save_dialog.py:39
 #, python-brace-format
@@ -1241,13 +1249,15 @@ msgstr "Speichern"
 
 #: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
 msgid "Unsupported Shell Version ({get_full_shell_version()})"
-msgstr ""
+msgstr "Nicht unterstützte Shell Version ({get_full_shell_version()})"
 
 #: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
 msgid ""
 "The Shell version you are using is not supported by Gradience. Please "
 "upgrade to a newer version of GNOME."
 msgstr ""
+"Die verwendete Shell-Version, von Gradience nicht unterstützt. Bitte "
+"aktualisiere auf eine neuere Version von GNOME."
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -1277,7 +1287,7 @@ msgstr "Auto"
 
 #: gradience/frontend/widgets/monet_theming_group.py:131
 msgid "Failed to generate Monet palette"
-msgstr ""
+msgstr "Generieren der Monet Palette fehlgeschlagen"
 
 #: gradience/frontend/widgets/monet_theming_group.py:136
 #, fuzzy
@@ -1370,10 +1380,11 @@ msgstr "GTK 3-Backup konnte nicht wiederhergestellt werden"
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."
 msgstr ""
+"Beim Laden von variablen Farben ist ein unerwarteter Fehler aufgetreten."
 
 #: gradience/frontend/widgets/shell_theming_group.py:118
 msgid "GNOME Shell Missing"
-msgstr ""
+msgstr "GNOME Shell fehlt"
 
 #: gradience/frontend/widgets/shell_theming_group.py:119
 msgid ""
@@ -1381,6 +1392,8 @@ msgid ""
 "still generate themes on other desktop environments, but it won't have any "
 "affect on them."
 msgstr ""
+"Shell Engine ist nur für Systeme mit GNOME konzipiert. Es kann zwar Themen "
+"auf anderen Desktop-Umgebungen erzeugen, aber es wird keinen Einfluss haben."
 
 #: gradience/frontend/widgets/shell_theming_group.py:121
 #, fuzzy
@@ -1397,7 +1410,7 @@ msgstr "Fortfahren"
 
 #: gradience/frontend/widgets/shell_theming_group.py:129
 msgid "User Themes Extension Missing"
-msgstr ""
+msgstr "User Themes Erweiterung fehlt"
 
 #: gradience/frontend/widgets/shell_theming_group.py:130
 msgid ""
@@ -1405,6 +1418,9 @@ msgid ""
 "theme. You can still generate a theme, but you won't be able to apply it "
 "without this extension."
 msgstr ""
+"Gradience erfordert die Installation der Erweiterung User Themes, um das "
+"Shell-Thema anzuwenden. Es ist immer noch möglich ein Theme erstellen, aber "
+"ohne diese Erweiterung ist es nicht möglich es anzuwenden."
 
 #: gradience/frontend/widgets/shell_theming_group.py:132
 #, fuzzy
@@ -1413,13 +1429,15 @@ msgstr "Installieren von Themen"
 
 #: gradience/frontend/widgets/shell_theming_group.py:140
 msgid "User Themes Extension Disabled"
-msgstr ""
+msgstr "User Themes Erweiterung deaktiviert"
 
 #: gradience/frontend/widgets/shell_theming_group.py:141
 msgid ""
 "The User Themes extension is currently disabled on your system. Please "
 "enable it to apply the theme."
 msgstr ""
+"Die Erweiterung User Themes ist derzeit auf deaktiviert. Bitte aktiviere "
+"sie, um das Theme anzuwenden."
 
 #: gradience/frontend/widgets/shell_theming_group.py:143
 #: gradience/frontend/views/presets_manager_window.py:201
@@ -1428,7 +1446,7 @@ msgstr "Abbrechen"
 
 #: gradience/frontend/widgets/shell_theming_group.py:181
 msgid "An error occurred while generating a Shell theme."
-msgstr ""
+msgstr "Ein Fehler ist beim Genieren des Shell Themes aufgetreten."
 
 #: gradience/frontend/widgets/shell_theming_group.py:188
 #, fuzzy
@@ -1439,7 +1457,7 @@ msgstr "Farbschema erfolgreich gespeichert!"
 #: gradience/frontend/widgets/shell_theming_group.py:217
 #: gradience/frontend/widgets/shell_theming_group.py:222
 msgid "Failed to load extension's install link."
-msgstr ""
+msgstr "Laden des Erweiterung-Installation-Links fehlgeschlagen."
 
 #: gradience/frontend/widgets/shell_theming_group.py:241
 #, fuzzy
@@ -1449,11 +1467,11 @@ msgstr "Farbschema erfolgreich gespeichert!"
 
 #: gradience/frontend/views/about_window.py:27
 msgid "translator-credits"
-msgstr ""
+msgstr "FineFindus "
 
 #: gradience/frontend/views/about_window.py:56
 msgid "Copyright © 2022-2023 Gradience Team"
-msgstr ""
+msgstr "Copyright © 2022-2023 Gradience Team"
 
 #: gradience/frontend/views/about_window.py:63
 #, fuzzy
@@ -1465,6 +1483,8 @@ msgid ""
 "Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
 "contributors"
 msgstr ""
+"Mitwirkende auf GitHub https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 
 #: gradience/frontend/views/about_window.py:69
 #, fuzzy
