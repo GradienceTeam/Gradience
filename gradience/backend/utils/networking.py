@@ -31,7 +31,7 @@ def get_preset_repos(use_jsdeliver: bool) -> dict:
 
 def github_to_jsdeliver_url(github_url: str) -> str:
     """
-    Converts Github raw data URL link to JSDeliver CDN link.
+    Converts Github raw data URL link to JSDelivr CDN link.
     """
 
     jsdeliver_url = None
