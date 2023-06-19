@@ -11,21 +11,21 @@ template GradienceAppTypeDialog : Adw.MessageDialog {
       orientation: vertical;
       Label {
         styles ["heading"]
-        label: _("Select application types you want to theme:");
+        label: _("Select application types to theme:");
       }
       CheckButton gtk4-app-type {
         label: _("Libadwaita and GTK 4 Applications");
         active: true;
       }
       CheckButton gtk3-app-type {
-        label: _("GTK 3 Applications (adw-gtk3 theme is required)");
+        label: _("GTK 3 Applications (adw-gtk3 theme required)");
       }
     }
     // Box {
     //   orientation: vertical;
     //   Label {
     //     styles ["heading"]
-    //     label: _("Select color mode you want to affect:");
+    //     label: _("Select color mode to theme:");
     //   }
     //   CheckButton dark {
     //     label: _("Dark");
