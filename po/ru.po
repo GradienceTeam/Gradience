@@ -14,9 +14,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2023-06-20 16:35+0000\n"
-"PO-Revision-Date: 2023-05-31 19:53+0000\n"
+"PO-Revision-Date: 2023-06-20 17:10+0000\n"
 "Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ru/>\n"
@@ -24,10 +24,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Generator: Weblate 4.18-dev\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || ("
+"n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Weblate 4.18.1\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -97,18 +97,14 @@ msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "Снимок вкладки \"Обзор\" менеджера предустановок"
 
 #: data/ui/app_type_dialog.blp:14
-#, fuzzy
-#| msgid "Select application types you want to theme:"
 msgid "Select application types to theme:"
-msgstr "Выберите типы приложений, которые вы хотите кастомизировать:"
+msgstr "Выберите типы приложений для кастомизизации:"
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "Приложения Libadwaita и GTK 4"
 
 #: data/ui/app_type_dialog.blp:21
-#, fuzzy
-#| msgid "GTK 3 Applications (adw-gtk3 theme is required)"
 msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "Приложения GTK 3 (требуется тема adw-gtk3)"
 
@@ -126,18 +122,15 @@ msgid "Custom CSS"
 msgstr "Пользовательский CSS"
 
 #: data/ui/custom_css_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Changing this may break some programs. Keep in mind that Libadwaita was "
-#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
 "hardcode values like padding and margins, and using custom CSS may cause "
 "unintended breakage."
 msgstr ""
-"Изменение этого поля может сломать некоторые программы. Помните, что "
-"Libadwaita была создана, чтобы разработчики могли хардкодить такие вещи, как "
-"отступы элементов."
+"Изменение этого значения может привести к поломке некоторых программ. "
+"Libadwaita позволяет приложениям устанавливать фиксированные значения, такие "
+"как отступы и поля, и использование пользовательского CSS может привести к "
+"непреднамеренным поломкам."
 
 #: data/ui/custom_css_group.blp:33
 msgid "GTK 4"
@@ -160,26 +153,16 @@ msgid "Monet Engine"
 msgstr "Движок Monet"
 
 #: data/ui/monet_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Monet Engine generates a Material You color palette from an image."
-msgstr ""
-"Движок Monet генерирует палитру Material Design 3, извлекая цвета "
-"изображения."
+msgstr "Движок Monet генерирует цветовую палитру Material You из изображения."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
 msgstr "Параметры движка Monet"
 
 #: data/ui/monet_theming_group.blp:10
-#, fuzzy
-#| msgid ""
-#| "Choose an image, and change the parameters of a generated Monet palette"
 msgid "Choose an image and modify generated Monet palette"
-msgstr ""
-"Выберите изображение и измените параметры сгенерированной палитры Monet"
+msgstr "Выберите изображение и измените созданную палитру Monet"
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
 #: data/ui/window.blp:29
@@ -208,7 +191,7 @@ msgstr "Выйти"
 
 #: data/ui/log_out_dialog.blp:6
 msgid "Log out to allow changes to take effect."
-msgstr ""
+msgstr "Выйдите из системы, чтобы изменения вступили в силу."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -219,10 +202,8 @@ msgid "No Preferences"
 msgstr "Нет параметров"
 
 #: data/ui/no_plugin_window.blp:16
-#, fuzzy
-#| msgid "This plugin doesn't have any preferences."
 msgid "This plugin has no preferences."
-msgstr "У этого плагина нет никаких параметров."
+msgstr "У этого плагина нет параметров."
 
 #: data/ui/option_row.blp:10
 msgid "GTK 3 Support Warning"
@@ -372,10 +353,8 @@ msgid "Description"
 msgstr "Описание"
 
 #: data/ui/preset_row.blp:81
-#, fuzzy
-#| msgid "Sorry, but this preset don't have a description."
 msgid "This preset has no description."
-msgstr "Извините, но у этой предустановки нет описания."
+msgstr "Эта предустановка не имеет описания."
 
 #: data/ui/preset_row.blp:93
 msgid "No Badges"
@@ -402,8 +381,6 @@ msgid "Import"
 msgstr "Импорт"
 
 #: data/ui/presets_manager_window.blp:32
-#, fuzzy
-#| msgid "Import a Preset File"
 msgid "Import Preset File"
 msgstr "Импортировать файл предустановки"
 
@@ -474,14 +451,8 @@ msgid "Reset and Restore Presets"
 msgstr "Сброс и восстановление предустановок"
 
 #: data/ui/reset_preset_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "This section allows you to reset a currently applied preset or restore "
-#| "the previous one."
 msgid "Reset a currently applied preset or restore the previous one."
-msgstr ""
-"Этот раздел позволяет сбросить текущую предустановку или восстановить "
-"предыдущую."
+msgstr "Сброс текущей предустановки или восстановление предыдущей."
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -584,7 +555,7 @@ msgstr ""
 
 #: data/ui/share_window.blp:110
 msgid "Legacy apps theming"
-msgstr "Кастомизация устаревших приложений"
+msgstr "Оформление устаревших приложений"
 
 #: data/ui/share_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
@@ -641,27 +612,19 @@ msgid "Custom Shell Colors"
 msgstr "Пользовательские цвета Shell"
 
 #: data/ui/shell_prefs_window.blp:14
-#, fuzzy
-#| msgid "Customize Shell Theme"
 msgid "Customize Shell theme colors."
-msgstr "Настроить тему Shell"
+msgstr "Настроить цвета темы Shell."
 
 #: data/ui/shell_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the colors of "
-#| "a currently selected preset.\n"
-#| "WARNING: Extensions that modify Shell stylesheet can cause issues with "
-#| "themes."
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on the currently "
 "selected preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
-"Движок Shell генерирует пользовательскую тему GNOME Shell на основе цветов "
-"выбранной в данный момент предустановки.\n"
-"ПРЕДУПРЕЖДЕНИЕ: Расширения, изменяющие таблицу стилей Shell, могут вызвать "
+"Движок Shell генерирует пользовательскую тему GNOME Shell на основе текущей "
+"выбранной предустановки.\n"
+"ВНИМАНИЕ: Расширения, изменяющие таблицу стилей Shell, могут вызвать "
 "проблемы с темами."
 
 #: data/ui/shell_theming_group.blp:9
@@ -669,14 +632,10 @@ msgid "Shell Engine Options"
 msgstr "Параметры движка Shell"
 
 #: data/ui/shell_theming_group.blp:10
-#, fuzzy
-#| msgid "Change the parameters of a generated GNOME Shell theme"
 msgid "Change the generated GNOME Shell theme"
-msgstr "Изменение параметров сгенерированной темы GNOME Shell"
+msgstr "Изменение созданной темы GNOME Shell"
 
 #: data/ui/shell_theming_group.blp:17
-#, fuzzy
-#| msgid "Apply a Shell theme"
 msgid "Apply Shell theme"
 msgstr "Применить тему Shell"
 
@@ -694,7 +653,7 @@ msgstr "Вариант предустановки"
 
 #: data/ui/shell_theming_group.blp:35
 msgid "Select currently applied preset variant"
-msgstr ""
+msgstr "Выберите текущий вариант предустановки"
 
 #: data/ui/shell_theming_group.blp:47
 msgid "Currently unavailable"
@@ -705,8 +664,6 @@ msgid "Reset Theme"
 msgstr "Сбросить тему"
 
 #: data/ui/shell_theming_group.blp:56
-#, fuzzy
-#| msgid "Reset an applied theme"
 msgid "Reset applied theme"
 msgstr "Сбросить примененную тему"
 
@@ -751,36 +708,28 @@ msgid "Agree and Continue"
 msgstr "Согласиться и продолжить"
 
 #: data/ui/welcome_window.blp:96
-#, fuzzy
-#| msgid ""
-#| "Change colors of windows, buttons, lists and more, with advanced features "
-#| "like adding custom CSS."
 msgid ""
 "Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
-"Изменяйте цвета окон, кнопок, списков и более, с продвинутыми функциями как "
+"Изменяйте цвета окон, кнопок, списков и более; с продвинутыми функциями как "
 "добавление пользовательского CSS."
 
 #: data/ui/welcome_window.blp:108
 msgid "Legacy Apps Theming"
-msgstr "Кастомизация устаревших приложений"
+msgstr "Оформление устаревших приложений"
 
 #: data/ui/welcome_window.blp:113
-#, fuzzy
-#| msgid "Install adw-gtk3 theme for legacy apps theming"
 msgid "Install adw-gtk3 theme for legacy app theming"
-msgstr "Установить тему adw-gtk3 для кастомизации устаревших приложений"
+msgstr "Установить тему adw-gtk3 для оформления устаревших приложений"
 
 #: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "Конфигурация системы"
 
 #: data/ui/welcome_window.blp:134
-#, fuzzy
-#| msgid "Installing Themes"
 msgid "Installing adw-gtk3"
-msgstr "Установка тем"
+msgstr "Установка adw-gtk3"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -1229,16 +1178,12 @@ msgid "Select an image first"
 msgstr "Сначала выберите изображение"
 
 #: gradience/frontend/widgets/option_row.py:52
-#, fuzzy
-#| msgid "This option is only partially supported by the adw-gtk3 theme."
 msgid "This option is only partially supported by adw-gtk3."
-msgstr "Этот параметр поддерживается темой adw-gtk3 только частично."
+msgstr "Этот параметр поддерживается adw-gtk3 только частично."
 
 #: gradience/frontend/widgets/option_row.py:57
-#, fuzzy
-#| msgid "This option is not supported by the adw-gtk3 theme."
 msgid "This option is not supported by adw-gtk3."
-msgstr "Этот параметр не поддерживается темой adw-gtk3."
+msgstr "Этот параметр не поддерживается adw-gtk3."
 
 #: gradience/frontend/widgets/option_row.py:116
 msgid "Not a color, see text value"
