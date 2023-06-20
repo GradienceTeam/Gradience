@@ -49,12 +49,12 @@ class GradienceOptionRow(Adw.ActionRow):
         elif adw_gtk3_support == "partial":
             self.warning_button.add_css_class("warning")
             self.warning_label.set_label(
-                _("This option is only partially supported by the adw-gtk3 theme.")
+                _("This option is only partially supported by adw-gtk3.")
             )
         elif adw_gtk3_support == "no":
             self.warning_button.add_css_class("error")
             self.warning_label.set_label(
-                _("This option is not supported by the adw-gtk3 theme.")
+                _("This option is not supported by adw-gtk3.")
             )
 
         self.explanation_label.set_label(explanation or "")

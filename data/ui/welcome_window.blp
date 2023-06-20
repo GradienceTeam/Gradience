@@ -93,7 +93,7 @@ template GradienceWelcomeWindow: Adw.Window {
                             hexpand: true;
                             icon-name: "larger-brush-symbolic";
                             title: _("Customize Adwaita Theme");
-                            description: _("Change colors of windows, buttons, lists and more, with advanced features like adding custom CSS.");
+                            description: _("Change colors of windows, buttons, lists and more; with advanced features like adding custom CSS.");
                         }
 
                         Adw.StatusPage page_configure {
@@ -110,7 +110,7 @@ template GradienceWelcomeWindow: Adw.Window {
                                         [suffix]
                                         Switch switch_adw_gtk3 {
                                             valign: center;
-                                            tooltip-text: _("Install adw-gtk3 theme for legacy apps theming");
+                                            tooltip-text: _("Install adw-gtk3 theme for legacy app theming");
                                         }
                                     }
 
@@ -131,8 +131,8 @@ template GradienceWelcomeWindow: Adw.Window {
                         Adw.StatusPage page_download {
                             vexpand: true;
                             hexpand: true;
-                            title: _("Installing Themes");
-                            description: _("Please wait until theme will be installed.");
+                            title: _("Installing adw-gtk3");
+                            description: _("Please wait until theme will be installed.");  // i don't think we need this, just a "Installing adw-gtk3…" might be enough
 
                             Gtk.Box {
                                 orientation: vertical;
