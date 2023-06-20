@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 22:01+0000\n"
+"POT-Creation-Date: 2023-06-20 16:35+0000\n"
 "PO-Revision-Date: 2023-05-24 11:43+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -92,7 +92,9 @@ msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "Tangkapan layar Tab \"Jelajahi\" pada Manajer Preset"
 
 #: data/ui/app_type_dialog.blp:14
-msgid "Select application types you want to theme:"
+#, fuzzy
+#| msgid "Select application types you want to theme:"
+msgid "Select application types to theme:"
 msgstr "Pilih jenis aplikasi yang ingin Anda beri tema:"
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
@@ -100,7 +102,9 @@ msgid "Libadwaita and GTK 4 Applications"
 msgstr "Aplikasi Libadwaita dan GTK 4"
 
 #: data/ui/app_type_dialog.blp:21
-msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+#, fuzzy
+#| msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "Aplikasi GTK 3 (diperlukan tema adw-gtk3)"
 
 #: data/ui/builtin_preset_row.blp:5
@@ -117,9 +121,14 @@ msgid "Custom CSS"
 msgstr "CSS khusus"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Keep in mind that Libadwaita was "
+#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins."
+"Changing this may break some programs. Libadwaita allows applications to "
+"hardcode values like padding and margins, and using custom CSS may cause "
+"unintended breakage."
 msgstr ""
 "Mengubahnya dapat merusak beberapa program. Perlu diingat bahwa Libadwaita "
 "dibuat agar aplikasi dapat mengkodekan nilai seperti padding dan margin."
@@ -147,9 +156,7 @@ msgstr "Mesin Monet"
 
 #: data/ui/monet_theming_group.blp:6
 #, fuzzy
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from "
-"extracting image's colors."
+msgid "Monet Engine generates a Material You color palette from an image."
 msgstr ""
 "Monet adalah mesin yang menghasilkan palet Material Design 3 dari warna "
 "gambar."
@@ -160,7 +167,7 @@ msgid "Monet Engine Options"
 msgstr "Mesin Monet"
 
 #: data/ui/monet_theming_group.blp:10
-msgid "Choose an image, and change the parameters of a generated Monet palette"
+msgid "Choose an image and modify generated Monet palette"
 msgstr ""
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
@@ -193,8 +200,8 @@ msgid "Log out"
 msgstr "Keluar"
 
 #: data/ui/log_out_dialog.blp:6
-msgid "For the changes to take full effect, you need to log out."
-msgstr "Agar perubahan diterapkan sepenuhnya, Anda harus keluar."
+msgid "Log out to allow changes to take effect."
+msgstr ""
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -205,7 +212,9 @@ msgid "No Preferences"
 msgstr "Tidak ada preferensi"
 
 #: data/ui/no_plugin_window.blp:16
-msgid "This plugin doesn't have any preferences."
+#, fuzzy
+#| msgid "This plugin doesn't have any preferences."
+msgid "This plugin has no preferences."
 msgstr "Plugin ini tidak memiliki preferensi apa pun."
 
 #: data/ui/option_row.blp:10
@@ -371,7 +380,7 @@ msgstr "Deskripsi"
 
 #: data/ui/preset_row.blp:81
 #, fuzzy
-msgid "Sorry, but this preset don't have a description."
+msgid "This preset has no description."
 msgstr "Maaf, tetapi preset ini tidak memiliki deskripsi."
 
 #: data/ui/preset_row.blp:93
@@ -403,7 +412,7 @@ msgstr "Impor"
 
 #: data/ui/presets_manager_window.blp:32
 #, fuzzy
-msgid "Import a Preset File"
+msgid "Import Preset File"
 msgstr "Mengimpor File Preset"
 
 #: data/ui/presets_manager_window.blp:38
@@ -481,9 +490,7 @@ msgid "Reset and Restore Presets"
 msgstr "Ganti nama Preset"
 
 #: data/ui/reset_preset_group.blp:6
-msgid ""
-"This section allows you to reset a currently applied preset or restore the "
-"previous one."
+msgid "Reset a currently applied preset or restore the previous one."
 msgstr ""
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
@@ -606,7 +613,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "Aplikasi lama bertema"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
+#: data/ui/share_window.blp:115
 #, fuzzy
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Instal tema adw-gtk3 untuk aplikasi lawas bertema"
@@ -621,7 +628,7 @@ msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 "Mengkonfigurasi sistem untuk tematik, memungkinkan penggantian tema Flatpak"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
+#: data/ui/share_window.blp:136
 #, fuzzy
 msgid "Installing Themes"
 msgstr "Memasang tema"
@@ -672,16 +679,16 @@ msgid "Custom Shell Colors"
 msgstr "Warna Naungan"
 
 #: data/ui/shell_prefs_window.blp:14
-msgid ""
-"This section allows you to customize colors that will be used in the Shell "
-"theme."
-msgstr ""
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Shell theme colors."
+msgstr "Sesuaikan Tema Adwaita"
 
 #: data/ui/shell_theming_group.blp:6
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
-"currently selected preset.\n"
-"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"Shell Engine generates a custom GNOME Shell theme based on the currently "
+"selected preset.\n"
+"WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 
@@ -690,12 +697,12 @@ msgid "Shell Engine Options"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:10
-msgid "Change the parameters of a generated GNOME Shell theme"
+msgid "Change the generated GNOME Shell theme"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:17
 #, fuzzy
-msgid "Apply a Shell theme"
+msgid "Apply Shell theme"
 msgstr "Menerapkan Skema Warna Ini?"
 
 #: data/ui/shell_theming_group.blp:23
@@ -717,7 +724,7 @@ msgid "Preset Variant"
 msgstr "Preset disetel ulang"
 
 #: data/ui/shell_theming_group.blp:35
-msgid "Select which preset variant you have currently applied"
+msgid "Select currently applied preset variant"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:47
@@ -732,7 +739,7 @@ msgstr "Preset dihapus"
 #: data/ui/shell_theming_group.blp:56
 #, fuzzy
 #| msgid "Reset applied color scheme?"
-msgid "Reset an applied theme"
+msgid "Reset applied theme"
 msgstr "Setel ulang skema warna yang diterapkan?"
 
 #: data/ui/theming_empty_group.blp:5
@@ -780,7 +787,7 @@ msgstr "Melanjutkan"
 #: data/ui/welcome_window.blp:96
 #, fuzzy
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
 "Ubah warna jendela, tombol, daftar, dan lainnya dengan fitur lanjutan "
@@ -791,10 +798,20 @@ msgstr ""
 msgid "Legacy Apps Theming"
 msgstr "Theming Aplikasi Lama"
 
+#: data/ui/welcome_window.blp:113
+#, fuzzy
+msgid "Install adw-gtk3 theme for legacy app theming"
+msgstr "Instal tema adw-gtk3 untuk aplikasi lawas bertema"
+
 #: data/ui/welcome_window.blp:118
 #, fuzzy
 msgid "System Configuration"
 msgstr "Konfigurasi Sistem"
+
+#: data/ui/welcome_window.blp:134
+#, fuzzy
+msgid "Installing adw-gtk3"
+msgstr "Memasang tema"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -1319,11 +1336,15 @@ msgid "Select an image first"
 msgstr "Pilih latar belakang terlebih dulu"
 
 #: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is only partially supported by the adw-gtk3 theme."
+msgid "This option is only partially supported by adw-gtk3."
 msgstr "Opsi ini hanya didukung sebagian oleh tema adw-gtk3."
 
 #: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is not supported by the adw-gtk3 theme."
+msgid "This option is not supported by adw-gtk3."
 msgstr "Opsi ini tidak didukung oleh tema adw-gtk3."
 
 #: gradience/frontend/widgets/option_row.py:116
@@ -1667,6 +1688,17 @@ msgstr "Preset disimpan"
 #| msgid "Preset set sucessfully"
 msgid "Preset set successfully"
 msgstr "Preset berhasil disetel"
+
+#, fuzzy
+#~ msgid ""
+#~ "Monet is an engine that generates a Material Design 3 palette from "
+#~ "extracting image's colors."
+#~ msgstr ""
+#~ "Monet adalah mesin yang menghasilkan palet Material Design 3 dari warna "
+#~ "gambar."
+
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "Agar perubahan diterapkan sepenuhnya, Anda harus keluar."
 
 #~ msgid "Allow GTK 4 Flatpak Applications Theming"
 #~ msgstr "Izinkan Tema Aplikasi GTK 4 Flatpak"

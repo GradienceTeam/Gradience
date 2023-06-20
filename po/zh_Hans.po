@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 22:01+0000\n"
+"POT-Creation-Date: 2023-06-20 16:35+0000\n"
 "PO-Revision-Date: 2023-06-01 06:51+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -88,7 +88,9 @@ msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "预设管理器的“浏览”选项卡的屏幕截图"
 
 #: data/ui/app_type_dialog.blp:14
-msgid "Select application types you want to theme:"
+#, fuzzy
+#| msgid "Select application types you want to theme:"
+msgid "Select application types to theme:"
 msgstr "选择您想要影响的应用主题："
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
@@ -96,7 +98,9 @@ msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita 和 GTK 4 应用程序"
 
 #: data/ui/app_type_dialog.blp:21
-msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+#, fuzzy
+#| msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "GTK 3 应用（需要 adw-gtk3 主题）"
 
 #: data/ui/builtin_preset_row.blp:5
@@ -113,9 +117,14 @@ msgid "Custom CSS"
 msgstr "自定义 CSS"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Keep in mind that Libadwaita was "
+#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins."
+"Changing this may break some programs. Libadwaita allows applications to "
+"hardcode values like padding and margins, and using custom CSS may cause "
+"unintended breakage."
 msgstr ""
 "更改此设置可能会破坏某些程序。请记住，制作 Libadwaita 是为了让应用程序可以硬"
 "编码诸如填充和边距之类的值。"
@@ -141,17 +150,22 @@ msgid "Monet Engine"
 msgstr "Monet 引擎"
 
 #: data/ui/monet_theming_group.blp:6
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from "
-"extracting image's colors."
-msgstr "Monet 是一种引擎可通过提取图像的颜色生成 Material Design 3 调色板。"
+#, fuzzy
+#| msgid ""
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
+#| "image's colors."
+msgid "Monet Engine generates a Material You color palette from an image."
+msgstr "Monet 引擎通过提取图像的颜色生成 Material Design 3 调色板。"
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
 msgstr "Monet 引擎选项"
 
 #: data/ui/monet_theming_group.blp:10
-msgid "Choose an image, and change the parameters of a generated Monet palette"
+#, fuzzy
+#| msgid ""
+#| "Choose an image, and change the parameters of a generated Monet palette"
+msgid "Choose an image and modify generated Monet palette"
 msgstr "选择一个图像，并改变生成的 Monet 调色板的参数"
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
@@ -180,8 +194,8 @@ msgid "Log out"
 msgstr "注销"
 
 #: data/ui/log_out_dialog.blp:6
-msgid "For the changes to take full effect, you need to log out."
-msgstr "要使更改完全生效，您需要注销。"
+msgid "Log out to allow changes to take effect."
+msgstr ""
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -192,7 +206,9 @@ msgid "No Preferences"
 msgstr "没有选项"
 
 #: data/ui/no_plugin_window.blp:16
-msgid "This plugin doesn't have any preferences."
+#, fuzzy
+#| msgid "This plugin doesn't have any preferences."
+msgid "This plugin has no preferences."
 msgstr "这个插件没有任何选项。"
 
 #: data/ui/option_row.blp:10
@@ -334,7 +350,9 @@ msgid "Description"
 msgstr "描述"
 
 #: data/ui/preset_row.blp:81
-msgid "Sorry, but this preset don't have a description."
+#, fuzzy
+#| msgid "Sorry, but this preset don't have a description."
+msgid "This preset has no description."
 msgstr "抱歉，这个预设没有描述。"
 
 #: data/ui/preset_row.blp:93
@@ -362,7 +380,9 @@ msgid "Import"
 msgstr "导入"
 
 #: data/ui/presets_manager_window.blp:32
-msgid "Import a Preset File"
+#, fuzzy
+#| msgid "Import a Preset File"
+msgid "Import Preset File"
 msgstr "导入一个预设文件"
 
 #: data/ui/presets_manager_window.blp:38
@@ -432,9 +452,11 @@ msgid "Reset and Restore Presets"
 msgstr "重置和恢复预设"
 
 #: data/ui/reset_preset_group.blp:6
-msgid ""
-"This section allows you to reset a currently applied preset or restore the "
-"previous one."
+#, fuzzy
+#| msgid ""
+#| "This section allows you to reset a currently applied preset or restore "
+#| "the previous one."
+msgid "Reset a currently applied preset or restore the previous one."
 msgstr "此部分允许您重置当前应用的预设或恢复上一个预设。"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
@@ -533,7 +555,7 @@ msgstr "为旧版应用程序安装 adw-gtk3 主题并为主题配置系统。"
 msgid "Legacy apps theming"
 msgstr "旧版应用主题"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
+#: data/ui/share_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "为旧版应用程序主题安装 adw-gtk3 主题"
 
@@ -545,7 +567,7 @@ msgstr "系统配置"
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr "为主题配置系统，启用 Flatpak 主题覆盖"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
+#: data/ui/share_window.blp:136
 msgid "Installing Themes"
 msgstr "正在安装主题"
 
@@ -586,16 +608,22 @@ msgid "Custom Shell Colors"
 msgstr "自定义 Shell 颜色"
 
 #: data/ui/shell_prefs_window.blp:14
-msgid ""
-"This section allows you to customize colors that will be used in the Shell "
-"theme."
-msgstr "此部分允许您自定义将在 Shell 主题中使用的颜色。"
+#, fuzzy
+#| msgid "Customize Shell Theme"
+msgid "Customize Shell theme colors."
+msgstr "定制 Shell 主题"
 
 #: data/ui/shell_theming_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Shell Engine generates a custom GNOME Shell theme based on the colors of "
+#| "a currently selected preset.\n"
+#| "WARNING: Extensions that modify Shell stylesheet can cause issues with "
+#| "themes."
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
-"currently selected preset.\n"
-"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"Shell Engine generates a custom GNOME Shell theme based on the currently "
+"selected preset.\n"
+"WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 "Shell 引擎根据当前所选预设的颜色生成自定义 GNOME Shell 主题。\n"
@@ -606,11 +634,15 @@ msgid "Shell Engine Options"
 msgstr "Shell 引擎选项"
 
 #: data/ui/shell_theming_group.blp:10
-msgid "Change the parameters of a generated GNOME Shell theme"
+#, fuzzy
+#| msgid "Change the parameters of a generated GNOME Shell theme"
+msgid "Change the generated GNOME Shell theme"
 msgstr "更改生成的 GNOME Shell 主题的参数"
 
 #: data/ui/shell_theming_group.blp:17
-msgid "Apply a Shell theme"
+#, fuzzy
+#| msgid "Apply a Shell theme"
+msgid "Apply Shell theme"
 msgstr "应用 Shell 主题"
 
 #: data/ui/shell_theming_group.blp:23
@@ -626,8 +658,8 @@ msgid "Preset Variant"
 msgstr "预设变体"
 
 #: data/ui/shell_theming_group.blp:35
-msgid "Select which preset variant you have currently applied"
-msgstr "选择你目前应用的预设变体"
+msgid "Select currently applied preset variant"
+msgstr ""
 
 #: data/ui/shell_theming_group.blp:47
 msgid "Currently unavailable"
@@ -638,7 +670,9 @@ msgid "Reset Theme"
 msgstr "重置主题"
 
 #: data/ui/shell_theming_group.blp:56
-msgid "Reset an applied theme"
+#, fuzzy
+#| msgid "Reset an applied theme"
+msgid "Reset applied theme"
 msgstr "重置应用的主题"
 
 #: data/ui/theming_empty_group.blp:5
@@ -680,8 +714,12 @@ msgid "Agree and Continue"
 msgstr "同意并继续"
 
 #: data/ui/welcome_window.blp:96
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS."
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr "使用添加自定义 CSS 等高级功能更改窗口、按钮、列表等的颜色。"
 
@@ -689,9 +727,21 @@ msgstr "使用添加自定义 CSS 等高级功能更改窗口、按钮、列表�
 msgid "Legacy Apps Theming"
 msgstr "旧版应用程序主题"
 
+#: data/ui/welcome_window.blp:113
+#, fuzzy
+#| msgid "Install adw-gtk3 theme for legacy apps theming"
+msgid "Install adw-gtk3 theme for legacy app theming"
+msgstr "为旧版应用程序主题安装 adw-gtk3 主题"
+
 #: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "系统配置"
+
+#: data/ui/welcome_window.blp:134
+#, fuzzy
+#| msgid "Installing Themes"
+msgid "Installing adw-gtk3"
+msgstr "正在安装主题"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -1113,11 +1163,15 @@ msgid "Select an image first"
 msgstr "先选择一张图片"
 
 #: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is only partially supported by the adw-gtk3 theme."
+msgid "This option is only partially supported by adw-gtk3."
 msgstr "这个选项只被adw-gtk3主题部分地支持。"
 
 #: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is not supported by the adw-gtk3 theme."
+msgid "This option is not supported by adw-gtk3."
 msgstr "adw-gtk3 主题不支持这个选项。"
 
 #: gradience/frontend/widgets/option_row.py:116
@@ -1413,6 +1467,22 @@ msgstr "预设已保存"
 #: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "预设设置成功"
+
+#~ msgid ""
+#~ "Monet is an engine that generates a Material Design 3 palette from "
+#~ "extracting image's colors."
+#~ msgstr "Monet 是一种引擎可通过提取图像的颜色生成 Material Design 3 调色板。"
+
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "要使更改完全生效，您需要注销。"
+
+#~ msgid ""
+#~ "This section allows you to customize colors that will be used in the "
+#~ "Shell theme."
+#~ msgstr "此部分允许您自定义将在 Shell 主题中使用的颜色。"
+
+#~ msgid "Select which preset variant you have currently applied"
+#~ msgstr "选择你目前应用的预设变体"
 
 #~ msgid "Allow GTK 4 Flatpak Applications Theming"
 #~ msgstr "允许 GTK 4 Flatpak 应用程序主题化"

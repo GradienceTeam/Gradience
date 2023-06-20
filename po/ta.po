@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 22:01+0000\n"
+"POT-Creation-Date: 2023-06-20 16:35+0000\n"
 "PO-Revision-Date: 2023-06-01 16:51+0000\n"
 "Last-Translator: \"K.B.Dharun Krishna\" <kbdharunkrishna@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -91,7 +91,9 @@ msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "முன்னமைக்கப்பட்ட மேலாளரின் \"ஆய்வு\" தாவலின் ஸ்கிரீன்ஷாட்"
 
 #: data/ui/app_type_dialog.blp:14
-msgid "Select application types you want to theme:"
+#, fuzzy
+#| msgid "Select application types you want to theme:"
+msgid "Select application types to theme:"
 msgstr "நீங்கள் தீம் செய்ய விரும்பும் பயன்பாட்டு வகைகளை தேர்ந்தெடுக்கவும்:"
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
@@ -99,7 +101,9 @@ msgid "Libadwaita and GTK 4 Applications"
 msgstr "லிபட்வைதா மற்றும் GTK 4 பயன்பாடுகள்"
 
 #: data/ui/app_type_dialog.blp:21
-msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+#, fuzzy
+#| msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "GTK 3 பயன்பாடுகள் (adw-gtk3 தீம் தேவை)"
 
 #: data/ui/builtin_preset_row.blp:5
@@ -116,9 +120,14 @@ msgid "Custom CSS"
 msgstr "தனிப்பயன் CSS"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Keep in mind that Libadwaita was "
+#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins."
+"Changing this may break some programs. Libadwaita allows applications to "
+"hardcode values like padding and margins, and using custom CSS may cause "
+"unintended breakage."
 msgstr ""
 "இதை மாற்றினால் சில புரோகிராம்கள் உடைந்து போகலாம். லிபத்வைதா உருவாக்கப்பட்டது, அதனால் "
 "பயன்பாடுகள் பேடிங் மற்றும் ஓரங்கள் போன்ற மதிப்புகளை ஹார்ட்கோட் செய்ய முடியும் என்பதை "
@@ -145,19 +154,24 @@ msgid "Monet Engine"
 msgstr "மோனெட் எஞ்சின்"
 
 #: data/ui/monet_theming_group.blp:6
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from "
-"extracting image's colors."
+#, fuzzy
+#| msgid ""
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
+#| "image's colors."
+msgid "Monet Engine generates a Material You color palette from an image."
 msgstr ""
-"மோனெட் என்பது படத்தின் வண்ணங்களைப் பிரித்தெடுப்பதில் இருந்து மெட்டீரியல் டிசைன் 3 தட்டுகளை "
-"உருவாக்கும் ஒரு இயந்திரமாகும்."
+"படத்தின் வண்ணங்களைப் பிரித்தெடுப்பதன் மூலம் மோனெட் இயந்திரம் மெட்டீரியல் டிசைன் 3 தட்டுகளை "
+"உருவாக்குகிறது."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
 msgstr "மோனெட் இயந்திரம் விருப்பங்கள்"
 
 #: data/ui/monet_theming_group.blp:10
-msgid "Choose an image, and change the parameters of a generated Monet palette"
+#, fuzzy
+#| msgid ""
+#| "Choose an image, and change the parameters of a generated Monet palette"
+msgid "Choose an image and modify generated Monet palette"
 msgstr "ஒரு படத்தைத் தேர்வுசெய்து, உருவாக்கப்பட்ட மோனெட் தட்டுக்கான அளவுருக்களை மாற்றவும்"
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
@@ -186,8 +200,8 @@ msgid "Log out"
 msgstr "வெளியேறு"
 
 #: data/ui/log_out_dialog.blp:6
-msgid "For the changes to take full effect, you need to log out."
-msgstr "மாற்றங்கள் முழுமையாக செயல்பட, நீங்கள் வெளியேற வேண்டும்."
+msgid "Log out to allow changes to take effect."
+msgstr ""
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -198,7 +212,9 @@ msgid "No Preferences"
 msgstr "விருப்பத்தேர்வுகள் இல்லை"
 
 #: data/ui/no_plugin_window.blp:16
-msgid "This plugin doesn't have any preferences."
+#, fuzzy
+#| msgid "This plugin doesn't have any preferences."
+msgid "This plugin has no preferences."
 msgstr "இந்த செருகுநிரலுக்கு விருப்பத்தேர்வுகள் எதுவும் இல்லை."
 
 #: data/ui/option_row.blp:10
@@ -349,7 +365,9 @@ msgid "Description"
 msgstr "விளக்கம்"
 
 #: data/ui/preset_row.blp:81
-msgid "Sorry, but this preset don't have a description."
+#, fuzzy
+#| msgid "Sorry, but this preset don't have a description."
+msgid "This preset has no description."
 msgstr "மன்னிக்கவும், ஆனால் இந்த முன்னமைவில் விளக்கம் இல்லை."
 
 #: data/ui/preset_row.blp:93
@@ -377,7 +395,9 @@ msgid "Import"
 msgstr "இறக்குமதி"
 
 #: data/ui/presets_manager_window.blp:32
-msgid "Import a Preset File"
+#, fuzzy
+#| msgid "Import a Preset File"
+msgid "Import Preset File"
 msgstr "முன்னமைக்கப்பட்ட கோப்பை இறக்குமதி செய்"
 
 #: data/ui/presets_manager_window.blp:38
@@ -447,9 +467,11 @@ msgid "Reset and Restore Presets"
 msgstr "முன்னமைவுகளை மீட்டமைத்து மீட்டமைக்கவும்"
 
 #: data/ui/reset_preset_group.blp:6
-msgid ""
-"This section allows you to reset a currently applied preset or restore the "
-"previous one."
+#, fuzzy
+#| msgid ""
+#| "This section allows you to reset a currently applied preset or restore "
+#| "the previous one."
+msgid "Reset a currently applied preset or restore the previous one."
 msgstr ""
 "தற்போது பயன்படுத்தப்பட்ட முன்னமைவை மீட்டமைக்க அல்லது முந்தையதை மீட்டமைக்க இந்தப் பிரிவு "
 "உங்களை அனுமதிக்கிறது."
@@ -555,7 +577,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "லெகஸி ஆப்ஸ் தீமிங்"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
+#: data/ui/share_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "லெகஸி ஆப்ஸ் தீமிங்கிற்கு adw-gtk3 தீம் நிறுவவும்"
 
@@ -567,7 +589,7 @@ msgstr "கணினி கட்டமைப்பு"
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr "தீமிங்கிற்கான அமைப்பை உள்ளமைக்கவும், பிளாட்பாக் தீம் மேலெழுதலை செயல்படுத்துகிறது"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
+#: data/ui/share_window.blp:136
 msgid "Installing Themes"
 msgstr "தீம்கள் நிறுவுகிறது"
 
@@ -610,17 +632,22 @@ msgid "Custom Shell Colors"
 msgstr "தனிப்பயன் ஷெல் நிறங்கள்"
 
 #: data/ui/shell_prefs_window.blp:14
-msgid ""
-"This section allows you to customize colors that will be used in the Shell "
-"theme."
-msgstr ""
-"ஷெல் தீமில் பயன்படுத்தப்படும் வண்ணங்களைத் தனிப்பயனாக்க இந்தப் பிரிவு உங்களை அனுமதிக்கிறது."
+#, fuzzy
+#| msgid "Customize Shell Theme"
+msgid "Customize Shell theme colors."
+msgstr "ஷெல் தீம் தனிப்பயனாக்கு"
 
 #: data/ui/shell_theming_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Shell Engine generates a custom GNOME Shell theme based on the colors of "
+#| "a currently selected preset.\n"
+#| "WARNING: Extensions that modify Shell stylesheet can cause issues with "
+#| "themes."
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
-"currently selected preset.\n"
-"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"Shell Engine generates a custom GNOME Shell theme based on the currently "
+"selected preset.\n"
+"WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 "ஷெல் இயந்திரம் தற்போது தேர்ந்தெடுக்கப்பட்ட முன்னமைவின் வண்ணங்களின் அடிப்படையில் தனிப்பயன் "
@@ -632,11 +659,15 @@ msgid "Shell Engine Options"
 msgstr "ஷெல் இயந்திர விருப்பங்கள்"
 
 #: data/ui/shell_theming_group.blp:10
-msgid "Change the parameters of a generated GNOME Shell theme"
+#, fuzzy
+#| msgid "Change the parameters of a generated GNOME Shell theme"
+msgid "Change the generated GNOME Shell theme"
 msgstr "உருவாக்கப்பட்ட GNOME ஷெல் (Shell) கருப்பொருளின் அளவுருக்களை மாற்றவும்"
 
 #: data/ui/shell_theming_group.blp:17
-msgid "Apply a Shell theme"
+#, fuzzy
+#| msgid "Apply a Shell theme"
+msgid "Apply Shell theme"
 msgstr "ஒரு ஷெல் தீம் பயன்படுத்தவும்"
 
 #: data/ui/shell_theming_group.blp:23
@@ -652,8 +683,8 @@ msgid "Preset Variant"
 msgstr "முன்னமைக்கப்பட்ட மாறுபாடு"
 
 #: data/ui/shell_theming_group.blp:35
-msgid "Select which preset variant you have currently applied"
-msgstr "நீங்கள் தற்போது விண்ணப்பித்துள்ள முன்னமைக்கப்பட்ட மாறுபாட்டைத் தேர்ந்தெடுக்கவும்"
+msgid "Select currently applied preset variant"
+msgstr ""
 
 #: data/ui/shell_theming_group.blp:47
 msgid "Currently unavailable"
@@ -664,7 +695,9 @@ msgid "Reset Theme"
 msgstr "தீம்மை மீட்டமைக்கவும்"
 
 #: data/ui/shell_theming_group.blp:56
-msgid "Reset an applied theme"
+#, fuzzy
+#| msgid "Reset an applied theme"
+msgid "Reset applied theme"
 msgstr "பயன்படுத்தப்பட்ட தீம் ஒன்றை மீட்டமைக்கவும்"
 
 #: data/ui/theming_empty_group.blp:5
@@ -708,8 +741,12 @@ msgid "Agree and Continue"
 msgstr "ஒப்புக்கொண்டு தொடரவும்"
 
 #: data/ui/welcome_window.blp:96
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS."
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
 "தனிப்பயன் CSS ஐச் சேர்ப்பது போன்ற மேம்பட்ட அம்சங்களுடன் சாளரங்கள், பொத்தான்கள், பட்டியல்கள் "
@@ -719,9 +756,21 @@ msgstr ""
 msgid "Legacy Apps Theming"
 msgstr "லெகஸி ஆப்ஸ் தீமிங்"
 
+#: data/ui/welcome_window.blp:113
+#, fuzzy
+#| msgid "Install adw-gtk3 theme for legacy apps theming"
+msgid "Install adw-gtk3 theme for legacy app theming"
+msgstr "லெகஸி ஆப்ஸ் தீமிங்கிற்கு adw-gtk3 தீம் நிறுவவும்"
+
 #: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "கணினி கட்டமைப்பு"
+
+#: data/ui/welcome_window.blp:134
+#, fuzzy
+#| msgid "Installing Themes"
+msgid "Installing adw-gtk3"
+msgstr "தீம்கள் நிறுவுகிறது"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -1165,11 +1214,15 @@ msgid "Select an image first"
 msgstr "முதலில் ஒரு படத்தைத் தேர்ந்தெடுக்கவும்"
 
 #: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is only partially supported by the adw-gtk3 theme."
+msgid "This option is only partially supported by adw-gtk3."
 msgstr "இந்த விருப்பம் adw-gtk3 தீம் மூலம் ஓரளவு மட்டுமே ஆதரிக்கப்படுகிறது."
 
 #: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is not supported by the adw-gtk3 theme."
+msgid "This option is not supported by adw-gtk3."
 msgstr "இந்த விருப்பத்தை adw-gtk3 தீம் ஆதரிக்கவில்லை."
 
 #: gradience/frontend/widgets/option_row.py:116
@@ -1473,6 +1526,25 @@ msgstr "முன்னமைவு சேமிக்கப்பட்டத�
 #: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "முன்னமைவு வெற்றிகரமாக அமைக்கப்பட்டது"
+
+#~ msgid ""
+#~ "Monet is an engine that generates a Material Design 3 palette from "
+#~ "extracting image's colors."
+#~ msgstr ""
+#~ "மோனெட் என்பது படத்தின் வண்ணங்களைப் பிரித்தெடுப்பதில் இருந்து மெட்டீரியல் டிசைன் 3 "
+#~ "தட்டுகளை உருவாக்கும் ஒரு இயந்திரமாகும்."
+
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "மாற்றங்கள் முழுமையாக செயல்பட, நீங்கள் வெளியேற வேண்டும்."
+
+#~ msgid ""
+#~ "This section allows you to customize colors that will be used in the "
+#~ "Shell theme."
+#~ msgstr ""
+#~ "ஷெல் தீமில் பயன்படுத்தப்படும் வண்ணங்களைத் தனிப்பயனாக்க இந்தப் பிரிவு உங்களை அனுமதிக்கிறது."
+
+#~ msgid "Select which preset variant you have currently applied"
+#~ msgstr "நீங்கள் தற்போது விண்ணப்பித்துள்ள முன்னமைக்கப்பட்ட மாறுபாட்டைத் தேர்ந்தெடுக்கவும்"
 
 #~ msgid "Allow GTK 4 Flatpak Applications Theming"
 #~ msgstr "GTK 4 பிளாட்பேக் பயன்பாடுகள் தீமிங்கை அனுமதிக்கவும்"

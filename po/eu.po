@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 22:01+0000\n"
+"POT-Creation-Date: 2023-06-20 16:35+0000\n"
 "PO-Revision-Date: 2023-05-24 11:43+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: data/ui/app_type_dialog.blp:14
 #, fuzzy
-msgid "Select application types you want to theme:"
+msgid "Select application types to theme:"
 msgstr "Aukeratu eragin nahi dituzun aplikazio motak:"
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
@@ -113,7 +113,7 @@ msgstr "Libadwaita eta GTK 4 aplikazioak"
 
 #: data/ui/app_type_dialog.blp:21
 #, fuzzy
-msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "GTK 3 aplikazioak (adw-gtk3 gaia behar da)"
 
 #: data/ui/builtin_preset_row.blp:5
@@ -138,8 +138,9 @@ msgstr "CSS pertsonalizatua"
 #| "made so that applications could hardcode values like paddings and "
 #| "margins. Only GTK 4 CSS will be previewed here."
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins."
+"Changing this may break some programs. Libadwaita allows applications to "
+"hardcode values like padding and margins, and using custom CSS may cause "
+"unintended breakage."
 msgstr ""
 "Hau aldatzeak programa batzuk hautsi ditzake. Kontuan izan Libadwaita "
 "aplikazioek betegarria eta marjinak bezalako balioak kodetzeko egin zela. "
@@ -172,9 +173,7 @@ msgstr "Monet motorra"
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
 #| "image's color."
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from "
-"extracting image's colors."
+msgid "Monet Engine generates a Material You color palette from an image."
 msgstr ""
 "Irudi baten koloretik abiatuta, Design 3 material-paleta bat sortzen duen "
 "motorra da Monet."
@@ -186,7 +185,7 @@ msgid "Monet Engine Options"
 msgstr "Monet motorra"
 
 #: data/ui/monet_theming_group.blp:10
-msgid "Choose an image, and change the parameters of a generated Monet palette"
+msgid "Choose an image and modify generated Monet palette"
 msgstr ""
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
@@ -219,7 +218,7 @@ msgid "Log out"
 msgstr ""
 
 #: data/ui/log_out_dialog.blp:6
-msgid "For the changes to take full effect, you need to log out."
+msgid "Log out to allow changes to take effect."
 msgstr ""
 
 #: data/ui/no_plugin_window.blp:5
@@ -231,7 +230,7 @@ msgid "No Preferences"
 msgstr ""
 
 #: data/ui/no_plugin_window.blp:16
-msgid "This plugin doesn't have any preferences."
+msgid "This plugin has no preferences."
 msgstr ""
 
 #: data/ui/option_row.blp:10
@@ -384,7 +383,7 @@ msgid "Description"
 msgstr ""
 
 #: data/ui/preset_row.blp:81
-msgid "Sorry, but this preset don't have a description."
+msgid "This preset has no description."
 msgstr ""
 
 #: data/ui/preset_row.blp:93
@@ -414,8 +413,9 @@ msgid "Import"
 msgstr "Inportatu"
 
 #: data/ui/presets_manager_window.blp:32
-msgid "Import a Preset File"
-msgstr ""
+#, fuzzy
+msgid "Import Preset File"
+msgstr "Kendu diseinua"
 
 #: data/ui/presets_manager_window.blp:38
 msgid "Delete"
@@ -488,9 +488,7 @@ msgid "Reset and Restore Presets"
 msgstr "Kendu diseinua"
 
 #: data/ui/reset_preset_group.blp:6
-msgid ""
-"This section allows you to reset a currently applied preset or restore the "
-"previous one."
+msgid "Reset a currently applied preset or restore the previous one."
 msgstr ""
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
@@ -600,7 +598,7 @@ msgstr "Instalatu adw-gtk3 gaia oinordetzan hartutako aplikazioetarako."
 msgid "Legacy apps theming"
 msgstr ""
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
+#: data/ui/share_window.blp:115
 #, fuzzy
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Instalatu adw-gtk3 gaia oinordetzan hartutako aplikazioetarako."
@@ -613,7 +611,7 @@ msgstr "Sistemaren konfigurazioa"
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
+#: data/ui/share_window.blp:136
 #, fuzzy
 msgid "Installing Themes"
 msgstr "Gaiak instalatzen"
@@ -661,16 +659,16 @@ msgid "Custom Shell Colors"
 msgstr "Itzalaren kolorea"
 
 #: data/ui/shell_prefs_window.blp:14
-msgid ""
-"This section allows you to customize colors that will be used in the Shell "
-"theme."
-msgstr ""
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Shell theme colors."
+msgstr "Adwaita gaia pertsonalizatu"
 
 #: data/ui/shell_theming_group.blp:6
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
-"currently selected preset.\n"
-"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"Shell Engine generates a custom GNOME Shell theme based on the currently "
+"selected preset.\n"
+"WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 
@@ -679,12 +677,12 @@ msgid "Shell Engine Options"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:10
-msgid "Change the parameters of a generated GNOME Shell theme"
+msgid "Change the generated GNOME Shell theme"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:17
 #, fuzzy
-msgid "Apply a Shell theme"
+msgid "Apply Shell theme"
 msgstr "Koloreen eskema hau aplikatu?"
 
 #: data/ui/shell_theming_group.blp:23
@@ -704,7 +702,7 @@ msgid "Preset Variant"
 msgstr "Diseinua berrezarri da"
 
 #: data/ui/shell_theming_group.blp:35
-msgid "Select which preset variant you have currently applied"
+msgid "Select currently applied preset variant"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:47
@@ -720,7 +718,7 @@ msgstr "Diseinua kenduta"
 #: data/ui/shell_theming_group.blp:56
 #, fuzzy
 #| msgid "Reset applied color scheme?"
-msgid "Reset an applied theme"
+msgid "Reset applied theme"
 msgstr "Aplikatutako kolore-eskema berrezarri?"
 
 #: data/ui/theming_empty_group.blp:5
@@ -766,7 +764,7 @@ msgstr "Jarraitu"
 #: data/ui/welcome_window.blp:96
 #, fuzzy
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
 "Aldatu leihoetako koloreak, botoiak, zerrendak eta askoz gehiago funtzio "
@@ -776,10 +774,20 @@ msgstr ""
 msgid "Legacy Apps Theming"
 msgstr ""
 
+#: data/ui/welcome_window.blp:113
+#, fuzzy
+msgid "Install adw-gtk3 theme for legacy app theming"
+msgstr "Instalatu adw-gtk3 gaia oinordetzan hartutako aplikazioetarako."
+
 #: data/ui/welcome_window.blp:118
 #, fuzzy
 msgid "System Configuration"
 msgstr "Sistemaren konfigurazioa"
+
+#: data/ui/welcome_window.blp:134
+#, fuzzy
+msgid "Installing adw-gtk3"
+msgstr "Gaiak instalatzen"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -1287,11 +1295,15 @@ msgid "Select an image first"
 msgstr "Hautatu lehenengo fondo bat"
 
 #: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is only partially supported by the adw-gtk3 theme."
+msgid "This option is only partially supported by adw-gtk3."
 msgstr "Aukera hau zati batean baino ez da bateragarria adw-gtk3 gaiarekin."
 
 #: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is not supported by the adw-gtk3 theme."
+msgid "This option is not supported by adw-gtk3."
 msgstr "Aukera hau ez da bateragarria adw-gtk3 gaiarekin."
 
 #: gradience/frontend/widgets/option_row.py:116
@@ -1623,6 +1635,17 @@ msgstr "Diseinua gorde da"
 #| msgid "Preset set sucessfully"
 msgid "Preset set successfully"
 msgstr "Diseinua ondo ezarri da"
+
+#, fuzzy
+#~| msgid ""
+#~| "Monet is an engine that generates a Material Design 3 palette from an "
+#~| "image's color."
+#~ msgid ""
+#~ "Monet is an engine that generates a Material Design 3 palette from "
+#~ "extracting image's colors."
+#~ msgstr ""
+#~ "Irudi baten koloretik abiatuta, Design 3 material-paleta bat sortzen duen "
+#~ "motorra da Monet."
 
 #~ msgid "_Monet"
 #~ msgstr "_Monet"

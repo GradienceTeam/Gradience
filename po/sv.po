@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 22:01+0000\n"
+"POT-Creation-Date: 2023-06-20 16:35+0000\n"
 "PO-Revision-Date: 2023-05-24 11:43+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -92,7 +92,9 @@ msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "Skärmdump av \"Färger\" fliken i förinställninghanteraren"
 
 #: data/ui/app_type_dialog.blp:14
-msgid "Select application types you want to theme:"
+#, fuzzy
+#| msgid "Select application types you want to theme:"
+msgid "Select application types to theme:"
 msgstr "Välj programtyper som du vill ta upp i temat:"
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
@@ -100,7 +102,9 @@ msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita och GTK 4 program"
 
 #: data/ui/app_type_dialog.blp:21
-msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+#, fuzzy
+#| msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "GTK 3 program (adw-gtk3-tema krävs)"
 
 #: data/ui/builtin_preset_row.blp:5
@@ -117,9 +121,14 @@ msgid "Custom CSS"
 msgstr "Anpassad CSS"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Keep in mind that Libadwaita was "
+#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins."
+"Changing this may break some programs. Libadwaita allows applications to "
+"hardcode values like padding and margins, and using custom CSS may cause "
+"unintended breakage."
 msgstr ""
 "Om du ändrar detta kan vissa program brytas. Tänk på att Libadwaita skapades "
 "för att programmen skulle kunna hårdkoda värden som paddings och marginaler."
@@ -149,9 +158,7 @@ msgstr "Monet motor"
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
 #| "image's color."
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from "
-"extracting image's colors."
+msgid "Monet Engine generates a Material You color palette from an image."
 msgstr ""
 "Monet är en motor som genererar en Material Design 3-palett från en bilds "
 "färger."
@@ -163,8 +170,10 @@ msgid "Monet Engine Options"
 msgstr "Monet motor"
 
 #: data/ui/monet_theming_group.blp:10
-msgid "Choose an image, and change the parameters of a generated Monet palette"
-msgstr ""
+#, fuzzy
+#| msgid "Failed to generate Monet palette"
+msgid "Choose an image and modify generated Monet palette"
+msgstr "Misslyckades att generera Monet-palett"
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
 #: data/ui/window.blp:29
@@ -192,8 +201,8 @@ msgid "Log out"
 msgstr "Logga ut"
 
 #: data/ui/log_out_dialog.blp:6
-msgid "For the changes to take full effect, you need to log out."
-msgstr "För att ändringarna ska få full effekt måste du logga ut."
+msgid "Log out to allow changes to take effect."
+msgstr ""
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -204,7 +213,9 @@ msgid "No Preferences"
 msgstr "Inga inställningar"
 
 #: data/ui/no_plugin_window.blp:16
-msgid "This plugin doesn't have any preferences."
+#, fuzzy
+#| msgid "This plugin doesn't have any preferences."
+msgid "This plugin has no preferences."
 msgstr "Detta plugin har inga inställningar."
 
 #: data/ui/option_row.blp:10
@@ -387,7 +398,9 @@ msgid "Description"
 msgstr "Beskrivning"
 
 #: data/ui/preset_row.blp:81
-msgid "Sorry, but this preset don't have a description."
+#, fuzzy
+#| msgid "Sorry, but this preset don't have a description."
+msgid "This preset has no description."
 msgstr "Tyvärr har denna förinställning ingen beskrivning."
 
 #: data/ui/preset_row.blp:93
@@ -415,7 +428,9 @@ msgid "Import"
 msgstr "Importera"
 
 #: data/ui/presets_manager_window.blp:32
-msgid "Import a Preset File"
+#, fuzzy
+#| msgid "Import a Preset File"
+msgid "Import Preset File"
 msgstr "Importera en förinställd fil"
 
 #: data/ui/presets_manager_window.blp:38
@@ -487,9 +502,7 @@ msgid "Reset and Restore Presets"
 msgstr "Byt namn på förinställning"
 
 #: data/ui/reset_preset_group.blp:6
-msgid ""
-"This section allows you to reset a currently applied preset or restore the "
-"previous one."
+msgid "Reset a currently applied preset or restore the previous one."
 msgstr ""
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
@@ -602,7 +615,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "Gamla appar med tematisering"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
+#: data/ui/share_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Installera adw-gtk3-tema för tematisering av äldre appar"
 
@@ -615,7 +628,7 @@ msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 "Konfigurera systemet för tematisering, aktiverar Flatpak-temaöverstyrning"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
+#: data/ui/share_window.blp:136
 msgid "Installing Themes"
 msgstr "Installerar teman"
 
@@ -660,16 +673,16 @@ msgid "Custom Shell Colors"
 msgstr "Nyansfärg"
 
 #: data/ui/shell_prefs_window.blp:14
-msgid ""
-"This section allows you to customize colors that will be used in the Shell "
-"theme."
-msgstr ""
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Shell theme colors."
+msgstr "Anpassa Adwaita-tema"
 
 #: data/ui/shell_theming_group.blp:6
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
-"currently selected preset.\n"
-"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"Shell Engine generates a custom GNOME Shell theme based on the currently "
+"selected preset.\n"
+"WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 
@@ -678,13 +691,13 @@ msgid "Shell Engine Options"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:10
-msgid "Change the parameters of a generated GNOME Shell theme"
+msgid "Change the generated GNOME Shell theme"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:17
 #, fuzzy
 #| msgid "Apply This Color Scheme?"
-msgid "Apply a Shell theme"
+msgid "Apply Shell theme"
 msgstr "Använda detta färgschema?"
 
 #: data/ui/shell_theming_group.blp:23
@@ -705,7 +718,7 @@ msgid "Preset Variant"
 msgstr "Förinställning återställd"
 
 #: data/ui/shell_theming_group.blp:35
-msgid "Select which preset variant you have currently applied"
+msgid "Select currently applied preset variant"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:47
@@ -721,7 +734,7 @@ msgstr "Förinställning borttagen"
 #: data/ui/shell_theming_group.blp:56
 #, fuzzy
 #| msgid "Reset applied color scheme?"
-msgid "Reset an applied theme"
+msgid "Reset applied theme"
 msgstr "Återställ tillämpat färgschema?"
 
 #: data/ui/theming_empty_group.blp:5
@@ -769,8 +782,12 @@ msgid "Agree and Continue"
 msgstr "Fortsätt"
 
 #: data/ui/welcome_window.blp:96
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS."
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
 "Ändra färgerna på fönster, knappar, listor med mera, med avancerade "
@@ -780,9 +797,21 @@ msgstr ""
 msgid "Legacy Apps Theming"
 msgstr "Tematisering av äldre appar"
 
+#: data/ui/welcome_window.blp:113
+#, fuzzy
+#| msgid "Install adw-gtk3 theme for legacy apps theming"
+msgid "Install adw-gtk3 theme for legacy app theming"
+msgstr "Installera adw-gtk3-tema för tematisering av äldre appar"
+
 #: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "Systemkonfiguration"
+
+#: data/ui/welcome_window.blp:134
+#, fuzzy
+#| msgid "Installing Themes"
+msgid "Installing adw-gtk3"
+msgstr "Installerar teman"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -1273,11 +1302,15 @@ msgid "Select an image first"
 msgstr "Välj en bild"
 
 #: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is only partially supported by the adw-gtk3 theme."
+msgid "This option is only partially supported by adw-gtk3."
 msgstr "Det här alternativet stöds endast delvis av adw-gtk3-temat."
 
 #: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is not supported by the adw-gtk3 theme."
+msgid "This option is not supported by adw-gtk3."
 msgstr "Det här alternativet stöds inte av adw-gtk3-temat."
 
 #: gradience/frontend/widgets/option_row.py:116
@@ -1584,6 +1617,20 @@ msgstr "Förinställning sparad"
 #: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "Förinställningen lyckades"
+
+#, fuzzy
+#~| msgid ""
+#~| "Monet is an engine that generates a Material Design 3 palette from an "
+#~| "image's color."
+#~ msgid ""
+#~ "Monet is an engine that generates a Material Design 3 palette from "
+#~ "extracting image's colors."
+#~ msgstr ""
+#~ "Monet är en motor som genererar en Material Design 3-palett från en bilds "
+#~ "färger."
+
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "För att ändringarna ska få full effekt måste du logga ut."
 
 #~ msgid "Allow GTK 4 Flatpak Applications Theming"
 #~ msgstr "Tillåt GTK 4 Flatpak program teman"
