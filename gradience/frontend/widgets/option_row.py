@@ -92,6 +92,9 @@ class GradienceOptionRow(Adw.ActionRow):
         widget = self.text_value if self.text_value_toggle.get_active() else self.color_value
         self.value_stack.set_visible_child(widget)
         self.set_activatable_widget(widget)
+        
+        tooltip = _("Show Color") if self.text_value_toggle.get_active() else _("Show Hex")
+        self.text_value_toggle.set_tooltip_text(tooltip);
 
     def update_value(self, new_value, update_vars=False, **kwargs):
         rgba = Gdk.RGBA()
