@@ -6,8 +6,8 @@ Fixes #(issue) <!-- Remove this, if your PR doesn't fix any tracked issue. -->
 
 ## Type of change
 
-<!-- What type of change does your pull request introduce? Put an `x` in the box that apply. -->
-- [ ] Bugfix (Change which fixes a issue)
+<!-- What type of change does your pull request introduce? Put an `x` in the appropriate box . -->
+- [ ] Bugfix (Change which fixes an issue)
 - [ ] New feature (Change which adds new functionality)
 - [ ] Enhancement (Change which slightly improves existing code)
 - [ ] Breaking change (This change will introduce incompatibility with existing functionality)
