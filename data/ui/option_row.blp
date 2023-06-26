@@ -2,6 +2,8 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradienceOptionRow : Adw.ActionRow {
+  activatable-widget: color-value;
+
   [suffix]
   MenuButton warning-button {
     valign: center;
