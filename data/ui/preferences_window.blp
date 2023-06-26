@@ -59,6 +59,7 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
       Adw.ActionRow jsdeliver_row {
         title: _("Use an alternative server for downloading presets");
         subtitle: _("JSDelivr will be used instead of direct preset fetching from GitHub");
+        activatable-widget: jsdeliver_switch;
         Gtk.Switch jsdeliver_switch {
           valign: center;
         }
