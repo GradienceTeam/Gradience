@@ -2,6 +2,8 @@ using Gtk 4.0;
 using Adw 1;
 
 template GradienceOptionRow : Adw.ActionRow {
+  activatable-widget: color-value;
+
   [suffix]
   MenuButton warning-button {
     valign: center;
@@ -40,7 +42,7 @@ template GradienceOptionRow : Adw.ActionRow {
   ToggleButton text-value-toggle {
     valign: center;
     icon-name: "document-edit-symbolic";
-    tooltip-text: _("Toggle Text Value");
+    tooltip-text: _("Show Hex");
     styles ["flat"]
 
     toggled => on_text_value_toggled();
