@@ -76,7 +76,7 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
     def setup_jsdeliver(self):
         self.jsdeliver_switch.set_active(self.app.use_jsdeliver)
         self.jsdeliver_switch.connect(
-            "state-set", self.on_jsdeliver_switch_toggled
+            "notify::active", self.on_jsdeliver_switch_toggled
         )
 
     def setup_theme_engines_group(self):
@@ -84,11 +84,11 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.monet_engine_switch.set_active("monet" in self.win.enabled_theme_engines)
 
         self.gnome_shell_engine_switch.connect(
-            "state-set", self.on_gnome_shell_engine_switch_toggled
+            "notify::active", self.on_gnome_shell_engine_switch_toggled
         )
 
         self.monet_engine_switch.connect(
-            "state-set", self.on_monet_engine_switch_toggled
+            "notify::active", self.on_monet_engine_switch_toggled
         )
 
     def setup_flatpak_group(self):
@@ -113,41 +113,35 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         # self.gtk3_global_theming_switch.set_active(global_flatpak_theming_gtk3)
 
         self.gtk4_user_theming_switch.connect(
-            "state-set", self.on_gtk4_user_theming_switch_toggled
+            "notify::active", self.on_gtk4_user_theming_switch_toggled
         )
 
         self.gtk3_user_theming_switch.connect(
-            "state-set", self.on_gtk3_user_theming_switch_toggled
+            "notify::active", self.on_gtk3_user_theming_switch_toggled
         )
 
-    def on_gtk4_user_theming_switch_toggled(self, *args):
-        active = self.gtk4_user_theming_switch.props.active
-
-        if not active:
+    def on_gtk4_user_theming_switch_toggled(self, widget, *args):
+        if widget.get_active():
             create_gtk_user_override(self.settings, "gtk4", self)
         else:
             remove_gtk_user_override(self.settings, "gtk4", self)
 
-            logging.debug(
-                f"user-flatpak-theming-gtk4: {self.settings.get_boolean('user-flatpak-theming-gtk4')}"
-            )
+        logging.debug(
+            f"user-flatpak-theming-gtk4: {self.settings.get_boolean('user-flatpak-theming-gtk4')}"
+        )
 
-    def on_gtk3_user_theming_switch_toggled(self, *args):
-        active = self.gtk3_user_theming_switch.props.active
-
-        if not active:
+    def on_gtk3_user_theming_switch_toggled(self, widget, *args):
+        if widget.get_active():
             create_gtk_user_override(self.settings, "gtk3", self)
         else:
             remove_gtk_user_override(self.settings, "gtk3", self)
 
-            logging.debug(
-                f"user-flatpak-theming-gtk3: {self.settings.get_boolean('user-flatpak-theming-gtk3')}"
-            )
+        logging.debug(
+            f"user-flatpak-theming-gtk3: {self.settings.get_boolean('user-flatpak-theming-gtk3')}"
+        )
 
-    def on_gtk4_global_theming_switch_toggled(self, *args):
-        active = self.gtk4_global_theming_switch.props.active
-
-        if not active:
+    def on_gtk4_global_theming_switch_toggled(self, widget, *args):
+        if widget.get_active():
             create_gtk_global_override(self.settings, "gtk4", self)
         else:
             remove_gtk_global_override(self.settings, "gtk4", self)
@@ -156,10 +150,8 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
                 f"global-flatpak-theming-gtk4: {self.settings.get_boolean('global-flatpak-theming-gtk4')}"
             )
 
-    def on_gtk3_global_theming_switch_toggled(self, *args):
-        active = self.gtk3_global_theming_switch.props.active
-
-        if not active:
+    def on_gtk3_global_theming_switch_toggled(self, widget, *args):
+        if widget.get_active():
             create_gtk_global_override(self.settings, "gtk3", self)
         else:
             remove_gtk_global_override(self.settings, "gtk3", self)
@@ -168,10 +160,8 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
                 f"global-flatpak-theming-gtk3: {self.settings.get_boolean('global-flatpak-theming-gtk3')}"
             )
 
-    def on_gnome_shell_engine_switch_toggled(self, *args):
-        active = self.gnome_shell_engine_switch.props.active
-
-        if not active:
+    def on_gnome_shell_engine_switch_toggled(self, widget, *args):
+        if widget.get_active():
             self.win.enabled_theme_engines.add("shell")
         else:
             self.win.enabled_theme_engines.remove("shell")
@@ -185,10 +175,8 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
                 f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
         )
 
-    def on_monet_engine_switch_toggled(self, *args):
-        active = self.monet_engine_switch.props.active
-
-        if not active:
+    def on_monet_engine_switch_toggled(self, widget, *args):
+        if widget.get_active():
             self.win.enabled_theme_engines.add("monet")
         else:
             self.win.enabled_theme_engines.remove("monet")
@@ -202,10 +190,8 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
                 f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
         )
 
-    def on_jsdeliver_switch_toggled(self, *args):
-        active = self.jsdeliver_switch.props.active
-
-        if not active:
+    def on_jsdeliver_switch_toggled(self, widget, *args):
+        if widget.get_active():
             self.app.use_jsdeliver = True
         else:
             self.app.use_jsdeliver = False
