@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-06-20 16:35+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-27 13:11+0000\n"
 "PO-Revision-Date: 2023-06-21 06:51+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -103,7 +103,7 @@ msgstr "GTK 3 应用（需要 adw-gtk3 主题）"
 msgid "Made by @GradienceTeam"
 msgstr "@GradienceTeam 制作"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
+#: data/ui/builtin_preset_row.blp:12 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 msgid "Apply Preset"
 msgstr "应用预设"
@@ -117,9 +117,9 @@ msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
 "hardcode values like padding and margins, and using custom CSS may cause "
 "unintended breakage."
-msgstr "更改此设置可能会破坏某些程序。 Libadwaita "
-"允许应用程序对填充和边距等值进行硬编码，并且使用自定义 CSS "
-"可能会导致意外损坏。"
+msgstr ""
+"更改此设置可能会破坏某些程序。 Libadwaita 允许应用程序对填充和边距等值进行硬"
+"编码，并且使用自定义 CSS 可能会导致意外损坏。"
 
 #: data/ui/custom_css_group.blp:33
 msgid "GTK 4"
@@ -129,15 +129,15 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:21
+#: data/ui/explore_preset_row.blp:23
 msgid "Download and Apply"
 msgstr "下载并应用"
 
-#: data/ui/explore_preset_row.blp:32
+#: data/ui/explore_preset_row.blp:34
 msgid "Download Only"
 msgstr "仅下载"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Monet 引擎"
 
@@ -166,11 +166,11 @@ msgstr "应用调色板"
 msgid "Select an Image"
 msgstr "选择图像"
 
-#: data/ui/monet_theming_group.blp:32
+#: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
 msgstr "选择文件"
 
-#: data/ui/monet_theming_group.blp:41
+#: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "选择图像文件"
 
@@ -194,28 +194,28 @@ msgstr "没有选项"
 msgid "This plugin has no preferences."
 msgstr "该插件没有偏好设置。"
 
-#: data/ui/option_row.blp:10
+#: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
 msgstr "GTK 3 支持警告"
 
-#: data/ui/option_row.blp:19
+#: data/ui/option_row.blp:21
 msgid "Explanation"
 msgstr "解释"
 
-#: data/ui/option_row.blp:43
-msgid "Toggle Text Value"
-msgstr "切换文本值"
+#: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
+msgid "Show Hex"
+msgstr ""
 
-#: data/ui/plugin_row.blp:8
+#: data/ui/plugin_row.blp:10
 msgid "Toggle Plugin"
 msgstr "切换插件"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:128
 msgid "Preferences"
 msgstr "选项"
 
-#: data/ui/plugin_row.blp:28
+#: data/ui/plugin_row.blp:30
 msgid "Remove Plugin"
 msgstr "删除插件"
 
@@ -286,39 +286,39 @@ msgstr "使用备用服务器下载预设"
 msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgstr "将使用 JSDelivr 而不是直接从 GitHub 获取预设"
 
-#: data/ui/preferences_window.blp:72
+#: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
 msgstr "自定义预设存储库"
 
-#: data/ui/preferences_window.blp:75
+#: data/ui/preferences_window.blp:76
 msgid "Custom repository URL address"
 msgstr "自定义存储库 URL 地址"
 
-#: data/ui/preferences_window.blp:95
+#: data/ui/preferences_window.blp:96
 msgid "Theming"
 msgstr "主题"
 
-#: data/ui/preferences_window.blp:99
+#: data/ui/preferences_window.blp:100
 msgid "Theme Engines"
 msgstr "主题引擎"
 
-#: data/ui/preferences_window.blp:100
+#: data/ui/preferences_window.blp:101
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
 msgstr "主题引擎是用于各种可定制程序/框架的内置主题生成器。"
 
-#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 msgid "Shell Engine"
 msgstr "Shell 引擎"
 
-#: data/ui/preferences_window.blp:104
+#: data/ui/preferences_window.blp:105
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
 msgstr "Shell 引擎会根据当前选择的预设生成自定义 GNOME Shell 主题。"
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:114
 msgid ""
 "Monet Engine generates a Material Design 3 palette by extracting the image's "
 "colors."
@@ -612,27 +612,27 @@ msgstr "应用 Shell 主题"
 msgid "Customize Shell Theme"
 msgstr "定制 Shell 主题"
 
-#: data/ui/shell_theming_group.blp:28
+#: data/ui/shell_theming_group.blp:29
 msgid "Open Shell Preferences"
 msgstr "打开 Shell 选项"
 
-#: data/ui/shell_theming_group.blp:34
+#: data/ui/shell_theming_group.blp:35
 msgid "Preset Variant"
 msgstr "预设变体"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:36
 msgid "Select currently applied preset variant"
 msgstr "选择当前应用的预设变体"
 
-#: data/ui/shell_theming_group.blp:47
+#: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
 msgstr "目前不可用"
 
-#: data/ui/shell_theming_group.blp:55
+#: data/ui/shell_theming_group.blp:56
 msgid "Reset Theme"
 msgstr "重置主题"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:57
 msgid "Reset applied theme"
 msgstr "重置应用的主题"
 
@@ -1123,7 +1123,13 @@ msgstr "adw-gtk3 仅部分支持此选项。"
 msgid "This option is not supported by adw-gtk3."
 msgstr "adw-gtk3 不支持此选项。"
 
-#: gradience/frontend/widgets/option_row.py:116
+#: gradience/frontend/widgets/option_row.py:96
+#, fuzzy
+#| msgid "Shade Color"
+msgid "Show Color"
+msgstr "阴影颜色"
+
+#: gradience/frontend/widgets/option_row.py:118
 msgid "Not a color, see text value"
 msgstr "不是颜色，见文本值"
 
@@ -1416,6 +1422,9 @@ msgstr "预设已保存"
 #: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "预设设置成功"
+
+#~ msgid "Toggle Text Value"
+#~ msgstr "切换文本值"
 
 #~ msgid ""
 #~ "Monet is an engine that generates a Material Design 3 palette from "

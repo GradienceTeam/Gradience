@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-20 16:35+0000\n"
+"POT-Creation-Date: 2023-06-27 13:11+0000\n"
 "PO-Revision-Date: 2023-06-12 21:52+0000\n"
 "Last-Translator: Fúlvio Leo <fulviokaldas@outlook.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -120,7 +120,7 @@ msgstr "Aplicativos GTK 3 (o tema adw-gtk3 é necessário)"
 msgid "Made by @GradienceTeam"
 msgstr "Feito por @GradienceTeam"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
+#: data/ui/builtin_preset_row.blp:12 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 msgid "Apply Preset"
 msgstr "Aplicar predefinição"
@@ -151,15 +151,15 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:21
+#: data/ui/explore_preset_row.blp:23
 msgid "Download and Apply"
 msgstr "Baixar e Aplicar"
 
-#: data/ui/explore_preset_row.blp:32
+#: data/ui/explore_preset_row.blp:34
 msgid "Download Only"
 msgstr "Apenas baixar"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Recurso Monet"
 
@@ -201,11 +201,11 @@ msgstr "Aplicar predefinição"
 msgid "Select an Image"
 msgstr "Selecione uma imagem"
 
-#: data/ui/monet_theming_group.blp:32
+#: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
 msgstr "Escolher um arquivo"
 
-#: data/ui/monet_theming_group.blp:41
+#: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Escolher um arquivo de imagem"
 
@@ -231,29 +231,29 @@ msgstr "Sem preferências"
 msgid "This plugin has no preferences."
 msgstr "Este plugin não tem quaisquer preferências."
 
-#: data/ui/option_row.blp:10
+#: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
 msgstr "Aviso de Suporte GTK 3"
 
-#: data/ui/option_row.blp:19
+#: data/ui/option_row.blp:21
 msgid "Explanation"
 msgstr "Explicação"
 
-#: data/ui/option_row.blp:43
-msgid "Toggle Text Value"
-msgstr "Alterar o texto"
+#: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
+msgid "Show Hex"
+msgstr ""
 
-#: data/ui/plugin_row.blp:8
+#: data/ui/plugin_row.blp:10
 #, fuzzy
 msgid "Toggle Plugin"
 msgstr "Plugin de alternância"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:128
 msgid "Preferences"
 msgstr "Preferências"
 
-#: data/ui/plugin_row.blp:28
+#: data/ui/plugin_row.blp:30
 msgid "Remove Plugin"
 msgstr "Remover o plugin"
 
@@ -346,27 +346,27 @@ msgstr "Use um servidor alternativo para baixar predefinições"
 msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgstr "JSDelivr será usado em vez de busca predefinida direta do GitHub"
 
-#: data/ui/preferences_window.blp:72
+#: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
 msgstr "Repositórios predefinidos personalizados"
 
-#: data/ui/preferences_window.blp:75
+#: data/ui/preferences_window.blp:76
 msgid "Custom repository URL address"
 msgstr "Endereço URL de repositório personalizado"
 
-#: data/ui/preferences_window.blp:95
+#: data/ui/preferences_window.blp:96
 #, fuzzy
 #| msgid "Theme"
 msgid "Theming"
 msgstr "Tema"
 
-#: data/ui/preferences_window.blp:99
+#: data/ui/preferences_window.blp:100
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Theme Engines"
 msgstr "Recurso Monet"
 
-#: data/ui/preferences_window.blp:100
+#: data/ui/preferences_window.blp:101
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
@@ -374,13 +374,13 @@ msgstr ""
 "Engines de Tema são geradores de temas integrados para vários programas/"
 "estruturas personalizáveis."
 
-#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Shell Engine"
 msgstr "Recurso Monet"
 
-#: data/ui/preferences_window.blp:104
+#: data/ui/preferences_window.blp:105
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
@@ -388,7 +388,7 @@ msgstr ""
 "O Shell Engine gera um tema personalizado do GNOME Shell com base em uma "
 "predefinição escolhida no momento."
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:114
 #, fuzzy
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
@@ -745,33 +745,33 @@ msgstr "Aplicar este esquema de cores?"
 msgid "Customize Shell Theme"
 msgstr "Customize o tema Adwaita"
 
-#: data/ui/shell_theming_group.blp:28
+#: data/ui/shell_theming_group.blp:29
 #, fuzzy
 #| msgid "No Preferences"
 msgid "Open Shell Preferences"
 msgstr "Sem preferências"
 
-#: data/ui/shell_theming_group.blp:34
+#: data/ui/shell_theming_group.blp:35
 #, fuzzy
 #| msgid "Preset reseted"
 msgid "Preset Variant"
 msgstr "Predefinição redefinida"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:36
 msgid "Select currently applied preset variant"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:47
+#: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
 msgstr "Atualmente disponível"
 
-#: data/ui/shell_theming_group.blp:55
+#: data/ui/shell_theming_group.blp:56
 #, fuzzy
 #| msgid "Preset removed"
 msgid "Reset Theme"
 msgstr "Predefinição removida"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:57
 #, fuzzy
 #| msgid "Reset applied color scheme?"
 msgid "Reset applied theme"
@@ -1360,7 +1360,13 @@ msgstr "Esta opção é apenas parcialmente suportada pelo tema adw-gtk3."
 msgid "This option is not supported by adw-gtk3."
 msgstr "Esta opção não é suportada pelo tema adw-gtk3."
 
-#: gradience/frontend/widgets/option_row.py:116
+#: gradience/frontend/widgets/option_row.py:96
+#, fuzzy
+#| msgid "Shade Color"
+msgid "Show Color"
+msgstr "Cor da sombra"
+
+#: gradience/frontend/widgets/option_row.py:118
 msgid "Not a color, see text value"
 msgstr "Não é uma cor, verifique o valor em texto"
 
@@ -1676,6 +1682,9 @@ msgstr "Predefinição salva"
 #: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "Predefinição definida com sucesso"
+
+#~ msgid "Toggle Text Value"
+#~ msgstr "Alterar o texto"
 
 #, fuzzy
 #~| msgid ""

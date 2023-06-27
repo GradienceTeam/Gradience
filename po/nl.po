@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-06-20 16:35+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-27 13:11+0000\n"
 "PO-Revision-Date: 2023-06-21 09:51+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -111,7 +111,7 @@ msgstr "GTK 3-apps (adw-gtk3-thema is vereist)"
 msgid "Made by @GradienceTeam"
 msgstr "Gemaakt door @GradienceTeam"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
+#: data/ui/builtin_preset_row.blp:12 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 msgid "Apply Preset"
 msgstr "Voorinstelling toepassen"
@@ -142,15 +142,15 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:21
+#: data/ui/explore_preset_row.blp:23
 msgid "Download and Apply"
 msgstr "Downloaden en toepassen"
 
-#: data/ui/explore_preset_row.blp:32
+#: data/ui/explore_preset_row.blp:34
 msgid "Download Only"
 msgstr "Alleen downloaden"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Monet"
 
@@ -189,11 +189,11 @@ msgstr "Palet toepassen"
 msgid "Select an Image"
 msgstr "Afbeelding selecteren"
 
-#: data/ui/monet_theming_group.blp:32
+#: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
 msgstr "Bestand kiezen"
 
-#: data/ui/monet_theming_group.blp:41
+#: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Afbeeldingsbestand kiezen"
 
@@ -219,28 +219,28 @@ msgstr "Geen voorkeuren"
 msgid "This plugin has no preferences."
 msgstr "Deze plug-in heeft geen voorkeuren."
 
-#: data/ui/option_row.blp:10
+#: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
 msgstr "Ondersteuningswaarschuwing voor GTK 3"
 
-#: data/ui/option_row.blp:19
+#: data/ui/option_row.blp:21
 msgid "Explanation"
 msgstr "Uitleg"
 
-#: data/ui/option_row.blp:43
-msgid "Toggle Text Value"
-msgstr "Tekstwaarde omschakelen"
+#: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
+msgid "Show Hex"
+msgstr ""
 
-#: data/ui/plugin_row.blp:8
+#: data/ui/plugin_row.blp:10
 msgid "Toggle Plugin"
 msgstr "Plug-in omschakelen"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:128
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: data/ui/plugin_row.blp:28
+#: data/ui/plugin_row.blp:30
 msgid "Remove Plugin"
 msgstr "Plug-in verwijderen"
 
@@ -320,23 +320,23 @@ msgstr "Alternatieve server gebruiken voor downloaden van voorinstellingen"
 msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgstr ""
 
-#: data/ui/preferences_window.blp:72
+#: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
 msgstr "Aangepaste repositories voor voorinstellingen"
 
-#: data/ui/preferences_window.blp:75
+#: data/ui/preferences_window.blp:76
 msgid "Custom repository URL address"
 msgstr "URL-adres van aangepaste repository"
 
-#: data/ui/preferences_window.blp:95
+#: data/ui/preferences_window.blp:96
 msgid "Theming"
 msgstr "Thema"
 
-#: data/ui/preferences_window.blp:99
+#: data/ui/preferences_window.blp:100
 msgid "Theme Engines"
 msgstr "Thema-engines"
 
-#: data/ui/preferences_window.blp:100
+#: data/ui/preferences_window.blp:101
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
@@ -344,11 +344,11 @@ msgstr ""
 "Thema-engines zijn de ingebouwde thema-generatoren voor verschillende "
 "aanpasbare apps/frameworks."
 
-#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 msgid "Shell Engine"
 msgstr "Shell-engine"
 
-#: data/ui/preferences_window.blp:104
+#: data/ui/preferences_window.blp:105
 #, fuzzy
 #| msgid ""
 #| "Shell Engine generates a custom GNOME Shell theme based of a currently "
@@ -360,7 +360,7 @@ msgstr ""
 "Shell-engine genereert een aangepast GNOME Shell-thema op basis van een "
 "momenteel gekozen voorinstelling."
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:114
 #, fuzzy
 #| msgid ""
 #| "Monet Engine generates a Material Design 3 palette from extracting "
@@ -693,27 +693,27 @@ msgstr "Shell-thema toepassen"
 msgid "Customize Shell Theme"
 msgstr "Shell-thema personaliseren"
 
-#: data/ui/shell_theming_group.blp:28
+#: data/ui/shell_theming_group.blp:29
 msgid "Open Shell Preferences"
 msgstr "Shell-voorkeuren openen"
 
-#: data/ui/shell_theming_group.blp:34
+#: data/ui/shell_theming_group.blp:35
 msgid "Preset Variant"
 msgstr "Voorinstellings­variant"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:36
 msgid "Select currently applied preset variant"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:47
+#: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
 msgstr "Momenteel niet beschikbaar"
 
-#: data/ui/shell_theming_group.blp:55
+#: data/ui/shell_theming_group.blp:56
 msgid "Reset Theme"
 msgstr "Thema resetten"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:57
 msgid "Reset applied theme"
 msgstr "Toegepast thema resetten"
 
@@ -1285,7 +1285,13 @@ msgstr ""
 msgid "This option is not supported by adw-gtk3."
 msgstr "Deze optie wordt niet ondersteund door het adw-gtk3-thema."
 
-#: gradience/frontend/widgets/option_row.py:116
+#: gradience/frontend/widgets/option_row.py:96
+#, fuzzy
+#| msgid "Shade Color"
+msgid "Show Color"
+msgstr "Schaduwkleur"
+
+#: gradience/frontend/widgets/option_row.py:118
 msgid "Not a color, see text value"
 msgstr "Geen kleur, zie tekstwaarde"
 
@@ -1602,6 +1608,9 @@ msgstr "Voorinstelling opgeslagen"
 #: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "Voorinstelling succesvol ingesteld"
+
+#~ msgid "Toggle Text Value"
+#~ msgstr "Tekstwaarde omschakelen"
 
 #~ msgid ""
 #~ "Monet is an engine that generates a Material Design 3 palette from "

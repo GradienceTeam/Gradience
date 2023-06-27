@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-06-20 16:35+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-27 13:11+0000\n"
 "PO-Revision-Date: 2023-06-21 09:51+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -112,7 +112,7 @@ msgstr "GTK 3 Uygulamaları (adw-gtk3 teması gereklidir)"
 msgid "Made by @GradienceTeam"
 msgstr "@GradienceTeam tarafından yapılmıştır"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
+#: data/ui/builtin_preset_row.blp:12 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 msgid "Apply Preset"
 msgstr "Ön Ayarı Uygula"
@@ -143,15 +143,15 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:21
+#: data/ui/explore_preset_row.blp:23
 msgid "Download and Apply"
 msgstr "İndir ve Uygula"
 
-#: data/ui/explore_preset_row.blp:32
+#: data/ui/explore_preset_row.blp:34
 msgid "Download Only"
 msgstr "Sadece İndir"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Monet Motoru"
 
@@ -190,11 +190,11 @@ msgstr "Palet uygula"
 msgid "Select an Image"
 msgstr "Görüntü Seç"
 
-#: data/ui/monet_theming_group.blp:32
+#: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
 msgstr "Dosya Seç"
 
-#: data/ui/monet_theming_group.blp:41
+#: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Görüntü Dosyası Seç"
 
@@ -220,28 +220,28 @@ msgstr "Tercih Yok"
 msgid "This plugin has no preferences."
 msgstr "Bu eklentinin herhangi bir tercihi yoktur."
 
-#: data/ui/option_row.blp:10
+#: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
 msgstr "GTK 3 Destek Uyarısı"
 
-#: data/ui/option_row.blp:19
+#: data/ui/option_row.blp:21
 msgid "Explanation"
 msgstr "Açıklama"
 
-#: data/ui/option_row.blp:43
-msgid "Toggle Text Value"
-msgstr "Metin Değerini Aç/Kapat"
+#: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
+msgid "Show Hex"
+msgstr ""
 
-#: data/ui/plugin_row.blp:8
+#: data/ui/plugin_row.blp:10
 msgid "Toggle Plugin"
 msgstr "Eklentiyi Aç/Kapat"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:128
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: data/ui/plugin_row.blp:28
+#: data/ui/plugin_row.blp:30
 msgid "Remove Plugin"
 msgstr "Eklentiyi Kaldır"
 
@@ -314,23 +314,23 @@ msgstr "Ön ayarları indirmek için alternatif sunucu kullan"
 msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgstr "GitHub'dan doğrudan ön ayar getirmek yerine JSDelivr kullanılacak"
 
-#: data/ui/preferences_window.blp:72
+#: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
 msgstr "Özel Ön Ayar Depoları"
 
-#: data/ui/preferences_window.blp:75
+#: data/ui/preferences_window.blp:76
 msgid "Custom repository URL address"
 msgstr "Özel depo URL adresi"
 
-#: data/ui/preferences_window.blp:95
+#: data/ui/preferences_window.blp:96
 msgid "Theming"
 msgstr "Tema"
 
-#: data/ui/preferences_window.blp:99
+#: data/ui/preferences_window.blp:100
 msgid "Theme Engines"
 msgstr "Tema Motorları"
 
-#: data/ui/preferences_window.blp:100
+#: data/ui/preferences_window.blp:101
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
@@ -338,11 +338,11 @@ msgstr ""
 "Tema Motorları, çeşitli özelleştirilebilir programlar/çatılar için yerleşik "
 "tema oluşturuculardır."
 
-#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 msgid "Shell Engine"
 msgstr "Kabuk Motoru"
 
-#: data/ui/preferences_window.blp:104
+#: data/ui/preferences_window.blp:105
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
@@ -350,7 +350,7 @@ msgstr ""
 "Kabuk Motoru, seçili bir ön ayarı temel alarak özel bir GNOME Shell teması "
 "oluşturur."
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:114
 msgid ""
 "Monet Engine generates a Material Design 3 palette by extracting the image's "
 "colors."
@@ -681,27 +681,27 @@ msgstr "Shell teması uygula"
 msgid "Customize Shell Theme"
 msgstr "Shell Temasını Özelleştir"
 
-#: data/ui/shell_theming_group.blp:28
+#: data/ui/shell_theming_group.blp:29
 msgid "Open Shell Preferences"
 msgstr "Shell Tercihlerini Aç"
 
-#: data/ui/shell_theming_group.blp:34
+#: data/ui/shell_theming_group.blp:35
 msgid "Preset Variant"
 msgstr "Ön Ayar Çeşiti"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:36
 msgid "Select currently applied preset variant"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:47
+#: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
 msgstr "Şu anda kullanılamıyor"
 
-#: data/ui/shell_theming_group.blp:55
+#: data/ui/shell_theming_group.blp:56
 msgid "Reset Theme"
 msgstr "Temayı Sıfırla"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:57
 msgid "Reset applied theme"
 msgstr "Uygulanan temayı sıfırla"
 
@@ -1235,7 +1235,13 @@ msgstr "Bu seçenek, adw-gtk3 teması tarafından yalnızca kısmen desteklenir.
 msgid "This option is not supported by adw-gtk3."
 msgstr "Bu seçenek adw-gtk3 teması tarafından desteklenmez."
 
-#: gradience/frontend/widgets/option_row.py:116
+#: gradience/frontend/widgets/option_row.py:96
+#, fuzzy
+#| msgid "Shade Color"
+msgid "Show Color"
+msgstr "Gölge Rengi"
+
+#: gradience/frontend/widgets/option_row.py:118
 msgid "Not a color, see text value"
 msgstr "Renk değil, metin değerine bakın"
 
@@ -1537,6 +1543,9 @@ msgstr "Ön ayar kaydedildi"
 #: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "Ön ayar ayarlandı"
+
+#~ msgid "Toggle Text Value"
+#~ msgstr "Metin Değerini Aç/Kapat"
 
 #~ msgid ""
 #~ "Monet is an engine that generates a Material Design 3 palette from "

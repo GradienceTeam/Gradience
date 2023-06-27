@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-20 16:35+0000\n"
+"POT-Creation-Date: 2023-06-27 13:11+0000\n"
 "PO-Revision-Date: 2023-05-24 11:43+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -121,7 +121,7 @@ msgstr "GTK 3 aplikazioak (adw-gtk3 gaia behar da)"
 msgid "Made by @GradienceTeam"
 msgstr "Gradience taldea"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
+#: data/ui/builtin_preset_row.blp:12 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 #, fuzzy
 msgid "Apply Preset"
@@ -154,17 +154,17 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:21
+#: data/ui/explore_preset_row.blp:23
 #, fuzzy
 msgid "Download and Apply"
 msgstr "Deskargatu eta aplikatu"
 
-#: data/ui/explore_preset_row.blp:32
+#: data/ui/explore_preset_row.blp:34
 #, fuzzy
 msgid "Download Only"
 msgstr "Deskargatu soilik"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Monet motorra"
 
@@ -203,12 +203,12 @@ msgstr "Aplikatu diseinua"
 msgid "Select an Image"
 msgstr ""
 
-#: data/ui/monet_theming_group.blp:32
+#: data/ui/monet_theming_group.blp:33
 #, fuzzy
 msgid "Choose a File"
 msgstr "Aukeratu fitxategi bat"
 
-#: data/ui/monet_theming_group.blp:41
+#: data/ui/monet_theming_group.blp:42
 #, fuzzy
 msgid "Choose a Image File"
 msgstr "Aukeratu fitxategi bat"
@@ -233,29 +233,29 @@ msgstr ""
 msgid "This plugin has no preferences."
 msgstr ""
 
-#: data/ui/option_row.blp:10
+#: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
 msgstr "GTK 3ren euskarriari buruzko oharra"
 
-#: data/ui/option_row.blp:19
+#: data/ui/option_row.blp:21
 msgid "Explanation"
 msgstr "Azalpena"
 
-#: data/ui/option_row.blp:43
-msgid "Toggle Text Value"
-msgstr "Testuaren balioa kommutatu"
+#: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
+msgid "Show Hex"
+msgstr ""
 
-#: data/ui/plugin_row.blp:8
+#: data/ui/plugin_row.blp:10
 #, fuzzy
 msgid "Toggle Plugin"
 msgstr "Aktibatu plugina"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:128
 msgid "Preferences"
 msgstr ""
 
-#: data/ui/plugin_row.blp:28
+#: data/ui/plugin_row.blp:30
 #, fuzzy
 msgid "Remove Plugin"
 msgstr "Kendu plugina"
@@ -323,45 +323,45 @@ msgstr ""
 msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgstr ""
 
-#: data/ui/preferences_window.blp:72
+#: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
 msgstr ""
 
-#: data/ui/preferences_window.blp:75
+#: data/ui/preferences_window.blp:76
 msgid "Custom repository URL address"
 msgstr ""
 
-#: data/ui/preferences_window.blp:95
+#: data/ui/preferences_window.blp:96
 #, fuzzy
 #| msgid "Theme"
 msgid "Theming"
 msgstr "Itxura"
 
-#: data/ui/preferences_window.blp:99
+#: data/ui/preferences_window.blp:100
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Theme Engines"
 msgstr "Monet motorra"
 
-#: data/ui/preferences_window.blp:100
+#: data/ui/preferences_window.blp:101
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
 msgstr ""
 
-#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Shell Engine"
 msgstr "Monet motorra"
 
-#: data/ui/preferences_window.blp:104
+#: data/ui/preferences_window.blp:105
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
 msgstr ""
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:114
 #, fuzzy
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
@@ -691,31 +691,31 @@ msgstr "Koloreen eskema hau aplikatu?"
 msgid "Customize Shell Theme"
 msgstr "Adwaita gaia pertsonalizatu"
 
-#: data/ui/shell_theming_group.blp:28
+#: data/ui/shell_theming_group.blp:29
 msgid "Open Shell Preferences"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:34
+#: data/ui/shell_theming_group.blp:35
 #, fuzzy
 #| msgid "Preset reseted"
 msgid "Preset Variant"
 msgstr "Diseinua berrezarri da"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:36
 msgid "Select currently applied preset variant"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:47
+#: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:55
+#: data/ui/shell_theming_group.blp:56
 #, fuzzy
 #| msgid "Preset removed"
 msgid "Reset Theme"
 msgstr "Diseinua kenduta"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:57
 #, fuzzy
 #| msgid "Reset applied color scheme?"
 msgid "Reset applied theme"
@@ -1306,7 +1306,13 @@ msgstr "Aukera hau zati batean baino ez da bateragarria adw-gtk3 gaiarekin."
 msgid "This option is not supported by adw-gtk3."
 msgstr "Aukera hau ez da bateragarria adw-gtk3 gaiarekin."
 
-#: gradience/frontend/widgets/option_row.py:116
+#: gradience/frontend/widgets/option_row.py:96
+#, fuzzy
+#| msgid "Shade Color"
+msgid "Show Color"
+msgstr "Itzalaren kolorea"
+
+#: gradience/frontend/widgets/option_row.py:118
 msgid "Not a color, see text value"
 msgstr "Ez da kolore bat, ikusi testuaren balioa"
 
@@ -1635,6 +1641,9 @@ msgstr "Diseinua gorde da"
 #| msgid "Preset set sucessfully"
 msgid "Preset set successfully"
 msgstr "Diseinua ondo ezarri da"
+
+#~ msgid "Toggle Text Value"
+#~ msgstr "Testuaren balioa kommutatu"
 
 #, fuzzy
 #~| msgid ""
