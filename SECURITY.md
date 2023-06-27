@@ -6,9 +6,9 @@ Only two latest versions are officially supported, but older versions get some h
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 0.4.x   | :white_check_mark: |
 | 0.3.x   | :white_check_mark: |
-| 0.2.x   | :white_check_mark: |
-| < 0.1   | :x:                |
+| < 0.2   | :x:                |
 
 ### Reporting a Vulnerability
 
