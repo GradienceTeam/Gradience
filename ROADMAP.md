@@ -29,6 +29,6 @@ Gradience is completely usable, if you like to see a new feature, open an issue 
 
 - [x] Add plugin support. Will help integration with others tools.
 - [x] Customize Firefox GNOME theme
-- [ ] Customize GNOME Shell **(High priority)**
+- [x] Customize GNOME Shell **(High priority)**
 - [ ] Customize GDM **(High priority)**
 - [ ] Customize KvLibadwaita
