@@ -44,7 +44,7 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
     gtk3_user_theming_switch = Gtk.Template.Child()
     gtk3_global_theming_switch = Gtk.Template.Child()
 
-    jsdeliver_switch = Gtk.Template.Child()
+    jsdelivr_switch = Gtk.Template.Child()
 
     monet_engine_switch = Gtk.Template.Child()
     gnome_shell_engine_switch = Gtk.Template.Child()
@@ -66,17 +66,17 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
         self.setup_flatpak_group()
         self.setup_theme_engines_group()
         self.setup_reset_preset_group()
-        self.setup_jsdeliver()
+        self.setup_jsdelivr()
 
     def setup_reset_preset_group(self):
         self.reset_preset_group = GradienceResetPresetGroup(self)
 
         self.theming_page.add(self.reset_preset_group)
 
-    def setup_jsdeliver(self):
-        self.jsdeliver_switch.set_active(self.app.use_jsdeliver)
-        self.jsdeliver_switch.connect(
-            "notify::active", self.on_jsdeliver_switch_toggled
+    def setup_jsdelivr(self):
+        self.jsdelivr_switch.set_active(self.app.use_jsdelivr)
+        self.jsdelivr_switch.connect(
+            "notify::active", self.on_jsdelivr_switch_toggled
         )
 
     def setup_theme_engines_group(self):
@@ -190,14 +190,14 @@ class GradiencePreferencesWindow(Adw.PreferencesWindow):
                 f"enabled-theme-engines: {self.settings.get_value('enabled-theme-engines')}"
         )
 
-    def on_jsdeliver_switch_toggled(self, widget, *args):
+    def on_jsdelivr_switch_toggled(self, widget, *args):
         if widget.get_active():
-            self.app.use_jsdeliver = True
+            self.app.use_jsdelivr = True
         else:
-            self.app.use_jsdeliver = False
+            self.app.use_jsdelivr = False
 
-        self.settings.set_boolean("use-jsdeliver", self.app.use_jsdeliver)
+        self.settings.set_boolean("use-jsdelivr", self.app.use_jsdelivr)
 
         logging.debug(
-                f"use-jsdeliver: {self.settings.get_value('use-jsdeliver')}"
+                f"use-jsdelivr: {self.settings.get_value('use-jsdelivr')}"
         )
