@@ -22,7 +22,8 @@
         "--filesystem=~/.mozilla/firefox",
         "--filesystem=~/.librewolf",
         "--filesystem=~/.var/app/org.mozilla.firefox/.mozilla/firefox",
-        "--filesystem=~/.var/app/io.gitlab.librewolf-community/.librewolf"
+        "--filesystem=~/.var/app/io.gitlab.librewolf-community/.librewolf",
+        "--env=GIO_EXTRA_MODULES=/app/lib/gio/modules/"
     ],
     "cleanup" : [
         "/include",
@@ -60,6 +61,23 @@
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
                     "tag" : "v0.8.1"
+                }
+            ]
+        },
+        {
+            "name" : "dconf",
+            "buildsystem" : "meson",
+            "config-opts": [
+                "-Dbash_completion=false",
+                "-Dman=false",
+                "-Dgtk_doc=false",
+                "-Dvapi=false"
+            ],
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/dconf/0.40/dconf-0.40.0.tar.xz",
+                    "sha256" : "cf7f22a4c9200421d8d3325c5c1b8b93a36843650c9f95d6451e20f0bcb24533"
                 }
             ]
         },
