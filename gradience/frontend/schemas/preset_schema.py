@@ -310,7 +310,7 @@ preset_schema = {
                         "for header bars and similar widgets that separates "
                         "them from the main window."
                     ),
-                    "adw_gtk3_support": "yes",
+                    "adw_gtk3_support": "no",
                 },
             ],
         },
@@ -353,7 +353,7 @@ preset_schema = {
                         "for header bars and similar widgets that separates "
                         "them from the main window."
                     ),
-                    "adw_gtk3_support": "yes",
+                    "adw_gtk3_support": "no",
                 },
             ],
         },
