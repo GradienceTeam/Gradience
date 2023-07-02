@@ -208,8 +208,14 @@ makepkg -sic
 
 Gradience is available for NixOS 23.05 (Stoat) and later:
 
+To run in a temporary shell:
 ```shell
 nix-shell -p gradience
+```
+
+To install it:
+```shell
+nix-env -iA nixos.gradience
 ```
 
 
@@ -289,7 +295,7 @@ Pretty Purple is built-in in the Gradience and used in all Gradience artworks.
 
 > See [gradienceteam.github.io/hack](https://gradienceteam.github.io/hack)
 
-Gradience Team is not against the ideas of [stopthemingmy.app](https://stopthemingmy.app) and the developers of Adwaita. Gradience is a tool for those who want to theme their desktop at their liking, but **not a tool for distributions** to ship in their releases. Gradience Team agrees with importance of unified look of Adwaita to make sure that all apps function correctly and that developers have a unified and stable tool for creating their apps.
+Gradience Team is not against the ideas of [stopthemingmy.app](https://stopthemingmy.app) and the developers of Adwaita. Gradience is a tool for those who want to theme their desktop to their liking, but **not a tool for distributions** to ship in their releases. Gradience Team agrees with importance of unified look of Adwaita to make sure that all apps function correctly and that developers have a unified and stable tool for creating their apps.
 
 
 ## 💝 Acknowledgment
