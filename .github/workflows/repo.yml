@@ -52,7 +52,7 @@ jobs:
           arch: ${{ matrix.arch }}
           gpg-sign: ${{ steps.gpg.outputs.fingerprint }}
           upload-bundles: true
-          upload-pages-artifact: ${{ matrix.arch == 'aarch64' }}
+          upload-pages-artifact: true
           upload-pages-includes: |
             default.css
             index.html
