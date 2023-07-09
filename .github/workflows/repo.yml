@@ -1,0 +1,73 @@
+name: Repo
+
+on:
+  # Rebuild once a day
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  flatter:
+    name: Flatter
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/andyholmes/flatter/gnome:43
+      options: --privileged
+
+    strategy:
+      matrix:
+        arch: [x86_64, aarch64]
+      fail-fast: false
+      # Only one job at a time can use the shared repository cache
+      max-parallel: 1
+
+    steps:
+      # Checkout a repository with Flatpak manifests
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # See "Multiple Architectures" below
+      - name: Setup QEMU
+        if: ${{ matrix.arch == 'aarch64' }}
+        id: qemu
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: arm64
+
+      # See "GPG Signing" below
+      - name: Setup GPG
+        id: gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Build
+        uses: andyholmes/flatter@main
+        with:
+          files: |
+            build-aux/flatpak/com.github.GradienceTeam.Gradience.json
+          arch: ${{ matrix.arch }}
+          gpg-sign: ${{ steps.gpg.outputs.fingerprint }}
+          upload-bundles: true
+          upload-pages-artifact: ${{ matrix.arch == 'aarch64' }}
+          upload-pages-includes: |
+            default.css
+            index.html
+
+  # See "Github Pages" below
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: flatter
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
