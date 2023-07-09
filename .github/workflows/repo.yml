@@ -25,6 +25,8 @@ jobs:
       # Checkout a repository with Flatpak manifests
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       # See "Multiple Architectures" below
       - name: Setup QEMU
