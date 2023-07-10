@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!-- Meta -->
+    <title>Gradience Nightly</title>
+    <meta name="title" content="Flatter"/>
+    <meta name="description" content="Build and host a nightly Flatpak repository."/>
+    <meta itemprop="name" content="Flatter"/>
+    <meta itemprop="description" content="Build and host a nightly Flatpak repository."/>
+
+    <meta name="viewport" content="width=device-width"/>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Flatter"/>
+    <meta property="og:description" content="Build and host a nightly Flatpak repository."/>
+    <meta property="og:locale" content="en"/>
+
+    <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
+  </head>
+  <body class="flatter-scheme">
+    <header>
+      <h1 id="logo" class="content">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 16 16">
+          <g>
+            <path d="M4.02 1A3.04 3.04 0 0 0 1 4.02v7.91a3.04 3.04 0 0 0 3.02 3.03h7.95A3.04 3.04 0 0 0 15 11.93v-7.9A3.04 3.04 0 0 0 11.97 1Zm0 2h7.95A1 1 0 0 1 13 4.02v7.91a1 1 0 0 1-1.03 1.03H4.02A1 1 0 0 1 3 11.93v-7.9A1 1 0 0 1 4.02 3Zm0 0"/>
+            <path d="M4.02 1A3.04 3.04 0 0 0 1 4.03v.94S2.39 7 4.02 7h7.95C13.44 7 15 4.97 15 4.97v-.94A3.04 3.04 0 0 0 11.97 1Zm0 2h7.95A1 1 0 0 1 13 4.03v.94A1 1 0 0 1 11.97 6H4.02A1 1 0 0 1 3 4.97v-.94A1 1 0 0 1 4.02 3Zm0 0"/>
+            <path d="M7 1h2v10.03l-2-1Zm0 0"/>
+          </g>
+        </svg>
+        Gradience Nightly
+      </h1>
+    </header>
+
+    <section id="description">
+      <h2>Build and host a Flatpak repository</h2>
+      <p class="content">
+        <a href="https://github.com/andyholmes/flatter">Flatter</a> is a GitHub
+        Action for building and hosting a Flatpak repository in a static hosting
+        environment, such as GitHub Pages.
+      </p>
+    </section>
+
+    <section id="repository">
+      <h2>Nightly Repository</h2>
+      <p class="content">
+        Flatter is ideal for a low-traffic Flatpak repository, like distributing
+        automated nightly builds. A <code>.flatpakrepo</code> file is generated
+        for your repository, making it easy for users to test your latest code.
+      </p>
+      <ul class="content">
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 16 16">
+            <path d="M1 4v8c0 1.1.9 2 2 2h10a2 2 0 0 0 2-2V4zm7 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm-2 3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm4 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm0 0"/>
+            <path d="M6 1 5 2v3h2V2h2v3h2V2l-1-1zm0 0"/>
+          </svg>
+          <h3>Software Repository</h3>
+          <p>
+            Add the repository to your software manager
+          </p>
+          <a href="https://flatter.andyholmes.ca/index.flatpakrepo" class="pill">
+            Enable Repository
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="downloads">
+      <h2>Nightly Downloads</h2>
+      <p class="content">
+        For every successful build, Flatter can upload a Flatpak bundle as a CI
+        artifact. Together with <a href="https://nightly.link/">nightly.link</a>
+        you can share direct links to Flatpak bundles, built from the latest commit.
+      </p>
+      <ul class="content">
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 16 16">
+            <path d="M3 0C1.34 0 0 1.34 0 3v7c0 1.66 1.34 3 3 3h10c1.66 0 3-1.34 3-3V3c0-1.66-1.34-3-3-3zm0 2h10c.555 0 1 .445 1 1v7c0 .555-.445 1-1 1H3c-.555 0-1-.445-1-1V3c0-.555.445-1 1-1zm2 12c-1.105 0-2 .895-2 2h10c0-1.105-.895-2-2-2zm0 0"/>
+          </svg>
+          <h3>Desktop Linux</h3>
+          <p>
+            For standard desktop and laptop computers, with AMD or Intel processors.
+          </p>
+          <a href="https://nightly.link/GradienceTeam/Gradience/workflows/repo/main/com.github.GradienceTeam.Gradience-x86_64.zip" class="pill">
+            Download (x86-64)
+          </a>
+        </li>
+
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 16 16">
+            <path d="M5 0C3.355 0 2 1.355 2 3v10c0 1.645 1.355 3 3 3h6c1.645 0 3-1.355 3-3V3c0-1.645-1.355-3-3-3zm0 2h1c0 .555.445 1 1 1h2c.555 0 1-.445 1-1h1c.57 0 1 .43 1 1v9c0 .555-.445 1-1 1H5c-.555 0-1-.445-1-1V3c0-.57.43-1 1-1zm0 0"/>
+          </svg>
+          <h3>Mobile Linux</h3>
+          <p>
+            For ARM64-based devices, such as the PinePhone or Librem 5.
+          </p>
+          <a href="https://nightly.link/GradienceTeam/Gradience/workflows/repo/main/com.github.GradienceTeam.Gradience-aarch64.zip" class="pill">
+            Download (aarch64)
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <div class="content">
+        &copy; 2022 <a href="https://andyholmes.ca/">Andy Holmes</a>
+      </div>
+    </footer>
+  </body>
+</html>
