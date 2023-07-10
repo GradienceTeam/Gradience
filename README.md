@@ -222,7 +222,7 @@ nix-env -iA nixos.gradience
 ## 🏗️ Building from source
 
 > **Note**
-> You can download [latest nightly build](https://nightly.link/GradienceTeam/Gradience/workflows/build/main) from GitHub actions
+> You can install [nightly build](https://gradienceteam.github.io/Gradience) with automatic updates
 
 ### GNOME Builder
 
