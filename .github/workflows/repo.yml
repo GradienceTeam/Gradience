@@ -13,6 +13,8 @@ jobs:
     container:
       image: ghcr.io/andyholmes/flatter/gnome:master
       options: --privileged
+    permissions:
+      contents: write
 
     strategy:
       matrix:
@@ -48,28 +50,14 @@ jobs:
         uses: andyholmes/flatter@main
         with:
           files: |
-            build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
+            build-aux/flatpak/com.github.GradienceTeam.Gradience.json
           arch: ${{ matrix.arch }}
           gpg-sign: ${{ steps.gpg.outputs.fingerprint }}
           upload-bundles: true
-          upload-pages-artifact: true
-          upload-pages-includes: |
-            default.css
-            index.html
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          folder: ${{ steps.build.outputs.repository }}
+          target-folder: repo
+          single-commit: true
 
-  # See "Github Pages" below
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    needs: flatter
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
