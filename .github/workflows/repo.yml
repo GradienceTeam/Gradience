@@ -48,7 +48,7 @@ jobs:
         uses: andyholmes/flatter@main
         with:
           files: |
-            build-aux/flatpak/com.github.GradienceTeam.Gradience.json
+            build-aux/flatpak/com.github.GradienceTeam.Gradience.Devel.json
           arch: ${{ matrix.arch }}
           gpg-sign: ${{ steps.gpg.outputs.fingerprint }}
           upload-bundles: true
