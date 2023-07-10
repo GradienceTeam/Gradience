@@ -2,8 +2,9 @@ name: Repo
 
 on:
   # Rebuild once a day
-  schedule:
-    - cron: "0 0 * * *"
+  #schedule:
+  #  - cron: "0 0 * * *"
+  push:
   workflow_dispatch:
 
 jobs:
@@ -54,8 +55,8 @@ jobs:
           upload-bundles: true
           upload-pages-artifact: true
           upload-pages-includes: |
-            default.css
-            index.html
+            repo/default.css
+            repo/index.html
 
   # See "Github Pages" below
   deploy:
