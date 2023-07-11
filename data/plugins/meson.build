@@ -3,6 +3,8 @@ builtin_plugins_list = files([
     'firefox_gnome_theme.yapsy-plugin',
     'qt5ct.py',
     'qt5ct.yapsy-plugin',
+    'mailspring.py',
+    'mailspring.yapsy-plugin',
 ])
 
 install_data(

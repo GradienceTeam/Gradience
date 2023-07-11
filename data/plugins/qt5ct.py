@@ -116,10 +116,6 @@ class Qt5ctColorScheme2Plugin(IPlugin):
                 for match in matches:
                     qt_disabled[qt_pos.get(match)] = tran
         try:
-            user_config_dir = os.environ.get(
-                "XDG_CONFIG_HOME", os.environ["HOME"] + "/.config"
-            )
-
             path = os.path.expanduser("~/.config/qt5ct/colors")
             if not os.path.exists(path):
                 os.makedirs(path)
