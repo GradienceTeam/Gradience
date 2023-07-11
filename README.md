@@ -219,7 +219,7 @@ nix-env -iA nixos.gradience
 ```
 
 
-## 🏗️ Building from source
+## 🏗️ Building from source (for getting Nightly features like Shell Theming)
 
 > **Note**
 > You can install [nightly build](https://gradienceteam.github.io/Gradience) with automatic updates
