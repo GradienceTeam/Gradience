@@ -219,11 +219,27 @@ nix-env -iA nixos.gradience
 ```
 
 
-## 🏗️ Building from source (for getting Nightly features like Shell Theming)
+## 🏗️ Building from source
 
-### Use the Nightly Repo
+### Nightly Remote
 
-First of all, you need to have GNOME Nightly Repo installed, run `flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo` if not. After, add the Gradience Flatpak repo with `flatpak remote-add --if-not-exists gradience https://gradienceteam.github.io/Gradience/index.flatpakrepo`. And finally, install Gradience by running `flatpak install com.github.GradienceTeam.Gradience.Devel`
+First of all, you need to have [GNOME Nightly](https://wiki.gnome.org/Apps/Nightly) remote added if it's not already:
+
+```shell
+flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo
+```
+
+Then, add the Gradience Flatpak remote:
+
+```shell
+flatpak remote-add --if-not-exists gradience https://gradienceteam.github.io/Gradience/index.flatpakrepo
+```
+
+Finally, install Gradience by running:
+
+```shell
+flatpak install com.github.GradienceTeam.Gradience.Devel
+```
 
 ### GNOME Builder
 
