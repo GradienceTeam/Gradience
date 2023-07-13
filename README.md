@@ -232,13 +232,13 @@ flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome
 Then, add the Gradience Flatpak remote:
 
 ```shell
-flatpak remote-add --if-not-exists gradience https://gradienceteam.github.io/Gradience/index.flatpakrepo
+flatpak remote-add --if-not-exists gradience-origin https://gradienceteam.github.io/Gradience/index.flatpakrepo
 ```
 
 Finally, install Gradience by running:
 
 ```shell
-flatpak install com.github.GradienceTeam.Gradience.Devel
+flatpak install gradience-origin com.github.GradienceTeam.Gradience.Devel
 ```
 
 ### GNOME Builder
