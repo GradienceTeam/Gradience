@@ -223,7 +223,7 @@ nix-env -iA nixos.gradience
 
 ### Nightly Remote
 
-First of all, you need to have [GNOME Nightly](https://wiki.gnome.org/Apps/Nightly) remote added if it's not already:
+First of all, you need to have [GNOME Nightly](https://wiki.gnome.org/Apps/Nightly) Flatpak remote added if it's not already:
 
 ```shell
 flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo
