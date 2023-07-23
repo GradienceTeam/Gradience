@@ -60,7 +60,8 @@
 
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
-> [!IMPORTANT] [Gradience, stopthemingmy.app and Adwaita Developers](#%EF%B8%8F-gradience-stopthemingmyapp-and-adwaita-developers)
+> [!IMPORTANT]\
+> [Gradience, stopthemingmy.app and Adwaita Developers](#%EF%B8%8F-gradience-stopthemingmyapp-and-adwaita-developers)
 
 The main features of Gradience include the following:
 
@@ -84,7 +85,7 @@ The main features of Gradience include the following:
 
 ## 🎨️ Theming setup
 
-> **Note**
+> [!NOTE]\
 > You can go to `Preferences` and apply overrides for Flatpak
 
 <details>
@@ -151,7 +152,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 > [!IMPORTANT]\
 > The main installation method is Flatpak from Flathub
 
-> **Note**
+> [!NOTE]\
 > There are number of Gradience packages that are not tested by Gradience Team and not listed here, available at [Repology](https://repology.org/project/gradience/versions)
 
 ### Fedora (COPR)
