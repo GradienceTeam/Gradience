@@ -1,4 +1,4 @@
-> **Warning**
+> [!IMPORTANT]\
 > This software is currently in a **beta** state. It can break things, and it doesn't yet have a polished, _foolproof_ UX.
 >
 > Contributions are welcome!
@@ -60,7 +60,7 @@
 
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
-> **Warning**
+> [!WARNING]\
 > [Gradience, stopthemingmy.app and Adwaita Developers](#%EF%B8%8F-gradience-stopthemingmyapp-and-adwaita-developers)
 
 The main features of Gradience include the following:
@@ -141,7 +141,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 - Run `sudo flatpak override --reset`
 
-> **Warning**
+> [!WARNING]\
 > This will reset all Flatpak overrides, such as Firefox Wayland override
 
 </details>
@@ -149,7 +149,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 ## 📦️ Alternative installation methods
 
-> **Warning**
+> [!IMPORTANT]\
 > The main installation method is Flatpak from Flathub
 
 > **Note**
@@ -166,7 +166,7 @@ dnf install gradience
 
 ### Debian (And derivatives)
 
-> **Warning**
+> [!WARNING]\
 > Not available yet.
 
 ### Arch Linux (AUR)
