@@ -79,7 +79,7 @@ The main features of Gradience include the following:
   ![Proof of Work](https://github.com/GradienceTeam/Design/raw/main/Screenshots/proof_purple.png)
 </details>
 
-> **Note**
+> [!NOTE]\
 > You can download [latest nightly build](https://nightly.link/GradienceTeam/Gradience/workflows/build/main) from GitHub actions
 
 
