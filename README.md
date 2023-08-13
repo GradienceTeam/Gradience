@@ -1,4 +1,4 @@
-> [!IMPORTANT]\
+> [!IMPORTANT]
 > This software is currently in a **beta** state. It can break things, and it doesn't yet have a polished, _foolproof_ UX.
 >
 > Contributions are welcome!
@@ -60,7 +60,7 @@
 
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
-> [!IMPORTANT]\
+> [!IMPORTANT]
 > [Gradience, stopthemingmy.app and Adwaita Developers](#%EF%B8%8F-gradience-stopthemingmyapp-and-adwaita-developers)
 
 The main features of Gradience include the following:
@@ -79,13 +79,13 @@ The main features of Gradience include the following:
   ![Proof of Work](https://github.com/GradienceTeam/Design/raw/main/Screenshots/proof_purple.png)
 </details>
 
-> [!NOTE]\
+> [!NOTE]
 > You can download [latest nightly build](https://nightly.link/GradienceTeam/Gradience/workflows/build/main) from GitHub actions
 
 
 ## 🎨️ Theming setup
 
-> [!NOTE]\
+> [!NOTE]
 > You can go to `Preferences` and apply overrides for Flatpak
 
 <details>
@@ -141,7 +141,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 - Run `sudo flatpak override --reset`
 
-> [!WARNING]\
+> [!WARNING]
 > This will reset all Flatpak overrides, such as Firefox Wayland override
 
 </details>
@@ -149,10 +149,10 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 ## 📦️ Alternative installation methods
 
-> [!IMPORTANT]\
+> [!IMPORTANT]
 > The main installation method is Flatpak from Flathub
 
-> [!NOTE]\
+> [!NOTE]
 > There are number of Gradience packages that are not tested by Gradience Team and not listed here, available at [Repology](https://repology.org/project/gradience/versions)
 
 ### Fedora (COPR)
@@ -166,7 +166,7 @@ dnf install gradience
 
 ### Debian (And derivatives)
 
-> [!WARNING]\
+> [!WARNING]
 > Not available yet.
 
 ### Arch Linux (AUR)
