@@ -5,6 +5,8 @@ template GradienceMainWindow : Adw.ApplicationWindow {
   title: _("Gradience");
   default-width: 950;
   default-height: 650;
+  width-request: 387;
+  height-request: 480;
 
   ShortcutController {
     Shortcut {
@@ -14,109 +16,110 @@ template GradienceMainWindow : Adw.ApplicationWindow {
   }
 
   Adw.ToastOverlay toast_overlay {
-    Adw.Leaflet leaflet {
-      can-navigate-back: true;
-      can-unfold: false;
+    Adw.ToolbarView main_view {
+      [top]
+      Adw.HeaderBar titlebar {
+        Button apply-button {
+          styles ["suggested-action"]
+          label: _("Apply");
+          tooltip-text: _("Apply Preset");
+          action-name: "app.apply_color_scheme";
+        }
 
-      Gtk.Box main_view {
-        orientation: vertical;
+        [start]
+        Button {
+          icon-name: "applications-science-symbolic";
+          tooltip-text: _("Show Preview Window");
+          visible: false;
+        }
 
-        Adw.HeaderBar titlebar {
-          centering-policy: strict;
+        [title]
+        Adw.ViewSwitcher title {
+          stack: view_stack;
+          policy: wide;
+        }
 
-          Button apply-button {
-            styles ["suggested-action"]
-            label: _("Apply");
-            tooltip-text: _("Apply Preset");
-            action-name: "app.apply_color_scheme";
-          }
+        [end]
+        Gtk.MenuButton {
+          tooltip-text: _("Main Menu");
+          icon-name: "open-menu-symbolic";
+          menu-model: main-menu;
+        }
 
-          [start]
-          Button {
-            icon-name: "applications-science-symbolic";
-            tooltip-text: _("Show Preview Window");
-            visible: false;
-          }
+        [end]
+        MenuButton presets-dropdown {
+          menu-model: presets-menu;
+          label: _("Presets");
+          tooltip-text: _("Presets Menu");
+          icon-name: "palette-symbolic";
+        }
 
-          [title]
-          Adw.ViewSwitcherTitle title {
-            stack: view_stack;
-          }
-
-          [end]
-          Gtk.MenuButton {
-            tooltip-text: _("Main Menu");
-            icon-name: "open-menu-symbolic";
-            menu-model: main-menu;
-          }
-
-          [end]
-          MenuButton presets-dropdown {
-            menu-model: presets-menu;
-            label: _("Presets");
-            tooltip-text: _("Presets Menu");
-            icon-name: "palette-symbolic";
-          }
-
-          [end]
-          Button save-preset-button {
-            action-name: "app.save_preset";
-            tooltip-text: _("Save Preset");
-            Adw.ButtonContent {
-              icon-name: "drive-symbolic";
-            }
-          }
-
-          [end]
-          MenuButton errors-button {
-            styles ["raised", "error"]
-            tooltip-text: _("CSS Errors");
-            icon-name: "dialog-warning-symbolic";
-            popover: errors-popover;
+        [end]
+        Button save-preset-button {
+          action-name: "app.save_preset";
+          tooltip-text: _("Save Preset");
+          Adw.ButtonContent {
+            icon-name: "drive-symbolic";
           }
         }
 
-        Gtk.Box {
-          orientation: vertical;
-
-          Adw.ViewStack view_stack {
-            vexpand: true;
-            hexpand: true;
-
-            Adw.ViewStackPage {
-              name: "colors";
-              title: _("_Colors");
-              icon-name: "larger-brush-symbolic";
-
-              child: Adw.PreferencesPage content-colors { };
-              use-underline: true;
-            }
-
-            Adw.ViewStackPage {
-              name: "theming";
-              title: _("_Theming");
-              icon-name: "color-picker-symbolic";
-
-              child: Adw.PreferencesPage content-theming { };
-              use-underline: true;
-            }
-
-            Adw.ViewStackPage {
-              name: "plugins";
-              title: _("_Advanced");
-              icon-name: "settings-symbolic";
-
-              child: Adw.PreferencesPage content-plugins { };
-              use-underline: true;
-            }
-          }
-
-          Adw.ViewSwitcherBar {
-            stack: view_stack;
-            reveal: bind title.title-visible;
-          }
+        [end]
+        MenuButton errors-button {
+          styles ["raised", "error"]
+          tooltip-text: _("CSS Errors");
+          icon-name: "dialog-warning-symbolic";
+          popover: errors-popover;
         }
       }
+
+      
+      content: Adw.ViewStack view_stack {
+        vexpand: true;
+        hexpand: true;
+
+        Adw.ViewStackPage {
+          name: "colors";
+          title: _("_Colors");
+          icon-name: "larger-brush-symbolic";
+
+          child: Adw.PreferencesPage content-colors { };
+          use-underline: true;
+        }
+
+        Adw.ViewStackPage {
+          name: "theming";
+          title: _("_Theming");
+          icon-name: "color-picker-symbolic";
+
+          child: Adw.PreferencesPage content-theming { };
+          use-underline: true;
+        }
+
+        Adw.ViewStackPage {
+          name: "plugins";
+          title: _("_Advanced");
+          icon-name: "settings-symbolic";
+
+          child: Adw.PreferencesPage content-plugins { };
+          use-underline: true;
+        }
+      };
+
+      [bottom]
+      Adw.ViewSwitcherBar switcher_bar {
+        stack: view_stack;
+      }
+    }
+  }
+  
+
+
+  Adw.Breakpoint {
+    condition ("max-width: 550sp")
+    setters {
+      titlebar.title-widget: null;
+      switcher_bar.reveal: true;
+
     }
   }
 }

@@ -15,156 +15,151 @@ template GradiencePresetWindow : Adw.Window {
   }
 
   Adw.ToastOverlay toast_overlay {
-    Adw.Leaflet leaflet {
-      can-navigate-back: true;
-      can-unfold: false;
+    Gtk.Box main_view {
+      orientation: vertical;
 
-      Gtk.Box main_view {
-        orientation: vertical;
+      Adw.HeaderBar titlebar {
+        centering-policy: strict;
+        styles ["flat"]
 
-        Adw.HeaderBar titlebar {
-          centering-policy: strict;
-          styles ["flat"]
-
-          Button import_button {
-            styles ["suggested-action"]
-            label: _("Import");
-            tooltip-text: _("Import Preset File");
-            clicked => on_import_button_clicked();
-          }
-
-          Button remove_button {
-            styles ["danger"]
-            label: _("Delete");
-            visible: false;
-          }
-
-          Button report_button {
-            // styles ["danger"]
-            label: _("Report Preset Issue");
-            visible: false;
-          }
-
-          [title]
-          Adw.ViewSwitcherTitle title {
-            stack: view_stack;
-          }
-
-          [end]
-          Button file_manager_button {
-            tooltip-text: _("Open in File Manager");
-            clicked => on_file_manager_button_clicked();
-            Adw.ButtonContent {
-              icon-name: "folder-symbolic";
-            }
-          }
-
+        Button import_button {
+          styles ["suggested-action"]
+          label: _("Import");
+          tooltip-text: _("Import Preset File");
+          clicked => on_import_button_clicked();
         }
 
-        Gtk.Box {
-          orientation: vertical;
+        Button remove_button {
+          styles ["danger"]
+          label: _("Delete");
+          visible: false;
+        }
 
-          Adw.ViewStack view_stack {
-            vexpand: true;
-            hexpand: true;
+        Button report_button {
+          // styles ["danger"]
+          label: _("Report Preset Issue");
+          visible: false;
+        }
 
-            Adw.ViewStackPage {
-              name: "installed";
-              title: _("Installed");
-              icon-name: "larger-brush-symbolic";
+        [title]
+        Adw.ViewSwitcherTitle title {
+          stack: view_stack;
+        }
 
-              child: Adw.PreferencesPage installed { };
+        [end]
+        Button file_manager_button {
+          tooltip-text: _("Open in File Manager");
+          clicked => on_file_manager_button_clicked();
+          Adw.ButtonContent {
+            icon-name: "folder-symbolic";
+          }
+        }
 
-            }
+      }
 
-            Adw.ViewStackPage {
-              name: "explore";
-              title: _("Explore");
-              icon-name: "web-browser-symbolic";
+      Gtk.Box {
+        orientation: vertical;
 
-              child: Gtk.ScrolledWindow {
-                Adw.StatusPage {
-                  title: _("Search for presets");
-                  description: _("Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a>.");
-                  valign: start;
-                  Adw.Clamp {
-                    styles ["clamp"]
+        Adw.ViewStack view_stack {
+          vexpand: true;
+          hexpand: true;
+
+          Adw.ViewStackPage {
+            name: "installed";
+            title: _("Installed");
+            icon-name: "larger-brush-symbolic";
+
+            child: Adw.PreferencesPage installed { };
+
+          }
+
+          Adw.ViewStackPage {
+            name: "explore";
+            title: _("Explore");
+            icon-name: "web-browser-symbolic";
+
+            child: Gtk.ScrolledWindow {
+              Adw.StatusPage {
+                title: _("Search for presets");
+                description: _("Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a>.");
+                valign: start;
+                Adw.Clamp {
+                  styles ["clamp"]
+
+                  Gtk.Box {
+                    orientation: vertical;
 
                     Gtk.Box {
-                      orientation: vertical;
+                      styles ["linked"]
 
-                      Gtk.Box {
-                        styles ["linked"]
-
-                        Gtk.SearchEntry search_entry {
-                          hexpand: true;
-                          placeholder-text: _("e.g. \"Pretty Purple\"");
-                        }
-
-                        Gtk.DropDown search_dropdown {
-                          model: StringList search_string_list {
-                            strings [_("All")]
-                          };
-                        }
+                      Gtk.SearchEntry search_entry {
+                        hexpand: true;
+                        placeholder-text: _("e.g. \"Pretty Purple\"");
                       }
 
-                      Gtk.Stack search_stack {
-                        Gtk.StackPage {
-                          name: "page_spinner";
-                          child: Gtk.Spinner search_spinner {
-                            valign: start;
-                            halign: center;
-                            spinning: true;
-                          };
-                        }
+                      Gtk.DropDown search_dropdown {
+                        model: StringList search_string_list {
+                          strings [_("All")]
+                        };
+                      }
+                    }
 
-                        Gtk.StackPage {
-                          name: "page_results";
-                          child: Gtk.ListBox search_results {
-                            styles ["boxed-list"]
-                            valign: start;
-                            selection-mode: none;
-                          };
-                        }
+                    Gtk.Stack search_stack {
+                      Gtk.StackPage {
+                        name: "page_spinner";
+                        child: Gtk.Spinner search_spinner {
+                          valign: start;
+                          halign: center;
+                          spinning: true;
+                        };
+                      }
 
-                        Gtk.StackPage {
-                          name: "page_empty";
-                          child: Adw.StatusPage {
-                            icon-name: "system-search-symbolic";
-                            title: _("No Results Found");
-                          };
-                        }
+                      Gtk.StackPage {
+                        name: "page_results";
+                        child: Gtk.ListBox search_results {
+                          styles ["boxed-list"]
+                          valign: start;
+                          selection-mode: none;
+                        };
+                      }
 
-                        Gtk.StackPage {
-                          name: "page_offline";
-                          child: Adw.StatusPage {
-                            icon-name: "network-wireless-offline-symbolic";
-                            title: _("Offline");
-                          };
-                        }
+                      Gtk.StackPage {
+                        name: "page_empty";
+                        child: Adw.StatusPage {
+                          icon-name: "system-search-symbolic";
+                          title: _("No Results Found");
+                        };
+                      }
+
+                      Gtk.StackPage {
+                        name: "page_offline";
+                        child: Adw.StatusPage {
+                          icon-name: "network-wireless-offline-symbolic";
+                          title: _("Offline");
+                        };
                       }
                     }
                   }
                 }
-              };
-            }
-
-            // NOTE: This group is disabled as there isn't yet any implementation of custom repositories in Gradience
-            Adw.ViewStackPage {
-              name: "repos";
-              title: _("Repositories");
-              icon-name: "folder-symbolic";
-              visible: false;
-
-              child: Adw.PreferencesPage repos { };
-
-            }
+              }
+            };
           }
 
-          Adw.ViewSwitcherBar {
-            stack: view_stack;
-            reveal: bind title.title-visible;
+          // NOTE: This group is disabled as there isn't yet any implementation of custom repositories in Gradience
+          Adw.ViewStackPage {
+            name: "repos";
+            title: _("Repositories");
+            icon-name: "folder-symbolic";
+            visible: false;
+
+            child: Adw.PreferencesPage repos { };
+
           }
+        }
+
+        Adw.ViewSwitcherBar {
+          stack: view_stack;
+          reveal: bind title.title-visible;
         }
       }
     }
