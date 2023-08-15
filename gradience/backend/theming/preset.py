@@ -38,6 +38,7 @@ class PresetUtils:
     THEME_GSETTINGS_SCHEMA_ID = "org.gnome.desktop.interface"
     
     def __init__(self):
+        pass
 
     def set_gtk3_theme(self):
         settings_retriever = FlatpakGSettings if is_sandboxed() else GSettingsSetting
