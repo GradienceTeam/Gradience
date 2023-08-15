@@ -5,9 +5,8 @@ template GradienceCustomCSSGroup : Adw.PreferencesGroup {
   title: _("Custom CSS");
   description: _("Changing this may break some programs. Libadwaita allows applications to hardcode values like padding and margins, and using custom CSS may cause unintended breakage.");  
 
-  Box {
-    orientation: vertical;
-    ScrolledWindow {
+  Overlay {
+    child: ScrolledWindow {
       min-content-height: 500;
       max-content-height: 500;
       TextView custom_css_text_view {
@@ -21,19 +20,17 @@ template GradienceCustomCSSGroup : Adw.PreferencesGroup {
           changed => on_custom_css_changed();
         };
       }
-    }
+    };
 
-    Box {
-      DropDown app_type_dropdown {
-        halign: end;
-        hexpand: true;
-        model: app_type_list;
-        notify => on_dropdown_notify();
-      }
-      styles [ "toolbar" ]
+    [overlay]
+    DropDown app_type_dropdown {
+      halign: end;
+      valign: end;
+      margin-bottom: 6;
+      margin-end: 6;
+      model: app_type_list;
+      notify => on_dropdown_notify();
     }
-
-    styles [ "card" ]
   }
   
 }
