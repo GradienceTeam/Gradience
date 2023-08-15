@@ -22,7 +22,7 @@ from gradience.backend.constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/palette_shades.ui")
-class GradiencePaletteShades(Adw.ActionRow):
+class GradiencePaletteShades(Adw.ExpanderRow):
     __gtype_name__ = "GradiencePaletteShades"
 
     def __init__(self, prefix, color_title, n_shades, **kwargs):
@@ -35,13 +35,17 @@ class GradiencePaletteShades(Adw.ActionRow):
 
         self.color_pickers = {}
         for i in range(1, n_shades + 1):
+            row = Adw.ActionRow()
+            row.set_subtitle("@" + prefix + str(i))
+            row.set_title("Shade " + str(i))
             picker = Gtk.ColorButton()
             picker.set_name(prefix + str(i))
             picker.set_rgba(Gdk.RGBA(red=0, green=0, blue=0, alpha=0))
             picker.set_valign(Gtk.Align.CENTER)
             picker.connect("color-set", self.on_color_changed)
+            row.add_suffix(picker)
             self.color_pickers[str(i)] = picker
-            self.add_suffix(picker)
+            self.add_row(row)
 
     def on_color_changed(self, *_args):
         shades = {}

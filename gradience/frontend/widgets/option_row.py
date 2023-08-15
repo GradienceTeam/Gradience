@@ -23,17 +23,18 @@ from gradience.backend.constants import rootdir
 
 
 @Gtk.Template(resource_path=f"{rootdir}/ui/option_row.ui")
-class GradienceOptionRow(Adw.ActionRow):
+class GradienceOptionRow(Adw.ExpanderRow):
     __gtype_name__ = "GradienceOptionRow"
 
     color_value = Gtk.Template.Child("color-value")
     text_value = Gtk.Template.Child("text-value")
-    value_stack = Gtk.Template.Child("value-stack")
-    text_value_toggle = Gtk.Template.Child("text-value-toggle")
+    #value_stack = Gtk.Template.Child("value-stack")
+    #text_value_toggle = Gtk.Template.Child("text-value-toggle")
+    row = Gtk.Template.Child("row")
     warning_button = Gtk.Template.Child("warning-button")
     warning_label = Gtk.Template.Child("warning-label")
-    explanation_button = Gtk.Template.Child("explanation-button")
-    explanation_label = Gtk.Template.Child("explanation-label")
+    # explanation_button = Gtk.Template.Child("explanation-button")
+    # explanation_label = Gtk.Template.Child("explanation-label")
 
     def __init__(self, name, title, explanation=None, adw_gtk3_support=None, update_var=None, **kwargs):
         super().__init__(**kwargs)
@@ -43,6 +44,13 @@ class GradienceOptionRow(Adw.ActionRow):
         self.set_name(name)
         self.set_title(title)
         self.set_subtitle("@" + name)
+
+        self.add_row(self.row)
+
+        if explanation:
+            row = Adw.ActionRow()
+            row.set_subtitle(explanation or "")
+            self.add_row(row)
 
         if adw_gtk3_support == "yes" or not adw_gtk3_support:
             self.warning_button.set_visible(False)
@@ -57,10 +65,9 @@ class GradienceOptionRow(Adw.ActionRow):
                 _("This option is not supported by adw-gtk3.")
             )
 
-        self.explanation_label.set_label(explanation or "")
-
-        if not explanation:
-            self.explanation_button.set_visible(False)
+        # self.explanation_label.set_label(explanation or "")
+        # if not explanation:
+        #     self.explanation_button.set_visible(False)
 
         self.update_var = update_var
 
@@ -103,10 +110,10 @@ class GradienceOptionRow(Adw.ActionRow):
         if kwargs.get("update_from") != "text_value":
             if rgba.parse(new_value):
                 self.text_value.set_text(new_value)
-                self.text_value_toggle.set_active(False)
+                #self.text_value_toggle.set_active(False)
             else:
                 self.text_value.set_text(new_value)
-                self.text_value_toggle.set_active(True)
+                #self.text_value_toggle.set_active(True)
 
         if kwargs.get("update_from") != "color_value":
             if rgba.parse(new_value):

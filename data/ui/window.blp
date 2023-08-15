@@ -82,7 +82,19 @@ template GradienceMainWindow : Adw.ApplicationWindow {
           title: _("_Colors");
           icon-name: "larger-brush-symbolic";
 
-          child: Adw.PreferencesPage content-colors { };
+          //child: Adw.NavigationSplitView split_view {
+          //  [sidebar]
+          //  Adw.NavigationPage sidebar {
+              child: Adw.PreferencesPage content-colors { };
+          //  }
+//
+          //  [content]
+          //  Adw.NavigationPage demo {
+          //    
+          //  
+          //  }
+          //};
+
           use-underline: true;
         }
 
@@ -112,16 +124,31 @@ template GradienceMainWindow : Adw.ApplicationWindow {
     }
   }
   
-
+  
+  //Adw.Breakpoint {
+  //  condition ("max-width: 400sp")
+  //  setters {
+  //    split_view.collapsed: true;
+//
+  //  }
+  //}
 
   Adw.Breakpoint {
     condition ("max-width: 550sp")
     setters {
       titlebar.title-widget: null;
       switcher_bar.reveal: true;
-
     }
   }
+
+  // Adw.Breakpoint {
+  //   condition ("max-width: 600sp")
+  //   setters {
+  //     split_view.sidebar-width-fraction: 0.33;
+  //     split_view.collapsed: true;
+// 
+  //   }
+  // }
 }
 
 
@@ -171,6 +198,10 @@ menu presets-menu {
       action: "app.manage_presets";
     }
   }
+}
+
+StringList app_type_list {
+  strings [_("GTK 4"), _("GTK 3")]
 }
 
 

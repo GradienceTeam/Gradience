@@ -3,30 +3,39 @@ using Adw 1;
 
 template GradienceCustomCSSGroup : Adw.PreferencesGroup {
   title: _("Custom CSS");
-  description: _("Changing this may break some programs. Libadwaita allows applications to hardcode values like padding and margins, and using custom CSS may cause unintended breakage.");
+  description: _("Changing this may break some programs. Libadwaita allows applications to hardcode values like padding and margins, and using custom CSS may cause unintended breakage.");  
 
-  [header-suffix]
-  DropDown app_type_dropdown {
-    valign: start;
-    model: app_type_list;
-    notify => on_dropdown_notify();
-  }
-
-  ScrolledWindow {
-    min-content-height: 500;
-    max-content-height: 500;
-    TextView custom_css_text_view {
-      styles ["card"]
-      left-margin: 10;
-      right-margin: 10;
-      top-margin: 10;
-      bottom-margin: 10;
-      monospace: true;
-      buffer: TextBuffer {
-        changed => on_custom_css_changed();
-      };
+  Box {
+    orientation: vertical;
+    ScrolledWindow {
+      min-content-height: 500;
+      max-content-height: 500;
+      TextView custom_css_text_view {
+        styles ["card"]
+        left-margin: 10;
+        right-margin: 10;
+        top-margin: 10;
+        bottom-margin: 10;
+        monospace: true;
+        buffer: TextBuffer {
+          changed => on_custom_css_changed();
+        };
+      }
     }
+
+    Box {
+      DropDown app_type_dropdown {
+        halign: end;
+        hexpand: true;
+        model: app_type_list;
+        notify => on_dropdown_notify();
+      }
+      styles [ "toolbar" ]
+    }
+
+    styles [ "card" ]
   }
+  
 }
 
 StringList app_type_list {
