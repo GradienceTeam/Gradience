@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradienceMonetThemingGroup : Adw.PreferencesGroup {
+template $GradienceMonetThemingGroup : Adw.PreferencesGroup {
   title: _("Monet Engine");
   description: _("Monet Engine generates a Material You color palette from an image.");
 
@@ -15,7 +15,7 @@ template GradienceMonetThemingGroup : Adw.PreferencesGroup {
       valign: center;
       label: _("Apply");
       tooltip-text: _("Apply a palette");
-      clicked => on_apply_button_clicked();
+      clicked => $on_apply_button_clicked();
       styles ["suggested-action"]
     }
 
@@ -26,7 +26,7 @@ template GradienceMonetThemingGroup : Adw.PreferencesGroup {
       [suffix]
       Button file-chooser-button {
         valign: center;
-        clicked => on_file_chooser_button_clicked();
+        clicked => $on_file_chooser_button_clicked();
 
         Adw.ButtonContent {
           icon-name: "folder-pictures-symbolic";

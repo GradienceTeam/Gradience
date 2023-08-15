@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradienceCustomCSSGroup : Adw.PreferencesGroup {
+template $GradienceCustomCSSGroup : Adw.PreferencesGroup {
   title: _("Custom CSS");
   description: _("Changing this may break some programs. Libadwaita allows applications to hardcode values like padding and margins, and using custom CSS may cause unintended breakage.");
 
@@ -9,7 +9,7 @@ template GradienceCustomCSSGroup : Adw.PreferencesGroup {
   DropDown app_type_dropdown {
     valign: start;
     model: app_type_list;
-    notify => on_dropdown_notify();
+    notify => $on_dropdown_notify();
   }
 
   ScrolledWindow {
@@ -23,7 +23,7 @@ template GradienceCustomCSSGroup : Adw.PreferencesGroup {
       bottom-margin: 10;
       monospace: true;
       buffer: TextBuffer {
-        changed => on_custom_css_changed();
+        changed => $on_custom_css_changed();
       };
     }
   }
