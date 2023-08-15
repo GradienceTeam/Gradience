@@ -186,7 +186,7 @@ class ShellTheme:
                 if template_match := template_regex.search(line):
                     key = template_match.__getitem__(1)
                     shell_colors = self.shell_colors or get_shell_colors(self.preset_variables)
-                    value = shell_colors.get(key) or self.preset_variables(key)
+                    value = shell_colors.get(key) or self.preset_variables.get(key)
                     if value:
                         line = line.replace("{{" + key + "}}", value)
                 colors_content += line
