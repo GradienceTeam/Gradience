@@ -10,196 +10,192 @@ template GradienceShareWindow: Adw.Window {
     default-height: 500;
 
     Adw.ToastOverlay toast_overlay {
-        Adw.Leaflet leaflet {
-            can-navigate-back: false;
-            can-unfold: false;
+        Gtk.Box main_view {
+            orientation: vertical;
 
-            Gtk.Box main_view {
-                orientation: vertical;
+            Adw.HeaderBar titlebar {
+                styles ["flat"]
+                centering-policy: strict;
 
-                Adw.HeaderBar titlebar {
+                [title]
+                Adw.CarouselIndicatorDots {
                     styles ["flat"]
-                    centering-policy: strict;
-
-                    [title]
-                    Adw.CarouselIndicatorDots {
-                        styles ["flat"]
-                        carousel: carousel;
-                        orientation: horizontal;
-                    }
-
+                    carousel: carousel;
+                    orientation: horizontal;
                 }
 
-                Gtk.Overlay {
-                    [overlay]
-                    Gtk.Button btn_back {
-                        styles ["circular"]
-                        margin-start: 10;
-                        icon-name: "go-previous-symbolic";
-                        halign: start;
-                        valign: center;
-                        visible: false;
-                        tooltip-text: _("Previous");
-                    }
+            }
 
-                    child: Adw.Carousel carousel {
+            Gtk.Overlay {
+                [overlay]
+                Gtk.Button btn_back {
+                    styles ["circular"]
+                    margin-start: 10;
+                    icon-name: "go-previous-symbolic";
+                    halign: start;
+                    valign: center;
+                    visible: false;
+                    tooltip-text: _("Previous");
+                }
+
+                child: Adw.Carousel carousel {
+                    vexpand: true;
+                    hexpand: true;
+                    allow-scroll-wheel: true;
+                    allow-mouse-drag: true;
+                    allow-long-swipes: false;
+                    margin-start: 10;
+                    margin-end: 10;
+
+                    Gtk.Box {
+                        orientation: vertical;
                         vexpand: true;
                         hexpand: true;
-                        allow-scroll-wheel: true;
-                        allow-mouse-drag: true;
-                        allow-long-swipes: false;
-                        margin-start: 10;
-                        margin-end: 10;
+
+                        Gtk.Image img_welcome {
+                            resource: "/com/github/GradienceTeam/Gradience/images/welcome.svg";
+                            pixel-size: 256;
+                        }
+
+                        Adw.StatusPage page_welcome {
+                            title: _("Share your preset");
+                            description: _("Share your preset with the world!");
+                        }
+
+                    }
+
+                    Adw.StatusPage page_release {
+                        icon-name: "git-symbolic";
+                        title: _("How it's work?");
+                        description: _("Gradience use GitHub to share your preset. You need to create a GitHub account and fork <a href='https://github.com/GradienceTeam/Community'>GradienceTeam/Community</a>. Then, you can upload your preset, make a pull request and share it with the world!");
+                    }
+
+                    Adw.StatusPage page_agreement {
+                        vexpand: true;
+                        hexpand: true;
+                        icon-name: "dialog-warning-symbolic";
+                        title: _("Warning");
+                        description: _("Changing the color scheme can negatively affect contrast and readability. Proceed with caution. Please do not report theming-related issues to app developers.");
+
+                        Gtk.Button btn_agree {
+                            styles ["suggested-action", "pill"]
+                            label: _("I Understand The Consequences");
+                            use-underline: true;
+                            halign: center;
+                        }
+                    }
+
+
+                    Adw.StatusPage page_gradience {
+                        vexpand: true;
+                        hexpand: true;
+                        icon-name: "larger-brush-symbolic";
+                        title: _("Customize Adwaita Theme");
+                        description: _("Change colors of windows, buttons, lists and more, with advanced features like adding custom CSS");
+                    }
+
+                    Adw.StatusPage page_configure {
+                        vexpand: true;
+                        hexpand: true;
+                        title: _("Configure Gradience");
+                        description: _("Install adw-gtk3 theme for legacy applications and configure system for theming.");
+
+                        Adw.PreferencesPage {
+                            Adw.PreferencesGroup {
+                                Adw.ActionRow configure_adw_gtk3 {
+                                    title: _("Legacy apps theming");
+                                    activatable-widget: switch_adw_gtk3;
+                                    [suffix]
+                                    Switch switch_adw_gtk3 {
+                                        valign: center;
+                                        tooltip-text: _("Install adw-gtk3 theme for legacy apps theming");
+                                    }
+                                }
+
+                                Adw.ActionRow configure_system {
+                                    title: _("System configuration");
+                                    activatable-widget: switch_system;
+
+                                    [suffix]
+                                    Switch switch_system {
+                                        valign: center;
+                                        tooltip-text: _("Configure system for theming, enables Flatpak theme override");
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    Adw.StatusPage page_download {
+                        vexpand: true;
+                        hexpand: true;
+                        title: _("Installing Themes");
+                        description: _("Please wait until theme will be installed.");
 
                         Gtk.Box {
                             orientation: vertical;
-                            vexpand: true;
-                            hexpand: true;
-
-                            Gtk.Image img_welcome {
-                                resource: "/com/github/GradienceTeam/Gradience/images/welcome.svg";
-                                pixel-size: 256;
-                            }
-
-                            Adw.StatusPage page_welcome {
-                                title: _("Share your preset");
-                                description: _("Share your preset with the world!");
-                            }
-
-                        }
-
-                        Adw.StatusPage page_release {
-                            icon-name: "git-symbolic";
-                            title: _("How it's work?");
-                            description: _("Gradience use GitHub to share your preset. You need to create a GitHub account and fork <a href='https://github.com/GradienceTeam/Community'>GradienceTeam/Community</a>. Then, you can upload your preset, make a pull request and share it with the world!");
-                        }
-
-                        Adw.StatusPage page_agreement {
-                            vexpand: true;
-                            hexpand: true;
-                            icon-name: "dialog-warning-symbolic";
-                            title: _("Warning");
-                            description: _("Changing the color scheme can negatively affect contrast and readability. Proceed with caution. Please do not report theming-related issues to app developers.");
-
-                            Gtk.Button btn_agree {
+                            Gtk.Button btn_install {
                                 styles ["suggested-action", "pill"]
-                                label: _("I Understand The Consequences");
+                                label: _("Continue");
                                 use-underline: true;
                                 halign: center;
+
+                            }
+
+                            Gtk.ProgressBar progressbar {
+                                halign: center;
+                                visible: false;
+                                margin-top: 24;
+                                margin-bottom: 24;
                             }
                         }
-
-
-                        Adw.StatusPage page_gradience {
-                            vexpand: true;
-                            hexpand: true;
-                            icon-name: "larger-brush-symbolic";
-                            title: _("Customize Adwaita Theme");
-                            description: _("Change colors of windows, buttons, lists and more, with advanced features like adding custom CSS");
-                        }
-
-                        Adw.StatusPage page_configure {
-                            vexpand: true;
-                            hexpand: true;
-                            title: _("Configure Gradience");
-                            description: _("Install adw-gtk3 theme for legacy applications and configure system for theming.");
-
-                            Adw.PreferencesPage {
-                                Adw.PreferencesGroup {
-                                    Adw.ActionRow configure_adw_gtk3 {
-                                        title: _("Legacy apps theming");
-                                        activatable-widget: switch_adw_gtk3;
-                                        [suffix]
-                                        Switch switch_adw_gtk3 {
-                                            valign: center;
-                                            tooltip-text: _("Install adw-gtk3 theme for legacy apps theming");
-                                        }
-                                    }
-
-                                    Adw.ActionRow configure_system {
-                                        title: _("System configuration");
-                                        activatable-widget: switch_system;
-
-                                        [suffix]
-                                        Switch switch_system {
-                                            valign: center;
-                                            tooltip-text: _("Configure system for theming, enables Flatpak theme override");
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        Adw.StatusPage page_download {
-                            vexpand: true;
-                            hexpand: true;
-                            title: _("Installing Themes");
-                            description: _("Please wait until theme will be installed.");
-
-                            Gtk.Box {
-                                orientation: vertical;
-                                Gtk.Button btn_install {
-                                    styles ["suggested-action", "pill"]
-                                    label: _("Continue");
-                                    use-underline: true;
-                                    halign: center;
-
-                                }
-
-                                Gtk.ProgressBar progressbar {
-                                    halign: center;
-                                    visible: false;
-                                    margin-top: 24;
-                                    margin-bottom: 24;
-                                }
-                            }
-                        }
-
-                        Adw.StatusPage page_finish {
-                            vexpand: true;
-                            hexpand: true;
-                            icon-name: "selection-mode-symbolic";
-                            title: _("Done");
-                            description: _("Now you can make your own presets or download some online.");
-
-                            Gtk.Box {
-                                orientation: vertical;
-                                Gtk.Button label_skip {
-                                    label: _("Please finish the setup first");
-                                    margin-bottom: 24;
-                                    visible: true;
-
-                                }
-
-                                Gtk.Button btn_close {
-                                    styles ["suggested-action", "pill"]
-                                    label: _("Start Using Gradience");
-                                    use-underline: true;
-                                    halign: center;
-                                    visible: true;
-                                }
-                            }
-                        }
-                    };
-
-                    [overlay]
-                    Gtk.Button btn_next {
-                        styles ["circular", "suggested-action"]
-                        margin-end: 10;
-                        icon-name: "go-next-symbolic";
-                        halign: end;
-                        valign: center;
-                        visible: false;
-                        tooltip-text: _("Next");
                     }
 
+                    Adw.StatusPage page_finish {
+                        vexpand: true;
+                        hexpand: true;
+                        icon-name: "selection-mode-symbolic";
+                        title: _("Done");
+                        description: _("Now you can make your own presets or download some online.");
 
+                        Gtk.Box {
+                            orientation: vertical;
+                            Gtk.Button label_skip {
+                                label: _("Please finish the setup first");
+                                margin-bottom: 24;
+                                visible: true;
 
+                            }
 
+                            Gtk.Button btn_close {
+                                styles ["suggested-action", "pill"]
+                                label: _("Start Using Gradience");
+                                use-underline: true;
+                                halign: center;
+                                visible: true;
+                            }
+                        }
+                    }
+                };
+
+                [overlay]
+                Gtk.Button btn_next {
+                    styles ["circular", "suggested-action"]
+                    margin-end: 10;
+                    icon-name: "go-next-symbolic";
+                    halign: end;
+                    valign: center;
+                    visible: false;
+                    tooltip-text: _("Next");
                 }
 
 
+
+
             }
+
+
         }
     }
 }
+
