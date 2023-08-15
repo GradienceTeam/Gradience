@@ -72,7 +72,5 @@ if compile_schemas.found()
 endif
 
 subdir('icons')
-subdir('plugins')
-
 subdir('shell')
-subdir('submodules/gnome-shell')
+subdir('submodules')
