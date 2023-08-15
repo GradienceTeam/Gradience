@@ -157,7 +157,7 @@ class ShellTheme:
 
         os.makedirs(self.output_dir, exist_ok=True)
 
-        self._compile_sass(os.path.join(self.source_dir, "gnome-shell.scss"),
+        self._compile_sass(self.main_source,
             os.path.join(self.output_dir, "gnome-shell.css"))
 
         self._set_shell_theme()
