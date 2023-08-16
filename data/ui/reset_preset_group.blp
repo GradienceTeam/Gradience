@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradienceResetPresetGroup : Adw.PreferencesGroup {
+template $GradienceResetPresetGroup : Adw.PreferencesGroup {
   title: _("Reset and Restore Presets");
   description: _("Reset a currently applied preset or restore the previous one.");
 
@@ -12,7 +12,7 @@ template GradienceResetPresetGroup : Adw.PreferencesGroup {
       valign: center;
       icon-name: "edit-undo-symbolic";
       tooltip-text: _("Restore Previous Preset");
-      clicked => on_libadw_restore_button_clicked();
+      clicked => $on_libadw_restore_button_clicked();
       styles ["flat"]
     }
 
@@ -20,7 +20,7 @@ template GradienceResetPresetGroup : Adw.PreferencesGroup {
       valign: center;
       label: _("Reset");
       tooltip-text: _("Reset Applied Preset");
-      clicked => on_libadw_reset_button_clicked();
+      clicked => $on_libadw_reset_button_clicked();
       styles ["destructive-action"]
     }
   }
@@ -32,7 +32,7 @@ template GradienceResetPresetGroup : Adw.PreferencesGroup {
       valign: center;
       icon-name: "edit-undo-symbolic";
       tooltip-text: _("Restore Previous Preset");
-      clicked => on_gtk3_restore_button_clicked();
+      clicked => $on_gtk3_restore_button_clicked();
       styles ["flat"]
     }
 
@@ -40,7 +40,7 @@ template GradienceResetPresetGroup : Adw.PreferencesGroup {
       valign: center;
       label: _("Reset");
       tooltip-text: _("Reset Applied Preset");
-      clicked => on_gtk3_reset_button_clicked();
+      clicked => $on_gtk3_reset_button_clicked();
       styles ["destructive-action"]
     }
   }

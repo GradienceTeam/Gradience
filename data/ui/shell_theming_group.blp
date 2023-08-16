@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradienceShellThemingGroup : Adw.PreferencesGroup {
+template $GradienceShellThemingGroup : Adw.PreferencesGroup {
   title: _("Shell Engine");
   description: _("Shell Engine generates a custom GNOME Shell theme based on the currently selected preset.\nWARNING: Extensions that modify the Shell stylesheet may cause issues with themes.");
 
@@ -15,7 +15,7 @@ template GradienceShellThemingGroup : Adw.PreferencesGroup {
       valign: center;
       label: _("Apply");
       tooltip-text: _("Apply Shell theme");
-      clicked => on_apply_button_clicked();
+      clicked => $on_apply_button_clicked();
       styles ["suggested-action"]
     }
 
@@ -27,7 +27,7 @@ template GradienceShellThemingGroup : Adw.PreferencesGroup {
       Button custom-colors-button {
         valign: center;
         label: _("Open Shell Preferences");
-        clicked => on_custom_colors_button_clicked();
+        clicked => $on_custom_colors_button_clicked();
       }
     }
 
@@ -46,7 +46,7 @@ Adw.ActionRow other-options-row {
     sensitive: false;
     //tooltip-text: _("Restore Previous Theme");
     tooltip-text: _("Currently unavailable");
-    clicked => on_restore_button_clicked();
+    clicked => $on_restore_button_clicked();
     styles ["flat"]
   }
 
@@ -55,7 +55,7 @@ Adw.ActionRow other-options-row {
     valign: center;
     label: _("Reset Theme");
     tooltip-text: _("Reset applied theme");
-    clicked => on_reset_theme_clicked();
+    clicked => $on_reset_theme_clicked();
     styles ["destructive-action"]
   }
 }
