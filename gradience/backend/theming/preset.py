@@ -20,6 +20,7 @@ import os
 import json
 
 from pathlib import Path
+from shutil import copyfile
 
 from gi.repository import GLib, Gio
 
@@ -123,15 +124,9 @@ class PresetUtils:
             os.makedirs(theme_dir)
 
         try:
-            with open(gtk_css_path, "r", encoding="utf-8") as css_file:
-                contents = css_file.read()
-                css_file.close()
+            copyfile(gtk_css_path, gtk_css_path + ".bak")
         except FileNotFoundError:
             logging.warning(f"gtk.css file not found in {gtk_css_path}. Generating new stylesheet.")
-        else:
-            with open(gtk_css_path + ".bak", "w", encoding="utf-8") as backup:
-                backup.write(contents)
-                backup.close()
         finally:
             with open(gtk_css_path, "w", encoding="utf-8") as css_file:
                 css_file.write(generate_gtk_css(app_type, preset))
@@ -142,13 +137,7 @@ class PresetUtils:
         gtk_css_path = os.path.join(theme_dir, "gtk.css")
 
         try:
-            with open(gtk_css_path + ".bak", "r", encoding="utf-8") as backup:
-                contents = backup.read()
-                backup.close()
-
-            with open(gtk_css_path, "w", encoding="utf-8") as css_file:
-                css_file.write(contents)
-                css_file.close()
+            copyfile(gtk_css_path + ".bak", gtk_css_path)
         except OSError as e:
             logging.error(f"Unable to restore {app_type.capitalize()} preset backup.", exc=e)
             raise
