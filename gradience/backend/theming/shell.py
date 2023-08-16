@@ -20,6 +20,7 @@ import os
 import re
 import shutil
 import os.path
+import stat
 import sass
 
 from gi.repository import GObject, Gio, GLib
@@ -91,12 +92,22 @@ class ShellTheme:
         self.templates_dir = os.path.join(datadir, "gradience", "shell", "templates", str(self.version_target))
         self.source_dir = os.path.join(GLib.get_home_dir(), ".cache", "gradience", "gradience-shell", str(self.version_target))
 
-        if os.path.exists(self.source_dir):
-            shutil.rmtree(self.source_dir)
-
         # Copy shell theme source directories to ~/.cache/gradience/gradience-shell
-        shutil.copytree(os.path.join(datadir, "gradience", "shell",
-            str(self.version_target)), self.source_dir, dirs_exist_ok=True
+        def copy_function(src, dst):
+            dst_dir = os.path.dirname(dst)
+            os.chmod(dst_dir, os.stat(dst_dir).st_mode | stat.S_IWRITE)
+
+            if (os.path.exists(dst)):
+                os.remove(dst)
+
+            shutil.copy2(src, dst)
+            os.chmod(dst, os.stat(dst).st_mode | stat.S_IWRITE)
+            
+        shutil.copytree(
+            os.path.join(datadir, "gradience", "shell", str(self.version_target)), 
+            self.source_dir, 
+            dirs_exist_ok=True,
+            copy_function=copy_function
         )
 
         # TODO: Allow user to use different name than "gradience-shell" (also, with default name, we should append "-light" suffix when generated from light preset)
