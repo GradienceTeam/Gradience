@@ -135,13 +135,8 @@ class PresetUtils:
         theme_dir = get_gtk_theme_dir(app_type)
         gtk_css_path = os.path.join(theme_dir, "gtk.css")
 
-        file = Gio.File.new_for_path(gtk_css_path)
-
         try:
-            file.delete()
-        except GLib.GError as e:
-            if e.code == 1:
-                return
-
+            os.remove(gtk_css_path)
+        except Exception as e:
             logging.error("Unable to delete current preset.", exc=e)
             raise
