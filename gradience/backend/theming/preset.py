@@ -52,8 +52,7 @@ class PresetUtils:
         def __get_repo_presets(repo):
             if repo.is_dir():
                 for file_name in repo.iterdir():
-                    file_name = str(file_name)
-                    if file_name.endswith(".json"):
+                    if file_name.suffix == ".json":
                         try:
                             with open(os.path.join(presets_dir, file_name), "r", encoding="utf-8") as file:
                                 preset_text = file.read()
@@ -73,7 +72,7 @@ class PresetUtils:
                             presets_list[file_name] = preset["name"]
             elif repo.is_file():
                 # this exists to keep compatibility with old preset structure
-                if repo.name.endswith(".json"):
+                if repo.suffix == ".json":
                     logging.warning("Legacy preset structure found. Moving to a new structure.")
 
                     try:
