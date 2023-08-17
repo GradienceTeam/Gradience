@@ -51,10 +51,10 @@ class PresetUtils:
             with open(path, "r", encoding="utf-8") as file:
                 preset = json.load(file)
 
-            if preset.get("variables") is None:
+            if "variables" not in preset:
                 raise KeyError("'variables' section missing in loaded preset file")
 
-            if preset.get("palette") is None:
+            if "palette" not in preset:
                 raise KeyError("'palette' section missing in loaded preset file")
         except (OSError, KeyError, json.JSONDecodeError) as e:
             logging.error("Failed to load preset information.", exc=e)
