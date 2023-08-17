@@ -46,6 +46,21 @@ class PresetUtils:
         self.settings = settings_retriever(self.THEME_GSETTINGS_SCHEMA_ID, schema_dir=None)
         self.settings.set("gtk-theme", "adw-gtk3")
 
+    def load_preset(self, path: Path):
+        try:
+            with open(path, "r", encoding="utf-8") as file:
+                preset = json.load(file)
+
+            if preset.get("variables") is None:
+                raise KeyError("'variables' section missing in loaded preset file")
+
+            if preset.get("palette") is None:
+                raise KeyError("'palette' section missing in loaded preset file")
+        except (OSError, KeyError, json.JSONDecodeError) as e:
+            logging.error("Failed to load preset information.", exc=e)
+            raise
+        return preset
+
     def get_presets_list(self, repo=None, full_list=False) -> dict:
         presets_list = {}
 
@@ -53,22 +68,7 @@ class PresetUtils:
             if repo.is_dir():
                 for file_name in repo.iterdir():
                     if file_name.suffix == ".json":
-                        try:
-                            with open(os.path.join(presets_dir, file_name), "r", encoding="utf-8") as file:
-                                preset_text = file.read()
-                                file.close()
-                        except (OSError, KeyError) as e:
-                            logging.error("Failed to load preset information.", exc=e)
-                            raise
-                        else:
-                            preset = json.loads(preset_text)
-
-                            if preset.get("variables") is None:
-                                raise KeyError("'variables' section missing in loaded preset file")
-
-                            if preset.get("palette") is None:
-                                raise KeyError("'palette' section missing in loaded preset file")
-
+                            preset = load_preset(os.path.join(presets_dir, file_name))
                             presets_list[file_name] = preset["name"]
             elif repo.is_file():
                 # this exists to keep compatibility with old preset structure
@@ -82,21 +82,11 @@ class PresetUtils:
                         os.rename(repo, os.path.join(
                             presets_dir, "user", repo.name))
 
-                        with open(os.path.join(presets_dir, "user", repo), "r", encoding="utf-8") as file:
-                            preset_text = file.read()
-                            file.close()
-                    except (OSError, KeyError) as e:
-                        logging.error("Failed to load preset information.", exc=e)
+                    except (OSError, FileNotFoundError) as e:
+                        logging.error("Failed to move user preset.", exc=e)
                         raise
                     else:
-                        preset = json.loads(preset_text)
-
-                        if preset.get("variables") is None:
-                            raise KeyError("'variables' section missing in loaded preset file")
-
-                        if preset.get("palette") is None:
-                            raise KeyError("'palette' section missing in loaded preset file")
-
+                        preset = load_preset(os.path.join(presets_dir, "user", repo))
                         presets_list["user"][file_name] = preset["name"]
 
         if full_list:
