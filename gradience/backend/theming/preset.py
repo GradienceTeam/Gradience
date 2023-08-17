@@ -71,19 +71,17 @@ class PresetUtils:
             # this exists to keep compatibility with old preset structure
             if repo.suffix == ".json":
                 logging.warning("Legacy preset structure found. Moving to a new structure.")
+                user_dir = Path(presets_dir) / "user"
 
                 try:
-                    if not os.path.isdir(os.path.join(presets_dir, "user")):
-                        os.mkdir(os.path.join(presets_dir, "user"))
-
-                    os.rename(repo, os.path.join(
-                        presets_dir, "user", repo.name))
+                    os.makedirs(user_dir, exist_ok=True)
+                    os.rename(repo, user_dir / repo.name)
 
                 except (OSError, FileNotFoundError) as e:
                     logging.error("Failed to move user preset.", exc=e)
                     raise
                 else:
-                    preset = self.load_preset(os.path.join(presets_dir, "user", repo))
+                    preset = self.load_preset(user_dir / repo)
                     presets_list["user"][file_name] = preset["name"]
 
     def get_presets_list(self, repo=None, full_list=False) -> dict:
