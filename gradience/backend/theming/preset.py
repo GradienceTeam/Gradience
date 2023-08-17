@@ -61,46 +61,46 @@ class PresetUtils:
             raise
         return preset
 
+    def __get_repo_presets(self, repo, presets_list):
+        if repo.is_dir():
+            for file_name in repo.iterdir():
+                if file_name.suffix == ".json":
+                    preset = self.load_preset(os.path.join(presets_dir, file_name))
+                    presets_list[file_name] = preset["name"]
+        elif repo.is_file():
+            # this exists to keep compatibility with old preset structure
+            if repo.suffix == ".json":
+                logging.warning("Legacy preset structure found. Moving to a new structure.")
+
+                try:
+                    if not os.path.isdir(os.path.join(presets_dir, "user")):
+                        os.mkdir(os.path.join(presets_dir, "user"))
+
+                    os.rename(repo, os.path.join(
+                        presets_dir, "user", repo.name))
+
+                except (OSError, FileNotFoundError) as e:
+                    logging.error("Failed to move user preset.", exc=e)
+                    raise
+                else:
+                    preset = self.load_preset(os.path.join(presets_dir, "user", repo))
+                    presets_list["user"][file_name] = preset["name"]
+
     def get_presets_list(self, repo=None, full_list=False) -> dict:
         presets_list = {}
-
-        def __get_repo_presets(repo):
-            if repo.is_dir():
-                for file_name in repo.iterdir():
-                    if file_name.suffix == ".json":
-                            preset = load_preset(os.path.join(presets_dir, file_name))
-                            presets_list[file_name] = preset["name"]
-            elif repo.is_file():
-                # this exists to keep compatibility with old preset structure
-                if repo.suffix == ".json":
-                    logging.warning("Legacy preset structure found. Moving to a new structure.")
-
-                    try:
-                        if not os.path.isdir(os.path.join(presets_dir, "user")):
-                            os.mkdir(os.path.join(presets_dir, "user"))
-
-                        os.rename(repo, os.path.join(
-                            presets_dir, "user", repo.name))
-
-                    except (OSError, FileNotFoundError) as e:
-                        logging.error("Failed to move user preset.", exc=e)
-                        raise
-                    else:
-                        preset = load_preset(os.path.join(presets_dir, "user", repo))
-                        presets_list["user"][file_name] = preset["name"]
 
         if full_list:
             for repo in Path(presets_dir).iterdir():
                 logging.debug(f"presets_dir.iterdir: {repo}")
-                __get_repo_presets(repo)
+                self.__get_repo_presets(repo, presets_list)
 
-            return presets_list
         elif repo:
-            __get_repo_presets(repo)
+            self.__get_repo_presets(repo, presets_list)
 
-            return presets_list
         else:
             raise AttributeError("You either need to set 'repo' property, or change 'full_list' property to True")
+
+        return presets_list
 
     def apply_preset(self, app_type: str, preset: Preset) -> None:
         theme_dir = get_gtk_theme_dir(app_type)
