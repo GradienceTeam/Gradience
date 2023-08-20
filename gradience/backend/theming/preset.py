@@ -26,8 +26,8 @@ from gi.repository import GLib, Gio
 from gradience.backend.models.preset import Preset
 
 from gradience.backend.utils.theming import generate_gtk_css
-from gradience.backend.globals import user_config_dir, presets_dir, get_gtk_theme_dir, is_sandboxed
-from gradience.backend.utils.gsettings import GSettingsSetting, FlatpakGSettings, GSettingsMissingError
+from gradience.backend.globals import presets_dir, get_gtk_theme_dir, is_sandboxed
+from gradience.backend.utils.gsettings import GSettingsSetting, FlatpakGSettings
 
 from gradience.backend.logger import Logger
 
@@ -42,7 +42,7 @@ class PresetUtils:
 
     def set_gtk3_theme(self):
         settings_retriever = FlatpakGSettings if is_sandboxed() else GSettingsSetting
-        self.settings = settings_retriever(self.THEME_GSETTINGS_SCHEMA_ID, schema_dir=None)
+        self.settings = settings_retriever(self.THEME_GSETTINGS_SCHEMA_ID)
         self.settings.set("gtk-theme", "adw-gtk3")
 
     def get_presets_list(self, repo=None, full_list=False) -> dict:
