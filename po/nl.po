@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2023-06-27 13:11+0000\n"
-"PO-Revision-Date: 2023-08-16 07:53+0000\n"
+"PO-Revision-Date: 2023-08-23 07:49+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/nl/>\n"
@@ -117,18 +117,14 @@ msgid "Custom CSS"
 msgstr "Aangepaste CSS"
 
 #: data/ui/custom_css_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Changing this may break some programs. Keep in mind that Libadwaita was "
-#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
 "hardcode values like padding and margins, and using custom CSS may cause "
 "unintended breakage."
 msgstr ""
-"Als u dit wijzigt, kunnen sommige apps fouten vertonen. Houd er rekening mee "
-"dat Adwaita zo is gemaakt dat apps waarden zoals opvulling en marges kunnen "
-"overschrijven."
+"Als u dit wijzigt, kunnen sommige apps fouten vertonen. libAdwaita staat "
+"apps toe om waarden zoals opvulling en marges te kunnen overschrijven, en "
+"het gebruik van aangepaste CSS kan tot onbedoelde fouten leiden."
 
 #: data/ui/custom_css_group.blp:33
 msgid "GTK 4"
@@ -148,16 +144,12 @@ msgstr "Alleen downloaden"
 
 #: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
-msgstr "Monet"
+msgstr "Monet-engine"
 
 #: data/ui/monet_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette from extracting "
-#| "image's colors."
 msgid "Monet Engine generates a Material You color palette from an image."
 msgstr ""
-"Monet-engine genereert een Material Design 3-palet uit de kleuren van een "
+"Monet-engine genereert een Material You-palet uit de kleuren van een "
 "afbeelding."
 
 #: data/ui/monet_theming_group.blp:9
@@ -301,6 +293,8 @@ msgstr "Alternatieve server gebruiken voor downloaden van voorinstellingen"
 #: data/ui/preferences_window.blp:61
 msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgstr ""
+"JSDelivr wordt gebruikt voor het ophalen van voorinstellingen in plaats van "
+"directe downloads van GitHub"
 
 #: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
@@ -312,7 +306,7 @@ msgstr "URL-adres van aangepaste repository"
 
 #: data/ui/preferences_window.blp:96
 msgid "Theming"
-msgstr "Thema"
+msgstr "Thema's"
 
 #: data/ui/preferences_window.blp:100
 msgid "Theme Engines"
@@ -331,10 +325,6 @@ msgid "Shell Engine"
 msgstr "Shell-engine"
 
 #: data/ui/preferences_window.blp:105
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based of a currently "
-#| "chosen preset."
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
@@ -343,15 +333,11 @@ msgstr ""
 "momenteel gekozen voorinstelling."
 
 #: data/ui/preferences_window.blp:114
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette from extracting "
-#| "image's colors."
 msgid ""
 "Monet Engine generates a Material Design 3 palette by extracting the image's "
 "colors."
 msgstr ""
-"Monet-engine genereert een Material Design 3-palet uit de kleuren van een "
+"Monet-engine genereert een Material You-palet uit de kleuren van een "
 "afbeelding."
 
 #: data/ui/preset_row.blp:65
@@ -626,12 +612,6 @@ msgid "Customize Shell theme colors."
 msgstr "Personaliseer shell-themakleuren."
 
 #: data/ui/shell_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the colors of "
-#| "a currently selected preset.\n"
-#| "WARNING: Extensions that modify Shell stylesheet can cause issues with "
-#| "themes."
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on the currently "
 "selected preset.\n"
@@ -639,7 +619,7 @@ msgid ""
 "themes."
 msgstr ""
 "De shell-engine genereert een aangepast GNOME-shell-thema gebaseerd op de "
-"kleuren van een huidig geselecteerde voorinstelling.\n"
+"momenteel geselecteerde voorinstelling.\n"
 "WAARSCHUWING: Uitbreidingen die het shell-stijlblad wijzigen kunnen "
 "problemen veroorzaken met thema's."
 
@@ -688,10 +668,6 @@ msgid "No Theme Engines"
 msgstr "Geen thema-engines"
 
 #: data/ui/theming_empty_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Theme Engines extends the functionality of Gradience. They can be enabled "
-#| "in the Preferences."
 msgid ""
 "Theme Engines extend the functionality of Gradience. They can be enabled in "
 "the Preferences."
@@ -716,10 +692,6 @@ msgid "What's new in 0.8.0"
 msgstr "Nieuw in 0.8.0"
 
 #: data/ui/welcome_window.blp:72
-#, fuzzy
-#| msgid ""
-#| "In this release, we added GNOME Shell theming support and reworked how "
-#| "Gradience work internally."
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally."
@@ -732,15 +704,11 @@ msgid "Agree and Continue"
 msgstr "Akkoord en doorgaan"
 
 #: data/ui/welcome_window.blp:96
-#, fuzzy
-#| msgid ""
-#| "Change colors of windows, buttons, lists and more, with advanced features "
-#| "like adding custom CSS."
 msgid ""
 "Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
-"Verander kleuren van vensters, knoppen, lijsten en meer, met geavanceerde "
+"Verander kleuren van vensters, knoppen, lijsten en meer; met geavanceerde "
 "functies zoals het toepassen van aangepaste CSS."
 
 #: data/ui/welcome_window.blp:108
@@ -813,18 +781,12 @@ msgid "Accent Colors"
 msgstr "Accentkleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:25
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, and entries, to indicate that a widget is important, interactive, "
-#| "or currently active."
 msgid ""
 "These colors are used across many different widgets, often to indicate that "
 "a widget is important, interactive, or currently active."
 msgstr ""
-"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
-"labels en velden, om aan te geven dat een widget belangrijk, interactief of "
-"momenteel actief is."
+"Deze kleuren worden gebruikt in veel verschillende widgets, vaak om aan te "
+"geven dat een widget belangrijk, interactief of momenteel actief is."
 
 #: gradience/frontend/schemas/preset_schema.py:32
 #: gradience/frontend/schemas/preset_schema.py:63
@@ -883,64 +845,46 @@ msgid "Destructive Colors"
 msgstr "Destructieve kleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:57
-#, fuzzy
-#| msgid ""
-#| "These colors are used for buttons to indicate a dangerous action, such as "
-#| "deleting a file."
 msgid ""
 "These colors are used to indicate dangerous actions, such as deleting a file."
 msgstr ""
-"Deze kleuren worden gebruikt voor knoppen om een gevaarlijke actie aan te "
-"geven, zoals het verwijderen van een bestand."
+"Deze kleuren worden gebruikt om gevaarlijke acties aan te geven, zoals het "
+"verwijderen van een bestand."
 
 #: gradience/frontend/schemas/preset_schema.py:86
 msgid "Success Colors"
 msgstr "Succes-kleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:88
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, entries, and level bars, to indicate a success or a high level."
 msgid ""
 "These colors are used across many different widgets, to indicate success or "
 "a high level."
 msgstr ""
-"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
-"labels, velden en niveaubalken, om een succes of een hoog niveau aan te "
-"geven."
+"Deze kleuren worden gebruikt in veel verschillende widgets om succes of een "
+"hoog niveau aan te geven."
 
 #: gradience/frontend/schemas/preset_schema.py:117
 msgid "Warning Colors"
 msgstr "Waarschuwingskleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:119
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, entries, and level bars, to indicate a warning or a low level."
 msgid ""
 "These colors are used across many different widgets, to indicate warning or "
 "a low level."
 msgstr ""
-"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
-"labels, velden en niveaubalken, om een waarschuwing of een laag niveau aan "
-"te geven."
+"Deze kleuren worden gebruikt in veel verschillende widgets om een "
+"waarschuwing of een laag niveau aan te geven."
 
 #: gradience/frontend/schemas/preset_schema.py:148
 msgid "Error Colors"
 msgstr "Foutkleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:150
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, and entries, to indicate a failure."
 msgid ""
 "These colors are used across many different widgets, to indicate a failure."
 msgstr ""
-"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
-"labels en velden, om een storing aan te geven."
+"Deze kleuren worden gebruikt in veel verschillende widgets om een storing "
+"aan te geven."
 
 #: gradience/frontend/schemas/preset_schema.py:179
 msgid "Window Colors"
@@ -955,16 +899,12 @@ msgid "View Colors"
 msgstr "Weergavekleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:198
-#, fuzzy
-#| msgid ""
-#| "These colors are used in a variety of widgets, such as text views and "
-#| "entries."
 msgid ""
 "These colors are used across many different widgets, such as text views and "
 "entries."
 msgstr ""
-"Deze kleuren worden gebruikt in verschillende widgets, zoals tekstweergaven "
-"en velden."
+"Deze kleuren worden gebruikt door veel verschillende widgets, zoals "
+"tekstweergaven en velden."
 
 #: gradience/frontend/schemas/preset_schema.py:216
 msgid "Header Bar Colors"
@@ -1315,11 +1255,6 @@ msgid "GNOME Shell Missing"
 msgstr "GNOME Shell ontbreekt"
 
 #: gradience/frontend/widgets/shell_theming_group.py:119
-#, fuzzy
-#| msgid ""
-#| "Shell Engine is designed to work only on systems running GNOME. You can "
-#| "still generate themes on other desktop environments, but it won't have "
-#| "any affect on them."
 msgid ""
 "Shell Engine is designed to work only on systems running GNOME. You can "
 "still generate themes on other desktop environments, but it won't have any "
@@ -1344,19 +1279,14 @@ msgid "User Themes Extension Missing"
 msgstr "Uitbreiding ‘User Themes’ ontbreekt"
 
 #: gradience/frontend/widgets/shell_theming_group.py:130
-#, fuzzy
-#| msgid ""
-#| "Gradience requires User Themes extension installed in order to apply "
-#| "Shell theme. You can still generate a theme, but you won't be able to "
-#| "apply it without this extension."
 msgid ""
 "Gradience requires the User Themes extension installed to apply the Shell "
 "theme. You can still generate a theme, but you won't be able to apply it "
 "without this extension."
 msgstr ""
-"Gradience vereist dat de uitbreiding ‘User Themes’ is geïnstalleerd om shell-"
-"thema's toe te kunnen passen. U kunt nog steeds een thema genereren, maar u "
-"kunt het niet toepassen zonder deze uitbreiding."
+"Gradience vereist dat de uitbreiding ‘User Themes’ is geïnstalleerd om het "
+"shell-thema toe te passen. U kunt nog steeds een thema genereren, maar u "
+"kunt deze niet toepassen zonder de uitbreiding."
 
 #: gradience/frontend/widgets/shell_theming_group.py:132
 msgid "Install Extension"
@@ -1367,16 +1297,12 @@ msgid "User Themes Extension Disabled"
 msgstr "Uitbreiding ‘User Themes’ uitgeschakeld"
 
 #: gradience/frontend/widgets/shell_theming_group.py:141
-#, fuzzy
-#| msgid ""
-#| "User Themes extension is currently disabled on your system. Please enable "
-#| "it in order to apply theme."
 msgid ""
 "The User Themes extension is currently disabled on your system. Please "
 "enable it to apply the theme."
 msgstr ""
 "De uitbreiding ‘User Themes’ is momenteel uitgeschakeld op uw systeem. "
-"Schakel deze in om een thema toe te kunnen passen."
+"Schakel deze in om het thema toe te passen."
 
 #: gradience/frontend/widgets/shell_theming_group.py:143
 #: gradience/frontend/views/presets_manager_window.py:201
