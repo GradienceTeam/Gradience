@@ -14,45 +14,45 @@ template GradienceOptionRow : Adw.ExpanderRow {
     styles ["flat"]
   }
 
-  // [suffix]
-  // MenuButton explanation-button {
-  //   valign: center;
-  //   icon-name: "dialog-information-symbolic";
-  //   popover: explanation-popover;
-  //   tooltip-text: _("Explanation");
-  //   styles ["flat"]
-  // }
+  [suffix]
+  MenuButton explanation-button {
+    valign: center;
+    icon-name: "dialog-information-symbolic";
+    popover: explanation-popover;
+    tooltip-text: _("Explanation");
+    styles ["flat"]
+  }
 
   
-  //Stack value-stack {
-  //  valign: center;
-  //  hhomogeneous: false;
-  //  interpolate-size: true;
-  //  transition-type: crossfade;
-//
-  //  ColorButton color-value {
-  //    rgba: "#00000000";
-  //    use-alpha: true;
-  //  }
-  //  Entry text-value {
-  //    text: "#00000000";
-  //  }
-  //}
-//
-  //[suffix]
-  //ToggleButton text-value-toggle {
-  //  valign: center;
-  //  icon-name: "document-edit-symbolic";
-  //  tooltip-text: _("Show Hex");
-  //  styles ["flat"]
-//
-  //  toggled => on_text_value_toggled();
-  //}
+  Stack value-stack {
+    valign: center;
+    hhomogeneous: false;
+    interpolate-size: true;
+    transition-type: crossfade;
+
+    ColorButton color-value {
+      rgba: "#00000000";
+      use-alpha: true;
+    }
+    Entry text-value {
+      text: "#00000000";
+    }
+  }
+
+  [suffix]
+  ToggleButton text-value-toggle {
+    valign: center;
+    icon-name: "document-edit-symbolic";
+    tooltip-text: _("Show Hex");
+    styles ["flat"]
+
+    toggled => on_text_value_toggled();
+  }
 }
 
 Adw.ActionRow row {
   [prefix]
-  ColorButton color-value {
+  ColorButton color-value-mobile {
     valign: center;
     halign: center;
     rgba: "#00000000";
@@ -60,7 +60,7 @@ Adw.ActionRow row {
   }
 
   [suffix]
-  Entry text-value {
+  Entry text-value-mobile {
     valign: center;
     halign: center;
     text: "#00000000";

@@ -27,14 +27,16 @@ class GradienceOptionRow(Adw.ExpanderRow):
     __gtype_name__ = "GradienceOptionRow"
 
     color_value = Gtk.Template.Child("color-value")
+    color_value_mobile = Gtk.Template.Child("color-value-mobile")
+    text_value_mobile = Gtk.Template.Child("text-value-mobile")
     text_value = Gtk.Template.Child("text-value")
-    #value_stack = Gtk.Template.Child("value-stack")
-    #text_value_toggle = Gtk.Template.Child("text-value-toggle")
+    value_stack = Gtk.Template.Child("value-stack")
+    text_value_toggle = Gtk.Template.Child("text-value-toggle")
     row = Gtk.Template.Child("row")
     warning_button = Gtk.Template.Child("warning-button")
     warning_label = Gtk.Template.Child("warning-label")
-    # explanation_button = Gtk.Template.Child("explanation-button")
-    # explanation_label = Gtk.Template.Child("explanation-label")
+    explanation_button = Gtk.Template.Child("explanation-button")
+    explanation_label = Gtk.Template.Child("explanation-label")
 
     def __init__(self, name, title, explanation=None, adw_gtk3_support=None, update_var=None, **kwargs):
         super().__init__(**kwargs)
@@ -45,7 +47,7 @@ class GradienceOptionRow(Adw.ExpanderRow):
         self.set_title(title)
         self.set_subtitle("@" + name)
 
-        self.add_row(self.row)
+        
 
         if explanation:
             row = Adw.ActionRow()
@@ -70,6 +72,24 @@ class GradienceOptionRow(Adw.ExpanderRow):
         #     self.explanation_button.set_visible(False)
 
         self.update_var = update_var
+
+        # on window resize
+
+    def update_mode(self):
+        # get window width
+        window = self.app.win
+        width = window.get_size()[0]
+
+        # set mode
+        if width < 500:
+            self.add_row(self.row)
+            self.explanation_button.set_visible(False)
+            self.value_stack.set_visible(False)
+            self.text_value_toggle.set_visible(False)
+        else:
+            self.remove(self.row)
+
+
 
     def connect_signals(self, update_vars):
         self.color_value.connect("color-set", self.on_color_value_changed, update_vars)
@@ -101,7 +121,7 @@ class GradienceOptionRow(Adw.ExpanderRow):
         self.set_activatable_widget(widget)
         
         tooltip = _("Show Color") if self.text_value_toggle.get_active() else _("Show Hex")
-        self.text_value_toggle.set_tooltip_text(tooltip);
+        self.text_value_toggle.set_tooltip_text(tooltip)
 
     def update_value(self, new_value, update_vars=False, **kwargs):
         rgba = Gdk.RGBA()
