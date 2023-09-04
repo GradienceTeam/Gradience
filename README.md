@@ -1,4 +1,4 @@
-> **Warning**
+> [!IMPORTANT]
 > This software is currently in a **beta** state. It can break things, and it doesn't yet have a polished, _foolproof_ UX.
 >
 > Contributions are welcome!
@@ -60,7 +60,7 @@
 
 Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 theme.
 
-> **Warning**
+> [!IMPORTANT]
 > [Gradience, stopthemingmy.app and Adwaita Developers](#%EF%B8%8F-gradience-stopthemingmyapp-and-adwaita-developers)
 
 The main features of Gradience include the following:
@@ -79,10 +79,13 @@ The main features of Gradience include the following:
   ![Proof of Work](https://github.com/GradienceTeam/Design/raw/main/Screenshots/proof_purple.png)
 </details>
 
+> [!NOTE]
+> You can download [latest nightly build](https://nightly.link/GradienceTeam/Gradience/workflows/build/main) from GitHub actions
+
 
 ## 🎨️ Theming setup
 
-> **Note**
+> [!NOTE]
 > You can go to `Preferences` and apply overrides for Flatpak
 
 <details>
@@ -138,7 +141,7 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 - Run `sudo flatpak override --reset`
 
-> **Warning**
+> [!WARNING]
 > This will reset all Flatpak overrides, such as Firefox Wayland override
 
 </details>
@@ -146,10 +149,10 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 
 ## 📦️ Alternative installation methods
 
-> **Warning**
+> [!IMPORTANT]
 > The main installation method is Flatpak from Flathub
 
-> **Note**
+> [!NOTE]
 > There are number of Gradience packages that are not tested by Gradience Team and not listed here, available at [Repology](https://repology.org/project/gradience/versions)
 
 ### Fedora (COPR)
@@ -163,7 +166,7 @@ dnf install gradience
 
 ### Debian (And derivatives)
 
-> **Warning**
+> [!WARNING]
 > Not available yet.
 
 ### Arch Linux (AUR)
@@ -203,20 +206,40 @@ makepkg -sic
 
 ### NixOS
 
-> **Warning**
-> It's currently only available in `unstable`
+Gradience is available for NixOS 23.05 (Stoat) and later:
 
-Gradience is available for NixOS:
-
+To run in a temporary shell:
 ```shell
 nix-shell -p gradience
+```
+
+To install:
+```shell
+nix-env -iA nixos.gradience
 ```
 
 
 ## 🏗️ Building from source
 
-> **Note**
-> You can download [latest nightly build](https://nightly.link/GradienceTeam/Gradience/workflows/build/main) from GitHub actions
+### Nightly Remote
+
+First of all, you need to have [GNOME Nightly](https://wiki.gnome.org/Apps/Nightly) Flatpak remote added if it's not already:
+
+```shell
+flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo
+```
+
+Then, add the Gradience Flatpak remote:
+
+```shell
+flatpak remote-add --if-not-exists gradience-nightly https://gradienceteam.github.io/Gradience/index.flatpakrepo
+```
+
+Finally, install Gradience by running:
+
+```shell
+flatpak install gradience-nightly com.github.GradienceTeam.Gradience.Devel
+```
 
 ### GNOME Builder
 
@@ -289,7 +312,7 @@ Pretty Purple is built-in in the Gradience and used in all Gradience artworks.
 
 > See [gradienceteam.github.io/hack](https://gradienceteam.github.io/hack)
 
-Gradience Team is not against [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers idea, Gradience is a tool for tinkers that want to theme their desktops at their liking, and not a tool for distributions to change theme in them by default, Gradience Team agrees with importance of unified look of Adwaita to make sure that all apps work right and Developers have unified and stable tool for creating their apps.
+Gradience Team is not against the ideas of [stopthemingmy.app](https://stopthemingmy.app) and the developers of Adwaita. Gradience is a tool for tinkerers who want to theme their desktop to their liking, and **not a tool for distributions** to ship in their releases. Gradience Team agrees with importance of unified look of Adwaita to make sure that all apps function correctly and that developers have a unified and stable tool for creating their apps.
 
 
 ## 💝 Acknowledgment

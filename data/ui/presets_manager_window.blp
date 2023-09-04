@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradiencePresetWindow : Adw.Window {
+template $GradiencePresetWindow : Adw.Window {
   title: _("Presets");
   default-width: 650;
   default-height: 500;
@@ -29,8 +29,8 @@ template GradiencePresetWindow : Adw.Window {
           Button import_button {
             styles ["suggested-action"]
             label: _("Import");
-            tooltip-text: _("Import a Preset File");
-            clicked => on_import_button_clicked();
+            tooltip-text: _("Import Preset File");
+            clicked => $on_import_button_clicked();
           }
 
           Button remove_button {
@@ -53,7 +53,7 @@ template GradiencePresetWindow : Adw.Window {
           [end]
           Button file_manager_button {
             tooltip-text: _("Open in File Manager");
-            clicked => on_file_manager_button_clicked();
+            clicked => $on_file_manager_button_clicked();
             Adw.ButtonContent {
               icon-name: "folder-symbolic";
             }

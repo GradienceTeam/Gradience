@@ -27,7 +27,7 @@ def generate_gtk_css(app_type: str, preset: Preset) -> str:
     theming_warning = """/*
 Generated with Gradience
 
-Issues caused by theming should be reported to Gradience repository, and not upstream
+Issues caused by theming should be reported to Gradience repository, and not to upstream
 
 https://github.com/GradienceTeam/Gradience
 */

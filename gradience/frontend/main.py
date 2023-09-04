@@ -41,7 +41,6 @@ from gradience.frontend.views.presets_manager_window import GradiencePresetWindo
 from gradience.frontend.views.preferences_window import GradiencePreferencesWindow
 
 from gradience.frontend.dialogs.app_type_dialog import GradienceAppTypeDialog
-from gradience.frontend.dialogs.log_out_dialog import GradienceLogOutDialog
 from gradience.frontend.dialogs.save_dialog import GradienceSaveDialog
 from gradience.frontend.widgets.custom_css_group import GradienceCustomCSSGroup
 
@@ -96,7 +95,7 @@ class GradienceApplication(Adw.Application):
 
         self.style_manager = Adw.StyleManager.get_default()
 
-        self.use_jsdeliver = self.settings.get_boolean("use-jsdeliver")
+        self.use_jsdelivr = self.settings.get_boolean("use-jsdelivr")
 
     def do_activate(self):
         """Called when the application is activated."""
@@ -616,11 +615,12 @@ class GradienceApplication(Adw.Application):
             self.plugins_list.apply()
 
             self.win.toast_overlay.add_toast(
-                Adw.Toast(title=_("Preset set successfully"))
+                Adw.Toast(title=_("Preset set successfully. You may need to restart some apps and log out."))
             )
 
-            dialog = GradienceLogOutDialog(self.win)
-            dialog.present()
+            toast = Adw.Toast()
+            toast.set_title(_("Preset set successfully. You may need to restart some apps and log out."))
+            self.win.toast_overlay.add_toast(toast)
 
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)

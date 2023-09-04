@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 17:45+0000\n"
-"PO-Revision-Date: 2023-05-24 11:43+0000\n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
+"POT-Creation-Date: 2023-06-27 13:11+0000\n"
+"PO-Revision-Date: 2023-07-13 02:27+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ro/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -101,7 +101,9 @@ msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr ""
 
 #: data/ui/app_type_dialog.blp:14
-msgid "Select application types you want to theme:"
+#, fuzzy
+#| msgid "Select application types you want to theme:"
+msgid "Select application types to theme:"
 msgstr "Alegeți tipurile de aplicații asupra cărora vreți să aplicați tema:"
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
@@ -109,14 +111,16 @@ msgid "Libadwaita and GTK 4 Applications"
 msgstr "Aplicații Libadwaita și GTK 4"
 
 #: data/ui/app_type_dialog.blp:21
-msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+#, fuzzy
+#| msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "Aplicații GTK 3 (tema adw-gtk3 este necesară)"
 
 #: data/ui/builtin_preset_row.blp:5
 msgid "Made by @GradienceTeam"
 msgstr "Creat de către @GradienceTeam"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
+#: data/ui/builtin_preset_row.blp:12 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 msgid "Apply Preset"
 msgstr "Aplicați presetarea"
@@ -126,9 +130,14 @@ msgid "Custom CSS"
 msgstr "CSS personalizat"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Keep in mind that Libadwaita was "
+#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins."
+"Changing this may break some programs. Libadwaita allows applications to "
+"hardcode values like padding and margins, and using custom CSS may cause "
+"unintended breakage."
 msgstr ""
 "Modificarea acestei setări poate afecta anumite programe. Țineți cont că "
 "Libadwaita a fost creată astfel încât aplicațiile să poate avea valori "
@@ -142,15 +151,15 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:21
+#: data/ui/explore_preset_row.blp:23
 msgid "Download and Apply"
 msgstr "Descărcați-o și aplicați-o"
 
-#: data/ui/explore_preset_row.blp:32
+#: data/ui/explore_preset_row.blp:34
 msgid "Download Only"
 msgstr "Doar descărcați-o"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Generator Monet"
 
@@ -159,9 +168,7 @@ msgstr "Generator Monet"
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
 #| "image's color."
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from "
-"extracting image's colors."
+msgid "Monet Engine generates a Material You color palette from an image."
 msgstr ""
 "Monet este un generator care poate genera o paletă de culori Material Design "
 "3 din culorile unei imagini."
@@ -173,7 +180,7 @@ msgid "Monet Engine Options"
 msgstr "Generator Monet"
 
 #: data/ui/monet_theming_group.blp:10
-msgid "Choose an image, and change the parameters of a generated Monet palette"
+msgid "Choose an image and modify generated Monet palette"
 msgstr ""
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
@@ -189,11 +196,11 @@ msgstr ""
 msgid "Select an Image"
 msgstr ""
 
-#: data/ui/monet_theming_group.blp:32
+#: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
 msgstr "Alegeți un fișier"
 
-#: data/ui/monet_theming_group.blp:41
+#: data/ui/monet_theming_group.blp:42
 #, fuzzy
 #| msgid "Choose a File"
 msgid "Choose a Image File"
@@ -206,11 +213,8 @@ msgid "Log out"
 msgstr "Ieșiți din sesiune?"
 
 #: data/ui/log_out_dialog.blp:6
-#, fuzzy
-#| msgid "For the changes to take effect, you need to log out. "
-msgid "For the changes to take full effect, you need to log out."
+msgid "Log out to allow changes to take effect."
 msgstr ""
-"Pentru ca modificările să se poată aplica, trebuie să ieșiți din sesiune. "
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -221,31 +225,33 @@ msgid "No Preferences"
 msgstr "Nu există opțiuni"
 
 #: data/ui/no_plugin_window.blp:16
-msgid "This plugin doesn't have any preferences."
+#, fuzzy
+#| msgid "This plugin doesn't have any preferences."
+msgid "This plugin has no preferences."
 msgstr "Acest modul nu permite setarea niciunei opțiuni."
 
-#: data/ui/option_row.blp:10
+#: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
 msgstr "Atenționare privind compatibilitatea cu GTK 3"
 
-#: data/ui/option_row.blp:19
+#: data/ui/option_row.blp:21
 msgid "Explanation"
 msgstr "Explicație"
 
-#: data/ui/option_row.blp:43
-msgid "Toggle Text Value"
-msgstr "Schimbați valoarea textului"
+#: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
+msgid "Show Hex"
+msgstr ""
 
-#: data/ui/plugin_row.blp:8
+#: data/ui/plugin_row.blp:10
 msgid "Toggle Plugin"
 msgstr "Activați/dezactivați modulul"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:128
 msgid "Preferences"
 msgstr "Preferințe"
 
-#: data/ui/plugin_row.blp:28
+#: data/ui/plugin_row.blp:30
 msgid "Remove Plugin"
 msgstr "Înlăturați modulul"
 
@@ -304,10 +310,6 @@ msgid "Allow GTK 3 Theming"
 msgstr "Permiteți aplicarea temelor pe aplicațiile GTK 3 Flatpak"
 
 #: data/ui/preferences_window.blp:38
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak "
-#| "applications to access adw-gtk3 theme."
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme."
@@ -322,10 +324,6 @@ msgid "Allow GTK 3 Theming (System)"
 msgstr "Permiteți aplicarea temelor pe aplicațiile GTK 4 Flatpak (sistem)"
 
 #: data/ui/preferences_window.blp:48
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for all users to allow GTK 3 Flatpak "
-#| "applications to access adw-gtk3 theme. (Requires root access)"
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme. (Requires root access)"
@@ -345,48 +343,48 @@ msgid "Use an alternative server for downloading presets"
 msgstr ""
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDeliver will be used instead of direct preset fetching from GitHub"
+msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgstr ""
 
-#: data/ui/preferences_window.blp:72
+#: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
 msgstr "Depozite pentru presetări personalizate"
 
-#: data/ui/preferences_window.blp:75
+#: data/ui/preferences_window.blp:76
 msgid "Custom repository URL address"
 msgstr "Adresă URL pentru depozit personalizat"
 
-#: data/ui/preferences_window.blp:95
+#: data/ui/preferences_window.blp:96
 #, fuzzy
 #| msgid "Theme"
 msgid "Theming"
 msgstr "Temă"
 
-#: data/ui/preferences_window.blp:99
+#: data/ui/preferences_window.blp:100
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Theme Engines"
 msgstr "Generator Monet"
 
-#: data/ui/preferences_window.blp:100
+#: data/ui/preferences_window.blp:101
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
 msgstr ""
 
-#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Shell Engine"
 msgstr "Generator Monet"
 
-#: data/ui/preferences_window.blp:104
+#: data/ui/preferences_window.blp:105
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
 msgstr ""
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:114
 #, fuzzy
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
@@ -407,7 +405,9 @@ msgid "Description"
 msgstr "Descriere"
 
 #: data/ui/preset_row.blp:81
-msgid "Sorry, but this preset don't have a description."
+#, fuzzy
+#| msgid "Sorry, but this preset don't have a description."
+msgid "This preset has no description."
 msgstr "Din păcate această presetare nu conține o descriere."
 
 #: data/ui/preset_row.blp:93
@@ -437,7 +437,9 @@ msgid "Import"
 msgstr "Importați"
 
 #: data/ui/presets_manager_window.blp:32
-msgid "Import a Preset File"
+#, fuzzy
+#| msgid "Import a Preset File"
+msgid "Import Preset File"
 msgstr "Importați un fișier cu o presetare"
 
 #: data/ui/presets_manager_window.blp:38
@@ -513,9 +515,7 @@ msgid "Reset and Restore Presets"
 msgstr "Redenumiți presetarea"
 
 #: data/ui/reset_preset_group.blp:6
-msgid ""
-"This section allows you to reset a currently applied preset or restore the "
-"previous one."
+msgid "Reset a currently applied preset or restore the previous one."
 msgstr ""
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
@@ -629,7 +629,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "Temele pentru aplicațiile mai vechi"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
+#: data/ui/share_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Instalați tema adw-gtk3 pentru a aplica teme pe aplicațiile mai vechi"
 
@@ -643,7 +643,7 @@ msgstr ""
 "Configurați sistemul pentru aplicarea temelor, vă permite să suprascrieți "
 "temele aplicațiilor de tip Flatpak"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
+#: data/ui/share_window.blp:136
 msgid "Installing Themes"
 msgstr "Instalarea temelor"
 
@@ -690,16 +690,16 @@ msgid "Custom Shell Colors"
 msgstr "Culoare pentru umbre"
 
 #: data/ui/shell_prefs_window.blp:14
-msgid ""
-"This section allows you to customize colors that will be used in the Shell "
-"theme."
-msgstr ""
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Shell theme colors."
+msgstr "Personalizați tema Adwaita"
 
 #: data/ui/shell_theming_group.blp:6
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
-"currently selected preset.\n"
-"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"Shell Engine generates a custom GNOME Shell theme based on the currently "
+"selected preset.\n"
+"WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 
@@ -708,13 +708,13 @@ msgid "Shell Engine Options"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:10
-msgid "Change the parameters of a generated GNOME Shell theme"
+msgid "Change the generated GNOME Shell theme"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:17
 #, fuzzy
 #| msgid "Apply This Color Scheme?"
-msgid "Apply a Shell theme"
+msgid "Apply Shell theme"
 msgstr "Aplicați această schemă cromatică?"
 
 #: data/ui/shell_theming_group.blp:23
@@ -723,36 +723,36 @@ msgstr "Aplicați această schemă cromatică?"
 msgid "Customize Shell Theme"
 msgstr "Personalizați tema Adwaita"
 
-#: data/ui/shell_theming_group.blp:28
+#: data/ui/shell_theming_group.blp:29
 #, fuzzy
 #| msgid "No Preferences"
 msgid "Open Shell Preferences"
 msgstr "Nu există opțiuni"
 
-#: data/ui/shell_theming_group.blp:34
+#: data/ui/shell_theming_group.blp:35
 #, fuzzy
 #| msgid "Preset reseted"
 msgid "Preset Variant"
 msgstr "Presetare reinițializată"
 
-#: data/ui/shell_theming_group.blp:35
-msgid "Select which preset variant you have currently applied"
+#: data/ui/shell_theming_group.blp:36
+msgid "Select currently applied preset variant"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:47
+#: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:55
+#: data/ui/shell_theming_group.blp:56
 #, fuzzy
 #| msgid "Preset removed"
 msgid "Reset Theme"
 msgstr "Presetare înlăturată"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:57
 #, fuzzy
 #| msgid "Reset applied color scheme?"
-msgid "Reset an applied theme"
+msgid "Reset applied theme"
 msgstr "Reveniți la schema cromatică implicită?"
 
 #: data/ui/theming_empty_group.blp:5
@@ -800,8 +800,12 @@ msgid "Agree and Continue"
 msgstr "Continuați"
 
 #: data/ui/welcome_window.blp:96
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS."
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
 "Modificați culorile ferestrelor, butoanelor, listelor și multor altor "
@@ -811,9 +815,21 @@ msgstr ""
 msgid "Legacy Apps Theming"
 msgstr "Temele pentru aplicațiile mai vechi"
 
+#: data/ui/welcome_window.blp:113
+#, fuzzy
+#| msgid "Install adw-gtk3 theme for legacy apps theming"
+msgid "Install adw-gtk3 theme for legacy app theming"
+msgstr "Instalați tema adw-gtk3 pentru a aplica teme pe aplicațiile mai vechi"
+
 #: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "Configurarea sistemului"
+
+#: data/ui/welcome_window.blp:134
+#, fuzzy
+#| msgid "Installing Themes"
+msgid "Installing adw-gtk3"
+msgstr "Instalarea temelor"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -1317,14 +1333,24 @@ msgid "Select an image first"
 msgstr "Alegeți o imagine de fundal mai întâi"
 
 #: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is only partially supported by the adw-gtk3 theme."
+msgid "This option is only partially supported by adw-gtk3."
 msgstr "Această opțiune nu este decât parțial acceptată de tema adw-gtk3."
 
 #: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is not supported by the adw-gtk3 theme."
+msgid "This option is not supported by adw-gtk3."
 msgstr "Această opțiune nu este acceptată de tema adw-gtk3."
 
-#: gradience/frontend/widgets/option_row.py:116
+#: gradience/frontend/widgets/option_row.py:96
+#, fuzzy
+#| msgid "Shade Color"
+msgid "Show Color"
+msgstr "Culoare pentru umbre"
+
+#: gradience/frontend/widgets/option_row.py:118
 msgid "Not a color, see text value"
 msgstr "Culoare nevalidă, vedeți valoarea textului"
 
@@ -1646,6 +1672,26 @@ msgstr "Presetare salvată"
 #| msgid "Preset set sucessfully"
 msgid "Preset set successfully"
 msgstr "Presetare aplicată cu succes"
+
+#~ msgid "Toggle Text Value"
+#~ msgstr "Schimbați valoarea textului"
+
+#, fuzzy
+#~| msgid ""
+#~| "Monet is an engine that generates a Material Design 3 palette from an "
+#~| "image's color."
+#~ msgid ""
+#~ "Monet is an engine that generates a Material Design 3 palette from "
+#~ "extracting image's colors."
+#~ msgstr ""
+#~ "Monet este un generator care poate genera o paletă de culori Material "
+#~ "Design 3 din culorile unei imagini."
+
+#, fuzzy
+#~| msgid "For the changes to take effect, you need to log out. "
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr ""
+#~ "Pentru ca modificările să se poată aplica, trebuie să ieșiți din sesiune. "
 
 #~ msgid "Allow GTK 4 Flatpak Applications Theming"
 #~ msgstr "Permiteți aplicarea temelor pe aplicațiile GTK 4 Flatpak"

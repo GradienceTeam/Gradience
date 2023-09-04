@@ -45,7 +45,7 @@ preset_repos_github = {
     "Curated": "https://github.com/GradienceTeam/Community/raw/next/curated.json"
 }
 
-preset_repos_jsdeliver = {
+preset_repos_jsdelivr = {
     "Official": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/official.json",
     "Curated": "https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/curated.json"
 }

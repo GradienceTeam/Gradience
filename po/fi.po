@@ -10,10 +10,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 17:45+0000\n"
-"PO-Revision-Date: 2023-05-24 11:43+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
+"POT-Creation-Date: 2023-06-27 13:11+0000\n"
+"PO-Revision-Date: 2023-08-26 10:55+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/fi/>\n"
 "Language: fi\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -101,22 +101,24 @@ msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "Värit-välilehden kuvakaappaus"
 
 #: data/ui/app_type_dialog.blp:14
-msgid "Select application types you want to theme:"
-msgstr "Valitse sovellustyypit jotka haluat teemoittaa:"
+msgid "Select application types to theme:"
+msgstr "Valitse teemoitettavat sovellustyypit:"
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita ja GTK 4 -sovellukset"
 
 #: data/ui/app_type_dialog.blp:21
-msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+#, fuzzy
+#| msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "GTK 3 -sovellukset (teema adw-gtk3 vaaditaan)"
 
 #: data/ui/builtin_preset_row.blp:5
 msgid "Made by @GradienceTeam"
 msgstr "Tehnyt @GradienceTeam"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
+#: data/ui/builtin_preset_row.blp:12 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 msgid "Apply Preset"
 msgstr "Toteuta esiasetus"
@@ -126,9 +128,14 @@ msgid "Custom CSS"
 msgstr "Mukautettu CSS"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Keep in mind that Libadwaita was "
+#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins."
+"Changing this may break some programs. Libadwaita allows applications to "
+"hardcode values like padding and margins, and using custom CSS may cause "
+"unintended breakage."
 msgstr ""
 "Tämän muuttaminen saattaa rikkoa joitain ohjelmia. Pidä mielessä, että "
 "Libadwaita tehtiin siten, että sovellukset voivat kovakoodata arvoja kuten "
@@ -142,15 +149,15 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:21
+#: data/ui/explore_preset_row.blp:23
 msgid "Download and Apply"
 msgstr "Lataa ja toteuta"
 
-#: data/ui/explore_preset_row.blp:32
+#: data/ui/explore_preset_row.blp:34
 msgid "Download Only"
 msgstr "Lataa ainoastaan"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Monet-moottori"
 
@@ -159,22 +166,18 @@ msgstr "Monet-moottori"
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
 #| "image's color."
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from "
-"extracting image's colors."
+msgid "Monet Engine generates a Material You color palette from an image."
 msgstr ""
 "Monet on moottori, joka luo Material Design 3 -paletin kuvan väriin "
 "pohjautuen."
 
 #: data/ui/monet_theming_group.blp:9
-#, fuzzy
-#| msgid "Monet Engine"
 msgid "Monet Engine Options"
-msgstr "Monet-moottori"
+msgstr "Monet-moottorin asetukset"
 
 #: data/ui/monet_theming_group.blp:10
-msgid "Choose an image, and change the parameters of a generated Monet palette"
-msgstr ""
+msgid "Choose an image and modify generated Monet palette"
+msgstr "Valitse kuva ja muokkaa luotua Monet-palettia"
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
 #: data/ui/window.blp:29
@@ -182,20 +185,18 @@ msgid "Apply"
 msgstr "Toteuta"
 
 #: data/ui/monet_theming_group.blp:17
-#, fuzzy
-#| msgid "Apply preset"
 msgid "Apply a palette"
-msgstr "Toteuta esiasetus"
+msgstr "Toteuta paletti"
 
 #: data/ui/monet_theming_group.blp:23
 msgid "Select an Image"
 msgstr "Valitse kuva"
 
-#: data/ui/monet_theming_group.blp:32
+#: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
 msgstr "Valitse tiedosto"
 
-#: data/ui/monet_theming_group.blp:41
+#: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Valitse kuvatiedosto"
 
@@ -204,8 +205,8 @@ msgid "Log out"
 msgstr "Kirjaudu ulos"
 
 #: data/ui/log_out_dialog.blp:6
-msgid "For the changes to take full effect, you need to log out."
-msgstr "Muutosten toteuttaminen vaatii uloskirjautumisen."
+msgid "Log out to allow changes to take effect."
+msgstr "Kirjaudu ulos, jotta muutokset tulevat voimaan."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -216,50 +217,46 @@ msgid "No Preferences"
 msgstr "Ei asetuksia"
 
 #: data/ui/no_plugin_window.blp:16
-msgid "This plugin doesn't have any preferences."
-msgstr "Tämä liitännäinen ei sisällä asetuksia."
+msgid "This plugin has no preferences."
+msgstr "Tässä liitännäisessä ei ole asetuksia."
 
-#: data/ui/option_row.blp:10
+#: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
 msgstr "GTK 3 -tuen varoitus"
 
-#: data/ui/option_row.blp:19
+#: data/ui/option_row.blp:21
 msgid "Explanation"
 msgstr "Selitys"
 
-#: data/ui/option_row.blp:43
-msgid "Toggle Text Value"
-msgstr "Näytä/piilota tekstiarvo"
+#: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
+msgid "Show Hex"
+msgstr ""
 
-#: data/ui/plugin_row.blp:8
+#: data/ui/plugin_row.blp:10
 #, fuzzy
 msgid "Toggle Plugin"
 msgstr "Käytä liitännäistä"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:128
 msgid "Preferences"
 msgstr "Asetukset"
 
-#: data/ui/plugin_row.blp:28
+#: data/ui/plugin_row.blp:30
 msgid "Remove Plugin"
 msgstr "Poista liitännäinen"
 
 #: data/ui/preferences_window.blp:11
 msgid "General"
-msgstr ""
+msgstr "Yleiset"
 
 #: data/ui/preferences_window.blp:15
-#, fuzzy
-#| msgid "GTK 4 Flatpak Applications"
 msgid "Flatpak Applications"
-msgstr "GTK 4 Flatpak -sovellukset"
+msgstr "Flatpak-sovellukset"
 
 #: data/ui/preferences_window.blp:18
-#, fuzzy
-#| msgid "Allow GTK 4 Flatpak theming"
 msgid "Allow GTK 4 Theming"
-msgstr "Salli GTK 4 Flatpak -teemoitus"
+msgstr "Salli GTK 4 -teemoitus"
 
 #: data/ui/preferences_window.blp:19
 #, fuzzy
@@ -274,10 +271,8 @@ msgstr ""
 "muotoisten GTK 4 -sovellusten käyttää mukautettuja teemoja."
 
 #: data/ui/preferences_window.blp:28
-#, fuzzy
-#| msgid "Allow GTK 4 Flatpak Applications Theming (System)"
 msgid "Allow GTK 4 Theming (System)"
-msgstr "Salli GTK 4 Flatpak -sovellusten teemoitus (järjestelmä)"
+msgstr "Salli GTK 4 -sovellusten teemoitus (järjestelmä)"
 
 #: data/ui/preferences_window.blp:29
 #, fuzzy
@@ -293,16 +288,10 @@ msgstr ""
 "oikeuden)"
 
 #: data/ui/preferences_window.blp:37
-#, fuzzy
-#| msgid "Allow GTK 3 Flatpak theming"
 msgid "Allow GTK 3 Theming"
-msgstr "Salli GTK 3 Flatpak -teemoitus"
+msgstr "Salli GTK 3 -teemoitus"
 
 #: data/ui/preferences_window.blp:38
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak "
-#| "applications to access adw-gtk3 theme."
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme."
@@ -311,16 +300,10 @@ msgstr ""
 "muotoisten GTK 3 -sovellusten käyttää adw-gtk3-teemaa."
 
 #: data/ui/preferences_window.blp:47
-#, fuzzy
-#| msgid "Allow GTK 4 Flatpak Applications Theming (System)"
 msgid "Allow GTK 3 Theming (System)"
-msgstr "Salli GTK 4 Flatpak -sovellusten teemoitus (järjestelmä)"
+msgstr "Salli GTK 3 -sovellusten teemoitus (järjestelmä)"
 
 #: data/ui/preferences_window.blp:48
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for all users to allow GTK 3 Flatpak "
-#| "applications to access adw-gtk3 theme. (Requires root access)"
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme. (Requires root access)"
@@ -329,58 +312,52 @@ msgstr ""
 "muotoisten GTK 3 -sovellusten käyttää adw-gtk3-teemaa. (Vaatii root-oikeuden)"
 
 #: data/ui/preferences_window.blp:58
-#, fuzzy
-#| msgid "Presets Menu"
 msgid "Preset Fetching"
-msgstr "Esiasetukset-valikko"
+msgstr "Esiasetusten haku"
 
 #: data/ui/preferences_window.blp:60
 msgid "Use an alternative server for downloading presets"
-msgstr ""
+msgstr "Käytä vaihtoehtoista palvelinta esiasetusten lataukseen"
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDeliver will be used instead of direct preset fetching from GitHub"
+msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgstr ""
 
-#: data/ui/preferences_window.blp:72
+#: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
 msgstr "Mukautetut esiasetusten tietovarastot"
 
-#: data/ui/preferences_window.blp:75
+#: data/ui/preferences_window.blp:76
 msgid "Custom repository URL address"
 msgstr "Mukautetun tietovaraston URL-osoite"
 
-#: data/ui/preferences_window.blp:95
-#, fuzzy
-#| msgid "Theme"
+#: data/ui/preferences_window.blp:96
 msgid "Theming"
-msgstr "Teema"
-
-#: data/ui/preferences_window.blp:99
-#, fuzzy
-#| msgid "Monet Engine"
-msgid "Theme Engines"
-msgstr "Monet-moottori"
+msgstr "Teemoitus"
 
 #: data/ui/preferences_window.blp:100
+msgid "Theme Engines"
+msgstr "Teemamoottorit"
+
+#: data/ui/preferences_window.blp:101
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
 msgstr ""
 
-#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Shell Engine"
 msgstr "Monet-moottori"
 
-#: data/ui/preferences_window.blp:104
+#: data/ui/preferences_window.blp:105
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
 msgstr ""
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:114
 #, fuzzy
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
@@ -401,8 +378,8 @@ msgid "Description"
 msgstr "Kuvaus"
 
 #: data/ui/preset_row.blp:81
-msgid "Sorry, but this preset don't have a description."
-msgstr "Tällä esiasetuksella ei ole kuvausta."
+msgid "This preset has no description."
+msgstr "Tässä esiasetuksessa ei ole kuvausta."
 
 #: data/ui/preset_row.blp:93
 msgid "No Badges"
@@ -429,7 +406,7 @@ msgid "Import"
 msgstr "Tuo"
 
 #: data/ui/presets_manager_window.blp:32
-msgid "Import a Preset File"
+msgid "Import Preset File"
 msgstr "Tuo esiasetustiedosto"
 
 #: data/ui/presets_manager_window.blp:38
@@ -495,34 +472,24 @@ msgid "JSON file (*.json)"
 msgstr "JSON-tiedosto (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-#, fuzzy
-#| msgid "Rename Preset"
 msgid "Reset and Restore Presets"
-msgstr "Nimeä esiasetus uudelleen"
+msgstr "Nollaa ja palauta esiasetukset"
 
 #: data/ui/reset_preset_group.blp:6
-msgid ""
-"This section allows you to reset a currently applied preset or restore the "
-"previous one."
+msgid "Reset a currently applied preset or restore the previous one."
 msgstr ""
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
-#, fuzzy
-#| msgid "Remove Preset"
 msgid "Restore Previous Preset"
-msgstr "Poista esiasetus"
+msgstr "Palauta edellinen esiasetus"
 
 #: data/ui/reset_preset_group.blp:21 data/ui/reset_preset_group.blp:41
-#, fuzzy
-#| msgid "_Reset"
 msgid "Reset"
-msgstr "_Nollaa"
+msgstr "Nollaa"
 
 #: data/ui/reset_preset_group.blp:22 data/ui/reset_preset_group.blp:42
-#, fuzzy
-#| msgid "Reset Applied Color Scheme"
 msgid "Reset Applied Preset"
-msgstr "Nollaa toteutettu väriteema"
+msgstr "Nollaa toteutettu esiasetus"
 
 #: data/ui/reset_preset_group.blp:29
 msgid "GTK 3 Applications"
@@ -614,7 +581,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "Vanhojen sovellusten teemoitus"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
+#: data/ui/share_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Asenna adw-gtk3-teema vanhojen sovellusten teemoitusta varten."
 
@@ -627,7 +594,7 @@ msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 "Määritä järjestelmä teemoitusta varten, mahdollistaa Flatpak-teeman ylityksen"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
+#: data/ui/share_window.blp:136
 msgid "Installing Themes"
 msgstr "Asennetaan teemoja"
 
@@ -672,16 +639,16 @@ msgid "Custom Shell Colors"
 msgstr "Varjostusväri"
 
 #: data/ui/shell_prefs_window.blp:14
-msgid ""
-"This section allows you to customize colors that will be used in the Shell "
-"theme."
-msgstr ""
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Shell theme colors."
+msgstr "Mukauta Adwaita-teemaa"
 
 #: data/ui/shell_theming_group.blp:6
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
-"currently selected preset.\n"
-"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"Shell Engine generates a custom GNOME Shell theme based on the currently "
+"selected preset.\n"
+"WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 
@@ -690,13 +657,13 @@ msgid "Shell Engine Options"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:10
-msgid "Change the parameters of a generated GNOME Shell theme"
+msgid "Change the generated GNOME Shell theme"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:17
 #, fuzzy
 #| msgid "Apply This Color Scheme?"
-msgid "Apply a Shell theme"
+msgid "Apply Shell theme"
 msgstr "Toteutetaanko tämä väriteema?"
 
 #: data/ui/shell_theming_group.blp:23
@@ -705,43 +672,41 @@ msgstr "Toteutetaanko tämä väriteema?"
 msgid "Customize Shell Theme"
 msgstr "Mukauta Adwaita-teemaa"
 
-#: data/ui/shell_theming_group.blp:28
+#: data/ui/shell_theming_group.blp:29
 #, fuzzy
 #| msgid "No Preferences"
 msgid "Open Shell Preferences"
 msgstr "Ei asetuksia"
 
-#: data/ui/shell_theming_group.blp:34
+#: data/ui/shell_theming_group.blp:35
 #, fuzzy
 #| msgid "Preset reseted"
 msgid "Preset Variant"
 msgstr "Esiasetus nollattu"
 
-#: data/ui/shell_theming_group.blp:35
-msgid "Select which preset variant you have currently applied"
+#: data/ui/shell_theming_group.blp:36
+msgid "Select currently applied preset variant"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:47
+#: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:55
+#: data/ui/shell_theming_group.blp:56
 #, fuzzy
 #| msgid "Preset removed"
 msgid "Reset Theme"
 msgstr "Esiasetus poistettu"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:57
 #, fuzzy
 #| msgid "Reset applied color scheme?"
-msgid "Reset an applied theme"
+msgid "Reset applied theme"
 msgstr "Nollataanko toteutettu väriteema?"
 
 #: data/ui/theming_empty_group.blp:5
-#, fuzzy
-#| msgid "Monet Engine"
 msgid "No Theme Engines"
-msgstr "Monet-moottori"
+msgstr "Ei teemamoottoreita"
 
 #: data/ui/theming_empty_group.blp:6
 msgid ""
@@ -754,10 +719,8 @@ msgid "Open Preferences to manage Theme Engines"
 msgstr ""
 
 #: data/ui/theming_empty_group.blp:14 data/ui/theming_empty_group.blp:15
-#, fuzzy
-#| msgid "Preferences"
 msgid "Open Preferences"
-msgstr "Asetukset"
+msgstr "Avaa asetukset"
 
 #: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:63
 msgid "Welcome to Gradience"
@@ -774,14 +737,12 @@ msgid ""
 msgstr ""
 
 #: data/ui/welcome_window.blp:84
-#, fuzzy
-#| msgid "Continue"
 msgid "Agree and Continue"
-msgstr "Jatka"
+msgstr "Hyväksy ja jatka"
 
 #: data/ui/welcome_window.blp:96
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
 "Vaihda ikkunoiden, painikkeiden, luettelojen ja muiden elementtien väriä ja "
@@ -791,9 +752,19 @@ msgstr ""
 msgid "Legacy Apps Theming"
 msgstr "Vanhojen sovellusten teemoitus"
 
+#: data/ui/welcome_window.blp:113
+#, fuzzy
+#| msgid "Install adw-gtk3 theme for legacy apps theming"
+msgid "Install adw-gtk3 theme for legacy app theming"
+msgstr "Asenna adw-gtk3-teema vanhojen sovellusten teemoitusta varten."
+
 #: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "Järjestelmän määritys"
+
+#: data/ui/welcome_window.blp:134
+msgid "Installing adw-gtk3"
+msgstr "Asennetaan adw-gtk3"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -820,10 +791,8 @@ msgid "_Colors"
 msgstr "_Värit"
 
 #: data/ui/window.blp:97
-#, fuzzy
-#| msgid "Theme"
 msgid "_Theming"
-msgstr "Teema"
+msgstr "_Teemoitus"
 
 #: data/ui/window.blp:106
 msgid "_Advanced"
@@ -831,7 +800,7 @@ msgstr "_Lisäasetukset"
 
 #: data/ui/window.blp:133
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Pikanäppäimet"
 
 #: data/ui/window.blp:138
 msgid "About Gradience"
@@ -1263,20 +1232,26 @@ msgid "Palette generated"
 msgstr "Paletti luotu"
 
 #: gradience/frontend/widgets/monet_theming_group.py:141
-#, fuzzy
-#| msgid "Select an Image"
 msgid "Select an image first"
-msgstr "Valitse kuva"
+msgstr "Valitse ensin kuva"
 
 #: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is only partially supported by the adw-gtk3 theme."
+msgid "This option is only partially supported by adw-gtk3."
 msgstr "Tämä valinta on vain osittain tuettu adw-gtk3-teeman toimesta."
 
 #: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is not supported by the adw-gtk3 theme."
+msgid "This option is not supported by adw-gtk3."
 msgstr "Tämä valinta ei ole tuettu adw-gtk3-teeman toimesta."
 
-#: gradience/frontend/widgets/option_row.py:116
+#: gradience/frontend/widgets/option_row.py:96
+msgid "Show Color"
+msgstr "Näytä väri"
+
+#: gradience/frontend/widgets/option_row.py:118
 msgid "Not a color, see text value"
 msgstr "Ei väri, katso tekstiarvo"
 
@@ -1351,22 +1326,18 @@ msgid ""
 msgstr ""
 
 #: gradience/frontend/widgets/shell_theming_group.py:121
-#, fuzzy
-#| msgid "Monet Engine"
 msgid "Disable Engine"
-msgstr "Monet-moottori"
+msgstr "Poista moottori käytöstä"
 
 #: gradience/frontend/widgets/shell_theming_group.py:122
 #: gradience/frontend/widgets/shell_theming_group.py:133
 #: gradience/frontend/widgets/shell_theming_group.py:145
-#, fuzzy
-#| msgid "Continue"
 msgid "Continue Anyway"
-msgstr "Jatka"
+msgstr "Jatka silti"
 
 #: gradience/frontend/widgets/shell_theming_group.py:129
 msgid "User Themes Extension Missing"
-msgstr ""
+msgstr "User Themes -laajennus puuttuu"
 
 #: gradience/frontend/widgets/shell_theming_group.py:130
 msgid ""
@@ -1376,13 +1347,12 @@ msgid ""
 msgstr ""
 
 #: gradience/frontend/widgets/shell_theming_group.py:132
-#, fuzzy
 msgid "Install Extension"
-msgstr "Asennetaan teemoja"
+msgstr "Asenna laajennus"
 
 #: gradience/frontend/widgets/shell_theming_group.py:140
 msgid "User Themes Extension Disabled"
-msgstr ""
+msgstr "User Themes -laajennus poistettu käytöstä"
 
 #: gradience/frontend/widgets/shell_theming_group.py:141
 msgid ""
@@ -1431,22 +1401,20 @@ msgid ""
 "Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
 "contributors"
 msgstr ""
+"Avustajat GitHubissa https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 
 #: gradience/frontend/views/about_window.py:69
 msgid "Presets by"
 msgstr "Esiasetukset"
 
 #: gradience/frontend/views/about_window.py:71
-#, fuzzy
-#| msgid ""
-#| "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#| "Community\">GradienceTeam/Community</a>."
 msgid ""
 "Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
 "contributors"
 msgstr ""
-"Kirjoita hakusana jota etsitään <a href=\"https://github.com/GradienceTeam/"
-"Community\">GradienceTeam/Communitysta</a>."
+"Avustajat GitHubissa https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
 
 #: gradience/frontend/views/main_window.py:204
 msgid "Palette Colors"
@@ -1577,6 +1545,23 @@ msgstr "Esiasetus tallennettu"
 #: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "Esiasetus asetettu onnistuneesti"
+
+#~ msgid "Toggle Text Value"
+#~ msgstr "Näytä/piilota tekstiarvo"
+
+#, fuzzy
+#~| msgid ""
+#~| "Monet is an engine that generates a Material Design 3 palette from an "
+#~| "image's color."
+#~ msgid ""
+#~ "Monet is an engine that generates a Material Design 3 palette from "
+#~ "extracting image's colors."
+#~ msgstr ""
+#~ "Monet on moottori, joka luo Material Design 3 -paletin kuvan väriin "
+#~ "pohjautuen."
+
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "Muutosten toteuttaminen vaatii uloskirjautumisen."
 
 #~ msgid "Allow GTK 4 Flatpak Applications Theming"
 #~ msgstr "Salli GTK 4 Flatpak -sovellusten teemoitus"

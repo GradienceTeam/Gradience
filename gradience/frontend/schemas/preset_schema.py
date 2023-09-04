@@ -271,6 +271,93 @@ preset_schema = {
             ],
         },
         {
+            "name": "sidebar_colors",
+            "title": _("Sidebar Colors"),
+            "description": _(
+                "These colors are used for sidebars, generally attached to the left "
+                "or right sides of a window. They are used by AdwNavigationSplitView "
+                "and AdwOverlaySplitView when they are not collapsed."
+            ),
+            "variables": [
+                {
+                    "name": "sidebar_bg_color",
+                    "title": _("Background Color"),
+                    "adw_gtk3_support": "no",
+                },
+                {
+                    "name": "sidebar_fg_color",
+                    "title": _("Foreground Color"),
+                    "adw_gtk3_support": "no",
+                },
+                {
+                    "name": "sidebar_backdrop_color",
+                    "title": _("Backdrop Color"),
+                    "explanation": _(
+                        "The backdrop color is used instead of the "
+                        "background color when the window is not focused. By "
+                        "default it's an alias of the window's background "
+                        "color and changes together with it. When changing "
+                        "this variable, make sure to set it to a value "
+                        "matching your header bar background color."
+                    ),
+                    "adw_gtk3_support": "no",
+                },
+                {
+                    "name": "sidebar_shade_color",
+                    "title": _("Shade Color"),
+                    "explanation": _(
+                        "The shade color is used to provide a dark border "
+                        "for header bars and similar widgets that separates "
+                        "them from the main window."
+                    ),
+                    "adw_gtk3_support": "no",
+                },
+            ],
+        },
+        {
+            "name": "secondary_sidebar_colors",
+            "title": _("Secondary Sidebar Colors"),
+            "description": _(
+                "These colors are used for middle panes in triple-pane layouts,  "
+                "created via nesting two split views within one another."
+            ),
+            "variables": [
+                {
+                    "name": "secondary_sidebar_bg_color",
+                    "title": _("Background Color"),
+                    "adw_gtk3_support": "no",
+                },
+                {
+                    "name": "secondary_sidebar_fg_color",
+                    "title": _("Foreground Color"),
+                    "adw_gtk3_support": "no",
+                },
+                {
+                    "name": "secondary_sidebar_backdrop_color",
+                    "title": _("Backdrop Color"),
+                    "explanation": _(
+                        "The backdrop color is used instead of the "
+                        "background color when the window is not focused. By "
+                        "default it's an alias of the window's background "
+                        "color and changes together with it. When changing "
+                        "this variable, make sure to set it to a value "
+                        "matching your header bar background color."
+                    ),
+                    "adw_gtk3_support": "no",
+                },
+                {
+                    "name": "secondary_sidebar_shade_color",
+                    "title": _("Shade Color"),
+                    "explanation": _(
+                        "The shade color is used to provide a dark border "
+                        "for header bars and similar widgets that separates "
+                        "them from the main window."
+                    ),
+                    "adw_gtk3_support": "no",
+                },
+            ],
+        },
+        {
             "name": "card_colors",
             "title": _("Card Colors"),
             "description": _("These colors are used for cards and boxed lists."),
@@ -345,6 +432,16 @@ preset_schema = {
                     "name": "popover_fg_color",
                     "title": _("Foreground Color"),
                     "adw_gtk3_support": "yes",
+                },
+                {
+                    "name": "popover_shade_color",
+                    "title": _("Shade Color"),
+                    "explanation": _(
+                        "The shade color is used for scroll undershoot styles within popovers, "
+                        "as well as transitions in AdwNavigationView, AdwOverlaySplitView, "
+                        "AdwLeaflet and AdwFlap."
+                    ),
+                    "adw_gtk3_support": "no",
                 },
             ],
         },

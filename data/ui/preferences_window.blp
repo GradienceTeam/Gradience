@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradiencePreferencesWindow : Adw.PreferencesWindow {
+template $GradiencePreferencesWindow : Adw.PreferencesWindow {
   title: _("Preferences");
   default-height: 400;
   default-width: 600;
@@ -53,19 +53,20 @@ template GradiencePreferencesWindow : Adw.PreferencesWindow {
       }
     }
 
-    Adw.PreferencesGroup jsdeliver_group {
+    Adw.PreferencesGroup jsdelivr_group {
 
       title: _("Preset Fetching");
-      Adw.ActionRow jsdeliver_row {
+      Adw.ActionRow jsdelivr_row {
         title: _("Use an alternative server for downloading presets");
-        subtitle: _("JSDeliver will be used instead of direct preset fetching from GitHub");
-        Gtk.Switch jsdeliver_switch {
+        subtitle: _("JSDelivr will be used instead of direct preset fetching from GitHub");
+        activatable-widget: jsdelivr_switch;
+        Gtk.Switch jsdelivr_switch {
           valign: center;
         }
       }
     }
 
-      
+
     // NOTE: This group is disabled as there isn't yet any implementation of custom repositories in Gradience
     Adw.PreferencesGroup custom_repository_group {
       visible: false;

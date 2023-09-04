@@ -10,10 +10,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 17:45+0000\n"
-"PO-Revision-Date: 2023-05-24 11:43+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
+"POT-Creation-Date: 2023-06-27 13:11+0000\n"
+"PO-Revision-Date: 2023-08-27 18:55+0000\n"
+"Last-Translator: Davide <davide.ferracin@protonmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/it/>\n"
 "Language: it\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -71,52 +71,42 @@ msgid "🧩️ Extending functionality using plugins"
 msgstr "🧩️ Estendere le funzionalità con dei plugin"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:27
-#, fuzzy
-#| msgid "Screenshot of \"Colors\" Tab"
 msgid "Screenshot of \"Colors\" Tab of Main UI"
-msgstr "Schermata della scheda «Colori»"
+msgstr "Schermata della scheda «Colori» nell'interfaccia principale"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:32
-#, fuzzy
-#| msgid "Screenshot of \"Monet\" Tab"
 msgid "Screenshot of \"Monet\" Tab of Main UI"
-msgstr "Schermata della scheda «Monet»"
+msgstr "Schermata della scheda «Monet» nell'interfaccia principale"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:37
-#, fuzzy
-#| msgid "Screenshot of \"Advanced\" Tab"
 msgid "Screenshot of \"Advanced\" Tab of Main UI"
-msgstr "Schermata della scheda «Avanzate»"
+msgstr "Schermata della scheda «Avanzate» nell'interfaccia principale"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:42
-#, fuzzy
-#| msgid "Screenshot of \"Advanced\" Tab"
 msgid "Screenshot of \"Installed\" Tab of Preset Manager"
-msgstr "Schermata della scheda «Avanzate»"
+msgstr "Schermata della scheda «Installate» nel gestore delle configurazioni"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:47
-#, fuzzy
-#| msgid "Screenshot of \"Colors\" Tab"
 msgid "Screenshot of \"Explore\" Tab of Preset Manager"
-msgstr "Schermata della scheda «Colori»"
+msgstr "Schermata della scheda «Esplosa» nel gestore delle configurazioni"
 
 #: data/ui/app_type_dialog.blp:14
-msgid "Select application types you want to theme:"
-msgstr "Selezionare i tipi di applicazioni di cui si vuole cambiare il tema:"
+msgid "Select application types to theme:"
+msgstr "Selezionare i tipi di applicazioni a cui cambiare il tema:"
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita e applicazioni GTK 4"
 
 #: data/ui/app_type_dialog.blp:21
-msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "Applicazioni GTK 3 (è richiesto il tema adw-gtk3)"
 
 #: data/ui/builtin_preset_row.blp:5
 msgid "Made by @GradienceTeam"
 msgstr "Creato da @GradienceTeam"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
+#: data/ui/builtin_preset_row.blp:12 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 msgid "Apply Preset"
 msgstr "Applica configurazione"
@@ -127,13 +117,13 @@ msgstr "CSS personalizzato"
 
 #: data/ui/custom_css_group.blp:6
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins."
+"Changing this may break some programs. Libadwaita allows applications to "
+"hardcode values like padding and margins, and using custom CSS may cause "
+"unintended breakage."
 msgstr ""
 "Questa modifica potrebbe impedire il funzionamento corretto di alcuni "
-"programmi. Si tenga presente che Libadwaita è stato sviluppato in modo che "
-"le applicazioni possano fissare nel codice dei valori come i bordi e i "
-"margini."
+"programmi. Libadwaita è stato sviluppato in modo che le applicazioni possano "
+"fissare nel codice dei valori come i bordi e i margini."
 
 #: data/ui/custom_css_group.blp:33
 msgid "GTK 4"
@@ -143,39 +133,30 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:21
+#: data/ui/explore_preset_row.blp:23
 msgid "Download and Apply"
 msgstr "Scarica e applica"
 
-#: data/ui/explore_preset_row.blp:32
+#: data/ui/explore_preset_row.blp:34
 msgid "Download Only"
 msgstr "Scarica soltanto"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Generatore Monet"
 
 #: data/ui/monet_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Monet is an engine that generates a Material Design 3 palette from an "
-#| "image's color."
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from "
-"extracting image's colors."
+msgid "Monet Engine generates a Material You color palette from an image."
 msgstr ""
-"Monet è un generatore che crea una tavolozza Material Design 3 a partire dai "
-"colori di un'immagine."
+"Il generatore Monet crea una tavolozza Material You a partire da un'immagine."
 
 #: data/ui/monet_theming_group.blp:9
-#, fuzzy
-#| msgid "Monet Engine"
 msgid "Monet Engine Options"
-msgstr "Generatore Monet"
+msgstr "Opzioni del generatore Monet"
 
 #: data/ui/monet_theming_group.blp:10
-msgid "Choose an image, and change the parameters of a generated Monet palette"
-msgstr ""
+msgid "Choose an image and modify generated Monet palette"
+msgstr "Scegliere un'immagine e modificare la tavolozza Monet generata"
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
 #: data/ui/window.blp:29
@@ -183,20 +164,18 @@ msgid "Apply"
 msgstr "Applica"
 
 #: data/ui/monet_theming_group.blp:17
-#, fuzzy
-#| msgid "Apply preset"
 msgid "Apply a palette"
-msgstr "Applica configurazione"
+msgstr "Applica una tavolozza"
 
 #: data/ui/monet_theming_group.blp:23
 msgid "Select an Image"
 msgstr "Selezionare un'immagine"
 
-#: data/ui/monet_theming_group.blp:32
+#: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
 msgstr "Scegliere un file"
 
-#: data/ui/monet_theming_group.blp:41
+#: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Scegliere un file immagine"
 
@@ -205,10 +184,9 @@ msgid "Log out"
 msgstr "Termina sessione"
 
 #: data/ui/log_out_dialog.blp:6
-msgid "For the changes to take full effect, you need to log out."
+msgid "Log out to allow changes to take effect."
 msgstr ""
-"È necessario terminare la propria sessione affinché le modifiche abbiano "
-"pieno effetto."
+"È necessario terminare la sessione affinché le modifiche abbiano effetto."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -219,55 +197,47 @@ msgid "No Preferences"
 msgstr "Nessuna preferenza"
 
 #: data/ui/no_plugin_window.blp:16
-msgid "This plugin doesn't have any preferences."
+msgid "This plugin has no preferences."
 msgstr "Questo plugin non ha preferenze."
 
-#: data/ui/option_row.blp:10
+#: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
 msgstr "Avviso per il supporto GTK 3"
 
-#: data/ui/option_row.blp:19
+#: data/ui/option_row.blp:21
 msgid "Explanation"
-msgstr "Descrizione"
+msgstr "Spiegazione"
 
-#: data/ui/option_row.blp:43
-msgid "Toggle Text Value"
-msgstr "Cambia valore del testo"
+#: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
+msgid "Show Hex"
+msgstr "Mostra esadecimale"
 
-#: data/ui/plugin_row.blp:8
+#: data/ui/plugin_row.blp:10
 msgid "Toggle Plugin"
 msgstr "Attiva plugin"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:128
 msgid "Preferences"
 msgstr "Preferenze"
 
-#: data/ui/plugin_row.blp:28
+#: data/ui/plugin_row.blp:30
 msgid "Remove Plugin"
 msgstr "Rimuovi plugin"
 
 #: data/ui/preferences_window.blp:11
 msgid "General"
-msgstr ""
+msgstr "Generali"
 
 #: data/ui/preferences_window.blp:15
-#, fuzzy
-#| msgid "GTK 4 Flatpak Applications"
 msgid "Flatpak Applications"
-msgstr "Applicazioni Flatpak con GTK 4"
+msgstr "Applicazioni Flatpak"
 
 #: data/ui/preferences_window.blp:18
-#, fuzzy
-#| msgid "Allow GTK 4 Flatpak theming"
 msgid "Allow GTK 4 Theming"
-msgstr "Autorizza i temi per Flatpak con GTK 4"
+msgstr "Autorizza i temi per GTK 4"
 
 #: data/ui/preferences_window.blp:19
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 4 Flatpak "
-#| "applications to access custom themes."
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to "
 "access custom themes."
@@ -276,16 +246,10 @@ msgstr ""
 "applicazioni Flatpak con GTK 4 di accedere ai temi personalizzati."
 
 #: data/ui/preferences_window.blp:28
-#, fuzzy
-#| msgid "Allow GTK 4 Flatpak Applications Theming (System)"
 msgid "Allow GTK 4 Theming (System)"
-msgstr "Autorizza l'uso dei temi per applicazioni Flatpak con GTK 4 (sistema)"
+msgstr "Autorizza l'uso dei temi per GTK 4 (sistema)"
 
 #: data/ui/preferences_window.blp:29
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for all users to allow GTK 4 Flatpak "
-#| "applications to access custom themes. (Requires root access)"
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
 "access custom themes. (Requires root access)"
@@ -295,16 +259,10 @@ msgstr ""
 "l'accesso come root.)"
 
 #: data/ui/preferences_window.blp:37
-#, fuzzy
-#| msgid "Allow GTK 3 Flatpak theming"
 msgid "Allow GTK 3 Theming"
-msgstr "Autorizza i temi per Flatpak con GTK 3"
+msgstr "Autorizza i temi per GTK 3"
 
 #: data/ui/preferences_window.blp:38
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak "
-#| "applications to access adw-gtk3 theme."
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme."
@@ -313,16 +271,10 @@ msgstr ""
 "applicazioni Flatpak con GTK 3 di accedere al tema adw-gtk3."
 
 #: data/ui/preferences_window.blp:47
-#, fuzzy
-#| msgid "Allow GTK 4 Flatpak Applications Theming (System)"
 msgid "Allow GTK 3 Theming (System)"
-msgstr "Autorizza l'uso dei temi per applicazioni Flatpak con GTK 4 (sistema)"
+msgstr "Autorizza l'uso dei temi per GTK 3 (sistema)"
 
 #: data/ui/preferences_window.blp:48
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for all users to allow GTK 3 Flatpak "
-#| "applications to access adw-gtk3 theme. (Requires root access)"
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme. (Requires root access)"
@@ -332,67 +284,59 @@ msgstr ""
 "l'accesso come root.)"
 
 #: data/ui/preferences_window.blp:58
-#, fuzzy
-#| msgid "Presets Menu"
 msgid "Preset Fetching"
-msgstr "Menù configurazioni"
+msgstr "Acquisizione delle configurazioni"
 
 #: data/ui/preferences_window.blp:60
 msgid "Use an alternative server for downloading presets"
-msgstr ""
+msgstr "Usa un server alternativo per scaricare le configurazioni"
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDeliver will be used instead of direct preset fetching from GitHub"
-msgstr ""
+msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+msgstr "JSDelivr verrà usato al posto dello scaricamento diretto da GitHub"
 
-#: data/ui/preferences_window.blp:72
+#: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
 msgstr "Repository delle configurazioni personalizzate"
 
-#: data/ui/preferences_window.blp:75
+#: data/ui/preferences_window.blp:76
 msgid "Custom repository URL address"
 msgstr "Indirizzo URL personalizzato del repository"
 
-#: data/ui/preferences_window.blp:95
-#, fuzzy
-#| msgid "Theme"
+#: data/ui/preferences_window.blp:96
 msgid "Theming"
-msgstr "Tema"
-
-#: data/ui/preferences_window.blp:99
-#, fuzzy
-#| msgid "Monet Engine"
-msgid "Theme Engines"
-msgstr "Generatore Monet"
+msgstr "Temi"
 
 #: data/ui/preferences_window.blp:100
+msgid "Theme Engines"
+msgstr "Generatori di temi"
+
+#: data/ui/preferences_window.blp:101
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
 msgstr ""
+"I generatori di temi sono strumenti integrati che servono a creare temi per "
+"svariati programmi e framework personalizzabili."
 
-#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
-#, fuzzy
-#| msgid "Monet Engine"
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 msgid "Shell Engine"
-msgstr "Generatore Monet"
+msgstr "Generatore Shell"
 
-#: data/ui/preferences_window.blp:104
+#: data/ui/preferences_window.blp:105
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
 msgstr ""
+"Il generatore Shell genera un tema per la shell di GNOME sulla base della "
+"configurazione attualmente selezionata."
 
-#: data/ui/preferences_window.blp:113
-#, fuzzy
-#| msgid ""
-#| "Monet is an engine that generates a Material Design 3 palette from an "
-#| "image's color."
+#: data/ui/preferences_window.blp:114
 msgid ""
 "Monet Engine generates a Material Design 3 palette by extracting the image's "
 "colors."
 msgstr ""
-"Monet è un generatore che crea una tavolozza Material Design 3 a partire dai "
+"Il generatore Monet crea una tavolozza Material Design 3 a partire dai "
 "colori di un'immagine."
 
 #: data/ui/preset_row.blp:65
@@ -404,7 +348,7 @@ msgid "Description"
 msgstr "Descrizione"
 
 #: data/ui/preset_row.blp:81
-msgid "Sorry, but this preset don't have a description."
+msgid "This preset has no description."
 msgstr "Questa configurazione non contiene alcuna descrizione."
 
 #: data/ui/preset_row.blp:93
@@ -412,10 +356,8 @@ msgid "No Badges"
 msgstr "Nessun badge"
 
 #: data/ui/preset_row.blp:102 data/ui/presets_manager_window.blp:44
-#, fuzzy
-#| msgid "Remove Preset"
 msgid "Report Preset Issue"
-msgstr "Rimuovi configurazione"
+msgstr "Segnala un problema della configurazione"
 
 #: data/ui/preset_row.blp:109
 msgid "Remove preset"
@@ -434,8 +376,8 @@ msgid "Import"
 msgstr "Importa"
 
 #: data/ui/presets_manager_window.blp:32
-msgid "Import a Preset File"
-msgstr "Importare un file di configurazione"
+msgid "Import Preset File"
+msgstr "Importa un file di configurazione"
 
 #: data/ui/presets_manager_window.blp:38
 msgid "Delete"
@@ -500,34 +442,26 @@ msgid "JSON file (*.json)"
 msgstr "File JSON (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-#, fuzzy
-#| msgid "Rename Preset"
 msgid "Reset and Restore Presets"
-msgstr "Rinomina configurazione"
+msgstr "Reimposta e ripristina configurazioni"
 
 #: data/ui/reset_preset_group.blp:6
-msgid ""
-"This section allows you to reset a currently applied preset or restore the "
-"previous one."
+msgid "Reset a currently applied preset or restore the previous one."
 msgstr ""
+"Reimposta una configurazione attualmente applicata, o ripristina la "
+"precedente."
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
-#, fuzzy
-#| msgid "Remove Preset"
 msgid "Restore Previous Preset"
-msgstr "Rimuovi configurazione"
+msgstr "Ripristina la precedente configurazione"
 
 #: data/ui/reset_preset_group.blp:21 data/ui/reset_preset_group.blp:41
-#, fuzzy
-#| msgid "_Reset"
 msgid "Reset"
-msgstr "_Reimposta"
+msgstr "Reimposta"
 
 #: data/ui/reset_preset_group.blp:22 data/ui/reset_preset_group.blp:42
-#, fuzzy
-#| msgid "Reset Applied Color Scheme"
 msgid "Reset Applied Preset"
-msgstr "Reimposta lo schema di colori applicato"
+msgstr "Reimposta la configurazione applicata"
 
 #: data/ui/reset_preset_group.blp:29
 msgid "GTK 3 Applications"
@@ -569,10 +503,10 @@ msgid ""
 "make a pull request and share it with the world!"
 msgstr ""
 "Gradience usa GitHub per condividere le configurazioni degli utenti. È "
-"necessario creare un account GitHub ed effettuare il fork di <a href="
-"\"https://github.com/GradienceTeam/Community\">GradienceTeam/Community</a>. "
-"A quel punto è possibile caricare la propria configurazione, effettuare una "
-"pull request e condividerla con gli altri utenti!"
+"necessario creare un account GitHub ed effettuare il fork di <a href=\"https"
+"://github.com/GradienceTeam/Community\">GradienceTeam/Community</a>. A quel "
+"punto è possibile caricare la propria configurazione, effettuare una pull "
+"request e condividerla con gli altri utenti!"
 
 #: data/ui/share_window.blp:81 data/ui/welcome_window.blp:79
 msgid "Warning"
@@ -621,7 +555,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "Temi delle applicazioni datate"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
+#: data/ui/share_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "Installa adw-gtk3 per applicare i temi alle applicazioni datate"
 
@@ -635,7 +569,7 @@ msgstr ""
 "Configurare il sistema per applicare i temi, permette di sovrascrivere i "
 "temi Flatpak"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
+#: data/ui/share_window.blp:136
 msgid "Installing Themes"
 msgstr "Installazione dei temi in corso"
 
@@ -670,130 +604,112 @@ msgid "Next"
 msgstr "Successivo"
 
 #: data/ui/shell_prefs_window.blp:5
-#, fuzzy
-#| msgid "Plugin Preferences"
 msgid "Shell Engine Preferences"
-msgstr "Preferenze dei plugin"
+msgstr "Preferenze del generatore Shell"
 
 #: data/ui/shell_prefs_window.blp:13
-#, fuzzy
-#| msgid "Shade Color"
 msgid "Custom Shell Colors"
-msgstr "Colore dell'ombreggiatura"
+msgstr "Colori personalizzati per la shell"
 
 #: data/ui/shell_prefs_window.blp:14
-msgid ""
-"This section allows you to customize colors that will be used in the Shell "
-"theme."
-msgstr ""
+msgid "Customize Shell theme colors."
+msgstr "Personalizza i colori del tema della shell."
 
 #: data/ui/shell_theming_group.blp:6
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
-"currently selected preset.\n"
-"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"Shell Engine generates a custom GNOME Shell theme based on the currently "
+"selected preset.\n"
+"WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
+"Il generatore Shell genera un tema per la shell di GNOME sulla base della "
+"configurazione attualmente selezionata.\n"
+"ATTENZIONE: le estensioni che modificano lo schema di colori della shell "
+"potrebbero causare dei problemi con i temi."
 
 #: data/ui/shell_theming_group.blp:9
 msgid "Shell Engine Options"
-msgstr ""
+msgstr "Opzioni del generatore Shell"
 
 #: data/ui/shell_theming_group.blp:10
-msgid "Change the parameters of a generated GNOME Shell theme"
-msgstr ""
+msgid "Change the generated GNOME Shell theme"
+msgstr "Modifica il tema generato per la shell di GNOME"
 
 #: data/ui/shell_theming_group.blp:17
-#, fuzzy
-#| msgid "Apply This Color Scheme?"
-msgid "Apply a Shell theme"
-msgstr "Applicare questo schema di colori?"
+msgid "Apply Shell theme"
+msgstr "Applica il tema della shell"
 
 #: data/ui/shell_theming_group.blp:23
-#, fuzzy
-#| msgid "Customize Adwaita Theme"
 msgid "Customize Shell Theme"
-msgstr "Personalizza il tema Adwaita"
+msgstr "Personalizza il tema della shell"
 
-#: data/ui/shell_theming_group.blp:28
-#, fuzzy
-#| msgid "No Preferences"
+#: data/ui/shell_theming_group.blp:29
 msgid "Open Shell Preferences"
-msgstr "Nessuna preferenza"
-
-#: data/ui/shell_theming_group.blp:34
-#, fuzzy
-#| msgid "Preset reseted"
-msgid "Preset Variant"
-msgstr "Configurazione reimpostata"
+msgstr "Apri le preferenze della shell"
 
 #: data/ui/shell_theming_group.blp:35
-msgid "Select which preset variant you have currently applied"
-msgstr ""
+msgid "Preset Variant"
+msgstr "Variante della configurazione"
 
-#: data/ui/shell_theming_group.blp:47
+#: data/ui/shell_theming_group.blp:36
+msgid "Select currently applied preset variant"
+msgstr "Seleziona la variante della configurazione attualmente applicata"
+
+#: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
-msgstr ""
-
-#: data/ui/shell_theming_group.blp:55
-#, fuzzy
-#| msgid "Preset removed"
-msgid "Reset Theme"
-msgstr "Configurazione rimossa"
+msgstr "Attualmente non disponibile"
 
 #: data/ui/shell_theming_group.blp:56
-#, fuzzy
-#| msgid "Reset applied color scheme?"
-msgid "Reset an applied theme"
-msgstr "Reimpostare lo schema di colori applicato?"
+msgid "Reset Theme"
+msgstr "Reimposta tema"
+
+#: data/ui/shell_theming_group.blp:57
+msgid "Reset applied theme"
+msgstr "Reimposta il tema applicato"
 
 #: data/ui/theming_empty_group.blp:5
-#, fuzzy
-#| msgid "Monet Engine"
 msgid "No Theme Engines"
-msgstr "Generatore Monet"
+msgstr "Nessun generatore di temi"
 
 #: data/ui/theming_empty_group.blp:6
 msgid ""
 "Theme Engines extend the functionality of Gradience. They can be enabled in "
 "the Preferences."
 msgstr ""
+"I generatori di temi estendono le funzionalità di Gradience. Possono essere "
+"abilitati nelle impostazioni."
 
 #: data/ui/theming_empty_group.blp:9
 msgid "Open Preferences to manage Theme Engines"
-msgstr ""
+msgstr "Apri le impostazioni per gestire i generatori di temi"
 
 #: data/ui/theming_empty_group.blp:14 data/ui/theming_empty_group.blp:15
-#, fuzzy
-#| msgid "Preferences"
 msgid "Open Preferences"
-msgstr "Preferenze"
+msgstr "Apri le impostazioni"
 
 #: data/ui/welcome_window.blp:5 data/ui/welcome_window.blp:63
 msgid "Welcome to Gradience"
 msgstr "Benvenuti in Gradience"
 
 #: data/ui/welcome_window.blp:71
-#, fuzzy
-#| msgid "What's new in 0.3.2"
 msgid "What's new in 0.8.0"
-msgstr "Novità nella versione 0.3.2"
+msgstr "Novità nella versione 0.8.0"
 
 #: data/ui/welcome_window.blp:72
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally."
 msgstr ""
+"In questa versione abbiamo aggiunto il supporto ai temi della shell di "
+"GNOME, e riscritto il funzionamento interno di Gradience."
 
 #: data/ui/welcome_window.blp:84
-#, fuzzy
-#| msgid "Continue"
 msgid "Agree and Continue"
-msgstr "Continua"
+msgstr "Accetta e continua"
 
 #: data/ui/welcome_window.blp:96
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
 "Cambia i colori delle finestre, dei pulsanti, delle liste e altro tramite "
@@ -803,9 +719,17 @@ msgstr ""
 msgid "Legacy Apps Theming"
 msgstr "Temi di applicazioni datate"
 
+#: data/ui/welcome_window.blp:113
+msgid "Install adw-gtk3 theme for legacy app theming"
+msgstr "Installa adw-gtk3 per applicare i temi alle applicazioni datate"
+
 #: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "Configurazione di sistema"
+
+#: data/ui/welcome_window.blp:134
+msgid "Installing adw-gtk3"
+msgstr "Installazione di adw-gtk3"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -832,10 +756,8 @@ msgid "_Colors"
 msgstr "_Colori"
 
 #: data/ui/window.blp:97
-#, fuzzy
-#| msgid "Theme"
 msgid "_Theming"
-msgstr "Tema"
+msgstr "_Temi"
 
 #: data/ui/window.blp:106
 msgid "_Advanced"
@@ -843,7 +765,7 @@ msgstr "_Avanzate"
 
 #: data/ui/window.blp:133
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Scorciatoie da tastiera"
 
 #: data/ui/window.blp:138
 msgid "About Gradience"
@@ -863,18 +785,12 @@ msgid "Accent Colors"
 msgstr "Colori di accento"
 
 #: gradience/frontend/schemas/preset_schema.py:25
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, and entries, to indicate that a widget is important, interactive, "
-#| "or currently active."
 msgid ""
 "These colors are used across many different widgets, often to indicate that "
 "a widget is important, interactive, or currently active."
 msgstr ""
-"Questi colori vengono usati in vari widget tra cui pulsanti, etichette, e "
-"voci testuali, per indicare che un widget è importante, interattivo o attivo "
-"in quel momento."
+"Questi colori vengono usati in vari widget per indicare che sono importanti, "
+"interattivi o attivi in quel momento."
 
 #: gradience/frontend/schemas/preset_schema.py:32
 #: gradience/frontend/schemas/preset_schema.py:63
@@ -933,63 +849,44 @@ msgid "Destructive Colors"
 msgstr "Colori distruttivi"
 
 #: gradience/frontend/schemas/preset_schema.py:57
-#, fuzzy
-#| msgid ""
-#| "These colors are used for buttons to indicate a dangerous action, such as "
-#| "deleting a file."
 msgid ""
 "These colors are used to indicate dangerous actions, such as deleting a file."
 msgstr ""
-"Questi colori vengono utilizzati dai pulsanti per indicare un'azione "
-"pericolosa, come l'eliminazione di un file."
+"Questi colori vengono utilizzati per indicare un'azione pericolosa, come "
+"l'eliminazione di un file."
 
 #: gradience/frontend/schemas/preset_schema.py:86
 msgid "Success Colors"
 msgstr "Colori di successo"
 
 #: gradience/frontend/schemas/preset_schema.py:88
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, entries, and level bars, to indicate a success or a high level."
 msgid ""
 "These colors are used across many different widgets, to indicate success or "
 "a high level."
 msgstr ""
-"Questi colori vengono usati in vari widget tra cui pulsanti, etichette, voci "
-"di liste, e barre di livello, per indicare un successo o un livello alto."
+"Questi colori vengono usati in vari widget per indicare un successo o un "
+"livello alto."
 
 #: gradience/frontend/schemas/preset_schema.py:117
 msgid "Warning Colors"
 msgstr "Colori di avvertimento"
 
 #: gradience/frontend/schemas/preset_schema.py:119
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, entries, and level bars, to indicate a warning or a low level."
 msgid ""
 "These colors are used across many different widgets, to indicate warning or "
 "a low level."
 msgstr ""
-"Questi colori vengono usati in vari widget tra cui pulsanti, etichette, voci "
-"di liste, e barre di livello, per indicare un avvertimento o un livello "
-"basso."
+"Questi colori vengono usati in vari widget per indicare un avvertimento o un "
+"livello basso."
 
 #: gradience/frontend/schemas/preset_schema.py:148
 msgid "Error Colors"
 msgstr "Colori di errore"
 
 #: gradience/frontend/schemas/preset_schema.py:150
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, and entries, to indicate a failure."
 msgid ""
 "These colors are used across many different widgets, to indicate a failure."
-msgstr ""
-"Questi colori vengono usati in vari widget tra cui pulsanti, etichette, e "
-"voci di liste, per indicare un errore."
+msgstr "Questi colori vengono usati in vari widget per indicare un errore."
 
 #: gradience/frontend/schemas/preset_schema.py:179
 msgid "Window Colors"
@@ -1004,15 +901,11 @@ msgid "View Colors"
 msgstr "Colori di visualizzazione"
 
 #: gradience/frontend/schemas/preset_schema.py:198
-#, fuzzy
-#| msgid ""
-#| "These colors are used in a variety of widgets, such as text views and "
-#| "entries."
 msgid ""
 "These colors are used across many different widgets, such as text views and "
 "entries."
 msgstr ""
-"Questi colori vengono usati in vari widget tra cui voci testuali e finestre "
+"Questi colori vengono usati in vari widget, tra cui voci testuali e finestre "
 "di dialogo."
 
 #: gradience/frontend/schemas/preset_schema.py:216
@@ -1085,8 +978,7 @@ msgstr "Colori delle carte"
 
 #: gradience/frontend/schemas/preset_schema.py:276
 msgid "These colors are used for cards and boxed lists."
-msgstr ""
-"Questi colori vengono utilizzati per le carte e gli elenchi a riquadri."
+msgstr "Questi colori vengono utilizzati per le carte e gli elenchi a riquadri."
 
 #: gradience/frontend/schemas/preset_schema.py:292
 msgid ""
@@ -1099,16 +991,12 @@ msgstr ""
 "separatori tra le righe al loro interno."
 
 #: gradience/frontend/schemas/preset_schema.py:302
-#, fuzzy
-#| msgid "Dialog Colors"
 msgid "Thumbnail Colors"
-msgstr "Colori di finestre di dialogo"
+msgstr "Colori delle anteprime"
 
 #: gradience/frontend/schemas/preset_schema.py:303
-#, fuzzy
-#| msgid "These colors are used for popovers."
 msgid "These colors are used for Tab Overview thumbnails."
-msgstr "Questi colori vengono utilizzati per i popover."
+msgstr "Questi colori vengono utilizzati per le anteprime in Tab Overview."
 
 #: gradience/frontend/schemas/preset_schema.py:319
 msgid "Dialog Colors"
@@ -1197,40 +1085,28 @@ msgid "Dark"
 msgstr "Scuro"
 
 #: gradience/frontend/schemas/shell_schema.py:24
-#, fuzzy
-#| msgid "Background Color"
 msgid "Base Background Color"
-msgstr "Colore di sfondo"
+msgstr "Colore di sfondo di base"
 
 #: gradience/frontend/schemas/shell_schema.py:29
-#, fuzzy
-#| msgid "Foreground Color"
 msgid "Base Foreground Color"
-msgstr "Colore di primo piano"
+msgstr "Colore di primo piano di base"
 
 #: gradience/frontend/schemas/shell_schema.py:34
-#, fuzzy
-#| msgid "Background Color"
 msgid "Overview Background Color"
-msgstr "Colore di sfondo"
+msgstr "Colore di sfondo della panoramica"
 
 #: gradience/frontend/schemas/shell_schema.py:39
-#, fuzzy
-#| msgid "Background Color"
 msgid "Accent Background Color"
-msgstr "Colore di sfondo"
+msgstr "Colore di sfondo di accento"
 
 #: gradience/frontend/schemas/shell_schema.py:44
-#, fuzzy
-#| msgid "Foreground Color"
 msgid "Accent Foreground Color"
-msgstr "Colore di primo piano"
+msgstr "Colore di primo piano di accento"
 
 #: gradience/frontend/schemas/shell_schema.py:61
-#, fuzzy
-#| msgid "Foreground Color"
 msgid "OSD Foreground Color"
-msgstr "Colore di primo piano"
+msgstr "Colore di primo piano OSD"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:47
 #: gradience/frontend/dialogs/save_dialog.py:62
@@ -1261,13 +1137,15 @@ msgstr "_Salva"
 
 #: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
 msgid "Unsupported Shell Version ({get_full_shell_version()})"
-msgstr ""
+msgstr "Versione della shell non supportata ({get_full_shell_version()})"
 
 #: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
 msgid ""
 "The Shell version you are using is not supported by Gradience. Please "
 "upgrade to a newer version of GNOME."
 msgstr ""
+"La versione della shell in uso non è supportata da Gradience. Effettuare "
+"l'aggiornamento a una versione di GNOME più recente."
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -1300,20 +1178,22 @@ msgid "Palette generated"
 msgstr "Tavolozza generata"
 
 #: gradience/frontend/widgets/monet_theming_group.py:141
-#, fuzzy
-#| msgid "Select an Image"
 msgid "Select an image first"
-msgstr "Selezionare un'immagine"
+msgstr "Selezionare prima un'immagine"
 
 #: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
-msgstr "Questa opzione è supportata solo parzialmente dal tema adw-gtk3."
+msgid "This option is only partially supported by adw-gtk3."
+msgstr "Questa opzione è supportata solo parzialmente da adw-gtk3."
 
 #: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
-msgstr "Questa opzione non è supportata dal tema adw-gtk3."
+msgid "This option is not supported by adw-gtk3."
+msgstr "Questa opzione non è supportata da adw-gtk3."
 
-#: gradience/frontend/widgets/option_row.py:116
+#: gradience/frontend/widgets/option_row.py:96
+msgid "Show Color"
+msgstr "Mostra colore"
+
+#: gradience/frontend/widgets/option_row.py:118
 msgid "Not a color, see text value"
 msgstr "Colore non valido, vedere il valore testuale"
 
@@ -1374,11 +1254,11 @@ msgstr "Ripristino del backup di GTK 3 non riuscito"
 
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."
-msgstr ""
+msgstr "Errore inaspettato durante il caricamento dei colori variabili."
 
 #: gradience/frontend/widgets/shell_theming_group.py:118
 msgid "GNOME Shell Missing"
-msgstr ""
+msgstr "Shell di GNOME mancante"
 
 #: gradience/frontend/widgets/shell_theming_group.py:119
 msgid ""
@@ -1386,24 +1266,23 @@ msgid ""
 "still generate themes on other desktop environments, but it won't have any "
 "affect on them."
 msgstr ""
+"Il generatore Shell è progettato per funzionare solo per i sistemi con "
+"GNOME. È comunque possibile generare i temi all'interno di altri ambienti "
+"desktop, ma non avranno alcun effetto."
 
 #: gradience/frontend/widgets/shell_theming_group.py:121
-#, fuzzy
-#| msgid "Monet Engine"
 msgid "Disable Engine"
-msgstr "Generatore Monet"
+msgstr "Disabilita generatore"
 
 #: gradience/frontend/widgets/shell_theming_group.py:122
 #: gradience/frontend/widgets/shell_theming_group.py:133
 #: gradience/frontend/widgets/shell_theming_group.py:145
-#, fuzzy
-#| msgid "Continue"
 msgid "Continue Anyway"
-msgstr "Continua"
+msgstr "Continua comunque"
 
 #: gradience/frontend/widgets/shell_theming_group.py:129
 msgid "User Themes Extension Missing"
-msgstr ""
+msgstr "Estensione User Themes mancante"
 
 #: gradience/frontend/widgets/shell_theming_group.py:130
 msgid ""
@@ -1411,21 +1290,25 @@ msgid ""
 "theme. You can still generate a theme, but you won't be able to apply it "
 "without this extension."
 msgstr ""
+"Gradience ha bisogno che l'estensione User Themes sia installata per poter "
+"applicare il tema alla shell. È comunque possibile generare un tema, ma "
+"senza questa estensione non sarà possibile applicarlo."
 
 #: gradience/frontend/widgets/shell_theming_group.py:132
-#, fuzzy
 msgid "Install Extension"
-msgstr "Installazione dei temi in corso"
+msgstr "Installa estensione"
 
 #: gradience/frontend/widgets/shell_theming_group.py:140
 msgid "User Themes Extension Disabled"
-msgstr ""
+msgstr "Estensione User Themes disabilitata"
 
 #: gradience/frontend/widgets/shell_theming_group.py:141
 msgid ""
 "The User Themes extension is currently disabled on your system. Please "
 "enable it to apply the theme."
 msgstr ""
+"L'estensione User Themes è attualmente disabilitata sul sistema operativo. È "
+"necessario abilitarla per poter applicare il tema."
 
 #: gradience/frontend/widgets/shell_theming_group.py:143
 #: gradience/frontend/views/presets_manager_window.py:201
@@ -1434,26 +1317,28 @@ msgstr "Annulla"
 
 #: gradience/frontend/widgets/shell_theming_group.py:181
 msgid "An error occurred while generating a Shell theme."
-msgstr ""
+msgstr "Si è verificato un errore nella generazione di un tema per la shell."
 
 #: gradience/frontend/widgets/shell_theming_group.py:188
-#, fuzzy
-#| msgid "Preset set successfully"
 msgid "Shell theme applied successfully."
-msgstr "Configurazione applicata con successo"
+msgstr "Tema della shell applicato con successo"
 
 #: gradience/frontend/widgets/shell_theming_group.py:217
 #: gradience/frontend/widgets/shell_theming_group.py:222
 msgid "Failed to load extension's install link."
-msgstr ""
+msgstr "Caricamento del link di installazione dell'estensione non riuscito."
 
 #: gradience/frontend/widgets/shell_theming_group.py:241
 msgid "Shell theme successfully reset."
-msgstr ""
+msgstr "Tema della shell reimpostato con successo."
 
 #: gradience/frontend/views/about_window.py:27
 msgid "translator-credits"
 msgstr ""
+"Davide Ferracin , 2022, 2023\n"
+"0xMRTT &lt;0xMRTT@tuta.io&gt;, 2022\n"
+"Daudix UFO , 2022\n"
+"yangyangdaji &lt;1504305527@qq.com&gt;, 2022, 2023"
 
 #: gradience/frontend/views/about_window.py:56
 msgid "Copyright © 2022-2023 Gradience Team"
@@ -1468,22 +1353,20 @@ msgid ""
 "Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
 "contributors"
 msgstr ""
+"I collaboratori su GitHub https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 
 #: gradience/frontend/views/about_window.py:69
 msgid "Presets by"
 msgstr "Configurazioni di"
 
 #: gradience/frontend/views/about_window.py:71
-#, fuzzy
-#| msgid ""
-#| "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#| "Community\">GradienceTeam/Community</a>."
 msgid ""
 "Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
 "contributors"
 msgstr ""
-"Inserire una parola chiave per cercare su <a href=\"https://github.com/"
-"GradienceTeam/Community\">GradienceTeam/Community</a>."
+"I collaboratori su GitHub https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
 
 #: gradience/frontend/views/main_window.py:204
 msgid "Palette Colors"
@@ -1558,8 +1441,8 @@ msgid ""
 "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 "Community</a> on Github for more presets."
 msgstr ""
-"Visitare <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a> su GitHub per ulteriori configurazioni."
+"Visitare <a href=\"https://github.com/GradienceTeam/Community\">"
+"GradienceTeam/Community</a> su GitHub per ulteriori configurazioni."
 
 #: gradience/frontend/views/presets_manager_window.py:384
 msgid ""
@@ -1616,6 +1499,25 @@ msgstr "Configurazione salvata"
 #: gradience/frontend/main.py:619
 msgid "Preset set successfully"
 msgstr "Configurazione applicata con successo"
+
+#~ msgid "Toggle Text Value"
+#~ msgstr "Cambia valore del testo"
+
+#, fuzzy
+#~| msgid ""
+#~| "Monet is an engine that generates a Material Design 3 palette from an "
+#~| "image's color."
+#~ msgid ""
+#~ "Monet is an engine that generates a Material Design 3 palette from "
+#~ "extracting image's colors."
+#~ msgstr ""
+#~ "Monet è un generatore che crea una tavolozza Material Design 3 a partire "
+#~ "dai colori di un'immagine."
+
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr ""
+#~ "È necessario terminare la propria sessione affinché le modifiche abbiano "
+#~ "pieno effetto."
 
 #~ msgid "Allow GTK 4 Flatpak Applications Theming"
 #~ msgstr "Autorizza l'uso dei temi per applicazioni Flatpak con GTK 4"

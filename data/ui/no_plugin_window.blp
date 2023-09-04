@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradienceNoPluginPrefWindow : Adw.PreferencesWindow {
+template $GradienceNoPluginPrefWindow : Adw.PreferencesWindow {
   title: _("Plugin Preferences");
   search-enabled: false;
   default-height: 400;
@@ -13,7 +13,7 @@ template GradienceNoPluginPrefWindow : Adw.PreferencesWindow {
       name: "empty";
       icon-name: "action-unavailable-symbolic";
       title: _("No Preferences");
-      description: _("This plugin doesn't have any preferences.");
+      description: _("This plugin has no preferences.");
     }
   }
 }

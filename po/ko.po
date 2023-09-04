@@ -11,9 +11,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 17:45+0000\n"
-"PO-Revision-Date: 2023-05-24 11:43+0000\n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
+"POT-Creation-Date: 2023-06-27 13:11+0000\n"
+"PO-Revision-Date: 2023-07-13 02:27+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/ko/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -97,7 +97,9 @@ msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr ""
 
 #: data/ui/app_type_dialog.blp:14
-msgid "Select application types you want to theme:"
+#, fuzzy
+#| msgid "Select application types you want to theme:"
+msgid "Select application types to theme:"
 msgstr "테마를 지정할 응용프로그램 유형 선택하기:"
 
 #: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
@@ -105,14 +107,16 @@ msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita 및 GTK 4 응용프로그램"
 
 #: data/ui/app_type_dialog.blp:21
-msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+#, fuzzy
+#| msgid "GTK 3 Applications (adw-gtk3 theme is required)"
+msgid "GTK 3 Applications (adw-gtk3 theme required)"
 msgstr "GTK 3 응용프로그램 (adw-gtk3 테마 필요)"
 
 #: data/ui/builtin_preset_row.blp:5
 msgid "Made by @GradienceTeam"
 msgstr "제작팀: @GradienceTeam"
 
-#: data/ui/builtin_preset_row.blp:11 data/ui/preset_row.blp:50
+#: data/ui/builtin_preset_row.blp:12 data/ui/preset_row.blp:50
 #: data/ui/window.blp:30
 msgid "Apply Preset"
 msgstr "프리셋 적용하기"
@@ -124,8 +128,9 @@ msgstr "커스텀 CSS"
 #: data/ui/custom_css_group.blp:6
 #, fuzzy
 msgid ""
-"Changing this may break some programs. Keep in mind that Libadwaita was made "
-"so that applications could hardcode values like paddings and margins."
+"Changing this may break some programs. Libadwaita allows applications to "
+"hardcode values like padding and margins, and using custom CSS may cause "
+"unintended breakage."
 msgstr ""
 "이것을 변경하면 일부 프로그램이 중단될 수 있습니다. Libadwaita는 응용 프로그"
 "램이 패딩 및 여백과 같은 값을 하드코딩할 수 있도록 만들어졌습니다."
@@ -138,15 +143,15 @@ msgstr "GTK 4"
 msgid "GTK 3"
 msgstr "GTK 3"
 
-#: data/ui/explore_preset_row.blp:21
+#: data/ui/explore_preset_row.blp:23
 msgid "Download and Apply"
 msgstr "다운로드하고 적용하기"
 
-#: data/ui/explore_preset_row.blp:32
+#: data/ui/explore_preset_row.blp:34
 msgid "Download Only"
 msgstr "다운로드만"
 
-#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:112
+#: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Monet 엔진"
 
@@ -155,9 +160,7 @@ msgstr "Monet 엔진"
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
 #| "image's color."
-msgid ""
-"Monet is an engine that generates a Material Design 3 palette from "
-"extracting image's colors."
+msgid "Monet Engine generates a Material You color palette from an image."
 msgstr ""
 "Monet은 이미지 색상에서 Material Design 3 팔레트를 생성하는 엔진입니다."
 
@@ -168,7 +171,7 @@ msgid "Monet Engine Options"
 msgstr "Monet 엔진"
 
 #: data/ui/monet_theming_group.blp:10
-msgid "Choose an image, and change the parameters of a generated Monet palette"
+msgid "Choose an image and modify generated Monet palette"
 msgstr ""
 
 #: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
@@ -186,11 +189,11 @@ msgstr "사전 설정 적용"
 msgid "Select an Image"
 msgstr ""
 
-#: data/ui/monet_theming_group.blp:32
+#: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
 msgstr "파일 고르기"
 
-#: data/ui/monet_theming_group.blp:41
+#: data/ui/monet_theming_group.blp:42
 #, fuzzy
 #| msgid "Choose a File"
 msgid "Choose a Image File"
@@ -203,10 +206,8 @@ msgid "Log out"
 msgstr "로그아웃하시겠습니까?"
 
 #: data/ui/log_out_dialog.blp:6
-#, fuzzy
-#| msgid "For the changes to take effect, you need to log out. "
-msgid "For the changes to take full effect, you need to log out."
-msgstr "변경 사항을 적용하려면 로그아웃해야 합니다. "
+msgid "Log out to allow changes to take effect."
+msgstr ""
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -217,31 +218,33 @@ msgid "No Preferences"
 msgstr "환경설정 없음"
 
 #: data/ui/no_plugin_window.blp:16
-msgid "This plugin doesn't have any preferences."
+#, fuzzy
+#| msgid "This plugin doesn't have any preferences."
+msgid "This plugin has no preferences."
 msgstr "이 플러그인에는 환경설정이 없습니다."
 
-#: data/ui/option_row.blp:10
+#: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
 msgstr "GTK 3 지원 경고"
 
-#: data/ui/option_row.blp:19
+#: data/ui/option_row.blp:21
 msgid "Explanation"
 msgstr "설명"
 
-#: data/ui/option_row.blp:43
-msgid "Toggle Text Value"
-msgstr "텍스트 값 토글"
+#: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
+msgid "Show Hex"
+msgstr ""
 
-#: data/ui/plugin_row.blp:8
+#: data/ui/plugin_row.blp:10
 msgid "Toggle Plugin"
 msgstr "플러그인 전환하기"
 
-#: data/ui/plugin_row.blp:16 data/ui/preferences_window.blp:5
+#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
 #: data/ui/window.blp:128
 msgid "Preferences"
 msgstr "환경설정"
 
-#: data/ui/plugin_row.blp:28
+#: data/ui/plugin_row.blp:30
 msgid "Remove Plugin"
 msgstr "플러그인 제거하기"
 
@@ -298,16 +301,12 @@ msgid "Allow GTK 3 Theming"
 msgstr "GTK 3 Flatpak 테마 허용하기"
 
 #: data/ui/preferences_window.blp:38
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak "
-#| "applications to access adw-gtk3 theme."
 msgid ""
 "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme."
 msgstr ""
-"GTK 3 Flatpak 응용프로그램이 adw-gtk3 테마에 액세스할 수 있도록 현재 사용자"
-"에 대한 Flatpak 권한을 재정의합니다."
+"GTK 3 Flatpak 응용프로그램이 adw-gtk3 테마에 액세스할 수 있도록 현재 "
+"사용자에 대한 Flatpak 권한을 재정의합니다."
 
 #: data/ui/preferences_window.blp:47
 #, fuzzy
@@ -316,16 +315,12 @@ msgid "Allow GTK 3 Theming (System)"
 msgstr "GTK 4 Flatpak 응용프로그램 테마 허용하기 (시스템)"
 
 #: data/ui/preferences_window.blp:48
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for all users to allow GTK 3 Flatpak "
-#| "applications to access adw-gtk3 theme. (Requires root access)"
 msgid ""
 "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
 "access adw-gtk3 theme. (Requires root access)"
 msgstr ""
-"GTK 3 Flatpak 응용프로그램이 adw-gtk3 테마에 액세스할 수 있도록 모든 사용자"
-"에 대한 Flatpak 권한을 재정의합니다. (루트 액세스 필요)"
+"GTK 3 Flatpak 응용프로그램이 adw-gtk3 테마에 액세스할 수 있도록 모든 "
+"사용자에 대한 Flatpak 권한을 재정의합니다. (루트 액세스 필요)"
 
 #: data/ui/preferences_window.blp:58
 #, fuzzy
@@ -338,48 +333,48 @@ msgid "Use an alternative server for downloading presets"
 msgstr ""
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDeliver will be used instead of direct preset fetching from GitHub"
+msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgstr ""
 
-#: data/ui/preferences_window.blp:72
+#: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
 msgstr "사용자 지정 프리셋 저장소"
 
-#: data/ui/preferences_window.blp:75
+#: data/ui/preferences_window.blp:76
 msgid "Custom repository URL address"
 msgstr "사용자 지정 저장소 URL 주소"
 
-#: data/ui/preferences_window.blp:95
+#: data/ui/preferences_window.blp:96
 #, fuzzy
 #| msgid "Theme"
 msgid "Theming"
 msgstr "테마"
 
-#: data/ui/preferences_window.blp:99
+#: data/ui/preferences_window.blp:100
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Theme Engines"
 msgstr "Monet 엔진"
 
-#: data/ui/preferences_window.blp:100
+#: data/ui/preferences_window.blp:101
 msgid ""
 "Theme Engines are the built-in theme generators for various customizable "
 "programs/frameworks."
 msgstr ""
 
-#: data/ui/preferences_window.blp:103 data/ui/shell_theming_group.blp:5
+#: data/ui/preferences_window.blp:104 data/ui/shell_theming_group.blp:5
 #, fuzzy
 #| msgid "Monet Engine"
 msgid "Shell Engine"
 msgstr "Monet 엔진"
 
-#: data/ui/preferences_window.blp:104
+#: data/ui/preferences_window.blp:105
 msgid ""
 "Shell Engine generates a custom GNOME Shell theme based on a currently "
 "chosen preset."
 msgstr ""
 
-#: data/ui/preferences_window.blp:113
+#: data/ui/preferences_window.blp:114
 #, fuzzy
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
@@ -399,7 +394,9 @@ msgid "Description"
 msgstr "설명"
 
 #: data/ui/preset_row.blp:81
-msgid "Sorry, but this preset don't have a description."
+#, fuzzy
+#| msgid "Sorry, but this preset don't have a description."
+msgid "This preset has no description."
 msgstr "죄송합니다. 이 프리셋에는 설명이 없습니다."
 
 #: data/ui/preset_row.blp:93
@@ -429,7 +426,9 @@ msgid "Import"
 msgstr "가져오기"
 
 #: data/ui/presets_manager_window.blp:32
-msgid "Import a Preset File"
+#, fuzzy
+#| msgid "Import a Preset File"
+msgid "Import Preset File"
 msgstr "프리셋 파일 가져오기"
 
 #: data/ui/presets_manager_window.blp:38
@@ -502,9 +501,7 @@ msgid "Reset and Restore Presets"
 msgstr "프리셋 이름 바꾸기"
 
 #: data/ui/reset_preset_group.blp:6
-msgid ""
-"This section allows you to reset a currently applied preset or restore the "
-"previous one."
+msgid "Reset a currently applied preset or restore the previous one."
 msgstr ""
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
@@ -614,7 +611,7 @@ msgstr ""
 msgid "Legacy apps theming"
 msgstr "기존 앱 테마적용"
 
-#: data/ui/share_window.blp:115 data/ui/welcome_window.blp:113
+#: data/ui/share_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
 msgstr "기존 앱 테마적용을 위한 adw-gtk3 테마 설치하기"
 
@@ -626,7 +623,7 @@ msgstr "시스템 설정"
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr "테마적용을 위한 시스템을 구성하고, Flatpak 테마 재정의 활성화하기"
 
-#: data/ui/share_window.blp:136 data/ui/welcome_window.blp:134
+#: data/ui/share_window.blp:136
 msgid "Installing Themes"
 msgstr "테마 설치"
 
@@ -673,16 +670,16 @@ msgid "Custom Shell Colors"
 msgstr "그림자 색상"
 
 #: data/ui/shell_prefs_window.blp:14
-msgid ""
-"This section allows you to customize colors that will be used in the Shell "
-"theme."
-msgstr ""
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Shell theme colors."
+msgstr "Adwaita 테마를 커스터마이징"
 
 #: data/ui/shell_theming_group.blp:6
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the colors of a "
-"currently selected preset.\n"
-"WARNING: Extensions that modify Shell stylesheet can cause issues with "
+"Shell Engine generates a custom GNOME Shell theme based on the currently "
+"selected preset.\n"
+"WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 
@@ -691,13 +688,13 @@ msgid "Shell Engine Options"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:10
-msgid "Change the parameters of a generated GNOME Shell theme"
+msgid "Change the generated GNOME Shell theme"
 msgstr ""
 
 #: data/ui/shell_theming_group.blp:17
 #, fuzzy
 #| msgid "Apply This Color Scheme?"
-msgid "Apply a Shell theme"
+msgid "Apply Shell theme"
 msgstr "이 색 구성표를 적용하시겠습니까?"
 
 #: data/ui/shell_theming_group.blp:23
@@ -706,36 +703,36 @@ msgstr "이 색 구성표를 적용하시겠습니까?"
 msgid "Customize Shell Theme"
 msgstr "Adwaita 테마를 커스터마이징"
 
-#: data/ui/shell_theming_group.blp:28
+#: data/ui/shell_theming_group.blp:29
 #, fuzzy
 #| msgid "No Preferences"
 msgid "Open Shell Preferences"
 msgstr "환경설정 없음"
 
-#: data/ui/shell_theming_group.blp:34
+#: data/ui/shell_theming_group.blp:35
 #, fuzzy
 #| msgid "Preset reseted"
 msgid "Preset Variant"
 msgstr "사전 설정 재설정됨"
 
-#: data/ui/shell_theming_group.blp:35
-msgid "Select which preset variant you have currently applied"
+#: data/ui/shell_theming_group.blp:36
+msgid "Select currently applied preset variant"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:47
+#: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:55
+#: data/ui/shell_theming_group.blp:56
 #, fuzzy
 #| msgid "Preset removed"
 msgid "Reset Theme"
 msgstr "사전 설정 제거됨"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:57
 #, fuzzy
 #| msgid "Reset applied color scheme?"
-msgid "Reset an applied theme"
+msgid "Reset applied theme"
 msgstr "적용된 색 구성표를 재설정하시겠습니까?"
 
 #: data/ui/theming_empty_group.blp:5
@@ -782,8 +779,12 @@ msgid "Agree and Continue"
 msgstr "계속"
 
 #: data/ui/welcome_window.blp:96
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS."
 msgid ""
-"Change colors of windows, buttons, lists and more, with advanced features "
+"Change colors of windows, buttons, lists and more; with advanced features "
 "like adding custom CSS."
 msgstr ""
 "사용자 지정 CSS 추가와 같은 고급 기능을 사용하여 창, 단추, 목록 등의 색상을 "
@@ -793,9 +794,21 @@ msgstr ""
 msgid "Legacy Apps Theming"
 msgstr "기존 앱 테마적용"
 
+#: data/ui/welcome_window.blp:113
+#, fuzzy
+#| msgid "Install adw-gtk3 theme for legacy apps theming"
+msgid "Install adw-gtk3 theme for legacy app theming"
+msgstr "기존 앱 테마적용을 위한 adw-gtk3 테마 설치하기"
+
 #: data/ui/welcome_window.blp:118
 msgid "System Configuration"
 msgstr "시스템 구성"
+
+#: data/ui/welcome_window.blp:134
+#, fuzzy
+#| msgid "Installing Themes"
+msgid "Installing adw-gtk3"
+msgstr "테마 설치"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -1286,14 +1299,24 @@ msgid "Select an image first"
 msgstr "먼저 배경을 선택하십시오"
 
 #: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is only partially supported by the adw-gtk3 theme."
+msgid "This option is only partially supported by adw-gtk3."
 msgstr "이 옵션은 adw-gtk3 테마에서 부분적으로만 지원됩니다."
 
 #: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by the adw-gtk3 theme."
+#, fuzzy
+#| msgid "This option is not supported by the adw-gtk3 theme."
+msgid "This option is not supported by adw-gtk3."
 msgstr "이 옵션은 adw-gtk3 테마에서 지원되지 않습니다."
 
-#: gradience/frontend/widgets/option_row.py:116
+#: gradience/frontend/widgets/option_row.py:96
+#, fuzzy
+#| msgid "Shade Color"
+msgid "Show Color"
+msgstr "그림자 색상"
+
+#: gradience/frontend/widgets/option_row.py:118
 msgid "Not a color, see text value"
 msgstr "색상이 아님, 텍스트 값 참조"
 
@@ -1601,6 +1624,24 @@ msgstr "사전 설정 저장됨"
 #, fuzzy
 msgid "Preset set successfully"
 msgstr "사전 설정이 성공적으로 적용되었습니다!"
+
+#~ msgid "Toggle Text Value"
+#~ msgstr "텍스트 값 토글"
+
+#, fuzzy
+#~| msgid ""
+#~| "Monet is an engine that generates a Material Design 3 palette from an "
+#~| "image's color."
+#~ msgid ""
+#~ "Monet is an engine that generates a Material Design 3 palette from "
+#~ "extracting image's colors."
+#~ msgstr ""
+#~ "Monet은 이미지 색상에서 Material Design 3 팔레트를 생성하는 엔진입니다."
+
+#, fuzzy
+#~| msgid "For the changes to take effect, you need to log out. "
+#~ msgid "For the changes to take full effect, you need to log out."
+#~ msgstr "변경 사항을 적용하려면 로그아웃해야 합니다. "
 
 #~ msgid "Allow GTK 4 Flatpak Applications Theming"
 #~ msgstr "GTK 4 Flatpak 응용프로그램 테마 허용하기"

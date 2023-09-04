@@ -22,8 +22,6 @@ from gradience.backend.constants import rootdir
 from gradience.backend.logger import Logger
 from gradience.backend.theming.preset import PresetUtils
 
-from gradience.frontend.dialogs.log_out_dialog import GradienceLogOutDialog
-
 logging = Logger()
 
 
@@ -57,8 +55,10 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
                 Adw.Toast(title=_("Unable to restore GTK 4 backup"))
             )
         else:
-            dialog = GradienceLogOutDialog(self.win)
-            dialog.present()
+            toast = Adw.Toast(
+                title=_("GTK 4 preset has been restored. Please log out to apply changes."),
+            )
+            self.parent.add_toast(toast)
 
     @Gtk.Template.Callback()
     def on_libadw_reset_button_clicked(self, *_args):
@@ -69,8 +69,10 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
                 Adw.Toast(title=_("Unable to delete current preset"))
             )
         else:
-            dialog = GradienceLogOutDialog(self.win)
-            dialog.present()
+            toast = Adw.Toast(
+                title=_("GTK 4 theme has been reset. Please log out to apply changes."),
+            )
+            self.parent.add_toast(toast)
 
 
     @Gtk.Template.Callback()
@@ -82,8 +84,10 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
                 Adw.Toast(title=_("Unable to restore GTK 3 backup"))
             )
         else:
-            dialog = GradienceLogOutDialog(self.win)
-            dialog.present()
+            toast = Adw.Toast(
+                title=_("GTK 3 preset has been restored. Please log out to apply changes."),
+            )
+            self.parent.add_toast(toast)
 
     @Gtk.Template.Callback()
     def on_gtk3_reset_button_clicked(self, *_args):
@@ -94,5 +98,7 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
                 Adw.Toast(title=_("Unable to delete current preset"))
             )
         else:
-            dialog = GradienceLogOutDialog(self.win)
-            dialog.present()
+            toast = Adw.Toast(
+                title=_("GTK 3 theme has been reset. Please log out to apply changes."),
+            )
+            self.parent.add_toast(toast)

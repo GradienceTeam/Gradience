@@ -84,7 +84,7 @@ class GradiencePresetWindow(Adw.Window):
         self.user_repositories = self.settings.get_value("repos").unpack()
         self.enabled_repos = self.settings.get_value("enabled-repos").unpack()
 
-        self.preset_repos = get_preset_repos(self.settings.get_boolean("use-jsdeliver"))
+        self.preset_repos = get_preset_repos(self.settings.get_boolean("use-jsdelivr"))
 
         self.setup_signals()
         self.setup()
@@ -148,7 +148,7 @@ class GradiencePresetWindow(Adw.Window):
                 badge = "white"
 
             try:
-                explore_presets, urls = PresetDownloader(self.settings.get_boolean("use-jsdeliver")).fetch_presets(repo)
+                explore_presets, urls = PresetDownloader(self.settings.get_boolean("use-jsdelivr")).fetch_presets(repo)
             except GLib.GError as e:
                 if e.code == 1:
                     self.offline = True

@@ -29,11 +29,11 @@ using Adw 1;
 //   }
 // }
 
-template GradiencePresetRow : Adw.ExpanderRow {
+template $GradiencePresetRow : Adw.ExpanderRow {
   [action]
   Button star_button {
     valign: center;
-    clicked => on_star_button_clicked();
+    clicked => $on_star_button_clicked();
     styles ["flat"]
   }
 
@@ -48,13 +48,13 @@ template GradiencePresetRow : Adw.ExpanderRow {
       valign: center;
       icon-name: "checkmark-large-symbolic";
       tooltip-text: _("Apply Preset");
-      clicked => on_apply_button_clicked();
+      clicked => $on_apply_button_clicked();
       styles ["flat"]
     }
 
     Entry name_entry {
       text: "Name";
-      changed => on_name_entry_changed();
+      changed => $on_name_entry_changed();
     }
   }
 
@@ -63,7 +63,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
     valign: center;
     icon-name: "document-edit-symbolic";
     tooltip-text: _("Rename Preset");
-    toggled => on_name_entry_toggled();
+    toggled => $on_name_entry_toggled();
     styles ["flat"]
   }
 
@@ -78,7 +78,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
 
   Adw.ActionRow description {
     title: _("Description");
-    subtitle: _("Sorry, but this preset don't have a description.");
+    subtitle: _("This preset has no description.");
   }
 
   Adw.ActionRow {
@@ -100,7 +100,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
       valign: center;
       icon-name: "bug-symbolic";
       tooltip-text: _("Report Preset Issue");
-      clicked => on_report_button_clicked();
+      clicked => $on_report_button_clicked();
     }
 
     [suffix]
@@ -108,7 +108,7 @@ template GradiencePresetRow : Adw.ExpanderRow {
       valign: center;
       label: _("Remove preset");
       tooltip-text: _("Remove Preset");
-      clicked => on_remove_button_clicked();
+      clicked => $on_remove_button_clicked();
       styles ["destructive-action"]
     }
   }

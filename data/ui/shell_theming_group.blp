@@ -1,38 +1,39 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradienceShellThemingGroup : Adw.PreferencesGroup {
+template $GradienceShellThemingGroup : Adw.PreferencesGroup {
   title: _("Shell Engine");
-  description: _("Shell Engine generates a custom GNOME Shell theme based on the colors of a currently selected preset.\nWARNING: Extensions that modify Shell stylesheet can cause issues with themes.");
+  description: _("Shell Engine generates a custom GNOME Shell theme based on the currently selected preset.\nWARNING: Extensions that modify the Shell stylesheet may cause issues with themes.");
 
   Adw.ExpanderRow shell-theming-expander {
     title: _("Shell Engine Options");
-    subtitle: _("Change the parameters of a generated GNOME Shell theme");
+    subtitle: _("Change the generated GNOME Shell theme");
     expanded: true;
 
     [action]
     Button shell-apply-button {
       valign: center;
       label: _("Apply");
-      tooltip-text: _("Apply a Shell theme");
-      clicked => on_apply_button_clicked();
+      tooltip-text: _("Apply Shell theme");
+      clicked => $on_apply_button_clicked();
       styles ["suggested-action"]
     }
 
     Adw.ActionRow custom-colors-row {
       title: _("Customize Shell Theme");
+      activatable-widget: custom-colors-button;
 
       [suffix]
       Button custom-colors-button {
         valign: center;
         label: _("Open Shell Preferences");
-        clicked => on_custom_colors_button_clicked();
+        clicked => $on_custom_colors_button_clicked();
       }
     }
 
     Adw.ComboRow variant-row {
       title: _("Preset Variant");
-      subtitle: _("Select which preset variant you have currently applied");
+      subtitle: _("Select currently applied preset variant");
     }
   }
 }
@@ -45,7 +46,7 @@ Adw.ActionRow other-options-row {
     sensitive: false;
     //tooltip-text: _("Restore Previous Theme");
     tooltip-text: _("Currently unavailable");
-    clicked => on_restore_button_clicked();
+    clicked => $on_restore_button_clicked();
     styles ["flat"]
   }
 
@@ -53,8 +54,8 @@ Adw.ActionRow other-options-row {
   Button reset_theme_button {
     valign: center;
     label: _("Reset Theme");
-    tooltip-text: _("Reset an applied theme");
-    clicked => on_reset_theme_clicked();
+    tooltip-text: _("Reset applied theme");
+    clicked => $on_reset_theme_clicked();
     styles ["destructive-action"]
   }
 }

@@ -49,12 +49,12 @@ class GradienceOptionRow(Adw.ActionRow):
         elif adw_gtk3_support == "partial":
             self.warning_button.add_css_class("warning")
             self.warning_label.set_label(
-                _("This option is only partially supported by the adw-gtk3 theme.")
+                _("This option is only partially supported by adw-gtk3.")
             )
         elif adw_gtk3_support == "no":
             self.warning_button.add_css_class("error")
             self.warning_label.set_label(
-                _("This option is not supported by the adw-gtk3 theme.")
+                _("This option is not supported by adw-gtk3.")
             )
 
         self.explanation_label.set_label(explanation or "")
@@ -89,10 +89,12 @@ class GradienceOptionRow(Adw.ActionRow):
 
     @Gtk.Template.Callback()
     def on_text_value_toggled(self, *_args):
-        if self.text_value_toggle.get_active():
-            self.value_stack.set_visible_child(self.text_value)
-        else:
-            self.value_stack.set_visible_child(self.color_value)
+        widget = self.text_value if self.text_value_toggle.get_active() else self.color_value
+        self.value_stack.set_visible_child(widget)
+        self.set_activatable_widget(widget)
+        
+        tooltip = _("Show Color") if self.text_value_toggle.get_active() else _("Show Hex")
+        self.text_value_toggle.set_tooltip_text(tooltip);
 
     def update_value(self, new_value, update_vars=False, **kwargs):
         rgba = Gdk.RGBA()

@@ -19,22 +19,22 @@
 from urllib.parse import urlparse
 
 
-def get_preset_repos(use_jsdeliver: bool) -> dict:
-    if use_jsdeliver:
-        from gradience.backend.globals import preset_repos_jsdeliver
-        preset_repos = preset_repos_jsdeliver
+def get_preset_repos(use_jsdelivr: bool) -> dict:
+    if use_jsdelivr:
+        from gradience.backend.globals import preset_repos_jsdelivr
+        preset_repos = preset_repos_jsdelivr
     else:
         from gradience.backend.globals import preset_repos_github
         preset_repos = preset_repos_github
 
     return preset_repos
 
-def github_to_jsdeliver_url(github_url: str) -> str:
+def github_to_jsdelivr_url(github_url: str) -> str:
     """
-    Converts Github raw data URL link to JSDeliver CDN link.
+    Converts Github raw data URL link to JSDelivr CDN link.
     """
 
-    jsdeliver_url = None
+    jsdelivr_url = None
 
     # https://github.com/GradienceTeam/Community/raw/next/official/builder.json =>
     # https://cdn.jsdelivr.net/gh/GradienceTeam/Community@next/official/builder.json
@@ -43,6 +43,6 @@ def github_to_jsdeliver_url(github_url: str) -> str:
         path = urlparse(github_url).path
         user, repo, _, branch, *path = path.strip('/').split('/')
         path = "/".join(path)
-        jsdeliver_url = JSDELIVER_FORMAT.format(user=user, repo=repo, branch=branch, path=path)
+        jsdelivr_url = JSDELIVER_FORMAT.format(user=user, repo=repo, branch=branch, path=path)
 
-    return jsdeliver_url
+    return jsdelivr_url

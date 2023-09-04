@@ -1,7 +1,9 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradienceExplorePresetRow : Adw.ActionRow {
+template $GradienceExplorePresetRow : Adw.ActionRow {
+  activatable-widget: apply_button;
+
   Box {
     spacing: 6;
 
@@ -19,7 +21,7 @@ template GradienceExplorePresetRow : Adw.ActionRow {
       valign: center;
       icon-name: "checkmark-large-symbolic";
       tooltip-text: _("Download and Apply");
-      clicked => on_apply_button_clicked();
+      clicked => $on_apply_button_clicked();
 
       styles [
         "flat",
@@ -30,7 +32,7 @@ template GradienceExplorePresetRow : Adw.ActionRow {
       valign: center;
       icon-name: "folder-download-symbolic";
       tooltip-text: _("Download Only");
-      clicked => on_download_button_clicked();
+      clicked => $on_download_button_clicked();
 
       styles [
         "flat",

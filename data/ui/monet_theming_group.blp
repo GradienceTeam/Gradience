@@ -1,13 +1,13 @@
 using Gtk 4.0;
 using Adw 1;
 
-template GradienceMonetThemingGroup : Adw.PreferencesGroup {
+template $GradienceMonetThemingGroup : Adw.PreferencesGroup {
   title: _("Monet Engine");
-  description: _("Monet is an engine that generates a Material Design 3 palette from extracting image's colors.");
+  description: _("Monet Engine generates a Material You color palette from an image.");
 
   Adw.ExpanderRow monet-theming-expander {
     title: _("Monet Engine Options");
-    subtitle: _("Choose an image, and change the parameters of a generated Monet palette");
+    subtitle: _("Choose an image and modify generated Monet palette");
     expanded: true;
 
     [action]
@@ -15,17 +15,18 @@ template GradienceMonetThemingGroup : Adw.PreferencesGroup {
       valign: center;
       label: _("Apply");
       tooltip-text: _("Apply a palette");
-      clicked => on_apply_button_clicked();
+      clicked => $on_apply_button_clicked();
       styles ["suggested-action"]
     }
 
     Adw.ActionRow file-chooser-row {
       title: _("Select an Image");
+      activatable-widget: file-chooser-button;
 
       [suffix]
       Button file-chooser-button {
         valign: center;
-        clicked => on_file_chooser_button_clicked();
+        clicked => $on_file_chooser_button_clicked();
 
         Adw.ButtonContent {
           icon-name: "folder-pictures-symbolic";
@@ -42,3 +43,4 @@ Gtk.FileChooserNative monet-file-chooser {
   modal: true;
   //response => on_monet_file_chooser_response();
 }
+
