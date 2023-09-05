@@ -618,10 +618,6 @@ class GradienceApplication(Adw.Application):
                 Adw.Toast(title=_("Preset has been set. Log out to apply changes."))
             )
 
-            toast = Adw.Toast()
-            toast.set_title(_("Preset has been set. Log out to apply changes."))
-            self.win.toast_overlay.add_toast(toast)
-
     def show_preferences(self, *_args):
         prefs = GradiencePreferencesWindow(self.win)
         prefs.present()
