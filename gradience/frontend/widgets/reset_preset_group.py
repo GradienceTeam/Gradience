@@ -56,7 +56,7 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
             )
         else:
             toast = Adw.Toast(
-                title=_("GTK 4 preset has been restored. Please log out to apply changes."),
+                title=_("GTK 4 preset has been restored. Log out to apply changes."),
             )
             self.parent.add_toast(toast)
 
@@ -70,7 +70,7 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
             )
         else:
             toast = Adw.Toast(
-                title=_("GTK 4 theme has been reset. Please log out to apply changes."),
+                title=_("GTK 4 theme has been reset. Log out to apply changes."),
             )
             self.parent.add_toast(toast)
 
@@ -85,7 +85,7 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
             )
         else:
             toast = Adw.Toast(
-                title=_("GTK 3 preset has been restored. Please log out to apply changes."),
+                title=_("GTK 3 preset has been restored. Log out to apply changes."),
             )
             self.parent.add_toast(toast)
 
@@ -99,6 +99,6 @@ class GradienceResetPresetGroup(Adw.PreferencesGroup):
             )
         else:
             toast = Adw.Toast(
-                title=_("GTK 3 theme has been reset. Please log out to apply changes."),
+                title=_("GTK 3 theme has been reset. Log out to apply changes."),
             )
             self.parent.add_toast(toast)
