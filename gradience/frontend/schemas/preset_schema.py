@@ -282,12 +282,12 @@ preset_schema = {
                 {
                     "name": "sidebar_bg_color",
                     "title": _("Background Color"),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
                 },
                 {
                     "name": "sidebar_fg_color",
                     "title": _("Foreground Color"),
-                    "adw_gtk3_support": "no",
+                    "adw_gtk3_support": "yes",
                 },
                 {
                     "name": "sidebar_backdrop_color",

@@ -45,6 +45,10 @@ https://github.com/GradienceTeam/Gradience
 
     gtk_css += custom_css.get(app_type, "")
 
+    gtk_css += "\n.navigation-sidebar {\nbackground-color: "
+    gtk_css += variables["window_bg_color"]
+    gtk_css += ";\n}"
+
     final_css = theming_warning + gtk_css
 
     return final_css
