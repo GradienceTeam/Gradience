@@ -116,7 +116,6 @@ class GradienceWelcomeWindow(Adw.Window):
 
         if self.update:
             self.btn_close.set_sensitive(True)
-            self.label_skip.set_visible(False)
             self.next_page()
         else:
             self.next_page()

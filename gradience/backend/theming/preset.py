@@ -43,7 +43,7 @@ class PresetUtils:
     def set_gtk3_theme(self):
         settings_retriever = FlatpakGSettings if is_sandboxed() else GSettingsSetting
         self.settings = settings_retriever(self.THEME_GSETTINGS_SCHEMA_ID, schema_dir=None)
-        self.settings.set("gtk-theme", "adw-gtk3")
+        self.settings.set_string("gtk-theme", "adw-gtk3")
 
     def get_presets_list(self, repo=None, full_list=False) -> dict:
         presets_list = {}
