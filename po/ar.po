@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-06-27 13:11+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-03 19:58+0300\n"
 "PO-Revision-Date: 2023-06-28 11:52+0000\n"
 "Last-Translator: Ali Aljishi <ahj696@hotmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -92,6 +92,24 @@ msgstr "لقطة شاشة للسان \"مثبَّت\" في مدير الإعدا
 msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "لقطة شاشة للسان \"استكشف\" في مدير الإعدادات المسبقة"
 
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:82
+msgid "AdwCustomizer"
+msgstr ""
+
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:83
+#, fuzzy
+#| msgid "Adwaita Manager Team"
+msgid "Adwaita Manager"
+msgstr "فريق مدير Adwaita"
+
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:84
+msgid "GNOME"
+msgstr ""
+
+#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:85
+msgid "Customization"
+msgstr ""
+
 #: data/ui/app_type_dialog.blp:14
 msgid "Select application types to theme:"
 msgstr "حدد أنواع التطبيقات التي تريد تغيير سِماتها:"
@@ -142,6 +160,66 @@ msgstr "تنزيل وتطبيق"
 msgid "Download Only"
 msgstr "تنزيل فقط"
 
+#: data/ui/help_overlay.blp:11
+#, fuzzy
+#| msgid "General"
+msgctxt "shortcut window"
+msgid "General"
+msgstr "عام"
+
+#: data/ui/help_overlay.blp:14
+#, fuzzy
+#| msgid "Keyboard Shortcuts"
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "اختصارات لوح المفاتيح"
+
+#: data/ui/help_overlay.blp:19
+msgctxt "shortcut window"
+msgid "Show Apply Dialog"
+msgstr ""
+
+#: data/ui/help_overlay.blp:24
+#, fuzzy
+#| msgid "Manage Presets"
+msgctxt "shortcut window"
+msgid "Manage Presets"
+msgstr "أدِر الإعدادات المسبقة"
+
+#: data/ui/help_overlay.blp:29
+#, fuzzy
+#| msgid "Save Preset"
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "احفظ الإعداد المسبق"
+
+#: data/ui/help_overlay.blp:34
+msgctxt "shortcut window"
+msgid "Go to the Colors Section"
+msgstr ""
+
+#: data/ui/help_overlay.blp:39
+msgctxt "shortcut window"
+msgid "Go to the Theming Section"
+msgstr ""
+
+#: data/ui/help_overlay.blp:44
+msgctxt "shortcut window"
+msgid "Go to the Advanced Section"
+msgstr ""
+
+#: data/ui/help_overlay.blp:49
+#, fuzzy
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "تفضيلات"
+
+#: data/ui/help_overlay.blp:54
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
 #: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "محرك مونيه"
@@ -183,6 +261,7 @@ msgstr "اختر ملفَّ صورة"
 msgid "Log out"
 msgstr "سجل الخروج"
 
+#. TODO: redundant? how can we not repeat ourselves?
 #: data/ui/log_out_dialog.blp:6
 msgid "Log out to allow changes to take effect."
 msgstr "اخرج تُطبَّق التغييرات."
@@ -349,6 +428,7 @@ msgstr "لم يوصف هذا الإعداد المسبق."
 msgid "No Badges"
 msgstr "بلا شارات"
 
+#. styles ["danger"]
 #: data/ui/preset_row.blp:102 data/ui/presets_manager_window.blp:44
 msgid "Report Preset Issue"
 msgstr "بلِّغ عن مشكلة في الإعداد المسبق"
@@ -377,7 +457,7 @@ msgstr "استورد ملف إعداد مسبق"
 msgid "Delete"
 msgstr "احذف"
 
-#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:251
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:250
 msgid "Open in File Manager"
 msgstr "افتح في مدير الملفات"
 
@@ -398,8 +478,8 @@ msgid ""
 "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
 "Community\">GradienceTeam/Community</a>."
 msgstr ""
-"أدخل كلمة رئيسة للبحث في <a href=\"https://gradienceteam.github.io/presets"
-"\"> GradienceTeam / Community </a>."
+"أدخل كلمة رئيسة للبحث في <a href=\"https://gradienceteam.github.io/"
+"presets\"> GradienceTeam / Community </a>."
 
 #: data/ui/presets_manager_window.blp:101
 msgid "e.g. \"Pretty Purple\""
@@ -499,11 +579,11 @@ msgstr ""
 "Community</a>، بعد ذلك، يمكنك تحميل إعدادك المسبق وتقديم طلب سحب ومشاركته مع "
 "العالم!"
 
-#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:79
+#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:78
 msgid "Warning"
 msgstr "تحذير"
 
-#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:80
+#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:79
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -516,7 +596,7 @@ msgstr ""
 msgid "I Understand The Consequences"
 msgstr "أنا أفهم العواقب"
 
-#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:95
+#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:93
 msgid "Customize Adwaita Theme"
 msgstr "خصص سِمة أدوايتا"
 
@@ -528,11 +608,11 @@ msgstr ""
 "غير ألوان النوافذ والأزرار والقوائم وغيرها باستخدام ميزات متقدمة مثل إضافة "
 "سي‌إس‌إس مخصص"
 
-#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:102
+#: data/ui/share_window.blp:104
 msgid "Configure Gradience"
 msgstr "اضبط «تدرج»"
 
-#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:103
+#: data/ui/share_window.blp:105
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
@@ -550,7 +630,7 @@ msgstr "ثبت سمة adw-gtk3 لوَسم التطبيقات القديمة"
 msgid "System configuration"
 msgstr "ضبط النظام"
 
-#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:124
+#: data/ui/share_window.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr "ضبط النظام من أجل السمات، يتيح هذا تجاوز السمة لتطبيقات فلاتباك"
 
@@ -558,31 +638,31 @@ msgstr "ضبط النظام من أجل السمات، يتيح هذا تجاو�
 msgid "Installing Themes"
 msgstr "تثبيت السِّمات"
 
-#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:135
+#: data/ui/share_window.blp:137
 msgid "Please wait until theme will be installed."
 msgstr "يرجى الانتظار حتى تُثبت السمة."
 
-#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:141
+#: data/ui/share_window.blp:143
 msgid "Continue"
 msgstr "واصل"
 
-#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:160
+#: data/ui/share_window.blp:162
 msgid "Done"
 msgstr "تم"
 
-#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:161
+#: data/ui/share_window.blp:163
 msgid "Now you can make your own presets or download some online."
 msgstr "يمكنك الآن إنشاء إعدادات مسبقة خاصة بك أو تنزيل بعضها عبر الإنترنت."
 
-#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:166
+#: data/ui/share_window.blp:168
 msgid "Please finish the setup first"
 msgstr "أنهِ الإعداد أولًا"
 
-#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:174
+#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:98
 msgid "Start Using Gradience"
 msgstr "ابدأ استخدام «تدرج»"
 
-#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:191
+#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:113
 msgid "Next"
 msgstr "التالي"
 
@@ -636,6 +716,7 @@ msgstr "تنويعة الإعداد المسبق"
 msgid "Select currently applied preset variant"
 msgstr "حدِّد تنويعة الإعداد المطبَّق"
 
+#. tooltip-text: _("Restore Previous Theme");
 #: data/ui/shell_theming_group.blp:48
 msgid "Currently unavailable"
 msgstr "غير متاح الآن"
@@ -670,43 +751,31 @@ msgstr "افتح التفضيلات"
 msgid "Welcome to Gradience"
 msgstr "مرحبًا بك في «تدرج»"
 
-#: data/ui/welcome_window.blp:71
+#: data/ui/welcome_window.blp:70
 msgid "What's new in 0.8.0"
 msgstr "ما الجديد في ٠٫٨٫٠"
 
-#: data/ui/welcome_window.blp:72
+#: data/ui/welcome_window.blp:71
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally."
 msgstr "أضفنا في هذا الإصدار دعم وسم صدفة جنوم، وأعدنا صياغة سبيل عمل «تدرج»."
 
-#: data/ui/welcome_window.blp:84
+#: data/ui/welcome_window.blp:83
 msgid "Agree and Continue"
 msgstr "أوافق، تابع"
 
-#: data/ui/welcome_window.blp:96
+#: data/ui/welcome_window.blp:94
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS"
 msgid ""
-"Change colors of windows, buttons, lists and more; with advanced features "
+"Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom CSS."
 msgstr ""
-"يمكنك تغيير ألوان النوافذ والأزرار والقوائم والمزيد باستخدام ميزات متقدمة "
-"مثل إضافة سي‌إس‌إس مخصص."
-
-#: data/ui/welcome_window.blp:108
-msgid "Legacy Apps Theming"
-msgstr "وسم التطبيقات القديمة"
-
-#: data/ui/welcome_window.blp:113
-msgid "Install adw-gtk3 theme for legacy app theming"
-msgstr "ثبت سمة adw-gtk3 لوَسم التطبيقات القديمة"
-
-#: data/ui/welcome_window.blp:118
-msgid "System Configuration"
-msgstr "ضبط النظام"
-
-#: data/ui/welcome_window.blp:134
-msgid "Installing adw-gtk3"
-msgstr "تثبيت سمة adw-gtk3"
+"غير ألوان النوافذ والأزرار والقوائم وغيرها باستخدام ميزات متقدمة مثل إضافة "
+"سي‌إس‌إس مخصص"
 
 #: data/ui/window.blp:37
 msgid "Show Preview Window"
@@ -798,10 +867,12 @@ msgstr ""
 #: gradience/frontend/schemas/preset_schema.py:184
 #: gradience/frontend/schemas/preset_schema.py:204
 #: gradience/frontend/schemas/preset_schema.py:225
-#: gradience/frontend/schemas/preset_schema.py:280
-#: gradience/frontend/schemas/preset_schema.py:307
-#: gradience/frontend/schemas/preset_schema.py:324
-#: gradience/frontend/schemas/preset_schema.py:341
+#: gradience/frontend/schemas/preset_schema.py:284
+#: gradience/frontend/schemas/preset_schema.py:327
+#: gradience/frontend/schemas/preset_schema.py:367
+#: gradience/frontend/schemas/preset_schema.py:394
+#: gradience/frontend/schemas/preset_schema.py:411
+#: gradience/frontend/schemas/preset_schema.py:428
 msgid "Background Color"
 msgstr "لون الخلفية"
 
@@ -813,10 +884,12 @@ msgstr "لون الخلفية"
 #: gradience/frontend/schemas/preset_schema.py:189
 #: gradience/frontend/schemas/preset_schema.py:209
 #: gradience/frontend/schemas/preset_schema.py:230
-#: gradience/frontend/schemas/preset_schema.py:285
-#: gradience/frontend/schemas/preset_schema.py:312
-#: gradience/frontend/schemas/preset_schema.py:329
-#: gradience/frontend/schemas/preset_schema.py:346
+#: gradience/frontend/schemas/preset_schema.py:289
+#: gradience/frontend/schemas/preset_schema.py:332
+#: gradience/frontend/schemas/preset_schema.py:372
+#: gradience/frontend/schemas/preset_schema.py:399
+#: gradience/frontend/schemas/preset_schema.py:416
+#: gradience/frontend/schemas/preset_schema.py:433
 msgid "Foreground Color"
 msgstr "لون المقدمة"
 
@@ -915,10 +988,14 @@ msgstr ""
 "الرأس المنفصل."
 
 #: gradience/frontend/schemas/preset_schema.py:250
+#: gradience/frontend/schemas/preset_schema.py:294
+#: gradience/frontend/schemas/preset_schema.py:337
 msgid "Backdrop Color"
 msgstr "اللون الخلفي"
 
 #: gradience/frontend/schemas/preset_schema.py:252
+#: gradience/frontend/schemas/preset_schema.py:296
+#: gradience/frontend/schemas/preset_schema.py:339
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -930,12 +1007,17 @@ msgstr ""
 "المتغير، تحقق من تعيينه على قيمة تطابق لون خلفية الشريط العلوي."
 
 #: gradience/frontend/schemas/preset_schema.py:263
-#: gradience/frontend/schemas/preset_schema.py:290
-#: gradience/frontend/schemas/preset_schema.py:358
+#: gradience/frontend/schemas/preset_schema.py:307
+#: gradience/frontend/schemas/preset_schema.py:350
+#: gradience/frontend/schemas/preset_schema.py:377
+#: gradience/frontend/schemas/preset_schema.py:438
+#: gradience/frontend/schemas/preset_schema.py:455
 msgid "Shade Color"
 msgstr "لون الظل"
 
 #: gradience/frontend/schemas/preset_schema.py:265
+#: gradience/frontend/schemas/preset_schema.py:309
+#: gradience/frontend/schemas/preset_schema.py:352
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
@@ -944,14 +1026,39 @@ msgstr ""
 "المشابهة تفصلها عن النافذة الرئيسة."
 
 #: gradience/frontend/schemas/preset_schema.py:275
+#, fuzzy
+#| msgid "View Colors"
+msgid "Sidebar Colors"
+msgstr "عرض الألوان"
+
+#: gradience/frontend/schemas/preset_schema.py:277
+msgid ""
+"These colors are used for sidebars, generally attached to the left or right "
+"sides of a window. They are used by AdwNavigationSplitView and "
+"AdwOverlaySplitView when they are not collapsed."
+msgstr ""
+
+#: gradience/frontend/schemas/preset_schema.py:319
+#, fuzzy
+#| msgid "Header Bar Colors"
+msgid "Secondary Sidebar Colors"
+msgstr "ألوان الشريط العلوي"
+
+#: gradience/frontend/schemas/preset_schema.py:321
+msgid ""
+"These colors are used for middle panes in triple-pane layouts,  created via "
+"nesting two split views within one another."
+msgstr ""
+
+#: gradience/frontend/schemas/preset_schema.py:362
 msgid "Card Colors"
 msgstr "ألوان البطاقات"
 
-#: gradience/frontend/schemas/preset_schema.py:276
+#: gradience/frontend/schemas/preset_schema.py:363
 msgid "These colors are used for cards and boxed lists."
 msgstr "تُستخدم هذه الألوان للبطاقات والقوائم المعبّأة."
 
-#: gradience/frontend/schemas/preset_schema.py:292
+#: gradience/frontend/schemas/preset_schema.py:379
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
@@ -960,39 +1067,46 @@ msgstr ""
 "يُستخدم لون الظل للظلال التي تستخدمها البطاقات لفصل نفسها عن خلفية النافذة، "
 "وكذلك لفواصل الصفوف في البطاقات."
 
-#: gradience/frontend/schemas/preset_schema.py:302
+#: gradience/frontend/schemas/preset_schema.py:389
 msgid "Thumbnail Colors"
 msgstr "ألوان المصغَّرات"
 
-#: gradience/frontend/schemas/preset_schema.py:303
+#: gradience/frontend/schemas/preset_schema.py:390
 msgid "These colors are used for Tab Overview thumbnails."
 msgstr "تُستخدم هذه الألوان في مصغَّرات النظرة العامة للألسنة."
 
-#: gradience/frontend/schemas/preset_schema.py:319
+#: gradience/frontend/schemas/preset_schema.py:406
 msgid "Dialog Colors"
 msgstr "ألوان مربعات الحوار"
 
-#: gradience/frontend/schemas/preset_schema.py:320
+#: gradience/frontend/schemas/preset_schema.py:407
 msgid "These colors are used for message dialogs."
 msgstr "تُستخدم هذه الألوان لمربعات الرسائل."
 
-#: gradience/frontend/schemas/preset_schema.py:336
+#: gradience/frontend/schemas/preset_schema.py:423
 msgid "Popover Colors"
 msgstr "ألوان العناصر المنبثقة"
 
-#: gradience/frontend/schemas/preset_schema.py:337
+#: gradience/frontend/schemas/preset_schema.py:424
 msgid "These colors are used for popovers."
 msgstr "تُستخدم هذه الألوان للعناصر المنبثقة."
 
-#: gradience/frontend/schemas/preset_schema.py:353
+#: gradience/frontend/schemas/preset_schema.py:440
+msgid ""
+"The shade color is used for scroll undershoot styles within popovers, as "
+"well as transitions in AdwNavigationView, AdwOverlaySplitView, AdwLeaflet "
+"and AdwFlap."
+msgstr ""
+
+#: gradience/frontend/schemas/preset_schema.py:450
 msgid "Miscellaneous Colors"
 msgstr "ألوان متنوعة"
 
-#: gradience/frontend/schemas/preset_schema.py:354
+#: gradience/frontend/schemas/preset_schema.py:451
 msgid "Colors that don't fit in any particular group."
 msgstr "الألوان التي لا تناسب أي مجموعة."
 
-#: gradience/frontend/schemas/preset_schema.py:360
+#: gradience/frontend/schemas/preset_schema.py:457
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -1000,11 +1114,11 @@ msgstr ""
 "يُستخدم لون الظل بواسطة شُرُط علامات التبويب المضمنة، بالإضافة إلى الانتقالات "
 "في المنشورات واللوحات وحدود شريط المعلومات."
 
-#: gradience/frontend/schemas/preset_schema.py:368
+#: gradience/frontend/schemas/preset_schema.py:465
 msgid "Scrollbar Outline Color"
 msgstr "لون شريط التمرير"
 
-#: gradience/frontend/schemas/preset_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:467
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -1012,41 +1126,41 @@ msgstr ""
 "يُستخدم لون شريط التمرير بواسطة شُرُط التمرير لضمان ظهور شُرُط التمرير المتراكبة "
 "بغض النظر عن لون المحتوى."
 
-#: gradience/frontend/schemas/preset_schema.py:380
+#: gradience/frontend/schemas/preset_schema.py:477
 msgid "Blue"
 msgstr "أزرق"
 
-#: gradience/frontend/schemas/preset_schema.py:381
+#: gradience/frontend/schemas/preset_schema.py:478
 msgid "Green"
 msgstr "أخضر"
 
-#: gradience/frontend/schemas/preset_schema.py:382
+#: gradience/frontend/schemas/preset_schema.py:479
 msgid "Yellow"
 msgstr "أصفر"
 
-#: gradience/frontend/schemas/preset_schema.py:383
+#: gradience/frontend/schemas/preset_schema.py:480
 msgid "Orange"
 msgstr "برتقالي"
 
-#: gradience/frontend/schemas/preset_schema.py:384
+#: gradience/frontend/schemas/preset_schema.py:481
 msgid "Red"
 msgstr "أحمر"
 
-#: gradience/frontend/schemas/preset_schema.py:385
+#: gradience/frontend/schemas/preset_schema.py:482
 msgid "Purple"
 msgstr "أرجواني"
 
-#: gradience/frontend/schemas/preset_schema.py:386
+#: gradience/frontend/schemas/preset_schema.py:483
 msgid "Brown"
 msgstr "بني"
 
-#: gradience/frontend/schemas/preset_schema.py:387
+#: gradience/frontend/schemas/preset_schema.py:484
 #: gradience/frontend/widgets/monet_theming_group.py:95
 #: gradience/frontend/widgets/shell_theming_group.py:73
 msgid "Light"
 msgstr "مظهر فاتح"
 
-#: gradience/frontend/schemas/preset_schema.py:388
+#: gradience/frontend/schemas/preset_schema.py:485
 #: gradience/frontend/widgets/monet_theming_group.py:96
 #: gradience/frontend/widgets/shell_theming_group.py:72
 msgid "Dark"
@@ -1081,11 +1195,6 @@ msgstr "لون مقدمة إعدادات الشاشة"
 msgid "_Cancel"
 msgstr "ألغِ"
 
-#: gradience/frontend/dialogs/log_out_dialog.py:41
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
-msgid "OK"
-msgstr "حسنًا"
-
 #: gradience/frontend/dialogs/save_dialog.py:39
 #, python-brace-format
 msgid ""
@@ -1112,6 +1221,10 @@ msgid ""
 "The Shell version you are using is not supported by Gradience. Please "
 "upgrade to a newer version of GNOME."
 msgstr "لا يدعم «تدرج» إصدار صدفتك. عليك أن ترقيها لإصدار جنوم أحدث."
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
+msgid "OK"
+msgstr "حسنًا"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -1205,18 +1318,34 @@ msgstr "تعذر حذف الإعداد المسبق"
 msgid "Repository removed"
 msgstr "أُزيل المستودع"
 
-#: gradience/frontend/widgets/reset_preset_group.py:57
+#: gradience/frontend/widgets/reset_preset_group.py:55
 msgid "Unable to restore GTK 4 backup"
 msgstr "تعذّرت استعادة النسخة الاحتياطية لـ جي‌تي‌كي 4"
 
+#: gradience/frontend/widgets/reset_preset_group.py:59
+msgid "GTK 4 preset has been restored. Log out to apply changes."
+msgstr ""
+
 #: gradience/frontend/widgets/reset_preset_group.py:69
-#: gradience/frontend/widgets/reset_preset_group.py:94
+#: gradience/frontend/widgets/reset_preset_group.py:98
 msgid "Unable to delete current preset"
 msgstr "تعذر حذف الإعداد المسبق الحالي"
 
-#: gradience/frontend/widgets/reset_preset_group.py:82
+#: gradience/frontend/widgets/reset_preset_group.py:73
+msgid "GTK 4 theme has been reset. Log out to apply changes."
+msgstr ""
+
+#: gradience/frontend/widgets/reset_preset_group.py:84
 msgid "Unable to restore GTK 3 backup"
 msgstr "تعذّرت استعادة نسخة جي‌تي‌كي ٣ الاحتياطية"
+
+#: gradience/frontend/widgets/reset_preset_group.py:88
+msgid "GTK 3 preset has been restored. Log out to apply changes."
+msgstr ""
+
+#: gradience/frontend/widgets/reset_preset_group.py:102
+msgid "GTK 3 theme has been reset. Log out to apply changes."
+msgstr ""
 
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."
@@ -1239,6 +1368,7 @@ msgstr ""
 msgid "Disable Engine"
 msgstr "عطِّل المحرك"
 
+#. dialog.add_response("enable-extension", _("Enable Extension"))
 #: gradience/frontend/widgets/shell_theming_group.py:122
 #: gradience/frontend/widgets/shell_theming_group.py:133
 #: gradience/frontend/widgets/shell_theming_group.py:145
@@ -1272,6 +1402,7 @@ msgid ""
 "enable it to apply the theme."
 msgstr "امتداد «سمات المستخدم» معطَّل في نظامك، عليك تمكينه لتطبِّق السمة."
 
+#. TODO: Fix "assertion 'adw_message_dialog_has_response (self, response)' failed" error #. (don't know if this isn't a bug in libadwaita itself)
 #: gradience/frontend/widgets/shell_theming_group.py:143
 #: gradience/frontend/views/presets_manager_window.py:201
 msgid "Cancel"
@@ -1294,6 +1425,9 @@ msgstr "فشل تحميل رابط تثبيت الامتداد."
 msgid "Shell theme successfully reset."
 msgstr "صُفِّرت سمة الصدفة."
 
+#. TRANSLATORS: This is a place to put your credits (formats:
+#. "Name https://example.com" or "Name <email@example.com>",
+#. no quotes) and is not meant to be translated literally.
 #: gradience/frontend/views/about_window.py:27
 msgid "translator-credits"
 msgstr "علي الجشي https://github.com/Ali-x98"
@@ -1386,7 +1520,7 @@ msgid "Unsupported file format, must be .json"
 msgstr "تنسيق الملف غير مدعوم، يجب أن تنسيقه .json"
 
 #: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:204
+#: gradience/frontend/main.py:203
 msgid "Failed to load list of presets"
 msgstr "فشل تحميل قائمة الإعدادات المسبقة"
 
@@ -1410,31 +1544,31 @@ msgstr ""
 "لم يُعثر على إعداد مسبق! استخدم زر الاستيراد لاستيراد إعداد مسبق أو البحث عن "
 "واحد في علامة تبويب \"استكشاف\"."
 
-#: gradience/frontend/views/welcome_window.py:89
+#: gradience/frontend/views/welcome_window.py:79
 msgid "Thanks for updating Gradience!"
 msgstr "هنيئًا لك بتحديث «تدرج»!"
 
-#: gradience/frontend/main.py:237
+#: gradience/frontend/main.py:236
 msgid "No presets found"
 msgstr "لم يُعثر على إعدادات مسبقة"
 
-#: gradience/frontend/main.py:260
+#: gradience/frontend/main.py:259
 msgid "Favorite Presets"
 msgstr "الإعدادات المسبقة المفضلة"
 
-#: gradience/frontend/main.py:417
+#: gradience/frontend/main.py:416
 msgid "Unsaved Changes"
 msgstr "التغييرات غير المحفوظة"
 
-#: gradience/frontend/main.py:429
+#: gradience/frontend/main.py:428
 msgid "Save Changes"
 msgstr "احفظ التغييرات"
 
-#: gradience/frontend/main.py:519
+#: gradience/frontend/main.py:518
 msgid "Apply This Color Scheme?"
 msgstr "طبق نظام الألوان هذا؟"
 
-#: gradience/frontend/main.py:521
+#: gradience/frontend/main.py:520
 msgid ""
 "Warning: any custom CSS files for those app types will be irreversibly "
 "overwritten!"
@@ -1442,21 +1576,43 @@ msgstr ""
 "تحذير: ستتم الكتابة فوق أي ملفات سي‌إس‌إس مخصصة لأنواع التطبيقات هذه بشكل "
 "نهائي!"
 
-#: gradience/frontend/main.py:525
+#: gradience/frontend/main.py:524
 msgid "_Apply"
 msgstr "طبق"
 
-#: gradience/frontend/main.py:551
+#: gradience/frontend/main.py:550
 msgid "You have unsaved changes!"
 msgstr "لديك تعديلات لم تُحفظ!"
 
-#: gradience/frontend/main.py:602
+#: gradience/frontend/main.py:601
 msgid "Preset saved"
 msgstr "حُفظ الإعداد المسبق"
 
-#: gradience/frontend/main.py:619
-msgid "Preset set successfully"
-msgstr "طُبق الإعداد المسبق بنجاح"
+#: gradience/frontend/main.py:618
+msgid "Preset has been set. Log out to apply changes."
+msgstr ""
+
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more; with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "يمكنك تغيير ألوان النوافذ والأزرار والقوائم والمزيد باستخدام ميزات متقدمة "
+#~ "مثل إضافة سي‌إس‌إس مخصص."
+
+#~ msgid "Legacy Apps Theming"
+#~ msgstr "وسم التطبيقات القديمة"
+
+#~ msgid "Install adw-gtk3 theme for legacy app theming"
+#~ msgstr "ثبت سمة adw-gtk3 لوَسم التطبيقات القديمة"
+
+#~ msgid "System Configuration"
+#~ msgstr "ضبط النظام"
+
+#~ msgid "Installing adw-gtk3"
+#~ msgstr "تثبيت سمة adw-gtk3"
+
+#~ msgid "Preset set successfully"
+#~ msgstr "طُبق الإعداد المسبق بنجاح"
 
 #~ msgid "Toggle Text Value"
 #~ msgstr "بدّل قيمة النص"
@@ -2006,9 +2162,6 @@ msgstr "طُبق الإعداد المسبق بنجاح"
 
 #~ msgid "About Adwaita Manager"
 #~ msgstr "حول مدير Adwaita"
-
-#~ msgid "Adwaita Manager Team"
-#~ msgstr "فريق مدير Adwaita"
 
 #~ msgid "GTK 4 Flatpak Specific"
 #~ msgstr "GTK 4 Flatpak محدد"
