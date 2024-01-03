@@ -25,7 +25,7 @@ jobs:
     steps:
       # Checkout a repository with Flatpak manifests
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.1
         with:
           submodules: recursive
 
@@ -33,14 +33,14 @@ jobs:
       - name: Setup QEMU
         if: ${{ matrix.arch == 'aarch64' }}
         id: qemu
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v3.0.0
         with:
           platforms: arm64
 
       # See "GPG Signing" below
       - name: Setup GPG
         id: gpg
-        uses: crazy-max/ghaction-import-gpg@v6
+        uses: crazy-max/ghaction-import-gpg@v6.1.0
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
@@ -73,4 +73,4 @@ jobs:
     steps:
       - name: GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.2
