@@ -107,3 +107,4 @@ ninja -C builddir run
 > **Note** 
 > During testing and development, as a convenience, you can use the `local.sh` script to quickly rebuild local builds.
 > If you want to use CLI in local builds, you should type: `./local_cli.sh <command>` instead of `gradience-cli`.
+

@@ -46,7 +46,7 @@ template $GradiencePresetRow : Adw.ExpanderRow {
 
     Button apply_button {
       valign: center;
-      icon-name: "checkmark-large-symbolic";
+      icon-name: "checkmark-symbolic";
       tooltip-text: _("Apply Preset");
       clicked => $on_apply_button_clicked();
       styles ["flat"]
@@ -99,7 +99,7 @@ template $GradiencePresetRow : Adw.ExpanderRow {
     Button report_button {
       valign: center;
       icon-name: "bug-symbolic";
-      tooltip-text: _("Report Preset Issue");
+      tooltip-text: _("Report an Issue");
       clicked => $on_report_button_clicked();
     }
 

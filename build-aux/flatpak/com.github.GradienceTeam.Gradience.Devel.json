@@ -22,8 +22,10 @@
         "--filesystem=xdg-download:ro",
         "--filesystem=~/.mozilla/firefox",
         "--filesystem=~/.librewolf",
+        "--filesystem=~/.waterfox",
         "--filesystem=~/.var/app/org.mozilla.firefox/.mozilla/firefox",
         "--filesystem=~/.var/app/io.gitlab.librewolf-community/.librewolf",
+        "--filesystem=~/.var/app/net.waterfox.waterfox/.waterfox",
         "--filesystem=~/snap/firefox/common/.mozilla/firefox",
         "--filesystem=/.var/app/com.getmailspring.Mailspring/config/Mailspring/packages/Libadwaita/styles",
         "--filesystem=xdg-config/Mailspring"
@@ -51,8 +53,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/lxml/lxml/releases/download/lxml-4.9.3/lxml-4.9.3.tar.gz",
-                    "sha256": "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
+                    "url": "https://github.com/lxml/lxml/releases/download/lxml-5.0.0-1/lxml-5.0.0.tar.gz",
+                    "sha256": "67216b13a832adb984cfd20437261236f8c05fc19a0f7d4c59c235fddb17dfdb"
                 }
             ]
         },
@@ -62,7 +64,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                    "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
                     "branch" : "main"
                 }
             ]
@@ -93,7 +95,7 @@
                         {
                             "type": "git",
                             "url": "https://github.com/sass/libsass.git",
-                            "tag": "3.6.5"
+                            "tag": "3.6.6"
                         },
                         {
                             "type": "script",
@@ -120,8 +122,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/flatpak/libportal",
-                    "tag": "main"
+                    "url": "https://github.com/flatpak/libportal.git",
+                    "branch": "main"
                 }
             ]
         },
