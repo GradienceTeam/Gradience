@@ -1,9 +1,20 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $GradienceShellThemingGroup : Adw.PreferencesGroup {
+template $GradienceShellThemingGroup: Adw.PreferencesGroup {
   title: _("Shell Engine");
-  description: _("Shell Engine generates a custom GNOME Shell theme based on the currently selected preset.\nWARNING: Extensions that modify the Shell stylesheet may cause issues with themes.");
+  description: _("Generates GNOME Shell theme based on current preset.\nWARNING: Extensions that modify the Shell stylesheet may cause issues with themes.");
+
+  // TODO: Fix the warning being under shell-theming-expander
+  Label {
+    label: "Warning: Extensions that modify the Shell stylesheet may cause issues with themes";
+    halign: start;
+
+    styles [
+      "dim-label",
+      "warning"
+    ]
+  }
 
   Adw.ExpanderRow shell-theming-expander {
     title: _("Shell Engine Options");
@@ -16,7 +27,10 @@ template $GradienceShellThemingGroup : Adw.PreferencesGroup {
       label: _("Apply");
       tooltip-text: _("Apply Shell theme");
       clicked => $on_apply_button_clicked();
-      styles ["suggested-action"]
+
+      styles [
+        "suggested-action"
+      ]
     }
 
     Adw.ActionRow custom-colors-row {
@@ -47,7 +61,10 @@ Adw.ActionRow other-options-row {
     //tooltip-text: _("Restore Previous Theme");
     tooltip-text: _("Currently unavailable");
     clicked => $on_restore_button_clicked();
-    styles ["flat"]
+
+    styles [
+      "flat"
+    ]
   }
 
   [suffix]
@@ -56,6 +73,10 @@ Adw.ActionRow other-options-row {
     label: _("Reset Theme");
     tooltip-text: _("Reset applied theme");
     clicked => $on_reset_theme_clicked();
-    styles ["destructive-action"]
+
+    styles [
+      "destructive-action"
+    ]
   }
 }
+

@@ -15,8 +15,8 @@ template $GradiencePreferencesWindow : Adw.PreferencesWindow {
       title: _("Flatpak Applications");
 
       Adw.ActionRow {
-        title: _("Allow GTK 4 Theming");
-        subtitle: _("Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to access custom themes.");
+        title: _("Theme sandboxed GTK 4 apps");
+        subtitle: _("Allow GTK 4 Flatpak apps of current user to access custom themes");
         activatable-widget: gtk4_user_theming_switch;
         Gtk.Switch gtk4_user_theming_switch {
           valign: center;
@@ -25,8 +25,8 @@ template $GradiencePreferencesWindow : Adw.PreferencesWindow {
 
       Adw.ActionRow {
         visible: false;
-        title: _("Allow GTK 4 Theming (System)");
-        subtitle: _("Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to access custom themes. (Requires root access)");
+        title: _("Theme sandboxed GTK 4 apps (System)");
+        subtitle: _("Allow GTK 4 Flatpak apps of all users to access custom themes (Authentication required)");
         activatable-widget: gtk4_global_theming_switch;
         Gtk.Switch gtk4_global_theming_switch {
           valign: center;
@@ -34,8 +34,8 @@ template $GradiencePreferencesWindow : Adw.PreferencesWindow {
       }
 
       Adw.ActionRow {
-        title: _("Allow GTK 3 Theming");
-        subtitle: _("Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to access adw-gtk3 theme.");
+        title: _("Theme sandboxed GTK 3 apps");
+        subtitle: _("Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme");
         activatable-widget: gtk3_user_theming_switch;
         Gtk.Switch gtk3_user_theming_switch {
           valign: center;
@@ -44,8 +44,8 @@ template $GradiencePreferencesWindow : Adw.PreferencesWindow {
 
       Adw.ActionRow {
         visible: false;
-        title: _("Allow GTK 3 Theming (System)");
-        subtitle: _("Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to access adw-gtk3 theme. (Requires root access)");
+        title: _("Theme sandboxed GTK 3 apps (System)");
+        subtitle: _("Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme (Authentication required)");
         activatable-widget: gtk3_global_theming_switch;
         Gtk.Switch gtk3_global_theming_switch {
           valign: center;
@@ -57,8 +57,8 @@ template $GradiencePreferencesWindow : Adw.PreferencesWindow {
 
       title: _("Preset Fetching");
       Adw.ActionRow jsdelivr_row {
-        title: _("Use an alternative server for downloading presets");
-        subtitle: _("JSDelivr will be used instead of direct preset fetching from GitHub");
+        title: _("Use an alternative server for fetching presets");
+        subtitle: _("Use JSDelivr instead of directly fetching presets from GitHub");
         activatable-widget: jsdelivr_switch;
         Gtk.Switch jsdelivr_switch {
           valign: center;
@@ -102,7 +102,7 @@ template $GradiencePreferencesWindow : Adw.PreferencesWindow {
 
       Adw.ActionRow {
         title: _("Shell Engine");
-        subtitle: _("Shell Engine generates a custom GNOME Shell theme based on a currently chosen preset.");
+        subtitle: _("Generates GNOME Shell theme based on current preset");
         activatable-widget: gnome_shell_engine_switch;
         Switch gnome_shell_engine_switch {
           valign: center;
@@ -111,7 +111,7 @@ template $GradiencePreferencesWindow : Adw.PreferencesWindow {
 
       Adw.ActionRow {
         title: _("Monet Engine");
-        subtitle: _("Monet Engine generates a Material Design 3 palette by extracting the image's colors.");
+        subtitle: _("Generates a Material Design 3 palette by extracting colors of an image");
         activatable-widget: monet_engine_switch;
         Switch monet_engine_switch {
           valign: center;
@@ -120,3 +120,4 @@ template $GradiencePreferencesWindow : Adw.PreferencesWindow {
     }
   }
 }
+

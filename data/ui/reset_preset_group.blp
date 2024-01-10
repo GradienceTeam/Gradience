@@ -2,11 +2,11 @@ using Gtk 4.0;
 using Adw 1;
 
 template $GradienceResetPresetGroup : Adw.PreferencesGroup {
-  title: _("Reset and Restore Presets");
-  description: _("Reset a currently applied preset or restore the previous one.");
+  title: _("Reset and Restore Theming");
+  description: _("Reset theming to default or restore previously applied preset.");
 
   Adw.ActionRow {
-    title: _("Libadwaita and GTK 4 Applications");
+    title: _("GTK 4/Libadwaita Apps");
 
     Button restore_libadw_button {
       valign: center;
@@ -26,7 +26,7 @@ template $GradienceResetPresetGroup : Adw.PreferencesGroup {
   }
 
   Adw.ActionRow {
-    title: _("GTK 3 Applications");
+    title: _("GTK 3 Apps");
 
     Button restore_gtk3_button {
       valign: center;
