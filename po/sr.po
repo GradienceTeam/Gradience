@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-10-03 19:58+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-10 01:35+0000\n"
 "PO-Revision-Date: 2023-10-20 04:21+0000\n"
 "Last-Translator: Vasilj Milosevic <eboyee@gmail.com>\n"
 "Language-Team: Serbian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -87,27 +87,11 @@ msgstr "Snimci ekrana \"Instalirano\" listića menadžera postavki"
 msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "Snimci ekrana \"Istraži\" listića menadžera postavki"
 
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:82
-msgid "AdwCustomizer"
-msgstr "AdwPrilagođavač"
-
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:83
-msgid "Adwaita Manager"
-msgstr "Adwaita Menadžer"
-
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:84
-msgid "GNOME"
-msgstr ""
-
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:85
-msgid "Customization"
-msgstr "Prilagođavanje"
-
 #: data/ui/app_type_dialog.blp:14
 msgid "Select application types to theme:"
 msgstr "Izaberi tipove aplikacija za primenu teme:"
 
-#: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
+#: data/ui/app_type_dialog.blp:17
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita i GTK 4 aplikacije"
 
@@ -125,13 +109,20 @@ msgid "Apply Preset"
 msgstr "Primeni postavku"
 
 #: data/ui/custom_css_group.blp:5
-msgid "Custom CSS"
+#, fuzzy
+#| msgid "Custom CSS"
+msgid "Custom Styles"
 msgstr "Poseban CSS"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Libadwaita allows applications to "
+#| "hardcode values like padding and margins, and using custom CSS may cause "
+#| "unintended breakage."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
-"hardcode values like padding and margins, and using custom CSS may cause "
+"hardcode values like padding and margins, and using custom styles may cause "
 "unintended breakage."
 msgstr ""
 "Menjanje ovoga može pokvariti neke programe. Libadwaita omogućava "
@@ -151,66 +142,31 @@ msgid "Download and Apply"
 msgstr "Preuzmi i primeni"
 
 #: data/ui/explore_preset_row.blp:34
-msgid "Download Only"
+#, fuzzy
+#| msgid "Download Only"
+msgid "Download"
 msgstr "Samo preuzmi"
 
-#: data/ui/help_overlay.blp:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Opšte"
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr "Izloguj se"
 
-#: data/ui/help_overlay.blp:14
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Prikaži prečice"
-
-#: data/ui/help_overlay.blp:19
-msgctxt "shortcut window"
-msgid "Show Apply Dialog"
-msgstr "Prikaži dijalog za primenu"
-
-#: data/ui/help_overlay.blp:24
-msgctxt "shortcut window"
-msgid "Manage Presets"
-msgstr "Upravljaj postavkama"
-
-#: data/ui/help_overlay.blp:29
-msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "Sačuvaj postavku"
-
-#: data/ui/help_overlay.blp:34
-msgctxt "shortcut window"
-msgid "Go to the Colors Section"
-msgstr "Idi na sekciju sa bojama"
-
-#: data/ui/help_overlay.blp:39
-msgctxt "shortcut window"
-msgid "Go to the Theming Section"
-msgstr "Idi na sekciju sa temama"
-
-#: data/ui/help_overlay.blp:44
-msgctxt "shortcut window"
-msgid "Go to the Advanced Section"
-msgstr "Idi na naprednu sekciju"
-
-#: data/ui/help_overlay.blp:49
-msgctxt "shortcut window"
-msgid "Preferences"
-msgstr "Preference"
-
-#: data/ui/help_overlay.blp:54
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Izađi"
+#: data/ui/log_out_dialog.blp:6
+msgid "Log out to allow changes to take effect."
+msgstr "Izloguj se da bi omogućio da se primene promene."
 
 #: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Monet motor"
 
 #: data/ui/monet_theming_group.blp:6
-msgid "Monet Engine generates a Material You color palette from an image."
-msgstr "Monet motor generiše Material You paletu boja iz slike."
+#, fuzzy
+#| msgid ""
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
+#| "image's colors."
+msgid "Generates a Material Design 3 palette by extracting colors of an image."
+msgstr ""
+"Monet motor generiše Material Design 3 paletu izvlačeći je iz boja sa slike."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
@@ -220,7 +176,7 @@ msgstr "Monet moto opcije"
 msgid "Choose an image and modify generated Monet palette"
 msgstr "Izaberi sliku i modifikuj generisanu Monet paletu"
 
-#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
+#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:27
 #: data/ui/window.blp:29
 msgid "Apply"
 msgstr "Primeni"
@@ -230,8 +186,8 @@ msgid "Apply a palette"
 msgstr "Primeni paletu"
 
 #: data/ui/monet_theming_group.blp:23
-msgid "Select an Image"
-msgstr "Izaberi sliku"
+msgid "Background Image"
+msgstr ""
 
 #: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
@@ -240,15 +196,6 @@ msgstr "Izaberi dokument"
 #: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Izaberi slikovni dokument"
-
-#: data/ui/log_out_dialog.blp:5
-msgid "Log out"
-msgstr "Izloguj se"
-
-#. TODO: redundant? how can we not repeat ourselves?
-#: data/ui/log_out_dialog.blp:6
-msgid "Log out to allow changes to take effect."
-msgstr "Izloguj se da bi omogućio da se primene promene."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -278,14 +225,13 @@ msgstr "Prikaži hex"
 msgid "Toggle Plugin"
 msgstr "Uključi/isključi dodatak"
 
-#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:128
-msgid "Preferences"
-msgstr "Preference"
-
-#: data/ui/plugin_row.blp:30
+#: data/ui/plugin_row.blp:33
 msgid "Remove Plugin"
 msgstr "Ukloni dodatak"
+
+#: data/ui/preferences_window.blp:5 data/ui/window.blp:128
+msgid "Preferences"
+msgstr "Preference"
 
 #: data/ui/preferences_window.blp:11
 msgid "General"
@@ -296,63 +242,67 @@ msgid "Flatpak Applications"
 msgstr "Flatpak aplikacije"
 
 #: data/ui/preferences_window.blp:18
-msgid "Allow GTK 4 Theming"
-msgstr "Omogući GTK 4 teme"
+msgid "Theme sandboxed GTK 4 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:19
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to "
-"access custom themes."
+#, fuzzy
+#| msgid ""
+#| "Override Flatpak permissions for current user to allow GTK 4 Flatpak apps "
+#| "to access custom themes."
+msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
 msgstr ""
 "Nadjačaj Flatpak dozvole za trenutnog korisnika kako bi GTK 4 Flatpak "
 "aplikacije imale pristup prilagođenim temama."
 
 #: data/ui/preferences_window.blp:28
-msgid "Allow GTK 4 Theming (System)"
-msgstr "Dzovoli GTK 4 teme (Sistem)"
+msgid "Theme sandboxed GTK 4 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:29
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
-"access custom themes. (Requires root access)"
+"Allow GTK 4 Flatpak apps of all users to access custom themes "
+"(Authentication required)"
 msgstr ""
-"Nadjačaj Flatpak dozvole za sve korisnike kako bi GTK 4 Flatpak aplikacije "
-"imale pristup prilagođenim temama. (Zahteva koreni pristup)"
 
 #: data/ui/preferences_window.blp:37
-msgid "Allow GTK 3 Theming"
-msgstr "Omogući GTK 3 teme"
+msgid "Theme sandboxed GTK 3 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:38
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme."
+#, fuzzy
+#| msgid ""
+#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps "
+#| "to access adw-gtk3 theme."
+msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
 msgstr ""
 "Nadjačaj Flatpak dozvole za trenutnog korisnika kako bi GTK 3 Flatpak "
 "aplikacije imale pristup adw-gtk3 temi."
 
 #: data/ui/preferences_window.blp:47
-msgid "Allow GTK 3 Theming (System)"
-msgstr "Omogući GTK 3 teme (Sistem)"
+msgid "Theme sandboxed GTK 3 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:48
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme. (Requires root access)"
+"Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
+"(Authentication required)"
 msgstr ""
-"Nadjačaj Flatpak dozvole za sve korisnike kako bi GTK 3 Flatpak aplikacije "
-"imale pristup adw-gtk3 temi. (Zahteva koreni pristup)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "Preuzimanje postavki"
 
 #: data/ui/preferences_window.blp:60
-msgid "Use an alternative server for downloading presets"
+#, fuzzy
+#| msgid "Use an alternative server for downloading presets"
+msgid "Use an alternative server for fetching presets"
 msgstr "Koristi alternativni server za preuzimanje postavki"
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+#, fuzzy
+#| msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+msgid "Use JSDelivr instead of directly fetching presets from GitHub"
 msgstr ""
 "JSDelivr će biti korišćen umesto direktnog preuzimanja postavki sa GitHub-a"
 
@@ -385,17 +335,21 @@ msgid "Shell Engine"
 msgstr "Oklopni motor"
 
 #: data/ui/preferences_window.blp:105
-msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on a currently "
-"chosen preset."
+#, fuzzy
+#| msgid ""
+#| "Shell Engine generates a custom GNOME Shell theme based on a currently "
+#| "chosen preset."
+msgid "Generates GNOME Shell theme based on current preset"
 msgstr ""
 "Oklopni motor generiše prilagođenu temu za Gnome školjku bazirano na "
 "trenutno izabranoj postavci."
 
 #: data/ui/preferences_window.blp:114
-msgid ""
-"Monet Engine generates a Material Design 3 palette by extracting the image's "
-"colors."
+#, fuzzy
+#| msgid ""
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
+#| "image's colors."
+msgid "Generates a Material Design 3 palette by extracting colors of an image"
 msgstr ""
 "Monet motor generiše Material Design 3 paletu izvlačeći je iz boja sa slike."
 
@@ -415,20 +369,21 @@ msgstr "Postavka nema opis."
 msgid "No Badges"
 msgstr "Nema bedževa"
 
-#. styles ["danger"]
-#: data/ui/preset_row.blp:102 data/ui/presets_manager_window.blp:44
-msgid "Report Preset Issue"
+#: data/ui/preset_row.blp:102
+#, fuzzy
+#| msgid "Report Preset Issue"
+msgid "Report an Issue"
 msgstr "Prijavi problem sa postavkom"
 
 #: data/ui/preset_row.blp:109
 msgid "Remove preset"
 msgstr "Ukloni postavku"
 
-#: data/ui/preset_row.blp:110
+#: data/ui/preset_row.blp:110 data/ui/repo_row.blp:9
 msgid "Remove Preset"
 msgstr "Ukloni Postavku"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:65
 msgid "Presets"
 msgstr "Postavke"
 
@@ -443,6 +398,10 @@ msgstr "Uvezi dokument postavke"
 #: data/ui/presets_manager_window.blp:38
 msgid "Delete"
 msgstr "Obriši"
+
+#: data/ui/presets_manager_window.blp:44
+msgid "Report Preset Issue"
+msgstr "Prijavi problem sa postavkom"
 
 #: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:250
 msgid "Open in File Manager"
@@ -503,12 +462,18 @@ msgid "JSON file (*.json)"
 msgstr "JSON dokument (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-msgid "Reset and Restore Presets"
+#, fuzzy
+#| msgid "Reset and Restore Presets"
+msgid "Reset and Restore Theming"
 msgstr "Resetuj i ponovo primeni postavke"
 
 #: data/ui/reset_preset_group.blp:6
-msgid "Reset a currently applied preset or restore the previous one."
-msgstr "Resetuj trenutno primenjenu postavku ili ponovo primeni prethodnu."
+msgid "Reset theming to default or restore previously applied preset."
+msgstr ""
+
+#: data/ui/reset_preset_group.blp:9
+msgid "GTK 4/Libadwaita Apps"
+msgstr ""
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -523,7 +488,9 @@ msgid "Reset Applied Preset"
 msgstr "Resetuj primenjenu postavku"
 
 #: data/ui/reset_preset_group.blp:29
-msgid "GTK 3 Applications"
+#, fuzzy
+#| msgid "GTK 3 Applications"
+msgid "GTK 3 Apps"
 msgstr "GTK 3 aplikacije"
 
 #: data/ui/save_dialog.blp:5
@@ -570,7 +537,7 @@ msgstr ""
 msgid "Warning"
 msgstr "Upozorenje"
 
-#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:79
+#: data/ui/share_window.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -584,7 +551,7 @@ msgstr ""
 msgid "I Understand The Consequences"
 msgstr "Razumem posledice"
 
-#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:93
+#: data/ui/share_window.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Prilagodi Adwaita temu"
 
@@ -622,7 +589,8 @@ msgstr "Sistemska konfiguracije"
 
 #: data/ui/share_window.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
-msgstr "Konfiguriši sistem za primenu tema, omogućava nadjačavanje Flatpak teme"
+msgstr ""
+"Konfiguriši sistem za primenu tema, omogućava nadjačavanje Flatpak teme"
 
 #: data/ui/share_window.blp:136
 msgid "Installing Themes"
@@ -661,17 +629,20 @@ msgid "Shell Engine Preferences"
 msgstr "Preference oklopnog motora"
 
 #: data/ui/shell_prefs_window.blp:13
-msgid "Custom Shell Colors"
-msgstr "Prilagođene boje školjke"
-
-#: data/ui/shell_prefs_window.blp:14
-msgid "Customize Shell theme colors."
+#, fuzzy
+#| msgid "Customize Shell theme colors."
+msgid "Shell theme colors"
 msgstr "Prilagodi boje teme školjke."
 
 #: data/ui/shell_theming_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
+#| "selected preset.\n"
+#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
+#| "with themes."
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the currently "
-"selected preset.\n"
+"Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
@@ -680,44 +651,43 @@ msgstr ""
 "UPOZORENJE: Ekstenzije koje modifikuju Oklopni stil mogu izazvati probleme "
 "sa temama."
 
-#: data/ui/shell_theming_group.blp:9
+#: data/ui/shell_theming_group.blp:20
 msgid "Shell Engine Options"
 msgstr "Opcije oklopnog motora"
 
-#: data/ui/shell_theming_group.blp:10
+#: data/ui/shell_theming_group.blp:21
 msgid "Change the generated GNOME Shell theme"
 msgstr "Izmeni generisanu Gnome temu školjke"
 
-#: data/ui/shell_theming_group.blp:17
+#: data/ui/shell_theming_group.blp:28
 msgid "Apply Shell theme"
 msgstr "Primenu temu školjke"
 
-#: data/ui/shell_theming_group.blp:23
+#: data/ui/shell_theming_group.blp:37
 msgid "Customize Shell Theme"
 msgstr "Prilagodi temu školjke"
 
-#: data/ui/shell_theming_group.blp:29
+#: data/ui/shell_theming_group.blp:43
 msgid "Open Shell Preferences"
 msgstr "Otvori preference školjke"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:49
 msgid "Preset Variant"
 msgstr "Varijanta postavke"
 
-#: data/ui/shell_theming_group.blp:36
+#: data/ui/shell_theming_group.blp:50
 msgid "Select currently applied preset variant"
 msgstr "Izaberi trenutno izabranu varijantu postavke"
 
-#. tooltip-text: _("Restore Previous Theme");
-#: data/ui/shell_theming_group.blp:48
+#: data/ui/shell_theming_group.blp:62
 msgid "Currently unavailable"
 msgstr "Trenutno nedostupno"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:73
 msgid "Reset Theme"
 msgstr "Resetuj temu"
 
-#: data/ui/shell_theming_group.blp:57
+#: data/ui/shell_theming_group.blp:74
 msgid "Reset applied theme"
 msgstr "Resetuj primenjenu temu"
 
@@ -750,40 +720,69 @@ msgid "What's new in 0.8.0"
 msgstr "Šta je novo u 0.8.0"
 
 #: data/ui/welcome_window.blp:71
+#, fuzzy
+#| msgid ""
+#| "In this release, we added GNOME Shell theming support and reworked how "
+#| "Gradience works internally."
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
-"Gradience works internally."
+"Gradience works internally"
 msgstr ""
 "U ovom izdanju, dodali smo Gnome primenu tema školjke i od nule napisali "
 "kako interno radi Gradience."
+
+#: data/ui/welcome_window.blp:79
+#, fuzzy
+#| msgid ""
+#| "Changing the color scheme can negatively affect contrast and readability. "
+#| "Proceed with caution. Please do not report theming-related issues to app "
+#| "developers."
+msgid ""
+"Changing the color scheme can negatively affect contrast and readability. "
+"Proceed with caution. Please do not report theming-related issues to app "
+"developers"
+msgstr ""
+"Menjanjem boja možeš negativno uticati na kontrast i čitljivost. Nastavi sa "
+"upozorenjem. Nemojte prijavljivati probleme sa temama programerima "
+"aplikacije."
 
 #: data/ui/welcome_window.blp:83
 msgid "Agree and Continue"
 msgstr "Prihvati i nastavi"
 
+#: data/ui/welcome_window.blp:93
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Adwaita"
+msgstr "Prilagodi Adwaita temu"
+
 #: data/ui/welcome_window.blp:94
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
-"like adding custom CSS."
+"like adding custom styles"
 msgstr ""
-"Promeni boje prozora, dugmića, lista i još više, sa naprednim opcijama kao "
-"što su prilagođeni CSS."
+"Izmeni boje prozora, dugmića, listi i više, sa naprednim opcijama kao što su "
+"dodavanje posebnog CSS-a"
 
-#: data/ui/window.blp:37
+#: data/ui/window.blp:37 gradience/frontend/main.py:422
+msgid "Save Preset"
+msgstr "Sačuvaj postavku"
+
+#: data/ui/window.blp:46
 msgid "Show Preview Window"
 msgstr "Prikaži prozor za prikaz"
 
-#: data/ui/window.blp:48
+#: data/ui/window.blp:57
 msgid "Main Menu"
 msgstr "Glavni meni"
 
-#: data/ui/window.blp:57
+#: data/ui/window.blp:66
 msgid "Presets Menu"
 msgstr "Meni postavki"
-
-#: data/ui/window.blp:64
-msgid "Save Preset"
-msgstr "Sačuvaj postavku"
 
 #: data/ui/window.blp:73
 msgid "CSS Errors"
@@ -817,6 +816,102 @@ msgstr "Ugrađene postavke"
 #: data/ui/window.blp:167
 msgid "Manage Presets"
 msgstr "Upravljaj postavkama"
+
+#: gradience/backend/flatpak_overrides.py:71
+#: gradience/backend/flatpak_overrides.py:93
+msgid "Failed to save override"
+msgstr ""
+
+#: gradience/backend/flatpak_overrides.py:186
+#: gradience/backend/flatpak_overrides.py:228
+#: gradience/backend/flatpak_overrides.py:306
+#: gradience/backend/flatpak_overrides.py:366
+#: gradience/backend/flatpak_overrides.py:448
+#: gradience/backend/flatpak_overrides.py:509
+msgid "Unexpected file error occurred"
+msgstr ""
+
+#: gradience/frontend/dialogs/app_type_dialog.py:47
+#: gradience/frontend/dialogs/save_dialog.py:62
+msgid "_Cancel"
+msgstr ""
+
+#: gradience/frontend/dialogs/save_dialog.py:39
+#, python-brace-format
+msgid ""
+"Saving preset to \n"
+" <small><i><tt>{0}</tt></i></small>. \n"
+" If that preset already exists, it will be overwritten."
+msgstr ""
+
+#: gradience/frontend/dialogs/save_dialog.py:65
+msgid "Discard"
+msgstr ""
+
+#: gradience/frontend/dialogs/save_dialog.py:70
+msgid "_Save"
+msgstr ""
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
+msgid "Unsupported Shell Version ({get_full_shell_version()})"
+msgstr ""
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+msgid ""
+"The Shell version you are using is not supported by Gradience. Please "
+"upgrade to a newer version of GNOME."
+msgstr ""
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
+msgid "OK"
+msgstr ""
+
+#: gradience/frontend/main.py:203
+#: gradience/frontend/views/presets_manager_window.py:339
+msgid "Failed to load list of presets"
+msgstr ""
+
+#: gradience/frontend/main.py:236
+msgid "No presets found"
+msgstr ""
+
+#: gradience/frontend/main.py:259
+msgid "Favorite Presets"
+msgstr ""
+
+#: gradience/frontend/main.py:412
+msgid "Unsaved Changes"
+msgstr ""
+
+#: gradience/frontend/main.py:421
+msgid "Save"
+msgstr ""
+
+#: gradience/frontend/main.py:511
+msgid "Apply This Color Scheme?"
+msgstr ""
+
+#: gradience/frontend/main.py:513
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+
+#: gradience/frontend/main.py:517
+msgid "_Apply"
+msgstr ""
+
+#: gradience/frontend/main.py:543
+msgid "You have unsaved changes!"
+msgstr ""
+
+#: gradience/frontend/main.py:594
+msgid "Preset saved"
+msgstr ""
+
+#: gradience/frontend/main.py:611
+msgid "Preset has been set. Log out to apply changes."
+msgstr ""
 
 #: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
@@ -1148,38 +1243,111 @@ msgstr ""
 msgid "OSD Foreground Color"
 msgstr ""
 
-#: gradience/frontend/dialogs/app_type_dialog.py:47
-#: gradience/frontend/dialogs/save_dialog.py:62
-msgid "_Cancel"
+#: gradience/frontend/views/about_window.py:27
+msgid "translator-credits"
 msgstr ""
 
-#: gradience/frontend/dialogs/save_dialog.py:39
-#, python-brace-format
+#: gradience/frontend/views/about_window.py:56
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:63
+msgid "Plugins by"
+msgstr ""
+
+#: gradience/frontend/views/about_window.py:65
 msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten."
+"Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 msgstr ""
 
-#: gradience/frontend/dialogs/save_dialog.py:65
-msgid "Discard"
+#: gradience/frontend/views/about_window.py:69
+msgid "Presets by"
 msgstr ""
 
-#: gradience/frontend/dialogs/save_dialog.py:70
-msgid "_Save"
-msgstr ""
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
-msgid "Unsupported Shell Version ({get_full_shell_version()})"
-msgstr ""
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+#: gradience/frontend/views/about_window.py:71
 msgid ""
-"The Shell version you are using is not supported by Gradience. Please "
-"upgrade to a newer version of GNOME."
+"Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
 msgstr ""
 
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
-msgid "OK"
+#: gradience/frontend/views/main_window.py:204
+msgid "Palette Colors"
+msgstr ""
+
+#: gradience/frontend/views/main_window.py:207
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+
+#: gradience/frontend/views/plugins_list.py:89
+msgid "Plugins"
+msgstr ""
+
+#: gradience/frontend/views/plugins_list.py:92
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+
+#: gradience/frontend/views/plugins_list.py:104
+msgid "No Plugins Found."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:119
+#: gradience/frontend/views/presets_manager_window.py:355
+msgid "User Presets"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:194
+msgid "Add new repository"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:195
+msgid "Add a repository to install additional presets."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:201
+#: gradience/frontend/widgets/shell_theming_group.py:143
+msgid "Cancel"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:202
+msgid "Add"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:298
+msgid "Preset already exists"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:310
+msgid "Preset imported"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:313
+msgid "Unsupported file format, must be .json"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid "Built-in Presets"
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:358
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+
+#: gradience/frontend/views/presets_manager_window.py:384
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+
+#: gradience/frontend/views/welcome_window.py:79
+msgid "Thanks for updating Gradience!"
 msgstr ""
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
@@ -1193,11 +1361,11 @@ msgid "Preset downloaded"
 msgstr ""
 
 #: gradience/frontend/widgets/monet_theming_group.py:65
-msgid "Monet Palette"
+msgid "Palette"
 msgstr ""
 
 #: gradience/frontend/widgets/monet_theming_group.py:91
-msgid "Theme"
+msgid "Style"
 msgstr ""
 
 #: gradience/frontend/widgets/monet_theming_group.py:94
@@ -1322,7 +1490,6 @@ msgstr ""
 msgid "Disable Engine"
 msgstr ""
 
-#. dialog.add_response("enable-extension", _("Enable Extension"))
 #: gradience/frontend/widgets/shell_theming_group.py:122
 #: gradience/frontend/widgets/shell_theming_group.py:133
 #: gradience/frontend/widgets/shell_theming_group.py:145
@@ -1354,13 +1521,6 @@ msgid ""
 "enable it to apply the theme."
 msgstr ""
 
-#. TODO: Fix "assertion 'adw_message_dialog_has_response (self, response)' failed" error \
-#. (don't know if this isn't a bug in libadwaita itself)
-#: gradience/frontend/widgets/shell_theming_group.py:143
-#: gradience/frontend/views/presets_manager_window.py:201
-msgid "Cancel"
-msgstr ""
-
 #: gradience/frontend/widgets/shell_theming_group.py:181
 msgid "An error occurred while generating a Shell theme."
 msgstr ""
@@ -1378,154 +1538,96 @@ msgstr ""
 msgid "Shell theme successfully reset."
 msgstr ""
 
-#. TRANSLATORS: This is a place to put your credits (formats:
-#. "Name https://example.com" or "Name <email@example.com>",
-#. no quotes) and is not meant to be translated literally.
-#: gradience/frontend/views/about_window.py:27
-msgid "translator-credits"
-msgstr ""
+#~ msgid "AdwCustomizer"
+#~ msgstr "AdwPrilagođavač"
 
-#: gradience/frontend/views/about_window.py:56
-msgid "Copyright © 2022-2023 Gradience Team"
-msgstr ""
+#~ msgid "Adwaita Manager"
+#~ msgstr "Adwaita Menadžer"
 
-#: gradience/frontend/views/about_window.py:63
-msgid "Plugins by"
-msgstr ""
+#~ msgid "Customization"
+#~ msgstr "Prilagođavanje"
 
-#: gradience/frontend/views/about_window.py:65
-msgid ""
-"Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
-"contributors"
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Opšte"
 
-#: gradience/frontend/views/about_window.py:69
-msgid "Presets by"
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "Show Shortcuts"
+#~ msgstr "Prikaži prečice"
 
-#: gradience/frontend/views/about_window.py:71
-msgid ""
-"Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
-"contributors"
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "Show Apply Dialog"
+#~ msgstr "Prikaži dijalog za primenu"
 
-#: gradience/frontend/views/main_window.py:204
-msgid "Palette Colors"
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "Manage Presets"
+#~ msgstr "Upravljaj postavkama"
 
-#: gradience/frontend/views/main_window.py:207
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Sačuvaj postavku"
 
-#: gradience/frontend/views/plugins_list.py:89
-msgid "Plugins"
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Colors Section"
+#~ msgstr "Idi na sekciju sa bojama"
 
-#: gradience/frontend/views/plugins_list.py:92
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Theming Section"
+#~ msgstr "Idi na sekciju sa temama"
 
-#: gradience/frontend/views/plugins_list.py:104
-msgid "No Plugins Found."
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Advanced Section"
+#~ msgstr "Idi na naprednu sekciju"
 
-#: gradience/frontend/views/presets_manager_window.py:119
-#: gradience/frontend/views/presets_manager_window.py:355
-msgid "User Presets"
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Preference"
 
-#: gradience/frontend/views/presets_manager_window.py:194
-msgid "Add new repository"
-msgstr ""
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Izađi"
 
-#: gradience/frontend/views/presets_manager_window.py:195
-msgid "Add a repository to install additional presets."
-msgstr ""
+#~ msgid "Monet Engine generates a Material You color palette from an image."
+#~ msgstr "Monet motor generiše Material You paletu boja iz slike."
 
-#: gradience/frontend/views/presets_manager_window.py:202
-msgid "Add"
-msgstr ""
+#~ msgid "Select an Image"
+#~ msgstr "Izaberi sliku"
 
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset already exists"
-msgstr ""
+#~ msgid "Allow GTK 4 Theming"
+#~ msgstr "Omogući GTK 4 teme"
 
-#: gradience/frontend/views/presets_manager_window.py:310
-msgid "Preset imported"
-msgstr ""
+#~ msgid "Allow GTK 4 Theming (System)"
+#~ msgstr "Dzovoli GTK 4 teme (Sistem)"
 
-#: gradience/frontend/views/presets_manager_window.py:313
-msgid "Unsupported file format, must be .json"
-msgstr ""
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
+#~ "access custom themes. (Requires root access)"
+#~ msgstr ""
+#~ "Nadjačaj Flatpak dozvole za sve korisnike kako bi GTK 4 Flatpak "
+#~ "aplikacije imale pristup prilagođenim temama. (Zahteva koreni pristup)"
 
-#: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:203
-msgid "Failed to load list of presets"
-msgstr ""
+#~ msgid "Allow GTK 3 Theming"
+#~ msgstr "Omogući GTK 3 teme"
 
-#: gradience/frontend/views/presets_manager_window.py:348
-msgid "Built-in Presets"
-msgstr ""
+#~ msgid "Allow GTK 3 Theming (System)"
+#~ msgstr "Omogući GTK 3 teme (Sistem)"
 
-#: gradience/frontend/views/presets_manager_window.py:358
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
+#~ "access adw-gtk3 theme. (Requires root access)"
+#~ msgstr ""
+#~ "Nadjačaj Flatpak dozvole za sve korisnike kako bi GTK 3 Flatpak "
+#~ "aplikacije imale pristup adw-gtk3 temi. (Zahteva koreni pristup)"
 
-#: gradience/frontend/views/presets_manager_window.py:384
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
+#~ msgid "Reset a currently applied preset or restore the previous one."
+#~ msgstr "Resetuj trenutno primenjenu postavku ili ponovo primeni prethodnu."
 
-#: gradience/frontend/views/welcome_window.py:79
-msgid "Thanks for updating Gradience!"
-msgstr ""
+#~ msgid "Custom Shell Colors"
+#~ msgstr "Prilagođene boje školjke"
 
-#: gradience/frontend/main.py:236
-msgid "No presets found"
-msgstr ""
-
-#: gradience/frontend/main.py:259
-msgid "Favorite Presets"
-msgstr ""
-
-#: gradience/frontend/main.py:416
-msgid "Unsaved Changes"
-msgstr ""
-
-#: gradience/frontend/main.py:428
-msgid "Save Changes"
-msgstr ""
-
-#: gradience/frontend/main.py:518
-msgid "Apply This Color Scheme?"
-msgstr ""
-
-#: gradience/frontend/main.py:520
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-
-#: gradience/frontend/main.py:524
-msgid "_Apply"
-msgstr ""
-
-#: gradience/frontend/main.py:550
-msgid "You have unsaved changes!"
-msgstr ""
-
-#: gradience/frontend/main.py:601
-msgid "Preset saved"
-msgstr ""
-
-#: gradience/frontend/main.py:618
-msgid "Preset has been set. Log out to apply changes."
-msgstr ""
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more, with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "Promeni boje prozora, dugmića, lista i još više, sa naprednim opcijama "
+#~ "kao što su prilagođeni CSS."

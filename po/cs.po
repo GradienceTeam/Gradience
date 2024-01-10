@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-10-03 19:58+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-10 01:35+0000\n"
 "PO-Revision-Date: 2023-12-14 18:34+0100\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -94,27 +94,11 @@ msgstr "Snímek obrazovky se záložkou \"Nainstalované\" Správce předvoleb"
 msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "Snímek obrazovky záložky \"Prozkoumat\" Správce předvoleb"
 
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:82
-msgid "AdwCustomizer"
-msgstr "AdwCustomizer"
-
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:83
-msgid "Adwaita Manager"
-msgstr "Adwaita Manager"
-
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:84
-msgid "GNOME"
-msgstr "GNOME"
-
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:85
-msgid "Customization"
-msgstr "Přizpůsobení"
-
 #: data/ui/app_type_dialog.blp:14
 msgid "Select application types to theme:"
 msgstr "Vyberte typy aplikací pro motiv:"
 
-#: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
+#: data/ui/app_type_dialog.blp:17
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "Aplikace Libadwaita a GTK 4"
 
@@ -132,13 +116,20 @@ msgid "Apply Preset"
 msgstr "Použít předvolbu"
 
 #: data/ui/custom_css_group.blp:5
-msgid "Custom CSS"
+#, fuzzy
+#| msgid "Custom CSS"
+msgid "Custom Styles"
 msgstr "Vlastní CSS"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Libadwaita allows applications to "
+#| "hardcode values like padding and margins, and using custom CSS may cause "
+#| "unintended breakage."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
-"hardcode values like padding and margins, and using custom CSS may cause "
+"hardcode values like padding and margins, and using custom styles may cause "
 "unintended breakage."
 msgstr ""
 "Změna tohoto nastavení může způsobit problémy některých programů. Libadwaita "
@@ -158,66 +149,31 @@ msgid "Download and Apply"
 msgstr "Stáhnout a použít"
 
 #: data/ui/explore_preset_row.blp:34
-msgid "Download Only"
+#, fuzzy
+#| msgid "Download Only"
+msgid "Download"
 msgstr "Pouze ke stažení"
 
-#: data/ui/help_overlay.blp:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Obecné"
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr "Odhlásit se"
 
-#: data/ui/help_overlay.blp:14
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Zobrazit klávesové zkratky"
-
-#: data/ui/help_overlay.blp:19
-msgctxt "shortcut window"
-msgid "Show Apply Dialog"
-msgstr "Zobrazit dialog Použít"
-
-#: data/ui/help_overlay.blp:24
-msgctxt "shortcut window"
-msgid "Manage Presets"
-msgstr "Správa předvoleb"
-
-#: data/ui/help_overlay.blp:29
-msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "Uložit předvolbu"
-
-#: data/ui/help_overlay.blp:34
-msgctxt "shortcut window"
-msgid "Go to the Colors Section"
-msgstr "Přejít do sekce Barvy"
-
-#: data/ui/help_overlay.blp:39
-msgctxt "shortcut window"
-msgid "Go to the Theming Section"
-msgstr "Přejít do sekce Témata"
-
-#: data/ui/help_overlay.blp:44
-msgctxt "shortcut window"
-msgid "Go to the Advanced Section"
-msgstr "Přejit do sekce Pokročilé"
-
-#: data/ui/help_overlay.blp:49
-msgctxt "shortcut window"
-msgid "Preferences"
-msgstr "Předvolby"
-
-#: data/ui/help_overlay.blp:54
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Ukončit"
+#: data/ui/log_out_dialog.blp:6
+msgid "Log out to allow changes to take effect."
+msgstr "Odhlaste se, aby se změny projevily."
 
 #: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Monet Engine"
 
 #: data/ui/monet_theming_group.blp:6
-msgid "Monet Engine generates a Material You color palette from an image."
-msgstr "Monet Engine vygeneruje z obrázku barevnou paletu Material You."
+#, fuzzy
+#| msgid ""
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
+#| "image's colors."
+msgid "Generates a Material Design 3 palette by extracting colors of an image."
+msgstr ""
+"Monet je engine, který z barev obrázku generuje paletu Material Design 3."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
@@ -227,7 +183,7 @@ msgstr "Možnosti Monet Engine"
 msgid "Choose an image and modify generated Monet palette"
 msgstr "Vyberte obrázek a změňte parametry vygenerované palety Monet"
 
-#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
+#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:27
 #: data/ui/window.blp:29
 msgid "Apply"
 msgstr "Použít"
@@ -237,8 +193,9 @@ msgid "Apply a palette"
 msgstr "Aplikovat paletu"
 
 #: data/ui/monet_theming_group.blp:23
-msgid "Select an Image"
-msgstr "Vyberte obrázek"
+#, fuzzy
+msgid "Background Image"
+msgstr "Obrázek na pozadí"
 
 #: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
@@ -247,15 +204,6 @@ msgstr "Vybrat soubor"
 #: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Vybrat obrázek"
-
-#: data/ui/log_out_dialog.blp:5
-msgid "Log out"
-msgstr "Odhlásit se"
-
-#. TODO: redundant? how can we not repeat ourselves?
-#: data/ui/log_out_dialog.blp:6
-msgid "Log out to allow changes to take effect."
-msgstr "Odhlaste se, aby se změny projevily."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -285,14 +233,13 @@ msgstr "Zobrazit Hex"
 msgid "Toggle Plugin"
 msgstr "Přepnout plugin"
 
-#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:128
-msgid "Preferences"
-msgstr "Předvolby"
-
-#: data/ui/plugin_row.blp:30
+#: data/ui/plugin_row.blp:33
 msgid "Remove Plugin"
 msgstr "Odstranit plugin"
+
+#: data/ui/preferences_window.blp:5 data/ui/window.blp:128
+msgid "Preferences"
+msgstr "Předvolby"
 
 #: data/ui/preferences_window.blp:11
 msgid "General"
@@ -303,63 +250,67 @@ msgid "Flatpak Applications"
 msgstr "Aplikace Flatpak"
 
 #: data/ui/preferences_window.blp:18
-msgid "Allow GTK 4 Theming"
-msgstr "Povolit GTK 4 Theming"
+msgid "Theme sandboxed GTK 4 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:19
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to "
-"access custom themes."
+#, fuzzy
+#| msgid ""
+#| "Override Flatpak permissions for current user to allow GTK 4 Flatpak apps "
+#| "to access custom themes."
+msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
 msgstr ""
 "Přepsání oprávnění Flatpaku pro aktuálního uživatele, aby aplikace GTK 4 "
 "Flatpak mohly přistupovat k vlastním motivům."
 
 #: data/ui/preferences_window.blp:28
-msgid "Allow GTK 4 Theming (System)"
-msgstr "Povolení vytváření témat aplikací GTK 4 Flatpak (Systém)"
+msgid "Theme sandboxed GTK 4 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:29
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
-"access custom themes. (Requires root access)"
+"Allow GTK 4 Flatpak apps of all users to access custom themes "
+"(Authentication required)"
 msgstr ""
-"Přepsání oprávnění Flatpaku pro všechny uživatele, aby aplikace GTK 4 "
-"Flatpak mohly přistupovat k vlastním motivům. (Vyžaduje práva roota)"
 
 #: data/ui/preferences_window.blp:37
-msgid "Allow GTK 3 Theming"
-msgstr "Povolení témat GTK 3"
+msgid "Theme sandboxed GTK 3 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:38
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme."
+#, fuzzy
+#| msgid ""
+#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps "
+#| "to access adw-gtk3 theme."
+msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
 msgstr ""
 "Přepsání oprávnění Flatpaku pro aktuálního uživatele, aby aplikace GTK 3 "
 "Flatpak mohly přistupovat k tématu adw-gtk3."
 
 #: data/ui/preferences_window.blp:47
-msgid "Allow GTK 3 Theming (System)"
-msgstr "Povolení vytváření témat aplikací GTK 3 (Systém)"
+msgid "Theme sandboxed GTK 3 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:48
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme. (Requires root access)"
+"Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
+"(Authentication required)"
 msgstr ""
-"Přepsání oprávnění Flatpaku pro všechny uživatele, aby aplikace GTK 3 "
-"Flatpak mohly přistupovat k tématu adw-gtk3. (Vyžaduje práva roota)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "Načítání předvoleb"
 
 #: data/ui/preferences_window.blp:60
-msgid "Use an alternative server for downloading presets"
+#, fuzzy
+#| msgid "Use an alternative server for downloading presets"
+msgid "Use an alternative server for fetching presets"
 msgstr "Pro stahování předvoleb použijte alternativní server"
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+#, fuzzy
+#| msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+msgid "Use JSDelivr instead of directly fetching presets from GitHub"
 msgstr "Místo přímého přednastaveného načítání z GitHubu bude použit JSDelivr"
 
 #: data/ui/preferences_window.blp:73
@@ -391,17 +342,21 @@ msgid "Shell Engine"
 msgstr "Shell Engine"
 
 #: data/ui/preferences_window.blp:105
-msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on a currently "
-"chosen preset."
+#, fuzzy
+#| msgid ""
+#| "Shell Engine generates a custom GNOME Shell theme based on a currently "
+#| "chosen preset."
+msgid "Generates GNOME Shell theme based on current preset"
 msgstr ""
 "Shell Engine generuje vlastní téma prostředí GNOME na základě aktuálně "
 "zvoleného přednastavení."
 
 #: data/ui/preferences_window.blp:114
-msgid ""
-"Monet Engine generates a Material Design 3 palette by extracting the image's "
-"colors."
+#, fuzzy
+#| msgid ""
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
+#| "image's colors."
+msgid "Generates a Material Design 3 palette by extracting colors of an image"
 msgstr ""
 "Monet je engine, který z barev obrázku generuje paletu Material Design 3."
 
@@ -421,20 +376,21 @@ msgstr "Tato předvolba nemá žádný popis."
 msgid "No Badges"
 msgstr "Žádné odznaky"
 
-#. styles ["danger"]
-#: data/ui/preset_row.blp:102 data/ui/presets_manager_window.blp:44
-msgid "Report Preset Issue"
-msgstr "Nahlásit problém s předvolbou"
+#: data/ui/preset_row.blp:102
+#, fuzzy
+#| msgid "Report an Issue…"
+msgid "Report an Issue"
+msgstr "Nahlásit problém…"
 
 #: data/ui/preset_row.blp:109
 msgid "Remove preset"
 msgstr "Odebrat předvolbu"
 
-#: data/ui/preset_row.blp:110
+#: data/ui/preset_row.blp:110 data/ui/repo_row.blp:9
 msgid "Remove Preset"
 msgstr "Odebrat předvolbu"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:65
 msgid "Presets"
 msgstr "Předvolby"
 
@@ -449,6 +405,10 @@ msgstr "Import souboru s předvolbou"
 #: data/ui/presets_manager_window.blp:38
 msgid "Delete"
 msgstr "Smazat"
+
+#: data/ui/presets_manager_window.blp:44
+msgid "Report Preset Issue"
+msgstr "Nahlásit problém s předvolbou"
 
 #: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:250
 msgid "Open in File Manager"
@@ -509,12 +469,20 @@ msgid "JSON file (*.json)"
 msgstr "Soubor JSON (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-msgid "Reset and Restore Presets"
+#, fuzzy
+#| msgid "Reset and Restore Presets"
+msgid "Reset and Restore Theming"
 msgstr "Resetovat a obnovit předvolby"
 
 #: data/ui/reset_preset_group.blp:6
-msgid "Reset a currently applied preset or restore the previous one."
-msgstr "Resetovat aktuálně použitou předvolbu nebo obnovit předchozí."
+msgid "Reset theming to default or restore previously applied preset."
+msgstr ""
+
+#: data/ui/reset_preset_group.blp:9
+#, fuzzy
+#| msgid "Libadwaita and GTK 4 apps"
+msgid "GTK 4/Libadwaita Apps"
+msgstr "Libadwaita a GTK 4 aplikace"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -529,7 +497,9 @@ msgid "Reset Applied Preset"
 msgstr "Resetovat použitou předvolbu"
 
 #: data/ui/reset_preset_group.blp:29
-msgid "GTK 3 Applications"
+#, fuzzy
+#| msgid "GTK 3 Applications"
+msgid "GTK 3 Apps"
 msgstr "Aplikace GTK 3"
 
 #: data/ui/save_dialog.blp:5
@@ -576,7 +546,7 @@ msgstr ""
 msgid "Warning"
 msgstr "Varování"
 
-#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:79
+#: data/ui/share_window.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -590,7 +560,7 @@ msgstr ""
 msgid "I Understand The Consequences"
 msgstr "Chápu důsledky"
 
-#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:93
+#: data/ui/share_window.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Přizpůsobení tématu Adwaita"
 
@@ -669,17 +639,20 @@ msgid "Shell Engine Preferences"
 msgstr "Shell Engine předvolby"
 
 #: data/ui/shell_prefs_window.blp:13
-msgid "Custom Shell Colors"
-msgstr "Vlastní barvy shellu"
-
-#: data/ui/shell_prefs_window.blp:14
-msgid "Customize Shell theme colors."
+#, fuzzy
+#| msgid "Customize Shell theme colors."
+msgid "Shell theme colors"
 msgstr "Přizpůsobit barvy motivu Shell."
 
 #: data/ui/shell_theming_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
+#| "selected preset.\n"
+#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
+#| "with themes."
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the currently "
-"selected preset.\n"
+"Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
@@ -688,44 +661,43 @@ msgstr ""
 "VAROVÁNÍ: Rozšíření, která upravují šablonu stylů prostředí, mohou způsobit "
 "problémy s motivy."
 
-#: data/ui/shell_theming_group.blp:9
+#: data/ui/shell_theming_group.blp:20
 msgid "Shell Engine Options"
 msgstr "Možnosti Shell Engine"
 
-#: data/ui/shell_theming_group.blp:10
+#: data/ui/shell_theming_group.blp:21
 msgid "Change the generated GNOME Shell theme"
 msgstr "Změňit vygenerovaný motiv prostředí GNOME"
 
-#: data/ui/shell_theming_group.blp:17
+#: data/ui/shell_theming_group.blp:28
 msgid "Apply Shell theme"
 msgstr "Použít téma Shell"
 
-#: data/ui/shell_theming_group.blp:23
+#: data/ui/shell_theming_group.blp:37
 msgid "Customize Shell Theme"
 msgstr "Přizpůsobení tématu Shell"
 
-#: data/ui/shell_theming_group.blp:29
+#: data/ui/shell_theming_group.blp:43
 msgid "Open Shell Preferences"
 msgstr "Otevřete Předvolby Shell"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:49
 msgid "Preset Variant"
 msgstr "Varianta předvolby"
 
-#: data/ui/shell_theming_group.blp:36
+#: data/ui/shell_theming_group.blp:50
 msgid "Select currently applied preset variant"
 msgstr "Vyberte aktuálně použitou přednastavenou variantu"
 
-#. tooltip-text: _("Restore Previous Theme");
-#: data/ui/shell_theming_group.blp:48
+#: data/ui/shell_theming_group.blp:62
 msgid "Currently unavailable"
 msgstr "Momentálně nedostupné"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:73
 msgid "Reset Theme"
 msgstr "Resetovat téma"
 
-#: data/ui/shell_theming_group.blp:57
+#: data/ui/shell_theming_group.blp:74
 msgid "Reset applied theme"
 msgstr "Obnovit použitý motiv"
 
@@ -757,40 +729,69 @@ msgid "What's new in 0.8.0"
 msgstr "Novinky ve verzi 0.8.0"
 
 #: data/ui/welcome_window.blp:71
+#, fuzzy
+#| msgid ""
+#| "In this release, we added GNOME Shell theming support and reworked how "
+#| "Gradience works internally."
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
-"Gradience works internally."
+"Gradience works internally"
 msgstr ""
 "V tomto vydání jsme přidali podporu motivace prostředí GNOME Shell a "
 "přepracovali jsme, jak Gradience interně funguje."
+
+#: data/ui/welcome_window.blp:79
+#, fuzzy
+#| msgid ""
+#| "Changing the color scheme can negatively affect contrast and readability. "
+#| "Proceed with caution. Please do not report theming-related issues to app "
+#| "developers."
+msgid ""
+"Changing the color scheme can negatively affect contrast and readability. "
+"Proceed with caution. Please do not report theming-related issues to app "
+"developers"
+msgstr ""
+"Změna barevného schématu může negativně ovlivnit kontrast a čitelnost. "
+"Postupujte opatrně. Problémy související s tématy neoznamujte vývojářům "
+"aplikací."
 
 #: data/ui/welcome_window.blp:83
 msgid "Agree and Continue"
 msgstr "Souhlasit a pokračovat"
 
+#: data/ui/welcome_window.blp:93
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Adwaita"
+msgstr "Přizpůsobení tématu Adwaita"
+
 #: data/ui/welcome_window.blp:94
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
-"like adding custom CSS."
+"like adding custom styles"
 msgstr ""
 "Změna barev oken, tlačítek, seznamů a dalších položek pomocí pokročilých "
-"funkcí, jako je přidání vlastního CSS."
+"funkcí, jako je přidání vlastního CSS"
 
-#: data/ui/window.blp:37
+#: data/ui/window.blp:37 gradience/frontend/main.py:422
+msgid "Save Preset"
+msgstr "Uložit předvolbu"
+
+#: data/ui/window.blp:46
 msgid "Show Preview Window"
 msgstr "Zobrazit okno náhledu"
 
-#: data/ui/window.blp:48
+#: data/ui/window.blp:57
 msgid "Main Menu"
 msgstr "Hlavní Menu"
 
-#: data/ui/window.blp:57
+#: data/ui/window.blp:66
 msgid "Presets Menu"
 msgstr "Nabídka předvoleb"
-
-#: data/ui/window.blp:64
-msgid "Save Preset"
-msgstr "Uložit předvolbu"
 
 #: data/ui/window.blp:73
 msgid "CSS Errors"
@@ -824,6 +825,113 @@ msgstr "Vestavěné předvolby"
 #: data/ui/window.blp:167
 msgid "Manage Presets"
 msgstr "Správa předvoleb"
+
+#: gradience/backend/flatpak_overrides.py:71
+#: gradience/backend/flatpak_overrides.py:93
+#, fuzzy
+msgid "Failed to save override"
+msgstr "Nepodařilo se uložit přepis"
+
+#: gradience/backend/flatpak_overrides.py:186
+#: gradience/backend/flatpak_overrides.py:228
+#: gradience/backend/flatpak_overrides.py:306
+#: gradience/backend/flatpak_overrides.py:366
+#: gradience/backend/flatpak_overrides.py:448
+#: gradience/backend/flatpak_overrides.py:509
+#, fuzzy
+msgid "Unexpected file error occurred"
+msgstr "Došlo k neočekávané chybě souboru"
+
+#: gradience/frontend/dialogs/app_type_dialog.py:47
+#: gradience/frontend/dialogs/save_dialog.py:62
+msgid "_Cancel"
+msgstr "_Zrušit"
+
+#: gradience/frontend/dialogs/save_dialog.py:39
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+#| "overwritten."
+msgid ""
+"Saving preset to \n"
+" <small><i><tt>{0}</tt></i></small>. \n"
+" If that preset already exists, it will be overwritten."
+msgstr ""
+"Uložení předvolby do <tt>{0}</tt>. Pokud předvolba již existuje, bude "
+"přepsána."
+
+#: gradience/frontend/dialogs/save_dialog.py:65
+msgid "Discard"
+msgstr "Zahodit"
+
+#: gradience/frontend/dialogs/save_dialog.py:70
+msgid "_Save"
+msgstr "_Uložit"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
+msgid "Unsupported Shell Version ({get_full_shell_version()})"
+msgstr "Nepodporovaná verze prostředí ({get_full_shell_version()})"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+msgid ""
+"The Shell version you are using is not supported by Gradience. Please "
+"upgrade to a newer version of GNOME."
+msgstr ""
+"Verze Shell, kterou používáte, není podporována aplikací Gradience. "
+"Aktualizujte prosím na novější verzi GNOME."
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
+msgid "OK"
+msgstr "OK"
+
+#: gradience/frontend/main.py:203
+#: gradience/frontend/views/presets_manager_window.py:339
+msgid "Failed to load list of presets"
+msgstr "Nepodařilo se načíst předvolbu"
+
+#: gradience/frontend/main.py:236
+msgid "No presets found"
+msgstr "Nebyly nalezeny žádné předvolby"
+
+#: gradience/frontend/main.py:259
+msgid "Favorite Presets"
+msgstr "Oblíbené předvolby"
+
+#: gradience/frontend/main.py:412
+msgid "Unsaved Changes"
+msgstr "Neuložené změny"
+
+#: gradience/frontend/main.py:421
+msgid "Save"
+msgstr "Uložit"
+
+#: gradience/frontend/main.py:511
+msgid "Apply This Color Scheme?"
+msgstr "Použít toto barevné schéma?"
+
+#: gradience/frontend/main.py:513
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Varování: Všechny vlastní CSS soubory pro tyto typy aplikací budou nevratně "
+"přepsány!"
+
+#: gradience/frontend/main.py:517
+msgid "_Apply"
+msgstr "_Použít"
+
+#: gradience/frontend/main.py:543
+msgid "You have unsaved changes!"
+msgstr "Máte neuložené změny!"
+
+#: gradience/frontend/main.py:594
+msgid "Preset saved"
+msgstr "Mix byl uložen"
+
+#: gradience/frontend/main.py:611
+msgid "Preset has been set. Log out to apply changes."
+msgstr "Předvolba byla nastavena. Pro použití změn se odhlaste."
 
 #: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
@@ -1193,43 +1301,125 @@ msgstr "Accent barva popředí"
 msgid "OSD Foreground Color"
 msgstr "Barva popředí OSD"
 
-#: gradience/frontend/dialogs/app_type_dialog.py:47
-#: gradience/frontend/dialogs/save_dialog.py:62
-msgid "_Cancel"
-msgstr "_Zrušit"
+#: gradience/frontend/views/about_window.py:27
+msgid "translator-credits"
+msgstr "Amerey.eu"
 
-#: gradience/frontend/dialogs/save_dialog.py:39
-#, python-brace-format
+#: gradience/frontend/views/about_window.py:56
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr "Copyright © 2022-2023 Gradience Team"
+
+#: gradience/frontend/views/about_window.py:63
+msgid "Plugins by"
+msgstr "Zásuvné moduly od"
+
+#: gradience/frontend/views/about_window.py:65
 msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten."
+"Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 msgstr ""
-"Uložení předvolby do <tt>{0}</tt>. Pokud předvolba již existuje, bude "
-"přepsána."
+"Přispěvatelé na GitHubu https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 
-#: gradience/frontend/dialogs/save_dialog.py:65
-msgid "Discard"
-msgstr "Zahodit"
+#: gradience/frontend/views/about_window.py:69
+msgid "Presets by"
+msgstr "Předvolby od"
 
-#: gradience/frontend/dialogs/save_dialog.py:70
-msgid "_Save"
-msgstr "_Uložit"
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
-msgid "Unsupported Shell Version ({get_full_shell_version()})"
-msgstr "Nepodporovaná verze prostředí ({get_full_shell_version()})"
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+#: gradience/frontend/views/about_window.py:71
 msgid ""
-"The Shell version you are using is not supported by Gradience. Please "
-"upgrade to a newer version of GNOME."
+"Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
 msgstr ""
-"Verze Shell, kterou používáte, není podporována aplikací Gradience. "
-"Aktualizujte prosím na novější verzi GNOME."
+"Přispěvatelé na GitHub https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
 
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
-msgid "OK"
-msgstr "OK"
+#: gradience/frontend/views/main_window.py:204
+msgid "Palette Colors"
+msgstr "Paleta barev"
+
+#: gradience/frontend/views/main_window.py:207
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"Pojmenovaná paleta barev používaná některými aplikacemi. Výchozí barvy jsou "
+"nastaveny podle <a href=\"https://developer.gnome.org/hig/reference/palette."
+"html\">GNOME Human Interface Guidelines</a>."
+
+#: gradience/frontend/views/plugins_list.py:89
+msgid "Plugins"
+msgstr "Zásuvné moduly"
+
+#: gradience/frontend/views/plugins_list.py:92
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+"Zásuvné moduly přidávají do Gradience další funkce, jsou vytvářeny komunitou "
+"Gradience a mohou způsobovat problémy."
+
+#: gradience/frontend/views/plugins_list.py:104
+msgid "No Plugins Found."
+msgstr "Nebyly nalezeny žádné zásuvné moduly."
+
+#: gradience/frontend/views/presets_manager_window.py:119
+#: gradience/frontend/views/presets_manager_window.py:355
+msgid "User Presets"
+msgstr "Uživatelská přednastavení"
+
+#: gradience/frontend/views/presets_manager_window.py:194
+msgid "Add new repository"
+msgstr "Přidat nový repozitář"
+
+#: gradience/frontend/views/presets_manager_window.py:195
+msgid "Add a repository to install additional presets."
+msgstr "Přidat úložiště pro instalaci dalších předvoleb."
+
+#: gradience/frontend/views/presets_manager_window.py:201
+#: gradience/frontend/widgets/shell_theming_group.py:143
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: gradience/frontend/views/presets_manager_window.py:202
+msgid "Add"
+msgstr "Přidat"
+
+#: gradience/frontend/views/presets_manager_window.py:298
+msgid "Preset already exists"
+msgstr "Předvolba již existuje"
+
+#: gradience/frontend/views/presets_manager_window.py:310
+msgid "Preset imported"
+msgstr "Předvolba importována"
+
+#: gradience/frontend/views/presets_manager_window.py:313
+msgid "Unsupported file format, must be .json"
+msgstr "Nepodporovaný formát souboru, musí být .json"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid "Built-in Presets"
+msgstr "Vestavěné předvolby"
+
+#: gradience/frontend/views/presets_manager_window.py:358
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Další předvolby najdete <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a> na Githubu."
+
+#: gradience/frontend/views/presets_manager_window.py:384
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Nebyla nalezena žádná předvolba! Použijte tlačítko importovat pro import "
+"nebo vyhledejte předvolbu na kartě Prozkoumat."
+
+#: gradience/frontend/views/welcome_window.py:79
+msgid "Thanks for updating Gradience!"
+msgstr "Díky za aktualizaci Gradience!"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -1242,12 +1432,14 @@ msgid "Preset downloaded"
 msgstr "Předvolba stažena"
 
 #: gradience/frontend/widgets/monet_theming_group.py:65
-msgid "Monet Palette"
+#, fuzzy
+#| msgid "Monet Palette"
+msgid "Palette"
 msgstr "Monetova paleta"
 
 #: gradience/frontend/widgets/monet_theming_group.py:91
-msgid "Theme"
-msgstr "Motiv"
+msgid "Style"
+msgstr ""
 
 #: gradience/frontend/widgets/monet_theming_group.py:94
 msgid "Auto"
@@ -1374,7 +1566,6 @@ msgstr ""
 msgid "Disable Engine"
 msgstr "Deaktivovat"
 
-#. dialog.add_response("enable-extension", _("Enable Extension"))
 #: gradience/frontend/widgets/shell_theming_group.py:122
 #: gradience/frontend/widgets/shell_theming_group.py:133
 #: gradience/frontend/widgets/shell_theming_group.py:145
@@ -1411,12 +1602,6 @@ msgstr ""
 "Rozšíření uživatelských motivů je aktuálně ve vašem systému zakázáno. Chcete-"
 "li použít motiv, povolte jej."
 
-#. TODO: Fix "assertion 'adw_message_dialog_has_response (self, response)' failed" error #. (don't know if this isn't a bug in libadwaita itself)
-#: gradience/frontend/widgets/shell_theming_group.py:143
-#: gradience/frontend/views/presets_manager_window.py:201
-msgid "Cancel"
-msgstr "Zrušit"
-
 #: gradience/frontend/widgets/shell_theming_group.py:181
 msgid "An error occurred while generating a Shell theme."
 msgstr "Při generování motivu Shell došlo k chybě."
@@ -1434,172 +1619,108 @@ msgstr "Nepodařilo se načíst odkaz na instalaci rozšíření."
 msgid "Shell theme successfully reset."
 msgstr "Motiv prostředí byl úspěšně resetován."
 
-#. TRANSLATORS: This is a place to put your credits (formats:
-#. "Name https://example.com" or "Name <email@example.com>",
-#. no quotes) and is not meant to be translated literally.
-#: gradience/frontend/views/about_window.py:27
-msgid "translator-credits"
-msgstr "Amerey.eu"
+#~ msgid "AdwCustomizer"
+#~ msgstr "AdwCustomizer"
 
-#: gradience/frontend/views/about_window.py:56
-msgid "Copyright © 2022-2023 Gradience Team"
-msgstr "Copyright © 2022-2023 Gradience Team"
+#~ msgid "Adwaita Manager"
+#~ msgstr "Adwaita Manager"
 
-#: gradience/frontend/views/about_window.py:63
-msgid "Plugins by"
-msgstr "Zásuvné moduly od"
+#~ msgid "GNOME"
+#~ msgstr "GNOME"
 
-#: gradience/frontend/views/about_window.py:65
-msgid ""
-"Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
-"contributors"
-msgstr ""
-"Přispěvatelé na GitHubu https://github.com/GradienceTeam/Plugins/graphs/"
-"contributors"
+#~ msgid "Customization"
+#~ msgstr "Přizpůsobení"
 
-#: gradience/frontend/views/about_window.py:69
-msgid "Presets by"
-msgstr "Předvolby od"
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Obecné"
 
-#: gradience/frontend/views/about_window.py:71
-msgid ""
-"Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
-"contributors"
-msgstr ""
-"Přispěvatelé na GitHub https://github.com/GradienceTeam/Community/graphs/"
-"contributors"
+#~ msgctxt "shortcut window"
+#~ msgid "Show Shortcuts"
+#~ msgstr "Zobrazit klávesové zkratky"
 
-#: gradience/frontend/views/main_window.py:204
-msgid "Palette Colors"
-msgstr "Paleta barev"
+#~ msgctxt "shortcut window"
+#~ msgid "Show Apply Dialog"
+#~ msgstr "Zobrazit dialog Použít"
 
-#: gradience/frontend/views/main_window.py:207
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"Pojmenovaná paleta barev používaná některými aplikacemi. Výchozí barvy jsou "
-"nastaveny podle <a href=\"https://developer.gnome.org/hig/reference/palette."
-"html\">GNOME Human Interface Guidelines</a>."
+#~ msgctxt "shortcut window"
+#~ msgid "Manage Presets"
+#~ msgstr "Správa předvoleb"
 
-#: gradience/frontend/views/plugins_list.py:89
-msgid "Plugins"
-msgstr "Zásuvné moduly"
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Uložit předvolbu"
 
-#: gradience/frontend/views/plugins_list.py:92
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
-"Zásuvné moduly přidávají do Gradience další funkce, jsou vytvářeny komunitou "
-"Gradience a mohou způsobovat problémy."
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Colors Section"
+#~ msgstr "Přejít do sekce Barvy"
 
-#: gradience/frontend/views/plugins_list.py:104
-msgid "No Plugins Found."
-msgstr "Nebyly nalezeny žádné zásuvné moduly."
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Theming Section"
+#~ msgstr "Přejít do sekce Témata"
 
-#: gradience/frontend/views/presets_manager_window.py:119
-#: gradience/frontend/views/presets_manager_window.py:355
-msgid "User Presets"
-msgstr "Uživatelská přednastavení"
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Advanced Section"
+#~ msgstr "Přejit do sekce Pokročilé"
 
-#: gradience/frontend/views/presets_manager_window.py:194
-msgid "Add new repository"
-msgstr "Přidat nový repozitář"
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Předvolby"
 
-#: gradience/frontend/views/presets_manager_window.py:195
-msgid "Add a repository to install additional presets."
-msgstr "Přidat úložiště pro instalaci dalších předvoleb."
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Ukončit"
 
-#: gradience/frontend/views/presets_manager_window.py:202
-msgid "Add"
-msgstr "Přidat"
+#~ msgid "Monet Engine generates a Material You color palette from an image."
+#~ msgstr "Monet Engine vygeneruje z obrázku barevnou paletu Material You."
 
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset already exists"
-msgstr "Předvolba již existuje"
+#~ msgid "Select an Image"
+#~ msgstr "Vyberte obrázek"
 
-#: gradience/frontend/views/presets_manager_window.py:310
-msgid "Preset imported"
-msgstr "Předvolba importována"
+#~ msgid "Allow GTK 4 Theming"
+#~ msgstr "Povolit GTK 4 Theming"
 
-#: gradience/frontend/views/presets_manager_window.py:313
-msgid "Unsupported file format, must be .json"
-msgstr "Nepodporovaný formát souboru, musí být .json"
+#~ msgid "Allow GTK 4 Theming (System)"
+#~ msgstr "Povolení vytváření témat aplikací GTK 4 Flatpak (Systém)"
 
-#: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:203
-msgid "Failed to load list of presets"
-msgstr "Nepodařilo se načíst předvolbu"
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
+#~ "access custom themes. (Requires root access)"
+#~ msgstr ""
+#~ "Přepsání oprávnění Flatpaku pro všechny uživatele, aby aplikace GTK 4 "
+#~ "Flatpak mohly přistupovat k vlastním motivům. (Vyžaduje práva roota)"
 
-#: gradience/frontend/views/presets_manager_window.py:348
-msgid "Built-in Presets"
-msgstr "Vestavěné předvolby"
+#~ msgid "Allow GTK 3 Theming"
+#~ msgstr "Povolení témat GTK 3"
 
-#: gradience/frontend/views/presets_manager_window.py:358
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Další předvolby najdete <a href=\"https://github.com/GradienceTeam/"
-"Community\">GradienceTeam/Community</a> na Githubu."
+#~ msgid "Allow GTK 3 Theming (System)"
+#~ msgstr "Povolení vytváření témat aplikací GTK 3 (Systém)"
 
-#: gradience/frontend/views/presets_manager_window.py:384
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Nebyla nalezena žádná předvolba! Použijte tlačítko importovat pro import "
-"nebo vyhledejte předvolbu na kartě Prozkoumat."
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
+#~ "access adw-gtk3 theme. (Requires root access)"
+#~ msgstr ""
+#~ "Přepsání oprávnění Flatpaku pro všechny uživatele, aby aplikace GTK 3 "
+#~ "Flatpak mohly přistupovat k tématu adw-gtk3. (Vyžaduje práva roota)"
 
-#: gradience/frontend/views/welcome_window.py:79
-msgid "Thanks for updating Gradience!"
-msgstr "Díky za aktualizaci Gradience!"
+#~ msgid "Reset a currently applied preset or restore the previous one."
+#~ msgstr "Resetovat aktuálně použitou předvolbu nebo obnovit předchozí."
 
-#: gradience/frontend/main.py:236
-msgid "No presets found"
-msgstr "Nebyly nalezeny žádné předvolby"
+#~ msgid "Custom Shell Colors"
+#~ msgstr "Vlastní barvy shellu"
 
-#: gradience/frontend/main.py:259
-msgid "Favorite Presets"
-msgstr "Oblíbené předvolby"
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more, with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "Změna barev oken, tlačítek, seznamů a dalších položek pomocí pokročilých "
+#~ "funkcí, jako je přidání vlastního CSS."
 
-#: gradience/frontend/main.py:416
-msgid "Unsaved Changes"
-msgstr "Neuložené změny"
+#~ msgid "Theme"
+#~ msgstr "Motiv"
 
-#: gradience/frontend/main.py:428
-msgid "Save Changes"
-msgstr "Uložit změny"
-
-#: gradience/frontend/main.py:518
-msgid "Apply This Color Scheme?"
-msgstr "Použít toto barevné schéma?"
-
-#: gradience/frontend/main.py:520
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"Varování: Všechny vlastní CSS soubory pro tyto typy aplikací budou nevratně "
-"přepsány!"
-
-#: gradience/frontend/main.py:524
-msgid "_Apply"
-msgstr "_Použít"
-
-#: gradience/frontend/main.py:550
-msgid "You have unsaved changes!"
-msgstr "Máte neuložené změny!"
-
-#: gradience/frontend/main.py:601
-msgid "Preset saved"
-msgstr "Mix byl uložen"
-
-#: gradience/frontend/main.py:618
-msgid "Preset has been set. Log out to apply changes."
-msgstr "Předvolba byla nastavena. Pro použití změn se odhlaste."
+#~ msgid "Save Changes"
+#~ msgstr "Uložit změny"
 
 #~ msgid ""
 #~ "Change colors of windows, buttons, lists and more; with advanced features "
@@ -1695,9 +1816,6 @@ msgstr "Předvolba byla nastavena. Pro použití změn se odhlaste."
 #~ msgid "Select a background first"
 #~ msgstr "Nejprve vyberte pozadí"
 
-#~ msgid "Report an Issue…"
-#~ msgstr "Nahlásit problém…"
-
 #, fuzzy
 #~ msgid "More Options"
 #~ msgstr "Více možností"
@@ -1715,10 +1833,6 @@ msgstr "Předvolba byla nastavena. Pro použití změn se odhlaste."
 #~ msgstr "Zvláštní poděkování patří"
 
 #, fuzzy
-#~ msgid "Background Image"
-#~ msgstr "Obrázek na pozadí"
-
-#, fuzzy
 #~ msgid "Tone"
 #~ msgstr "Tón"
 
@@ -1733,17 +1847,6 @@ msgstr "Předvolba byla nastavena. Pro použití změn se odhlaste."
 #, fuzzy
 #~ msgid "GTK 4 Widget Factory"
 #~ msgstr "Továrna na widgety GTK 4"
-
-#, fuzzy
-#~ msgid "Failed to save override"
-#~ msgstr "Nepodařilo se uložit přepis"
-
-#, fuzzy
-#~ msgid "Unexpected file error occurred"
-#~ msgstr "Došlo k neočekávané chybě souboru"
-
-#~ msgid "Save"
-#~ msgstr "Uložit"
 
 #, fuzzy
 #~ msgid ""
@@ -2096,9 +2199,6 @@ msgstr "Předvolba byla nastavena. Pro použití změn se odhlaste."
 #, fuzzy
 #~ msgid "Select app types you want to affect:"
 #~ msgstr "Vyberte typy aplikací, které chcete ovlivnit:"
-
-#~ msgid "Libadwaita and GTK 4 apps"
-#~ msgstr "Libadwaita a GTK 4 aplikace"
 
 #, fuzzy
 #~ msgid "GTK 3 apps (adw-gtk3 theme required)"

@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-10-03 19:58+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-10 01:35+0000\n"
 "PO-Revision-Date: 2023-10-11 17:03+0000\n"
 "Last-Translator: Davide <davide.ferracin@protonmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/GradienceTeam/"
@@ -90,27 +90,11 @@ msgstr "Schermata della scheda «Installate» nel gestore delle configurazioni"
 msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "Schermata della scheda «Esplosa» nel gestore delle configurazioni"
 
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:82
-msgid "AdwCustomizer"
-msgstr "AdwCustomizer"
-
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:83
-msgid "Adwaita Manager"
-msgstr "Gestore di Adwaita"
-
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:84
-msgid "GNOME"
-msgstr "GNOME"
-
-#: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:85
-msgid "Customization"
-msgstr "Personalizzazione"
-
 #: data/ui/app_type_dialog.blp:14
 msgid "Select application types to theme:"
 msgstr "Selezionare i tipi di applicazioni a cui cambiare il tema:"
 
-#: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
+#: data/ui/app_type_dialog.blp:17
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita e applicazioni GTK 4"
 
@@ -128,13 +112,20 @@ msgid "Apply Preset"
 msgstr "Applica configurazione"
 
 #: data/ui/custom_css_group.blp:5
-msgid "Custom CSS"
+#, fuzzy
+#| msgid "Custom CSS"
+msgid "Custom Styles"
 msgstr "CSS personalizzato"
 
 #: data/ui/custom_css_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Changing this may break some programs. Libadwaita allows applications to "
+#| "hardcode values like padding and margins, and using custom CSS may cause "
+#| "unintended breakage."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
-"hardcode values like padding and margins, and using custom CSS may cause "
+"hardcode values like padding and margins, and using custom styles may cause "
 "unintended breakage."
 msgstr ""
 "Questa modifica potrebbe impedire il funzionamento corretto di alcuni "
@@ -154,67 +145,33 @@ msgid "Download and Apply"
 msgstr "Scarica e applica"
 
 #: data/ui/explore_preset_row.blp:34
-msgid "Download Only"
+#, fuzzy
+#| msgid "Download Only"
+msgid "Download"
 msgstr "Scarica soltanto"
 
-#: data/ui/help_overlay.blp:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Generali"
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr "Termina sessione"
 
-#: data/ui/help_overlay.blp:14
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Mostra le scorciatoie"
-
-#: data/ui/help_overlay.blp:19
-msgctxt "shortcut window"
-msgid "Show Apply Dialog"
-msgstr "Mostra la finestra di applicazione tema"
-
-#: data/ui/help_overlay.blp:24
-msgctxt "shortcut window"
-msgid "Manage Presets"
-msgstr "Gestore delle configurazioni"
-
-#: data/ui/help_overlay.blp:29
-msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "Salva la configurazione"
-
-#: data/ui/help_overlay.blp:34
-msgctxt "shortcut window"
-msgid "Go to the Colors Section"
-msgstr "Passa alla sezione Colori"
-
-#: data/ui/help_overlay.blp:39
-msgctxt "shortcut window"
-msgid "Go to the Theming Section"
-msgstr "Passa alla sezione Temi"
-
-#: data/ui/help_overlay.blp:44
-msgctxt "shortcut window"
-msgid "Go to the Advanced Section"
-msgstr "Passa alla sezione Avanzate"
-
-#: data/ui/help_overlay.blp:49
-msgctxt "shortcut window"
-msgid "Preferences"
-msgstr "Preferenze"
-
-#: data/ui/help_overlay.blp:54
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Esce"
+#: data/ui/log_out_dialog.blp:6
+msgid "Log out to allow changes to take effect."
+msgstr ""
+"È necessario terminare la sessione affinché le modifiche abbiano effetto."
 
 #: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Generatore Monet"
 
 #: data/ui/monet_theming_group.blp:6
-msgid "Monet Engine generates a Material You color palette from an image."
+#, fuzzy
+#| msgid ""
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
+#| "image's colors."
+msgid "Generates a Material Design 3 palette by extracting colors of an image."
 msgstr ""
-"Il generatore Monet crea una tavolozza Material You a partire da un'immagine."
+"Il generatore Monet crea una tavolozza Material Design 3 a partire dai "
+"colori di un'immagine."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
@@ -224,7 +181,7 @@ msgstr "Opzioni del generatore Monet"
 msgid "Choose an image and modify generated Monet palette"
 msgstr "Scegliere un'immagine e modificare la tavolozza Monet generata"
 
-#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
+#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:27
 #: data/ui/window.blp:29
 msgid "Apply"
 msgstr "Applica"
@@ -234,8 +191,8 @@ msgid "Apply a palette"
 msgstr "Applica una tavolozza"
 
 #: data/ui/monet_theming_group.blp:23
-msgid "Select an Image"
-msgstr "Selezionare un'immagine"
+msgid "Background Image"
+msgstr "Immagine di sfondo"
 
 #: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
@@ -244,16 +201,6 @@ msgstr "Scegliere un file"
 #: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Scegliere un file immagine"
-
-#: data/ui/log_out_dialog.blp:5
-msgid "Log out"
-msgstr "Termina sessione"
-
-#. TODO: redundant? how can we not repeat ourselves?
-#: data/ui/log_out_dialog.blp:6
-msgid "Log out to allow changes to take effect."
-msgstr ""
-"È necessario terminare la sessione affinché le modifiche abbiano effetto."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -283,14 +230,13 @@ msgstr "Mostra esadecimale"
 msgid "Toggle Plugin"
 msgstr "Attiva plugin"
 
-#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:128
-msgid "Preferences"
-msgstr "Preferenze"
-
-#: data/ui/plugin_row.blp:30
+#: data/ui/plugin_row.blp:33
 msgid "Remove Plugin"
 msgstr "Rimuovi plugin"
+
+#: data/ui/preferences_window.blp:5 data/ui/window.blp:128
+msgid "Preferences"
+msgstr "Preferenze"
 
 #: data/ui/preferences_window.blp:11
 msgid "General"
@@ -301,65 +247,67 @@ msgid "Flatpak Applications"
 msgstr "Applicazioni Flatpak"
 
 #: data/ui/preferences_window.blp:18
-msgid "Allow GTK 4 Theming"
-msgstr "Autorizza i temi per GTK 4"
+msgid "Theme sandboxed GTK 4 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:19
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to "
-"access custom themes."
+#, fuzzy
+#| msgid ""
+#| "Override Flatpak permissions for current user to allow GTK 4 Flatpak apps "
+#| "to access custom themes."
+msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
 msgstr ""
 "Sovrascrive i privilegi Flatpak dell'utente attuale per permettere alle "
 "applicazioni Flatpak con GTK 4 di accedere ai temi personalizzati."
 
 #: data/ui/preferences_window.blp:28
-msgid "Allow GTK 4 Theming (System)"
-msgstr "Autorizza l'uso dei temi per GTK 4 (sistema)"
+msgid "Theme sandboxed GTK 4 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:29
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
-"access custom themes. (Requires root access)"
+"Allow GTK 4 Flatpak apps of all users to access custom themes "
+"(Authentication required)"
 msgstr ""
-"Sovrascrive i privilegi Flatpak di tutti gli utenti per permettere alle "
-"applicazioni Flatpak con GTK 4 di accedere ai temi personalizzati. (Richiede "
-"l'accesso come root.)"
 
 #: data/ui/preferences_window.blp:37
-msgid "Allow GTK 3 Theming"
-msgstr "Autorizza i temi per GTK 3"
+msgid "Theme sandboxed GTK 3 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:38
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme."
+#, fuzzy
+#| msgid ""
+#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps "
+#| "to access adw-gtk3 theme."
+msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
 msgstr ""
 "Sovrascrive i privilegi Flatpak dell'utente attuale per permettere alle "
 "applicazioni Flatpak con GTK 3 di accedere al tema adw-gtk3."
 
 #: data/ui/preferences_window.blp:47
-msgid "Allow GTK 3 Theming (System)"
-msgstr "Autorizza l'uso dei temi per GTK 3 (sistema)"
+msgid "Theme sandboxed GTK 3 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:48
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme. (Requires root access)"
+"Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
+"(Authentication required)"
 msgstr ""
-"Sovrascrive i privilegi Flatpak di tutti gli utenti per permettere alle "
-"applicazioni Flatpak con GTK 3 di accedere al tema adw-gtk3. (Richiede "
-"l'accesso come root.)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "Acquisizione delle configurazioni"
 
 #: data/ui/preferences_window.blp:60
-msgid "Use an alternative server for downloading presets"
+#, fuzzy
+#| msgid "Use an alternative server for downloading presets"
+msgid "Use an alternative server for fetching presets"
 msgstr "Usa un server alternativo per scaricare le configurazioni"
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+#, fuzzy
+#| msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+msgid "Use JSDelivr instead of directly fetching presets from GitHub"
 msgstr "JSDelivr verrà usato al posto dello scaricamento diretto da GitHub"
 
 #: data/ui/preferences_window.blp:73
@@ -391,17 +339,21 @@ msgid "Shell Engine"
 msgstr "Generatore Shell"
 
 #: data/ui/preferences_window.blp:105
-msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on a currently "
-"chosen preset."
+#, fuzzy
+#| msgid ""
+#| "Shell Engine generates a custom GNOME Shell theme based on a currently "
+#| "chosen preset."
+msgid "Generates GNOME Shell theme based on current preset"
 msgstr ""
 "Il generatore Shell genera un tema per la shell di GNOME sulla base della "
 "configurazione attualmente selezionata."
 
 #: data/ui/preferences_window.blp:114
-msgid ""
-"Monet Engine generates a Material Design 3 palette by extracting the image's "
-"colors."
+#, fuzzy
+#| msgid ""
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
+#| "image's colors."
+msgid "Generates a Material Design 3 palette by extracting colors of an image"
 msgstr ""
 "Il generatore Monet crea una tavolozza Material Design 3 a partire dai "
 "colori di un'immagine."
@@ -422,20 +374,21 @@ msgstr "Questa configurazione non contiene alcuna descrizione."
 msgid "No Badges"
 msgstr "Nessun badge"
 
-#. styles ["danger"]
-#: data/ui/preset_row.blp:102 data/ui/presets_manager_window.blp:44
-msgid "Report Preset Issue"
-msgstr "Segnala un problema della configurazione"
+#: data/ui/preset_row.blp:102
+#, fuzzy
+#| msgid "Report an Issue…"
+msgid "Report an Issue"
+msgstr "Segnala un problema…"
 
 #: data/ui/preset_row.blp:109
 msgid "Remove preset"
 msgstr "Rimuovi configurazione"
 
-#: data/ui/preset_row.blp:110
+#: data/ui/preset_row.blp:110 data/ui/repo_row.blp:9
 msgid "Remove Preset"
 msgstr "Rimuovi configurazione"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:65
 msgid "Presets"
 msgstr "Configurazioni"
 
@@ -450,6 +403,10 @@ msgstr "Importa un file di configurazione"
 #: data/ui/presets_manager_window.blp:38
 msgid "Delete"
 msgstr "Elimina"
+
+#: data/ui/presets_manager_window.blp:44
+msgid "Report Preset Issue"
+msgstr "Segnala un problema della configurazione"
 
 #: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:250
 msgid "Open in File Manager"
@@ -510,14 +467,20 @@ msgid "JSON file (*.json)"
 msgstr "File JSON (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-msgid "Reset and Restore Presets"
+#, fuzzy
+#| msgid "Reset and Restore Presets"
+msgid "Reset and Restore Theming"
 msgstr "Reimposta e ripristina configurazioni"
 
 #: data/ui/reset_preset_group.blp:6
-msgid "Reset a currently applied preset or restore the previous one."
+msgid "Reset theming to default or restore previously applied preset."
 msgstr ""
-"Reimposta una configurazione attualmente applicata, o ripristina la "
-"precedente."
+
+#: data/ui/reset_preset_group.blp:9
+#, fuzzy
+#| msgid "Libadwaita and GTK 4 apps"
+msgid "GTK 4/Libadwaita Apps"
+msgstr "Libadwaita e app GTK 4"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -532,7 +495,9 @@ msgid "Reset Applied Preset"
 msgstr "Reimposta la configurazione applicata"
 
 #: data/ui/reset_preset_group.blp:29
-msgid "GTK 3 Applications"
+#, fuzzy
+#| msgid "GTK 3 Applications"
+msgid "GTK 3 Apps"
 msgstr "Applicazioni GTK 3"
 
 #: data/ui/save_dialog.blp:5
@@ -580,7 +545,7 @@ msgstr ""
 msgid "Warning"
 msgstr "Avvisi"
 
-#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:79
+#: data/ui/share_window.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -595,7 +560,7 @@ msgstr ""
 msgid "I Understand The Consequences"
 msgstr "Ho capito le conseguenze"
 
-#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:93
+#: data/ui/share_window.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Personalizza il tema Adwaita"
 
@@ -676,17 +641,20 @@ msgid "Shell Engine Preferences"
 msgstr "Preferenze del generatore Shell"
 
 #: data/ui/shell_prefs_window.blp:13
-msgid "Custom Shell Colors"
-msgstr "Colori personalizzati per la shell"
-
-#: data/ui/shell_prefs_window.blp:14
-msgid "Customize Shell theme colors."
+#, fuzzy
+#| msgid "Customize Shell theme colors."
+msgid "Shell theme colors"
 msgstr "Personalizza i colori del tema della shell."
 
 #: data/ui/shell_theming_group.blp:6
+#, fuzzy
+#| msgid ""
+#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
+#| "selected preset.\n"
+#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
+#| "with themes."
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the currently "
-"selected preset.\n"
+"Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
@@ -695,44 +663,43 @@ msgstr ""
 "ATTENZIONE: le estensioni che modificano lo schema di colori della shell "
 "potrebbero causare dei problemi con i temi."
 
-#: data/ui/shell_theming_group.blp:9
+#: data/ui/shell_theming_group.blp:20
 msgid "Shell Engine Options"
 msgstr "Opzioni del generatore Shell"
 
-#: data/ui/shell_theming_group.blp:10
+#: data/ui/shell_theming_group.blp:21
 msgid "Change the generated GNOME Shell theme"
 msgstr "Modifica il tema generato per la shell di GNOME"
 
-#: data/ui/shell_theming_group.blp:17
+#: data/ui/shell_theming_group.blp:28
 msgid "Apply Shell theme"
 msgstr "Applica il tema della shell"
 
-#: data/ui/shell_theming_group.blp:23
+#: data/ui/shell_theming_group.blp:37
 msgid "Customize Shell Theme"
 msgstr "Personalizza il tema della shell"
 
-#: data/ui/shell_theming_group.blp:29
+#: data/ui/shell_theming_group.blp:43
 msgid "Open Shell Preferences"
 msgstr "Apri le preferenze della shell"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:49
 msgid "Preset Variant"
 msgstr "Variante della configurazione"
 
-#: data/ui/shell_theming_group.blp:36
+#: data/ui/shell_theming_group.blp:50
 msgid "Select currently applied preset variant"
 msgstr "Seleziona la variante della configurazione attualmente applicata"
 
-#. tooltip-text: _("Restore Previous Theme");
-#: data/ui/shell_theming_group.blp:48
+#: data/ui/shell_theming_group.blp:62
 msgid "Currently unavailable"
 msgstr "Attualmente non disponibile"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:73
 msgid "Reset Theme"
 msgstr "Reimposta tema"
 
-#: data/ui/shell_theming_group.blp:57
+#: data/ui/shell_theming_group.blp:74
 msgid "Reset applied theme"
 msgstr "Reimposta il tema applicato"
 
@@ -765,40 +732,70 @@ msgid "What's new in 0.8.0"
 msgstr "Novità nella versione 0.8.0"
 
 #: data/ui/welcome_window.blp:71
+#, fuzzy
+#| msgid ""
+#| "In this release, we added GNOME Shell theming support and reworked how "
+#| "Gradience works internally."
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
-"Gradience works internally."
+"Gradience works internally"
 msgstr ""
 "In questa versione abbiamo aggiunto il supporto ai temi della shell di "
 "GNOME, e riscritto il funzionamento interno di Gradience."
+
+#: data/ui/welcome_window.blp:79
+#, fuzzy
+#| msgid ""
+#| "Changing the color scheme can negatively affect contrast and readability. "
+#| "Proceed with caution. Please do not report theming-related issues to app "
+#| "developers."
+msgid ""
+"Changing the color scheme can negatively affect contrast and readability. "
+"Proceed with caution. Please do not report theming-related issues to app "
+"developers"
+msgstr ""
+"La modifica dello schema di colori potrebbe avere un effetto negativo sul "
+"contrasto e sulla leggibilità. Procedere con attenzione. Si prega di non "
+"segnalare agli sviluppatori delle applicazioni i problemi legati ai temi "
+"applicati."
 
 #: data/ui/welcome_window.blp:83
 msgid "Agree and Continue"
 msgstr "Accetta e continua"
 
+#: data/ui/welcome_window.blp:93
+#, fuzzy
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Adwaita"
+msgstr "Personalizza il tema Adwaita"
+
 #: data/ui/welcome_window.blp:94
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
-"like adding custom CSS."
+"like adding custom styles"
 msgstr ""
 "Cambia i colori delle finestre, dei pulsanti, delle liste e altro tramite "
-"funzionalità avanzate come l'aggiunta di CSS personalizzato."
+"funzionalità avanzate come l'aggiunta di CSS personalizzato"
 
-#: data/ui/window.blp:37
+#: data/ui/window.blp:37 gradience/frontend/main.py:422
+msgid "Save Preset"
+msgstr "Salva configurazione"
+
+#: data/ui/window.blp:46
 msgid "Show Preview Window"
 msgstr "Mostra la finestra di configurazione"
 
-#: data/ui/window.blp:48
+#: data/ui/window.blp:57
 msgid "Main Menu"
 msgstr "Menù principale"
 
-#: data/ui/window.blp:57
+#: data/ui/window.blp:66
 msgid "Presets Menu"
 msgstr "Menù configurazioni"
-
-#: data/ui/window.blp:64
-msgid "Save Preset"
-msgstr "Salva configurazione"
 
 #: data/ui/window.blp:73
 msgid "CSS Errors"
@@ -832,6 +829,111 @@ msgstr "Configurazioni preinstallate"
 #: data/ui/window.blp:167
 msgid "Manage Presets"
 msgstr "Gestisci configurazioni"
+
+#: gradience/backend/flatpak_overrides.py:71
+#: gradience/backend/flatpak_overrides.py:93
+msgid "Failed to save override"
+msgstr "Salvataggio della configurazione non riuscito"
+
+#: gradience/backend/flatpak_overrides.py:186
+#: gradience/backend/flatpak_overrides.py:228
+#: gradience/backend/flatpak_overrides.py:306
+#: gradience/backend/flatpak_overrides.py:366
+#: gradience/backend/flatpak_overrides.py:448
+#: gradience/backend/flatpak_overrides.py:509
+msgid "Unexpected file error occurred"
+msgstr "Si è verificato un errore inaspettato con un file"
+
+#: gradience/frontend/dialogs/app_type_dialog.py:47
+#: gradience/frontend/dialogs/save_dialog.py:62
+msgid "_Cancel"
+msgstr "A_nnulla"
+
+#: gradience/frontend/dialogs/save_dialog.py:39
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+#| "overwritten."
+msgid ""
+"Saving preset to \n"
+" <small><i><tt>{0}</tt></i></small>. \n"
+" If that preset already exists, it will be overwritten."
+msgstr ""
+"Salvataggio della configurazione in <tt>{0}</tt>. Se la configurazione "
+"esiste già, verrà sovrascritta."
+
+#: gradience/frontend/dialogs/save_dialog.py:65
+msgid "Discard"
+msgstr "Scarta"
+
+#: gradience/frontend/dialogs/save_dialog.py:70
+msgid "_Save"
+msgstr "_Salva"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
+msgid "Unsupported Shell Version ({get_full_shell_version()})"
+msgstr "Versione della shell non supportata ({get_full_shell_version()})"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+msgid ""
+"The Shell version you are using is not supported by Gradience. Please "
+"upgrade to a newer version of GNOME."
+msgstr ""
+"La versione della shell in uso non è supportata da Gradience. Effettuare "
+"l'aggiornamento a una versione di GNOME più recente."
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
+msgid "OK"
+msgstr "OK"
+
+#: gradience/frontend/main.py:203
+#: gradience/frontend/views/presets_manager_window.py:339
+msgid "Failed to load list of presets"
+msgstr "Caricamento della lista delle configurazioni non riuscito"
+
+#: gradience/frontend/main.py:236
+msgid "No presets found"
+msgstr "Nessuna configurazione trovata"
+
+#: gradience/frontend/main.py:259
+msgid "Favorite Presets"
+msgstr "Configurazioni preferite"
+
+#: gradience/frontend/main.py:412
+msgid "Unsaved Changes"
+msgstr "Modifiche non salvate"
+
+#: gradience/frontend/main.py:421
+msgid "Save"
+msgstr "Salva"
+
+#: gradience/frontend/main.py:511
+msgid "Apply This Color Scheme?"
+msgstr "Applicare questo schema di colori?"
+
+#: gradience/frontend/main.py:513
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Attenzione: tutti i file CSS personalizzati per questo tipo di applicazioni "
+"verranno sovrascritti irreversibilmente!"
+
+#: gradience/frontend/main.py:517
+msgid "_Apply"
+msgstr "_Applica"
+
+#: gradience/frontend/main.py:543
+msgid "You have unsaved changes!"
+msgstr "Ci sono modifiche non salvate!"
+
+#: gradience/frontend/main.py:594
+msgid "Preset saved"
+msgstr "Configurazione salvata"
+
+#: gradience/frontend/main.py:611
+msgid "Preset has been set. Log out to apply changes."
+msgstr ""
 
 #: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
@@ -1208,43 +1310,130 @@ msgstr "Colore di primo piano di accento"
 msgid "OSD Foreground Color"
 msgstr "Colore di primo piano OSD"
 
-#: gradience/frontend/dialogs/app_type_dialog.py:47
-#: gradience/frontend/dialogs/save_dialog.py:62
-msgid "_Cancel"
-msgstr "A_nnulla"
-
-#: gradience/frontend/dialogs/save_dialog.py:39
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten."
+#: gradience/frontend/views/about_window.py:27
+msgid "translator-credits"
 msgstr ""
-"Salvataggio della configurazione in <tt>{0}</tt>. Se la configurazione "
-"esiste già, verrà sovrascritta."
+"Davide Ferracin , 2022, 2023\n"
+"0xMRTT &lt;0xMRTT@tuta.io&gt;, 2022\n"
+"Daudix UFO , 2022\n"
+"yangyangdaji &lt;1504305527@qq.com&gt;, 2022, 2023"
 
-#: gradience/frontend/dialogs/save_dialog.py:65
-msgid "Discard"
-msgstr "Scarta"
+#: gradience/frontend/views/about_window.py:56
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr "Copyright © 2022-2023 Gradience Team"
 
-#: gradience/frontend/dialogs/save_dialog.py:70
-msgid "_Save"
-msgstr "_Salva"
+#: gradience/frontend/views/about_window.py:63
+msgid "Plugins by"
+msgstr "Plugin di"
 
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
-msgid "Unsupported Shell Version ({get_full_shell_version()})"
-msgstr "Versione della shell non supportata ({get_full_shell_version()})"
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+#: gradience/frontend/views/about_window.py:65
 msgid ""
-"The Shell version you are using is not supported by Gradience. Please "
-"upgrade to a newer version of GNOME."
+"Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 msgstr ""
-"La versione della shell in uso non è supportata da Gradience. Effettuare "
-"l'aggiornamento a una versione di GNOME più recente."
+"I collaboratori su GitHub https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
-msgid "OK"
-msgstr "OK"
+#: gradience/frontend/views/about_window.py:69
+msgid "Presets by"
+msgstr "Configurazioni di"
+
+#: gradience/frontend/views/about_window.py:71
+msgid ""
+"Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
+msgstr ""
+"I collaboratori su GitHub https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
+
+#: gradience/frontend/views/main_window.py:204
+msgid "Palette Colors"
+msgstr "Colori della tavolozza"
+
+#: gradience/frontend/views/main_window.py:207
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"I colori della tavolozza con un nome possono essere utilizzati da alcune "
+"applicazioni. I colori predefiniti seguono le <a href=\"https://developer."
+"gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."
+
+#: gradience/frontend/views/plugins_list.py:89
+msgid "Plugins"
+msgstr "Plugin"
+
+#: gradience/frontend/views/plugins_list.py:92
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+"I plugin apportano funzionalità aggiuntive a Gradience, sono creati dalla "
+"comunità di Gradience, e possono causare problemi."
+
+#: gradience/frontend/views/plugins_list.py:104
+msgid "No Plugins Found."
+msgstr "Nessun plugin trovato."
+
+#: gradience/frontend/views/presets_manager_window.py:119
+#: gradience/frontend/views/presets_manager_window.py:355
+msgid "User Presets"
+msgstr "Configurazioni dell'utente"
+
+#: gradience/frontend/views/presets_manager_window.py:194
+msgid "Add new repository"
+msgstr "Aggiungi nuovo repository"
+
+#: gradience/frontend/views/presets_manager_window.py:195
+msgid "Add a repository to install additional presets."
+msgstr "Aggiungere un repository per installare configurazioni aggiuntive."
+
+#: gradience/frontend/views/presets_manager_window.py:201
+#: gradience/frontend/widgets/shell_theming_group.py:143
+msgid "Cancel"
+msgstr "Annulla"
+
+#: gradience/frontend/views/presets_manager_window.py:202
+msgid "Add"
+msgstr "Aggiungi"
+
+#: gradience/frontend/views/presets_manager_window.py:298
+msgid "Preset already exists"
+msgstr "La configurazione è già esistente"
+
+#: gradience/frontend/views/presets_manager_window.py:310
+msgid "Preset imported"
+msgstr "Configurazione importata"
+
+#: gradience/frontend/views/presets_manager_window.py:313
+msgid "Unsupported file format, must be .json"
+msgstr "Formato di file non supportato, deve essere .json"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid "Built-in Presets"
+msgstr "Configurazioni preinstallate"
+
+#: gradience/frontend/views/presets_manager_window.py:358
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Visitare <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a> su GitHub per ulteriori "
+"configurazioni."
+
+#: gradience/frontend/views/presets_manager_window.py:384
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Nessuna configurazione trovata. Usare il pulsante Importa per importarne una "
+"o cercarne una nella scheda Esplora."
+
+#: gradience/frontend/views/welcome_window.py:79
+msgid "Thanks for updating Gradience!"
+msgstr "Grazie per aver aggiornato Gradience!"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -1257,12 +1446,14 @@ msgid "Preset downloaded"
 msgstr "Configurazione scaricata"
 
 #: gradience/frontend/widgets/monet_theming_group.py:65
-msgid "Monet Palette"
+#, fuzzy
+#| msgid "Monet Palette"
+msgid "Palette"
 msgstr "Tavolozza Monet"
 
 #: gradience/frontend/widgets/monet_theming_group.py:91
-msgid "Theme"
-msgstr "Tema"
+msgid "Style"
+msgstr ""
 
 #: gradience/frontend/widgets/monet_theming_group.py:94
 msgid "Auto"
@@ -1389,7 +1580,6 @@ msgstr ""
 msgid "Disable Engine"
 msgstr "Disabilita generatore"
 
-#. dialog.add_response("enable-extension", _("Enable Extension"))
 #: gradience/frontend/widgets/shell_theming_group.py:122
 #: gradience/frontend/widgets/shell_theming_group.py:133
 #: gradience/frontend/widgets/shell_theming_group.py:145
@@ -1426,12 +1616,6 @@ msgstr ""
 "L'estensione User Themes è attualmente disabilitata sul sistema operativo. È "
 "necessario abilitarla per poter applicare il tema."
 
-#. TODO: Fix "assertion 'adw_message_dialog_has_response (self, response)' failed" error #. (don't know if this isn't a bug in libadwaita itself)
-#: gradience/frontend/widgets/shell_theming_group.py:143
-#: gradience/frontend/views/presets_manager_window.py:201
-msgid "Cancel"
-msgstr "Annulla"
-
 #: gradience/frontend/widgets/shell_theming_group.py:181
 msgid "An error occurred while generating a Shell theme."
 msgstr "Si è verificato un errore nella generazione di un tema per la shell."
@@ -1449,177 +1633,114 @@ msgstr "Caricamento del link di installazione dell'estensione non riuscito."
 msgid "Shell theme successfully reset."
 msgstr "Tema della shell reimpostato con successo."
 
-#. TRANSLATORS: This is a place to put your credits (formats:
-#. "Name https://example.com" or "Name <email@example.com>",
-#. no quotes) and is not meant to be translated literally.
-#: gradience/frontend/views/about_window.py:27
-msgid "translator-credits"
-msgstr ""
-"Davide Ferracin , 2022, 2023\n"
-"0xMRTT &lt;0xMRTT@tuta.io&gt;, 2022\n"
-"Daudix UFO , 2022\n"
-"yangyangdaji &lt;1504305527@qq.com&gt;, 2022, 2023"
+#~ msgid "AdwCustomizer"
+#~ msgstr "AdwCustomizer"
 
-#: gradience/frontend/views/about_window.py:56
-msgid "Copyright © 2022-2023 Gradience Team"
-msgstr "Copyright © 2022-2023 Gradience Team"
+#~ msgid "Adwaita Manager"
+#~ msgstr "Gestore di Adwaita"
 
-#: gradience/frontend/views/about_window.py:63
-msgid "Plugins by"
-msgstr "Plugin di"
+#~ msgid "GNOME"
+#~ msgstr "GNOME"
 
-#: gradience/frontend/views/about_window.py:65
-msgid ""
-"Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
-"contributors"
-msgstr ""
-"I collaboratori su GitHub https://github.com/GradienceTeam/Plugins/graphs/"
-"contributors"
+#~ msgid "Customization"
+#~ msgstr "Personalizzazione"
 
-#: gradience/frontend/views/about_window.py:69
-msgid "Presets by"
-msgstr "Configurazioni di"
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Generali"
 
-#: gradience/frontend/views/about_window.py:71
-msgid ""
-"Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
-"contributors"
-msgstr ""
-"I collaboratori su GitHub https://github.com/GradienceTeam/Community/graphs/"
-"contributors"
+#~ msgctxt "shortcut window"
+#~ msgid "Show Shortcuts"
+#~ msgstr "Mostra le scorciatoie"
 
-#: gradience/frontend/views/main_window.py:204
-msgid "Palette Colors"
-msgstr "Colori della tavolozza"
+#~ msgctxt "shortcut window"
+#~ msgid "Show Apply Dialog"
+#~ msgstr "Mostra la finestra di applicazione tema"
 
-#: gradience/frontend/views/main_window.py:207
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"I colori della tavolozza con un nome possono essere utilizzati da alcune "
-"applicazioni. I colori predefiniti seguono le <a href=\"https://developer."
-"gnome.org/hig/reference/palette.html\">GNOME Human Interface Guidelines</a>."
+#~ msgctxt "shortcut window"
+#~ msgid "Manage Presets"
+#~ msgstr "Gestore delle configurazioni"
 
-#: gradience/frontend/views/plugins_list.py:89
-msgid "Plugins"
-msgstr "Plugin"
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Salva la configurazione"
 
-#: gradience/frontend/views/plugins_list.py:92
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
-"I plugin apportano funzionalità aggiuntive a Gradience, sono creati dalla "
-"comunità di Gradience, e possono causare problemi."
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Colors Section"
+#~ msgstr "Passa alla sezione Colori"
 
-#: gradience/frontend/views/plugins_list.py:104
-msgid "No Plugins Found."
-msgstr "Nessun plugin trovato."
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Theming Section"
+#~ msgstr "Passa alla sezione Temi"
 
-#: gradience/frontend/views/presets_manager_window.py:119
-#: gradience/frontend/views/presets_manager_window.py:355
-msgid "User Presets"
-msgstr "Configurazioni dell'utente"
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Advanced Section"
+#~ msgstr "Passa alla sezione Avanzate"
 
-#: gradience/frontend/views/presets_manager_window.py:194
-msgid "Add new repository"
-msgstr "Aggiungi nuovo repository"
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Preferenze"
 
-#: gradience/frontend/views/presets_manager_window.py:195
-msgid "Add a repository to install additional presets."
-msgstr "Aggiungere un repository per installare configurazioni aggiuntive."
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Esce"
 
-#: gradience/frontend/views/presets_manager_window.py:202
-msgid "Add"
-msgstr "Aggiungi"
+#~ msgid "Monet Engine generates a Material You color palette from an image."
+#~ msgstr ""
+#~ "Il generatore Monet crea una tavolozza Material You a partire da "
+#~ "un'immagine."
 
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset already exists"
-msgstr "La configurazione è già esistente"
+#~ msgid "Select an Image"
+#~ msgstr "Selezionare un'immagine"
 
-#: gradience/frontend/views/presets_manager_window.py:310
-msgid "Preset imported"
-msgstr "Configurazione importata"
+#~ msgid "Allow GTK 4 Theming"
+#~ msgstr "Autorizza i temi per GTK 4"
 
-#: gradience/frontend/views/presets_manager_window.py:313
-msgid "Unsupported file format, must be .json"
-msgstr "Formato di file non supportato, deve essere .json"
+#~ msgid "Allow GTK 4 Theming (System)"
+#~ msgstr "Autorizza l'uso dei temi per GTK 4 (sistema)"
 
-#: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:203
-msgid "Failed to load list of presets"
-msgstr "Caricamento della lista delle configurazioni non riuscito"
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
+#~ "access custom themes. (Requires root access)"
+#~ msgstr ""
+#~ "Sovrascrive i privilegi Flatpak di tutti gli utenti per permettere alle "
+#~ "applicazioni Flatpak con GTK 4 di accedere ai temi personalizzati. "
+#~ "(Richiede l'accesso come root.)"
 
-#: gradience/frontend/views/presets_manager_window.py:348
-msgid "Built-in Presets"
-msgstr "Configurazioni preinstallate"
+#~ msgid "Allow GTK 3 Theming"
+#~ msgstr "Autorizza i temi per GTK 3"
 
-#: gradience/frontend/views/presets_manager_window.py:358
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Visitare <a href=\"https://github.com/GradienceTeam/"
-"Community\">GradienceTeam/Community</a> su GitHub per ulteriori "
-"configurazioni."
+#~ msgid "Allow GTK 3 Theming (System)"
+#~ msgstr "Autorizza l'uso dei temi per GTK 3 (sistema)"
 
-#: gradience/frontend/views/presets_manager_window.py:384
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Nessuna configurazione trovata. Usare il pulsante Importa per importarne una "
-"o cercarne una nella scheda Esplora."
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
+#~ "access adw-gtk3 theme. (Requires root access)"
+#~ msgstr ""
+#~ "Sovrascrive i privilegi Flatpak di tutti gli utenti per permettere alle "
+#~ "applicazioni Flatpak con GTK 3 di accedere al tema adw-gtk3. (Richiede "
+#~ "l'accesso come root.)"
 
-#: gradience/frontend/views/welcome_window.py:79
-msgid "Thanks for updating Gradience!"
-msgstr "Grazie per aver aggiornato Gradience!"
+#~ msgid "Reset a currently applied preset or restore the previous one."
+#~ msgstr ""
+#~ "Reimposta una configurazione attualmente applicata, o ripristina la "
+#~ "precedente."
 
-#: gradience/frontend/main.py:236
-msgid "No presets found"
-msgstr "Nessuna configurazione trovata"
+#~ msgid "Custom Shell Colors"
+#~ msgstr "Colori personalizzati per la shell"
 
-#: gradience/frontend/main.py:259
-msgid "Favorite Presets"
-msgstr "Configurazioni preferite"
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more, with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "Cambia i colori delle finestre, dei pulsanti, delle liste e altro tramite "
+#~ "funzionalità avanzate come l'aggiunta di CSS personalizzato."
 
-#: gradience/frontend/main.py:416
-msgid "Unsaved Changes"
-msgstr "Modifiche non salvate"
+#~ msgid "Theme"
+#~ msgstr "Tema"
 
-#: gradience/frontend/main.py:428
-msgid "Save Changes"
-msgstr "Salva modifiche"
-
-#: gradience/frontend/main.py:518
-msgid "Apply This Color Scheme?"
-msgstr "Applicare questo schema di colori?"
-
-#: gradience/frontend/main.py:520
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-"Attenzione: tutti i file CSS personalizzati per questo tipo di applicazioni "
-"verranno sovrascritti irreversibilmente!"
-
-#: gradience/frontend/main.py:524
-msgid "_Apply"
-msgstr "_Applica"
-
-#: gradience/frontend/main.py:550
-msgid "You have unsaved changes!"
-msgstr "Ci sono modifiche non salvate!"
-
-#: gradience/frontend/main.py:601
-msgid "Preset saved"
-msgstr "Configurazione salvata"
-
-#: gradience/frontend/main.py:618
-msgid "Preset has been set. Log out to apply changes."
-msgstr ""
+#~ msgid "Save Changes"
+#~ msgstr "Salva modifiche"
 
 #~ msgid ""
 #~ "Change colors of windows, buttons, lists and more; with advanced features "
@@ -1707,9 +1828,6 @@ msgstr ""
 #~ msgid "Select a background first"
 #~ msgstr "Selezionare prima uno sfondo"
 
-#~ msgid "Report an Issue…"
-#~ msgstr "Segnala un problema…"
-
 #~ msgid "More Options"
 #~ msgstr "Più opzioni"
 
@@ -1722,9 +1840,6 @@ msgstr ""
 #~ msgid "Special thanks to"
 #~ msgstr "Un ringraziamento speciale a"
 
-#~ msgid "Background Image"
-#~ msgstr "Immagine di sfondo"
-
 #~ msgid "Tone"
 #~ msgstr "Tono"
 
@@ -1733,15 +1848,6 @@ msgstr ""
 
 #~ msgid "GTK 4 Widget Factory"
 #~ msgstr "Fabbrica dei widget GTK 4"
-
-#~ msgid "Failed to save override"
-#~ msgstr "Salvataggio della configurazione non riuscito"
-
-#~ msgid "Unexpected file error occurred"
-#~ msgstr "Si è verificato un errore inaspettato con un file"
-
-#~ msgid "Save"
-#~ msgstr "Salva"
 
 #~ msgid ""
 #~ "\n"
@@ -2113,9 +2219,6 @@ msgstr ""
 #~ msgid "Select app types you want to affect:"
 #~ msgstr ""
 #~ "Selezionare i tipi di applicazioni di cui si vuole cambiare il tema:"
-
-#~ msgid "Libadwaita and GTK 4 apps"
-#~ msgstr "Libadwaita e app GTK 4"
 
 #, fuzzy
 #~ msgid "GTK 3 apps (adw-gtk3 theme required)"
