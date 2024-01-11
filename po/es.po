@@ -10,13 +10,13 @@
 # Daniel <daniel-sevillano@hotmail.com>, 2022.
 # yangyangdaji <1504305527@qq.com>, 2022, 2023.
 # Óscar Fernández Díaz <oscfdezdz@users.noreply.hosted.weblate.org>, 2023.
-# gallegonovato <fran-carro@hotmail.es>, 2023.
+# gallegonovato <fran-carro@hotmail.es>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2024-01-10 01:35+0000\n"
-"PO-Revision-Date: 2023-10-24 23:05+0000\n"
+"PO-Revision-Date: 2024-01-11 17:06+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/es/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1.1-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -127,25 +127,18 @@ msgid "Apply Preset"
 msgstr "Aplicar diseño"
 
 #: data/ui/custom_css_group.blp:5
-#, fuzzy
-#| msgid "Custom CSS"
 msgid "Custom Styles"
-msgstr "CSS personalizado"
+msgstr "Estilos personalizados"
 
 #: data/ui/custom_css_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Changing this may break some programs. Libadwaita allows applications to "
-#| "hardcode values like padding and margins, and using custom CSS may cause "
-#| "unintended breakage."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
 "hardcode values like padding and margins, and using custom styles may cause "
 "unintended breakage."
 msgstr ""
 "Cambiar esto puede romper algunos programas. Libadwaita permite a las "
-"aplicaciones codificar los valores como el relleno y los márgenes, y el uso "
-"de un CSS personalizado puede causar interrupciones involuntarias."
+"aplicaciones codificar valores como el relleno y los márgenes, y el uso de "
+"estilos personalizados puede causar interrupciones involuntarias."
 
 #: data/ui/custom_css_group.blp:33
 msgid "GTK 4"
@@ -160,10 +153,8 @@ msgid "Download and Apply"
 msgstr "Descargar y aplicar"
 
 #: data/ui/explore_preset_row.blp:34
-#, fuzzy
-#| msgid "Download Only"
 msgid "Download"
-msgstr "Descargar solo"
+msgstr "Descargar"
 
 #: data/ui/log_out_dialog.blp:5
 msgid "Log out"
@@ -178,14 +169,9 @@ msgid "Monet Engine"
 msgstr "Motor Monet"
 
 #: data/ui/monet_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image."
 msgstr ""
-"Monet Engine genera una paleta en Material Design 3 extrayendo los colores "
-"de la imagen."
+"Genera una paleta Material Design 3 extrayendo los colores de una imagen."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
@@ -262,69 +248,60 @@ msgstr "Aplicaciones de Flatpak"
 
 #: data/ui/preferences_window.blp:18
 msgid "Theme sandboxed GTK 4 apps"
-msgstr ""
+msgstr "Tema de aplicaciones GTK 4 aisladas"
 
 #: data/ui/preferences_window.blp:19
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 4 Flatpak apps "
-#| "to access custom themes."
 msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
 msgstr ""
-"Anula los permisos de Flatpak del usuario actual para permitir que las "
-"aplicaciones GTK 4 Flatpak accedan a los temas personalizados."
+"Permitir que las aplicaciones GTK 4 Flatpak del usuario actual accedan a "
+"temas personalizados"
 
 #: data/ui/preferences_window.blp:28
 msgid "Theme sandboxed GTK 4 apps (System)"
-msgstr ""
+msgstr "Tema de aplicaciones GTK 4 aisladas (Sistema)"
 
 #: data/ui/preferences_window.blp:29
 msgid ""
 "Allow GTK 4 Flatpak apps of all users to access custom themes "
 "(Authentication required)"
 msgstr ""
+"Permitir que las aplicaciones GTK 4 Flatpak de todos los usuarios accedan a "
+"temas personalizados (se requiere autenticación)"
 
 #: data/ui/preferences_window.blp:37
 msgid "Theme sandboxed GTK 3 apps"
-msgstr ""
+msgstr "Aplicaciones GTK 3 con sandbox"
 
 #: data/ui/preferences_window.blp:38
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps "
-#| "to access adw-gtk3 theme."
 msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
 msgstr ""
-"Sobreescribe los permisos Flatpak del usuario actual para permitir que las "
-"aplicaciones GTK 3 Flatpak accedan al tema adw-gtk3."
+"Permitir que las aplicaciones GTK 3 Flatpak del usuario actual accedan al "
+"tema adw-gtk3"
 
 #: data/ui/preferences_window.blp:47
 msgid "Theme sandboxed GTK 3 apps (System)"
-msgstr ""
+msgstr "Tema de aplicaciones GTK 3 aisladas (Sistema)"
 
 #: data/ui/preferences_window.blp:48
 msgid ""
 "Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
 "(Authentication required)"
 msgstr ""
+"Permitir que las aplicaciones GTK 3 Flatpak de todos los usuarios accedan al "
+"tema adw-gtk3 (se requiere autenticación)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "Obtener los ajustes preestablecidos"
 
 #: data/ui/preferences_window.blp:60
-#, fuzzy
-#| msgid "Use an alternative server for downloading presets"
 msgid "Use an alternative server for fetching presets"
-msgstr "Utilizar un servidor alternativo para descargar los preajustes"
+msgstr "Utilizar un servidor alternativo para obtener preajustes"
 
 #: data/ui/preferences_window.blp:61
-#, fuzzy
-#| msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgid "Use JSDelivr instead of directly fetching presets from GitHub"
 msgstr ""
-"Se utilizará JSDelivr en lugar de la obtención directa de los preajustes "
-"desde GitHub"
+"Utilizar JSDelivr en lugar de obtener directamente los preajustes de GitHub"
 
 #: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
@@ -355,24 +332,13 @@ msgid "Shell Engine"
 msgstr "Motor de Shell"
 
 #: data/ui/preferences_window.blp:105
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on a currently "
-#| "chosen preset."
 msgid "Generates GNOME Shell theme based on current preset"
-msgstr ""
-"Shell Engine genera un tema personalizado de GNOME Shell basado en un "
-"preajuste actualmente elegido."
+msgstr "Genera el tema de GNOME Shell basado en el preajuste actual"
 
 #: data/ui/preferences_window.blp:114
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image"
 msgstr ""
-"Monet Engine genera una paleta en Material Design 3 extrayendo los colores "
-"de la imagen."
+"Genera una paleta Material Design 3 extrayendo los colores de una imagen"
 
 #: data/ui/preset_row.blp:65
 msgid "Rename Preset"
@@ -391,10 +357,8 @@ msgid "No Badges"
 msgstr "Sin insignias"
 
 #: data/ui/preset_row.blp:102
-#, fuzzy
-#| msgid "Report an Issue…"
 msgid "Report an Issue"
-msgstr "Informar de una incidencia…"
+msgstr "Notificar un problema"
 
 #: data/ui/preset_row.blp:109
 msgid "Remove preset"
@@ -483,20 +447,18 @@ msgid "JSON file (*.json)"
 msgstr "Archivo JSON (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-#, fuzzy
-#| msgid "Reset and Restore Presets"
 msgid "Reset and Restore Theming"
-msgstr "Restablecer y restaurar la configuración predeterminada"
+msgstr "Restablecer y restaurar la tematización"
 
 #: data/ui/reset_preset_group.blp:6
 msgid "Reset theming to default or restore previously applied preset."
 msgstr ""
+"Restablecer la tematización por defecto o restaurar la preconfiguración "
+"aplicada previamente."
 
 #: data/ui/reset_preset_group.blp:9
-#, fuzzy
-#| msgid "Libadwaita and GTK 4 apps"
 msgid "GTK 4/Libadwaita Apps"
-msgstr "Aplicaciones Libadwaita y GTK 4"
+msgstr "Aplicaciones GTK 4/Libadwaita"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -511,8 +473,6 @@ msgid "Reset Applied Preset"
 msgstr "Restablecer el preajuste aplicado"
 
 #: data/ui/reset_preset_group.blp:29
-#, fuzzy
-#| msgid "GTK 3 Applications"
 msgid "GTK 3 Apps"
 msgstr "Aplicaciones GTK 3"
 
@@ -652,27 +612,18 @@ msgid "Shell Engine Preferences"
 msgstr "Preferencias del motor Shell"
 
 #: data/ui/shell_prefs_window.blp:13
-#, fuzzy
-#| msgid "Customize Shell theme colors."
 msgid "Shell theme colors"
-msgstr "Personaliza los colores del tema Shell."
+msgstr "Colores del tema Shell"
 
 #: data/ui/shell_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
-#| "selected preset.\n"
-#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
-#| "with themes."
 msgid ""
 "Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
-"Shell Engine genera un tema personalizado de GNOME Shell basado en el "
-"preajuste actualmente seleccionado.\n"
-"AVISO: Las extensiones que modifican la hoja de los estilos de Shell pueden "
-"causar problemas con los temas."
+"Genera el tema Shell de GNOME basado en el preajuste actual.\n"
+"ADVERTENCIA: Las extensiones que modifican la hoja de estilos de Shell "
+"pueden causar problemas con los temas."
 
 #: data/ui/shell_theming_group.blp:20
 msgid "Shell Engine Options"
@@ -743,53 +694,38 @@ msgid "What's new in 0.8.0"
 msgstr "Novedades de la versión 0.8.0"
 
 #: data/ui/welcome_window.blp:71
-#, fuzzy
-#| msgid ""
-#| "In this release, we added GNOME Shell theming support and reworked how "
-#| "Gradience works internally."
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally"
 msgstr ""
 "En esta versión, hemos añadido compatibilidad con la temática de GNOME Shell "
-"y hemos rediseñado el funcionamiento interno de Gradience."
+"y hemos modificado el funcionamiento interno de Gradience"
 
 #: data/ui/welcome_window.blp:79
-#, fuzzy
-#| msgid ""
-#| "Changing the color scheme can negatively affect contrast and readability. "
-#| "Proceed with caution. Please do not report theming-related issues to app "
-#| "developers."
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
 "developers"
 msgstr ""
 "Cambiar la combinación de colores puede afectar negativamente al contraste y "
-"a la legibilidad. Proceda con cautela. No informe a los desarrolladores de "
-"aplicaciones sobre problemas relacionados con los temas."
+"a la legibilidad. Proceda con cautela. No informes a los desarrolladores de "
+"aplicaciones sobre problemas relacionados con la temática"
 
 #: data/ui/welcome_window.blp:83
 msgid "Agree and Continue"
 msgstr "Aceptar y continuar"
 
 #: data/ui/welcome_window.blp:93
-#, fuzzy
-#| msgid "Customize Adwaita Theme"
 msgid "Customize Adwaita"
-msgstr "Personalizar el tema Adwaita"
+msgstr "Personalizar Adwaita"
 
 #: data/ui/welcome_window.blp:94
-#, fuzzy
-#| msgid ""
-#| "Change colors of windows, buttons, lists and more, with advanced features "
-#| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom styles"
 msgstr ""
 "Cambia los colores de ventanas, botones, listas y mucho más, con funciones "
-"avanzadas como añadir CSS personalizado"
+"avanzadas como añadir estilos personalizados"
 
 #: data/ui/window.blp:37 gradience/frontend/main.py:422
 msgid "Save Preset"
@@ -842,7 +778,6 @@ msgstr "Gestionar preajustes"
 
 #: gradience/backend/flatpak_overrides.py:71
 #: gradience/backend/flatpak_overrides.py:93
-#, fuzzy
 msgid "Failed to save override"
 msgstr "No se ha podido guardar la anulación"
 
@@ -852,9 +787,8 @@ msgstr "No se ha podido guardar la anulación"
 #: gradience/backend/flatpak_overrides.py:366
 #: gradience/backend/flatpak_overrides.py:448
 #: gradience/backend/flatpak_overrides.py:509
-#, fuzzy
 msgid "Unexpected file error occurred"
-msgstr "Se ha producido un error de archivo inesperado"
+msgstr "Se ha producido un error en el archivo inesperado"
 
 #: gradience/frontend/dialogs/app_type_dialog.py:47
 #: gradience/frontend/dialogs/save_dialog.py:62
@@ -862,16 +796,15 @@ msgid "_Cancel"
 msgstr "_Cancelar"
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten."
+#, python-brace-format
 msgid ""
 "Saving preset to \n"
 " <small><i><tt>{0}</tt></i></small>. \n"
 " If that preset already exists, it will be overwritten."
 msgstr ""
-"Guardar diseño en <tt>{0}</tt>. ¡Si ese diseño ya existe, se sobrescribirá."
+"Guardar preajuste en \n"
+" <small><i><tt>{0}</tt></i></small>. \n"
+" Si ese preajuste ya existe, se sobrescribirá."
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 msgid "Discard"
@@ -1462,14 +1395,12 @@ msgid "Preset downloaded"
 msgstr "Diseño descargado"
 
 #: gradience/frontend/widgets/monet_theming_group.py:65
-#, fuzzy
-#| msgid "Monet Palette"
 msgid "Palette"
-msgstr "Paleta Monet"
+msgstr "Paleta"
 
 #: gradience/frontend/widgets/monet_theming_group.py:91
 msgid "Style"
-msgstr ""
+msgstr "Estilo"
 
 #: gradience/frontend/widgets/monet_theming_group.py:94
 msgid "Auto"
