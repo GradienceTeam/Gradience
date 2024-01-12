@@ -5,52 +5,6 @@ on:
     branches: [main]
 
 jobs:
-  report:
-    name: Deploy
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: true
-
-      - name: Test
-        id: test
-        uses: andyholmes/actuary@main
-        with:
-          suite: test
-          setup-args: |
-            -Ddocumentation=true
-            -Dtests=true
-          test-coverage: true
-          lcov-include: '${{ github.workspace }}/src/*'
-
-      - name: Report
-        continue-on-error: true
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ${{ steps.test.outputs.coverage }}
-
-      - name: Coverage
-        continue-on-error: true
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          folder: ${{ steps.test.outputs.coverage-html }}
-          target-folder: coverage
-          single-commit: true
-
-      - name: Documentation
-        continue-on-error: true
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          folder: _build/doc/sdk/valent
-          target-folder: documentation
-          single-commit: true
-
   flatpak:
     name: Flatpak
     runs-on: ubuntu-latest
@@ -102,3 +56,4 @@ jobs:
           folder: ${{ steps.build.outputs.repository }}
           target-folder: repo
           single-commit: true
+
