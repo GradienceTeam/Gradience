@@ -8,8 +8,6 @@ jobs:
   report:
     name: Deploy
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/gradienceteam/gradience:${{ github.ref_name}}
     permissions:
       contents: write
 
