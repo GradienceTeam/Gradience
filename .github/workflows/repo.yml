@@ -1,51 +1,95 @@
 name: Repo
 
 on:
-  # Rebuild once a day
-  #schedule:
-  #  - cron: "0 0 * * *"
   push:
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
-  flatter:
-    name: Flatter
+  report:
+    name: Deploy
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}:${{ github.ref_name}}
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Test
+        id: test
+        uses: andyholmes/actuary@main
+        with:
+          suite: test
+          setup-args: |
+            -Ddocumentation=true
+            -Dtests=true
+          test-coverage: true
+          lcov-include: '${{ github.workspace }}/src/*'
+
+      - name: Report
+        continue-on-error: true
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ${{ steps.test.outputs.coverage }}
+
+      - name: Coverage
+        continue-on-error: true
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          folder: ${{ steps.test.outputs.coverage-html }}
+          target-folder: coverage
+          single-commit: true
+
+      - name: Documentation
+        continue-on-error: true
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          folder: _build/doc/sdk/valent
+          target-folder: documentation
+          single-commit: true
+
+  flatpak:
+    name: Flatpak
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/andyholmes/flatter/gnome:master
       options: --privileged
+    permissions:
+      contents: write
 
     strategy:
+      max-parallel: 1
       matrix:
         arch: [x86_64, aarch64]
       fail-fast: false
-      # Only one job at a time can use the shared repository cache
-      max-parallel: 1
 
     steps:
-      # Checkout a repository with Flatpak manifests
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: true
 
-      # See "Multiple Architectures" below
       - name: Setup QEMU
         if: ${{ matrix.arch == 'aarch64' }}
         id: qemu
-        uses: docker/setup-qemu-action@v3.0.0
+        uses: docker/setup-qemu-action@v3
         with:
           platforms: arm64
 
-      # See "GPG Signing" below
       - name: Setup GPG
         id: gpg
-        uses: crazy-max/ghaction-import-gpg@v6.1.0
+        uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Build
+        id: build
         uses: andyholmes/flatter@main
         with:
           files: |
@@ -53,24 +97,10 @@ jobs:
           arch: ${{ matrix.arch }}
           gpg-sign: ${{ steps.gpg.outputs.fingerprint }}
           upload-bundles: true
-          upload-pages-artifact: true
-          upload-pages-includes: |
-            repo/default.css
-            repo/index.html
 
-  # See "Github Pages" below
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    needs: flatter
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4.0.3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          folder: ${{ steps.build.outputs.repository }}
+          target-folder: repo
+          single-commit: true
