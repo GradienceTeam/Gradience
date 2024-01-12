@@ -3,15 +3,15 @@
 # This file is distributed under the GNU GPLv3 license.
 # Gradience Team, 2022.
 #
-# yangyangdaji <1504305527@qq.com>, 2022, 2023.
+# yangyangdaji <1504305527@qq.com>, 2022, 2023, 2024.
 # 0xMRTT <0xMRTT@tuta.io>, 2022.
 # Daudix UFO <ddaudix@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2024-01-10 01:35+0000\n"
-"PO-Revision-Date: 2023-10-18 04:16+0000\n"
+"PO-Revision-Date: 2024-01-12 08:06+0000\n"
 "Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "GradienceTeam/gradience/zh_Hans/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.1\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -41,7 +41,7 @@ msgstr "Gradience 团队"
 msgid ""
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme."
-msgstr "Gradience 是一个用于自定义 Libadwaita 应用程序和 adw-gtk3 主题的工具。"
+msgstr "Gradience 是一个用于自定义 Libadwaita 应用和 adw-gtk3 主题的工具。"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:15
 msgid "The main features of Gradience include the following:"
@@ -89,11 +89,11 @@ msgstr "预设管理器的“浏览”选项卡的屏幕截图"
 
 #: data/ui/app_type_dialog.blp:14
 msgid "Select application types to theme:"
-msgstr "选择主题的应用程序类型："
+msgstr "选择主题的应用类型："
 
 #: data/ui/app_type_dialog.blp:17
 msgid "Libadwaita and GTK 4 Applications"
-msgstr "Libadwaita 和 GTK 4 应用程序"
+msgstr "Libadwaita 和 GTK 4 应用"
 
 #: data/ui/app_type_dialog.blp:21
 msgid "GTK 3 Applications (adw-gtk3 theme required)"
@@ -109,24 +109,16 @@ msgid "Apply Preset"
 msgstr "应用预设"
 
 #: data/ui/custom_css_group.blp:5
-#, fuzzy
-#| msgid "Custom CSS"
 msgid "Custom Styles"
-msgstr "自定义 CSS"
+msgstr "自定义样式"
 
 #: data/ui/custom_css_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Changing this may break some programs. Libadwaita allows applications to "
-#| "hardcode values like padding and margins, and using custom CSS may cause "
-#| "unintended breakage."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
 "hardcode values like padding and margins, and using custom styles may cause "
 "unintended breakage."
-msgstr ""
-"更改此设置可能会破坏某些程序。 Libadwaita 允许应用程序对填充和边距等值进行硬"
-"编码，并且使用自定义 CSS 可能会导致意外损坏。"
+msgstr "更改此设置可能会破坏某些程序。 Libadwaita "
+"允许应用对填充和边距等值进行硬编码，并且使用自定义样式可能会导致意外损坏。"
 
 #: data/ui/custom_css_group.blp:33
 msgid "GTK 4"
@@ -141,10 +133,8 @@ msgid "Download and Apply"
 msgstr "下载并应用"
 
 #: data/ui/explore_preset_row.blp:34
-#, fuzzy
-#| msgid "Download Only"
 msgid "Download"
-msgstr "仅下载"
+msgstr "下载"
 
 #: data/ui/log_out_dialog.blp:5
 msgid "Log out"
@@ -159,12 +149,8 @@ msgid "Monet Engine"
 msgstr "Monet 引擎"
 
 #: data/ui/monet_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image."
-msgstr "Monet 引擎通过提取图像的颜色生成 Material Design 3 调色板。"
+msgstr "通过提取图像的颜色生成 Material Design 3 调色板。"
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
@@ -237,70 +223,55 @@ msgstr "常规"
 
 #: data/ui/preferences_window.blp:15
 msgid "Flatpak Applications"
-msgstr "Flatpak 应用程序"
+msgstr "Flatpak 应用"
 
 #: data/ui/preferences_window.blp:18
 msgid "Theme sandboxed GTK 4 apps"
-msgstr ""
+msgstr "主题沙盒 GTK 4 应用"
 
 #: data/ui/preferences_window.blp:19
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 4 Flatpak apps "
-#| "to access custom themes."
 msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
-msgstr ""
-"覆盖当前用户的 Flatpak 权限，以允许 GTK 4 Flatpak 应用程序访问自定义主题。"
+msgstr "允许当前用户的 GTK 4 Flatpak 应用访问自定义主题"
 
 #: data/ui/preferences_window.blp:28
 msgid "Theme sandboxed GTK 4 apps (System)"
-msgstr ""
+msgstr "主题沙盒 GTK 4 应用（系统）"
 
 #: data/ui/preferences_window.blp:29
 msgid ""
 "Allow GTK 4 Flatpak apps of all users to access custom themes "
 "(Authentication required)"
-msgstr ""
+msgstr "允许所有用户的 GTK 4 Flatpak 应用访问自定义主题（需要身份验证）"
 
 #: data/ui/preferences_window.blp:37
 msgid "Theme sandboxed GTK 3 apps"
-msgstr ""
+msgstr "主题沙盒 GTK 3 应用"
 
 #: data/ui/preferences_window.blp:38
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps "
-#| "to access adw-gtk3 theme."
 msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
-msgstr ""
-"覆盖当前用户的 Flatpak 权限，以允许 GTK 3 Flatpak 应用程序访问 adw-gtk3 主"
-"题。"
+msgstr "允许当前用户的 GTK 3 Flatpak 应用访问 adw-gtk3 主题"
 
 #: data/ui/preferences_window.blp:47
 msgid "Theme sandboxed GTK 3 apps (System)"
-msgstr ""
+msgstr "主题沙盒 GTK 3 应用（系统）"
 
 #: data/ui/preferences_window.blp:48
 msgid ""
 "Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
 "(Authentication required)"
-msgstr ""
+msgstr "允许所有用户的GTK 3 Flatpak应用访问adw-gtk3主题（需要身份验证）"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "预设抓取"
 
 #: data/ui/preferences_window.blp:60
-#, fuzzy
-#| msgid "Use an alternative server for downloading presets"
 msgid "Use an alternative server for fetching presets"
-msgstr "使用备用服务器下载预设"
+msgstr "使用备用服务器获取预设"
 
 #: data/ui/preferences_window.blp:61
-#, fuzzy
-#| msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgid "Use JSDelivr instead of directly fetching presets from GitHub"
-msgstr "将使用 JSDelivr 而不是直接从 GitHub 获取预设"
+msgstr "使用 JSDelivr 而不是直接从 GitHub 获取预设"
 
 #: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
@@ -329,20 +300,12 @@ msgid "Shell Engine"
 msgstr "Shell 引擎"
 
 #: data/ui/preferences_window.blp:105
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on a currently "
-#| "chosen preset."
 msgid "Generates GNOME Shell theme based on current preset"
-msgstr "Shell 引擎会根据当前选择的预设生成自定义 GNOME Shell 主题。"
+msgstr "根据当前预设生成 GNOME Shell 主题"
 
 #: data/ui/preferences_window.blp:114
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image"
-msgstr "Monet 引擎通过提取图像的颜色生成 Material Design 3 调色板。"
+msgstr "通过提取图像的颜色生成 Material Design 3 调色板"
 
 #: data/ui/preset_row.blp:65
 msgid "Rename Preset"
@@ -361,10 +324,8 @@ msgid "No Badges"
 msgstr "无徽章"
 
 #: data/ui/preset_row.blp:102
-#, fuzzy
-#| msgid "Report an Issue…"
 msgid "Report an Issue"
-msgstr "报告问题…"
+msgstr "报告问题"
 
 #: data/ui/preset_row.blp:109
 msgid "Remove preset"
@@ -453,20 +414,16 @@ msgid "JSON file (*.json)"
 msgstr "JSON文件（*.json）"
 
 #: data/ui/reset_preset_group.blp:5
-#, fuzzy
-#| msgid "Reset and Restore Presets"
 msgid "Reset and Restore Theming"
-msgstr "重置和恢复预设"
+msgstr "重置和恢复主题"
 
 #: data/ui/reset_preset_group.blp:6
 msgid "Reset theming to default or restore previously applied preset."
-msgstr ""
+msgstr "将主题重置为默认值或恢复之前应用的预设。"
 
 #: data/ui/reset_preset_group.blp:9
-#, fuzzy
-#| msgid "Libadwaita and GTK 4 apps"
 msgid "GTK 4/Libadwaita Apps"
-msgstr "Libadwaita 和 GTK 4 应用程序"
+msgstr "GTK 4/Libadwaita 应用"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -481,10 +438,8 @@ msgid "Reset Applied Preset"
 msgstr "重置应用的预设"
 
 #: data/ui/reset_preset_group.blp:29
-#, fuzzy
-#| msgid "GTK 3 Applications"
 msgid "GTK 3 Apps"
-msgstr "GTK 3 应用程序"
+msgstr "GTK 3 应用"
 
 #: data/ui/save_dialog.blp:5
 msgid "Save preset as…"
@@ -560,7 +515,7 @@ msgstr "配置 Gradience"
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
-msgstr "为旧版应用程序安装 adw-gtk3 主题并为主题配置系统。"
+msgstr "为旧版应用安装 adw-gtk3 主题并为主题配置系统。"
 
 #: data/ui/share_window.blp:110
 msgid "Legacy apps theming"
@@ -568,7 +523,7 @@ msgstr "旧版应用主题"
 
 #: data/ui/share_window.blp:115
 msgid "Install adw-gtk3 theme for legacy apps theming"
-msgstr "为旧版应用程序主题安装 adw-gtk3 主题"
+msgstr "为旧版应用主题安装 adw-gtk3 主题"
 
 #: data/ui/share_window.blp:120
 msgid "System configuration"
@@ -615,24 +570,16 @@ msgid "Shell Engine Preferences"
 msgstr "Shell 引擎选项"
 
 #: data/ui/shell_prefs_window.blp:13
-#, fuzzy
-#| msgid "Customize Shell theme colors."
 msgid "Shell theme colors"
-msgstr "自定义 Shell 主题颜色。"
+msgstr "Shell 主题颜色"
 
 #: data/ui/shell_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
-#| "selected preset.\n"
-#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
-#| "with themes."
 msgid ""
 "Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
-"Shell 引擎根据当前选择的预设生成自定义 GNOME Shell 主题。\n"
+"根据当前预设生成 GNOME Shell 主题。\n"
 "警告：修改 Shell 样式表的扩展可能会导致主题出现问题。"
 
 #: data/ui/shell_theming_group.blp:20
@@ -702,50 +649,33 @@ msgid "What's new in 0.8.0"
 msgstr "0.8.0 中的新内容"
 
 #: data/ui/welcome_window.blp:71
-#, fuzzy
-#| msgid ""
-#| "In this release, we added GNOME Shell theming support and reworked how "
-#| "Gradience works internally."
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
 "Gradience works internally"
-msgstr ""
-"在此版本中，我们添加了 GNOME Shell 主题支持并重新设计了 Gradience 的内部工作"
-"方式。"
+msgstr "在此版本中，我们添加了 GNOME Shell 主题支持并重新设计了 Gradience "
+"的内部工作方式"
 
 #: data/ui/welcome_window.blp:79
-#, fuzzy
-#| msgid ""
-#| "Changing the color scheme can negatively affect contrast and readability. "
-#| "Proceed with caution. Please do not report theming-related issues to app "
-#| "developers."
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
 "developers"
-msgstr ""
-"更改配色方案会对对比度和可读性产生负面影响。谨慎行事。请不要向应用开发者报告"
-"与主题相关的问题。"
+msgstr "更改配色方案会对对比度和可读性产生负面影响。谨慎行事。请不要向应用开发者报告"
+"与主题相关的问题"
 
 #: data/ui/welcome_window.blp:83
 msgid "Agree and Continue"
 msgstr "同意并继续"
 
 #: data/ui/welcome_window.blp:93
-#, fuzzy
-#| msgid "Customize Adwaita Theme"
 msgid "Customize Adwaita"
-msgstr "定制 Adwaita 主题"
+msgstr "定制 Adwaita"
 
 #: data/ui/welcome_window.blp:94
-#, fuzzy
-#| msgid ""
-#| "Change colors of windows, buttons, lists and more, with advanced features "
-#| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom styles"
-msgstr "使用添加自定义 CSS 等高级功能更改窗口、按钮、列表等的颜色"
+msgstr "使用添加自定义样式等高级功能更改窗口、按钮、列表等的颜色"
 
 #: data/ui/window.blp:37 gradience/frontend/main.py:422
 msgid "Save Preset"
@@ -816,15 +746,15 @@ msgid "_Cancel"
 msgstr "取消 (C)"
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten."
+#, python-brace-format
 msgid ""
 "Saving preset to \n"
 " <small><i><tt>{0}</tt></i></small>. \n"
 " If that preset already exists, it will be overwritten."
-msgstr "存储预设为 <tt>{0}</tt>.如果该预设已存在，它将被覆盖。"
+msgstr ""
+"存储预设为 \n"
+" <small><i><tt>{0}</tt></i></small>。 \n"
+" 如果该预设已存在，它将被覆盖。"
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 msgid "Discard"
@@ -1283,8 +1213,8 @@ msgid ""
 "href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
 "Interface Guidelines</a>."
 msgstr ""
-"一些应用程序所使用的命名调色板颜色。默认颜色遵循<a href=\"https://developer."
-"gnome.org/hig/reference/palette.html\">GNOME 人机界面指南</a>。"
+"一些应用所使用的命名调色板颜色。默认颜色遵循<a href=\"https://developer.gnome"
+".org/hig/reference/palette.html\">GNOME 人机界面指南</a>。"
 
 #: gradience/frontend/views/plugins_list.py:89
 msgid "Plugins"
@@ -1369,14 +1299,12 @@ msgid "Preset downloaded"
 msgstr "预设已下载"
 
 #: gradience/frontend/widgets/monet_theming_group.py:65
-#, fuzzy
-#| msgid "Monet Palette"
 msgid "Palette"
-msgstr "Monet 调色板"
+msgstr "调色板"
 
 #: gradience/frontend/widgets/monet_theming_group.py:91
 msgid "Style"
-msgstr ""
+msgstr "样式"
 
 #: gradience/frontend/widgets/monet_theming_group.py:94
 msgid "Auto"
