@@ -28,7 +28,7 @@ jobs:
     name: Typos
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4
 
     - name: Check for typos
       uses: crate-ci/typos@v1.17.0
