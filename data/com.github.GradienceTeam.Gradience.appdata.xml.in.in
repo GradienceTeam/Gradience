@@ -53,6 +53,7 @@
   <url type="bugtracker">@BUGTRACKER_URL@</url>
   <url type="help">@HELP_URL@</url>
   <url type="translate">@TRANSLATE_URL@</url>
+  <url type="vcs-browser">@PROJECT_URL@</url>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
@@ -60,7 +61,6 @@
   </kudos>
 
   <custom>
-    <value key="Purism::form_factor">workstation</value>
     <value key="Purism::form_factor">mobile</value>
   </custom>
 
@@ -68,22 +68,11 @@
     <display_length compare="ge">360</display_length>
   </requires>
 
-  <categories>
-    <category>Utility</category>
-  </categories>
-
   <recommends>
     <control>keyboard</control>
     <control>pointing</control>
     <control>touch</control>
   </recommends>
-
-  <keywords>
-    <keyword>AdwCustomizer</keyword>
-    <keyword>Adwaita Manager</keyword>
-    <keyword>GNOME</keyword>
-    <keyword>Customization</keyword>
-  </keywords>
 
   <releases>
     <release version="0.8.0-beta2" date="2024-01-4" type="development">
