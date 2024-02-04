@@ -18,13 +18,14 @@
 # FineFindus <FineFindus@users.noreply.hosted.weblate.org>, 2023.
 # Costeer <koehler.lukas@protonmail.com>, 2023.
 # Ettore Atalan <atalanttore@googlemail.com>, 2023, 2024.
+# David Sedding <davidsedding@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2024-01-10 01:35+0000\n"
-"PO-Revision-Date: 2024-01-14 12:30+0000\n"
-"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
+"PO-Revision-Date: 2024-02-04 02:01+0000\n"
+"Last-Translator: David Sedding <davidsedding@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/de/>\n"
 "Language: de\n"
@@ -132,11 +133,6 @@ msgid "Custom Styles"
 msgstr "Benutzerdefinierte Stile"
 
 #: data/ui/custom_css_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Changing this may break some programs. Libadwaita allows applications to "
-#| "hardcode values like padding and margins, and using custom CSS may cause "
-#| "unintended breakage."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
 "hardcode values like padding and margins, and using custom styles may cause "
@@ -176,14 +172,8 @@ msgid "Monet Engine"
 msgstr "Monet Engine"
 
 #: data/ui/monet_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image."
-msgstr ""
-"Monet ist eine Engine, die aus den Farben eines Bildes eine Material Design "
-"3-Palette erzeugt."
+msgstr "Erzeugt aus den Farben eines Bildes eine Material Design 3-Palette ."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
@@ -281,6 +271,8 @@ msgid ""
 "Allow GTK 4 Flatpak apps of all users to access custom themes "
 "(Authentication required)"
 msgstr ""
+"Erlaube GTK 4 Flatpak-Anwendungen aller Benutzer den Zugriff auf "
+"benutzerdefinierte Themen (Authentifizierung erforderlich)"
 
 #: data/ui/preferences_window.blp:37
 msgid "Theme sandboxed GTK 3 apps"
@@ -311,10 +303,8 @@ msgid "Preset Fetching"
 msgstr "Abrufen von Voreinstellungen"
 
 #: data/ui/preferences_window.blp:60
-#, fuzzy
-#| msgid "Use an alternative server for downloading presets"
 msgid "Use an alternative server for fetching presets"
-msgstr "Alternative Server zum Herunterladen von Voreinstellungen nutzen"
+msgstr "Alternative Server zum Abrufen von Voreinstellungen nutzen"
 
 #: data/ui/preferences_window.blp:61
 #, fuzzy
@@ -353,24 +343,14 @@ msgid "Shell Engine"
 msgstr "Shell Engine"
 
 #: data/ui/preferences_window.blp:105
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on a currently "
-#| "chosen preset."
 msgid "Generates GNOME Shell theme based on current preset"
 msgstr ""
-"Shell Engine generiert ein benutzerdefiniertes GNOME-Shell-Theme auf der "
-"Grundlage einer aktuell gewählten Voreinstellung."
+"Generiert ein GNOME-Shell-Thema basierend auf der aktuellen Voreinstellung"
 
 #: data/ui/preferences_window.blp:114
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image"
 msgstr ""
-"Monet ist eine Engine, die aus den Farben eines Bildes eine Material Design "
-"3-Palette erzeugt."
+"Erzeugt basieren auf den Farben eines Bildes eine Material Design 3-Palette"
 
 #: data/ui/preset_row.blp:65
 msgid "Rename Preset"
@@ -489,10 +469,8 @@ msgid "Reset theming to default or restore previously applied preset."
 msgstr ""
 
 #: data/ui/reset_preset_group.blp:9
-#, fuzzy
-#| msgid "Libadwaita and GTK 4 apps"
 msgid "GTK 4/Libadwaita Apps"
-msgstr "Libadwaita und GTK 4 Apps"
+msgstr "GTK 4/Libadwaita Anwendungen"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -653,25 +631,16 @@ msgid "Shell Engine Preferences"
 msgstr "Shell Engine Optionen"
 
 #: data/ui/shell_prefs_window.blp:13
-#, fuzzy
-#| msgid "Customize Shell theme colors."
 msgid "Shell theme colors"
-msgstr "Shell Theme anpassen."
+msgstr "Shell-Theme Farben"
 
 #: data/ui/shell_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
-#| "selected preset.\n"
-#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
-#| "with themes."
 msgid ""
 "Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
-"Shell Engine generiert ein benutzerdefiniertes GNOME Shell Theme basierend "
-"auf den derzeitig angegeben Farben.\n"
+"Erzeugt ein GNOME-Shell-Thema basierend auf der aktuellen Voreinstellung.\n"
 "ACHTUNG: Erweiterungen, die das Shell Stylesheet modifizieren, können zu "
 "Fehlern mit Themes führen."
 
@@ -766,22 +735,16 @@ msgid "Agree and Continue"
 msgstr "Zustimmen und Fortfahren"
 
 #: data/ui/welcome_window.blp:93
-#, fuzzy
-#| msgid "Customize Adwaita Theme"
 msgid "Customize Adwaita"
-msgstr "Adwaita Theme anpassen"
+msgstr "Adwaita anpassen"
 
 #: data/ui/welcome_window.blp:94
-#, fuzzy
-#| msgid ""
-#| "Change colors of windows, buttons, lists and more, with advanced features "
-#| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom styles"
 msgstr ""
 "Ändern Sie die Farben von Fenstern, Schaltflächen, Listen und mehr, mit "
-"erweiterten Funktionen wie dem Hinzufügen von benutzerdefiniertem CSS"
+"erweiterten Funktionen wie dem Hinzufügen von benutzerdefiniertem styles"
 
 #: data/ui/window.blp:37 gradience/frontend/main.py:422
 msgid "Save Preset"
@@ -834,9 +797,8 @@ msgstr "Presets verwalten"
 
 #: gradience/backend/flatpak_overrides.py:71
 #: gradience/backend/flatpak_overrides.py:93
-#, fuzzy
 msgid "Failed to save override"
-msgstr "Überschreibung konnte nicht gespeichert werden"
+msgstr "Fehler beim Überschreiben: Konnte nicht gespeichert werden"
 
 #: gradience/backend/flatpak_overrides.py:186
 #: gradience/backend/flatpak_overrides.py:228
@@ -938,6 +900,8 @@ msgstr "Preset gespeichert!"
 #: gradience/frontend/main.py:611
 msgid "Preset has been set. Log out to apply changes."
 msgstr ""
+"Die Voreinstellung wurde festgelegt. Melden Sie sich ab, um die Änderungen "
+"zu übernehmen."
 
 #: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
@@ -1155,6 +1119,10 @@ msgid ""
 "sides of a window. They are used by AdwNavigationSplitView and "
 "AdwOverlaySplitView when they are not collapsed."
 msgstr ""
+"Diese Farben werden für Seitenleisten verwendet, die im Allgemeinen an der "
+"linken oder rechten Seite eines Fensters angebracht sind. Sie werden von "
+"AdwNavigationSplitView und AdwOverlaySplitView verwendet, wenn sie nicht "
+"eingeklappt sind."
 
 #: gradience/frontend/schemas/preset_schema.py:319
 msgid "Secondary Sidebar Colors"
