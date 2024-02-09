@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2024-01-10 01:35+0000\n"
-"PO-Revision-Date: 2024-02-01 21:01+0000\n"
+"PO-Revision-Date: 2024-02-09 15:01+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/tr/>\n"
@@ -235,7 +235,7 @@ msgstr "Flatpak Uygulamaları"
 
 #: data/ui/preferences_window.blp:18
 msgid "Theme sandboxed GTK 4 apps"
-msgstr ""
+msgstr "Yalıtılmış GTK 4 uygulamalarını temalandır"
 
 #: data/ui/preferences_window.blp:19
 msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
@@ -245,17 +245,19 @@ msgstr ""
 
 #: data/ui/preferences_window.blp:28
 msgid "Theme sandboxed GTK 4 apps (System)"
-msgstr ""
+msgstr "Yalıtılmış GTK 4 uygulamalarını temalandır (Sistem)"
 
 #: data/ui/preferences_window.blp:29
 msgid ""
 "Allow GTK 4 Flatpak apps of all users to access custom themes "
 "(Authentication required)"
 msgstr ""
+"Tüm kullanıcıların GTK 4 Flatpak uygulamalarının özel temalara erişmesine "
+"izin ver (Kimlik doğrulama gereklidir)"
 
 #: data/ui/preferences_window.blp:37
 msgid "Theme sandboxed GTK 3 apps"
-msgstr ""
+msgstr "Yalıtılmış GTK 3 uygulamalarını temalandır"
 
 #: data/ui/preferences_window.blp:38
 msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
@@ -265,13 +267,15 @@ msgstr ""
 
 #: data/ui/preferences_window.blp:47
 msgid "Theme sandboxed GTK 3 apps (System)"
-msgstr ""
+msgstr "Yalıtılmış GTK 3 uygulamalarını temalandır (Sistem)"
 
 #: data/ui/preferences_window.blp:48
 msgid ""
 "Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
 "(Authentication required)"
 msgstr ""
+"GTK 3 Flatpak uygulamalarının adw-gtk3 temasına erişmesine izin ver (Kimlik "
+"doğrulama gereklidir)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
@@ -434,6 +438,7 @@ msgstr "Temalandırmayı Sıfırla ve Geri Yükle"
 #: data/ui/reset_preset_group.blp:6
 msgid "Reset theming to default or restore previously applied preset."
 msgstr ""
+"Temayı öntanımlıya sıfırla ya da önceden uygulanmış ön ayarı geri yükle."
 
 #: data/ui/reset_preset_group.blp:9
 msgid "GTK 4/Libadwaita Apps"
@@ -599,19 +604,12 @@ msgid "Shell theme colors"
 msgstr "Shell teması renkleri"
 
 #: data/ui/shell_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
-#| "selected preset.\n"
-#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
-#| "with themes."
 msgid ""
 "Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
-"Kabuk Motoru, seçili ön ayarı temel alarak özel bir GNOME Shell teması "
-"oluşturur.\n"
+"Geçerli ön ayarı temel alarak NOME Shell teması oluşturur.\n"
 "UYARI: Shell stil sayfasını değiştiren uzantılar temalarla ilgili sorunlara "
 "neden olabilir."
 
@@ -786,17 +784,15 @@ msgid "_Cancel"
 msgstr "_İptal"
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten."
+#, python-brace-format
 msgid ""
 "Saving preset to \n"
 " <small><i><tt>{0}</tt></i></small>. \n"
 " If that preset already exists, it will be overwritten."
 msgstr ""
-"<tt>{0}</tt> olarak ön ayar kaydediliyor. Eğer bu ön ayar zaten mevcutsa, "
-"üzerine yazılacaktır."
+"Önayar\n"
+" <small><i><tt>{0}</tt></i></small> olarak kaydediliyor. \n"
+"Ön ayar zaten varsa üzerine yazılacak."
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 msgid "Discard"
