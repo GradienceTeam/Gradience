@@ -1,9 +1,6 @@
 > [!IMPORTANT]
-> This software is currently in a **beta** state. It can break things, and it doesn't yet have a polished, _foolproof_ UX.
->
-> Contributions are welcome!
->
-> Please, if you got into some trouble with it, just create a [new issue](https://github.com/GradienceTeam/Gradience/issues/new?assignees=&labels=type%2Fbug&template=bug_report.yml&title=bug%3A+), or contact us on [Matrix](https://matrix.to/#/#Gradience:matrix.org) and [Discord](https://discord.com/invite/4njFDtfGEZ).
+> Gradience is looking for a maintainer(s)! if you know Python and GTK4/Libadwaita and willing to work on it, chip in on [Matrix](https://matrix.to/#/#Gradience:matrix.org) and [Discord](https://discord.com/invite/4njFDtfGEZ)
+> 
 
 <h1 align="center">
   <img src="data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg" alt="Gradience" width="192" height="192"/>
@@ -79,10 +76,6 @@ The main features of Gradience include the following:
   ![Proof of Work](https://github.com/GradienceTeam/Design/raw/main/Screenshots/proof_purple.png)
 </details>
 
-> [!NOTE]
-> You can download [latest nightly build](https://nightly.link/GradienceTeam/Gradience/workflows/build/main) from GitHub actions
-
-
 ## 🎨️ Theming setup
 
 > [!NOTE]
@@ -112,7 +105,6 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
   - Use [Flatseal](https://github.com/tchx84/Flatseal) and adding `xdg-config/gtk-3.0` to **Other files** in the **Filesystem** section of **All Applications**
 
 </details>
-
 
 ## 🔄 Revert Theming
 1. Open Preferences window
@@ -145,7 +137,6 @@ Use [this guide](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk4.md) to 
 > This will reset all Flatpak overrides, such as Firefox Wayland override
 
 </details>
-
 
 ## 📦️ Alternative installation methods
 
@@ -218,27 +209,22 @@ To install:
 nix-env -iA nixos.gradience
 ```
 
-
 ## 🏗️ Building from source
 
-### Nightly Remote
+### Nightly Build
 
-First of all, you need to have [GNOME Nightly](https://wiki.gnome.org/Apps/Nightly) Flatpak remote added if it's not already:
+First of all, you need to have [GNOME Nightly](https://nightly.gnome.org) Flatpak remote added if it's not already:
 
 ```shell
 flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo
 ```
 
-Then, add the Gradience Flatpak remote:
+Then, download the Gradience nightly from [here](https://nightly.link/GradienceTeam/Gradience/workflows/build/main)
+
+Finally, extract the ZIP and install Gradience by running:
 
 ```shell
-flatpak remote-add --if-not-exists gradience-nightly https://gradienceteam.github.io/Gradience/index.flatpakrepo
-```
-
-Finally, install Gradience by running:
-
-```shell
-flatpak install gradience-nightly com.github.GradienceTeam.Gradience.Devel
+flatpak install gradience-devel.flatpak
 ```
 
 ### GNOME Builder
@@ -247,12 +233,11 @@ GNOME Builder is the environment used for developing this application.
 It can use Flatpak manifests to create a consistent building and running
 environment cross-distro. Thus, it is highly recommended you use it.
 
-1. Download [GNOME Builder](https://flathub.org/apps/details/org.gnome.Builder).
+1. Download [GNOME Builder](https://apps.gnome.org/Builder).
 2. In Builder, click the "Clone Repository" button at the bottom, using `https://github.com/GradienceTeam/Gradience.git` as the URL.
 3. Click the build button at the top once the project is loaded.
 
 For more building and installation methods, see [HACKING.md](HACKING.md)
-
 
 ## 🎛️ Miscellaneous
 
@@ -272,22 +257,18 @@ flatpak run --command=gsettings com.github.GradienceTeam.Gradience reset com.git
 gsettings reset com.github.GradienceTeam.Gradience first-run
 ```
 
-
 ## ℹ️ FAQ
 
 ### How can I launch a CLI?
 Refer to [temporary CLI documentation](https://github.com/GradienceTeam/Gradience/wiki/Using-CLI) in repo's wiki for instructions on how to launch a CLI.
 
-
 ## 🙌 Contribute to Gradience
 
 See [HACKING.md](HACKING.md)
 
-
 ## ✨️ Contributors
 
 [![Contributors](https://contrib.rocks/image?repo=GradienceTeam/Gradience)](https://github.com/GradienceTeam/Gradience/graphs/contributors)
-
 
 ## 🏷️ About the Name
 
@@ -307,13 +288,11 @@ Pretty Purple preset was originally shared in the https://github.com/GradienceTe
 
 Pretty Purple is built-in in the Gradience and used in all Gradience artworks.
 
-
 ## 🌱️ Gradience, [stopthemingmy.app](https://stopthemingmy.app) and Adwaita Developers
 
 > See [gradienceteam.github.io/hack](https://gradienceteam.github.io/hack)
 
 Gradience Team is not against the ideas of [stopthemingmy.app](https://stopthemingmy.app) and the developers of Adwaita. Gradience is a tool for tinkerers who want to theme their desktop to their liking, and **not a tool for distributions** to ship in their releases. Gradience Team agrees with importance of unified look of Adwaita to make sure that all apps function correctly and that developers have a unified and stable tool for creating their apps.
-
 
 ## 💝 Acknowledgment
 
