@@ -1,7 +1,3 @@
-> [!IMPORTANT]
-> Gradience is looking for a maintainer(s)! if you know Python and GTK4/Libadwaita and willing to work on it, chip in on [Matrix](https://matrix.to/#/#Gradience:matrix.org) and [Discord](https://discord.com/invite/4njFDtfGEZ)
-> 
-
 <h1 align="center">
   <img src="data/icons/hicolor/scalable/apps/com.github.GradienceTeam.Gradience.svg" alt="Gradience" width="192" height="192"/>
   <br>
