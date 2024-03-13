@@ -10,13 +10,14 @@
 # Daudix UFO <ddaudix@gmail.com>, 2022.
 # yangyangdaji <1504305527@qq.com>, 2022, 2023, 2024.
 # Písek Pískovec <pisekpiskovec@gmail.com>, 2023.
+# Amerey <info@amerey.eu>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2024-01-10 01:35+0000\n"
-"PO-Revision-Date: 2024-01-12 08:06+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"PO-Revision-Date: 2024-03-13 18:47+0100\n"
+"Last-Translator: Amerey <info@amerey.eu>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/cs/>\n"
 "Language: cs\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
 "<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -116,17 +117,10 @@ msgid "Apply Preset"
 msgstr "Použít předvolbu"
 
 #: data/ui/custom_css_group.blp:5
-#, fuzzy
-#| msgid "Custom CSS"
 msgid "Custom Styles"
-msgstr "Vlastní CSS"
+msgstr "Vlastní Styly"
 
 #: data/ui/custom_css_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Changing this may break some programs. Libadwaita allows applications to "
-#| "hardcode values like padding and margins, and using custom CSS may cause "
-#| "unintended breakage."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
 "hardcode values like padding and margins, and using custom styles may cause "
@@ -149,10 +143,8 @@ msgid "Download and Apply"
 msgstr "Stáhnout a použít"
 
 #: data/ui/explore_preset_row.blp:34
-#, fuzzy
-#| msgid "Download Only"
 msgid "Download"
-msgstr "Pouze ke stažení"
+msgstr "Stáhnout"
 
 #: data/ui/log_out_dialog.blp:5
 msgid "Log out"
@@ -167,13 +159,8 @@ msgid "Monet Engine"
 msgstr "Monet Engine"
 
 #: data/ui/monet_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image."
-msgstr ""
-"Monet je engine, který z barev obrázku generuje paletu Material Design 3."
+msgstr "Generuje paletu Material Design 3 extrahováním barev z obrázku."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
@@ -193,7 +180,6 @@ msgid "Apply a palette"
 msgstr "Aplikovat paletu"
 
 #: data/ui/monet_theming_group.blp:23
-#, fuzzy
 msgid "Background Image"
 msgstr "Obrázek na pozadí"
 
@@ -251,67 +237,59 @@ msgstr "Aplikace Flatpak"
 
 #: data/ui/preferences_window.blp:18
 msgid "Theme sandboxed GTK 4 apps"
-msgstr ""
+msgstr "Aplikace GTK 4 v izolovaném prostoru"
 
 #: data/ui/preferences_window.blp:19
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 4 Flatpak apps "
-#| "to access custom themes."
 msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
 msgstr ""
-"Přepsání oprávnění Flatpaku pro aktuálního uživatele, aby aplikace GTK 4 "
-"Flatpak mohly přistupovat k vlastním motivům."
+"Povolit aplikacím GTK 4 Flatpak aktuálního uživatele přístup k vlastním "
+"motivům"
 
 #: data/ui/preferences_window.blp:28
 msgid "Theme sandboxed GTK 4 apps (System)"
-msgstr ""
+msgstr "Aplikace GTK 4 v izolovaném prostoru (systém)"
 
 #: data/ui/preferences_window.blp:29
 msgid ""
 "Allow GTK 4 Flatpak apps of all users to access custom themes "
 "(Authentication required)"
 msgstr ""
+"Povolit aplikacím GTK 4 Flatpak všem uživatelům přístup k vlastním motivům "
+"(vyžaduje ověření)"
 
 #: data/ui/preferences_window.blp:37
 msgid "Theme sandboxed GTK 3 apps"
-msgstr ""
+msgstr "Aplikace GTK 3 v izolovaném prostoru"
 
 #: data/ui/preferences_window.blp:38
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps "
-#| "to access adw-gtk3 theme."
 msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
 msgstr ""
-"Přepsání oprávnění Flatpaku pro aktuálního uživatele, aby aplikace GTK 3 "
-"Flatpak mohly přistupovat k tématu adw-gtk3."
+"Povolit aplikacím GTK 3 Flatpak aktuálního uživatele přístup k tématu adw-"
+"gtk3"
 
 #: data/ui/preferences_window.blp:47
 msgid "Theme sandboxed GTK 3 apps (System)"
-msgstr ""
+msgstr "Aplikace GTK 3 v izolovaném prostoru (systém)"
 
 #: data/ui/preferences_window.blp:48
 msgid ""
 "Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
 "(Authentication required)"
 msgstr ""
+"Povolit aplikacím GTK 3 Flatpak všem uživatelům přístup k motivu adw-gtk3 "
+"(vyžaduje ověření)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "Načítání předvoleb"
 
 #: data/ui/preferences_window.blp:60
-#, fuzzy
-#| msgid "Use an alternative server for downloading presets"
 msgid "Use an alternative server for fetching presets"
-msgstr "Pro stahování předvoleb použijte alternativní server"
+msgstr "Pro načtení předvoleb použijte alternativní server"
 
 #: data/ui/preferences_window.blp:61
-#, fuzzy
-#| msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgid "Use JSDelivr instead of directly fetching presets from GitHub"
-msgstr "Místo přímého přednastaveného načítání z GitHubu bude použit JSDelivr"
+msgstr "Místo přímého načítání předvoleb z GitHubu použijte JSDelivr"
 
 #: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
@@ -342,23 +320,12 @@ msgid "Shell Engine"
 msgstr "Shell Engine"
 
 #: data/ui/preferences_window.blp:105
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on a currently "
-#| "chosen preset."
 msgid "Generates GNOME Shell theme based on current preset"
-msgstr ""
-"Shell Engine generuje vlastní téma prostředí GNOME na základě aktuálně "
-"zvoleného přednastavení."
+msgstr "Generuje motiv prostředí GNOME na základě aktuálního přednastavení"
 
 #: data/ui/preferences_window.blp:114
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image"
-msgstr ""
-"Monet je engine, který z barev obrázku generuje paletu Material Design 3."
+msgstr "Vygeneruje paletu Material Design 3 extrahováním barev z obrázku"
 
 #: data/ui/preset_row.blp:65
 msgid "Rename Preset"
@@ -467,20 +434,17 @@ msgid "JSON file (*.json)"
 msgstr "Soubor JSON (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-#, fuzzy
-#| msgid "Reset and Restore Presets"
 msgid "Reset and Restore Theming"
-msgstr "Resetovat a obnovit předvolby"
+msgstr "Resetovat a obnovit motiv"
 
 #: data/ui/reset_preset_group.blp:6
 msgid "Reset theming to default or restore previously applied preset."
 msgstr ""
+"Obnovte výchozí nastavení motivu nebo obnovte dříve použitou předvolbu."
 
 #: data/ui/reset_preset_group.blp:9
-#, fuzzy
-#| msgid "Libadwaita and GTK 4 apps"
 msgid "GTK 4/Libadwaita Apps"
-msgstr "Libadwaita a GTK 4 aplikace"
+msgstr "GTK 4/Libadwaita aplikace"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -495,8 +459,6 @@ msgid "Reset Applied Preset"
 msgstr "Resetovat použitou předvolbu"
 
 #: data/ui/reset_preset_group.blp:29
-#, fuzzy
-#| msgid "GTK 3 Applications"
 msgid "GTK 3 Apps"
 msgstr "Aplikace GTK 3"
 
@@ -637,25 +599,16 @@ msgid "Shell Engine Preferences"
 msgstr "Shell Engine předvolby"
 
 #: data/ui/shell_prefs_window.blp:13
-#, fuzzy
-#| msgid "Customize Shell theme colors."
 msgid "Shell theme colors"
-msgstr "Přizpůsobit barvy motivu Shell."
+msgstr "Barvy motivu Shell"
 
 #: data/ui/shell_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
-#| "selected preset.\n"
-#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
-#| "with themes."
 msgid ""
 "Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
-"Shell Engine generuje vlastní motiv prostředí GNOME na základě barev "
-"aktuálně vybrané předvolby.\n"
+"Generuje motiv prostředí GNOME na základě aktuálního přednastavení.\n"
 "VAROVÁNÍ: Rozšíření, která upravují šablonu stylů prostředí, mohou způsobit "
 "problémy s motivy."
 
@@ -749,22 +702,16 @@ msgid "Agree and Continue"
 msgstr "Souhlasit a pokračovat"
 
 #: data/ui/welcome_window.blp:93
-#, fuzzy
-#| msgid "Customize Adwaita Theme"
 msgid "Customize Adwaita"
 msgstr "Přizpůsobení tématu Adwaita"
 
 #: data/ui/welcome_window.blp:94
-#, fuzzy
-#| msgid ""
-#| "Change colors of windows, buttons, lists and more, with advanced features "
-#| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom styles"
 msgstr ""
 "Změna barev oken, tlačítek, seznamů a dalších položek pomocí pokročilých "
-"funkcí, jako je přidání vlastního CSS"
+"funkcí, jako je přidání vlastních stylů"
 
 #: data/ui/window.blp:37 gradience/frontend/main.py:422
 msgid "Save Preset"
@@ -817,9 +764,8 @@ msgstr "Správa předvoleb"
 
 #: gradience/backend/flatpak_overrides.py:71
 #: gradience/backend/flatpak_overrides.py:93
-#, fuzzy
 msgid "Failed to save override"
-msgstr "Nepodařilo se uložit přepis"
+msgstr "Nepodařilo se uložit přepsání"
 
 #: gradience/backend/flatpak_overrides.py:186
 #: gradience/backend/flatpak_overrides.py:228
@@ -827,7 +773,6 @@ msgstr "Nepodařilo se uložit přepis"
 #: gradience/backend/flatpak_overrides.py:366
 #: gradience/backend/flatpak_overrides.py:448
 #: gradience/backend/flatpak_overrides.py:509
-#, fuzzy
 msgid "Unexpected file error occurred"
 msgstr "Došlo k neočekávané chybě souboru"
 
@@ -837,17 +782,15 @@ msgid "_Cancel"
 msgstr "_Zrušit"
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten."
+#, python-brace-format
 msgid ""
 "Saving preset to \n"
 " <small><i><tt>{0}</tt></i></small>. \n"
 " If that preset already exists, it will be overwritten."
 msgstr ""
-"Uložení předvolby do <tt>{0}</tt>. Pokud předvolba již existuje, bude "
-"přepsána."
+"Ukládání předvolby do\n"
+"  <small><i><tt>{0}</tt></i></small>.\n"
+"  Pokud již tato předvolba existuje, bude přepsána."
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 msgid "Discard"
@@ -1421,14 +1364,12 @@ msgid "Preset downloaded"
 msgstr "Předvolba stažena"
 
 #: gradience/frontend/widgets/monet_theming_group.py:65
-#, fuzzy
-#| msgid "Monet Palette"
 msgid "Palette"
-msgstr "Monetova paleta"
+msgstr "Paleta"
 
 #: gradience/frontend/widgets/monet_theming_group.py:91
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: gradience/frontend/widgets/monet_theming_group.py:94
 msgid "Auto"
