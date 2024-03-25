@@ -11,17 +11,20 @@ template $GradiencePluginRow : Adw.ActionRow {
     state-set => $on_switch_toggled();
   }
 
-  [suffix]
-  Button settings-button {
-    valign: center;
-    icon-name: "settings-symbolic";
-    tooltip-text: _("Preferences");
-    clicked => $on_settings_plugin_clicked();
+  // TODO: Detect if plugin has preferences, and if it does display the
+  // settings button
 
-    styles [
-      "flat",
-    ]
-  }
+  // [suffix]
+  // Button settings-button {
+  //   valign: center;
+  //   icon-name: "settings-symbolic";
+  //   tooltip-text: _("Preferences");
+  //   clicked => $on_settings_plugin_clicked();
+
+  //   styles [
+  //     "flat",
+  //   ]
+  // }
 
   [suffix]
   Button remove-button {

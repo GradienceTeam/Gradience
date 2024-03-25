@@ -6,14 +6,14 @@
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2022, 2023.
 # 0xMRTT <0xMRTT@tuta.io>, 2022.
 # Daudix UFO <ddaudix@gmail.com>, 2022.
-# yangyangdaji <1504305527@qq.com>, 2022, 2023.
+# yangyangdaji <1504305527@qq.com>, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-06-27 13:11+0000\n"
-"PO-Revision-Date: 2023-07-25 17:05+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"POT-Creation-Date: 2024-01-10 01:35+0000\n"
+"PO-Revision-Date: 2024-01-12 08:06+0000\n"
+"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/fi/>\n"
 "Language: fi\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -104,7 +104,7 @@ msgstr "Värit-välilehden kuvakaappaus"
 msgid "Select application types to theme:"
 msgstr "Valitse teemoitettavat sovellustyypit:"
 
-#: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
+#: data/ui/app_type_dialog.blp:17
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita ja GTK 4 -sovellukset"
 
@@ -124,7 +124,9 @@ msgid "Apply Preset"
 msgstr "Toteuta esiasetus"
 
 #: data/ui/custom_css_group.blp:5
-msgid "Custom CSS"
+#, fuzzy
+#| msgid "Custom CSS"
+msgid "Custom Styles"
 msgstr "Mukautettu CSS"
 
 #: data/ui/custom_css_group.blp:6
@@ -134,7 +136,7 @@ msgstr "Mukautettu CSS"
 #| "made so that applications could hardcode values like paddings and margins."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
-"hardcode values like padding and margins, and using custom CSS may cause "
+"hardcode values like padding and margins, and using custom styles may cause "
 "unintended breakage."
 msgstr ""
 "Tämän muuttaminen saattaa rikkoa joitain ohjelmia. Pidä mielessä, että "
@@ -154,8 +156,18 @@ msgid "Download and Apply"
 msgstr "Lataa ja toteuta"
 
 #: data/ui/explore_preset_row.blp:34
-msgid "Download Only"
+#, fuzzy
+#| msgid "Download Only"
+msgid "Download"
 msgstr "Lataa ainoastaan"
+
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr "Kirjaudu ulos"
+
+#: data/ui/log_out_dialog.blp:6
+msgid "Log out to allow changes to take effect."
+msgstr "Kirjaudu ulos, jotta muutokset tulevat voimaan."
 
 #: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
@@ -166,7 +178,7 @@ msgstr "Monet-moottori"
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
 #| "image's color."
-msgid "Monet Engine generates a Material You color palette from an image."
+msgid "Generates a Material Design 3 palette by extracting colors of an image."
 msgstr ""
 "Monet on moottori, joka luo Material Design 3 -paletin kuvan väriin "
 "pohjautuen."
@@ -179,7 +191,7 @@ msgstr "Monet-moottorin asetukset"
 msgid "Choose an image and modify generated Monet palette"
 msgstr "Valitse kuva ja muokkaa luotua Monet-palettia"
 
-#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
+#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:27
 #: data/ui/window.blp:29
 msgid "Apply"
 msgstr "Toteuta"
@@ -189,8 +201,8 @@ msgid "Apply a palette"
 msgstr "Toteuta paletti"
 
 #: data/ui/monet_theming_group.blp:23
-msgid "Select an Image"
-msgstr "Valitse kuva"
+msgid "Background Image"
+msgstr "Taustakuva"
 
 #: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
@@ -199,14 +211,6 @@ msgstr "Valitse tiedosto"
 #: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Valitse kuvatiedosto"
-
-#: data/ui/log_out_dialog.blp:5
-msgid "Log out"
-msgstr "Kirjaudu ulos"
-
-#: data/ui/log_out_dialog.blp:6
-msgid "Log out to allow changes to take effect."
-msgstr "Kirjaudu ulos, jotta muutokset tulevat voimaan."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -237,14 +241,13 @@ msgstr ""
 msgid "Toggle Plugin"
 msgstr "Käytä liitännäistä"
 
-#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:128
-msgid "Preferences"
-msgstr "Asetukset"
-
-#: data/ui/plugin_row.blp:30
+#: data/ui/plugin_row.blp:33
 msgid "Remove Plugin"
 msgstr "Poista liitännäinen"
+
+#: data/ui/preferences_window.blp:5 data/ui/window.blp:128
+msgid "Preferences"
+msgstr "Asetukset"
 
 #: data/ui/preferences_window.blp:11
 msgid "General"
@@ -255,72 +258,65 @@ msgid "Flatpak Applications"
 msgstr "Flatpak-sovellukset"
 
 #: data/ui/preferences_window.blp:18
-msgid "Allow GTK 4 Theming"
-msgstr "Salli GTK 4 -teemoitus"
+msgid "Theme sandboxed GTK 4 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:19
 #, fuzzy
 #| msgid ""
 #| "Override Flatpak permissions for current user to allow GTK 4 Flatpak "
 #| "applications to access custom themes."
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to "
-"access custom themes."
+msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
 msgstr ""
 "Ohita Flatpak-oikeudet nykyisen käyttäjän osalta salliaksesi Flatpak-"
 "muotoisten GTK 4 -sovellusten käyttää mukautettuja teemoja."
 
 #: data/ui/preferences_window.blp:28
-msgid "Allow GTK 4 Theming (System)"
-msgstr "Salli GTK 4 -sovellusten teemoitus (järjestelmä)"
+msgid "Theme sandboxed GTK 4 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:29
-#, fuzzy
-#| msgid ""
-#| "Override Flatpak permissions for all users to allow GTK 4 Flatpak "
-#| "applications to access custom themes. (Requires root access)"
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
-"access custom themes. (Requires root access)"
+"Allow GTK 4 Flatpak apps of all users to access custom themes "
+"(Authentication required)"
 msgstr ""
-"Ohita Flatpak-oikeudet kaikkien käyttäjien osalta salliaksesi Flatpak-"
-"muotoisten GTK 4 -sovellusten käyttää mukautettuja teemoja. (Vaatii root-"
-"oikeuden)"
 
 #: data/ui/preferences_window.blp:37
-msgid "Allow GTK 3 Theming"
-msgstr "Salli GTK 3 -teemoitus"
+msgid "Theme sandboxed GTK 3 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:38
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme."
+#, fuzzy
+#| msgid ""
+#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps "
+#| "to access adw-gtk3 theme."
+msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
 msgstr ""
 "Ohita Flatpak-oikeudet nykyisen käyttäjän osalta salliaksesi Flatpak-"
 "muotoisten GTK 3 -sovellusten käyttää adw-gtk3-teemaa."
 
 #: data/ui/preferences_window.blp:47
-msgid "Allow GTK 3 Theming (System)"
-msgstr "Salli GTK 3 -sovellusten teemoitus (järjestelmä)"
+msgid "Theme sandboxed GTK 3 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:48
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme. (Requires root access)"
+"Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
+"(Authentication required)"
 msgstr ""
-"Ohita Flatpak-oikeudet kaikkien käyttäjien osalta salliaksesi Flatpak-"
-"muotoisten GTK 3 -sovellusten käyttää adw-gtk3-teemaa. (Vaatii root-oikeuden)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "Esiasetusten haku"
 
 #: data/ui/preferences_window.blp:60
-msgid "Use an alternative server for downloading presets"
+#, fuzzy
+#| msgid "Use an alternative server for downloading presets"
+msgid "Use an alternative server for fetching presets"
 msgstr "Käytä vaihtoehtoista palvelinta esiasetusten lataukseen"
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+msgid "Use JSDelivr instead of directly fetching presets from GitHub"
 msgstr ""
 
 #: data/ui/preferences_window.blp:73
@@ -352,9 +348,7 @@ msgid "Shell Engine"
 msgstr "Monet-moottori"
 
 #: data/ui/preferences_window.blp:105
-msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on a currently "
-"chosen preset."
+msgid "Generates GNOME Shell theme based on current preset"
 msgstr ""
 
 #: data/ui/preferences_window.blp:114
@@ -362,9 +356,7 @@ msgstr ""
 #| msgid ""
 #| "Monet is an engine that generates a Material Design 3 palette from an "
 #| "image's color."
-msgid ""
-"Monet Engine generates a Material Design 3 palette by extracting the image's "
-"colors."
+msgid "Generates a Material Design 3 palette by extracting colors of an image"
 msgstr ""
 "Monet on moottori, joka luo Material Design 3 -paletin kuvan väriin "
 "pohjautuen."
@@ -385,19 +377,19 @@ msgstr "Tässä esiasetuksessa ei ole kuvausta."
 msgid "No Badges"
 msgstr ""
 
-#: data/ui/preset_row.blp:102 data/ui/presets_manager_window.blp:44
-msgid "Report Preset Issue"
-msgstr "Ilmoita esiasetuksen ongelmasta"
+#: data/ui/preset_row.blp:102
+msgid "Report an Issue"
+msgstr "Ilmoita ongelmasta"
 
 #: data/ui/preset_row.blp:109
 msgid "Remove preset"
 msgstr "Poista esiasetus"
 
-#: data/ui/preset_row.blp:110
+#: data/ui/preset_row.blp:110 data/ui/repo_row.blp:9
 msgid "Remove Preset"
 msgstr "Poista esiasetus"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:65
 msgid "Presets"
 msgstr "Esiasetukset"
 
@@ -413,7 +405,11 @@ msgstr "Tuo esiasetustiedosto"
 msgid "Delete"
 msgstr "Poista"
 
-#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:251
+#: data/ui/presets_manager_window.blp:44
+msgid "Report Preset Issue"
+msgstr "Ilmoita esiasetuksen ongelmasta"
+
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:250
 msgid "Open in File Manager"
 msgstr "Avaa tiedostonhallinnassa"
 
@@ -472,12 +468,20 @@ msgid "JSON file (*.json)"
 msgstr "JSON-tiedosto (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-msgid "Reset and Restore Presets"
+#, fuzzy
+#| msgid "Reset and Restore Presets"
+msgid "Reset and Restore Theming"
 msgstr "Nollaa ja palauta esiasetukset"
 
 #: data/ui/reset_preset_group.blp:6
-msgid "Reset a currently applied preset or restore the previous one."
+msgid "Reset theming to default or restore previously applied preset."
 msgstr ""
+
+#: data/ui/reset_preset_group.blp:9
+#, fuzzy
+#| msgid "Libadwaita and GTK 4 apps"
+msgid "GTK 4/Libadwaita Apps"
+msgstr "Libadwaita ja GTK 4 -sovellukset"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -492,7 +496,9 @@ msgid "Reset Applied Preset"
 msgstr "Nollaa toteutettu esiasetus"
 
 #: data/ui/reset_preset_group.blp:29
-msgid "GTK 3 Applications"
+#, fuzzy
+#| msgid "GTK 3 Applications"
+msgid "GTK 3 Apps"
 msgstr "GTK 3 -sovellukset"
 
 #: data/ui/save_dialog.blp:5
@@ -531,15 +537,15 @@ msgid ""
 "make a pull request and share it with the world!"
 msgstr ""
 "Gradience käyttää GitHubia esiasetusten jakamiseen. Sinun tulee luoda GitHub-"
-"tili ja haarauta <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a>. Sen jälkeen lähetä esiasetuksesi, tee pull-"
-"pyyntö ja jaa esiasetuksesi kaikkien kanssa!"
+"tili ja haarauta <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a>. Sen jälkeen lähetä esiasetuksesi, "
+"tee pull-pyyntö ja jaa esiasetuksesi kaikkien kanssa!"
 
-#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:79
+#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:78
 msgid "Warning"
 msgstr "Varoitus"
 
-#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:80
+#: data/ui/share_window.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -553,7 +559,7 @@ msgstr ""
 msgid "I Understand The Consequences"
 msgstr "Ymmärrän seuraukset"
 
-#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:95
+#: data/ui/share_window.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Mukauta Adwaita-teemaa"
 
@@ -565,11 +571,11 @@ msgstr ""
 "Mukauta ikkunoiden, painikkeiden, luettelojen ja muiden elementtien väriä ja "
 "käytä lisäominaisuuksia kuten omavalintaista CSS:ää"
 
-#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:102
+#: data/ui/share_window.blp:104
 msgid "Configure Gradience"
 msgstr "Muokkaa Gradiencea"
 
-#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:103
+#: data/ui/share_window.blp:105
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
@@ -589,7 +595,7 @@ msgstr "Asenna adw-gtk3-teema vanhojen sovellusten teemoitusta varten."
 msgid "System configuration"
 msgstr "Järjestelmän määritys"
 
-#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:124
+#: data/ui/share_window.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 "Määritä järjestelmä teemoitusta varten, mahdollistaa Flatpak-teeman ylityksen"
@@ -598,31 +604,31 @@ msgstr ""
 msgid "Installing Themes"
 msgstr "Asennetaan teemoja"
 
-#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:135
+#: data/ui/share_window.blp:137
 msgid "Please wait until theme will be installed."
 msgstr "Odota kunnes teema on asennettu."
 
-#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:141
+#: data/ui/share_window.blp:143
 msgid "Continue"
 msgstr "Jatka"
 
-#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:160
+#: data/ui/share_window.blp:162
 msgid "Done"
 msgstr "Valmis"
 
-#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:161
+#: data/ui/share_window.blp:163
 msgid "Now you can make your own presets or download some online."
 msgstr "Voit nyt tehdä omia esiasetuksia tai ladata niitä verkosta."
 
-#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:166
+#: data/ui/share_window.blp:168
 msgid "Please finish the setup first"
 msgstr "Viimeistele määritys ensin"
 
-#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:174
+#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:98
 msgid "Start Using Gradience"
 msgstr "Aloita Gradiencen käyttäminen"
 
-#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:191
+#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:113
 msgid "Next"
 msgstr "Seuraava"
 
@@ -634,71 +640,64 @@ msgstr "Liitännäisen asetukset"
 
 #: data/ui/shell_prefs_window.blp:13
 #, fuzzy
-#| msgid "Shade Color"
-msgid "Custom Shell Colors"
-msgstr "Varjostusväri"
-
-#: data/ui/shell_prefs_window.blp:14
-#, fuzzy
 #| msgid "Customize Adwaita Theme"
-msgid "Customize Shell theme colors."
+msgid "Shell theme colors"
 msgstr "Mukauta Adwaita-teemaa"
 
 #: data/ui/shell_theming_group.blp:6
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the currently "
-"selected preset.\n"
+"Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:9
+#: data/ui/shell_theming_group.blp:20
 msgid "Shell Engine Options"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:10
+#: data/ui/shell_theming_group.blp:21
 msgid "Change the generated GNOME Shell theme"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:17
+#: data/ui/shell_theming_group.blp:28
 #, fuzzy
 #| msgid "Apply This Color Scheme?"
 msgid "Apply Shell theme"
 msgstr "Toteutetaanko tämä väriteema?"
 
-#: data/ui/shell_theming_group.blp:23
+#: data/ui/shell_theming_group.blp:37
 #, fuzzy
 #| msgid "Customize Adwaita Theme"
 msgid "Customize Shell Theme"
 msgstr "Mukauta Adwaita-teemaa"
 
-#: data/ui/shell_theming_group.blp:29
+#: data/ui/shell_theming_group.blp:43
 #, fuzzy
 #| msgid "No Preferences"
 msgid "Open Shell Preferences"
 msgstr "Ei asetuksia"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:49
 #, fuzzy
 #| msgid "Preset reseted"
 msgid "Preset Variant"
 msgstr "Esiasetus nollattu"
 
-#: data/ui/shell_theming_group.blp:36
+#: data/ui/shell_theming_group.blp:50
 msgid "Select currently applied preset variant"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:48
+#: data/ui/shell_theming_group.blp:62
 msgid "Currently unavailable"
 msgstr ""
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:73
 #, fuzzy
 #| msgid "Preset removed"
 msgid "Reset Theme"
 msgstr "Esiasetus poistettu"
 
-#: data/ui/shell_theming_group.blp:57
+#: data/ui/shell_theming_group.blp:74
 #, fuzzy
 #| msgid "Reset applied color scheme?"
 msgid "Reset applied theme"
@@ -726,61 +725,63 @@ msgstr "Avaa asetukset"
 msgid "Welcome to Gradience"
 msgstr "Tervetuloa, tämä on Gradience"
 
-#: data/ui/welcome_window.blp:71
+#: data/ui/welcome_window.blp:70
 msgid "What's new in 0.8.0"
 msgstr ""
 
-#: data/ui/welcome_window.blp:72
+#: data/ui/welcome_window.blp:71
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
-"Gradience works internally."
+"Gradience works internally"
 msgstr ""
 
-#: data/ui/welcome_window.blp:84
+#: data/ui/welcome_window.blp:79
+msgid ""
+"Changing the color scheme can negatively affect contrast and readability. "
+"Proceed with caution. Please do not report theming-related issues to app "
+"developers"
+msgstr ""
+"Väriteeman vaihtaminen voi heikentää kontrastia ja luettavuutta. Jatka "
+"varoen. Älä ilmoita teemoihin liittyvistä ongelmista tämän sovelluksen "
+"kehittäjille"
+
+#: data/ui/welcome_window.blp:83
 msgid "Agree and Continue"
 msgstr "Hyväksy ja jatka"
 
-#: data/ui/welcome_window.blp:96
-msgid ""
-"Change colors of windows, buttons, lists and more; with advanced features "
-"like adding custom CSS."
-msgstr ""
-"Vaihda ikkunoiden, painikkeiden, luettelojen ja muiden elementtien väriä ja "
-"käytä lisäominaisuuksia kuten omavalintaista CSS:ää."
-
-#: data/ui/welcome_window.blp:108
-msgid "Legacy Apps Theming"
-msgstr "Vanhojen sovellusten teemoitus"
-
-#: data/ui/welcome_window.blp:113
+#: data/ui/welcome_window.blp:93
 #, fuzzy
-#| msgid "Install adw-gtk3 theme for legacy apps theming"
-msgid "Install adw-gtk3 theme for legacy app theming"
-msgstr "Asenna adw-gtk3-teema vanhojen sovellusten teemoitusta varten."
+#| msgid "Customize Adwaita Theme"
+msgid "Customize Adwaita"
+msgstr "Mukauta Adwaita-teemaa"
 
-#: data/ui/welcome_window.blp:118
-msgid "System Configuration"
-msgstr "Järjestelmän määritys"
+#: data/ui/welcome_window.blp:94
+#, fuzzy
+#| msgid ""
+#| "Change colors of windows, buttons, lists and more, with advanced features "
+#| "like adding custom CSS"
+msgid ""
+"Change colors of windows, buttons, lists and more, with advanced features "
+"like adding custom styles"
+msgstr ""
+"Mukauta ikkunoiden, painikkeiden, luettelojen ja muiden elementtien väriä ja "
+"käytä lisäominaisuuksia kuten omavalintaista CSS:ää"
 
-#: data/ui/welcome_window.blp:134
-msgid "Installing adw-gtk3"
-msgstr "Asennetaan adw-gtk3"
+#: data/ui/window.blp:37 gradience/frontend/main.py:422
+msgid "Save Preset"
+msgstr "Tallenna esiasetus"
 
-#: data/ui/window.blp:37
+#: data/ui/window.blp:46
 msgid "Show Preview Window"
 msgstr "Näytä esikatseluikkuna"
 
-#: data/ui/window.blp:48
+#: data/ui/window.blp:57
 msgid "Main Menu"
 msgstr "Päävalikko"
 
-#: data/ui/window.blp:57
+#: data/ui/window.blp:66
 msgid "Presets Menu"
 msgstr "Esiasetukset-valikko"
-
-#: data/ui/window.blp:64
-msgid "Save Preset"
-msgstr "Tallenna esiasetus"
 
 #: data/ui/window.blp:73
 msgid "CSS Errors"
@@ -814,6 +815,103 @@ msgstr "Sisäänrakennetut esiasetukset"
 #: data/ui/window.blp:167
 msgid "Manage Presets"
 msgstr "Hallitse esiasetuksia"
+
+#: gradience/backend/flatpak_overrides.py:71
+#: gradience/backend/flatpak_overrides.py:93
+#, fuzzy
+msgid "Failed to save override"
+msgstr "Esiasetuksen lataaminen epäonnistui"
+
+#: gradience/backend/flatpak_overrides.py:186
+#: gradience/backend/flatpak_overrides.py:228
+#: gradience/backend/flatpak_overrides.py:306
+#: gradience/backend/flatpak_overrides.py:366
+#: gradience/backend/flatpak_overrides.py:448
+#: gradience/backend/flatpak_overrides.py:509
+msgid "Unexpected file error occurred"
+msgstr ""
+
+#: gradience/frontend/dialogs/app_type_dialog.py:47
+#: gradience/frontend/dialogs/save_dialog.py:62
+msgid "_Cancel"
+msgstr "_Peru"
+
+#: gradience/frontend/dialogs/save_dialog.py:39
+#, python-brace-format
+msgid ""
+"Saving preset to \n"
+" <small><i><tt>{0}</tt></i></small>. \n"
+" If that preset already exists, it will be overwritten."
+msgstr ""
+
+#: gradience/frontend/dialogs/save_dialog.py:65
+msgid "Discard"
+msgstr "Hylkää"
+
+#: gradience/frontend/dialogs/save_dialog.py:70
+msgid "_Save"
+msgstr "_Tallenna"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
+msgid "Unsupported Shell Version ({get_full_shell_version()})"
+msgstr ""
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+msgid ""
+"The Shell version you are using is not supported by Gradience. Please "
+"upgrade to a newer version of GNOME."
+msgstr ""
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
+msgid "OK"
+msgstr "OK"
+
+#: gradience/frontend/main.py:203
+#: gradience/frontend/views/presets_manager_window.py:339
+msgid "Failed to load list of presets"
+msgstr "Esiasetusluettelon lataaminen epäonnistui"
+
+#: gradience/frontend/main.py:236
+msgid "No presets found"
+msgstr "Esiasetuksia ei löydy"
+
+#: gradience/frontend/main.py:259
+msgid "Favorite Presets"
+msgstr "Suosikkiesiasetukset"
+
+#: gradience/frontend/main.py:412
+msgid "Unsaved Changes"
+msgstr "Tallentamattomia muutoksia"
+
+#: gradience/frontend/main.py:421
+msgid "Save"
+msgstr "Tallenna"
+
+#: gradience/frontend/main.py:511
+msgid "Apply This Color Scheme?"
+msgstr "Toteutetaanko tämä väriteema?"
+
+#: gradience/frontend/main.py:513
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+
+#: gradience/frontend/main.py:517
+msgid "_Apply"
+msgstr "_Toteuta"
+
+#: gradience/frontend/main.py:543
+msgid "You have unsaved changes!"
+msgstr "Tallentamattomia muutoksia!"
+
+#: gradience/frontend/main.py:594
+msgid "Preset saved"
+msgstr "Esiasetus tallennettu"
+
+#: gradience/frontend/main.py:611
+msgid "Preset has been set. Log out to apply changes."
+msgstr ""
 
 #: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
@@ -863,10 +961,12 @@ msgstr ""
 #: gradience/frontend/schemas/preset_schema.py:184
 #: gradience/frontend/schemas/preset_schema.py:204
 #: gradience/frontend/schemas/preset_schema.py:225
-#: gradience/frontend/schemas/preset_schema.py:280
-#: gradience/frontend/schemas/preset_schema.py:307
-#: gradience/frontend/schemas/preset_schema.py:324
-#: gradience/frontend/schemas/preset_schema.py:341
+#: gradience/frontend/schemas/preset_schema.py:284
+#: gradience/frontend/schemas/preset_schema.py:327
+#: gradience/frontend/schemas/preset_schema.py:367
+#: gradience/frontend/schemas/preset_schema.py:394
+#: gradience/frontend/schemas/preset_schema.py:411
+#: gradience/frontend/schemas/preset_schema.py:428
 msgid "Background Color"
 msgstr "Taustaväri"
 
@@ -878,10 +978,12 @@ msgstr "Taustaväri"
 #: gradience/frontend/schemas/preset_schema.py:189
 #: gradience/frontend/schemas/preset_schema.py:209
 #: gradience/frontend/schemas/preset_schema.py:230
-#: gradience/frontend/schemas/preset_schema.py:285
-#: gradience/frontend/schemas/preset_schema.py:312
-#: gradience/frontend/schemas/preset_schema.py:329
-#: gradience/frontend/schemas/preset_schema.py:346
+#: gradience/frontend/schemas/preset_schema.py:289
+#: gradience/frontend/schemas/preset_schema.py:332
+#: gradience/frontend/schemas/preset_schema.py:372
+#: gradience/frontend/schemas/preset_schema.py:399
+#: gradience/frontend/schemas/preset_schema.py:416
+#: gradience/frontend/schemas/preset_schema.py:433
 msgid "Foreground Color"
 msgstr "Edustaväri"
 
@@ -1000,10 +1102,14 @@ msgid ""
 msgstr ""
 
 #: gradience/frontend/schemas/preset_schema.py:250
+#: gradience/frontend/schemas/preset_schema.py:294
+#: gradience/frontend/schemas/preset_schema.py:337
 msgid "Backdrop Color"
 msgstr "Taustapudotusväri"
 
 #: gradience/frontend/schemas/preset_schema.py:252
+#: gradience/frontend/schemas/preset_schema.py:296
+#: gradience/frontend/schemas/preset_schema.py:339
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -1012,119 +1118,156 @@ msgid ""
 msgstr ""
 
 #: gradience/frontend/schemas/preset_schema.py:263
-#: gradience/frontend/schemas/preset_schema.py:290
-#: gradience/frontend/schemas/preset_schema.py:358
+#: gradience/frontend/schemas/preset_schema.py:307
+#: gradience/frontend/schemas/preset_schema.py:350
+#: gradience/frontend/schemas/preset_schema.py:377
+#: gradience/frontend/schemas/preset_schema.py:438
+#: gradience/frontend/schemas/preset_schema.py:455
 msgid "Shade Color"
 msgstr "Varjostusväri"
 
 #: gradience/frontend/schemas/preset_schema.py:265
+#: gradience/frontend/schemas/preset_schema.py:309
+#: gradience/frontend/schemas/preset_schema.py:352
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
 msgstr ""
 
 #: gradience/frontend/schemas/preset_schema.py:275
+#, fuzzy
+#| msgid "View Colors"
+msgid "Sidebar Colors"
+msgstr "Näkymävärit"
+
+#: gradience/frontend/schemas/preset_schema.py:277
+msgid ""
+"These colors are used for sidebars, generally attached to the left or right "
+"sides of a window. They are used by AdwNavigationSplitView and "
+"AdwOverlaySplitView when they are not collapsed."
+msgstr ""
+
+#: gradience/frontend/schemas/preset_schema.py:319
+#, fuzzy
+#| msgid "Header Bar Colors"
+msgid "Secondary Sidebar Colors"
+msgstr "Otsakepalkin värit"
+
+#: gradience/frontend/schemas/preset_schema.py:321
+msgid ""
+"These colors are used for middle panes in triple-pane layouts,  created via "
+"nesting two split views within one another."
+msgstr ""
+
+#: gradience/frontend/schemas/preset_schema.py:362
 msgid "Card Colors"
 msgstr "Korttivärit"
 
-#: gradience/frontend/schemas/preset_schema.py:276
+#: gradience/frontend/schemas/preset_schema.py:363
 msgid "These colors are used for cards and boxed lists."
 msgstr "Näitä värejä käytetään korteille ja laatikkoluetteloille."
 
-#: gradience/frontend/schemas/preset_schema.py:292
+#: gradience/frontend/schemas/preset_schema.py:379
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
 "cards."
 msgstr ""
 
-#: gradience/frontend/schemas/preset_schema.py:302
+#: gradience/frontend/schemas/preset_schema.py:389
 #, fuzzy
 #| msgid "Dialog Colors"
 msgid "Thumbnail Colors"
 msgstr "Dialogivärit"
 
-#: gradience/frontend/schemas/preset_schema.py:303
+#: gradience/frontend/schemas/preset_schema.py:390
 #, fuzzy
 #| msgid "These colors are used for popovers."
 msgid "These colors are used for Tab Overview thumbnails."
 msgstr "Näitä värejä käytetään ponnahduksissa."
 
-#: gradience/frontend/schemas/preset_schema.py:319
+#: gradience/frontend/schemas/preset_schema.py:406
 msgid "Dialog Colors"
 msgstr "Dialogivärit"
 
-#: gradience/frontend/schemas/preset_schema.py:320
+#: gradience/frontend/schemas/preset_schema.py:407
 msgid "These colors are used for message dialogs."
 msgstr "Näitä värejä käytetään viesti-ikkunoissa."
 
-#: gradience/frontend/schemas/preset_schema.py:336
+#: gradience/frontend/schemas/preset_schema.py:423
 msgid "Popover Colors"
 msgstr "Ponnahdusvärit"
 
-#: gradience/frontend/schemas/preset_schema.py:337
+#: gradience/frontend/schemas/preset_schema.py:424
 msgid "These colors are used for popovers."
 msgstr "Näitä värejä käytetään ponnahduksissa."
 
-#: gradience/frontend/schemas/preset_schema.py:353
+#: gradience/frontend/schemas/preset_schema.py:440
+msgid ""
+"The shade color is used for scroll undershoot styles within popovers, as "
+"well as transitions in AdwNavigationView, AdwOverlaySplitView, AdwLeaflet "
+"and AdwFlap."
+msgstr ""
+
+#: gradience/frontend/schemas/preset_schema.py:450
 msgid "Miscellaneous Colors"
 msgstr "Sekalaiset värit"
 
-#: gradience/frontend/schemas/preset_schema.py:354
+#: gradience/frontend/schemas/preset_schema.py:451
 msgid "Colors that don't fit in any particular group."
 msgstr "Värit, jotka eivät sovi mihinkään tiettyyn ryhmään."
 
-#: gradience/frontend/schemas/preset_schema.py:360
+#: gradience/frontend/schemas/preset_schema.py:457
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
 msgstr ""
 
-#: gradience/frontend/schemas/preset_schema.py:368
+#: gradience/frontend/schemas/preset_schema.py:465
 msgid "Scrollbar Outline Color"
 msgstr "Vierityspalkin uloin väri"
 
-#: gradience/frontend/schemas/preset_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:467
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
 msgstr ""
 
-#: gradience/frontend/schemas/preset_schema.py:380
+#: gradience/frontend/schemas/preset_schema.py:477
 msgid "Blue"
 msgstr "Sininen"
 
-#: gradience/frontend/schemas/preset_schema.py:381
+#: gradience/frontend/schemas/preset_schema.py:478
 msgid "Green"
 msgstr "Vihreä"
 
-#: gradience/frontend/schemas/preset_schema.py:382
+#: gradience/frontend/schemas/preset_schema.py:479
 msgid "Yellow"
 msgstr "Keltainen"
 
-#: gradience/frontend/schemas/preset_schema.py:383
+#: gradience/frontend/schemas/preset_schema.py:480
 msgid "Orange"
 msgstr "Oranssi"
 
-#: gradience/frontend/schemas/preset_schema.py:384
+#: gradience/frontend/schemas/preset_schema.py:481
 msgid "Red"
 msgstr "Punainen"
 
-#: gradience/frontend/schemas/preset_schema.py:385
+#: gradience/frontend/schemas/preset_schema.py:482
 msgid "Purple"
 msgstr "Liila"
 
-#: gradience/frontend/schemas/preset_schema.py:386
+#: gradience/frontend/schemas/preset_schema.py:483
 msgid "Brown"
 msgstr "Ruskea"
 
-#: gradience/frontend/schemas/preset_schema.py:387
+#: gradience/frontend/schemas/preset_schema.py:484
 #: gradience/frontend/widgets/monet_theming_group.py:95
 #: gradience/frontend/widgets/shell_theming_group.py:73
 msgid "Light"
 msgstr "Vaalea"
 
-#: gradience/frontend/schemas/preset_schema.py:388
+#: gradience/frontend/schemas/preset_schema.py:485
 #: gradience/frontend/widgets/monet_theming_group.py:96
 #: gradience/frontend/widgets/shell_theming_group.py:72
 msgid "Dark"
@@ -1166,40 +1309,125 @@ msgstr "Edustaväri"
 msgid "OSD Foreground Color"
 msgstr "Edustaväri"
 
-#: gradience/frontend/dialogs/app_type_dialog.py:47
-#: gradience/frontend/dialogs/save_dialog.py:62
-msgid "_Cancel"
-msgstr "_Peru"
+#: gradience/frontend/views/about_window.py:27
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
 
-#: gradience/frontend/dialogs/log_out_dialog.py:41
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
-msgid "OK"
-msgstr "OK"
+#: gradience/frontend/views/about_window.py:56
+msgid "Copyright © 2022-2023 Gradience Team"
+msgstr "Tekijänoikeus © 2022-2023 Gradience-tiimi"
 
-#: gradience/frontend/dialogs/save_dialog.py:39
-#, python-brace-format
+#: gradience/frontend/views/about_window.py:63
+msgid "Plugins by"
+msgstr "Liitännäiset"
+
+#: gradience/frontend/views/about_window.py:65
 msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten."
+"Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 msgstr ""
+"Avustajat GitHubissa https://github.com/GradienceTeam/Plugins/graphs/"
+"contributors"
 
-#: gradience/frontend/dialogs/save_dialog.py:65
-msgid "Discard"
-msgstr "Hylkää"
+#: gradience/frontend/views/about_window.py:69
+msgid "Presets by"
+msgstr "Esiasetukset"
 
-#: gradience/frontend/dialogs/save_dialog.py:70
-msgid "_Save"
-msgstr "_Tallenna"
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
-msgid "Unsupported Shell Version ({get_full_shell_version()})"
-msgstr ""
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+#: gradience/frontend/views/about_window.py:71
 msgid ""
-"The Shell version you are using is not supported by Gradience. Please "
-"upgrade to a newer version of GNOME."
+"Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
 msgstr ""
+"Avustajat GitHubissa https://github.com/GradienceTeam/Community/graphs/"
+"contributors"
+
+#: gradience/frontend/views/main_window.py:204
+msgid "Palette Colors"
+msgstr "Palettivärit"
+
+#: gradience/frontend/views/main_window.py:207
+msgid ""
+"Named palette colors used by some applications. Default colors follow the <a "
+"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
+"Interface Guidelines</a>."
+msgstr ""
+"Nimetyt palettivärit ovat joidenkin sovellusten käyttämiä. Oletusvärit "
+"seuraavat <a href=\"https://developer.gnome.org/hig/reference/palette."
+"html\">Gnomen Human Interface Guidelines -ohjeistuksia</a>."
+
+#: gradience/frontend/views/plugins_list.py:89
+msgid "Plugins"
+msgstr "Liitännäiset"
+
+#: gradience/frontend/views/plugins_list.py:92
+msgid ""
+"Plugins add additional features to Gradience, plugins are made by Gradience "
+"community and can cause issues."
+msgstr ""
+"Liitännäiset lisäävät ominaisuuksia Gradienceen. Liitännäiset ovat yhteisön "
+"tekemiä ja ne voivat aiheuttaa ongelmia."
+
+#: gradience/frontend/views/plugins_list.py:104
+msgid "No Plugins Found."
+msgstr "Liitännäisiä ei löytynyt."
+
+#: gradience/frontend/views/presets_manager_window.py:119
+#: gradience/frontend/views/presets_manager_window.py:355
+msgid "User Presets"
+msgstr "Käyttäjien esiasetukset"
+
+#: gradience/frontend/views/presets_manager_window.py:194
+msgid "Add new repository"
+msgstr "Lisää uusi tietovarasto"
+
+#: gradience/frontend/views/presets_manager_window.py:195
+msgid "Add a repository to install additional presets."
+msgstr "Lisää tietovarasto, josta on mahdollista asentaa lisää esiasetuksia."
+
+#: gradience/frontend/views/presets_manager_window.py:201
+#: gradience/frontend/widgets/shell_theming_group.py:143
+msgid "Cancel"
+msgstr "Peru"
+
+#: gradience/frontend/views/presets_manager_window.py:202
+msgid "Add"
+msgstr "Lisää"
+
+#: gradience/frontend/views/presets_manager_window.py:298
+msgid "Preset already exists"
+msgstr "Esiasetus on jo olemassa"
+
+#: gradience/frontend/views/presets_manager_window.py:310
+msgid "Preset imported"
+msgstr "Esiasetus tuotu"
+
+#: gradience/frontend/views/presets_manager_window.py:313
+msgid "Unsupported file format, must be .json"
+msgstr "Tiedostomuoto ei ole tuettu, täytyy olla .json"
+
+#: gradience/frontend/views/presets_manager_window.py:348
+msgid "Built-in Presets"
+msgstr "Sisäänrakennetut esiasetukset"
+
+#: gradience/frontend/views/presets_manager_window.py:358
+msgid ""
+"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
+"Community</a> on Github for more presets."
+msgstr ""
+"Katso Githubista <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a> saadaksesi lisää esiasetuksia"
+
+#: gradience/frontend/views/presets_manager_window.py:384
+msgid ""
+"No preset found! Use the import button to import one or search one on the "
+"Explore tab."
+msgstr ""
+"Esiasetusta ei löytynyt! Tuo esiasetus Tuo-painikkeella tai etsi "
+"esiasetuksia Selaa-välilehdeltä."
+
+#: gradience/frontend/views/welcome_window.py:79
+msgid "Thanks for updating Gradience!"
+msgstr "Kiitos kun päivitit Gradiencen!"
 
 #: gradience/frontend/widgets/explore_preset_row.py:68
 #: gradience/frontend/widgets/explore_preset_row.py:94
@@ -1212,12 +1440,14 @@ msgid "Preset downloaded"
 msgstr "Esiasetus ladattu"
 
 #: gradience/frontend/widgets/monet_theming_group.py:65
-msgid "Monet Palette"
+#, fuzzy
+#| msgid "Monet Palette"
+msgid "Palette"
 msgstr "Monet-paletti"
 
 #: gradience/frontend/widgets/monet_theming_group.py:91
-msgid "Theme"
-msgstr "Teema"
+msgid "Style"
+msgstr ""
 
 #: gradience/frontend/widgets/monet_theming_group.py:94
 msgid "Auto"
@@ -1297,18 +1527,34 @@ msgstr "Esiasetusta ei voitu poistaa"
 msgid "Repository removed"
 msgstr "Tietovarasto poistettu"
 
-#: gradience/frontend/widgets/reset_preset_group.py:57
+#: gradience/frontend/widgets/reset_preset_group.py:55
 msgid "Unable to restore GTK 4 backup"
 msgstr "GTK 4 -varmuuskopiota ei voitu palauttaa"
 
+#: gradience/frontend/widgets/reset_preset_group.py:59
+msgid "GTK 4 preset has been restored. Log out to apply changes."
+msgstr ""
+
 #: gradience/frontend/widgets/reset_preset_group.py:69
-#: gradience/frontend/widgets/reset_preset_group.py:94
+#: gradience/frontend/widgets/reset_preset_group.py:98
 msgid "Unable to delete current preset"
 msgstr "Nykyistä esiasetusta ei voitu poistaa"
 
-#: gradience/frontend/widgets/reset_preset_group.py:82
+#: gradience/frontend/widgets/reset_preset_group.py:73
+msgid "GTK 4 theme has been reset. Log out to apply changes."
+msgstr ""
+
+#: gradience/frontend/widgets/reset_preset_group.py:84
 msgid "Unable to restore GTK 3 backup"
 msgstr "GTK 3 -varmuuskopiota ei voitu palauttaa"
+
+#: gradience/frontend/widgets/reset_preset_group.py:88
+msgid "GTK 3 preset has been restored. Log out to apply changes."
+msgstr ""
+
+#: gradience/frontend/widgets/reset_preset_group.py:102
+msgid "GTK 3 theme has been reset. Log out to apply changes."
+msgstr ""
 
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."
@@ -1337,7 +1583,7 @@ msgstr "Jatka silti"
 
 #: gradience/frontend/widgets/shell_theming_group.py:129
 msgid "User Themes Extension Missing"
-msgstr ""
+msgstr "User Themes -laajennus puuttuu"
 
 #: gradience/frontend/widgets/shell_theming_group.py:130
 msgid ""
@@ -1352,18 +1598,13 @@ msgstr "Asenna laajennus"
 
 #: gradience/frontend/widgets/shell_theming_group.py:140
 msgid "User Themes Extension Disabled"
-msgstr ""
+msgstr "User Themes -laajennus poistettu käytöstä"
 
 #: gradience/frontend/widgets/shell_theming_group.py:141
 msgid ""
 "The User Themes extension is currently disabled on your system. Please "
 "enable it to apply the theme."
 msgstr ""
-
-#: gradience/frontend/widgets/shell_theming_group.py:143
-#: gradience/frontend/views/presets_manager_window.py:201
-msgid "Cancel"
-msgstr "Peru"
 
 #: gradience/frontend/widgets/shell_theming_group.py:181
 msgid "An error occurred while generating a Shell theme."
@@ -1384,169 +1625,133 @@ msgstr ""
 msgid "Shell theme successfully reset."
 msgstr ""
 
-#: gradience/frontend/views/about_window.py:27
-msgid "translator-credits"
-msgstr "Jiri Grönroos"
+#~ msgid "AdwCustomizer"
+#~ msgstr "AdwCustomizer"
 
-#: gradience/frontend/views/about_window.py:56
-msgid "Copyright © 2022-2023 Gradience Team"
-msgstr "Tekijänoikeus © 2022-2023 Gradience-tiimi"
-
-#: gradience/frontend/views/about_window.py:63
-msgid "Plugins by"
-msgstr "Liitännäiset"
-
-#: gradience/frontend/views/about_window.py:65
-msgid ""
-"Contributors on GitHub https://github.com/GradienceTeam/Plugins/graphs/"
-"contributors"
-msgstr ""
-
-#: gradience/frontend/views/about_window.py:69
-msgid "Presets by"
-msgstr "Esiasetukset"
-
-#: gradience/frontend/views/about_window.py:71
 #, fuzzy
-#| msgid ""
-#| "Enter a keyword to search on <a href=\"https://github.com/GradienceTeam/"
-#| "Community\">GradienceTeam/Community</a>."
-msgid ""
-"Contributors on GitHub https://github.com/GradienceTeam/Community/graphs/"
-"contributors"
-msgstr ""
-"Kirjoita hakusana jota etsitään <a href=\"https://github.com/GradienceTeam/"
-"Community\">GradienceTeam/Communitysta</a>."
+#~| msgid "Adwaita Demo"
+#~ msgid "Adwaita Manager"
+#~ msgstr "Adwaitan demo"
 
-#: gradience/frontend/views/main_window.py:204
-msgid "Palette Colors"
-msgstr "Palettivärit"
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Yleiset"
 
-#: gradience/frontend/views/main_window.py:207
-msgid ""
-"Named palette colors used by some applications. Default colors follow the <a "
-"href=\"https://developer.gnome.org/hig/reference/palette.html\">GNOME Human "
-"Interface Guidelines</a>."
-msgstr ""
-"Nimetyt palettivärit ovat joidenkin sovellusten käyttämiä. Oletusvärit "
-"seuraavat <a href=\"https://developer.gnome.org/hig/reference/palette.html"
-"\">Gnomen Human Interface Guidelines -ohjeistuksia</a>."
+#, fuzzy
+#~| msgid "Keyboard Shortcuts"
+#~ msgctxt "shortcut window"
+#~ msgid "Show Shortcuts"
+#~ msgstr "Pikanäppäimet"
 
-#: gradience/frontend/views/plugins_list.py:89
-msgid "Plugins"
-msgstr "Liitännäiset"
+#, fuzzy
+#~| msgid "Manage Presets"
+#~ msgctxt "shortcut window"
+#~ msgid "Manage Presets"
+#~ msgstr "Hallitse esiasetuksia"
 
-#: gradience/frontend/views/plugins_list.py:92
-msgid ""
-"Plugins add additional features to Gradience, plugins are made by Gradience "
-"community and can cause issues."
-msgstr ""
-"Liitännäiset lisäävät ominaisuuksia Gradienceen. Liitännäiset ovat yhteisön "
-"tekemiä ja ne voivat aiheuttaa ongelmia."
+#, fuzzy
+#~| msgid "Save Preset"
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Tallenna esiasetus"
 
-#: gradience/frontend/views/plugins_list.py:104
-msgid "No Plugins Found."
-msgstr "Liitännäisiä ei löytynyt."
+#, fuzzy
+#~| msgid "Preferences"
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Asetukset"
 
-#: gradience/frontend/views/presets_manager_window.py:119
-#: gradience/frontend/views/presets_manager_window.py:355
-msgid "User Presets"
-msgstr "Käyttäjien esiasetukset"
+#, fuzzy
+#~| msgid ""
+#~| "Monet is an engine that generates a Material Design 3 palette from an "
+#~| "image's color."
+#~ msgid "Monet Engine generates a Material You color palette from an image."
+#~ msgstr ""
+#~ "Monet on moottori, joka luo Material Design 3 -paletin kuvan väriin "
+#~ "pohjautuen."
 
-#: gradience/frontend/views/presets_manager_window.py:194
-msgid "Add new repository"
-msgstr "Lisää uusi tietovarasto"
+#~ msgid "Select an Image"
+#~ msgstr "Valitse kuva"
 
-#: gradience/frontend/views/presets_manager_window.py:195
-msgid "Add a repository to install additional presets."
-msgstr "Lisää tietovarasto, josta on mahdollista asentaa lisää esiasetuksia."
+#~ msgid "Allow GTK 4 Theming"
+#~ msgstr "Salli GTK 4 -teemoitus"
 
-#: gradience/frontend/views/presets_manager_window.py:202
-msgid "Add"
-msgstr "Lisää"
+#~ msgid "Allow GTK 4 Theming (System)"
+#~ msgstr "Salli GTK 4 -sovellusten teemoitus (järjestelmä)"
 
-#: gradience/frontend/views/presets_manager_window.py:298
-msgid "Preset already exists"
-msgstr "Esiasetus on jo olemassa"
+#, fuzzy
+#~| msgid ""
+#~| "Override Flatpak permissions for all users to allow GTK 4 Flatpak "
+#~| "applications to access custom themes. (Requires root access)"
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
+#~ "access custom themes. (Requires root access)"
+#~ msgstr ""
+#~ "Ohita Flatpak-oikeudet kaikkien käyttäjien osalta salliaksesi Flatpak-"
+#~ "muotoisten GTK 4 -sovellusten käyttää mukautettuja teemoja. (Vaatii root-"
+#~ "oikeuden)"
 
-#: gradience/frontend/views/presets_manager_window.py:310
-msgid "Preset imported"
-msgstr "Esiasetus tuotu"
+#~ msgid "Allow GTK 3 Theming"
+#~ msgstr "Salli GTK 3 -teemoitus"
 
-#: gradience/frontend/views/presets_manager_window.py:313
-msgid "Unsupported file format, must be .json"
-msgstr "Tiedostomuoto ei ole tuettu, täytyy olla .json"
+#~ msgid "Allow GTK 3 Theming (System)"
+#~ msgstr "Salli GTK 3 -sovellusten teemoitus (järjestelmä)"
 
-#: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:204
-msgid "Failed to load list of presets"
-msgstr "Esiasetusluettelon lataaminen epäonnistui"
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
+#~ "access adw-gtk3 theme. (Requires root access)"
+#~ msgstr ""
+#~ "Ohita Flatpak-oikeudet kaikkien käyttäjien osalta salliaksesi Flatpak-"
+#~ "muotoisten GTK 3 -sovellusten käyttää adw-gtk3-teemaa. (Vaatii root-"
+#~ "oikeuden)"
 
-#: gradience/frontend/views/presets_manager_window.py:348
-msgid "Built-in Presets"
-msgstr "Sisäänrakennetut esiasetukset"
+#, fuzzy
+#~| msgid "Shade Color"
+#~ msgid "Custom Shell Colors"
+#~ msgstr "Varjostusväri"
 
-#: gradience/frontend/views/presets_manager_window.py:358
-msgid ""
-"See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
-"Community</a> on Github for more presets."
-msgstr ""
-"Katso Githubista <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a> saadaksesi lisää esiasetuksia"
+#, fuzzy
+#~| msgid ""
+#~| "Change colors of windows, buttons, lists and more, with advanced "
+#~| "features like adding custom CSS"
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more, with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "Mukauta ikkunoiden, painikkeiden, luettelojen ja muiden elementtien väriä "
+#~ "ja käytä lisäominaisuuksia kuten omavalintaista CSS:ää"
 
-#: gradience/frontend/views/presets_manager_window.py:384
-msgid ""
-"No preset found! Use the import button to import one or search one on the "
-"Explore tab."
-msgstr ""
-"Esiasetusta ei löytynyt! Tuo esiasetus Tuo-painikkeella tai etsi "
-"esiasetuksia Selaa-välilehdeltä."
+#~ msgid "Theme"
+#~ msgstr "Teema"
 
-#: gradience/frontend/views/welcome_window.py:89
-msgid "Thanks for updating Gradience!"
-msgstr "Kiitos kun päivitit Gradiencen!"
+#~ msgid "Save Changes"
+#~ msgstr "Tallenna muutokset"
 
-#: gradience/frontend/main.py:237
-msgid "No presets found"
-msgstr "Esiasetuksia ei löydy"
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more; with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "Vaihda ikkunoiden, painikkeiden, luettelojen ja muiden elementtien väriä "
+#~ "ja käytä lisäominaisuuksia kuten omavalintaista CSS:ää."
 
-#: gradience/frontend/main.py:260
-msgid "Favorite Presets"
-msgstr "Suosikkiesiasetukset"
+#~ msgid "Legacy Apps Theming"
+#~ msgstr "Vanhojen sovellusten teemoitus"
 
-#: gradience/frontend/main.py:417
-msgid "Unsaved Changes"
-msgstr "Tallentamattomia muutoksia"
+#, fuzzy
+#~| msgid "Install adw-gtk3 theme for legacy apps theming"
+#~ msgid "Install adw-gtk3 theme for legacy app theming"
+#~ msgstr "Asenna adw-gtk3-teema vanhojen sovellusten teemoitusta varten."
 
-#: gradience/frontend/main.py:429
-msgid "Save Changes"
-msgstr "Tallenna muutokset"
+#~ msgid "System Configuration"
+#~ msgstr "Järjestelmän määritys"
 
-#: gradience/frontend/main.py:519
-msgid "Apply This Color Scheme?"
-msgstr "Toteutetaanko tämä väriteema?"
+#~ msgid "Installing adw-gtk3"
+#~ msgstr "Asennetaan adw-gtk3"
 
-#: gradience/frontend/main.py:521
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
-msgstr ""
-
-#: gradience/frontend/main.py:525
-msgid "_Apply"
-msgstr "_Toteuta"
-
-#: gradience/frontend/main.py:551
-msgid "You have unsaved changes!"
-msgstr "Tallentamattomia muutoksia!"
-
-#: gradience/frontend/main.py:602
-msgid "Preset saved"
-msgstr "Esiasetus tallennettu"
-
-#: gradience/frontend/main.py:619
-msgid "Preset set successfully"
-msgstr "Esiasetus asetettu onnistuneesti"
+#~ msgid "Preset set successfully"
+#~ msgstr "Esiasetus asetettu onnistuneesti"
 
 #~ msgid "Toggle Text Value"
 #~ msgstr "Näytä/piilota tekstiarvo"
@@ -1600,9 +1805,6 @@ msgstr "Esiasetus asetettu onnistuneesti"
 #~ msgid "Select a background first"
 #~ msgstr "Valitse ensin tausta"
 
-#~ msgid "Report an Issue…"
-#~ msgstr "Ilmoita ongelmasta…"
-
 #~ msgid "More Options"
 #~ msgstr "Lisää valintoja"
 
@@ -1615,27 +1817,14 @@ msgstr "Esiasetus asetettu onnistuneesti"
 #~ msgid "Special thanks to"
 #~ msgstr "Erikoiskiitokset"
 
-#~ msgid "Background Image"
-#~ msgstr "Taustakuva"
-
 #~ msgid "Tone"
 #~ msgstr "Sävy"
-
-#~ msgid "Adwaita Demo"
-#~ msgstr "Adwaitan demo"
 
 #~ msgid "GTK 4 Demo"
 #~ msgstr "GTK 4:n demo"
 
 #~ msgid "GTK 4 Widget Factory"
 #~ msgstr "GTK 4:n widget-tehdas"
-
-#, fuzzy
-#~ msgid "Failed to save override"
-#~ msgstr "Esiasetuksen lataaminen epäonnistui"
-
-#~ msgid "Save"
-#~ msgstr "Tallenna"
 
 #~ msgid ""
 #~ "\n"
@@ -1709,9 +1898,6 @@ msgstr "Esiasetus asetettu onnistuneesti"
 #, fuzzy
 #~ msgid "Select app types you want to affect:"
 #~ msgstr "Valitse sovellustyypit jotka haluat teemoittaa:"
-
-#~ msgid "Libadwaita and GTK 4 apps"
-#~ msgstr "Libadwaita ja GTK 4 -sovellukset"
 
 #, fuzzy
 #~ msgid "GTK 3 apps (adw-gtk3 theme required)"
@@ -1805,8 +1991,8 @@ msgstr "Esiasetus asetettu onnistuneesti"
 #~ "See <a href=\"https://github.com/GradienceTeam/Community\">GradienceTeam/"
 #~ "Community</a> on Github for more presets"
 #~ msgstr ""
-#~ "Katso Githubista <a href=\"https://github.com/GradienceTeam/Community"
-#~ "\">GradienceTeam/Community</a> saadaksesi lisää esiasetuksia"
+#~ "Katso Githubista <a href=\"https://github.com/GradienceTeam/"
+#~ "Community\">GradienceTeam/Community</a> saadaksesi lisää esiasetuksia"
 
 #~ msgid ""
 #~ "No preset found! Use the import button to import one or search one on the "

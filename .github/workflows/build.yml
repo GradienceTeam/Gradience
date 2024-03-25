@@ -40,7 +40,7 @@ jobs:
       fail-fast: false
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
         with:
           submodules: recursive
@@ -51,11 +51,12 @@ jobs:
 
       - name: Set up QEMU
         id: qemu
-        uses: docker/setup-qemu-action@v2.2.0
+        uses: docker/setup-qemu-action@v3
         with:
           platforms: arm64
 
-      - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
+      - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.3
+
         with:
           repository-name: gnome-nightly
           bundle: gradience-devel.flatpak

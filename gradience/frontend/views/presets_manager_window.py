@@ -404,3 +404,4 @@ class GradiencePresetWindow(Adw.Window):
         self.repos.add(self.repos_list)
 
         self._repos = {**self.user_repositories, **self.preset_repos}
+

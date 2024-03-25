@@ -32,6 +32,15 @@ template $GradienceMainWindow : Adw.ApplicationWindow {
           }
 
           [start]
+          Button save-preset-button {
+            action-name: "app.save_preset";
+            tooltip-text: _("Save Preset");
+            Adw.ButtonContent {
+              icon-name: "document-save-symbolic";
+            }
+          }
+
+          [start]
           Button {
             icon-name: "applications-science-symbolic";
             tooltip-text: _("Show Preview Window");
@@ -56,15 +65,6 @@ template $GradienceMainWindow : Adw.ApplicationWindow {
             label: _("Presets");
             tooltip-text: _("Presets Menu");
             icon-name: "palette-symbolic";
-          }
-
-          [end]
-          Button save-preset-button {
-            action-name: "app.save_preset";
-            tooltip-text: _("Save Preset");
-            Adw.ButtonContent {
-              icon-name: "drive-symbolic";
-            }
           }
 
           [end]

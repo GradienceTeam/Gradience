@@ -19,7 +19,7 @@ template $GradienceExplorePresetRow : Adw.ActionRow {
 
     Button apply_button {
       valign: center;
-      icon-name: "checkmark-large-symbolic";
+      icon-name: "checkmark-symbolic";
       tooltip-text: _("Download and Apply");
       clicked => $on_apply_button_clicked();
 
@@ -31,7 +31,7 @@ template $GradienceExplorePresetRow : Adw.ActionRow {
     Button download_button {
       valign: center;
       icon-name: "folder-download-symbolic";
-      tooltip-text: _("Download Only");
+      tooltip-text: _("Download");
       clicked => $on_download_button_clicked();
 
       styles [

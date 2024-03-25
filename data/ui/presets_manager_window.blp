@@ -55,7 +55,7 @@ template $GradiencePresetWindow : Adw.Window {
             tooltip-text: _("Open in File Manager");
             clicked => $on_file_manager_button_clicked();
             Adw.ButtonContent {
-              icon-name: "folder-symbolic";
+              icon-name: "folder-open-symbolic";
             }
           }
 
@@ -185,3 +185,4 @@ Gtk.FileFilter json_filter {
   name: _("JSON file (*.json)");
   mime-types ["application/json"]
 }
+

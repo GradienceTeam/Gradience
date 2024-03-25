@@ -5,17 +5,18 @@
 #
 # Translators:
 # Taylan Tatlı <taylantatli90@gmail.com>, 2022
-# Sabri Ünal <libreajans@gmail.com>, 2022, 2023.
+# Sabri Ünal <libreajans@gmail.com>, 2022, 2023, 2024.
 # 0xMRTT <0xMRTT@tuta.io>, 2022.
 # Daudix UFO <ddaudix@gmail.com>, 2022.
-# yangyangdaji <1504305527@qq.com>, 2022, 2023.
+# yangyangdaji <1504305527@qq.com>, 2022, 2023, 2024.
+# Burak Orcun OZKABLAN <borcunozkablan@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 13:11+0000\n"
-"PO-Revision-Date: 2023-06-21 09:51+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
+"POT-Creation-Date: 2024-01-10 01:35+0000\n"
+"PO-Revision-Date: 2024-02-09 15:01+0000\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/tr/>\n"
 "Language: tr\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -45,7 +46,7 @@ msgid ""
 "Gradience is a tool for customizing Libadwaita applications and the adw-gtk3 "
 "theme."
 msgstr ""
-"Gradience Libadwaita uygulamalarını ve adw-gtk3 temasını özelleştirmek için "
+"Gradience, Libadwaita uygulamalarını ve adw-gtk3 temasını özelleştirmek için "
 "bir araçtır."
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:15
@@ -62,7 +63,7 @@ msgstr "🖼️ Duvar kağıdından Material 3 renk şeması uygulama"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:19
 msgid "🎁️ Usage of other users presets"
-msgstr "🎁️ Diğer kullanıcıların ön ayarlarını kullanma"
+msgstr "🎁️ Diğer kullanıcıların ön ayarlarının kullanımı"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:20
 msgid "⚙️ Changing advanced options with CSS"
@@ -93,20 +94,16 @@ msgid "Screenshot of \"Explore\" Tab of Preset Manager"
 msgstr "Ön Ayar Yöneticisinin \"Keşfet\" Sekmesinin Ekran Görüntüsü"
 
 #: data/ui/app_type_dialog.blp:14
-#, fuzzy
-#| msgid "Select application types you want to theme:"
 msgid "Select application types to theme:"
-msgstr "Temalandırmak istediğiniz uygulama türlerini seçin:"
+msgstr "Temalandırılacak uygulama türlerini seçin:"
 
-#: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
+#: data/ui/app_type_dialog.blp:17
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita ve GTK 4 Uygulamaları"
 
 #: data/ui/app_type_dialog.blp:21
-#, fuzzy
-#| msgid "GTK 3 Applications (adw-gtk3 theme is required)"
 msgid "GTK 3 Applications (adw-gtk3 theme required)"
-msgstr "GTK 3 Uygulamaları (adw-gtk3 teması gereklidir)"
+msgstr "GTK 3 Uygulamaları (adw-gtk3 teması gerekli)"
 
 #: data/ui/builtin_preset_row.blp:5
 msgid "Made by @GradienceTeam"
@@ -118,22 +115,18 @@ msgid "Apply Preset"
 msgstr "Ön Ayarı Uygula"
 
 #: data/ui/custom_css_group.blp:5
-msgid "Custom CSS"
-msgstr "Özel CSS"
+msgid "Custom Styles"
+msgstr "Özel Biçemler"
 
 #: data/ui/custom_css_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Changing this may break some programs. Keep in mind that Libadwaita was "
-#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
-"hardcode values like padding and margins, and using custom CSS may cause "
+"hardcode values like padding and margins, and using custom styles may cause "
 "unintended breakage."
 msgstr ""
-"Bunu değiştirmek bazı programları bozabilir. Libadwaita'nın, uygulamaların "
-"dolgu ve kenar boşlukları gibi değerleri sabit kodlayabilmesi için "
-"yapıldığını unutmayın."
+"Bunu değiştirmek bazı programları bozabilir. Libadwaita, uygulamaların dolgu "
+"ve kenar boşlukları gibi değerleri sabit olarak kodlamasına olanak tanır ve "
+"özel biçem kullanmak, istenmeyen kırılmalara neden olabilir."
 
 #: data/ui/custom_css_group.blp:33
 msgid "GTK 4"
@@ -148,36 +141,34 @@ msgid "Download and Apply"
 msgstr "İndir ve Uygula"
 
 #: data/ui/explore_preset_row.blp:34
-msgid "Download Only"
-msgstr "Sadece İndir"
+msgid "Download"
+msgstr "İndir"
+
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr "Oturumu kapat"
+
+#: data/ui/log_out_dialog.blp:6
+msgid "Log out to allow changes to take effect."
+msgstr "Değişikliklerin etkili olması için oturumu kapatın."
 
 #: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
 msgstr "Monet Motoru"
 
 #: data/ui/monet_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
-msgid "Monet Engine generates a Material You color palette from an image."
-msgstr ""
-"Monet Motoru, görüntünün renklerini çıkararak bir Material Design 3 paleti "
-"oluşturur."
+msgid "Generates a Material Design 3 palette by extracting colors of an image."
+msgstr "Görüntünün renklerini çıkararak Material Design 3 paleti oluşturur."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
 msgstr "Monet Motoru Seçenekleri"
 
 #: data/ui/monet_theming_group.blp:10
-#, fuzzy
-#| msgid ""
-#| "Choose an image, and change the parameters of a generated Monet palette"
 msgid "Choose an image and modify generated Monet palette"
-msgstr ""
-"Bir görüntü seçin ve oluşturulan Monet paletinin parametrelerini değiştirin"
+msgstr "Bir görüntü seçin ve oluşturulan Monet paletini düzenleyin"
 
-#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
+#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:27
 #: data/ui/window.blp:29
 msgid "Apply"
 msgstr "Uygula"
@@ -187,8 +178,8 @@ msgid "Apply a palette"
 msgstr "Palet uygula"
 
 #: data/ui/monet_theming_group.blp:23
-msgid "Select an Image"
-msgstr "Görüntü Seç"
+msgid "Background Image"
+msgstr "Arkaplan Resmi"
 
 #: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
@@ -197,14 +188,6 @@ msgstr "Dosya Seç"
 #: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Görüntü Dosyası Seç"
-
-#: data/ui/log_out_dialog.blp:5
-msgid "Log out"
-msgstr "Oturumu kapat"
-
-#: data/ui/log_out_dialog.blp:6
-msgid "Log out to allow changes to take effect."
-msgstr ""
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -215,10 +198,8 @@ msgid "No Preferences"
 msgstr "Tercih Yok"
 
 #: data/ui/no_plugin_window.blp:16
-#, fuzzy
-#| msgid "This plugin doesn't have any preferences."
 msgid "This plugin has no preferences."
-msgstr "Bu eklentinin herhangi bir tercihi yoktur."
+msgstr "Bu eklenti tercih sunmuyor."
 
 #: data/ui/option_row.blp:12
 msgid "GTK 3 Support Warning"
@@ -230,20 +211,19 @@ msgstr "Açıklama"
 
 #: data/ui/option_row.blp:45 gradience/frontend/widgets/option_row.py:96
 msgid "Show Hex"
-msgstr ""
+msgstr "Hex Göster"
 
 #: data/ui/plugin_row.blp:10
 msgid "Toggle Plugin"
 msgstr "Eklentiyi Aç/Kapat"
 
-#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:128
-msgid "Preferences"
-msgstr "Tercihler"
-
-#: data/ui/plugin_row.blp:30
+#: data/ui/plugin_row.blp:33
 msgid "Remove Plugin"
 msgstr "Eklentiyi Kaldır"
+
+#: data/ui/preferences_window.blp:5 data/ui/window.blp:128
+msgid "Preferences"
+msgstr "Tercihler"
 
 #: data/ui/preferences_window.blp:11
 msgid "General"
@@ -254,65 +234,60 @@ msgid "Flatpak Applications"
 msgstr "Flatpak Uygulamaları"
 
 #: data/ui/preferences_window.blp:18
-msgid "Allow GTK 4 Theming"
-msgstr "GTK 4 Temalandırmaya İzin Ver"
+msgid "Theme sandboxed GTK 4 apps"
+msgstr "Yalıtılmış GTK 4 uygulamalarını temalandır"
 
 #: data/ui/preferences_window.blp:19
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to "
-"access custom themes."
+msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
 msgstr ""
-"GTK 4 Flatpak uygulamalarının özel temalara erişmesine izin vermek için "
-"mevcut kullanıcı için Flatpak izinlerinin üzerine yaz."
+"Geçerli kullanıcının GTK 4 Flatpak uygulamalarının özel temalara erişmesine "
+"izin ver"
 
 #: data/ui/preferences_window.blp:28
-msgid "Allow GTK 4 Theming (System)"
-msgstr "GTK 4 Temalandırılmasına İzin Ver (Sistem)"
+msgid "Theme sandboxed GTK 4 apps (System)"
+msgstr "Yalıtılmış GTK 4 uygulamalarını temalandır (Sistem)"
 
 #: data/ui/preferences_window.blp:29
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
-"access custom themes. (Requires root access)"
+"Allow GTK 4 Flatpak apps of all users to access custom themes "
+"(Authentication required)"
 msgstr ""
-"GTK 4 Flatpak uygulamalarının özel temalara erişmesine izin vermek için tüm "
-"kullanıcılar için Flatpak izinlerinin üzerine yaz. (Root erişimi gerektirir)"
+"Tüm kullanıcıların GTK 4 Flatpak uygulamalarının özel temalara erişmesine "
+"izin ver (Kimlik doğrulama gereklidir)"
 
 #: data/ui/preferences_window.blp:37
-msgid "Allow GTK 3 Theming"
-msgstr "GTK 3 Temalandırmasına İzin Ver"
+msgid "Theme sandboxed GTK 3 apps"
+msgstr "Yalıtılmış GTK 3 uygulamalarını temalandır"
 
 #: data/ui/preferences_window.blp:38
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme."
+msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
 msgstr ""
-"GTK 3 Flatpak uygulamalarının adw-gtk3 temasına erişmesine izin vermek için "
-"geçerli kullanıcı için Flatpak izinlerinin üzerine yaz."
+"Geçerli kullanıcının GTK 3 Flatpak uygulamalarının adw-gtk3 temasına "
+"erişmesine izin ver"
 
 #: data/ui/preferences_window.blp:47
-msgid "Allow GTK 3 Theming (System)"
-msgstr "GTK 3 Temalandırılmasına İzin Ver (Sistem)"
+msgid "Theme sandboxed GTK 3 apps (System)"
+msgstr "Yalıtılmış GTK 3 uygulamalarını temalandır (Sistem)"
 
 #: data/ui/preferences_window.blp:48
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme. (Requires root access)"
+"Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
+"(Authentication required)"
 msgstr ""
-"GTK 3 Flatpak uygulamalarının adw-gtk3 temasına erişmesine izin vermek için "
-"tüm kullanıcılar için Flatpak izinlerinin üzerine yaz. (Root erişimi "
-"gerektirir)"
+"GTK 3 Flatpak uygulamalarının adw-gtk3 temasına erişmesine izin ver (Kimlik "
+"doğrulama gereklidir)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "Ön Ayarları Alma"
 
 #: data/ui/preferences_window.blp:60
-msgid "Use an alternative server for downloading presets"
-msgstr "Ön ayarları indirmek için alternatif sunucu kullan"
+msgid "Use an alternative server for fetching presets"
+msgstr "Ön ayarları almak için alternatif sunucu kullan"
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
-msgstr "GitHub'dan doğrudan ön ayar getirmek yerine JSDelivr kullanılacak"
+msgid "Use JSDelivr instead of directly fetching presets from GitHub"
+msgstr "GitHub'dan doğrudan ön ayar almak yerine JSDelivr kullan"
 
 #: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
@@ -343,20 +318,12 @@ msgid "Shell Engine"
 msgstr "Kabuk Motoru"
 
 #: data/ui/preferences_window.blp:105
-msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on a currently "
-"chosen preset."
-msgstr ""
-"Kabuk Motoru, seçili bir ön ayarı temel alarak özel bir GNOME Shell teması "
-"oluşturur."
+msgid "Generates GNOME Shell theme based on current preset"
+msgstr "Geçerli ön ayarı temel alan GNOME Shell teması oluştur"
 
 #: data/ui/preferences_window.blp:114
-msgid ""
-"Monet Engine generates a Material Design 3 palette by extracting the image's "
-"colors."
-msgstr ""
-"Monet Motoru, görüntünün renklerini çıkararak bir Material Design 3 paleti "
-"oluşturur."
+msgid "Generates a Material Design 3 palette by extracting colors of an image"
+msgstr "Görüntünün renklerini çıkararak Material Design 3 paleti oluşturur"
 
 #: data/ui/preset_row.blp:65
 msgid "Rename Preset"
@@ -367,28 +334,26 @@ msgid "Description"
 msgstr "Açıklama"
 
 #: data/ui/preset_row.blp:81
-#, fuzzy
-#| msgid "Sorry, but this preset don't have a description."
 msgid "This preset has no description."
-msgstr "Üzgünüz, ancak bu ön ayarın bir açıklaması yok."
+msgstr "Bu ön ayarın açıklaması yok."
 
 #: data/ui/preset_row.blp:93
 msgid "No Badges"
 msgstr "Rozet Yok"
 
-#: data/ui/preset_row.blp:102 data/ui/presets_manager_window.blp:44
-msgid "Report Preset Issue"
-msgstr "Ön Ayar Sorununu Bildir"
+#: data/ui/preset_row.blp:102
+msgid "Report an Issue"
+msgstr "Sorun Bildir"
 
 #: data/ui/preset_row.blp:109
 msgid "Remove preset"
 msgstr "Ön ayarı kaldır"
 
-#: data/ui/preset_row.blp:110
+#: data/ui/preset_row.blp:110 data/ui/repo_row.blp:9
 msgid "Remove Preset"
 msgstr "Ön Ayarı Kaldır"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:65
 msgid "Presets"
 msgstr "Ön Ayarlar"
 
@@ -397,8 +362,6 @@ msgid "Import"
 msgstr "İçe Aktar"
 
 #: data/ui/presets_manager_window.blp:32
-#, fuzzy
-#| msgid "Import a Preset File"
 msgid "Import Preset File"
 msgstr "Ön Ayar Dosyasını İçe Aktar"
 
@@ -406,7 +369,11 @@ msgstr "Ön Ayar Dosyasını İçe Aktar"
 msgid "Delete"
 msgstr "Sil"
 
-#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:251
+#: data/ui/presets_manager_window.blp:44
+msgid "Report Preset Issue"
+msgstr "Ön Ayar Sorununu Bildir"
+
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:250
 msgid "Open in File Manager"
 msgstr "Dosya Yöneticisinde Aç"
 
@@ -465,18 +432,17 @@ msgid "JSON file (*.json)"
 msgstr "JSON dosyası (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-msgid "Reset and Restore Presets"
-msgstr "Ön Ayarları Sıfırla ve Geri Yükle"
+msgid "Reset and Restore Theming"
+msgstr "Temalandırmayı Sıfırla ve Geri Yükle"
 
 #: data/ui/reset_preset_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "This section allows you to reset a currently applied preset or restore "
-#| "the previous one."
-msgid "Reset a currently applied preset or restore the previous one."
+msgid "Reset theming to default or restore previously applied preset."
 msgstr ""
-"Bu bölüm, o anda uygulanan bir ön ayarı sıfırlamanıza veya bir öncekini geri "
-"yüklemenizi sağlar."
+"Temayı öntanımlıya sıfırla ya da önceden uygulanmış ön ayarı geri yükle."
+
+#: data/ui/reset_preset_group.blp:9
+msgid "GTK 4/Libadwaita Apps"
+msgstr "GTK 4/Libadwaita uygulamaları"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -491,7 +457,7 @@ msgid "Reset Applied Preset"
 msgstr "Uygulanan Ön Ayarı Sıfırla"
 
 #: data/ui/reset_preset_group.blp:29
-msgid "GTK 3 Applications"
+msgid "GTK 3 Apps"
 msgstr "GTK 3 Uygulamaları"
 
 #: data/ui/save_dialog.blp:5
@@ -530,16 +496,16 @@ msgid ""
 "make a pull request and share it with the world!"
 msgstr ""
 "Gradience, ön ayarınızı paylaşmak için GitHub'ı kullanır. Bir GitHub hesabı "
-"oluşturmanız ve <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a> dosyasını çatallamanız gerekir. Ardından, ön "
-"ayarınızı yükleyebilir, bir çekme isteği oluşturabilir ve dünyayla "
-"paylaşabilirsiniz!"
+"oluşturmanız ve <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a> dosyasını çatallamanız gerekir. "
+"Ardından, ön ayarınızı yükleyebilir, bir çekme isteği oluşturabilir ve "
+"dünyayla paylaşabilirsiniz!"
 
-#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:79
+#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:78
 msgid "Warning"
 msgstr "Uyarı"
 
-#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:80
+#: data/ui/share_window.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -553,7 +519,7 @@ msgstr ""
 msgid "I Understand The Consequences"
 msgstr "Sonuçlarını Anlıyorum"
 
-#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:95
+#: data/ui/share_window.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Adwaita Temasını Özelleştir"
 
@@ -565,11 +531,11 @@ msgstr ""
 "Özel CSS ekleme gibi gelişmiş özelliklerle pencerelerin, düğmelerin, "
 "listelerin ve daha fazlasının renklerini değiştirin"
 
-#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:102
+#: data/ui/share_window.blp:104
 msgid "Configure Gradience"
 msgstr "Gradience Uygulamasını Yapılandır"
 
-#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:103
+#: data/ui/share_window.blp:105
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
@@ -589,7 +555,7 @@ msgstr "Eski uygulama temalandırma için adw-gtk3 temasını kur"
 msgid "System configuration"
 msgstr "Sistem yapılandırması"
 
-#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:124
+#: data/ui/share_window.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 "Temalandırma için sistemi yapılandır, Flatpak temasının üzerine yazılmasını "
@@ -599,33 +565,33 @@ msgstr ""
 msgid "Installing Themes"
 msgstr "Temalar Kuruluyor"
 
-#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:135
+#: data/ui/share_window.blp:137
 msgid "Please wait until theme will be installed."
 msgstr "Lütfen temalar kurulana kadar bekleyin."
 
-#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:141
+#: data/ui/share_window.blp:143
 msgid "Continue"
 msgstr "Devam"
 
-#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:160
+#: data/ui/share_window.blp:162
 msgid "Done"
 msgstr "Tamamlandı"
 
-#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:161
+#: data/ui/share_window.blp:163
 msgid "Now you can make your own presets or download some online."
 msgstr ""
 "Artık kendi ön ayarlarınızı yapabilir veya bazılarını çevrimiçi olarak "
 "indirebilirsiniz."
 
-#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:166
+#: data/ui/share_window.blp:168
 msgid "Please finish the setup first"
 msgstr "Lütfen önce kurulumu tamamlayın"
 
-#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:174
+#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:98
 msgid "Start Using Gradience"
 msgstr "Gradience Kullanmaya Başlayın"
 
-#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:191
+#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:113
 msgid "Next"
 msgstr "Sonraki"
 
@@ -634,74 +600,56 @@ msgid "Shell Engine Preferences"
 msgstr "Kabuk Motoru Tercihleri"
 
 #: data/ui/shell_prefs_window.blp:13
-msgid "Custom Shell Colors"
-msgstr "Özel Kabuk Renkleri"
-
-#: data/ui/shell_prefs_window.blp:14
-#, fuzzy
-#| msgid "Customize Shell Theme"
-msgid "Customize Shell theme colors."
-msgstr "Shell Temasını Özelleştir"
+msgid "Shell theme colors"
+msgstr "Shell teması renkleri"
 
 #: data/ui/shell_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the colors of "
-#| "a currently selected preset.\n"
-#| "WARNING: Extensions that modify Shell stylesheet can cause issues with "
-#| "themes."
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the currently "
-"selected preset.\n"
+"Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
-"Kabuk Motoru, seçili ön ayarın renklerini temel alarak özel bir GNOME Shell "
-"teması oluşturur.\n"
+"Geçerli ön ayarı temel alarak NOME Shell teması oluşturur.\n"
 "UYARI: Shell stil sayfasını değiştiren uzantılar temalarla ilgili sorunlara "
 "neden olabilir."
 
-#: data/ui/shell_theming_group.blp:9
+#: data/ui/shell_theming_group.blp:20
 msgid "Shell Engine Options"
 msgstr "Kabuk Motoru Seçenekleri"
 
-#: data/ui/shell_theming_group.blp:10
-#, fuzzy
-#| msgid "Change the parameters of a generated GNOME Shell theme"
+#: data/ui/shell_theming_group.blp:21
 msgid "Change the generated GNOME Shell theme"
-msgstr "Oluşturulan bir GNOME Shell temasının parametrelerini değiştir"
+msgstr "Oluşturulan GNOME Shell temasını değiştir"
 
-#: data/ui/shell_theming_group.blp:17
-#, fuzzy
-#| msgid "Apply a Shell theme"
+#: data/ui/shell_theming_group.blp:28
 msgid "Apply Shell theme"
 msgstr "Shell teması uygula"
 
-#: data/ui/shell_theming_group.blp:23
+#: data/ui/shell_theming_group.blp:37
 msgid "Customize Shell Theme"
 msgstr "Shell Temasını Özelleştir"
 
-#: data/ui/shell_theming_group.blp:29
+#: data/ui/shell_theming_group.blp:43
 msgid "Open Shell Preferences"
 msgstr "Shell Tercihlerini Aç"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:49
 msgid "Preset Variant"
 msgstr "Ön Ayar Çeşiti"
 
-#: data/ui/shell_theming_group.blp:36
+#: data/ui/shell_theming_group.blp:50
 msgid "Select currently applied preset variant"
-msgstr ""
+msgstr "Uygulanan ön ayar türevini seçin"
 
-#: data/ui/shell_theming_group.blp:48
+#: data/ui/shell_theming_group.blp:62
 msgid "Currently unavailable"
 msgstr "Şu anda kullanılamıyor"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:73
 msgid "Reset Theme"
 msgstr "Temayı Sıfırla"
 
-#: data/ui/shell_theming_group.blp:57
+#: data/ui/shell_theming_group.blp:74
 msgid "Reset applied theme"
 msgstr "Uygulanan temayı sıfırla"
 
@@ -729,69 +677,59 @@ msgstr "Tercihleri Aç"
 msgid "Welcome to Gradience"
 msgstr "Gradience'e Hoş Geldiniz"
 
-#: data/ui/welcome_window.blp:71
+#: data/ui/welcome_window.blp:70
 msgid "What's new in 0.8.0"
 msgstr "0.8.0'daki yenilikler"
 
-#: data/ui/welcome_window.blp:72
+#: data/ui/welcome_window.blp:71
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
-"Gradience works internally."
+"Gradience works internally"
 msgstr ""
 "Bu sürümde, GNOME Shell tema desteği ekledik ve Gradience'ın dahili olarak "
-"nasıl çalıştığını yeniden düzenledik."
+"nasıl çalıştığını yeniden düzenledik"
 
-#: data/ui/welcome_window.blp:84
+#: data/ui/welcome_window.blp:79
+msgid ""
+"Changing the color scheme can negatively affect contrast and readability. "
+"Proceed with caution. Please do not report theming-related issues to app "
+"developers"
+msgstr ""
+"Renk düzenini değiştirmek karşıtlığı ve okunabilirliği olumsuz "
+"etkileyebilir. Dikkatli davranın. Lütfen tema ile ilgili sorunları uygulama "
+"geliştiricilerine bildirmeyin"
+
+#: data/ui/welcome_window.blp:83
 msgid "Agree and Continue"
 msgstr "Kabul Et ve Devam Et"
 
-#: data/ui/welcome_window.blp:96
-#, fuzzy
-#| msgid ""
-#| "Change colors of windows, buttons, lists and more, with advanced features "
-#| "like adding custom CSS."
+#: data/ui/welcome_window.blp:93
+msgid "Customize Adwaita"
+msgstr "Adwaita'yı Özelleştir"
+
+#: data/ui/welcome_window.blp:94
 msgid ""
-"Change colors of windows, buttons, lists and more; with advanced features "
-"like adding custom CSS."
+"Change colors of windows, buttons, lists and more, with advanced features "
+"like adding custom styles"
 msgstr ""
-"Özel CSS ekleme gibi gelişmiş özelliklerle pencerelerin, düğmelerin, "
-"listelerin ve daha fazlasının renklerini değiştirin."
+"Özel biçem ekleme gibi gelişmiş özelliklerle pencerelerin, düğmelerin, "
+"listelerin ve daha fazlasının renklerini değiştirin"
 
-#: data/ui/welcome_window.blp:108
-msgid "Legacy Apps Theming"
-msgstr "Eski Uygulamalar Temalandırması"
+#: data/ui/window.blp:37 gradience/frontend/main.py:422
+msgid "Save Preset"
+msgstr "Ön Ayarı Kaydet"
 
-#: data/ui/welcome_window.blp:113
-#, fuzzy
-#| msgid "Install adw-gtk3 theme for legacy apps theming"
-msgid "Install adw-gtk3 theme for legacy app theming"
-msgstr "Eski uygulama temalandırma için adw-gtk3 temasını kur"
-
-#: data/ui/welcome_window.blp:118
-msgid "System Configuration"
-msgstr "Sistem Yapılandırması"
-
-#: data/ui/welcome_window.blp:134
-#, fuzzy
-#| msgid "Installing Themes"
-msgid "Installing adw-gtk3"
-msgstr "Temalar Kuruluyor"
-
-#: data/ui/window.blp:37
+#: data/ui/window.blp:46
 msgid "Show Preview Window"
 msgstr "Önizleme Penceresini Göster"
 
-#: data/ui/window.blp:48
+#: data/ui/window.blp:57
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: data/ui/window.blp:57
+#: data/ui/window.blp:66
 msgid "Presets Menu"
 msgstr "Ön Ayarlar Menüsü"
-
-#: data/ui/window.blp:64
-msgid "Save Preset"
-msgstr "Ön Ayarı Kaydet"
 
 #: data/ui/window.blp:73
 msgid "CSS Errors"
@@ -825,6 +763,109 @@ msgstr "Yerleşik Ön Ayarlar"
 #: data/ui/window.blp:167
 msgid "Manage Presets"
 msgstr "Ön Ayarları Yönet"
+
+#: gradience/backend/flatpak_overrides.py:71
+#: gradience/backend/flatpak_overrides.py:93
+msgid "Failed to save override"
+msgstr "Üzerine yazma kaydedilemedi"
+
+#: gradience/backend/flatpak_overrides.py:186
+#: gradience/backend/flatpak_overrides.py:228
+#: gradience/backend/flatpak_overrides.py:306
+#: gradience/backend/flatpak_overrides.py:366
+#: gradience/backend/flatpak_overrides.py:448
+#: gradience/backend/flatpak_overrides.py:509
+msgid "Unexpected file error occurred"
+msgstr "Beklenmeyen dosya hatası oluştu"
+
+#: gradience/frontend/dialogs/app_type_dialog.py:47
+#: gradience/frontend/dialogs/save_dialog.py:62
+msgid "_Cancel"
+msgstr "_İptal"
+
+#: gradience/frontend/dialogs/save_dialog.py:39
+#, python-brace-format
+msgid ""
+"Saving preset to \n"
+" <small><i><tt>{0}</tt></i></small>. \n"
+" If that preset already exists, it will be overwritten."
+msgstr ""
+"Önayar\n"
+" <small><i><tt>{0}</tt></i></small> olarak kaydediliyor. \n"
+"Ön ayar zaten varsa üzerine yazılacak."
+
+#: gradience/frontend/dialogs/save_dialog.py:65
+msgid "Discard"
+msgstr "Gözden Çıkar"
+
+#: gradience/frontend/dialogs/save_dialog.py:70
+msgid "_Save"
+msgstr "_Kaydet"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
+msgid "Unsupported Shell Version ({get_full_shell_version()})"
+msgstr "Desteklenmeyen Shell Sürümü ({get_full_shell_version()})"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+msgid ""
+"The Shell version you are using is not supported by Gradience. Please "
+"upgrade to a newer version of GNOME."
+msgstr ""
+"Kullandığınız Shell sürümü Gradience tarafından desteklenmiyor. Lütfen daha "
+"yeni bir GNOME sürümüne yükseltin."
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
+msgid "OK"
+msgstr "Tamam"
+
+#: gradience/frontend/main.py:203
+#: gradience/frontend/views/presets_manager_window.py:339
+msgid "Failed to load list of presets"
+msgstr "Ön ayar listesi yüklenemedi"
+
+#: gradience/frontend/main.py:236
+msgid "No presets found"
+msgstr "Ön ayar bulunamadı"
+
+#: gradience/frontend/main.py:259
+msgid "Favorite Presets"
+msgstr "Favori Ön Ayarlar"
+
+#: gradience/frontend/main.py:412
+msgid "Unsaved Changes"
+msgstr "Kaydedilmemiş Değişiklikler"
+
+#: gradience/frontend/main.py:421
+msgid "Save"
+msgstr "Kaydet"
+
+#: gradience/frontend/main.py:511
+msgid "Apply This Color Scheme?"
+msgstr "Bu Renk Şeması Uygulansın Mı?"
+
+#: gradience/frontend/main.py:513
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Uyarı: Bu uygulama türleri için bulunan herhangi bir özel CSS dosyasının "
+"üzerine geri alınamaz bir şekilde yazılacaktır!"
+
+#: gradience/frontend/main.py:517
+msgid "_Apply"
+msgstr "_Uygula"
+
+#: gradience/frontend/main.py:543
+msgid "You have unsaved changes!"
+msgstr "Kaydedilmemiş değişiklikleriniz var!"
+
+#: gradience/frontend/main.py:594
+msgid "Preset saved"
+msgstr "Ön ayar kaydedildi"
+
+#: gradience/frontend/main.py:611
+msgid "Preset has been set. Log out to apply changes."
+msgstr "Ön ayar ayarlandı. Değişiklikleri uygulamak için oturumu kapatın."
 
 #: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
@@ -868,10 +909,12 @@ msgstr ""
 #: gradience/frontend/schemas/preset_schema.py:184
 #: gradience/frontend/schemas/preset_schema.py:204
 #: gradience/frontend/schemas/preset_schema.py:225
-#: gradience/frontend/schemas/preset_schema.py:280
-#: gradience/frontend/schemas/preset_schema.py:307
-#: gradience/frontend/schemas/preset_schema.py:324
-#: gradience/frontend/schemas/preset_schema.py:341
+#: gradience/frontend/schemas/preset_schema.py:284
+#: gradience/frontend/schemas/preset_schema.py:327
+#: gradience/frontend/schemas/preset_schema.py:367
+#: gradience/frontend/schemas/preset_schema.py:394
+#: gradience/frontend/schemas/preset_schema.py:411
+#: gradience/frontend/schemas/preset_schema.py:428
 msgid "Background Color"
 msgstr "Arka Plan Rengi"
 
@@ -883,10 +926,12 @@ msgstr "Arka Plan Rengi"
 #: gradience/frontend/schemas/preset_schema.py:189
 #: gradience/frontend/schemas/preset_schema.py:209
 #: gradience/frontend/schemas/preset_schema.py:230
-#: gradience/frontend/schemas/preset_schema.py:285
-#: gradience/frontend/schemas/preset_schema.py:312
-#: gradience/frontend/schemas/preset_schema.py:329
-#: gradience/frontend/schemas/preset_schema.py:346
+#: gradience/frontend/schemas/preset_schema.py:289
+#: gradience/frontend/schemas/preset_schema.py:332
+#: gradience/frontend/schemas/preset_schema.py:372
+#: gradience/frontend/schemas/preset_schema.py:399
+#: gradience/frontend/schemas/preset_schema.py:416
+#: gradience/frontend/schemas/preset_schema.py:433
 msgid "Foreground Color"
 msgstr "Ön Plan Rengi"
 
@@ -987,10 +1032,14 @@ msgstr ""
 "arasındaki ayırıcılar."
 
 #: gradience/frontend/schemas/preset_schema.py:250
+#: gradience/frontend/schemas/preset_schema.py:294
+#: gradience/frontend/schemas/preset_schema.py:337
 msgid "Backdrop Color"
 msgstr "Zemin Rengi"
 
 #: gradience/frontend/schemas/preset_schema.py:252
+#: gradience/frontend/schemas/preset_schema.py:296
+#: gradience/frontend/schemas/preset_schema.py:339
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -1003,81 +1052,122 @@ msgstr ""
 "renginizle eşleşen bir değere ayarladığınızdan emin olun."
 
 #: gradience/frontend/schemas/preset_schema.py:263
-#: gradience/frontend/schemas/preset_schema.py:290
-#: gradience/frontend/schemas/preset_schema.py:358
+#: gradience/frontend/schemas/preset_schema.py:307
+#: gradience/frontend/schemas/preset_schema.py:350
+#: gradience/frontend/schemas/preset_schema.py:377
+#: gradience/frontend/schemas/preset_schema.py:438
+#: gradience/frontend/schemas/preset_schema.py:455
 msgid "Shade Color"
-msgstr "Gölge Rengi"
+msgstr "Renk Tonu"
 
 #: gradience/frontend/schemas/preset_schema.py:265
+#: gradience/frontend/schemas/preset_schema.py:309
+#: gradience/frontend/schemas/preset_schema.py:352
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
 msgstr ""
-"Gölge rengi, başlık çubukları ve bunları ana pencereden ayıran benzer "
-"parçacıklar için koyu bir kenarlık sağlamak amacıyla kullanılır."
+"Renk tonu, başlık çubukları ve bunları ana pencereden ayıran benzer "
+"parçacıklar için koyu kenarlık sağlamak amacıyla kullanılır."
 
 #: gradience/frontend/schemas/preset_schema.py:275
+msgid "Sidebar Colors"
+msgstr "Keran Çubuğu Renkleri"
+
+#: gradience/frontend/schemas/preset_schema.py:277
+msgid ""
+"These colors are used for sidebars, generally attached to the left or right "
+"sides of a window. They are used by AdwNavigationSplitView and "
+"AdwOverlaySplitView when they are not collapsed."
+msgstr ""
+"Bu renkler genellikle pencerenin sol veya sağ taraflarına eklenen kenar "
+"çubukları için kullanılır. Daraltılmadıklarında AdwNavigationSplitView ve "
+"AdwOverlaySplitView tarafından kullanılırlar."
+
+#: gradience/frontend/schemas/preset_schema.py:319
+msgid "Secondary Sidebar Colors"
+msgstr "İkincil Kenar Çubuğu Renkleri"
+
+#: gradience/frontend/schemas/preset_schema.py:321
+msgid ""
+"These colors are used for middle panes in triple-pane layouts,  created via "
+"nesting two split views within one another."
+msgstr ""
+"Bu renkler, iki bölünmüş görünümün iç içe yerleştirilmesiyle oluşturulan "
+"üçlü bölme düzenlerindeki orta bölmeler için kullanılır."
+
+#: gradience/frontend/schemas/preset_schema.py:362
 msgid "Card Colors"
 msgstr "Kart Renkleri"
 
-#: gradience/frontend/schemas/preset_schema.py:276
+#: gradience/frontend/schemas/preset_schema.py:363
 msgid "These colors are used for cards and boxed lists."
 msgstr "Bu renkler kartlar ve kutu listeleri için kullanılır."
 
-#: gradience/frontend/schemas/preset_schema.py:292
+#: gradience/frontend/schemas/preset_schema.py:379
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
 "cards."
 msgstr ""
-"Gölge rengi, kartlar tarafından kendilerini pencere arka planından ayırmak "
+"Renk tonu, kartlar tarafından kendilerini pencere arka planından ayırmak "
 "için kullanılan gölgeler ve kartlardaki satır ayırıcılar için kullanılır."
 
-#: gradience/frontend/schemas/preset_schema.py:302
+#: gradience/frontend/schemas/preset_schema.py:389
 msgid "Thumbnail Colors"
 msgstr "Küçük Resim Renkleri"
 
-#: gradience/frontend/schemas/preset_schema.py:303
+#: gradience/frontend/schemas/preset_schema.py:390
 msgid "These colors are used for Tab Overview thumbnails."
 msgstr "Bu renkler, Sekme Genel Görünüm küçük resimleri için kullanılır."
 
-#: gradience/frontend/schemas/preset_schema.py:319
+#: gradience/frontend/schemas/preset_schema.py:406
 msgid "Dialog Colors"
 msgstr "İletişim Kutusu Renkleri"
 
-#: gradience/frontend/schemas/preset_schema.py:320
+#: gradience/frontend/schemas/preset_schema.py:407
 msgid "These colors are used for message dialogs."
 msgstr "Bu renkler mesaj diyalogları için kullanılır."
 
-#: gradience/frontend/schemas/preset_schema.py:336
+#: gradience/frontend/schemas/preset_schema.py:423
 msgid "Popover Colors"
 msgstr "Popover Renkleri"
 
-#: gradience/frontend/schemas/preset_schema.py:337
+#: gradience/frontend/schemas/preset_schema.py:424
 msgid "These colors are used for popovers."
 msgstr "Bu renkler popoverlar için kullanılır."
 
-#: gradience/frontend/schemas/preset_schema.py:353
+#: gradience/frontend/schemas/preset_schema.py:440
+msgid ""
+"The shade color is used for scroll undershoot styles within popovers, as "
+"well as transitions in AdwNavigationView, AdwOverlaySplitView, AdwLeaflet "
+"and AdwFlap."
+msgstr ""
+"Renk tonları, açılır pencereler içindeki kaydırma alt vuruş biçemlerinin "
+"yanı sıra AdwNavigationView, AdwOverlaySplitView, AdwLeaflet ve AdwFlap'teki "
+"geçişler için kullanılır."
+
+#: gradience/frontend/schemas/preset_schema.py:450
 msgid "Miscellaneous Colors"
 msgstr "Çeşitli Renkler"
 
-#: gradience/frontend/schemas/preset_schema.py:354
+#: gradience/frontend/schemas/preset_schema.py:451
 msgid "Colors that don't fit in any particular group."
 msgstr "Belirli bir gruba uymayan renkler."
 
-#: gradience/frontend/schemas/preset_schema.py:360
+#: gradience/frontend/schemas/preset_schema.py:457
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
 msgstr ""
-"Gölge rengi, satır içi sekme çubuklarının yanı sıra broşür ve kanatlardaki "
+"Renk tonu, satır içi sekme çubuklarının yanı sıra broşür ve kanatlardaki "
 "geçişler ve bilgi çubuğu kenarlıkları tarafından kullanılır."
 
-#: gradience/frontend/schemas/preset_schema.py:368
+#: gradience/frontend/schemas/preset_schema.py:465
 msgid "Scrollbar Outline Color"
 msgstr "Kaydırma Çubuğu Dış Hat Rengi"
 
-#: gradience/frontend/schemas/preset_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:467
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -1086,41 +1176,41 @@ msgstr ""
 "kaydırma çubuklarının görünür olmasını sağlamak için kaydırma çubukları "
 "tarafından kullanılır."
 
-#: gradience/frontend/schemas/preset_schema.py:380
+#: gradience/frontend/schemas/preset_schema.py:477
 msgid "Blue"
 msgstr "Mavi"
 
-#: gradience/frontend/schemas/preset_schema.py:381
+#: gradience/frontend/schemas/preset_schema.py:478
 msgid "Green"
 msgstr "Yeşil"
 
-#: gradience/frontend/schemas/preset_schema.py:382
+#: gradience/frontend/schemas/preset_schema.py:479
 msgid "Yellow"
 msgstr "Sarı"
 
-#: gradience/frontend/schemas/preset_schema.py:383
+#: gradience/frontend/schemas/preset_schema.py:480
 msgid "Orange"
 msgstr "Turuncu"
 
-#: gradience/frontend/schemas/preset_schema.py:384
+#: gradience/frontend/schemas/preset_schema.py:481
 msgid "Red"
 msgstr "Kırmızı"
 
-#: gradience/frontend/schemas/preset_schema.py:385
+#: gradience/frontend/schemas/preset_schema.py:482
 msgid "Purple"
 msgstr "Mor"
 
-#: gradience/frontend/schemas/preset_schema.py:386
+#: gradience/frontend/schemas/preset_schema.py:483
 msgid "Brown"
 msgstr "Kahverengi"
 
-#: gradience/frontend/schemas/preset_schema.py:387
+#: gradience/frontend/schemas/preset_schema.py:484
 #: gradience/frontend/widgets/monet_theming_group.py:95
 #: gradience/frontend/widgets/shell_theming_group.py:73
 msgid "Light"
 msgstr "Aydınlık"
 
-#: gradience/frontend/schemas/preset_schema.py:388
+#: gradience/frontend/schemas/preset_schema.py:485
 #: gradience/frontend/widgets/monet_theming_group.py:96
 #: gradience/frontend/widgets/shell_theming_group.py:72
 msgid "Dark"
@@ -1149,236 +1239,6 @@ msgstr "Aksan Ön Plan Rengi"
 #: gradience/frontend/schemas/shell_schema.py:61
 msgid "OSD Foreground Color"
 msgstr "OSD Ön Plan Rengi"
-
-#: gradience/frontend/dialogs/app_type_dialog.py:47
-#: gradience/frontend/dialogs/save_dialog.py:62
-msgid "_Cancel"
-msgstr "_İptal"
-
-#: gradience/frontend/dialogs/log_out_dialog.py:41
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
-msgid "OK"
-msgstr "Tamam"
-
-#: gradience/frontend/dialogs/save_dialog.py:39
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten."
-msgstr ""
-"<tt>{0}</tt> olarak ön ayar kaydediliyor. Eğer bu ön ayar zaten mevcutsa, "
-"üzerine yazılacaktır."
-
-#: gradience/frontend/dialogs/save_dialog.py:65
-msgid "Discard"
-msgstr "Gözden Çıkar"
-
-#: gradience/frontend/dialogs/save_dialog.py:70
-msgid "_Save"
-msgstr "_Kaydet"
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
-msgid "Unsupported Shell Version ({get_full_shell_version()})"
-msgstr "Desteklenmeyen Shell Sürümü ({get_full_shell_version()})"
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
-msgid ""
-"The Shell version you are using is not supported by Gradience. Please "
-"upgrade to a newer version of GNOME."
-msgstr ""
-"Kullandığınız Shell sürümü Gradience tarafından desteklenmiyor. Lütfen daha "
-"yeni bir GNOME sürümüne yükseltin."
-
-#: gradience/frontend/widgets/explore_preset_row.py:68
-#: gradience/frontend/widgets/explore_preset_row.py:94
-msgid "Preset could not be downloaded"
-msgstr "Ön ayar indirilemedi"
-
-#: gradience/frontend/widgets/explore_preset_row.py:82
-#: gradience/frontend/widgets/explore_preset_row.py:98
-msgid "Preset downloaded"
-msgstr "Ön ayar indirildi"
-
-#: gradience/frontend/widgets/monet_theming_group.py:65
-msgid "Monet Palette"
-msgstr "Monet Paleti"
-
-#: gradience/frontend/widgets/monet_theming_group.py:91
-msgid "Theme"
-msgstr "Tema"
-
-#: gradience/frontend/widgets/monet_theming_group.py:94
-msgid "Auto"
-msgstr "Otomatik"
-
-#: gradience/frontend/widgets/monet_theming_group.py:131
-msgid "Failed to generate Monet palette"
-msgstr "Monet paleti oluşturulamadı"
-
-#: gradience/frontend/widgets/monet_theming_group.py:136
-msgid "Palette generated"
-msgstr "Palet oluşturuldu"
-
-#: gradience/frontend/widgets/monet_theming_group.py:141
-msgid "Select an image first"
-msgstr "Önce bir görüntü seçin"
-
-#: gradience/frontend/widgets/option_row.py:52
-#, fuzzy
-#| msgid "This option is only partially supported by the adw-gtk3 theme."
-msgid "This option is only partially supported by adw-gtk3."
-msgstr "Bu seçenek, adw-gtk3 teması tarafından yalnızca kısmen desteklenir."
-
-#: gradience/frontend/widgets/option_row.py:57
-#, fuzzy
-#| msgid "This option is not supported by the adw-gtk3 theme."
-msgid "This option is not supported by adw-gtk3."
-msgstr "Bu seçenek adw-gtk3 teması tarafından desteklenmez."
-
-#: gradience/frontend/widgets/option_row.py:96
-#, fuzzy
-#| msgid "Shade Color"
-msgid "Show Color"
-msgstr "Gölge Rengi"
-
-#: gradience/frontend/widgets/option_row.py:118
-msgid "Not a color, see text value"
-msgstr "Renk değil, metin değerine bakın"
-
-#: gradience/frontend/widgets/plugin_row.py:85
-msgid "Unable to remove"
-msgstr "Kaldırılamadı"
-
-#: gradience/frontend/widgets/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed."
-msgstr "Bu bir sistem eklentisidir ve kaldırılamaz."
-
-#: gradience/frontend/widgets/plugin_row.py:88
-msgid "Close"
-msgstr "Kapat"
-
-#: gradience/frontend/widgets/preset_row.py:85
-#: gradience/frontend/widgets/preset_row.py:144
-msgid "Remove from Favorites"
-msgstr "Favorilerden Kaldır"
-
-#: gradience/frontend/widgets/preset_row.py:88
-#: gradience/frontend/widgets/preset_row.py:140
-msgid "Add to Favorites"
-msgstr "Favorilere Ekle"
-
-#: gradience/frontend/widgets/preset_row.py:160
-msgid "Preset removed"
-msgstr "Ön ayar kaldırıldı"
-
-#: gradience/frontend/widgets/preset_row.py:161
-msgid "Undo"
-msgstr "Geri Al"
-
-#: gradience/frontend/widgets/preset_row.py:176
-msgid "Pending Deletion"
-msgstr "Silinmeyi Bekliyor"
-
-#: gradience/frontend/widgets/preset_row.py:190
-msgid "Unable to delete preset"
-msgstr "Ön ayar silinemedi"
-
-#: gradience/frontend/widgets/repo_row.py:60
-msgid "Repository removed"
-msgstr "Depo kaldırıldı"
-
-#: gradience/frontend/widgets/reset_preset_group.py:57
-msgid "Unable to restore GTK 4 backup"
-msgstr "GTK 4 yedeği geri yüklenemedi"
-
-#: gradience/frontend/widgets/reset_preset_group.py:69
-#: gradience/frontend/widgets/reset_preset_group.py:94
-msgid "Unable to delete current preset"
-msgstr "Geçerli ön ayar silinemedi"
-
-#: gradience/frontend/widgets/reset_preset_group.py:82
-msgid "Unable to restore GTK 3 backup"
-msgstr "GTK 3 yedeği geri yüklenemedi"
-
-#: gradience/frontend/widgets/shell_theming_group.py:94
-msgid "An unexpected error occurred while loading variable colors."
-msgstr "Değişken renkler yüklenirken beklenmeyen bir hata oluştu."
-
-#: gradience/frontend/widgets/shell_theming_group.py:118
-msgid "GNOME Shell Missing"
-msgstr "GNOME Shell Yok"
-
-#: gradience/frontend/widgets/shell_theming_group.py:119
-msgid ""
-"Shell Engine is designed to work only on systems running GNOME. You can "
-"still generate themes on other desktop environments, but it won't have any "
-"affect on them."
-msgstr ""
-"Shell Engine yalnızca GNOME çalıştıran sistemlerde çalışmak üzere "
-"tasarlanmıştır. Diğer masaüstü ortamlarında da tema oluşturabilirsiniz, "
-"ancak bu ortamlar üzerinde herhangi bir etkisi olmayacaktır."
-
-#: gradience/frontend/widgets/shell_theming_group.py:121
-msgid "Disable Engine"
-msgstr "Motoru Devre Dışı Bırak"
-
-#: gradience/frontend/widgets/shell_theming_group.py:122
-#: gradience/frontend/widgets/shell_theming_group.py:133
-#: gradience/frontend/widgets/shell_theming_group.py:145
-msgid "Continue Anyway"
-msgstr "Yine De Devam Et"
-
-#: gradience/frontend/widgets/shell_theming_group.py:129
-msgid "User Themes Extension Missing"
-msgstr "Kullanıcı Temaları Uzantısı Eksik"
-
-#: gradience/frontend/widgets/shell_theming_group.py:130
-msgid ""
-"Gradience requires the User Themes extension installed to apply the Shell "
-"theme. You can still generate a theme, but you won't be able to apply it "
-"without this extension."
-msgstr ""
-"Gradience, Shell temasını uygulamak için Kullanıcı Temaları uzantısının "
-"yüklü olmasını gerektirir. Yine de bir tema oluşturabilirsiniz, ancak bu "
-"uzantı olmadan temayı uygulayamazsınız."
-
-#: gradience/frontend/widgets/shell_theming_group.py:132
-msgid "Install Extension"
-msgstr "Uzantıyı Yükle"
-
-#: gradience/frontend/widgets/shell_theming_group.py:140
-msgid "User Themes Extension Disabled"
-msgstr "Kullanıcı Temaları Uzantısı Devre Dışı"
-
-#: gradience/frontend/widgets/shell_theming_group.py:141
-msgid ""
-"The User Themes extension is currently disabled on your system. Please "
-"enable it to apply the theme."
-msgstr ""
-"Kullanıcı Temaları uzantısı şu anda sisteminizde devre dışı bırakılmış. "
-"Temayı uygulamak için lütfen etkinleştirin."
-
-#: gradience/frontend/widgets/shell_theming_group.py:143
-#: gradience/frontend/views/presets_manager_window.py:201
-msgid "Cancel"
-msgstr "İptal"
-
-#: gradience/frontend/widgets/shell_theming_group.py:181
-msgid "An error occurred while generating a Shell theme."
-msgstr "Shell teması oluşturulurken hata oluştu."
-
-#: gradience/frontend/widgets/shell_theming_group.py:188
-msgid "Shell theme applied successfully."
-msgstr "Shell teması uygulandı."
-
-#: gradience/frontend/widgets/shell_theming_group.py:217
-#: gradience/frontend/widgets/shell_theming_group.py:222
-msgid "Failed to load extension's install link."
-msgstr "Uzantının kurulum bağlantısı yüklenemedi."
-
-#: gradience/frontend/widgets/shell_theming_group.py:241
-msgid "Shell theme successfully reset."
-msgstr "Shell teması sıfırlandı."
 
 #: gradience/frontend/views/about_window.py:27
 msgid "translator-credits"
@@ -1455,6 +1315,11 @@ msgstr "Yeni depo ekle"
 msgid "Add a repository to install additional presets."
 msgstr "Ek ön ayarları kurmak için bir depo ekleyin."
 
+#: gradience/frontend/views/presets_manager_window.py:201
+#: gradience/frontend/widgets/shell_theming_group.py:143
+msgid "Cancel"
+msgstr "İptal"
+
 #: gradience/frontend/views/presets_manager_window.py:202
 msgid "Add"
 msgstr "Ekle"
@@ -1470,11 +1335,6 @@ msgstr "Ön ayar içe aktarıldı"
 #: gradience/frontend/views/presets_manager_window.py:313
 msgid "Unsupported file format, must be .json"
 msgstr "Desteklenmeyen dosya biçimi, .json olmalı"
-
-#: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:204
-msgid "Failed to load list of presets"
-msgstr "Ön ayar listesi yüklenemedi"
 
 #: gradience/frontend/views/presets_manager_window.py:348
 msgid "Built-in Presets"
@@ -1496,53 +1356,337 @@ msgstr ""
 "Ön ayar bulunamadı! Birini içe aktarmak için içe aktar düğmesini kullanın "
 "veya Keşfet sekmesinde bir tane arayın."
 
-#: gradience/frontend/views/welcome_window.py:89
+#: gradience/frontend/views/welcome_window.py:79
 msgid "Thanks for updating Gradience!"
 msgstr "Gradience'ı güncellediğiniz için teşekkürler!"
 
-#: gradience/frontend/main.py:237
-msgid "No presets found"
-msgstr "Ön ayar bulunamadı"
+#: gradience/frontend/widgets/explore_preset_row.py:68
+#: gradience/frontend/widgets/explore_preset_row.py:94
+msgid "Preset could not be downloaded"
+msgstr "Ön ayar indirilemedi"
 
-#: gradience/frontend/main.py:260
-msgid "Favorite Presets"
-msgstr "Favori Ön Ayarlar"
+#: gradience/frontend/widgets/explore_preset_row.py:82
+#: gradience/frontend/widgets/explore_preset_row.py:98
+msgid "Preset downloaded"
+msgstr "Ön ayar indirildi"
 
-#: gradience/frontend/main.py:417
-msgid "Unsaved Changes"
-msgstr "Kaydedilmemiş Değişiklikler"
+#: gradience/frontend/widgets/monet_theming_group.py:65
+msgid "Palette"
+msgstr "Palet"
 
-#: gradience/frontend/main.py:429
-msgid "Save Changes"
-msgstr "Değişiklikleri Kaydet"
+#: gradience/frontend/widgets/monet_theming_group.py:91
+msgid "Style"
+msgstr "Biçem"
 
-#: gradience/frontend/main.py:519
-msgid "Apply This Color Scheme?"
-msgstr "Bu Renk Şeması Uygulansın Mı?"
+#: gradience/frontend/widgets/monet_theming_group.py:94
+msgid "Auto"
+msgstr "Otomatik"
 
-#: gradience/frontend/main.py:521
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
+#: gradience/frontend/widgets/monet_theming_group.py:131
+msgid "Failed to generate Monet palette"
+msgstr "Monet paleti oluşturulamadı"
+
+#: gradience/frontend/widgets/monet_theming_group.py:136
+msgid "Palette generated"
+msgstr "Palet oluşturuldu"
+
+#: gradience/frontend/widgets/monet_theming_group.py:141
+msgid "Select an image first"
+msgstr "Önce bir görüntü seçin"
+
+#: gradience/frontend/widgets/option_row.py:52
+msgid "This option is only partially supported by adw-gtk3."
+msgstr "Bu seçenek, adw-gtk3 tarafından kısmen desteklenir."
+
+#: gradience/frontend/widgets/option_row.py:57
+msgid "This option is not supported by adw-gtk3."
+msgstr "Bu seçenek adw-gtk3 tarafından desteklenmez."
+
+#: gradience/frontend/widgets/option_row.py:96
+msgid "Show Color"
+msgstr "Rengi Göster"
+
+#: gradience/frontend/widgets/option_row.py:118
+msgid "Not a color, see text value"
+msgstr "Renk değil, metin değerine bakın"
+
+#: gradience/frontend/widgets/plugin_row.py:85
+msgid "Unable to remove"
+msgstr "Kaldırılamadı"
+
+#: gradience/frontend/widgets/plugin_row.py:86
+msgid "This is a system plugin, and cannot be removed."
+msgstr "Bu bir sistem eklentisidir ve kaldırılamaz."
+
+#: gradience/frontend/widgets/plugin_row.py:88
+msgid "Close"
+msgstr "Kapat"
+
+#: gradience/frontend/widgets/preset_row.py:85
+#: gradience/frontend/widgets/preset_row.py:144
+msgid "Remove from Favorites"
+msgstr "Favorilerden Kaldır"
+
+#: gradience/frontend/widgets/preset_row.py:88
+#: gradience/frontend/widgets/preset_row.py:140
+msgid "Add to Favorites"
+msgstr "Favorilere Ekle"
+
+#: gradience/frontend/widgets/preset_row.py:160
+msgid "Preset removed"
+msgstr "Ön ayar kaldırıldı"
+
+#: gradience/frontend/widgets/preset_row.py:161
+msgid "Undo"
+msgstr "Geri Al"
+
+#: gradience/frontend/widgets/preset_row.py:176
+msgid "Pending Deletion"
+msgstr "Silinmeyi Bekliyor"
+
+#: gradience/frontend/widgets/preset_row.py:190
+msgid "Unable to delete preset"
+msgstr "Ön ayar silinemedi"
+
+#: gradience/frontend/widgets/repo_row.py:60
+msgid "Repository removed"
+msgstr "Depo kaldırıldı"
+
+#: gradience/frontend/widgets/reset_preset_group.py:55
+msgid "Unable to restore GTK 4 backup"
+msgstr "GTK 4 yedeği geri yüklenemedi"
+
+#: gradience/frontend/widgets/reset_preset_group.py:59
+msgid "GTK 4 preset has been restored. Log out to apply changes."
 msgstr ""
-"Uyarı: Bu uygulama türleri için bulunan herhangi bir özel CSS dosyasının "
-"üzerine geri alınamaz bir şekilde yazılacaktır!"
+"GTK 4 ön ayarı geri yüklendi. Değişiklikleri uygulamak için oturumu kapatın."
 
-#: gradience/frontend/main.py:525
-msgid "_Apply"
-msgstr "_Uygula"
+#: gradience/frontend/widgets/reset_preset_group.py:69
+#: gradience/frontend/widgets/reset_preset_group.py:98
+msgid "Unable to delete current preset"
+msgstr "Geçerli ön ayar silinemedi"
 
-#: gradience/frontend/main.py:551
-msgid "You have unsaved changes!"
-msgstr "Kaydedilmemiş değişiklikleriniz var!"
+#: gradience/frontend/widgets/reset_preset_group.py:73
+msgid "GTK 4 theme has been reset. Log out to apply changes."
+msgstr ""
+"GTK 4 teması sıfırlandı. Değişiklikleri uygulamak için oturumu kapatın."
 
-#: gradience/frontend/main.py:602
-msgid "Preset saved"
-msgstr "Ön ayar kaydedildi"
+#: gradience/frontend/widgets/reset_preset_group.py:84
+msgid "Unable to restore GTK 3 backup"
+msgstr "GTK 3 yedeği geri yüklenemedi"
 
-#: gradience/frontend/main.py:619
-msgid "Preset set successfully"
-msgstr "Ön ayar ayarlandı"
+#: gradience/frontend/widgets/reset_preset_group.py:88
+msgid "GTK 3 preset has been restored. Log out to apply changes."
+msgstr ""
+"GTK 3 ön ayarı geri yüklendi. Değişiklikleri uygulamak için oturumu kapatın."
+
+#: gradience/frontend/widgets/reset_preset_group.py:102
+msgid "GTK 3 theme has been reset. Log out to apply changes."
+msgstr ""
+"GTK 3 teması sıfırlandı. Değişiklikleri uygulamak için oturumu kapatın."
+
+#: gradience/frontend/widgets/shell_theming_group.py:94
+msgid "An unexpected error occurred while loading variable colors."
+msgstr "Değişken renkler yüklenirken beklenmeyen bir hata oluştu."
+
+#: gradience/frontend/widgets/shell_theming_group.py:118
+msgid "GNOME Shell Missing"
+msgstr "GNOME Shell Yok"
+
+#: gradience/frontend/widgets/shell_theming_group.py:119
+msgid ""
+"Shell Engine is designed to work only on systems running GNOME. You can "
+"still generate themes on other desktop environments, but it won't have any "
+"affect on them."
+msgstr ""
+"Shell Engine yalnızca GNOME çalıştıran sistemlerde çalışmak üzere "
+"tasarlanmıştır. Diğer masaüstü ortamlarında da tema oluşturabilirsiniz, "
+"ancak bu ortamlar üzerinde herhangi bir etkisi olmayacaktır."
+
+#: gradience/frontend/widgets/shell_theming_group.py:121
+msgid "Disable Engine"
+msgstr "Motoru Devre Dışı Bırak"
+
+#: gradience/frontend/widgets/shell_theming_group.py:122
+#: gradience/frontend/widgets/shell_theming_group.py:133
+#: gradience/frontend/widgets/shell_theming_group.py:145
+msgid "Continue Anyway"
+msgstr "Yine De Devam Et"
+
+#: gradience/frontend/widgets/shell_theming_group.py:129
+msgid "User Themes Extension Missing"
+msgstr "Kullanıcı Temaları Uzantısı Eksik"
+
+#: gradience/frontend/widgets/shell_theming_group.py:130
+msgid ""
+"Gradience requires the User Themes extension installed to apply the Shell "
+"theme. You can still generate a theme, but you won't be able to apply it "
+"without this extension."
+msgstr ""
+"Gradience, Shell temasını uygulamak için Kullanıcı Temaları uzantısının "
+"yüklü olmasını gerektirir. Yine de bir tema oluşturabilirsiniz, ancak bu "
+"uzantı olmadan temayı uygulayamazsınız."
+
+#: gradience/frontend/widgets/shell_theming_group.py:132
+msgid "Install Extension"
+msgstr "Uzantıyı Yükle"
+
+#: gradience/frontend/widgets/shell_theming_group.py:140
+msgid "User Themes Extension Disabled"
+msgstr "Kullanıcı Temaları Uzantısı Devre Dışı"
+
+#: gradience/frontend/widgets/shell_theming_group.py:141
+msgid ""
+"The User Themes extension is currently disabled on your system. Please "
+"enable it to apply the theme."
+msgstr ""
+"Kullanıcı Temaları uzantısı şu anda sisteminizde devre dışı bırakılmış. "
+"Temayı uygulamak için lütfen etkinleştirin."
+
+#: gradience/frontend/widgets/shell_theming_group.py:181
+msgid "An error occurred while generating a Shell theme."
+msgstr "Shell teması oluşturulurken hata oluştu."
+
+#: gradience/frontend/widgets/shell_theming_group.py:188
+msgid "Shell theme applied successfully."
+msgstr "Shell teması uygulandı."
+
+#: gradience/frontend/widgets/shell_theming_group.py:217
+#: gradience/frontend/widgets/shell_theming_group.py:222
+msgid "Failed to load extension's install link."
+msgstr "Uzantının kurulum bağlantısı yüklenemedi."
+
+#: gradience/frontend/widgets/shell_theming_group.py:241
+msgid "Shell theme successfully reset."
+msgstr "Shell teması sıfırlandı."
+
+#~ msgid "AdwCustomizer"
+#~ msgstr "AdwCustomizer"
+
+#~ msgid "Adwaita Manager"
+#~ msgstr "Adwaita Yöneticisi"
+
+#~ msgid "GNOME"
+#~ msgstr "GNOME"
+
+#~ msgid "Customization"
+#~ msgstr "Özelleştirme"
+
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Genel"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Show Shortcuts"
+#~ msgstr "Kısayolları Göster"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Show Apply Dialog"
+#~ msgstr "Uygula İletişim Kutusunu Göster"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Manage Presets"
+#~ msgstr "Ön Ayarları Yönet"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Ön Ayarı Kaydet"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Colors Section"
+#~ msgstr "Renkler Bölümüne Git"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Theming Section"
+#~ msgstr "Temalar Bölümüne Git"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Advanced Section"
+#~ msgstr "Gelişmiş Bölümüne Git"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Tercihler"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Çık"
+
+#~ msgid "Monet Engine generates a Material You color palette from an image."
+#~ msgstr ""
+#~ "Monet Motoru, görüntüyü kullanarak Material You renk paleti oluşturur."
+
+#~ msgid "Select an Image"
+#~ msgstr "Görüntü Seç"
+
+#~ msgid "Allow GTK 4 Theming"
+#~ msgstr "GTK 4 Temalandırmaya İzin Ver"
+
+#~ msgid "Allow GTK 4 Theming (System)"
+#~ msgstr "GTK 4 Temalandırılmasına İzin Ver (Sistem)"
+
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
+#~ "access custom themes. (Requires root access)"
+#~ msgstr ""
+#~ "GTK 4 Flatpak uygulamalarının özel temalara erişmesine izin vermek için "
+#~ "tüm kullanıcılar için Flatpak izinlerinin üzerine yaz. (Root erişimi "
+#~ "gerektirir)"
+
+#~ msgid "Allow GTK 3 Theming"
+#~ msgstr "GTK 3 Temalandırmasına İzin Ver"
+
+#~ msgid "Allow GTK 3 Theming (System)"
+#~ msgstr "GTK 3 Temalandırılmasına İzin Ver (Sistem)"
+
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
+#~ "access adw-gtk3 theme. (Requires root access)"
+#~ msgstr ""
+#~ "GTK 3 Flatpak uygulamalarının adw-gtk3 temasına erişmesine izin vermek "
+#~ "için tüm kullanıcılar için Flatpak izinlerinin üzerine yaz. (Root erişimi "
+#~ "gerektirir)"
+
+#~ msgid "Reset a currently applied preset or restore the previous one."
+#~ msgstr "Uygulanmış bir ön ayarı sıfırla veya öncekini geri yükle."
+
+#~ msgid "Custom Shell Colors"
+#~ msgstr "Özel Kabuk Renkleri"
+
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more, with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "Özel CSS ekleme gibi gelişmiş özelliklerle pencerelerin, düğmelerin, "
+#~ "listelerin ve daha fazlasının renklerini değiştirin."
+
+#~ msgid "Theme"
+#~ msgstr "Tema"
+
+#~ msgid "Save Changes"
+#~ msgstr "Değişiklikleri Kaydet"
+
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more; with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "Özel CSS ekleme gibi gelişmiş özelliklerle pencerelerin, düğmelerin, "
+#~ "listelerin ve daha fazlasının renklerini değiştirin."
+
+#~ msgid "Legacy Apps Theming"
+#~ msgstr "Eski Uygulamalar Temalandırması"
+
+#~ msgid "Install adw-gtk3 theme for legacy app theming"
+#~ msgstr "Eski uygulama temalandırma için adw-gtk3 temasını kur"
+
+#~ msgid "System Configuration"
+#~ msgstr "Sistem Yapılandırması"
+
+#~ msgid "Installing adw-gtk3"
+#~ msgstr "adw-gtk3 kuruluyor"
+
+#~ msgid "Preset set successfully"
+#~ msgstr "Ön ayar ayarlandı"
 
 #~ msgid "Toggle Text Value"
 #~ msgstr "Metin Değerini Aç/Kapat"
@@ -1610,9 +1754,6 @@ msgstr "Ön ayar ayarlandı"
 #~ msgid "Select a background first"
 #~ msgstr "Önce arka plan seçin"
 
-#~ msgid "Report an Issue…"
-#~ msgstr "Sorun Bildir…"
-
 #~ msgid "More Options"
 #~ msgstr "Diğer Seçenekler"
 
@@ -1625,9 +1766,6 @@ msgstr "Ön ayar ayarlandı"
 #~ msgid "Special thanks to"
 #~ msgstr "Özel teşekkürler"
 
-#~ msgid "Background Image"
-#~ msgstr "Arkaplan Resmi"
-
 #~ msgid "Tone"
 #~ msgstr "Ton"
 
@@ -1639,15 +1777,6 @@ msgstr "Ön ayar ayarlandı"
 
 #~ msgid "GTK 4 Widget Factory"
 #~ msgstr "GTK 4 Widget Fabrikası"
-
-#~ msgid "Failed to save override"
-#~ msgstr "Üzerine yazma kaydedilemedi"
-
-#~ msgid "Unexpected file error occurred"
-#~ msgstr "Beklenmeyen dosya hatası oluştu"
-
-#~ msgid "Save"
-#~ msgstr "Kaydet"
 
 #~ msgid ""
 #~ "\n"
@@ -1936,9 +2065,6 @@ msgstr "Ön ayar ayarlandı"
 #~ msgid "Add AdwViewSwitcher in the header bar"
 #~ msgstr "AdwViewSwitcher başlık çubuğuna eklendi"
 
-#~ msgid "Move CSS to the \"Advanced\" tab"
-#~ msgstr "CSS \"Gelişmiş\" sekmesine taşındı"
-
 #~ msgid "Move the rest to the \"colors\" tab"
 #~ msgstr "Geri kalanlar \"Renkler\" sekmesine taşındı"
 
@@ -1989,9 +2115,6 @@ msgstr "Ön ayar ayarlandı"
 #, fuzzy
 #~ msgid "Select app types you want to affect:"
 #~ msgstr "Değiştirmek istediğiniz uygulama türlerini seçin:"
-
-#~ msgid "Libadwaita and GTK 4 apps"
-#~ msgstr "Libadwaita ve GTK 4 uygulamaları"
 
 #, fuzzy
 #~ msgid "GTK 3 apps (adw-gtk3 theme required)"
@@ -2121,9 +2244,6 @@ msgstr "Ön ayar ayarlandı"
 
 #~ msgid "About Adwaita Manager"
 #~ msgstr "Adwaita Yöneticisi Hakkında"
-
-#~ msgid "Adwaita Manager Team"
-#~ msgstr "Adwaita Yöneticisi Takımı"
 
 #, fuzzy
 #~ msgid "Rename preset"

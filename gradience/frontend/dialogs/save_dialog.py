@@ -36,7 +36,7 @@ class GradienceSaveDialog(Adw.MessageDialog):
         self.app = self.parent.get_application()
 
         self.body = _(
-            "Saving preset to <tt>{0}</tt>. If that preset already "
+            "Saving preset to \n <small><i><tt>{0}</tt></i></small>. \n If that preset already "
             "exists, it will be overwritten."
         )
 
@@ -74,3 +74,4 @@ class GradienceSaveDialog(Adw.MessageDialog):
         self.set_response_appearance(
             "save", Adw.ResponseAppearance.SUGGESTED
         )
+

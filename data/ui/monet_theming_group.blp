@@ -3,7 +3,7 @@ using Adw 1;
 
 template $GradienceMonetThemingGroup : Adw.PreferencesGroup {
   title: _("Monet Engine");
-  description: _("Monet Engine generates a Material You color palette from an image.");
+  description: _("Generates a Material Design 3 palette by extracting colors of an image.");
 
   Adw.ExpanderRow monet-theming-expander {
     title: _("Monet Engine Options");
@@ -20,7 +20,7 @@ template $GradienceMonetThemingGroup : Adw.PreferencesGroup {
     }
 
     Adw.ActionRow file-chooser-row {
-      title: _("Select an Image");
+      title: _("Background Image");
       activatable-widget: file-chooser-button;
 
       [suffix]

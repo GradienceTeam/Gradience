@@ -53,6 +53,7 @@
   <url type="bugtracker">@BUGTRACKER_URL@</url>
   <url type="help">@HELP_URL@</url>
   <url type="translate">@TRANSLATE_URL@</url>
+  <url type="vcs-browser">@PROJECT_URL@</url>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
@@ -60,7 +61,6 @@
   </kudos>
 
   <custom>
-    <value key="Purism::form_factor">workstation</value>
     <value key="Purism::form_factor">mobile</value>
   </custom>
 
@@ -68,26 +68,23 @@
     <display_length compare="ge">360</display_length>
   </requires>
 
-  <categories>
-    <category>Utility</category>
-  </categories>
-
   <recommends>
     <control>keyboard</control>
     <control>pointing</control>
     <control>touch</control>
   </recommends>
 
-  <keywords>
-    <keyword>AdwCustomizer</keyword>
-    <keyword>Adwaita Manager</keyword>
-    <keyword>GNOME</keyword>
-    <keyword>Customization</keyword>
-  </keywords>
-
   <releases>
+    <release version="0.8.0-beta2" date="2024-01-4" type="development">
+      <description translatable="no">
+        <p>Gradience 0.8.0-beta2 release is the second beta for upcoming major release.</p>
+        <ul>
+          <li>See GitHub releases for more info</li>
+        </ul>
+      </description>
+    </release>"
     <release version="0.8.0-beta1" date="2023-06-16" type="development">
-      <description>
+      <description translatable="no">
         <p>Gradience 0.8.0-beta1 release is the first beta for upcoming major release.</p>
         <ul>
           <li>See GitHub releases for more info</li>
@@ -95,7 +92,7 @@
       </description>
     </release>
     <release version="0.4.1" date="2023-3-5" type="stable">
-      <description>
+      <description translatable="no">
         <p>This is a small bug fix release mainly intended for package maintainers.</p>
         <ul>
           <li>Only configure local CLI if buildtype is set to debug</li>
@@ -109,7 +106,7 @@
       </description>
     </release>
     <release version="0.4.0" date="2023-2-8" type="stable">
-      <description>
+      <description translatable="no">
         <p>Gradience version 0.4.0 introduces some bug fixes and general quality of life improvement changes:</p>
         <ul>
           <li>Added CLI interface, useful for creating scripts or for those who prefer terminal tools</li>
@@ -127,7 +124,7 @@
       </description>
     </release>
     <release version="0.3.3" date="2022-12-3" type="stable">
-      <description>
+      <description translatable="no">
         <p>Gradience 0.3.3 release is a minor translations update and UI improvement release:</p>
         <ul>
           <li>The Firefox GNOME theme plugin now parses profiles from profiles.ini</li>
@@ -141,7 +138,7 @@
       </description>
     </release>
     <release version="0.3.2" date="2022-11-10" type="stable">
-      <description>
+      <description translatable="no">
         <p>Gradience 0.3.2 release fixes some major issues and introduces some under-the-hood improvements:</p>
         <ul>
           <li>The Firefox GNOME theme plugin now correctly parses installations with multiple profiles</li>
@@ -165,7 +162,7 @@
       </description>
     </release>
     <release version="0.3.1" date="2022-10-07" type="stable">
-      <description>
+      <description translatable="no">
         <p>Gradience 0.3.1 release focuses on user interface polish and bug fixes, as well as some new features:</p>
         <ul>
           <li>Added ability to star preset to display it in Palette</li>
@@ -188,7 +185,7 @@
       </description>
     </release>
     <release version="0.3.0" date="2022-09-16" type="stable">
-      <description>
+      <description translatable="no">
         <p>Gradience 0.3.0 is a major update with many new features and improvements. Here are some of them:</p>
         <ul>
           <li>Added plugins support, this allows the creation of plugins to customize other apps</li>
@@ -205,7 +202,7 @@
       </description>
     </release>
     <release version="0.2.1" date="2022-08-30" type="stable">
-      <description>
+      <description translatable="no">
         <p>A small bug fix release of Gradience.</p>
         <ul>
           <li>Small improvements to the welcome screen</li>
@@ -214,7 +211,7 @@
       </description>
     </release>
     <release version="0.2.0" date="2022-08-26" type="stable">
-      <description>
+      <description translatable="no">
         <p>New Release of Gradience.</p>
         <ul>
           <li>Rebrand</li>
@@ -227,7 +224,7 @@
       </description>
     </release>
     <release version="0.1.0" date="2022-08-12" type="stable">
-      <description>
+      <description translatable="no">
         <p>First release of Gradience.</p>
         <ul>
           <li>Add AdwViewSwitcher in the header bar</li>

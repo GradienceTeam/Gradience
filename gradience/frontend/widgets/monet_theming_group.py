@@ -62,7 +62,7 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
 
     def setup_palette_shades(self):
         self.monet_palette_shades = GradiencePaletteShades(
-            "monet", _("Monet Palette"), 6
+            "monet", _("Palette"), 6
         )
         self.app.pref_palette_shades["monet"] = self.monet_palette_shades
 
@@ -88,7 +88,7 @@ class GradienceMonetThemingGroup(Adw.PreferencesGroup):
 
     def setup_theme_row(self):
         self.theme_row = Adw.ComboRow()
-        self.theme_row.set_title(_("Theme"))
+        self.theme_row.set_title(_("Style"))
 
         theme_store = Gtk.StringList()
         theme_store.append(_("Auto"))

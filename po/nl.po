@@ -3,17 +3,17 @@
 # This file is distributed under the GNU GPLv3 license.
 # Gradience Team, 2022.
 #
-# Philip Goto <philip.goto@gmail.com>, 2022, 2023.
+# Philip Goto <philip.goto@gmail.com>, 2022, 2023, 2024.
 # 0xMRTT <0xMRTT@tuta.io>, 2022.
 # Ewout van Mansom <ewout@vanmansom.name>, 2022.
 # Daudix UFO <ddaudix@gmail.com>, 2022.
-# yangyangdaji <1504305527@qq.com>, 2022, 2023.
+# yangyangdaji <1504305527@qq.com>, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
-"POT-Creation-Date: 2023-06-27 13:11+0000\n"
-"PO-Revision-Date: 2023-08-16 07:53+0000\n"
+"POT-Creation-Date: 2024-01-10 01:35+0000\n"
+"PO-Revision-Date: 2024-03-08 09:01+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -95,7 +95,7 @@ msgstr "Tabblad ‘Kleuren’ onder voorinstellingsbeheer"
 msgid "Select application types to theme:"
 msgstr "Selecteer app-types om te personaliseren:"
 
-#: data/ui/app_type_dialog.blp:17 data/ui/reset_preset_group.blp:9
+#: data/ui/app_type_dialog.blp:17
 msgid "Libadwaita and GTK 4 Applications"
 msgstr "Libadwaita en GTK 4-apps"
 
@@ -113,22 +113,18 @@ msgid "Apply Preset"
 msgstr "Voorinstelling toepassen"
 
 #: data/ui/custom_css_group.blp:5
-msgid "Custom CSS"
-msgstr "Aangepaste CSS"
+msgid "Custom Styles"
+msgstr "Aangepaste stijlen"
 
 #: data/ui/custom_css_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Changing this may break some programs. Keep in mind that Libadwaita was "
-#| "made so that applications could hardcode values like paddings and margins."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
-"hardcode values like padding and margins, and using custom CSS may cause "
+"hardcode values like padding and margins, and using custom styles may cause "
 "unintended breakage."
 msgstr ""
-"Als u dit wijzigt, kunnen sommige apps fouten vertonen. Houd er rekening mee "
-"dat Adwaita zo is gemaakt dat apps waarden zoals opvulling en marges kunnen "
-"overschrijven."
+"Als u dit wijzigt, kunnen sommige apps fouten vertonen. libAdwaita staat "
+"apps toe om waarden zoals opvulling en marges te kunnen overschrijven, en "
+"het gebruik van aangepaste stijlen kan tot onbedoelde fouten leiden."
 
 #: data/ui/custom_css_group.blp:33
 msgid "GTK 4"
@@ -143,21 +139,29 @@ msgid "Download and Apply"
 msgstr "Downloaden en toepassen"
 
 #: data/ui/explore_preset_row.blp:34
-msgid "Download Only"
-msgstr "Alleen downloaden"
+msgid "Download"
+msgstr "Downloaden"
+
+#: data/ui/log_out_dialog.blp:5
+msgid "Log out"
+msgstr "Uitloggen"
+
+#: data/ui/log_out_dialog.blp:6
+msgid "Log out to allow changes to take effect."
+msgstr "Log uit om wijzigingen toe te passen."
 
 #: data/ui/monet_theming_group.blp:5 data/ui/preferences_window.blp:113
 msgid "Monet Engine"
-msgstr "Monet"
+msgstr "Monet-engine"
 
 #: data/ui/monet_theming_group.blp:6
 #, fuzzy
 #| msgid ""
-#| "Monet Engine generates a Material Design 3 palette from extracting "
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
 #| "image's colors."
-msgid "Monet Engine generates a Material You color palette from an image."
+msgid "Generates a Material Design 3 palette by extracting colors of an image."
 msgstr ""
-"Monet-engine genereert een Material Design 3-palet uit de kleuren van een "
+"Monet-engine genereert een Material You-palet uit de kleuren van een "
 "afbeelding."
 
 #: data/ui/monet_theming_group.blp:9
@@ -168,7 +172,7 @@ msgstr "Opties voor Monet-engine"
 msgid "Choose an image and modify generated Monet palette"
 msgstr "Kies een afbeelding en pas het gegenereerde Monet-palet aan"
 
-#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:16
+#: data/ui/monet_theming_group.blp:16 data/ui/shell_theming_group.blp:27
 #: data/ui/window.blp:29
 msgid "Apply"
 msgstr "Toepassen"
@@ -178,8 +182,8 @@ msgid "Apply a palette"
 msgstr "Palet toepassen"
 
 #: data/ui/monet_theming_group.blp:23
-msgid "Select an Image"
-msgstr "Afbeelding selecteren"
+msgid "Background Image"
+msgstr "Achtergrondafbeelding"
 
 #: data/ui/monet_theming_group.blp:33
 msgid "Choose a File"
@@ -188,14 +192,6 @@ msgstr "Bestand kiezen"
 #: data/ui/monet_theming_group.blp:42
 msgid "Choose a Image File"
 msgstr "Afbeeldingsbestand kiezen"
-
-#: data/ui/log_out_dialog.blp:5
-msgid "Log out"
-msgstr "Uitloggen"
-
-#: data/ui/log_out_dialog.blp:6
-msgid "Log out to allow changes to take effect."
-msgstr "Log uit om wijzigingen toe te passen."
 
 #: data/ui/no_plugin_window.blp:5
 msgid "Plugin Preferences"
@@ -225,14 +221,13 @@ msgstr "Hex-code tonen"
 msgid "Toggle Plugin"
 msgstr "Plug-in omschakelen"
 
-#: data/ui/plugin_row.blp:18 data/ui/preferences_window.blp:5
-#: data/ui/window.blp:128
-msgid "Preferences"
-msgstr "Voorkeuren"
-
-#: data/ui/plugin_row.blp:30
+#: data/ui/plugin_row.blp:33
 msgid "Remove Plugin"
 msgstr "Plug-in verwijderen"
+
+#: data/ui/preferences_window.blp:5 data/ui/window.blp:128
+msgid "Preferences"
+msgstr "Voorkeuren"
 
 #: data/ui/preferences_window.blp:11
 msgid "General"
@@ -243,64 +238,68 @@ msgid "Flatpak Applications"
 msgstr "Flatpak-apps"
 
 #: data/ui/preferences_window.blp:18
-msgid "Allow GTK 4 Theming"
-msgstr "Personalisatie van GTK-4-apps toestaan"
+msgid "Theme sandboxed GTK 4 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:19
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 4 Flatpak apps to "
-"access custom themes."
+#, fuzzy
+#| msgid ""
+#| "Override Flatpak permissions for current user to allow GTK 4 Flatpak apps "
+#| "to access custom themes."
+msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
 msgstr ""
 "Overschrijf Flatpak-rechten voor de huidige gebruiker om GTK 4-Flatpak-apps "
 "toegang te geven tot aangepaste thema's."
 
 #: data/ui/preferences_window.blp:28
-msgid "Allow GTK 4 Theming (System)"
-msgstr "Personalisatie van GTK 4 toestaan (systeem)"
+msgid "Theme sandboxed GTK 4 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:29
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
-"access custom themes. (Requires root access)"
+"Allow GTK 4 Flatpak apps of all users to access custom themes "
+"(Authentication required)"
 msgstr ""
-"Overschrijf Flatpak-machtigingen voor alle gebruikers om GTK-4-Flatpak-apps "
-"toegang te geven tot aangepaste thema's. (Vereist root-toegang)"
 
 #: data/ui/preferences_window.blp:37
-msgid "Allow GTK 3 Theming"
-msgstr "Personalisatie van GTK 3 toestaan"
+msgid "Theme sandboxed GTK 3 apps"
+msgstr ""
 
 #: data/ui/preferences_window.blp:38
-msgid ""
-"Override Flatpak permissions for current user to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme."
+#, fuzzy
+#| msgid ""
+#| "Override Flatpak permissions for current user to allow GTK 3 Flatpak apps "
+#| "to access adw-gtk3 theme."
+msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
 msgstr ""
 "Overschrijf Flatpak-rechten voor de huidige gebruiker om GTK-3-Flatpak-apps "
 "toegang te geven tot het thema adw-gtk3."
 
 #: data/ui/preferences_window.blp:47
-msgid "Allow GTK 3 Theming (System)"
-msgstr "Personalisatie van GTK 3 toestaan (systeem)"
+msgid "Theme sandboxed GTK 3 apps (System)"
+msgstr ""
 
 #: data/ui/preferences_window.blp:48
 msgid ""
-"Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
-"access adw-gtk3 theme. (Requires root access)"
+"Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
+"(Authentication required)"
 msgstr ""
-"Overschrijf Flatpak-rechten voor alle gebruikers om GTK-3-Flatpak-apps "
-"toegang te geven tot het thema adw-gtk3. (Vereist root-toegang)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "Verkrijgen van voorinstellingen"
 
 #: data/ui/preferences_window.blp:60
-msgid "Use an alternative server for downloading presets"
-msgstr "Alternatieve server gebruiken voor downloaden van voorinstellingen"
+msgid "Use an alternative server for fetching presets"
+msgstr "Alternatieve server gebruiken voor ophalen van voor­instellingen"
 
 #: data/ui/preferences_window.blp:61
-msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+#, fuzzy
+#| msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
+msgid "Use JSDelivr instead of directly fetching presets from GitHub"
 msgstr ""
+"JSDelivr wordt gebruikt voor het ophalen van voorinstellingen in plaats van "
+"directe downloads van GitHub"
 
 #: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
@@ -312,7 +311,7 @@ msgstr "URL-adres van aangepaste repository"
 
 #: data/ui/preferences_window.blp:96
 msgid "Theming"
-msgstr "Thema"
+msgstr "Thema's"
 
 #: data/ui/preferences_window.blp:100
 msgid "Theme Engines"
@@ -333,11 +332,9 @@ msgstr "Shell-engine"
 #: data/ui/preferences_window.blp:105
 #, fuzzy
 #| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based of a currently "
+#| "Shell Engine generates a custom GNOME Shell theme based on a currently "
 #| "chosen preset."
-msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on a currently "
-"chosen preset."
+msgid "Generates GNOME Shell theme based on current preset"
 msgstr ""
 "Shell-engine genereert een aangepast GNOME Shell-thema op basis van een "
 "momenteel gekozen voorinstelling."
@@ -345,13 +342,11 @@ msgstr ""
 #: data/ui/preferences_window.blp:114
 #, fuzzy
 #| msgid ""
-#| "Monet Engine generates a Material Design 3 palette from extracting "
+#| "Monet Engine generates a Material Design 3 palette by extracting the "
 #| "image's colors."
-msgid ""
-"Monet Engine generates a Material Design 3 palette by extracting the image's "
-"colors."
+msgid "Generates a Material Design 3 palette by extracting colors of an image"
 msgstr ""
-"Monet-engine genereert een Material Design 3-palet uit de kleuren van een "
+"Monet-engine genereert een Material You-palet uit de kleuren van een "
 "afbeelding."
 
 #: data/ui/preset_row.blp:65
@@ -370,19 +365,19 @@ msgstr "Deze voorinstelling heeft geen omschrijving."
 msgid "No Badges"
 msgstr "Geen badges"
 
-#: data/ui/preset_row.blp:102 data/ui/presets_manager_window.blp:44
-msgid "Report Preset Issue"
-msgstr "Probleem met voorinstelling rapporteren"
+#: data/ui/preset_row.blp:102
+msgid "Report an Issue"
+msgstr "Een probleem melden"
 
 #: data/ui/preset_row.blp:109
 msgid "Remove preset"
 msgstr "Voorinstelling verwijderen"
 
-#: data/ui/preset_row.blp:110
+#: data/ui/preset_row.blp:110 data/ui/repo_row.blp:9
 msgid "Remove Preset"
 msgstr "Voorinstelling verwijderen"
 
-#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:56
+#: data/ui/presets_manager_window.blp:5 data/ui/window.blp:65
 msgid "Presets"
 msgstr "Voorinstellingen"
 
@@ -398,7 +393,11 @@ msgstr "Voorinstellingsbestand importeren"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:251
+#: data/ui/presets_manager_window.blp:44
+msgid "Report Preset Issue"
+msgstr "Probleem met voorinstelling rapporteren"
+
+#: data/ui/presets_manager_window.blp:55 gradience/frontend/main.py:250
 msgid "Open in File Manager"
 msgstr "Openen in bestandsbeheerder"
 
@@ -457,12 +456,16 @@ msgid "JSON file (*.json)"
 msgstr "JSON-bestanden (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-msgid "Reset and Restore Presets"
-msgstr "Voorinstellingen resetten en herstellen"
+msgid "Reset and Restore Theming"
+msgstr "Thama's resetten en herstellen"
 
 #: data/ui/reset_preset_group.blp:6
-msgid "Reset a currently applied preset or restore the previous one."
-msgstr "Reset een momenteel toegepaste voorinstelling of herstel de vorige."
+msgid "Reset theming to default or restore previously applied preset."
+msgstr ""
+
+#: data/ui/reset_preset_group.blp:9
+msgid "GTK 4/Libadwaita Apps"
+msgstr "Apps met GTK 4/Libadwaita"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -477,8 +480,8 @@ msgid "Reset Applied Preset"
 msgstr "Toegepaste voorinstelling resetten"
 
 #: data/ui/reset_preset_group.blp:29
-msgid "GTK 3 Applications"
-msgstr "GTK-3-apps"
+msgid "GTK 3 Apps"
+msgstr "Apps met GTK 3"
 
 #: data/ui/save_dialog.blp:5
 msgid "Save preset as…"
@@ -516,15 +519,15 @@ msgid ""
 "make a pull request and share it with the world!"
 msgstr ""
 "Gradience gebruikt GitHub om uw voorinstelling te delen. U dient een GitHub-"
-"account te hebben en <a href=\"https://github.com/GradienceTeam/Community"
-"\">GradienceTeam/Community</a> forken. Vervolgens kunt u uw voorinstelling "
-"uploaden, een pull request doen en deze delen met de wereld!"
+"account te hebben en <a href=\"https://github.com/GradienceTeam/"
+"Community\">GradienceTeam/Community</a> forken. Vervolgens kunt u uw "
+"voorinstelling uploaden, een pull request doen en deze delen met de wereld!"
 
-#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:79
+#: data/ui/share_window.blp:81 data/ui/welcome_window.blp:78
 msgid "Warning"
 msgstr "Waarschuwing"
 
-#: data/ui/share_window.blp:82 data/ui/welcome_window.blp:80
+#: data/ui/share_window.blp:82
 msgid ""
 "Changing the color scheme can negatively affect contrast and readability. "
 "Proceed with caution. Please do not report theming-related issues to app "
@@ -538,7 +541,7 @@ msgstr ""
 msgid "I Understand The Consequences"
 msgstr "Ik begrijp de gevolgen"
 
-#: data/ui/share_window.blp:97 data/ui/welcome_window.blp:95
+#: data/ui/share_window.blp:97
 msgid "Customize Adwaita Theme"
 msgstr "Personaliseer Adwaita-thema"
 
@@ -550,11 +553,11 @@ msgstr ""
 "Verander kleuren van vensters, knoppen, lijsten en meer, met geavanceerde "
 "functies zoals het toepassen van aangepaste CSS"
 
-#: data/ui/share_window.blp:104 data/ui/welcome_window.blp:102
+#: data/ui/share_window.blp:104
 msgid "Configure Gradience"
 msgstr "Gradience configureren"
 
-#: data/ui/share_window.blp:105 data/ui/welcome_window.blp:103
+#: data/ui/share_window.blp:105
 msgid ""
 "Install adw-gtk3 theme for legacy applications and configure system for "
 "theming."
@@ -574,7 +577,7 @@ msgstr "Installeer het adw-gtk3-thema voor personalisatie van oudere apps"
 msgid "System configuration"
 msgstr "Systeemconfiguratie"
 
-#: data/ui/share_window.blp:126 data/ui/welcome_window.blp:124
+#: data/ui/share_window.blp:126
 msgid "Configure system for theming, enables Flatpak theme override"
 msgstr ""
 "Systeem configureren voor personalisatie, schakelt overschrijving van "
@@ -584,32 +587,32 @@ msgstr ""
 msgid "Installing Themes"
 msgstr "Thema's installeren"
 
-#: data/ui/share_window.blp:137 data/ui/welcome_window.blp:135
+#: data/ui/share_window.blp:137
 msgid "Please wait until theme will be installed."
 msgstr "Wacht totdat thema wordt geïnstalleerd."
 
-#: data/ui/share_window.blp:143 data/ui/welcome_window.blp:141
+#: data/ui/share_window.blp:143
 msgid "Continue"
 msgstr "Doorgaan"
 
-#: data/ui/share_window.blp:162 data/ui/welcome_window.blp:160
+#: data/ui/share_window.blp:162
 msgid "Done"
 msgstr "Klaar"
 
-#: data/ui/share_window.blp:163 data/ui/welcome_window.blp:161
+#: data/ui/share_window.blp:163
 msgid "Now you can make your own presets or download some online."
 msgstr ""
 "U kunt nu uw eigen voorinstellingen maken, of enkele online downloaden."
 
-#: data/ui/share_window.blp:168 data/ui/welcome_window.blp:166
+#: data/ui/share_window.blp:168
 msgid "Please finish the setup first"
 msgstr "Voltooi eerst de setup"
 
-#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:174
+#: data/ui/share_window.blp:176 data/ui/welcome_window.blp:98
 msgid "Start Using Gradience"
 msgstr "Beginnen met Gradience gebruiken"
 
-#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:191
+#: data/ui/share_window.blp:193 data/ui/welcome_window.blp:113
 msgid "Next"
 msgstr "Volgende"
 
@@ -618,68 +621,63 @@ msgid "Shell Engine Preferences"
 msgstr "Voorkeuren voor shell-engine"
 
 #: data/ui/shell_prefs_window.blp:13
-msgid "Custom Shell Colors"
-msgstr "Aangepaste shell-kleuren"
-
-#: data/ui/shell_prefs_window.blp:14
-msgid "Customize Shell theme colors."
-msgstr "Personaliseer shell-themakleuren."
+msgid "Shell theme colors"
+msgstr "Shell-thema­kleuren"
 
 #: data/ui/shell_theming_group.blp:6
 #, fuzzy
 #| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the colors of "
-#| "a currently selected preset.\n"
-#| "WARNING: Extensions that modify Shell stylesheet can cause issues with "
-#| "themes."
+#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
+#| "selected preset.\n"
+#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
+#| "with themes."
 msgid ""
-"Shell Engine generates a custom GNOME Shell theme based on the currently "
-"selected preset.\n"
+"Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
 "De shell-engine genereert een aangepast GNOME-shell-thema gebaseerd op de "
-"kleuren van een huidig geselecteerde voorinstelling.\n"
+"momenteel geselecteerde voorinstelling.\n"
 "WAARSCHUWING: Uitbreidingen die het shell-stijlblad wijzigen kunnen "
 "problemen veroorzaken met thema's."
 
-#: data/ui/shell_theming_group.blp:9
+#: data/ui/shell_theming_group.blp:20
 msgid "Shell Engine Options"
 msgstr "Opties voor shell-engine"
 
-#: data/ui/shell_theming_group.blp:10
+#: data/ui/shell_theming_group.blp:21
 msgid "Change the generated GNOME Shell theme"
 msgstr "Pas het gegenereerde GNOME-shell-thema aan"
 
-#: data/ui/shell_theming_group.blp:17
+#: data/ui/shell_theming_group.blp:28
 msgid "Apply Shell theme"
 msgstr "Shell-thema toepassen"
 
-#: data/ui/shell_theming_group.blp:23
+#: data/ui/shell_theming_group.blp:37
 msgid "Customize Shell Theme"
 msgstr "Shell-thema personaliseren"
 
-#: data/ui/shell_theming_group.blp:29
+#: data/ui/shell_theming_group.blp:43
 msgid "Open Shell Preferences"
 msgstr "Shell-voorkeuren openen"
 
-#: data/ui/shell_theming_group.blp:35
+#: data/ui/shell_theming_group.blp:49
 msgid "Preset Variant"
 msgstr "Voorinstellings­variant"
 
-#: data/ui/shell_theming_group.blp:36
+#: data/ui/shell_theming_group.blp:50
 msgid "Select currently applied preset variant"
 msgstr "Selecteer de momenteel toegepaste voorinstellings­variant"
 
-#: data/ui/shell_theming_group.blp:48
+#: data/ui/shell_theming_group.blp:62
 msgid "Currently unavailable"
 msgstr "Momenteel niet beschikbaar"
 
-#: data/ui/shell_theming_group.blp:56
+#: data/ui/shell_theming_group.blp:73
 msgid "Reset Theme"
 msgstr "Thema resetten"
 
-#: data/ui/shell_theming_group.blp:57
+#: data/ui/shell_theming_group.blp:74
 msgid "Reset applied theme"
 msgstr "Toegepast thema resetten"
 
@@ -688,10 +686,6 @@ msgid "No Theme Engines"
 msgstr "Geen thema-engines"
 
 #: data/ui/theming_empty_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Theme Engines extends the functionality of Gradience. They can be enabled "
-#| "in the Preferences."
 msgid ""
 "Theme Engines extend the functionality of Gradience. They can be enabled in "
 "the Preferences."
@@ -711,69 +705,63 @@ msgstr "Voorkeuren openen"
 msgid "Welcome to Gradience"
 msgstr "Welkom bij Gradience"
 
-#: data/ui/welcome_window.blp:71
+#: data/ui/welcome_window.blp:70
 msgid "What's new in 0.8.0"
 msgstr "Nieuw in 0.8.0"
 
-#: data/ui/welcome_window.blp:72
-#, fuzzy
-#| msgid ""
-#| "In this release, we added GNOME Shell theming support and reworked how "
-#| "Gradience work internally."
+#: data/ui/welcome_window.blp:71
 msgid ""
 "In this release, we added GNOME Shell theming support and reworked how "
-"Gradience works internally."
+"Gradience works internally"
 msgstr ""
 "In deze uitgave hebben we ondersteuning voor GNOME-shell-thema's toegevoegd "
-"en de interne werking van Gradience aangepast."
+"en de interne werking van Gradience aangepast"
 
-#: data/ui/welcome_window.blp:84
+#: data/ui/welcome_window.blp:79
+msgid ""
+"Changing the color scheme can negatively affect contrast and readability. "
+"Proceed with caution. Please do not report theming-related issues to app "
+"developers"
+msgstr ""
+"Het veranderen van het kleurenschema kan het contrast en de leesbaarheid "
+"negatief beïnvloeden. Ga voorzichtig te werk. Meld themagerelateerde "
+"problemen niet aan app-ontwikkelaars"
+
+#: data/ui/welcome_window.blp:83
 msgid "Agree and Continue"
 msgstr "Akkoord en doorgaan"
 
-#: data/ui/welcome_window.blp:96
+#: data/ui/welcome_window.blp:93
+msgid "Customize Adwaita"
+msgstr "Adwaita personaliseren"
+
+#: data/ui/welcome_window.blp:94
 #, fuzzy
 #| msgid ""
 #| "Change colors of windows, buttons, lists and more, with advanced features "
-#| "like adding custom CSS."
+#| "like adding custom CSS"
 msgid ""
-"Change colors of windows, buttons, lists and more; with advanced features "
-"like adding custom CSS."
+"Change colors of windows, buttons, lists and more, with advanced features "
+"like adding custom styles"
 msgstr ""
 "Verander kleuren van vensters, knoppen, lijsten en meer, met geavanceerde "
-"functies zoals het toepassen van aangepaste CSS."
+"functies zoals het toepassen van aangepaste CSS"
 
-#: data/ui/welcome_window.blp:108
-msgid "Legacy Apps Theming"
-msgstr "Personalisatie van oudere apps"
+#: data/ui/window.blp:37 gradience/frontend/main.py:422
+msgid "Save Preset"
+msgstr "Voorinstelling opslaan"
 
-#: data/ui/welcome_window.blp:113
-msgid "Install adw-gtk3 theme for legacy app theming"
-msgstr "Installeer het adw-gtk3-thema voor personalisatie van oudere apps"
-
-#: data/ui/welcome_window.blp:118
-msgid "System Configuration"
-msgstr "Systeemconfiguratie"
-
-#: data/ui/welcome_window.blp:134
-msgid "Installing adw-gtk3"
-msgstr "adw-gtk3 installeren"
-
-#: data/ui/window.blp:37
+#: data/ui/window.blp:46
 msgid "Show Preview Window"
 msgstr "Voorvertoningsvenster tonen"
 
-#: data/ui/window.blp:48
+#: data/ui/window.blp:57
 msgid "Main Menu"
 msgstr "Hoofdmenu"
 
-#: data/ui/window.blp:57
+#: data/ui/window.blp:66
 msgid "Presets Menu"
 msgstr "Voorinstellingenmenu"
-
-#: data/ui/window.blp:64
-msgid "Save Preset"
-msgstr "Voorinstelling opslaan"
 
 #: data/ui/window.blp:73
 msgid "CSS Errors"
@@ -808,23 +796,122 @@ msgstr "Ingebouwde voorinstellingen"
 msgid "Manage Presets"
 msgstr "Voorinstellingen beheren"
 
+#: gradience/backend/flatpak_overrides.py:71
+#: gradience/backend/flatpak_overrides.py:93
+msgid "Failed to save override"
+msgstr "Overschrijven mislukt"
+
+#: gradience/backend/flatpak_overrides.py:186
+#: gradience/backend/flatpak_overrides.py:228
+#: gradience/backend/flatpak_overrides.py:306
+#: gradience/backend/flatpak_overrides.py:366
+#: gradience/backend/flatpak_overrides.py:448
+#: gradience/backend/flatpak_overrides.py:509
+msgid "Unexpected file error occurred"
+msgstr "Er is een onverwachte bestandsfout opgetreden"
+
+#: gradience/frontend/dialogs/app_type_dialog.py:47
+#: gradience/frontend/dialogs/save_dialog.py:62
+msgid "_Cancel"
+msgstr "_Annuleren"
+
+#: gradience/frontend/dialogs/save_dialog.py:39
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
+#| "overwritten."
+msgid ""
+"Saving preset to \n"
+" <small><i><tt>{0}</tt></i></small>. \n"
+" If that preset already exists, it will be overwritten."
+msgstr ""
+"Voorinstelling wordt opgeslagen in <tt>{0}</tt>. Indien de voorinstelling al "
+"bestaat, zal deze worden overschreven."
+
+#: gradience/frontend/dialogs/save_dialog.py:65
+msgid "Discard"
+msgstr "Verwerpen"
+
+#: gradience/frontend/dialogs/save_dialog.py:70
+msgid "_Save"
+msgstr "_Opslaan"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
+msgid "Unsupported Shell Version ({get_full_shell_version()})"
+msgstr "Niet-ondersteunde shell-versie ({get_full_shell_version()})"
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
+msgid ""
+"The Shell version you are using is not supported by Gradience. Please "
+"upgrade to a newer version of GNOME."
+msgstr ""
+"De shell-versie die u gebruikt wordt niet ondersteund door Gradience. "
+"Upgrade naar een nieuwere versie van GNOME."
+
+#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
+msgid "OK"
+msgstr "Ok"
+
+#: gradience/frontend/main.py:203
+#: gradience/frontend/views/presets_manager_window.py:339
+msgid "Failed to load list of presets"
+msgstr "Lijst met voorinstellingen laden mislukt"
+
+#: gradience/frontend/main.py:236
+msgid "No presets found"
+msgstr "Geen voorinstellingen gevonden"
+
+#: gradience/frontend/main.py:259
+msgid "Favorite Presets"
+msgstr "Favoriete voorinstellingen"
+
+#: gradience/frontend/main.py:412
+msgid "Unsaved Changes"
+msgstr "Niet-opgeslagen wijzigingen"
+
+#: gradience/frontend/main.py:421
+msgid "Save"
+msgstr "Opslaan"
+
+#: gradience/frontend/main.py:511
+msgid "Apply This Color Scheme?"
+msgstr "Dit kleurenschema toepassen?"
+
+#: gradience/frontend/main.py:513
+msgid ""
+"Warning: any custom CSS files for those app types will be irreversibly "
+"overwritten!"
+msgstr ""
+"Waarschuwing: aangepaste CSS-bestanden voor die app-typen worden "
+"onomkeerbaar overschreven!"
+
+#: gradience/frontend/main.py:517
+msgid "_Apply"
+msgstr "_Toepassen"
+
+#: gradience/frontend/main.py:543
+msgid "You have unsaved changes!"
+msgstr "Er zijn niet-opgeslagen wijzigingen!"
+
+#: gradience/frontend/main.py:594
+msgid "Preset saved"
+msgstr "Voorinstelling opgeslagen"
+
+#: gradience/frontend/main.py:611
+msgid "Preset has been set. Log out to apply changes."
+msgstr ""
+
 #: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
 msgstr "Accentkleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:25
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, and entries, to indicate that a widget is important, interactive, "
-#| "or currently active."
 msgid ""
 "These colors are used across many different widgets, often to indicate that "
 "a widget is important, interactive, or currently active."
 msgstr ""
-"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
-"labels en velden, om aan te geven dat een widget belangrijk, interactief of "
-"momenteel actief is."
+"Deze kleuren worden gebruikt in veel verschillende widgets, vaak om aan te "
+"geven dat een widget belangrijk, interactief of momenteel actief is."
 
 #: gradience/frontend/schemas/preset_schema.py:32
 #: gradience/frontend/schemas/preset_schema.py:63
@@ -856,10 +943,12 @@ msgstr ""
 #: gradience/frontend/schemas/preset_schema.py:184
 #: gradience/frontend/schemas/preset_schema.py:204
 #: gradience/frontend/schemas/preset_schema.py:225
-#: gradience/frontend/schemas/preset_schema.py:280
-#: gradience/frontend/schemas/preset_schema.py:307
-#: gradience/frontend/schemas/preset_schema.py:324
-#: gradience/frontend/schemas/preset_schema.py:341
+#: gradience/frontend/schemas/preset_schema.py:284
+#: gradience/frontend/schemas/preset_schema.py:327
+#: gradience/frontend/schemas/preset_schema.py:367
+#: gradience/frontend/schemas/preset_schema.py:394
+#: gradience/frontend/schemas/preset_schema.py:411
+#: gradience/frontend/schemas/preset_schema.py:428
 msgid "Background Color"
 msgstr "Achtergrondkleur"
 
@@ -871,10 +960,12 @@ msgstr "Achtergrondkleur"
 #: gradience/frontend/schemas/preset_schema.py:189
 #: gradience/frontend/schemas/preset_schema.py:209
 #: gradience/frontend/schemas/preset_schema.py:230
-#: gradience/frontend/schemas/preset_schema.py:285
-#: gradience/frontend/schemas/preset_schema.py:312
-#: gradience/frontend/schemas/preset_schema.py:329
-#: gradience/frontend/schemas/preset_schema.py:346
+#: gradience/frontend/schemas/preset_schema.py:289
+#: gradience/frontend/schemas/preset_schema.py:332
+#: gradience/frontend/schemas/preset_schema.py:372
+#: gradience/frontend/schemas/preset_schema.py:399
+#: gradience/frontend/schemas/preset_schema.py:416
+#: gradience/frontend/schemas/preset_schema.py:433
 msgid "Foreground Color"
 msgstr "Voorgrondkleur"
 
@@ -883,64 +974,46 @@ msgid "Destructive Colors"
 msgstr "Destructieve kleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:57
-#, fuzzy
-#| msgid ""
-#| "These colors are used for buttons to indicate a dangerous action, such as "
-#| "deleting a file."
 msgid ""
 "These colors are used to indicate dangerous actions, such as deleting a file."
 msgstr ""
-"Deze kleuren worden gebruikt voor knoppen om een gevaarlijke actie aan te "
-"geven, zoals het verwijderen van een bestand."
+"Deze kleuren worden gebruikt om gevaarlijke acties aan te geven, zoals het "
+"verwijderen van een bestand."
 
 #: gradience/frontend/schemas/preset_schema.py:86
 msgid "Success Colors"
 msgstr "Succes-kleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:88
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, entries, and level bars, to indicate a success or a high level."
 msgid ""
 "These colors are used across many different widgets, to indicate success or "
 "a high level."
 msgstr ""
-"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
-"labels, velden en niveaubalken, om een succes of een hoog niveau aan te "
-"geven."
+"Deze kleuren worden gebruikt in veel verschillende widgets om succes of een "
+"hoog niveau aan te geven."
 
 #: gradience/frontend/schemas/preset_schema.py:117
 msgid "Warning Colors"
 msgstr "Waarschuwingskleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:119
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, entries, and level bars, to indicate a warning or a low level."
 msgid ""
 "These colors are used across many different widgets, to indicate warning or "
 "a low level."
 msgstr ""
-"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
-"labels, velden en niveaubalken, om een waarschuwing of een laag niveau aan "
-"te geven."
+"Deze kleuren worden gebruikt in veel verschillende widgets om een "
+"waarschuwing of een laag niveau aan te geven."
 
 #: gradience/frontend/schemas/preset_schema.py:148
 msgid "Error Colors"
 msgstr "Foutkleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:150
-#, fuzzy
-#| msgid ""
-#| "These colors are used across many different widgets, such as buttons, "
-#| "labels, and entries, to indicate a failure."
 msgid ""
 "These colors are used across many different widgets, to indicate a failure."
 msgstr ""
-"Deze kleuren worden gebruikt in veel verschillende widgets, zoals knoppen, "
-"labels en velden, om een storing aan te geven."
+"Deze kleuren worden gebruikt in veel verschillende widgets om een storing "
+"aan te geven."
 
 #: gradience/frontend/schemas/preset_schema.py:179
 msgid "Window Colors"
@@ -955,16 +1028,12 @@ msgid "View Colors"
 msgstr "Weergavekleuren"
 
 #: gradience/frontend/schemas/preset_schema.py:198
-#, fuzzy
-#| msgid ""
-#| "These colors are used in a variety of widgets, such as text views and "
-#| "entries."
 msgid ""
 "These colors are used across many different widgets, such as text views and "
 "entries."
 msgstr ""
-"Deze kleuren worden gebruikt in verschillende widgets, zoals tekstweergaven "
-"en velden."
+"Deze kleuren worden gebruikt door veel verschillende widgets, zoals "
+"tekstweergaven en velden."
 
 #: gradience/frontend/schemas/preset_schema.py:216
 msgid "Header Bar Colors"
@@ -998,10 +1067,14 @@ msgstr ""
 "gesplitste titelbalk-layout."
 
 #: gradience/frontend/schemas/preset_schema.py:250
+#: gradience/frontend/schemas/preset_schema.py:294
+#: gradience/frontend/schemas/preset_schema.py:337
 msgid "Backdrop Color"
 msgstr "Backdrop-kleur"
 
 #: gradience/frontend/schemas/preset_schema.py:252
+#: gradience/frontend/schemas/preset_schema.py:296
+#: gradience/frontend/schemas/preset_schema.py:339
 msgid ""
 "The backdrop color is used instead of the background color when the window "
 "is not focused. By default it's an alias of the window's background color "
@@ -1014,12 +1087,17 @@ msgstr ""
 "achtergrondkleur van de titelbalk past."
 
 #: gradience/frontend/schemas/preset_schema.py:263
-#: gradience/frontend/schemas/preset_schema.py:290
-#: gradience/frontend/schemas/preset_schema.py:358
+#: gradience/frontend/schemas/preset_schema.py:307
+#: gradience/frontend/schemas/preset_schema.py:350
+#: gradience/frontend/schemas/preset_schema.py:377
+#: gradience/frontend/schemas/preset_schema.py:438
+#: gradience/frontend/schemas/preset_schema.py:455
 msgid "Shade Color"
 msgstr "Schaduwkleur"
 
 #: gradience/frontend/schemas/preset_schema.py:265
+#: gradience/frontend/schemas/preset_schema.py:309
+#: gradience/frontend/schemas/preset_schema.py:352
 msgid ""
 "The shade color is used to provide a dark border for header bars and similar "
 "widgets that separates them from the main window."
@@ -1028,14 +1106,35 @@ msgstr ""
 "titelbalken en soortgelijke widgets die ze scheidt van het hoofdvenster."
 
 #: gradience/frontend/schemas/preset_schema.py:275
+msgid "Sidebar Colors"
+msgstr "Zijbalk­kleuren"
+
+#: gradience/frontend/schemas/preset_schema.py:277
+msgid ""
+"These colors are used for sidebars, generally attached to the left or right "
+"sides of a window. They are used by AdwNavigationSplitView and "
+"AdwOverlaySplitView when they are not collapsed."
+msgstr ""
+
+#: gradience/frontend/schemas/preset_schema.py:319
+msgid "Secondary Sidebar Colors"
+msgstr "Secundaire zijbalk­kleuren"
+
+#: gradience/frontend/schemas/preset_schema.py:321
+msgid ""
+"These colors are used for middle panes in triple-pane layouts,  created via "
+"nesting two split views within one another."
+msgstr ""
+
+#: gradience/frontend/schemas/preset_schema.py:362
 msgid "Card Colors"
 msgstr "Kaartkleuren"
 
-#: gradience/frontend/schemas/preset_schema.py:276
+#: gradience/frontend/schemas/preset_schema.py:363
 msgid "These colors are used for cards and boxed lists."
 msgstr "Deze kleuren worden gebruikt voor kaarten en kaartlijsten."
 
-#: gradience/frontend/schemas/preset_schema.py:292
+#: gradience/frontend/schemas/preset_schema.py:379
 msgid ""
 "The shade color is used for shadows that are used by cards to separate "
 "themselves from the window background, as well as for row dividers in the "
@@ -1045,39 +1144,46 @@ msgstr ""
 "gebruikt om zichzelf te scheiden van de achtergrond van het venster, evenals "
 "voor rijverdelers in de kaarten."
 
-#: gradience/frontend/schemas/preset_schema.py:302
+#: gradience/frontend/schemas/preset_schema.py:389
 msgid "Thumbnail Colors"
 msgstr "Miniatuur­kleuren"
 
-#: gradience/frontend/schemas/preset_schema.py:303
+#: gradience/frontend/schemas/preset_schema.py:390
 msgid "These colors are used for Tab Overview thumbnails."
 msgstr "Deze kleuren worden gebruikt voor miniaturen van een tabblad­overzicht."
 
-#: gradience/frontend/schemas/preset_schema.py:319
+#: gradience/frontend/schemas/preset_schema.py:406
 msgid "Dialog Colors"
 msgstr "Dialoogkleuren"
 
-#: gradience/frontend/schemas/preset_schema.py:320
+#: gradience/frontend/schemas/preset_schema.py:407
 msgid "These colors are used for message dialogs."
 msgstr "Deze kleuren worden gebruikt voor dialogen."
 
-#: gradience/frontend/schemas/preset_schema.py:336
+#: gradience/frontend/schemas/preset_schema.py:423
 msgid "Popover Colors"
 msgstr "Popover-kleuren"
 
-#: gradience/frontend/schemas/preset_schema.py:337
+#: gradience/frontend/schemas/preset_schema.py:424
 msgid "These colors are used for popovers."
 msgstr "Deze kleuren worden gebruikt voor popovers."
 
-#: gradience/frontend/schemas/preset_schema.py:353
+#: gradience/frontend/schemas/preset_schema.py:440
+msgid ""
+"The shade color is used for scroll undershoot styles within popovers, as "
+"well as transitions in AdwNavigationView, AdwOverlaySplitView, AdwLeaflet "
+"and AdwFlap."
+msgstr ""
+
+#: gradience/frontend/schemas/preset_schema.py:450
 msgid "Miscellaneous Colors"
 msgstr "Diverse kleuren"
 
-#: gradience/frontend/schemas/preset_schema.py:354
+#: gradience/frontend/schemas/preset_schema.py:451
 msgid "Colors that don't fit in any particular group."
 msgstr "Kleuren die niet in een bepaalde groep passen."
 
-#: gradience/frontend/schemas/preset_schema.py:360
+#: gradience/frontend/schemas/preset_schema.py:457
 msgid ""
 "The shade color is used by inline tab bars, as well as the transitions in "
 "leaflets and flaps, and info bar borders."
@@ -1085,11 +1191,11 @@ msgstr ""
 "De schaduwkleur wordt gebruikt door inline-tabbalken, leaflet- en flap-"
 "overgangen, en randen van infobalken."
 
-#: gradience/frontend/schemas/preset_schema.py:368
+#: gradience/frontend/schemas/preset_schema.py:465
 msgid "Scrollbar Outline Color"
 msgstr "Randkleur schuifbalk"
 
-#: gradience/frontend/schemas/preset_schema.py:370
+#: gradience/frontend/schemas/preset_schema.py:467
 msgid ""
 "The scrollbar outline color is used by scrollbars to ensure that overlay "
 "scrollbars are visible regardless of the content color."
@@ -1097,41 +1203,41 @@ msgstr ""
 "De randkleur van de schuifbalk wordt gebruikt door schuifbalken zodat "
 "zwevende schuifbalken zichtbaar blijven ongeacht de achtergrond."
 
-#: gradience/frontend/schemas/preset_schema.py:380
+#: gradience/frontend/schemas/preset_schema.py:477
 msgid "Blue"
 msgstr "Blauw"
 
-#: gradience/frontend/schemas/preset_schema.py:381
+#: gradience/frontend/schemas/preset_schema.py:478
 msgid "Green"
 msgstr "Groen"
 
-#: gradience/frontend/schemas/preset_schema.py:382
+#: gradience/frontend/schemas/preset_schema.py:479
 msgid "Yellow"
 msgstr "Geel"
 
-#: gradience/frontend/schemas/preset_schema.py:383
+#: gradience/frontend/schemas/preset_schema.py:480
 msgid "Orange"
 msgstr "Oranje"
 
-#: gradience/frontend/schemas/preset_schema.py:384
+#: gradience/frontend/schemas/preset_schema.py:481
 msgid "Red"
 msgstr "Rood"
 
-#: gradience/frontend/schemas/preset_schema.py:385
+#: gradience/frontend/schemas/preset_schema.py:482
 msgid "Purple"
 msgstr "Paars"
 
-#: gradience/frontend/schemas/preset_schema.py:386
+#: gradience/frontend/schemas/preset_schema.py:483
 msgid "Brown"
 msgstr "Bruin"
 
-#: gradience/frontend/schemas/preset_schema.py:387
+#: gradience/frontend/schemas/preset_schema.py:484
 #: gradience/frontend/widgets/monet_theming_group.py:95
 #: gradience/frontend/widgets/shell_theming_group.py:73
 msgid "Light"
 msgstr "Licht"
 
-#: gradience/frontend/schemas/preset_schema.py:388
+#: gradience/frontend/schemas/preset_schema.py:485
 #: gradience/frontend/widgets/monet_theming_group.py:96
 #: gradience/frontend/widgets/shell_theming_group.py:72
 msgid "Dark"
@@ -1160,245 +1266,6 @@ msgstr "Accent-voorgrondkleur"
 #: gradience/frontend/schemas/shell_schema.py:61
 msgid "OSD Foreground Color"
 msgstr "OSD-voorgrondkleur"
-
-#: gradience/frontend/dialogs/app_type_dialog.py:47
-#: gradience/frontend/dialogs/save_dialog.py:62
-msgid "_Cancel"
-msgstr "_Annuleren"
-
-#: gradience/frontend/dialogs/log_out_dialog.py:41
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:43
-msgid "OK"
-msgstr "Ok"
-
-#: gradience/frontend/dialogs/save_dialog.py:39
-#, python-brace-format
-msgid ""
-"Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-"overwritten."
-msgstr ""
-"Voorinstelling wordt opgeslagen in <tt>{0}</tt>. Indien de voorinstelling al "
-"bestaat, zal deze worden overschreven."
-
-#: gradience/frontend/dialogs/save_dialog.py:65
-msgid "Discard"
-msgstr "Verwerpen"
-
-#: gradience/frontend/dialogs/save_dialog.py:70
-msgid "_Save"
-msgstr "_Opslaan"
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:40
-msgid "Unsupported Shell Version ({get_full_shell_version()})"
-msgstr "Niet-ondersteunde shell-versie ({get_full_shell_version()})"
-
-#: gradience/frontend/dialogs/unsupported_shell_dialog.py:41
-msgid ""
-"The Shell version you are using is not supported by Gradience. Please "
-"upgrade to a newer version of GNOME."
-msgstr ""
-"De shell-versie die u gebruikt wordt niet ondersteund door Gradience. "
-"Upgrade naar een nieuwere versie van GNOME."
-
-#: gradience/frontend/widgets/explore_preset_row.py:68
-#: gradience/frontend/widgets/explore_preset_row.py:94
-msgid "Preset could not be downloaded"
-msgstr "Voorinstelling kon niet worden gedownload"
-
-#: gradience/frontend/widgets/explore_preset_row.py:82
-#: gradience/frontend/widgets/explore_preset_row.py:98
-msgid "Preset downloaded"
-msgstr "Voorinstelling gedownload"
-
-#: gradience/frontend/widgets/monet_theming_group.py:65
-msgid "Monet Palette"
-msgstr "Monet-palet"
-
-#: gradience/frontend/widgets/monet_theming_group.py:91
-msgid "Theme"
-msgstr "Thema"
-
-#: gradience/frontend/widgets/monet_theming_group.py:94
-msgid "Auto"
-msgstr "Automatisch"
-
-#: gradience/frontend/widgets/monet_theming_group.py:131
-msgid "Failed to generate Monet palette"
-msgstr "Monet-palet genereren mislukt"
-
-#: gradience/frontend/widgets/monet_theming_group.py:136
-msgid "Palette generated"
-msgstr "Palet gegenereerd"
-
-#: gradience/frontend/widgets/monet_theming_group.py:141
-msgid "Select an image first"
-msgstr "Selecteer eerst een afbeelding"
-
-#: gradience/frontend/widgets/option_row.py:52
-msgid "This option is only partially supported by adw-gtk3."
-msgstr "Deze optie wordt slechts gedeeltelijk ondersteund door adw-gtk3."
-
-#: gradience/frontend/widgets/option_row.py:57
-msgid "This option is not supported by adw-gtk3."
-msgstr "Deze optie wordt niet ondersteund door adw-gtk3."
-
-#: gradience/frontend/widgets/option_row.py:96
-msgid "Show Color"
-msgstr "Kleur tonen"
-
-#: gradience/frontend/widgets/option_row.py:118
-msgid "Not a color, see text value"
-msgstr "Geen kleur, zie tekstwaarde"
-
-#: gradience/frontend/widgets/plugin_row.py:85
-msgid "Unable to remove"
-msgstr "Verwijderen mislukt"
-
-#: gradience/frontend/widgets/plugin_row.py:86
-msgid "This is a system plugin, and cannot be removed."
-msgstr "Dit is een systeem-plug-in, en kan niet worden verwijderd."
-
-#: gradience/frontend/widgets/plugin_row.py:88
-msgid "Close"
-msgstr "Sluiten"
-
-#: gradience/frontend/widgets/preset_row.py:85
-#: gradience/frontend/widgets/preset_row.py:144
-msgid "Remove from Favorites"
-msgstr "Verwijderen uit favorieten"
-
-#: gradience/frontend/widgets/preset_row.py:88
-#: gradience/frontend/widgets/preset_row.py:140
-msgid "Add to Favorites"
-msgstr "Toevoegen aan favorieten"
-
-#: gradience/frontend/widgets/preset_row.py:160
-msgid "Preset removed"
-msgstr "Voorinstelling verwijderd"
-
-#: gradience/frontend/widgets/preset_row.py:161
-msgid "Undo"
-msgstr "Ongedaan maken"
-
-#: gradience/frontend/widgets/preset_row.py:176
-msgid "Pending Deletion"
-msgstr "In afwachting van verwijdering"
-
-#: gradience/frontend/widgets/preset_row.py:190
-msgid "Unable to delete preset"
-msgstr "Kan voorinstelling niet verwijderen"
-
-#: gradience/frontend/widgets/repo_row.py:60
-msgid "Repository removed"
-msgstr "Repository verwijderd"
-
-#: gradience/frontend/widgets/reset_preset_group.py:57
-msgid "Unable to restore GTK 4 backup"
-msgstr "Kan GTK-4-back-up niet herstellen"
-
-#: gradience/frontend/widgets/reset_preset_group.py:69
-#: gradience/frontend/widgets/reset_preset_group.py:94
-msgid "Unable to delete current preset"
-msgstr "Kan huidige voorinstelling niet verwijderen"
-
-#: gradience/frontend/widgets/reset_preset_group.py:82
-msgid "Unable to restore GTK 3 backup"
-msgstr "Kan GTK-3-back-up niet herstellen"
-
-#: gradience/frontend/widgets/shell_theming_group.py:94
-msgid "An unexpected error occurred while loading variable colors."
-msgstr ""
-"Er is een onverwachte fout opgetreden bij het laden van variabelekleuren."
-
-#: gradience/frontend/widgets/shell_theming_group.py:118
-msgid "GNOME Shell Missing"
-msgstr "GNOME Shell ontbreekt"
-
-#: gradience/frontend/widgets/shell_theming_group.py:119
-#, fuzzy
-#| msgid ""
-#| "Shell Engine is designed to work only on systems running GNOME. You can "
-#| "still generate themes on other desktop environments, but it won't have "
-#| "any affect on them."
-msgid ""
-"Shell Engine is designed to work only on systems running GNOME. You can "
-"still generate themes on other desktop environments, but it won't have any "
-"affect on them."
-msgstr ""
-"Shell-engine is ontworpen om alleen te werken op systemen met GNOME. U kunt "
-"nog steeds thema's genereren op andere bureaubladomgevingen, maar het zal er "
-"geen invloed op hebben."
-
-#: gradience/frontend/widgets/shell_theming_group.py:121
-msgid "Disable Engine"
-msgstr "Engine uitschakelen"
-
-#: gradience/frontend/widgets/shell_theming_group.py:122
-#: gradience/frontend/widgets/shell_theming_group.py:133
-#: gradience/frontend/widgets/shell_theming_group.py:145
-msgid "Continue Anyway"
-msgstr "Toch doorgaan"
-
-#: gradience/frontend/widgets/shell_theming_group.py:129
-msgid "User Themes Extension Missing"
-msgstr "Uitbreiding ‘User Themes’ ontbreekt"
-
-#: gradience/frontend/widgets/shell_theming_group.py:130
-#, fuzzy
-#| msgid ""
-#| "Gradience requires User Themes extension installed in order to apply "
-#| "Shell theme. You can still generate a theme, but you won't be able to "
-#| "apply it without this extension."
-msgid ""
-"Gradience requires the User Themes extension installed to apply the Shell "
-"theme. You can still generate a theme, but you won't be able to apply it "
-"without this extension."
-msgstr ""
-"Gradience vereist dat de uitbreiding ‘User Themes’ is geïnstalleerd om shell-"
-"thema's toe te kunnen passen. U kunt nog steeds een thema genereren, maar u "
-"kunt het niet toepassen zonder deze uitbreiding."
-
-#: gradience/frontend/widgets/shell_theming_group.py:132
-msgid "Install Extension"
-msgstr "Uitbreiding installeren"
-
-#: gradience/frontend/widgets/shell_theming_group.py:140
-msgid "User Themes Extension Disabled"
-msgstr "Uitbreiding ‘User Themes’ uitgeschakeld"
-
-#: gradience/frontend/widgets/shell_theming_group.py:141
-#, fuzzy
-#| msgid ""
-#| "User Themes extension is currently disabled on your system. Please enable "
-#| "it in order to apply theme."
-msgid ""
-"The User Themes extension is currently disabled on your system. Please "
-"enable it to apply the theme."
-msgstr ""
-"De uitbreiding ‘User Themes’ is momenteel uitgeschakeld op uw systeem. "
-"Schakel deze in om een thema toe te kunnen passen."
-
-#: gradience/frontend/widgets/shell_theming_group.py:143
-#: gradience/frontend/views/presets_manager_window.py:201
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: gradience/frontend/widgets/shell_theming_group.py:181
-msgid "An error occurred while generating a Shell theme."
-msgstr "Er is een fout opgetreden tijdens het genereren van een shell-thema."
-
-#: gradience/frontend/widgets/shell_theming_group.py:188
-msgid "Shell theme applied successfully."
-msgstr "Shell-thema succesvol toegepast"
-
-#: gradience/frontend/widgets/shell_theming_group.py:217
-#: gradience/frontend/widgets/shell_theming_group.py:222
-msgid "Failed to load extension's install link."
-msgstr "Installatielink van uitbreiding laden mislukt"
-
-#: gradience/frontend/widgets/shell_theming_group.py:241
-msgid "Shell theme successfully reset."
-msgstr "Shell-thema succesvol opgeslagen"
 
 #: gradience/frontend/views/about_window.py:27
 msgid "translator-credits"
@@ -1475,6 +1342,11 @@ msgstr "Nieuwe repository toevoegen"
 msgid "Add a repository to install additional presets."
 msgstr "Voeg een repository toe om extra voorinstellingen te installeren."
 
+#: gradience/frontend/views/presets_manager_window.py:201
+#: gradience/frontend/widgets/shell_theming_group.py:143
+msgid "Cancel"
+msgstr "Annuleren"
+
 #: gradience/frontend/views/presets_manager_window.py:202
 msgid "Add"
 msgstr "Toevoegen"
@@ -1490,11 +1362,6 @@ msgstr "Voorinstelling geïmporteerd"
 #: gradience/frontend/views/presets_manager_window.py:313
 msgid "Unsupported file format, must be .json"
 msgstr "Niet-ondersteund bestandsformaat, dit dient JSON te zijn"
-
-#: gradience/frontend/views/presets_manager_window.py:339
-#: gradience/frontend/main.py:204
-msgid "Failed to load list of presets"
-msgstr "Lijst met voorinstellingen laden mislukt"
 
 #: gradience/frontend/views/presets_manager_window.py:348
 msgid "Built-in Presets"
@@ -1516,53 +1383,329 @@ msgstr ""
 "Geen voorinstellingen gevonden. Gebruik de knop ‘importeren’ of zoek onder "
 "‘verkennen’."
 
-#: gradience/frontend/views/welcome_window.py:89
+#: gradience/frontend/views/welcome_window.py:79
 msgid "Thanks for updating Gradience!"
 msgstr "Bedankt voor het bijwerken van Gradience!"
 
-#: gradience/frontend/main.py:237
-msgid "No presets found"
-msgstr "Geen voorinstellingen gevonden"
+#: gradience/frontend/widgets/explore_preset_row.py:68
+#: gradience/frontend/widgets/explore_preset_row.py:94
+msgid "Preset could not be downloaded"
+msgstr "Voorinstelling kon niet worden gedownload"
 
-#: gradience/frontend/main.py:260
-msgid "Favorite Presets"
-msgstr "Favoriete voorinstellingen"
+#: gradience/frontend/widgets/explore_preset_row.py:82
+#: gradience/frontend/widgets/explore_preset_row.py:98
+msgid "Preset downloaded"
+msgstr "Voorinstelling gedownload"
 
-#: gradience/frontend/main.py:417
-msgid "Unsaved Changes"
-msgstr "Niet-opgeslagen wijzigingen"
+#: gradience/frontend/widgets/monet_theming_group.py:65
+msgid "Palette"
+msgstr "Palet"
 
-#: gradience/frontend/main.py:429
-msgid "Save Changes"
-msgstr "Wijzigingen opslaan"
+#: gradience/frontend/widgets/monet_theming_group.py:91
+msgid "Style"
+msgstr "Stijl"
 
-#: gradience/frontend/main.py:519
-msgid "Apply This Color Scheme?"
-msgstr "Dit kleurenschema toepassen?"
+#: gradience/frontend/widgets/monet_theming_group.py:94
+msgid "Auto"
+msgstr "Automatisch"
 
-#: gradience/frontend/main.py:521
-msgid ""
-"Warning: any custom CSS files for those app types will be irreversibly "
-"overwritten!"
+#: gradience/frontend/widgets/monet_theming_group.py:131
+msgid "Failed to generate Monet palette"
+msgstr "Monet-palet genereren mislukt"
+
+#: gradience/frontend/widgets/monet_theming_group.py:136
+msgid "Palette generated"
+msgstr "Palet gegenereerd"
+
+#: gradience/frontend/widgets/monet_theming_group.py:141
+msgid "Select an image first"
+msgstr "Selecteer eerst een afbeelding"
+
+#: gradience/frontend/widgets/option_row.py:52
+msgid "This option is only partially supported by adw-gtk3."
+msgstr "Deze optie wordt slechts gedeeltelijk ondersteund door adw-gtk3."
+
+#: gradience/frontend/widgets/option_row.py:57
+msgid "This option is not supported by adw-gtk3."
+msgstr "Deze optie wordt niet ondersteund door adw-gtk3."
+
+#: gradience/frontend/widgets/option_row.py:96
+msgid "Show Color"
+msgstr "Kleur tonen"
+
+#: gradience/frontend/widgets/option_row.py:118
+msgid "Not a color, see text value"
+msgstr "Geen kleur, zie tekstwaarde"
+
+#: gradience/frontend/widgets/plugin_row.py:85
+msgid "Unable to remove"
+msgstr "Verwijderen mislukt"
+
+#: gradience/frontend/widgets/plugin_row.py:86
+msgid "This is a system plugin, and cannot be removed."
+msgstr "Dit is een systeem-plug-in, en kan niet worden verwijderd."
+
+#: gradience/frontend/widgets/plugin_row.py:88
+msgid "Close"
+msgstr "Sluiten"
+
+#: gradience/frontend/widgets/preset_row.py:85
+#: gradience/frontend/widgets/preset_row.py:144
+msgid "Remove from Favorites"
+msgstr "Verwijderen uit favorieten"
+
+#: gradience/frontend/widgets/preset_row.py:88
+#: gradience/frontend/widgets/preset_row.py:140
+msgid "Add to Favorites"
+msgstr "Toevoegen aan favorieten"
+
+#: gradience/frontend/widgets/preset_row.py:160
+msgid "Preset removed"
+msgstr "Voorinstelling verwijderd"
+
+#: gradience/frontend/widgets/preset_row.py:161
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: gradience/frontend/widgets/preset_row.py:176
+msgid "Pending Deletion"
+msgstr "In afwachting van verwijdering"
+
+#: gradience/frontend/widgets/preset_row.py:190
+msgid "Unable to delete preset"
+msgstr "Kan voorinstelling niet verwijderen"
+
+#: gradience/frontend/widgets/repo_row.py:60
+msgid "Repository removed"
+msgstr "Repository verwijderd"
+
+#: gradience/frontend/widgets/reset_preset_group.py:55
+msgid "Unable to restore GTK 4 backup"
+msgstr "Kan GTK-4-back-up niet herstellen"
+
+#: gradience/frontend/widgets/reset_preset_group.py:59
+msgid "GTK 4 preset has been restored. Log out to apply changes."
 msgstr ""
-"Waarschuwing: aangepaste CSS-bestanden voor die app-typen worden "
-"onomkeerbaar overschreven!"
 
-#: gradience/frontend/main.py:525
-msgid "_Apply"
-msgstr "_Toepassen"
+#: gradience/frontend/widgets/reset_preset_group.py:69
+#: gradience/frontend/widgets/reset_preset_group.py:98
+msgid "Unable to delete current preset"
+msgstr "Kan huidige voorinstelling niet verwijderen"
 
-#: gradience/frontend/main.py:551
-msgid "You have unsaved changes!"
-msgstr "Er zijn niet-opgeslagen wijzigingen!"
+#: gradience/frontend/widgets/reset_preset_group.py:73
+msgid "GTK 4 theme has been reset. Log out to apply changes."
+msgstr ""
 
-#: gradience/frontend/main.py:602
-msgid "Preset saved"
-msgstr "Voorinstelling opgeslagen"
+#: gradience/frontend/widgets/reset_preset_group.py:84
+msgid "Unable to restore GTK 3 backup"
+msgstr "Kan GTK-3-back-up niet herstellen"
 
-#: gradience/frontend/main.py:619
-msgid "Preset set successfully"
-msgstr "Voorinstelling succesvol ingesteld"
+#: gradience/frontend/widgets/reset_preset_group.py:88
+msgid "GTK 3 preset has been restored. Log out to apply changes."
+msgstr ""
+
+#: gradience/frontend/widgets/reset_preset_group.py:102
+msgid "GTK 3 theme has been reset. Log out to apply changes."
+msgstr ""
+
+#: gradience/frontend/widgets/shell_theming_group.py:94
+msgid "An unexpected error occurred while loading variable colors."
+msgstr ""
+"Er is een onverwachte fout opgetreden bij het laden van variabelekleuren."
+
+#: gradience/frontend/widgets/shell_theming_group.py:118
+msgid "GNOME Shell Missing"
+msgstr "GNOME Shell ontbreekt"
+
+#: gradience/frontend/widgets/shell_theming_group.py:119
+msgid ""
+"Shell Engine is designed to work only on systems running GNOME. You can "
+"still generate themes on other desktop environments, but it won't have any "
+"affect on them."
+msgstr ""
+"Shell-engine is ontworpen om alleen te werken op systemen met GNOME. U kunt "
+"nog steeds thema's genereren op andere bureaubladomgevingen, maar het zal er "
+"geen invloed op hebben."
+
+#: gradience/frontend/widgets/shell_theming_group.py:121
+msgid "Disable Engine"
+msgstr "Engine uitschakelen"
+
+#: gradience/frontend/widgets/shell_theming_group.py:122
+#: gradience/frontend/widgets/shell_theming_group.py:133
+#: gradience/frontend/widgets/shell_theming_group.py:145
+msgid "Continue Anyway"
+msgstr "Toch doorgaan"
+
+#: gradience/frontend/widgets/shell_theming_group.py:129
+msgid "User Themes Extension Missing"
+msgstr "Uitbreiding ‘User Themes’ ontbreekt"
+
+#: gradience/frontend/widgets/shell_theming_group.py:130
+msgid ""
+"Gradience requires the User Themes extension installed to apply the Shell "
+"theme. You can still generate a theme, but you won't be able to apply it "
+"without this extension."
+msgstr ""
+"Gradience vereist dat de uitbreiding ‘User Themes’ is geïnstalleerd om het "
+"shell-thema toe te passen. U kunt nog steeds een thema genereren, maar u "
+"kunt deze niet toepassen zonder de uitbreiding."
+
+#: gradience/frontend/widgets/shell_theming_group.py:132
+msgid "Install Extension"
+msgstr "Uitbreiding installeren"
+
+#: gradience/frontend/widgets/shell_theming_group.py:140
+msgid "User Themes Extension Disabled"
+msgstr "Uitbreiding ‘User Themes’ uitgeschakeld"
+
+#: gradience/frontend/widgets/shell_theming_group.py:141
+msgid ""
+"The User Themes extension is currently disabled on your system. Please "
+"enable it to apply the theme."
+msgstr ""
+"De uitbreiding ‘User Themes’ is momenteel uitgeschakeld op uw systeem. "
+"Schakel deze in om het thema toe te passen."
+
+#: gradience/frontend/widgets/shell_theming_group.py:181
+msgid "An error occurred while generating a Shell theme."
+msgstr "Er is een fout opgetreden tijdens het genereren van een shell-thema."
+
+#: gradience/frontend/widgets/shell_theming_group.py:188
+msgid "Shell theme applied successfully."
+msgstr "Shell-thema succesvol toegepast"
+
+#: gradience/frontend/widgets/shell_theming_group.py:217
+#: gradience/frontend/widgets/shell_theming_group.py:222
+msgid "Failed to load extension's install link."
+msgstr "Installatielink van uitbreiding laden mislukt"
+
+#: gradience/frontend/widgets/shell_theming_group.py:241
+msgid "Shell theme successfully reset."
+msgstr "Shell-thema succesvol opgeslagen"
+
+#~ msgid "AdwCustomizer"
+#~ msgstr "AdwCustomizer"
+
+#, fuzzy
+#~| msgid "Adwaita Dark"
+#~ msgid "Adwaita Manager"
+#~ msgstr "Adwaita-donker"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "shortcut window"
+#~ msgid "General"
+#~ msgstr "Algemeen"
+
+#, fuzzy
+#~| msgid "Keyboard Shortcuts"
+#~ msgctxt "shortcut window"
+#~ msgid "Show Shortcuts"
+#~ msgstr "Sneltoetsen"
+
+#, fuzzy
+#~| msgid "Manage Presets"
+#~ msgctxt "shortcut window"
+#~ msgid "Manage Presets"
+#~ msgstr "Voorinstellingen beheren"
+
+#, fuzzy
+#~| msgid "Save Preset"
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Voorinstelling opslaan"
+
+#, fuzzy
+#~| msgid "Move CSS to the \"Advanced\" tab"
+#~ msgctxt "shortcut window"
+#~ msgid "Go to the Advanced Section"
+#~ msgstr "Verplaats CSS naar het tabblad \"Geavanceerd\""
+
+#, fuzzy
+#~| msgid "Preferences"
+#~ msgctxt "shortcut window"
+#~ msgid "Preferences"
+#~ msgstr "Voorkeuren"
+
+#~ msgid "Monet Engine generates a Material You color palette from an image."
+#~ msgstr ""
+#~ "Monet-engine genereert een Material You-palet uit de kleuren van een "
+#~ "afbeelding."
+
+#~ msgid "Select an Image"
+#~ msgstr "Afbeelding selecteren"
+
+#~ msgid "Allow GTK 4 Theming"
+#~ msgstr "Personalisatie van GTK-4-apps toestaan"
+
+#~ msgid "Allow GTK 4 Theming (System)"
+#~ msgstr "Personalisatie van GTK 4 toestaan (systeem)"
+
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 4 Flatpak apps to "
+#~ "access custom themes. (Requires root access)"
+#~ msgstr ""
+#~ "Overschrijf Flatpak-machtigingen voor alle gebruikers om GTK-4-Flatpak-"
+#~ "apps toegang te geven tot aangepaste thema's. (Vereist root-toegang)"
+
+#~ msgid "Allow GTK 3 Theming"
+#~ msgstr "Personalisatie van GTK 3 toestaan"
+
+#~ msgid "Allow GTK 3 Theming (System)"
+#~ msgstr "Personalisatie van GTK 3 toestaan (systeem)"
+
+#~ msgid ""
+#~ "Override Flatpak permissions for all users to allow GTK 3 Flatpak apps to "
+#~ "access adw-gtk3 theme. (Requires root access)"
+#~ msgstr ""
+#~ "Overschrijf Flatpak-rechten voor alle gebruikers om GTK-3-Flatpak-apps "
+#~ "toegang te geven tot het thema adw-gtk3. (Vereist root-toegang)"
+
+#~ msgid "Reset a currently applied preset or restore the previous one."
+#~ msgstr "Reset een momenteel toegepaste voorinstelling of herstel de vorige."
+
+#~ msgid "Custom Shell Colors"
+#~ msgstr "Aangepaste shell-kleuren"
+
+#, fuzzy
+#~| msgid ""
+#~| "Change colors of windows, buttons, lists and more, with advanced "
+#~| "features like adding custom CSS"
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more, with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "Verander kleuren van vensters, knoppen, lijsten en meer, met geavanceerde "
+#~ "functies zoals het toepassen van aangepaste CSS"
+
+#~ msgid "Theme"
+#~ msgstr "Thema"
+
+#~ msgid "Save Changes"
+#~ msgstr "Wijzigingen opslaan"
+
+#~ msgid ""
+#~ "Change colors of windows, buttons, lists and more; with advanced features "
+#~ "like adding custom CSS."
+#~ msgstr ""
+#~ "Verander kleuren van vensters, knoppen, lijsten en meer; met geavanceerde "
+#~ "functies zoals het toepassen van aangepaste CSS."
+
+#~ msgid "Legacy Apps Theming"
+#~ msgstr "Personalisatie van oudere apps"
+
+#~ msgid "Install adw-gtk3 theme for legacy app theming"
+#~ msgstr "Installeer het adw-gtk3-thema voor personalisatie van oudere apps"
+
+#~ msgid "System Configuration"
+#~ msgstr "Systeemconfiguratie"
+
+#~ msgid "Installing adw-gtk3"
+#~ msgstr "adw-gtk3 installeren"
+
+#~ msgid "Preset set successfully"
+#~ msgstr "Voorinstelling succesvol ingesteld"
 
 #~ msgid "Toggle Text Value"
 #~ msgstr "Tekstwaarde omschakelen"
@@ -1637,9 +1780,6 @@ msgstr "Voorinstelling succesvol ingesteld"
 #~ msgid "Select a background first"
 #~ msgstr "Selecteer eerst een achtergrond"
 
-#~ msgid "Report an Issue…"
-#~ msgstr "Een probleem melden…"
-
 #~ msgid "More Options"
 #~ msgstr "Meer opties"
 
@@ -1651,9 +1791,6 @@ msgstr "Voorinstelling succesvol ingesteld"
 
 #~ msgid "Special thanks to"
 #~ msgstr "Speciale dank aan"
-
-#~ msgid "Background Image"
-#~ msgstr "Achtergrondafbeelding"
 
 #~ msgid "Tone"
 #~ msgstr "Toon"
@@ -1669,15 +1806,6 @@ msgstr "Voorinstelling succesvol ingesteld"
 
 #~ msgid "GTK 4 Widget Factory"
 #~ msgstr "GTK 4-widgetfabriek"
-
-#~ msgid "Failed to save override"
-#~ msgstr "Overschrijven mislukt"
-
-#~ msgid "Unexpected file error occurred"
-#~ msgstr "Er is een onverwachte bestandsfout opgetreden"
-
-#~ msgid "Save"
-#~ msgstr "Opslaan"
 
 #~ msgid ""
 #~ "\n"
@@ -1747,8 +1875,8 @@ msgstr "Voorinstelling succesvol ingesteld"
 #~ msgstr ""
 #~ "In deze versie hebben we plugin-ondersteuning, een plugin-repository, "
 #~ "badges en een snelle preset-switcher toegevoegd. We hebben ook de preset "
-#~ "repository opgesplitst in een \"Officiële\" repository en een \"Verzamelde"
-#~ "\" repository."
+#~ "repository opgesplitst in een \"Officiële\" repository en een "
+#~ "\"Verzamelde\" repository."
 
 #, fuzzy
 #~ msgid ""
@@ -1914,9 +2042,6 @@ msgstr "Voorinstelling succesvol ingesteld"
 #~ msgid "Add AdwViewSwitcher in the header bar"
 #~ msgstr "Voeg AdwViewSwitcher toe in de kopbalk"
 
-#~ msgid "Move CSS to the \"Advanced\" tab"
-#~ msgstr "Verplaats CSS naar het tabblad \"Geavanceerd\""
-
 #~ msgid "Move the rest to the \"colors\" tab"
 #~ msgstr "Verplaats de rest naar het tabblad \"Kleuren\""
 
@@ -1973,9 +2098,6 @@ msgstr "Voorinstelling succesvol ingesteld"
 #, fuzzy
 #~ msgid "Select app types you want to affect:"
 #~ msgstr "Selecteer app-soorten die u wilt personaliseren:"
-
-#~ msgid "Libadwaita and GTK 4 apps"
-#~ msgstr "Apps met GTK 4 en Libadwaita"
 
 #, fuzzy
 #~ msgid "GTK 3 apps (adw-gtk3 theme required)"
@@ -2098,9 +2220,6 @@ msgstr "Voorinstelling succesvol ingesteld"
 
 #~ msgid "Adwaita"
 #~ msgstr "Adwaita"
-
-#~ msgid "Adwaita Dark"
-#~ msgstr "Adwaita-donker"
 
 #~ msgid "Reset successfully!"
 #~ msgstr "Succesvol opnieuw ingesteld!"
