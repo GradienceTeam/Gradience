@@ -44,12 +44,11 @@ shell_schema = {
             "title": _("Accent Foreground Color"),
         },
         # TODO: Fix panel background color injection code
-        {
-            "name": "panel_bg_color",
-            "var_name": "panel_bg_color",
-            "title": _("Panel Background Color"),
-            "default_value": "#000", # this is temporary until the code is fixed
-        },
+        # {
+        #     "name": "panel_bg_color",
+        #     "var_name": "window_bg_color",
+        #     "title": _("Panel Background Color"),
+        # },
         # {
         #    "name": "osd_bg_color",
         #    "var_name": "window_bg_color",
