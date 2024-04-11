@@ -83,5 +83,12 @@ $hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color,
 $active_bg_color: if($variant=='light', darken($bg_color, 5%), lighten($bg_color, 12%));
 $active_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 12%));
 
-// $panel_bg_color: {{panel_bg_color}};
+// panel colors
+// TODO: both of these open to discussion
 $panel_bg_color: darken(desaturate({{panel_bg_color}}, 2%), 2%);
+$panel_fg_color: $fg_color;
+
+// card elements
+$card_bg_color: if($variant == 'light', $light_1, lighten($bg_color, 7%));
+$card_shadow_color: if($variant == 'light', transparentize($dark_5, .97), transparent);
+$card_shadow_border_color: if($variant == 'light', transparentize($dark_5, .91), transparent);

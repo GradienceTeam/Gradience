@@ -21,44 +21,44 @@ shell_schema = {
         {
             "name": "bg_color",
             "var_name": "window_bg_color",
-            "title": _("Base Background Color")
+            "title": _("Base Background Color"),
         },
         {
             "name": "fg_color",
             "var_name": "window_fg_color",
-            "title": _("Base Foreground Color")
+            "title": _("Base Foreground Color"),
         },
         {
             "name": "system_bg_color",
             "var_name": "window_bg_color",
-            "title": _("Overview Background Color")
+            "title": _("Overview Background Color"),
         },
         {
             "name": "selected_bg_color",
             "var_name": "accent_bg_color",
-            "title": _("Accent Background Color")
+            "title": _("Accent Background Color"),
         },
         {
             "name": "selected_fg_color",
             "var_name": "window_fg_color",
-            "title": _("Accent Foreground Color")
+            "title": _("Accent Foreground Color"),
         },
         # TODO: Fix panel background color injection code
-        #{
-        #    "name": "panel_bg_color",
-        #    "var_name": "panel_bg_color",
-        #    "title": _("Panel Background Color"),
-        #    "default_value": "#000"
-        #},
-        #{
+        {
+            "name": "panel_bg_color",
+            "var_name": "panel_bg_color",
+            "title": _("Panel Background Color"),
+            "default_value": "#000", # this is temporary until the code is fixed
+        },
+        # {
         #    "name": "osd_bg_color",
         #    "var_name": "window_bg_color",
         #    "title": _("OSD Background Color")
-        #},
+        # },
         {
             "name": "osd_fg_color",
             "var_name": "window_fg_color",
-            "title": _("OSD Foreground Color")
-        }
+            "title": _("OSD Foreground Color"),
+        },
     ]
 }
