@@ -82,7 +82,7 @@ class GradienceExplorePresetRow(Adw.ActionRow):
                 Adw.Toast(title=_("Preset downloaded")))
             self.win.reload_pref_group()
 
-            logging.debug("Apply and download compeleted")
+            logging.debug("Apply and download completed")
 
     @Gtk.Template.Callback()
     def on_download_button_clicked(self, *_args):
@@ -97,4 +97,4 @@ class GradienceExplorePresetRow(Adw.ActionRow):
             self.toast_overlay.add_toast(
                 Adw.Toast(title=_("Preset downloaded")))
             self.win.reload_pref_group()
-            logging.debug("Download compeleted")
+            logging.debug("Download completed")
