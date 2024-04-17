@@ -7,13 +7,14 @@
 # 0xMRTT <0xMRTT@tuta.io>, 2022.
 # Daudix UFO <ddaudix@gmail.com>, 2022.
 # yangyangdaji <1504305527@qq.com>, 2022, 2023, 2024.
+# Nathan Hadley <nathanhadley.pigeon@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2024-01-10 01:35+0000\n"
-"PO-Revision-Date: 2024-01-12 08:06+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"PO-Revision-Date: 2024-04-17 21:03+0000\n"
+"Last-Translator: Nathan Hadley <nathanhadley.pigeon@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/it/>\n"
 "Language: it\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -112,17 +113,10 @@ msgid "Apply Preset"
 msgstr "Applica configurazione"
 
 #: data/ui/custom_css_group.blp:5
-#, fuzzy
-#| msgid "Custom CSS"
 msgid "Custom Styles"
-msgstr "CSS personalizzato"
+msgstr "Stili personalizzati"
 
 #: data/ui/custom_css_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Changing this may break some programs. Libadwaita allows applications to "
-#| "hardcode values like padding and margins, and using custom CSS may cause "
-#| "unintended breakage."
 msgid ""
 "Changing this may break some programs. Libadwaita allows applications to "
 "hardcode values like padding and margins, and using custom styles may cause "
@@ -145,10 +139,8 @@ msgid "Download and Apply"
 msgstr "Scarica e applica"
 
 #: data/ui/explore_preset_row.blp:34
-#, fuzzy
-#| msgid "Download Only"
 msgid "Download"
-msgstr "Scarica soltanto"
+msgstr "Scaricamento"
 
 #: data/ui/log_out_dialog.blp:5
 msgid "Log out"
@@ -164,14 +156,9 @@ msgid "Monet Engine"
 msgstr "Generatore Monet"
 
 #: data/ui/monet_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image."
 msgstr ""
-"Il generatore Monet crea una tavolozza Material Design 3 a partire dai "
-"colori di un'immagine."
+"Genera una tavolozza Material Design 3 estraendo i colori di un'immagine."
 
 #: data/ui/monet_theming_group.blp:9
 msgid "Monet Engine Options"
@@ -269,6 +256,8 @@ msgid ""
 "Allow GTK 4 Flatpak apps of all users to access custom themes "
 "(Authentication required)"
 msgstr ""
+"Consenti alle app GTK 4 Flatpak di tutti gli utenti di accedere a temi "
+"personalizzati (autenticazione richiesta)"
 
 #: data/ui/preferences_window.blp:37
 msgid "Theme sandboxed GTK 3 apps"
@@ -465,20 +454,18 @@ msgid "JSON file (*.json)"
 msgstr "File JSON (*.json)"
 
 #: data/ui/reset_preset_group.blp:5
-#, fuzzy
-#| msgid "Reset and Restore Presets"
 msgid "Reset and Restore Theming"
-msgstr "Reimposta e ripristina configurazioni"
+msgstr "Ripristina e ripristina i temi"
 
 #: data/ui/reset_preset_group.blp:6
 msgid "Reset theming to default or restore previously applied preset."
 msgstr ""
+"Ripristina i temi predefiniti o ripristina quelli preimpostati applicati in "
+"precedenza."
 
 #: data/ui/reset_preset_group.blp:9
-#, fuzzy
-#| msgid "Libadwaita and GTK 4 apps"
 msgid "GTK 4/Libadwaita Apps"
-msgstr "Libadwaita e app GTK 4"
+msgstr "Applicazioni GTK 4/Libadwaita"
 
 #: data/ui/reset_preset_group.blp:14 data/ui/reset_preset_group.blp:34
 msgid "Restore Previous Preset"
@@ -493,8 +480,6 @@ msgid "Reset Applied Preset"
 msgstr "Reimposta la configurazione applicata"
 
 #: data/ui/reset_preset_group.blp:29
-#, fuzzy
-#| msgid "GTK 3 Applications"
 msgid "GTK 3 Apps"
 msgstr "Applicazioni GTK 3"
 
@@ -753,10 +738,8 @@ msgid "Agree and Continue"
 msgstr "Accetta e continua"
 
 #: data/ui/welcome_window.blp:93
-#, fuzzy
-#| msgid "Customize Adwaita Theme"
 msgid "Customize Adwaita"
-msgstr "Personalizza il tema Adwaita"
+msgstr "Personalizza Adwaita"
 
 #: data/ui/welcome_window.blp:94
 #, fuzzy
@@ -923,6 +906,8 @@ msgstr "Configurazione salvata"
 #: gradience/frontend/main.py:611
 msgid "Preset has been set. Log out to apply changes."
 msgstr ""
+"La preimpostazione è stata impostata. Disconnettersi per applicare le "
+"modifiche."
 
 #: gradience/frontend/schemas/preset_schema.py:23
 msgid "Accent Colors"
@@ -1435,14 +1420,12 @@ msgid "Preset downloaded"
 msgstr "Configurazione scaricata"
 
 #: gradience/frontend/widgets/monet_theming_group.py:65
-#, fuzzy
-#| msgid "Monet Palette"
 msgid "Palette"
-msgstr "Tavolozza Monet"
+msgstr "Tavolozza"
 
 #: gradience/frontend/widgets/monet_theming_group.py:91
 msgid "Style"
-msgstr ""
+msgstr "Stile"
 
 #: gradience/frontend/widgets/monet_theming_group.py:94
 msgid "Auto"
@@ -1525,6 +1508,8 @@ msgstr "Ripristino del backup di GTK 4 non riuscito"
 #: gradience/frontend/widgets/reset_preset_group.py:59
 msgid "GTK 4 preset has been restored. Log out to apply changes."
 msgstr ""
+"La preimpostazione GTK 4 è stata ripristinata. Per favore disconnettiti per "
+"applicare le modifiche."
 
 #: gradience/frontend/widgets/reset_preset_group.py:69
 #: gradience/frontend/widgets/reset_preset_group.py:98
