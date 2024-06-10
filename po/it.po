@@ -8,13 +8,14 @@
 # Daudix UFO <ddaudix@gmail.com>, 2022.
 # yangyangdaji <1504305527@qq.com>, 2022, 2023, 2024.
 # Nathan Hadley <nathanhadley.pigeon@gmail.com>, 2024.
+# Lorenzo Federici <federicilorenzo.it@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Atrophaneura@proton.me\n"
 "POT-Creation-Date: 2024-01-10 01:35+0000\n"
-"PO-Revision-Date: 2024-05-02 14:07+0000\n"
-"Last-Translator: Nathan Hadley <nathanhadley.pigeon@gmail.com>\n"
+"PO-Revision-Date: 2024-06-10 13:09+0000\n"
+"Last-Translator: Lorenzo Federici <federicilorenzo.it@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/GradienceTeam/"
 "gradience/it/>\n"
 "Language: it\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.3-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 #: data/com.github.GradienceTeam.Gradience.appdata.xml.in.in:4
 #: data/com.github.GradienceTeam.Gradience.desktop.in.in:3 data/ui/window.blp:5
@@ -235,7 +236,7 @@ msgstr "Applicazioni Flatpak"
 
 #: data/ui/preferences_window.blp:18
 msgid "Theme sandboxed GTK 4 apps"
-msgstr ""
+msgstr "Applica il tema alle app GTK 4 in sandbox"
 
 #: data/ui/preferences_window.blp:19
 msgid "Allow GTK 4 Flatpak apps of current user to access custom themes"
@@ -245,7 +246,7 @@ msgstr ""
 
 #: data/ui/preferences_window.blp:28
 msgid "Theme sandboxed GTK 4 apps (System)"
-msgstr ""
+msgstr "Applica il tema alle app GTK 4 in sandbox (Sistema)"
 
 #: data/ui/preferences_window.blp:29
 msgid ""
@@ -257,7 +258,7 @@ msgstr ""
 
 #: data/ui/preferences_window.blp:37
 msgid "Theme sandboxed GTK 3 apps"
-msgstr ""
+msgstr "Applica il tema alle app GTK 3 in sandbox"
 
 #: data/ui/preferences_window.blp:38
 msgid "Allow GTK 3 Flatpak apps of current user to access adw-gtk3 theme"
@@ -267,29 +268,27 @@ msgstr ""
 
 #: data/ui/preferences_window.blp:47
 msgid "Theme sandboxed GTK 3 apps (System)"
-msgstr ""
+msgstr "Applica il tema alle app GTK 3 in sandbox (Sistema)"
 
 #: data/ui/preferences_window.blp:48
 msgid ""
 "Allow GTK 3 Flatpak apps of all users to access adw-gtk3 theme "
 "(Authentication required)"
 msgstr ""
+"Consentire alle app Flatpak GTK 3 di tutti gli utenti di accedere al tema "
+"adw-gtk3 (Richiede autenticazione)"
 
 #: data/ui/preferences_window.blp:58
 msgid "Preset Fetching"
 msgstr "Acquisizione delle configurazioni"
 
 #: data/ui/preferences_window.blp:60
-#, fuzzy
-#| msgid "Use an alternative server for downloading presets"
 msgid "Use an alternative server for fetching presets"
-msgstr "Usa un server alternativo per scaricare le configurazioni"
+msgstr "Usa un server alternativo per ottenere le configurazioni"
 
 #: data/ui/preferences_window.blp:61
-#, fuzzy
-#| msgid "JSDelivr will be used instead of direct preset fetching from GitHub"
 msgid "Use JSDelivr instead of directly fetching presets from GitHub"
-msgstr "JSDelivr verrà usato al posto dello scaricamento diretto da GitHub"
+msgstr "Usa JSDelivr al posto dello scaricamento diretto da GitHub"
 
 #: data/ui/preferences_window.blp:73
 msgid "Custom Preset Repositories"
@@ -320,24 +319,13 @@ msgid "Shell Engine"
 msgstr "Generatore Shell"
 
 #: data/ui/preferences_window.blp:105
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on a currently "
-#| "chosen preset."
 msgid "Generates GNOME Shell theme based on current preset"
-msgstr ""
-"Il generatore Shell genera un tema per la shell di GNOME sulla base della "
-"configurazione attualmente selezionata."
+msgstr "Genera un tema GNOME Shell basato sul preset corrente"
 
 #: data/ui/preferences_window.blp:114
-#, fuzzy
-#| msgid ""
-#| "Monet Engine generates a Material Design 3 palette by extracting the "
-#| "image's colors."
 msgid "Generates a Material Design 3 palette by extracting colors of an image"
 msgstr ""
-"Il generatore Monet crea una tavolozza Material Design 3 a partire dai "
-"colori di un'immagine."
+"Genera una tavolozza Material Design 3 a partire dai colori di un'immagine"
 
 #: data/ui/preset_row.blp:65
 msgid "Rename Preset"
@@ -493,11 +481,11 @@ msgstr "Precedente"
 
 #: data/ui/share_window.blp:65
 msgid "Share your preset"
-msgstr "Condividi configurazione"
+msgstr "Condividi la tua configurazione"
 
 #: data/ui/share_window.blp:66
 msgid "Share your preset with the world!"
-msgstr "Condividi la tua configurazione con altri utenti"
+msgstr "Condividi la tua configurazione con il mondo!"
 
 #: data/ui/share_window.blp:73
 msgid "How it's work?"
@@ -616,26 +604,18 @@ msgid "Shell Engine Preferences"
 msgstr "Preferenze del generatore Shell"
 
 #: data/ui/shell_prefs_window.blp:13
-#, fuzzy
-#| msgid "Customize Shell theme colors."
 msgid "Shell theme colors"
-msgstr "Personalizza i colori del tema della shell."
+msgstr "Colore del tema della shell"
 
 #: data/ui/shell_theming_group.blp:6
-#, fuzzy
-#| msgid ""
-#| "Shell Engine generates a custom GNOME Shell theme based on the currently "
-#| "selected preset.\n"
-#| "WARNING: Extensions that modify the Shell stylesheet may cause issues "
-#| "with themes."
 msgid ""
 "Generates GNOME Shell theme based on current preset.\n"
 "WARNING: Extensions that modify the Shell stylesheet may cause issues with "
 "themes."
 msgstr ""
-"Il generatore Shell genera un tema per la shell di GNOME sulla base della "
-"configurazione attualmente selezionata.\n"
-"ATTENZIONE: le estensioni che modificano lo schema di colori della shell "
+"Genera un tema per la Shell di GNOME sulla base della configurazione "
+"attualmente selezionata.\n"
+"ATTENZIONE: le estensioni che modificano lo schema di colori della Shell "
 "potrebbero causare dei problemi con i temi."
 
 #: data/ui/shell_theming_group.blp:20
@@ -734,16 +714,12 @@ msgid "Customize Adwaita"
 msgstr "Personalizza Adwaita"
 
 #: data/ui/welcome_window.blp:94
-#, fuzzy
-#| msgid ""
-#| "Change colors of windows, buttons, lists and more, with advanced features "
-#| "like adding custom CSS"
 msgid ""
 "Change colors of windows, buttons, lists and more, with advanced features "
 "like adding custom styles"
 msgstr ""
 "Cambia i colori delle finestre, dei pulsanti, delle liste e altro tramite "
-"funzionalità avanzate come l'aggiunta di CSS personalizzato"
+"funzionalità avanzate come l'aggiunta di stili personalizzati"
 
 #: data/ui/window.blp:37 gradience/frontend/main.py:422
 msgid "Save Preset"
@@ -814,17 +790,15 @@ msgid "_Cancel"
 msgstr "A_nnulla"
 
 #: gradience/frontend/dialogs/save_dialog.py:39
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Saving preset to <tt>{0}</tt>. If that preset already exists, it will be "
-#| "overwritten."
+#, python-brace-format
 msgid ""
 "Saving preset to \n"
 " <small><i><tt>{0}</tt></i></small>. \n"
 " If that preset already exists, it will be overwritten."
 msgstr ""
-"Salvataggio della configurazione in <tt>{0}</tt>. Se la configurazione "
-"esiste già, verrà sovrascritta."
+"Salvataggio della configurazione in\n"
+"<small><i><tt>{0}</tt></i></small>.\n"
+"Se quella configurazione esiste già, verrà sovrascritta."
 
 #: gradience/frontend/dialogs/save_dialog.py:65
 msgid "Discard"
@@ -1181,6 +1155,9 @@ msgid ""
 "well as transitions in AdwNavigationView, AdwOverlaySplitView, AdwLeaflet "
 "and AdwFlap."
 msgstr ""
+"Là tonalità di colore viene utilizzato per gli stili di scorrimento "
+"all'interno dei popover, nonché per le transizioni in AdwNavigationView, "
+"AdwOverlaySplitView, AdwLeaflet e AdwFlap."
 
 #: gradience/frontend/schemas/preset_schema.py:450
 msgid "Miscellaneous Colors"
@@ -1282,7 +1259,8 @@ msgstr ""
 "Davide Ferracin , 2022, 2023\n"
 "0xMRTT &lt;0xMRTT@tuta.io&gt;, 2022\n"
 "Daudix UFO , 2022\n"
-"yangyangdaji &lt;1504305527@qq.com&gt;, 2022, 2023"
+"yangyangdaji &lt;1504305527@qq.com&gt;, 2022, 2023\n"
+"Lorenzo Federici, 2024"
 
 #: gradience/frontend/views/about_window.py:56
 msgid "Copyright © 2022-2023 Gradience Team"
@@ -1511,6 +1489,8 @@ msgstr "Eliminazione della configurazione attuale non riuscita"
 #: gradience/frontend/widgets/reset_preset_group.py:73
 msgid "GTK 4 theme has been reset. Log out to apply changes."
 msgstr ""
+"Il tema GTK 4 è stato reimpostato. Termina la sessione per applicare le "
+"modifiche."
 
 #: gradience/frontend/widgets/reset_preset_group.py:84
 msgid "Unable to restore GTK 3 backup"
@@ -1519,10 +1499,14 @@ msgstr "Ripristino del backup di GTK 3 non riuscito"
 #: gradience/frontend/widgets/reset_preset_group.py:88
 msgid "GTK 3 preset has been restored. Log out to apply changes."
 msgstr ""
+"Il preset GTK 3 è stato ripristinato. Termina la sessione per applicare le "
+"modifiche."
 
 #: gradience/frontend/widgets/reset_preset_group.py:102
 msgid "GTK 3 theme has been reset. Log out to apply changes."
 msgstr ""
+"Il tema GTK 3 è stato reimpostato. Termina la sessione per applicare le "
+"modifiche."
 
 #: gradience/frontend/widgets/shell_theming_group.py:94
 msgid "An unexpected error occurred while loading variable colors."
