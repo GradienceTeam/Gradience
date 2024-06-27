@@ -39,7 +39,7 @@ logging = Logger(logger_name="ShellTheme")
 
 class ShellTheme:
     # Supported GNOME Shell versions: 42, 43, 44
-    shell_versions = [42, 43, 44, 45]
+    shell_versions = [42, 43, 44, 45, 46]
     shell_versions_str = ", ".join(map(str, shell_versions))
     version_target = None
 
