@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> Gradience has been archived as of July 29, 2024. See the [blog post](https://daudix.one/blog/archiving-gradience/) for some information on the rationale behind this decision.
+> Gradience has been archived as of June 29, 2024. See the [blog post](https://daudix.one/blog/archiving-gradience/) for some information on the rationale behind this decision.
 
 > [!NOTE]
 > Gradience is looking for a maintainer(s)! if you know Python and GTK4/Libadwaita and willing to work on it, chip in on [Matrix](https://matrix.to/#/#Gradience:matrix.org) and [Discord](https://discord.com/invite/4njFDtfGEZ).
