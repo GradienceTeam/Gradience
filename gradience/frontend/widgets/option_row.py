@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, Gdk, Adw
+from gi.repository import Gtk, Gdk, Adw, GObject
 
 from gradience.backend.utils.colors import rgb_to_hash
 from gradience.backend.constants import rootdir
@@ -64,6 +64,39 @@ class GradienceOptionRow(Adw.ActionRow):
 
         self.update_var = update_var
 
+        self.setup_dnd(self.color_value)
+
+    def setup_dnd(self, color_button):
+        drop_target = Gtk.DropTarget.new(
+            GObject.TYPE_STRING,
+            Gdk.DragAction.COPY
+        )
+
+        drag_source = Gtk.DragSource()
+        drag_source.set_actions(Gdk.DragAction.COPY)
+
+        drop_target.connect("drop", self.on_drop, color_button)
+        drag_source.connect("prepare", self.on_drag_prepare, color_button)
+
+        color_button.add_controller(drop_target)
+        color_button.add_controller(drag_source)
+
+    def on_drag_prepare(self, drag_source, _unused0, _unused1, box):
+        data = box.get_rgba().to_string()
+
+        provider = Gdk.ContentProvider.new_for_value(data)
+        return provider
+
+    def on_drop(self, drop_target, data, x, y, box):
+        if data is None:
+            return False
+
+        box.set_tooltip_text(f"{data}")
+        self.update_value(
+        data, update_from="color_value", update_vars=True
+        )
+        return True
+
     def connect_signals(self, update_vars):
         self.color_value.connect("color-set", self.on_color_value_changed, update_vars)
         self.text_value.connect("changed", self.on_text_value_changed, update_vars)
@@ -92,7 +125,7 @@ class GradienceOptionRow(Adw.ActionRow):
         widget = self.text_value if self.text_value_toggle.get_active() else self.color_value
         self.value_stack.set_visible_child(widget)
         self.set_activatable_widget(widget)
-        
+
         tooltip = _("Show Color") if self.text_value_toggle.get_active() else _("Show Hex")
         self.text_value_toggle.set_tooltip_text(tooltip);
 
