@@ -2,6 +2,7 @@
 // it gets @if-ed depending on $variant
 
 @import '_palette.scss';
+@import '_default-colors.scss';
 
 $is_highcontrast: false;
 
@@ -86,3 +87,8 @@ $active_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color
 // panel colors
 $panel_bg_color: $bg_color;
 $panel_fg_color: $fg_color;
+
+// card elements
+$card_bg_color: if($variant == 'light', $light_1, lighten($bg_color, 7%));
+$card_shadow_color: if($variant == 'light', transparentize($dark_5, .97), transparent);
+$card_shadow_border_color: if($variant == 'light', transparentize($dark_5, .91), transparent);
