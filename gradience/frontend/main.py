@@ -19,12 +19,13 @@
 import os
 import sys
 import threading
+import json
 
 from pathlib import Path
 from material_color_utilities_python import hexFromArgb
 from gi.repository import GObject, Gtk, Gdk, Gio, Adw, GLib
 
-from gradience.backend.globals import presets_dir, get_gtk_theme_dir
+from gradience.backend.globals import presets_dir, get_gtk_theme_dir, preset_repos
 from gradience.backend.css_parser import parse_css
 from gradience.backend.models.preset import Preset
 from gradience.backend.theming.preset import PresetUtils
@@ -32,6 +33,7 @@ from gradience.backend.theming.monet import Monet
 from gradience.backend.utils.common import to_slug_case
 from gradience.backend.utils.theming import generate_gtk_css
 from gradience.backend.constants import rootdir, app_id, rel_ver
+from gradience.backend.preset_downloader import PresetDownloader
 
 from gradience.frontend.views.main_window import GradienceMainWindow
 from gradience.frontend.views.plugins_list import GradiencePluginsList
@@ -62,7 +64,7 @@ class GradienceApplication(Adw.Application):
     def __init__(self):
         super().__init__(
             application_id=app_id,
-            flags=Gio.ApplicationFlags.FLAGS_NONE
+            flags=Gio.ApplicationFlags.HANDLES_OPEN | Gio.ApplicationFlags.FLAGS_NONE
         )
 
         self.set_resource_base_path(rootdir)
@@ -168,6 +170,62 @@ class GradienceApplication(Adw.Application):
             else:
                 logging.debug("normal run")
                 self.win.present()
+
+    def do_open(self, files, _n_files, _hint):
+        # gradience://{repo,import}/{slug, url}
+
+        uri = files[0].get_uri().replace("gradience://", "")
+        logging.debug(uri)
+
+        if uri.startswith("import/"): # import from custom url
+            url = uri.replace("import/")
+            logging.debug(f"import {url}")
+
+            # TODO: import from custom URL
+        else:
+            # format: repo / slug
+            repo, slug = uri.split("/")
+            logging.debug(f"{repo} / {slug}")
+
+            try:
+                repo_url = preset_repos[repo.capitalize()]
+                explore_presets, urls = PresetDownloader().fetch_presets(repo_url)
+            except GLib.GError as e:
+                # TODO: handle offline
+                pass
+            except json.JSONDecodeError:
+                # TODO: handle error
+                pass
+            else:
+                for (preset, preset_name), preset_url in zip(
+                    explore_presets.items(), urls
+                ):
+                    if to_slug_case(preset_name) == slug:
+                        logging.debug("found preset")
+                        try:
+                            PresetDownloader().download_preset(to_slug_case(slug), repo, preset_url)
+                        except (GLib.GError, json.JSONDecodeError, OSError):
+                            logging.error("An error occurred while trying to download a preset.")
+                        else:
+                            self.activate()
+                            self.load_preset_from_file(
+                                os.path.join(
+                                    os.environ.get("XDG_CONFIG_HOME",
+                                                os.environ["HOME"] + "/.config"),
+                                    "presets",
+                                    repo,
+                                    slug + ".json",
+                                )
+                            )
+
+                            logging.debug("Apply and download compeleted")
+                else:
+                    # TODO: show warning 
+                    logging.error("no preset found")
+
+
+        
+
 
     def setup_signals(self):
         # Custom signals
@@ -675,4 +733,5 @@ class GradienceApplication(Adw.Application):
 def main():
     """The application's entry point."""
     app = GradienceApplication()
+    print(sys.argv)
     return app.run(sys.argv)
